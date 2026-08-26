@@ -1,0 +1,362 @@
+---
+import Base from '../layouts/Base.astro';
+import data from '../data/artifacts.json';
+
+const { types, templates, named, featureGroups } = data;
+
+const SLOT_LABEL: Record<string, string> = {
+  helmet: 'Headgear',
+  regalia: 'Regalia',
+  armor: 'Armor',
+  primary_armament: 'Weapons',
+  miscellaneous: 'Trinkets',
+  journal: 'Journals',
+  throne: 'Thrones',
+  pedestal: 'Pedestals',
+  sculpture: 'Sculptures',
+  book: 'Lectern books',
+  wall_big: 'Wall pieces (large)',
+  wall_small: 'Wall pieces (small)',
+};
+const SLOT_ORDER = [
+  'helmet', 'regalia', 'armor', 'primary_armament', 'miscellaneous', 'journal',
+  'throne', 'pedestal', 'sculpture', 'book', 'wall_big', 'wall_small',
+];
+
+const typeById = new Map(types.map((t) => [t.id, t]));
+const templateById = new Map(templates.map((t) => [t.id, t]));
+
+const slotOf = (a: (typeof named)[number]) => typeById.get(a.types[0])?.slot ?? 'miscellaneous';
+const slots = [...new Set(named.map(slotOf))].sort(
+  (a, b) => SLOT_ORDER.indexOf(a) - SLOT_ORDER.indexOf(b),
+);
+const dlcs = [...new Set(named.map((a) => a.dlc).filter(Boolean))].sort() as string[];
+const uniqueCount = named.filter((a) => a.unique).length;
+const featureCount = featureGroups.reduce((n, g) => n + g.features.length, 0);
+
+const rarityLabel = (r: string) => r.charAt(0).toUpperCase() + r.slice(1);
+---
+<Base
+  title="Artifacts"
+  active="artifacts"
+  lede="Every named artifact the scripts can create — with the real modifier sets they carry, who can benefit from them, and the slot types and material features that compose generated artifacts."
+  stats={[
+    { value: named.length, label: 'named artifacts' },
+    { value: uniqueCount, label: 'uniques' },
+    { value: types.length, label: 'slot types' },
+    { value: featureCount, label: 'crafting features' },
+  ]}
+>
+  <div class="filterbar">
+    <input type="search" id="q" placeholder="Filter by name, modifier, condition…" autocomplete="off" />
+    <select id="fslot">
+      <option value="">every slot</option>
+      {slots.map((s) => <option value={s}>{SLOT_LABEL[s] ?? s}</option>)}
+    </select>
+    <select id="fdlc">
+      <option value="">base game + DLC</option>
+      <option value="base">base game only</option>
+      {dlcs.map((d) => <option value={d}>{d}</option>)}
+    </select>
+    <span class="hint" id="count"></span>
+  </div>
+
+  {slots.map((slot) => {
+    const rows = named.filter((a) => slotOf(a) === slot);
+    const category = typeById.get(rows[0].types[0])?.category;
+    return (
+      <section data-group={slot}>
+        <h2 class="group-h" id={slot}>
+          {SLOT_LABEL[slot] ?? slot}
+          <span class="count">{rows.length} · {category} slot</span>
+        </h2>
+        <div class="tbl-scroll">
+          <table class="ntbl">
+            <thead>
+              <tr>
+                <th>Artifact</th>
+                <th>Type</th>
+                <th>Rarity</th>
+                <th>Modifiers</th>
+                <th>Full effect requires</th>
+                <th>DLC</th>
+              </tr>
+            </thead>
+            <tbody>
+              {rows.map((a) => {
+                const tmpl = templateById.get(a.template);
+                const benefit = tmpl?.benefit ?? [];
+                return (
+                  <tr
+                    id={a.id}
+                    data-name={`${a.name} ${a.modifiers.flatMap((m) => m.lines.map((l) => l.text)).join(' ')} ${benefit.join(' ')}`.toLowerCase()}
+                    data-slot={slot}
+                    data-dlc={a.dlc ?? 'base'}
+                  >
+                    <td class="name">
+                      <span class="u-name" title={a.desc ?? undefined}>{a.name}</span>
+                      {a.unique && <span class="chip chip--unique">unique</span>}
+                    </td>
+                    <td><span class="subtle">{typeById.get(a.types[0])?.name ?? a.types[0]}</span></td>
+                    <td>
+                      {a.rarity.length ? a.rarity.map((r) => <span class={`rarity rarity--${r}`}>{rarityLabel(r)}</span>) : <span class="subtle">—</span>}
+                    </td>
+                    <td>
+                      {a.modifiers.map((m) => (
+                        <ul class="mods">
+                          {a.modifiers.length > 1 && <li class="subtle mono">{m.key}</li>}
+                          {m.lines.map((l) => <li class={l.polarity}>{l.text}</li>)}
+                        </ul>
+                      ))}
+                    </td>
+                    <td>
+                      {benefit.length ? (
+                        <span class="chips">
+                          {benefit.map((c) => <span class="chip chip--req">{c}</span>)}
+                        </span>
+                      ) : (
+                        <span class="subtle">anyone</span>
+                      )}
+                    </td>
+                    <td>{a.dlc ? <span class="badge-dlc">{a.dlc}</span> : <span class="subtle">—</span>}</td>
+                  </tr>
+                );
+              })}
+            </tbody>
+          </table>
+        </div>
+      </section>
+    );
+  })}
+
+  <section data-group="templates">
+    <h2 class="group-h" id="templates">
+      Templates
+      <span class="count">{templates.length} · wield &amp; benefit rules</span>
+    </h2>
+    <p class="note">
+      A template is the scripted rulebook an artifact is built on: who can equip it, who gets its
+      full modifiers, and the fallback modifier everyone else gets instead. The real bonus set of a
+      named artifact lives on the artifact itself (tables above); generated artifacts draw theirs
+      by rarity at creation.
+    </p>
+    <div class="tbl-scroll">
+      <table class="ntbl">
+        <thead>
+          <tr>
+            <th>Template</th>
+            <th>Equip requires</th>
+            <th>Full effect requires</th>
+            <th>Fallback modifiers</th>
+            <th>Used by</th>
+            <th>DLC</th>
+          </tr>
+        </thead>
+        <tbody>
+          {templates.map((t) => (
+            <tr
+              id={t.id}
+              data-name={`${t.label} ${t.id} ${t.benefit.join(' ')} ${t.fallback.map((m) => m.text).join(' ')}`.toLowerCase()}
+              data-dlc={t.dlc ?? 'base'}
+            >
+              <td class="name">
+                <span class="u-name">{t.label}</span>
+                {t.unique && <span class="chip chip--unique">unique</span>}
+                {!t.canReforge && <span class="chip">no reforge</span>}
+                {!t.canRepair && <span class="chip">no repair</span>}
+              </td>
+              <td>
+                {t.equip.length ? (
+                  <span class="chips">{t.equip.map((c) => <span class="chip chip--req">{c}</span>)}</span>
+                ) : (
+                  <span class="subtle">anyone</span>
+                )}
+              </td>
+              <td>
+                {t.benefit.length ? (
+                  <span class="chips">{t.benefit.map((c) => <span class="chip chip--req">{c}</span>)}</span>
+                ) : (
+                  <span class="subtle">anyone</span>
+                )}
+              </td>
+              <td>
+                <ul class="mods">
+                  {t.fallback.map((m) => <li class={m.polarity}>{m.text}</li>)}
+                </ul>
+                {!t.fallback.length && <span class="subtle">none</span>}
+              </td>
+              <td>
+                {t.artifacts.length ? (
+                  <span class="chips">
+                    {t.artifacts.slice(0, 4).map((id) => {
+                      const a = named.find((n) => n.id === id);
+                      return a ? <a class="chip" href={`#${id}`}>{a.name}</a> : null;
+                    })}
+                    {t.artifacts.length > 4 && <span class="subtle">+{t.artifacts.length - 4} more</span>}
+                  </span>
+                ) : (
+                  <span class="subtle">generated artifacts</span>
+                )}
+              </td>
+              <td>{t.dlc ? <span class="badge-dlc">{t.dlc}</span> : <span class="subtle">—</span>}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section data-group="types">
+    <h2 class="group-h" id="types">
+      Slot types
+      <span class="count">{types.length}</span>
+    </h2>
+    <p class="note">
+      Every artifact has a type that fixes its inventory or court slot and the feature groups a
+      craftsman draws from — required groups are always assigned at creation, optional ones can be
+      added by events.
+    </p>
+    <div class="tbl-scroll">
+      <table class="ntbl">
+        <thead>
+          <tr>
+            <th>Type</th>
+            <th>Slot</th>
+            <th>Category</th>
+            <th>Required features</th>
+            <th>Optional features</th>
+          </tr>
+        </thead>
+        <tbody>
+          {types.map((t) => (
+            <tr id={`type_${t.id}`} data-name={`${t.name} ${t.id} ${t.slot}`.toLowerCase()}>
+              <td class="name">
+                <span class="u-name">{t.name}</span>
+                <span class="subtle mono"> {t.id}</span>
+              </td>
+              <td>{SLOT_LABEL[t.slot] ?? t.slot}</td>
+              <td><span class="subtle">{t.category}</span></td>
+              <td>
+                <span class="chips">
+                  {t.requiredFeatures.map((g) => <a class="chip" href={`#fg_${g}`}>{g.replace(/_/g, ' ')}</a>)}
+                </span>
+                {!t.requiredFeatures.length && <span class="subtle">—</span>}
+              </td>
+              <td>
+                <span class="chips">
+                  {t.optionalFeatures.map((g) => <a class="chip" href={`#fg_${g}`}>{g.replace(/_/g, ' ')}</a>)}
+                </span>
+                {!t.optionalFeatures.length && <span class="subtle">—</span>}
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section data-group="features">
+    <h2 class="group-h" id="features">
+      Feature groups
+      <span class="count">{featureGroups.length} groups · {featureCount} features</span>
+    </h2>
+    <p class="note">
+      Features are the materials and decorations rolled onto generated artifacts — they name and
+      describe the piece rather than change its stats. Most are gated by the wealth put into the
+      commission; weights are relative odds among valid candidates.
+    </p>
+    {featureGroups.map((g) => (
+      <details class="fg" id={`fg_${g.id}`}>
+        <summary>
+          {g.label}
+          <span class="count">{g.features.length}</span>
+        </summary>
+        <div class="tbl-scroll">
+          <table class="ntbl">
+            <thead>
+              <tr>
+                <th>Feature</th>
+                <th>Reads as</th>
+                <th class="num" title="Wealth window in which this feature can be rolled">Wealth</th>
+                <th class="num" title="Relative selection weight among valid candidates">Weight</th>
+              </tr>
+            </thead>
+            <tbody>
+              {g.features.map((f) => (
+                <tr>
+                  <td class="mono">{f.id}</td>
+                  <td>{f.text ?? <span class="subtle">dynamic</span>}{f.conditional && <span class="subtle" title="additionally gated by culture, faith, or region triggers"> *</span>}</td>
+                  <td class="num">{f.wealth ?? '—'}</td>
+                  <td class="num">{f.weight}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </details>
+    ))}
+  </section>
+
+  <script>
+    const q = document.getElementById('q') as HTMLInputElement;
+    const fslot = document.getElementById('fslot') as HTMLSelectElement;
+    const fdlc = document.getElementById('fdlc') as HTMLSelectElement;
+    const count = document.getElementById('count')!;
+    const rows = [...document.querySelectorAll<HTMLTableRowElement>('section[data-group] tbody tr')];
+    const groups = [...document.querySelectorAll<HTMLElement>('section[data-group]')];
+
+    function apply() {
+      const needle = q.value.trim().toLowerCase();
+      const s = fslot.value;
+      const d = fdlc.value;
+      let shown = 0;
+      for (const r of rows) {
+        const name = r.dataset.name;
+        if (name == null) continue; // feature rows: not filtered
+        const ok =
+          (!needle || name.includes(needle)) &&
+          (!s || !r.dataset.slot || r.dataset.slot === s) &&
+          (!d || !r.dataset.dlc || (d === 'base' ? r.dataset.dlc === 'base' : r.dataset.dlc === d));
+        r.hidden = !ok;
+        if (ok && r.dataset.slot) shown++;
+      }
+      for (const g of groups) {
+        if (g.dataset.group === 'features') continue;
+        g.hidden = ![...g.querySelectorAll('tbody tr')].some((r) => !(r as HTMLTableRowElement).hidden);
+      }
+      count.textContent = `${shown} named artifacts`;
+    }
+    for (const el of [q, fslot, fdlc]) el.addEventListener('input', apply);
+    apply();
+  </script>
+
+  <style>
+    .note { color: var(--dim); font-size: 0.85rem; max-width: 72ch; margin: 0 0 0.8rem; }
+    .mono { font-family: var(--font-mono); font-size: 0.78rem; }
+    .chip--unique {
+      border-color: color-mix(in oklab, var(--rubric) 55%, var(--line));
+      color: var(--rubric);
+      margin-left: 0.35rem;
+    }
+    .rarity { font-size: 0.78rem; white-space: nowrap; }
+    .rarity--common { color: var(--dim); }
+    .rarity--masterwork { color: var(--sk-learning); }
+    .rarity--famed { color: var(--sk-intrigue); }
+    .rarity--illustrious { color: var(--brass-bright); }
+    ul.mods { margin: 0; padding: 0; list-style: none; font-size: 0.78rem; max-width: 26rem; }
+    ul.mods li.good { color: var(--good); }
+    ul.mods li.bad { color: var(--bad); }
+    ul.mods + ul.mods { margin-top: 0.4rem; }
+    .u-name[title] { cursor: help; border-bottom: 1px dotted var(--line); }
+    .chips { max-width: 24rem; }
+    .chip--req { white-space: normal; }
+    details.fg { margin: 0.4rem 0; }
+    details.fg summary {
+      cursor: pointer; user-select: none;
+      font-family: var(--font-display); font-size: 0.95rem; font-weight: 600;
+      padding: 0.35rem 0.2rem;
+    }
+    details.fg summary .count { color: var(--faint); font-family: var(--font-mono); font-size: 0.72rem; margin-left: 0.4rem; }
+    details.fg .tbl-scroll { margin: 0.3rem 0 0.6rem; }
+  </style>
+</Base>

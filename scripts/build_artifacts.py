@@ -130,6 +130,11 @@ def describe_trigger(blk, depth=0):
         elif k in ("custom_tooltip", "custom_description") and isinstance(v, Block):
             txt = ck3.loc(v.get("text", ""))
             out.append(ck3.render_text(txt) if txt else pretty(v.get("text", k)))
+        elif isinstance(v, str) and "var:" in v:
+            var = re.search(r"var:(\w+)", v)
+            out.append(f"Matches the artifact's {var.group(1).replace('_', ' ')}")
+        elif k == "has_variable" and isinstance(v, str):
+            out.append(f"has {v.replace('_', ' ')}")
         elif k == "culture" and isinstance(v, Block):
             for ck, _o, cv in v:
                 if ck == "has_cultural_pillar":
@@ -169,9 +174,6 @@ def describe_trigger(blk, depth=0):
             out.append(f"Doctrine: {ck3.render_text(raw) if raw else pretty(v)}")
         elif k == "faith" and isinstance(v, Block):
             out.extend(f"Faith {p[0].lower() + p[1:]}" for p in describe_trigger(v, depth + 1))
-        elif isinstance(v, str) and "var:" in v:
-            var = re.search(r"var:(\w+)", v)
-            out.append(f"Matches the artifact's {var.group(1).replace('_', ' ')}")
         elif k.startswith("scope:artifact") and isinstance(v, Block):
             var = re.search(r"var:(\w+)", repr(v.triples))
             if var:
@@ -194,7 +196,7 @@ def describe_trigger(blk, depth=0):
             out.append(f"{pretty(k)}: {'; '.join(inner)}" if inner else pretty(k))
         else:
             out.append(f"{pretty(k)}" + ("" if v is True else f" = {v}"))
-    return out
+    return list(dict.fromkeys(out))
 
 
 def trigger_field(blk):
@@ -248,6 +250,23 @@ def walk_rarity(b, found):
             found.add(m.group(1))
         if isinstance(v, (Block, Tagged)):
             walk_rarity(v, found)
+
+
+def sets_historical_unique(b):
+    """Does the effect body mark its artifact with historical_unique_artifact?"""
+    if isinstance(b, Tagged):
+        b = b.block
+    if not isinstance(b, Block):
+        return False
+    for k, _op, v in b:
+        if k == "set_variable":
+            if v == "historical_unique_artifact":
+                return True
+            if isinstance(v, Block) and v.get("name") == "historical_unique_artifact":
+                return True
+        if isinstance(v, (Block, Tagged)) and sets_historical_unique(v):
+            return True
+    return False
 
 
 def main():
@@ -354,6 +373,7 @@ def main():
                 continue
             rarities = set()
             walk_rarity(body, rarities)
+            hist_unique = sets_historical_unique(body)
             for ca in cas:
                 ca_total += 1
                 name_key = ca.get("name")
@@ -362,7 +382,11 @@ def main():
                 if not (isinstance(name_key, str) and "$" not in name_key and ck3.loc(name_key)):
                     continue  # dynamic/parameterized name: a generated artifact
                 if not (isinstance(tmpl, str) and tmpl in template_by_id):
-                    continue  # untemplated generic creation (base weapons etc.)
+                    # untemplated generic creation (base weapons etc.) — unless
+                    # the effect marks it as a historical unique (e.g. Excalibur)
+                    if not hist_unique:
+                        continue
+                    tmpl = None
                 name = ck3.render_text(ck3.loc(name_key))
                 if "…" in name:
                     continue  # name needs runtime data (e.g. owner's dynasty)
@@ -381,7 +405,7 @@ def main():
                     "desc": None,
                     "types": [],
                     "template": tmpl,
-                    "unique": template_by_id[tmpl]["unique"],
+                    "unique": hist_unique or (template_by_id[tmpl]["unique"] if tmpl else False),
                     "rarity": sorted(rarities),
                     "permanent": ca.get("decaying") is False,
                     "modifiers": [],
@@ -411,7 +435,8 @@ def main():
                         key=lambda r: (slot_category.get(type_by_id[r["types"][0]]["slot"], "") if r["types"] else "~",
                                        r["types"][0] if r["types"] else "~", r["name"]))
     for r in named_list:
-        template_by_id[r["template"]]["artifacts"].append(r["id"])
+        if r["template"]:
+            template_by_id[r["template"]]["artifacts"].append(r["id"])
 
     # -- features & groups ---------------------------------------------------
     groups = {key: {"id": key, "label": pretty(key), "features": []}

@@ -50,6 +50,7 @@ MAPPED = {
     "situation": "build_situations.py",
     "legends": "build_legends.py",
     "epidemics": "build_epidemics.py",
+    "artifacts": "build_artifacts.py",
     "game_concepts": "build_concepts.py + lib/ck3.py link targets",
     "culture": "build_traditions.py / build_innovations.py / build_pillars.py"
                " / build_cultures.py (subdirs eras/name_lists pending)",
@@ -61,8 +62,7 @@ MAPPED = {
 # won't be in either set and fails the audit — that's the point.
 SKIP = {
     # phase 2
-    "artifacts",
-    "domiciles", "task_contracts", "accolade_types", "accolade_names",
+        "domiciles", "task_contracts", "accolade_types", "accolade_names",
     "accolade_icons", "character_interactions", "character_interaction_categories",
     "secret_types", "hook_types", "factions", "succession_election",
     "succession_appointment", "tax_slots", "lease_contracts", "vassal_stances",

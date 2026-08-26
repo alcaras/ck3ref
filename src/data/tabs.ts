@@ -36,6 +36,7 @@ export const TABS: Tab[] = [
   // Dynasty
   { slug: 'legacies', label: 'Dynasty Legacies', section: 'Dynasty', status: 'built', summary: '21 legacy tracks, five steps each.' },
   { slug: 'house', label: 'House Mechanics', section: 'Dynasty', status: 'placeholder', summary: 'Unity, aspirations, mottos.' },
+  { slug: 'artifacts', label: 'Artifacts', section: 'Dynasty', status: 'built', summary: '109 named artifacts and their real modifier sets, plus slot types and crafting features.' },
   { slug: 'accolades', label: 'Accolades', section: 'Dynasty', status: 'placeholder', summary: 'Knight accolade types and pairings.' },
   // Culture
   { slug: 'traditions', label: 'Traditions', section: 'Culture', status: 'built', summary: '197 traditions: cost, gates, effects.' },

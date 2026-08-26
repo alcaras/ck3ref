@@ -48,6 +48,7 @@ CATEGORIES = [
     ("situations.json", None, "situation_types", "situations", "icon", "id", False),
     ("epidemics.json", None, "epidemics", "epidemics", "icon", "id", False),
     ("legends.json", "types", "legend_types", "legends-types", "icon", "id", False),
+    ("artifacts.json", "named", "artifact", "artifacts", "icon", "icon", False),
 ]
 
 

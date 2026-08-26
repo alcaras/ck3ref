@@ -47,7 +47,7 @@ GROUP_BY_FILE = {
 
 # [EmptyScope.ScriptValue('x')|fmt] has a static answer when the script value
 # does — resolve before render_text turns it into "…".
-_SCRIPT_VALUE = re.compile(r"\[EmptyScope\.ScriptValue\(\s*'(\w+)'\s*\)(\|[\w+=\-]+)?\]")
+_SCRIPT_VALUE = re.compile(r"\[EmptyScope\.ScriptValue\(\s*'(\w+)'\s*\)(\|[^\]]+)?\]")
 
 # GetTrait first tries the bare key in ck3's generic chain, which the
 # 'adventurer' camp-name loc shadows — resolve trait names directly.
@@ -60,10 +60,15 @@ def resolve_scriptvalue_calls(s):
         if n is None:
             return m.group(0)
         fmt = m.group(2) or ""
-        num = f"{n:g}"
+        pct = ""
+        if "%" in fmt:
+            pct = "%"
+            if "%/" not in fmt:  # '%' scales ×100; '%/' is sign-only
+                n = n * 100
+        num = f"{round(n, 2):g}"
         if "+" in fmt and n > 0:
             num = "+" + num
-        return num
+        return num + pct
     return _SCRIPT_VALUE.sub(sub, s)
 
 
@@ -75,6 +80,7 @@ def render_loc_lines(raw):
     raw = re.sub(r"\[\w+_i\]", "", raw)  # [prestige_i]-style inline icons
     raw = _GET_TRAIT.sub(lambda m: ck3.loc(f"trait_{m.group(1)}") or m.group(0), raw)
     text = ck3.render_text(resolve_scriptvalue_calls(raw))
+    text = text.replace("++", "+")  # loc "+" meeting a sign-formatted value
     lines = []
     for line in text.split("\n"):
         line = line.strip().lstrip("•").strip()
