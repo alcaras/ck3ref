@@ -43,6 +43,11 @@ CATEGORIES = [
     ("activities.json", "intents", "activity_intents", "intents", "icon", "id", True),
     ("activities.json", "travelOptions", "travel_options", "travel-options", "icon", "id", True),
     ("activities.json", "pois", "point_of_interest_types", "poi", "icon", "id", True),
+    ("schemes.json", "schemes", "scheme_types", "schemes", "icon", "id", False),
+    ("schemes.json", "countermeasures", "scheme_countermeasure_types", "countermeasures", "icon", "id", False),
+    ("situations.json", None, "situation_types", "situations", "icon", "id", False),
+    ("epidemics.json", None, "epidemics", "epidemics", "icon", "id", False),
+    ("legends.json", "types", "legend_types", "legends-types", "icon", "id", False),
 ]
 
 

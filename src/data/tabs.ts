@@ -29,10 +29,10 @@ export const TABS: Tab[] = [
   // Characters
   { slug: 'traits', label: 'Traits', section: 'Characters', status: 'built', summary: 'All character traits: modifiers, opinions, opposites, inheritance.' },
   { slug: 'lifestyles', label: 'Lifestyles & Perks', section: 'Characters', status: 'built', summary: 'The 18 perk trees, rendered as trees.' },
-  { slug: 'schemes', label: 'Schemes', section: 'Characters', status: 'placeholder', summary: 'Scheme types, agents, countermeasures.' },
+  { slug: 'schemes', label: 'Schemes', section: 'Characters', status: 'built', summary: 'Scheme types, agents, countermeasures.' },
   { slug: 'court-positions', label: 'Court Positions', section: 'Characters', status: 'built', summary: 'Every court position and its tasks.' },
   { slug: 'council', label: 'Council', section: 'Characters', status: 'built', summary: 'Council positions and tasks.' },
-  { slug: 'nicknames', label: 'Nicknames', section: 'Characters', status: 'placeholder', summary: 'All 683 nicknames and how to earn them.' },
+  { slug: 'nicknames', label: 'Nicknames', section: 'Characters', status: 'built', summary: 'All 683 nicknames: good, bad, prefix, DLC.' },
   // Dynasty
   { slug: 'legacies', label: 'Dynasty Legacies', section: 'Dynasty', status: 'built', summary: '21 legacy tracks, five steps each.' },
   { slug: 'house', label: 'House Mechanics', section: 'Dynasty', status: 'placeholder', summary: 'Unity, aspirations, mottos.' },
@@ -64,9 +64,10 @@ export const TABS: Tab[] = [
   // World
   { slug: 'titles', label: 'Titles', section: 'World', status: 'built', summary: 'De jure trees for every empire, kingdom, duchy.' },
   { slug: 'start-dates', label: 'Start Dates', section: 'World', status: 'built', summary: 'Who holds what in 867 and 1066.' },
-  { slug: 'struggles', label: 'Struggles', section: 'World', status: 'placeholder', summary: 'Iberia, Persia, and the steppe.' },
-  { slug: 'legends', label: 'Legends', section: 'World', status: 'placeholder', summary: 'Legend types, seeds, chronicles.' },
-  { slug: 'epidemics', label: 'Epidemics', section: 'World', status: 'placeholder', summary: 'The seven plagues.' },
+  { slug: 'situations', label: 'Situations', section: 'World', status: 'built', summary: 'The Great Steppe seasons, Dynastic Cycle, Silk Road, natural disasters.' },
+  { slug: 'struggles', label: 'Struggles', section: 'World', status: 'built', summary: 'Iberia and Persia: phases, effects, catalysts.' },
+  { slug: 'legends', label: 'Legends', section: 'World', status: 'built', summary: 'Legend types, seeds, chronicles.' },
+  { slug: 'epidemics', label: 'Epidemics', section: 'World', status: 'built', summary: 'The seven plagues.' },
   // Activities
   { slug: 'activities', label: 'Activities', section: 'Activities', status: 'built', summary: 'Feasts, tours, tournaments, pilgrimages.' },
   { slug: 'decisions', label: 'Decisions', section: 'Activities', status: 'built', summary: '431 decisions and their requirements.' },

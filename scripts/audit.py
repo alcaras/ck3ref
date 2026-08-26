@@ -43,6 +43,12 @@ MAPPED = {
     "travel": "build_activities.py",
     "decisions": "build_decisions.py",
     "decision_group_types": "build_decisions.py",
+    "schemes": "build_schemes.py (pulse_actions skipped: flavor-event scheduling)",
+    "nicknames": "build_nicknames.py",
+    "struggle": "build_struggles.py",
+    "situation": "build_situations.py",
+    "legends": "build_legends.py",
+    "epidemics": "build_epidemics.py",
     "game_concepts": "build_concepts.py + lib/ck3.py link targets",
     "culture": "build_traditions.py / build_innovations.py / build_pillars.py"
                " (subdirs cultures/eras/name_lists pending phase 2)",
@@ -54,10 +60,10 @@ MAPPED = {
 # won't be in either set and fails the audit — that's the point.
 SKIP = {
     # phase 2
-    "struggle", "situation", "legends", "epidemics", "nicknames", "artifacts",
+    "artifacts",
     "domiciles", "task_contracts", "accolade_types", "accolade_names",
     "accolade_icons", "character_interactions", "character_interaction_categories",
-    "schemes", "secret_types", "hook_types", "factions", "succession_election",
+    "secret_types", "hook_types", "factions", "succession_election",
     "succession_appointment", "tax_slots", "lease_contracts", "vassal_stances",
     "diarchies", "confederation_types", "legitimacy", "house_unities",
     "house_aspirations", "house_relation_types", "dynasty_houses", "dynasties",

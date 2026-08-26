@@ -588,6 +588,7 @@ PREFIX_TO_DLC = {
     # the game's own has_tgp_dlc_trigger checks feature all_under_heaven
     "tgp": "All Under Heaven",
     "afr": "African Attire", "laamp": "Roads to Power",
+    "roco": "The Royal Court",
 }
 
 _KNOWN_FEATURES: set = set()

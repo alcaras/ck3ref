@@ -35,6 +35,12 @@ data:
 	@python3 scripts/build_great_projects.py
 	@python3 scripts/build_activities.py
 	@python3 scripts/build_decisions.py
+	@python3 scripts/build_schemes.py
+	@python3 scripts/build_nicknames.py
+	@python3 scripts/build_struggles.py
+	@python3 scripts/build_situations.py
+	@python3 scripts/build_legends.py
+	@python3 scripts/build_epidemics.py
 	@python3 scripts/build_governments.py
 	@python3 scripts/build_laws.py
 	@python3 scripts/build_contracts.py

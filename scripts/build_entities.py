@@ -93,6 +93,24 @@ def main():
         add(f"holy_site_{r['id']}", "holy_site", r["name"], "holy-sites",
             scan=False, slug=r["id"])
 
+    sch = load("schemes.json") or {"schemes": []}
+    for r in sch["schemes"]:
+        add(r["id"], "scheme", r["name"], "schemes",
+            f"img/schemes/{r['id']}.webp", scan=False)
+
+    for r in load("struggles.json") or []:
+        add(r["id"], "struggle", r["name"], "struggles", scan=True)
+    for r in load("situations.json") or []:
+        add(r["id"], "situation", r["name"], "situations", scan=False)
+    lg = load("legends.json") or {"types": [], "seeds": []}
+    for r in lg.get("types", []):
+        add(r["id"], "legend_type", r["name"], "legends", scan=False)
+    for r in lg.get("seeds", []):
+        add(r["id"], "legend_seed", r["name"], "legends", scan=True)
+    for r in load("epidemics.json") or []:
+        add(r["id"], "epidemic", r["name"], "epidemics",
+            f"img/epidemics/{r['id']}.webp", scan=True)
+
     for r in load("governments.json") or []:
         add(r["id"], "government", r["name"], "governments",
             f"img/governments/{r['id']}.webp", scan=False)
