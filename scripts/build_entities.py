@@ -92,6 +92,21 @@ def main():
         add(r["id"], "cb", r["name"], "casus-belli",
             f"img/cb/{r['id']}.webp", scan=False)
 
+    ti = load("titles.json") or {"roots": []}
+
+    def walk_titles(node, empire_page=None):
+        page = empire_page
+        if node["tier"] in ("hegemony", "empire"):
+            page = f"titles/{node['id']}"
+        if node["tier"] in ("hegemony", "empire", "kingdom", "duchy"):
+            add(node["id"], f"title_{node['tier']}", node["name"],
+                page or "titles", scan=False)
+        for ch in node.get("children", []):
+            walk_titles(ch, page)
+
+    for r in ti["roots"]:
+        walk_titles(r)
+
     for r in load("concepts.json") or []:
         add(f"concept_{r['id']}", "concept", r["name"], "concepts",
             scan=" " in r["name"], slug=r["id"])

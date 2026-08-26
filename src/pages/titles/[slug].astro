@@ -1,0 +1,83 @@
+---
+import Base from '../../layouts/Base.astro';
+import data from '../../data/titles.json';
+
+export function getStaticPaths() {
+  const roots = (data as any).roots;
+  const tops = [
+    ...roots.filter((r: any) => r.tier === 'hegemony' || r.tier === 'empire'),
+    ...roots.filter((r: any) => r.tier === 'hegemony')
+      .flatMap((h: any) => (h.children ?? []).filter((c: any) => c.tier === 'empire')),
+  ];
+  return tops.map((t: any) => ({ params: { slug: t.id }, props: { title: t } }));
+}
+
+const { title } = Astro.props;
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+
+function countTier(n: any, tier: string): number {
+  let c = n.tier === tier ? 1 : 0;
+  for (const ch of n.children ?? []) c += countTier(ch, tier);
+  return c;
+}
+const kingdoms = (title.children ?? []).filter((c: any) => c.tier === 'kingdom' || c.tier === 'empire');
+const looseDuchies = (title.children ?? []).filter((c: any) => c.tier === 'duchy');
+---
+<Base
+  title={title.name}
+  active="titles"
+  lede={`De jure ${title.tier} — ${countTier(title, 'kingdom')} kingdoms, ${countTier(title, 'duchy')} duchies, ${countTier(title, 'county')} counties.`}
+  stats={[
+    { value: countTier(title, 'kingdom'), label: 'kingdoms' },
+    { value: countTier(title, 'duchy'), label: 'duchies' },
+    { value: countTier(title, 'county'), label: 'counties' },
+  ]}
+>
+  <p><a href={`${base}/titles`}>← all titles</a></p>
+
+  {[...kingdoms, ...looseDuchies].map((k: any) => (
+    <section>
+      <h2 class="group-h" id={k.id}>
+        <span class="sw" style={`--c:${k.color ?? 'var(--line)'}`} />
+        {k.name}
+        <span class="count">{k.tier}{(k.children ?? []).length ? '' : ' · titular'}</span>
+      </h2>
+      <div class="duchies">
+        {(k.children ?? []).map((d: any) => (
+          <div class="duchy" id={d.id}>
+            <div class="d-h">
+              <span class="sw sw--s" style={`--c:${d.color ?? 'var(--line)'}`} />
+              <b>{d.name}</b>
+              <span class="subtle">{d.tier} · {(d.children ?? []).length} counties</span>
+            </div>
+            <div class="counties">
+              {(d.children ?? []).map((c: any) => (
+                <details class="county" id={c.id}>
+                  <summary>
+                    <span class="sw sw--s" style={`--c:${c.color ?? 'var(--line)'}`} />
+                    {c.name}
+                    <span class="subtle">{(c.baronies ?? []).length}</span>
+                  </summary>
+                  <div class="baronies">{(c.baronies ?? []).join(' · ')}</div>
+                </details>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+  ))}
+
+  <style>
+    .sw { display: inline-block; width: 11px; height: 18px; border-radius: 2px; background: var(--c); vertical-align: -3px; }
+    .sw--s { width: 9px; height: 13px; }
+    .duchies { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 0.7rem; }
+    .duchy { background: var(--panel); border: 1px solid var(--line-soft); border-radius: var(--r); padding: 0.55rem 0.7rem; }
+    .d-h { display: flex; gap: 0.45rem; align-items: baseline; margin-bottom: 0.3rem; }
+    .county summary { cursor: pointer; list-style: none; padding: 0.12rem 0; font-size: 0.85rem; display: flex; gap: 0.4rem; align-items: baseline; }
+    .county summary::-webkit-details-marker { display: none; }
+    .county summary:hover { color: var(--brass-bright); }
+    .county .subtle { font-family: var(--font-mono); font-size: 0.68rem; }
+    .baronies { color: var(--dim); font-size: 0.78rem; padding: 0.15rem 0 0.3rem 1.2rem; }
+  </style>
+</Base>

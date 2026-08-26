@@ -29,6 +29,7 @@ MAPPED = {
     "religion": "build_faiths.py / build_doctrines.py / build_holy_sites.py",
     "casus_belli_types": "build_cbs.py",
     "casus_belli_groups": "build_cbs.py",
+    "landed_titles": "build_titles.py",
     "court_positions": "build_court.py",
     "council_positions": "build_council.py",
     "council_tasks": "build_council.py",
@@ -47,7 +48,7 @@ SKIP = {
     "holdings", "laws",
     "governments", "subject_contracts", "great_projects",
     # phase 2
-    "landed_titles", "decisions", "decision_group_types", "activities", "travel",
+    "decisions", "decision_group_types", "activities", "travel",
     "struggle", "situation", "legends", "epidemics", "nicknames", "artifacts",
     "domiciles", "task_contracts", "accolade_types", "accolade_names",
     "accolade_icons", "character_interactions", "character_interaction_categories",

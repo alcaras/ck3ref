@@ -23,7 +23,7 @@ TYPE_LABELS = {
     "innovation": "Innovation", "pillar": "Culture Pillar", "terrain": "Terrain",
     "government": "Government", "law": "Law", "contract": "Vassal Contract",
     "cb": "Casus Belli", "court_position": "Court Position",
-    "council_position": "Council", "culture": "Culture", "title": "Title",
+    "council_position": "Council", "culture": "Culture", "title": "Title", "title_hegemony": "Hegemony", "title_empire": "Empire", "title_kingdom": "Kingdom", "title_duchy": "Duchy",
     "decision": "Decision", "activity": "Activity", "scheme": "Scheme",
     "nickname": "Nickname", "artifact": "Artifact",
 }

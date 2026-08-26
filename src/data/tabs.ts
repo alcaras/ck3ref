@@ -62,7 +62,7 @@ export const TABS: Tab[] = [
   { slug: 'casus-belli', label: 'Casus Belli', section: 'Warfare', status: 'built', summary: '121 war declarations and their terms.' },
   { slug: 'combat', label: 'Combat Mechanics', section: 'Warfare', status: 'placeholder', summary: 'Advantage, phases, knights — from defines.' },
   // World
-  { slug: 'titles', label: 'Titles', section: 'World', status: 'placeholder', summary: 'De jure trees for every empire, kingdom, duchy.' },
+  { slug: 'titles', label: 'Titles', section: 'World', status: 'built', summary: 'De jure trees for every empire, kingdom, duchy.' },
   { slug: 'start-dates', label: 'Start Dates', section: 'World', status: 'placeholder', summary: 'Who holds what in 867 and 1066.' },
   { slug: 'struggles', label: 'Struggles', section: 'World', status: 'placeholder', summary: 'Iberia, Persia, and the steppe.' },
   { slug: 'legends', label: 'Legends', section: 'World', status: 'placeholder', summary: 'Legend types, seeds, chronicles.' },
