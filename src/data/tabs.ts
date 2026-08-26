@@ -53,9 +53,9 @@ export const TABS: Tab[] = [
   { slug: 'domiciles', label: 'Domiciles', section: 'Realm', status: 'placeholder', summary: 'Camps and estates for landless play.' },
   // Holdings
   { slug: 'buildings', label: 'Buildings', section: 'Holdings', status: 'built', summary: '975 buildings in 366 upgrade chains.' },
-  { slug: 'holdings', label: 'Holdings', section: 'Holdings', status: 'placeholder', summary: 'Castle, city, temple, tribe.' },
-  { slug: 'great-projects', label: 'Great Projects', section: 'Holdings', status: 'placeholder', summary: 'Special buildings and wonders.' },
-  { slug: 'terrain', label: 'Terrain', section: 'Holdings', status: 'placeholder', summary: 'Terrain modifiers and building gates.' },
+  { slug: 'holdings', label: 'Holdings', section: 'Holdings', status: 'built', summary: 'Castle, city, temple, tribe.' },
+  { slug: 'great-projects', label: 'Great Projects', section: 'Holdings', status: 'built', summary: 'Collaboratively funded works: Mandala temples, the Great Wall, ministries.' },
+  { slug: 'terrain', label: 'Terrain', section: 'Holdings', status: 'built', summary: 'Movement, combat, supply, danger for all 17 terrains.' },
   // Warfare
   { slug: 'men-at-arms', label: 'Men-at-Arms', section: 'Warfare', status: 'built', summary: 'All 110 regiment types: stats, counters, terrain, costs.' },
   { slug: 'counters', label: 'Counters Matrix', section: 'Warfare', status: 'built', summary: 'Who counters whom, in one grid.' },
@@ -68,8 +68,8 @@ export const TABS: Tab[] = [
   { slug: 'legends', label: 'Legends', section: 'World', status: 'placeholder', summary: 'Legend types, seeds, chronicles.' },
   { slug: 'epidemics', label: 'Epidemics', section: 'World', status: 'placeholder', summary: 'The seven plagues.' },
   // Activities
-  { slug: 'activities', label: 'Activities', section: 'Activities', status: 'placeholder', summary: 'Feasts, tours, tournaments, pilgrimages.' },
-  { slug: 'decisions', label: 'Decisions', section: 'Activities', status: 'placeholder', summary: '431 decisions and their requirements.' },
+  { slug: 'activities', label: 'Activities', section: 'Activities', status: 'built', summary: 'Feasts, tours, tournaments, pilgrimages.' },
+  { slug: 'decisions', label: 'Decisions', section: 'Activities', status: 'built', summary: '431 decisions and their requirements.' },
   { slug: 'events', label: 'Events', section: 'Activities', status: 'placeholder', summary: 'The 9,792-event browser.' },
   // Concepts
   { slug: 'concepts', label: 'Glossary', section: 'Concepts', status: 'built', summary: 'Every game concept, auto-linked.' },

@@ -585,7 +585,8 @@ PREFIX_TO_DLC = {
     "bp4": "Wandering Nobles",
     "mpo": "Khans of the Steppe",
     "ce1": "Community Pack 1 (free)", "ce2": "Couture of the Capets",
-    "tgp": "The Great People",
+    # the game's own has_tgp_dlc_trigger checks feature all_under_heaven
+    "tgp": "All Under Heaven",
     "afr": "African Attire", "laamp": "Roads to Power",
 }
 

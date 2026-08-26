@@ -41,7 +41,20 @@ def main():
 
     for _p, key, blk in ck3.parse_dir(ck3.COMMON / "terrain_types"):
         add(f"terrain_{key}", "terrain",
-            ck3.render_text(ck3.loc(key) or key.title()), None, scan=False, slug=key)
+            ck3.render_text(ck3.loc(key) or key.title()), "terrain", scan=False, slug=key)
+
+    for r in load("holdings.json") or []:
+        add(r["id"], "holding", r["name"], "holdings",
+            f"img/holdings/{r['id']}.webp", scan=False)
+    for r in load("great_projects.json") or []:
+        add(r["id"], "great_project", r["name"], "great-projects", scan=False)
+    act = load("activities.json") or {"activities": []}
+    for r in act["activities"]:
+        add(r["id"], "activity", r["name"], "activities",
+            f"img/activities/{r['id']}.webp", scan=" " in r["name"])
+    dec = load("decisions.json") or {"decisions": []}
+    for r in dec["decisions"]:
+        add(r["id"], "decision", r["name"], "decisions", scan=False)
 
     for r in load("traits.json") or []:
         add(r["id"], "trait", r["name"], "traits",

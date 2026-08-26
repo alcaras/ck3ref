@@ -36,7 +36,13 @@ MAPPED = {
     "court_positions": "build_court.py",
     "council_positions": "build_council.py",
     "council_tasks": "build_council.py",
-    "terrain_types": "build_entities.py",
+    "terrain_types": "build_terrain.py + build_entities.py",
+    "holdings": "build_holdings.py",
+    "great_projects": "build_great_projects.py",
+    "activities": "build_activities.py",
+    "travel": "build_activities.py",
+    "decisions": "build_decisions.py",
+    "decision_group_types": "build_decisions.py",
     "game_concepts": "build_concepts.py + lib/ck3.py link targets",
     "culture": "build_traditions.py / build_innovations.py / build_pillars.py"
                " (subdirs cultures/eras/name_lists pending phase 2)",
@@ -47,10 +53,7 @@ MAPPED = {
 # Consciously not yet rendered; phase from PLAN.md. A NEW dir after a patch
 # won't be in either set and fails the audit — that's the point.
 SKIP = {
-    # phase 1
-    "holdings", "great_projects",
     # phase 2
-    "decisions", "decision_group_types", "activities", "travel",
     "struggle", "situation", "legends", "epidemics", "nicknames", "artifacts",
     "domiciles", "task_contracts", "accolade_types", "accolade_names",
     "accolade_icons", "character_interactions", "character_interaction_categories",

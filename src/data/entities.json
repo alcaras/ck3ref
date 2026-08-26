@@ -757,6 +757,14 @@
       "id": "accolade_maa_skirmishers"
     },
     {
+      "alias": "capital examination",
+      "id": "activity_imperial_examination"
+    },
+    {
+      "alias": "monument expedition",
+      "id": "activity_journey"
+    },
+    {
       "alias": "miletê tawûsê melek",
       "id": "yazidi_religion"
     },
@@ -875,10 +883,6 @@
     {
       "alias": "minister of revenue",
       "id": "concept_minister_of_revenue"
-    },
-    {
-      "alias": "monument expedition",
-      "id": "concept_monument_expedition"
     },
     {
       "alias": "obedience threshold",
@@ -1329,6 +1333,10 @@
       "id": "guinea_warrior"
     },
     {
+      "alias": "local examination",
+      "id": "activity_local_examination"
+    },
+    {
       "alias": "kalikula shaktism",
       "id": "kalikula_shaktism"
     },
@@ -1671,6 +1679,14 @@
     {
       "alias": "pesilat warriors",
       "id": "pesilat_warriors"
+    },
+    {
+      "alias": "university visit",
+      "id": "activity_adult_education"
+    },
+    {
+      "alias": "grand tournament",
+      "id": "activity_tournament"
     },
     {
       "alias": "srikula shaktism",
@@ -3073,6 +3089,10 @@
       "id": "light_footmen"
     },
     {
+      "alias": "grand wedding",
+      "id": "activity_wedding"
+    },
+    {
       "alias": "waldensianism",
       "id": "waldensian"
     },
@@ -3443,6 +3463,14 @@
     {
       "alias": "landsknechts",
       "id": "landsknecht"
+    },
+    {
+      "alias": "camp revelry",
+      "id": "activity_camp_party"
+    },
+    {
+      "alias": "chariot race",
+      "id": "activity_chariot_race"
     },
     {
       "alias": "messalianism",
@@ -3983,6 +4011,18 @@
     {
       "alias": "trebuchets",
       "id": "trebuchet"
+    },
+    {
+      "alias": "meet peers",
+      "id": "activity_playdate"
+    },
+    {
+      "alias": "grand tour",
+      "id": "activity_tour"
+    },
+    {
+      "alias": "grand rite",
+      "id": "activity_witch_ritual"
     },
     {
       "alias": "bogomilism",
@@ -5171,6 +5211,22 @@
       "type": "perk"
     },
     {
+      "id": "abandon_celibacy_decision",
+      "name": "Abandon Celibacy",
+      "page": "decisions",
+      "scan": false,
+      "slug": "abandon_celibacy_decision",
+      "type": "decision"
+    },
+    {
+      "id": "abandon_crypto_faith_decision",
+      "name": "Abandon Secret Faith",
+      "page": "decisions",
+      "scan": false,
+      "slug": "abandon_crypto_faith_decision",
+      "type": "decision"
+    },
+    {
       "id": "abrahamic_hostility_doctrine",
       "name": "Abrahamic",
       "page": "doctrines",
@@ -5194,6 +5250,14 @@
       "scan": true,
       "slug": "abudrar",
       "type": "maa"
+    },
+    {
+      "id": "accept_cannibalism_decision",
+      "name": "… Cannibalism",
+      "page": "decisions",
+      "scan": false,
+      "slug": "accept_cannibalism_decision",
+      "type": "decision"
     },
     {
       "id": "acclamation_succession_law",
@@ -5311,6 +5375,14 @@
       "type": "perk"
     },
     {
+      "id": "accuse_krstjani_of_heresy_decision",
+      "name": "Accuse the Krstjani of Heresy",
+      "page": "decisions",
+      "scan": false,
+      "slug": "accuse_krstjani_of_heresy_decision",
+      "type": "decision"
+    },
+    {
       "icon": "img/faith/acharya.webp",
       "id": "acharya",
       "name": "Acharya",
@@ -5318,6 +5390,195 @@
       "scan": true,
       "slug": "acharya",
       "type": "faith"
+    },
+    {
+      "icon": "img/activities/activity_adult_education.webp",
+      "id": "activity_adult_education",
+      "name": "University Visit",
+      "page": "activities",
+      "scan": true,
+      "slug": "activity_adult_education",
+      "type": "activity"
+    },
+    {
+      "icon": "img/activities/activity_camp_party.webp",
+      "id": "activity_camp_party",
+      "name": "Camp Revelry",
+      "page": "activities",
+      "scan": true,
+      "slug": "activity_camp_party",
+      "type": "activity"
+    },
+    {
+      "icon": "img/activities/activity_chariot_race.webp",
+      "id": "activity_chariot_race",
+      "name": "Chariot Race",
+      "page": "activities",
+      "scan": true,
+      "slug": "activity_chariot_race",
+      "type": "activity"
+    },
+    {
+      "icon": "img/activities/activity_coronation.webp",
+      "id": "activity_coronation",
+      "name": "Coronation",
+      "page": "activities",
+      "scan": false,
+      "slug": "activity_coronation",
+      "type": "activity"
+    },
+    {
+      "icon": "img/activities/activity_debate.webp",
+      "id": "activity_debate",
+      "name": "Debate",
+      "page": "activities",
+      "scan": false,
+      "slug": "activity_debate",
+      "type": "activity"
+    },
+    {
+      "icon": "img/activities/activity_feast.webp",
+      "id": "activity_feast",
+      "name": "Feast",
+      "page": "activities",
+      "scan": false,
+      "slug": "activity_feast",
+      "type": "activity"
+    },
+    {
+      "icon": "img/activities/activity_festival.webp",
+      "id": "activity_festival",
+      "name": "Festival",
+      "page": "activities",
+      "scan": false,
+      "slug": "activity_festival",
+      "type": "activity"
+    },
+    {
+      "icon": "img/activities/activity_funeral.webp",
+      "id": "activity_funeral",
+      "name": "Funeral",
+      "page": "activities",
+      "scan": false,
+      "slug": "activity_funeral",
+      "type": "activity"
+    },
+    {
+      "icon": "img/activities/activity_gruesome_festival.webp",
+      "id": "activity_gruesome_festival",
+      "name": "Blót",
+      "page": "activities",
+      "scan": false,
+      "slug": "activity_gruesome_festival",
+      "type": "activity"
+    },
+    {
+      "icon": "img/activities/activity_hunt.webp",
+      "id": "activity_hunt",
+      "name": "Hunt",
+      "page": "activities",
+      "scan": false,
+      "slug": "activity_hunt",
+      "type": "activity"
+    },
+    {
+      "icon": "img/activities/activity_imperial_examination.webp",
+      "id": "activity_imperial_examination",
+      "name": "Capital Examination",
+      "page": "activities",
+      "scan": true,
+      "slug": "activity_imperial_examination",
+      "type": "activity"
+    },
+    {
+      "icon": "img/activities/activity_journey.webp",
+      "id": "activity_journey",
+      "name": "Monument Expedition",
+      "page": "activities",
+      "scan": true,
+      "slug": "activity_journey",
+      "type": "activity"
+    },
+    {
+      "icon": "img/activities/activity_local_examination.webp",
+      "id": "activity_local_examination",
+      "name": "Local Examination",
+      "page": "activities",
+      "scan": true,
+      "slug": "activity_local_examination",
+      "type": "activity"
+    },
+    {
+      "icon": "img/activities/activity_pilgrimage.webp",
+      "id": "activity_pilgrimage",
+      "name": "Pilgrimage",
+      "page": "activities",
+      "scan": false,
+      "slug": "activity_pilgrimage",
+      "type": "activity"
+    },
+    {
+      "icon": "img/activities/activity_playdate.webp",
+      "id": "activity_playdate",
+      "name": "Meet Peers",
+      "page": "activities",
+      "scan": true,
+      "slug": "activity_playdate",
+      "type": "activity"
+    },
+    {
+      "icon": "img/activities/activity_roaming.webp",
+      "id": "activity_roaming",
+      "name": "Hike",
+      "page": "activities",
+      "scan": false,
+      "slug": "activity_roaming",
+      "type": "activity"
+    },
+    {
+      "icon": "img/activities/activity_survey.webp",
+      "id": "activity_survey",
+      "name": "Inspection",
+      "page": "activities",
+      "scan": false,
+      "slug": "activity_survey",
+      "type": "activity"
+    },
+    {
+      "icon": "img/activities/activity_tour.webp",
+      "id": "activity_tour",
+      "name": "Grand Tour",
+      "page": "activities",
+      "scan": true,
+      "slug": "activity_tour",
+      "type": "activity"
+    },
+    {
+      "icon": "img/activities/activity_tournament.webp",
+      "id": "activity_tournament",
+      "name": "Grand Tournament",
+      "page": "activities",
+      "scan": true,
+      "slug": "activity_tournament",
+      "type": "activity"
+    },
+    {
+      "icon": "img/activities/activity_wedding.webp",
+      "id": "activity_wedding",
+      "name": "Grand Wedding",
+      "page": "activities",
+      "scan": true,
+      "slug": "activity_wedding",
+      "type": "activity"
+    },
+    {
+      "icon": "img/activities/activity_witch_ritual.webp",
+      "id": "activity_witch_ritual",
+      "name": "Grand Rite",
+      "page": "activities",
+      "scan": true,
+      "slug": "activity_witch_ritual",
+      "type": "activity"
     },
     {
       "icon": "img/faith/adamites.webp",
@@ -5344,6 +5605,14 @@
       "scan": false,
       "slug": "admin_barbarian_conquest_cb",
       "type": "cb"
+    },
+    {
+      "id": "admin_confirmation_decision",
+      "name": "Governorship Confirmation",
+      "page": "decisions",
+      "scan": false,
+      "slug": "admin_confirmation_decision",
+      "type": "decision"
     },
     {
       "icon": "img/traits/administrative_court_1.webp",
@@ -5414,6 +5683,78 @@
       "type": "perk"
     },
     {
+      "id": "adopt_a_kennel_dog",
+      "name": "Adopt a Kennel Dog",
+      "page": "decisions",
+      "scan": false,
+      "slug": "adopt_a_kennel_dog",
+      "type": "decision"
+    },
+    {
+      "id": "adopt_a_new_faith_for_persia_decision",
+      "name": "Find a New Faith for Persia",
+      "page": "decisions",
+      "scan": false,
+      "slug": "adopt_a_new_faith_for_persia_decision",
+      "type": "decision"
+    },
+    {
+      "id": "adopt_domicile_culture_decision",
+      "name": "Adopt … Traditions",
+      "page": "decisions",
+      "scan": false,
+      "slug": "adopt_domicile_culture_decision",
+      "type": "decision"
+    },
+    {
+      "id": "adopt_domicile_faith_decision",
+      "name": "Convert to … through your People",
+      "page": "decisions",
+      "scan": false,
+      "slug": "adopt_domicile_faith_decision",
+      "type": "decision"
+    },
+    {
+      "id": "adopt_nomadic_ways_decision",
+      "name": "Adopt the Nomadic Ways",
+      "page": "decisions",
+      "scan": false,
+      "slug": "adopt_nomadic_ways_decision",
+      "type": "decision"
+    },
+    {
+      "id": "adopt_puppy_decision",
+      "name": "Adopt Puppy",
+      "page": "decisions",
+      "scan": false,
+      "slug": "adopt_puppy_decision",
+      "type": "decision"
+    },
+    {
+      "id": "adopt_special_succession_decision",
+      "name": "Adopt Special Succession Type",
+      "page": "decisions",
+      "scan": false,
+      "slug": "adopt_special_succession_decision",
+      "type": "decision"
+    },
+    {
+      "id": "adopt_state_faith",
+      "name": "Adopt State Faith",
+      "page": "decisions",
+      "scan": false,
+      "slug": "adopt_state_faith",
+      "type": "decision"
+    },
+    {
+      "id": "adopt_steppe_administration",
+      "name": "Become a Meritocratic Khanate",
+      "page": "decisions",
+      "scan": false,
+      "slug": "adopt_steppe_administration",
+      "type": "decision"
+    },
+    {
       "icon": "img/faith/adoptionist.webp",
       "id": "adoptionist",
       "name": "Adoptionism",
@@ -5475,6 +5816,22 @@
       "scan": false,
       "slug": "aggressive_attacker",
       "type": "trait"
+    },
+    {
+      "id": "ai_create_head_of_faith_decision",
+      "name": "holderplace",
+      "page": "decisions",
+      "scan": false,
+      "slug": "ai_create_head_of_faith_decision",
+      "type": "decision"
+    },
+    {
+      "id": "ai_movement_petition_change_laws_decision",
+      "name": "Make Movement Petition",
+      "page": "decisions",
+      "scan": false,
+      "slug": "ai_movement_petition_change_laws_decision",
+      "type": "decision"
     },
     {
       "icon": "img/court/akolouthos_court_position.webp",
@@ -5680,6 +6037,14 @@
       "type": "perk"
     },
     {
+      "id": "appoint_a_righteous_caliph_decision",
+      "name": "Appoint a Righteous Caliph",
+      "page": "decisions",
+      "scan": false,
+      "slug": "appoint_a_righteous_caliph_decision",
+      "type": "decision"
+    },
+    {
       "id": "appointment_succession_law",
       "name": "Appointment Succession",
       "page": "laws",
@@ -5840,6 +6205,14 @@
       "type": "faith"
     },
     {
+      "id": "ask_western_help_decision",
+      "name": "Ask for Support",
+      "page": "decisions",
+      "scan": false,
+      "slug": "ask_western_help_decision",
+      "type": "decision"
+    },
+    {
       "icon": "img/buildings/icon_structure_hotin_fortress.webp",
       "id": "assassin_castle_01",
       "name": "Hashshashin Fortress",
@@ -5847,6 +6220,22 @@
       "scan": false,
       "slug": "assassin_castle_01",
       "type": "building"
+    },
+    {
+      "id": "assimilate_local_traditions_decision",
+      "name": "Have the Realm Embrace Local Traditions",
+      "page": "decisions",
+      "scan": false,
+      "slug": "assimilate_local_traditions_decision",
+      "type": "decision"
+    },
+    {
+      "id": "assimilate_to_mandala_decision",
+      "name": "Assimilate to Mandala Rule",
+      "page": "decisions",
+      "scan": false,
+      "slug": "assimilate_to_mandala_decision",
+      "type": "decision"
     },
     {
       "id": "at_any_cost_perk",
@@ -5901,6 +6290,14 @@
       "type": "building"
     },
     {
+      "id": "author_book_decision",
+      "name": "Author Book",
+      "page": "decisions",
+      "scan": false,
+      "slug": "author_book_decision",
+      "type": "decision"
+    },
+    {
       "icon": "img/traits/avaricious.webp",
       "id": "avaricious",
       "name": "Avaricious",
@@ -5925,6 +6322,22 @@
       "scan": true,
       "slug": "avatamsaka",
       "type": "faith"
+    },
+    {
+      "id": "avenge_the_battle_of_nahrawan_decision",
+      "name": "Avenge the Battle of Nahrawan",
+      "page": "decisions",
+      "scan": false,
+      "slug": "avenge_the_battle_of_nahrawan_decision",
+      "type": "decision"
+    },
+    {
+      "id": "avenge_the_battle_of_tours_decision",
+      "name": "Avenge the Battle of Tours",
+      "page": "decisions",
+      "scan": false,
+      "slug": "avenge_the_battle_of_tours_decision",
+      "type": "decision"
     },
     {
       "icon": "img/maa/ayrudzi.webp",
@@ -6013,6 +6426,14 @@
       "scan": false,
       "slug": "bandit_crackdown_law",
       "type": "law"
+    },
+    {
+      "id": "bandit_king_decision",
+      "name": "Levy the Outcasts",
+      "page": "decisions",
+      "scan": false,
+      "slug": "bandit_king_decision",
+      "type": "decision"
     },
     {
       "icon": "img/buildings/icon_structure_mines.webp",
@@ -6137,6 +6558,54 @@
       "scan": false,
       "slug": "beauty_good_3",
       "type": "trait"
+    },
+    {
+      "id": "become_chakravarti_decision",
+      "name": "Become Chakravarti",
+      "page": "decisions",
+      "scan": false,
+      "slug": "become_chakravarti_decision",
+      "type": "decision"
+    },
+    {
+      "id": "become_conqueror_decision",
+      "name": "Become a Great Conqueror",
+      "page": "decisions",
+      "scan": false,
+      "slug": "become_conqueror_decision",
+      "type": "decision"
+    },
+    {
+      "id": "become_greatest_of_khans_decision",
+      "name": "Become Greatest of Khans",
+      "page": "decisions",
+      "scan": false,
+      "slug": "become_greatest_of_khans_decision",
+      "type": "decision"
+    },
+    {
+      "id": "become_landless_adventurer_decision",
+      "name": "Become Adventurer",
+      "page": "decisions",
+      "scan": false,
+      "slug": "become_landless_adventurer_decision",
+      "type": "decision"
+    },
+    {
+      "id": "become_nomadic_decision",
+      "name": "Become Nomadic",
+      "page": "decisions",
+      "scan": false,
+      "slug": "become_nomadic_decision",
+      "type": "decision"
+    },
+    {
+      "id": "become_saoshyant_decision",
+      "name": "Become the Saoshyant",
+      "page": "decisions",
+      "scan": false,
+      "slug": "become_saoshyant_decision",
+      "type": "decision"
     },
     {
       "id": "been_there_done_that_perk",
@@ -6265,6 +6734,14 @@
       "scan": false,
       "slug": "bleeder",
       "type": "trait"
+    },
+    {
+      "id": "blend_traditions_decision",
+      "name": "Blend … and … Traditions",
+      "page": "decisions",
+      "scan": false,
+      "slug": "blend_traditions_decision",
+      "type": "decision"
     },
     {
       "icon": "img/traits/blind.webp",
@@ -6414,6 +6891,14 @@
       "type": "building"
     },
     {
+      "id": "borrow_from_holy_order_decision",
+      "name": "Borrow Gold from Holy Order",
+      "page": "decisions",
+      "scan": false,
+      "slug": "borrow_from_holy_order_decision",
+      "type": "decision"
+    },
+    {
       "icon": "img/faith/bosnian_church.webp",
       "id": "bosnian_church",
       "name": "Krstjani",
@@ -6466,6 +6951,14 @@
       "scan": false,
       "slug": "brave",
       "type": "trait"
+    },
+    {
+      "id": "break_with_the_old_ways_decision",
+      "name": "Break With the Old Ways",
+      "page": "decisions",
+      "scan": false,
+      "slug": "break_with_the_old_ways_decision",
+      "type": "decision"
     },
     {
       "icon": "img/buildings/icon_building_breweries.webp",
@@ -7025,6 +7518,14 @@
       "type": "law"
     },
     {
+      "id": "build_holy_pilgrim_roads_decision",
+      "name": "Build Pilgrim Roads",
+      "page": "decisions",
+      "scan": false,
+      "slug": "build_holy_pilgrim_roads_decision",
+      "type": "decision"
+    },
+    {
       "icon": "img/traits/burdened.webp",
       "id": "burdened",
       "name": "Burdened",
@@ -7070,6 +7571,14 @@
       "type": "maa"
     },
     {
+      "id": "butcher_animals_decision",
+      "name": "Desperate Measures — Butcher Animals",
+      "page": "decisions",
+      "scan": false,
+      "slug": "butcher_animals_decision",
+      "type": "decision"
+    },
+    {
       "icon": "img/buildings/icon_structure_quanzhou_seaport.webp",
       "id": "byeokran_port_01",
       "name": "Byeokran Port",
@@ -7095,6 +7604,14 @@
       "scan": true,
       "slug": "cainitism",
       "type": "faith"
+    },
+    {
+      "id": "call_for_confederation_decision",
+      "name": "Call for Confederation",
+      "page": "decisions",
+      "scan": false,
+      "slug": "call_for_confederation_decision",
+      "type": "decision"
     },
     {
       "icon": "img/traits/callous.webp",
@@ -7217,6 +7734,14 @@
       "type": "trait"
     },
     {
+      "id": "cancel_holy_order_lease_decision",
+      "name": "Revoke Holy Order Lease",
+      "page": "decisions",
+      "scan": false,
+      "slug": "cancel_holy_order_lease_decision",
+      "type": "decision"
+    },
+    {
       "icon": "img/traits/cancer.webp",
       "id": "cancer",
       "name": "Cancer",
@@ -7293,6 +7818,15 @@
       "scan": false,
       "slug": "castle_01",
       "type": "building"
+    },
+    {
+      "icon": "img/holdings/castle_holding.webp",
+      "id": "castle_holding",
+      "name": "Castle",
+      "page": "holdings",
+      "scan": false,
+      "slug": "castle_holding",
+      "type": "holding"
     },
     {
       "icon": "img/maa/cataphract.webp",
@@ -7825,6 +8359,30 @@
       "type": "building"
     },
     {
+      "id": "change_election_candidacy_status_decision",
+      "name": "Change Election Candidacy Status",
+      "page": "decisions",
+      "scan": false,
+      "slug": "change_election_candidacy_status_decision",
+      "type": "decision"
+    },
+    {
+      "id": "change_imperial_aspirations_decision",
+      "name": "Change … Aspirations",
+      "page": "decisions",
+      "scan": false,
+      "slug": "change_imperial_aspirations_decision",
+      "type": "decision"
+    },
+    {
+      "id": "change_state_faith",
+      "name": "Change State Faith",
+      "page": "decisions",
+      "scan": false,
+      "slug": "change_state_faith",
+      "type": "decision"
+    },
+    {
       "icon": "img/traits/charioteer_blue.webp",
       "id": "charioteer_blue",
       "name": "Charioteer of the Venetoi",
@@ -8040,6 +8598,22 @@
       "type": "building"
     },
     {
+      "id": "choose_designated_terrain_decision",
+      "name": "Designated Terrain",
+      "page": "decisions",
+      "scan": false,
+      "slug": "choose_designated_terrain_decision",
+      "type": "decision"
+    },
+    {
+      "id": "choose_master_terrain_decision",
+      "name": "Master Terrain",
+      "page": "decisions",
+      "scan": false,
+      "slug": "choose_master_terrain_decision",
+      "type": "decision"
+    },
+    {
       "id": "christianity_religion",
       "name": "Christianity",
       "page": "faiths",
@@ -8063,6 +8637,15 @@
       "scan": false,
       "slug": "church_and_state_perk",
       "type": "perk"
+    },
+    {
+      "icon": "img/holdings/church_holding.webp",
+      "id": "church_holding",
+      "name": "Temple",
+      "page": "holdings",
+      "scan": false,
+      "slug": "church_holding",
+      "type": "holding"
     },
     {
       "icon": "img/buildings/icon_structure_parthenon_theotokos.webp",
@@ -8126,6 +8709,15 @@
       "scan": false,
       "slug": "city_01",
       "type": "building"
+    },
+    {
+      "icon": "img/holdings/city_holding.webp",
+      "id": "city_holding",
+      "name": "City",
+      "page": "holdings",
+      "scan": false,
+      "slug": "city_holding",
+      "type": "holding"
     },
     {
       "id": "city_succession_law",
@@ -8238,6 +8830,14 @@
       "type": "contract"
     },
     {
+      "id": "clear_ground_for_legendary_building",
+      "name": "Clear Ground for a Legendary Building",
+      "page": "decisions",
+      "scan": false,
+      "slug": "clear_ground_for_legendary_building",
+      "type": "decision"
+    },
+    {
       "id": "clerical_justifications_perk",
       "name": "Clerical Justifications",
       "page": "lifestyles",
@@ -8297,6 +8897,54 @@
       "scan": false,
       "slug": "comfort_eater",
       "type": "trait"
+    },
+    {
+      "id": "commission_artifact_decision",
+      "name": "Commission Artifact",
+      "page": "decisions",
+      "scan": false,
+      "slug": "commission_artifact_decision",
+      "type": "decision"
+    },
+    {
+      "id": "commission_epic_decision",
+      "name": "Commission Epic",
+      "page": "decisions",
+      "scan": false,
+      "slug": "commission_epic_decision",
+      "type": "decision"
+    },
+    {
+      "id": "commission_icon_decision",
+      "name": "Commission Icon",
+      "page": "decisions",
+      "scan": false,
+      "slug": "commission_icon_decision",
+      "type": "decision"
+    },
+    {
+      "id": "commission_legend_artifact_decision",
+      "name": "Commission Legend Artifact",
+      "page": "decisions",
+      "scan": false,
+      "slug": "commission_legend_artifact_decision",
+      "type": "decision"
+    },
+    {
+      "id": "commission_silk_regalia_decision",
+      "name": "Commission Silk Regalia",
+      "page": "decisions",
+      "scan": false,
+      "slug": "commission_silk_regalia_decision",
+      "type": "decision"
+    },
+    {
+      "id": "commit_suicide_decision",
+      "name": "Attempt Suicide",
+      "page": "decisions",
+      "scan": false,
+      "slug": "commit_suicide_decision",
+      "type": "decision"
     },
     {
       "icon": "img/buildings/icon_building_tradeport.webp",
@@ -16549,6 +17197,14 @@
       "type": "law"
     },
     {
+      "id": "confederation_kingdom_decision",
+      "name": "Elevate Confederation",
+      "page": "decisions",
+      "scan": false,
+      "slug": "confederation_kingdom_decision",
+      "type": "decision"
+    },
+    {
       "id": "confidants_perk",
       "name": "Confidants",
       "page": "lifestyles",
@@ -16619,6 +17275,22 @@
       "type": "trait"
     },
     {
+      "id": "consolidate_rule_decision",
+      "name": "Consolidate Rule",
+      "page": "decisions",
+      "scan": false,
+      "slug": "consolidate_rule_decision",
+      "type": "decision"
+    },
+    {
+      "id": "construct_great_barracks",
+      "name": "Construct Great Barracks",
+      "page": "great-projects",
+      "scan": false,
+      "slug": "construct_great_barracks",
+      "type": "great_project"
+    },
+    {
       "icon": "img/traits/consumption.webp",
       "id": "consumption",
       "name": "Consumption",
@@ -16655,6 +17327,110 @@
       "type": "faith"
     },
     {
+      "id": "convert_clan_to_feudalism_through_liege_decision",
+      "name": "Adopt … Ways through Liege",
+      "page": "decisions",
+      "scan": false,
+      "slug": "convert_clan_to_feudalism_through_liege_decision",
+      "type": "decision"
+    },
+    {
+      "id": "convert_feudalism_to_clan_through_liege_decision",
+      "name": "Adopt … Ways through Liege",
+      "page": "decisions",
+      "scan": false,
+      "slug": "convert_feudalism_to_clan_through_liege_decision",
+      "type": "decision"
+    },
+    {
+      "id": "convert_to_administrative_decision",
+      "name": "Adopt Centralized Administration",
+      "page": "decisions",
+      "scan": false,
+      "slug": "convert_to_administrative_decision",
+      "type": "decision"
+    },
+    {
+      "id": "convert_to_confucianism",
+      "name": "Adopt Confucianism",
+      "page": "decisions",
+      "scan": false,
+      "slug": "convert_to_confucianism",
+      "type": "decision"
+    },
+    {
+      "id": "convert_to_feudalism_from_administrative_decision",
+      "name": "Adopt … Ways",
+      "page": "decisions",
+      "scan": false,
+      "slug": "convert_to_feudalism_from_administrative_decision",
+      "type": "decision"
+    },
+    {
+      "id": "convert_to_feudalism_liege_converted_decision",
+      "name": "Adopt … Ways through Liege",
+      "page": "decisions",
+      "scan": false,
+      "slug": "convert_to_feudalism_liege_converted_decision",
+      "type": "decision"
+    },
+    {
+      "id": "convert_to_local_culture_decision",
+      "name": "Convert to Local Culture",
+      "page": "decisions",
+      "scan": false,
+      "slug": "convert_to_local_culture_decision",
+      "type": "decision"
+    },
+    {
+      "id": "convert_to_mandala_government_decision",
+      "name": "Adopt Mandala Government",
+      "page": "decisions",
+      "scan": false,
+      "slug": "convert_to_mandala_government_decision",
+      "type": "decision"
+    },
+    {
+      "id": "convert_to_meritocratic_decision",
+      "name": "Adopt Meritocratic Government",
+      "page": "decisions",
+      "scan": false,
+      "slug": "convert_to_meritocratic_decision",
+      "type": "decision"
+    },
+    {
+      "id": "convert_to_taoism",
+      "name": "Adopt Taoism",
+      "page": "decisions",
+      "scan": false,
+      "slug": "convert_to_taoism",
+      "type": "decision"
+    },
+    {
+      "id": "convert_to_tribalism_decision",
+      "name": "Embrace Tribalism",
+      "page": "decisions",
+      "scan": false,
+      "slug": "convert_to_tribalism_decision",
+      "type": "decision"
+    },
+    {
+      "id": "convert_whole_realm_to_feudalism_decision",
+      "name": "Adopt … Ways",
+      "page": "decisions",
+      "scan": false,
+      "slug": "convert_whole_realm_to_feudalism_decision",
+      "type": "decision"
+    },
+    {
+      "id": "convert_whole_realm_to_feudalism_west_african_pagan_decision",
+      "name": "Adopt … Ways (West African Pagan)",
+      "page": "decisions",
+      "scan": false,
+      "slug": "convert_whole_realm_to_feudalism_west_african_pagan_decision",
+      "type": "decision"
+    },
+    {
       "icon": "img/faith/coptic.webp",
       "id": "coptic",
       "name": "Coptic",
@@ -16662,6 +17438,14 @@
       "scan": true,
       "slug": "coptic",
       "type": "faith"
+    },
+    {
+      "id": "council_of_toledo_decision",
+      "name": "Convene Council of Toledo",
+      "page": "decisions",
+      "scan": false,
+      "slug": "council_of_toledo_decision",
+      "type": "decision"
     },
     {
       "id": "council_rights",
@@ -16885,6 +17669,70 @@
       "scan": false,
       "slug": "craven",
       "type": "trait"
+    },
+    {
+      "id": "create_armenian_empire_decision",
+      "name": "Revive Greater Armenia",
+      "page": "decisions",
+      "scan": false,
+      "slug": "create_armenian_empire_decision",
+      "type": "decision"
+    },
+    {
+      "id": "create_bunga_mas_decision",
+      "name": "Create Bunga Mas",
+      "page": "decisions",
+      "scan": false,
+      "slug": "create_bunga_mas_decision",
+      "type": "decision"
+    },
+    {
+      "id": "create_cadet_branch_decision",
+      "name": "Create Cadet Branch",
+      "page": "decisions",
+      "scan": false,
+      "slug": "create_cadet_branch_decision",
+      "type": "decision"
+    },
+    {
+      "id": "create_cossack_kingdom_decision",
+      "name": "Form the Cossack Kingdom",
+      "page": "decisions",
+      "scan": false,
+      "slug": "create_cossack_kingdom_decision",
+      "type": "decision"
+    },
+    {
+      "id": "create_dar_al_islam_decision",
+      "name": "Establish the Dar al-Islam",
+      "page": "decisions",
+      "scan": false,
+      "slug": "create_dar_al_islam_decision",
+      "type": "decision"
+    },
+    {
+      "id": "create_holy_order_decision",
+      "name": "Found Holy Order",
+      "page": "decisions",
+      "scan": false,
+      "slug": "create_holy_order_decision",
+      "type": "decision"
+    },
+    {
+      "id": "create_israel_kingdom_decision",
+      "name": "Restore Israel",
+      "page": "decisions",
+      "scan": false,
+      "slug": "create_israel_kingdom_decision",
+      "type": "decision"
+    },
+    {
+      "id": "create_outremer_empire_decision",
+      "name": "Form the Outremer Empire",
+      "page": "decisions",
+      "scan": false,
+      "slug": "create_outremer_empire_decision",
+      "type": "decision"
     },
     {
       "icon": "img/maa/crossbowmen.webp",
@@ -25942,6 +26790,46 @@
       "type": "trait"
     },
     {
+      "id": "deceitful_progress_hostile_schemes_decision",
+      "name": "Study the Art of Scheming",
+      "page": "decisions",
+      "scan": false,
+      "slug": "deceitful_progress_hostile_schemes_decision",
+      "type": "decision"
+    },
+    {
+      "id": "decision_restore_carantania",
+      "name": "Restore Carantanian Rule",
+      "page": "decisions",
+      "scan": false,
+      "slug": "decision_restore_carantania",
+      "type": "decision"
+    },
+    {
+      "id": "decision_solve_the_journals",
+      "name": "Unlock the Journal",
+      "page": "decisions",
+      "scan": false,
+      "slug": "decision_solve_the_journals",
+      "type": "decision"
+    },
+    {
+      "id": "declare_bloodline_holy_decision",
+      "name": "Consecrate Bloodline",
+      "page": "decisions",
+      "scan": false,
+      "slug": "declare_bloodline_holy_decision",
+      "type": "decision"
+    },
+    {
+      "id": "declare_canarias_decision",
+      "name": "Consolidate the Canaries",
+      "page": "decisions",
+      "scan": false,
+      "slug": "declare_canarias_decision",
+      "type": "decision"
+    },
+    {
       "id": "default_tributary_levies",
       "name": "Tributary Levies",
       "page": "contracts",
@@ -25972,6 +26860,14 @@
       "scan": false,
       "slug": "defender_of_the_faith_perk",
       "type": "perk"
+    },
+    {
+      "id": "defenders_of_highgod_decision",
+      "name": "Defenders of …",
+      "page": "decisions",
+      "scan": false,
+      "slug": "defenders_of_highgod_decision",
+      "type": "decision"
     },
     {
       "id": "defense_mobilization_law",
@@ -26070,12 +26966,28 @@
       "type": "building"
     },
     {
+      "id": "destroy_the_magi_decision",
+      "name": "Reform the …",
+      "page": "decisions",
+      "scan": false,
+      "slug": "destroy_the_magi_decision",
+      "type": "decision"
+    },
+    {
       "id": "detailed_ledgers_perk",
       "name": "Detailed Ledgers",
       "page": "lifestyles",
       "scan": false,
       "slug": "detailed_ledgers_perk",
       "type": "perk"
+    },
+    {
+      "id": "develop_fertility_decision",
+      "name": "Manage Pasturage",
+      "page": "decisions",
+      "scan": false,
+      "slug": "develop_fertility_decision",
+      "type": "decision"
     },
     {
       "icon": "img/traits/deviant.webp",
@@ -26103,6 +27015,14 @@
       "scan": true,
       "slug": "dhyana",
       "type": "faith"
+    },
+    {
+      "id": "diarch_attempt_to_overthrow_liege",
+      "name": "Attempt to Overthrow Liege",
+      "page": "decisions",
+      "scan": false,
+      "slug": "diarch_attempt_to_overthrow_liege",
+      "type": "decision"
     },
     {
       "icon": "img/cb/diarch_vassalisation_cb.webp",
@@ -26157,6 +27077,14 @@
       "type": "trait"
     },
     {
+      "id": "diligent_development_focus_decision",
+      "name": "Develop Capital",
+      "page": "decisions",
+      "scan": false,
+      "slug": "diligent_development_focus_decision",
+      "type": "decision"
+    },
+    {
       "id": "diplomacy_adventurer_focus",
       "name": "diplomacy_adventurer_focus",
       "page": "lifestyles",
@@ -26187,6 +27115,22 @@
       "scan": false,
       "slug": "diplomacy_majesty_focus",
       "type": "focus"
+    },
+    {
+      "id": "diplomacy_oath_1_decision",
+      "name": "Secure Alliances …",
+      "page": "decisions",
+      "scan": false,
+      "slug": "diplomacy_oath_1_decision",
+      "type": "decision"
+    },
+    {
+      "id": "diplomacy_oath_2_decision",
+      "name": "Strengthen the House …",
+      "page": "decisions",
+      "scan": false,
+      "slug": "diplomacy_oath_2_decision",
+      "type": "decision"
     },
     {
       "icon": "img/traits/diplomat.webp",
@@ -26277,6 +27221,14 @@
       "type": "cb"
     },
     {
+      "id": "dismantle_byz_pretender_decision",
+      "name": "Dismantle Greek Pretenders",
+      "page": "decisions",
+      "scan": false,
+      "slug": "dismantle_byz_pretender_decision",
+      "type": "decision"
+    },
+    {
       "icon": "img/cb/dismantle_holy_pretender_cb.webp",
       "id": "dismantle_holy_pretender_cb",
       "name": "Dismantle Pretender",
@@ -26284,6 +27236,22 @@
       "scan": false,
       "slug": "dismantle_holy_pretender_cb",
       "type": "cb"
+    },
+    {
+      "id": "dismantle_holy_pretender_decision",
+      "name": "Dismantle German Pretenders",
+      "page": "decisions",
+      "scan": false,
+      "slug": "dismantle_holy_pretender_decision",
+      "type": "decision"
+    },
+    {
+      "id": "dismantle_papacy_decision",
+      "name": "Dismantle the Papacy",
+      "page": "decisions",
+      "scan": false,
+      "slug": "dismantle_papacy_decision",
+      "type": "decision"
     },
     {
       "icon": "img/traits/disputed_heritage.webp",
@@ -26326,6 +27294,14 @@
       "scan": false,
       "slug": "divine_retribution_perk",
       "type": "perk"
+    },
+    {
+      "id": "divine_the_stars_decision",
+      "name": "Divine the Stars",
+      "page": "decisions",
+      "scan": false,
+      "slug": "divine_the_stars_decision",
+      "type": "decision"
     },
     {
       "id": "doctrine_adultery_men_accepted",
@@ -26998,6 +27974,14 @@
       "type": "building"
     },
     {
+      "id": "draw_up_new_charts_decision",
+      "name": "Create Travel Itinerary",
+      "page": "decisions",
+      "scan": false,
+      "slug": "draw_up_new_charts_decision",
+      "type": "decision"
+    },
+    {
       "id": "dreadful_perk",
       "name": "Dreadful",
       "page": "lifestyles",
@@ -27128,6 +28112,14 @@
       "scan": false,
       "slug": "dwarf",
       "type": "trait"
+    },
+    {
+      "id": "dynasty_of_many_crowns_decision",
+      "name": "Dynasty of Many Crowns",
+      "page": "decisions",
+      "scan": false,
+      "slug": "dynasty_of_many_crowns_decision",
+      "type": "decision"
     },
     {
       "icon": "img/traits/dysentery.webp",
@@ -27868,6 +28860,14 @@
       "type": "doctrine"
     },
     {
+      "id": "eat_cheese_decision",
+      "name": "Eat Your Cheese",
+      "page": "decisions",
+      "scan": false,
+      "slug": "eat_cheese_decision",
+      "type": "decision"
+    },
+    {
       "icon": "img/traits/eccentric.webp",
       "id": "eccentric",
       "name": "Eccentric",
@@ -28232,12 +29232,76 @@
       "type": "court_position"
     },
     {
+      "id": "elevate_mann_and_the_isles_decision",
+      "name": "Elevate the Kingdom of Mann & the Isles",
+      "page": "decisions",
+      "scan": false,
+      "slug": "elevate_mann_and_the_isles_decision",
+      "type": "decision"
+    },
+    {
       "id": "embassies_perk",
       "name": "Embassies",
       "page": "lifestyles",
       "scan": false,
       "slug": "embassies_perk",
       "type": "perk"
+    },
+    {
+      "id": "embrace_celibacy_decision",
+      "name": "Embrace Celibacy",
+      "page": "decisions",
+      "scan": false,
+      "slug": "embrace_celibacy_decision",
+      "type": "decision"
+    },
+    {
+      "id": "embrace_english_culture_decision",
+      "name": "Embrace English Culture",
+      "page": "decisions",
+      "scan": false,
+      "slug": "embrace_english_culture_decision",
+      "type": "decision"
+    },
+    {
+      "id": "embrace_hebrew_language_decision",
+      "name": "Embrace the Hebrew Language",
+      "page": "decisions",
+      "scan": false,
+      "slug": "embrace_hebrew_language_decision",
+      "type": "decision"
+    },
+    {
+      "id": "embrace_heresy_decision",
+      "name": "Embrace Heresy",
+      "page": "decisions",
+      "scan": false,
+      "slug": "embrace_heresy_decision",
+      "type": "decision"
+    },
+    {
+      "id": "embrace_outremer_culture_decision",
+      "name": "Embrace Outremer Culture",
+      "page": "decisions",
+      "scan": false,
+      "slug": "embrace_outremer_culture_decision",
+      "type": "decision"
+    },
+    {
+      "id": "embrace_responsibilities_decision",
+      "name": "Embrace Responsibilities",
+      "page": "decisions",
+      "scan": false,
+      "slug": "embrace_responsibilities_decision",
+      "type": "decision"
+    },
+    {
+      "id": "embrace_tengriism_decision",
+      "name": "Embrace Tengriism",
+      "page": "decisions",
+      "scan": false,
+      "slug": "embrace_tengriism_decision",
+      "type": "decision"
     },
     {
       "icon": "img/maa/emishi_horse_archers.webp",
@@ -28249,6 +29313,46 @@
       "type": "maa"
     },
     {
+      "id": "empower_sicilian_parliament_decision",
+      "name": "Empower Sicilian Parliament",
+      "page": "decisions",
+      "scan": false,
+      "slug": "empower_sicilian_parliament_decision",
+      "type": "decision"
+    },
+    {
+      "id": "enact_legacy_of_adventurer_decision",
+      "name": "Legacy of …",
+      "page": "decisions",
+      "scan": false,
+      "slug": "enact_legacy_of_adventurer_decision",
+      "type": "decision"
+    },
+    {
+      "id": "encourage_confession_of_false_conversions_decision",
+      "name": "Amnesty for False Conversions",
+      "page": "decisions",
+      "scan": false,
+      "slug": "encourage_confession_of_false_conversions_decision",
+      "type": "decision"
+    },
+    {
+      "id": "end_investments_minor_decision",
+      "name": "End Pious Investments",
+      "page": "decisions",
+      "scan": false,
+      "slug": "end_investments_minor_decision",
+      "type": "decision"
+    },
+    {
+      "id": "end_the_struggle_oath_decision",
+      "name": "End the Iberian Struggle …",
+      "page": "decisions",
+      "scan": false,
+      "slug": "end_the_struggle_oath_decision",
+      "type": "decision"
+    },
+    {
       "id": "enduring_hardships_perk",
       "name": "Enduring Hardships",
       "page": "lifestyles",
@@ -28257,12 +29361,28 @@
       "type": "perk"
     },
     {
+      "id": "enforce_traditions_decision",
+      "name": "Promote … Traditions",
+      "page": "decisions",
+      "scan": false,
+      "slug": "enforce_traditions_decision",
+      "type": "decision"
+    },
+    {
       "id": "engineered_for_destruction_perk",
       "name": "Engineered for Destruction",
       "page": "lifestyles",
       "scan": false,
       "slug": "engineered_for_destruction_perk",
       "type": "perk"
+    },
+    {
+      "id": "england_request_laudabiliter_decision",
+      "name": "Request Claim on Ireland",
+      "page": "decisions",
+      "scan": false,
+      "slug": "england_request_laudabiliter_decision",
+      "type": "decision"
     },
     {
       "icon": "img/buildings/icon_structure_cathedral_buddhist.webp",
@@ -28611,6 +29731,94 @@
       "type": "legacy_track"
     },
     {
+      "id": "escape_from_prison_decision",
+      "name": "Escape from Prison",
+      "page": "decisions",
+      "scan": false,
+      "slug": "escape_from_prison_decision",
+      "type": "decision"
+    },
+    {
+      "id": "establish_bactrian_supremacy_decision",
+      "name": "Establish Bactrian Supremacy",
+      "page": "decisions",
+      "scan": false,
+      "slug": "establish_bactrian_supremacy_decision",
+      "type": "decision"
+    },
+    {
+      "id": "establish_iconoclast_patriarchate_decision",
+      "name": "Establish Iconoclast Patriarchate",
+      "page": "decisions",
+      "scan": false,
+      "slug": "establish_iconoclast_patriarchate_decision",
+      "type": "decision"
+    },
+    {
+      "id": "establish_norman_culture_decision",
+      "name": "Establish Norman Culture",
+      "page": "decisions",
+      "scan": false,
+      "slug": "establish_norman_culture_decision",
+      "type": "decision"
+    },
+    {
+      "id": "establish_silk_production_decision",
+      "name": "Establish Silk Production",
+      "page": "decisions",
+      "scan": false,
+      "slug": "establish_silk_production_decision",
+      "type": "decision"
+    },
+    {
+      "id": "establish_the_electorate_of_saxony_decision",
+      "name": "Establish the Electorate of Saxony",
+      "page": "decisions",
+      "scan": false,
+      "slug": "establish_the_electorate_of_saxony_decision",
+      "type": "decision"
+    },
+    {
+      "id": "establish_yamagate_in_samarkand_decision",
+      "name": "Establish the Yamagate in Samarkand",
+      "page": "decisions",
+      "scan": false,
+      "slug": "establish_yamagate_in_samarkand_decision",
+      "type": "decision"
+    },
+    {
+      "id": "estate_bolster_security_decision",
+      "name": "Bolster Estate Security",
+      "page": "decisions",
+      "scan": false,
+      "slug": "estate_bolster_security_decision",
+      "type": "decision"
+    },
+    {
+      "id": "estate_governor_patrols_decision",
+      "name": "Conduct Patrols in Governorship",
+      "page": "decisions",
+      "scan": false,
+      "slug": "estate_governor_patrols_decision",
+      "type": "decision"
+    },
+    {
+      "id": "estate_granary_decision",
+      "name": "Manipulate Grain Market",
+      "page": "decisions",
+      "scan": false,
+      "slug": "estate_granary_decision",
+      "type": "decision"
+    },
+    {
+      "id": "estate_hire_agents_decisions",
+      "name": "Hire Agents",
+      "page": "decisions",
+      "scan": false,
+      "slug": "estate_hire_agents_decisions",
+      "type": "decision"
+    },
+    {
       "icon": "img/buildings/icon_structure_etchmiadzin_cathedral.webp",
       "id": "etchmiadzin_cathedral",
       "name": "Cathedral of Vagarshapat",
@@ -28685,6 +29893,14 @@
       "type": "trait"
     },
     {
+      "id": "evangelize_the_slavs_decision",
+      "name": "Evangelize the Pagans",
+      "page": "decisions",
+      "scan": false,
+      "slug": "evangelize_the_slavs_decision",
+      "type": "decision"
+    },
+    {
       "icon": "img/buildings/icon_building_tower_of_silence.webp",
       "id": "event_tower_of_silence_01",
       "name": "Tower of Silence",
@@ -28730,6 +29946,30 @@
       "type": "court_position"
     },
     {
+      "id": "exoticise_a_grand_hall_decision",
+      "name": "Exoticize a Grand Hall",
+      "page": "decisions",
+      "scan": false,
+      "slug": "exoticise_a_grand_hall_decision",
+      "type": "decision"
+    },
+    {
+      "id": "expand_duchy_decision",
+      "name": "Expand Duchy",
+      "page": "decisions",
+      "scan": false,
+      "slug": "expand_duchy_decision",
+      "type": "decision"
+    },
+    {
+      "id": "expand_the_steppe_decision",
+      "name": "Expand the Steppes",
+      "page": "decisions",
+      "scan": false,
+      "slug": "expand_the_steppe_decision",
+      "type": "decision"
+    },
+    {
       "icon": "img/cb/expansion_cb.webp",
       "id": "expansion_cb",
       "name": "County Expansion",
@@ -28739,6 +29979,14 @@
       "type": "cb"
     },
     {
+      "id": "expunge_latin_dominion_decision",
+      "name": "Expunge Latin Dominion",
+      "page": "decisions",
+      "scan": false,
+      "slug": "expunge_latin_dominion_decision",
+      "type": "decision"
+    },
+    {
       "icon": "img/traits/extolled.webp",
       "id": "extolled",
       "name": "Extolled by House",
@@ -28746,6 +29994,22 @@
       "scan": false,
       "slug": "extolled",
       "type": "trait"
+    },
+    {
+      "id": "extort_subjects_decision",
+      "name": "Extort Subjects",
+      "page": "decisions",
+      "scan": false,
+      "slug": "extort_subjects_decision",
+      "type": "decision"
+    },
+    {
+      "id": "extract_gold_from_treasury",
+      "name": "Withdraw Funds from Treasury",
+      "page": "decisions",
+      "scan": false,
+      "slug": "extract_gold_from_treasury",
+      "type": "decision"
     },
     {
       "icon": "img/buildings/icon_structure_fairy_chimneys.webp",
@@ -28852,6 +30116,22 @@
       "type": "building"
     },
     {
+      "id": "favor_dynastic_cycle_era_decision",
+      "name": "Favor an Era",
+      "page": "decisions",
+      "scan": false,
+      "slug": "favor_dynastic_cycle_era_decision",
+      "type": "decision"
+    },
+    {
+      "id": "favor_movement_decision",
+      "name": "Favor a Movement",
+      "page": "decisions",
+      "scan": false,
+      "slug": "favor_movement_decision",
+      "type": "decision"
+    },
+    {
       "icon": "img/court/favored_minister_court_position.webp",
       "id": "favored_minister_court_position",
       "name": "Favored Minister",
@@ -28859,6 +30139,30 @@
       "scan": true,
       "slug": "favored_minister_court_position",
       "type": "court_position"
+    },
+    {
+      "id": "favored_movement_consults_heaven_decision",
+      "name": "Shape the Dynastic Cycle",
+      "page": "decisions",
+      "scan": false,
+      "slug": "favored_movement_consults_heaven_decision",
+      "type": "decision"
+    },
+    {
+      "id": "favour_skilled_outsiders_decision",
+      "name": "Favor Skilled Outsiders",
+      "page": "decisions",
+      "scan": false,
+      "slug": "favour_skilled_outsiders_decision",
+      "type": "decision"
+    },
+    {
+      "id": "favour_the_countryside_basques_decision",
+      "name": "Champion the Faith of the Country Basques",
+      "page": "decisions",
+      "scan": false,
+      "slug": "favour_the_countryside_basques_decision",
+      "type": "decision"
     },
     {
       "id": "fear_tax_perk",
@@ -29116,6 +30420,14 @@
       "type": "perk"
     },
     {
+      "id": "forge_the_jomsvikings_decision",
+      "name": "Forge the Jomsvikings",
+      "page": "decisions",
+      "scan": false,
+      "slug": "forge_the_jomsvikings_decision",
+      "type": "decision"
+    },
+    {
       "icon": "img/traits/forgiving.webp",
       "id": "forgiving",
       "name": "Forgiving",
@@ -29123,6 +30435,126 @@
       "scan": false,
       "slug": "forgiving",
       "type": "trait"
+    },
+    {
+      "id": "form_austria_kingdom_decision",
+      "name": "Form Archduchy of Austria",
+      "page": "decisions",
+      "scan": false,
+      "slug": "form_austria_kingdom_decision",
+      "type": "decision"
+    },
+    {
+      "id": "form_bene_israel_decision",
+      "name": "Consolidate Bene-Israel",
+      "page": "decisions",
+      "scan": false,
+      "slug": "form_bene_israel_decision",
+      "type": "decision"
+    },
+    {
+      "id": "form_bosporan_kingdom_decision",
+      "name": "Restore the Bosporan Kingdom",
+      "page": "decisions",
+      "scan": false,
+      "slug": "form_bosporan_kingdom_decision",
+      "type": "decision"
+    },
+    {
+      "id": "form_brunei_empire_decision",
+      "name": "Found the Empire of Brunei",
+      "page": "decisions",
+      "scan": false,
+      "slug": "form_brunei_empire_decision",
+      "type": "decision"
+    },
+    {
+      "id": "form_brunei_kingdom_decision",
+      "name": "Establish the Darussalam",
+      "page": "decisions",
+      "scan": false,
+      "slug": "form_brunei_kingdom_decision",
+      "type": "decision"
+    },
+    {
+      "id": "form_cumbria_decision",
+      "name": "Form the Kingdom of Cumbria",
+      "page": "decisions",
+      "scan": false,
+      "slug": "form_cumbria_decision",
+      "type": "decision"
+    },
+    {
+      "id": "form_dai_viet_empire_decision",
+      "name": "Found the Viet Empire",
+      "page": "decisions",
+      "scan": false,
+      "slug": "form_dai_viet_empire_decision",
+      "type": "decision"
+    },
+    {
+      "id": "form_majapahit_empire_decision",
+      "name": "Found the Majapahit Empire",
+      "page": "decisions",
+      "scan": false,
+      "slug": "form_majapahit_empire_decision",
+      "type": "decision"
+    },
+    {
+      "id": "form_portugal_decision",
+      "name": "Form Portugal",
+      "page": "decisions",
+      "scan": false,
+      "slug": "form_portugal_decision",
+      "type": "decision"
+    },
+    {
+      "id": "form_rum_sultanate_decision",
+      "name": "Form the Sultanate of Rum",
+      "page": "decisions",
+      "scan": false,
+      "slug": "form_rum_sultanate_decision",
+      "type": "decision"
+    },
+    {
+      "id": "form_ryukyu_empire_decision",
+      "name": "Found a Ryukyuan Empire",
+      "page": "decisions",
+      "scan": false,
+      "slug": "form_ryukyu_empire_decision",
+      "type": "decision"
+    },
+    {
+      "id": "form_siam_kingdom_decision",
+      "name": "Found the Siam Kingdom",
+      "page": "decisions",
+      "scan": false,
+      "slug": "form_siam_kingdom_decision",
+      "type": "decision"
+    },
+    {
+      "id": "form_switzerland_kingdom_decision",
+      "name": "Form the Swiss Confederation",
+      "page": "decisions",
+      "scan": false,
+      "slug": "form_switzerland_kingdom_decision",
+      "type": "decision"
+    },
+    {
+      "id": "form_the_kingdom_of_aragon_decision",
+      "name": "Found the Kingdom of Aragon",
+      "page": "decisions",
+      "scan": false,
+      "slug": "form_the_kingdom_of_aragon_decision",
+      "type": "decision"
+    },
+    {
+      "id": "formalise_the_daneland_decision",
+      "name": "Formalize the Daneland",
+      "page": "decisions",
+      "scan": false,
+      "slug": "formalise_the_daneland_decision",
+      "type": "decision"
     },
     {
       "icon": "img/traits/former_emperor.webp",
@@ -29149,6 +30581,118 @@
       "scan": false,
       "slug": "fortification_rights",
       "type": "contract"
+    },
+    {
+      "id": "foster_integration_decision",
+      "name": "Foster Integration",
+      "page": "decisions",
+      "scan": false,
+      "slug": "foster_integration_decision",
+      "type": "decision"
+    },
+    {
+      "id": "found_capital_of_the_rus_decision",
+      "name": "Found the Capital of the Rus'",
+      "page": "decisions",
+      "scan": false,
+      "slug": "found_capital_of_the_rus_decision",
+      "type": "decision"
+    },
+    {
+      "id": "found_duchy_decision",
+      "name": "Found a New Duchy",
+      "page": "decisions",
+      "scan": false,
+      "slug": "found_duchy_decision",
+      "type": "decision"
+    },
+    {
+      "id": "found_empire_decision",
+      "name": "Found a New Empire",
+      "page": "decisions",
+      "scan": false,
+      "slug": "found_empire_decision",
+      "type": "decision"
+    },
+    {
+      "id": "found_empire_of_beth_nahrain_decision",
+      "name": "Home of the Rivers",
+      "page": "decisions",
+      "scan": false,
+      "slug": "found_empire_of_beth_nahrain_decision",
+      "type": "decision"
+    },
+    {
+      "id": "found_kingdom_decision",
+      "name": "Found a New Kingdom",
+      "page": "decisions",
+      "scan": false,
+      "slug": "found_kingdom_decision",
+      "type": "decision"
+    },
+    {
+      "id": "found_kingdom_of_bosnia_decision",
+      "name": "Found Kingdom of Bosnia",
+      "page": "decisions",
+      "scan": false,
+      "slug": "found_kingdom_of_bosnia_decision",
+      "type": "decision"
+    },
+    {
+      "id": "found_kingdom_of_livonia_decision",
+      "name": "Proclaim Terra Mariana",
+      "page": "decisions",
+      "scan": false,
+      "slug": "found_kingdom_of_livonia_decision",
+      "type": "decision"
+    },
+    {
+      "id": "found_kingdom_toledo_decision",
+      "name": "Establish Kingdom of Toledo",
+      "page": "decisions",
+      "scan": false,
+      "slug": "found_kingdom_toledo_decision",
+      "type": "decision"
+    },
+    {
+      "id": "found_salon_decision",
+      "name": "Found Salon",
+      "page": "decisions",
+      "scan": false,
+      "slug": "found_salon_decision",
+      "type": "decision"
+    },
+    {
+      "id": "found_the_empire_of_hindustan_decision",
+      "name": "Found the Empire of Hindustan",
+      "page": "decisions",
+      "scan": false,
+      "slug": "found_the_empire_of_hindustan_decision",
+      "type": "decision"
+    },
+    {
+      "id": "found_university_decision",
+      "name": "Found University",
+      "page": "decisions",
+      "scan": false,
+      "slug": "found_university_decision",
+      "type": "decision"
+    },
+    {
+      "id": "found_varangian_guard_decision",
+      "name": "Found the Varangian Guard",
+      "page": "decisions",
+      "scan": false,
+      "slug": "found_varangian_guard_decision",
+      "type": "decision"
+    },
+    {
+      "id": "found_witch_coven_decision",
+      "name": "Found Witch Coven",
+      "page": "decisions",
+      "scan": false,
+      "slug": "found_witch_coven_decision",
+      "type": "decision"
     },
     {
       "id": "fp1_adventure_legacy_1",
@@ -29392,6 +30936,30 @@
       "type": "legacy_track"
     },
     {
+      "id": "fp3_become_clan_government_decision",
+      "name": "Adopt Clan Ways through House",
+      "page": "decisions",
+      "scan": false,
+      "slug": "fp3_become_clan_government_decision",
+      "type": "decision"
+    },
+    {
+      "id": "fp3_embellish_capital_decision",
+      "name": "Embellish Capital",
+      "page": "decisions",
+      "scan": false,
+      "slug": "fp3_embellish_capital_decision",
+      "type": "decision"
+    },
+    {
+      "id": "fp3_embrace_zoroastrianism_decision",
+      "name": "Embrace Zoroastrianism",
+      "page": "decisions",
+      "scan": false,
+      "slug": "fp3_embrace_zoroastrianism_decision",
+      "type": "decision"
+    },
+    {
       "icon": "img/cb/fp3_free_house_member_cb.webp",
       "id": "fp3_free_house_member_cb",
       "name": "Rescue House Members",
@@ -29477,6 +31045,30 @@
       "type": "legacy_track"
     },
     {
+      "id": "fp3_name_read_in_friday_prayer_decision",
+      "name": "Declare Stance in the Iranian Intermezzo",
+      "page": "decisions",
+      "scan": false,
+      "slug": "fp3_name_read_in_friday_prayer_decision",
+      "type": "decision"
+    },
+    {
+      "id": "fp3_play_with_buzina_decision",
+      "name": "Play with the Monkey",
+      "page": "decisions",
+      "scan": false,
+      "slug": "fp3_play_with_buzina_decision",
+      "type": "decision"
+    },
+    {
+      "id": "fp3_promote_persian_scripture_decision",
+      "name": "Promote Persian Scriptures",
+      "page": "decisions",
+      "scan": false,
+      "slug": "fp3_promote_persian_scripture_decision",
+      "type": "decision"
+    },
+    {
       "icon": "img/cb/fp3_seljuk_invasion_cb.webp",
       "id": "fp3_seljuk_invasion_cb",
       "name": "Nomadic Invasion",
@@ -29484,6 +31076,22 @@
       "scan": false,
       "slug": "fp3_seljuk_invasion_cb",
       "type": "cb"
+    },
+    {
+      "id": "fp3_sponsor_persian_scholars_decision",
+      "name": "Sponsor Persian Scholars",
+      "page": "decisions",
+      "scan": false,
+      "slug": "fp3_sponsor_persian_scholars_decision",
+      "type": "decision"
+    },
+    {
+      "id": "fp3_sponsor_research_project_decision",
+      "name": "Sponsor Research Project",
+      "page": "decisions",
+      "scan": false,
+      "slug": "fp3_sponsor_research_project_decision",
+      "type": "decision"
     },
     {
       "icon": "img/traits/fp3_struggle_detractor.webp",
@@ -29502,6 +31110,14 @@
       "scan": false,
       "slug": "fp3_struggle_supporter",
       "type": "trait"
+    },
+    {
+      "id": "fp3_sunder_the_caliphate_decision",
+      "name": "Destroy the Caliphate",
+      "page": "decisions",
+      "scan": false,
+      "slug": "fp3_sunder_the_caliphate_decision",
+      "type": "decision"
     },
     {
       "icon": "img/cb/fp3_turkic_invasion_cb.webp",
@@ -29554,6 +31170,14 @@
       "scan": false,
       "slug": "gaelic_elective_succession_law",
       "type": "law"
+    },
+    {
+      "id": "gain_weight_decision",
+      "name": "Gain Weight",
+      "page": "decisions",
+      "scan": false,
+      "slug": "gain_weight_decision",
+      "type": "decision"
     },
     {
       "icon": "img/maa/gakgung_archers.webp",
@@ -29616,6 +31240,22 @@
       "scan": true,
       "slug": "garudas",
       "type": "maa"
+    },
+    {
+      "id": "gather_faction_support_decision",
+      "name": "Gather Faction Support",
+      "page": "decisions",
+      "scan": false,
+      "slug": "gather_faction_support_decision",
+      "type": "decision"
+    },
+    {
+      "id": "gather_provisions_decision",
+      "name": "Gather Provisions",
+      "page": "decisions",
+      "scan": false,
+      "slug": "gather_provisions_decision",
+      "type": "decision"
     },
     {
       "icon": "img/faith/gayomarthianism.webp",
@@ -29733,6 +31373,14 @@
       "type": "building"
     },
     {
+      "id": "give_sky_burial_decision",
+      "name": "Give Your … a Sky Burial",
+      "page": "decisions",
+      "scan": false,
+      "slug": "give_sky_burial_decision",
+      "type": "decision"
+    },
+    {
       "id": "glory_legacy_1",
       "name": "Desirable Match",
       "page": "legacies",
@@ -29791,6 +31439,14 @@
       "type": "trait"
     },
     {
+      "id": "go_fishing_decision",
+      "name": "Go Fishing",
+      "page": "decisions",
+      "scan": false,
+      "slug": "go_fishing_decision",
+      "type": "decision"
+    },
+    {
       "icon": "img/maa/goedendag.webp",
       "id": "goedendag",
       "name": "Goedendag Militia",
@@ -29807,6 +31463,14 @@
       "scan": false,
       "slug": "goguryeo_tomb_01",
       "type": "building"
+    },
+    {
+      "id": "golden_age_jewish_science_in_iberia_decision",
+      "name": "Sponsor Jewish Sciences",
+      "page": "decisions",
+      "scan": false,
+      "slug": "golden_age_jewish_science_in_iberia_decision",
+      "type": "decision"
     },
     {
       "id": "golden_aplomb_perk",
@@ -29895,6 +31559,22 @@
       "type": "cb"
     },
     {
+      "id": "grand_campaign_project",
+      "name": "…China Grand Campaign",
+      "page": "great-projects",
+      "scan": false,
+      "slug": "grand_campaign_project",
+      "type": "great_project"
+    },
+    {
+      "id": "grand_canals",
+      "name": "The Grand Canals",
+      "page": "great-projects",
+      "scan": false,
+      "slug": "grand_canals",
+      "type": "great_project"
+    },
+    {
       "id": "grand_censor_law",
       "name": "Imperial Censor",
       "page": "laws",
@@ -29964,6 +31644,46 @@
       "type": "trait"
     },
     {
+      "id": "great_project_earthquake",
+      "name": "… Earthquake Relief",
+      "page": "great-projects",
+      "scan": false,
+      "slug": "great_project_earthquake",
+      "type": "great_project"
+    },
+    {
+      "id": "great_project_flood",
+      "name": "… Flood Relief",
+      "page": "great-projects",
+      "scan": false,
+      "slug": "great_project_flood",
+      "type": "great_project"
+    },
+    {
+      "id": "great_wall",
+      "name": "Improve the Great Wall",
+      "page": "great-projects",
+      "scan": false,
+      "slug": "great_wall",
+      "type": "great_project"
+    },
+    {
+      "id": "great_wall_extend_to_liaodong",
+      "name": "Extend the Great Wall to Liaodong",
+      "page": "great-projects",
+      "scan": false,
+      "slug": "great_wall_extend_to_liaodong",
+      "type": "great_project"
+    },
+    {
+      "id": "great_wall_extend_to_shanhai_pass",
+      "name": "Extend the Great Wall to Shanhai Pass",
+      "page": "great-projects",
+      "scan": false,
+      "slug": "great_wall_extend_to_shanhai_pass",
+      "type": "great_project"
+    },
+    {
       "icon": "img/buildings/icon_structure_great_wall_of_gorgan.webp",
       "id": "great_wall_of_gorgan_01",
       "name": "Great Wall of Gorgan",
@@ -29971,6 +31691,14 @@
       "scan": false,
       "slug": "great_wall_of_gorgan_01",
       "type": "building"
+    },
+    {
+      "id": "greatest_hunter_oath_decision",
+      "name": "Greatest Hunter …",
+      "page": "decisions",
+      "scan": false,
+      "slug": "greatest_hunter_oath_decision",
+      "type": "decision"
     },
     {
       "icon": "img/traits/greatest_of_khans.webp",
@@ -30284,6 +32012,46 @@
       "type": "perk"
     },
     {
+      "id": "hasan_agitate_the_populace",
+      "name": "Agitate the Local Populace",
+      "page": "decisions",
+      "scan": false,
+      "slug": "hasan_agitate_the_populace",
+      "type": "decision"
+    },
+    {
+      "id": "hasan_evangelize_the_faith",
+      "name": "Evangelize the Faith",
+      "page": "decisions",
+      "scan": false,
+      "slug": "hasan_evangelize_the_faith",
+      "type": "decision"
+    },
+    {
+      "id": "hasan_expand_the_assassins",
+      "name": "Expand the Assassins",
+      "page": "decisions",
+      "scan": false,
+      "slug": "hasan_expand_the_assassins",
+      "type": "decision"
+    },
+    {
+      "id": "hasan_found_the_assassins",
+      "name": "Found the Assassins",
+      "page": "decisions",
+      "scan": false,
+      "slug": "hasan_found_the_assassins",
+      "type": "decision"
+    },
+    {
+      "id": "hasan_ignite_the_flames",
+      "name": "Begin the Revolution",
+      "page": "decisions",
+      "scan": false,
+      "slug": "hasan_ignite_the_flames",
+      "type": "decision"
+    },
+    {
       "icon": "img/traits/hashishiyah.webp",
       "id": "hashishiyah",
       "name": "Hashishiyah",
@@ -30405,6 +32173,14 @@
       "type": "building"
     },
     {
+      "id": "heir_preparation_oath_decision",
+      "name": "Prepare the Heir …",
+      "page": "decisions",
+      "scan": false,
+      "slug": "heir_preparation_oath_decision",
+      "type": "decision"
+    },
+    {
       "icon": "img/faith/hellenic_pagan.webp",
       "id": "hellenic_pagan",
       "name": "Hellenism",
@@ -30455,6 +32231,15 @@
       "scan": false,
       "slug": "herder_government_obligations",
       "type": "contract"
+    },
+    {
+      "icon": "img/holdings/herder_holding.webp",
+      "id": "herder_holding",
+      "name": "Herder Camp",
+      "page": "holdings",
+      "scan": false,
+      "slug": "herder_holding",
+      "type": "holding"
     },
     {
       "id": "herder_succession_law",
@@ -31047,6 +32832,30 @@
       "scan": true,
       "slug": "hobelar",
       "type": "maa"
+    },
+    {
+      "id": "hold_court_decision",
+      "name": "Hold Court",
+      "page": "decisions",
+      "scan": false,
+      "slug": "hold_court_decision",
+      "type": "decision"
+    },
+    {
+      "id": "hold_mystical_communion_decision",
+      "name": "Hold Mystical Communion",
+      "page": "decisions",
+      "scan": false,
+      "slug": "hold_mystical_communion_decision",
+      "type": "decision"
+    },
+    {
+      "id": "hold_triumph_decision",
+      "name": "Hold a Triumph",
+      "page": "decisions",
+      "scan": false,
+      "slug": "hold_triumph_decision",
+      "type": "decision"
     },
     {
       "icon": "img/governments/holy_order_government.webp",
@@ -33987,6 +35796,14 @@
       "type": "maa"
     },
     {
+      "id": "house_head_consults_heaven_decision",
+      "name": "Consult Heaven",
+      "page": "decisions",
+      "scan": false,
+      "slug": "house_head_consults_heaven_decision",
+      "type": "decision"
+    },
+    {
       "icon": "img/buildings/icon_structure_grand_library_of_baghdad.webp",
       "id": "house_of_wisdom_01",
       "name": "House of Wisdom",
@@ -34012,6 +35829,14 @@
       "scan": false,
       "slug": "humble",
       "type": "trait"
+    },
+    {
+      "id": "humiliate_the_stooge_decision",
+      "name": "Humiliate the Stooge",
+      "page": "decisions",
+      "scan": false,
+      "slug": "humiliate_the_stooge_decision",
+      "type": "decision"
     },
     {
       "icon": "img/cb/humiliation_cb.webp",
@@ -34167,6 +35992,14 @@
       "type": "trait"
     },
     {
+      "id": "impatient_rushing_all_schemes_decision",
+      "name": "Expedite Schemes",
+      "page": "decisions",
+      "scan": false,
+      "slug": "impatient_rushing_all_schemes_decision",
+      "type": "decision"
+    },
+    {
       "id": "imperial_bureaucracy_0",
       "name": "Decentralized Realm",
       "page": "laws",
@@ -34241,6 +36074,14 @@
       "scan": false,
       "slug": "impotent",
       "type": "trait"
+    },
+    {
+      "id": "improve_city_province_decision",
+      "name": "Expand Cities",
+      "page": "decisions",
+      "scan": false,
+      "slug": "improve_city_province_decision",
+      "type": "decision"
     },
     {
       "icon": "img/traits/improvident.webp",
@@ -34349,6 +36190,14 @@
       "scan": false,
       "slug": "influence_war_cb",
       "type": "cb"
+    },
+    {
+      "id": "initiate_consolamentum_decision",
+      "name": "Enact Ritual Suicide",
+      "page": "decisions",
+      "scan": false,
+      "slug": "initiate_consolamentum_decision",
+      "type": "decision"
     },
     {
       "icon": "img/innovations/innovation_adaptive_militia.webp",
@@ -35313,6 +37162,14 @@
       "type": "perk"
     },
     {
+      "id": "install_claimants_oath_decision",
+      "name": "Install Claimants …",
+      "page": "decisions",
+      "scan": false,
+      "slug": "install_claimants_oath_decision",
+      "type": "decision"
+    },
+    {
       "icon": "img/faith/insular_celtic.webp",
       "id": "insular_celtic",
       "name": "Insularism",
@@ -35426,6 +37283,14 @@
       "type": "focus"
     },
     {
+      "id": "introduce_a_new_fashion_at_court_decision",
+      "name": "Introduce a New Fashion at Court",
+      "page": "decisions",
+      "scan": false,
+      "slug": "introduce_a_new_fashion_at_court_decision",
+      "type": "decision"
+    },
+    {
       "icon": "img/cb/invasion_war.webp",
       "id": "invasion_war",
       "name": "Invasion",
@@ -35433,6 +37298,38 @@
       "scan": false,
       "slug": "invasion_war",
       "type": "cb"
+    },
+    {
+      "id": "invite_claimants_decision",
+      "name": "Invite Claimants",
+      "page": "decisions",
+      "scan": false,
+      "slug": "invite_claimants_decision",
+      "type": "decision"
+    },
+    {
+      "id": "invite_knights_decision",
+      "name": "Invite …",
+      "page": "decisions",
+      "scan": false,
+      "slug": "invite_knights_decision",
+      "type": "decision"
+    },
+    {
+      "id": "invite_poets_decision",
+      "name": "Invite Poets",
+      "page": "decisions",
+      "scan": false,
+      "slug": "invite_poets_decision",
+      "type": "decision"
+    },
+    {
+      "id": "invite_religious_exiles_decision",
+      "name": "Invite Religious Exiles",
+      "page": "decisions",
+      "scan": false,
+      "slug": "invite_religious_exiles_decision",
+      "type": "decision"
     },
     {
       "id": "iqta_special_rights",
@@ -35520,6 +37417,22 @@
       "scan": true,
       "slug": "ismaili",
       "type": "faith"
+    },
+    {
+      "id": "isolate_capital_decision",
+      "name": "Isolate Capital",
+      "page": "decisions",
+      "scan": false,
+      "slug": "isolate_capital_decision",
+      "type": "decision"
+    },
+    {
+      "id": "isolate_family_decision",
+      "name": "Enter Seclusion",
+      "page": "decisions",
+      "scan": false,
+      "slug": "isolate_family_decision",
+      "type": "decision"
     },
     {
       "id": "isolation_law",
@@ -35768,6 +37681,22 @@
       "scan": false,
       "slug": "japanese_regency_succession_law",
       "type": "law"
+    },
+    {
+      "id": "jester_entertainment_decision",
+      "name": "Be Entertained by the Court Jester",
+      "page": "decisions",
+      "scan": false,
+      "slug": "jester_entertainment_decision",
+      "type": "decision"
+    },
+    {
+      "id": "jewish_restore_high_priesthood_decision",
+      "name": "Restore the … High Priesthood",
+      "page": "decisions",
+      "scan": false,
+      "slug": "jewish_restore_high_priesthood_decision",
+      "type": "decision"
     },
     {
       "icon": "img/buildings/icon_structure_mines.webp",
@@ -38323,6 +40252,14 @@
       "type": "legacy_track"
     },
     {
+      "id": "kindle_royal_fire_decision",
+      "name": "Kindle Royal Fire",
+      "page": "decisions",
+      "scan": false,
+      "slug": "kindle_royal_fire_decision",
+      "type": "decision"
+    },
+    {
       "id": "kingsguard_perk",
       "name": "Household Guard",
       "page": "lifestyles",
@@ -38383,6 +40320,14 @@
       "scan": false,
       "slug": "knight_errant",
       "type": "trait"
+    },
+    {
+      "id": "knight_errant_decision",
+      "name": "The … of the …",
+      "page": "decisions",
+      "scan": false,
+      "slug": "knight_errant_decision",
+      "type": "decision"
     },
     {
       "id": "know_thyself_perk",
@@ -39323,6 +41268,22 @@
       "type": "perk"
     },
     {
+      "id": "launch_a_legendary_adventure",
+      "name": "Launch a Legendary Adventure",
+      "page": "decisions",
+      "scan": false,
+      "slug": "launch_a_legendary_adventure",
+      "type": "decision"
+    },
+    {
+      "id": "launch_hungarian_migration_decision",
+      "name": "Prepare to Cross the Carpathians",
+      "page": "decisions",
+      "scan": false,
+      "slug": "launch_hungarian_migration_decision",
+      "type": "decision"
+    },
+    {
       "icon": "img/court/laureate_camp_officer.webp",
       "id": "laureate_camp_officer",
       "name": "Laureate",
@@ -39422,6 +41383,14 @@
       "type": "focus"
     },
     {
+      "id": "learning_oath_1_decision",
+      "name": "Foster Enlightenment …",
+      "page": "decisions",
+      "scan": false,
+      "slug": "learning_oath_1_decision",
+      "type": "decision"
+    },
+    {
       "id": "learning_scholarship_focus",
       "name": "learning_scholarship_focus",
       "page": "lifestyles",
@@ -39436,6 +41405,14 @@
       "scan": false,
       "slug": "learning_theology_focus",
       "type": "focus"
+    },
+    {
+      "id": "leave_confederation_decision",
+      "name": "Abandon Confederation",
+      "page": "decisions",
+      "scan": false,
+      "slug": "leave_confederation_decision",
+      "type": "decision"
     },
     {
       "icon": "img/cb/leg_demand_fealty_cb.webp",
@@ -39456,6 +41433,14 @@
       "type": "trait"
     },
     {
+      "id": "legend_demand_fealty",
+      "name": "Demand Local Submission",
+      "page": "decisions",
+      "scan": false,
+      "slug": "legend_demand_fealty",
+      "type": "decision"
+    },
+    {
       "icon": "img/cb/legendary_adventure.webp",
       "id": "legendary_adventure",
       "name": "Legendary Adventure",
@@ -39465,6 +41450,22 @@
       "type": "cb"
     },
     {
+      "id": "legendary_conversion",
+      "name": "Evangelize to the Realm",
+      "page": "decisions",
+      "scan": false,
+      "slug": "legendary_conversion",
+      "type": "decision"
+    },
+    {
+      "id": "legendary_holy_war",
+      "name": "Reassert the Holy Mission",
+      "page": "decisions",
+      "scan": false,
+      "slug": "legendary_holy_war",
+      "type": "decision"
+    },
+    {
       "icon": "img/buildings/icon_building_legendary_hunting_grounds.webp",
       "id": "legendary_hunting_lodge",
       "name": "Legendary Hunting Lodge",
@@ -39472,6 +41473,38 @@
       "scan": false,
       "slug": "legendary_hunting_lodge",
       "type": "building"
+    },
+    {
+      "id": "legendary_integration_d",
+      "name": "Expand the Realm",
+      "page": "decisions",
+      "scan": false,
+      "slug": "legendary_integration_d",
+      "type": "decision"
+    },
+    {
+      "id": "legendary_integration_e",
+      "name": "Exalt the Realm",
+      "page": "decisions",
+      "scan": false,
+      "slug": "legendary_integration_e",
+      "type": "decision"
+    },
+    {
+      "id": "legendary_integration_k",
+      "name": "Consolidate the Realm",
+      "page": "decisions",
+      "scan": false,
+      "slug": "legendary_integration_k",
+      "type": "decision"
+    },
+    {
+      "id": "legendary_pacifism_spread",
+      "name": "Evangelize Pacifism",
+      "page": "decisions",
+      "scan": false,
+      "slug": "legendary_pacifism_spread",
+      "type": "decision"
     },
     {
       "icon": "img/buildings/icon_building_legendary_palace.webp",
@@ -39508,6 +41541,14 @@
       "scan": false,
       "slug": "legendary_watchtower",
       "type": "building"
+    },
+    {
+      "id": "legitimize_latin_dominion_decision",
+      "name": "Legitimize Latin Dominion",
+      "page": "decisions",
+      "scan": false,
+      "slug": "legitimize_latin_dominion_decision",
+      "type": "decision"
     },
     {
       "icon": "img/traits/legitimized_bastard.webp",
@@ -39785,6 +41826,14 @@
       "type": "building"
     },
     {
+      "id": "local_arbitration_decision",
+      "name": "Local Arbitration",
+      "page": "decisions",
+      "scan": false,
+      "slug": "local_arbitration_decision",
+      "type": "decision"
+    },
+    {
       "id": "local_arbitration_perk",
       "name": "Arbitration",
       "page": "lifestyles",
@@ -39863,6 +41912,14 @@
       "type": "building"
     },
     {
+      "id": "lose_weight_decision",
+      "name": "Lose Weight",
+      "page": "decisions",
+      "scan": false,
+      "slug": "lose_weight_decision",
+      "type": "decision"
+    },
+    {
       "icon": "img/traits/lovers_pox.webp",
       "id": "lovers_pox",
       "name": "Lover's Pox",
@@ -39896,6 +41953,14 @@
       "scan": false,
       "slug": "lunatic_1",
       "type": "trait"
+    },
+    {
+      "id": "lunatic_building_decision",
+      "name": "Build a Glass Monument",
+      "page": "decisions",
+      "scan": false,
+      "slug": "lunatic_building_decision",
+      "type": "decision"
     },
     {
       "icon": "img/traits/lunatic_genetic.webp",
@@ -40196,13 +42261,52 @@
       "type": "perk"
     },
     {
-      "icon": "img/buildings/tgp_icon_building_mandala_capital_tier_01.webp",
+      "id": "mandala_adopt_clan_government_decision",
+      "name": "Adopt Clan Ways",
+      "page": "decisions",
+      "scan": false,
+      "slug": "mandala_adopt_clan_government_decision",
+      "type": "decision"
+    },
+    {
       "id": "mandala_capital_01",
-      "name": "Ornate Temple",
-      "page": "buildings",
+      "name": "Capital Temple Complex",
+      "page": "great-projects",
       "scan": false,
       "slug": "mandala_capital_01",
-      "type": "building"
+      "type": "great_project"
+    },
+    {
+      "id": "mandala_capital_02",
+      "name": "Capital Temple Complex Upgrade",
+      "page": "great-projects",
+      "scan": false,
+      "slug": "mandala_capital_02",
+      "type": "great_project"
+    },
+    {
+      "id": "mandala_capital_03",
+      "name": "Capital Temple Complex Upgrade",
+      "page": "great-projects",
+      "scan": false,
+      "slug": "mandala_capital_03",
+      "type": "great_project"
+    },
+    {
+      "id": "mandala_capital_04",
+      "name": "Capital Temple Complex Upgrade",
+      "page": "great-projects",
+      "scan": false,
+      "slug": "mandala_capital_04",
+      "type": "great_project"
+    },
+    {
+      "id": "mandala_capital_05",
+      "name": "Capital Temple Complex Upgrade",
+      "page": "great-projects",
+      "scan": false,
+      "slug": "mandala_capital_05",
+      "type": "great_project"
     },
     {
       "id": "mandala_decree_expansion",
@@ -40448,6 +42552,22 @@
       "type": "pillar"
     },
     {
+      "id": "martial_oath_1_decision",
+      "name": "Consolidate the … …",
+      "page": "decisions",
+      "scan": false,
+      "slug": "martial_oath_1_decision",
+      "type": "decision"
+    },
+    {
+      "id": "martial_oath_2_decision",
+      "name": "Expand the Realm …",
+      "page": "decisions",
+      "scan": false,
+      "slug": "martial_oath_2_decision",
+      "type": "decision"
+    },
+    {
       "id": "martial_strategy_focus",
       "name": "martial_strategy_focus",
       "page": "lifestyles",
@@ -40573,6 +42693,14 @@
       "type": "trait"
     },
     {
+      "id": "meditate_in_seclusion_decision",
+      "name": "Meditate in Seclusion",
+      "page": "decisions",
+      "scan": false,
+      "slug": "meditate_in_seclusion_decision",
+      "type": "decision"
+    },
+    {
       "icon": "img/buildings/icon_megalith.webp",
       "id": "megalith_01",
       "name": "Minor Megalith",
@@ -40589,6 +42717,22 @@
       "scan": true,
       "slug": "melieism",
       "type": "faith"
+    },
+    {
+      "id": "mend_the_fracture_oath_decision",
+      "name": "Mend the Fracture …",
+      "page": "decisions",
+      "scan": false,
+      "slug": "mend_the_fracture_oath_decision",
+      "type": "decision"
+    },
+    {
+      "id": "mend_the_great_schism_decision",
+      "name": "Mend the Great Schism",
+      "page": "decisions",
+      "scan": false,
+      "slug": "mend_the_great_schism_decision",
+      "type": "decision"
     },
     {
       "id": "mental_resilience_perk",
@@ -40622,6 +42766,14 @@
       "scan": false,
       "slug": "mercenary_government",
       "type": "government"
+    },
+    {
+      "id": "merge_aquitaine_decision",
+      "name": "France as One",
+      "page": "decisions",
+      "scan": false,
+      "slug": "merge_aquitaine_decision",
+      "type": "decision"
     },
     {
       "id": "meritocracy_perk",
@@ -40861,6 +43013,14 @@
       "type": "court_position"
     },
     {
+      "id": "minister_compel_religious_uniformity",
+      "name": "Compel Religious Uniformity",
+      "page": "great-projects",
+      "scan": false,
+      "slug": "minister_compel_religious_uniformity",
+      "type": "great_project"
+    },
+    {
       "id": "minister_grand_marshal",
       "name": "Grand Marshal",
       "page": "council",
@@ -40883,6 +43043,46 @@
       "scan": false,
       "slug": "minister_personnel",
       "type": "council_position"
+    },
+    {
+      "id": "minister_project_conduct_census",
+      "name": "Conduct Census",
+      "page": "great-projects",
+      "scan": false,
+      "slug": "minister_project_conduct_census",
+      "type": "great_project"
+    },
+    {
+      "id": "minister_project_culture",
+      "name": "Culture Convert Area",
+      "page": "great-projects",
+      "scan": false,
+      "slug": "minister_project_culture",
+      "type": "great_project"
+    },
+    {
+      "id": "minister_project_development",
+      "name": "Develop Communities",
+      "page": "great-projects",
+      "scan": false,
+      "slug": "minister_project_development",
+      "type": "great_project"
+    },
+    {
+      "id": "minister_project_establish_control",
+      "name": "Establish Control",
+      "page": "great-projects",
+      "scan": false,
+      "slug": "minister_project_establish_control",
+      "type": "great_project"
+    },
+    {
+      "id": "minister_project_train_troops",
+      "name": "Military Operation Exercise",
+      "page": "great-projects",
+      "scan": false,
+      "slug": "minister_project_train_troops",
+      "type": "great_project"
     },
     {
       "id": "minister_works",
@@ -41035,6 +43235,46 @@
       "type": "maa"
     },
     {
+      "id": "move_shogunate_court_decision",
+      "name": "Move the … Court",
+      "page": "decisions",
+      "scan": false,
+      "slug": "move_shogunate_court_decision",
+      "type": "decision"
+    },
+    {
+      "id": "movement_petition_change_laws_decision",
+      "name": "Make Movement Petition",
+      "page": "decisions",
+      "scan": false,
+      "slug": "movement_petition_change_laws_decision",
+      "type": "decision"
+    },
+    {
+      "id": "movement_petition_decision",
+      "name": "Make Movement Petition",
+      "page": "decisions",
+      "scan": false,
+      "slug": "movement_petition_decision",
+      "type": "decision"
+    },
+    {
+      "id": "mozarabic_bind_the_faith_to_rome_decision",
+      "name": "Bind the Faith to Rome",
+      "page": "decisions",
+      "scan": false,
+      "slug": "mozarabic_bind_the_faith_to_rome_decision",
+      "type": "decision"
+    },
+    {
+      "id": "mozarabic_break_with_rome_decision",
+      "name": "Break with Rome",
+      "page": "decisions",
+      "scan": false,
+      "slug": "mozarabic_break_with_rome_decision",
+      "type": "decision"
+    },
+    {
       "icon": "img/faith/mozarabic_church.webp",
       "id": "mozarabic_church",
       "name": "Mozarabism",
@@ -41053,6 +43293,78 @@
       "type": "building"
     },
     {
+      "id": "mpo_abuse_authority_paiza_decision",
+      "name": "Abuse Gurkhan's Authority",
+      "page": "decisions",
+      "scan": false,
+      "slug": "mpo_abuse_authority_paiza_decision",
+      "type": "decision"
+    },
+    {
+      "id": "mpo_become_greatest_of_khans_decision",
+      "name": "Become the Greatest of All Khans",
+      "page": "decisions",
+      "scan": false,
+      "slug": "mpo_become_greatest_of_khans_decision",
+      "type": "decision"
+    },
+    {
+      "id": "mpo_call_for_merchants_decision",
+      "name": "Summon Wealthy Visitors: Paiza",
+      "page": "decisions",
+      "scan": false,
+      "slug": "mpo_call_for_merchants_decision",
+      "type": "decision"
+    },
+    {
+      "id": "mpo_call_for_merchants_small_decision",
+      "name": "Summon Wealthy Visitors: Local Offers",
+      "page": "decisions",
+      "scan": false,
+      "slug": "mpo_call_for_merchants_small_decision",
+      "type": "decision"
+    },
+    {
+      "id": "mpo_decision_fertility_dance",
+      "name": "Call for an Assembly",
+      "page": "decisions",
+      "scan": false,
+      "slug": "mpo_decision_fertility_dance",
+      "type": "decision"
+    },
+    {
+      "id": "mpo_decision_introduce_heir",
+      "name": "Introduce Heir",
+      "page": "decisions",
+      "scan": false,
+      "slug": "mpo_decision_introduce_heir",
+      "type": "decision"
+    },
+    {
+      "id": "mpo_desperate_stance_decision",
+      "name": "Desperate Times",
+      "page": "decisions",
+      "scan": false,
+      "slug": "mpo_desperate_stance_decision",
+      "type": "decision"
+    },
+    {
+      "id": "mpo_divination_decision",
+      "name": "Consult the Skies",
+      "page": "decisions",
+      "scan": false,
+      "slug": "mpo_divination_decision",
+      "type": "decision"
+    },
+    {
+      "id": "mpo_establish_paiza_system_decision",
+      "name": "Establish Paiza System",
+      "page": "decisions",
+      "scan": false,
+      "slug": "mpo_establish_paiza_system_decision",
+      "type": "decision"
+    },
+    {
       "icon": "img/cb/mpo_gok_onslaught_cb.webp",
       "id": "mpo_gok_onslaught_cb",
       "name": "Greatest of Khans' Onslaught",
@@ -41060,6 +43372,14 @@
       "scan": false,
       "slug": "mpo_gok_onslaught_cb",
       "type": "cb"
+    },
+    {
+      "id": "mpo_gok_world_conquest_decision",
+      "name": "Reform the Great Khaganate",
+      "page": "decisions",
+      "scan": false,
+      "slug": "mpo_gok_world_conquest_decision",
+      "type": "decision"
     },
     {
       "icon": "img/cb/mpo_great_war_of_defiance_cb.webp",
@@ -41136,6 +43456,22 @@
       "scan": false,
       "slug": "mpo_nomad_legacy_track",
       "type": "legacy_track"
+    },
+    {
+      "id": "mpo_pax_mongolica_decision",
+      "name": "Peace of the Great Khan",
+      "page": "decisions",
+      "scan": false,
+      "slug": "mpo_pax_mongolica_decision",
+      "type": "decision"
+    },
+    {
+      "id": "mpo_pleasure_dome_decision",
+      "name": "Devise Pleasure Dome",
+      "page": "decisions",
+      "scan": false,
+      "slug": "mpo_pleasure_dome_decision",
+      "type": "decision"
     },
     {
       "icon": "img/faith/mu.webp",
@@ -41347,6 +43683,22 @@
       "type": "cb"
     },
     {
+      "id": "negotiate_the_danelaw_decision",
+      "name": "Negotiate the Danelaw",
+      "page": "decisions",
+      "scan": false,
+      "slug": "negotiate_the_danelaw_decision",
+      "type": "decision"
+    },
+    {
+      "id": "negotiate_the_danelaw_integrate_duchies_decision",
+      "name": "Integrate English Duchy",
+      "page": "decisions",
+      "scan": false,
+      "slug": "negotiate_the_danelaw_integrate_duchies_decision",
+      "type": "decision"
+    },
+    {
       "icon": "img/faith/nestorian.webp",
       "id": "nestorian",
       "name": "Nestorianism",
@@ -41438,6 +43790,23 @@
       "scan": false,
       "slug": "nomad_government_taxes",
       "type": "contract"
+    },
+    {
+      "id": "nomad_higher_tier_title_decision",
+      "name": "…",
+      "page": "decisions",
+      "scan": false,
+      "slug": "nomad_higher_tier_title_decision",
+      "type": "decision"
+    },
+    {
+      "icon": "img/holdings/nomad_holding.webp",
+      "id": "nomad_holding",
+      "name": "Nomadic Settlement",
+      "page": "holdings",
+      "scan": false,
+      "slug": "nomad_holding",
+      "type": "holding"
     },
     {
       "icon": "img/maa/nomad_lancers.webp",
@@ -41710,6 +44079,14 @@
       "type": "building"
     },
     {
+      "id": "order_mass_eviction_decision",
+      "name": "Order Mass Eviction",
+      "page": "decisions",
+      "scan": false,
+      "slug": "order_mass_eviction_decision",
+      "type": "decision"
+    },
+    {
       "icon": "img/traits/order_member.webp",
       "id": "order_member",
       "name": "Order Member",
@@ -41955,6 +44332,14 @@
       "type": "cb"
     },
     {
+      "id": "pay_homage_decision",
+      "name": "Pay Homage",
+      "page": "decisions",
+      "scan": false,
+      "slug": "pay_homage_decision",
+      "type": "decision"
+    },
+    {
       "id": "peacemaker_perk",
       "name": "Peacemaker",
       "page": "lifestyles",
@@ -42031,6 +44416,38 @@
       "scan": true,
       "slug": "pesilat_warriors",
       "type": "maa"
+    },
+    {
+      "id": "pet_cat_decision",
+      "name": "Pet …",
+      "page": "decisions",
+      "scan": false,
+      "slug": "pet_cat_decision",
+      "type": "decision"
+    },
+    {
+      "id": "pet_dog_decision",
+      "name": "Pet …",
+      "page": "decisions",
+      "scan": false,
+      "slug": "pet_dog_decision",
+      "type": "decision"
+    },
+    {
+      "id": "petition_ceremonial_liege_decision",
+      "name": "Petition the Ceremonial Monarch",
+      "page": "decisions",
+      "scan": false,
+      "slug": "petition_ceremonial_liege_decision",
+      "type": "decision"
+    },
+    {
+      "id": "petition_liege_decision",
+      "name": "Petition the …",
+      "page": "decisions",
+      "scan": false,
+      "slug": "petition_liege_decision",
+      "type": "decision"
     },
     {
       "icon": "img/buildings/icon_structure_petra.webp",
@@ -42123,6 +44540,14 @@
       "type": "maa"
     },
     {
+      "id": "pick_legendary_barony_decision",
+      "name": "Clear Ground for a Legendary Building",
+      "page": "decisions",
+      "scan": false,
+      "slug": "pick_legendary_barony_decision",
+      "type": "decision"
+    },
+    {
       "icon": "img/court/pike_captain_camp_officer.webp",
       "id": "pike_captain_camp_officer",
       "name": "Pike Captain",
@@ -42192,6 +44617,14 @@
       "scan": false,
       "slug": "pleasure_dome",
       "type": "building"
+    },
+    {
+      "id": "pledge_loyalty_to_liege_decision",
+      "name": "Pledge Loyalty to the …",
+      "page": "decisions",
+      "scan": false,
+      "slug": "pledge_loyalty_to_liege_decision",
+      "type": "decision"
     },
     {
       "icon": "img/traits/pneumonic.webp",
@@ -42298,6 +44731,14 @@
       "type": "perk"
     },
     {
+      "id": "pray_to_protective_amulet_decision",
+      "name": "Pray to Protective Amulet",
+      "page": "decisions",
+      "scan": false,
+      "slug": "pray_to_protective_amulet_decision",
+      "type": "decision"
+    },
+    {
       "icon": "img/traits/pregnant.webp",
       "id": "pregnant",
       "name": "Pregnant",
@@ -42305,6 +44746,14 @@
       "scan": false,
       "slug": "pregnant",
       "type": "trait"
+    },
+    {
+      "id": "prepare_greek_fire_dromons_decision",
+      "name": "Prepare Greek Fire Dromons",
+      "page": "decisions",
+      "scan": false,
+      "slug": "prepare_greek_fire_dromons_decision",
+      "type": "decision"
     },
     {
       "id": "prepared_conscription_perk",
@@ -42373,12 +44822,68 @@
       "type": "perk"
     },
     {
+      "id": "promote_gothic_innovations_decision",
+      "name": "Inspire Opus Francigenum",
+      "page": "decisions",
+      "scan": false,
+      "slug": "promote_gothic_innovations_decision",
+      "type": "decision"
+    },
+    {
+      "id": "promote_hungarian_settlement_decision",
+      "name": "Promote Christian Settlements",
+      "page": "decisions",
+      "scan": false,
+      "slug": "promote_hungarian_settlement_decision",
+      "type": "decision"
+    },
+    {
+      "id": "promote_other_culture_development_decision",
+      "name": "Celebrate Other Cultures",
+      "page": "decisions",
+      "scan": false,
+      "slug": "promote_other_culture_development_decision",
+      "type": "decision"
+    },
+    {
       "id": "prophet_perk",
       "name": "Prophet",
       "page": "lifestyles",
       "scan": false,
       "slug": "prophet_perk",
       "type": "perk"
+    },
+    {
+      "id": "proselytize_to_your_people_decision",
+      "name": "Spread … to your People",
+      "page": "decisions",
+      "scan": false,
+      "slug": "proselytize_to_your_people_decision",
+      "type": "decision"
+    },
+    {
+      "id": "provide_for_the_faithful_oath_decision",
+      "name": "Provide for the Faithful …",
+      "page": "decisions",
+      "scan": false,
+      "slug": "provide_for_the_faithful_oath_decision",
+      "type": "decision"
+    },
+    {
+      "id": "provide_for_the_poor_oath_decision",
+      "name": "Provide for the Poor …",
+      "page": "decisions",
+      "scan": false,
+      "slug": "provide_for_the_poor_oath_decision",
+      "type": "decision"
+    },
+    {
+      "id": "provide_for_the_warriors_oath_decision",
+      "name": "Support My … …",
+      "page": "decisions",
+      "scan": false,
+      "slug": "provide_for_the_warriors_oath_decision",
+      "type": "decision"
     },
     {
       "id": "province_border_law_0",
@@ -42462,6 +44967,22 @@
       "scan": false,
       "slug": "pure_blooded",
       "type": "trait"
+    },
+    {
+      "id": "purge_pretenders_oath_decision",
+      "name": "Purge Pretenders …",
+      "page": "decisions",
+      "scan": false,
+      "slug": "purge_pretenders_oath_decision",
+      "type": "decision"
+    },
+    {
+      "id": "push_heresy_as_state_faith",
+      "name": "Push State Faith Change",
+      "page": "decisions",
+      "scan": false,
+      "slug": "push_heresy_as_state_faith",
+      "type": "decision"
     },
     {
       "icon": "img/buildings/icon_structure_pyramid_lingapura.webp",
@@ -42606,6 +45127,22 @@
       "type": "building"
     },
     {
+      "id": "raise_runestone_decision",
+      "name": "Raise a Runestone",
+      "page": "decisions",
+      "scan": false,
+      "slug": "raise_runestone_decision",
+      "type": "decision"
+    },
+    {
+      "id": "raise_stele_decision",
+      "name": "Raise Runestone",
+      "page": "decisions",
+      "scan": false,
+      "slug": "raise_stele_decision",
+      "type": "decision"
+    },
+    {
       "icon": "img/traits/rakish.webp",
       "id": "rakish",
       "name": "Rakish",
@@ -42659,6 +45196,14 @@
       "type": "trait"
     },
     {
+      "id": "rebuke_roman_revanchism_sicily",
+      "name": "Rebuke Roman Revanchism for Sicily",
+      "page": "decisions",
+      "scan": false,
+      "slug": "rebuke_roman_revanchism_sicily",
+      "type": "decision"
+    },
+    {
       "icon": "img/traits/reckless.webp",
       "id": "reckless",
       "name": "Reckless",
@@ -42666,6 +45211,14 @@
       "scan": false,
       "slug": "reckless",
       "type": "trait"
+    },
+    {
+      "id": "reclaim_britannia_decision",
+      "name": "Reclaim Britannia",
+      "page": "decisions",
+      "scan": false,
+      "slug": "reclaim_britannia_decision",
+      "type": "decision"
     },
     {
       "icon": "img/cb/reclaim_relic_artifact_war.webp",
@@ -42684,6 +45237,62 @@
       "scan": false,
       "slug": "reclusive",
       "type": "trait"
+    },
+    {
+      "id": "reconfirm_grain_dole_decision",
+      "name": "Reconfirm the Grain Dole",
+      "page": "decisions",
+      "scan": false,
+      "slug": "reconfirm_grain_dole_decision",
+      "type": "decision"
+    },
+    {
+      "id": "recreate_byzantine_empire_decision",
+      "name": "Restore the Byzantine Empire",
+      "page": "decisions",
+      "scan": false,
+      "slug": "recreate_byzantine_empire_decision",
+      "type": "decision"
+    },
+    {
+      "id": "recruit_court_position_decision",
+      "name": "Recruit for a Court Position",
+      "page": "decisions",
+      "scan": false,
+      "slug": "recruit_court_position_decision",
+      "type": "decision"
+    },
+    {
+      "id": "recruit_from_nomadic_capital_decision",
+      "name": "Recruit … from Nomadic Capital",
+      "page": "decisions",
+      "scan": false,
+      "slug": "recruit_from_nomadic_capital_decision",
+      "type": "decision"
+    },
+    {
+      "id": "recruit_terrain_specialist_decision",
+      "name": "Recruit Terrain Specialist",
+      "page": "decisions",
+      "scan": false,
+      "slug": "recruit_terrain_specialist_decision",
+      "type": "decision"
+    },
+    {
+      "id": "reform_carolingian_empire_decision",
+      "name": "Restore Carolingian Borders",
+      "page": "decisions",
+      "scan": false,
+      "slug": "reform_carolingian_empire_decision",
+      "type": "decision"
+    },
+    {
+      "id": "refound_pandidakterion_decision",
+      "name": "Refound the Pandidakterion",
+      "page": "decisions",
+      "scan": false,
+      "slug": "refound_pandidakterion_decision",
+      "type": "decision"
     },
     {
       "icon": "img/cb/refused_liege_demand_war.webp",
@@ -42711,6 +45320,22 @@
       "scan": false,
       "slug": "reincarnation",
       "type": "trait"
+    },
+    {
+      "id": "reinstitute_grain_dole_decision",
+      "name": "Reinstate the Grain Dole",
+      "page": "decisions",
+      "scan": false,
+      "slug": "reinstitute_grain_dole_decision",
+      "type": "decision"
+    },
+    {
+      "id": "reject_inheritance_decision",
+      "name": "Reject Inheritance",
+      "page": "decisions",
+      "scan": false,
+      "slug": "reject_inheritance_decision",
+      "type": "decision"
     },
     {
       "id": "religious_icon_perk",
@@ -42747,6 +45372,54 @@
       "type": "cb"
     },
     {
+      "id": "renounce_governorship_decision",
+      "name": "Withdraw from Governorship",
+      "page": "decisions",
+      "scan": false,
+      "slug": "renounce_governorship_decision",
+      "type": "decision"
+    },
+    {
+      "id": "renounce_noble_family_title_decision",
+      "name": "Retire from Heading the … House",
+      "page": "decisions",
+      "scan": false,
+      "slug": "renounce_noble_family_title_decision",
+      "type": "decision"
+    },
+    {
+      "id": "renounce_vow_of_poverty_decision",
+      "name": "Renounce Vow of Poverty",
+      "page": "decisions",
+      "scan": false,
+      "slug": "renounce_vow_of_poverty_decision",
+      "type": "decision"
+    },
+    {
+      "id": "renounce_vows_decision",
+      "name": "Renounce Vows",
+      "page": "decisions",
+      "scan": false,
+      "slug": "renounce_vows_decision",
+      "type": "decision"
+    },
+    {
+      "id": "repay_loan_decision",
+      "name": "Repay Loan",
+      "page": "decisions",
+      "scan": false,
+      "slug": "repay_loan_decision",
+      "type": "decision"
+    },
+    {
+      "id": "repent_oath_decision",
+      "name": "Repent …",
+      "page": "decisions",
+      "scan": false,
+      "slug": "repent_oath_decision",
+      "type": "decision"
+    },
+    {
       "icon": "img/cb/replace_ceremonial_regent_faction_war.webp",
       "id": "replace_ceremonial_regent_faction_war",
       "name": "Install Ruling Regent",
@@ -42773,6 +45446,30 @@
       "type": "contract"
     },
     {
+      "id": "restore_backwater_counties_decision",
+      "name": "Restore …",
+      "page": "decisions",
+      "scan": false,
+      "slug": "restore_backwater_counties_decision",
+      "type": "decision"
+    },
+    {
+      "id": "restore_badd_fortress_decision",
+      "name": "Establish … Stronghold",
+      "page": "decisions",
+      "scan": false,
+      "slug": "restore_badd_fortress_decision",
+      "type": "decision"
+    },
+    {
+      "id": "restore_carthage_decision",
+      "name": "Restore Carthage",
+      "page": "decisions",
+      "scan": false,
+      "slug": "restore_carthage_decision",
+      "type": "decision"
+    },
+    {
       "icon": "img/cb/restore_ceremonial_liege_faction_war.webp",
       "id": "restore_ceremonial_liege_faction_war",
       "name": "Restore Ceremonial Monarch",
@@ -42780,6 +45477,94 @@
       "scan": false,
       "slug": "restore_ceremonial_liege_faction_war",
       "type": "cb"
+    },
+    {
+      "id": "restore_dumnonia_decision",
+      "name": "Restore the Kingdom of Cornwall",
+      "page": "decisions",
+      "scan": false,
+      "slug": "restore_dumnonia_decision",
+      "type": "decision"
+    },
+    {
+      "id": "restore_ecumenical_patriarchate_decision",
+      "name": "Restore Ecumenical Patriarchate",
+      "page": "decisions",
+      "scan": false,
+      "slug": "restore_ecumenical_patriarchate_decision",
+      "type": "decision"
+    },
+    {
+      "id": "restore_holy_roman_empire_decision",
+      "name": "Restore the Holy Roman Empire",
+      "page": "decisions",
+      "scan": false,
+      "slug": "restore_holy_roman_empire_decision",
+      "type": "decision"
+    },
+    {
+      "id": "restore_mandala_capital_decision",
+      "name": "Restore Mandala Capital",
+      "page": "decisions",
+      "scan": false,
+      "slug": "restore_mandala_capital_decision",
+      "type": "decision"
+    },
+    {
+      "id": "restore_old_vasconia_decision",
+      "name": "Restore Old Vasconia",
+      "page": "decisions",
+      "scan": false,
+      "slug": "restore_old_vasconia_decision",
+      "type": "decision"
+    },
+    {
+      "id": "restore_papacy_decision",
+      "name": "Restore the Papacy",
+      "page": "decisions",
+      "scan": false,
+      "slug": "restore_papacy_decision",
+      "type": "decision"
+    },
+    {
+      "id": "restore_pope_in_rome_decision",
+      "name": "Restore Pope in Rome",
+      "page": "decisions",
+      "scan": false,
+      "slug": "restore_pope_in_rome_decision",
+      "type": "decision"
+    },
+    {
+      "id": "restore_roman_empire_decision",
+      "name": "Restore the Roman Empire",
+      "page": "decisions",
+      "scan": false,
+      "slug": "restore_roman_empire_decision",
+      "type": "decision"
+    },
+    {
+      "id": "restore_roman_empire_holy_decision",
+      "name": "Restore the Roman Empire",
+      "page": "decisions",
+      "scan": false,
+      "slug": "restore_roman_empire_holy_decision",
+      "type": "decision"
+    },
+    {
+      "id": "restore_roman_empire_italian_decision",
+      "name": "Restore the Roman Empire",
+      "page": "decisions",
+      "scan": false,
+      "slug": "restore_roman_empire_italian_decision",
+      "type": "decision"
+    },
+    {
+      "id": "restore_sunni_caliphate_decision",
+      "name": "Restore the Ash'ari Caliphate",
+      "page": "decisions",
+      "scan": false,
+      "slug": "restore_sunni_caliphate_decision",
+      "type": "decision"
     },
     {
       "id": "restraint_perk",
@@ -42790,6 +45575,14 @@
       "type": "perk"
     },
     {
+      "id": "retake_eastern_provinces_decision",
+      "name": "Re-Establish the Theodosian Borders",
+      "page": "decisions",
+      "scan": false,
+      "slug": "retake_eastern_provinces_decision",
+      "type": "decision"
+    },
+    {
       "icon": "img/cb/retaliation_cb.webp",
       "id": "retaliation_cb",
       "name": "Retaliation War",
@@ -42797,6 +45590,46 @@
       "scan": false,
       "slug": "retaliation_cb",
       "type": "cb"
+    },
+    {
+      "id": "return_rome_decision",
+      "name": "Return Roma",
+      "page": "decisions",
+      "scan": false,
+      "slug": "return_rome_decision",
+      "type": "decision"
+    },
+    {
+      "id": "return_to_the_steppe_decision",
+      "name": "Return to the Steppe",
+      "page": "decisions",
+      "scan": false,
+      "slug": "return_to_the_steppe_decision",
+      "type": "decision"
+    },
+    {
+      "id": "revive_magyar_paganism_decision",
+      "name": "Revive Táltosism",
+      "page": "decisions",
+      "scan": false,
+      "slug": "revive_magyar_paganism_decision",
+      "type": "decision"
+    },
+    {
+      "id": "revoke_false_conversion_decision",
+      "name": "Reveal True Faith",
+      "page": "decisions",
+      "scan": false,
+      "slug": "revoke_false_conversion_decision",
+      "type": "decision"
+    },
+    {
+      "id": "rites_of_passage_decision",
+      "name": "Rites of Passage",
+      "page": "decisions",
+      "scan": false,
+      "slug": "rites_of_passage_decision",
+      "type": "decision"
     },
     {
       "id": "roaming_perk",
@@ -42924,6 +45757,14 @@
       "type": "building"
     },
     {
+      "id": "sacrifice_bear_decision",
+      "name": "Sacrifice Bear",
+      "page": "decisions",
+      "scan": false,
+      "slug": "sacrifice_bear_decision",
+      "type": "decision"
+    },
+    {
       "icon": "img/traits/sadistic.webp",
       "id": "sadistic",
       "name": "Sadistic",
@@ -42976,6 +45817,14 @@
       "scan": false,
       "slug": "saint_lazarus",
       "type": "building"
+    },
+    {
+      "id": "sale_of_titles_decision",
+      "name": "Sell Trivial Titles",
+      "page": "decisions",
+      "scan": false,
+      "slug": "sale_of_titles_decision",
+      "type": "decision"
     },
     {
       "icon": "img/faith/samaritan.webp",
@@ -43254,6 +46103,14 @@
       "type": "perk"
     },
     {
+      "id": "scrape_the_barrel_decision",
+      "name": "Scrape the Barrel",
+      "page": "decisions",
+      "scan": false,
+      "slug": "scrape_the_barrel_decision",
+      "type": "decision"
+    },
+    {
       "icon": "img/buildings/icon_building_library.webp",
       "id": "scriptorium_01",
       "name": "Libraries",
@@ -43263,6 +46120,22 @@
       "type": "building"
     },
     {
+      "id": "seasoned_visitor_decision",
+      "name": "The Travels of …",
+      "page": "decisions",
+      "scan": false,
+      "slug": "seasoned_visitor_decision",
+      "type": "decision"
+    },
+    {
+      "id": "secede_from_empire_decision",
+      "name": "Secede from …",
+      "page": "decisions",
+      "scan": false,
+      "slug": "secede_from_empire_decision",
+      "type": "decision"
+    },
+    {
       "icon": "img/court/second_camp_officer.webp",
       "id": "second_camp_officer",
       "name": "Second",
@@ -43270,6 +46143,30 @@
       "scan": true,
       "slug": "second_camp_officer",
       "type": "court_position"
+    },
+    {
+      "id": "secure_high_kingdom_north_sea_decision",
+      "name": "Secure the High Kingdom of the North Sea",
+      "page": "decisions",
+      "scan": false,
+      "slug": "secure_high_kingdom_north_sea_decision",
+      "type": "decision"
+    },
+    {
+      "id": "secure_iberian_foothold_decision",
+      "name": "Iberian Foothold",
+      "page": "decisions",
+      "scan": false,
+      "slug": "secure_iberian_foothold_decision",
+      "type": "decision"
+    },
+    {
+      "id": "secure_mediterranean_decision",
+      "name": "Secure the Mediterranean",
+      "page": "decisions",
+      "scan": false,
+      "slug": "secure_mediterranean_decision",
+      "type": "decision"
     },
     {
       "icon": "img/faith/sedism.webp",
@@ -43298,6 +46195,38 @@
       "type": "perk"
     },
     {
+      "id": "seek_aid_of_the_spirits_decision",
+      "name": "Seek Aid of the Spirits",
+      "page": "decisions",
+      "scan": false,
+      "slug": "seek_aid_of_the_spirits_decision",
+      "type": "decision"
+    },
+    {
+      "id": "seize_mandala_capital_decision",
+      "name": "Seize Mandala Temple Complex",
+      "page": "decisions",
+      "scan": false,
+      "slug": "seize_mandala_capital_decision",
+      "type": "decision"
+    },
+    {
+      "id": "select_personal_deity_germanic_decision",
+      "name": "Determine Personal Deity",
+      "page": "decisions",
+      "scan": false,
+      "slug": "select_personal_deity_germanic_decision",
+      "type": "decision"
+    },
+    {
+      "id": "select_personal_deity_hinduism_decision",
+      "name": "Determine Bhakti",
+      "page": "decisions",
+      "scan": false,
+      "slug": "select_personal_deity_hinduism_decision",
+      "type": "decision"
+    },
+    {
       "icon": "img/court/seneschal_court_position.webp",
       "id": "seneschal_court_position",
       "name": "Seneschal",
@@ -43305,6 +46234,14 @@
       "scan": true,
       "slug": "seneschal_court_position",
       "type": "court_position"
+    },
+    {
+      "id": "separatist_uprising_decision",
+      "name": "Champion the … Culture",
+      "page": "decisions",
+      "scan": false,
+      "slug": "separatist_uprising_decision",
+      "type": "decision"
     },
     {
       "id": "serve_the_crown_perk",
@@ -43315,6 +46252,30 @@
       "type": "perk"
     },
     {
+      "id": "set_capital_constantinople_decision",
+      "name": "Reclaim Constantinople",
+      "page": "decisions",
+      "scan": false,
+      "slug": "set_capital_constantinople_decision",
+      "type": "decision"
+    },
+    {
+      "id": "set_capital_rome_decision",
+      "name": "Reclaim Rome",
+      "page": "decisions",
+      "scan": false,
+      "slug": "set_capital_rome_decision",
+      "type": "decision"
+    },
+    {
+      "id": "set_de_jure_capital_decision",
+      "name": "Relocate De Jure Capital",
+      "page": "decisions",
+      "scan": false,
+      "slug": "set_de_jure_capital_decision",
+      "type": "decision"
+    },
+    {
       "icon": "img/faith/sethianism.webp",
       "id": "sethianism",
       "name": "Sethianism",
@@ -43322,6 +46283,22 @@
       "scan": true,
       "slug": "sethianism",
       "type": "faith"
+    },
+    {
+      "id": "settle_people_decision",
+      "name": "Move into Conquered Lands",
+      "page": "decisions",
+      "scan": false,
+      "slug": "settle_people_decision",
+      "type": "decision"
+    },
+    {
+      "id": "settle_the_steppe_decision",
+      "name": "Settle the Steppe",
+      "page": "decisions",
+      "scan": false,
+      "slug": "settle_the_steppe_decision",
+      "type": "decision"
     },
     {
       "icon": "img/buildings/icon_structure_shah_i_zindah.webp",
@@ -43575,6 +46552,30 @@
       "scan": false,
       "slug": "sinitic_hostility_doctrine",
       "type": "doctrine"
+    },
+    {
+      "id": "situation_dynastic_cycle_choose_movement_decision",
+      "name": "Join Movement",
+      "page": "decisions",
+      "scan": false,
+      "slug": "situation_dynastic_cycle_choose_movement_decision",
+      "type": "decision"
+    },
+    {
+      "id": "situation_dynastic_cycle_claim_mandate_decision",
+      "name": "Claim the Mandate of Heaven",
+      "page": "decisions",
+      "scan": false,
+      "slug": "situation_dynastic_cycle_claim_mandate_decision",
+      "type": "decision"
+    },
+    {
+      "id": "situation_dynastic_cycle_favor_own_culture_for_appointments",
+      "name": "Promote Cultural Governors",
+      "page": "decisions",
+      "scan": false,
+      "slug": "situation_dynastic_cycle_favor_own_culture_for_appointments",
+      "type": "decision"
     },
     {
       "icon": "img/maa/skoutatoi.webp",
@@ -43904,6 +46905,22 @@
       "type": "trait"
     },
     {
+      "id": "split_roman_empire_decision",
+      "name": "Cleave the Empire",
+      "page": "decisions",
+      "scan": false,
+      "slug": "split_roman_empire_decision",
+      "type": "decision"
+    },
+    {
+      "id": "spread_theravada_faith_decision",
+      "name": "Spread the … Faith",
+      "page": "decisions",
+      "scan": false,
+      "slug": "spread_theravada_faith_decision",
+      "type": "decision"
+    },
+    {
       "icon": "img/buildings/icon_structure_mines.webp",
       "id": "srebrenica_mines_01",
       "name": "Srebrenica Mining Settlement",
@@ -43937,6 +46954,22 @@
       "scan": false,
       "slug": "stalwart_leader_perk",
       "type": "perk"
+    },
+    {
+      "id": "start_city_construction_decision",
+      "name": "Found a Holding",
+      "page": "decisions",
+      "scan": false,
+      "slug": "start_city_construction_decision",
+      "type": "decision"
+    },
+    {
+      "id": "step_away_from_the_steppe_decision",
+      "name": "Forsake Nomadism",
+      "page": "decisions",
+      "scan": false,
+      "slug": "step_away_from_the_steppe_decision",
+      "type": "decision"
     },
     {
       "icon": "img/governments/steppe_admin_government.webp",
@@ -43979,6 +47012,22 @@
       "scan": false,
       "slug": "stewardship_duty_focus",
       "type": "focus"
+    },
+    {
+      "id": "stewardship_oath_1_decision",
+      "name": "Ensure Peace …",
+      "page": "decisions",
+      "scan": false,
+      "slug": "stewardship_oath_1_decision",
+      "type": "decision"
+    },
+    {
+      "id": "stewardship_oath_2_decision",
+      "name": "Shape the Realm …",
+      "page": "decisions",
+      "scan": false,
+      "slug": "stewardship_oath_2_decision",
+      "type": "decision"
     },
     {
       "id": "stewardship_wealth_focus",
@@ -44025,6 +47074,22 @@
       "type": "court_position"
     },
     {
+      "id": "stop_gain_weight_decision",
+      "name": "Stop Gaining Weight",
+      "page": "decisions",
+      "scan": false,
+      "slug": "stop_gain_weight_decision",
+      "type": "decision"
+    },
+    {
+      "id": "stop_lose_weight_decision",
+      "name": "Stop Losing Weight",
+      "page": "decisions",
+      "scan": false,
+      "slug": "stop_lose_weight_decision",
+      "type": "decision"
+    },
+    {
       "icon": "img/traits/strategist.webp",
       "id": "strategist",
       "name": "Strategist",
@@ -44040,6 +47105,134 @@
       "scan": false,
       "slug": "strategist_perk",
       "type": "perk"
+    },
+    {
+      "id": "strengthen_bloodline_decision",
+      "name": "Strengthen Bloodline",
+      "page": "decisions",
+      "scan": false,
+      "slug": "strengthen_bloodline_decision",
+      "type": "decision"
+    },
+    {
+      "id": "strengthen_capital",
+      "name": "Strengthen Capital",
+      "page": "great-projects",
+      "scan": false,
+      "slug": "strengthen_capital",
+      "type": "great_project"
+    },
+    {
+      "id": "stress_loss_athletic_decision",
+      "name": "Work off Some Stress",
+      "page": "decisions",
+      "scan": false,
+      "slug": "stress_loss_athletic_decision",
+      "type": "decision"
+    },
+    {
+      "id": "stress_loss_comfort_eater_decision",
+      "name": "Indulge in Food",
+      "page": "decisions",
+      "scan": false,
+      "slug": "stress_loss_comfort_eater_decision",
+      "type": "decision"
+    },
+    {
+      "id": "stress_loss_confider_decision",
+      "name": "Talk to Confidant",
+      "page": "decisions",
+      "scan": false,
+      "slug": "stress_loss_confider_decision",
+      "type": "decision"
+    },
+    {
+      "id": "stress_loss_contrite_decision",
+      "name": "Confess",
+      "page": "decisions",
+      "scan": false,
+      "slug": "stress_loss_contrite_decision",
+      "type": "decision"
+    },
+    {
+      "id": "stress_loss_drunkard_decision",
+      "name": "Indulge in Drink",
+      "page": "decisions",
+      "scan": false,
+      "slug": "stress_loss_drunkard_decision",
+      "type": "decision"
+    },
+    {
+      "id": "stress_loss_flagellant_decision",
+      "name": "Indulge in Flagellation",
+      "page": "decisions",
+      "scan": false,
+      "slug": "stress_loss_flagellant_decision",
+      "type": "decision"
+    },
+    {
+      "id": "stress_loss_hashishiyah_decision",
+      "name": "Consume Hashish Cakes",
+      "page": "decisions",
+      "scan": false,
+      "slug": "stress_loss_hashishiyah_decision",
+      "type": "decision"
+    },
+    {
+      "id": "stress_loss_improvident_decision",
+      "name": "Donate to Charity",
+      "page": "decisions",
+      "scan": false,
+      "slug": "stress_loss_improvident_decision",
+      "type": "decision"
+    },
+    {
+      "id": "stress_loss_inappetetic_decision",
+      "name": "Shun Food",
+      "page": "decisions",
+      "scan": false,
+      "slug": "stress_loss_inappetetic_decision",
+      "type": "decision"
+    },
+    {
+      "id": "stress_loss_irritable_decision",
+      "name": "Lash Out",
+      "page": "decisions",
+      "scan": false,
+      "slug": "stress_loss_irritable_decision",
+      "type": "decision"
+    },
+    {
+      "id": "stress_loss_journaller_decision",
+      "name": "Write Thoughts Down",
+      "page": "decisions",
+      "scan": false,
+      "slug": "stress_loss_journaller_decision",
+      "type": "decision"
+    },
+    {
+      "id": "stress_loss_profligate_decision",
+      "name": "Visit the Market",
+      "page": "decisions",
+      "scan": false,
+      "slug": "stress_loss_profligate_decision",
+      "type": "decision"
+    },
+    {
+      "id": "stress_loss_rakish_decision",
+      "name": "Visit a Brothel",
+      "page": "decisions",
+      "scan": false,
+      "slug": "stress_loss_rakish_decision",
+      "type": "decision"
+    },
+    {
+      "id": "stress_loss_reclusive_decision",
+      "name": "Seclude Yourself",
+      "page": "decisions",
+      "scan": false,
+      "slug": "stress_loss_reclusive_decision",
+      "type": "decision"
     },
     {
       "id": "strict_organization_perk",
@@ -44059,6 +47252,54 @@
       "type": "trait"
     },
     {
+      "id": "struggle_iberia_ending_compromise_decision",
+      "name": "Status Quo",
+      "page": "decisions",
+      "scan": false,
+      "slug": "struggle_iberia_ending_compromise_decision",
+      "type": "decision"
+    },
+    {
+      "id": "struggle_iberia_ending_conciliation_decision",
+      "name": "Détente",
+      "page": "decisions",
+      "scan": false,
+      "slug": "struggle_iberia_ending_conciliation_decision",
+      "type": "decision"
+    },
+    {
+      "id": "struggle_iberia_ending_hostility_decision",
+      "name": "… Dominance",
+      "page": "decisions",
+      "scan": false,
+      "slug": "struggle_iberia_ending_hostility_decision",
+      "type": "decision"
+    },
+    {
+      "id": "struggle_persia_ending_assertion_decision",
+      "name": "Renewed Caliphate",
+      "page": "decisions",
+      "scan": false,
+      "slug": "struggle_persia_ending_assertion_decision",
+      "type": "decision"
+    },
+    {
+      "id": "struggle_persia_ending_foundation_decision",
+      "name": "Abbasid Humiliation",
+      "page": "decisions",
+      "scan": false,
+      "slug": "struggle_persia_ending_foundation_decision",
+      "type": "decision"
+    },
+    {
+      "id": "struggle_persia_ending_rekindle_iran_decision",
+      "name": "Iranian Resurgence",
+      "page": "decisions",
+      "scan": false,
+      "slug": "struggle_persia_ending_rekindle_iran_decision",
+      "type": "decision"
+    },
+    {
       "icon": "img/traits/stubborn.webp",
       "id": "stubborn",
       "name": "Stubborn",
@@ -44068,6 +47309,14 @@
       "type": "trait"
     },
     {
+      "id": "study_commander_trait_decision",
+      "name": "Master the Art of Command",
+      "page": "decisions",
+      "scan": false,
+      "slug": "study_commander_trait_decision",
+      "type": "decision"
+    },
+    {
       "icon": "img/traits/stuttering.webp",
       "id": "stuttering",
       "name": "Stuttering",
@@ -44075,6 +47324,14 @@
       "scan": false,
       "slug": "stuttering",
       "type": "trait"
+    },
+    {
+      "id": "submit_to_the_great_khan_decision",
+      "name": "Submit to the Great Khan",
+      "page": "decisions",
+      "scan": false,
+      "slug": "submit_to_the_great_khan_decision",
+      "type": "decision"
     },
     {
       "id": "subtle_desire_perk",
@@ -44118,6 +47375,14 @@
       "scan": false,
       "slug": "sumela_monastery_01",
       "type": "building"
+    },
+    {
+      "id": "summon_fair_courtiers_decision",
+      "name": "Summon Fair Courtiers",
+      "page": "decisions",
+      "scan": false,
+      "slug": "summon_fair_courtiers_decision",
+      "type": "decision"
     },
     {
       "icon": "img/buildings/icon_structure_special_silk_road_market.webp",
@@ -44243,6 +47508,22 @@
       "type": "building"
     },
     {
+      "id": "take_stewardship_of_the_sacred_river_decision",
+      "name": "Take Stewardship of the Sacred River",
+      "page": "decisions",
+      "scan": false,
+      "slug": "take_stewardship_of_the_sacred_river_decision",
+      "type": "decision"
+    },
+    {
+      "id": "take_vow_of_poverty_decision",
+      "name": "Take Vow of Poverty",
+      "page": "decisions",
+      "scan": false,
+      "slug": "take_vow_of_poverty_decision",
+      "type": "decision"
+    },
+    {
       "icon": "img/buildings/icon_structure_mines.webp",
       "id": "takkeda_mines_01",
       "name": "Takkeda Mining Settlement",
@@ -44360,6 +47641,15 @@
       "scan": false,
       "slug": "temple_citadel_01",
       "type": "building"
+    },
+    {
+      "icon": "img/holdings/temple_citadel_holding.webp",
+      "id": "temple_citadel_holding",
+      "name": "Temple Citadel",
+      "page": "holdings",
+      "scan": false,
+      "slug": "temple_citadel_holding",
+      "type": "holding"
     },
     {
       "icon": "img/buildings/icon_structure_temple_of_uppsala.webp",
@@ -44991,7 +48281,7 @@
     {
       "id": "terrain_coastal_sea",
       "name": "Coastal Sea",
-      "page": null,
+      "page": "terrain",
       "scan": false,
       "slug": "coastal_sea",
       "type": "terrain"
@@ -44999,7 +48289,7 @@
     {
       "id": "terrain_desert",
       "name": "Desert",
-      "page": null,
+      "page": "terrain",
       "scan": false,
       "slug": "desert",
       "type": "terrain"
@@ -45007,7 +48297,7 @@
     {
       "id": "terrain_desert_mountains",
       "name": "Desert Mountains",
-      "page": null,
+      "page": "terrain",
       "scan": false,
       "slug": "desert_mountains",
       "type": "terrain"
@@ -45015,7 +48305,7 @@
     {
       "id": "terrain_drylands",
       "name": "Drylands",
-      "page": null,
+      "page": "terrain",
       "scan": false,
       "slug": "drylands",
       "type": "terrain"
@@ -45023,7 +48313,7 @@
     {
       "id": "terrain_farmlands",
       "name": "Farmlands",
-      "page": null,
+      "page": "terrain",
       "scan": false,
       "slug": "farmlands",
       "type": "terrain"
@@ -45031,7 +48321,7 @@
     {
       "id": "terrain_floodplains",
       "name": "Floodplains",
-      "page": null,
+      "page": "terrain",
       "scan": false,
       "slug": "floodplains",
       "type": "terrain"
@@ -45039,7 +48329,7 @@
     {
       "id": "terrain_forest",
       "name": "Forest",
-      "page": null,
+      "page": "terrain",
       "scan": false,
       "slug": "forest",
       "type": "terrain"
@@ -45047,7 +48337,7 @@
     {
       "id": "terrain_hills",
       "name": "Hills",
-      "page": null,
+      "page": "terrain",
       "scan": false,
       "slug": "hills",
       "type": "terrain"
@@ -45055,7 +48345,7 @@
     {
       "id": "terrain_jungle",
       "name": "Jungle",
-      "page": null,
+      "page": "terrain",
       "scan": false,
       "slug": "jungle",
       "type": "terrain"
@@ -45063,7 +48353,7 @@
     {
       "id": "terrain_mountains",
       "name": "Mountains",
-      "page": null,
+      "page": "terrain",
       "scan": false,
       "slug": "mountains",
       "type": "terrain"
@@ -45071,7 +48361,7 @@
     {
       "id": "terrain_oasis",
       "name": "Oasis",
-      "page": null,
+      "page": "terrain",
       "scan": false,
       "slug": "oasis",
       "type": "terrain"
@@ -45079,7 +48369,7 @@
     {
       "id": "terrain_plains",
       "name": "Plains",
-      "page": null,
+      "page": "terrain",
       "scan": false,
       "slug": "plains",
       "type": "terrain"
@@ -45087,7 +48377,7 @@
     {
       "id": "terrain_sea",
       "name": "Sea",
-      "page": null,
+      "page": "terrain",
       "scan": false,
       "slug": "sea",
       "type": "terrain"
@@ -45095,7 +48385,7 @@
     {
       "id": "terrain_steppe",
       "name": "Steppe",
-      "page": null,
+      "page": "terrain",
       "scan": false,
       "slug": "steppe",
       "type": "terrain"
@@ -45103,7 +48393,7 @@
     {
       "id": "terrain_taiga",
       "name": "Taiga",
-      "page": null,
+      "page": "terrain",
       "scan": false,
       "slug": "taiga",
       "type": "terrain"
@@ -45111,7 +48401,7 @@
     {
       "id": "terrain_terraced_hills",
       "name": "Terraced Hills",
-      "page": null,
+      "page": "terrain",
       "scan": false,
       "slug": "terraced_hills",
       "type": "terrain"
@@ -45119,7 +48409,7 @@
     {
       "id": "terrain_wetlands",
       "name": "Wetlands",
-      "page": null,
+      "page": "terrain",
       "scan": false,
       "slug": "wetlands",
       "type": "terrain"
@@ -45143,6 +48433,14 @@
       "type": "maa"
     },
     {
+      "id": "tgp_china_attend_child_exam_decision",
+      "name": "Attend Children's Examination",
+      "page": "decisions",
+      "scan": false,
+      "slug": "tgp_china_attend_child_exam_decision",
+      "type": "decision"
+    },
+    {
       "icon": "img/legacies/tgp_china_legacy_track.webp",
       "id": "tgp_china_legacy_track",
       "name": "Virtues",
@@ -45150,6 +48448,14 @@
       "scan": false,
       "slug": "tgp_china_legacy_track",
       "type": "legacy_track"
+    },
+    {
+      "id": "tgp_china_study_confucian_classics_decision",
+      "name": "Study the Confucian Classics",
+      "page": "decisions",
+      "scan": false,
+      "slug": "tgp_china_study_confucian_classics_decision",
+      "type": "decision"
     },
     {
       "id": "tgp_chinese_legacy_1",
@@ -45190,6 +48496,118 @@
       "scan": false,
       "slug": "tgp_chinese_legacy_5",
       "type": "dynasty_perk"
+    },
+    {
+      "id": "tgp_choose_career_path_decision",
+      "name": "Choose Career Path",
+      "page": "decisions",
+      "scan": false,
+      "slug": "tgp_choose_career_path_decision",
+      "type": "decision"
+    },
+    {
+      "id": "tgp_claim_the_mantle_of_maitreya_decision",
+      "name": "Claim the Mantle of Maitreya",
+      "page": "decisions",
+      "scan": false,
+      "slug": "tgp_claim_the_mantle_of_maitreya_decision",
+      "type": "decision"
+    },
+    {
+      "id": "tgp_command_family_to_take_exams_decision",
+      "name": "Command Family to Attend Examinations",
+      "page": "decisions",
+      "scan": false,
+      "slug": "tgp_command_family_to_take_exams_decision",
+      "type": "decision"
+    },
+    {
+      "id": "tgp_divine_reincarnation_decision",
+      "name": "Divine Reincarnation",
+      "page": "decisions",
+      "scan": false,
+      "slug": "tgp_divine_reincarnation_decision",
+      "type": "decision"
+    },
+    {
+      "id": "tgp_japan_assert_regional_dominion_government_decision",
+      "name": "Assert Regional Dominion",
+      "page": "decisions",
+      "scan": false,
+      "slug": "tgp_japan_assert_regional_dominion_government_decision",
+      "type": "decision"
+    },
+    {
+      "id": "tgp_japan_become_a_monk_decision",
+      "name": "In Search of the Pure Land",
+      "page": "decisions",
+      "scan": false,
+      "slug": "tgp_japan_become_a_monk_decision",
+      "type": "decision"
+    },
+    {
+      "id": "tgp_japan_become_a_poet_decision",
+      "name": "Study Poetry",
+      "page": "decisions",
+      "scan": false,
+      "slug": "tgp_japan_become_a_poet_decision",
+      "type": "decision"
+    },
+    {
+      "id": "tgp_japan_become_shogun_decision",
+      "name": "Formalize … Shōgunate",
+      "page": "decisions",
+      "scan": false,
+      "slug": "tgp_japan_become_shogun_decision",
+      "type": "decision"
+    },
+    {
+      "id": "tgp_japan_emperor_restoration_decision",
+      "name": "Restore Direct Imperial Rule",
+      "page": "decisions",
+      "scan": false,
+      "slug": "tgp_japan_emperor_restoration_decision",
+      "type": "decision"
+    },
+    {
+      "id": "tgp_japan_emperor_war_decision",
+      "name": "Begin the Restoration War",
+      "page": "decisions",
+      "scan": false,
+      "slug": "tgp_japan_emperor_war_decision",
+      "type": "decision"
+    },
+    {
+      "id": "tgp_japan_establish_house_fief_decision",
+      "name": "Establish Sōryō Fief",
+      "page": "decisions",
+      "scan": false,
+      "slug": "tgp_japan_establish_house_fief_decision",
+      "type": "decision"
+    },
+    {
+      "id": "tgp_japan_establish_soryo_administration_decision",
+      "name": "Establish Sōryō Administration",
+      "page": "decisions",
+      "scan": false,
+      "slug": "tgp_japan_establish_soryo_administration_decision",
+      "type": "decision"
+    },
+    {
+      "id": "tgp_japan_establish_soryo_manor_decision",
+      "name": "Abandon the Bureaucracy",
+      "page": "decisions",
+      "scan": false,
+      "slug": "tgp_japan_establish_soryo_manor_decision",
+      "type": "decision"
+    },
+    {
+      "id": "tgp_japan_imperial_branch_decision",
+      "name": "Request Royal Honsei",
+      "page": "decisions",
+      "scan": false,
+      "slug": "tgp_japan_imperial_branch_decision",
+      "type": "decision"
     },
     {
       "id": "tgp_japan_legacy_1",
@@ -45241,6 +48659,70 @@
       "type": "legacy_track"
     },
     {
+      "id": "tgp_japan_restore_japanese_government_decision",
+      "name": "Restore Ritsuryō Bureaucracy",
+      "page": "decisions",
+      "scan": false,
+      "slug": "tgp_japan_restore_japanese_government_decision",
+      "type": "decision"
+    },
+    {
+      "id": "tgp_japan_restore_japanese_monarchy_decision",
+      "name": "Restore a Yamato Ten'nō",
+      "page": "decisions",
+      "scan": false,
+      "slug": "tgp_japan_restore_japanese_monarchy_decision",
+      "type": "decision"
+    },
+    {
+      "id": "tgp_japan_train_with_troops_decision",
+      "name": "Inspire the Troops",
+      "page": "decisions",
+      "scan": false,
+      "slug": "tgp_japan_train_with_troops_decision",
+      "type": "decision"
+    },
+    {
+      "id": "tgp_korea_unify_goryeo_decision",
+      "name": "Unite the Husamguk",
+      "page": "decisions",
+      "scan": false,
+      "slug": "tgp_korea_unify_goryeo_decision",
+      "type": "decision"
+    },
+    {
+      "id": "tgp_minister_recruit_courtiers_decision",
+      "name": "Summon Courtiers for the Celestial Bureau",
+      "page": "decisions",
+      "scan": false,
+      "slug": "tgp_minister_recruit_courtiers_decision",
+      "type": "decision"
+    },
+    {
+      "id": "tgp_minister_request_bestowal_of_honors_decision",
+      "name": "Request Bestowal of Honors",
+      "page": "decisions",
+      "scan": false,
+      "slug": "tgp_minister_request_bestowal_of_honors_decision",
+      "type": "decision"
+    },
+    {
+      "id": "tgp_refuse_appointments_decision",
+      "name": "Refuse Further Appointments",
+      "page": "decisions",
+      "scan": false,
+      "slug": "tgp_refuse_appointments_decision",
+      "type": "decision"
+    },
+    {
+      "id": "tgp_resume_appointments_decision",
+      "name": "Resume New Appointments",
+      "page": "decisions",
+      "scan": false,
+      "slug": "tgp_resume_appointments_decision",
+      "type": "decision"
+    },
+    {
       "id": "tgp_sea_legacy_1",
       "name": "Consecration",
       "page": "legacies",
@@ -45288,6 +48770,22 @@
       "scan": false,
       "slug": "tgp_southeast_asia_legacy_track",
       "type": "legacy_track"
+    },
+    {
+      "id": "tgp_suggest_budget_change_decision",
+      "name": "Suggest Treasury Audit",
+      "page": "decisions",
+      "scan": false,
+      "slug": "tgp_suggest_budget_change_decision",
+      "type": "decision"
+    },
+    {
+      "id": "tgp_tea_ceremony_decision",
+      "name": "Perform Tea Ceremony",
+      "page": "decisions",
+      "scan": false,
+      "slug": "tgp_tea_ceremony_decision",
+      "type": "decision"
     },
     {
       "icon": "img/buildings/icon_structure_colosseum.webp",
@@ -47188,6 +50686,14 @@
       "type": "tradition"
     },
     {
+      "id": "train_for_tournament_decision",
+      "name": "Train for a Tournament",
+      "page": "decisions",
+      "scan": false,
+      "slug": "train_for_tournament_decision",
+      "type": "decision"
+    },
+    {
       "id": "travel_companion_perk",
       "name": "Travel Companion",
       "page": "lifestyles",
@@ -47211,6 +50717,22 @@
       "scan": false,
       "slug": "travel_logs_perk",
       "type": "perk"
+    },
+    {
+      "id": "treasure_hunting_contract_decision",
+      "name": "Search for Treasures",
+      "page": "decisions",
+      "scan": false,
+      "slug": "treasure_hunting_contract_decision",
+      "type": "decision"
+    },
+    {
+      "id": "treasure_map_contract_decision",
+      "name": "Excavate Treasure",
+      "page": "decisions",
+      "scan": false,
+      "slug": "treasure_map_contract_decision",
+      "type": "decision"
     },
     {
       "icon": "img/maa/trebuchet.webp",
@@ -47263,6 +50785,14 @@
       "type": "law"
     },
     {
+      "id": "tribal_challenge_ruler_decision",
+      "name": "Challenge the …",
+      "page": "decisions",
+      "scan": false,
+      "slug": "tribal_challenge_ruler_decision",
+      "type": "decision"
+    },
+    {
       "id": "tribal_elective_succession_law",
       "name": "Tribal Elective",
       "page": "laws",
@@ -47286,6 +50816,15 @@
       "scan": false,
       "slug": "tribal_government_obligations",
       "type": "contract"
+    },
+    {
+      "icon": "img/holdings/tribal_holding.webp",
+      "id": "tribal_holding",
+      "name": "Tribe",
+      "page": "holdings",
+      "scan": false,
+      "slug": "tribal_holding",
+      "type": "holding"
     },
     {
       "icon": "img/cb/tribal_subjugation_cb.webp",
@@ -47321,6 +50860,54 @@
       "scan": false,
       "slug": "tributary_war_participation_obligation",
       "type": "contract"
+    },
+    {
+      "id": "tribute_mission_decision_china",
+      "name": "Kowtow to China",
+      "page": "decisions",
+      "scan": false,
+      "slug": "tribute_mission_decision_china",
+      "type": "decision"
+    },
+    {
+      "id": "tribute_mission_decision_dar_al_islam",
+      "name": "Pay Tribute to Dar al-Islam",
+      "page": "decisions",
+      "scan": false,
+      "slug": "tribute_mission_decision_dar_al_islam",
+      "type": "decision"
+    },
+    {
+      "id": "tribute_mission_decision_eastern_roman_empire",
+      "name": "Pay Tribute to Eastern Roman Empire",
+      "page": "decisions",
+      "scan": false,
+      "slug": "tribute_mission_decision_eastern_roman_empire",
+      "type": "decision"
+    },
+    {
+      "id": "tribute_mission_decision_india",
+      "name": "Pay Tribute to India",
+      "page": "decisions",
+      "scan": false,
+      "slug": "tribute_mission_decision_india",
+      "type": "decision"
+    },
+    {
+      "id": "tribute_mission_decision_mandala",
+      "name": "Pay Tribute to …",
+      "page": "decisions",
+      "scan": false,
+      "slug": "tribute_mission_decision_mandala",
+      "type": "decision"
+    },
+    {
+      "id": "tribute_mission_decision_roman_empire",
+      "name": "Pay Tribute to Roman Empire",
+      "page": "decisions",
+      "scan": false,
+      "slug": "tribute_mission_decision_roman_empire",
+      "type": "decision"
     },
     {
       "icon": "img/buildings/icon_building_hill_forts.webp",
@@ -47416,6 +51003,174 @@
       "scan": false,
       "slug": "undirected_great_holy_war",
       "type": "cb"
+    },
+    {
+      "id": "unify_burgundy_kingdom_decision",
+      "name": "Unify the Burgundies",
+      "page": "decisions",
+      "scan": false,
+      "slug": "unify_burgundy_kingdom_decision",
+      "type": "decision"
+    },
+    {
+      "id": "unify_italian_empire_decision",
+      "name": "Unify Italy",
+      "page": "decisions",
+      "scan": false,
+      "slug": "unify_italian_empire_decision",
+      "type": "decision"
+    },
+    {
+      "id": "unite_africa_decision",
+      "name": "Unite Africa",
+      "page": "decisions",
+      "scan": false,
+      "slug": "unite_africa_decision",
+      "type": "decision"
+    },
+    {
+      "id": "unite_the_slavs_decision",
+      "name": "Unite the Slavs",
+      "page": "decisions",
+      "scan": false,
+      "slug": "unite_the_slavs_decision",
+      "type": "decision"
+    },
+    {
+      "id": "unite_the_southern_slavs_decision",
+      "name": "Unite the South Slavs",
+      "page": "decisions",
+      "scan": false,
+      "slug": "unite_the_southern_slavs_decision",
+      "type": "decision"
+    },
+    {
+      "id": "unite_the_spanish_thrones_decision",
+      "name": "Unite the Spanish Thrones",
+      "page": "decisions",
+      "scan": false,
+      "slug": "unite_the_spanish_thrones_decision",
+      "type": "decision"
+    },
+    {
+      "id": "unite_the_western_slavs_decision",
+      "name": "Unite the West Slavs",
+      "page": "decisions",
+      "scan": false,
+      "slug": "unite_the_western_slavs_decision",
+      "type": "decision"
+    },
+    {
+      "id": "unity_consult_house_decision",
+      "name": "Consult House Members",
+      "page": "decisions",
+      "scan": false,
+      "slug": "unity_consult_house_decision",
+      "type": "decision"
+    },
+    {
+      "id": "unity_educate_youth_in_madrasas_decision",
+      "name": "…",
+      "page": "decisions",
+      "scan": false,
+      "slug": "unity_educate_youth_in_madrasas_decision",
+      "type": "decision"
+    },
+    {
+      "id": "unity_encourage_house_economy_decision",
+      "name": "Encourage House to Improve the Economy",
+      "page": "decisions",
+      "scan": false,
+      "slug": "unity_encourage_house_economy_decision",
+      "type": "decision"
+    },
+    {
+      "id": "unity_establish_futuwaa_lodges_decision",
+      "name": "Establish Futuwaa Lodges",
+      "page": "decisions",
+      "scan": false,
+      "slug": "unity_establish_futuwaa_lodges_decision",
+      "type": "decision"
+    },
+    {
+      "id": "unity_establish_network_decision",
+      "name": "Enforce Intrigue Network",
+      "page": "decisions",
+      "scan": false,
+      "slug": "unity_establish_network_decision",
+      "type": "decision"
+    },
+    {
+      "id": "unity_improve_logistics_decision",
+      "name": "Demand Shared Army Logistics",
+      "page": "decisions",
+      "scan": false,
+      "slug": "unity_improve_logistics_decision",
+      "type": "decision"
+    },
+    {
+      "id": "unity_improve_taxation_decision",
+      "name": "Improve Taxation",
+      "page": "decisions",
+      "scan": false,
+      "slug": "unity_improve_taxation_decision",
+      "type": "decision"
+    },
+    {
+      "id": "unity_organize_house_for_war_decision",
+      "name": "Organize House Members for War",
+      "page": "decisions",
+      "scan": false,
+      "slug": "unity_organize_house_for_war_decision",
+      "type": "decision"
+    },
+    {
+      "id": "unity_placate_vassals_decision",
+      "name": "Placate Vassals",
+      "page": "decisions",
+      "scan": false,
+      "slug": "unity_placate_vassals_decision",
+      "type": "decision"
+    },
+    {
+      "id": "unity_promote_development_decision",
+      "name": "Promote Development",
+      "page": "decisions",
+      "scan": false,
+      "slug": "unity_promote_development_decision",
+      "type": "decision"
+    },
+    {
+      "id": "unity_reinforce_army_decision",
+      "name": "Reinforce Army with Loyal Officers",
+      "page": "decisions",
+      "scan": false,
+      "slug": "unity_reinforce_army_decision",
+      "type": "decision"
+    },
+    {
+      "id": "unity_search_for_administrators_decision",
+      "name": "Search for Tax Collectors",
+      "page": "decisions",
+      "scan": false,
+      "slug": "unity_search_for_administrators_decision",
+      "type": "decision"
+    },
+    {
+      "id": "unity_send_bailiffs_decision",
+      "name": "Send Bailiffs",
+      "page": "decisions",
+      "scan": false,
+      "slug": "unity_send_bailiffs_decision",
+      "type": "decision"
+    },
+    {
+      "id": "unity_steer_house_direction_decision",
+      "name": "Steer House Unity",
+      "page": "decisions",
+      "scan": false,
+      "slug": "unity_steer_house_direction_decision",
+      "type": "decision"
     },
     {
       "id": "unreformed_faith_doctrine",
@@ -47611,6 +51366,30 @@
       "scan": false,
       "slug": "visegrad_castle_01",
       "type": "building"
+    },
+    {
+      "id": "visit_local_settlement_decision",
+      "name": "Visit …",
+      "page": "decisions",
+      "scan": false,
+      "slug": "visit_local_settlement_decision",
+      "type": "decision"
+    },
+    {
+      "id": "visit_local_shrine_decision",
+      "name": "Perform a Ritual Sacrifice",
+      "page": "decisions",
+      "scan": false,
+      "slug": "visit_local_shrine_decision",
+      "type": "decision"
+    },
+    {
+      "id": "visit_silk_road_market_decision",
+      "name": "Visit a Silk Road Market",
+      "page": "decisions",
+      "scan": false,
+      "slug": "visit_silk_road_market_decision",
+      "type": "decision"
     },
     {
       "id": "voyager_perk",
@@ -48095,6 +51874,14 @@
       "type": "trait"
     },
     {
+      "id": "wipe_slate_decision",
+      "name": "Wipe Slate",
+      "page": "decisions",
+      "scan": false,
+      "slug": "wipe_slate_decision",
+      "type": "decision"
+    },
+    {
       "icon": "img/traits/witch.webp",
       "id": "witch",
       "name": "Witch",
@@ -48165,6 +51952,14 @@
       "scan": false,
       "slug": "wrathful",
       "type": "trait"
+    },
+    {
+      "id": "write_muwashshah_poem_decision",
+      "name": "Write Muwashshah Poem",
+      "page": "decisions",
+      "scan": false,
+      "slug": "write_muwashshah_poem_decision",
+      "type": "decision"
     },
     {
       "id": "writing_history_perk",
@@ -48336,6 +52131,22 @@
       "type": "trait"
     },
     {
+      "id": "zealous_missionary_prep_decision",
+      "name": "The … Path — Ascension",
+      "page": "decisions",
+      "scan": false,
+      "slug": "zealous_missionary_prep_decision",
+      "type": "decision"
+    },
+    {
+      "id": "zealous_missionary_start_decision",
+      "name": "The … Path — Prelude",
+      "page": "decisions",
+      "scan": false,
+      "slug": "zealous_missionary_start_decision",
+      "type": "decision"
+    },
+    {
       "id": "zealous_proselytizer_perk",
       "name": "Zealous Proselytizer",
       "page": "lifestyles",
@@ -48378,6 +52189,14 @@
       "scan": false,
       "slug": "zijinshan_mines_01",
       "type": "building"
+    },
+    {
+      "id": "zoroastrian_restore_high_priesthood_decision",
+      "name": "Restore the …",
+      "page": "decisions",
+      "scan": false,
+      "slug": "zoroastrian_restore_high_priesthood_decision",
+      "type": "decision"
     },
     {
       "id": "zoroastrianism_religion",

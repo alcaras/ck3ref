@@ -45,7 +45,7 @@ def records_of(name, path):
         return []
     d = json.loads(p.read_text(encoding="utf-8"))
     if path:
-        d = d.get(path, [])
+        d = d.get(path, []) if isinstance(d, dict) else []
     return d if isinstance(d, list) else []
 
 

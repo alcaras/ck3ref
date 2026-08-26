@@ -37,6 +37,12 @@ CATEGORIES = [
     ("court_positions.json", "positions", "court_position_types", "court", "icon", "id", False),
     ("council.json", "tasks", "council_task_types", "council-tasks", "icon", "id", True),
     ("governments.json", None, "government_types", "governments", "icon", "id", False),
+    ("holdings.json", None, "holding_types_tab", "holdings", "icon", "id", False),
+    ("great_projects.json", None, "", "great-projects", "icon", "id", True),
+    ("activities.json", "activities", "activities", "activities", "icon", "id", False),
+    ("activities.json", "intents", "activity_intents", "intents", "icon", "id", True),
+    ("activities.json", "travelOptions", "travel_options", "travel-options", "icon", "id", True),
+    ("activities.json", "pois", "point_of_interest_types", "poi", "icon", "id", True),
 ]
 
 

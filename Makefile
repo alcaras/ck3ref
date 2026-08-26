@@ -30,6 +30,11 @@ data:
 	@python3 scripts/build_pillars.py
 	@python3 scripts/build_court.py
 	@python3 scripts/build_council.py
+	@python3 scripts/build_holdings.py
+	@python3 scripts/build_terrain.py
+	@python3 scripts/build_great_projects.py
+	@python3 scripts/build_activities.py
+	@python3 scripts/build_decisions.py
 	@python3 scripts/build_governments.py
 	@python3 scripts/build_laws.py
 	@python3 scripts/build_contracts.py

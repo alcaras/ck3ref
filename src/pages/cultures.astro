@@ -1,0 +1,174 @@
+---
+import Base from '../layouts/Base.astro';
+import cultures from '../data/cultures.json';
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+
+type Ref = { key: string; name: string };
+const byId = new Map(cultures.map((c) => [c.id, c]));
+
+const heritages = [...new Map(cultures.map((c) => [c.heritage.key, c.heritage])).values()]
+  .sort((a, b) => a.name.localeCompare(b.name));
+const ethoses = [...new Map(cultures.map((c) => [c.ethos.key, c.ethos])).values()]
+  .sort((a, b) => a.name.localeCompare(b.name));
+
+const hybrids = cultures.filter((c) => c.parents.length > 0).length;
+
+const searchText = (c: (typeof cultures)[number]) =>
+  [
+    c.name, c.heritage.name, c.language.name, c.ethos.name, c.martialCustom.name,
+    ...c.traditions.map((t) => t.name),
+    ...c.parents.map((p) => byId.get(p)?.name ?? p),
+  ].join(' ').toLowerCase();
+
+const yearOf = (d: string | null) => (d ? d.split('.')[0] : null);
+---
+<Base
+  title="Cultures"
+  active="cultures"
+  lede="Every culture template — heritage, language, ethos, martial custom, and starting traditions, with divergence and hybridization ancestry — read from culture/cultures and cross-linked into the pillars and traditions pages."
+  stats={[
+    { value: cultures.length, label: 'cultures' },
+    { value: heritages.length, label: 'heritages' },
+    { value: hybrids, label: 'diverged or hybridized' },
+  ]}
+>
+  <div class="filterbar">
+    <input type="search" id="q" placeholder="Filter by name, tradition, language…" autocomplete="off" />
+    <select id="fher">
+      <option value="">every heritage</option>
+      {heritages.map((h) => <option value={h.key}>{h.name}</option>)}
+    </select>
+    <select id="feth">
+      <option value="">every ethos</option>
+      {ethoses.map((e) => <option value={e.key}>{e.name}</option>)}
+    </select>
+    <span class="hint" id="count"></span>
+  </div>
+
+  {heritages.map((h) => (
+    <section data-group={h.key}>
+      <h2 class="group-h" id={h.key}>
+        <a href={`${base}/pillars#${h.key}`} title="Heritage details on the pillars page">{h.name}</a>
+        <span class="count">{cultures.filter((c) => c.heritage.key === h.key).length}</span>
+      </h2>
+      <div class="tbl-scroll">
+        <table class="ntbl">
+          <thead>
+            <tr>
+              <th>Culture</th>
+              <th>Ethos</th>
+              <th>Language</th>
+              <th>Martial custom</th>
+              <th>Traditions</th>
+              <th>Origin</th>
+            </tr>
+          </thead>
+          <tbody>
+            {cultures
+              .filter((c) => c.heritage.key === h.key)
+              .map((c) => (
+                <tr id={c.id} data-name={searchText(c)} data-her={c.heritage.key} data-eth={c.ethos.key}>
+                  <td class="name">
+                    <span class="cul">
+                      <span class="dot" style={`--c:${c.color ?? 'var(--faint)'}`} />
+                      <span class="u-name">{c.name}</span>
+                    </span>
+                  </td>
+                  <td>
+                    <a class="chip" href={`${base}/pillars#${c.ethos.key}`}>{c.ethos.name}</a>
+                  </td>
+                  <td>
+                    <a class="chip" href={`${base}/pillars#${c.language.key}`}>{c.language.name}</a>
+                  </td>
+                  <td>
+                    <a class="mc" href={`${base}/pillars#${c.martialCustom.key}`}>{c.martialCustom.name}</a>
+                    {c.headDetermination?.key === 'head_determination_herd' && (
+                      <span class="subtle" title={c.headDetermination.name}> · herd</span>
+                    )}
+                  </td>
+                  <td>
+                    <span class="chips chips--wide">
+                      {c.traditions.map((t) => (
+                        <a
+                          class:list={['chip', { 'chip--dlc': 'dlc' in t, 'chip--fb': 'withoutDlc' in t }]}
+                          href={`${base}/traditions#${t.key}`}
+                          title={'dlc' in t ? `with ${(t as any).dlc}` : 'withoutDlc' in t ? `without ${(t as any).withoutDlc}` : undefined}
+                        >
+                          {t.name}
+                        </a>
+                      ))}
+                    </span>
+                  </td>
+                  <td class="origin">
+                    {c.parents.length > 0 ? (
+                      <>
+                        {c.parents.length > 1 ? 'hybrid of ' : 'diverged from '}
+                        {c.parents.map((p, i) => (
+                          <>
+                            {i > 0 && ' + '}
+                            <a href={`#${p}`}>{byId.get(p)?.name ?? p}</a>
+                          </>
+                        ))}
+                        {c.created && <span class="subtle"> ({yearOf(c.created)})</span>}
+                      </>
+                    ) : (
+                      <span class="subtle">—</span>
+                    )}
+                  </td>
+                </tr>
+              ))}
+          </tbody>
+        </table>
+      </div>
+    </section>
+  ))}
+
+  <script>
+    const q = document.getElementById('q') as HTMLInputElement;
+    const fher = document.getElementById('fher') as HTMLSelectElement;
+    const feth = document.getElementById('feth') as HTMLSelectElement;
+    const count = document.getElementById('count')!;
+    const rows = [...document.querySelectorAll<HTMLTableRowElement>('tbody tr')];
+    const groups = [...document.querySelectorAll<HTMLElement>('section[data-group]')];
+
+    function apply() {
+      const needle = q.value.trim().toLowerCase();
+      const h = fher.value;
+      const e = feth.value;
+      let shown = 0;
+      for (const r of rows) {
+        const ok =
+          (!needle || (r.dataset.name ?? '').includes(needle)) &&
+          (!h || r.dataset.her === h) &&
+          (!e || r.dataset.eth === e);
+        r.hidden = !ok;
+        if (ok) shown++;
+      }
+      for (const g of groups) {
+        g.hidden = ![...g.querySelectorAll('tbody tr')].some((r) => !(r as HTMLTableRowElement).hidden);
+      }
+      count.textContent = `${shown} of ${rows.length}`;
+    }
+    for (const el of [q, fher, feth]) el.addEventListener('input', apply);
+    apply();
+  </script>
+
+  <style>
+    .group-h a { color: inherit; border-bottom: none; }
+    .group-h a:hover { color: var(--brass-bright); }
+    .cul { display: flex; align-items: center; gap: 0.5rem; }
+    .cul .dot {
+      width: 10px; height: 10px; border-radius: 50%; flex: none;
+      background: var(--c, var(--faint));
+      box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.45);
+    }
+    a.chip { border-bottom: none; }
+    a.chip:hover { border-color: var(--brass); color: var(--brass-bright); }
+    .chips--wide { max-width: 26rem; }
+    .chip--dlc { border-color: color-mix(in oklab, var(--brass) 45%, var(--line)); }
+    .chip--fb { border-style: dashed; color: var(--dim); }
+    .mc { color: var(--vellum); border-bottom-color: color-mix(in oklab, var(--dim) 35%, transparent); white-space: nowrap; }
+    .origin { font-size: 0.8rem; color: var(--dim); max-width: 14rem; }
+  </style>
+</Base>
