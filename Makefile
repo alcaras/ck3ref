@@ -29,6 +29,9 @@ data:
 	@python3 scripts/build_pillars.py
 	@python3 scripts/build_court.py
 	@python3 scripts/build_council.py
+	@python3 scripts/build_governments.py
+	@python3 scripts/build_laws.py
+	@python3 scripts/build_contracts.py
 	@python3 scripts/build_dlc.py
 	@python3 scripts/build_entities.py
 	@python3 scripts/build_backlinks.py

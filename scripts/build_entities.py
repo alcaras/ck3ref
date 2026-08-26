@@ -80,6 +80,17 @@ def main():
         add(f"holy_site_{r['id']}", "holy_site", r["name"], "holy-sites",
             scan=False, slug=r["id"])
 
+    for r in load("governments.json") or []:
+        add(r["id"], "government", r["name"], "governments",
+            f"img/governments/{r['id']}.webp", scan=False)
+    lw = load("laws.json") or []
+    for g in (lw if isinstance(lw, list) else lw.get("groups", [])):
+        for r in g.get("laws", []):
+            add(r["id"], "law", r["name"], "laws", scan=False)
+    ct = load("contracts.json") or {}
+    for r in (ct.get("contracts", []) if isinstance(ct, dict) else []):
+        add(r["id"], "contract", r["name"], "contracts", scan=False)
+
     cp = load("court_positions.json") or {"positions": []}
     for r in cp["positions"]:
         add(r["id"], "court_position", r["name"], "court-positions",

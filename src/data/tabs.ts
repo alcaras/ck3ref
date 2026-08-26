@@ -47,9 +47,9 @@ export const TABS: Tab[] = [
   { slug: 'doctrines', label: 'Doctrines & Tenets', section: 'Faith', status: 'built', summary: 'Every doctrine and tenet, with piety costs.' },
   { slug: 'holy-sites', label: 'Holy Sites', section: 'Faith', status: 'built', summary: '326 holy sites and their bonuses.' },
   // Realm
-  { slug: 'governments', label: 'Governments', section: 'Realm', status: 'placeholder', summary: 'Feudal to nomadic: every government type.' },
-  { slug: 'laws', label: 'Laws', section: 'Realm', status: 'placeholder', summary: 'Crown authority, succession, admin policies.' },
-  { slug: 'contracts', label: 'Vassal Contracts', section: 'Realm', status: 'placeholder', summary: 'Obligations, stances, tax slots.' },
+  { slug: 'governments', label: 'Governments', section: 'Realm', status: 'built', summary: 'Feudal to nomadic: every government type.' },
+  { slug: 'laws', label: 'Laws', section: 'Realm', status: 'built', summary: 'Crown authority, succession, admin policies.' },
+  { slug: 'contracts', label: 'Vassal Contracts', section: 'Realm', status: 'built', summary: 'Obligations, stances, tax slots.' },
   { slug: 'domiciles', label: 'Domiciles', section: 'Realm', status: 'placeholder', summary: 'Camps and estates for landless play.' },
   // Holdings
   { slug: 'buildings', label: 'Buildings', section: 'Holdings', status: 'built', summary: '975 buildings in 366 upgrade chains.' },

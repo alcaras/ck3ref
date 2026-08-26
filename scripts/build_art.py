@@ -36,6 +36,7 @@ CATEGORIES = [
     ("cbs.json", "cbs", "casus_bellis", "cb", "icon", "id", True),
     ("court_positions.json", "positions", "court_position_types", "court", "icon", "id", False),
     ("council.json", "tasks", "council_task_types", "council-tasks", "icon", "id", True),
+    ("governments.json", None, "government_types", "governments", "icon", "id", False),
 ]
 
 

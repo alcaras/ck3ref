@@ -30,6 +30,9 @@ MAPPED = {
     "casus_belli_types": "build_cbs.py",
     "casus_belli_groups": "build_cbs.py",
     "landed_titles": "build_titles.py",
+    "governments": "build_governments.py",
+    "laws": "build_laws.py",
+    "subject_contracts": "build_contracts.py",
     "court_positions": "build_court.py",
     "council_positions": "build_council.py",
     "council_tasks": "build_council.py",
@@ -45,8 +48,7 @@ MAPPED = {
 # won't be in either set and fails the audit — that's the point.
 SKIP = {
     # phase 1
-    "holdings", "laws",
-    "governments", "subject_contracts", "great_projects",
+    "holdings", "great_projects",
     # phase 2
     "decisions", "decision_group_types", "activities", "travel",
     "struggle", "situation", "legends", "epidemics", "nicknames", "artifacts",
