@@ -31,6 +31,7 @@ const traitLink = (id: string) => (getEntity(id) ? `${base}/traits#${id}` : null
   {epidemics.map((e) => (
     <section id={e.id}>
       <h2 class="group-h">
+        <img class="hdr-icon" src={`${base}/img/epidemics/${e.id}.webp`} alt="" width="28" height="28" loading="lazy" onerror="this.hidden=true" />
         {e.name}
         {e.dlc && <span class="badge-dlc">{e.dlc}</span>}
       </h2>
@@ -141,3 +142,8 @@ const traitLink = (id: string) => (getEntity(id) ? `${base}/traits#${id}` : null
     .footnote { color: var(--faint); font-size: 0.78rem; max-width: 70ch; margin-top: 2rem; }
   </style>
 </Base>
+
+<style is:global>
+  .hdr-icon { vertical-align: -6px; margin-right: 0.4rem; }
+  .hdr-icon.sm { vertical-align: -6px; margin-right: 0.35rem; }
+</style>

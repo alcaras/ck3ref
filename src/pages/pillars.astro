@@ -2,6 +2,7 @@
 import Base from '../layouts/Base.astro';
 import pillars from '../data/pillars.json';
 
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 const TYPE_ORDER = ['ethos', 'heritage', 'language', 'martial_custom', 'head_determination'];
 const types = [...new Set(pillars.map((p) => p.type).filter(Boolean))].sort(
   (a, b) => TYPE_ORDER.indexOf(a) - TYPE_ORDER.indexOf(b),
@@ -92,7 +93,7 @@ function searchText(p: any): string {
                 .filter((p) => p.type === t)
                 .map((p) => (
                   <tr id={p.id} data-item data-name={searchText(p)} data-type={p.type} data-dlc={p.dlc ?? 'base'}>
-                    <td class="name"><span class="u-name">{p.name}</span></td>
+                    <td class="name"><img class="hdr-icon sm" src={`${base}/img/pillars/${p.id}.webp`} alt="" width="24" height="24" loading="lazy" onerror="this.hidden=true" /><span class="u-name">{p.name}</span></td>
                     <td class="desc-cell">{p.desc}</td>
                     <td>
                       {Object.entries(p.modifiers).map(([scope, lines]) => (
@@ -187,3 +188,8 @@ function searchText(p: any): string {
     .chip--block { border-color: color-mix(in oklab, var(--bad) 40%, var(--line)); white-space: normal; }
   </style>
 </Base>
+
+<style is:global>
+  .hdr-icon { vertical-align: -6px; margin-right: 0.4rem; }
+  .hdr-icon.sm { vertical-align: -6px; margin-right: 0.35rem; }
+</style>
