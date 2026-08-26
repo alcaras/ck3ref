@@ -84,7 +84,35 @@ def convert_wide(src: Path, dst: Path, maxw: int) -> bool:
     return True
 
 
+def build_decision_art():
+    """Decisions name their art by full gfx path (across several illustration
+    folders), so they are converted by path rather than by category folder."""
+    path = ck3.ROOT / "src/data/decisions.json"
+    if not path.exists():
+        return
+    recs = json.loads(path.read_text(encoding="utf-8")).get("decisions", [])
+    seen, done, missing = set(), 0, 0
+    for r in recs:
+        ref = r.get("picture")
+        if not ref or not ref.startswith("gfx/"):
+            continue
+        stem = Path(ref).stem
+        if stem in seen:
+            continue
+        seen.add(stem)
+        src = MIRROR / "game" / ref
+        dst = ck3.ROOT / "public/img/decisions" / f"{stem}.webp"
+        if convert_wide(src, dst, 520):
+            done += 1
+        else:
+            missing += 1
+    print(f"✓ art: {done}/{len(seen)} decision illustrations → public/img/decisions/")
+    if missing:
+        print(f"  ({missing} referenced files not present in the mirror)")
+
+
 def main():
+    build_decision_art()
     for sub, out_sub, maxw in ILLUSTRATIONS:
         src_dir = ILLUS / sub
         if not src_dir.exists():

@@ -333,6 +333,20 @@ def main():
     # each group in definition order
     out = [t for t in tracks if not t["dlc"]] + [t for t in tracks if t["dlc"]]
 
+    # Perk cost is global across ALL tracks, not per track:
+    #   COST = PERK_COST_BASE + (perks already unlocked * PERK_COST_MULTIPLIER)
+    # (the game states this formula in the defines comment itself)
+    import re as _re
+    _defines = (ck3.COMMON / "defines" / "00_defines.txt").read_text(
+        encoding="utf-8-sig", errors="replace")
+    def _define(name, fallback):
+        m = _re.search(rf"^\s*{name}\s*=\s*([\d.]+)", _defines, _re.M)
+        return float(m.group(1)) if m else fallback
+    ck3.write_json("legacy-costs.json", {
+        "base": _define("PERK_COST_BASE", 250),
+        "perStep": _define("PERK_COST_MULTIPLIER", 500),
+        "formula": "base + (perks already unlocked x perStep), counted across every track",
+    })
     ck3.write_json("legacies.json", out)
 
     problems = False

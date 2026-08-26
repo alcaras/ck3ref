@@ -27,7 +27,6 @@ from ck3 import Block, Tagged
 EXCLUDED_GROUPS = {"debug", "tutorial_objectives"}
 
 SKIP_FIELDS = {
-    "picture": "decision-window illustration selection (not table-icon art)",
     "extra_picture": "struggle-button illustration",
     "soundeffect": "audio",
     "confirm_click_sound": "audio",
@@ -45,6 +44,7 @@ SKIP_FIELDS = {
 }
 
 HANDLED_FIELDS = {
+    "picture",
     "title", "desc", "decision_group_type", "sort_order", "is_shown",
     "is_valid", "is_valid_showing_failures_only", "cost", "minimum_cost",
     "cooldown", "major", "is_invisible",
@@ -440,6 +440,22 @@ def main():
                 if k not in HANDLED_FIELDS and k not in SKIP_FIELDS:
                     unhandled[k] += 1
 
+            # `picture = { trigger? reference = "gfx/..." }`, first-valid style.
+            # The unconditional entry is the fallback the game shows when no
+            # trigger matches — that's the one safe to render statically.
+            picture = None
+            for pb in blk.get_all("picture"):
+                if not isinstance(pb, Block):
+                    continue
+                ref = pb.get("reference")
+                if isinstance(ref, str):
+                    if not pb.has("trigger"):
+                        picture = ref          # unconditional: prefer it
+                    elif picture is None:
+                        picture = ref          # else keep the first seen
+            if isinstance(blk.get("picture"), str):
+                picture = blk.get("picture")
+
             ginfo = groups.get(group, {"important": False})
             rec = {
                 "id": key,
@@ -458,6 +474,7 @@ def main():
                 "requirements": dedupe(reqs),
                 "effectText": effect_tooltips(blk.get("effect")),
                 "sortOrder": blk.get("sort_order", 0),
+                "picture": picture,
                 "dlc": dlc,
                 "sourceFile": path.name,
             }

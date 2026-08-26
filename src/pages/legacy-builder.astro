@@ -1,6 +1,7 @@
 ---
 import Base from '../layouts/Base.astro';
 import legacies from '../data/legacies.json';
+import costs from '../data/legacy-costs.json';
 
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 // Order matters: renown is spent step by step, so a build is a sequence.
@@ -12,17 +13,19 @@ const tracks = (legacies as any[]).map((t) => ({
   gate: t.gate,
   perks: t.perks.map((p: any) => ({ id: p.id, name: p.name, effects: p.effects })),
 }));
-// Renown cost per step, from the game's dynasty legacy pricing.
-const STEP_COSTS = [1000, 1500, 2000, 2500, 3000];
+// Perk cost is GLOBAL, not per track: the Nth perk you buy anywhere costs
+// base + (N-1) x perStep (defines PERK_COST_BASE / PERK_COST_MULTIPLIER).
+const COST = costs as { base: number; perStep: number; formula: string };
+const nthCost = (n: number) => COST.base + n * COST.perStep; // n = already owned
 ---
 <Base
   title="Legacy Builder"
   active="legacy-builder"
-  lede="Plan a dynasty's legacy path in the order you'll actually buy it, see the running renown bill, and share the build as a link."
+  lede={`Plan a dynasty's legacy path in the order you'll actually buy it. Each perk costs ${COST.base} renown plus ${COST.perStep} for every perk you already own — across all tracks — so the later a pick comes, the more it costs.`}
   stats={[
     { value: tracks.length, label: 'tracks' },
     { value: tracks.reduce((n, t) => n + t.perks.length, 0), label: 'perks' },
-    { value: STEP_COSTS.reduce((a, b) => a + b, 0).toLocaleString(), label: 'renown per full track' },
+    { value: `${COST.base} + ${COST.perStep}`, label: 'renown per perk, per perk owned' },
   ]}
 >
   <div class="filterbar">
@@ -68,12 +71,15 @@ const STEP_COSTS = [1000, 1500, 2000, 2500, 3000];
   </div>
 
   <p class="prov">
-    Renown costs are the standard 1,000 / 1,500 / 2,000 / 2,500 / 3,000 ladder
-    per track step. Discounts from house unity, legacy-cost modifiers, and the
-    Kurultai are not applied — this is the list price of a path, not a forecast.
+    Cost model read from <code>defines</code>:
+    <code>PERK_COST_BASE {COST.base}</code> +
+    <code>PERK_COST_MULTIPLIER {COST.perStep}</code> × perks already unlocked,
+    counted across every track — so a build's total depends on how many perks
+    it has, not which tracks they came from. Renown discounts (house unity,
+    legacy-cost modifiers, the Kurultai) are not applied.
   </p>
 
-  <script is:inline define:vars={{ tracks, STEP_COSTS, base }}>
+  <script is:inline define:vars={{ tracks, COST, base }}>
     const byId = new Map(tracks.map((t) => [t.id, t]));
     const order = tracks.map((t) => t.id); // stable index for share links
     let plan = []; // [{track, step}] in purchase order
@@ -94,13 +100,14 @@ const STEP_COSTS = [1000, 1500, 2000, 2500, 3000];
           <img src="${base}/img/legacies/${t.id}.webp" alt="" width="26" height="26" onerror="this.hidden=true">
           <span class="pl-n"><b>${esc(perk.name)}</b>
             <span class="subtle">${esc(t.name)} ${p.step + 1}</span></span>
-          <span class="pl-c">${STEP_COSTS[p.step].toLocaleString()}</span>
+          <span class="pl-c">${(COST.base + i * COST.perStep).toLocaleString()}</span>
           <button class="rm" data-i="${i}" title="remove this and later steps of the track">×</button>
         </li>`;
       }).join('');
       $('empty').hidden = plan.length > 0;
 
-      const total = plan.reduce((n, p) => n + STEP_COSTS[p.step], 0);
+      // the k-th perk bought (0-indexed k) costs base + k*perStep
+      const total = plan.reduce((n, _p, k) => n + COST.base + k * COST.perStep, 0);
       $('total').textContent = total.toLocaleString();
       $('steps').textContent = plan.length;
 

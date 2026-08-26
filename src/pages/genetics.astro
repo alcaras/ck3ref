@@ -90,10 +90,13 @@ const fams = famOrder.map((k) => families.find((f: any) => f.key === k)).filter(
     {constants.ACTIVE_TRAIT_CHANCE_ACTIVE_NONE}% / {constants.ACTIVE_TRAIT_CHANCE_INACTIVE_INACTIVE}% /
     {constants.ACTIVE_TRAIT_CHANCE_INACTIVE_NONE}% (both / active+carrier / one / two carriers / one carrier),
     reinforcement {constants.TRAIT_REINFORCEMENT_CHANCE * 100}%. Single-trait odds
-    are exact; the tiered-descent steps follow the algorithm documented in the
-    defines comments and are marked as interpretive where that comment is
-    ambiguous. Dynasty legacy and lifestyle modifiers to these chances are not
-    yet modeled.
+    are exact. Tiered lines follow the descent algorithm the defines comments
+    spell out — start at the highest tier, and on each step down treat one more
+    parent as carrying that tier. <code>TIER_TRAIT_REDUCTION_MULT</code> is the
+    one define not modelled here: its comment ("when going down a tier, add this
+    chance") does not say what the 0.4 is added to, so rather than guess a
+    number this tool leaves it out. Trait-inheritance modifiers from dynasty
+    legacies and lifestyles are also not applied.
   </p>
 
   <script define:vars={{ constants }}>
@@ -139,10 +142,19 @@ const fams = famOrder.map((k) => families.find((f: any) => f.key === k)).filter(
       const out = { active: {}, carrier: 0, none: 0 };
       let remaining = 100;
       let descents = 0;
+      // defines document the descent rule: "go down a tier, if inactive
+      // pretend 1 more parent has that tier active, otherwise 1 more parent
+      // has it inactive" — i.e. each descent promotes both parents' standing
+      // one notch (none -> carrier -> active).
+      const promote = (c, n) => {
+        let s = c.s;
+        for (let i = 0; i < n; i++) s = s === 'N' ? 'I' : 'A';
+        return { s, mult: c.mult };
+      };
       for (let t = top; t >= 1; t--) {
-        const cf = classify(f, t), cm = classify(m, t);
+        const cf = promote(classify(f, t), descents);
+        const cm = promote(classify(m, t), descents);
         let chance = A[pair(cf.s, cm.s)] * cf.mult * cm.mult;
-        if (descents > 0) chance = Math.min(100, chance + C.TIER_TRAIT_REDUCTION_MULT * 100 * 0); // descent bonus is interpretive; kept at documented pair chance
         chance = Math.min(100, chance);
         let p = remaining * (chance / 100);
         // reinforcement: both active at this tier can push one level up
