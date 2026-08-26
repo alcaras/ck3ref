@@ -22,6 +22,19 @@ data mirror's `PLAN.md`. Pipeline: `make patch` = sync → version → data → 
    it's reported unhandled. Never collapse a conditional script_value to one
    number — `ck3.resolve_value` returns rule structures; render them.
 5. **Never edit `reference/`** — it's synced game data.
+6. **NEVER invent a game value, formula, or mechanic.** Every number on the
+   site must come from a file under `reference/`. Before writing any constant,
+   grep `common/defines/`, `common/script_values/`, and the category's
+   `_*.info` doc. Read constants at BUILD TIME so they follow patches — never
+   paste a literal. If a value isn't statically derivable, render "varies" and
+   name the contributing factors; if a rule is documented ambiguously, say on
+   the page that it isn't modelled. Explanatory prose about mechanics should
+   quote the game's own `game_concept_*_desc` text rather than paraphrase from
+   memory. Anything editorial must be labelled as such.
+   *This rule exists because an invented dynasty-legacy cost ladder shipped,
+   was shared publicly, and was immediately corrected by a player. The real
+   formula (`PERK_COST_BASE` + `PERK_COST_MULTIPLIER` x perks owned) was in
+   defines all along, documented in its own comment.*
 
 ## The library (`scripts/lib/ck3.py`)
 

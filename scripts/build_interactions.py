@@ -214,7 +214,19 @@ def build_secrets():
             "dlc": ck3.dlc_tag(path, blk)[0],
         })
     hooks.sort(key=lambda r: (not r["strong"], r["name"]))
-    ck3.write_json("secrets.json", {"secrets": secrets, "hooks": hooks})
+
+    # Explanatory text comes from the game's own concept glossary, not from us.
+    concepts = {}
+    for key, label in (("hook", "Hooks"), ("strong_hook", "Strong Hooks"),
+                       ("weak_hook", "Weak Hooks"), ("secret", "Secrets")):
+        desc = ck3.loc(f"game_concept_{key}_desc")
+        if desc:
+            concepts[key] = {
+                "name": ck3.render_text(ck3.loc(f"game_concept_{key}") or label),
+                "desc": ck3.render_text(desc),
+            }
+    ck3.write_json("secrets.json", {"secrets": secrets, "hooks": hooks,
+                                    "concepts": concepts})
 
 
 if __name__ == "__main__":
