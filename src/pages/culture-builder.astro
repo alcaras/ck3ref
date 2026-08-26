@@ -1,0 +1,304 @@
+---
+import Base from '../layouts/Base.astro';
+import culturesData from '../data/cultures.json';
+import traditionsData from '../data/traditions.json';
+import pillarsData from '../data/pillars.json';
+import rules from '../data/culture-rules.json';
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const R = rules as any;
+const traditions = (traditionsData as any).traditions;
+const pillars = pillarsData as any[];
+const cultures = culturesData as any[];
+
+const key = (x: any) => (typeof x === 'string' ? x : x?.key ?? x?.id);
+const pillarName = (k: string) => pillars.find((p) => p.id === k)?.name ?? k;
+
+// client payload: only what the tool needs to compute and render
+const C = cultures.map((c) => ({
+  id: c.id, name: c.name, color: c.color,
+  ethos: key(c.ethos), heritage: key(c.heritage),
+  language: key(c.language), martial: key(c.martialCustom),
+  tr: (c.traditions ?? []).map(key).filter(Boolean),
+}));
+const T = Object.fromEntries(traditions.map((t: any) => [t.id, {
+  n: t.name, cat: t.categoryName ?? t.category, cost: t.cost?.prestige ?? null,
+  params: (t.parameters ?? []).map((p: any) => p.key ?? p),
+  fx: [
+    ...Object.values(t.modifiers ?? {}).flat(),
+    ...(t.parameters ?? []).map((p: any) => p.text ?? p.key ?? p),
+  ].slice(0, 6),
+}]));
+const P = Object.fromEntries(pillars.map((p: any) => [p.id, { n: p.name, type: p.type }]));
+
+const EASIER = R.hybridization.traditions.easier_to_hybridize.map((t: any) => t.id);
+const HARDER = R.hybridization.traditions.harder_to_hybridize.map((t: any) => t.id);
+const maxTraditions = R.defines.DEFAULT_MAX_TRADITIONS;
+---
+<Base
+  title="Culture Builder"
+  active="culture-builder"
+  lede={`Start from a culture and plan how to get where you want: hybridize with a neighbour, diverge, or just reform traditions. Every threshold, cooldown and cost below is read from the game — acceptance base ${R.hybridization.base}, ${maxTraditions} traditions max.`}
+  stats={[
+    { value: cultures.length, label: 'cultures' },
+    { value: traditions.length, label: 'traditions' },
+    { value: maxTraditions, label: 'tradition slots' },
+  ]}
+>
+  <div class="filterbar">
+    <label>Start from
+      <select id="startc">
+        {C.map((c) => <option value={c.id}>{c.name}</option>)}
+      </select>
+    </label>
+    <label>Path
+      <select id="path">
+        <option value="hybrid">Hybridize with…</option>
+        <option value="diverge">Diverge</option>
+        <option value="reform">Reform traditions only</option>
+      </select>
+    </label>
+    <label id="withwrap">with
+      <select id="withc">
+        {C.map((c) => <option value={c.id}>{c.name}</option>)}
+      </select>
+    </label>
+    <button id="share" class="btn-primary">Copy share link</button>
+    <button id="reset">Reset</button>
+  </div>
+
+  <div class="cols">
+    <section>
+      <h2 class="group-h" id="gate">What it takes</h2>
+      <div id="gatebox" class="gate"></div>
+
+      <h2 class="group-h">Pillars</h2>
+      <p class="note" id="pillarnote"></p>
+      <div id="pillars" class="pillargrid"></div>
+
+      <h2 class="group-h">Traditions <span class="count" id="trcount"></span></h2>
+      <p class="note" id="trnote"></p>
+      <div id="pool" class="pool"></div>
+    </section>
+
+    <aside class="result">
+      <h2 class="group-h">Your culture</h2>
+      <div id="summary"></div>
+    </aside>
+  </div>
+
+  <p class="prov">
+    Anchored on the game: hybridization threshold from
+    <code>hybridization_threshold_value</code> (base {R.hybridization.base}
+    cultural acceptance, ×{R.hybridization.multipliers.easier_to_hybridize} /
+    ×{R.hybridization.multipliers.harder_to_hybridize} from the traditions that
+    carry those parameters); cooldowns {R.cooldownYears.hybrid}y hybrid,
+    {R.cooldownYears.divergence}y divergence, {R.cooldownYears.addTradition}y
+    per tradition change; tradition costs from each tradition's own
+    <code>cost</code> chain; slot count from
+    <code>DEFAULT_MAX_TRADITIONS</code>; reformation timing from
+    <code>REFORMATION_PROGRESS_GAIN_BASE</code> and
+    <code>REFORMATION_MAX_YEARS</code>. Struggle-phase and Kurultai modifiers
+    exist in the same chain but depend on live game state, so they are listed
+    rather than applied. Which cultures you can actually reach also depends on
+    live acceptance and adjacency, which no static read can answer.
+  </p>
+
+  <script is:inline define:vars={{ C, T, P, R, EASIER, HARDER, maxTraditions, base }}>
+    const byId = Object.fromEntries(C.map((c) => [c.id, c]));
+    const $ = (id) => document.getElementById(id);
+    const esc = (s) => String(s ?? '').replace(/[&<>]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;' }[c]));
+
+    let state = { start: C[0].id, path: 'hybrid', with: C[1].id, pillars: {}, tr: [] };
+
+    const pillarSlots = ['ethos', 'heritage', 'language', 'martial'];
+
+    function parents() {
+      const a = byId[state.start];
+      const b = state.path === 'hybrid' ? byId[state.with] : null;
+      return b ? [a, b] : [a];
+    }
+
+    // ---- hybridization gate, computed from the game's own chain
+    function gate() {
+      const [a, b] = parents();
+      if (state.path !== 'hybrid' || !b) return null;
+      let mult = 1;
+      const steps = [];
+      if (a.tr.some((t) => EASIER.includes(t))) {
+        mult *= R.hybridization.multipliers.easier_to_hybridize;
+        steps.push(`×${R.hybridization.multipliers.easier_to_hybridize} — ${a.name} has a tradition that eases hybridizing`);
+      }
+      if (a.tr.some((t) => HARDER.includes(t))) {
+        mult *= R.hybridization.multipliers.harder_to_hybridize;
+        steps.push(`×${R.hybridization.multipliers.harder_to_hybridize} — ${a.name} resists hybridizing`);
+      }
+      if (b.tr.some((t) => HARDER.includes(t))) {
+        mult *= R.hybridization.multipliers.harder_to_hybridize;
+        steps.push(`×${R.hybridization.multipliers.harder_to_hybridize} — ${b.name} resists hybridizing`);
+      }
+      const val = Math.max(0, Math.min(100, R.hybridization.base * mult));
+      return { val, steps };
+    }
+
+    function pool() {
+      const ps = parents();
+      const seen = new Set();
+      const out = [];
+      for (const c of ps) for (const t of c.tr) {
+        if (T[t] && !seen.has(t)) { seen.add(t); out.push({ id: t, from: c.name }); }
+      }
+      // reform/diverge can also reach any other tradition, at a cost
+      return out;
+    }
+
+    function costOf(id, inherited) {
+      const t = T[id];
+      if (!t?.cost) return { n: 0, note: 'no cost data' };
+      if (inherited) return { n: 0, note: 'carried over from a parent' };
+      const base = t.cost.base ?? 2000;
+      return { n: base, note: 'base cost; penalties depend on your ethos and holdings' };
+    }
+
+    function render() {
+      const [a, b] = parents();
+      $('withwrap').hidden = state.path !== 'hybrid';
+
+      // gate box
+      const g = gate();
+      const cd = state.path === 'hybrid' ? R.cooldownYears.hybrid
+        : state.path === 'diverge' ? R.cooldownYears.divergence
+        : R.cooldownYears.addTradition;
+      $('gatebox').innerHTML = g
+        ? `<div class="big"><b>${g.val}</b> cultural acceptance needed with ${esc(b.name)}</div>` +
+          (g.steps.length ? `<ul class="steps">${g.steps.map((s) => `<li>${esc(s)}</li>`).join('')}</ul>`
+                          : `<p class="note">Base threshold — neither culture modifies it.</p>`) +
+          `<p class="note">Then a <b>${cd}-year</b> cooldown before you can hybridize again.</p>`
+        : state.path === 'diverge'
+          ? `<div class="big">No acceptance gate</div><p class="note">Divergence splits your culture off directly; the cooldown is <b>${cd} years</b>.</p>`
+          : `<div class="big">No acceptance gate</div><p class="note">Each tradition change costs prestige and locks the culture for <b>${cd} years</b>.</p>`;
+
+      // pillars: choose from the parents
+      $('pillarnote').textContent = state.path === 'hybrid'
+        ? 'A hybrid takes each pillar from one of its two parents — pick a side per pillar.'
+        : 'Divergence and reform keep the parent culture’s pillars.';
+      $('pillars').innerHTML = pillarSlots.map((slot) => {
+        const opts = [...new Set(parents().map((c) => c[slot]).filter(Boolean))];
+        const cur = state.pillars[slot] ?? opts[0];
+        return `<div class="pcard"><span class="lbl">${slot === 'martial' ? 'martial custom' : slot}</span>` +
+          opts.map((o) => `<button class="popt${o === cur ? ' on' : ''}" data-slot="${slot}" data-val="${esc(o)}">` +
+            `${esc(P[o]?.n ?? o)}</button>`).join('') + `</div>`;
+      }).join('');
+
+      // tradition pool
+      const p = pool();
+      $('trnote').textContent = state.path === 'hybrid'
+        ? `Pick up to ${maxTraditions} from either parent (carried over free), or swap in any other tradition for its prestige cost.`
+        : `Keep or replace up to ${maxTraditions} traditions; replacements cost prestige.`;
+      const inherited = new Set(p.map((x) => x.id));
+      const chosen = state.tr.length ? state.tr : p.slice(0, maxTraditions).map((x) => x.id);
+      state.tr = chosen.slice(0, maxTraditions);
+      $('trcount').textContent = `${state.tr.length}/${maxTraditions}`;
+      $('pool').innerHTML = p.map((x) => {
+        const on = state.tr.includes(x.id);
+        const t = T[x.id];
+        return `<button class="tr${on ? ' on' : ''}" data-tr="${esc(x.id)}" title="${esc((t.fx || []).join(' · '))}">` +
+          `<span class="tn">${esc(t.n)}</span><span class="tf">${esc(x.from)}</span></button>`;
+      }).join('');
+
+      // summary
+      const cost = state.tr.filter((t) => !inherited.has(t))
+        .reduce((n, t) => n + costOf(t, false).n, 0);
+      const minYears = Math.ceil(100 / (R.defines.REFORMATION_PROGRESS_GAIN_BASE * 12));
+      $('summary').innerHTML =
+        `<div class="scard">` +
+        pillarSlots.map((s) => {
+          const v = state.pillars[s] ?? parents()[0][s];
+          return `<div class="srow"><span class="lbl">${s === 'martial' ? 'martial custom' : s}</span>` +
+            `<b>${esc(P[v]?.n ?? v ?? '—')}</b></div>`;
+        }).join('') +
+        `<div class="srow"><span class="lbl">traditions</span><b>${state.tr.length}</b></div>` +
+        `</div>` +
+        `<ul class="slist">${state.tr.map((t) =>
+          `<li>${esc(T[t]?.n ?? t)}${inherited.has(t) ? '' : ' <span class="paid">new</span>'}</li>`).join('')}</ul>` +
+        `<p class="note">Prestige for new traditions: <b>${cost.toLocaleString()}</b>` +
+        `${cost ? ' (base cost; wrong-ethos and unmet-criteria penalties apply per tradition)' : ''}</p>` +
+        `<p class="note">Reforming takes at least <b>${minYears} years</b> and is slower the more counties hold the culture, capped at ${R.defines.REFORMATION_MAX_YEARS}.</p>`;
+
+      const u = new URL(location.href);
+      u.searchParams.set('c', `${state.start}~${state.path}~${state.with}~${state.tr.join(',')}`);
+      history.replaceState(null, '', u);
+    }
+
+    function load() {
+      const raw = new URLSearchParams(location.search).get('c');
+      if (!raw) return;
+      const [s, p, w, tr] = raw.split('~');
+      if (byId[s]) state.start = s;
+      if (['hybrid', 'diverge', 'reform'].includes(p)) state.path = p;
+      if (byId[w]) state.with = w;
+      if (tr) state.tr = tr.split(',').filter((t) => T[t]);
+      $('startc').value = state.start; $('path').value = state.path; $('withc').value = state.with;
+    }
+
+    $('startc').addEventListener('input', (e) => { state.start = e.target.value; state.tr = []; state.pillars = {}; render(); });
+    $('withc').addEventListener('input', (e) => { state.with = e.target.value; state.tr = []; state.pillars = {}; render(); });
+    $('path').addEventListener('input', (e) => { state.path = e.target.value; state.tr = []; state.pillars = {}; render(); });
+    $('reset').addEventListener('click', () => { state.tr = []; state.pillars = {}; render(); });
+    $('share').addEventListener('click', async () => {
+      try { await navigator.clipboard.writeText(location.href); } catch {}
+      const b = $('share'), t = b.textContent; b.textContent = 'Copied!';
+      setTimeout(() => (b.textContent = t), 1500);
+    });
+    document.addEventListener('click', (ev) => {
+      const po = ev.target.closest('.popt');
+      if (po) { state.pillars[po.dataset.slot] = po.dataset.val; return render(); }
+      const tr = ev.target.closest('.tr');
+      if (tr) {
+        const id = tr.dataset.tr;
+        if (state.tr.includes(id)) state.tr = state.tr.filter((x) => x !== id);
+        else if (state.tr.length < maxTraditions) state.tr.push(id);
+        return render();
+      }
+    });
+
+    load();
+    render();
+  </script>
+
+  <style>
+    .cols { display: grid; grid-template-columns: 1fr 20rem; gap: 1.25rem; align-items: start; }
+    @media (max-width: 950px) { .cols { grid-template-columns: 1fr; } }
+    .filterbar label { color: var(--dim); font-size: 0.8rem; display: flex; gap: 0.4rem; align-items: center; }
+    .filterbar select { background: var(--ink); color: var(--vellum); border: 1px solid var(--line); border-radius: var(--r); padding: 0.28rem 0.5rem; max-width: 13rem; }
+    button { background: var(--panel); color: var(--vellum); border: 1px solid var(--line); border-radius: var(--r); padding: 0.28rem 0.7rem; cursor: pointer; font: 0.82rem var(--font-ui); }
+    button:hover { border-color: var(--brass); color: var(--brass-bright); }
+    .btn-primary { border-color: color-mix(in oklab, var(--rubric) 60%, var(--line)); }
+    .gate { background: var(--panel); border: 1px solid var(--line-soft); border-radius: var(--r); padding: 0.7rem 0.9rem; margin-bottom: 0.5rem; }
+    .note { color: var(--faint); font-size: 0.8rem; margin: 0.4rem 0 0.5rem; }
+    .pillargrid { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 0.5rem; }
+    .pool { display: flex; flex-wrap: wrap; gap: 0.35rem; }
+    .result { position: sticky; top: 4rem; }
+    .prov { color: var(--faint); font-size: 0.78rem; max-width: 70ch; margin-top: 2rem; }
+    .prov code { font-family: var(--font-mono); }
+  </style>
+</Base>
+<style is:global>
+  /* rendered via innerHTML at runtime — cannot be scoped */
+  .big { font-family: var(--font-display); font-size: 1.05rem; }
+  .big b { color: var(--rubric); font-family: var(--font-mono); font-size: 1.3rem; }
+  .steps { margin: 0.4rem 0 0; padding-left: 1rem; color: var(--dim); font-size: 0.8rem; }
+  .pcard { background: var(--panel); border: 1px solid var(--line-soft); border-radius: var(--r); padding: 0.5rem 0.6rem; display: flex; flex-direction: column; gap: 0.25rem; }
+  .lbl { color: var(--faint); font-size: 0.68rem; font-family: var(--font-mono); }
+  .popt { text-align: left; }
+  .popt.on { border-color: var(--rubric); color: var(--vellum); background: color-mix(in oklab, var(--rubric) 18%, transparent); }
+  .tr { display: flex; flex-direction: column; align-items: flex-start; gap: 0.1rem; max-width: 15rem; cursor: help; }
+  .tr.on { border-color: var(--brass); background: color-mix(in oklab, var(--brass) 14%, transparent); }
+  .tn { font-size: 0.82rem; }
+  .tf { color: var(--faint); font-size: 0.68rem; font-family: var(--font-mono); }
+  .scard { background: var(--panel); border: 1px solid var(--line-soft); border-radius: var(--r); padding: 0.6rem 0.75rem; }
+  .srow { display: flex; justify-content: space-between; gap: 0.5rem; padding: 0.12rem 0; font-size: 0.85rem; }
+  .slist { list-style: none; margin: 0.5rem 0 0; padding: 0; font-size: 0.82rem; }
+  .slist li { padding: 0.1rem 0; border-bottom: 1px solid var(--line-soft); }
+  .paid { color: var(--brass); font-family: var(--font-mono); font-size: 0.68rem; }
+</style>

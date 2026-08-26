@@ -30,6 +30,7 @@ data:
 	@python3 scripts/build_innovations.py
 	@python3 scripts/build_pillars.py
 	@python3 scripts/build_cultures.py
+	@python3 scripts/build_culture_rules.py
 	@python3 scripts/build_court.py
 	@python3 scripts/build_council.py
 	@python3 scripts/build_holdings.py
