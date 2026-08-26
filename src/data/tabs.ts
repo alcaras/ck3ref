@@ -21,6 +21,7 @@ export const SECTIONS = [
   'Warfare',
   'World',
   'Activities',
+  'Events',
   'Concepts',
   'Tools',
 ] as const;
@@ -79,7 +80,7 @@ export const TABS: Tab[] = [
   // Activities
   { slug: 'activities', label: 'Activities', section: 'Activities', status: 'built', summary: 'Feasts, tours, tournaments, pilgrimages.' },
   { slug: 'decisions', label: 'Decisions', section: 'Activities', status: 'built', summary: '431 decisions and their requirements.' },
-  { slug: 'events', label: 'Events', section: 'Activities', status: 'built', summary: 'Searchable index of all 9,823 events.' },
+  { slug: 'events', label: 'Event Browser', section: 'Events', status: 'built', summary: 'Searchable index of all 9,823 events.' },
   // Concepts
   { slug: 'game-rules', label: 'Game Rules', section: 'Concepts', status: 'built', summary: 'Every start-of-game rule, its options, and achievement blockers.' },
   { slug: 'concepts', label: 'Glossary', section: 'Concepts', status: 'built', summary: 'Every game concept, auto-linked.' },

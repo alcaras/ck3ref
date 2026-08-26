@@ -328,6 +328,18 @@ def render_text(s, _depth=0):
         inner = m.group(1).strip()
         if re.search(r"\.Get\w*Icon\w*(\|\w+)?$", inner):
             return ""  # inline icon call — nothing to say in plain text
+        # `[dread_i]`-style inline icon tokens carry the noun in the game's
+        # own templates ("You gain [dread_i]+10"); render the word so the
+        # text still says what the number is.
+        im = re.match(r"^(\w+)_i$", inner)
+        if im:
+            stem = im.group(1)
+            word = loc(f"game_concept_{stem}") or loc(stem.upper()) or loc(stem)
+            if word:
+                w = render_text(word, _depth + 1)
+                if w and len(w) < 40:
+                    return w + " "
+            return stem.replace("_", " ").title() + " "
         if re.match(r"^\w+_i$", inner):
             return ""  # [gold_i]-style inline icon token
         cm = _CONCEPT_FN.match(inner)

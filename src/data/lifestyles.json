@@ -7,7 +7,7 @@
       "effects": [
         "+10 General Opinion",
         "+30% Travel Speed",
-        "15 …Diplomatic Scheme Phase Length days faster per Scheme Phase"
+        "15 Diplomacy Diplomatic Scheme Phase Length days faster per Scheme Phase"
       ],
       "id": "diplomacy_adventurer_focus",
       "lifestyle": "diplomacy_lifestyle",
@@ -55,8 +55,8 @@
       "effects": [
         "+2.5% Owned Hostile Scheme Success Chance Growth Add",
         "+20% Scheme Secrecy",
-        "15 …Intrigue Scheme Phase Length days faster per Scheme Phase",
-        "15 …Prowess Scheme Phase Length days faster per Scheme Phase"
+        "15 Intrigue Intrigue Scheme Phase Length days faster per Scheme Phase",
+        "15 Prowess Prowess Scheme Phase Length days faster per Scheme Phase"
       ],
       "id": "intrigue_adventurer_focus",
       "lifestyle": "intrigue_lifestyle",
@@ -105,7 +105,7 @@
       "dlc": null,
       "education": false,
       "effects": [
-        "15 …Learning Scheme Phase Length days faster per Scheme Phase",
+        "15 Learning Learning Scheme Phase Length days faster per Scheme Phase",
         "-20% Stress Gain",
         "+10 Travel Safety"
       ],
@@ -119,7 +119,7 @@
       "education": false,
       "effects": [
         "+1 Learning",
-        "+0 Health"
+        "+0.25 Health"
       ],
       "id": "learning_medicine_focus",
       "lifestyle": "learning_lifestyle",
@@ -131,7 +131,7 @@
       "education": false,
       "effects": [
         "+3 Learning",
-        "+15% Development Growth Factor"
+        "+15% Development Growth"
       ],
       "id": "learning_scholarship_focus",
       "lifestyle": "learning_lifestyle",
@@ -157,7 +157,7 @@
       "effects": [
         "+10 Advantage",
         "+15% Men-at-Arms Toughness",
-        "15 …Martial Scheme Phase Length days faster per Scheme Phase"
+        "15 Martial Martial Scheme Phase Length days faster per Scheme Phase"
       ],
       "id": "martial_adventurer_focus",
       "lifestyle": "martial_lifestyle",
@@ -206,7 +206,7 @@
       "education": false,
       "effects": [
         "+2.5% Owned Contract Scheme Success Chance Growth Add",
-        "15 …Stewardship Scheme Phase Length days faster per Scheme Phase",
+        "15 Stewardship Stewardship Scheme Phase Length days faster per Scheme Phase",
         "+25% Provisions Gain"
       ],
       "id": "stewardship_adventurer_focus",
@@ -482,7 +482,7 @@
         {
           "dlc": null,
           "effects": [
-            "… Successful Befriend Schemes against Rulers will add the target to your Roll of Patrons"
+            "Adventurer Successful Befriend Schemes against Rulers will add the target to your Roll of Patrons"
           ],
           "features": [],
           "icon": "node_diplomacy",
@@ -607,7 +607,7 @@
             "+15 Fellow Vassal Opinion (landless adventurer)",
             "+15 Fellow Tributary Opinion (landless adventurer)",
             "+15 Fellow Confederation Member Opinion (nomadic)",
-            "… Make a Request Acceptance for Knights or Men-at-Arms: +25"
+            "Adventurer Make a Request Acceptance for Knights or Men-at-Arms: +25"
           ],
           "features": [],
           "icon": "node_diplomacy",
@@ -646,7 +646,7 @@
         {
           "dlc": null,
           "effects": [
-            "… Make a Request Acceptance: +20"
+            "Adventurer Make a Request Acceptance: +20"
           ],
           "features": [],
           "icon": "node_diplomacy",
@@ -666,7 +666,7 @@
           "effects": [
             "60 Learn Language Phase Length days faster per Scheme Phase",
             "+20% Owned Political Scheme Success Chance Add (administrative)",
-            "… Enables the Make a Request Interaction with anyone whose Domain your Camp is located in"
+            "Adventurer Enables the Make a Request Interaction with anyone whose Domain your Camp is located in"
           ],
           "features": [],
           "icon": "node_diplomacy",
@@ -685,8 +685,8 @@
           "dlc": null,
           "effects": [
             "+25% Scheme Secrecy (landless adventurer)",
-            "… Enables using the Elope Scheme on non-Lovers",
-            "… Elope Success Chance: +50%#"
+            "Adventurer Enables using the Elope Scheme on non-Lovers",
+            "Adventurer Elope Success Chance: +50%#"
           ],
           "features": [],
           "icon": "node_diplomacy",
@@ -734,7 +734,7 @@
           "effects": [
             "20 Sway Phase Length days faster per Scheme Phase",
             "+10 Tributary Opinion (mandala)",
-            "… Opinion gained with Officers recruited via Scout for Talent: +25"
+            "Adventurer Opinion gained with Officers recruited via Scout for Talent: +25"
           ],
           "features": [],
           "icon": "node_diplomacy",
@@ -753,7 +753,7 @@
             "Invert Check (landless adventurer)",
             "+0.4% Monthly Prestige per Dread (landless adventurer)",
             "+0.1% Knight Effectiveness per Dread (landless adventurer)",
-            "… Contract Prestige Rewards: …+20%"
+            "Adventurer Contract Prestige Rewards: Prestige +20%"
           ],
           "features": [],
           "icon": "node_diplomacy",
@@ -779,7 +779,7 @@
             "+10 Councillor Opinion (japan administrative)",
             "+1% Monthly Piety per Court Position (mandala)",
             "+10 Councillor Opinion (mandala)",
-            "… Can use Make a Request to start a Feast with you as the Honorary Guest"
+            "Adventurer Can use Make a Request to start a Feast with you as the Honorary Guest"
           ],
           "features": [],
           "icon": "node_diplomacy",
@@ -823,7 +823,7 @@
             "+0.15 Prestige per Legitimacy Level /month (landless adventurer)",
             "+15 Court Grandeur Baseline Add (landless adventurer)",
             "+0.15 Piety per Legitimacy Level /month (mandala)",
-            "… Make a Request Acceptance from Level of Fame: +20%"
+            "Adventurer Make a Request Acceptance from Level of Fame: +20%"
           ],
           "features": [],
           "icon": "node_diplomacy",
@@ -846,7 +846,7 @@
             "Invert Check (landless adventurer)",
             "+5% Legitimacy Gain (landless adventurer)",
             "+25% Legend Spread Chance (landless adventurer)",
-            "… Steadfast Camp Temperament now also grants a scaling Personal Scheme Phase Length bonus of 25"
+            "Adventurer Steadfast Camp Temperament now also grants a scaling Personal Scheme Phase Length bonus of 25"
           ],
           "features": [],
           "icon": "node_diplomacy",
@@ -1000,7 +1000,7 @@
           "effects": [
             "Invert Check (landless adventurer)",
             "+0.5 Dread Gain per Tyranny (landless adventurer)",
-            "… Criminal Contract Gold Rewards: …+100%"
+            "Adventurer Criminal Contract Gold Rewards: Gold +100%"
           ],
           "features": [],
           "icon": "node_intrigue",
@@ -1021,7 +1021,7 @@
           "effects": [
             "+0.05 Prestige per Dread /month (japan feudal)",
             "+0.05 Prestige per Dread /month (japan administrative)",
-            "+0 Piety per Dread /month (mandala)",
+            "+0.05 Piety per Dread /month (mandala)",
             "Invert Check (has unique perks)",
             "+15% Intimidated Vassal Tax Contribution (has unique perks)",
             "+15% Intimidated Vassal Levy Contribution (has unique perks)",
@@ -1030,7 +1030,7 @@
             "+15% Intimidated Vassal Herd Contribution (nomadic)",
             "+30% Terrified Vassal Herd Contribution (nomadic)",
             "+1 Domain Limit (government uses domain limit)",
-            "… Enables the Turn into Mystery Meat Execution method, allowing you to turn Prisoners into …Provisions\n(based on weight)"
+            "Adventurer Enables the Turn into Mystery Meat Execution method, allowing you to turn Prisoners into Provisions Provisions\n(based on weight)"
           ],
           "features": [],
           "icon": "node_intrigue",
@@ -1123,7 +1123,7 @@
         {
           "dlc": null,
           "effects": [
-            "…Enables the Search for Secrets Travel Option"
+            "Adventurer Enables the Search for Secrets Travel Option"
           ],
           "features": [],
           "icon": "node_intrigue",
@@ -1143,7 +1143,7 @@
           "effects": [
             "+10% Owned Political Scheme Success Chance Max Add (administrative)",
             "Schemes using Grace begin with an extra … months of it",
-            "… Exposing Secrets gives …Prestige based on the Rank of the target"
+            "Adventurer Exposing Secrets gives Prestige Prestige based on the Rank of the target"
           ],
           "features": [],
           "icon": "node_intrigue",
@@ -1377,7 +1377,7 @@
         {
           "dlc": null,
           "effects": [
-            "… Successful Seduce Schemes against Rulers will add the target to your Roll of Patrons and give you a Weak Hook if you choose to become Lovers"
+            "Adventurer Successful Seduce Schemes against Rulers will add the target to your Roll of Patrons and give you a Weak Hook if you choose to become Lovers"
           ],
           "features": [],
           "icon": "node_intrigue",
@@ -1556,7 +1556,7 @@
         {
           "dlc": null,
           "effects": [
-            "+0 Health",
+            "+0.5 Health",
             "Invert Check (landless adventurer)",
             "+5 Plague Resistance (landless adventurer)"
           ],
@@ -1624,7 +1624,7 @@
             "+20% Cultural Head Fascination Mult (landless adventurer)",
             "+25% Counter Efficiency (landless adventurer)",
             "-15% Siege Phase Time (landless adventurer)",
-            "… Bonus Modifiers from the Steadfast Camp Temperament now also scale by number of Followers with …15 Learning or more (1 per Follower)"
+            "Adventurer Bonus Modifiers from the Steadfast Camp Temperament now also scale by number of Followers with Learning 15 Learning or more (1 per Follower)"
           ],
           "features": [],
           "icon": "node_learning",
@@ -1665,8 +1665,8 @@
           "effects": [
             "+100% Wanderer (…) Trait Experience Gain (landless adventurer)",
             "-25% Men-at-Arms Recruitment Cost (landless adventurer)",
-            "+15% County Fertility Growth Mult (nomadic)",
-            "… May recruit Cultural Men-at-Arms from where you are located"
+            "+15% County Fertility Growth (nomadic)",
+            "Adventurer May recruit Cultural Men-at-Arms from where you are located"
           ],
           "features": [],
           "icon": "node_learning",
@@ -1686,7 +1686,7 @@
           "effects": [
             "+15 Different Faith Opinion",
             "-75% Faith Conversion Cost",
-            "… You now gain ……………+1 for every three unique Faiths your Followers have when Camp Temperament is Steadfast"
+            "Adventurer You now gain Diplomacy Intrigue Stewardship Martial Learning +1 for every three unique Faiths your Followers have when Camp Temperament is Steadfast"
           ],
           "features": [],
           "icon": "node_learning",
@@ -1726,7 +1726,7 @@
           "dlc": null,
           "effects": [
             "+200% Seasoned (…) Trait Experience Gain (landless adventurer)",
-            "… Followers will occasionally become Inspired to write Books"
+            "Adventurer Followers will occasionally become Inspired to write Books"
           ],
           "features": [],
           "icon": "node_learning",
@@ -1752,7 +1752,7 @@
             "+0.5 Domicile Piety /month (japan administrative)",
             "+15% Confucian Education Trait Experience Gain (japan feudal)",
             "+0.5 Domicile Piety /month (japan feudal)",
-            "… Followers produce significantly higher-quality Artifacts when completing Book Inspirations"
+            "Adventurer Followers produce significantly higher-quality Artifacts when completing Book Inspirations"
           ],
           "features": [],
           "icon": "node_learning",
@@ -1801,7 +1801,7 @@
             "Doctrine: doctrine theocracy temporal",
             "+10 Clergy Opinion",
             "+0.5 Merit /month (government has merit)",
-            "… Steadfast Camp Temperament now also grants a scaling +1 Faith Hostility Advantage"
+            "Adventurer Steadfast Camp Temperament now also grants a scaling +1 Faith Hostility Advantage"
           ],
           "features": [],
           "icon": "node_learning",
@@ -1817,7 +1817,7 @@
         {
           "dlc": null,
           "effects": [
-            "… Enables the Proselytize to Locals Travel Option"
+            "Adventurer Enables the Proselytize to Locals Travel Option"
           ],
           "features": [],
           "icon": "node_learning",
@@ -1835,7 +1835,7 @@
         {
           "dlc": null,
           "effects": [
-            "…… Pilgrimage Cost: …-50%"
+            "Adventurer Nomad Pilgrimage Cost: Gold -50%"
           ],
           "features": [],
           "icon": "node_learning",
@@ -1854,7 +1854,7 @@
           "dlc": null,
           "effects": [
             "+10% Stress loss per Level of Devotion (mandala)",
-            "… You now gain …+0.4/month for every Follower of your Faith when Camp Temperament is Steadfast"
+            "Adventurer You now gain Piety +0.4/month for every Follower of your Faith when Camp Temperament is Steadfast"
           ],
           "features": [],
           "icon": "node_learning",
@@ -1879,8 +1879,8 @@
             "+50 Zealot Vassal Opinion (nomadic)",
             "+15 Same Faith Opinion (nomadic)",
             "+5% Monthly Domicile Piety (government uses domicile but not adventurer)",
-            "… Visiting a Temple Holding awards …25",
-            "… Visiting a Religious Point of Interest awards …250"
+            "Adventurer Visiting a Temple Holding awards Piety 25",
+            "Adventurer Visiting a Religious Point of Interest awards Piety 250"
           ],
           "features": [],
           "icon": "node_learning",
@@ -1903,8 +1903,8 @@
             "-50% Faith Creation and Reformation Cost (government has merit)",
             "+20% Monthly Merit (government has merit)",
             "+10% Stress loss per Level of Devotion (government has merit)",
-            "… Enables the Attempt to Convert Interaction with anyone whose Domain your Camp is located in",
-            "… Gain …Prestige when successfully using the Attempt to Convert Interaction"
+            "Adventurer Enables the Attempt to Convert Interaction with anyone whose Domain your Camp is located in",
+            "Adventurer Gain Prestige Prestige when successfully using the Attempt to Convert Interaction"
           ],
           "features": [],
           "icon": "node_learning",
@@ -1955,8 +1955,8 @@
             "Doctrine: doctrine pluralism pluralistic",
             "+1 Diplomacy per Level of Devotion",
             "+20% Monthly Piety",
-            "… Removes the Acceptance Penalty from the target not being Cynical when using the Attempt to Convert Interaction",
-            "… Doubles Acceptance from your …Learning when using the Attempt to Convert Interaction\n(presuming your Learning is higher)"
+            "Adventurer Removes the Acceptance Penalty from the target not being Cynical when using the Attempt to Convert Interaction",
+            "Adventurer Doubles Acceptance from your Learning Learning when using the Attempt to Convert Interaction\n(presuming your Learning is higher)"
           ],
           "features": [],
           "icon": "node_learning",
@@ -2024,7 +2024,7 @@
             "Invert Check (landless adventurer)",
             "+5 Controlled Territory Defender Advantage (landless adventurer)",
             "+10% Domicile Income (government uses domicile but not adventurer)",
-            "… Doubles the effect of Siege Replenishment"
+            "Adventurer Doubles the effect of Siege Replenishment"
           ],
           "features": [],
           "icon": "node_martial",
@@ -2042,7 +2042,7 @@
         {
           "dlc": null,
           "effects": [
-            "… Finishing a Siege awards x20 times the Holding's Loot value as …Provisions"
+            "Adventurer Finishing a Siege awards x20 times the Holding's Loot value as Provisions Provisions"
           ],
           "features": [],
           "icon": "node_martial",
@@ -2087,7 +2087,7 @@
             "Invert Check (landless adventurer)",
             "+50% Siege Progress against Revolts (landless adventurer)",
             "+10% Men-at-Arms Damage (landless adventurer)",
-            "… Mercenary Contract and Offer Military Assistance Gold Rewards: …+25%"
+            "Adventurer Mercenary Contract and Offer Military Assistance Gold Rewards: Gold +25%"
           ],
           "features": [],
           "icon": "node_martial",
@@ -2110,7 +2110,7 @@
             "-15% Army Gold Maintenance (landless adventurer)",
             "-20% Men-at-Arms Recruitment Cost (landless adventurer)",
             "-20% Upgrade Nomadic Horde Regiment Cost (nomadic)",
-            "… Refill Men-at-Arms Provision cost: …-25%"
+            "Adventurer Refill Men-at-Arms Provision cost: Provisions -25%"
           ],
           "features": [],
           "icon": "node_martial",
@@ -2131,7 +2131,7 @@
             "Invert Check (landless adventurer)",
             "-30% Mercenary Hire Cost (landless adventurer)",
             "-20% Men-at-Arms Recruitment Cost (landless adventurer)",
-            "… Reinforcements from Scrape the Barrel: +400%"
+            "Adventurer Reinforcements from Scrape the Barrel: +400%"
           ],
           "features": [],
           "icon": "node_martial",
@@ -2150,7 +2150,7 @@
           "dlc": null,
           "effects": [
             "+1 Domain Limit (government uses domain limit)",
-            "… Bonus Modifiers from the Steadfast Camp Temperament now also scale by …Dread (1 per 20 Dread)",
+            "Adventurer Bonus Modifiers from the Steadfast Camp Temperament now also scale by Dread Dread (1 per 20 Dread)",
             "Vassals no longer refuse Directives"
           ],
           "features": [],
@@ -2199,7 +2199,7 @@
             "+4 Prowess",
             "+5% Foot (Hastiluder) Trait Experience Gain",
             "+20% Foot (Hastiluder) Trait Experience Gain (landless adventurer)",
-            "… Can use Make a Request to make Count-Rank Rulers or higher start a Grand Tournament"
+            "Adventurer Can use Make a Request to make Count-Rank Rulers or higher start a Grand Tournament"
           ],
           "features": [],
           "icon": "node_martial",
@@ -2316,8 +2316,8 @@
           "effects": [
             "+25% Bow (Hastiluder) Trait Experience Gain (landless adventurer)",
             "Invert Check (administrative)",
-            "+4 Number of …Knights (administrative)",
-            "+2 Number of …Knights (administrative)"
+            "+4 Number of Knight Knights (administrative)",
+            "+2 Number of Knight Knights (administrative)"
           ],
           "features": [],
           "icon": "node_martial",
@@ -2609,7 +2609,7 @@
             "-5% Build Prestige Cost (landless adventurer)",
             "-5% Domicile Building Construction Cost (landless adventurer)",
             "-10% Domicile Building Construction Cost (nomadic)",
-            "… Refill Men-at-Arms Gold cost: …-25%"
+            "Adventurer Refill Men-at-Arms Gold cost: Gold -25%"
           ],
           "features": [],
           "icon": "node_stewardship",
@@ -2651,7 +2651,7 @@
             "-30% Build Speed (landless adventurer)",
             "-30% Holding Build Speed (landless adventurer)",
             "-30% Domicile Build Speed (government uses domicile but not adventurer)",
-            "… Significantly improves Characters recruited in the Tavern when using the Visit Settlement Decision"
+            "Adventurer Significantly improves Characters recruited in the Tavern when using the Visit Settlement Decision"
           ],
           "features": [],
           "icon": "node_stewardship",
@@ -2672,7 +2672,7 @@
             "Invert Check (landless adventurer)",
             "+100% Levy Reinforcement Rate (landless adventurer)",
             "+2% Herd Conversion into Horde Riders (nomadic)",
-            "… Visiting a Point of Interest awards ……"
+            "Adventurer Visiting a Point of Interest awards Gold …"
           ],
           "features": [],
           "icon": "node_stewardship",
@@ -2693,7 +2693,7 @@
             "Invert Check (landless adventurer)",
             "+0.3 Character Capital County Monthly Development Growth Add /month (landless adventurer)",
             "+15% Herd Gain (nomadic)",
-            "… Visiting a Capital Point of Interest improves all Followers by 1 Skill point"
+            "Adventurer Visiting a Capital Point of Interest improves all Followers by 1 Skill point"
           ],
           "features": [],
           "icon": "node_stewardship",
@@ -2713,7 +2713,7 @@
           "effects": [
             "Invert Check (landless adventurer)",
             "+50 Popular Opinion (landless adventurer)",
-            "… Enables the Gather Inspiration Travel Option"
+            "Adventurer Enables the Gather Inspiration Travel Option"
           ],
           "features": [],
           "icon": "node_stewardship",
@@ -2741,7 +2741,7 @@
             "+1 Maximum Domain Limit (japan feudal)",
             "+1 Maximum Domain Limit (japan administrative)",
             "+1 Maximum Domain Limit (wanua)",
-            "… Followers produce significantly higher-quality Artifacts when completing a Weapon, Armor, or Smith Inspiration"
+            "Adventurer Followers produce significantly higher-quality Artifacts when completing a Weapon, Armor, or Smith Inspiration"
           ],
           "features": [],
           "icon": "node_stewardship",
@@ -2805,7 +2805,7 @@
           "effects": [
             "Invert Check (landless adventurer)",
             "40 Learn Language Phase Length days faster per Scheme Phase (landless adventurer)",
-            "… Enables the Encourage Relationships Travel Option"
+            "Adventurer Enables the Encourage Relationships Travel Option"
           ],
           "features": [],
           "icon": "node_stewardship",
@@ -2828,7 +2828,7 @@
             "+10% Governor Trait Experience Gain (administrative)",
             "+20% Vassal Herd Contribution (nomadic)",
             "+5% Monthly Income from Herd (nomadic)",
-            "… Cost of recruiting Officers via Scout for Talent: -50%"
+            "Adventurer Cost of recruiting Officers via Scout for Talent: -50%"
           ],
           "features": [],
           "icon": "node_stewardship",
@@ -2851,8 +2851,8 @@
             "+20 Liege Opinion (landless adventurer)",
             "+10 Tributary Opinion (landless adventurer)",
             "+20 Suzerain Opinion (landless adventurer)",
-            "… Aptitude of Officers who are your Best Friend: +30",
-            "… Aptitude of Officers who are your Friend: +15"
+            "Adventurer Aptitude of Officers who are your Best Friend: +30",
+            "Adventurer Aptitude of Officers who are your Friend: +15"
           ],
           "features": [],
           "icon": "node_stewardship",
@@ -2871,8 +2871,8 @@
           "dlc": null,
           "effects": [
             "Invert Check (landless adventurer)",
-            "-0 Monthly Tyranny (landless adventurer)",
-            "… Officer Aptitude: +10"
+            "-0.15 Monthly Tyranny (landless adventurer)",
+            "Adventurer Officer Aptitude: +10"
           ],
           "features": [],
           "icon": "node_stewardship",
@@ -2892,9 +2892,9 @@
           "effects": [
             "Invert Check (landless adventurer)",
             "+20 Councillor Opinion (landless adventurer)",
-            "… Aptitude of Officers with a Friend: +5",
-            "… Aptitude of Officers with a Lover: +5",
-            "… Aptitude of Officers who are Married: +10"
+            "Adventurer Aptitude of Officers with a Friend: +5",
+            "Adventurer Aptitude of Officers with a Lover: +5",
+            "Adventurer Aptitude of Officers who are Married: +10"
           ],
           "features": [],
           "icon": "node_stewardship",
@@ -2912,8 +2912,8 @@
         {
           "dlc": null,
           "effects": [
-            "… The effects of the Scout for Talent Travel Option now apply to all Travels\n(Except the Speed penalty)",
-            "… The Scout for Talent Travel Option can no longer be selected"
+            "Adventurer The effects of the Scout for Talent Travel Option now apply to all Travels\n(Except the Speed penalty)",
+            "Adventurer The Scout for Talent Travel Option can no longer be selected"
           ],
           "features": [],
           "icon": "node_stewardship",
@@ -2939,7 +2939,7 @@
             "+50% Tributary Piety contributions (mandala)",
             "+5 House Opinion (japan feudal)",
             "+5 Close Family Opinion (japan feudal)",
-            "… Bonus Modifiers from the Steadfast Camp Temperament now also scale by number of Followers (1 per 5 Followers)",
+            "Adventurer Bonus Modifiers from the Steadfast Camp Temperament now also scale by number of Followers (1 per 5 Followers)",
             "Vassals no longer refuse Directives"
           ],
           "features": [],
@@ -3024,7 +3024,7 @@
           "effects": [
             "Invert Check (landless adventurer)",
             "+10% Monthly Gold Income while at War (landless adventurer)",
-            "… Reduces the cost of buying …Provisions when using the Visit Settlement Decision by …-25%"
+            "Adventurer Reduces the cost of buying Provisions Provisions when using the Visit Settlement Decision by Gold -25%"
           ],
           "features": [],
           "icon": "node_stewardship",
@@ -3043,7 +3043,7 @@
           "dlc": null,
           "effects": [
             "+10% Domicile Income (government uses domicile but not adventurer)",
-            "… You gain +25% more …Provisions from the Gather Provisions Decision"
+            "Adventurer You gain +25% more Provisions Provisions from the Gather Provisions Decision"
           ],
           "features": [],
           "icon": "node_stewardship",
@@ -3086,8 +3086,8 @@
           "dlc": null,
           "effects": [
             "Invert Check (landless adventurer)",
-            "-0% Men-at-Arms Maintenance per Dread (landless adventurer)",
-            "… Enables the High-stakes Bartering Travel Option"
+            "-0.5% Men-at-Arms Maintenance per Dread (landless adventurer)",
+            "Adventurer Enables the High-stakes Bartering Travel Option"
           ],
           "features": [],
           "icon": "node_stewardship",
@@ -3107,7 +3107,7 @@
           "effects": [
             "Invert Check (landless adventurer)",
             "+10% Monthly Income per Stress Level (landless adventurer)",
-            "… When using the Gather Provisions Decision, Somewhat Effective Terrain now counts as Very Effective"
+            "Adventurer When using the Gather Provisions Decision, Somewhat Effective Terrain now counts as Very Effective"
           ],
           "features": [],
           "icon": "node_stewardship",
@@ -3127,7 +3127,7 @@
           "effects": [
             "Invert Check (landless adventurer)",
             "+10% Domain Taxes (landless adventurer)",
-            "… Contract Gold Rewards: …+25%\n(Not for Mercenary Contracts)"
+            "Adventurer Contract Gold Rewards: Gold +25%\n(Not for Mercenary Contracts)"
           ],
           "features": [],
           "icon": "node_stewardship",
@@ -3174,7 +3174,7 @@
           "dlc": null,
           "effects": [
             "Traveling through Domain Holdings improves the effectiveness of your Stationed Men-at-Arms",
-            "Unlocks the Designated Terrain Decision\nDesignated Terrain Danger: …-20"
+            "Unlocks the Designated Terrain Decision\nDesignated Terrain Danger: Danger -20"
           ],
           "features": [],
           "icon": "node_wanderer",
@@ -3193,8 +3193,8 @@
             "+10% Domain Taxes (settled)",
             "+10% Minor Landholder Vassal Tax Contribution (settled)",
             "Gain access to the Inspection Activity",
-            "Designated Terrain Provisions Use: …-25%\nUnlocks the Quartermaster Officer\nQuartermaster Aptitude: +10\nUnlocks the Head Porter Officer\nHead Porter Aptitude: +10",
-            "Designated Terrain County Fertility Growth: …30%"
+            "Designated Terrain Provisions Use: Provisions -25%\nUnlocks the Quartermaster Officer\nQuartermaster Aptitude: +10\nUnlocks the Head Porter Officer\nHead Porter Aptitude: +10",
+            "Designated Terrain County Fertility Growth: County Fertility 30%"
           ],
           "features": [],
           "icon": "node_wanderer",
@@ -3215,7 +3215,7 @@
             "+10 Parochial Vassal Opinion (settled)",
             "+10 Minor Landholder Vassal Opinion (settled)",
             "Same Realm Marriage Acceptance for self: +…\nSame Realm Marriage Acceptance for Close Family & Extended Family: +…",
-            "Gather Provisions in Designated Terrain: …+50%",
+            "Gather Provisions in Designated Terrain: Provisions +50%",
             "Unlocks the … Travel Option"
           ],
           "features": [],
@@ -3235,7 +3235,7 @@
           "dlc": null,
           "effects": [
             "Gain Development and Control in owned Counties when hosting Activities in them",
-            "…Designated Terrain Advantage: +5\n…Maximum Battle Roll in Designated Terrain: +2\n…Minimum Battle Roll in Designated Terrain: +2"
+            "Command Modifier Designated Terrain Advantage: +5\nCommand Modifier Maximum Battle Roll in Designated Terrain: +2\nCommand Modifier Minimum Battle Roll in Designated Terrain: +2"
           ],
           "features": [],
           "icon": "node_wanderer",
@@ -3274,12 +3274,12 @@
             "+0.15 Monthly County Control Growth Add /month (nomadic)",
             "Unlocks the Local Arbitration Decision",
             "Second Aptitude: +15",
-            "Gain Skill points based on Camp Purpose (Wanderers):\\t\\t•Your Diplomacy increases by …1\\t\\t•Your Martial increases by …1\\t\\t•Your Stewardship increases by …1\\t\\t•Your Intrigue increases by …1\\t\\t•Your Learning increases by …1",
-            "Gain Skill points based on Camp Purpose (Swords-for-Hire):\\t\\t•Your Martial increases by …2\\t\\t•Your Prowess increases by …2",
-            "Gain Skill points based on Camp Purpose (Scholars):\\t\\t•Your Learning increases by …2\\t\\t•Your Stewardship increases by …2",
-            "Gain Skill points based on Camp Purpose (Explorers):\\t\\t•Your Diplomacy increases by …2\\t\\t•Your Intrigue increases by …2",
-            "Gain Skill points based on Camp Purpose (Freebooters):\\t\\t•Your Prowess increases by …2\\t\\t•Your Intrigue increases by …2",
-            "Gain Skill points based on Camp Purpose (Legitimists):\\t\\t•Your Diplomacy increases by …2\\t\\t•Your Martial increases by …2"
+            "Gain Skill points based on Camp Purpose (Wanderers):\\t\\t•Your Diplomacy increases by Diplomacy 1\\t\\t•Your Martial increases by Martial 1\\t\\t•Your Stewardship increases by Stewardship 1\\t\\t•Your Intrigue increases by Intrigue 1\\t\\t•Your Learning increases by Learning 1",
+            "Gain Skill points based on Camp Purpose (Swords-for-Hire):\\t\\t•Your Martial increases by Martial 2\\t\\t•Your Prowess increases by Prowess 2",
+            "Gain Skill points based on Camp Purpose (Scholars):\\t\\t•Your Learning increases by Learning 2\\t\\t•Your Stewardship increases by Stewardship 2",
+            "Gain Skill points based on Camp Purpose (Explorers):\\t\\t•Your Diplomacy increases by Diplomacy 2\\t\\t•Your Intrigue increases by Intrigue 2",
+            "Gain Skill points based on Camp Purpose (Freebooters):\\t\\t•Your Prowess increases by Prowess 2\\t\\t•Your Intrigue increases by Intrigue 2",
+            "Gain Skill points based on Camp Purpose (Legitimists):\\t\\t•Your Diplomacy increases by Diplomacy 2\\t\\t•Your Martial increases by Martial 2"
           ],
           "features": [],
           "icon": "node_wanderer",
@@ -3325,7 +3325,7 @@
             "+1 Maximum Domain Limit (japan administrative)",
             "Holding an Inspection Activity will also apply the effects of a Local Arbitration in that County\nNo Stone Unturned Effects: +50%",
             "Unlock the Master Terrain Decision",
-            "Effects for Master Terrain:\n•Danger: …-20\n•Provisions Use: …-25%\n•Refill Men-at-Arms Cost: ……-25%\n•Prestige and Fame from Battles: …+50%\n•…Advantage: +5\n•…Maximum Battle Roll: +1\n•…Minimum Battle Roll: +1\n•…Negate Supply Limit Penalty: Yes\n•…Attrition Taken: -50%",
+            "Effects for Master Terrain:\n•Danger: Danger -20\n•Provisions Use: Provisions -25%\n•Refill Men-at-Arms Cost: Gold Provisions -25%\n•Prestige and Fame from Battles: Prestige +50%\n•Command Modifier Advantage: +5\n•Command Modifier Maximum Battle Roll: +1\n•Command Modifier Minimum Battle Roll: +1\n•Command Modifier Negate Supply Limit Penalty: Yes\n•Command Modifier Attrition Taken: -50%",
             "Know Your Land, Know Your People Effects: +50%"
           ],
           "features": [],
@@ -3446,7 +3446,7 @@
         {
           "dlc": null,
           "effects": [
-            "Point of Interest Stress Loss: …-5\nPoint of Interest Prestige: …+10"
+            "Point of Interest Stress Loss: Stress Loss -5\nPoint of Interest Prestige: Prestige +10"
           ],
           "features": [],
           "icon": "node_wanderer",
@@ -3466,8 +3466,8 @@
           "effects": [
             "+20% Provisions Capacity (landless adventurer)",
             "The Capital will gain Development if the owner returns from a Travel to a more developed Destination",
-            "… Whenever you move your Camp, gain +10 Opinion with Courtiers and Guests",
-            "… Whenever you move your Camp, you may gain +25 Gold and +5 Gallowsbait Trait Experience (once every 3 months)"
+            "Adventurer Whenever you move your Camp, gain +10 Opinion with Courtiers and Guests",
+            "Adventurer Whenever you move your Camp, you may gain +25 Gold and +5 Gallowsbait Trait Experience (once every 3 months)"
           ],
           "features": [],
           "icon": "node_wanderer",
@@ -3488,7 +3488,7 @@
           "effects": [
             "Gain 10 opinion with anyone Traveling to the Capital, and 10 opinion when Traveling to the Capital of others",
             "Court Position Aptitude Increased by +3 per known Language",
-            "… Bonus Modifiers from the Steadfast Camp Temperament now also scale by number of known Languages",
+            "Adventurer Bonus Modifiers from the Steadfast Camp Temperament now also scale by number of known Languages",
             "Gain 10 Opinion when visiting someone's Capital"
           ],
           "features": [],
@@ -3629,7 +3629,7 @@
           "dlc": null,
           "effects": [
             "Promote Cultural Acceptance Effectiveness: +30%\nIncrease the Popular Opinion of a Realm County when Traveling to it",
-            "… Whenever you move your Camp, gain …Fame equal to 15 times your Diplomacy Skill (once every 3 months)"
+            "Adventurer Whenever you move your Camp, gain Fame Fame equal to 15 times your Diplomacy Skill (once every 3 months)"
           ],
           "features": [],
           "icon": "node_wanderer",

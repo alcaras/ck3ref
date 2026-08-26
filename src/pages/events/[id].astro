@@ -1,0 +1,107 @@
+---
+import Base from '../../layouts/Base.astro';
+import index from '../../../public/data/event-index.json';
+import options from '../../../public/data/event-options.json';
+
+export function getStaticPaths() {
+  const idx = index as any[];
+  const opts = options as Record<string, any[]>;
+  // one page per event that has something to show: player text or choices
+  return idx
+    .filter((e) => e.title || e.desc || opts[e.id])
+    .map((e) => ({
+      params: { id: e.id },
+      props: { event: e, options: opts[e.id] ?? [] },
+    }));
+}
+
+const { event, options: opts } = Astro.props;
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const letters = 'abcdefghijklmnopqrstuvwxyz';
+---
+<Base
+  title={event.title || event.id}
+  docTitle={`${event.title || event.id} — CK3 Reference`}
+  active="events"
+  lede={event.desc ?? undefined}
+  stats={[
+    { value: opts.length || '—', label: 'choices' },
+    { value: event.type, label: 'type' },
+    { value: event.folder, label: 'folder' },
+  ]}
+>
+  <p class="crumbs">
+    <a href={`${base}/events`}>← all events</a>
+    <span class="idtag">{event.id}</span>
+    {event.hidden && <span class="chip">hidden</span>}
+    {event.dlc && <span class="badge-dlc">{event.dlc}</span>}
+  </p>
+
+  {opts.length > 0 ? (
+    <section>
+      <h2 class="group-h">Choices <span class="count">{opts.length}</span></h2>
+      <div class="opts">
+        {opts.map((o: any, i: number) => (
+          <article class="opt">
+            <div class="o-h">
+              <span class="o-key">{letters[i] ?? i + 1}</span>
+              <b>{o.text ?? <span class="subtle">untitled option</span>}</b>
+            </div>
+            {o.tooltip?.length > 0 && (
+              <p class="o-tip">{o.tooltip.join(' ')}</p>
+            )}
+            {o.outcomes.length > 0 ? (
+              <ul class="o-fx">
+                {o.outcomes.map((x: string) => <li>{x}</li>)}
+              </ul>
+            ) : (
+              <p class="o-none">
+                No outcome the game puts into words — this choice runs script
+                the game doesn't describe in a tooltip.
+              </p>
+            )}
+            {o.unlocalized > 0 && (
+              <p class="o-more">
+                + {o.unlocalized} further scripted effect{o.unlocalized === 1 ? '' : 's'} with no tooltip text
+              </p>
+            )}
+          </article>
+        ))}
+      </div>
+    </section>
+  ) : (
+    <p class="o-none">
+      This event has no player choices — it fires and resolves on its own
+      {event.hidden ? ', and is hidden from the player entirely.' : '.'}
+    </p>
+  )}
+
+  <p class="prov">
+    Outcomes are rendered with the game's own effect vocabulary
+    (<code>common/effect_localization</code>), which maps each scriptable
+    effect to the words the game uses for it. Effects the game never phrases —
+    control flow, scope plumbing, scripted macros — are counted rather than
+    guessed at. Source: <code>{event.file}</code>.
+  </p>
+
+  <style>
+    .crumbs { display: flex; gap: 0.6rem; align-items: center; flex-wrap: wrap; }
+    .idtag { font-family: var(--font-mono); font-size: 0.75rem; color: var(--faint); }
+    .opts { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 0.7rem; }
+    .opt { background: var(--panel); border: 1px solid var(--line-soft); border-radius: var(--r); padding: 0.7rem 0.85rem; }
+    .o-h { display: flex; gap: 0.5rem; align-items: baseline; margin-bottom: 0.35rem; }
+    .o-key {
+      font-family: var(--font-mono); font-size: 0.72rem; color: var(--rubric);
+      border: 1px solid color-mix(in oklab, var(--rubric) 45%, var(--line));
+      border-radius: 3px; padding: 0 0.3rem; flex: none;
+    }
+    .o-h b { font-family: var(--font-display); font-size: 0.95rem; }
+    .o-tip { color: var(--dim); font-size: 0.82rem; margin: 0 0 0.35rem; }
+    .o-fx { margin: 0; padding-left: 1rem; font-size: 0.82rem; }
+    .o-fx li { padding: 0.06rem 0; }
+    .o-none { color: var(--faint); font-size: 0.8rem; font-style: italic; margin: 0; }
+    .o-more { color: var(--faint); font-size: 0.75rem; font-family: var(--font-mono); margin: 0.35rem 0 0; }
+    .prov { color: var(--faint); font-size: 0.78rem; max-width: 68ch; margin-top: 2rem; }
+    .prov code { font-family: var(--font-mono); }
+  </style>
+</Base>

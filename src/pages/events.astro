@@ -9,7 +9,7 @@ const named = categories.reduce((n: number, c: any) => n + c.named, 0);
 <Base
   title="Events"
   active="events"
-  lede="Every event in the game, searchable by id, title, or text. Hidden events (engine plumbing with no player-facing text) are included but flagged — the option trees behind each event are effect scripts and aren't rendered here."
+  lede="Every event in the game, searchable by id, title, or text. Hidden events (engine plumbing with no player-facing text) are included but flagged — click any event for its choices and what each one does."
   stats={[
     { value: total.toLocaleString(), label: 'events' },
     { value: named.toLocaleString(), label: 'with player text' },
@@ -96,7 +96,8 @@ const named = categories.reduce((n: number, c: any) => n + c.named, 0);
         if (hits.length >= 300) break;
       }
       rows.innerHTML = hits.map((e) =>
-        `<tr id="${esc(e.id)}"><td class="name"><span class="u-name">${esc(e.title) || '<span class="subtle">untitled</span>'}</span>` +
+        `<tr id="${esc(e.id)}"><td class="name">` +
+        `<a class="u-name" href="${base}/events/${encodeURIComponent(e.id)}">${esc(e.title) || '<span class="subtle">untitled</span>'}</a>` +
         `<div class="u-sub mono">${esc(e.id)}${e.hidden ? ' · hidden' : ''}</div></td>` +
         `<td class="fx">${esc(e.desc) || '<span class="subtle">—</span>'}</td>` +
         `<td class="num">${e.options || '—'}</td>` +

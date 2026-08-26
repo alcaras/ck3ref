@@ -54,6 +54,7 @@ data:
 	@python3 scripts/build_realm2.py
 	@python3 scripts/build_court2.py
 	@python3 scripts/build_events.py
+	@python3 scripts/build_event_details.py
 	@python3 scripts/build_artifacts.py
 	@python3 scripts/build_dlc.py
 	@python3 scripts/build_genetics.py

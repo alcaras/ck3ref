@@ -706,7 +706,7 @@
         "scope": "Holding"
       },
       {
-        "cond": "if culture: Rulers of this Culture gain …Prestige and …Renown from Castle Holdings",
+        "cond": "if culture: Rulers of this Culture gain Prestige Prestige and Renown Renown from Castle Holdings",
         "lines": [
           "+0.02 Prestige /month",
           "+0.01 Renown /month"
@@ -721,14 +721,14 @@
         "scope": "Holding"
       },
       {
-        "cond": "if coastal, culture: Coastal Holdings in Counties of this Culture provide an additional +…% …Tax",
+        "cond": "if coastal, culture: Coastal Holdings in Counties of this Culture provide an additional +…% Gold Tax",
         "lines": [
           "+10% Holding Taxes"
         ],
         "scope": "Holding"
       },
       {
-        "cond": "if Jungle, culture: Fort Level per level of Tribal Hold in Jungle Terrain: …+…",
+        "cond": "if Jungle, culture: Fort Level per level of Tribal Hold in Jungle Terrain: Fort Level +…",
         "lines": [
           "+1 Additional Fort Level"
         ],
@@ -858,7 +858,7 @@
         "scope": "Holding"
       },
       {
-        "cond": "if culture: Rulers of this Culture gain …Prestige and …Renown from Castle Holdings",
+        "cond": "if culture: Rulers of this Culture gain Prestige Prestige and Renown Renown from Castle Holdings",
         "lines": [
           "+0.03 Prestige /month",
           "+0.02 Renown /month"
@@ -873,14 +873,14 @@
         "scope": "Holding"
       },
       {
-        "cond": "if coastal, culture: Coastal Holdings in Counties of this Culture provide an additional +…% …Tax",
+        "cond": "if coastal, culture: Coastal Holdings in Counties of this Culture provide an additional +…% Gold Tax",
         "lines": [
           "+10% Holding Taxes"
         ],
         "scope": "Holding"
       },
       {
-        "cond": "if Jungle, culture: Fort Level per level of Tribal Hold in Jungle Terrain: …+…",
+        "cond": "if Jungle, culture: Fort Level per level of Tribal Hold in Jungle Terrain: Fort Level +…",
         "lines": [
           "+2 Additional Fort Level"
         ],
@@ -961,7 +961,7 @@
         "scope": "Holding"
       },
       {
-        "cond": "if culture: Rulers of this Culture gain …Prestige and …Renown from Castle Holdings",
+        "cond": "if culture: Rulers of this Culture gain Prestige Prestige and Renown Renown from Castle Holdings",
         "lines": [
           "+0.04 Prestige /month",
           "+0.03 Renown /month"
@@ -976,14 +976,14 @@
         "scope": "Holding"
       },
       {
-        "cond": "if coastal, culture: Coastal Holdings in Counties of this Culture provide an additional +…% …Tax",
+        "cond": "if coastal, culture: Coastal Holdings in Counties of this Culture provide an additional +…% Gold Tax",
         "lines": [
           "+10% Holding Taxes"
         ],
         "scope": "Holding"
       },
       {
-        "cond": "if Jungle, culture: Fort Level per level of Tribal Hold in Jungle Terrain: …+…",
+        "cond": "if Jungle, culture: Fort Level per level of Tribal Hold in Jungle Terrain: Fort Level +…",
         "lines": [
           "+3 Additional Fort Level"
         ],
@@ -1064,7 +1064,7 @@
         "scope": "Holding"
       },
       {
-        "cond": "if culture: Rulers of this Culture gain …Prestige and …Renown from Castle Holdings",
+        "cond": "if culture: Rulers of this Culture gain Prestige Prestige and Renown Renown from Castle Holdings",
         "lines": [
           "+0.05 Prestige /month",
           "+0.04 Renown /month"
@@ -1079,14 +1079,14 @@
         "scope": "Holding"
       },
       {
-        "cond": "if coastal, culture: Coastal Holdings in Counties of this Culture provide an additional +…% …Tax",
+        "cond": "if coastal, culture: Coastal Holdings in Counties of this Culture provide an additional +…% Gold Tax",
         "lines": [
           "+10% Holding Taxes"
         ],
         "scope": "Holding"
       },
       {
-        "cond": "if Jungle, culture: Fort Level per level of Tribal Hold in Jungle Terrain: …+…",
+        "cond": "if Jungle, culture: Fort Level per level of Tribal Hold in Jungle Terrain: Fort Level +…",
         "lines": [
           "+4 Additional Fort Level"
         ],
@@ -1185,7 +1185,7 @@
         "scope": "County"
       },
       {
-        "cond": "if coastal, culture: Coastal Holdings in Counties of this Culture provide an additional +…% …Tax",
+        "cond": "if coastal, culture: Coastal Holdings in Counties of this Culture provide an additional +…% Gold Tax",
         "lines": [
           "+10% Holding Taxes"
         ],
@@ -1340,7 +1340,7 @@
         "scope": "County"
       },
       {
-        "cond": "if coastal, culture: Coastal Holdings in Counties of this Culture provide an additional +…% …Tax",
+        "cond": "if coastal, culture: Coastal Holdings in Counties of this Culture provide an additional +…% Gold Tax",
         "lines": [
           "+10% Holding Taxes"
         ],
@@ -1460,7 +1460,7 @@
         "scope": "County"
       },
       {
-        "cond": "if coastal, culture: Coastal Holdings in Counties of this Culture provide an additional +…% …Tax",
+        "cond": "if coastal, culture: Coastal Holdings in Counties of this Culture provide an additional +…% Gold Tax",
         "lines": [
           "+10% Holding Taxes"
         ],
@@ -1587,7 +1587,7 @@
         "scope": "County"
       },
       {
-        "cond": "if coastal, culture: Coastal Holdings in Counties of this Culture provide an additional +…% …Tax",
+        "cond": "if coastal, culture: Coastal Holdings in Counties of this Culture provide an additional +…% Gold Tax",
         "lines": [
           "+10% Holding Taxes"
         ],
@@ -4981,7 +4981,7 @@
       {
         "cond": null,
         "lines": [
-          "+2 Number of …Knights",
+          "+2 Number of Knight Knights",
           "+25% Knight Effectiveness",
           "-2.5% Army Gold Maintenance",
           "-10% Men-at-Arms Recruitment Cost",
@@ -5040,7 +5040,7 @@
       {
         "cond": null,
         "lines": [
-          "+4 Number of …Knights",
+          "+4 Number of Knight Knights",
           "+50% Knight Effectiveness",
           "-3.5% Army Gold Maintenance",
           "-20% Men-at-Arms Recruitment Cost",
@@ -5099,7 +5099,7 @@
       {
         "cond": null,
         "lines": [
-          "+6 Number of …Knights",
+          "+6 Number of Knight Knights",
           "+75% Knight Effectiveness",
           "-5% Army Gold Maintenance",
           "-30% Men-at-Arms Recruitment Cost",
@@ -28877,7 +28877,7 @@
         "scope": "County"
       },
       {
-        "cond": "if culture: Characters of this Culture gain …Piety from the Barracks line of Buildings",
+        "cond": "if culture: Characters of this Culture gain Piety Piety from the Barracks line of Buildings",
         "lines": [
           "+0.1 Piety /month"
         ],
@@ -28950,7 +28950,7 @@
         "scope": "County"
       },
       {
-        "cond": "if culture: Characters of this Culture gain …Piety from the Barracks line of Buildings",
+        "cond": "if culture: Characters of this Culture gain Piety Piety from the Barracks line of Buildings",
         "lines": [
           "+0.2 Piety /month"
         ],
@@ -29048,7 +29048,7 @@
         "scope": "County"
       },
       {
-        "cond": "if culture: Characters of this Culture gain …Piety from the Barracks line of Buildings",
+        "cond": "if culture: Characters of this Culture gain Piety Piety from the Barracks line of Buildings",
         "lines": [
           "+0.3 Piety /month"
         ],
@@ -29153,7 +29153,7 @@
         "scope": "County"
       },
       {
-        "cond": "if culture: Characters of this Culture gain …Piety from the Barracks line of Buildings",
+        "cond": "if culture: Characters of this Culture gain Piety Piety from the Barracks line of Buildings",
         "lines": [
           "+0.4 Piety /month"
         ],
@@ -29260,7 +29260,7 @@
         "scope": "County"
       },
       {
-        "cond": "if culture: Characters of this Culture gain …Piety from the Barracks line of Buildings",
+        "cond": "if culture: Characters of this Culture gain Piety Piety from the Barracks line of Buildings",
         "lines": [
           "+0.5 Piety /month"
         ],
@@ -29374,7 +29374,7 @@
         "scope": "County"
       },
       {
-        "cond": "if culture: Characters of this Culture gain …Piety from the Barracks line of Buildings",
+        "cond": "if culture: Characters of this Culture gain Piety Piety from the Barracks line of Buildings",
         "lines": [
           "+0.6 Piety /month"
         ],
@@ -29488,7 +29488,7 @@
         "scope": "County"
       },
       {
-        "cond": "if culture: Characters of this Culture gain …Piety from the Barracks line of Buildings",
+        "cond": "if culture: Characters of this Culture gain Piety Piety from the Barracks line of Buildings",
         "lines": [
           "+0.7 Piety /month"
         ],
@@ -29602,7 +29602,7 @@
         "scope": "County"
       },
       {
-        "cond": "if culture: Characters of this Culture gain …Piety from the Barracks line of Buildings",
+        "cond": "if culture: Characters of this Culture gain Piety Piety from the Barracks line of Buildings",
         "lines": [
           "+0.8 Piety /month"
         ],
@@ -34361,7 +34361,7 @@
         "cond": null,
         "lines": [
           "-6.4% Men-at-Arms Maintenance",
-          "+1 Number of …Knights"
+          "+1 Number of Knight Knights"
         ],
         "scope": "Owner"
       }
@@ -34452,7 +34452,7 @@
         "cond": null,
         "lines": [
           "-7.2% Men-at-Arms Maintenance",
-          "+1 Number of …Knights",
+          "+1 Number of Knight Knights",
           "-1% Army Gold Maintenance"
         ],
         "scope": "Owner"
@@ -38286,7 +38286,7 @@
       {
         "cond": null,
         "lines": [
-          "+1 Number of …Knights",
+          "+1 Number of Knight Knights",
           "+10% Knight Effectiveness"
         ],
         "scope": "Owner"
@@ -38329,7 +38329,7 @@
       {
         "cond": null,
         "lines": [
-          "+1 Number of …Knights",
+          "+1 Number of Knight Knights",
           "+10% Knight Effectiveness",
           "-1% Men-at-Arms Maintenance"
         ],
@@ -38374,7 +38374,7 @@
       {
         "cond": null,
         "lines": [
-          "+1 Number of …Knights",
+          "+1 Number of Knight Knights",
           "+10% Knight Effectiveness",
           "-3% Men-at-Arms Maintenance"
         ],
@@ -38420,7 +38420,7 @@
         "cond": null,
         "lines": [
           "-5% Men-at-Arms Maintenance",
-          "+1 Number of …Knights",
+          "+1 Number of Knight Knights",
           "+15% Knight Effectiveness"
         ],
         "scope": "Owner"
@@ -43045,7 +43045,7 @@
           "+0.1 Piety per Knight /month",
           "+2 Intrigue per Level of Fame",
           "+2 Learning",
-          "+2 Number of …Knights",
+          "+2 Number of Knight Knights",
           "+20% Knight Effectiveness",
           "+5% Monthly Renown"
         ],
@@ -43101,7 +43101,7 @@
           "+0.1 Piety per Knight /month",
           "+2 Intrigue per Level of Fame",
           "+2 Learning",
-          "+2 Number of …Knights",
+          "+2 Number of Knight Knights",
           "+20% Knight Effectiveness",
           "+5% Monthly Renown"
         ],
@@ -43663,7 +43663,7 @@
           "+10% Monthly Piety",
           "+5% Monthly Renown",
           "+20% Knight Effectiveness",
-          "+1 Number of …Knights"
+          "+1 Number of Knight Knights"
         ],
         "scope": "Owner"
       }
@@ -52747,7 +52747,7 @@
     },
     "desc": "The Tower of London is a castle that serves as both a vital fortification and a prison. The central tower is called the 'White Tower' and houses the ruling class. The position of the Tower of London means that it's vital to the defense of the entire County.",
     "dlc": "Roads to Power",
-    "effects": "…Harrying of the North: Pacification increases by 2 upon construction",
+    "effects": "Harrying of the North Harrying of the North: Pacification increases by 2 upon construction",
     "features": [
       "roads_to_power"
     ],
@@ -52914,7 +52914,7 @@
           "+0.2 Piety /month",
           "+0.05 Renown /month",
           "+5 Eastern Opinion",
-          "+2 Number of …Knights"
+          "+2 Number of Knight Knights"
         ],
         "scope": "Owner"
       }
@@ -70917,7 +70917,7 @@
         "scope": "Holding"
       },
       {
-        "cond": "if culture: Temple Citadels have increased …Fort Level",
+        "cond": "if culture: Temple Citadels have increased Fort Level Fort Level",
         "lines": [
           "+1 Fort Level"
         ],
@@ -70931,14 +70931,14 @@
         "scope": "Holding"
       },
       {
-        "cond": "if culture: Temple Citadels provide a small …Control bonus",
+        "cond": "if culture: Temple Citadels provide a small Control Control bonus",
         "lines": [
           "+0.1 Monthly County Control Growth Add /month"
         ],
         "scope": "County"
       },
       {
-        "cond": "if culture: Rulers of this Culture gain …Prestige and …Renown from Castle Holdings",
+        "cond": "if culture: Rulers of this Culture gain Prestige Prestige and Renown Renown from Castle Holdings",
         "lines": [
           "+0.02 Prestige /month",
           "+0.01 Renown /month"
@@ -70953,14 +70953,14 @@
         "scope": "Holding"
       },
       {
-        "cond": "if coastal, culture: Coastal Holdings in Counties of this Culture provide an additional +…% …Tax",
+        "cond": "if coastal, culture: Coastal Holdings in Counties of this Culture provide an additional +…% Gold Tax",
         "lines": [
           "+10% Holding Taxes"
         ],
         "scope": "Holding"
       },
       {
-        "cond": "if Jungle, culture: Fort Level per level of Tribal Hold in Jungle Terrain: …+…",
+        "cond": "if Jungle, culture: Fort Level per level of Tribal Hold in Jungle Terrain: Fort Level +…",
         "lines": [
           "+1 Additional Fort Level"
         ],
@@ -71090,7 +71090,7 @@
         "scope": "Holding"
       },
       {
-        "cond": "if culture: Temple Citadels have increased …Fort Level",
+        "cond": "if culture: Temple Citadels have increased Fort Level Fort Level",
         "lines": [
           "+2 Fort Level"
         ],
@@ -71104,14 +71104,14 @@
         "scope": "Holding"
       },
       {
-        "cond": "if culture: Temple Citadels provide a small …Control bonus",
+        "cond": "if culture: Temple Citadels provide a small Control Control bonus",
         "lines": [
           "+0.2 Monthly County Control Growth Add /month"
         ],
         "scope": "County"
       },
       {
-        "cond": "if culture: Rulers of this Culture gain …Prestige and …Renown from Castle Holdings",
+        "cond": "if culture: Rulers of this Culture gain Prestige Prestige and Renown Renown from Castle Holdings",
         "lines": [
           "+0.03 Prestige /month",
           "+0.02 Renown /month"
@@ -71126,14 +71126,14 @@
         "scope": "Holding"
       },
       {
-        "cond": "if coastal, culture: Coastal Holdings in Counties of this Culture provide an additional +…% …Tax",
+        "cond": "if coastal, culture: Coastal Holdings in Counties of this Culture provide an additional +…% Gold Tax",
         "lines": [
           "+10% Holding Taxes"
         ],
         "scope": "Holding"
       },
       {
-        "cond": "if Jungle, culture: Fort Level per level of Tribal Hold in Jungle Terrain: …+…",
+        "cond": "if Jungle, culture: Fort Level per level of Tribal Hold in Jungle Terrain: Fort Level +…",
         "lines": [
           "+2 Additional Fort Level"
         ],
@@ -71235,7 +71235,7 @@
         "scope": "Holding"
       },
       {
-        "cond": "if culture: Temple Citadels have increased …Fort Level",
+        "cond": "if culture: Temple Citadels have increased Fort Level Fort Level",
         "lines": [
           "+3 Fort Level"
         ],
@@ -71249,14 +71249,14 @@
         "scope": "Holding"
       },
       {
-        "cond": "if culture: Temple Citadels provide a small …Control bonus",
+        "cond": "if culture: Temple Citadels provide a small Control Control bonus",
         "lines": [
           "+0.3 Monthly County Control Growth Add /month"
         ],
         "scope": "County"
       },
       {
-        "cond": "if culture: Rulers of this Culture gain …Prestige and …Renown from Castle Holdings",
+        "cond": "if culture: Rulers of this Culture gain Prestige Prestige and Renown Renown from Castle Holdings",
         "lines": [
           "+0.04 Prestige /month",
           "+0.03 Renown /month"
@@ -71271,14 +71271,14 @@
         "scope": "Holding"
       },
       {
-        "cond": "if coastal, culture: Coastal Holdings in Counties of this Culture provide an additional +…% …Tax",
+        "cond": "if coastal, culture: Coastal Holdings in Counties of this Culture provide an additional +…% Gold Tax",
         "lines": [
           "+10% Holding Taxes"
         ],
         "scope": "Holding"
       },
       {
-        "cond": "if Jungle, culture: Fort Level per level of Tribal Hold in Jungle Terrain: …+…",
+        "cond": "if Jungle, culture: Fort Level per level of Tribal Hold in Jungle Terrain: Fort Level +…",
         "lines": [
           "+3 Additional Fort Level"
         ],
@@ -71381,7 +71381,7 @@
         "scope": "Holding"
       },
       {
-        "cond": "if culture: Temple Citadels have increased …Fort Level",
+        "cond": "if culture: Temple Citadels have increased Fort Level Fort Level",
         "lines": [
           "+4 Fort Level"
         ],
@@ -71395,14 +71395,14 @@
         "scope": "Holding"
       },
       {
-        "cond": "if culture: Temple Citadels provide a small …Control bonus",
+        "cond": "if culture: Temple Citadels provide a small Control Control bonus",
         "lines": [
           "+0.4 Monthly County Control Growth Add /month"
         ],
         "scope": "County"
       },
       {
-        "cond": "if culture: Rulers of this Culture gain …Prestige and …Renown from Castle Holdings",
+        "cond": "if culture: Rulers of this Culture gain Prestige Prestige and Renown Renown from Castle Holdings",
         "lines": [
           "+0.05 Prestige /month",
           "+0.04 Renown /month"
@@ -71417,14 +71417,14 @@
         "scope": "Holding"
       },
       {
-        "cond": "if coastal, culture: Coastal Holdings in Counties of this Culture provide an additional +…% …Tax",
+        "cond": "if coastal, culture: Coastal Holdings in Counties of this Culture provide an additional +…% Gold Tax",
         "lines": [
           "+10% Holding Taxes"
         ],
         "scope": "Holding"
       },
       {
-        "cond": "if Jungle, culture: Fort Level per level of Tribal Hold in Jungle Terrain: …+…",
+        "cond": "if Jungle, culture: Fort Level per level of Tribal Hold in Jungle Terrain: Fort Level +…",
         "lines": [
           "+4 Additional Fort Level"
         ],
@@ -74819,7 +74819,7 @@
         "scope": "Holding"
       },
       {
-        "cond": "if coastal, culture: Coastal Holdings in Counties of this Culture provide an additional +…% …Tax",
+        "cond": "if coastal, culture: Coastal Holdings in Counties of this Culture provide an additional +…% Gold Tax",
         "lines": [
           "+10% Holding Taxes"
         ],
@@ -74969,7 +74969,7 @@
         "scope": "Holding"
       },
       {
-        "cond": "if coastal, culture: Coastal Holdings in Counties of this Culture provide an additional +…% …Tax",
+        "cond": "if coastal, culture: Coastal Holdings in Counties of this Culture provide an additional +…% Gold Tax",
         "lines": [
           "+10% Holding Taxes"
         ],
@@ -75077,7 +75077,7 @@
         "scope": "Holding"
       },
       {
-        "cond": "if coastal, culture: Coastal Holdings in Counties of this Culture provide an additional +…% …Tax",
+        "cond": "if coastal, culture: Coastal Holdings in Counties of this Culture provide an additional +…% Gold Tax",
         "lines": [
           "+10% Holding Taxes"
         ],
@@ -75185,7 +75185,7 @@
         "scope": "Holding"
       },
       {
-        "cond": "if coastal, culture: Coastal Holdings in Counties of this Culture provide an additional +…% …Tax",
+        "cond": "if coastal, culture: Coastal Holdings in Counties of this Culture provide an additional +…% Gold Tax",
         "lines": [
           "+10% Holding Taxes"
         ],
@@ -76640,7 +76640,7 @@
         "scope": "Holding"
       },
       {
-        "cond": "if Jungle, culture: Fort Level per level of Castle in Jungle Terrain: …+…",
+        "cond": "if Jungle, culture: Fort Level per level of Castle in Jungle Terrain: Fort Level +…",
         "lines": [
           "+2 Additional Fort Level"
         ],
@@ -76736,7 +76736,7 @@
         "scope": "Holding"
       },
       {
-        "cond": "if Jungle, culture: Fort Level per level of Castle in Jungle Terrain: …+…",
+        "cond": "if Jungle, culture: Fort Level per level of Castle in Jungle Terrain: Fort Level +…",
         "lines": [
           "+4 Additional Fort Level"
         ],
@@ -77146,7 +77146,7 @@
       {
         "cond": null,
         "lines": [
-          "+1 Number of …Knights",
+          "+1 Number of Knight Knights",
           "+10% Knight Effectiveness"
         ],
         "scope": "Owner"
@@ -77229,7 +77229,7 @@
       {
         "cond": null,
         "lines": [
-          "+2 Number of …Knights",
+          "+2 Number of Knight Knights",
           "+20% Knight Effectiveness"
         ],
         "scope": "Owner"

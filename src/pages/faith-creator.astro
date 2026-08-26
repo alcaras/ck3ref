@@ -3,18 +3,27 @@ import Base from '../layouts/Base.astro';
 import doctrinesData from '../data/doctrines.json';
 import faithsData from '../data/faiths.json';
 
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+// which icons actually exist, resolved at build time from public/img
+const artFiles = new Set(
+  Object.keys(import.meta.glob('/public/img/{faith,faith_doctrines}/*.webp'))
+    .map((p) => p.split('/').slice(-2).join('/').replace('.webp', ''))
+);
+const hasArt = (dir: string, id: string) => artFiles.has(dir + '/' + id);
+
 const { doctrines, groups } = doctrinesData as any;
 const faiths = (faithsData as any).faiths;
 
 // client payload: only what the math needs
 const docMap = Object.fromEntries(doctrines.map((d: any) => [d.id, {
   n: d.name, cost: d.pietyCost, tenet: d.isTenet,
+  art: hasArt('faith_doctrines', d.id) ? d.id : null,
 }]));
 const creatableGroups = groups.filter((g: any) =>
   g.category !== 'not_creatable' && g.doctrines.some((id: string) => docMap[id]));
 const tenetIds = doctrines.filter((d: any) => d.isTenet).map((d: any) => d.id);
 const faithMap = Object.fromEntries(faiths.map((f: any) => [f.id, {
-  n: f.name, d: f.doctrines,
+  n: f.name, d: f.doctrines, art: hasArt('faith', f.id) ? f.id : null,
   t: f.tenets.map((t: any) => (typeof t === 'string' ? t : t.key)),
 }]));
 const contexts = ['Christianity or Islam', 'Judaism or Buddhism or Jainism', 'otherwise'];
@@ -30,6 +39,7 @@ const contexts = ['Christianity or Islam', 'Judaism or Buddhism or Jainism', 'ot
 >
   <div class="filterbar">
     <label>Starting faith
+      <img id="faithart" class="pick-art lg" src="" alt="" width="34" height="34" hidden />
       <select id="basefaith">
         {faiths.map((f: any) => <option value={f.id}>{f.name}</option>)}
       </select>
@@ -48,9 +58,12 @@ const contexts = ['Christianity or Islam', 'Judaism or Buddhism or Jainism', 'ot
       {[0, 1, 2].map((i) => (
         <label class="pick">
           <span class="subtle">tenet {i + 1}</span>
-          <select data-tenet={i}>
-            {tenetIds.map((id: string) => <option value={id}>{docMap[id].n}</option>)}
-          </select>
+          <span class="pick-row">
+            <img class="pick-art" src="" alt="" width="28" height="28" hidden />
+            <select data-tenet={i}>
+              {tenetIds.map((id: string) => <option value={id}>{docMap[id].n}</option>)}
+            </select>
+          </span>
           <span class="pcost subtle"></span>
         </label>
       ))}
@@ -63,11 +76,14 @@ const contexts = ['Christianity or Islam', 'Judaism or Buddhism or Jainism', 'ot
       {creatableGroups.map((g: any) => (
         <label class="pick">
           <span class="subtle">{g.name}</span>
-          <select data-group={g.id}>
-            {g.doctrines.filter((id: string) => docMap[id]).map((id: string) => (
-              <option value={id}>{docMap[id].n}</option>
-            ))}
-          </select>
+          <span class="pick-row">
+            <img class="pick-art" src="" alt="" width="28" height="28" hidden />
+            <select data-group={g.id}>
+              {g.doctrines.filter((id: string) => docMap[id]).map((id: string) => (
+                <option value={id}>{docMap[id].n}</option>
+              ))}
+            </select>
+          </span>
           <span class="pcost subtle"></span>
         </label>
       ))}
@@ -82,7 +98,7 @@ const contexts = ['Christianity or Islam', 'Judaism or Buddhism or Jainism', 'ot
     of unreformed faiths are not included.
   </p>
 
-  <script define:vars={{ docMap, faithMap, contexts }}>
+  <script define:vars={{ docMap, faithMap, contexts, base }}>
     const baseSel = document.getElementById('basefaith');
     const ctxSel = document.getElementById('ctx');
     const totalEl = document.getElementById('total');
@@ -120,7 +136,22 @@ const contexts = ['Christianity or Islam', 'Judaism or Buddhism or Jainism', 'ot
       });
     }
 
+    function syncArt() {
+      const f = faithMap[baseSel.value];
+      const fa = document.getElementById('faithart');
+      if (f?.art) { fa.src = `${base}/img/faith/${f.art}.webp`; fa.hidden = false; }
+      else fa.hidden = true;
+      document.querySelectorAll('.pick').forEach((p) => {
+        const img = p.querySelector('.pick-art');
+        if (!img) return;
+        const art = docMap[p.querySelector('select').value]?.art;
+        if (art) { img.src = `${base}/img/faith_doctrines/${art}.webp`; img.hidden = false; }
+        else img.hidden = true;
+      });
+    }
+
     function update() {
+      syncArt();
       const f = currentPicks();
       let total = 0;
       document.querySelectorAll('.pick').forEach((p) => {
@@ -151,6 +182,9 @@ const contexts = ['Christianity or Islam', 'Judaism or Buddhism or Jainism', 'ot
     .pick { display: flex; flex-direction: column; gap: 0.2rem; background: var(--panel); border: 1px solid var(--line-soft); border-radius: var(--r); padding: 0.5rem 0.65rem; }
     .pick select { background: var(--ink); color: var(--vellum); border: 1px solid var(--line); border-radius: var(--r); padding: 0.25rem 0.4rem; font-size: 0.82rem; }
     .pcost { font-family: var(--font-mono); font-size: 0.72rem; min-height: 1em; }
+    .pick-row { display: flex; align-items: center; gap: 0.4rem; }
+    .pick-row select { flex: 1; min-width: 0; }
+    .pick-art { flex: none; filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.6)); }
     .prov { color: var(--faint); font-size: 0.78rem; max-width: 64ch; margin-top: 2rem; }
     .prov code { font-family: var(--font-mono); }
   </style>
