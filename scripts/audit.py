@@ -29,7 +29,7 @@ MAPPED = {
     "religion": "build_faiths.py / build_doctrines.py / build_holy_sites.py",
     "casus_belli_types": "build_cbs.py",
     "casus_belli_groups": "build_cbs.py",
-    "landed_titles": "build_titles.py",
+    "landed_titles": "build_titles.py + build_startworld.py",
     "governments": "build_governments.py",
     "laws": "build_laws.py",
     "subject_contracts": "build_contracts.py",

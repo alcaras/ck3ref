@@ -1,6 +1,9 @@
 ---
 import Base from '../layouts/Base.astro';
 import data from '../data/faiths.json';
+import startworld from '../data/startworld.json';
+
+const startFaiths = (startworld as any).faiths;
 
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 
@@ -60,6 +63,7 @@ const traitText = (r: (typeof religions)[number]) =>
                   <th>Tenets</th>
                   <th>Holy sites</th>
                   <th>Head of faith</th>
+                  <th title="Provinces at the scripted world setup">At start</th>
                 </tr>
               </thead>
               <tbody>
@@ -101,6 +105,16 @@ const traitText = (r: (typeof religions)[number]) =>
                       </span>
                     </td>
                     <td>{f.religiousHead ? f.religiousHead.name ?? f.religiousHead.title : <span class="subtle">—</span>}</td>
+                    <td class="start">
+                      {startFaiths[f.id] ? (
+                        <span title={startFaiths[f.id].regions.map((r: any) => `${r.name} (${r.n})`).join(', ')}>
+                          <b>{startFaiths[f.id].provinces}</b>
+                          <span class="subtle"> prov · {startFaiths[f.id].counties} counties</span>
+                        </span>
+                      ) : (
+                        <span class="subtle">not on the map</span>
+                      )}
+                    </td>
                   </tr>
                 ))}
               </tbody>
@@ -160,3 +174,7 @@ const traitText = (r: (typeof religions)[number]) =>
     .chip--dlc { border-style: dashed; cursor: help; }
   </style>
 </Base>
+<style is:global>
+  .start { font-size: 0.78rem; white-space: nowrap; }
+  .start b { font-family: var(--font-mono); color: var(--brass); }
+</style>
