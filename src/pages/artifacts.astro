@@ -2,6 +2,7 @@
 import Base from '../layouts/Base.astro';
 import data from '../data/artifacts.json';
 
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 const { types, templates, named, featureGroups } = data;
 
 const SLOT_LABEL: Record<string, string> = {
@@ -94,6 +95,7 @@ const rarityLabel = (r: string) => r.charAt(0).toUpperCase() + r.slice(1);
                     data-dlc={a.dlc ?? 'base'}
                   >
                     <td class="name">
+                      <img class="row-icon" src={`${base}/img/artifacts/${a.icon}.webp`} alt="" width="26" height="26" loading="lazy" onerror="this.hidden=true" />
                       <span class="u-name" title={a.desc ?? undefined}>{a.name}</span>
                       {a.unique && <span class="chip chip--unique">unique</span>}
                     </td>
@@ -360,3 +362,7 @@ const rarityLabel = (r: string) => r.charAt(0).toUpperCase() + r.slice(1);
     details.fg .tbl-scroll { margin: 0.3rem 0 0.6rem; }
   </style>
 </Base>
+
+<style is:global>
+  .row-icon { vertical-align: -7px; margin-right: 0.4rem; }
+</style>

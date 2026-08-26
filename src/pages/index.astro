@@ -1,50 +1,25 @@
 ---
-import '../styles/theme.css';
+import Base from '../layouts/Base.astro';
 import { SECTIONS, TABS } from '../data/tabs';
-import patch from '../../data/patch.json';
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
-const built = TABS.filter((t) => t.status === 'built').length;
 ---
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>CK3 Reference</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Inter:wght@400;600&family=JetBrains+Mono:wght@400&display=swap"
-    />
-  </head>
-  <body>
-    <main class="wrap">
-      <div class="home-hero">
-        <h1><span class="versal">C</span>rusader Kings III Reference</h1>
-        <p>
-          Every number on this site is read from the game's own data files and
-          regenerated each patch — {TABS.length} reference pages and tools, from
-          traits and men-at-arms to the de jure map and the 867/1066 world.
-        </p>
+<Base
+  title="Crusader Kings III Reference"
+  docTitle="CK3 Reference"
+  lede={`Every number on this site is read from the game's own data files and regenerated each patch — ${TABS.length} reference pages and tools, from traits and men-at-arms to the de jure map and the 867/1066 world.`}
+>
+  <div class="sec-grid">
+    {SECTIONS.map((section) => (
+      <div class="sec-card">
+        <h2>{section}</h2>
+        <ul>
+          {TABS.filter((t) => t.section === section).map((t) => (
+            <li class:list={[{ soon: t.status !== 'built' }]}>
+              {t.status === 'built' ? <a href={`${base}/${t.slug}`}>{t.label}</a> : t.label}
+            </li>
+          ))}
+        </ul>
       </div>
-      <div class="sec-grid">
-        {SECTIONS.map((section) => (
-          <div class="sec-card">
-            <h2>{section}</h2>
-            <ul>
-              {TABS.filter((t) => t.section === section).map((t) => (
-                <li class:list={[{ soon: t.status !== 'built' }]}>
-                  {t.status === 'built' ? <a href={`${base}/${t.slug}`}>{t.label}</a> : t.label}
-                </li>
-              ))}
-            </ul>
-          </div>
-        ))}
-      </div>
-    </main>
-    <footer class="foot">
-      <span>ck3reference · data generated from the game's own files</span>
-      <span>game build {patch.buildId}</span>
-    </footer>
-  </body>
-</html>
+    ))}
+  </div>
+</Base>

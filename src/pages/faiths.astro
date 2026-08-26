@@ -78,6 +78,7 @@ const traitText = (r: (typeof religions)[number]) =>
                       <span class="faith">
                         <span class="dot" style={`--c:${f.color ?? 'var(--faint)'}`} />
                         <span>
+                          <img class="row-icon" src={`${base}/img/faith/${f.id}.webp`} alt="" width="26" height="26" loading="lazy" onerror="this.hidden=true" />
                           <span class="u-name">{f.name}</span>
                           {f.adherent && f.adherent !== f.name && (
                             <span class="u-sub"><br />{f.adherent}</span>
@@ -180,4 +181,8 @@ const traitText = (r: (typeof religions)[number]) =>
 <style is:global>
   .start { font-size: 0.78rem; white-space: nowrap; }
   .start b { font-family: var(--font-mono); color: var(--brass); }
+</style>
+
+<style is:global>
+  .row-icon { vertical-align: -7px; margin-right: 0.4rem; }
 </style>

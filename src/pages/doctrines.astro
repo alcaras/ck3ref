@@ -98,6 +98,7 @@ function searchText(d: (typeof doctrines)[number]): string {
             return (
               <tr id={d.id} data-kind="tenet" data-dlc={d.dlc ?? 'base'} data-name={searchText(d)}>
                 <td class="name">
+                  <img class="row-icon" src={`${base}/img/faith_doctrines/${d.id}.webp`} alt="" width="26" height="26" loading="lazy" onerror="this.hidden=true" />
                   <span class="u-name">{d.name}</span>
                   {d.nameVariants.length > 0 && <span class="u-sub"><br />also: {d.nameVariants.join(', ')}</span>}
                   {d.desc && <div class="desc">{d.desc}</div>}
@@ -282,3 +283,7 @@ function searchText(d: (typeof doctrines)[number]): string {
 
   <Backlinks ids={doctrines.map((x: any) => x.id)} />
 </Base>
+
+<style is:global>
+  .row-icon { vertical-align: -7px; margin-right: 0.4rem; }
+</style>

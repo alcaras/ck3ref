@@ -53,6 +53,7 @@ const rewardText = (r: any) =>
                 data-dlc={c.dlc ?? 'base'}
               >
                 <td class="name">
+                  <img class="row-icon" src={`${base}/img/task-contracts/${c.icon}.webp`} alt="" width="26" height="26" loading="lazy" onerror="this.hidden=true" />
                   <span class="u-name">{c.name}</span>
                   {c.isCriminal && <span class="chip chip--counter crim">criminal</span>}
                   {c.desc && <div class="u-sub">{c.desc}</div>}
@@ -110,3 +111,7 @@ const rewardText = (r: any) =>
     .chips { max-width: 26rem; }
   </style>
 </Base>
+
+<style is:global>
+  .row-icon { vertical-align: -7px; margin-right: 0.4rem; }
+</style>

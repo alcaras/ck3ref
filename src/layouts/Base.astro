@@ -5,11 +5,13 @@ import patch from '../../data/patch.json';
 
 interface Props {
   title: string;
+  /** Overrides the browser-tab title; defaults to "<title> — CK3 Reference". */
+  docTitle?: string;
   active?: string;
   lede?: string;
   stats?: { label: string; value: string | number }[];
 }
-const { title, active, lede, stats = [] } = Astro.props;
+const { title, docTitle, active, lede, stats = [] } = Astro.props;
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 const versal = title.slice(0, 1);
 const rest = title.slice(1);
@@ -18,7 +20,7 @@ const rest = title.slice(1);
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>{title} — CK3 Reference</title>
+    <title>{docTitle ?? `${title} — CK3 Reference`}</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link

@@ -3,6 +3,7 @@ import Base from '../layouts/Base.astro';
 import Backlinks from '../components/Backlinks.astro';
 import data from '../data/traditions.json';
 
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 const { costNote, traditions } = data as {
   costNote: string;
   traditions: any[];
@@ -70,7 +71,10 @@ function searchText(t: any): string {
           .map((t) => (
             <article class="trad" id={t.id} data-name={searchText(t)} data-cat={t.category} data-dlc={t.dlc ?? 'base'}>
               <header>
-                <h3><a href={`#${t.id}`}>{t.name}</a></h3>
+                <h3>
+                  <img class="trad-icon" src={`${base}/img/traditions/${t.id}.webp`} alt="" width="28" height="28" loading="lazy" onerror="this.hidden=true" />
+                  <a href={`#${t.id}`}>{t.name}</a>
+                </h3>
                 {t.dlc && <span class="badge-dlc">{t.dlc}</span>}
               </header>
               {t.desc && <p class="desc">{t.desc}</p>}
@@ -232,3 +236,7 @@ function searchText(t: any): string {
 
   <Backlinks ids={traditions.map((x: any) => x.id)} />
 </Base>
+
+<style is:global>
+  .trad-icon { vertical-align: -7px; margin-right: 0.35rem; }
+</style>

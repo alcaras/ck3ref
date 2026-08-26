@@ -2,6 +2,7 @@
 import Base from '../layouts/Base.astro';
 import data from '../data/cbs.json';
 
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 const { cbs, groups, meta } = data as {
   cbs: any[];
   groups: Record<string, { label: string; scriptOnly: boolean; debug: boolean; requirements: any[] }>;
@@ -104,6 +105,7 @@ function costLine(res: string, c: any): { text: string; varies: boolean } {
                   data-dlc={c.dlc ?? 'base'}
                 >
                   <td class="name">
+                    <img class="row-icon" src={`${base}/img/cb/${c.id}.webp`} alt="" width="26" height="26" loading="lazy" onerror="this.hidden=true" />
                     <span class="cb-name">{c.name}</span>
                     {c.isGreatHolyWar && <span class="chip chip--ghw">Great Holy War</span>}
                     {c.warName && c.warName !== c.name && <span class="u-sub">{c.warName}</span>}
@@ -225,3 +227,7 @@ function costLine(res: string, c: any): { text: string; varies: boolean } {
     .chip .neg { color: var(--bad); }
   </style>
 </Base>
+
+<style is:global>
+  .row-icon { vertical-align: -7px; margin-right: 0.4rem; }
+</style>
