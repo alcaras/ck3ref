@@ -73,7 +73,7 @@ export const TABS: Tab[] = [
   // Activities
   { slug: 'activities', label: 'Activities', section: 'Activities', status: 'built', summary: 'Feasts, tours, tournaments, pilgrimages.' },
   { slug: 'decisions', label: 'Decisions', section: 'Activities', status: 'built', summary: '431 decisions and their requirements.' },
-  { slug: 'events', label: 'Events', section: 'Activities', status: 'placeholder', summary: 'The 9,792-event browser.' },
+  { slug: 'events', label: 'Events', section: 'Activities', status: 'built', summary: 'Searchable index of all 9,823 events.' },
   // Concepts
   { slug: 'concepts', label: 'Glossary', section: 'Concepts', status: 'built', summary: 'Every game concept, auto-linked.' },
   { slug: 'defines', label: 'Defines', section: 'Concepts', status: 'built', summary: '1,122 engine constants, annotated.' },

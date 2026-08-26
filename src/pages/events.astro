@@ -1,0 +1,128 @@
+---
+import Base from '../layouts/Base.astro';
+import categories from '../data/event-categories.json';
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const total = categories.reduce((n: number, c: any) => n + c.count, 0);
+const named = categories.reduce((n: number, c: any) => n + c.named, 0);
+---
+<Base
+  title="Events"
+  active="events"
+  lede="Every event in the game, searchable by id, title, or text. Hidden events (engine plumbing with no player-facing text) are included but flagged — the option trees behind each event are effect scripts and aren't rendered here."
+  stats={[
+    { value: total.toLocaleString(), label: 'events' },
+    { value: named.toLocaleString(), label: 'with player text' },
+    { value: categories.length, label: 'folders' },
+  ]}
+>
+  <div class="filterbar">
+    <input type="search" id="q" placeholder="Search events by id, title, or text…" autocomplete="off" />
+    <select id="ffolder"><option value="">every folder</option>
+      {categories.map((c: any) => <option value={c.folder}>{c.folder} ({c.count})</option>)}
+    </select>
+    <label class="chk"><input type="checkbox" id="onlynamed" checked /> only events with text</label>
+    <span class="hint" id="count">loading…</span>
+  </div>
+
+  <div id="results" class="tbl-scroll" hidden>
+    <table class="ntbl">
+      <thead><tr><th>Event</th><th>Text</th><th class="num">Options</th><th>Folder</th><th>DLC</th></tr></thead>
+      <tbody id="rows"></tbody>
+    </table>
+  </div>
+
+  <section id="overview">
+    <h2 class="group-h">Event folders</h2>
+    <div class="tbl-scroll">
+      <table class="ntbl">
+        <thead><tr><th>Folder</th><th class="num">Events</th><th class="num">With text</th><th>Namespaces</th><th>DLC</th></tr></thead>
+        <tbody>
+          {categories.map((c: any) => (
+            <tr>
+              <td class="name"><button class="folderlink" data-folder={c.folder}>{c.folder}</button></td>
+              <td class="num">{c.count}</td>
+              <td class="num">{c.named}</td>
+              <td class="subtle">{c.namespaces.join(', ')}</td>
+              <td>{c.dlcs.map((d: string) => <span class="badge-dlc">{d}</span>)}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <script is:inline define:vars={{ base }}>
+    const q = document.getElementById('q');
+    const ffolder = document.getElementById('ffolder');
+    const onlynamed = document.getElementById('onlynamed');
+    const count = document.getElementById('count');
+    const rows = document.getElementById('rows');
+    const results = document.getElementById('results');
+    const overview = document.getElementById('overview');
+    let index = null;
+
+    async function load() {
+      if (index) return index;
+      count.textContent = 'loading index…';
+      index = await (await fetch(`${base}/data/event-index.json`)).json();
+      count.textContent = `${index.length.toLocaleString()} events`;
+      return index;
+    }
+
+    function esc(s) {
+      return (s ?? '').replace(/[&<>]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;' }[c]));
+    }
+
+    async function apply() {
+      const data = await load();
+      const needle = q.value.trim().toLowerCase();
+      const folder = ffolder.value;
+      const wantNamed = onlynamed.checked;
+      if (!needle && !folder) {
+        results.hidden = true; overview.hidden = false;
+        count.textContent = `${data.length.toLocaleString()} events`;
+        return;
+      }
+      const hits = [];
+      for (const e of data) {
+        if (folder && e.folder !== folder) continue;
+        if (wantNamed && !e.title && !e.desc) continue;
+        if (needle) {
+          const hay = `${e.id} ${e.title ?? ''} ${e.desc ?? ''} ${e.ns}`.toLowerCase();
+          if (!hay.includes(needle)) continue;
+        }
+        hits.push(e);
+        if (hits.length >= 300) break;
+      }
+      rows.innerHTML = hits.map((e) =>
+        `<tr id="${esc(e.id)}"><td class="name"><span class="u-name">${esc(e.title) || '<span class="subtle">untitled</span>'}</span>` +
+        `<div class="u-sub mono">${esc(e.id)}${e.hidden ? ' · hidden' : ''}</div></td>` +
+        `<td class="fx">${esc(e.desc) || '<span class="subtle">—</span>'}</td>` +
+        `<td class="num">${e.options || '—'}</td>` +
+        `<td class="subtle">${esc(e.folder)}</td>` +
+        `<td>${e.dlc ? `<span class="badge-dlc">${esc(e.dlc)}</span>` : '<span class="subtle">—</span>'}</td></tr>`
+      ).join('');
+      results.hidden = false; overview.hidden = true;
+      count.textContent = hits.length >= 300
+        ? 'showing first 300 matches — narrow the search'
+        : `${hits.length} of ${data.length.toLocaleString()}`;
+    }
+
+    for (const el of [q, ffolder, onlynamed]) el.addEventListener('input', apply);
+    document.addEventListener('click', (ev) => {
+      const b = ev.target.closest('.folderlink');
+      if (b) { ffolder.value = b.dataset.folder; apply(); }
+    });
+    load();
+  </script>
+
+  <style>
+    .chk { color: var(--dim); font-size: 0.8rem; display: flex; gap: 0.35rem; align-items: center; }
+    .folderlink { background: none; border: none; color: var(--brass); cursor: pointer; font: inherit; padding: 0; }
+    .folderlink:hover { color: var(--brass-bright); text-decoration: underline; }
+    .mono { font-family: var(--font-mono); font-size: 0.7rem; }
+    .fx { font-size: 0.8rem; max-width: 40rem; color: var(--dim); }
+    .ntbl td.name { white-space: normal; max-width: 22rem; }
+  </style>
+</Base>
