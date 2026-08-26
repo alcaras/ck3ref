@@ -27,6 +27,7 @@ data:
 	@python3 scripts/build_pillars.py
 	@python3 scripts/build_entities.py
 	@python3 scripts/build_backlinks.py
+	@python3 scripts/build_search_index.py
 
 art:
 	@python3 scripts/build_art.py

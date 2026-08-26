@@ -29,6 +29,11 @@ const rest = title.slice(1);
   <body>
     <header class="hdr">
       <a class="hdr__title" href={`${base}/`}><span class="rubric">C</span>K3 Reference</a>
+      <div class="search">
+        <input id="global-search" type="search" placeholder="Search… ( / )" autocomplete="off"
+          aria-label="Search the reference" />
+        <div id="search-results" class="search__results" hidden></div>
+      </div>
       <nav class="nav" aria-label="Sections">
         {SECTIONS.map((section) => (
           <details>
@@ -76,6 +81,58 @@ const rest = title.slice(1);
       document.addEventListener('click', (ev) => {
         if (!(ev.target as Element).closest('.nav'))
           for (const o of details) (o as HTMLDetailsElement).open = false;
+      });
+    </script>
+    <script is:inline define:vars={{ base }}>
+      // Header search: lazy-fetched flat index, 3-tier ranking (starts-with >
+      // word-boundary > substring), keyboard nav. owreference lineage.
+      const input = document.getElementById('global-search');
+      const box = document.getElementById('search-results');
+      let index = null, sel = -1, shown = [];
+      async function load() {
+        if (!index) {
+          try { index = await (await fetch(`${base}/data/search-index.json`)).json(); }
+          catch { index = []; }
+        }
+      }
+      function render() {
+        if (!shown.length) { box.hidden = true; return; }
+        box.innerHTML = shown.map((r, i) =>
+          `<a class="sr${i === sel ? ' is-sel' : ''}" href="${base}${r.u}">` +
+          (r.c ? `<img src="${base}${r.c}" alt="" width="18" height="18" loading="lazy">` : '<span class="sr__spacer"></span>') +
+          `<span class="sr__n">${r.n}</span><span class="sr__t">${r.t}</span></a>`).join('');
+        box.hidden = false;
+      }
+      function search(q) {
+        q = q.trim().toLowerCase();
+        if (!q) { shown = []; render(); return; }
+        const starts = [], words = [], subs = [];
+        for (const r of index) {
+          const n = r.n.toLowerCase();
+          if (n.startsWith(q)) starts.push(r);
+          else if (n.includes(' ' + q)) words.push(r);
+          else if (n.includes(q)) subs.push(r);
+          if (starts.length > 40) break;
+        }
+        const byLen = (a, b) => a.n.length - b.n.length;
+        shown = [...starts.sort(byLen), ...words.sort(byLen), ...subs.sort(byLen)].slice(0, 10);
+        sel = -1;
+        render();
+      }
+      input.addEventListener('focus', load);
+      input.addEventListener('input', async () => { await load(); search(input.value); });
+      input.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowDown') { sel = Math.min(sel + 1, shown.length - 1); render(); e.preventDefault(); }
+        else if (e.key === 'ArrowUp') { sel = Math.max(sel - 1, -1); render(); e.preventDefault(); }
+        else if (e.key === 'Enter' && sel >= 0) { location.href = base + shown[sel].u; }
+        else if (e.key === 'Escape') { box.hidden = true; input.blur(); }
+      });
+      document.addEventListener('keydown', (e) => {
+        if (e.key === '/' && !/INPUT|TEXTAREA|SELECT/.test(document.activeElement?.tagName ?? ''))
+          { input.focus(); e.preventDefault(); }
+      });
+      document.addEventListener('click', (e) => {
+        if (!e.target.closest('.search')) box.hidden = true;
       });
     </script>
   </body>
