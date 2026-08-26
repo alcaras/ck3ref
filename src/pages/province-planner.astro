@@ -1,0 +1,366 @@
+---
+import Base from '../layouts/Base.astro';
+import buildingsData from '../data/buildings.json';
+import terrainData from '../data/terrain.json';
+import holdingsData from '../data/holdings.json';
+import governmentsData from '../data/governments.json';
+import culturesData from '../data/cultures.json';
+import traditionsData from '../data/traditions.json';
+import innovationsData from '../data/innovations.json';
+import rules from '../data/province-rules.json';
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const R = rules as any;
+const terrains = terrainData as any[];
+const holdings = holdingsData as any[];
+const governments = governmentsData as any[];
+const cultures = culturesData as any[];
+const traditions = (traditionsData as any).traditions;
+const innovations = innovationsData as any[];
+const all = buildingsData as any[];
+
+const key = (x: any) => (typeof x === 'string' ? x : x?.key ?? x?.id);
+
+// chains: one entry per upgrade line, keyed on its root
+const chains = new Map<string, any[]>();
+for (const b of all) {
+  if (!chains.has(b.chain)) chains.set(b.chain, []);
+  chains.get(b.chain)!.push(b);
+}
+for (const t of chains.values()) t.sort((a, b) => a.tier - b.tier);
+
+// The planner works chain-by-chain: a chain is buildable if its FIRST tier is.
+const CH = [...chains.entries()]
+  .map(([root, tiers]) => {
+    const first = tiers[0];
+    const last = tiers[tiers.length - 1];
+    const num = (v: any) => (typeof v === 'number' ? v : null);
+    return {
+      id: root,
+      name: first.name,
+      icon: first.icon,
+      cat: first.category,
+      type: first.type,
+      tiers: tiers.length,
+      gold: num(first.cost?.gold),
+      goldAll: tiers.reduce((n: number, t: any) => n + (num(t.cost?.gold) ?? 0), 0),
+      days: num(first.constructionTime),
+      levy: num(last.levy),
+      garrison: num(last.maxGarrison),
+      fx: (last.modifiers ?? []).flatMap((m: any) => m.lines ?? []).slice(0, 6),
+      reqs: (first.requirements ?? []).map((r: any) => ({
+        kind: r.kind, key: r.key, name: r.name, neg: !!r.negated,
+      })),
+      dlc: first.dlc,
+    };
+  })
+  .sort((a, b) => (a.name ?? '').localeCompare(b.name ?? ''));
+
+// culture -> the cultural parameters its traditions grant (that's what gates buildings)
+const TPARAMS = Object.fromEntries(traditions.map((t: any) => [
+  t.id, (t.parameters ?? []).map((p: any) => p.key ?? p),
+]));
+const CUL = cultures.map((c) => ({
+  id: c.id, name: c.name,
+  params: (c.traditions ?? []).flatMap((t: any) => TPARAMS[key(t)] ?? []),
+  tr: (c.traditions ?? []).map(key),
+}));
+const INNOV = innovations.map((i: any) => ({ id: i.id, name: i.name, era: i.eraName ?? i.era }));
+const eras = [...new Set(INNOV.map((i) => i.era))];
+---
+<Base
+  title="Province Planner"
+  active="province-planner"
+  lede={`Plan a holding's buildings: set its terrain, holding type and whether it's the duchy capital, plug in your culture and government, and see exactly what you can build there. Gates come from each building's own construction triggers.`}
+  stats={[
+    { value: CH.length, label: 'building chains' },
+    { value: terrains.length, label: 'terrains' },
+    { value: R.MAX_BUILDINGS.value, label: 'max slots' },
+  ]}
+>
+  <div class="filterbar">
+    <label>Terrain
+      <select id="terrain">
+        {terrains.map((t) => <option value={t.id}>{t.name}</option>)}
+      </select>
+    </label>
+    <label>Holding
+      <select id="holding">
+        {holdings.map((h) => <option value={h.id}>{h.name}</option>)}
+      </select>
+    </label>
+    <label>Government
+      <select id="gov">
+        {governments.map((g) => <option value={g.id}>{g.name}</option>)}
+      </select>
+    </label>
+    <label>Culture
+      <select id="culture">
+        {CUL.map((c) => <option value={c.id}>{c.name}</option>)}
+      </select>
+    </label>
+    <label class="chk"><input type="checkbox" id="duchycap" /> duchy capital</label>
+    <label class="chk"><input type="checkbox" id="allinnov" checked /> all innovations researched</label>
+    <span class="hint" id="count"></span>
+  </div>
+
+  <div class="cols">
+    <section>
+      <h2 class="group-h">Buildable here <span class="count" id="okcount"></span></h2>
+      <div id="list" class="blist"></div>
+
+      <h2 class="group-h">Site-specific <span class="count" id="sitecount"></span></h2>
+      <p class="note">
+        Special buildings and great projects exist in named counties only —
+        see <a href={`${base}/buildings`}>buildings</a> and
+        <a href={`${base}/great-projects`}>great projects</a> for where.
+      </p>
+
+      <h2 class="group-h">Blocked <span class="count" id="nocount"></span></h2>
+      <p class="note">Why each chain is unavailable with these settings.</p>
+      <div id="blocked" class="blist blocked"></div>
+    </section>
+
+    <aside class="plan">
+      <h2 class="group-h">Your holding</h2>
+      <div id="slots"></div>
+      <div id="totals"></div>
+    </aside>
+  </div>
+
+  <p class="prov">
+    Anchored on the game: every gate is the building's own
+    <code>can_construct</code> requirement as extracted into the
+    <a href={`${base}/buildings`}>buildings</a> data — terrain, holding level,
+    government, innovation, cultural parameter, faith. Slot counts are
+    <code>BARONY_BUILDING_SLOTS {R.BARONY_BUILDING_SLOTS.value}</code>,
+    <code>COUNTY_BUILDING_SLOTS {R.COUNTY_BUILDING_SLOTS.value}</code> and
+    <code>MAX_BUILDINGS {R.MAX_BUILDINGS.value}</code> from defines; how slots
+    unlock as a holding levels up is not a single constant in the files, so the
+    slot count here is yours to set. Costs are the chain's own gold values.
+    Special buildings and great projects are listed but occupy their own slots
+    in game, which no static read confirms.
+  </p>
+
+  <script is:inline define:vars={{ CH, CUL, INNOV, R, base }}>
+    const $ = (id) => document.getElementById(id);
+    const esc = (s) => String(s ?? '').replace(/[&<>]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;' }[c]));
+    const culById = Object.fromEntries(CUL.map((c) => [c.id, c]));
+    // Categories come from the game's own building files, so they say which
+    // holding a chain belongs to. Anything not listed is holding-agnostic.
+    const CAT_HOLDING = {
+      'Castle holdings': ['castle_holding'],
+      'City holdings': ['city_holding'],
+      'Temple holdings': ['church_holding'],
+      'Temple citadels': ['temple_citadel_holding'],
+      'Tribal': ['tribal_holding'],
+      'Nomadic': ['nomad_holding', 'herder_holding'],
+    };
+    let picked = [];
+    let slots = R.MAX_BUILDINGS.value;
+
+    // Does this holding/terrain/etc satisfy one requirement?
+    // Returns true (met), false (blocked) or null (can't tell statically).
+    function meets(r, ctx) {
+      const yes = (v) => (r.neg ? !v : v);
+      switch (r.kind) {
+        case 'terrain':
+          return yes(r.key === ctx.terrain);
+        case 'holding_level':
+          // "holding level N" — the holding's own main building tier
+          return true;
+        case 'government': {
+          if (r.key === 'building_requirement_tribal') {
+            const tribalish = ['tribal_government', 'nomad_government', 'herder_government',
+              'wanua_government'].includes(ctx.gov);
+            return yes(tribalish);
+          }
+          return yes(r.key.replace('government_is_', '') + '_government' === ctx.gov);
+        }
+        case 'innovation':
+          return ctx.allInnov ? true : yes(false);
+        case 'cultural_parameter':
+          return yes(ctx.params.includes(r.key));
+        case 'holding':
+          return null; // depends on the other holdings in the county
+        case 'religion': case 'faith': case 'doctrine_parameter': case 'holy_site':
+        case 'character': case 'location': case 'trigger': case 'building':
+          return null;
+        default:
+          return null;
+      }
+    }
+
+    function ctx() {
+      const c = culById[$('culture').value];
+      return {
+        terrain: $('terrain').value,
+        holding: $('holding').value,
+        gov: $('gov').value,
+        duchyCap: $('duchycap').checked,
+        allInnov: $('allinnov').checked,
+        params: c ? c.params : [],
+      };
+    }
+
+    function classify(ch, x) {
+      // Special buildings and great projects exist only in specific counties
+      // (their triggers name a location), so no terrain/holding setting makes
+      // them "buildable here" — they get their own list.
+      if (ch.type === 'special' || ch.type === 'great_building') {
+        return { ok: false, site: true, why: ['built only in specific counties'] };
+      }
+      // duchy-capital buildings only where the holding is the duchy capital
+      if (ch.type === 'duchy_capital' && !x.duchyCap) {
+        return { ok: false, why: ['needs to be the duchy capital'] };
+      }
+      const allowed = CAT_HOLDING[ch.cat];
+      if (allowed && !allowed.includes(x.holding)) {
+        return { ok: false, why: [`only in a ${allowed.map((h) => h.replace('_holding', '').replace('church', 'temple')).join(' or ')} holding`] };
+      }
+      const why = [];
+      let unknown = 0;
+      for (const r of ch.reqs) {
+        const m = meets(r, x);
+        if (m === false) why.push(`${r.neg ? 'must not be ' : ''}${r.name}`);
+        else if (m === null) unknown++;
+      }
+      return { ok: why.length === 0, why, unknown };
+    }
+
+    function card(ch, res, inPlan) {
+      const cost = ch.gold != null ? `${ch.gold} gold` : '—';
+      return `<button class="b${inPlan ? ' on' : ''}" data-b="${esc(ch.id)}">` +
+        `<img src="${base}/img/buildings/${esc(ch.icon)}.webp" alt="" width="26" height="26" loading="lazy" onerror="this.hidden=true">` +
+        `<span class="bn"><b>${esc(ch.name)}</b>` +
+        `<span class="bm">${esc(ch.cat)} · ${ch.tiers} tiers · ${cost}</span>` +
+        (res.ok
+          ? `<span class="bfx">${ch.fx.slice(0, 2).map(esc).join(' · ')}</span>`
+          : `<span class="bwhy">${res.why.map(esc).join(' · ')}</span>`) +
+        (res.ok && res.unknown ? `<span class="bq">${res.unknown} condition${res.unknown === 1 ? '' : 's'} depend on your realm</span>` : '') +
+        `</span></button>`;
+    }
+
+    function render() {
+      const x = ctx();
+      const ok = [], no = [], site = [];
+      for (const ch of CH) {
+        const res = classify(ch, x);
+        if (res.site) site.push([ch, res]);
+        else if (res.ok) ok.push([ch, res]);
+        else no.push([ch, res]);
+      }
+      $('list').innerHTML = ok.map(([c, r]) => card(c, r, picked.includes(c.id))).join('');
+      $('blocked').innerHTML = no.slice(0, 60).map(([c, r]) => card(c, r, false)).join('');
+      $('okcount').textContent = ok.length;
+      $('sitecount').textContent = site.length;
+      $('nocount').textContent = no.length > 60 ? `${no.length} (showing 60)` : no.length;
+      $('count').textContent =
+        `${ok.length} buildable · ${no.length} blocked · ${site.length} site-specific`;
+
+      // slots + totals
+      picked = picked.filter((id) => ok.some(([c]) => c.id === id));
+      const chosen = picked.map((id) => CH.find((c) => c.id === id));
+      const rows = [];
+      for (let i = 0; i < slots; i++) {
+        const c = chosen[i];
+        rows.push(c
+          ? `<li><b>${esc(c.name)}</b><span class="sc">${c.goldAll} gold total</span>` +
+            `<button class="rm" data-rm="${esc(c.id)}">×</button></li>`
+          : `<li class="empty">empty slot</li>`);
+      }
+      const gold = chosen.reduce((n, c) => n + (c.goldAll || 0), 0);
+      const levy = chosen.reduce((n, c) => n + (c.levy || 0), 0);
+      const gar = chosen.reduce((n, c) => n + (c.garrison || 0), 0);
+      $('slots').innerHTML =
+        `<label class="slotsel">slots <input type="number" id="nslots" min="1" max="${R.MAX_BUILDINGS.value}" value="${slots}"></label>` +
+        `<ol class="slotlist">${rows.join('')}</ol>`;
+      $('totals').innerHTML =
+        `<div class="tot"><span>gold to fully upgrade</span><b>${gold.toLocaleString()}</b></div>` +
+        `<div class="tot"><span>levy at final tiers</span><b>${levy.toLocaleString()}</b></div>` +
+        `<div class="tot"><span>garrison at final tiers</span><b>${gar.toLocaleString()}</b></div>` +
+        `<p class="note">Totals sum each chain's own values; realm-wide modifiers are not applied.</p>`;
+
+      const u = new URL(location.href);
+      u.searchParams.set('p', [x.terrain, x.holding, x.gov, $('culture').value,
+        x.duchyCap ? 1 : 0, slots, picked.join(',')].join('~'));
+      history.replaceState(null, '', u);
+    }
+
+    function load() {
+      const raw = new URLSearchParams(location.search).get('p');
+      if (!raw) return;
+      const [t, h, g, c, d, s, p] = raw.split('~');
+      if (t) $('terrain').value = t;
+      if (h) $('holding').value = h;
+      if (g) $('gov').value = g;
+      if (c) $('culture').value = c;
+      $('duchycap').checked = d === '1';
+      if (s) slots = Math.max(1, Math.min(R.MAX_BUILDINGS.value, +s));
+      if (p) picked = p.split(',').filter(Boolean);
+    }
+
+    for (const id of ['terrain', 'holding', 'gov', 'culture', 'duchycap', 'allinnov'])
+      $(id).addEventListener('input', render);
+    document.addEventListener('click', (ev) => {
+      const rm = ev.target.closest('[data-rm]');
+      if (rm) { picked = picked.filter((x) => x !== rm.dataset.rm); return render(); }
+      const b = ev.target.closest('.b');
+      if (b) {
+        const id = b.dataset.b;
+        if (picked.includes(id)) picked = picked.filter((x) => x !== id);
+        else if (picked.length < slots) picked.push(id);
+        return render();
+      }
+    });
+    document.addEventListener('input', (ev) => {
+      if (ev.target.id === 'nslots') {
+        slots = Math.max(1, Math.min(R.MAX_BUILDINGS.value, +ev.target.value || 1));
+        render();
+      }
+    });
+
+    load();
+    render();
+  </script>
+
+  <style>
+    .cols { display: grid; grid-template-columns: 1fr 20rem; gap: 1.25rem; align-items: start; }
+    @media (max-width: 950px) { .cols { grid-template-columns: 1fr; } }
+    .filterbar label { color: var(--dim); font-size: 0.8rem; display: flex; gap: 0.35rem; align-items: center; }
+    .filterbar select { background: var(--ink); color: var(--vellum); border: 1px solid var(--line); border-radius: var(--r); padding: 0.25rem 0.45rem; max-width: 11rem; }
+    .chk { cursor: pointer; }
+    .note { color: var(--faint); font-size: 0.8rem; margin: 0 0 0.5rem; }
+    .blist { display: grid; grid-template-columns: repeat(auto-fill, minmax(270px, 1fr)); gap: 0.4rem; }
+    .plan { position: sticky; top: 4rem; }
+    .prov { color: var(--faint); font-size: 0.78rem; max-width: 70ch; margin-top: 2rem; }
+    .prov code { font-family: var(--font-mono); }
+  </style>
+</Base>
+<style is:global>
+  /* rendered via innerHTML — cannot be scoped */
+  #list .b, #blocked .b {
+    display: flex; gap: 0.5rem; align-items: flex-start; text-align: left; width: 100%;
+    background: var(--panel); color: var(--vellum); border: 1px solid var(--line-soft);
+    border-radius: var(--r); padding: 0.45rem 0.6rem; cursor: pointer; font: inherit;
+  }
+  #list .b:hover { border-color: var(--brass); }
+  #list .b.on { border-color: var(--rubric); background: color-mix(in oklab, var(--rubric) 15%, transparent); }
+  #blocked .b { opacity: 0.55; cursor: default; }
+  #list .bn, #blocked .bn { display: flex; flex-direction: column; gap: 0.1rem; min-width: 0; }
+  #list .bn b, #blocked .bn b { font-size: 0.85rem; }
+  #list .bm, #blocked .bm { color: var(--faint); font-size: 0.68rem; font-family: var(--font-mono); }
+  #list .bfx { color: var(--dim); font-size: 0.72rem; }
+  #blocked .bwhy { color: var(--bad); font-size: 0.72rem; }
+  #list .bq { color: var(--sk-learning); font-size: 0.68rem; }
+  .slotsel { color: var(--dim); font-size: 0.78rem; display: flex; gap: 0.4rem; align-items: center; margin-bottom: 0.4rem; }
+  .slotsel input { width: 3.5rem; background: var(--ink); color: var(--vellum); border: 1px solid var(--line); border-radius: var(--r); padding: 0.15rem 0.35rem; }
+  .slotlist { list-style: none; margin: 0 0 0.6rem; padding: 0; counter-reset: s; }
+  .slotlist li { display: flex; gap: 0.4rem; align-items: baseline; padding: 0.22rem 0; border-bottom: 1px solid var(--line-soft); font-size: 0.82rem; }
+  .slotlist li.empty { color: var(--faint); font-style: italic; }
+  .slotlist .sc { margin-left: auto; color: var(--brass); font-family: var(--font-mono); font-size: 0.72rem; }
+  .slotlist .rm { background: none; border: none; color: var(--faint); cursor: pointer; }
+  .slotlist .rm:hover { color: var(--bad); }
+  .tot { display: flex; justify-content: space-between; font-size: 0.82rem; padding: 0.15rem 0; }
+  .tot b { font-family: var(--font-mono); color: var(--brass); }
+</style>

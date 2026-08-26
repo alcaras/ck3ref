@@ -34,6 +34,7 @@ data:
 	@python3 scripts/build_court.py
 	@python3 scripts/build_council.py
 	@python3 scripts/build_holdings.py
+	@python3 scripts/build_province_rules.py
 	@python3 scripts/build_terrain.py
 	@python3 scripts/build_great_projects.py
 	@python3 scripts/build_activities.py
