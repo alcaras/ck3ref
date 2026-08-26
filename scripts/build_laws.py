@@ -88,8 +88,6 @@ TIER_NAMES = {"tier_barony": "Barony", "tier_county": "County", "tier_duchy": "D
               "tier_kingdom": "Kingdom", "tier_empire": "Empire", "tier_hegemony": "Hegemony"}
 
 _DLC_TRIGGER = re.compile(r"^has_([a-z0-9]+)_dlc_trigger$")
-# scripted trigger/effect namespaces that betray the owning DLC
-_DLC_NAME_PREFIX = re.compile(r"^(tgp|ep3|mpo|laamp|ce2|fp1|fp2|fp3|ep1|ep2|ep4|bp1|bp2|bp3|bp4)_")
 
 
 def prettify(key):
@@ -100,7 +98,12 @@ def loc_text(key, *fallbacks):
     for k in (key, *fallbacks):
         raw = ck3.loc(k)
         if raw:
-            return ck3.render_text(raw)
+            text = ck3.render_text(raw)
+            # $EFFECT_LIST_BULLET$ has no english loc entry; it and raw
+            # newlines separate effect lines — normalize to "; "
+            text = re.sub(r"\s*EFFECT_LIST_BULLET\s*", "; ", text)
+            text = re.sub(r"\s*\n\s*", "; ", text).strip("; ")
+            return re.sub(r"(; )+", "; ", text)
     return None
 
 
@@ -292,20 +295,27 @@ def _base_of(rules, depth=0):
     return None
 
 
-def scan_dlc(block, found):
+def scan_dlc(block, found, depth=0, seen=None):
+    """has_<x>_dlc_trigger reached through *conjunctive* branches only — a DLC
+    check inside an OR alternative does not gate the law on that DLC."""
     if isinstance(block, Tagged):
         block = block.block
-    if not isinstance(block, Block):
+    if not isinstance(block, Block) or depth > 6:
         return
+    seen = seen or set()
     for k, _op, v in block:
-        for token in (k, v if isinstance(v, str) else None):
-            if not isinstance(token, str):
-                continue
-            m = _DLC_TRIGGER.match(token) or _DLC_NAME_PREFIX.match(token)
-            if m and m.group(1) in ck3.PREFIX_TO_DLC:
-                found.add(ck3.PREFIX_TO_DLC[m.group(1)])
-        if isinstance(v, (Block, Tagged)):
-            scan_dlc(v, found)
+        if not isinstance(k, str):
+            continue
+        m = _DLC_TRIGGER.match(k)
+        if m and m.group(1) in ck3.PREFIX_TO_DLC:
+            found.add(ck3.PREFIX_TO_DLC[m.group(1)])
+        elif k in ("OR", "NOT", "NOR", "NAND", "custom_tooltip", "custom_description",
+                   "trigger_if", "trigger_else", "trigger_else_if"):
+            continue  # alternative/negated/conditional branch, not a hard gate
+        elif isinstance(v, bool) and k in scripted_triggers() and v and k not in seen:
+            scan_dlc(scripted_triggers()[k], found, depth + 1, seen | {k})
+        elif isinstance(v, (Block, Tagged)):
+            scan_dlc(v, found, depth + 1, seen)
 
 
 LAW_ICONS = {  # keys that ship a gfx/interface/icons/laws/<key>.dds
@@ -374,7 +384,8 @@ def main():
                         unhandled_law[k] += 1
 
                 dlcs = set()
-                scan_dlc(lblk, dlcs)
+                for gate in ("can_have", "can_keep", "potential", "should_start_with"):
+                    scan_dlc(lblk.get(gate), dlcs)
 
                 m = re.search(r"_(\d+)$", lkey)
                 laws.append({

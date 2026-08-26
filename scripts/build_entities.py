@@ -80,6 +80,14 @@ def main():
         add(f"holy_site_{r['id']}", "holy_site", r["name"], "holy-sites",
             scan=False, slug=r["id"])
 
+    cp = load("court_positions.json") or {"positions": []}
+    for r in cp["positions"]:
+        add(r["id"], "court_position", r["name"], "court-positions",
+            f"img/court/{r['id']}.webp", scan=True)
+    cl = load("council.json") or {"positions": []}
+    for r in cl["positions"]:
+        add(r["id"], "council_position", r["name"], "council", scan=False)
+
     for r in (load("cbs.json") or {"cbs": []})["cbs"]:
         add(r["id"], "cb", r["name"], "casus-belli",
             f"img/cb/{r['id']}.webp", scan=False)

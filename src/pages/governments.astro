@@ -1,0 +1,233 @@
+---
+import Base from '../layouts/Base.astro';
+import governments from '../data/governments.json';
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+
+const dlcs = [...new Set(governments.map((g) => g.dlc).filter(Boolean))].sort() as string[];
+const mechanicTypes = [...new Set(governments.map((g) => g.mechanicType).filter(Boolean))] as string[];
+
+function firstParagraph(desc: string | null): string | null {
+  if (!desc) return null;
+  const para = desc.split('\n').map((s) => s.trim()).find((s) => s.length > 0);
+  return para ?? null;
+}
+
+const TIER = { county: 'County', duchy: 'Duchy', kingdom: 'Kingdom' } as Record<string, string>;
+---
+<Base
+  title="Governments"
+  active="governments"
+  lede="Every government type — holdings, government rules and flags, ruler modifiers, and which vassal contract set it uses — read from common/governments."
+  stats={[
+    { value: governments.length, label: 'government types' },
+    { value: mechanicTypes.length, label: 'mechanic families' },
+    { value: dlcs.length, label: 'DLCs add content' },
+  ]}
+>
+  <div class="filterbar">
+    <input type="search" id="q" placeholder="Filter by name, holding, flag…" autocomplete="off" />
+    <select id="fdlc">
+      <option value="">base game + DLC</option>
+      <option value="base">base game only</option>
+      {dlcs.map((d) => <option value={d}>{d}</option>)}
+    </select>
+    <span class="hint" id="count"></span>
+  </div>
+
+  <div class="gov-grid">
+    {governments.map((g) => (
+      <article
+        class="gov"
+        id={g.id}
+        data-name={`${g.name} ${g.mechanicType ?? ''} ${g.validHoldings.map((h) => h.name).join(' ')} ${g.primaryHolding?.name ?? ''} ${g.flags.map((f) => f.name ?? f.key).join(' ')}`.toLowerCase()}
+        data-dlc={g.dlc ?? 'base'}
+      >
+        <header>
+          <img src={`${base}/img/governments/${g.id}.webp`} alt="" width="40" height="40" loading="lazy" />
+          <div>
+            <h2>
+              {g.color && <span class="swatch" style={`--c:${g.color}`} title="map-mode color" />}
+              {g.name}
+            </h2>
+            <p class="sub">
+              {g.mechanicType && <span>{g.mechanicType.replace(/_/g, ' ')} family{g.isMechanicDefault && ' · default'}</span>}
+              {g.dlc && <span class="badge-dlc">{g.dlc}</span>}
+            </p>
+          </div>
+        </header>
+
+        {firstParagraph(g.desc) && <p class="desc">{firstParagraph(g.desc)}</p>}
+
+        <div class="row">
+          <span class="lbl">Holdings</span>
+          <span class="chips">
+            {g.primaryHolding && (
+              <span class="chip chip--counter" title="primary holding">{g.primaryHolding.name}<span class="x">1st</span></span>
+            )}
+            {g.validHoldings.map((h) => <span class="chip">{h.name}</span>)}
+          </span>
+        </div>
+        {g.requiredCountyHoldings.length > 0 && (
+          <p class="fine">county build order: {g.requiredCountyHoldings.map((h) => h.name).join(' → ')}</p>
+        )}
+
+        <dl class="facts">
+          {g.vassalContractGroup && (
+            <>
+              <dt>Contracts</dt>
+              <dd><a href={`${base}/contracts#${g.vassalContractGroup.key}`}>{g.vassalContractGroup.name}</a></dd>
+            </>
+          )}
+          {g.royalCourt && g.royalCourt !== 'none' && (
+            <>
+              <dt>Royal court</dt>
+              <dd>{g.royalCourt === 'any' ? 'yes' : g.royalCourt.replace(/_/g, ' ')}</dd>
+            </>
+          )}
+          {g.adminTiers && (
+            <>
+              <dt>Admin tier</dt>
+              <dd>{TIER[g.adminTiers.main] ?? g.adminTiers.main} (appointments from {TIER[g.adminTiers.appointment] ?? g.adminTiers.appointment})</dd>
+            </>
+          )}
+          {g.domicileType && (
+            <>
+              <dt>Domicile</dt>
+              <dd>{g.domicileType.replace(/_/g, ' ')}</dd>
+            </>
+          )}
+          {g.primaryHeritages.length > 0 && (
+            <>
+              <dt>Heritages</dt>
+              <dd>{g.primaryHeritages.join(', ')}</dd>
+            </>
+          )}
+          {g.preferredReligions.length > 0 && (
+            <>
+              <dt>Religions</dt>
+              <dd>{g.preferredReligions.join(', ')}</dd>
+            </>
+          )}
+          {g.maxDread != null && (
+            <>
+              <dt>Max dread</dt>
+              <dd>{g.maxDread}</dd>
+            </>
+          )}
+          {Object.keys(g.currencyLevelCaps).length > 0 && (
+            <>
+              <dt>Level caps</dt>
+              <dd>{Object.entries(g.currencyLevelCaps).map(([k, v]) => `${k} ${v}`).join(', ')}</dd>
+            </>
+          )}
+          {g.supplyLimitMultForOthers != null && (
+            <>
+              <dt>Foreign supply</dt>
+              <dd>{Math.round(g.supplyLimitMultForOthers * 100)}% for other governments</dd>
+            </>
+          )}
+          {g.compatibleSuccession.length > 0 && (
+            <>
+              <dt>Succession-compatible</dt>
+              <dd>{g.compatibleSuccession.join(', ')}</dd>
+            </>
+          )}
+        </dl>
+
+        {g.characterModifiers.length > 0 && (
+          <div class="mods">
+            <span class="lbl">Ruler modifiers</span>
+            <ul>
+              {g.characterModifiers.map((m) => <li class={m.polarity}>{m.text}</li>)}
+            </ul>
+          </div>
+        )}
+        {g.topLiegeModifiers.length > 0 && (
+          <div class="mods">
+            <span class="lbl">As independent top liege</span>
+            <ul>
+              {g.topLiegeModifiers.map((m) => <li class={m.polarity}>{m.text}</li>)}
+            </ul>
+          </div>
+        )}
+
+        {g.flags.filter((f) => f.name).length > 0 && (
+          <div class="row">
+            <span class="lbl">Grants</span>
+            <span class="chips">
+              {g.flags.filter((f) => f.name).map((f) => <span class="chip chip--req">{f.name}</span>)}
+            </span>
+          </div>
+        )}
+
+        <details class="raw">
+          <summary>script rules &amp; flags</summary>
+          <p class="fine mono">
+            {Object.entries(g.rules).map(([k, v]) => `${k} = ${v ? 'yes' : 'no'}`).join(' · ')}
+          </p>
+          {g.flags.filter((f) => !f.name).length > 0 && (
+            <p class="fine mono">flags: {g.flags.filter((f) => !f.name).map((f) => f.key).join(', ')}</p>
+          )}
+        </details>
+      </article>
+    ))}
+  </div>
+
+  <script>
+    const q = document.getElementById('q') as HTMLInputElement;
+    const fdlc = document.getElementById('fdlc') as HTMLSelectElement;
+    const count = document.getElementById('count')!;
+    const cards = [...document.querySelectorAll<HTMLElement>('article.gov')];
+
+    function apply() {
+      const needle = q.value.trim().toLowerCase();
+      const d = fdlc.value;
+      let shown = 0;
+      for (const c of cards) {
+        const ok =
+          (!needle || (c.dataset.name ?? '').includes(needle)) &&
+          (!d || (d === 'base' ? c.dataset.dlc === 'base' : c.dataset.dlc === d));
+        c.hidden = !ok;
+        if (ok) shown++;
+      }
+      count.textContent = `${shown} of ${cards.length}`;
+    }
+    for (const el of [q, fdlc]) el.addEventListener('input', apply);
+    apply();
+  </script>
+
+  <style>
+    .gov-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(360px, 1fr)); gap: 1rem; }
+    .gov {
+      background: var(--panel); border: 1px solid var(--line-soft); border-radius: var(--r);
+      padding: 0.9rem 1rem 1rem; display: flex; flex-direction: column; gap: 0.55rem;
+    }
+    .gov header { display: flex; gap: 0.65rem; align-items: center; }
+    .gov header img { width: 40px; height: 40px; object-fit: contain; flex: none;
+      filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.6)); }
+    .gov h2 { font-family: var(--font-display); font-size: 1.05rem; font-weight: 600; margin: 0;
+      display: flex; align-items: center; gap: 0.4rem; }
+    .swatch { width: 9px; height: 9px; border-radius: 50%; background: var(--c); flex: none;
+      box-shadow: 0 0 0 1px var(--line); }
+    .gov .sub { margin: 0.1rem 0 0; color: var(--dim); font-size: 0.78rem;
+      display: flex; gap: 0.5rem; align-items: baseline; flex-wrap: wrap; }
+    .gov .desc { margin: 0; color: var(--dim); font-size: 0.82rem; }
+    .gov .row { display: flex; gap: 0.5rem; align-items: baseline; }
+    .gov .lbl { color: var(--faint); font-size: 0.72rem; flex: none; min-width: 5.5rem; }
+    .gov .chips { max-width: none; }
+    .gov .fine { margin: 0; color: var(--faint); font-size: 0.74rem; }
+    .gov .mono { font-family: var(--font-mono); font-size: 0.68rem; line-height: 1.7; }
+    .facts { display: grid; grid-template-columns: auto 1fr; gap: 0.1rem 0.7rem; margin: 0; font-size: 0.8rem; }
+    .facts dt { color: var(--faint); font-size: 0.72rem; }
+    .facts dd { margin: 0; }
+    .mods .lbl { display: block; margin-bottom: 0.15rem; }
+    .mods ul { margin: 0; padding: 0; list-style: none; font-size: 0.8rem;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 0.05rem 0.8rem; }
+    .mods li.good { color: var(--good); }
+    .mods li.bad { color: var(--bad); }
+    .raw summary { cursor: pointer; color: var(--faint); font-size: 0.72rem; }
+    .raw[open] summary { color: var(--dim); }
+    @media (max-width: 500px) { .mods ul { grid-template-columns: 1fr; } }
+  </style>
+</Base>

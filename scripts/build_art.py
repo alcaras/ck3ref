@@ -34,6 +34,8 @@ CATEGORIES = [
     ("pillars.json", None, "culture_pillars", "pillars", "icon", "id", True),
     ("traditions.json", "traditions", "culture_tradition/4-items", "traditions", "icon", "id", True),
     ("cbs.json", "cbs", "casus_bellis", "cb", "icon", "id", True),
+    ("court_positions.json", "positions", "court_position_types", "court", "icon", "id", False),
+    ("council.json", "tasks", "council_task_types", "council-tasks", "icon", "id", True),
 ]
 
 

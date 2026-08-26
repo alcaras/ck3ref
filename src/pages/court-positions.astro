@@ -1,0 +1,237 @@
+---
+import Base from '../layouts/Base.astro';
+import court from '../data/court_positions.json';
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const { positions, tasks } = court;
+
+const CATEGORY_ORDER = [
+  'Important positions', 'Regular positions', 'Kingdom-tier positions', 'Special positions',
+  'Administrative', 'Celestial court', 'Mandala court', 'Nomadic court', 'Camp officers',
+];
+const categories = [...new Set(positions.map((p) => p.category))].sort(
+  (a, b) => CATEGORY_ORDER.indexOf(a) - CATEGORY_ORDER.indexOf(b),
+);
+const skills = [...new Set(positions.map((p) => p.skill).filter(Boolean))];
+const dlcs = [...new Set(positions.map((p) => p.dlc).filter(Boolean))].sort();
+
+const tasksFor = (id: string) => tasks.filter((t) => t.positions.includes(id));
+
+type Money = { value?: number; base?: number; scales?: boolean };
+function moneyText(m: Money | undefined): string {
+  if (!m) return '';
+  if (m.value != null) return String(m.value);
+  if (m.base != null) return `~${m.base}`;
+  return 'varies';
+}
+const RES_SHORT: Record<string, string> = { gold: '', prestige: 'p', piety: 'pi' };
+function salaryText(salary: Record<string, Money>): string {
+  const parts = Object.entries(salary).map(([res, m]) => `${moneyText(m)}${RES_SHORT[res] ?? res}`);
+  return parts.join(' + ');
+}
+
+type Mod = { text: string; polarity: string };
+const LEVELS = ['terrible', 'poor', 'average', 'good', 'excellent'] as const;
+function progressionTitle(scaling: Record<string, Mod[]>): string {
+  return LEVELS.filter((l) => scaling[l])
+    .map((l) => `${l}: ${scaling[l].map((m) => m.text).join(', ')}`)
+    .join('\n');
+}
+function maxLevel(scaling: Record<string, Mod[]>): Mod[] {
+  for (const l of [...LEVELS].reverse()) if (scaling[l]) return scaling[l];
+  return [];
+}
+const skillTitle = (s: string) => s.charAt(0).toUpperCase() + s.slice(1);
+---
+<Base
+  title="Court Positions"
+  active="court-positions"
+  lede="Every hireable court position with its salary, aptitude skill, employer effects by aptitude level, and the tasks the holder can be set to — read from court_positions/types and tasks."
+  stats={[
+    { value: positions.length, label: 'positions' },
+    { value: tasks.length, label: 'tasks' },
+    { value: dlcs.length, label: 'DLCs add content' },
+  ]}
+>
+  <div class="filterbar">
+    <input type="search" id="q" placeholder="Filter by name, effect, requirement…" autocomplete="off" />
+    <select id="fcat">
+      <option value="">every category</option>
+      {categories.map((c) => <option value={c}>{c}</option>)}
+    </select>
+    <select id="fskill">
+      <option value="">every skill</option>
+      {skills.map((s) => <option value={s}>{skillTitle(s)}</option>)}
+    </select>
+    <select id="fdlc">
+      <option value="">base game + DLC</option>
+      <option value="base">base game only</option>
+      {dlcs.map((d) => <option value={d}>{d}</option>)}
+    </select>
+    <span class="hint" id="count"></span>
+  </div>
+
+  {categories.map((cat) => (
+    <section data-group={cat}>
+      <h2 class="group-h" id={cat.toLowerCase().replace(/\s+/g, '-')}>
+        {cat}
+        <span class="count">{positions.filter((p) => p.category === cat).length}</span>
+      </h2>
+      <div class="tbl-scroll">
+        <table class="ntbl">
+          <thead>
+            <tr>
+              <th>Position</th>
+              <th>Skill</th>
+              <th class="num" title="Monthly salary; ~ marks a base that scales with cultural era, obligations, and treasury routing">Salary</th>
+              <th class="num" title="Opinion of the liege while employed">Op.</th>
+              <th>Employer gets (at max aptitude)</th>
+              <th>Holder gets</th>
+              <th>Tasks</th>
+              <th>Requirements</th>
+              <th>DLC</th>
+            </tr>
+          </thead>
+          <tbody>
+            {positions
+              .filter((p) => p.category === cat)
+              .map((p) => (
+                <tr
+                  id={p.id}
+                  data-name={[
+                    p.name,
+                    ...maxLevel(p.scalingModifiers).map((m) => m.text),
+                    ...p.requirements.map((r) => r.name),
+                    ...tasksFor(p.id).map((t) => t.name),
+                  ].join(' ').toLowerCase()}
+                  data-cat={p.category}
+                  data-skill={p.skill ?? ''}
+                  data-dlc={p.dlc ?? 'base'}
+                >
+                  <td class="name">
+                    <span class="unit">
+                      <img src={`${base}/img/court/${p.id}.webp`} alt="" width="34" height="34" loading="lazy" />
+                      <span>
+                        <span class="u-name" title={p.desc}>{p.name}</span>
+                        <span class="u-sub"><br />
+                          {p.maxPositions > 1 && `up to ${p.maxPositions} · `}
+                          {p.minimumRank && `${p.minimumRank}+ · `}
+                          aptitude breakpoints {(p.breakpoints ?? []).join('/') || '—'}
+                        </span>
+                      </span>
+                    </span>
+                  </td>
+                  <td>
+                    {p.skill && <span class="chip chip--skill" style={`--c: var(--sk-${p.skill})`}><span class="dot" />{skillTitle(p.skill)}</span>}
+                    {p.aptitudeSkills.filter((s) => s !== p.skill).map((s) => (
+                      <span class="chip chip--skill chip--minor" style={`--c: var(--sk-${s})`} title="also weighs into aptitude"><span class="dot" />{skillTitle(s)}</span>
+                    ))}
+                  </td>
+                  <td class="num cost">
+                    {Object.keys(p.salary).length ? salaryText(p.salary) : <span class="subtle">free</span>}
+                  </td>
+                  <td class="num">{p.opinion != null ? `+${p.opinion}`.replace('+-', '−') : <span class="var" title="conditional">varies</span>}</td>
+                  <td>
+                    <ul class="fx" title={progressionTitle(p.scalingModifiers)}>
+                      {maxLevel(p.scalingModifiers).map((m) => (
+                        <li class={`is-${m.polarity}`}>{m.text}<span class="scaled">⤳</span></li>
+                      ))}
+                      {p.baseEmployerMods.map((m) => <li class={`is-${m.polarity}`}>{m.text}</li>)}
+                      {maxLevel(p.scalingCourtModifiers).map((m) => (
+                        <li class={`is-${m.polarity}`}>{m.text} <span class="subtle">(court)</span><span class="scaled">⤳</span></li>
+                      ))}
+                      {p.baseCourtMods.map((m) => <li class={`is-${m.polarity}`}>{m.text} <span class="subtle">(court)</span></li>)}
+                      {p.customEmployerDesc && <li class="is-neutral">{p.customEmployerDesc}</li>}
+                      {p.cultureMods.map((cm) => (
+                        <li class="is-neutral" title={cm.mods.map((m) => m.text).join(', ')}>with {cm.parameter}</li>
+                      ))}
+                    </ul>
+                  </td>
+                  <td>
+                    <ul class="fx">
+                      {p.employeeMods.map((m) => <li class={`is-${m.polarity}`}>{m.text}</li>)}
+                      {p.customEmployeeDesc && <li class="is-neutral">{p.customEmployeeDesc}</li>}
+                    </ul>
+                  </td>
+                  <td>
+                    <span class="chips">
+                      {tasksFor(p.id).map((t) => (
+                        <span
+                          class="chip chip--task"
+                          title={[
+                            t.desc,
+                            Object.keys(t.cost).length ? `Cost: ${salaryText(t.cost)}/month` : null,
+                            ...maxLevel(t.scalingModifiers).map((m) => `${m.text} (at max aptitude)`),
+                            ...t.baseEmployerMods.map((m) => m.text),
+                            ...t.employeeMods.map((m) => `holder: ${m.text}`),
+                          ].filter(Boolean).join('\n')}
+                        >{t.name}</span>
+                      ))}
+                    </span>
+                  </td>
+                  <td>
+                    <span class="chips">
+                      {p.requirements.map((r) => (
+                        <span class="chip chip--req">{r.negated && <span class="neg">not </span>}{r.name}</span>
+                      ))}
+                    </span>
+                  </td>
+                  <td>{p.dlc ? <span class="badge-dlc">{p.dlc}</span> : <span class="subtle">—</span>}</td>
+                </tr>
+              ))}
+          </tbody>
+        </table>
+      </div>
+    </section>
+  ))}
+
+  <p class="footnote">
+    Employer effects show the <em>excellent</em>-aptitude tier; hover a row's effects for the full
+    terrible→excellent progression (marked ⤳). Salaries marked ~ are the game's base line and scale
+    with the liege's cultural era; positions paid from the treasury under administrative rule are
+    shown as gold.
+  </p>
+
+  <script>
+    const q = document.getElementById('q') as HTMLInputElement;
+    const fcat = document.getElementById('fcat') as HTMLSelectElement;
+    const fskill = document.getElementById('fskill') as HTMLSelectElement;
+    const fdlc = document.getElementById('fdlc') as HTMLSelectElement;
+    const count = document.getElementById('count')!;
+    const rows = [...document.querySelectorAll<HTMLTableRowElement>('tbody tr')];
+    const groups = [...document.querySelectorAll<HTMLElement>('section[data-group]')];
+
+    function apply() {
+      const needle = q.value.trim().toLowerCase();
+      const c = fcat.value, s = fskill.value, d = fdlc.value;
+      let shown = 0;
+      for (const r of rows) {
+        const ok =
+          (!needle || (r.dataset.name ?? '').includes(needle)) &&
+          (!c || r.dataset.cat === c) &&
+          (!s || r.dataset.skill === s) &&
+          (!d || (d === 'base' ? r.dataset.dlc === 'base' : r.dataset.dlc === d));
+        r.hidden = !ok;
+        if (ok) shown++;
+      }
+      for (const g of groups) {
+        g.hidden = ![...g.querySelectorAll('tbody tr')].some((r) => !(r as HTMLTableRowElement).hidden);
+      }
+      count.textContent = `${shown} of ${rows.length}`;
+    }
+    for (const el of [q, fcat, fskill, fdlc]) el.addEventListener('input', apply);
+    apply();
+  </script>
+
+  <style>
+    .chip--skill { border-color: color-mix(in oklab, var(--c) 55%, var(--line)); }
+    .chip--minor { opacity: 0.75; }
+    .chip--task { border-color: color-mix(in oklab, var(--brass) 45%, var(--line)); cursor: help; }
+    .chip .neg { color: var(--bad); }
+    .fx { list-style: none; margin: 0; padding: 0; max-width: 24rem; font-size: 0.8rem; }
+    .fx li.is-good { color: var(--good); }
+    .fx li.is-bad { color: var(--bad); }
+    .fx .scaled { color: var(--faint); margin-left: 0.25rem; cursor: help; }
+    .footnote { color: var(--faint); font-size: 0.78rem; max-width: 70ch; margin-top: 2rem; }
+  </style>
+</Base>

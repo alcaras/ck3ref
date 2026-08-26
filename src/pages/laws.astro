@@ -1,0 +1,229 @@
+---
+import Base from '../layouts/Base.astro';
+import groups from '../data/laws.json';
+
+const CATEGORIES: { key: string; label: string; note: string }[] = [
+  { key: 'realm', label: 'Realm Laws', note: 'Authority ladders, camp purposes, decrees, and coronations.' },
+  { key: 'succession', label: 'Realm Succession', note: 'Succession order, gender, and faith laws applied realm-wide.' },
+  { key: 'title_succession', label: 'Title Succession', note: 'Elective and special succession applied to individual titles.' },
+  { key: 'administrative', label: 'Administrative Laws', note: 'Provincial policies and treasury budget allocations for administrative realms.' },
+  { key: 'imperial_policy', label: 'Imperial Policies', note: 'Realm-wide policies of the Japanese imperial court.' },
+];
+
+const lawCount = groups.reduce((n, g) => n + g.laws.length, 0);
+const successionCount = groups.reduce((n, g) => n + g.laws.filter((l) => l.succession).length, 0);
+
+type Cost = Record<string, { value: number | null; varies: boolean }> | null;
+function costText(cost: Cost): string {
+  if (!cost) return '—';
+  const parts = Object.entries(cost)
+    .filter(([, c]) => c.value !== 0 || !c.varies)
+    .map(([cur, c]) => {
+      if (c.value == null) return `varies ${cur}`;
+      return `${c.value}${c.varies ? '+' : ''} ${cur}`;
+    });
+  return parts.length ? parts.join(', ') : '—';
+}
+
+const SUCC_LABELS: Record<string, string> = {
+  orderOfSuccession: 'order',
+  titleDivision: 'division',
+  traversalOrder: 'traversal',
+  rank: 'rank',
+  genderLaw: 'gender',
+  faith: 'faith',
+  electionType: 'election',
+  appointmentType: 'appointment',
+  poolCharacterConfig: 'candidate pool',
+  createPrimaryTierTitles: 'creates primary-tier titles',
+  primaryHeirMinimumShare: 'primary heir share',
+  excludeRulers: 'rulers excluded',
+  limitToCourtiers: 'courtiers only',
+};
+
+function succEntries(s: Record<string, unknown> | null): [string, string][] {
+  if (!s) return [];
+  return Object.entries(s).map(([k, v]) => {
+    const label = SUCC_LABELS[k] ?? k;
+    if (typeof v === 'boolean') return [label, v ? 'yes' : 'no'] as [string, string];
+    if (k === 'primaryHeirMinimumShare') return [label, `≥${Math.round((v as number) * 100)}%`] as [string, string];
+    return [label, String(v).replace(/_/g, ' ')] as [string, string];
+  });
+}
+
+const hasSuccession = (g: (typeof groups)[number]) => g.laws.some((l) => l.succession);
+---
+<Base
+  title="Laws"
+  active="laws"
+  lede="All 27 law groups — crown-authority-style ladders, succession order and gender laws, administrative policies, and treasury budgets — with costs, effects, and unlock requirements resolved from the game's script."
+  stats={[
+    { value: groups.length, label: 'law groups' },
+    { value: lawCount, label: 'laws' },
+    { value: successionCount, label: 'define succession' },
+  ]}
+>
+  <div class="filterbar">
+    <input type="search" id="q" placeholder="Filter by law, modifier, requirement…" autocomplete="off" />
+    <select id="fcat">
+      <option value="">every category</option>
+      {CATEGORIES.map((c) => <option value={c.key}>{c.label}</option>)}
+    </select>
+    <span class="hint" id="count"></span>
+  </div>
+
+  {CATEGORIES.map((cat) => (
+    <section data-cat={cat.key}>
+      <h2 class="group-h" id={cat.key}>{cat.label}<span class="count">{groups.filter((g) => g.category === cat.key).reduce((n, g) => n + g.laws.length, 0)}</span></h2>
+      <p class="cat-note">{cat.note}</p>
+
+      {groups.filter((g) => g.category === cat.key).map((g) => {
+        const succession = hasSuccession(g);
+        const table = (
+          <div class="tbl-scroll">
+            <table class="ntbl">
+              <thead>
+                <tr>
+                  <th>Law</th>
+                  {succession && <th>Succession</th>}
+                  <th>Effects</th>
+                  <th>Requirements</th>
+                  <th class="num" title="Cost to enact; + marks a conditional base">Cost</th>
+                </tr>
+              </thead>
+              <tbody>
+                {g.laws.map((l) => (
+                  <tr id={l.id} data-name={`${l.name} ${l.modifiers.map((m) => m.text).join(' ')} ${Object.values(l.requirements).flat().map((r) => r.text).join(' ')}`.toLowerCase()} data-cat={cat.key}>
+                    <td class="name">
+                      {l.level != null && <span class="lvl">{l.level}</span>}
+                      <span class="l-name">{l.name}</span>
+                      {l.isDefault && <span class="dflt">default</span>}
+                      {l.dlc && <><br /><span class="badge-dlc">{l.dlc}</span></>}
+                    </td>
+                    {succession && (
+                      <td>
+                        {l.succession ? (
+                          <dl class="succ">
+                            {succEntries(l.succession).map(([k, v]) => (
+                              <>
+                                <dt>{k}</dt>
+                                <dd>{v}</dd>
+                              </>
+                            ))}
+                          </dl>
+                        ) : (
+                          <span class="subtle">—</span>
+                        )}
+                      </td>
+                    )}
+                    <td>
+                      <ul class="mods">
+                        {l.modifiers.map((m) => <li class={m.polarity}>{m.text}</li>)}
+                        {l.titleAllegianceOpinion != null && <li class="good">+{l.titleAllegianceOpinion} Title Allegiance Opinion</li>}
+                        {l.flags.filter((f) => f.name).map((f) => <li>{f.name}</li>)}
+                      </ul>
+                      {l.effects && <p class="effects" title={l.effects}>{l.effects.length > 160 ? l.effects.slice(0, 157) + '…' : l.effects}</p>}
+                    </td>
+                    <td>
+                      <span class="chips">
+                        {(l.requirements.pass ?? l.requirements.have ?? l.requirements.potential ?? []).map((r) => (
+                          <span class="chip chip--req">{r.negated && <span class="neg">not </span>}{r.text}</span>
+                        ))}
+                      </span>
+                    </td>
+                    <td class="num cost">{costText(l.passCost as Cost)}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        );
+        return (
+          <article class="lawgroup" data-cat={cat.key} id={g.id}>
+            <h3>
+              {g.name}
+              {g.cumulative && <span class="tag" title="each level keeps all effects of the previous one">cumulative</span>}
+              {g.treasuryBudget && <span class="tag">treasury budget</span>}
+              <span class="count">{g.laws.length}</span>
+            </h3>
+            {g.treasuryBudget ? (
+              <details>
+                <summary>{g.laws.length} allocation steps (0–100%)</summary>
+                {table}
+              </details>
+            ) : (
+              table
+            )}
+          </article>
+        );
+      })}
+    </section>
+  ))}
+
+  <script>
+    const q = document.getElementById('q') as HTMLInputElement;
+    const fcat = document.getElementById('fcat') as HTMLSelectElement;
+    const count = document.getElementById('count')!;
+    const rows = [...document.querySelectorAll<HTMLTableRowElement>('tbody tr')];
+    const groups = [...document.querySelectorAll<HTMLElement>('article.lawgroup')];
+    const sections = [...document.querySelectorAll<HTMLElement>('section[data-cat]')];
+
+    function apply() {
+      const needle = q.value.trim().toLowerCase();
+      const c = fcat.value;
+      let shown = 0;
+      for (const r of rows) {
+        const ok = (!needle || (r.dataset.name ?? '').includes(needle)) && (!c || r.dataset.cat === c);
+        r.hidden = !ok;
+        if (ok) shown++;
+      }
+      for (const g of groups) {
+        const any = [...g.querySelectorAll('tbody tr')].some((r) => !(r as HTMLTableRowElement).hidden);
+        g.hidden = !any;
+        if (needle && any) {
+          const d = g.querySelector('details');
+          if (d) d.open = true;
+        }
+      }
+      for (const s of sections) {
+        s.hidden = ![...s.querySelectorAll('article.lawgroup')].some((g) => !(g as HTMLElement).hidden);
+      }
+      count.textContent = `${shown} of ${rows.length}`;
+    }
+    for (const el of [q, fcat]) el.addEventListener('input', apply);
+    apply();
+  </script>
+
+  <style>
+    .cat-note { color: var(--dim); font-size: 0.82rem; margin: -0.2rem 0 0.8rem; }
+    .lawgroup { margin: 0 0 1.4rem; }
+    .lawgroup h3 {
+      font-family: var(--font-display); font-weight: 600; font-size: 0.98rem;
+      margin: 1rem 0 0.45rem; display: flex; align-items: baseline; gap: 0.5rem;
+    }
+    .lawgroup h3 .count { color: var(--faint); font-family: var(--font-mono); font-size: 0.72rem; }
+    .tag {
+      font-family: var(--font-mono); font-size: 0.65rem; color: var(--dim);
+      border: 1px dashed var(--line); border-radius: 999px; padding: 0.05rem 0.45rem; cursor: help;
+    }
+    .lawgroup details summary { cursor: pointer; color: var(--dim); font-size: 0.82rem; padding: 0.2rem 0; }
+    td.name { min-width: 11rem; }
+    .lvl {
+      display: inline-block; min-width: 1.25rem; text-align: center;
+      font-family: var(--font-mono); font-size: 0.72rem; color: var(--rubric);
+      border: 1px solid color-mix(in oklab, var(--rubric) 45%, var(--line));
+      border-radius: 999px; padding: 0.02rem 0.3rem; margin-right: 0.35rem;
+    }
+    .l-name { font-weight: 600; }
+    .dflt { color: var(--faint); font-size: 0.7rem; margin-left: 0.35rem; }
+    ul.mods { margin: 0; padding: 0; list-style: none; font-size: 0.78rem; max-width: 24rem; }
+    ul.mods li.good { color: var(--good); }
+    ul.mods li.bad { color: var(--bad); }
+    .effects { margin: 0.25rem 0 0; color: var(--faint); font-size: 0.74rem; max-width: 24rem; cursor: help; }
+    dl.succ { display: grid; grid-template-columns: auto 1fr; gap: 0 0.6rem; margin: 0; font-size: 0.76rem; min-width: 12rem; }
+    dl.succ dt { color: var(--faint); }
+    dl.succ dd { margin: 0; }
+    .chip .neg { color: var(--bad); }
+    .chips { max-width: 24rem; }
+  </style>
+</Base>

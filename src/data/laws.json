@@ -68,7 +68,7 @@
       },
       {
         "dlc": null,
-        "effects": "EFFECT_LIST_BULLETCan establish Tributaries\nEFFECT_LIST_BULLETRulers can change between available Partition Succession Laws\nEFFECT_LIST_BULLETTitles can be revoked\nEFFECT_LIST_BULLETVassals can be retracted",
+        "effects": "Can establish Tributaries; Rulers can change between available Partition Succession Laws; Titles can be revoked; Vassals can be retracted",
         "flags": [
           {
             "key": "title_revocation_allowed",
@@ -170,7 +170,7 @@
       },
       {
         "dlc": null,
-        "effects": "EFFECT_LIST_BULLETRulers can change between all available Succession Laws\nEFFECT_LIST_BULLETVassals cannot wage War against other Vassals unless they use a Hook on their Liege\nEFFECT_LIST_BULLETVassals' Titles cannot be inherited by Characters outside the Realm\nEFFECT_LIST_BULLETAll Vassals who refuse Title revocation or Vassal retraction are considered Criminals",
+        "effects": "Rulers can change between all available Succession Laws; Vassals cannot wage War against other Vassals unless they use a Hook on their Liege; Vassals' Titles cannot be inherited by Characters outside the Realm; All Vassals who refuse Title revocation or Vassal retraction are considered Criminals",
         "flags": [
           {
             "key": "vassal_internal_wars_banned",
@@ -287,7 +287,7 @@
       },
       {
         "dlc": null,
-        "effects": "EFFECT_LIST_BULLETVassals cannot wage any War unless they use a Hook on their Liege\nEFFECT_LIST_BULLETRulers can designate their Heir",
+        "effects": "Vassals cannot wage any War unless they use a Hook on their Liege; Rulers can designate their Heir",
         "flags": [
           {
             "key": "vassal_all_wars_banned",
@@ -468,7 +468,7 @@
       },
       {
         "dlc": null,
-        "effects": "EFFECT_LIST_BULLET Can establish Tributaries\nEFFECT_LIST_BULLET Characters can be Imprisoned\nEFFECT_LIST_BULLETTribal rulers with non-Tribal Lieges may settle, becoming Feudal or Clan",
+        "effects": "Can establish Tributaries; Characters can be Imprisoned; Tribal rulers with non-Tribal Lieges may settle, becoming Feudal or Clan",
         "flags": [
           {
             "key": "can_have_tributaries",
@@ -549,7 +549,7 @@
       },
       {
         "dlc": null,
-        "effects": "EFFECT_LIST_BULLETTitles can be revoked\nEFFECT_LIST_BULLETVassals can be retracted",
+        "effects": "Titles can be revoked; Vassals can be retracted",
         "flags": [
           {
             "key": "title_revocation_allowed",
@@ -643,7 +643,7 @@
       },
       {
         "dlc": null,
-        "effects": "EFFECT_LIST_BULLETIndependent Tribal rulers may settle, becoming Feudal or Clan",
+        "effects": "Independent Tribal rulers may settle, becoming Feudal or Clan",
         "flags": [
           {
             "key": "max_authority_level",
@@ -822,8 +822,8 @@
     "id": "camp_purpose",
     "laws": [
       {
-        "dlc": "Roads to Power",
-        "effects": "EFFECT_LIST_BULLETEqual chance to find Contracts of any type\nEFFECT_LIST_BULLETMay change to any other Camp Purpose without paying hefty Prestige\n\nThe open road offers a freedom quite unlike any other: why sully that with a needless niche?",
+        "dlc": null,
+        "effects": "Equal chance to find Contracts of any type; May change to any other Camp Purpose without paying hefty Prestige; The open road offers a freedom quite unlike any other: why sully that with a needless niche?",
         "flags": [
           {
             "key": "uses_camp_purpose",
@@ -863,8 +863,8 @@
         "titleAllegianceOpinion": null
       },
       {
-        "dlc": "Roads to Power",
-        "effects": "EFFECT_LIST_BULLETFinds more Mercenary Contracts\nEFFECT_LIST_BULLETFinds more Prowess and Martial Contracts\nEFFECT_LIST_BULLETUnlocks Camp Upgrades:\n•…\n•…\n•…\n•…\nEFFECT_LIST_BULLETCan access certain special Officers:\n•Chief Engineer (Unlocked via Siege Engineers)\n•Master of Spoils (Unlocked via Lockwagon)\n\nMercenaries earn their coin first and foremost by the sword. Usually legally, but when times are tough and all you have is an axe...",
+        "dlc": null,
+        "effects": "Finds more Mercenary Contracts; Finds more Prowess and Martial Contracts; Unlocks Camp Upgrades:; •…; •…; •…; •…; Can access certain special Officers:; •Chief Engineer (Unlocked via Siege Engineers); •Master of Spoils (Unlocked via Lockwagon); Mercenaries earn their coin first and foremost by the sword. Usually legally, but when times are tough and all you have is an axe...",
         "flags": [
           {
             "key": "uses_camp_purpose",
@@ -956,8 +956,8 @@
         "titleAllegianceOpinion": null
       },
       {
-        "dlc": "Roads to Power",
-        "effects": "EFFECT_LIST_BULLETFinds more Learning and Stewardship Contracts\nEFFECT_LIST_BULLETFinds slightly more Diplomacy Contracts\nEFFECT_LIST_BULLETUnlocks Camp Upgrades:\n•…\n•…\n•…\n•…\n•…\n•…\n•…\nEFFECT_LIST_BULLETCan access certain special Officers:\n•Chief Engineer (Unlocked via Siege Engineers)\n\nA book kept in one library is restless, an idea held in only one mind is wasted.",
+        "dlc": null,
+        "effects": "Finds more Learning and Stewardship Contracts; Finds slightly more Diplomacy Contracts; Unlocks Camp Upgrades:; •…; •…; •…; •…; •…; •…; •…; Can access certain special Officers:; •Chief Engineer (Unlocked via Siege Engineers); A book kept in one library is restless, an idea held in only one mind is wasted.",
         "flags": [
           {
             "key": "uses_camp_purpose",
@@ -1051,8 +1051,8 @@
         "titleAllegianceOpinion": null
       },
       {
-        "dlc": "Roads to Power",
-        "effects": "EFFECT_LIST_BULLETFinds more Transport Contracts\nEFFECT_LIST_BULLETFinds more Diplomacy and Intrigue Contracts\nEFFECT_LIST_BULLETFinds slightly more Martial Contracts\nEFFECT_LIST_BULLETUnlocks Camp Upgrades:\n•…\n•…\n•…\n•…\n•…\n\nThere's always another hill, another mountain, another culture, another language, awaiting just over that horizon...",
+        "dlc": null,
+        "effects": "Finds more Transport Contracts; Finds more Diplomacy and Intrigue Contracts; Finds slightly more Martial Contracts; Unlocks Camp Upgrades:; •…; •…; •…; •…; •…; There's always another hill, another mountain, another culture, another language, awaiting just over that horizon...",
         "flags": [
           {
             "key": "uses_camp_purpose",
@@ -1148,8 +1148,8 @@
         "titleAllegianceOpinion": null
       },
       {
-        "dlc": "Roads to Power",
-        "effects": "EFFECT_LIST_BULLETFinds more Criminal Contracts of all kinds\nEFFECT_LIST_BULLETFinds more Prowess and Intrigue Contracts\nEFFECT_LIST_BULLETUnlocks Camp Upgrades:\n•…\n•…\n•…\n•…\n•…\n•…\n•…\nEFFECT_LIST_BULLETCan access certain special Officers:\n•Master Thief (Unlocked via Subdued Gear)\n•Man-Haggler (Unlocked via Ransom Cages)\n•Master of Spoils (Unlocked via Lockwagon)\n\n\"Brigand\" is such an ugly term — there's nothing wrong with being decisive and practical, especially if you can turn a tidy profit at the same time.",
+        "dlc": null,
+        "effects": "Finds more Criminal Contracts of all kinds; Finds more Prowess and Intrigue Contracts; Unlocks Camp Upgrades:; •…; •…; •…; •…; •…; •…; •…; Can access certain special Officers:; •Master Thief (Unlocked via Subdued Gear); •Man-Haggler (Unlocked via Ransom Cages); •Master of Spoils (Unlocked via Lockwagon); \"Brigand\" is such an ugly term — there's nothing wrong with being decisive and practical, especially if you can turn a tidy profit at the same time.",
         "flags": [
           {
             "key": "uses_camp_purpose",
@@ -1248,8 +1248,8 @@
         "titleAllegianceOpinion": null
       },
       {
-        "dlc": "Roads to Power",
-        "effects": "EFFECT_LIST_BULLETEqual chance to find Contracts of any type\nEFFECT_LIST_BULLETCan use Request Legitimist Support Interaction on Kings and Emperors\nEFFECT_LIST_BULLETCan use Claim Casus Belli\nEFFECT_LIST_BULLETFinds unique Legitimist Support Contract\nEFFECT_LIST_BULLETUnlocks Camp Upgrades:\n•…\n•…\n•…\n•…\n•…\n•…\n•…\nEFFECT_LIST_BULLETCan access certain special Officers:\n•Witness (Unlocked via Proof of Claims)\n•Master of Spoils (Unlocked via Lockwagon)\n\nA claim, they call it. A mere claim. It's not just a claim, it's a letter of debt, a statement of intent, and a sure marker of the reclamation yet to come.",
+        "dlc": null,
+        "effects": "Equal chance to find Contracts of any type; Can use Request Legitimist Support Interaction on Kings and Emperors; Can use Claim Casus Belli; Finds unique Legitimist Support Contract; Unlocks Camp Upgrades:; •…; •…; •…; •…; •…; •…; •…; Can access certain special Officers:; •Witness (Unlocked via Proof of Claims); •Master of Spoils (Unlocked via Lockwagon); A claim, they call it. A mere claim. It's not just a claim, it's a letter of debt, a statement of intent, and a sure marker of the reclamation yet to come.",
         "flags": [
           {
             "key": "uses_camp_purpose",
@@ -1356,7 +1356,7 @@
     "laws": [
       {
         "dlc": null,
-        "effects": "EFFECT_LIST_BULLETVassals' Titles cannot be inherited by Characters outside the Realm",
+        "effects": "Vassals' Titles cannot be inherited by Characters outside the Realm",
         "flags": [
           {
             "key": "uses_imperial_bureaucracy",
@@ -1444,7 +1444,7 @@
       },
       {
         "dlc": null,
-        "effects": "EFFECT_LIST_BULLETCan establish Tributaries\nEFFECT_LIST_BULLETRulers can change between available Partition Succession Laws\nEFFECT_LIST_BULLETTitles can be revoked\nEFFECT_LIST_BULLETVassals can be retracted",
+        "effects": "Can establish Tributaries; Rulers can change between available Partition Succession Laws; Titles can be revoked; Vassals can be retracted",
         "flags": [
           {
             "key": "can_have_tributaries",
@@ -1575,7 +1575,7 @@
       },
       {
         "dlc": null,
-        "effects": "EFFECT_LIST_BULLETRulers can change between all available Succession Laws\nEFFECT_LIST_BULLETAll Vassals who refuse Title revocation or Vassal retraction are considered Criminals\nEFFECT_LIST_BULLETDemand Administrative Governance cost is reduced",
+        "effects": "Rulers can change between all available Succession Laws; All Vassals who refuse Title revocation or Vassal retraction are considered Criminals; Demand Administrative Governance cost is reduced",
         "flags": [
           {
             "key": "vassal_refusal_is_treason",
@@ -1716,7 +1716,7 @@
       },
       {
         "dlc": null,
-        "effects": "EFFECT_LIST_BULLETCost for Liege to call upon Provincial Armies: -…",
+        "effects": "Cost for Liege to call upon Provincial Armies: -…",
         "flags": [
           {
             "key": "vassal_all_wars_banned_permanent",
@@ -1946,7 +1946,7 @@
       },
       {
         "dlc": null,
-        "effects": "EFFECT_LIST_BULLETCharacters can be Imprisoned\nEFFECT_LIST_BULLETMigration can target De Jure Duchy Titles\nEFFECT_LIST_BULLETCan use the Forsake Nomadism Decision\nEFFECT_LIST_BULLETCan recruit Nomad Lancers as Men-at-Arms\nEFFECT_LIST_BULLETCan recruit Cataphract Archers as Men-at-Arms, if your Culture has the Iron Cavalry Tradition\nEFFECT_LIST_BULLETCan construct … Yurt Building",
+        "effects": "Characters can be Imprisoned; Migration can target De Jure Duchy Titles; Can use the Forsake Nomadism Decision; Can recruit Nomad Lancers as Men-at-Arms; Can recruit Cataphract Archers as Men-at-Arms, if your Culture has the Iron Cavalry Tradition; Can construct … Yurt Building",
         "flags": [
           {
             "key": "can_change_succession_laws",
@@ -2057,7 +2057,7 @@
       },
       {
         "dlc": null,
-        "effects": "EFFECT_LIST_BULLETVassals can be retracted\nEFFECT_LIST_BULLETMigration can target De Jure Kingdom Titles\nEFFECT_LIST_BULLETCan construct … Yurt Building\nEFFECT_LIST_BULLETCan use the Move into Conquered Lands Decision\nEFFECT_LIST_BULLETCan use the Settle the Steppe Decision for Tribal\nEFFECT_LIST_BULLETIndependent Nomadic rulers get access to the Overrun Kingdom Casus Belli",
+        "effects": "Vassals can be retracted; Migration can target De Jure Kingdom Titles; Can construct … Yurt Building; Can use the Move into Conquered Lands Decision; Can use the Settle the Steppe Decision for Tribal; Independent Nomadic rulers get access to the Overrun Kingdom Casus Belli",
         "flags": [
           {
             "key": "vassal_retraction_allowed",
@@ -2164,7 +2164,7 @@
       },
       {
         "dlc": null,
-        "effects": "EFFECT_LIST_BULLETMigration can target De Jure Empire Titles\nEFFECT_LIST_BULLETCan use the Establish Paiza System Decision\nEFFECT_LIST_BULLETCan use the Settle the Steppe Decision for Feudal or Clan\nEFFECT_LIST_BULLETCan construct … Yurt Building",
+        "effects": "Migration can target De Jure Empire Titles; Can use the Establish Paiza System Decision; Can use the Settle the Steppe Decision for Feudal or Clan; Can construct … Yurt Building",
         "flags": [
           {
             "key": "migration_to_empires",
@@ -2254,7 +2254,7 @@
       },
       {
         "dlc": null,
-        "effects": "EFFECT_LIST_BULLETMay use the Become the Greatest of All Khans Decision, unlocking the Greatest of Khans Trait and the means to conquer the world!\nEFFECT_LIST_BULLETThe Greatest of Khans may change Government type with the Reform the Great Khaganate Decision",
+        "effects": "May use the Become the Greatest of All Khans Decision, unlocking the Greatest of Khans Trait and the means to conquer the world!; The Greatest of Khans may change Government type with the Reform the Great Khaganate Decision",
         "flags": [
           {
             "key": "max_authority_level",
@@ -2364,7 +2364,7 @@
     "laws": [
       {
         "dlc": null,
-        "effects": "EFFECT_LIST_BULLETVassals' Titles cannot be inherited by Characters outside the Realm",
+        "effects": "Vassals' Titles cannot be inherited by Characters outside the Realm",
         "flags": [
           {
             "key": "uses_celestial_bureaucracy",
@@ -2441,7 +2441,7 @@
       },
       {
         "dlc": null,
-        "effects": "EFFECT_LIST_BULLETTitles can be revoked\nEFFECT_LIST_BULLETVassals can be retracted",
+        "effects": "Titles can be revoked; Vassals can be retracted",
         "flags": [
           {
             "key": "uses_celestial_bureaucracy",
@@ -2565,7 +2565,7 @@
       },
       {
         "dlc": null,
-        "effects": "EFFECT_LIST_BULLETRulers can change between all available Succession Laws\nEFFECT_LIST_BULLETAll Vassals who refuse Title revocation or Vassal retraction are considered Criminals\nEFFECT_LIST_BULLETDemand Administrative Governance cost is reduced",
+        "effects": "Rulers can change between all available Succession Laws; All Vassals who refuse Title revocation or Vassal retraction are considered Criminals; Demand Administrative Governance cost is reduced",
         "flags": [
           {
             "key": "uses_celestial_bureaucracy",
@@ -2694,7 +2694,7 @@
       },
       {
         "dlc": null,
-        "effects": "EFFECT_LIST_BULLETNon-Governor Vassals can never declare War",
+        "effects": "Non-Governor Vassals can never declare War",
         "flags": [
           {
             "key": "uses_celestial_bureaucracy",
@@ -2830,7 +2830,7 @@
     "laws": [
       {
         "dlc": null,
-        "effects": "No effects...\n\nAlways Active:\nEFFECT_LIST_BULLETTitles can be revoked\nEFFECT_LIST_BULLETVassals can be retracted\nEFFECT_LIST_BULLETAll Vassals who refuse Title revocation or Vassal retraction are considered Criminals\nEFFECT_LIST_BULLETRulers can designate their Heir\n\nI decree...",
+        "effects": "No effects...; Always Active:; Titles can be revoked; Vassals can be retracted; All Vassals who refuse Title revocation or Vassal retraction are considered Criminals; Rulers can designate their Heir; I decree...",
         "flags": [
           {
             "key": "can_have_tributaries",
@@ -2876,7 +2876,7 @@
       },
       {
         "dlc": null,
-        "effects": "EFFECT_LIST_BULLETTributaries are more accepting towards Exact Tribute\nEFFECT_LIST_BULLETSuccessful Defensive Wars generate Devotion\nEFFECT_LIST_BULLETLosing Wars cost Devotion\nEFFECT_LIST_BULLETCan spend Piety to Reassert Tributary\nEFFECT_LIST_BULLETTributaries are more loyal\nEFFECT_LIST_BULLETSubjects are more inclined to … Builder actions\n\nAlways Active:\nEFFECT_LIST_BULLETTitles can be revoked\nEFFECT_LIST_BULLETVassals can be retracted\nEFFECT_LIST_BULLETAll Vassals who refuse Title revocation or Vassal retraction are considered Criminals\nEFFECT_LIST_BULLETRulers can designate their Heir\n\nA prosperous realm is a strong realm.",
+        "effects": "Tributaries are more accepting towards Exact Tribute; Successful Defensive Wars generate Devotion; Losing Wars cost Devotion; Can spend Piety to Reassert Tributary; Tributaries are more loyal; Subjects are more inclined to … Builder actions; Always Active:; Titles can be revoked; Vassals can be retracted; All Vassals who refuse Title revocation or Vassal retraction are considered Criminals; Rulers can designate their Heir; A prosperous realm is a strong realm.",
         "flags": [
           {
             "key": "can_have_tributaries",
@@ -2963,7 +2963,7 @@
       },
       {
         "dlc": null,
-        "effects": "EFFECT_LIST_BULLETSuccessful Offensive Wars generate Piety\nEFFECT_LIST_BULLETLosing Wars cost Devotion\nEFFECT_LIST_BULLETCan call Tributaries into wars for a Piety cost\nEFFECT_LIST_BULLETA siege of a Capital Temple Complex yields Piety\nEFFECT_LIST_BULLETSubjects are more inclined to … Warlike actions\n\nAlways Active:\nEFFECT_LIST_BULLETTitles can be revoked\nEFFECT_LIST_BULLETVassals can be retracted\nEFFECT_LIST_BULLETAll Vassals who refuse Title revocation or Vassal retraction are considered Criminals\nEFFECT_LIST_BULLETRulers can designate their Heir\n\nMore is always more.",
+        "effects": "Successful Offensive Wars generate Piety; Losing Wars cost Devotion; Can call Tributaries into wars for a Piety cost; A siege of a Capital Temple Complex yields Piety; Subjects are more inclined to … Warlike actions; Always Active:; Titles can be revoked; Vassals can be retracted; All Vassals who refuse Title revocation or Vassal retraction are considered Criminals; Rulers can designate their Heir; More is always more.",
         "flags": [
           {
             "key": "can_have_tributaries",
@@ -3050,7 +3050,7 @@
       },
       {
         "dlc": null,
-        "effects": "EFFECT_LIST_BULLETThe act of going on Pilgrimages costs less\nEFFECT_LIST_BULLETConverting Subjects generate Piety\nEFFECT_LIST_BULLETVassals are more inclined to Convert to your Faith\nEFFECT_LIST_BULLETVassals are more likely to accept adopting Mandala governance\nEFFECT_LIST_BULLETTributaries can be invited to adopt Mandala governance\nEFFECT_LIST_BULLETVassals and Tributaries are more inclined to help fund Capital Temple Complex Great Projects\n\nAlways Active:\nEFFECT_LIST_BULLETTitles can be revoked\nEFFECT_LIST_BULLETVassals can be retracted\nEFFECT_LIST_BULLETAll Vassals who refuse Title revocation or Vassal retraction are considered Criminals\nEFFECT_LIST_BULLETRulers can designate their Heir\n\nLet us look to the heavens.",
+        "effects": "The act of going on Pilgrimages costs less; Converting Subjects generate Piety; Vassals are more inclined to Convert to your Faith; Vassals are more likely to accept adopting Mandala governance; Tributaries can be invited to adopt Mandala governance; Vassals and Tributaries are more inclined to help fund Capital Temple Complex Great Projects; Always Active:; Titles can be revoked; Vassals can be retracted; All Vassals who refuse Title revocation or Vassal retraction are considered Criminals; Rulers can designate their Heir; Let us look to the heavens.",
         "flags": [
           {
             "key": "can_have_tributaries",
@@ -3140,7 +3140,7 @@
     "laws": [
       {
         "dlc": null,
-        "effects": "EFFECT_LIST_BULLETVassals' Titles cannot be inherited by Characters outside the Realm",
+        "effects": "Vassals' Titles cannot be inherited by Characters outside the Realm",
         "flags": [
           {
             "key": "uses_meritocratic_bureaucracy",
@@ -3212,7 +3212,7 @@
       },
       {
         "dlc": null,
-        "effects": "EFFECT_LIST_BULLETTitles can be revoked\nEFFECT_LIST_BULLETVassals can be retracted",
+        "effects": "Titles can be revoked; Vassals can be retracted",
         "flags": [
           {
             "key": "uses_meritocratic_bureaucracy",
@@ -3336,7 +3336,7 @@
       },
       {
         "dlc": null,
-        "effects": "EFFECT_LIST_BULLETRulers can change between all available Succession Laws\nEFFECT_LIST_BULLETAll Vassals who refuse Title revocation or Vassal retraction are considered Criminals\nEFFECT_LIST_BULLETDemand Administrative Governance cost is reduced",
+        "effects": "Rulers can change between all available Succession Laws; All Vassals who refuse Title revocation or Vassal retraction are considered Criminals; Demand Administrative Governance cost is reduced",
         "flags": [
           {
             "key": "uses_meritocratic_bureaucracy",
@@ -3470,7 +3470,7 @@
       },
       {
         "dlc": null,
-        "effects": "EFFECT_LIST_BULLETNon-Governor Vassals can never declare War",
+        "effects": "Non-Governor Vassals can never declare War",
         "flags": [
           {
             "key": "uses_meritocratic_bureaucracy",
@@ -3611,7 +3611,7 @@
     "laws": [
       {
         "dlc": null,
-        "effects": "EFFECT_LIST_BULLETVassals' Titles cannot be inherited by Characters outside the Realm\nEFFECT_LIST_BULLETRulers can designate their Heir",
+        "effects": "Vassals' Titles cannot be inherited by Characters outside the Realm; Rulers can designate their Heir",
         "flags": [
           {
             "key": "uses_japanese_bureaucracy",
@@ -3683,7 +3683,7 @@
       },
       {
         "dlc": null,
-        "effects": "EFFECT_LIST_BULLETTitles can be revoked\nEFFECT_LIST_BULLETVassals can be retracted",
+        "effects": "Titles can be revoked; Vassals can be retracted",
         "flags": [
           {
             "key": "uses_celestial_bureaucracy",
@@ -3797,7 +3797,7 @@
       },
       {
         "dlc": null,
-        "effects": "EFFECT_LIST_BULLETRulers can change between all available Succession Laws\nEFFECT_LIST_BULLETAll Vassals who refuse Title revocation or Vassal retraction are considered Criminals\nEFFECT_LIST_BULLETDemand Administrative Governance cost is reduced",
+        "effects": "Rulers can change between all available Succession Laws; All Vassals who refuse Title revocation or Vassal retraction are considered Criminals; Demand Administrative Governance cost is reduced",
         "flags": [
           {
             "key": "uses_japanese_bureaucracy",
@@ -3935,7 +3935,7 @@
       },
       {
         "dlc": null,
-        "effects": "EFFECT_LIST_BULLETNon-Governor Vassals can never declare War",
+        "effects": "Non-Governor Vassals can never declare War",
         "flags": [
           {
             "key": "uses_japanese_bureaucracy",
@@ -4560,8 +4560,8 @@
     "id": "succession_order_laws",
     "laws": [
       {
-        "dlc": "The Great People",
-        "effects": "Under Confederate Partition, your … will be divided equally between your children. New … may be created for younger ….\n\nUpon succession, all Titles held by the late Ruler will be divided amongst their Eligible Children, with the Player Heir always being given the Primary Title, Realm Capital and any direct De Jure titles associated with it.\n\nYounger children will be given Titles starting with those of the same Rank as the Primary Title; if none are available they will be given lower-ranking Titles. Your Player Heir cannot be preemptively granted Titles they do not stand to inherit.\nYounger children will have Titles created for them, if enough land is held.\n\nTribal rulers are locked to this succession type.",
+        "dlc": null,
+        "effects": "Under Confederate Partition, your … will be divided equally between your children. New … may be created for younger ….; Upon succession, all Titles held by the late Ruler will be divided amongst their Eligible Children, with the Player Heir always being given the Primary Title, Realm Capital and any direct De Jure titles associated with it.; Younger children will be given Titles starting with those of the same Rank as the Primary Title; if none are available they will be given lower-ranking Titles. Your Player Heir cannot be preemptively granted Titles they do not stand to inherit.; Younger children will have Titles created for them, if enough land is held.; Tribal rulers are locked to this succession type.",
         "flags": [
           {
             "key": "partition_succession_law",
@@ -4751,7 +4751,7 @@
       },
       {
         "dlc": null,
-        "effects": "Under Partition …, your … will be divided equally between your children.\n\nUpon succession, all Titles held by the late Ruler will be divided amongst their Eligible Children, with the Player Heir always being given the Primary Title, Realm Capital and any direct De Jure titles associated with it.\n\nYounger children will be given Titles starting with those of the same Rank as the Primary Title; if none are available they will be given lower-ranking Titles. Your Player Heir cannot be preemptively granted Titles they do not stand to inherit.",
+        "effects": "Under Partition …, your … will be divided equally between your children.; Upon succession, all Titles held by the late Ruler will be divided amongst their Eligible Children, with the Player Heir always being given the Primary Title, Realm Capital and any direct De Jure titles associated with it.; Younger children will be given Titles starting with those of the same Rank as the Primary Title; if none are available they will be given lower-ranking Titles. Your Player Heir cannot be preemptively granted Titles they do not stand to inherit.",
         "flags": [
           {
             "key": "partition_succession_law",
@@ -4952,7 +4952,7 @@
       },
       {
         "dlc": null,
-        "effects": "Under High Partition …, the lion's share of … will go to your … – the rest will be divided between your children.\n\nUpon succession, all Titles held by the late Ruler will be divided amongst their Eligible Children, with the Player Heir always being given the Primary Title, Realm Capital and any direct De Jure titles associated with it.\n\nYounger children will be given Titles starting with those of the same Rank as the Primary Title; if none are available they will be given lower-ranking Titles. Your Player Heir cannot be preemptively granted Titles they do not stand to inherit.\nThe Player Heir will always inherit at least half of the late Ruler's Titles.",
+        "effects": "Under High Partition …, the lion's share of … will go to your … – the rest will be divided between your children.; Upon succession, all Titles held by the late Ruler will be divided amongst their Eligible Children, with the Player Heir always being given the Primary Title, Realm Capital and any direct De Jure titles associated with it.; Younger children will be given Titles starting with those of the same Rank as the Primary Title; if none are available they will be given lower-ranking Titles. Your Player Heir cannot be preemptively granted Titles they do not stand to inherit.; The Player Heir will always inherit at least half of the late Ruler's Titles.",
         "flags": [
           {
             "key": "partition_succession_law",
@@ -5139,8 +5139,8 @@
         "titleAllegianceOpinion": null
       },
       {
-        "dlc": "The Great People",
-        "effects": "Under Primogeniture …, your oldest child inherits all your ….\n\nUpon succession, all of the late Ruler's Titles will be given to the Player Heir, which is their oldest Eligible Child. Younger children will receive nothing.",
+        "dlc": null,
+        "effects": "Under Primogeniture …, your oldest child inherits all your ….; Upon succession, all of the late Ruler's Titles will be given to the Player Heir, which is their oldest Eligible Child. Younger children will receive nothing.",
         "flags": [
           {
             "key": "advanced_succession_law",
@@ -5247,7 +5247,7 @@
             },
             {
               "negated": false,
-              "text": "One of these:; Your Culture has the Primogeniture Innovation; You are an Independent Ruler; You are the Ceremonial Monarch"
+              "text": "One of these:; •Your Culture has the Primogeniture Innovation; •You are an Independent Ruler; •You are the Ceremonial Monarch"
             },
             {
               "negated": false,
@@ -5261,7 +5261,7 @@
           "keep": [
             {
               "negated": false,
-              "text": "One of these:; Your Culture has the Primogeniture Innovation; You are an Independent Ruler; You are the Ceremonial Monarch, or innovation: Primogeniture, or independent ruler, or holds Hindustan, or holds China, or independent ruler, or Meritocratic Khanate government"
+              "text": "One of these:; •Your Culture has the Primogeniture Innovation; •You are an Independent Ruler; •You are the Ceremonial Monarch, or innovation: Primogeniture, or independent ruler, or holds Hindustan, or holds China, or independent ruler, or Meritocratic Khanate government"
             },
             {
               "negated": false,
@@ -5389,7 +5389,7 @@
       },
       {
         "dlc": null,
-        "effects": "Under the Kurultai succession the Council plays an important role in decision who will be next in line. If there are disagreeing voices among the Kurultai, it will lead to a Chaotic Succession.\n\nUnder a Chaotic Succession the line is unclear, and the Heir will experience some negative effects at the start of their rule.\n\nIf all the Kurultai fall in line, the realm will experience a Stable Succession where the Heir will take the throne with the support of all their most powerful supporters.",
+        "effects": "Under the Kurultai succession the Council plays an important role in decision who will be next in line. If there are disagreeing voices among the Kurultai, it will lead to a Chaotic Succession.; Under a Chaotic Succession the line is unclear, and the Heir will experience some negative effects at the start of their rule.; If all the Kurultai fall in line, the realm will experience a Stable Succession where the Heir will take the throne with the support of all their most powerful supporters.",
         "flags": [
           {
             "key": "advanced_succession_law",
@@ -5521,7 +5521,7 @@
       },
       {
         "dlc": null,
-        "effects": "Under Ultimogeniture …, your youngest child inherits all your ….\n\nUpon succession, all of the late Ruler's Titles will be given to the Player Heir, which is their youngest Eligible Child. Older children will receive nothing.",
+        "effects": "Under Ultimogeniture …, your youngest child inherits all your ….; Upon succession, all of the late Ruler's Titles will be given to the Player Heir, which is their youngest Eligible Child. Older children will receive nothing.",
         "flags": [
           {
             "key": "advanced_succession_law",
@@ -5756,7 +5756,7 @@
       },
       {
         "dlc": null,
-        "effects": "Under House Seniority …, the oldest member of your … will inherit all your titles.\n\nUpon succession, all of the late Ruler's Titles will be given to the oldest eligible member of their House. Your children will not be given anything, unless one of them happens to be the oldest House member.",
+        "effects": "Under House Seniority …, the oldest member of your … will inherit all your titles.; Upon succession, all of the late Ruler's Titles will be given to the oldest eligible member of their House. Your children will not be given anything, unless one of them happens to be the oldest House member.",
         "flags": [
           {
             "key": "advanced_succession_law",
@@ -5996,7 +5996,7 @@
       },
       {
         "dlc": "Roads to Power",
-        "effects": "A type of Appointment Succession Law. Under Acclamation Succession, the Empire Title and its associated Holdings will be inherited by the Candidate with the highest Candidate Score.\n\nThe pool of candidates includes the House Heads of the Realm's Noble Families, Governors, and their family members.",
+        "effects": "A type of Appointment Succession Law. Under Acclamation Succession, the Empire Title and its associated Holdings will be inherited by the Candidate with the highest Candidate Score.; The pool of candidates includes the House Heads of the Realm's Noble Families, Governors, and their family members.",
         "flags": [
           {
             "key": "advanced_succession_law",
@@ -6178,8 +6178,8 @@
         "titleAllegianceOpinion": null
       },
       {
-        "dlc": null,
-        "effects": "A type of Appointment Succession Law. Under Appointment Succession, the Title and its associated Holdings will be inherited by the Candidate with the highest Candidate Score.\n\nAny Adult in the Realm may strive to attain a Governorship through various means from Scheming to spending Influence.",
+        "dlc": "Roads to Power",
+        "effects": "A type of Appointment Succession Law. Under Appointment Succession, the Title and its associated Holdings will be inherited by the Candidate with the highest Candidate Score.; Any Adult in the Realm may strive to attain a Governorship through various means from Scheming to spending Influence.",
         "flags": [
           {
             "key": "advanced_succession_law",
@@ -6679,7 +6679,7 @@
       },
       {
         "dlc": null,
-        "effects": "Under Antagonistic Succession, your … will be divided equally between your children.\n\nVassals from your House gain a Claim on your Primary Title\n\nUpon succession, all Titles held by the late Ruler will be divided amongst their Eligible Children, with the Player Heir always being given the Primary Title, Realm Capital and any direct De Jure titles associated with it.\n\nYounger children will be given Titles starting with those of the same Rank as the Primary Title; if none are available they will be given lower-ranking Titles. Your Player Heir cannot be preemptively granted Titles they do not stand to inherit.",
+        "effects": "Under Antagonistic Succession, your … will be divided equally between your children.; Vassals from your House gain a Claim on your Primary Title; Upon succession, all Titles held by the late Ruler will be divided amongst their Eligible Children, with the Player Heir always being given the Primary Title, Realm Capital and any direct De Jure titles associated with it.; Younger children will be given Titles starting with those of the same Rank as the Primary Title; if none are available they will be given lower-ranking Titles. Your Player Heir cannot be preemptively granted Titles they do not stand to inherit.",
         "flags": [
           {
             "key": "same_house_vassals_gain_claim_on_primary_title",
@@ -6771,7 +6771,7 @@
       },
       {
         "dlc": null,
-        "effects": "Under Competitive Succession, your … will be divided equally between your children.\n\nVassals from your House gain a Claim on your Primary Title\n\nUpon succession, all Titles held by the late Ruler will be divided amongst their Eligible Children, with the Player Heir always being given the Primary Title, Realm Capital and any direct De Jure titles associated with it.\n\nYounger children will be given Titles starting with those of the same Rank as the Primary Title; if none are available they will be given lower-ranking Titles. Your Player Heir cannot be preemptively granted Titles they do not stand to inherit.",
+        "effects": "Under Competitive Succession, your … will be divided equally between your children.; Vassals from your House gain a Claim on your Primary Title; Upon succession, all Titles held by the late Ruler will be divided amongst their Eligible Children, with the Player Heir always being given the Primary Title, Realm Capital and any direct De Jure titles associated with it.; Younger children will be given Titles starting with those of the same Rank as the Primary Title; if none are available they will be given lower-ranking Titles. Your Player Heir cannot be preemptively granted Titles they do not stand to inherit.",
         "flags": [
           {
             "key": "same_house_vassals_gain_claim_on_primary_title",
@@ -6858,7 +6858,7 @@
       },
       {
         "dlc": null,
-        "effects": "Under Impassive Succession, your … is guaranteed to receive a certain portion of your … – the rest will be divided between your remaining children.\n\nUpon succession, all Titles held by the late Ruler will be divided amongst their Eligible Children, with the Player Heir always being given the Primary Title, Realm Capital and any direct De Jure titles associated with it.\n\nYounger children will be given Titles starting with those of the same Rank as the Primary Title; if none are available they will be given lower-ranking Titles. Your Player Heir cannot be preemptively granted Titles they do not stand to inherit.\nThe Player Heir will always inherit at least a quarter of the late Ruler's Titles.",
+        "effects": "Under Impassive Succession, your … is guaranteed to receive a certain portion of your … – the rest will be divided between your remaining children.; Upon succession, all Titles held by the late Ruler will be divided amongst their Eligible Children, with the Player Heir always being given the Primary Title, Realm Capital and any direct De Jure titles associated with it.; Younger children will be given Titles starting with those of the same Rank as the Primary Title; if none are available they will be given lower-ranking Titles. Your Player Heir cannot be preemptively granted Titles they do not stand to inherit.; The Player Heir will always inherit at least a quarter of the late Ruler's Titles.",
         "flags": [
           {
             "key": "house_unity_stage_impassive",
@@ -6932,7 +6932,7 @@
       },
       {
         "dlc": null,
-        "effects": "Under Friendly Succession, your … is guaranteed to receive a certain portion of your … – the rest will be divided between your remaining children.\n\nUpon succession, all Titles held by the late Ruler will be divided amongst their Eligible Children, with the Player Heir always being given the Primary Title, Realm Capital and any direct De Jure titles associated with it.\n\nYounger children will be given Titles starting with those of the same Rank as the Primary Title; if none are available they will be given lower-ranking Titles. Your Player Heir cannot be preemptively granted Titles they do not stand to inherit.\nThe Player Heir will always inherit at least half of the late Ruler's Titles.",
+        "effects": "Under Friendly Succession, your … is guaranteed to receive a certain portion of your … – the rest will be divided between your remaining children.; Upon succession, all Titles held by the late Ruler will be divided amongst their Eligible Children, with the Player Heir always being given the Primary Title, Realm Capital and any direct De Jure titles associated with it.; Younger children will be given Titles starting with those of the same Rank as the Primary Title; if none are available they will be given lower-ranking Titles. Your Player Heir cannot be preemptively granted Titles they do not stand to inherit.; The Player Heir will always inherit at least half of the late Ruler's Titles.",
         "flags": [
           {
             "key": "house_unity_stage_friendly",
@@ -7006,7 +7006,7 @@
       },
       {
         "dlc": null,
-        "effects": "Under Harmonious Succession, your … is guaranteed to receive a certain portion of your … – the rest will be divided between your remaining children.\n\nUpon succession, all Titles held by the late Ruler will be divided amongst their Eligible Children, with the Player Heir always being given the Primary Title, Realm Capital and any direct De Jure titles associated with it.\n\nYounger children will be given Titles starting with those of the same Rank as the Primary Title; if none are available they will be given lower-ranking Titles. Your Player Heir cannot be preemptively granted Titles they do not stand to inherit.\nThe Player Heir will always inherit at least three quarters of the late Ruler's Titles.",
+        "effects": "Under Harmonious Succession, your … is guaranteed to receive a certain portion of your … – the rest will be divided between your remaining children.; Upon succession, all Titles held by the late Ruler will be divided amongst their Eligible Children, with the Player Heir always being given the Primary Title, Realm Capital and any direct De Jure titles associated with it.; Younger children will be given Titles starting with those of the same Rank as the Primary Title; if none are available they will be given lower-ranking Titles. Your Player Heir cannot be preemptively granted Titles they do not stand to inherit.; The Player Heir will always inherit at least three quarters of the late Ruler's Titles.",
         "flags": [
           {
             "key": "house_unity_stage_harmonious",
@@ -7124,7 +7124,7 @@
       },
       {
         "dlc": null,
-        "effects": "Succession is based on Merit Rank and Candidate Lists\n\nA type of Appointment Succession Law. Under Celestial Appointment Succession, the Title and its associated Holdings will be inherited by the candidate with the highest Candidate Score. Any Adult in the Realm may strive to attain a Governorship through various means, such as having a significant Merit Rank or spending Influence.",
+        "effects": "Succession is based on Merit Rank and Candidate Lists; A type of Appointment Succession Law. Under Celestial Appointment Succession, the Title and its associated Holdings will be inherited by the candidate with the highest Candidate Score. Any Adult in the Realm may strive to attain a Governorship through various means, such as having a significant Merit Rank or spending Influence.",
         "flags": [
           {
             "key": "advanced_succession_law",
@@ -7340,7 +7340,7 @@
       },
       {
         "dlc": null,
-        "effects": "Succession is based on Merit Rank and Candidate Lists\n\nA type of Appointment Succession Law. Under Celestial Commander Succession, the Title and its associated Holdings will be inherited by the candidate with highest Candidate Score. Any Adult in the Realm may strive to attain a military Governorship by having a good Martial Skill, gaining Commander Traits, or spending Influence.",
+        "effects": "Succession is based on Merit Rank and Candidate Lists; A type of Appointment Succession Law. Under Celestial Commander Succession, the Title and its associated Holdings will be inherited by the candidate with highest Candidate Score. Any Adult in the Realm may strive to attain a military Governorship by having a good Martial Skill, gaining Commander Traits, or spending Influence.",
         "flags": [
           {
             "key": "advanced_succession_law",
@@ -7571,8 +7571,8 @@
         "titleAllegianceOpinion": null
       },
       {
-        "dlc": null,
-        "effects": "Under Japanese Regency Succession, the Title and its associated Holdings will be inherited by the candidate with the highest score. The pool of candidates includes the realm's Noble Families, Governors, and their family members.\n\nIf the Japanese Emperor is chosen as the next Ruling Regent, they will be given the choice of either abdicating as Ten'nō or attempting to re-establish direct rule!",
+        "dlc": "The Great People",
+        "effects": "Under Japanese Regency Succession, the Title and its associated Holdings will be inherited by the candidate with the highest score. The pool of candidates includes the realm's Noble Families, Governors, and their family members.; If the Japanese Emperor is chosen as the next Ruling Regent, they will be given the choice of either abdicating as Ten'nō or attempting to re-establish direct rule!",
         "flags": [
           {
             "key": "advanced_succession_law",
@@ -7715,7 +7715,7 @@
         "titleAllegianceOpinion": null
       },
       {
-        "dlc": null,
+        "dlc": "The Great People",
         "effects": "A type of Appointment Succession Law. Under Ritsuryō Appointment Succession, the Title and its associated Holdings will be inherited by the candidate with the highest score. Any Adult in the Realm may strive to attain a Governorship through various means from Scheming to spending Influence.",
         "flags": [
           {
@@ -8184,7 +8184,7 @@
       },
       {
         "dlc": null,
-        "effects": "The Mandala Succession allows your oldest child to inherit your Titles.\n\nUpon succession the new ruler will have to pass Mandala Trials to keep control of the entire realm and its Tributaries.",
+        "effects": "The Mandala Succession allows your oldest child to inherit your Titles.; Upon succession the new ruler will have to pass Mandala Trials to keep control of the entire realm and its Tributaries.",
         "flags": [
           {
             "key": "can_designate_heirs",
@@ -8876,7 +8876,7 @@
     "laws": [
       {
         "dlc": null,
-        "effects": "EFFECT_LIST_BULLETWomen are disqualified from inheritance\nEFFECT_LIST_BULLETWomen cannot inherit Claims\nEFFECT_LIST_BULLETMale Rulers can have Concubines or multiple Spouses if their Faith has the Concubines or Polygamous Doctrine",
+        "effects": "Women are disqualified from inheritance; Women cannot inherit Claims; Male Rulers can have Concubines or multiple Spouses if their Faith has the Concubines or Polygamous Doctrine",
         "flags": [
           {
             "key": "men_can_have_multiple_spouses",
@@ -9046,7 +9046,7 @@
       },
       {
         "dlc": null,
-        "effects": "EFFECT_LIST_BULLETMen take precedence over women in succession\nEFFECT_LIST_BULLETMale Rulers can have Concubines or multiple Spouses if their Faith has the Concubines or Polygamous Doctrine",
+        "effects": "Men take precedence over women in succession; Male Rulers can have Concubines or multiple Spouses if their Faith has the Concubines or Polygamous Doctrine",
         "flags": [
           {
             "key": "men_can_have_multiple_spouses",
@@ -9224,7 +9224,7 @@
       },
       {
         "dlc": null,
-        "effects": "EFFECT_LIST_BULLETMen and women are equal in succession\nEFFECT_LIST_BULLETAll Rulers can have Concubines or multiple Spouses if their Faith has the Concubines or Polygamous Doctrine",
+        "effects": "Men and women are equal in succession; All Rulers can have Concubines or multiple Spouses if their Faith has the Concubines or Polygamous Doctrine",
         "flags": [
           {
             "key": "men_can_have_multiple_spouses",
@@ -9410,7 +9410,7 @@
       },
       {
         "dlc": null,
-        "effects": "EFFECT_LIST_BULLETWomen take precedence over men in succession\nEFFECT_LIST_BULLETFemale Rulers can have Concubines or multiple Spouses if their Faith has the Concubines or Polygamous Doctrine",
+        "effects": "Women take precedence over men in succession; Female Rulers can have Concubines or multiple Spouses if their Faith has the Concubines or Polygamous Doctrine",
         "flags": [
           {
             "key": "women_can_have_multiple_spouses",
@@ -9584,7 +9584,7 @@
       },
       {
         "dlc": null,
-        "effects": "EFFECT_LIST_BULLETMen are disqualified from inheritance\nEFFECT_LIST_BULLETMen cannot inherit Claims\nEFFECT_LIST_BULLETFemale Rulers can have Concubines or multiple Spouses if their Faith has the Concubines or Polygamous Doctrine",
+        "effects": "Men are disqualified from inheritance; Men cannot inherit Claims; Female Rulers can have Concubines or multiple Spouses if their Faith has the Concubines or Polygamous Doctrine",
         "flags": [
           {
             "key": "women_can_have_multiple_spouses",
@@ -10059,7 +10059,7 @@
       },
       {
         "dlc": null,
-        "effects": "The Emperor and the seven Prince–Electors can nominate a Title Heir from among themselves, any Legitimate children and siblings of the Ruler, as well as any other major De Jure Vassal of the Empire. If an historical elector Title is held by infidels or does not exist, another De Jure vassal will take its place. This Succession Law places a significant importance on Faith and Piety.\n\nThe Electoral titles for this realm are the Counties of Cologne, Mainz and Trier, and the Duchies of Bohemia, East Franconia, Ostfalen and Ostmark.",
+        "effects": "The Emperor and the seven Prince–Electors can nominate a Title Heir from among themselves, any Legitimate children and siblings of the Ruler, as well as any other major De Jure Vassal of the Empire. If an historical elector Title is held by infidels or does not exist, another De Jure vassal will take its place. This Succession Law places a significant importance on Faith and Piety.; The Electoral titles for this realm are the Counties of Cologne, Mainz and Trier, and the Duchies of Bohemia, East Franconia, Ostfalen and Ostmark.",
         "flags": [
           {
             "key": "elective_succession_law",
@@ -10767,7 +10767,7 @@
       },
       {
         "dlc": null,
-        "effects": "This County requires a specific Government to inherit based on the Holding Type of the capital Barony. It will be given to a character in the Realm's Line of Succession that fulfills this condition.\n\nIf no one fulfills the requirement, a local character will inherit the Title and become Independent.",
+        "effects": "This County requires a specific Government to inherit based on the Holding Type of the capital Barony. It will be given to a character in the Realm's Line of Succession that fulfills this condition.; If no one fulfills the requirement, a local character will inherit the Title and become Independent.",
         "flags": [],
         "id": "law_of_the_land_succession_law",
         "isDefault": false,
@@ -10909,8 +10909,8 @@
         "titleAllegianceOpinion": 10
       },
       {
-        "dlc": "The Great People",
-        "effects": "Succession is based on Merit Rank and Candidate Lists\n\nA type of Appointment Succession Law. Celestial Appointment Succession is the succcession for Ministry Titles. They are highly valued positions reserved for those of the highest Merit Ranks. Movements, Merit, and Influence play a major role in increasing a candidate's Candidate Score.",
+        "dlc": null,
+        "effects": "Succession is based on Merit Rank and Candidate Lists; A type of Appointment Succession Law. Celestial Appointment Succession is the succcession for Ministry Titles. They are highly valued positions reserved for those of the highest Merit Ranks. Movements, Merit, and Influence play a major role in increasing a candidate's Candidate Score.",
         "flags": [
           {
             "key": "appointment_type_succession",
@@ -10952,7 +10952,7 @@
       },
       {
         "dlc": null,
-        "effects": "Succession is based on Merit Rank and Candidate Lists\n\nA type of Appointment Succession Law only used by the Grand Marshal, a position reserved for commanders of the highest Merit Ranks. Under Grand Marshal Appointment, the Title will be inherited by the candidate with highest Candidate Score. Score is primarily affected by Martial Skill, gaining Commander Traits, or spending Influence.",
+        "effects": "Succession is based on Merit Rank and Candidate Lists; A type of Appointment Succession Law only used by the Grand Marshal, a position reserved for commanders of the highest Merit Ranks. Under Grand Marshal Appointment, the Title will be inherited by the candidate with highest Candidate Score. Score is primarily affected by Martial Skill, gaining Commander Traits, or spending Influence.",
         "flags": [
           {
             "key": "appointment_type_succession",
@@ -11886,7 +11886,7 @@
       },
       {
         "dlc": null,
-        "effects": "EFFECT_LIST_BULLETGovernors can keep less Personal Men-at-Arms and slightly more Title Men-at-Arms",
+        "effects": "Governors can keep less Personal Men-at-Arms and slightly more Title Men-at-Arms",
         "flags": [
           {
             "key": "admin_title_troop_cost_reduction",
@@ -12014,7 +12014,7 @@
       },
       {
         "dlc": null,
-        "effects": "EFFECT_LIST_BULLETGovernors can keep no Personal Men-at-Arms and more Title Men-at-Arms",
+        "effects": "Governors can keep no Personal Men-at-Arms and more Title Men-at-Arms",
         "flags": [
           {
             "key": "admin_title_troop_cost_reduction_high",
@@ -12137,7 +12137,7 @@
       },
       {
         "dlc": null,
-        "effects": "EFFECT_LIST_BULLETGovernors can keep no Personal Men-at-Arms and significantly more Title Men-at-Arms",
+        "effects": "Governors can keep no Personal Men-at-Arms and significantly more Title Men-at-Arms",
         "flags": [
           {
             "key": "admin_title_troop_cost_reduction_very_high",
@@ -13374,7 +13374,7 @@
     "laws": [
       {
         "dlc": null,
-        "effects": "EFFECT_LIST_BULLETTop Liege will always be the defending War Leader in Wars for any Title in their Realm",
+        "effects": "Top Liege will always be the defending War Leader in Wars for any Title in their Realm",
         "flags": [
           {
             "key": "top_liege_redirected_to_border_wars_law",
@@ -13412,7 +13412,7 @@
       },
       {
         "dlc": null,
-        "effects": "EFFECT_LIST_BULLETAll Title Holders within the Realm can be targeted by Wars declared by other Rulers\nEFFECT_LIST_BULLETTop Liege will not be involved in those wars on declaration\nEFFECT_LIST_BULLETTop Liege can still join the war as an ally using Protect Vassal Interaction\n\nTop Liege is more likely to join:\nEFFECT_LIST_BULLETContested titles are kingdom or higher tier\nEFFECT_LIST_BULLETWar targets multiple titles\nEFFECT_LIST_BULLETWar lasts more than 5 years\nEFFECT_LIST_BULLETIf the defender is weaker than the attacker\nTop Liege will not join:\nEFFECT_LIST_BULLETDuring the 1st year of the war\nEFFECT_LIST_BULLETWhen already at war\nEFFECT_LIST_BULLETWhen in debt\nEFFECT_LIST_BULLETIf the defender is stronger than the attacker",
+        "effects": "All Title Holders within the Realm can be targeted by Wars declared by other Rulers; Top Liege will not be involved in those wars on declaration; Top Liege can still join the war as an ally using Protect Vassal Interaction; Top Liege is more likely to join:; Contested titles are kingdom or higher tier; War targets multiple titles; War lasts more than 5 years; If the defender is weaker than the attacker; Top Liege will not join:; During the 1st year of the war; When already at war; When in debt; If the defender is stronger than the attacker",
         "flags": [
           {
             "key": "top_liege_not_redirected_to_border_wars_law",
@@ -13443,7 +13443,7 @@
             },
             {
               "negated": false,
-              "text": "At least one of these:; EFFECT_LIST_BULLETHighest held Title is Hegemony Rank; EFFECT_LIST_BULLETRealm Size is … or more (VALUE); EFFECT_LIST_BULLE…"
+              "text": "At least one of these:; Highest held Title is Hegemony Rank; Realm Size is … or more (VALUE); House Unity is Antagonistic; Defending War Leader in…"
             }
           ],
           "startsWith": [
@@ -13475,7 +13475,7 @@
     "laws": [
       {
         "dlc": null,
-        "effects": "EFFECT_LIST_BULLET Set … Title Succession as the Grand Secretariat Succession\nEFFECT_LIST_BULLET Designate … as the Secretary Director",
+        "effects": "Set … Title Succession as the Grand Secretariat Succession; Designate … as the Secretary Director",
         "flags": [
           {
             "key": "grand_chancellor_law",
@@ -13508,7 +13508,7 @@
       },
       {
         "dlc": null,
-        "effects": "EFFECT_LIST_BULLET Set … Title Succession as the Grand Secretariat Succession\nEFFECT_LIST_BULLET Designate … as the Secretary Director",
+        "effects": "Set … Title Succession as the Grand Secretariat Succession; Designate … as the Secretary Director",
         "flags": [
           {
             "key": "grand_marshal_law",
@@ -13541,7 +13541,7 @@
       },
       {
         "dlc": null,
-        "effects": "EFFECT_LIST_BULLET Set … Title Succession as the Grand Secretariat Succession\nEFFECT_LIST_BULLET Designate … as the Secretary Director",
+        "effects": "Set … Title Succession as the Grand Secretariat Succession; Designate … as the Secretary Director",
         "flags": [
           {
             "key": "grand_censor_law",
@@ -13589,7 +13589,7 @@
     "laws": [
       {
         "dlc": null,
-        "effects": "EFFECT_LIST_BULLET Level of Fame and Level of Splendor have no impact on Candidate Score",
+        "effects": "Level of Fame and Level of Splendor have no impact on Candidate Score",
         "flags": [
           {
             "key": "candidate_score_merit_law",
@@ -13639,7 +13639,7 @@
       },
       {
         "dlc": null,
-        "effects": "EFFECT_LIST_BULLET Level of Fame and Level of Splendor have major impact on Candidate Score",
+        "effects": "Level of Fame and Level of Splendor have major impact on Candidate Score",
         "flags": [
           {
             "key": "candidate_score_prestige_law",
@@ -17591,8 +17591,8 @@
     "id": "imperial_policy_laws",
     "laws": [
       {
-        "dlc": "The Great People",
-        "effects": "EFFECT_LIST_BULLETArmory and Stable Domicile Buildings Cost: -25%\nEFFECT_LIST_BULLETUnlocks the Imperial Reconquest of Japan (De Jure) Casus Belli",
+        "dlc": null,
+        "effects": "Armory and Stable Domicile Buildings Cost: -25%; Unlocks the Imperial Reconquest of Japan (De Jure) Casus Belli",
         "flags": [
           {
             "key": "defense_mobilization_law",
@@ -17667,8 +17667,8 @@
         "titleAllegianceOpinion": null
       },
       {
-        "dlc": "The Great People",
-        "effects": "EFFECT_LIST_BULLETInternal Casus Belli Prestige Cost: +…\nEFFECT_LIST_BULLETRitsuryō Government may construct and upgrade Castle Holdings",
+        "dlc": null,
+        "effects": "Internal Casus Belli Prestige Cost: +…; Ritsuryō Government may construct and upgrade Castle Holdings",
         "flags": [
           {
             "key": "disarmament_law",
@@ -17733,8 +17733,8 @@
         "titleAllegianceOpinion": null
       },
       {
-        "dlc": "The Great People",
-        "effects": "EFFECT_LIST_BULLETPlagues are less likely to spread into your Realm\nEFFECT_LIST_BULLETBetter outcomes from treatments performed by a Personal Physician",
+        "dlc": null,
+        "effects": "Plagues are less likely to spread into your Realm; Better outcomes from treatments performed by a Personal Physician",
         "flags": [
           {
             "key": "isolation_law",
@@ -17795,8 +17795,8 @@
         "titleAllegianceOpinion": null
       },
       {
-        "dlc": "The Great People",
-        "effects": "EFFECT_LIST_BULLETArmory and Stable Domicile Buildings Cost: -25%\nEFFECT_LIST_BULLETUnlocks the Imperial County Pacification Casus Belli\nEFFECT_LIST_BULLETAllows declaration of external Wars",
+        "dlc": null,
+        "effects": "Armory and Stable Domicile Buildings Cost: -25%; Unlocks the Imperial County Pacification Casus Belli; Allows declaration of external Wars",
         "flags": [
           {
             "key": "imperial_expansion_law",
@@ -17875,8 +17875,8 @@
         "titleAllegianceOpinion": null
       },
       {
-        "dlc": "The Great People",
-        "effects": "EFFECT_LIST_BULLETInfluence cost for Governorship revocation is halved",
+        "dlc": null,
+        "effects": "Influence cost for Governorship revocation is halved",
         "flags": [
           {
             "key": "manor_reform_law",
@@ -17958,7 +17958,7 @@
         "titleAllegianceOpinion": null
       },
       {
-        "dlc": "The Great People",
+        "dlc": null,
         "effects": null,
         "flags": [
           {

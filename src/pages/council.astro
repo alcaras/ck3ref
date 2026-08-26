@@ -1,0 +1,200 @@
+---
+import Base from '../layouts/Base.astro';
+import council from '../data/council.json';
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const { positions, tasks } = council;
+
+const POSITION_ORDER = [
+  'councillor_chancellor', 'councillor_steward', 'councillor_marshal',
+  'councillor_spymaster', 'councillor_court_chaplain', 'councillor_spouse',
+  'councillor_vizier', 'councillor_kurultai_1',
+  'minister_personnel', 'minister_justice', 'minister_works', 'minister_grand_marshal',
+];
+const ordered = [...positions].sort(
+  (a, b) => POSITION_ORDER.indexOf(a.id) - POSITION_ORDER.indexOf(b.id),
+);
+const tasksFor = (id: string) => tasks.filter((t) => t.position === id);
+const dlcs = [...new Set([...positions, ...tasks].map((x) => x.dlc).filter(Boolean))].sort();
+
+type Mod = { text: string; polarity: string; scale?: string };
+const skillTitle = (s: string) => s.charAt(0).toUpperCase() + s.slice(1);
+
+const TYPE_LABEL: Record<string, string> = { general: 'realm-wide', county: 'targets a county', court: 'targets a courtier' };
+const PROGRESS_LABEL: Record<string, string> = {
+  infinite: 'ongoing',
+  percentage: 'progresses to 100%',
+  value: 'builds progress to a goal',
+};
+function typeText(t: (typeof tasks)[number]): string {
+  let s = TYPE_LABEL[t.taskType] ?? t.taskType;
+  if (t.taskType === 'county' && t.countyTarget) s += ` (${t.countyTarget.replace(/_/g, ' ')})`;
+  return s;
+}
+---
+<Base
+  title="Council"
+  active="council"
+  lede="The council seats — who they are, what they grant while seated, and every task they can be set to, with each modifier's scaling factor named — read from council_positions and council_tasks."
+  stats={[
+    { value: positions.length, label: 'council positions' },
+    { value: tasks.length, label: 'tasks' },
+    { value: dlcs.length, label: 'DLCs add content' },
+  ]}
+>
+  <div class="filterbar">
+    <input type="search" id="q" placeholder="Filter tasks by name or effect…" autocomplete="off" />
+    <select id="fdlc">
+      <option value="">base game + DLC</option>
+      <option value="base">base game only</option>
+      {dlcs.map((d) => <option value={d}>{d}</option>)}
+    </select>
+    <span class="hint" id="count"></span>
+  </div>
+
+  {ordered.map((p) => (
+    <section data-group={p.id} data-dlc={p.dlc ?? 'base'}>
+      <h2 class="group-h" id={p.id.replace(/^councillor_/, '').replace(/_1$/, '')}>
+        {p.name}
+        {p.skill && <span class="chip chip--skill" style={`--c: var(--sk-${p.skill})`}><span class="dot" />{skillTitle(p.skill)}</span>}
+        {p.seats > 1 && <span class="chip">{p.seats} seats</span>}
+        {p.isClergy && <span class="chip">clergy</span>}
+        {p.requirements.map((r) => (
+          <span class="chip chip--req">{r.negated && <span class="neg">not </span>}{r.name}</span>
+        ))}
+        {p.dlc && <span class="badge-dlc">{p.dlc}</span>}
+        <span class="count">{tasksFor(p.id).length} tasks</span>
+      </h2>
+      {p.desc && <p class="pos-desc">{p.desc}</p>}
+      {(p.ownerModifiers.length > 0 || p.modifiers.length > 0) && (
+        <div class="pos-mods">
+          {p.ownerModifiers.length > 0 && (
+            <p>
+              <b>Liege gets:</b>
+              {p.ownerModifiers.map((m: Mod) => (
+                <span class={`fx-inline is-${m.polarity}`}>{m.text}{m.scale && <span class="scale"> × {m.scale}</span>}</span>
+              ))}
+            </p>
+          )}
+          {p.modifiers.length > 0 && (
+            <p>
+              <b>Councillor gets:</b>
+              {p.modifiers.map((m: Mod) => (
+                <span class={`fx-inline is-${m.polarity}`}>{m.text}{m.scale && <span class="scale"> × {m.scale}</span>}</span>
+              ))}
+            </p>
+          )}
+        </div>
+      )}
+      {tasksFor(p.id).length > 0 && (
+        <div class="tbl-scroll">
+          <table class="ntbl">
+            <thead>
+              <tr>
+                <th>Task</th>
+                <th>Scope</th>
+                <th>Progress</th>
+                <th>Effects <span class="subtle">(× named scaling factor)</span></th>
+                <th>DLC</th>
+              </tr>
+            </thead>
+            <tbody>
+              {tasksFor(p.id).map((t) => (
+                <tr
+                  id={t.id}
+                  data-name={[
+                    t.name, p.name,
+                    ...[...t.ownerMods, ...t.countyMods, ...t.councillorMods].map((m: Mod) => m.text),
+                  ].join(' ').toLowerCase()}
+                  data-dlc={t.dlc ?? 'base'}
+                >
+                  <td class="name">
+                    <span class="unit">
+                      <img src={`${base}/img/council-tasks/${t.id}.webp`} alt="" width="28" height="28" loading="lazy" onerror="this.style.visibility='hidden'" />
+                      <span class="u-name">{t.name}</span>
+                    </span>
+                  </td>
+                  <td>{typeText(t)}</td>
+                  <td class="subtle">{PROGRESS_LABEL[t.progress] ?? t.progress}</td>
+                  <td>
+                    <ul class="fx">
+                      {t.ownerMods.map((m: Mod) => (
+                        <li class={`is-${m.polarity}`}>{m.text}{m.scale && <span class="scale"> × {m.scale}</span>}</li>
+                      ))}
+                      {t.countyMods.map((m: Mod) => (
+                        <li class={`is-${m.polarity}`}>{m.text} <span class="subtle">(county)</span>{m.scale && <span class="scale"> × {m.scale}</span>}</li>
+                      ))}
+                      {t.councillorMods.map((m: Mod) => (
+                        <li class={`is-${m.polarity}`}>{m.text} <span class="subtle">(councillor)</span>{m.scale && <span class="scale"> × {m.scale}</span>}</li>
+                      ))}
+                      {t.effectDesc && <li class="is-neutral desc-li">{t.effectDesc}</li>}
+                      {!t.ownerMods.length && !t.countyMods.length && !t.councillorMods.length && !t.effectDesc && (
+                        <li class="subtle">event-driven — outcomes fire from scripted events</li>
+                      )}
+                    </ul>
+                  </td>
+                  <td>{t.dlc ? <span class="badge-dlc">{t.dlc}</span> : <span class="subtle">—</span>}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      )}
+    </section>
+  ))}
+
+  <p class="footnote">
+    Modifier magnitudes are the game's per-scale definitions; the dimmed
+    <span class="scale">× factor</span> names what each line is multiplied by (councillor skill,
+    liege tier, monthly income…), so in-game numbers vary with that factor. Kurultai seats 2–4 are
+    identical copies of seat 1 and are listed once.
+  </p>
+
+  <script>
+    const q = document.getElementById('q') as HTMLInputElement;
+    const fdlc = document.getElementById('fdlc') as HTMLSelectElement;
+    const count = document.getElementById('count')!;
+    const rows = [...document.querySelectorAll<HTMLTableRowElement>('tbody tr')];
+    const groups = [...document.querySelectorAll<HTMLElement>('section[data-group]')];
+
+    function apply() {
+      const needle = q.value.trim().toLowerCase();
+      const d = fdlc.value;
+      let shown = 0;
+      for (const r of rows) {
+        const ok =
+          (!needle || (r.dataset.name ?? '').includes(needle)) &&
+          (!d || (d === 'base' ? r.dataset.dlc === 'base' : r.dataset.dlc === d));
+        r.hidden = !ok;
+        if (ok) shown++;
+      }
+      for (const g of groups) {
+        const hasRows = [...g.querySelectorAll('tbody tr')].some((r) => !(r as HTMLTableRowElement).hidden);
+        const posOk = !d || (d === 'base' ? g.dataset.dlc === 'base' : g.dataset.dlc === d);
+        g.hidden = needle ? !hasRows : !(hasRows || (posOk && !needle));
+      }
+      count.textContent = `${shown} of ${rows.length} tasks`;
+    }
+    for (const el of [q, fdlc]) el.addEventListener('input', apply);
+    apply();
+  </script>
+
+  <style>
+    .group-h { flex-wrap: wrap; }
+    .group-h .chip, .group-h .badge-dlc { font-family: var(--font-ui); font-weight: 400; }
+    .chip--skill { border-color: color-mix(in oklab, var(--c) 55%, var(--line)); }
+    .chip .neg { color: var(--bad); }
+    .pos-desc { color: var(--dim); max-width: 72ch; margin: 0.2rem 0 0.6rem; font-size: 0.85rem; }
+    .pos-mods { margin: 0 0 0.6rem; font-size: 0.82rem; }
+    .pos-mods p { margin: 0.15rem 0; }
+    .pos-mods b { color: var(--dim); font-weight: 600; margin-right: 0.4rem; }
+    .fx { list-style: none; margin: 0; padding: 0; max-width: 30rem; font-size: 0.8rem; }
+    .fx li.is-good, .fx-inline.is-good { color: var(--good); }
+    .fx li.is-bad, .fx-inline.is-bad { color: var(--bad); }
+    .fx .desc-li { white-space: pre-line; color: var(--vellum); }
+    .fx-inline { margin-right: 0.7rem; }
+    .scale { color: var(--faint); font-size: 0.9em; }
+    .unit img { width: 28px; height: 28px; }
+    .footnote { color: var(--faint); font-size: 0.78rem; max-width: 70ch; margin-top: 2rem; }
+  </style>
+</Base>

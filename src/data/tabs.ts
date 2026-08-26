@@ -30,8 +30,8 @@ export const TABS: Tab[] = [
   { slug: 'traits', label: 'Traits', section: 'Characters', status: 'built', summary: 'All character traits: modifiers, opinions, opposites, inheritance.' },
   { slug: 'lifestyles', label: 'Lifestyles & Perks', section: 'Characters', status: 'built', summary: 'The 18 perk trees, rendered as trees.' },
   { slug: 'schemes', label: 'Schemes', section: 'Characters', status: 'placeholder', summary: 'Scheme types, agents, countermeasures.' },
-  { slug: 'court-positions', label: 'Court Positions', section: 'Characters', status: 'placeholder', summary: 'Every court position and its tasks.' },
-  { slug: 'council', label: 'Council', section: 'Characters', status: 'placeholder', summary: 'Council positions and tasks.' },
+  { slug: 'court-positions', label: 'Court Positions', section: 'Characters', status: 'built', summary: 'Every court position and its tasks.' },
+  { slug: 'council', label: 'Council', section: 'Characters', status: 'built', summary: 'Council positions and tasks.' },
   { slug: 'nicknames', label: 'Nicknames', section: 'Characters', status: 'placeholder', summary: 'All 683 nicknames and how to earn them.' },
   // Dynasty
   { slug: 'legacies', label: 'Dynasty Legacies', section: 'Dynasty', status: 'built', summary: '21 legacy tracks, five steps each.' },

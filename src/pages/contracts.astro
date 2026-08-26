@@ -1,0 +1,223 @@
+---
+import Base from '../layouts/Base.astro';
+import data from '../data/contracts.json';
+
+const { groups, contracts } = data as {
+  groups: {
+    id: string; name: string; isTributary: boolean;
+    heirSuccession: { suzerain: boolean; tributary: boolean } | null;
+    adminProvinceContract: string | null; contracts: string[];
+  }[];
+  contracts: {
+    id: string; name: string; displayMode: string; defaultsToHighest: boolean;
+    groups: string[]; dlc: string | null; sourceFile: string;
+    levels: {
+      id: string; name: string; shortName: string | null; isDefault: boolean; parent: string | null;
+      shares: Record<string, { value: number | null; varies: boolean }>;
+      minimums: Record<string, { value: number | null; varies: boolean }>;
+      factors: Record<string, { value: number | null; varies: boolean }>;
+      subjectOpinion: number | null; score: number | null; flags: string[];
+      subjectModifiers: { key: string; text: string; polarity: string }[];
+      liegeModifiers: { key: string; text: string; polarity: string }[];
+      enableTitleMaa: boolean | null; enableCharacterMaa: boolean | null;
+      appointmentTraitFlag: string | null;
+    }[];
+  }[];
+};
+
+const byId = new Map(contracts.map((c) => [c.id, c]));
+// render each contract once, under the first group that lists it
+const homeGroup = new Map<string, string>();
+for (const g of groups) for (const cid of g.contracts) if (!homeGroup.has(cid)) homeGroup.set(cid, g.id);
+const orphans = contracts.filter((c) => c.groups.length === 0);
+
+const levelCount = contracts.reduce((n, c) => n + c.levels.length, 0);
+const dlcs = [...new Set(contracts.map((c) => c.dlc).filter(Boolean))].sort() as string[];
+
+const SHARE_LABELS: Record<string, string> = {
+  tax: 'tax', levies: 'levies', herd: 'herd', barter_goods: 'barter goods',
+  prestige: 'prestige', piety: 'piety',
+};
+
+function pct(v: number): string {
+  return `${Math.round(v * 1000) / 10}%`;
+}
+function shareText(share: { value: number | null; varies: boolean }): string {
+  if (share.value == null) return 'varies';
+  return pct(share.value);
+}
+---
+<Base
+  title="Vassal Contracts"
+  active="contracts"
+  lede="Every subject-contract obligation and its levels — tax, levy, herd, and tribute shares, vassal opinion, and level modifiers — grouped by the government's contract set. Tax slots (administrative and clan taxation) are a later page."
+  stats={[
+    { value: contracts.length, label: 'contract obligations' },
+    { value: levelCount, label: 'obligation levels' },
+    { value: groups.length, label: 'contract sets' },
+  ]}
+>
+  <div class="filterbar">
+    <input type="search" id="q" placeholder="Filter by contract or level…" autocomplete="off" />
+    <select id="fgrp">
+      <option value="">every contract set</option>
+      {groups.map((g) => <option value={g.id}>{g.name}{g.isTributary ? ' (tributary)' : ''}</option>)}
+    </select>
+    <span class="hint" id="count"></span>
+  </div>
+
+  {[...groups, ...(orphans.length ? [{ id: '_other', name: 'Not in a contract set', isTributary: false, heirSuccession: null, adminProvinceContract: null, contracts: orphans.map((c) => c.id) }] : [])].map((g) => (
+    <section data-grp={g.id} id={g.id}>
+      <h2 class="group-h">
+        {g.name}
+        {g.isTributary && <span class="trib">tributary</span>}
+        <span class="count">{g.contracts.length}</span>
+      </h2>
+      {g.heirSuccession && (
+        <p class="grp-note">
+          survives suzerain's death: {g.heirSuccession.suzerain ? 'yes' : 'no'} ·
+          survives tributary's death: {g.heirSuccession.tributary ? 'yes' : 'no'}
+        </p>
+      )}
+      <p class="grp-chips">
+        {g.contracts.map((cid) => (
+          <a class="chip" href={`#c_${cid}`}>{byId.get(cid)?.name ?? cid}</a>
+        ))}
+      </p>
+
+      {g.contracts
+        .filter((cid) => (homeGroup.get(cid) ?? '_other') === g.id)
+        .map((cid) => byId.get(cid)!)
+        .filter(Boolean)
+        .map((c) => (
+          <article
+            class="contract"
+            id={`c_${c.id}`}
+            data-grps={c.groups.join(' ') || '_other'}
+            data-name={`${c.name} ${c.levels.map((l) => l.name).join(' ')}`.toLowerCase()}
+          >
+            <h3>
+              {c.name}
+              {c.groups.length > 1 && <span class="shared" title={`also in: ${c.groups.slice(1).map((gid) => groups.find((x) => x.id === gid)?.name ?? gid).join(', ')}`}>shared</span>}
+              {c.dlc && <span class="badge-dlc">{c.dlc}</span>}
+            </h3>
+            <div class="tbl-scroll">
+              <table class="ntbl">
+                <thead>
+                  <tr>
+                    <th>Level</th>
+                    <th class="num">Dues</th>
+                    <th class="num" title="Opinion the subject gains toward the liege">Opinion</th>
+                    <th>Modifiers</th>
+                    <th class="num" title="Positive favors the subject, negative the liege">Score</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {c.levels.map((l) => (
+                    <tr>
+                      <td class="name">
+                        <span class="l-name">{l.name}</span>
+                        {l.isDefault && <span class="dflt">default</span>}
+                      </td>
+                      <td class="num dues">
+                        {Object.entries(l.shares).map(([k, s]) => (
+                          <span class="due">
+                            {s.varies ? <span class="var" title="conditional — depends on liege, opinion, or realm state">varies</span> : shareText(s)} {SHARE_LABELS[k] ?? k}
+                            {l.minimums[k] && <span class="subtle"> (min {shareText(l.minimums[k])})</span>}
+                          </span>
+                        ))}
+                        {Object.entries(l.factors).map(([k, s]) => (
+                          <span class="due subtle">×{s.value == null ? '?' : Math.round(s.value * 100) / 100} {SHARE_LABELS[k] ?? k}</span>
+                        ))}
+                        {Object.keys(l.shares).length + Object.keys(l.factors).length === 0 && <span class="subtle">—</span>}
+                      </td>
+                      <td class="num">
+                        {l.subjectOpinion != null ? (
+                          <span class={l.subjectOpinion > 0 ? 'op-good' : 'op-bad'}>{l.subjectOpinion > 0 ? '+' : ''}{l.subjectOpinion}</span>
+                        ) : (
+                          <span class="subtle">—</span>
+                        )}
+                      </td>
+                      <td>
+                        <ul class="mods">
+                          {l.subjectModifiers.map((m) => <li class={m.polarity}>{m.text}</li>)}
+                          {l.liegeModifiers.map((m) => <li class={m.polarity}><span class="who">liege:</span> {m.text}</li>)}
+                          {l.enableTitleMaa === false && <li class="bad">disables title men-at-arms</li>}
+                          {l.enableCharacterMaa === false && <li class="bad">disables personal men-at-arms</li>}
+                          {l.appointmentTraitFlag && <li class="subtle">heirs need a “{l.appointmentTraitFlag.replace(/_/g, ' ')}” trait</li>}
+                        </ul>
+                      </td>
+                      <td class="num">{l.score ?? <span class="subtle">—</span>}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </article>
+        ))}
+    </section>
+  ))}
+
+  <script>
+    const q = document.getElementById('q') as HTMLInputElement;
+    const fgrp = document.getElementById('fgrp') as HTMLSelectElement;
+    const count = document.getElementById('count')!;
+    const arts = [...document.querySelectorAll<HTMLElement>('article.contract')];
+    const sections = [...document.querySelectorAll<HTMLElement>('section[data-grp]')];
+
+    function apply() {
+      const needle = q.value.trim().toLowerCase();
+      const grp = fgrp.value;
+      let shown = 0;
+      for (const a of arts) {
+        const ok =
+          (!needle || (a.dataset.name ?? '').includes(needle)) &&
+          (!grp || (a.dataset.grps ?? '').split(' ').includes(grp));
+        a.hidden = !ok;
+        if (ok) shown++;
+      }
+      for (const s of sections) {
+        const anyArticle = [...s.querySelectorAll('article.contract')].some((a) => !(a as HTMLElement).hidden);
+        const grpMatch = !grp || s.dataset.grp === grp;
+        // keep a section when nothing filters it, when it is the selected set,
+        // or when it hosts a shared contract that survived the filters
+        const show = (!needle && !grp) || anyArticle || (grpMatch && !needle);
+        s.hidden = !show;
+      }
+      count.textContent = `${shown} of ${arts.length}`;
+    }
+    for (const el of [q, fgrp]) el.addEventListener('input', apply);
+    apply();
+  </script>
+
+  <style>
+    .trib {
+      font-family: var(--font-mono); font-size: 0.65rem; color: var(--brass);
+      border: 1px dashed color-mix(in oklab, var(--brass) 50%, transparent);
+      border-radius: 999px; padding: 0.05rem 0.45rem;
+    }
+    .grp-note { color: var(--faint); font-size: 0.76rem; margin: -0.3rem 0 0.5rem; }
+    .grp-chips { display: flex; flex-wrap: wrap; gap: 0.3rem; margin: 0 0 0.8rem; }
+    .contract { margin: 0 0 1.3rem; }
+    .contract h3 {
+      font-family: var(--font-display); font-weight: 600; font-size: 0.95rem;
+      margin: 0.9rem 0 0.4rem; display: flex; align-items: baseline; gap: 0.5rem;
+    }
+    .shared {
+      font-family: var(--font-mono); font-size: 0.65rem; color: var(--dim);
+      border: 1px dashed var(--line); border-radius: 999px; padding: 0.05rem 0.45rem; cursor: help;
+    }
+    td.name { min-width: 9rem; }
+    .l-name { font-weight: 600; }
+    .dflt { color: var(--rubric); font-size: 0.7rem; margin-left: 0.35rem; }
+    .dues .due { display: block; white-space: nowrap; }
+    .dues .var { color: var(--sk-intrigue); cursor: help; border-bottom: 1px dotted var(--sk-intrigue); }
+    .op-good { color: var(--good); }
+    .op-bad { color: var(--bad); }
+    ul.mods { margin: 0; padding: 0; list-style: none; font-size: 0.78rem; max-width: 26rem; }
+    ul.mods li.good { color: var(--good); }
+    ul.mods li.bad { color: var(--bad); }
+    ul.mods li.subtle, .subtle { color: var(--faint); }
+    ul.mods .who { color: var(--faint); font-size: 0.7rem; }
+  </style>
+</Base>

@@ -26,6 +26,8 @@ data:
 	@python3 scripts/build_traditions.py
 	@python3 scripts/build_innovations.py
 	@python3 scripts/build_pillars.py
+	@python3 scripts/build_court.py
+	@python3 scripts/build_council.py
 	@python3 scripts/build_entities.py
 	@python3 scripts/build_backlinks.py
 	@python3 scripts/build_search_index.py
