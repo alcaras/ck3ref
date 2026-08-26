@@ -31,6 +31,7 @@ const nthCost = (n: number) => COST.base + n * COST.perStep; // n = already owne
   <div class="filterbar">
     <button id="share" class="btn-primary">Copy share link</button>
     <button id="clear">Clear</button>
+    <label class="chk"><input type="checkbox" id="expand" /> expanded — show every perk's effects</label>
     <span class="hint">
       Total <b id="total">0</b> renown · <b id="steps">0</b> steps
     </span>
@@ -56,7 +57,12 @@ const nthCost = (n: number) => COST.base + n * COST.perStep; // n = already owne
               {t.perks.map((p: any, i: number) => (
                 <button class="step" data-track={t.id} data-step={i}
                   aria-label={`${p.name}: ${p.effects.join('; ') || 'no direct modifiers'}`}>
-                  <span class="n">{i + 1}</span>{p.name}
+                  <span class="s-h"><span class="n">{i + 1}</span>{p.name}</span>
+                  <span class="s-fx">
+                    {p.effects.length > 0
+                      ? p.effects.map((e: string) => <span class="fxline">{e}</span>)
+                      : <span class="fxline none">unlocks or enables something the game doesn't phrase as a modifier</span>}
+                  </span>
                 </button>
               ))}
             </div>
@@ -250,6 +256,16 @@ const nthCost = (n: number) => COST.base + n * COST.perStep; // n = already owne
     });
     document.addEventListener('keydown', (e) => { if (e.key === 'Escape') hideTip(); });
 
+    // "expanded" shows every perk's effects inline instead of on hover
+    const expand = $('expand');
+    const applyExpand = () => {
+      document.querySelector('.tracks')?.classList.toggle('is-expanded', expand.checked);
+      try { localStorage.setItem('ck3ref-legacy-expand', expand.checked ? '1' : '0'); } catch {}
+    };
+    try { expand.checked = localStorage.getItem('ck3ref-legacy-expand') === '1'; } catch {}
+    expand.addEventListener('change', applyExpand);
+    applyExpand();
+
     loadFromURL();
     render();
   </script>
@@ -286,6 +302,14 @@ const nthCost = (n: number) => COST.base + n * COST.perStep; // n = already owne
     }
     .step:hover { border-color: var(--brass); color: var(--vellum); }
     .step .n { font-family: var(--font-mono); font-size: 0.68rem; color: var(--faint); min-width: 0.9rem; }
+    .step { flex-direction: column; align-items: stretch; width: 100%; }
+    .s-h { display: flex; gap: 0.45rem; align-items: baseline; }
+    .s-fx { display: none; }
+    .tracks.is-expanded .s-fx { display: block; padding: 0.15rem 0 0.2rem 1.35rem; }
+    .tracks.is-expanded .fxline { display: block; color: var(--dim); font-size: 0.72rem; line-height: 1.35; }
+    .tracks.is-expanded .fxline.none { font-style: italic; color: var(--faint); }
+    .tracks.is-expanded .step { padding-bottom: 0.3rem; border-bottom: 1px solid var(--line-soft); }
+    .chk { color: var(--dim); font-size: 0.8rem; display: flex; gap: 0.35rem; align-items: center; cursor: pointer; }
     .step.is-picked { color: var(--vellum); background: color-mix(in oklab, var(--rubric) 18%, transparent); }
     .step.is-picked .n { color: var(--rubric); }
     .step.is-next { border-color: color-mix(in oklab, var(--brass) 45%, transparent); }
