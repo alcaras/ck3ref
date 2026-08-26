@@ -1,0 +1,111 @@
+---
+import Base from '../layouts/Base.astro';
+import data from '../data/traditions.json';
+
+const { costNote, traditions } = data as any;
+const priced = traditions
+  .filter((t: any) => t.cost?.prestige)
+  .map((t: any) => ({
+    id: t.id, name: t.name, category: t.categoryName ?? t.category,
+    base: t.cost.prestige.base,
+    rules: (t.cost.prestige.rules ?? []).map((r: any) => ({
+      op: r.op, amount: r.amount, when: r.when,
+    })),
+  }))
+  .sort((a: any, b: any) => a.name.localeCompare(b.name));
+---
+<Base
+  title="Culture Calculator"
+  active="culture-calculator"
+  lede="Budget a culture rework: pick traditions and the conditions that apply, and see the prestige bill with the game's own pricing rules. Hybridization and divergence are gated by acceptance and cooldowns, not prestige — see the note below."
+  stats={[{ value: priced.length, label: 'priced traditions' }]}
+>
+  <div class="filterbar">
+    <select id="pick">
+      {priced.map((t: any) => <option value={t.id}>{t.name}</option>)}
+    </select>
+    <button id="add">Add tradition</button>
+    <span class="hint total">Total: <b id="total">0</b> prestige</span>
+  </div>
+
+  <div id="basket"></div>
+
+  <section class="notes">
+    <h2 class="group-h">Rules the game applies</h2>
+    <ul>
+      <li>Base cost 2,000 prestige (4,000 for a few ritual traditions); a culture holds at most 5.</li>
+      <li>Wrong ethos: +2,000 · unmet criteria: +3,000 · "Inspired by" a nearby culture: ×0.5 · replacing an existing tradition: ×1.5.</li>
+      <li>{costNote}</li>
+      <li>Hybridizing needs 40 cultural acceptance (modified by traits, traditions, and struggles), not prestige; divergence has a cooldown, not a price.</li>
+    </ul>
+  </section>
+
+  <script define:vars={{ priced }}>
+    const byId = new Map(priced.map((t) => [t.id, t]));
+    const basket = document.getElementById('basket');
+    const totalEl = document.getElementById('total');
+    const items = [];
+
+    function rowCost(item) {
+      const t = byId.get(item.id);
+      let v = t.base ?? 2000;
+      for (let i = 0; i < t.rules.length; i++) {
+        const r = t.rules[i];
+        if (!item.flags[i]) continue;
+        if (r.op === 'add') v += r.amount;
+        else if (r.op === 'multiply') v *= r.amount;
+      }
+      return Math.round(v);
+    }
+
+    function render() {
+      basket.innerHTML = '';
+      let total = 0;
+      items.forEach((item, idx) => {
+        const t = byId.get(item.id);
+        const cost = rowCost(item);
+        total += cost;
+        const div = document.createElement('div');
+        div.className = 'trow';
+        div.innerHTML =
+          `<div class="t-h"><b>${t.name}</b><span class="t-cost">${cost.toLocaleString()} prestige</span>` +
+          `<button data-del="${idx}">remove</button></div>` +
+          t.rules.map((r, i) =>
+            `<label class="cond"><input type="checkbox" data-idx="${idx}" data-rule="${i}" ${item.flags[i] ? 'checked' : ''}>` +
+            `<span>${r.op === 'add' ? `+${r.amount.toLocaleString()}` : `×${r.amount}`} — ${r.when}</span></label>`
+          ).join('');
+        basket.appendChild(div);
+      });
+      totalEl.textContent = total.toLocaleString();
+    }
+
+    document.getElementById('add').addEventListener('click', () => {
+      const id = document.getElementById('pick').value;
+      items.push({ id, flags: byId.get(id).rules.map(() => false) });
+      render();
+    });
+    basket.addEventListener('input', (e) => {
+      const cb = e.target.closest('input[data-idx]');
+      if (cb) { items[+cb.dataset.idx].flags[+cb.dataset.rule] = cb.checked; render(); }
+    });
+    basket.addEventListener('click', (e) => {
+      const del = e.target.closest('button[data-del]');
+      if (del) { items.splice(+del.dataset.del, 1); render(); }
+    });
+  </script>
+
+  <style>
+    .filterbar select { max-width: 20rem; background: var(--ink); color: var(--vellum); border: 1px solid var(--line); border-radius: var(--r); padding: 0.28rem 0.5rem; }
+    .filterbar button { background: var(--panel); color: var(--vellum); border: 1px solid var(--line); border-radius: var(--r); padding: 0.28rem 0.7rem; cursor: pointer; }
+    .filterbar button:hover { border-color: var(--brass); color: var(--brass-bright); }
+    .total b { color: var(--rubric); font-family: var(--font-mono); font-size: 1.1rem; }
+    .trow { background: var(--panel); border: 1px solid var(--line-soft); border-radius: var(--r); padding: 0.6rem 0.8rem; margin-bottom: 0.6rem; }
+    .t-h { display: flex; gap: 0.8rem; align-items: baseline; margin-bottom: 0.3rem; }
+    .t-cost { font-family: var(--font-mono); color: var(--brass); margin-left: auto; }
+    .t-h button { background: none; border: none; color: var(--faint); cursor: pointer; font-size: 0.75rem; }
+    .t-h button:hover { color: var(--bad); }
+    .cond { display: flex; gap: 0.45rem; align-items: baseline; color: var(--dim); font-size: 0.82rem; padding: 0.1rem 0; }
+    .notes ul { color: var(--dim); font-size: 0.85rem; max-width: 70ch; }
+    .notes li { margin: 0.25rem 0; }
+  </style>
+</Base>
