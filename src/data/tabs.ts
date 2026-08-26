@@ -62,7 +62,7 @@ export const TABS: Tab[] = [
   { slug: 'men-at-arms', label: 'Men-at-Arms', section: 'Warfare', status: 'built', summary: 'All 110 regiment types: stats, counters, terrain, costs.' },
   { slug: 'counters', label: 'Counters Matrix', section: 'Warfare', status: 'built', summary: 'Who counters whom, in one grid.' },
   { slug: 'casus-belli', label: 'Casus Belli', section: 'Warfare', status: 'built', summary: '121 war declarations and their terms.' },
-  { slug: 'combat', label: 'Combat Mechanics', section: 'Warfare', status: 'placeholder', summary: 'Advantage, phases, knights — from defines.' },
+  { slug: 'combat', label: 'Combat Mechanics', section: 'Warfare', status: 'built', summary: 'Advantage, phases, knights — from defines.' },
   // World
   { slug: 'titles', label: 'Titles', section: 'World', status: 'built', summary: 'De jure trees for every empire, kingdom, duchy.' },
   { slug: 'start-dates', label: 'Start Dates', section: 'World', status: 'built', summary: 'Who holds what in 867 and 1066.' },
@@ -78,7 +78,7 @@ export const TABS: Tab[] = [
   { slug: 'concepts', label: 'Glossary', section: 'Concepts', status: 'built', summary: 'Every game concept, auto-linked.' },
   { slug: 'defines', label: 'Defines', section: 'Concepts', status: 'built', summary: '1,122 engine constants, annotated.' },
   { slug: 'dlc', label: 'DLC Index', section: 'Concepts', status: 'built', summary: 'What each DLC adds.' },
-  { slug: 'patch-notes', label: 'Patch Notes', section: 'Concepts', status: 'placeholder', summary: 'Auto-generated data changelog.' },
+  { slug: 'patch-notes', label: 'Patch Notes', section: 'Concepts', status: 'built', summary: 'Auto-generated data changelog.' },
   // Tools
   { slug: 'genetics', label: 'Genetics Calculator', section: 'Tools', status: 'built', summary: 'Congenital trait inheritance odds.' },
   { slug: 'faith-creator', label: 'Faith Cost Calculator', section: 'Tools', status: 'built', summary: 'Reformation piety costs.' },

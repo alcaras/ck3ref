@@ -1,0 +1,6566 @@
+{
+  "contracts": [
+    {
+      "defaultsToHighest": false,
+      "displayMode": "radiobutton",
+      "dlc": null,
+      "groups": [
+        "admin_vassal"
+      ],
+      "id": "administrative_obligations",
+      "levels": [
+        {
+          "appointmentTraitFlag": null,
+          "enableCharacterMaa": null,
+          "enableTitleMaa": null,
+          "factors": {},
+          "flags": [],
+          "id": "default",
+          "isDefault": false,
+          "liegeModifiers": [],
+          "minimums": {},
+          "name": "Default",
+          "parent": null,
+          "score": null,
+          "shares": {
+            "levies": {
+              "value": 0.3,
+              "varies": false
+            },
+            "tax": {
+              "value": 0.75,
+              "varies": false
+            }
+          },
+          "shortName": null,
+          "subjectModifiers": [],
+          "subjectOpinion": null
+        }
+      ],
+      "name": "Administrative Obligations",
+      "sourceFile": "administrative.txt"
+    },
+    {
+      "defaultsToHighest": true,
+      "displayMode": "hidden",
+      "dlc": null,
+      "groups": [
+        "admin_vassal"
+      ],
+      "id": "administrative_salary_rank",
+      "levels": [
+        {
+          "appointmentTraitFlag": null,
+          "enableCharacterMaa": null,
+          "enableTitleMaa": null,
+          "factors": {},
+          "flags": [],
+          "id": "administrative_salary_rank_none",
+          "isDefault": true,
+          "liegeModifiers": [],
+          "minimums": {},
+          "name": "None",
+          "parent": null,
+          "score": null,
+          "shares": {},
+          "shortName": "None",
+          "subjectModifiers": [],
+          "subjectOpinion": null
+        },
+        {
+          "appointmentTraitFlag": null,
+          "enableCharacterMaa": null,
+          "enableTitleMaa": null,
+          "factors": {},
+          "flags": [],
+          "id": "administrative_salary_rank_duchy",
+          "isDefault": false,
+          "liegeModifiers": [],
+          "minimums": {},
+          "name": "Duchy Tier: Theme",
+          "parent": "administrative_salary_rank_none",
+          "score": null,
+          "shares": {},
+          "shortName": "Theme",
+          "subjectModifiers": [
+            {
+              "key": "monthly_treasury_from_salary_budget_base",
+              "polarity": "good",
+              "text": "+75% Monthly Salary Base Rate"
+            }
+          ],
+          "subjectOpinion": null
+        },
+        {
+          "appointmentTraitFlag": null,
+          "enableCharacterMaa": null,
+          "enableTitleMaa": null,
+          "factors": {},
+          "flags": [],
+          "id": "administrative_salary_rank_kingdom",
+          "isDefault": false,
+          "liegeModifiers": [],
+          "minimums": {},
+          "name": "Kingdom Tier: Catepan",
+          "parent": "administrative_salary_rank_duchy",
+          "score": null,
+          "shares": {},
+          "shortName": "Catepan",
+          "subjectModifiers": [
+            {
+              "key": "monthly_treasury_from_salary_budget_base",
+              "polarity": "good",
+              "text": "+100% Monthly Salary Base Rate"
+            }
+          ],
+          "subjectOpinion": null
+        },
+        {
+          "appointmentTraitFlag": null,
+          "enableCharacterMaa": null,
+          "enableTitleMaa": null,
+          "factors": {},
+          "flags": [],
+          "id": "administrative_salary_rank_empire",
+          "isDefault": false,
+          "liegeModifiers": [],
+          "minimums": {},
+          "name": "Empire Tier: Great Catepan",
+          "parent": "administrative_salary_rank_kingdom",
+          "score": null,
+          "shares": {},
+          "shortName": "Great Catepan",
+          "subjectModifiers": [
+            {
+              "key": "monthly_treasury_from_salary_budget_base",
+              "polarity": "good",
+              "text": "+200% Monthly Salary Base Rate"
+            }
+          ],
+          "subjectOpinion": null
+        }
+      ],
+      "name": "Salary Rank",
+      "sourceFile": "administrative.txt"
+    },
+    {
+      "defaultsToHighest": false,
+      "displayMode": "radiobutton",
+      "dlc": null,
+      "groups": [
+        "admin_vassal"
+      ],
+      "id": "administrative_themes",
+      "levels": [
+        {
+          "appointmentTraitFlag": null,
+          "enableCharacterMaa": null,
+          "enableTitleMaa": null,
+          "factors": {},
+          "flags": [
+            "admin_theme_balanced"
+          ],
+          "id": "admin_theme_balanced",
+          "isDefault": true,
+          "liegeModifiers": [],
+          "minimums": {},
+          "name": "Balanced Administration",
+          "parent": null,
+          "score": 0,
+          "shares": {},
+          "shortName": "Balanced",
+          "subjectModifiers": [
+            {
+              "key": "governor_xp_gain_mult",
+              "polarity": "good",
+              "text": "+20% Governor Trait Experience Gain"
+            }
+          ],
+          "subjectOpinion": null
+        },
+        {
+          "appointmentTraitFlag": null,
+          "enableCharacterMaa": null,
+          "enableTitleMaa": null,
+          "factors": {
+            "tax": {
+              "value": 0.5,
+              "varies": false
+            }
+          },
+          "flags": [
+            "admin_stewardship_obligation_bonus",
+            "admin_influence_construction_bonus",
+            "admin_ai_is_builder",
+            "admin_theme_civilian",
+            "obligation_high_taxes"
+          ],
+          "id": "admin_theme_civilian",
+          "isDefault": false,
+          "liegeModifiers": [],
+          "minimums": {},
+          "name": "Civilian Administration",
+          "parent": null,
+          "score": 0,
+          "shares": {},
+          "shortName": "Civilian",
+          "subjectModifiers": [
+            {
+              "key": "development_growth_factor",
+              "polarity": "good",
+              "text": "+20% Development Growth"
+            },
+            {
+              "key": "build_gold_cost",
+              "polarity": "good",
+              "text": "-10% Build Gold Cost"
+            },
+            {
+              "key": "build_speed",
+              "polarity": "good",
+              "text": "-10% Build Speed"
+            },
+            {
+              "key": "men_at_arms_title_limit",
+              "polarity": "bad",
+              "text": "-2 Size of Title Men-at-Arms Regiments"
+            },
+            {
+              "key": "men_at_arms_title_cap",
+              "polarity": "bad",
+              "text": "-2 Max Title Men-at-Arms Regiments"
+            }
+          ],
+          "subjectOpinion": null
+        },
+        {
+          "appointmentTraitFlag": null,
+          "enableCharacterMaa": null,
+          "enableTitleMaa": null,
+          "factors": {
+            "levies": {
+              "value": 0.75,
+              "varies": false
+            }
+          },
+          "flags": [
+            "admin_martial_obligation_bonus",
+            "admin_theme_military",
+            "obligation_high_levies"
+          ],
+          "id": "admin_theme_military",
+          "isDefault": false,
+          "liegeModifiers": [],
+          "minimums": {},
+          "name": "Military Administration",
+          "parent": null,
+          "score": 0,
+          "shares": {},
+          "shortName": "Military",
+          "subjectModifiers": [
+            {
+              "key": "development_growth_factor",
+              "polarity": "bad",
+              "text": "-25% Development Growth"
+            },
+            {
+              "key": "monthly_county_control_growth_factor",
+              "polarity": "good",
+              "text": "+10% Control Growth"
+            },
+            {
+              "key": "maa_damage_mult",
+              "polarity": "good",
+              "text": "+10% Men-at-Arms Damage"
+            },
+            {
+              "key": "men_at_arms_title_cap",
+              "polarity": "good",
+              "text": "+2 Max Title Men-at-Arms Regiments"
+            },
+            {
+              "key": "men_at_arms_maintenance",
+              "polarity": "good",
+              "text": "-20% Men-at-Arms Maintenance"
+            },
+            {
+              "key": "monthly_treasury_from_military_budget_base",
+              "polarity": "good",
+              "text": "+100% Monthly Military Base Rate"
+            }
+          ],
+          "subjectOpinion": null
+        },
+        {
+          "appointmentTraitFlag": null,
+          "enableCharacterMaa": null,
+          "enableTitleMaa": null,
+          "factors": {
+            "tax": {
+              "value": -0.2,
+              "varies": false
+            }
+          },
+          "flags": [
+            "admin_prowess_obligation_bonus",
+            "admin_duchy_expansion_unlocked",
+            "admin_ai_is_warlike",
+            "admin_theme_frontier",
+            "admin_theme_can_raid"
+          ],
+          "id": "admin_theme_frontier",
+          "isDefault": false,
+          "liegeModifiers": [],
+          "minimums": {},
+          "name": "Frontier Administration",
+          "parent": null,
+          "score": 0,
+          "shares": {},
+          "shortName": "Frontier",
+          "subjectModifiers": [
+            {
+              "key": "fort_level",
+              "polarity": "good",
+              "text": "+2 Fort Level"
+            },
+            {
+              "key": "defender_advantage",
+              "polarity": "good",
+              "text": "+6 Defender Advantage"
+            },
+            {
+              "key": "hostile_county_attrition",
+              "polarity": "good",
+              "text": "-30% Hostile County Attrition"
+            },
+            {
+              "key": "hostile_raid_time",
+              "polarity": "good",
+              "text": "+75% Hostile Raid Time"
+            },
+            {
+              "key": "ai_boldness",
+              "polarity": "good",
+              "text": "+20 Ai Boldness"
+            },
+            {
+              "key": "ai_rationality",
+              "polarity": "bad",
+              "text": "-15 Ai Rationality"
+            },
+            {
+              "key": "monthly_treasury_from_military_budget_base",
+              "polarity": "good",
+              "text": "+150% Monthly Military Base Rate"
+            }
+          ],
+          "subjectOpinion": null
+        },
+        {
+          "appointmentTraitFlag": null,
+          "enableCharacterMaa": null,
+          "enableTitleMaa": null,
+          "factors": {
+            "tax": {
+              "value": 0.1,
+              "varies": false
+            }
+          },
+          "flags": [
+            "admin_theme_imperial",
+            "admin_prestige_obligation_bonus",
+            "admin_cannot_revoke_titles_without_cause",
+            "obligation_high_taxes"
+          ],
+          "id": "admin_theme_imperial",
+          "isDefault": false,
+          "liegeModifiers": [
+            {
+              "key": "monthly_prestige_gain_per_legitimacy_level_add",
+              "polarity": "good",
+              "text": "+0.5 Prestige per Legitimacy Level /month"
+            },
+            {
+              "key": "legitimacy_gain_mult",
+              "polarity": "good",
+              "text": "+20% Legitimacy Gain"
+            }
+          ],
+          "minimums": {},
+          "name": "Imperial Administration",
+          "parent": null,
+          "score": 0,
+          "shares": {},
+          "shortName": "Imperial",
+          "subjectModifiers": [
+            {
+              "key": "monthly_prestige",
+              "polarity": "good",
+              "text": "+0.5 Prestige /month"
+            },
+            {
+              "key": "monthly_influence",
+              "polarity": "good",
+              "text": "+0.25 Influence /month"
+            }
+          ],
+          "subjectOpinion": null
+        },
+        {
+          "appointmentTraitFlag": null,
+          "enableCharacterMaa": null,
+          "enableTitleMaa": null,
+          "factors": {},
+          "flags": [
+            "admin_naval_duchy_expansion_unlocked",
+            "admin_tradeport_obligation_bonus",
+            "admin_theme_naval"
+          ],
+          "id": "admin_theme_naval",
+          "isDefault": false,
+          "liegeModifiers": [
+            {
+              "key": "embarkation_cost_mult",
+              "polarity": "good",
+              "text": "-10% Embarkation Cost"
+            },
+            {
+              "key": "naval_movement_speed_mult",
+              "polarity": "good",
+              "text": "+10% Naval Speed"
+            }
+          ],
+          "minimums": {},
+          "name": "Naval Administration",
+          "parent": null,
+          "score": 0,
+          "shares": {},
+          "shortName": "Naval",
+          "subjectModifiers": [
+            {
+              "key": "embarkation_cost_mult",
+              "polarity": "good",
+              "text": "-50% Embarkation Cost"
+            },
+            {
+              "key": "naval_movement_speed_mult",
+              "polarity": "good",
+              "text": "+25% Naval Speed"
+            },
+            {
+              "key": "no_disembark_penalty",
+              "polarity": "neutral",
+              "text": "No Advantage penalty from disembarking"
+            },
+            {
+              "key": "coastal_advantage",
+              "polarity": "good",
+              "text": "+10 Coastal Advantage"
+            },
+            {
+              "key": "development_growth_factor",
+              "polarity": "good",
+              "text": "+10% Development Growth"
+            },
+            {
+              "key": "monthly_treasury_from_military_budget_base",
+              "polarity": "good",
+              "text": "+100% Monthly Military Base Rate"
+            }
+          ],
+          "subjectOpinion": null
+        }
+      ],
+      "name": "Available Administration Types",
+      "sourceFile": "administrative.txt"
+    },
+    {
+      "defaultsToHighest": false,
+      "displayMode": "tree",
+      "dlc": null,
+      "groups": [
+        "tributary_wanua"
+      ],
+      "id": "barter_goods_obligations",
+      "levels": [
+        {
+          "appointmentTraitFlag": null,
+          "enableCharacterMaa": null,
+          "enableTitleMaa": null,
+          "factors": {},
+          "flags": [],
+          "id": "barter_goods_low",
+          "isDefault": false,
+          "liegeModifiers": [],
+          "minimums": {},
+          "name": "Low Barter Goods",
+          "parent": null,
+          "score": 1,
+          "shares": {
+            "barter_goods": {
+              "value": 0.05,
+              "varies": false
+            }
+          },
+          "shortName": "Low",
+          "subjectModifiers": [],
+          "subjectOpinion": null
+        },
+        {
+          "appointmentTraitFlag": null,
+          "enableCharacterMaa": null,
+          "enableTitleMaa": null,
+          "factors": {},
+          "flags": [],
+          "id": "barter_goods_medium",
+          "isDefault": true,
+          "liegeModifiers": [],
+          "minimums": {},
+          "name": "Medium Barter Goods",
+          "parent": "barter_goods_low",
+          "score": 0,
+          "shares": {
+            "barter_goods": {
+              "value": 0.1,
+              "varies": false
+            }
+          },
+          "shortName": "Medium",
+          "subjectModifiers": [],
+          "subjectOpinion": null
+        },
+        {
+          "appointmentTraitFlag": null,
+          "enableCharacterMaa": null,
+          "enableTitleMaa": null,
+          "factors": {},
+          "flags": [],
+          "id": "barter_goods_high",
+          "isDefault": false,
+          "liegeModifiers": [],
+          "minimums": {},
+          "name": "High Barter Goods",
+          "parent": "barter_goods_medium",
+          "score": -1,
+          "shares": {
+            "barter_goods": {
+              "value": 0.15,
+              "varies": false
+            }
+          },
+          "shortName": "High",
+          "subjectModifiers": [],
+          "subjectOpinion": null
+        }
+      ],
+      "name": "Barter Goods",
+      "sourceFile": "wanua.txt"
+    },
+    {
+      "defaultsToHighest": false,
+      "displayMode": "tree",
+      "dlc": null,
+      "groups": [
+        "celestial_vassal"
+      ],
+      "id": "celestial_ministry_budget",
+      "levels": [
+        {
+          "appointmentTraitFlag": null,
+          "enableCharacterMaa": null,
+          "enableTitleMaa": null,
+          "factors": {},
+          "flags": [],
+          "id": "celestial_ministry_budget_low",
+          "isDefault": false,
+          "liegeModifiers": [],
+          "minimums": {},
+          "name": "Low Budget",
+          "parent": null,
+          "score": -1,
+          "shares": {},
+          "shortName": "Low",
+          "subjectModifiers": [
+            {
+              "key": "monthly_treasury_from_ministry_budget_base",
+              "polarity": "bad",
+              "text": "-50% Monthly Ministry Base Rate"
+            }
+          ],
+          "subjectOpinion": -15
+        },
+        {
+          "appointmentTraitFlag": null,
+          "enableCharacterMaa": null,
+          "enableTitleMaa": null,
+          "factors": {},
+          "flags": [],
+          "id": "celestial_ministry_budget_medium",
+          "isDefault": true,
+          "liegeModifiers": [],
+          "minimums": {},
+          "name": "Medium Budget",
+          "parent": "celestial_ministry_budget_low",
+          "score": 0,
+          "shares": {},
+          "shortName": "Medium",
+          "subjectModifiers": [],
+          "subjectOpinion": null
+        },
+        {
+          "appointmentTraitFlag": null,
+          "enableCharacterMaa": null,
+          "enableTitleMaa": null,
+          "factors": {},
+          "flags": [],
+          "id": "celestial_ministry_budget_high",
+          "isDefault": false,
+          "liegeModifiers": [],
+          "minimums": {},
+          "name": "High Budget",
+          "parent": "celestial_ministry_budget_medium",
+          "score": 1,
+          "shares": {},
+          "shortName": "High",
+          "subjectModifiers": [
+            {
+              "key": "monthly_treasury_from_ministry_budget_base",
+              "polarity": "good",
+              "text": "+50% Monthly Ministry Base Rate"
+            }
+          ],
+          "subjectOpinion": 0
+        }
+      ],
+      "name": "Ministry Budget",
+      "sourceFile": "celestial.txt"
+    },
+    {
+      "defaultsToHighest": true,
+      "displayMode": "tree",
+      "dlc": null,
+      "groups": [
+        "celestial_vassal"
+      ],
+      "id": "celestial_ministry_obligations",
+      "levels": [
+        {
+          "appointmentTraitFlag": null,
+          "enableCharacterMaa": null,
+          "enableTitleMaa": null,
+          "factors": {},
+          "flags": [
+            "celestial_minister_obligation"
+          ],
+          "id": "celestial_minister_none",
+          "isDefault": true,
+          "liegeModifiers": [],
+          "minimums": {},
+          "name": "None",
+          "parent": null,
+          "score": 1,
+          "shares": {},
+          "shortName": "None",
+          "subjectModifiers": [],
+          "subjectOpinion": null
+        },
+        {
+          "appointmentTraitFlag": "civilian_province",
+          "enableCharacterMaa": null,
+          "enableTitleMaa": false,
+          "factors": {},
+          "flags": [
+            "celestial_minister_obligation"
+          ],
+          "id": "celestial_minister_civil",
+          "isDefault": false,
+          "liegeModifiers": [],
+          "minimums": {},
+          "name": "Ministry Obligations",
+          "parent": "celestial_minister_none",
+          "score": 2,
+          "shares": {},
+          "shortName": "Ministry",
+          "subjectModifiers": [
+            {
+              "key": "monthly_merit",
+              "polarity": "good",
+              "text": "+20 Merit /month"
+            },
+            {
+              "key": "monthly_treasury_from_ministry_budget_base",
+              "polarity": "good",
+              "text": "+100% Monthly Ministry Base Rate"
+            }
+          ],
+          "subjectOpinion": null
+        },
+        {
+          "appointmentTraitFlag": "military_province",
+          "enableCharacterMaa": null,
+          "enableTitleMaa": true,
+          "factors": {},
+          "flags": [
+            "celestial_minister_obligation",
+            "celestial_grand_marshal_obligation"
+          ],
+          "id": "celestial_minister_military",
+          "isDefault": false,
+          "liegeModifiers": [],
+          "minimums": {},
+          "name": "Grand Marshal Obligations",
+          "parent": "celestial_minister_none",
+          "score": 3,
+          "shares": {},
+          "shortName": "Grand Marshal",
+          "subjectModifiers": [
+            {
+              "key": "monthly_merit",
+              "polarity": "good",
+              "text": "+20 Merit /month"
+            },
+            {
+              "key": "men_at_arms_recruitment_cost",
+              "polarity": "good",
+              "text": "-50% Men-at-Arms Recruitment Cost"
+            },
+            {
+              "key": "men_at_arms_maintenance",
+              "polarity": "good",
+              "text": "-50% Men-at-Arms Maintenance"
+            },
+            {
+              "key": "monthly_treasury_from_military_budget_base",
+              "polarity": "good",
+              "text": "+250% Monthly Military Base Rate"
+            },
+            {
+              "key": "monthly_treasury_from_ministry_budget_base",
+              "polarity": "good",
+              "text": "+100% Monthly Ministry Base Rate"
+            }
+          ],
+          "subjectOpinion": null
+        }
+      ],
+      "name": "Ministry Obligations",
+      "sourceFile": "celestial.txt"
+    },
+    {
+      "defaultsToHighest": false,
+      "displayMode": "radiobutton",
+      "dlc": null,
+      "groups": [
+        "celestial_vassal"
+      ],
+      "id": "celestial_obligations",
+      "levels": [
+        {
+          "appointmentTraitFlag": null,
+          "enableCharacterMaa": null,
+          "enableTitleMaa": null,
+          "factors": {},
+          "flags": [],
+          "id": "default",
+          "isDefault": false,
+          "liegeModifiers": [],
+          "minimums": {},
+          "name": "Default",
+          "parent": null,
+          "score": null,
+          "shares": {
+            "levies": {
+              "value": 0.3,
+              "varies": false
+            },
+            "tax": {
+              "value": 0.75,
+              "varies": false
+            }
+          },
+          "shortName": null,
+          "subjectModifiers": [],
+          "subjectOpinion": null
+        }
+      ],
+      "name": "Celestial Obligations",
+      "sourceFile": "celestial.txt"
+    },
+    {
+      "defaultsToHighest": false,
+      "displayMode": "radiobutton",
+      "dlc": null,
+      "groups": [
+        "celestial_vassal"
+      ],
+      "id": "celestial_provinces",
+      "levels": [
+        {
+          "appointmentTraitFlag": "civilian_province",
+          "enableCharacterMaa": null,
+          "enableTitleMaa": false,
+          "factors": {},
+          "flags": [
+            "celestial_civil_appointment",
+            "celestial_province_standard"
+          ],
+          "id": "celestial_province_standard",
+          "isDefault": true,
+          "liegeModifiers": [],
+          "minimums": {},
+          "name": "Standard Administration",
+          "parent": null,
+          "score": 0,
+          "shares": {},
+          "shortName": "Standard",
+          "subjectModifiers": [
+            {
+              "key": "monthly_merit_per_liege_tax",
+              "polarity": "good",
+              "text": "+80% Monthly Merit per total Tax paid to Liege"
+            }
+          ],
+          "subjectOpinion": null
+        },
+        {
+          "appointmentTraitFlag": "civilian_province",
+          "enableCharacterMaa": null,
+          "enableTitleMaa": false,
+          "factors": {},
+          "flags": [
+            "celestial_civil_appointment",
+            "admin_ai_is_builder",
+            "celestial_province_industrial",
+            "obligation_high_taxes"
+          ],
+          "id": "celestial_province_industrial",
+          "isDefault": false,
+          "liegeModifiers": [],
+          "minimums": {},
+          "name": "Industrial Administration",
+          "parent": null,
+          "score": 0,
+          "shares": {},
+          "shortName": "Industrial",
+          "subjectModifiers": [
+            {
+              "key": "development_growth_factor",
+              "polarity": "good",
+              "text": "+5% Development Growth"
+            },
+            {
+              "key": "build_gold_cost",
+              "polarity": "good",
+              "text": "-10% Build Gold Cost"
+            },
+            {
+              "key": "build_speed",
+              "polarity": "good",
+              "text": "-20% Build Speed"
+            },
+            {
+              "key": "monthly_merit_per_liege_tax",
+              "polarity": "good",
+              "text": "+120% Monthly Merit per total Tax paid to Liege"
+            }
+          ],
+          "subjectOpinion": null
+        },
+        {
+          "appointmentTraitFlag": "civilian_province",
+          "enableCharacterMaa": null,
+          "enableTitleMaa": false,
+          "factors": {
+            "tax": {
+              "value": 0.05,
+              "varies": false
+            }
+          },
+          "flags": [
+            "celestial_civil_appointment",
+            "celestial_province_metropolitan",
+            "obligation_high_levies"
+          ],
+          "id": "celestial_province_metropolitan",
+          "isDefault": false,
+          "liegeModifiers": [],
+          "minimums": {},
+          "name": "Metropolitan Administration",
+          "parent": null,
+          "score": 0,
+          "shares": {},
+          "shortName": "Metropolitan",
+          "subjectModifiers": [
+            {
+              "key": "domain_tax_mult",
+              "polarity": "good",
+              "text": "+5% Domain Taxes"
+            },
+            {
+              "key": "development_growth_factor",
+              "polarity": "good",
+              "text": "+5% Development Growth"
+            },
+            {
+              "key": "monthly_county_control_growth_factor",
+              "polarity": "bad",
+              "text": "-10% Control Growth"
+            },
+            {
+              "key": "monthly_merit_per_liege_tax",
+              "polarity": "good",
+              "text": "+240% Monthly Merit per total Tax paid to Liege"
+            }
+          ],
+          "subjectOpinion": null
+        },
+        {
+          "appointmentTraitFlag": "military_province",
+          "enableCharacterMaa": null,
+          "enableTitleMaa": null,
+          "factors": {
+            "levies": {
+              "value": 0.5,
+              "varies": false
+            }
+          },
+          "flags": [
+            "celestial_province_military",
+            "celestial_military_appointment",
+            "obligation_high_levies"
+          ],
+          "id": "celestial_province_military",
+          "isDefault": false,
+          "liegeModifiers": [],
+          "minimums": {},
+          "name": "Military Administration",
+          "parent": null,
+          "score": 0,
+          "shares": {},
+          "shortName": "Military",
+          "subjectModifiers": [
+            {
+              "key": "development_growth_factor",
+              "polarity": "bad",
+              "text": "-20% Development Growth"
+            },
+            {
+              "key": "monthly_county_control_growth_factor",
+              "polarity": "good",
+              "text": "+10% Control Growth"
+            },
+            {
+              "key": "additional_fort_level",
+              "polarity": "good",
+              "text": "+2 Additional Fort Level"
+            },
+            {
+              "key": "defender_advantage",
+              "polarity": "good",
+              "text": "+4 Defender Advantage"
+            },
+            {
+              "key": "monthly_merit_per_title_maa_value",
+              "polarity": "good",
+              "text": "+2.4% Monthly Merit per Title Men-at-Arms Base Recruitment Cost"
+            },
+            {
+              "key": "domain_tax_mult",
+              "polarity": "bad",
+              "text": "-30% Domain Taxes"
+            },
+            {
+              "key": "monthly_treasury_from_military_budget_base",
+              "polarity": "good",
+              "text": "+100% Monthly Military Base Rate"
+            }
+          ],
+          "subjectOpinion": null
+        },
+        {
+          "appointmentTraitFlag": "military_province",
+          "enableCharacterMaa": null,
+          "enableTitleMaa": null,
+          "factors": {
+            "levies": {
+              "value": -1,
+              "varies": false
+            }
+          },
+          "flags": [
+            "admin_ai_is_warlike",
+            "celestial_province_protectorate",
+            "celestial_military_appointment",
+            "obligation_high_levies"
+          ],
+          "id": "celestial_province_protectorate",
+          "isDefault": false,
+          "liegeModifiers": [],
+          "minimums": {},
+          "name": "Protectorate Administration",
+          "parent": null,
+          "score": 0,
+          "shares": {},
+          "shortName": "Protectorate",
+          "subjectModifiers": [
+            {
+              "key": "development_growth_factor",
+              "polarity": "bad",
+              "text": "-30% Development Growth"
+            },
+            {
+              "key": "maa_damage_mult",
+              "polarity": "good",
+              "text": "+10% Men-at-Arms Damage"
+            },
+            {
+              "key": "men_at_arms_title_cap",
+              "polarity": "good",
+              "text": "+1 Max Title Men-at-Arms Regiments"
+            },
+            {
+              "key": "men_at_arms_title_limit",
+              "polarity": "good",
+              "text": "+1 Size of Title Men-at-Arms Regiments"
+            },
+            {
+              "key": "levy_reinforcement_rate",
+              "polarity": "good",
+              "text": "+20% Levy Reinforcement Rate"
+            },
+            {
+              "key": "monthly_merit_per_title_maa_value",
+              "polarity": "good",
+              "text": "+3.2% Monthly Merit per Title Men-at-Arms Base Recruitment Cost"
+            },
+            {
+              "key": "domain_tax_mult",
+              "polarity": "bad",
+              "text": "-20% Domain Taxes"
+            },
+            {
+              "key": "monthly_treasury_from_military_budget_base",
+              "polarity": "good",
+              "text": "+150% Monthly Military Base Rate"
+            }
+          ],
+          "subjectOpinion": null
+        }
+      ],
+      "name": "Available Administration Types",
+      "sourceFile": "celestial.txt"
+    },
+    {
+      "defaultsToHighest": false,
+      "displayMode": "tree",
+      "dlc": null,
+      "groups": [
+        "celestial_vassal"
+      ],
+      "id": "celestial_salary",
+      "levels": [
+        {
+          "appointmentTraitFlag": null,
+          "enableCharacterMaa": null,
+          "enableTitleMaa": null,
+          "factors": {},
+          "flags": [],
+          "id": "celestial_salary_very_low",
+          "isDefault": false,
+          "liegeModifiers": [],
+          "minimums": {},
+          "name": "Meager Salary",
+          "parent": null,
+          "score": -2,
+          "shares": {},
+          "shortName": "Meager",
+          "subjectModifiers": [
+            {
+              "key": "monthly_treasury_from_salary_budget_mult",
+              "polarity": "bad",
+              "text": "-50% Governor Salary"
+            }
+          ],
+          "subjectOpinion": -25
+        },
+        {
+          "appointmentTraitFlag": null,
+          "enableCharacterMaa": null,
+          "enableTitleMaa": null,
+          "factors": {},
+          "flags": [],
+          "id": "celestial_salary_low",
+          "isDefault": false,
+          "liegeModifiers": [],
+          "minimums": {},
+          "name": "Modest Salary",
+          "parent": "celestial_salary_very_low",
+          "score": -1,
+          "shares": {},
+          "shortName": "Modest",
+          "subjectModifiers": [
+            {
+              "key": "monthly_treasury_from_salary_budget_mult",
+              "polarity": "bad",
+              "text": "-25% Governor Salary"
+            }
+          ],
+          "subjectOpinion": -15
+        },
+        {
+          "appointmentTraitFlag": null,
+          "enableCharacterMaa": null,
+          "enableTitleMaa": null,
+          "factors": {},
+          "flags": [],
+          "id": "celestial_salary_medium",
+          "isDefault": true,
+          "liegeModifiers": [],
+          "minimums": {},
+          "name": "Average Salary",
+          "parent": "celestial_salary_low",
+          "score": 0,
+          "shares": {},
+          "shortName": "Average",
+          "subjectModifiers": [],
+          "subjectOpinion": null
+        },
+        {
+          "appointmentTraitFlag": null,
+          "enableCharacterMaa": null,
+          "enableTitleMaa": null,
+          "factors": {},
+          "flags": [],
+          "id": "celestial_salary_high",
+          "isDefault": false,
+          "liegeModifiers": [],
+          "minimums": {},
+          "name": "Generous Salary",
+          "parent": "celestial_salary_medium",
+          "score": 1,
+          "shares": {},
+          "shortName": "Generous",
+          "subjectModifiers": [
+            {
+              "key": "monthly_treasury_from_salary_budget_mult",
+              "polarity": "good",
+              "text": "+25% Governor Salary"
+            }
+          ],
+          "subjectOpinion": 5
+        },
+        {
+          "appointmentTraitFlag": null,
+          "enableCharacterMaa": null,
+          "enableTitleMaa": null,
+          "factors": {},
+          "flags": [],
+          "id": "celestial_salary_very_high",
+          "isDefault": false,
+          "liegeModifiers": [],
+          "minimums": {},
+          "name": "Extravagant Salary",
+          "parent": "celestial_salary_high",
+          "score": 2,
+          "shares": {},
+          "shortName": "Extravagant",
+          "subjectModifiers": [
+            {
+              "key": "monthly_treasury_from_salary_budget_mult",
+              "polarity": "good",
+              "text": "+50% Governor Salary"
+            }
+          ],
+          "subjectOpinion": 10
+        }
+      ],
+      "name": "Governor Salary",
+      "sourceFile": "celestial.txt"
+    },
+    {
+      "defaultsToHighest": true,
+      "displayMode": "hidden",
+      "dlc": null,
+      "groups": [
+        "celestial_vassal"
+      ],
+      "id": "celestial_salary_rank",
+      "levels": [
+        {
+          "appointmentTraitFlag": null,
+          "enableCharacterMaa": null,
+          "enableTitleMaa": null,
+          "factors": {},
+          "flags": [],
+          "id": "celestial_salary_rank_none",
+          "isDefault": true,
+          "liegeModifiers": [],
+          "minimums": {},
+          "name": "None",
+          "parent": null,
+          "score": null,
+          "shares": {},
+          "shortName": "None",
+          "subjectModifiers": [],
+          "subjectOpinion": null
+        },
+        {
+          "appointmentTraitFlag": null,
+          "enableCharacterMaa": null,
+          "enableTitleMaa": null,
+          "factors": {},
+          "flags": [],
+          "id": "celestial_salary_rank_county",
+          "isDefault": false,
+          "liegeModifiers": [],
+          "minimums": {},
+          "name": "County Tier: Prefecture",
+          "parent": "celestial_salary_rank_none",
+          "score": null,
+          "shares": {},
+          "shortName": "Prefecture",
+          "subjectModifiers": [
+            {
+              "key": "monthly_treasury_from_salary_budget_base",
+              "polarity": "good",
+              "text": "+30% Monthly Salary Base Rate"
+            },
+            {
+              "key": "monthly_treasury_from_military_budget_base",
+              "polarity": "bad",
+              "text": "-60% Monthly Military Base Rate"
+            },
+            {
+              "key": "men_at_arms_title_cap",
+              "polarity": "bad",
+              "text": "-1 Max Title Men-at-Arms Regiments"
+            }
+          ],
+          "subjectOpinion": null
+        },
+        {
+          "appointmentTraitFlag": null,
+          "enableCharacterMaa": null,
+          "enableTitleMaa": null,
+          "factors": {},
+          "flags": [],
+          "id": "celestial_salary_rank_duchy",
+          "isDefault": false,
+          "liegeModifiers": [],
+          "minimums": {},
+          "name": "Duchy Tier: Province",
+          "parent": "celestial_salary_rank_county",
+          "score": null,
+          "shares": {},
+          "shortName": "Province",
+          "subjectModifiers": [
+            {
+              "key": "monthly_treasury_from_salary_budget_base",
+              "polarity": "good",
+              "text": "+75% Monthly Salary Base Rate"
+            },
+            {
+              "key": "monthly_treasury_from_military_budget_base",
+              "polarity": "bad",
+              "text": "-30% Monthly Military Base Rate"
+            },
+            {
+              "key": "men_at_arms_title_cap",
+              "polarity": "bad",
+              "text": "-1 Max Title Men-at-Arms Regiments"
+            }
+          ],
+          "subjectOpinion": null
+        },
+        {
+          "appointmentTraitFlag": null,
+          "enableCharacterMaa": null,
+          "enableTitleMaa": null,
+          "factors": {},
+          "flags": [],
+          "id": "celestial_salary_rank_kingdom",
+          "isDefault": false,
+          "liegeModifiers": [],
+          "minimums": {},
+          "name": "Kingdom Tier: Circuit",
+          "parent": "celestial_salary_rank_duchy",
+          "score": null,
+          "shares": {},
+          "shortName": "Circuit",
+          "subjectModifiers": [
+            {
+              "key": "monthly_treasury_from_salary_budget_base",
+              "polarity": "good",
+              "text": "+100% Monthly Salary Base Rate"
+            }
+          ],
+          "subjectOpinion": null
+        },
+        {
+          "appointmentTraitFlag": null,
+          "enableCharacterMaa": null,
+          "enableTitleMaa": null,
+          "factors": {},
+          "flags": [],
+          "id": "celestial_salary_rank_empire",
+          "isDefault": false,
+          "liegeModifiers": [],
+          "minimums": {},
+          "name": "Empire Tier: Great Circuit",
+          "parent": "celestial_salary_rank_kingdom",
+          "score": null,
+          "shares": {},
+          "shortName": "Great Circuit",
+          "subjectModifiers": [
+            {
+              "key": "monthly_treasury_from_salary_budget_base",
+              "polarity": "good",
+              "text": "+200% Monthly Salary Base Rate"
+            }
+          ],
+          "subjectOpinion": null
+        },
+        {
+          "appointmentTraitFlag": null,
+          "enableCharacterMaa": null,
+          "enableTitleMaa": null,
+          "factors": {},
+          "flags": [],
+          "id": "celestial_salary_rank_minister",
+          "isDefault": false,
+          "liegeModifiers": [],
+          "minimums": {},
+          "name": "Empire Tier: Minister",
+          "parent": "celestial_salary_rank_kingdom",
+          "score": null,
+          "shares": {},
+          "shortName": "Minister",
+          "subjectModifiers": [
+            {
+              "key": "monthly_treasury_from_salary_budget_base",
+              "polarity": "good",
+              "text": "+300% Monthly Salary Base Rate"
+            }
+          ],
+          "subjectOpinion": null
+        }
+      ],
+      "name": "Salary Rank",
+      "sourceFile": "celestial.txt"
+    },
+    {
+      "defaultsToHighest": false,
+      "displayMode": "tree",
+      "dlc": null,
+      "groups": [
+        "celestial_vassal"
+      ],
+      "id": "celestial_treasury",
+      "levels": [
+        {
+          "appointmentTraitFlag": null,
+          "enableCharacterMaa": null,
+          "enableTitleMaa": null,
+          "factors": {},
+          "flags": [],
+          "id": "celestial_treasury_very_low",
+          "isDefault": false,
+          "liegeModifiers": [],
+          "minimums": {},
+          "name": "Very Low Vassal Development",
+          "parent": null,
+          "score": -2,
+          "shares": {},
+          "shortName": "Very Low",
+          "subjectModifiers": [
+            {
+              "key": "monthly_treasury_from_liege_mult",
+              "polarity": "bad",
+              "text": "-10% Monthly Treasury"
+            }
+          ],
+          "subjectOpinion": -25
+        },
+        {
+          "appointmentTraitFlag": null,
+          "enableCharacterMaa": null,
+          "enableTitleMaa": null,
+          "factors": {},
+          "flags": [],
+          "id": "celestial_treasury_low",
+          "isDefault": false,
+          "liegeModifiers": [],
+          "minimums": {},
+          "name": "Low Vassal Development",
+          "parent": "celestial_treasury_very_low",
+          "score": -1,
+          "shares": {},
+          "shortName": "Low",
+          "subjectModifiers": [
+            {
+              "key": "monthly_treasury_from_liege_mult",
+              "polarity": "bad",
+              "text": "-5% Monthly Treasury"
+            }
+          ],
+          "subjectOpinion": -15
+        },
+        {
+          "appointmentTraitFlag": null,
+          "enableCharacterMaa": null,
+          "enableTitleMaa": null,
+          "factors": {},
+          "flags": [],
+          "id": "celestial_treasury_medium",
+          "isDefault": true,
+          "liegeModifiers": [],
+          "minimums": {},
+          "name": "Medium Vassal Development",
+          "parent": "celestial_treasury_low",
+          "score": 0,
+          "shares": {},
+          "shortName": "Medium",
+          "subjectModifiers": [],
+          "subjectOpinion": null
+        },
+        {
+          "appointmentTraitFlag": null,
+          "enableCharacterMaa": null,
+          "enableTitleMaa": null,
+          "factors": {},
+          "flags": [],
+          "id": "celestial_treasury_high",
+          "isDefault": false,
+          "liegeModifiers": [],
+          "minimums": {},
+          "name": "High Vassal Development",
+          "parent": "celestial_treasury_medium",
+          "score": 1,
+          "shares": {},
+          "shortName": "High",
+          "subjectModifiers": [
+            {
+              "key": "monthly_treasury_from_liege_mult",
+              "polarity": "good",
+              "text": "+5% Monthly Treasury"
+            }
+          ],
+          "subjectOpinion": 5
+        },
+        {
+          "appointmentTraitFlag": null,
+          "enableCharacterMaa": null,
+          "enableTitleMaa": null,
+          "factors": {},
+          "flags": [],
+          "id": "celestial_treasury_very_high",
+          "isDefault": false,
+          "liegeModifiers": [],
+          "minimums": {},
+          "name": "Very High Vassal Development",
+          "parent": "celestial_treasury_high",
+          "score": 2,
+          "shares": {},
+          "shortName": "Very High",
+          "subjectModifiers": [
+            {
+              "key": "monthly_treasury_from_liege_mult",
+              "polarity": "good",
+              "text": "+10% Monthly Treasury"
+            }
+          ],
+          "subjectOpinion": 15
+        }
+      ],
+      "name": "Vassal Development",
+      "sourceFile": "celestial.txt"
+    },
+    {
+      "defaultsToHighest": false,
+      "displayMode": "checkbox",
+      "dlc": null,
+      "groups": [
+        "tributary_celestial"
+      ],
+      "id": "celestial_tributary_investiture_privilege_marriage",
+      "levels": [
+        {
+          "appointmentTraitFlag": null,
+          "enableCharacterMaa": null,
+          "enableTitleMaa": null,
+          "factors": {},
+          "flags": [],
+          "id": "investiture_marriage_no",
+          "isDefault": true,
+          "liegeModifiers": [],
+          "minimums": {},
+          "name": "Closed out of the Imperial Family",
+          "parent": null,
+          "score": 0,
+          "shares": {},
+          "shortName": null,
+          "subjectModifiers": [],
+          "subjectOpinion": null
+        },
+        {
+          "appointmentTraitFlag": null,
+          "enableCharacterMaa": null,
+          "enableTitleMaa": null,
+          "factors": {},
+          "flags": [
+            "celestial_investiture_marriage"
+          ],
+          "id": "investiture_marriage_yes",
+          "isDefault": false,
+          "liegeModifiers": [],
+          "minimums": {},
+          "name": "Invited into the Imperial Family",
+          "parent": "investiture_marriage_no",
+          "score": 0,
+          "shares": {},
+          "shortName": "Family Access",
+          "subjectModifiers": [],
+          "subjectOpinion": null
+        }
+      ],
+      "name": "Familial Privileges",
+      "sourceFile": "celestial.txt"
+    },
+    {
+      "defaultsToHighest": false,
+      "displayMode": "checkbox",
+      "dlc": null,
+      "groups": [
+        "tributary_celestial"
+      ],
+      "id": "celestial_tributary_investiture_privilege_politics",
+      "levels": [
+        {
+          "appointmentTraitFlag": null,
+          "enableCharacterMaa": null,
+          "enableTitleMaa": null,
+          "factors": {},
+          "flags": [],
+          "id": "investiture_politics_no",
+          "isDefault": true,
+          "liegeModifiers": [],
+          "minimums": {},
+          "name": "Shuttered from the Imperial Palace",
+          "parent": null,
+          "score": 0,
+          "shares": {},
+          "shortName": null,
+          "subjectModifiers": [],
+          "subjectOpinion": null
+        },
+        {
+          "appointmentTraitFlag": null,
+          "enableCharacterMaa": null,
+          "enableTitleMaa": null,
+          "factors": {},
+          "flags": [
+            "celestial_investiture_politics"
+          ],
+          "id": "investiture_politics_yes",
+          "isDefault": false,
+          "liegeModifiers": [],
+          "minimums": {},
+          "name": "Access to the Imperial Palace",
+          "parent": "investiture_politics_no",
+          "score": 0,
+          "shares": {},
+          "shortName": "Palace Access",
+          "subjectModifiers": [],
+          "subjectOpinion": null
+        }
+      ],
+      "name": "Palace Privileges",
+      "sourceFile": "celestial.txt"
+    },
+    {
+      "defaultsToHighest": false,
+      "displayMode": "checkbox",
+      "dlc": null,
+      "groups": [
+        "tributary_celestial"
+      ],
+      "id": "celestial_tributary_investiture_privilege_trade",
+      "levels": [
+        {
+          "appointmentTraitFlag": null,
+          "enableCharacterMaa": null,
+          "enableTitleMaa": null,
+          "factors": {},
+          "flags": [],
+          "id": "investiture_trade_no",
+          "isDefault": true,
+          "liegeModifiers": [],
+          "minimums": {},
+          "name": "Sealed off from Imperial Markets",
+          "parent": null,
+          "score": 0,
+          "shares": {},
+          "shortName": null,
+          "subjectModifiers": [],
+          "subjectOpinion": null
+        },
+        {
+          "appointmentTraitFlag": null,
+          "enableCharacterMaa": null,
+          "enableTitleMaa": null,
+          "factors": {},
+          "flags": [
+            "celestial_investiture_trade"
+          ],
+          "id": "investiture_trade_yes",
+          "isDefault": false,
+          "liegeModifiers": [],
+          "minimums": {},
+          "name": "Access to Imperial Markets",
+          "parent": "investiture_trade_no",
+          "score": 0,
+          "shares": {},
+          "shortName": "Market Access",
+          "subjectModifiers": [],
+          "subjectOpinion": null
+        }
+      ],
+      "name": "Trade Privileges",
+      "sourceFile": "celestial.txt"
+    },
+    {
+      "defaultsToHighest": false,
+      "displayMode": "tree",
+      "dlc": null,
+      "groups": [
+        "tributary_celestial"
+      ],
+      "id": "celestial_tribute_gold",
+      "levels": [
+        {
+          "appointmentTraitFlag": null,
+          "enableCharacterMaa": null,
+          "enableTitleMaa": null,
+          "factors": {},
+          "flags": [],
+          "id": "celestial_tributary_tax_none",
+          "isDefault": false,
+          "liegeModifiers": [],
+          "minimums": {},
+          "name": "No Taxes",
+          "parent": null,
+          "score": 2,
+          "shares": {
+            "tax": {
+              "value": 0,
+              "varies": false
+            }
+          },
+          "shortName": "None",
+          "subjectModifiers": [
+            {
+              "key": "monthly_legitimacy_add",
+              "polarity": "good",
+              "text": "+0.1 Monthly Legitimacy Add /month"
+            }
+          ],
+          "subjectOpinion": 5
+        },
+        {
+          "appointmentTraitFlag": null,
+          "enableCharacterMaa": null,
+          "enableTitleMaa": null,
+          "factors": {},
+          "flags": [],
+          "id": "celestial_tributary_tax_low",
+          "isDefault": true,
+          "liegeModifiers": [],
+          "minimums": {},
+          "name": "Low Taxes",
+          "parent": "celestial_tributary_tax_none",
+          "score": 1,
+          "shares": {
+            "tax": {
+              "value": 0.05,
+              "varies": false
+            }
+          },
+          "shortName": "Low",
+          "subjectModifiers": [
+            {
+              "key": "monthly_legitimacy_add",
+              "polarity": "good",
+              "text": "+0.2 Monthly Legitimacy Add /month"
+            }
+          ],
+          "subjectOpinion": -5
+        },
+        {
+          "appointmentTraitFlag": null,
+          "enableCharacterMaa": null,
+          "enableTitleMaa": null,
+          "factors": {},
+          "flags": [],
+          "id": "celestial_tributary_tax_normal",
+          "isDefault": false,
+          "liegeModifiers": [],
+          "minimums": {},
+          "name": "Medium Taxes",
+          "parent": "celestial_tributary_tax_low",
+          "score": 0,
+          "shares": {
+            "tax": {
+              "value": 0.1,
+              "varies": false
+            }
+          },
+          "shortName": "Medium",
+          "subjectModifiers": [
+            {
+              "key": "monthly_legitimacy_add",
+              "polarity": "good",
+              "text": "+0.3 Monthly Legitimacy Add /month"
+            }
+          ],
+          "subjectOpinion": -10
+        },
+        {
+          "appointmentTraitFlag": null,
+          "enableCharacterMaa": null,
+          "enableTitleMaa": null,
+          "factors": {},
+          "flags": [],
+          "id": "celestial_tributary_tax_high",
+          "isDefault": false,
+          "liegeModifiers": [],
+          "minimums": {},
+          "name": "High Taxes",
+          "parent": "celestial_tributary_tax_normal",
+          "score": -1,
+          "shares": {
+            "tax": {
+              "value": 0.25,
+              "varies": false
+            }
+          },
+          "shortName": "High",
+          "subjectModifiers": [
+            {
+              "key": "monthly_legitimacy_add",
+              "polarity": "good",
+              "text": "+0.5 Monthly Legitimacy Add /month"
+            }
+          ],
+          "subjectOpinion": -25
+        }
+      ],
+      "name": "Gold",
+      "sourceFile": "celestial.txt"
+    },
+    {
+      "defaultsToHighest": false,
+      "displayMode": "tree",
+      "dlc": null,
+      "groups": [
+        "tributary_celestial"
+      ],
+      "id": "celestial_tribute_prestige",
+      "levels": [
+        {
+          "appointmentTraitFlag": null,
+          "enableCharacterMaa": null,
+          "enableTitleMaa": null,
+          "factors": {},
+          "flags": [],
+          "id": "celestial_prestige_transfer_none",
+          "isDefault": false,
+          "liegeModifiers": [],
+          "minimums": {},
+          "name": "No Prestige Transfer",
+          "parent": null,
+          "score": 2,
+          "shares": {
+            "prestige": {
+              "value": 0,
+              "varies": false
+            }
+          },
+          "shortName": "None",
+          "subjectModifiers": [
+            {
+              "key": "monthly_legitimacy_add",
+              "polarity": "good",
+              "text": "+0.1 Monthly Legitimacy Add /month"
+            }
+          ],
+          "subjectOpinion": 5
+        },
+        {
+          "appointmentTraitFlag": null,
+          "enableCharacterMaa": null,
+          "enableTitleMaa": null,
+          "factors": {},
+          "flags": [],
+          "id": "celestial_prestige_transfer_low",
+          "isDefault": true,
+          "liegeModifiers": [],
+          "minimums": {},
+          "name": "Low Prestige Transfer",
+          "parent": "celestial_prestige_transfer_none",
+          "score": 1,
+          "shares": {
+            "prestige": {
+              "value": 0.05,
+              "varies": false
+            }
+          },
+          "shortName": "Low",
+          "subjectModifiers": [
+            {
+              "key": "monthly_legitimacy_add",
+              "polarity": "good",
+              "text": "+0.2 Monthly Legitimacy Add /month"
+            }
+          ],
+          "subjectOpinion": -5
+        },
+        {
+          "appointmentTraitFlag": null,
+          "enableCharacterMaa": null,
+          "enableTitleMaa": null,
+          "factors": {},
+          "flags": [],
+          "id": "celestial_prestige_transfer_normal",
+          "isDefault": true,
+          "liegeModifiers": [],
+          "minimums": {},
+          "name": "Medium Prestige Transfer",
+          "parent": "celestial_prestige_transfer_low",
+          "score": 0,
+          "shares": {
+            "prestige": {
+              "value": 0.1,
+              "varies": false
+            }
+          },
+          "shortName": "Medium",
+          "subjectModifiers": [
+            {
+              "key": "monthly_legitimacy_add",
+              "polarity": "good",
+              "text": "+0.3 Monthly Legitimacy Add /month"
+            }
+          ],
+          "subjectOpinion": -10
+        },
+        {
+          "appointmentTraitFlag": null,
+          "enableCharacterMaa": null,
+          "enableTitleMaa": null,
+          "factors": {},
+          "flags": [],
+          "id": "celestial_prestige_transfer_high",
+          "isDefault": false,
+          "liegeModifiers": [],
+          "minimums": {},
+          "name": "High Prestige Transfer",
+          "parent": "celestial_prestige_transfer_normal",
+          "score": -1,
+          "shares": {
+            "prestige": {
+              "value": 0.25,
+              "varies": false
+            }
+          },
+          "shortName": "High",
+          "subjectModifiers": [
+            {
+              "key": "monthly_legitimacy_add",
+              "polarity": "good",
+              "text": "+0.5 Monthly Legitimacy Add /month"
+            }
+          ],
+          "subjectOpinion": -25
+        }
+      ],
+      "name": "Prestige",
+      "sourceFile": "celestial.txt"
+    },
+    {
+      "defaultsToHighest": false,
+      "displayMode": "radiobutton",
+      "dlc": null,
+      "groups": [
+        "clan_vassal"
+      ],
+      "id": "clan_tax_collector_obligations",
+      "levels": [
+        {
+          "appointmentTraitFlag": null,
+          "enableCharacterMaa": null,
+          "enableTitleMaa": null,
+          "factors": {},
+          "flags": [],
+          "id": "default",
+          "isDefault": false,
+          "liegeModifiers": [],
+          "minimums": {},
+          "name": "Default",
+          "parent": null,
+          "score": null,
+          "shares": {
+            "levies": {
+              "rules": [
+                {
+                  "base": 0
+                },
+                {
+                  "if": "exists = scope:tax_collector",
+                  "then": [
+                    "add 0.04",
+                    "multiply …"
+                  ]
+                }
+              ],
+              "value": null,
+              "varies": true
+            },
+            "tax": {
+              "rules": [
+                {
+                  "base": 0
+                },
+                {
+                  "if": "exists = scope:tax_collector",
+                  "then": [
+                    "add …"
+                  ]
+                }
+              ],
+              "value": null,
+              "varies": true
+            }
+          },
+          "shortName": null,
+          "subjectModifiers": [],
+          "subjectOpinion": null
+        }
+      ],
+      "name": "Tax Collector Aptitude",
+      "sourceFile": "clan.txt"
+    },
+    {
+      "defaultsToHighest": false,
+      "displayMode": "checkbox",
+      "dlc": null,
+      "groups": [
+        "feudal_vassal",
+        "mandala_vassal",
+        "japan_feudal_vassal"
+      ],
+      "id": "coinage_rights",
+      "levels": [
+        {
+          "appointmentTraitFlag": null,
+          "enableCharacterMaa": null,
+          "enableTitleMaa": null,
+          "factors": {},
+          "flags": [],
+          "id": "coinage_rights_none",
+          "isDefault": true,
+          "liegeModifiers": [],
+          "minimums": {},
+          "name": "No Coinage Rights",
+          "parent": null,
+          "score": null,
+          "shares": {},
+          "shortName": "None",
+          "subjectModifiers": [],
+          "subjectOpinion": null
+        },
+        {
+          "appointmentTraitFlag": null,
+          "enableCharacterMaa": null,
+          "enableTitleMaa": null,
+          "factors": {},
+          "flags": [],
+          "id": "coinage_rights_granted",
+          "isDefault": false,
+          "liegeModifiers": [
+            {
+              "key": "development_growth_factor",
+              "polarity": "bad",
+              "text": "-2% Development Growth"
+            }
+          ],
+          "minimums": {},
+          "name": "Coinage Rights Granted",
+          "parent": "coinage_rights_none",
+          "score": null,
+          "shares": {},
+          "shortName": "Granted",
+          "subjectModifiers": [
+            {
+              "key": "character_capital_county_monthly_development_growth_add",
+              "polarity": "good",
+              "text": "+0.3 Character Capital County Monthly Development Growth Add /month"
+            }
+          ],
+          "subjectOpinion": null
+        }
+      ],
+      "name": "Coinage Rights",
+      "sourceFile": "special_contracts.txt"
+    },
+    {
+      "defaultsToHighest": false,
+      "displayMode": "checkbox",
+      "dlc": null,
+      "groups": [
+        "feudal_vassal",
+        "clan_vassal",
+        "japan_feudal_vassal"
+      ],
+      "id": "council_rights",
+      "levels": [
+        {
+          "appointmentTraitFlag": null,
+          "enableCharacterMaa": null,
+          "enableTitleMaa": null,
+          "factors": {},
+          "flags": [],
+          "id": "council_rights_none",
+          "isDefault": true,
+          "liegeModifiers": [],
+          "minimums": {},
+          "name": "No Council Rights",
+          "parent": null,
+          "score": null,
+          "shares": {},
+          "shortName": "None",
+          "subjectModifiers": [],
+          "subjectOpinion": null
+        },
+        {
+          "appointmentTraitFlag": null,
+          "enableCharacterMaa": null,
+          "enableTitleMaa": null,
+          "factors": {},
+          "flags": [
+            "can_demand_council_seat"
+          ],
+          "id": "council_rights_guaranteed",
+          "isDefault": false,
+          "liegeModifiers": [
+            {
+              "key": "powerful_vassal_opinion",
+              "polarity": "bad",
+              "text": "-2 Powerful Vassal Opinion"
+            }
+          ],
+          "minimums": {},
+          "name": "Council Rights Guaranteed",
+          "parent": "council_rights_none",
+          "score": 3,
+          "shares": {},
+          "shortName": "Guaranteed",
+          "subjectModifiers": [],
+          "subjectOpinion": 5
+        }
+      ],
+      "name": "Council Rights",
+      "sourceFile": "special_contracts.txt"
+    },
+    {
+      "defaultsToHighest": false,
+      "displayMode": "tree",
+      "dlc": null,
+      "groups": [
+        "tributary_settled"
+      ],
+      "id": "default_tributary_levies",
+      "levels": [
+        {
+          "appointmentTraitFlag": null,
+          "enableCharacterMaa": null,
+          "enableTitleMaa": null,
+          "factors": {},
+          "flags": [],
+          "id": "tributary_levies_exempt",
+          "isDefault": false,
+          "liegeModifiers": [],
+          "minimums": {},
+          "name": "None Levies",
+          "parent": null,
+          "score": 2,
+          "shares": {
+            "levies": {
+              "value": 0,
+              "varies": false
+            }
+          },
+          "shortName": "None",
+          "subjectModifiers": [],
+          "subjectOpinion": 10
+        },
+        {
+          "appointmentTraitFlag": null,
+          "enableCharacterMaa": null,
+          "enableTitleMaa": null,
+          "factors": {},
+          "flags": [],
+          "id": "tributary_levies_low",
+          "isDefault": true,
+          "liegeModifiers": [],
+          "minimums": {},
+          "name": "Low Levies",
+          "parent": "tributary_levies_exempt",
+          "score": 1,
+          "shares": {
+            "levies": {
+              "value": 0.25,
+              "varies": false
+            }
+          },
+          "shortName": "Low",
+          "subjectModifiers": [],
+          "subjectOpinion": 5
+        },
+        {
+          "appointmentTraitFlag": null,
+          "enableCharacterMaa": null,
+          "enableTitleMaa": null,
+          "factors": {},
+          "flags": [
+            "obligation_high_levies"
+          ],
+          "id": "tributary_levies_high",
+          "isDefault": false,
+          "liegeModifiers": [],
+          "minimums": {},
+          "name": "High Levies",
+          "parent": "tributary_levies_low",
+          "score": -1,
+          "shares": {
+            "levies": {
+              "value": 0.5,
+              "varies": false
+            }
+          },
+          "shortName": "High",
+          "subjectModifiers": [],
+          "subjectOpinion": -15
+        }
+      ],
+      "name": "Tributary Levies",
+      "sourceFile": "default_tributary.txt"
+    },
+    {
+      "defaultsToHighest": false,
+      "displayMode": "tree",
+      "dlc": null,
+      "groups": [
+        "tributary_settled",
+        "tributary_subjugated",
+        "tributary_wanua"
+      ],
+      "id": "default_tributary_prestige",
+      "levels": [
+        {
+          "appointmentTraitFlag": null,
+          "enableCharacterMaa": null,
+          "enableTitleMaa": null,
+          "factors": {},
+          "flags": [],
+          "id": "prestige_transfer_none",
+          "isDefault": false,
+          "liegeModifiers": [],
+          "minimums": {},
+          "name": "No Prestige Transfer",
+          "parent": null,
+          "score": 2,
+          "shares": {
+            "prestige": {
+              "value": 0,
+              "varies": false
+            }
+          },
+          "shortName": "None",
+          "subjectModifiers": [],
+          "subjectOpinion": null
+        },
+        {
+          "appointmentTraitFlag": null,
+          "enableCharacterMaa": null,
+          "enableTitleMaa": null,
+          "factors": {},
+          "flags": [],
+          "id": "prestige_transfer_normal",
+          "isDefault": true,
+          "liegeModifiers": [],
+          "minimums": {},
+          "name": "Low Prestige Transfer",
+          "parent": "prestige_transfer_none",
+          "score": 1,
+          "shares": {
+            "prestige": {
+              "value": 0.1,
+              "varies": false
+            }
+          },
+          "shortName": "Low",
+          "subjectModifiers": [],
+          "subjectOpinion": -10
+        },
+        {
+          "appointmentTraitFlag": null,
+          "enableCharacterMaa": null,
+          "enableTitleMaa": null,
+          "factors": {},
+          "flags": [],
+          "id": "prestige_transfer_high",
+          "isDefault": false,
+          "liegeModifiers": [],
+          "minimums": {},
+          "name": "High Prestige Transfer",
+          "parent": "prestige_transfer_normal",
+          "score": 0,
+          "shares": {
+            "prestige": {
+              "value": 0.25,
+              "varies": false
+            }
+          },
+          "shortName": "High",
+          "subjectModifiers": [],
+          "subjectOpinion": -25
+        }
+      ],
+      "name": "Tributary Prestige",
+      "sourceFile": "default_tributary.txt"
+    },
+    {
+      "defaultsToHighest": false,
+      "displayMode": "tree",
+      "dlc": null,
+      "groups": [
+        "tributary_settled",
+        "tributary_subjugated",
+        "tributary_steppe",
+        "tributary_wanua"
+      ],
+      "id": "default_tributary_taxes",
+      "levels": [
+        {
+          "appointmentTraitFlag": null,
+          "enableCharacterMaa": null,
+          "enableTitleMaa": null,
+          "factors": {},
+          "flags": [],
+          "id": "tributary_tax_none",
+          "isDefault": false,
+          "liegeModifiers": [],
+          "minimums": {},
+          "name": "No Taxes",
+          "parent": null,
+          "score": 1,
+          "shares": {
+            "tax": {
+              "value": 0,
+              "varies": false
+            }
+          },
+          "shortName": "None",
+          "subjectModifiers": [],
+          "subjectOpinion": 5
+        },
+        {
+          "appointmentTraitFlag": null,
+          "enableCharacterMaa": null,
+          "enableTitleMaa": null,
+          "factors": {},
+          "flags": [],
+          "id": "tributary_tax_low",
+          "isDefault": false,
+          "liegeModifiers": [],
+          "minimums": {},
+          "name": "Low Taxes",
+          "parent": "tributary_tax_none",
+          "score": 0,
+          "shares": {
+            "tax": {
+              "value": 0.25,
+              "varies": false
+            }
+          },
+          "shortName": "Low",
+          "subjectModifiers": [],
+          "subjectOpinion": -5
+        },
+        {
+          "appointmentTraitFlag": null,
+          "enableCharacterMaa": null,
+          "enableTitleMaa": null,
+          "factors": {},
+          "flags": [],
+          "id": "tributary_tax_high",
+          "isDefault": true,
+          "liegeModifiers": [],
+          "minimums": {},
+          "name": "High Taxes",
+          "parent": "tributary_tax_low",
+          "score": -1,
+          "shares": {
+            "tax": {
+              "value": 0.5,
+              "varies": false
+            }
+          },
+          "shortName": "High",
+          "subjectModifiers": [],
+          "subjectOpinion": -25
+        }
+      ],
+      "name": "Tributary Taxes",
+      "sourceFile": "default_tributary.txt"
+    },
+    {
+      "defaultsToHighest": false,
+      "displayMode": "tree",
+      "dlc": null,
+      "groups": [
+        "feudal_vassal",
+        "japan_feudal_vassal"
+      ],
+      "id": "feudal_government_levies",
+      "levels": [
+        {
+          "appointmentTraitFlag": null,
+          "enableCharacterMaa": null,
+          "enableTitleMaa": null,
+          "factors": {},
+          "flags": [],
+          "id": "feudal_levies_exempt",
+          "isDefault": false,
+          "liegeModifiers": [],
+          "minimums": {},
+          "name": "No Contribution",
+          "parent": null,
+          "score": 2,
+          "shares": {
+            "levies": {
+              "value": 0,
+              "varies": false
+            }
+          },
+          "shortName": "None",
+          "subjectModifiers": [],
+          "subjectOpinion": 10
+        },
+        {
+          "appointmentTraitFlag": null,
+          "enableCharacterMaa": null,
+          "enableTitleMaa": null,
+          "factors": {},
+          "flags": [],
+          "id": "feudal_levies_low",
+          "isDefault": false,
+          "liegeModifiers": [],
+          "minimums": {},
+          "name": "Low Levy Contribution",
+          "parent": "feudal_levies_exempt",
+          "score": 1,
+          "shares": {
+            "levies": {
+              "value": 0.1,
+              "varies": false
+            }
+          },
+          "shortName": "Low",
+          "subjectModifiers": [],
+          "subjectOpinion": 5
+        },
+        {
+          "appointmentTraitFlag": null,
+          "enableCharacterMaa": null,
+          "enableTitleMaa": null,
+          "factors": {},
+          "flags": [],
+          "id": "feudal_levies_normal",
+          "isDefault": true,
+          "liegeModifiers": [],
+          "minimums": {},
+          "name": "Normal Levy Contribution",
+          "parent": "feudal_levies_low",
+          "score": 0,
+          "shares": {
+            "levies": {
+              "value": 0.25,
+              "varies": false
+            }
+          },
+          "shortName": "Normal",
+          "subjectModifiers": [],
+          "subjectOpinion": null
+        },
+        {
+          "appointmentTraitFlag": null,
+          "enableCharacterMaa": null,
+          "enableTitleMaa": null,
+          "factors": {},
+          "flags": [
+            "obligation_high_levies"
+          ],
+          "id": "feudal_levies_high",
+          "isDefault": false,
+          "liegeModifiers": [],
+          "minimums": {},
+          "name": "High Levy Contribution",
+          "parent": "feudal_levies_normal",
+          "score": -1,
+          "shares": {
+            "levies": {
+              "value": 0.35,
+              "varies": false
+            }
+          },
+          "shortName": "High",
+          "subjectModifiers": [],
+          "subjectOpinion": -15
+        },
+        {
+          "appointmentTraitFlag": null,
+          "enableCharacterMaa": null,
+          "enableTitleMaa": null,
+          "factors": {},
+          "flags": [
+            "obligation_high_levies"
+          ],
+          "id": "feudal_levies_extortionate",
+          "isDefault": false,
+          "liegeModifiers": [],
+          "minimums": {},
+          "name": "Massive Levy Contribution",
+          "parent": "feudal_levies_high",
+          "score": -2,
+          "shares": {
+            "levies": {
+              "value": 0.5,
+              "varies": false
+            }
+          },
+          "shortName": "Massive",
+          "subjectModifiers": [],
+          "subjectOpinion": -25
+        }
+      ],
+      "name": "Feudal Levies",
+      "sourceFile": "feudal.txt"
+    },
+    {
+      "defaultsToHighest": false,
+      "displayMode": "tree",
+      "dlc": null,
+      "groups": [],
+      "id": "feudal_government_prestige",
+      "levels": [
+        {
+          "appointmentTraitFlag": null,
+          "enableCharacterMaa": null,
+          "enableTitleMaa": null,
+          "factors": {},
+          "flags": [],
+          "id": "prestige_transfer_none",
+          "isDefault": false,
+          "liegeModifiers": [],
+          "minimums": {},
+          "name": "No Prestige Transfer",
+          "parent": null,
+          "score": 2,
+          "shares": {
+            "prestige": {
+              "value": 0,
+              "varies": false
+            }
+          },
+          "shortName": "None",
+          "subjectModifiers": [],
+          "subjectOpinion": null
+        },
+        {
+          "appointmentTraitFlag": null,
+          "enableCharacterMaa": null,
+          "enableTitleMaa": null,
+          "factors": {},
+          "flags": [],
+          "id": "prestige_transfer_normal",
+          "isDefault": false,
+          "liegeModifiers": [],
+          "minimums": {},
+          "name": "Low Prestige Transfer",
+          "parent": "prestige_transfer_none",
+          "score": 1,
+          "shares": {
+            "prestige": {
+              "value": 0.1,
+              "varies": false
+            }
+          },
+          "shortName": "Low",
+          "subjectModifiers": [],
+          "subjectOpinion": -10
+        },
+        {
+          "appointmentTraitFlag": null,
+          "enableCharacterMaa": null,
+          "enableTitleMaa": null,
+          "factors": {},
+          "flags": [],
+          "id": "prestige_transfer_high",
+          "isDefault": false,
+          "liegeModifiers": [],
+          "minimums": {},
+          "name": "High Prestige Transfer",
+          "parent": "prestige_transfer_normal",
+          "score": 1,
+          "shares": {
+            "prestige": {
+              "value": 0.25,
+              "varies": false
+            }
+          },
+          "shortName": "High",
+          "subjectModifiers": [],
+          "subjectOpinion": -25
+        }
+      ],
+      "name": "Feudal Prestige",
+      "sourceFile": "feudal.txt"
+    },
+    {
+      "defaultsToHighest": false,
+      "displayMode": "tree",
+      "dlc": null,
+      "groups": [
+        "feudal_vassal",
+        "japan_feudal_vassal"
+      ],
+      "id": "feudal_government_taxes",
+      "levels": [
+        {
+          "appointmentTraitFlag": null,
+          "enableCharacterMaa": null,
+          "enableTitleMaa": null,
+          "factors": {},
+          "flags": [],
+          "id": "feudal_tax_exempt",
+          "isDefault": false,
+          "liegeModifiers": [],
+          "minimums": {},
+          "name": "Tax Exempt",
+          "parent": null,
+          "score": 2,
+          "shares": {
+            "tax": {
+              "value": 0,
+              "varies": false
+            }
+          },
+          "shortName": "Exempt",
+          "subjectModifiers": [],
+          "subjectOpinion": 10
+        },
+        {
+          "appointmentTraitFlag": null,
+          "enableCharacterMaa": null,
+          "enableTitleMaa": null,
+          "factors": {},
+          "flags": [],
+          "id": "feudal_tax_low",
+          "isDefault": false,
+          "liegeModifiers": [],
+          "minimums": {},
+          "name": "Low Taxes",
+          "parent": "feudal_tax_exempt",
+          "score": 1,
+          "shares": {
+            "tax": {
+              "value": 0.025,
+              "varies": false
+            }
+          },
+          "shortName": "Low",
+          "subjectModifiers": [],
+          "subjectOpinion": 5
+        },
+        {
+          "appointmentTraitFlag": null,
+          "enableCharacterMaa": null,
+          "enableTitleMaa": null,
+          "factors": {},
+          "flags": [],
+          "id": "feudal_tax_normal",
+          "isDefault": true,
+          "liegeModifiers": [],
+          "minimums": {},
+          "name": "Normal Taxes",
+          "parent": "feudal_tax_low",
+          "score": 0,
+          "shares": {
+            "tax": {
+              "value": 0.1,
+              "varies": false
+            }
+          },
+          "shortName": "Normal",
+          "subjectModifiers": [],
+          "subjectOpinion": null
+        },
+        {
+          "appointmentTraitFlag": null,
+          "enableCharacterMaa": null,
+          "enableTitleMaa": null,
+          "factors": {},
+          "flags": [
+            "obligation_high_taxes"
+          ],
+          "id": "feudal_tax_high",
+          "isDefault": false,
+          "liegeModifiers": [],
+          "minimums": {},
+          "name": "High Taxes",
+          "parent": "feudal_tax_normal",
+          "score": -2,
+          "shares": {
+            "tax": {
+              "value": 0.15,
+              "varies": false
+            }
+          },
+          "shortName": "High",
+          "subjectModifiers": [],
+          "subjectOpinion": -15
+        },
+        {
+          "appointmentTraitFlag": null,
+          "enableCharacterMaa": null,
+          "enableTitleMaa": null,
+          "factors": {},
+          "flags": [
+            "obligation_high_taxes"
+          ],
+          "id": "feudal_tax_extortionate",
+          "isDefault": false,
+          "liegeModifiers": [],
+          "minimums": {},
+          "name": "Extortionate Taxes",
+          "parent": "feudal_tax_high",
+          "score": -3,
+          "shares": {
+            "tax": {
+              "value": 0.25,
+              "varies": false
+            }
+          },
+          "shortName": "Extortionate",
+          "subjectModifiers": [],
+          "subjectOpinion": -25
+        }
+      ],
+      "name": "Feudal Taxes",
+      "sourceFile": "feudal.txt"
+    },
+    {
+      "defaultsToHighest": false,
+      "displayMode": "checkbox",
+      "dlc": null,
+      "groups": [
+        "feudal_vassal",
+        "mandala_vassal",
+        "japan_feudal_vassal"
+      ],
+      "id": "fortification_rights",
+      "levels": [
+        {
+          "appointmentTraitFlag": null,
+          "enableCharacterMaa": null,
+          "enableTitleMaa": null,
+          "factors": {},
+          "flags": [],
+          "id": "fortification_rights_none",
+          "isDefault": true,
+          "liegeModifiers": [],
+          "minimums": {},
+          "name": "No Fortification Rights",
+          "parent": null,
+          "score": null,
+          "shares": {},
+          "shortName": "None",
+          "subjectModifiers": [],
+          "subjectOpinion": null
+        },
+        {
+          "appointmentTraitFlag": null,
+          "enableCharacterMaa": null,
+          "enableTitleMaa": null,
+          "factors": {
+            "tax": {
+              "value": -0.1,
+              "varies": false
+            }
+          },
+          "flags": [],
+          "id": "fortification_rights_granted",
+          "isDefault": false,
+          "liegeModifiers": [
+            {
+              "key": "castle_holding_build_gold_cost",
+              "polarity": "bad",
+              "text": "+5% Castle Buildings Construction Cost"
+            }
+          ],
+          "minimums": {},
+          "name": "Fortification Rights Granted",
+          "parent": "fortification_rights_none",
+          "score": null,
+          "shares": {},
+          "shortName": "Granted",
+          "subjectModifiers": [
+            {
+              "key": "castle_holding_build_gold_cost",
+              "polarity": "good",
+              "text": "-15% Castle Buildings Construction Cost"
+            },
+            {
+              "key": "castle_holding_holding_build_gold_cost",
+              "polarity": "good",
+              "text": "-50% Castle Holding Construction Cost"
+            },
+            {
+              "key": "additional_fort_level",
+              "polarity": "good",
+              "text": "+1 Additional Fort Level"
+            }
+          ],
+          "subjectOpinion": null
+        }
+      ],
+      "name": "Fortification Rights",
+      "sourceFile": "special_contracts.txt"
+    },
+    {
+      "defaultsToHighest": false,
+      "displayMode": "checkbox",
+      "dlc": null,
+      "groups": [],
+      "id": "ghazi_special_rights",
+      "levels": [
+        {
+          "appointmentTraitFlag": null,
+          "enableCharacterMaa": null,
+          "enableTitleMaa": null,
+          "factors": {},
+          "flags": [],
+          "id": "ghazi_special_rights_default",
+          "isDefault": true,
+          "liegeModifiers": [],
+          "minimums": {},
+          "name": "Ghazi Special Rights Default",
+          "parent": null,
+          "score": null,
+          "shares": {},
+          "shortName": null,
+          "subjectModifiers": [],
+          "subjectOpinion": null
+        },
+        {
+          "appointmentTraitFlag": null,
+          "enableCharacterMaa": null,
+          "enableTitleMaa": null,
+          "factors": {
+            "levies": {
+              "value": -0.25,
+              "varies": false
+            }
+          },
+          "flags": [
+            "vassal_contract_cheaper_religious_war",
+            "vassal_contract_increase_prestige_cb_cost"
+          ],
+          "id": "ghazi_special_rights_granted",
+          "isDefault": false,
+          "liegeModifiers": [
+            {
+              "key": "monthly_piety_gain_mult",
+              "polarity": "good",
+              "text": "+10% Monthly Piety"
+            }
+          ],
+          "minimums": {},
+          "name": "Ghazi Special Rights Granted",
+          "parent": "ghazi_special_rights_default",
+          "score": null,
+          "shares": {},
+          "shortName": null,
+          "subjectModifiers": [
+            {
+              "key": "monthly_piety_gain_mult",
+              "polarity": "good",
+              "text": "+10% Monthly Piety"
+            }
+          ],
+          "subjectOpinion": 10
+        }
+      ],
+      "name": "Ghazi Special Rights",
+      "sourceFile": "special_contracts.txt"
+    },
+    {
+      "defaultsToHighest": false,
+      "displayMode": "tree",
+      "dlc": null,
+      "groups": [
+        "tributary_hegemonic"
+      ],
+      "id": "hegemonic_tribute_gold",
+      "levels": [
+        {
+          "appointmentTraitFlag": null,
+          "enableCharacterMaa": null,
+          "enableTitleMaa": null,
+          "factors": {},
+          "flags": [],
+          "id": "hegemonic_tributary_tax_none",
+          "isDefault": false,
+          "liegeModifiers": [],
+          "minimums": {},
+          "name": "No Taxes",
+          "parent": null,
+          "score": -2,
+          "shares": {
+            "tax": {
+              "value": 0,
+              "varies": false
+            }
+          },
+          "shortName": "None",
+          "subjectModifiers": [
+            {
+              "key": "monthly_legitimacy_add",
+              "polarity": "good",
+              "text": "+0.1 Monthly Legitimacy Add /month"
+            }
+          ],
+          "subjectOpinion": 5
+        },
+        {
+          "appointmentTraitFlag": null,
+          "enableCharacterMaa": null,
+          "enableTitleMaa": null,
+          "factors": {},
+          "flags": [],
+          "id": "hegemonic_tributary_tax_low",
+          "isDefault": true,
+          "liegeModifiers": [],
+          "minimums": {},
+          "name": "Low Taxes",
+          "parent": "hegemonic_tributary_tax_none",
+          "score": 1,
+          "shares": {
+            "tax": {
+              "value": 0.1,
+              "varies": false
+            }
+          },
+          "shortName": "Low",
+          "subjectModifiers": [
+            {
+              "key": "monthly_legitimacy_add",
+              "polarity": "good",
+              "text": "+0.2 Monthly Legitimacy Add /month"
+            }
+          ],
+          "subjectOpinion": -5
+        },
+        {
+          "appointmentTraitFlag": null,
+          "enableCharacterMaa": null,
+          "enableTitleMaa": null,
+          "factors": {},
+          "flags": [],
+          "id": "hegemonic_tributary_tax_normal",
+          "isDefault": false,
+          "liegeModifiers": [],
+          "minimums": {},
+          "name": "Medium Taxes",
+          "parent": "hegemonic_tributary_tax_low",
+          "score": 0,
+          "shares": {
+            "tax": {
+              "value": 0.15,
+              "varies": false
+            }
+          },
+          "shortName": "Medium",
+          "subjectModifiers": [
+            {
+              "key": "monthly_legitimacy_add",
+              "polarity": "good",
+              "text": "+0.3 Monthly Legitimacy Add /month"
+            }
+          ],
+          "subjectOpinion": -10
+        },
+        {
+          "appointmentTraitFlag": null,
+          "enableCharacterMaa": null,
+          "enableTitleMaa": null,
+          "factors": {},
+          "flags": [],
+          "id": "hegemonic_tributary_tax_high",
+          "isDefault": false,
+          "liegeModifiers": [],
+          "minimums": {},
+          "name": "High Taxes",
+          "parent": "hegemonic_tributary_tax_normal",
+          "score": -1,
+          "shares": {
+            "tax": {
+              "value": 0.3,
+              "varies": false
+            }
+          },
+          "shortName": "High",
+          "subjectModifiers": [
+            {
+              "key": "monthly_legitimacy_add",
+              "polarity": "good",
+              "text": "+0.5 Monthly Legitimacy Add /month"
+            }
+          ],
+          "subjectOpinion": -25
+        }
+      ],
+      "name": "Gold",
+      "sourceFile": "celestial.txt"
+    },
+    {
+      "defaultsToHighest": false,
+      "displayMode": "tree",
+      "dlc": null,
+      "groups": [
+        "tributary_hegemonic"
+      ],
+      "id": "hegemonic_tribute_prestige",
+      "levels": [
+        {
+          "appointmentTraitFlag": null,
+          "enableCharacterMaa": null,
+          "enableTitleMaa": null,
+          "factors": {},
+          "flags": [],
+          "id": "hegemonic_prestige_transfer_none",
+          "isDefault": false,
+          "liegeModifiers": [],
+          "minimums": {},
+          "name": "No Prestige Transfer",
+          "parent": null,
+          "score": 2,
+          "shares": {
+            "prestige": {
+              "value": 0,
+              "varies": false
+            }
+          },
+          "shortName": "None",
+          "subjectModifiers": [
+            {
+              "key": "monthly_legitimacy_add",
+              "polarity": "good",
+              "text": "+0.1 Monthly Legitimacy Add /month"
+            }
+          ],
+          "subjectOpinion": 5
+        },
+        {
+          "appointmentTraitFlag": null,
+          "enableCharacterMaa": null,
+          "enableTitleMaa": null,
+          "factors": {},
+          "flags": [],
+          "id": "hegemonic_prestige_transfer_low",
+          "isDefault": true,
+          "liegeModifiers": [],
+          "minimums": {},
+          "name": "Low Prestige Transfer",
+          "parent": "hegemonic_prestige_transfer_none",
+          "score": 1,
+          "shares": {
+            "prestige": {
+              "value": 0.1,
+              "varies": false
+            }
+          },
+          "shortName": "Low",
+          "subjectModifiers": [
+            {
+              "key": "monthly_legitimacy_add",
+              "polarity": "good",
+              "text": "+0.2 Monthly Legitimacy Add /month"
+            }
+          ],
+          "subjectOpinion": -5
+        },
+        {
+          "appointmentTraitFlag": null,
+          "enableCharacterMaa": null,
+          "enableTitleMaa": null,
+          "factors": {},
+          "flags": [],
+          "id": "hegemonic_prestige_transfer_normal",
+          "isDefault": true,
+          "liegeModifiers": [],
+          "minimums": {},
+          "name": "Medium Prestige Transfer",
+          "parent": "hegemonic_prestige_transfer_low",
+          "score": 0,
+          "shares": {
+            "prestige": {
+              "value": 0.15,
+              "varies": false
+            }
+          },
+          "shortName": "Medium",
+          "subjectModifiers": [
+            {
+              "key": "monthly_legitimacy_add",
+              "polarity": "good",
+              "text": "+0.3 Monthly Legitimacy Add /month"
+            }
+          ],
+          "subjectOpinion": -10
+        },
+        {
+          "appointmentTraitFlag": null,
+          "enableCharacterMaa": null,
+          "enableTitleMaa": null,
+          "factors": {},
+          "flags": [],
+          "id": "hegemonic_prestige_transfer_high",
+          "isDefault": false,
+          "liegeModifiers": [],
+          "minimums": {},
+          "name": "High Prestige Transfer",
+          "parent": "hegemonic_prestige_transfer_normal",
+          "score": -1,
+          "shares": {
+            "prestige": {
+              "value": 0.3,
+              "varies": false
+            }
+          },
+          "shortName": "High",
+          "subjectModifiers": [
+            {
+              "key": "monthly_legitimacy_add",
+              "polarity": "good",
+              "text": "+0.5 Monthly Legitimacy Add /month"
+            }
+          ],
+          "subjectOpinion": -25
+        }
+      ],
+      "name": "Prestige",
+      "sourceFile": "celestial.txt"
+    },
+    {
+      "defaultsToHighest": false,
+      "displayMode": "radiobutton",
+      "dlc": null,
+      "groups": [
+        "herder_vassal"
+      ],
+      "id": "herder_government_obligations",
+      "levels": [
+        {
+          "appointmentTraitFlag": null,
+          "enableCharacterMaa": null,
+          "enableTitleMaa": null,
+          "factors": {},
+          "flags": [],
+          "id": "default",
+          "isDefault": false,
+          "liegeModifiers": [],
+          "minimums": {},
+          "name": "Default",
+          "parent": null,
+          "score": null,
+          "shares": {
+            "herd": {
+              "value": 0,
+              "varies": false
+            },
+            "tax": {
+              "value": 0,
+              "varies": false
+            }
+          },
+          "shortName": null,
+          "subjectModifiers": [],
+          "subjectOpinion": null
+        }
+      ],
+      "name": "Herder Government Obligations",
+      "sourceFile": "herder.txt"
+    },
+    {
+      "defaultsToHighest": false,
+      "displayMode": "checkbox",
+      "dlc": null,
+      "groups": [],
+      "id": "iqta_special_rights",
+      "levels": [
+        {
+          "appointmentTraitFlag": null,
+          "enableCharacterMaa": null,
+          "enableTitleMaa": null,
+          "factors": {},
+          "flags": [],
+          "id": "iqta_special_rights_default",
+          "isDefault": true,
+          "liegeModifiers": [],
+          "minimums": {},
+          "name": "Iqta Special Rights Default",
+          "parent": null,
+          "score": null,
+          "shares": {},
+          "shortName": null,
+          "subjectModifiers": [],
+          "subjectOpinion": null
+        },
+        {
+          "appointmentTraitFlag": null,
+          "enableCharacterMaa": null,
+          "enableTitleMaa": null,
+          "factors": {
+            "levies": {
+              "value": -0.5,
+              "varies": false
+            },
+            "tax": {
+              "value": -0.5,
+              "varies": false
+            }
+          },
+          "flags": [],
+          "id": "iqta_special_rights_granted",
+          "isDefault": false,
+          "liegeModifiers": [
+            {
+              "key": "men_at_arms_maintenance",
+              "polarity": "good",
+              "text": "-2% Men-at-Arms Maintenance"
+            },
+            {
+              "key": "men_at_arms_recruitment_cost",
+              "polarity": "good",
+              "text": "-2% Men-at-Arms Recruitment Cost"
+            }
+          ],
+          "minimums": {},
+          "name": "Iqta Special Rights Granted",
+          "parent": "iqta_special_rights_default",
+          "score": null,
+          "shares": {},
+          "shortName": null,
+          "subjectModifiers": [
+            {
+              "key": "men_at_arms_maintenance",
+              "polarity": "good",
+              "text": "-10% Men-at-Arms Maintenance"
+            },
+            {
+              "key": "men_at_arms_recruitment_cost",
+              "polarity": "good",
+              "text": "-10% Men-at-Arms Recruitment Cost"
+            }
+          ],
+          "subjectOpinion": 5
+        }
+      ],
+      "name": "Iqta Special Rights",
+      "sourceFile": "special_contracts.txt"
+    },
+    {
+      "defaultsToHighest": false,
+      "displayMode": "radiobutton",
+      "dlc": null,
+      "groups": [
+        "japan_administrative_vassal"
+      ],
+      "id": "japan_administrative_obligations",
+      "levels": [
+        {
+          "appointmentTraitFlag": null,
+          "enableCharacterMaa": null,
+          "enableTitleMaa": null,
+          "factors": {},
+          "flags": [],
+          "id": "default",
+          "isDefault": false,
+          "liegeModifiers": [],
+          "minimums": {},
+          "name": "Default",
+          "parent": null,
+          "score": null,
+          "shares": {
+            "levies": {
+              "value": 0.1,
+              "varies": false
+            },
+            "tax": {
+              "value": 0.1,
+              "varies": false
+            }
+          },
+          "shortName": null,
+          "subjectModifiers": [],
+          "subjectOpinion": null
+        }
+      ],
+      "name": "Ritsuryō Obligations",
+      "sourceFile": "japan_administrative.txt"
+    },
+    {
+      "defaultsToHighest": false,
+      "displayMode": "radiobutton",
+      "dlc": null,
+      "groups": [
+        "japan_administrative_vassal"
+      ],
+      "id": "japan_administrative_provinces",
+      "levels": [
+        {
+          "appointmentTraitFlag": null,
+          "enableCharacterMaa": null,
+          "enableTitleMaa": false,
+          "factors": {},
+          "flags": [
+            "japan_administrative_province_standard"
+          ],
+          "id": "japan_administrative_province_standard",
+          "isDefault": true,
+          "liegeModifiers": [],
+          "minimums": {},
+          "name": "Standard Administration",
+          "parent": null,
+          "score": 0,
+          "shares": {},
+          "shortName": "Standard",
+          "subjectModifiers": [],
+          "subjectOpinion": null
+        },
+        {
+          "appointmentTraitFlag": null,
+          "enableCharacterMaa": null,
+          "enableTitleMaa": false,
+          "factors": {
+            "tax": {
+              "value": 0.25,
+              "varies": false
+            }
+          },
+          "flags": [
+            "admin_ai_is_builder",
+            "japan_administrative_province_trade",
+            "obligation_high_taxes"
+          ],
+          "id": "japan_administrative_province_trade",
+          "isDefault": false,
+          "liegeModifiers": [],
+          "minimums": {},
+          "name": "Industrial Administration",
+          "parent": null,
+          "score": 0,
+          "shares": {},
+          "shortName": "Industrial",
+          "subjectModifiers": [
+            {
+              "key": "development_growth_factor",
+              "polarity": "good",
+              "text": "+15% Development Growth"
+            },
+            {
+              "key": "build_gold_cost",
+              "polarity": "good",
+              "text": "-10% Build Gold Cost"
+            },
+            {
+              "key": "build_speed",
+              "polarity": "good",
+              "text": "-20% Build Speed"
+            }
+          ],
+          "subjectOpinion": null
+        },
+        {
+          "appointmentTraitFlag": null,
+          "enableCharacterMaa": null,
+          "enableTitleMaa": null,
+          "factors": {
+            "levies": {
+              "value": 0.5,
+              "varies": false
+            }
+          },
+          "flags": [
+            "japan_administrative_province_military",
+            "japan_administrative_military_appointment",
+            "obligation_high_levies"
+          ],
+          "id": "japan_administrative_province_military",
+          "isDefault": false,
+          "liegeModifiers": [],
+          "minimums": {},
+          "name": "Military Administration",
+          "parent": null,
+          "score": 0,
+          "shares": {},
+          "shortName": "Military",
+          "subjectModifiers": [
+            {
+              "key": "development_growth_factor",
+              "polarity": "bad",
+              "text": "-20% Development Growth"
+            },
+            {
+              "key": "monthly_county_control_growth_factor",
+              "polarity": "good",
+              "text": "+10% Control Growth"
+            },
+            {
+              "key": "fort_level",
+              "polarity": "good",
+              "text": "+1 Fort Level"
+            },
+            {
+              "key": "defender_advantage",
+              "polarity": "good",
+              "text": "+2 Defender Advantage"
+            },
+            {
+              "key": "men_at_arms_maintenance",
+              "polarity": "good",
+              "text": "-15% Men-at-Arms Maintenance"
+            }
+          ],
+          "subjectOpinion": null
+        }
+      ],
+      "name": "Available Administration Types",
+      "sourceFile": "japan_administrative.txt"
+    },
+    {
+      "defaultsToHighest": false,
+      "displayMode": "tree",
+      "dlc": null,
+      "groups": [],
+      "id": "japan_administrative_salary",
+      "levels": [
+        {
+          "appointmentTraitFlag": null,
+          "enableCharacterMaa": null,
+          "enableTitleMaa": null,
+          "factors": {},
+          "flags": [],
+          "id": "salary_very_low",
+          "isDefault": false,
+          "liegeModifiers": [],
+          "minimums": {},
+          "name": "Meager Salary",
+          "parent": null,
+          "score": -2,
+          "shares": {},
+          "shortName": "Meager Salary",
+          "subjectModifiers": [
+            {
+              "key": "subject_salary_expense_treasury_mult",
+              "polarity": "bad",
+              "text": "-50% Subject Treasury salary expense"
+            },
+            {
+              "key": "subject_salary_income_gold_mult",
+              "polarity": "bad",
+              "text": "-50% Subject Gold salary income"
+            }
+          ],
+          "subjectOpinion": -25
+        },
+        {
+          "appointmentTraitFlag": null,
+          "enableCharacterMaa": null,
+          "enableTitleMaa": null,
+          "factors": {},
+          "flags": [],
+          "id": "salary_low",
+          "isDefault": false,
+          "liegeModifiers": [],
+          "minimums": {},
+          "name": "Modest Salary",
+          "parent": "salary_very_low",
+          "score": 1,
+          "shares": {},
+          "shortName": "Modest",
+          "subjectModifiers": [
+            {
+              "key": "subject_salary_income_gold_mult",
+              "polarity": "bad",
+              "text": "-25% Subject Gold salary income"
+            }
+          ],
+          "subjectOpinion": -15
+        },
+        {
+          "appointmentTraitFlag": null,
+          "enableCharacterMaa": null,
+          "enableTitleMaa": null,
+          "factors": {},
+          "flags": [],
+          "id": "salary_medium",
+          "isDefault": true,
+          "liegeModifiers": [],
+          "minimums": {},
+          "name": "Average Salary",
+          "parent": "salary_low",
+          "score": 0,
+          "shares": {},
+          "shortName": "Average",
+          "subjectModifiers": [],
+          "subjectOpinion": null
+        },
+        {
+          "appointmentTraitFlag": null,
+          "enableCharacterMaa": null,
+          "enableTitleMaa": null,
+          "factors": {},
+          "flags": [],
+          "id": "salary_high",
+          "isDefault": false,
+          "liegeModifiers": [],
+          "minimums": {},
+          "name": "Generous Salary",
+          "parent": "salary_medium",
+          "score": 1,
+          "shares": {},
+          "shortName": "Generous",
+          "subjectModifiers": [
+            {
+              "key": "subject_salary_income_gold_mult",
+              "polarity": "good",
+              "text": "+25% Subject Gold salary income"
+            }
+          ],
+          "subjectOpinion": 5
+        },
+        {
+          "appointmentTraitFlag": null,
+          "enableCharacterMaa": null,
+          "enableTitleMaa": null,
+          "factors": {},
+          "flags": [],
+          "id": "salary_very_high",
+          "isDefault": false,
+          "liegeModifiers": [],
+          "minimums": {},
+          "name": "Extravagant Salary",
+          "parent": "salary_high",
+          "score": 2,
+          "shares": {},
+          "shortName": "Extravagant",
+          "subjectModifiers": [
+            {
+              "key": "subject_salary_income_gold_mult",
+              "polarity": "good",
+              "text": "+50% Subject Gold salary income"
+            }
+          ],
+          "subjectOpinion": 10
+        }
+      ],
+      "name": "Japan Administrative Salary",
+      "sourceFile": "japan_administrative.txt"
+    },
+    {
+      "defaultsToHighest": false,
+      "displayMode": "checkbox",
+      "dlc": null,
+      "groups": [
+        "feudal_vassal",
+        "japan_feudal_vassal"
+      ],
+      "id": "jizya_special_rights",
+      "levels": [
+        {
+          "appointmentTraitFlag": null,
+          "enableCharacterMaa": null,
+          "enableTitleMaa": null,
+          "factors": {},
+          "flags": [],
+          "id": "jizya_special_rights_default",
+          "isDefault": true,
+          "liegeModifiers": [],
+          "minimums": {},
+          "name": "Default Jizya Status",
+          "parent": null,
+          "score": null,
+          "shares": {},
+          "shortName": "Default",
+          "subjectModifiers": [],
+          "subjectOpinion": null
+        },
+        {
+          "appointmentTraitFlag": null,
+          "enableCharacterMaa": null,
+          "enableTitleMaa": null,
+          "factors": {
+            "levies": {
+              "value": -0.4,
+              "varies": false
+            },
+            "tax": {
+              "value": 0.4,
+              "varies": false
+            }
+          },
+          "flags": [
+            "vassal_contract_cannot_revoke_titles",
+            "religiously_protected",
+            "obligation_high_taxes"
+          ],
+          "id": "jizya_special_rights_granted",
+          "isDefault": false,
+          "liegeModifiers": [],
+          "minimums": {},
+          "name": "Enforced Jizya Status",
+          "parent": "jizya_special_rights_default",
+          "score": null,
+          "shares": {},
+          "shortName": "Granted",
+          "subjectModifiers": [
+            {
+              "key": "monthly_prestige",
+              "polarity": "bad",
+              "text": "-0.25 Prestige /month"
+            }
+          ],
+          "subjectOpinion": 20
+        }
+      ],
+      "name": "Jizya Status",
+      "sourceFile": "special_contracts.txt"
+    },
+    {
+      "defaultsToHighest": false,
+      "displayMode": "checkbox",
+      "dlc": null,
+      "groups": [
+        "nomad_vassal"
+      ],
+      "id": "kurultai_rights",
+      "levels": [
+        {
+          "appointmentTraitFlag": null,
+          "enableCharacterMaa": null,
+          "enableTitleMaa": null,
+          "factors": {},
+          "flags": [],
+          "id": "kurultai_rights_none",
+          "isDefault": true,
+          "liegeModifiers": [],
+          "minimums": {},
+          "name": "No Kurultai Rights",
+          "parent": null,
+          "score": null,
+          "shares": {},
+          "shortName": "None",
+          "subjectModifiers": [],
+          "subjectOpinion": null
+        },
+        {
+          "appointmentTraitFlag": null,
+          "enableCharacterMaa": null,
+          "enableTitleMaa": null,
+          "factors": {},
+          "flags": [
+            "can_demand_kurultai_seat"
+          ],
+          "id": "kurultai_rights_guaranteed",
+          "isDefault": false,
+          "liegeModifiers": [
+            {
+              "key": "powerful_vassal_opinion",
+              "polarity": "bad",
+              "text": "-2 Powerful Vassal Opinion"
+            }
+          ],
+          "minimums": {},
+          "name": "Kurultai Rights Guaranteed",
+          "parent": "kurultai_rights_none",
+          "score": null,
+          "shares": {},
+          "shortName": "Guaranteed",
+          "subjectModifiers": [],
+          "subjectOpinion": 5
+        }
+      ],
+      "name": "Kurultai Rights",
+      "sourceFile": "special_contracts.txt"
+    },
+    {
+      "defaultsToHighest": false,
+      "displayMode": "checkbox",
+      "dlc": null,
+      "groups": [
+        "nomad_vassal"
+      ],
+      "id": "liege_war_participation_obligation",
+      "levels": [
+        {
+          "appointmentTraitFlag": null,
+          "enableCharacterMaa": null,
+          "enableTitleMaa": null,
+          "factors": {},
+          "flags": [],
+          "id": "liege_war_participation_obligation_none",
+          "isDefault": true,
+          "liegeModifiers": [],
+          "minimums": {},
+          "name": "No Liege War Support",
+          "parent": null,
+          "score": null,
+          "shares": {},
+          "shortName": "None",
+          "subjectModifiers": [],
+          "subjectOpinion": null
+        },
+        {
+          "appointmentTraitFlag": null,
+          "enableCharacterMaa": null,
+          "enableTitleMaa": null,
+          "factors": {},
+          "flags": [
+            "vassal_contract_liege_forced_war_override"
+          ],
+          "id": "liege_war_participation_obligation_forced",
+          "isDefault": false,
+          "liegeModifiers": [],
+          "minimums": {},
+          "name": "Forced Liege War Support",
+          "parent": "liege_war_participation_obligation_none",
+          "score": null,
+          "shares": {},
+          "shortName": "Forced",
+          "subjectModifiers": [],
+          "subjectOpinion": 15
+        }
+      ],
+      "name": "Liege War Support",
+      "sourceFile": "special_contracts.txt"
+    },
+    {
+      "defaultsToHighest": false,
+      "displayMode": "tree",
+      "dlc": null,
+      "groups": [
+        "mandala_vassal",
+        "tributary_mandala",
+        "tributary_mandala_tribal"
+      ],
+      "id": "mandala_government_levies",
+      "levels": [
+        {
+          "appointmentTraitFlag": null,
+          "enableCharacterMaa": null,
+          "enableTitleMaa": null,
+          "factors": {},
+          "flags": [
+            "obligation_levies_exempt"
+          ],
+          "id": "mandala_levies_exempt",
+          "isDefault": false,
+          "liegeModifiers": [],
+          "minimums": {},
+          "name": "No Contribution",
+          "parent": null,
+          "score": 2,
+          "shares": {
+            "levies": {
+              "value": 0,
+              "varies": false
+            }
+          },
+          "shortName": "None",
+          "subjectModifiers": [],
+          "subjectOpinion": 10
+        },
+        {
+          "appointmentTraitFlag": null,
+          "enableCharacterMaa": null,
+          "enableTitleMaa": null,
+          "factors": {},
+          "flags": [
+            "obligation_levies_low"
+          ],
+          "id": "mandala_levies_low",
+          "isDefault": true,
+          "liegeModifiers": [],
+          "minimums": {},
+          "name": "Low Levy Contribution",
+          "parent": "mandala_levies_exempt",
+          "score": 1,
+          "shares": {
+            "levies": {
+              "value": 0.1,
+              "varies": false
+            }
+          },
+          "shortName": "Low",
+          "subjectModifiers": [],
+          "subjectOpinion": 5
+        },
+        {
+          "appointmentTraitFlag": null,
+          "enableCharacterMaa": null,
+          "enableTitleMaa": null,
+          "factors": {},
+          "flags": [
+            "obligation_levies_medium"
+          ],
+          "id": "mandala_levies_medium",
+          "isDefault": false,
+          "liegeModifiers": [],
+          "minimums": {},
+          "name": "Medium Levy Contribution",
+          "parent": "mandala_levies_low",
+          "score": 0,
+          "shares": {
+            "levies": {
+              "value": 0.25,
+              "varies": false
+            }
+          },
+          "shortName": "Medium",
+          "subjectModifiers": [],
+          "subjectOpinion": null
+        },
+        {
+          "appointmentTraitFlag": null,
+          "enableCharacterMaa": null,
+          "enableTitleMaa": null,
+          "factors": {},
+          "flags": [
+            "obligation_levies_high"
+          ],
+          "id": "mandala_levies_high",
+          "isDefault": false,
+          "liegeModifiers": [],
+          "minimums": {},
+          "name": "High Levy Contribution",
+          "parent": "mandala_levies_medium",
+          "score": -1,
+          "shares": {
+            "levies": {
+              "value": 0.35,
+              "varies": false
+            }
+          },
+          "shortName": "High",
+          "subjectModifiers": [],
+          "subjectOpinion": -15
+        },
+        {
+          "appointmentTraitFlag": null,
+          "enableCharacterMaa": null,
+          "enableTitleMaa": null,
+          "factors": {},
+          "flags": [
+            "obligation_levies_extortionate"
+          ],
+          "id": "mandala_levies_extortionate",
+          "isDefault": false,
+          "liegeModifiers": [],
+          "minimums": {},
+          "name": "Massive Levy Contribution",
+          "parent": "mandala_levies_high",
+          "score": -2,
+          "shares": {
+            "levies": {
+              "value": 0.5,
+              "varies": false
+            }
+          },
+          "shortName": "Massive",
+          "subjectModifiers": [],
+          "subjectOpinion": -25
+        }
+      ],
+      "name": "Mandala Levies",
+      "sourceFile": "mandala.txt"
+    },
+    {
+      "defaultsToHighest": false,
+      "displayMode": "tree",
+      "dlc": null,
+      "groups": [
+        "mandala_vassal",
+        "tributary_mandala",
+        "tributary_mandala_tribal"
+      ],
+      "id": "mandala_government_piety",
+      "levels": [
+        {
+          "appointmentTraitFlag": null,
+          "enableCharacterMaa": null,
+          "enableTitleMaa": null,
+          "factors": {},
+          "flags": [
+            "obligation_piety_low"
+          ],
+          "id": "mandala_piety_low",
+          "isDefault": false,
+          "liegeModifiers": [],
+          "minimums": {},
+          "name": "Low Piety Contribution",
+          "parent": null,
+          "score": 1,
+          "shares": {
+            "piety": {
+              "value": 0.05,
+              "varies": false
+            }
+          },
+          "shortName": "Low",
+          "subjectModifiers": [],
+          "subjectOpinion": null
+        },
+        {
+          "appointmentTraitFlag": null,
+          "enableCharacterMaa": null,
+          "enableTitleMaa": null,
+          "factors": {},
+          "flags": [
+            "obligation_piety_normal"
+          ],
+          "id": "mandala_piety_normal",
+          "isDefault": true,
+          "liegeModifiers": [],
+          "minimums": {},
+          "name": "Normal Piety Contribution",
+          "parent": "mandala_piety_low",
+          "score": 0,
+          "shares": {
+            "piety": {
+              "value": 0.1,
+              "varies": false
+            }
+          },
+          "shortName": "Normal",
+          "subjectModifiers": [],
+          "subjectOpinion": -10
+        },
+        {
+          "appointmentTraitFlag": null,
+          "enableCharacterMaa": null,
+          "enableTitleMaa": null,
+          "factors": {},
+          "flags": [
+            "obligation_piety_high"
+          ],
+          "id": "mandala_piety_high",
+          "isDefault": false,
+          "liegeModifiers": [],
+          "minimums": {},
+          "name": "High Piety Contribution",
+          "parent": "mandala_piety_normal",
+          "score": -1,
+          "shares": {
+            "piety": {
+              "value": 0.15,
+              "varies": false
+            }
+          },
+          "shortName": "High",
+          "subjectModifiers": [],
+          "subjectOpinion": -25
+        }
+      ],
+      "name": "Mandala Piety",
+      "sourceFile": "mandala.txt"
+    },
+    {
+      "defaultsToHighest": false,
+      "displayMode": "tree",
+      "dlc": null,
+      "groups": [
+        "tributary_mandala_tribal"
+      ],
+      "id": "mandala_government_prestige",
+      "levels": [
+        {
+          "appointmentTraitFlag": null,
+          "enableCharacterMaa": null,
+          "enableTitleMaa": null,
+          "factors": {},
+          "flags": [
+            "obligation_prestige_low"
+          ],
+          "id": "mandala_prestige_low",
+          "isDefault": false,
+          "liegeModifiers": [],
+          "minimums": {},
+          "name": "Low Prestige Contribution",
+          "parent": null,
+          "score": 1,
+          "shares": {
+            "prestige": {
+              "value": 0.05,
+              "varies": false
+            }
+          },
+          "shortName": "Low",
+          "subjectModifiers": [],
+          "subjectOpinion": null
+        },
+        {
+          "appointmentTraitFlag": null,
+          "enableCharacterMaa": null,
+          "enableTitleMaa": null,
+          "factors": {},
+          "flags": [
+            "obligation_prestige_normal"
+          ],
+          "id": "mandala_prestige_normal",
+          "isDefault": true,
+          "liegeModifiers": [],
+          "minimums": {},
+          "name": "Normal Prestige Contribution",
+          "parent": "mandala_prestige_low",
+          "score": 0,
+          "shares": {
+            "prestige": {
+              "value": 0.1,
+              "varies": false
+            }
+          },
+          "shortName": "Normal",
+          "subjectModifiers": [],
+          "subjectOpinion": -10
+        },
+        {
+          "appointmentTraitFlag": null,
+          "enableCharacterMaa": null,
+          "enableTitleMaa": null,
+          "factors": {},
+          "flags": [
+            "obligation_prestige_high"
+          ],
+          "id": "mandala_prestige_high",
+          "isDefault": false,
+          "liegeModifiers": [],
+          "minimums": {},
+          "name": "High Prestige Contribution",
+          "parent": "mandala_prestige_normal",
+          "score": -1,
+          "shares": {
+            "prestige": {
+              "value": 0.25,
+              "varies": false
+            }
+          },
+          "shortName": "High",
+          "subjectModifiers": [],
+          "subjectOpinion": -25
+        }
+      ],
+      "name": "Mandala Prestige",
+      "sourceFile": "mandala.txt"
+    },
+    {
+      "defaultsToHighest": false,
+      "displayMode": "tree",
+      "dlc": null,
+      "groups": [
+        "mandala_vassal",
+        "tributary_mandala",
+        "tributary_mandala_tribal"
+      ],
+      "id": "mandala_government_taxes",
+      "levels": [
+        {
+          "appointmentTraitFlag": null,
+          "enableCharacterMaa": null,
+          "enableTitleMaa": null,
+          "factors": {},
+          "flags": [
+            "obligation_tax_exempt"
+          ],
+          "id": "mandala_tax_exempt",
+          "isDefault": false,
+          "liegeModifiers": [],
+          "minimums": {},
+          "name": "Tax Exempt",
+          "parent": null,
+          "score": 2,
+          "shares": {
+            "tax": {
+              "value": 0,
+              "varies": false
+            }
+          },
+          "shortName": "Exempt",
+          "subjectModifiers": [],
+          "subjectOpinion": 10
+        },
+        {
+          "appointmentTraitFlag": null,
+          "enableCharacterMaa": null,
+          "enableTitleMaa": null,
+          "factors": {},
+          "flags": [
+            "obligation_tax_low"
+          ],
+          "id": "mandala_tax_low",
+          "isDefault": false,
+          "liegeModifiers": [],
+          "minimums": {},
+          "name": "Low Taxes",
+          "parent": "mandala_tax_exempt",
+          "score": 1,
+          "shares": {
+            "tax": {
+              "value": 0.025,
+              "varies": false
+            }
+          },
+          "shortName": "Low",
+          "subjectModifiers": [],
+          "subjectOpinion": 5
+        },
+        {
+          "appointmentTraitFlag": null,
+          "enableCharacterMaa": null,
+          "enableTitleMaa": null,
+          "factors": {},
+          "flags": [
+            "obligation_tax_normal"
+          ],
+          "id": "mandala_tax_normal",
+          "isDefault": true,
+          "liegeModifiers": [],
+          "minimums": {},
+          "name": "Normal Taxes",
+          "parent": "mandala_tax_low",
+          "score": 0,
+          "shares": {
+            "tax": {
+              "value": 0.1,
+              "varies": false
+            }
+          },
+          "shortName": "Normal",
+          "subjectModifiers": [],
+          "subjectOpinion": null
+        },
+        {
+          "appointmentTraitFlag": null,
+          "enableCharacterMaa": null,
+          "enableTitleMaa": null,
+          "factors": {},
+          "flags": [
+            "obligation_tax_high"
+          ],
+          "id": "mandala_tax_high",
+          "isDefault": false,
+          "liegeModifiers": [],
+          "minimums": {},
+          "name": "High Taxes",
+          "parent": "mandala_tax_normal",
+          "score": -1,
+          "shares": {
+            "tax": {
+              "value": 0.15,
+              "varies": false
+            }
+          },
+          "shortName": "High",
+          "subjectModifiers": [],
+          "subjectOpinion": -15
+        },
+        {
+          "appointmentTraitFlag": null,
+          "enableCharacterMaa": null,
+          "enableTitleMaa": null,
+          "factors": {},
+          "flags": [
+            "obligation_tax_extortionate"
+          ],
+          "id": "mandala_tax_extortionate",
+          "isDefault": false,
+          "liegeModifiers": [],
+          "minimums": {},
+          "name": "Extortionate Taxes",
+          "parent": "mandala_tax_high",
+          "score": -2,
+          "shares": {
+            "tax": {
+              "value": 0.25,
+              "varies": false
+            }
+          },
+          "shortName": "Extortionate",
+          "subjectModifiers": [],
+          "subjectOpinion": -25
+        }
+      ],
+      "name": "Mandala Taxes",
+      "sourceFile": "mandala.txt"
+    },
+    {
+      "defaultsToHighest": false,
+      "displayMode": "checkbox",
+      "dlc": null,
+      "groups": [
+        "tributary_mandala",
+        "tributary_mandala_tribal"
+      ],
+      "id": "mandala_suzerain_war_participation_guarantee",
+      "levels": [
+        {
+          "appointmentTraitFlag": null,
+          "enableCharacterMaa": null,
+          "enableTitleMaa": null,
+          "factors": {},
+          "flags": [],
+          "id": "mandala_suzerain_war_participation_guarantee_none",
+          "isDefault": false,
+          "liegeModifiers": [],
+          "minimums": {},
+          "name": "No Suzerain Guarantee",
+          "parent": null,
+          "score": null,
+          "shares": {},
+          "shortName": "None",
+          "subjectModifiers": [],
+          "subjectOpinion": -50
+        },
+        {
+          "appointmentTraitFlag": null,
+          "enableCharacterMaa": null,
+          "enableTitleMaa": null,
+          "factors": {},
+          "flags": [
+            "tributary_contract_suzerain_guarantee_override"
+          ],
+          "id": "mandala_suzerain_war_participation_guarantee_available",
+          "isDefault": true,
+          "liegeModifiers": [],
+          "minimums": {},
+          "name": "Suzerain Guarantee",
+          "parent": "mandala_suzerain_war_participation_guarantee_none",
+          "score": null,
+          "shares": {},
+          "shortName": "Guaranteed",
+          "subjectModifiers": [],
+          "subjectOpinion": null
+        }
+      ],
+      "name": "Suzerain Guarantee",
+      "sourceFile": "special_contracts.txt"
+    },
+    {
+      "defaultsToHighest": false,
+      "displayMode": "checkbox",
+      "dlc": null,
+      "groups": [
+        "clan_vassal"
+      ],
+      "id": "marriage_favor_rights",
+      "levels": [
+        {
+          "appointmentTraitFlag": null,
+          "enableCharacterMaa": null,
+          "enableTitleMaa": null,
+          "factors": {},
+          "flags": [],
+          "id": "marriage_favor_rights_default",
+          "isDefault": true,
+          "liegeModifiers": [],
+          "minimums": {},
+          "name": "Default Marriage Favor",
+          "parent": null,
+          "score": null,
+          "shares": {},
+          "shortName": "Default",
+          "subjectModifiers": [],
+          "subjectOpinion": null
+        },
+        {
+          "appointmentTraitFlag": null,
+          "enableCharacterMaa": null,
+          "enableTitleMaa": null,
+          "factors": {
+            "levies": {
+              "value": 0.1,
+              "varies": false
+            },
+            "tax": {
+              "value": 0.1,
+              "varies": false
+            }
+          },
+          "flags": [
+            "vassal_contract_marriage_favor",
+            "obligation_high_taxes",
+            "obligation_high_levies"
+          ],
+          "id": "marriage_favor_rights_granted",
+          "isDefault": false,
+          "liegeModifiers": [],
+          "minimums": {},
+          "name": "Granted Marriage Favor",
+          "parent": "marriage_favor_rights_default",
+          "score": null,
+          "shares": {},
+          "shortName": "Granted",
+          "subjectModifiers": [],
+          "subjectOpinion": 20
+        }
+      ],
+      "name": "Marriage Favor",
+      "sourceFile": "special_contracts.txt"
+    },
+    {
+      "defaultsToHighest": false,
+      "displayMode": "radiobutton",
+      "dlc": null,
+      "groups": [
+        "meritocratic_vassal"
+      ],
+      "id": "meritocratic_obligations",
+      "levels": [
+        {
+          "appointmentTraitFlag": null,
+          "enableCharacterMaa": null,
+          "enableTitleMaa": null,
+          "factors": {},
+          "flags": [],
+          "id": "default",
+          "isDefault": false,
+          "liegeModifiers": [],
+          "minimums": {},
+          "name": "Default",
+          "parent": null,
+          "score": null,
+          "shares": {
+            "levies": {
+              "value": 0.3,
+              "varies": false
+            },
+            "tax": {
+              "value": 0.75,
+              "varies": false
+            }
+          },
+          "shortName": null,
+          "subjectModifiers": [],
+          "subjectOpinion": null
+        }
+      ],
+      "name": "Meritocratic Obligations",
+      "sourceFile": "meritocratic.txt"
+    },
+    {
+      "defaultsToHighest": false,
+      "displayMode": "radiobutton",
+      "dlc": null,
+      "groups": [
+        "meritocratic_vassal"
+      ],
+      "id": "meritocratic_provinces",
+      "levels": [
+        {
+          "appointmentTraitFlag": "civilian_province",
+          "enableCharacterMaa": null,
+          "enableTitleMaa": false,
+          "factors": {},
+          "flags": [
+            "meritocratic_province_standard",
+            "meritocratic_civil_appointment"
+          ],
+          "id": "meritocratic_province_standard",
+          "isDefault": true,
+          "liegeModifiers": [],
+          "minimums": {},
+          "name": "Standard Administration",
+          "parent": null,
+          "score": 0,
+          "shares": {},
+          "shortName": "Standard",
+          "subjectModifiers": [
+            {
+              "key": "monthly_merit_per_liege_tax",
+              "polarity": "good",
+              "text": "+80% Monthly Merit per total Tax paid to Liege"
+            }
+          ],
+          "subjectOpinion": null
+        },
+        {
+          "appointmentTraitFlag": "civilian_province",
+          "enableCharacterMaa": null,
+          "enableTitleMaa": false,
+          "factors": {
+            "tax": {
+              "value": 0.25,
+              "varies": false
+            }
+          },
+          "flags": [
+            "admin_ai_is_builder",
+            "meritocratic_province_industrial",
+            "meritocratic_civil_appointment",
+            "obligation_high_taxes"
+          ],
+          "id": "meritocratic_province_industrial",
+          "isDefault": false,
+          "liegeModifiers": [],
+          "minimums": {},
+          "name": "Industrial Administration",
+          "parent": null,
+          "score": 0,
+          "shares": {},
+          "shortName": "Industrial",
+          "subjectModifiers": [
+            {
+              "key": "development_growth_factor",
+              "polarity": "good",
+              "text": "+15% Development Growth"
+            },
+            {
+              "key": "build_gold_cost",
+              "polarity": "good",
+              "text": "-10% Build Gold Cost"
+            },
+            {
+              "key": "build_speed",
+              "polarity": "good",
+              "text": "-20% Build Speed"
+            },
+            {
+              "key": "monthly_merit_per_liege_tax",
+              "polarity": "good",
+              "text": "+120% Monthly Merit per total Tax paid to Liege"
+            }
+          ],
+          "subjectOpinion": null
+        },
+        {
+          "appointmentTraitFlag": "military_province",
+          "enableCharacterMaa": null,
+          "enableTitleMaa": null,
+          "factors": {
+            "levies": {
+              "value": 0.5,
+              "varies": false
+            }
+          },
+          "flags": [
+            "meritocratic_province_military",
+            "meritocratic_military_appointment",
+            "obligation_high_levies"
+          ],
+          "id": "meritocratic_province_military",
+          "isDefault": false,
+          "liegeModifiers": [],
+          "minimums": {},
+          "name": "Military Administration",
+          "parent": null,
+          "score": 0,
+          "shares": {},
+          "shortName": "Military",
+          "subjectModifiers": [
+            {
+              "key": "development_growth_factor",
+              "polarity": "bad",
+              "text": "-20% Development Growth"
+            },
+            {
+              "key": "monthly_county_control_growth_factor",
+              "polarity": "good",
+              "text": "+10% Control Growth"
+            },
+            {
+              "key": "additional_fort_level",
+              "polarity": "good",
+              "text": "+2 Additional Fort Level"
+            },
+            {
+              "key": "defender_advantage",
+              "polarity": "good",
+              "text": "+4 Defender Advantage"
+            },
+            {
+              "key": "monthly_merit_per_title_maa_value",
+              "polarity": "good",
+              "text": "+2.4% Monthly Merit per Title Men-at-Arms Base Recruitment Cost"
+            },
+            {
+              "key": "domain_tax_mult",
+              "polarity": "bad",
+              "text": "-30% Domain Taxes"
+            },
+            {
+              "key": "monthly_treasury_from_military_budget_base",
+              "polarity": "good",
+              "text": "+100% Monthly Military Base Rate"
+            }
+          ],
+          "subjectOpinion": null
+        }
+      ],
+      "name": "Available Administration Types",
+      "sourceFile": "meritocratic.txt"
+    },
+    {
+      "defaultsToHighest": false,
+      "displayMode": "tree",
+      "dlc": null,
+      "groups": [
+        "meritocratic_vassal"
+      ],
+      "id": "meritocratic_salary",
+      "levels": [
+        {
+          "appointmentTraitFlag": null,
+          "enableCharacterMaa": null,
+          "enableTitleMaa": null,
+          "factors": {},
+          "flags": [],
+          "id": "salary_very_low",
+          "isDefault": false,
+          "liegeModifiers": [],
+          "minimums": {},
+          "name": "Meager Salary",
+          "parent": null,
+          "score": -2,
+          "shares": {},
+          "shortName": "Meager Salary",
+          "subjectModifiers": [
+            {
+              "key": "monthly_treasury_from_salary_budget_mult",
+              "polarity": "bad",
+              "text": "-50% Governor Salary"
+            }
+          ],
+          "subjectOpinion": -25
+        },
+        {
+          "appointmentTraitFlag": null,
+          "enableCharacterMaa": null,
+          "enableTitleMaa": null,
+          "factors": {},
+          "flags": [],
+          "id": "salary_low",
+          "isDefault": false,
+          "liegeModifiers": [],
+          "minimums": {},
+          "name": "Modest Salary",
+          "parent": "salary_very_low",
+          "score": 1,
+          "shares": {},
+          "shortName": "Modest",
+          "subjectModifiers": [
+            {
+              "key": "monthly_treasury_from_salary_budget_mult",
+              "polarity": "bad",
+              "text": "-25% Governor Salary"
+            }
+          ],
+          "subjectOpinion": -15
+        },
+        {
+          "appointmentTraitFlag": null,
+          "enableCharacterMaa": null,
+          "enableTitleMaa": null,
+          "factors": {},
+          "flags": [],
+          "id": "salary_medium",
+          "isDefault": true,
+          "liegeModifiers": [],
+          "minimums": {},
+          "name": "Average Salary",
+          "parent": "salary_low",
+          "score": 0,
+          "shares": {},
+          "shortName": "Average",
+          "subjectModifiers": [],
+          "subjectOpinion": null
+        },
+        {
+          "appointmentTraitFlag": null,
+          "enableCharacterMaa": null,
+          "enableTitleMaa": null,
+          "factors": {},
+          "flags": [],
+          "id": "salary_high",
+          "isDefault": false,
+          "liegeModifiers": [],
+          "minimums": {},
+          "name": "Generous Salary",
+          "parent": "salary_medium",
+          "score": 1,
+          "shares": {},
+          "shortName": "Generous",
+          "subjectModifiers": [
+            {
+              "key": "monthly_treasury_from_salary_budget_mult",
+              "polarity": "good",
+              "text": "+25% Governor Salary"
+            }
+          ],
+          "subjectOpinion": 5
+        },
+        {
+          "appointmentTraitFlag": null,
+          "enableCharacterMaa": null,
+          "enableTitleMaa": null,
+          "factors": {},
+          "flags": [],
+          "id": "salary_very_high",
+          "isDefault": false,
+          "liegeModifiers": [],
+          "minimums": {},
+          "name": "Extravagant Salary",
+          "parent": "salary_high",
+          "score": 2,
+          "shares": {},
+          "shortName": "Extravagant",
+          "subjectModifiers": [
+            {
+              "key": "monthly_treasury_from_salary_budget_mult",
+              "polarity": "good",
+              "text": "+50% Governor Salary"
+            }
+          ],
+          "subjectOpinion": 10
+        }
+      ],
+      "name": "Governor Salary",
+      "sourceFile": "meritocratic.txt"
+    },
+    {
+      "defaultsToHighest": true,
+      "displayMode": "hidden",
+      "dlc": null,
+      "groups": [
+        "meritocratic_vassal"
+      ],
+      "id": "meritocratic_salary_rank",
+      "levels": [
+        {
+          "appointmentTraitFlag": null,
+          "enableCharacterMaa": null,
+          "enableTitleMaa": null,
+          "factors": {},
+          "flags": [],
+          "id": "meritocratic_salary_rank_none",
+          "isDefault": true,
+          "liegeModifiers": [],
+          "minimums": {},
+          "name": "None",
+          "parent": null,
+          "score": null,
+          "shares": {},
+          "shortName": "None",
+          "subjectModifiers": [],
+          "subjectOpinion": null
+        },
+        {
+          "appointmentTraitFlag": null,
+          "enableCharacterMaa": null,
+          "enableTitleMaa": null,
+          "factors": {},
+          "flags": [],
+          "id": "meritocratic_salary_rank_county",
+          "isDefault": false,
+          "liegeModifiers": [],
+          "minimums": {},
+          "name": "County Tier: Prefecture",
+          "parent": "meritocratic_salary_rank_none",
+          "score": null,
+          "shares": {},
+          "shortName": "Prefecture",
+          "subjectModifiers": [
+            {
+              "key": "monthly_treasury_from_salary_budget_base",
+              "polarity": "good",
+              "text": "+30% Monthly Salary Base Rate"
+            }
+          ],
+          "subjectOpinion": null
+        },
+        {
+          "appointmentTraitFlag": null,
+          "enableCharacterMaa": null,
+          "enableTitleMaa": null,
+          "factors": {},
+          "flags": [],
+          "id": "meritocratic_salary_rank_duchy",
+          "isDefault": false,
+          "liegeModifiers": [],
+          "minimums": {},
+          "name": "Duchy Tier: Province",
+          "parent": "meritocratic_salary_rank_county",
+          "score": null,
+          "shares": {},
+          "shortName": "Province",
+          "subjectModifiers": [
+            {
+              "key": "monthly_treasury_from_salary_budget_base",
+              "polarity": "good",
+              "text": "+75% Monthly Salary Base Rate"
+            }
+          ],
+          "subjectOpinion": null
+        },
+        {
+          "appointmentTraitFlag": null,
+          "enableCharacterMaa": null,
+          "enableTitleMaa": null,
+          "factors": {},
+          "flags": [],
+          "id": "meritocratic_salary_rank_kingdom",
+          "isDefault": false,
+          "liegeModifiers": [],
+          "minimums": {},
+          "name": "Kingdom Tier: Circuit",
+          "parent": "meritocratic_salary_rank_duchy",
+          "score": null,
+          "shares": {},
+          "shortName": "Circuit",
+          "subjectModifiers": [
+            {
+              "key": "monthly_treasury_from_salary_budget_base",
+              "polarity": "good",
+              "text": "+100% Monthly Salary Base Rate"
+            }
+          ],
+          "subjectOpinion": null
+        },
+        {
+          "appointmentTraitFlag": null,
+          "enableCharacterMaa": null,
+          "enableTitleMaa": null,
+          "factors": {},
+          "flags": [],
+          "id": "meritocratic_salary_rank_empire",
+          "isDefault": false,
+          "liegeModifiers": [],
+          "minimums": {},
+          "name": "Empire Tier: Great Circuit",
+          "parent": "meritocratic_salary_rank_kingdom",
+          "score": null,
+          "shares": {},
+          "shortName": "Great Circuit",
+          "subjectModifiers": [
+            {
+              "key": "monthly_treasury_from_salary_budget_base",
+              "polarity": "good",
+              "text": "+200% Monthly Salary Base Rate"
+            }
+          ],
+          "subjectOpinion": null
+        }
+      ],
+      "name": "Salary Rank",
+      "sourceFile": "meritocratic.txt"
+    },
+    {
+      "defaultsToHighest": false,
+      "displayMode": "tree",
+      "dlc": null,
+      "groups": [
+        "meritocratic_vassal"
+      ],
+      "id": "meritocratic_treasury",
+      "levels": [
+        {
+          "appointmentTraitFlag": null,
+          "enableCharacterMaa": null,
+          "enableTitleMaa": null,
+          "factors": {},
+          "flags": [],
+          "id": "treasury_very_low",
+          "isDefault": false,
+          "liegeModifiers": [],
+          "minimums": {},
+          "name": "Very Low Vassal Development",
+          "parent": null,
+          "score": -2,
+          "shares": {},
+          "shortName": "Very Low",
+          "subjectModifiers": [
+            {
+              "key": "monthly_treasury_from_liege_mult",
+              "polarity": "bad",
+              "text": "-10% Monthly Treasury"
+            }
+          ],
+          "subjectOpinion": -25
+        },
+        {
+          "appointmentTraitFlag": null,
+          "enableCharacterMaa": null,
+          "enableTitleMaa": null,
+          "factors": {},
+          "flags": [],
+          "id": "treasury_low",
+          "isDefault": false,
+          "liegeModifiers": [],
+          "minimums": {},
+          "name": "Low Vassal Development",
+          "parent": "treasury_very_low",
+          "score": -1,
+          "shares": {},
+          "shortName": "Low",
+          "subjectModifiers": [
+            {
+              "key": "monthly_treasury_from_liege_mult",
+              "polarity": "bad",
+              "text": "-5% Monthly Treasury"
+            }
+          ],
+          "subjectOpinion": -15
+        },
+        {
+          "appointmentTraitFlag": null,
+          "enableCharacterMaa": null,
+          "enableTitleMaa": null,
+          "factors": {},
+          "flags": [],
+          "id": "treasury_medium",
+          "isDefault": true,
+          "liegeModifiers": [],
+          "minimums": {},
+          "name": "Medium Vassal Development",
+          "parent": "treasury_low",
+          "score": 0,
+          "shares": {},
+          "shortName": "Medium",
+          "subjectModifiers": [],
+          "subjectOpinion": null
+        },
+        {
+          "appointmentTraitFlag": null,
+          "enableCharacterMaa": null,
+          "enableTitleMaa": null,
+          "factors": {},
+          "flags": [],
+          "id": "treasury_high",
+          "isDefault": false,
+          "liegeModifiers": [],
+          "minimums": {},
+          "name": "High Vassal Development",
+          "parent": "treasury_medium",
+          "score": 1,
+          "shares": {},
+          "shortName": "High",
+          "subjectModifiers": [
+            {
+              "key": "monthly_treasury_from_liege_mult",
+              "polarity": "good",
+              "text": "+5% Monthly Treasury"
+            }
+          ],
+          "subjectOpinion": 5
+        },
+        {
+          "appointmentTraitFlag": null,
+          "enableCharacterMaa": null,
+          "enableTitleMaa": null,
+          "factors": {},
+          "flags": [],
+          "id": "treasury_very_high",
+          "isDefault": false,
+          "liegeModifiers": [],
+          "minimums": {},
+          "name": "Very High Vassal Development",
+          "parent": "treasury_high",
+          "score": 2,
+          "shares": {},
+          "shortName": "Very High",
+          "subjectModifiers": [
+            {
+              "key": "monthly_treasury_from_liege_mult",
+              "polarity": "good",
+              "text": "+10% Monthly Treasury"
+            }
+          ],
+          "subjectOpinion": 10
+        }
+      ],
+      "name": "Vassal Development",
+      "sourceFile": "meritocratic.txt"
+    },
+    {
+      "defaultsToHighest": false,
+      "displayMode": "tree",
+      "dlc": null,
+      "groups": [],
+      "id": "meritocratic_tribute_gold",
+      "levels": [
+        {
+          "appointmentTraitFlag": null,
+          "enableCharacterMaa": null,
+          "enableTitleMaa": null,
+          "factors": {},
+          "flags": [],
+          "id": "meritocratic_tributary_tax_none",
+          "isDefault": false,
+          "liegeModifiers": [],
+          "minimums": {},
+          "name": "Meritocratic Tributary Tax None",
+          "parent": null,
+          "score": -2,
+          "shares": {
+            "tax": {
+              "value": 0,
+              "varies": false
+            }
+          },
+          "shortName": null,
+          "subjectModifiers": [
+            {
+              "key": "monthly_legitimacy_add",
+              "polarity": "good",
+              "text": "+0.1 Monthly Legitimacy Add /month"
+            }
+          ],
+          "subjectOpinion": 5
+        },
+        {
+          "appointmentTraitFlag": null,
+          "enableCharacterMaa": null,
+          "enableTitleMaa": null,
+          "factors": {},
+          "flags": [],
+          "id": "meritocratic_tributary_tax_low",
+          "isDefault": true,
+          "liegeModifiers": [],
+          "minimums": {},
+          "name": "Meritocratic Tributary Tax Low",
+          "parent": "meritocratic_tributary_tax_none",
+          "score": -1,
+          "shares": {
+            "tax": {
+              "value": 0.05,
+              "varies": false
+            }
+          },
+          "shortName": null,
+          "subjectModifiers": [
+            {
+              "key": "monthly_legitimacy_add",
+              "polarity": "good",
+              "text": "+0.2 Monthly Legitimacy Add /month"
+            }
+          ],
+          "subjectOpinion": -5
+        },
+        {
+          "appointmentTraitFlag": null,
+          "enableCharacterMaa": null,
+          "enableTitleMaa": null,
+          "factors": {},
+          "flags": [],
+          "id": "meritocratic_tributary_tax_normal",
+          "isDefault": false,
+          "liegeModifiers": [],
+          "minimums": {},
+          "name": "Meritocratic Tributary Tax Normal",
+          "parent": "meritocratic_tributary_tax_low",
+          "score": 0,
+          "shares": {
+            "tax": {
+              "value": 0.1,
+              "varies": false
+            }
+          },
+          "shortName": null,
+          "subjectModifiers": [
+            {
+              "key": "monthly_legitimacy_add",
+              "polarity": "good",
+              "text": "+0.3 Monthly Legitimacy Add /month"
+            }
+          ],
+          "subjectOpinion": -10
+        },
+        {
+          "appointmentTraitFlag": null,
+          "enableCharacterMaa": null,
+          "enableTitleMaa": null,
+          "factors": {},
+          "flags": [],
+          "id": "meritocratic_tributary_tax_high",
+          "isDefault": false,
+          "liegeModifiers": [],
+          "minimums": {},
+          "name": "Meritocratic Tributary Tax High",
+          "parent": "meritocratic_tributary_tax_normal",
+          "score": 1,
+          "shares": {
+            "tax": {
+              "value": 0.25,
+              "varies": false
+            }
+          },
+          "shortName": null,
+          "subjectModifiers": [
+            {
+              "key": "monthly_legitimacy_add",
+              "polarity": "good",
+              "text": "+0.5 Monthly Legitimacy Add /month"
+            }
+          ],
+          "subjectOpinion": -25
+        }
+      ],
+      "name": "Meritocratic Tribute Gold",
+      "sourceFile": "meritocratic.txt"
+    },
+    {
+      "defaultsToHighest": false,
+      "displayMode": "tree",
+      "dlc": null,
+      "groups": [],
+      "id": "meritocratic_tribute_prestige",
+      "levels": [
+        {
+          "appointmentTraitFlag": null,
+          "enableCharacterMaa": null,
+          "enableTitleMaa": null,
+          "factors": {},
+          "flags": [],
+          "id": "meritocratic_prestige_transfer_none",
+          "isDefault": false,
+          "liegeModifiers": [],
+          "minimums": {},
+          "name": "Meritocratic Prestige Transfer None",
+          "parent": null,
+          "score": -2,
+          "shares": {
+            "prestige": {
+              "value": 0,
+              "varies": false
+            }
+          },
+          "shortName": null,
+          "subjectModifiers": [
+            {
+              "key": "monthly_legitimacy_add",
+              "polarity": "good",
+              "text": "+0.1 Monthly Legitimacy Add /month"
+            }
+          ],
+          "subjectOpinion": 5
+        },
+        {
+          "appointmentTraitFlag": null,
+          "enableCharacterMaa": null,
+          "enableTitleMaa": null,
+          "factors": {},
+          "flags": [],
+          "id": "meritocratic_prestige_transfer_low",
+          "isDefault": true,
+          "liegeModifiers": [],
+          "minimums": {},
+          "name": "Meritocratic Prestige Transfer Low",
+          "parent": "meritocratic_prestige_transfer_none",
+          "score": -1,
+          "shares": {
+            "prestige": {
+              "value": 0.05,
+              "varies": false
+            }
+          },
+          "shortName": null,
+          "subjectModifiers": [
+            {
+              "key": "monthly_legitimacy_add",
+              "polarity": "good",
+              "text": "+0.2 Monthly Legitimacy Add /month"
+            }
+          ],
+          "subjectOpinion": -5
+        },
+        {
+          "appointmentTraitFlag": null,
+          "enableCharacterMaa": null,
+          "enableTitleMaa": null,
+          "factors": {},
+          "flags": [],
+          "id": "meritocratic_prestige_transfer_normal",
+          "isDefault": true,
+          "liegeModifiers": [],
+          "minimums": {},
+          "name": "Meritocratic Prestige Transfer Normal",
+          "parent": "meritocratic_prestige_transfer_low",
+          "score": 0,
+          "shares": {
+            "prestige": {
+              "value": 0.1,
+              "varies": false
+            }
+          },
+          "shortName": null,
+          "subjectModifiers": [
+            {
+              "key": "monthly_legitimacy_add",
+              "polarity": "good",
+              "text": "+0.3 Monthly Legitimacy Add /month"
+            }
+          ],
+          "subjectOpinion": -10
+        },
+        {
+          "appointmentTraitFlag": null,
+          "enableCharacterMaa": null,
+          "enableTitleMaa": null,
+          "factors": {},
+          "flags": [],
+          "id": "meritocratic_prestige_transfer_high",
+          "isDefault": false,
+          "liegeModifiers": [],
+          "minimums": {},
+          "name": "Meritocratic Prestige Transfer High",
+          "parent": "meritocratic_prestige_transfer_normal",
+          "score": 1,
+          "shares": {
+            "prestige": {
+              "value": 0.25,
+              "varies": false
+            }
+          },
+          "shortName": null,
+          "subjectModifiers": [
+            {
+              "key": "monthly_legitimacy_add",
+              "polarity": "good",
+              "text": "+0.5 Monthly Legitimacy Add /month"
+            }
+          ],
+          "subjectOpinion": -25
+        }
+      ],
+      "name": "Meritocratic Tribute Prestige",
+      "sourceFile": "meritocratic.txt"
+    },
+    {
+      "defaultsToHighest": false,
+      "displayMode": "tree",
+      "dlc": null,
+      "groups": [
+        "nomad_vassal",
+        "tributary_nomadic"
+      ],
+      "id": "nomad_government_herd",
+      "levels": [
+        {
+          "appointmentTraitFlag": null,
+          "enableCharacterMaa": null,
+          "enableTitleMaa": null,
+          "factors": {},
+          "flags": [],
+          "id": "herd_tax_exempt",
+          "isDefault": false,
+          "liegeModifiers": [],
+          "minimums": {},
+          "name": "Herd Exempt",
+          "parent": null,
+          "score": 2,
+          "shares": {
+            "herd": {
+              "value": 0,
+              "varies": false
+            }
+          },
+          "shortName": "Exempt",
+          "subjectModifiers": [],
+          "subjectOpinion": 10
+        },
+        {
+          "appointmentTraitFlag": null,
+          "enableCharacterMaa": null,
+          "enableTitleMaa": null,
+          "factors": {},
+          "flags": [],
+          "id": "herd_tax_low",
+          "isDefault": false,
+          "liegeModifiers": [],
+          "minimums": {},
+          "name": "Low Herd",
+          "parent": "herd_tax_exempt",
+          "score": 1,
+          "shares": {
+            "herd": {
+              "value": 0.05,
+              "varies": false
+            }
+          },
+          "shortName": "Low",
+          "subjectModifiers": [],
+          "subjectOpinion": 5
+        },
+        {
+          "appointmentTraitFlag": null,
+          "enableCharacterMaa": null,
+          "enableTitleMaa": null,
+          "factors": {},
+          "flags": [],
+          "id": "herd_tax_normal",
+          "isDefault": true,
+          "liegeModifiers": [],
+          "minimums": {},
+          "name": "Normal Herd",
+          "parent": "herd_tax_low",
+          "score": 0,
+          "shares": {
+            "herd": {
+              "value": 0.1,
+              "varies": false
+            }
+          },
+          "shortName": "Normal",
+          "subjectModifiers": [],
+          "subjectOpinion": null
+        },
+        {
+          "appointmentTraitFlag": null,
+          "enableCharacterMaa": null,
+          "enableTitleMaa": null,
+          "factors": {},
+          "flags": [
+            "obligation_high_taxes"
+          ],
+          "id": "herd_tax_high",
+          "isDefault": false,
+          "liegeModifiers": [],
+          "minimums": {},
+          "name": "High Herd",
+          "parent": "herd_tax_normal",
+          "score": -1,
+          "shares": {
+            "herd": {
+              "value": 0.25,
+              "varies": false
+            }
+          },
+          "shortName": "High",
+          "subjectModifiers": [],
+          "subjectOpinion": -15
+        },
+        {
+          "appointmentTraitFlag": null,
+          "enableCharacterMaa": null,
+          "enableTitleMaa": null,
+          "factors": {},
+          "flags": [
+            "obligation_high_taxes"
+          ],
+          "id": "herd_tax_extortionate",
+          "isDefault": false,
+          "liegeModifiers": [],
+          "minimums": {},
+          "name": "Extortionate Herd",
+          "parent": "herd_tax_high",
+          "score": -2,
+          "shares": {
+            "herd": {
+              "value": 0.4,
+              "varies": false
+            }
+          },
+          "shortName": "Extortionate",
+          "subjectModifiers": [],
+          "subjectOpinion": -25
+        }
+      ],
+      "name": "Herd Tithes",
+      "sourceFile": "nomad.txt"
+    },
+    {
+      "defaultsToHighest": false,
+      "displayMode": "tree",
+      "dlc": null,
+      "groups": [
+        "tributary_nomadic",
+        "tributary_steppe"
+      ],
+      "id": "nomad_government_prestige",
+      "levels": [
+        {
+          "appointmentTraitFlag": null,
+          "enableCharacterMaa": null,
+          "enableTitleMaa": null,
+          "factors": {},
+          "flags": [],
+          "id": "prestige_transfer_none",
+          "isDefault": false,
+          "liegeModifiers": [],
+          "minimums": {},
+          "name": "No Prestige Transfer",
+          "parent": null,
+          "score": 2,
+          "shares": {
+            "prestige": {
+              "value": 0,
+              "varies": false
+            }
+          },
+          "shortName": "None",
+          "subjectModifiers": [],
+          "subjectOpinion": null
+        },
+        {
+          "appointmentTraitFlag": null,
+          "enableCharacterMaa": null,
+          "enableTitleMaa": null,
+          "factors": {},
+          "flags": [],
+          "id": "prestige_transfer_normal",
+          "isDefault": false,
+          "liegeModifiers": [],
+          "minimums": {},
+          "name": "Low Prestige Transfer",
+          "parent": "prestige_transfer_none",
+          "score": 1,
+          "shares": {
+            "prestige": {
+              "value": 0.15,
+              "varies": false
+            }
+          },
+          "shortName": "Low",
+          "subjectModifiers": [],
+          "subjectOpinion": -10
+        },
+        {
+          "appointmentTraitFlag": null,
+          "enableCharacterMaa": null,
+          "enableTitleMaa": null,
+          "factors": {},
+          "flags": [],
+          "id": "prestige_transfer_high",
+          "isDefault": false,
+          "liegeModifiers": [],
+          "minimums": {},
+          "name": "High Prestige Transfer",
+          "parent": "prestige_transfer_normal",
+          "score": 0,
+          "shares": {
+            "prestige": {
+              "value": 0.3,
+              "varies": false
+            }
+          },
+          "shortName": "High",
+          "subjectModifiers": [],
+          "subjectOpinion": -25
+        }
+      ],
+      "name": "Nomadic Prestige",
+      "sourceFile": "nomad.txt"
+    },
+    {
+      "defaultsToHighest": false,
+      "displayMode": "tree",
+      "dlc": null,
+      "groups": [
+        "nomad_vassal"
+      ],
+      "id": "nomad_government_taxes",
+      "levels": [
+        {
+          "appointmentTraitFlag": null,
+          "enableCharacterMaa": null,
+          "enableTitleMaa": null,
+          "factors": {},
+          "flags": [],
+          "id": "nomad_tax_exempt",
+          "isDefault": true,
+          "liegeModifiers": [],
+          "minimums": {},
+          "name": "Tax Exempt",
+          "parent": null,
+          "score": 2,
+          "shares": {
+            "tax": {
+              "value": 0,
+              "varies": false
+            }
+          },
+          "shortName": "Exempt",
+          "subjectModifiers": [],
+          "subjectOpinion": null
+        },
+        {
+          "appointmentTraitFlag": null,
+          "enableCharacterMaa": null,
+          "enableTitleMaa": null,
+          "factors": {},
+          "flags": [],
+          "id": "nomad_tax_low",
+          "isDefault": false,
+          "liegeModifiers": [],
+          "minimums": {},
+          "name": "Low Taxes",
+          "parent": "nomad_tax_exempt",
+          "score": 1,
+          "shares": {
+            "tax": {
+              "value": 0.05,
+              "varies": false
+            }
+          },
+          "shortName": "Low",
+          "subjectModifiers": [],
+          "subjectOpinion": -5
+        },
+        {
+          "appointmentTraitFlag": null,
+          "enableCharacterMaa": null,
+          "enableTitleMaa": null,
+          "factors": {},
+          "flags": [],
+          "id": "nomad_tax_normal",
+          "isDefault": false,
+          "liegeModifiers": [],
+          "minimums": {},
+          "name": "Medium Taxes",
+          "parent": "nomad_tax_low",
+          "score": 0,
+          "shares": {
+            "tax": {
+              "value": 0.1,
+              "varies": false
+            }
+          },
+          "shortName": "Medium",
+          "subjectModifiers": [],
+          "subjectOpinion": -15
+        },
+        {
+          "appointmentTraitFlag": null,
+          "enableCharacterMaa": null,
+          "enableTitleMaa": null,
+          "factors": {},
+          "flags": [
+            "obligation_high_taxes"
+          ],
+          "id": "nomad_tax_high",
+          "isDefault": false,
+          "liegeModifiers": [],
+          "minimums": {},
+          "name": "High Taxes",
+          "parent": "nomad_tax_normal",
+          "score": -1,
+          "shares": {
+            "tax": {
+              "value": 0.15,
+              "varies": false
+            }
+          },
+          "shortName": "High",
+          "subjectModifiers": [],
+          "subjectOpinion": -25
+        },
+        {
+          "appointmentTraitFlag": null,
+          "enableCharacterMaa": null,
+          "enableTitleMaa": null,
+          "factors": {},
+          "flags": [
+            "obligation_high_taxes"
+          ],
+          "id": "nomad_tax_extortionate",
+          "isDefault": false,
+          "liegeModifiers": [],
+          "minimums": {},
+          "name": "Extortionate Taxes",
+          "parent": "nomad_tax_high",
+          "score": -2,
+          "shares": {
+            "tax": {
+              "value": 0.2,
+              "varies": false
+            }
+          },
+          "shortName": "Extortionate",
+          "subjectModifiers": [],
+          "subjectOpinion": -40
+        }
+      ],
+      "name": "Nomadic Taxes",
+      "sourceFile": "nomad.txt"
+    },
+    {
+      "defaultsToHighest": false,
+      "displayMode": "checkbox",
+      "dlc": null,
+      "groups": [
+        "feudal_vassal",
+        "clan_vassal",
+        "mandala_vassal",
+        "japan_feudal_vassal"
+      ],
+      "id": "religious_rights",
+      "levels": [
+        {
+          "appointmentTraitFlag": null,
+          "enableCharacterMaa": null,
+          "enableTitleMaa": null,
+          "factors": {},
+          "flags": [],
+          "id": "religious_rights_none",
+          "isDefault": true,
+          "liegeModifiers": [],
+          "minimums": {},
+          "name": "Religiously Unprotected",
+          "parent": null,
+          "score": null,
+          "shares": {},
+          "shortName": "Unprotected",
+          "subjectModifiers": [],
+          "subjectOpinion": null
+        },
+        {
+          "appointmentTraitFlag": null,
+          "enableCharacterMaa": null,
+          "enableTitleMaa": null,
+          "factors": {},
+          "flags": [
+            "religiously_protected"
+          ],
+          "id": "religious_rights_protected",
+          "isDefault": false,
+          "liegeModifiers": [],
+          "minimums": {},
+          "name": "Religiously Protected",
+          "parent": "religious_rights_none",
+          "score": 3,
+          "shares": {},
+          "shortName": "Protected",
+          "subjectModifiers": [
+            {
+              "key": "county_opinion_add",
+              "polarity": "good",
+              "text": "+5 Popular Opinion"
+            }
+          ],
+          "subjectOpinion": 5
+        }
+      ],
+      "name": "Religious Rights",
+      "sourceFile": "special_contracts.txt"
+    },
+    {
+      "defaultsToHighest": false,
+      "displayMode": "radiobutton",
+      "dlc": null,
+      "groups": [
+        "republic_vassal"
+      ],
+      "id": "republic_government_obligations",
+      "levels": [
+        {
+          "appointmentTraitFlag": null,
+          "enableCharacterMaa": null,
+          "enableTitleMaa": null,
+          "factors": {},
+          "flags": [],
+          "id": "default",
+          "isDefault": false,
+          "liegeModifiers": [],
+          "minimums": {},
+          "name": "Default",
+          "parent": null,
+          "score": null,
+          "shares": {
+            "levies": {
+              "rules": [
+                {
+                  "scope:liege": "…"
+                }
+              ],
+              "value": null,
+              "varies": true
+            },
+            "tax": {
+              "rules": [
+                {
+                  "scope:liege": "…"
+                }
+              ],
+              "value": null,
+              "varies": true
+            }
+          },
+          "shortName": null,
+          "subjectModifiers": [],
+          "subjectOpinion": null
+        }
+      ],
+      "name": "Republic Obligations",
+      "sourceFile": "republic.txt"
+    },
+    {
+      "defaultsToHighest": false,
+      "displayMode": "radiobutton",
+      "dlc": null,
+      "groups": [
+        "feudal_vassal",
+        "clan_vassal",
+        "japan_feudal_vassal"
+      ],
+      "id": "special_contract",
+      "levels": [
+        {
+          "appointmentTraitFlag": null,
+          "enableCharacterMaa": null,
+          "enableTitleMaa": null,
+          "factors": {},
+          "flags": [],
+          "id": "special_contract_none",
+          "isDefault": true,
+          "liegeModifiers": [],
+          "minimums": {},
+          "name": "No Special Contract",
+          "parent": null,
+          "score": 0,
+          "shares": {},
+          "shortName": "None",
+          "subjectModifiers": [],
+          "subjectOpinion": null
+        },
+        {
+          "appointmentTraitFlag": null,
+          "enableCharacterMaa": null,
+          "enableTitleMaa": null,
+          "factors": {
+            "levies": {
+              "value": -0.75,
+              "varies": false
+            },
+            "tax": {
+              "value": 0.5,
+              "varies": false
+            }
+          },
+          "flags": [
+            "has_scutage_contract",
+            "obligation_high_taxes"
+          ],
+          "id": "special_contract_scutage",
+          "isDefault": false,
+          "liegeModifiers": [],
+          "minimums": {},
+          "name": "Scutage Contract",
+          "parent": "special_contract_none",
+          "score": 0,
+          "shares": {},
+          "shortName": "Scutage",
+          "subjectModifiers": [
+            {
+              "key": "men_at_arms_maintenance",
+              "polarity": "good",
+              "text": "-20% Men-at-Arms Maintenance"
+            }
+          ],
+          "subjectOpinion": null
+        },
+        {
+          "appointmentTraitFlag": null,
+          "enableCharacterMaa": null,
+          "enableTitleMaa": null,
+          "factors": {
+            "tax": {
+              "value": -0.5,
+              "varies": false
+            }
+          },
+          "flags": [
+            "has_march_contract"
+          ],
+          "id": "special_contract_march",
+          "isDefault": false,
+          "liegeModifiers": [],
+          "minimums": {},
+          "name": "March Contract",
+          "parent": "special_contract_none",
+          "score": 0,
+          "shares": {},
+          "shortName": "March",
+          "subjectModifiers": [
+            {
+              "key": "levy_size",
+              "polarity": "good",
+              "text": "+20% Levy Size"
+            },
+            {
+              "key": "army_maintenance_mult",
+              "polarity": "good",
+              "text": "-20% Army Gold Maintenance"
+            },
+            {
+              "key": "garrison_size",
+              "polarity": "good",
+              "text": "+20% Garrison Size"
+            },
+            {
+              "key": "levy_reinforcement_rate",
+              "polarity": "good",
+              "text": "+20% Levy Reinforcement Rate"
+            },
+            {
+              "key": "controlled_province_advantage",
+              "polarity": "good",
+              "text": "+5 Controlled Territory Defender Advantage"
+            }
+          ],
+          "subjectOpinion": null
+        },
+        {
+          "appointmentTraitFlag": null,
+          "enableCharacterMaa": null,
+          "enableTitleMaa": null,
+          "factors": {
+            "levies": {
+              "value": 0.5,
+              "varies": false
+            },
+            "tax": {
+              "value": -0.5,
+              "varies": false
+            }
+          },
+          "flags": [
+            "has_castellan_contract",
+            "obligation_high_levies"
+          ],
+          "id": "special_contract_castellan",
+          "isDefault": false,
+          "liegeModifiers": [],
+          "minimums": {},
+          "name": "Castellan Contract",
+          "parent": "special_contract_none",
+          "score": 0,
+          "shares": {},
+          "shortName": "Castellan",
+          "subjectModifiers": [
+            {
+              "key": "levy_size",
+              "polarity": "good",
+              "text": "+20% Levy Size"
+            },
+            {
+              "key": "army_maintenance_mult",
+              "polarity": "good",
+              "text": "-20% Army Gold Maintenance"
+            },
+            {
+              "key": "garrison_size",
+              "polarity": "good",
+              "text": "+20% Garrison Size"
+            },
+            {
+              "key": "levy_reinforcement_rate",
+              "polarity": "good",
+              "text": "+20% Levy Reinforcement Rate"
+            },
+            {
+              "key": "controlled_province_advantage",
+              "polarity": "good",
+              "text": "+5 Controlled Territory Defender Advantage"
+            }
+          ],
+          "subjectOpinion": null
+        },
+        {
+          "appointmentTraitFlag": null,
+          "enableCharacterMaa": null,
+          "enableTitleMaa": null,
+          "factors": {
+            "levies": {
+              "value": -0.2,
+              "varies": false
+            },
+            "tax": {
+              "value": -0.2,
+              "varies": false
+            }
+          },
+          "flags": [
+            "has_palatinate_contract"
+          ],
+          "id": "special_contract_palatinate",
+          "isDefault": false,
+          "liegeModifiers": [
+            {
+              "key": "monthly_prestige_gain_mult",
+              "polarity": "good",
+              "text": "+5% Monthly Prestige"
+            }
+          ],
+          "minimums": {},
+          "name": "Palatinate Contract",
+          "parent": "special_contract_none",
+          "score": 0,
+          "shares": {},
+          "shortName": "Palatinate",
+          "subjectModifiers": [
+            {
+              "key": "monthly_prestige_gain_mult",
+              "polarity": "good",
+              "text": "+20% Monthly Prestige"
+            },
+            {
+              "key": "fellow_vassal_opinion",
+              "polarity": "good",
+              "text": "+15 Fellow Vassal Opinion"
+            },
+            {
+              "key": "owned_personal_scheme_success_chance_add",
+              "polarity": "good",
+              "text": "+10% Owned Personal Scheme Success Chance Add"
+            },
+            {
+              "key": "owned_hostile_scheme_success_chance_add",
+              "polarity": "good",
+              "text": "+10% Owned Hostile Scheme Success Chance Add"
+            }
+          ],
+          "subjectOpinion": null
+        }
+      ],
+      "name": "Special Contract",
+      "sourceFile": "special_contracts.txt"
+    },
+    {
+      "defaultsToHighest": false,
+      "displayMode": "checkbox",
+      "dlc": null,
+      "groups": [
+        "feudal_vassal",
+        "mandala_vassal",
+        "japan_feudal_vassal"
+      ],
+      "id": "succession_rights",
+      "levels": [
+        {
+          "appointmentTraitFlag": null,
+          "enableCharacterMaa": null,
+          "enableTitleMaa": null,
+          "factors": {},
+          "flags": [],
+          "id": "succession_rights_default",
+          "isDefault": true,
+          "liegeModifiers": [],
+          "minimums": {},
+          "name": "Default Succession Rights",
+          "parent": null,
+          "score": null,
+          "shares": {},
+          "shortName": "Default",
+          "subjectModifiers": [],
+          "subjectOpinion": null
+        },
+        {
+          "appointmentTraitFlag": null,
+          "enableCharacterMaa": null,
+          "enableTitleMaa": null,
+          "factors": {},
+          "flags": [
+            "locked_to_partition"
+          ],
+          "id": "succession_rights_forced_partition",
+          "isDefault": false,
+          "liegeModifiers": [],
+          "minimums": {},
+          "name": "Forced Partition",
+          "parent": "succession_rights_default",
+          "score": -1,
+          "shares": {},
+          "shortName": "Forced Partition",
+          "subjectModifiers": [],
+          "subjectOpinion": -5
+        }
+      ],
+      "name": "Succession Rights",
+      "sourceFile": "special_contracts.txt"
+    },
+    {
+      "defaultsToHighest": false,
+      "displayMode": "checkbox",
+      "dlc": null,
+      "groups": [
+        "tributary_settled",
+        "tributary_nomadic",
+        "tributary_subjugated",
+        "tributary_steppe"
+      ],
+      "id": "suzerain_war_participation_guarantee",
+      "levels": [
+        {
+          "appointmentTraitFlag": null,
+          "enableCharacterMaa": null,
+          "enableTitleMaa": null,
+          "factors": {},
+          "flags": [],
+          "id": "suzerain_war_participation_guarantee_none",
+          "isDefault": true,
+          "liegeModifiers": [],
+          "minimums": {},
+          "name": "No Suzerain Guarantee",
+          "parent": null,
+          "score": -2,
+          "shares": {},
+          "shortName": "None",
+          "subjectModifiers": [],
+          "subjectOpinion": null
+        },
+        {
+          "appointmentTraitFlag": null,
+          "enableCharacterMaa": null,
+          "enableTitleMaa": null,
+          "factors": {},
+          "flags": [
+            "tributary_contract_suzerain_guarantee_override"
+          ],
+          "id": "suzerain_war_participation_guarantee_available",
+          "isDefault": false,
+          "liegeModifiers": [],
+          "minimums": {},
+          "name": "Suzerain Guarantee",
+          "parent": "suzerain_war_participation_guarantee_none",
+          "score": 2,
+          "shares": {},
+          "shortName": "Guaranteed",
+          "subjectModifiers": [],
+          "subjectOpinion": 25
+        }
+      ],
+      "name": "Suzerain Guarantee",
+      "sourceFile": "special_contracts.txt"
+    },
+    {
+      "defaultsToHighest": false,
+      "displayMode": "radiobutton",
+      "dlc": null,
+      "groups": [
+        "theocracy_vassal"
+      ],
+      "id": "theocracy_government_obligations",
+      "levels": [
+        {
+          "appointmentTraitFlag": null,
+          "enableCharacterMaa": null,
+          "enableTitleMaa": null,
+          "factors": {},
+          "flags": [],
+          "id": "default",
+          "isDefault": false,
+          "liegeModifiers": [],
+          "minimums": {},
+          "name": "Default",
+          "parent": null,
+          "score": null,
+          "shares": {
+            "levies": {
+              "rules": [
+                {
+                  "if": "scope:liege.faith != scope:subject.faith",
+                  "then": [
+                    "value 0.1"
+                  ]
+                },
+                {
+                  "else": "…"
+                }
+              ],
+              "value": null,
+              "varies": true
+            },
+            "tax": {
+              "rules": [
+                {
+                  "if": "scope:liege.faith != scope:subject.faith",
+                  "then": [
+                    "value 0.1"
+                  ]
+                },
+                {
+                  "else_if": "…"
+                }
+              ],
+              "value": null,
+              "varies": true
+            }
+          },
+          "shortName": null,
+          "subjectModifiers": [],
+          "subjectOpinion": null
+        }
+      ],
+      "name": "Theocratic Obligations",
+      "sourceFile": "theocratic.txt"
+    },
+    {
+      "defaultsToHighest": false,
+      "displayMode": "checkbox",
+      "dlc": null,
+      "groups": [
+        "feudal_vassal",
+        "clan_vassal",
+        "mandala_vassal",
+        "japan_feudal_vassal"
+      ],
+      "id": "title_revocation_rights",
+      "levels": [
+        {
+          "appointmentTraitFlag": null,
+          "enableCharacterMaa": null,
+          "enableTitleMaa": null,
+          "factors": {},
+          "flags": [],
+          "id": "title_revocation_rights_default",
+          "isDefault": true,
+          "liegeModifiers": [],
+          "minimums": {},
+          "name": "Default Title Revocation",
+          "parent": null,
+          "score": null,
+          "shares": {},
+          "shortName": "Default",
+          "subjectModifiers": [],
+          "subjectOpinion": null
+        },
+        {
+          "appointmentTraitFlag": null,
+          "enableCharacterMaa": null,
+          "enableTitleMaa": null,
+          "factors": {},
+          "flags": [
+            "vassal_contract_cannot_revoke_titles"
+          ],
+          "id": "title_revocation_rights_protected",
+          "isDefault": false,
+          "liegeModifiers": [],
+          "minimums": {},
+          "name": "Protected Title Revocation",
+          "parent": "title_revocation_rights_default",
+          "score": null,
+          "shares": {},
+          "shortName": "Protected",
+          "subjectModifiers": [],
+          "subjectOpinion": 5
+        }
+      ],
+      "name": "Title Revocation",
+      "sourceFile": "special_contracts.txt"
+    },
+    {
+      "defaultsToHighest": false,
+      "displayMode": "radiobutton",
+      "dlc": null,
+      "groups": [
+        "tribal_vassal"
+      ],
+      "id": "tribal_government_obligations",
+      "levels": [
+        {
+          "appointmentTraitFlag": null,
+          "enableCharacterMaa": null,
+          "enableTitleMaa": null,
+          "factors": {},
+          "flags": [],
+          "id": "default",
+          "isDefault": false,
+          "liegeModifiers": [],
+          "minimums": {},
+          "name": "Default",
+          "parent": null,
+          "score": null,
+          "shares": {
+            "levies": {
+              "rules": [
+                {
+                  "base": 0
+                },
+                {
+                  "max": 1
+                },
+                {
+                  "scope:liege": "…"
+                }
+              ],
+              "value": null,
+              "varies": true
+            },
+            "tax": {
+              "rules": [
+                {
+                  "base": 0
+                },
+                {
+                  "max": 0.5
+                },
+                {
+                  "scope:liege": "…"
+                }
+              ],
+              "value": null,
+              "varies": true
+            }
+          },
+          "shortName": null,
+          "subjectModifiers": [],
+          "subjectOpinion": null
+        }
+      ],
+      "name": "From Liege Level of Fame",
+      "sourceFile": "tribal.txt"
+    },
+    {
+      "defaultsToHighest": false,
+      "displayMode": "checkbox",
+      "dlc": null,
+      "groups": [
+        "tributary_settled",
+        "tributary_nomadic",
+        "tributary_subjugated",
+        "tributary_steppe"
+      ],
+      "id": "tributary_war_participation_obligation",
+      "levels": [
+        {
+          "appointmentTraitFlag": null,
+          "enableCharacterMaa": null,
+          "enableTitleMaa": null,
+          "factors": {},
+          "flags": [],
+          "id": "tributary_war_participation_obligation_none",
+          "isDefault": true,
+          "liegeModifiers": [],
+          "minimums": {},
+          "name": "No Tributary War Support",
+          "parent": null,
+          "score": 1,
+          "shares": {},
+          "shortName": "None",
+          "subjectModifiers": [],
+          "subjectOpinion": null
+        },
+        {
+          "appointmentTraitFlag": null,
+          "enableCharacterMaa": null,
+          "enableTitleMaa": null,
+          "factors": {},
+          "flags": [
+            "tributary_contract_tributary_forced_war_override"
+          ],
+          "id": "tributary_war_participation_obligation_forced",
+          "isDefault": false,
+          "liegeModifiers": [],
+          "minimums": {},
+          "name": "Forced Tributary War Support",
+          "parent": "tributary_war_participation_obligation_none",
+          "score": -3,
+          "shares": {},
+          "shortName": "Forced",
+          "subjectModifiers": [],
+          "subjectOpinion": -25
+        }
+      ],
+      "name": "Tributary War Support",
+      "sourceFile": "special_contracts.txt"
+    },
+    {
+      "defaultsToHighest": false,
+      "displayMode": "radiobutton",
+      "dlc": null,
+      "groups": [
+        "wanua_vassal"
+      ],
+      "id": "wanua_obligations",
+      "levels": [
+        {
+          "appointmentTraitFlag": null,
+          "enableCharacterMaa": null,
+          "enableTitleMaa": null,
+          "factors": {},
+          "flags": [],
+          "id": "default",
+          "isDefault": false,
+          "liegeModifiers": [],
+          "minimums": {},
+          "name": "Default",
+          "parent": null,
+          "score": null,
+          "shares": {
+            "barter_goods": {
+              "rules": [
+                {
+                  "base": 0
+                },
+                {
+                  "max": 0.5
+                },
+                {
+                  "scope:liege": "…"
+                }
+              ],
+              "value": null,
+              "varies": true
+            },
+            "levies": {
+              "rules": [
+                {
+                  "base": 0
+                },
+                {
+                  "max": 1
+                },
+                {
+                  "scope:liege": "…"
+                }
+              ],
+              "value": null,
+              "varies": true
+            },
+            "tax": {
+              "rules": [
+                {
+                  "base": 0
+                },
+                {
+                  "max": 0.5
+                },
+                {
+                  "scope:liege": "…"
+                }
+              ],
+              "value": null,
+              "varies": true
+            }
+          },
+          "shortName": null,
+          "subjectModifiers": [],
+          "subjectOpinion": null
+        }
+      ],
+      "name": "From Liege Level of Fame",
+      "sourceFile": "wanua.txt"
+    },
+    {
+      "defaultsToHighest": false,
+      "displayMode": "checkbox",
+      "dlc": null,
+      "groups": [
+        "feudal_vassal",
+        "clan_vassal",
+        "nomad_vassal",
+        "japan_feudal_vassal"
+      ],
+      "id": "war_declaration_rights",
+      "levels": [
+        {
+          "appointmentTraitFlag": null,
+          "enableCharacterMaa": null,
+          "enableTitleMaa": null,
+          "factors": {},
+          "flags": [],
+          "id": "war_declaration_rights_default",
+          "isDefault": true,
+          "liegeModifiers": [],
+          "minimums": {},
+          "name": "Default War Declaration",
+          "parent": null,
+          "score": null,
+          "shares": {},
+          "shortName": "Default",
+          "subjectModifiers": [],
+          "subjectOpinion": null
+        },
+        {
+          "appointmentTraitFlag": null,
+          "enableCharacterMaa": null,
+          "enableTitleMaa": null,
+          "factors": {},
+          "flags": [
+            "vassal_contract_war_override"
+          ],
+          "id": "war_declaration_rights_allowed",
+          "isDefault": false,
+          "liegeModifiers": [],
+          "minimums": {},
+          "name": "Sanctioned War Declaration",
+          "parent": "war_declaration_rights_default",
+          "score": null,
+          "shares": {},
+          "shortName": "Sanctioned",
+          "subjectModifiers": [],
+          "subjectOpinion": 5
+        }
+      ],
+      "name": "War Declaration",
+      "sourceFile": "special_contracts.txt"
+    }
+  ],
+  "groups": [
+    {
+      "adminProvinceContract": null,
+      "contracts": [
+        "feudal_government_taxes",
+        "feudal_government_levies",
+        "special_contract",
+        "religious_rights",
+        "fortification_rights",
+        "coinage_rights",
+        "succession_rights",
+        "war_declaration_rights",
+        "council_rights",
+        "title_revocation_rights",
+        "jizya_special_rights"
+      ],
+      "heirSuccession": null,
+      "id": "feudal_vassal",
+      "isTributary": false,
+      "name": "Feudal"
+    },
+    {
+      "adminProvinceContract": null,
+      "contracts": [
+        "republic_government_obligations"
+      ],
+      "heirSuccession": null,
+      "id": "republic_vassal",
+      "isTributary": false,
+      "name": "Republic"
+    },
+    {
+      "adminProvinceContract": null,
+      "contracts": [
+        "theocracy_government_obligations"
+      ],
+      "heirSuccession": null,
+      "id": "theocracy_vassal",
+      "isTributary": false,
+      "name": "Theocracy"
+    },
+    {
+      "adminProvinceContract": null,
+      "contracts": [
+        "clan_tax_collector_obligations",
+        "special_contract",
+        "religious_rights",
+        "war_declaration_rights",
+        "council_rights",
+        "title_revocation_rights",
+        "marriage_favor_rights"
+      ],
+      "heirSuccession": null,
+      "id": "clan_vassal",
+      "isTributary": false,
+      "name": "Clan"
+    },
+    {
+      "adminProvinceContract": null,
+      "contracts": [
+        "tribal_government_obligations"
+      ],
+      "heirSuccession": null,
+      "id": "tribal_vassal",
+      "isTributary": false,
+      "name": "Tribal"
+    },
+    {
+      "adminProvinceContract": "administrative_themes",
+      "contracts": [
+        "administrative_obligations",
+        "administrative_themes",
+        "administrative_salary_rank"
+      ],
+      "heirSuccession": null,
+      "id": "admin_vassal",
+      "isTributary": false,
+      "name": "Administrative"
+    },
+    {
+      "adminProvinceContract": null,
+      "contracts": [
+        "nomad_government_herd",
+        "nomad_government_taxes",
+        "liege_war_participation_obligation",
+        "kurultai_rights",
+        "war_declaration_rights"
+      ],
+      "heirSuccession": null,
+      "id": "nomad_vassal",
+      "isTributary": false,
+      "name": "Nomadic"
+    },
+    {
+      "adminProvinceContract": null,
+      "contracts": [
+        "default_tributary_taxes",
+        "default_tributary_levies",
+        "default_tributary_prestige",
+        "suzerain_war_participation_guarantee",
+        "tributary_war_participation_obligation"
+      ],
+      "heirSuccession": {
+        "suzerain": true,
+        "tributary": false
+      },
+      "id": "tributary_settled",
+      "isTributary": true,
+      "name": "Settled Tributary"
+    },
+    {
+      "adminProvinceContract": null,
+      "contracts": [
+        "nomad_government_herd",
+        "nomad_government_prestige",
+        "suzerain_war_participation_guarantee",
+        "tributary_war_participation_obligation"
+      ],
+      "heirSuccession": {
+        "suzerain": true,
+        "tributary": false
+      },
+      "id": "tributary_nomadic",
+      "isTributary": true,
+      "name": "Nomadic Tributary"
+    },
+    {
+      "adminProvinceContract": null,
+      "contracts": [
+        "default_tributary_taxes",
+        "default_tributary_prestige",
+        "suzerain_war_participation_guarantee",
+        "tributary_war_participation_obligation"
+      ],
+      "heirSuccession": {
+        "suzerain": false,
+        "tributary": false
+      },
+      "id": "tributary_subjugated",
+      "isTributary": true,
+      "name": "Subjugated Tributary"
+    },
+    {
+      "adminProvinceContract": null,
+      "contracts": [
+        "default_tributary_taxes",
+        "nomad_government_prestige",
+        "suzerain_war_participation_guarantee",
+        "tributary_war_participation_obligation"
+      ],
+      "heirSuccession": {
+        "suzerain": true,
+        "tributary": false
+      },
+      "id": "tributary_steppe",
+      "isTributary": true,
+      "name": "Steppe Tributary"
+    },
+    {
+      "adminProvinceContract": null,
+      "contracts": [
+        "herder_government_obligations"
+      ],
+      "heirSuccession": null,
+      "id": "herder_vassal",
+      "isTributary": false,
+      "name": "Herder"
+    },
+    {
+      "adminProvinceContract": "celestial_provinces",
+      "contracts": [
+        "celestial_obligations",
+        "celestial_ministry_obligations",
+        "celestial_provinces",
+        "celestial_treasury",
+        "celestial_salary",
+        "celestial_ministry_budget",
+        "celestial_salary_rank"
+      ],
+      "heirSuccession": null,
+      "id": "celestial_vassal",
+      "isTributary": false,
+      "name": "Celestial"
+    },
+    {
+      "adminProvinceContract": null,
+      "contracts": [
+        "celestial_tribute_gold",
+        "celestial_tribute_prestige",
+        "celestial_tributary_investiture_privilege_trade",
+        "celestial_tributary_investiture_privilege_marriage",
+        "celestial_tributary_investiture_privilege_politics"
+      ],
+      "heirSuccession": {
+        "suzerain": true,
+        "tributary": true
+      },
+      "id": "tributary_celestial",
+      "isTributary": true,
+      "name": "Celestial Tributary"
+    },
+    {
+      "adminProvinceContract": null,
+      "contracts": [
+        "hegemonic_tribute_gold",
+        "hegemonic_tribute_prestige"
+      ],
+      "heirSuccession": {
+        "suzerain": true,
+        "tributary": true
+      },
+      "id": "tributary_hegemonic",
+      "isTributary": true,
+      "name": "Hegemonic Tributary"
+    },
+    {
+      "adminProvinceContract": null,
+      "contracts": [
+        "mandala_government_taxes",
+        "mandala_government_piety",
+        "mandala_government_levies",
+        "religious_rights",
+        "fortification_rights",
+        "coinage_rights",
+        "succession_rights",
+        "title_revocation_rights"
+      ],
+      "heirSuccession": null,
+      "id": "mandala_vassal",
+      "isTributary": false,
+      "name": "Mandala"
+    },
+    {
+      "adminProvinceContract": null,
+      "contracts": [
+        "mandala_government_taxes",
+        "mandala_government_piety",
+        "mandala_government_levies",
+        "mandala_suzerain_war_participation_guarantee"
+      ],
+      "heirSuccession": {
+        "suzerain": true,
+        "tributary": true
+      },
+      "id": "tributary_mandala",
+      "isTributary": true,
+      "name": "Mandala Tributary"
+    },
+    {
+      "adminProvinceContract": null,
+      "contracts": [
+        "mandala_government_taxes",
+        "mandala_government_prestige",
+        "mandala_government_piety",
+        "mandala_government_levies",
+        "mandala_suzerain_war_participation_guarantee"
+      ],
+      "heirSuccession": {
+        "suzerain": true,
+        "tributary": true
+      },
+      "id": "tributary_mandala_tribal",
+      "isTributary": true,
+      "name": "Tribal Tributary"
+    },
+    {
+      "adminProvinceContract": "japan_administrative_provinces",
+      "contracts": [
+        "japan_administrative_obligations",
+        "japan_administrative_provinces"
+      ],
+      "heirSuccession": null,
+      "id": "japan_administrative_vassal",
+      "isTributary": false,
+      "name": "Ritsuryō"
+    },
+    {
+      "adminProvinceContract": null,
+      "contracts": [
+        "feudal_government_taxes",
+        "feudal_government_levies",
+        "special_contract",
+        "religious_rights",
+        "fortification_rights",
+        "coinage_rights",
+        "succession_rights",
+        "war_declaration_rights",
+        "council_rights",
+        "title_revocation_rights",
+        "jizya_special_rights"
+      ],
+      "heirSuccession": null,
+      "id": "japan_feudal_vassal",
+      "isTributary": false,
+      "name": "Sōryō"
+    },
+    {
+      "adminProvinceContract": null,
+      "contracts": [
+        "wanua_obligations"
+      ],
+      "heirSuccession": null,
+      "id": "wanua_vassal",
+      "isTributary": false,
+      "name": "Wanua"
+    },
+    {
+      "adminProvinceContract": null,
+      "contracts": [
+        "default_tributary_taxes",
+        "default_tributary_prestige",
+        "barter_goods_obligations"
+      ],
+      "heirSuccession": {
+        "suzerain": true,
+        "tributary": false
+      },
+      "id": "tributary_wanua",
+      "isTributary": true,
+      "name": "Wanua Tributary"
+    },
+    {
+      "adminProvinceContract": "meritocratic_provinces",
+      "contracts": [
+        "meritocratic_obligations",
+        "meritocratic_provinces",
+        "meritocratic_treasury",
+        "meritocratic_salary",
+        "meritocratic_salary_rank"
+      ],
+      "heirSuccession": null,
+      "id": "meritocratic_vassal",
+      "isTributary": false,
+      "name": "Meritocratic"
+    }
+  ]
+}

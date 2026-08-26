@@ -1,0 +1,3597 @@
+[
+  {
+    "cultures": [
+      {
+        "id": "basque",
+        "name": "Basque"
+      },
+      {
+        "id": "castilian",
+        "name": "Castilian"
+      },
+      {
+        "id": "catalan",
+        "name": "Catalan"
+      },
+      {
+        "id": "portuguese",
+        "name": "Portuguese"
+      },
+      {
+        "id": "galician",
+        "name": "Galician"
+      },
+      {
+        "id": "asturleonese",
+        "name": "Asturleonese"
+      },
+      {
+        "id": "aragonese",
+        "name": "Aragonese"
+      },
+      {
+        "id": "andalusian",
+        "name": "Andalusian"
+      },
+      {
+        "id": "bedouin",
+        "name": "Bedouin"
+      },
+      {
+        "id": "levantine",
+        "name": "Mashriqi"
+      },
+      {
+        "id": "maghrebi",
+        "name": "Maghrebi"
+      },
+      {
+        "id": "baranis",
+        "name": "Baranis"
+      },
+      {
+        "id": "sephardi",
+        "name": "Sephardi"
+      }
+    ],
+    "desc": "The Iberian Struggle depicts the centuries of fractious relationships on the Iberian Peninsula. Though born of the Umayyad Conquest of Iberia in the 8th Century, the Struggle shifts between Phases of hate-fueled violence, wary truces, and pragmatic cooperation. There are few permanent allies in such a situation, and Rulers should be wary of relying purely on a shared Faith or Culture.",
+    "dlc": "Fate of Iberia",
+    "faiths": [
+      {
+        "id": "catholic",
+        "name": "Catholicism"
+      },
+      {
+        "id": "mozarabic_church",
+        "name": "Mozarabism"
+      },
+      {
+        "id": "ashari",
+        "name": "Ash'arism"
+      },
+      {
+        "id": "muwalladi",
+        "name": "Muwalladism"
+      },
+      {
+        "id": "rabbinism",
+        "name": "Rabbinism"
+      },
+      {
+        "id": "karaism",
+        "name": "Karaism"
+      },
+      {
+        "id": "basque_pagan",
+        "name": "Era Zaharrak"
+      }
+    ],
+    "id": "iberian_struggle",
+    "involvementPct": 0.8,
+    "name": "Iberian Struggle",
+    "phases": [
+      {
+        "desc": "After a long period of relatively peaceful coexistence during the Conciliation Phase, complacency begins to set in. Peasantry and nobility alike are comfortable that things just work, allowing more shrewd Characters to take advantage of their naivety.\n\nEventually, fresh abuses will either cause an escalation into the Hostility Phase, or else savvy politicking reaches an uneasy equilibrium through the Conciliation Phase.",
+        "durationPoints": null,
+        "effects": [
+          {
+            "buckets": [
+              {
+                "audience": "involved",
+                "items": [
+                  {
+                    "key": "claims_in_region_cost_prestige_not_gold_for_involved_parties",
+                    "text": "Fabricating Claims in the Struggle Region costs …Prestige instead of …Gold"
+                  },
+                  {
+                    "key": "involved_or_interloper_wars_in_struggle_region_cheaper_prestige_costs",
+                    "text": "Wars within the Struggle Region cost less …Prestige"
+                  },
+                  {
+                    "key": "unlocks_border_raid_casus_belli",
+                    "text": "Unlocks the Border Raid Casus Belli"
+                  },
+                  {
+                    "key": "unlocks_contract_assistance_interaction",
+                    "text": "Unlocks the Military Assistance Interaction"
+                  },
+                  {
+                    "key": "unlocks_bargain_fealty_interaction",
+                    "text": "Unlocks the Bargain Fealty Interaction"
+                  }
+                ],
+                "kind": "parameters"
+              },
+              {
+                "audience": "involved",
+                "items": [
+                  {
+                    "key": "mercenary_hire_cost_mult",
+                    "polarity": "good",
+                    "text": "-30% Mercenary Hire Cost"
+                  },
+                  {
+                    "key": "ai_war_chance",
+                    "polarity": "good",
+                    "text": "+5 Ai War Chance"
+                  },
+                  {
+                    "key": "ai_war_cooldown",
+                    "polarity": "bad",
+                    "text": "-0.25 Ai War Cooldown"
+                  }
+                ],
+                "kind": "character"
+              },
+              {
+                "audience": "interloper",
+                "items": [
+                  {
+                    "key": "involved_or_interloper_wars_in_struggle_region_cheaper_prestige_costs",
+                    "text": "Wars within the Struggle Region cost less …Prestige"
+                  }
+                ],
+                "kind": "parameters"
+              }
+            ],
+            "group": "war_effects",
+            "name": "(War)"
+          },
+          {
+            "buckets": [
+              {
+                "audience": "common",
+                "items": [
+                  {
+                    "key": "cheaper_to_convert_to_struggle_faith",
+                    "text": "Converting to an Involved Faith is less expensive"
+                  },
+                  {
+                    "key": "county_faith_conversion_in_region_proceeds_faster",
+                    "text": "Convert Faith in County proceeds faster within the Struggle Region"
+                  },
+                  {
+                    "key": "holy_wars_in_region_cannot_be_declared",
+                    "text": "Holy Wars cannot be declared in the Struggle Region"
+                  }
+                ],
+                "kind": "parameters"
+              },
+              {
+                "audience": "involved",
+                "items": [
+                  {
+                    "key": "interfaith_marriages_available_between_involved_characters",
+                    "text": "Inter-Faith Marriages are available between Involved Characters"
+                  }
+                ],
+                "kind": "parameters"
+              }
+            ],
+            "group": "faith_effects",
+            "name": "(Faith)"
+          },
+          {
+            "buckets": [
+              {
+                "audience": "common",
+                "items": [
+                  {
+                    "key": "cheaper_to_convert_to_struggle_culture",
+                    "text": "Converting to an Involved Culture is less expensive"
+                  }
+                ],
+                "kind": "parameters"
+              },
+              {
+                "audience": "involved",
+                "items": [
+                  {
+                    "key": "learning_languages_gives_prestige",
+                    "text": "Learning a new Language provides …Prestige"
+                  },
+                  {
+                    "key": "granting_title_to_local_noble_gives_prestige",
+                    "text": "Granting a Title to a local noble provides …Prestige"
+                  },
+                  {
+                    "key": "gain_acceptance_when_developing_other_culture_county",
+                    "text": "Increasing the Development of a county with a different Culture increases Cultural Acceptance"
+                  }
+                ],
+                "kind": "parameters"
+              }
+            ],
+            "group": "culture_effects",
+            "name": "(Culture)"
+          },
+          {
+            "buckets": [
+              {
+                "audience": "involved",
+                "items": [
+                  {
+                    "key": "unlocks_buy_claim_for_all",
+                    "text": "Unlocks the Buy Claim Interaction against Involved Rulers"
+                  },
+                  {
+                    "key": "unlocks_demand_payments_for_all",
+                    "text": "Unlocks the Demand Payment Interaction against Involved Rulers"
+                  },
+                  {
+                    "key": "unlocks_abduct_for_all",
+                    "text": "Unlocks the Abduct Scheme against Involved Rulers"
+                  },
+                  {
+                    "key": "unlocks_fabricate_hooks_for_all",
+                    "text": "Unlocks the Fabricate Hook Scheme against Involved Rulers"
+                  },
+                  {
+                    "key": "unlocks_claim_throne_for_all",
+                    "text": "Unlocks the Claim Throne Scheme against Involved Rulers"
+                  },
+                  {
+                    "key": "unlocks_incite_revolts_interaction",
+                    "text": "Unlocks the Foment Revolt Interaction against Involved Rulers"
+                  },
+                  {
+                    "key": "struggle_unlocks_befriend_schemes_for_everyone",
+                    "text": "Unlocks the Befriend Scheme"
+                  },
+                  {
+                    "key": "unlocks_epic_commission_for_independent_rulers",
+                    "text": "Unlocks the Commission Epic Decision for Independent Rulers and adds a chance to grant Claims"
+                  },
+                  {
+                    "key": "unlocks_truce_purchasing_interaction",
+                    "text": "Involved Characters can purchase Truces from each other"
+                  },
+                  {
+                    "key": "unlocks_sell_minor_title_for_kings_and_higher",
+                    "text": "Unlocks the Sell Titles Decision for Kings and Emperors"
+                  }
+                ],
+                "kind": "parameters"
+              },
+              {
+                "audience": "interloper",
+                "items": [
+                  {
+                    "key": "unlocks_secure_iberian_foothold_decision",
+                    "text": "Unlocks the Iberian Foothold Decision"
+                  }
+                ],
+                "kind": "parameters"
+              },
+              {
+                "audience": "interloper",
+                "items": [
+                  {
+                    "key": "county_opinion_add",
+                    "polarity": "bad",
+                    "text": "-5 Popular Opinion"
+                  },
+                  {
+                    "key": "tax_mult",
+                    "polarity": "bad",
+                    "text": "-10% Holding Taxes"
+                  }
+                ],
+                "kind": "character"
+              },
+              {
+                "audience": "uninvolved",
+                "items": [
+                  {
+                    "key": "unlocks_secure_iberian_foothold_decision",
+                    "text": "Unlocks the Iberian Foothold Decision"
+                  }
+                ],
+                "kind": "parameters"
+              },
+              {
+                "audience": "uninvolved",
+                "items": [
+                  {
+                    "key": "county_opinion_add",
+                    "polarity": "bad",
+                    "text": "-10 Popular Opinion"
+                  },
+                  {
+                    "key": "tax_mult",
+                    "polarity": "bad",
+                    "text": "-15% Holding Taxes"
+                  }
+                ],
+                "kind": "county"
+              }
+            ],
+            "group": "other_effects",
+            "name": "(Other)"
+          }
+        ],
+        "ending": false,
+        "endingDecisions": [
+          {
+            "id": "struggle_iberia_ending_hostility_decision",
+            "name": "… Dominance"
+          },
+          {
+            "id": "struggle_iberia_ending_compromise_decision",
+            "name": "Status Quo"
+          },
+          {
+            "id": "struggle_iberia_ending_conciliation_decision",
+            "name": "Détente"
+          }
+        ],
+        "id": "struggle_iberia_phase_opportunity",
+        "name": "Opportunity",
+        "transitions": [
+          {
+            "catalysts": [
+              {
+                "desc": "Yearly Drift: Natural flow towards this Struggle Phase",
+                "id": "catalyst_passing_of_time",
+                "name": "Yearly Drift Catalyst",
+                "points": {
+                  "value": 1
+                }
+              },
+              {
+                "desc": "Acquire a Claim on a Title under the De Jure of Hispania",
+                "id": "catalyst_gain_claim_on_title_fp2",
+                "name": "Acquired Claim Catalyst",
+                "points": {
+                  "value": 3
+                }
+              },
+              {
+                "desc": "Win a War you started against another Involved Ruler",
+                "id": "catalyst_win_any_war_within_the_region",
+                "name": "Won a War Catalyst",
+                "points": {
+                  "value": 3
+                }
+              },
+              {
+                "desc": "Construct a Building in a Castle Holding",
+                "id": "catalyst_new_building_in_castle",
+                "name": "built in a Castle Catalyst",
+                "points": {
+                  "value": 3
+                }
+              },
+              {
+                "desc": "Become Rival or Nemesis with another Involved Ruler",
+                "id": "catalyst_becomes_rival_with_involved",
+                "name": "Escalated rivalry Catalyst",
+                "points": {
+                  "value": 10
+                }
+              },
+              {
+                "desc": "Use a Hook on an Involved Ruler",
+                "id": "catalyst_using_a_hook_on_very_important_character",
+                "name": "Used Hook Catalyst",
+                "points": {
+                  "value": 5
+                }
+              },
+              {
+                "desc": "Kill an Involved Ruler",
+                "id": "catalyst_unnatural_death_important_character",
+                "name": "Murdered Catalyst",
+                "points": {
+                  "value": 5
+                }
+              },
+              {
+                "desc": "Usurp a Title which is part of the De Jure of Hispania",
+                "id": "catalyst_usurp_title_fp2",
+                "name": "Usurped a Title Catalyst",
+                "points": {
+                  "value": 10
+                }
+              },
+              {
+                "desc": "Convert an Involved Ruler or County",
+                "id": "catalyst_forced_conversion",
+                "name": "Converted Catalyst",
+                "points": {
+                  "value": 5
+                }
+              },
+              {
+                "desc": "Reveal the Secret of an Involved Ruler",
+                "id": "catalyst_reveal_secret_important",
+                "name": "Exposed Secret Catalyst",
+                "points": {
+                  "value": 10
+                }
+              },
+              {
+                "desc": "Break a Truce with an Involved Ruler",
+                "id": "catalyst_broke_truce_against_important_character",
+                "name": "Broke Truce Catalyst",
+                "points": {
+                  "value": 25
+                }
+              }
+            ],
+            "default": false,
+            "to": "struggle_iberia_phase_hostility",
+            "toName": "Hostility"
+          },
+          {
+            "catalysts": [
+              {
+                "desc": "Increase the Development of a County of a different Faith or Culture",
+                "id": "catalyst_improve_development_vassal_diff_faith_culture",
+                "name": "Development increased Catalyst",
+                "points": {
+                  "value": 1
+                }
+              },
+              {
+                "desc": "Send a Gift or Artifact to an Involved Ruler",
+                "id": "catalyst_gift_independent_ruler",
+                "name": "Gift sent Catalyst",
+                "points": {
+                  "value": 3
+                }
+              },
+              {
+                "desc": "Become either Friends or Lovers with an Involved Ruler",
+                "id": "catalyst_became_friend_lover_with_character",
+                "name": "Twin Souls Catalyst",
+                "points": {
+                  "value": 3
+                }
+              },
+              {
+                "desc": "Learn the Language of an Involved Ruler",
+                "id": "catalyst_learned_new_language_important",
+                "name": "Learned Language Catalyst",
+                "points": {
+                  "value": 3
+                }
+              },
+              {
+                "desc": "Construct a Building in a City Holding",
+                "id": "catalyst_new_building_in_city",
+                "name": "built in a City Catalyst",
+                "points": {
+                  "value": 3
+                }
+              },
+              {
+                "desc": "Sign a Truce outside of a War with another Involved Ruler",
+                "id": "catalyst_sign_truce_outside_war",
+                "name": "Signed Truce Catalyst",
+                "points": {
+                  "value": 3
+                }
+              },
+              {
+                "desc": "Form an Alliance with Involved Ruler of a different Faith",
+                "id": "catalyst_formed_interreligious_alliance_with_important_character",
+                "name": "Formed Interreligious Alliance Catalyst",
+                "points": {
+                  "value": 3
+                }
+              },
+              {
+                "desc": "Ransom an Involved Ruler",
+                "id": "catalyst_ransom_important",
+                "name": "Ransom Catalyst",
+                "points": {
+                  "value": 5
+                }
+              },
+              {
+                "desc": "Grant better Vassal Contract or Title to a Vassal from a different Faith or Culture",
+                "id": "catalyst_grant_privilege_to_diff_faith_culture_vassal",
+                "name": "Granted privilege Catalyst",
+                "points": {
+                  "value": 5
+                }
+              },
+              {
+                "desc": "Invite an Involved Ruler of a different Faith or Culture to a Feast",
+                "id": "catalyst_invite_diff_faith_culture_to_feast",
+                "name": "Invited to Feast Catalyst",
+                "points": {
+                  "value": 5
+                }
+              },
+              {
+                "desc": "Grant Independence to a non-De Jure Vassal",
+                "id": "catalyst_independence_from_non_dejure_vassal",
+                "name": "Granted Independence Catalyst",
+                "points": {
+                  "value": 10
+                }
+              },
+              {
+                "desc": "Grant one of your Counties to a local noble of an Involved Culture",
+                "id": "catalyst_grant_land_local_noble",
+                "name": "Granted to local noble Catalyst",
+                "points": {
+                  "value": 10
+                }
+              },
+              {
+                "desc": "Become either Best Friends or Soulmates with an Involved Ruler",
+                "id": "catalyst_became_best_friend_soulmate_with_very_important_character",
+                "name": "Twin Souls Catalyst",
+                "points": {
+                  "value": 10
+                }
+              },
+              {
+                "desc": "Convert to the local Involved Culture or Faith",
+                "id": "catalyst_convert_local_culture_faith",
+                "name": "Converted to local beliefs Catalyst",
+                "points": {
+                  "value": 10
+                }
+              },
+              {
+                "desc": "Release an Involved Ruler from Prison without any request",
+                "id": "catalyst_release_important",
+                "name": "Released a Ruler Catalyst",
+                "points": {
+                  "value": 25
+                }
+              }
+            ],
+            "default": false,
+            "to": "struggle_iberia_phase_conciliation",
+            "toName": "Conciliation"
+          }
+        ]
+      },
+      {
+        "desc": "Tensions flare and tempers fray in this Phase. Repeated acts of malice and escalated misunderstandings during the Opportunity Phase have lead to rising hatred of Characters with differing Cultures, Faiths, or worse: both.\n\nSuch bloodshed cannot persist forever, though. Eventually, either cooler heads or simple exhaustion bring the peninsula to the Compromise Phase.",
+        "durationPoints": null,
+        "effects": [
+          {
+            "buckets": [
+              {
+                "audience": "involved",
+                "items": [
+                  {
+                    "key": "struggle_cb_cost_minor",
+                    "text": "Struggle Clash Casus Belli's are cheaper"
+                  },
+                  {
+                    "key": "truces_by_involved_or_interlopers_within_region_shorter",
+                    "text": "Involved and Interloper Characters have shorter Truces for Wars within the Struggle Region"
+                  },
+                  {
+                    "key": "involved_or_interloper_wars_in_struggle_region_cheaper_piety_costs",
+                    "text": "Involved and Interloper Characters pay less …Piety to start Wars within the Struggle Region"
+                  },
+                  {
+                    "key": "involved_or_interloper_wars_in_struggle_region_cheaper_costs",
+                    "text": "Involved and Interloper Characters pay less for Wars against Characters of a different Faith"
+                  },
+                  {
+                    "key": "unlocks_border_raid_casus_belli",
+                    "text": "Unlocks the Border Raid Casus Belli"
+                  },
+                  {
+                    "key": "unlocks_forced_vassalization_casus_belli",
+                    "text": "Unlocks the Forced Vassalization Casus Belli"
+                  }
+                ],
+                "kind": "parameters"
+              },
+              {
+                "audience": "involved",
+                "items": [
+                  {
+                    "key": "same_culture_mercenary_hire_cost_mult",
+                    "polarity": "good",
+                    "text": "-30% Same Culture Mercenary Hire Cost"
+                  },
+                  {
+                    "key": "ai_war_chance",
+                    "polarity": "good",
+                    "text": "+10 Ai War Chance"
+                  },
+                  {
+                    "key": "ai_war_cooldown",
+                    "polarity": "bad",
+                    "text": "-0.5 Ai War Cooldown"
+                  },
+                  {
+                    "key": "army_pursuit_mult",
+                    "polarity": "good",
+                    "text": "+20% Army Pursuit"
+                  },
+                  {
+                    "key": "army_siege_value_mult",
+                    "polarity": "good",
+                    "text": "+20% Army Siege Weapon Effectiveness"
+                  },
+                  {
+                    "key": "enemy_hard_casualty_modifier",
+                    "polarity": "good",
+                    "text": "+50% Enemy Fatal Casualties"
+                  },
+                  {
+                    "key": "advantage",
+                    "polarity": "good",
+                    "text": "+5 Advantage"
+                  }
+                ],
+                "kind": "character"
+              },
+              {
+                "audience": "interloper",
+                "items": [
+                  {
+                    "key": "truces_by_involved_or_interlopers_within_region_shorter",
+                    "text": "Involved and Interloper Characters have shorter Truces for Wars within the Struggle Region"
+                  },
+                  {
+                    "key": "involved_or_interloper_wars_in_struggle_region_cheaper_piety_costs",
+                    "text": "Involved and Interloper Characters pay less …Piety to start Wars within the Struggle Region"
+                  },
+                  {
+                    "key": "involved_or_interloper_wars_in_struggle_region_cheaper_costs",
+                    "text": "Involved and Interloper Characters pay less for Wars against Characters of a different Faith"
+                  }
+                ],
+                "kind": "parameters"
+              },
+              {
+                "audience": "interloper",
+                "items": [
+                  {
+                    "key": "enemy_hard_casualty_modifier",
+                    "polarity": "good",
+                    "text": "+50% Enemy Fatal Casualties"
+                  }
+                ],
+                "kind": "character"
+              },
+              {
+                "audience": "uninvolved",
+                "items": [
+                  {
+                    "key": "claims_in_region_more_expensive_to_press_for_uninvolved",
+                    "text": "Fabricating Claims on Titles within the Struggle Region is more expensive for Uninvolved Characters"
+                  }
+                ],
+                "kind": "parameters"
+              }
+            ],
+            "group": "war_effects",
+            "name": "(War)"
+          },
+          {
+            "buckets": [
+              {
+                "audience": "common",
+                "items": [
+                  {
+                    "key": "county_faith_conversion_in_region_proceeds_slower",
+                    "text": "Convert Faith in County proceeds slower within the Struggle Region"
+                  },
+                  {
+                    "key": "holy_wars_in_region_cannot_be_declared",
+                    "text": "Holy Wars cannot be declared in the Struggle Region"
+                  }
+                ],
+                "kind": "parameters"
+              },
+              {
+                "audience": "involved",
+                "items": [
+                  {
+                    "key": "holy_order_can_be_created_by_dukes",
+                    "text": "Enables Holy Order creation for Dukes"
+                  },
+                  {
+                    "key": "interfaith_marriages_available_between_involved_characters",
+                    "text": "Inter-Faith Marriages are available between Involved Characters"
+                  },
+                  {
+                    "key": "interfaith_marriages_between_involved_characters_costs_piety",
+                    "text": "Marrying someone from a different Faith costs …Piety"
+                  }
+                ],
+                "kind": "parameters"
+              },
+              {
+                "audience": "involved",
+                "items": [
+                  {
+                    "key": "levy_reinforcement_rate_same_faith",
+                    "polarity": "good",
+                    "text": "+50% Levy Reinforcement Rate (Same Faith)"
+                  },
+                  {
+                    "key": "domain_tax_different_faith_mult",
+                    "polarity": "good",
+                    "text": "+25% Domain Taxes (Different Faith)"
+                  },
+                  {
+                    "key": "holy_order_hire_cost_mult",
+                    "polarity": "good",
+                    "text": "-25% Holy Order Hire Cost"
+                  },
+                  {
+                    "key": "opinion_of_different_faith",
+                    "polarity": "bad",
+                    "text": "-10 Opinion of Different Faiths"
+                  }
+                ],
+                "kind": "character"
+              },
+              {
+                "audience": "interloper",
+                "items": [
+                  {
+                    "key": "holy_order_hire_cost_mult",
+                    "polarity": "good",
+                    "text": "-25% Holy Order Hire Cost"
+                  }
+                ],
+                "kind": "character"
+              }
+            ],
+            "group": "faith_effects",
+            "name": "(Faith)"
+          },
+          {
+            "buckets": [
+              {
+                "audience": "common",
+                "items": [
+                  {
+                    "key": "county_culture_conversion_in_region_proceeds_slower",
+                    "text": "Promote Culture proceeds slower within the Struggle Region"
+                  }
+                ],
+                "kind": "parameters"
+              },
+              {
+                "audience": "involved",
+                "items": [
+                  {
+                    "key": "opinion_of_different_culture",
+                    "polarity": "bad",
+                    "text": "-10 Opinion of Different Cultures"
+                  },
+                  {
+                    "key": "cultural_head_fascination_mult",
+                    "polarity": "bad",
+                    "text": "-50% Cultural Head Fascination Mult"
+                  },
+                  {
+                    "key": "cultural_head_acceptance_gain_mult",
+                    "polarity": "bad",
+                    "text": "-50% Cultural Acceptance Gain"
+                  }
+                ],
+                "kind": "character"
+              },
+              {
+                "audience": "interloper",
+                "items": [
+                  {
+                    "key": "cultural_head_fascination_mult",
+                    "polarity": "bad",
+                    "text": "-25% Cultural Head Fascination Mult"
+                  },
+                  {
+                    "key": "cultural_head_acceptance_gain_mult",
+                    "polarity": "bad",
+                    "text": "-25% Cultural Acceptance Gain"
+                  }
+                ],
+                "kind": "character"
+              }
+            ],
+            "group": "culture_effects",
+            "name": "(Culture)"
+          },
+          {
+            "buckets": [
+              {
+                "audience": "common",
+                "items": [
+                  {
+                    "key": "struggle_high_impact_on_terrain_danger",
+                    "text": "Danger when Traveling within the Struggle Region is increased markedly"
+                  }
+                ],
+                "kind": "parameters"
+              },
+              {
+                "audience": "involved",
+                "items": [
+                  {
+                    "key": "powerful_vassal_can_claim_liege_titles",
+                    "text": "Unlocks the Claim Liege Title Interaction for Powerful Vassals"
+                  },
+                  {
+                    "key": "unlocks_claim_throne_for_powerful_vassals",
+                    "text": "Unlocks the Claim Throne Scheme for Powerful Vassals against Involved Rulers"
+                  },
+                  {
+                    "key": "unlocks_truce_purchasing_interaction",
+                    "text": "Involved Characters can purchase Truces from each other"
+                  },
+                  {
+                    "key": "unlocks_expedite_scheme_decision",
+                    "text": "Unlocks the Study the Art of Scheming Decision"
+                  }
+                ],
+                "kind": "parameters"
+              },
+              {
+                "audience": "involved",
+                "items": [
+                  {
+                    "key": "max_hostile_schemes_add",
+                    "polarity": "good",
+                    "text": "+1 Max Hostile Schemes"
+                  }
+                ],
+                "kind": "character"
+              },
+              {
+                "audience": "involved",
+                "items": [
+                  {
+                    "key": "development_growth_factor",
+                    "polarity": "bad",
+                    "text": "-30% Development Growth"
+                  }
+                ],
+                "kind": "county"
+              },
+              {
+                "audience": "interloper",
+                "items": [
+                  {
+                    "key": "unlocks_secure_iberian_foothold_decision",
+                    "text": "Unlocks the Iberian Foothold Decision"
+                  }
+                ],
+                "kind": "parameters"
+              },
+              {
+                "audience": "interloper",
+                "items": [
+                  {
+                    "key": "county_opinion_add",
+                    "polarity": "bad",
+                    "text": "-15 Popular Opinion"
+                  },
+                  {
+                    "key": "tax_mult",
+                    "polarity": "bad",
+                    "text": "-30% Holding Taxes"
+                  },
+                  {
+                    "key": "development_growth_factor",
+                    "polarity": "bad",
+                    "text": "-40% Development Growth"
+                  }
+                ],
+                "kind": "county"
+              },
+              {
+                "audience": "uninvolved",
+                "items": [
+                  {
+                    "key": "unlocks_secure_iberian_foothold_decision",
+                    "text": "Unlocks the Iberian Foothold Decision"
+                  }
+                ],
+                "kind": "parameters"
+              },
+              {
+                "audience": "uninvolved",
+                "items": [
+                  {
+                    "key": "county_opinion_add",
+                    "polarity": "bad",
+                    "text": "-50 Popular Opinion"
+                  },
+                  {
+                    "key": "tax_mult",
+                    "polarity": "bad",
+                    "text": "-75% Holding Taxes"
+                  },
+                  {
+                    "key": "development_growth_factor",
+                    "polarity": "bad",
+                    "text": "-50% Development Growth"
+                  }
+                ],
+                "kind": "county"
+              }
+            ],
+            "group": "other_effects",
+            "name": "(Other)"
+          }
+        ],
+        "ending": false,
+        "endingDecisions": [
+          {
+            "id": "struggle_iberia_ending_hostility_decision",
+            "name": "… Dominance"
+          },
+          {
+            "id": "struggle_iberia_ending_compromise_decision",
+            "name": "Status Quo"
+          },
+          {
+            "id": "struggle_iberia_ending_conciliation_decision",
+            "name": "Détente"
+          }
+        ],
+        "id": "struggle_iberia_phase_hostility",
+        "name": "Hostility",
+        "transitions": [
+          {
+            "catalysts": [
+              {
+                "desc": "Yearly Drift: Natural flow towards this Struggle Phase",
+                "id": "catalyst_passing_of_time",
+                "name": "Yearly Drift Catalyst",
+                "points": {
+                  "value": 1
+                }
+              },
+              {
+                "desc": "Increase the Development of a County of a different Faith or Culture",
+                "id": "catalyst_improve_development_vassal_diff_faith_culture",
+                "name": "Development increased Catalyst",
+                "points": {
+                  "value": 1
+                }
+              },
+              {
+                "desc": "Send a Gift or Artifact to an Involved Ruler",
+                "id": "catalyst_gift_independent_ruler",
+                "name": "Gift sent Catalyst",
+                "points": {
+                  "value": 3
+                }
+              },
+              {
+                "desc": "Become either Friends or Lovers with an Involved Ruler",
+                "id": "catalyst_became_friend_lover_with_character",
+                "name": "Twin Souls Catalyst",
+                "points": {
+                  "value": 3
+                }
+              },
+              {
+                "desc": "Learn the Language of an Involved Ruler",
+                "id": "catalyst_learned_new_language_important",
+                "name": "Learned Language Catalyst",
+                "points": {
+                  "value": 3
+                }
+              },
+              {
+                "desc": "Construct a Building in a City Holding",
+                "id": "catalyst_new_building_in_city",
+                "name": "built in a City Catalyst",
+                "points": {
+                  "value": 3
+                }
+              },
+              {
+                "desc": "Sign a Truce outside of a War with another Involved Ruler",
+                "id": "catalyst_sign_truce_outside_war",
+                "name": "Signed Truce Catalyst",
+                "points": {
+                  "value": 3
+                }
+              },
+              {
+                "desc": "Form an Alliance with Involved Ruler of a different Faith",
+                "id": "catalyst_formed_interreligious_alliance_with_important_character",
+                "name": "Formed Interreligious Alliance Catalyst",
+                "points": {
+                  "value": 3
+                }
+              },
+              {
+                "desc": "Ransom an Involved Ruler",
+                "id": "catalyst_ransom_important",
+                "name": "Ransom Catalyst",
+                "points": {
+                  "value": 5
+                }
+              },
+              {
+                "desc": "Grant better Vassal Contract or Title to a Vassal from a different Faith or Culture",
+                "id": "catalyst_grant_privilege_to_diff_faith_culture_vassal",
+                "name": "Granted privilege Catalyst",
+                "points": {
+                  "value": 5
+                }
+              },
+              {
+                "desc": "Invite an Involved Ruler of a different Faith or Culture to a Feast",
+                "id": "catalyst_invite_diff_faith_culture_to_feast",
+                "name": "Invited to Feast Catalyst",
+                "points": {
+                  "value": 5
+                }
+              },
+              {
+                "desc": "Grant Independence to a non-De Jure Vassal",
+                "id": "catalyst_independence_from_non_dejure_vassal",
+                "name": "Granted Independence Catalyst",
+                "points": {
+                  "value": 10
+                }
+              },
+              {
+                "desc": "Grant one of your Counties to a local noble of an Involved Culture",
+                "id": "catalyst_grant_land_local_noble",
+                "name": "Granted to local noble Catalyst",
+                "points": {
+                  "value": 10
+                }
+              },
+              {
+                "desc": "Become either Best Friends or Soulmates with an Involved Ruler",
+                "id": "catalyst_became_best_friend_soulmate_with_very_important_character",
+                "name": "Twin Souls Catalyst",
+                "points": {
+                  "value": 10
+                }
+              },
+              {
+                "desc": "Convert to the local Involved Culture or Faith",
+                "id": "catalyst_convert_local_culture_faith",
+                "name": "Converted to local beliefs Catalyst",
+                "points": {
+                  "value": 10
+                }
+              },
+              {
+                "desc": "Release an Involved Ruler from Prison without any request",
+                "id": "catalyst_release_important",
+                "name": "Released a Ruler Catalyst",
+                "points": {
+                  "value": 25
+                }
+              }
+            ],
+            "default": false,
+            "to": "struggle_iberia_phase_compromise",
+            "toName": "Compromise"
+          }
+        ]
+      },
+      {
+        "desc": "Whether through sickness with the strife of the Hostility Phase or deft escalation during the Conciliation Phase, the Compromise Phase represents a growing accommodation between the peoples of Iberia. Differences fall by the wayside and shared history and heritage binds former foes together.\n\nThe peninsula stands at a cross-roads: if conflicts reappear, then the Opportunity Phase awaits.",
+        "durationPoints": null,
+        "effects": [
+          {
+            "buckets": [
+              {
+                "audience": "common",
+                "items": [
+                  {
+                    "key": "struggle_clash_restricted_to_single_county",
+                    "text": "The Struggle Clash Casus Belli only targets one County"
+                  }
+                ],
+                "kind": "parameters"
+              },
+              {
+                "audience": "involved",
+                "items": [
+                  {
+                    "key": "white_peace_acceptance_between_involved_or_interloper_with_region_easier",
+                    "text": "Involved and Interloper Characters more easily accept White Peace in Wars within the Struggle Region"
+                  },
+                  {
+                    "key": "truces_by_involved_or_interlopers_within_region_longer",
+                    "text": "Involved and Interloper Characters have longer Truces for Wars within the Struggle Region"
+                  },
+                  {
+                    "key": "struggle_cheaper_buy_truce",
+                    "text": "The Purchase Truce Interaction costs less …Gold"
+                  },
+                  {
+                    "key": "unlocks_enforce_truces_interaction",
+                    "text": "Involved Rulers of at least Duke Tier may enforce Truces below them"
+                  },
+                  {
+                    "key": "unlocks_iberian_reclamation_casus_belli",
+                    "text": "Unlocks the Iberian Reclamation Casus Belli"
+                  },
+                  {
+                    "key": "struggle_cb_cost_major",
+                    "text": "Struggle Clash Casus Belli's are expensive"
+                  },
+                  {
+                    "key": "involved_or_interloper_diff_faith_wars_in_struggle_region_more_expensive_prestige_costs",
+                    "text": "Involved and Interloper Characters pay more Prestige for Wars against Characters of a different Faith"
+                  },
+                  {
+                    "key": "apply_truce_when_sending_ward",
+                    "text": "Sending a Ward will establish a Truce with the Guardian"
+                  },
+                  {
+                    "key": "invasion_conquest_war_cannot_be_declared",
+                    "text": "Invasion and Conquest Casus Bellis are unavailable"
+                  }
+                ],
+                "kind": "parameters"
+              },
+              {
+                "audience": "involved",
+                "items": [
+                  {
+                    "key": "ai_war_chance",
+                    "polarity": "bad",
+                    "text": "-0.25 Ai War Chance"
+                  },
+                  {
+                    "key": "ai_war_cooldown",
+                    "polarity": "good",
+                    "text": "+0.25 Ai War Cooldown"
+                  },
+                  {
+                    "key": "levy_reinforcement_rate_friendly_territory",
+                    "polarity": "good",
+                    "text": "+50% Friendly Territory Levy Reinforcement Rate"
+                  },
+                  {
+                    "key": "levy_reinforcement_rate_same_faith",
+                    "polarity": "good",
+                    "text": "+50% Levy Reinforcement Rate (Same Faith)"
+                  },
+                  {
+                    "key": "garrison_size",
+                    "polarity": "good",
+                    "text": "+25% Garrison Size"
+                  },
+                  {
+                    "key": "defender_advantage",
+                    "polarity": "good",
+                    "text": "+5 Defender Advantage"
+                  }
+                ],
+                "kind": "character"
+              },
+              {
+                "audience": "interloper",
+                "items": [
+                  {
+                    "key": "white_peace_acceptance_between_involved_or_interloper_with_region_easier",
+                    "text": "Involved and Interloper Characters more easily accept White Peace in Wars within the Struggle Region"
+                  },
+                  {
+                    "key": "truces_by_involved_or_interlopers_within_region_longer",
+                    "text": "Involved and Interloper Characters have longer Truces for Wars within the Struggle Region"
+                  },
+                  {
+                    "key": "involved_or_interloper_diff_faith_wars_in_struggle_region_more_expensive_prestige_costs",
+                    "text": "Involved and Interloper Characters pay more Prestige for Wars against Characters of a different Faith"
+                  }
+                ],
+                "kind": "parameters"
+              },
+              {
+                "audience": "interloper",
+                "items": [
+                  {
+                    "key": "monthly_county_control_decline_at_war_add",
+                    "polarity": "good",
+                    "text": "+0.01 Monthly County Control Decline At War Add /month"
+                  },
+                  {
+                    "key": "monthly_county_control_growth_at_war_factor",
+                    "polarity": "bad",
+                    "text": "-25% Monthly County Control Growth At War Factor"
+                  },
+                  {
+                    "key": "defender_holding_advantage",
+                    "polarity": "bad",
+                    "text": "-5 Defender Holding Advantage"
+                  }
+                ],
+                "kind": "county"
+              },
+              {
+                "audience": "uninvolved",
+                "items": [
+                  {
+                    "key": "monthly_county_control_decline_at_war_add",
+                    "polarity": "good",
+                    "text": "+0.02 Monthly County Control Decline At War Add /month"
+                  },
+                  {
+                    "key": "monthly_county_control_growth_at_war_factor",
+                    "polarity": "bad",
+                    "text": "-50% Monthly County Control Growth At War Factor"
+                  },
+                  {
+                    "key": "defender_holding_advantage",
+                    "polarity": "bad",
+                    "text": "-10 Defender Holding Advantage"
+                  }
+                ],
+                "kind": "county"
+              }
+            ],
+            "group": "war_effects",
+            "name": "(War)"
+          },
+          {
+            "buckets": [
+              {
+                "audience": "common",
+                "items": [
+                  {
+                    "key": "holy_wars_in_region_cannot_be_declared",
+                    "text": "Holy Wars cannot be declared in the Struggle Region"
+                  },
+                  {
+                    "key": "county_faith_conversion_in_region_proceeds_slower",
+                    "text": "Convert Faith in County proceeds slower within the Struggle Region"
+                  }
+                ],
+                "kind": "parameters"
+              },
+              {
+                "audience": "involved",
+                "items": [
+                  {
+                    "key": "interfaith_marriages_available_between_involved_characters",
+                    "text": "Inter-Faith Marriages are available between Involved Characters"
+                  },
+                  {
+                    "key": "piety_from_new_alliance",
+                    "text": "Forming an Alliance with another Involved ruler provides …Piety"
+                  },
+                  {
+                    "key": "completing_building_in_temple_gives_piety",
+                    "text": "Completing buildings in Temple Holdings provides …Piety"
+                  },
+                  {
+                    "key": "release_prisoner_diff_faith_gives_prestige",
+                    "text": "Releasing Prisoners of a different Faith provides …Prestige"
+                  },
+                  {
+                    "key": "same_faith_friend_piety_gain",
+                    "text": "Becoming Friends with another Involved Character of the same Faith provides …Piety"
+                  }
+                ],
+                "kind": "parameters"
+              },
+              {
+                "audience": "involved",
+                "items": [
+                  {
+                    "key": "opinion_of_different_faith",
+                    "polarity": "good",
+                    "text": "+10 Opinion of Different Faiths"
+                  }
+                ],
+                "kind": "character"
+              },
+              {
+                "audience": "interloper",
+                "items": [
+                  {
+                    "key": "opinion_of_different_faith",
+                    "polarity": "good",
+                    "text": "+10 Opinion of Different Faiths"
+                  }
+                ],
+                "kind": "character"
+              }
+            ],
+            "group": "faith_effects",
+            "name": "(Faith)"
+          },
+          {
+            "buckets": [
+              {
+                "audience": "common",
+                "items": [
+                  {
+                    "key": "county_culture_conversion_in_region_proceeds_faster",
+                    "text": "Promote Culture proceeds faster within the Struggle Region"
+                  }
+                ],
+                "kind": "parameters"
+              },
+              {
+                "audience": "involved",
+                "items": [
+                  {
+                    "key": "release_prisoner_diff_culture_gives_prestige",
+                    "text": "Releasing Prisoners of a different Culture provides …Prestige"
+                  }
+                ],
+                "kind": "parameters"
+              },
+              {
+                "audience": "involved",
+                "items": [
+                  {
+                    "key": "cultural_head_acceptance_gain_mult",
+                    "polarity": "good",
+                    "text": "+50% Cultural Acceptance Gain"
+                  },
+                  {
+                    "key": "opinion_of_different_culture",
+                    "polarity": "good",
+                    "text": "+10 Opinion of Different Cultures"
+                  },
+                  {
+                    "key": "max_learn_language_schemes_add",
+                    "polarity": "good",
+                    "text": "+1 Max Learn Language Schemes"
+                  }
+                ],
+                "kind": "character"
+              },
+              {
+                "audience": "interloper",
+                "items": [
+                  {
+                    "key": "opinion_of_different_culture",
+                    "polarity": "good",
+                    "text": "+5 Opinion of Different Cultures"
+                  },
+                  {
+                    "key": "max_learn_language_schemes_add",
+                    "polarity": "good",
+                    "text": "+1 Max Learn Language Schemes"
+                  }
+                ],
+                "kind": "character"
+              }
+            ],
+            "group": "culture_effects",
+            "name": "(Culture)"
+          },
+          {
+            "buckets": [
+              {
+                "audience": "involved",
+                "items": [
+                  {
+                    "key": "completing_building_in_castle_gives_development",
+                    "text": "Completing buildings in Castle Holdings provides Development Growth"
+                  },
+                  {
+                    "key": "granting_independence_to_non_dejure_gives_renown",
+                    "text": "Granting independence to a non-De Jure provides Renown"
+                  },
+                  {
+                    "key": "struggle_grant_titles_diff_faith_culture_gives_prestige",
+                    "text": "Granting titles to a Vassal of a different Faith or Culture provides Renown"
+                  }
+                ],
+                "kind": "parameters"
+              },
+              {
+                "audience": "involved",
+                "items": [
+                  {
+                    "key": "castle_holding_build_gold_cost",
+                    "polarity": "good",
+                    "text": "-25% Castle Buildings Construction Cost"
+                  },
+                  {
+                    "key": "castle_holding_holding_build_gold_cost",
+                    "polarity": "good",
+                    "text": "-25% Castle Holding Construction Cost"
+                  }
+                ],
+                "kind": "county"
+              },
+              {
+                "audience": "interloper",
+                "items": [
+                  {
+                    "key": "county_opinion_add",
+                    "polarity": "bad",
+                    "text": "-10 Popular Opinion"
+                  },
+                  {
+                    "key": "tax_mult",
+                    "polarity": "bad",
+                    "text": "-25% Holding Taxes"
+                  }
+                ],
+                "kind": "character"
+              },
+              {
+                "audience": "uninvolved",
+                "items": [
+                  {
+                    "key": "county_opinion_add",
+                    "polarity": "bad",
+                    "text": "-25 Popular Opinion"
+                  },
+                  {
+                    "key": "tax_mult",
+                    "polarity": "bad",
+                    "text": "-50% Holding Taxes"
+                  }
+                ],
+                "kind": "county"
+              }
+            ],
+            "group": "other_effects",
+            "name": "(Other)"
+          }
+        ],
+        "ending": false,
+        "endingDecisions": [
+          {
+            "id": "struggle_iberia_ending_hostility_decision",
+            "name": "… Dominance"
+          },
+          {
+            "id": "struggle_iberia_ending_compromise_decision",
+            "name": "Status Quo"
+          },
+          {
+            "id": "struggle_iberia_ending_conciliation_decision",
+            "name": "Détente"
+          }
+        ],
+        "id": "struggle_iberia_phase_compromise",
+        "name": "Compromise",
+        "transitions": [
+          {
+            "catalysts": [
+              {
+                "desc": "Yearly Drift: Natural flow towards this Struggle Phase",
+                "id": "catalyst_passing_of_time",
+                "name": "Yearly Drift Catalyst",
+                "points": {
+                  "value": 1
+                }
+              },
+              {
+                "desc": "Acquire a Claim on a Title under the De Jure of Hispania",
+                "id": "catalyst_gain_claim_on_title_fp2",
+                "name": "Acquired Claim Catalyst",
+                "points": {
+                  "value": 3
+                }
+              },
+              {
+                "desc": "Win a War you started against another Involved Ruler",
+                "id": "catalyst_win_any_war_within_the_region",
+                "name": "Won a War Catalyst",
+                "points": {
+                  "value": 3
+                }
+              },
+              {
+                "desc": "Construct a Building in a Castle Holding",
+                "id": "catalyst_new_building_in_castle",
+                "name": "built in a Castle Catalyst",
+                "points": {
+                  "value": 3
+                }
+              },
+              {
+                "desc": "Become Rival or Nemesis with another Involved Ruler",
+                "id": "catalyst_becomes_rival_with_involved",
+                "name": "Escalated rivalry Catalyst",
+                "points": {
+                  "value": 10
+                }
+              },
+              {
+                "desc": "Use a Hook on an Involved Ruler",
+                "id": "catalyst_using_a_hook_on_very_important_character",
+                "name": "Used Hook Catalyst",
+                "points": {
+                  "value": 5
+                }
+              },
+              {
+                "desc": "Kill an Involved Ruler",
+                "id": "catalyst_unnatural_death_important_character",
+                "name": "Murdered Catalyst",
+                "points": {
+                  "value": 5
+                }
+              },
+              {
+                "desc": "Usurp a Title which is part of the De Jure of Hispania",
+                "id": "catalyst_usurp_title_fp2",
+                "name": "Usurped a Title Catalyst",
+                "points": {
+                  "value": 10
+                }
+              },
+              {
+                "desc": "Convert an Involved Ruler or County",
+                "id": "catalyst_forced_conversion",
+                "name": "Converted Catalyst",
+                "points": {
+                  "value": 5
+                }
+              },
+              {
+                "desc": "Reveal the Secret of an Involved Ruler",
+                "id": "catalyst_reveal_secret_important",
+                "name": "Exposed Secret Catalyst",
+                "points": {
+                  "value": 10
+                }
+              },
+              {
+                "desc": "Break a Truce with an Involved Ruler",
+                "id": "catalyst_broke_truce_against_important_character",
+                "name": "Broke Truce Catalyst",
+                "points": {
+                  "value": 25
+                }
+              }
+            ],
+            "default": false,
+            "to": "struggle_iberia_phase_opportunity",
+            "toName": "Opportunity"
+          }
+        ]
+      },
+      {
+        "desc": "The product of a notable Compromise Phase, during this Phase, relations between the peoples of Iberia grow so cordial that outsiders find their permissiveness difficult to parse. Inter-Faith Marriages are particularly common.\n\nThis can't last forever, though, and abuses of trust will eventually bring the Iberian Struggle back around to the Compromise Phase.",
+        "durationPoints": null,
+        "effects": [
+          {
+            "buckets": [
+              {
+                "audience": "common",
+                "items": [
+                  {
+                    "key": "invasion_conquest_war_cannot_be_declared",
+                    "text": "Invasion and Conquest Casus Bellis are unavailable"
+                  },
+                  {
+                    "key": "struggle_clash_restricted_to_single_county",
+                    "text": "The Struggle Clash Casus Belli only targets one County"
+                  }
+                ],
+                "kind": "parameters"
+              },
+              {
+                "audience": "involved",
+                "items": [
+                  {
+                    "key": "struggle_cb_cost_major",
+                    "text": "Struggle Clash Casus Belli's are expensive"
+                  },
+                  {
+                    "key": "unlocks_iberian_reclamation_casus_belli",
+                    "text": "Unlocks the Iberian Reclamation Casus Belli"
+                  },
+                  {
+                    "key": "struggle_cheaper_buy_truce",
+                    "text": "The Purchase Truce Interaction costs less …Gold"
+                  },
+                  {
+                    "key": "truces_by_involved_or_interlopers_within_region_longer",
+                    "text": "Involved and Interloper Characters have longer Truces for Wars within the Struggle Region"
+                  }
+                ],
+                "kind": "parameters"
+              },
+              {
+                "audience": "involved",
+                "items": [
+                  {
+                    "key": "ai_war_chance",
+                    "polarity": "bad",
+                    "text": "-0.5 Ai War Chance"
+                  },
+                  {
+                    "key": "ai_war_cooldown",
+                    "polarity": "good",
+                    "text": "+0.5 Ai War Cooldown"
+                  }
+                ],
+                "kind": "character"
+              },
+              {
+                "audience": "involved",
+                "items": [
+                  {
+                    "key": "monthly_county_control_decline_at_war_add",
+                    "polarity": "good",
+                    "text": "+0.01 Monthly County Control Decline At War Add /month"
+                  },
+                  {
+                    "key": "monthly_county_control_growth_at_war_factor",
+                    "polarity": "bad",
+                    "text": "-10% Monthly County Control Growth At War Factor"
+                  }
+                ],
+                "kind": "county"
+              },
+              {
+                "audience": "interloper",
+                "items": [
+                  {
+                    "key": "truces_by_involved_or_interlopers_within_region_longer",
+                    "text": "Involved and Interloper Characters have longer Truces for Wars within the Struggle Region"
+                  }
+                ],
+                "kind": "parameters"
+              },
+              {
+                "audience": "interloper",
+                "items": [
+                  {
+                    "key": "monthly_county_control_decline_at_war_add",
+                    "polarity": "good",
+                    "text": "+0.02 Monthly County Control Decline At War Add /month"
+                  },
+                  {
+                    "key": "monthly_county_control_growth_at_war_factor",
+                    "polarity": "bad",
+                    "text": "-25% Monthly County Control Growth At War Factor"
+                  }
+                ],
+                "kind": "county"
+              },
+              {
+                "audience": "uninvolved",
+                "items": [
+                  {
+                    "key": "monthly_county_control_decline_at_war_add",
+                    "polarity": "good",
+                    "text": "+0.05 Monthly County Control Decline At War Add /month"
+                  },
+                  {
+                    "key": "monthly_county_control_growth_at_war_factor",
+                    "polarity": "bad",
+                    "text": "-50% Monthly County Control Growth At War Factor"
+                  }
+                ],
+                "kind": "county"
+              }
+            ],
+            "group": "war_effects",
+            "name": "(War)"
+          },
+          {
+            "buckets": [
+              {
+                "audience": "involved",
+                "items": [
+                  {
+                    "key": "opinion_of_different_faith",
+                    "polarity": "good",
+                    "text": "+20 Opinion of Different Faiths"
+                  },
+                  {
+                    "key": "different_faith_county_opinion_mult",
+                    "polarity": "good",
+                    "text": "-50% Different Faith County Opinion Mult"
+                  },
+                  {
+                    "key": "opinion_of_different_faith_liege",
+                    "polarity": "good",
+                    "text": "+10 Opinion of Different Faith Liege"
+                  }
+                ],
+                "kind": "character"
+              },
+              {
+                "audience": "involved",
+                "items": [
+                  {
+                    "key": "unlocks_golden_age_jewish_science_decision",
+                    "text": "Unlocks the Sponsor Jewish Sciences Decision"
+                  },
+                  {
+                    "key": "unlocks_build_pilgrim_roads_decision",
+                    "text": "Unlocks the Build Pilgrim Roads Decision"
+                  },
+                  {
+                    "key": "truces_by_involved_or_interlopers_within_region_longer",
+                    "text": "Involved and Interloper Characters have longer Truces for Wars within the Struggle Region"
+                  },
+                  {
+                    "key": "county_conversion_disabled_for_involved_faiths_within_region",
+                    "text": "Convert Faith in County is disabled for Characters with Involved Faiths within the Struggle Region"
+                  },
+                  {
+                    "key": "interfaith_marriages_available_between_involved_characters",
+                    "text": "Inter-Faith Marriages are available between Involved Characters"
+                  },
+                  {
+                    "key": "interfaith_marriages_between_involved_characters_gives_piety",
+                    "text": "Marrying someone from a different Faith gives …Piety"
+                  },
+                  {
+                    "key": "release_prisoner_diff_faith_gives_prestige",
+                    "text": "Releasing Prisoners of a different Faith provides …Prestige"
+                  },
+                  {
+                    "key": "learning_languages_gives_piety",
+                    "text": "Learning a new Language provides …Piety"
+                  },
+                  {
+                    "key": "holy_wars_in_region_cannot_be_declared",
+                    "text": "Holy Wars cannot be declared in the Struggle Region"
+                  }
+                ],
+                "kind": "parameters"
+              }
+            ],
+            "group": "faith_effects",
+            "name": "(Faith)"
+          },
+          {
+            "buckets": [
+              {
+                "audience": "involved",
+                "items": [
+                  {
+                    "key": "easier_culture_hybridising_for_involved_and_interlopers",
+                    "text": "Hybridizing Cultures is easier for Involved and Interloper Characters"
+                  },
+                  {
+                    "key": "release_prisoner_diff_culture_gives_prestige",
+                    "text": "Releasing Prisoners of a different Culture provides …Prestige"
+                  }
+                ],
+                "kind": "parameters"
+              },
+              {
+                "audience": "involved",
+                "items": [
+                  {
+                    "key": "cultural_head_acceptance_gain_mult",
+                    "polarity": "good",
+                    "text": "+20% Cultural Acceptance Gain"
+                  },
+                  {
+                    "key": "opinion_of_different_culture",
+                    "polarity": "good",
+                    "text": "+20 Opinion of Different Cultures"
+                  },
+                  {
+                    "key": "learn_language_scheme_phase_duration_add",
+                    "polarity": "good",
+                    "text": "20 Learn Language Phase Length days faster per Scheme Phase"
+                  },
+                  {
+                    "key": "owned_personal_scheme_success_chance_add",
+                    "polarity": "good",
+                    "text": "+10% Owned Personal Scheme Success Chance Add"
+                  },
+                  {
+                    "key": "cultural_head_fascination_mult",
+                    "polarity": "good",
+                    "text": "+25% Cultural Head Fascination Mult"
+                  }
+                ],
+                "kind": "character"
+              },
+              {
+                "audience": "interloper",
+                "items": [
+                  {
+                    "key": "easier_culture_hybridising_for_involved_and_interlopers",
+                    "text": "Hybridizing Cultures is easier for Involved and Interloper Characters"
+                  }
+                ],
+                "kind": "parameters"
+              }
+            ],
+            "group": "culture_effects",
+            "name": "(Culture)"
+          },
+          {
+            "buckets": [
+              {
+                "audience": "common",
+                "items": [
+                  {
+                    "key": "development_growth_factor",
+                    "polarity": "good",
+                    "text": "+30% Development Growth"
+                  }
+                ],
+                "kind": "county"
+              },
+              {
+                "audience": "involved",
+                "items": [
+                  {
+                    "key": "struggle_unlocks_befriend_schemes_for_everyone",
+                    "text": "Unlocks the Befriend Scheme"
+                  },
+                  {
+                    "key": "unlocks_golden_age_jewish_science_decision",
+                    "text": "Unlocks the Sponsor Jewish Sciences Decision"
+                  },
+                  {
+                    "key": "struggle_prestige_from_feast",
+                    "text": "The Feast Activity provides more …Prestige"
+                  },
+                  {
+                    "key": "struggle_gifts_involved_diff_faith_culture_leads_to_friendship",
+                    "text": "Gifting …Gold or Artifacts to a Involved Character of a different Faith or Culture can lead to friendship"
+                  },
+                  {
+                    "key": "struggle_grant_titles_diff_faith_culture_to_leads_to_friendship",
+                    "text": "Granting Titles to a Vassal of a different Faith or Culture can lead to friendship"
+                  },
+                  {
+                    "key": "struggle_cannot_execute_involved_prisoners",
+                    "text": "Cannot Execute Involved Prisoners"
+                  },
+                  {
+                    "key": "struggle_becoming_friend_gives_prestige",
+                    "text": "Becoming Friends with another Involved Character provides …Prestige"
+                  },
+                  {
+                    "key": "involved_form_alliances_with_each_other_easier",
+                    "text": "Involved Characters form Alliances with each other more easily"
+                  },
+                  {
+                    "key": "struggle_agents_less_likely_to_join_schemes",
+                    "text": "Agent Acceptance: -25"
+                  }
+                ],
+                "kind": "parameters"
+              },
+              {
+                "audience": "involved",
+                "items": [
+                  {
+                    "key": "county_opinion_add",
+                    "polarity": "good",
+                    "text": "+20 Popular Opinion"
+                  },
+                  {
+                    "key": "build_speed",
+                    "polarity": "good",
+                    "text": "-25% Build Speed"
+                  },
+                  {
+                    "key": "city_holding_holding_build_gold_cost",
+                    "polarity": "good",
+                    "text": "-25% City Holding Construction Cost"
+                  },
+                  {
+                    "key": "city_holding_build_gold_cost",
+                    "polarity": "good",
+                    "text": "-25% City Buildings Construction Cost"
+                  }
+                ],
+                "kind": "county"
+              },
+              {
+                "audience": "involved",
+                "items": [
+                  {
+                    "key": "befriend_scheme_phase_duration_add",
+                    "polarity": "good",
+                    "text": "40 Befriend Phase Length days faster per Scheme Phase"
+                  },
+                  {
+                    "key": "enemy_hostile_scheme_phase_duration_add",
+                    "polarity": "good",
+                    "text": "20 Enemy Hostile Scheme Phase Length days slower per Scheme Phase"
+                  },
+                  {
+                    "key": "max_personal_schemes_add",
+                    "polarity": "good",
+                    "text": "+1 Max Personal Schemes"
+                  }
+                ],
+                "kind": "character"
+              },
+              {
+                "audience": "interloper",
+                "items": [
+                  {
+                    "key": "county_opinion_add",
+                    "polarity": "good",
+                    "text": "+10 Popular Opinion"
+                  },
+                  {
+                    "key": "build_speed",
+                    "polarity": "good",
+                    "text": "-5% Build Speed"
+                  },
+                  {
+                    "key": "tax_mult",
+                    "polarity": "bad",
+                    "text": "-25% Holding Taxes"
+                  }
+                ],
+                "kind": "character"
+              },
+              {
+                "audience": "uninvolved",
+                "items": [
+                  {
+                    "key": "tax_mult",
+                    "polarity": "bad",
+                    "text": "-50% Holding Taxes"
+                  },
+                  {
+                    "key": "county_opinion_add",
+                    "polarity": "bad",
+                    "text": "-50 Popular Opinion"
+                  },
+                  {
+                    "key": "garrison_size",
+                    "polarity": "bad",
+                    "text": "-50% Garrison Size"
+                  },
+                  {
+                    "key": "supply_limit_mult",
+                    "polarity": "bad",
+                    "text": "-50% Supply Limit"
+                  }
+                ],
+                "kind": "county"
+              }
+            ],
+            "group": "other_effects",
+            "name": "(Other)"
+          }
+        ],
+        "ending": false,
+        "endingDecisions": [
+          {
+            "id": "struggle_iberia_ending_hostility_decision",
+            "name": "… Dominance"
+          },
+          {
+            "id": "struggle_iberia_ending_compromise_decision",
+            "name": "Status Quo"
+          },
+          {
+            "id": "struggle_iberia_ending_conciliation_decision",
+            "name": "Détente"
+          }
+        ],
+        "id": "struggle_iberia_phase_conciliation",
+        "name": "Conciliation",
+        "transitions": [
+          {
+            "catalysts": [
+              {
+                "desc": "Yearly Drift: Natural flow towards this Struggle Phase",
+                "id": "catalyst_passing_of_time",
+                "name": "Yearly Drift Catalyst",
+                "points": {
+                  "value": 1
+                }
+              },
+              {
+                "desc": "Acquire a Claim on a Title under the De Jure of Hispania",
+                "id": "catalyst_gain_claim_on_title_fp2",
+                "name": "Acquired Claim Catalyst",
+                "points": {
+                  "value": 3
+                }
+              },
+              {
+                "desc": "Win a War you started against another Involved Ruler",
+                "id": "catalyst_win_any_war_within_the_region",
+                "name": "Won a War Catalyst",
+                "points": {
+                  "value": 3
+                }
+              },
+              {
+                "desc": "Construct a Building in a Castle Holding",
+                "id": "catalyst_new_building_in_castle",
+                "name": "built in a Castle Catalyst",
+                "points": {
+                  "value": 3
+                }
+              },
+              {
+                "desc": "Become Rival or Nemesis with another Involved Ruler",
+                "id": "catalyst_becomes_rival_with_involved",
+                "name": "Escalated rivalry Catalyst",
+                "points": {
+                  "value": 10
+                }
+              },
+              {
+                "desc": "Use a Hook on an Involved Ruler",
+                "id": "catalyst_using_a_hook_on_very_important_character",
+                "name": "Used Hook Catalyst",
+                "points": {
+                  "value": 5
+                }
+              },
+              {
+                "desc": "Kill an Involved Ruler",
+                "id": "catalyst_unnatural_death_important_character",
+                "name": "Murdered Catalyst",
+                "points": {
+                  "value": 5
+                }
+              },
+              {
+                "desc": "Usurp a Title which is part of the De Jure of Hispania",
+                "id": "catalyst_usurp_title_fp2",
+                "name": "Usurped a Title Catalyst",
+                "points": {
+                  "value": 10
+                }
+              },
+              {
+                "desc": "Convert an Involved Ruler or County",
+                "id": "catalyst_forced_conversion",
+                "name": "Converted Catalyst",
+                "points": {
+                  "value": 5
+                }
+              },
+              {
+                "desc": "Reveal the Secret of an Involved Ruler",
+                "id": "catalyst_reveal_secret_important",
+                "name": "Exposed Secret Catalyst",
+                "points": {
+                  "value": 10
+                }
+              },
+              {
+                "desc": "Break a Truce with an Involved Ruler",
+                "id": "catalyst_broke_truce_against_important_character",
+                "name": "Broke Truce Catalyst",
+                "points": {
+                  "value": 25
+                }
+              }
+            ],
+            "default": false,
+            "to": "struggle_iberia_phase_compromise",
+            "toName": "Compromise"
+          }
+        ]
+      }
+    ],
+    "regions": [
+      {
+        "id": "world_europe_west_iberia",
+        "name": "Iberia"
+      }
+    ],
+    "sourceFile": "iberian_struggle_script.txt",
+    "startPhase": "struggle_iberia_phase_opportunity",
+    "transitionDuration": "3 months"
+  },
+  {
+    "cultures": [
+      {
+        "id": "persian",
+        "name": "Persian"
+      },
+      {
+        "id": "kurdish",
+        "name": "Kurdish"
+      },
+      {
+        "id": "daylamite",
+        "name": "Daylamite"
+      },
+      {
+        "id": "baloch",
+        "name": "Baloch"
+      },
+      {
+        "id": "tajik",
+        "name": "Tajik"
+      },
+      {
+        "id": "afghan",
+        "name": "Afghan"
+      },
+      {
+        "id": "brahui",
+        "name": "Brahui"
+      },
+      {
+        "id": "sogdian",
+        "name": "Sogdian"
+      },
+      {
+        "id": "khwarezmian",
+        "name": "Khwarezmian"
+      },
+      {
+        "id": "bedouin",
+        "name": "Bedouin"
+      },
+      {
+        "id": "levantine",
+        "name": "Mashriqi"
+      },
+      {
+        "id": "yemeni",
+        "name": "Yemeni"
+      }
+    ],
+    "desc": "The Iranian Intermezzo depicts the tumultuous decline of the Abbasid Caliphate, in which Mesopotamia was ravaged by rebellions and power struggles and several Persian rulers asserted their independence.\n\nThough Involved Characters can have many agendas, most will want to either become a Supporter of Caliphal Authority and work towards restoring the power of the Caliphate, or a Detractor of the Caliphate and try to destroy it.\n\nThe Struggle shifts between two Phases - Unrest and Stabilization.",
+    "dlc": "Legacy of Persia",
+    "faiths": [
+      {
+        "id": "ashari",
+        "name": "Ash'arism"
+      },
+      {
+        "id": "zayidi",
+        "name": "Zayidism"
+      },
+      {
+        "id": "ismaili",
+        "name": "Isma'ilism"
+      },
+      {
+        "id": "azariqa",
+        "name": "Azraqism"
+      },
+      {
+        "id": "mutazila",
+        "name": "Mu'tazilism"
+      },
+      {
+        "id": "maturidi",
+        "name": "Maturidism"
+      },
+      {
+        "id": "imami",
+        "name": "Imamism"
+      },
+      {
+        "id": "alevi",
+        "name": "Alevism"
+      },
+      {
+        "id": "mazdayasna",
+        "name": "Mazdayasna"
+      },
+      {
+        "id": "khurmazta",
+        "name": "Khurmazdism"
+      },
+      {
+        "id": "khurramism",
+        "name": "Khurramism"
+      },
+      {
+        "id": "afridunism",
+        "name": "Afridunism"
+      },
+      {
+        "id": "mahayana",
+        "name": "Mahayana"
+      },
+      {
+        "id": "nestorian",
+        "name": "Nestorianism"
+      }
+    ],
+    "id": "persian_struggle",
+    "involvementPct": 0.5,
+    "name": "Iranian Intermezzo",
+    "phases": [
+      {
+        "desc": "Despite the brewing troubles, the caliph still commands respect. Rebellions and factionalism are on the back foot, but the lords of Persia will not be brought easily to heel.\n\nThe tension might spiral into Unrest, which would mean more chaos to come.",
+        "durationPoints": {
+          "value": 500
+        },
+        "effects": [
+          {
+            "buckets": [
+              {
+                "audience": "common",
+                "items": [
+                  {
+                    "key": "apply_truce_when_sending_ward",
+                    "text": "Sending a Ward will establish a Truce with the Guardian"
+                  },
+                  {
+                    "key": "invasion_conquest_war_cannot_be_declared",
+                    "text": "Invasion and Conquest Casus Bellis are unavailable"
+                  }
+                ],
+                "kind": "parameters"
+              },
+              {
+                "audience": "involved",
+                "items": [
+                  {
+                    "key": "men_at_arms_recruitment_cost",
+                    "polarity": "good",
+                    "text": "-50% Men-at-Arms Recruitment Cost"
+                  },
+                  {
+                    "key": "men_at_arms_maintenance",
+                    "polarity": "good",
+                    "text": "-25% Men-at-Arms Maintenance"
+                  },
+                  {
+                    "key": "glory_hound_ai_energy",
+                    "polarity": "good",
+                    "text": "+75 Glory Hound Personality Energy"
+                  },
+                  {
+                    "key": "glory_hound_ai_boldness",
+                    "polarity": "good",
+                    "text": "+75 Glory Hound Personality Boldness"
+                  }
+                ],
+                "kind": "character"
+              },
+              {
+                "audience": "interloper",
+                "items": [
+                  {
+                    "key": "men_at_arms_recruitment_cost",
+                    "polarity": "good",
+                    "text": "-25% Men-at-Arms Recruitment Cost"
+                  }
+                ],
+                "kind": "character"
+              }
+            ],
+            "group": "war_effects",
+            "name": "(War)"
+          },
+          {
+            "buckets": [
+              {
+                "audience": "involved",
+                "items": [
+                  {
+                    "key": "piety_from_new_alliance",
+                    "text": "Forming an Alliance with another Involved ruler provides …Piety"
+                  },
+                  {
+                    "key": "completing_building_in_temple_gives_piety",
+                    "text": "Completing buildings in Temple Holdings provides …Piety"
+                  },
+                  {
+                    "key": "same_faith_friend_piety_gain",
+                    "text": "Becoming Friends with another Involved Character of the same Faith provides …Piety"
+                  }
+                ],
+                "kind": "parameters"
+              },
+              {
+                "audience": "involved",
+                "items": [
+                  {
+                    "key": "same_faith_opinion",
+                    "polarity": "good",
+                    "text": "+20 Same Faith Opinion"
+                  },
+                  {
+                    "key": "minority_different_faith_opinion",
+                    "polarity": "bad",
+                    "text": "-20 Minority Vassal Opinion (Different Faith)"
+                  }
+                ],
+                "kind": "character"
+              }
+            ],
+            "group": "faith_effects",
+            "name": "(Faith)"
+          },
+          {
+            "buckets": [
+              {
+                "audience": "involved",
+                "items": [
+                  {
+                    "key": "learning_languages_gives_prestige",
+                    "text": "Learning a new Language provides …Prestige"
+                  },
+                  {
+                    "key": "granting_title_to_local_noble_gives_prestige",
+                    "text": "Granting a Title to a local noble provides …Prestige"
+                  },
+                  {
+                    "key": "gain_acceptance_when_developing_other_culture_county",
+                    "text": "Increasing the Development of a county with a different Culture increases Cultural Acceptance"
+                  },
+                  {
+                    "key": "release_prisoner_diff_culture_gives_prestige",
+                    "text": "Releasing Prisoners of a different Culture provides …Prestige"
+                  }
+                ],
+                "kind": "parameters"
+              },
+              {
+                "audience": "involved",
+                "items": [
+                  {
+                    "key": "same_culture_opinion",
+                    "polarity": "good",
+                    "text": "+10 Same Culture Opinion"
+                  },
+                  {
+                    "key": "opinion_of_same_culture",
+                    "polarity": "good",
+                    "text": "+10 Opinion of Same Culture"
+                  },
+                  {
+                    "key": "cultural_head_acceptance_gain_mult",
+                    "polarity": "good",
+                    "text": "+50% Cultural Acceptance Gain"
+                  }
+                ],
+                "kind": "character"
+              }
+            ],
+            "group": "culture_effects",
+            "name": "(Culture)"
+          },
+          {
+            "buckets": [
+              {
+                "audience": "involved",
+                "items": [
+                  {
+                    "key": "struggle_unlocks_befriend_schemes_for_everyone",
+                    "text": "Unlocks the Befriend Scheme"
+                  },
+                  {
+                    "key": "unlocks_epic_commission_for_independent_rulers",
+                    "text": "Unlocks the Commission Epic Decision for Independent Rulers and adds a chance to grant Claims"
+                  },
+                  {
+                    "key": "granting_independence_to_non_dejure_gives_renown",
+                    "text": "Granting independence to a non-De Jure provides Renown"
+                  },
+                  {
+                    "key": "unlocks_claim_throne_for_caliph_vassals",
+                    "text": "Unlocks the Claim Throne Scheme for Vassals of …"
+                  },
+                  {
+                    "key": "less_dissolution_more_claimants",
+                    "text": "The Dissolution Faction is less common but Claimant Factions are more common"
+                  },
+                  {
+                    "key": "caliph_cant_be_dissolutioned",
+                    "text": "Dissolution Factions cannot be used against the Sunni Caliphate or the Arabian Empire"
+                  }
+                ],
+                "kind": "parameters"
+              },
+              {
+                "audience": "involved",
+                "items": [
+                  {
+                    "key": "castle_holding_build_gold_cost",
+                    "polarity": "good",
+                    "text": "-30% Castle Buildings Construction Cost"
+                  }
+                ],
+                "kind": "character"
+              },
+              {
+                "audience": "interloper",
+                "items": [
+                  {
+                    "key": "less_dissolution_more_claimants",
+                    "text": "The Dissolution Faction is less common but Claimant Factions are more common"
+                  }
+                ],
+                "kind": "parameters"
+              }
+            ],
+            "group": "other_effects",
+            "name": "(Other)"
+          }
+        ],
+        "ending": false,
+        "endingDecisions": [
+          {
+            "id": "struggle_persia_ending_foundation_decision",
+            "name": "Struggle Persia Ending Foundation Decision"
+          },
+          {
+            "id": "struggle_persia_ending_assertion_decision",
+            "name": "Struggle Persia Ending Assertion Decision"
+          },
+          {
+            "id": "struggle_persia_ending_rekindle_iran_decision",
+            "name": "Struggle Persia Ending Rekindle Iran Decision"
+          }
+        ],
+        "id": "struggle_persia_phase_stabilisation",
+        "name": "Stabilization",
+        "transitions": [
+          {
+            "catalysts": [
+              {
+                "desc": "Yearly Drift: … or more Involved House Heads with Antagonistic House Unity",
+                "id": "catalyst_yearly_influential_house_is_antagonistic_major",
+                "name": "Antagonistic House Catalyst",
+                "points": {
+                  "value": 10
+                }
+              },
+              {
+                "desc": "Yearly Drift: … or more Involved House Heads with Antagonistic House Unity",
+                "id": "catalyst_yearly_influential_house_is_antagonistic_medium",
+                "name": "Antagonistic House Catalyst",
+                "points": {
+                  "value": 5
+                }
+              },
+              {
+                "desc": "Yearly Drift: … or more Involved House Heads with Antagonistic House Unity",
+                "id": "catalyst_yearly_influential_house_is_antagonistic_minor",
+                "name": "Antagonistic House Catalyst",
+                "points": {
+                  "value": 3
+                }
+              },
+              {
+                "desc": "Yearly Drift: … or more Involved House Heads with Antagonistic House Unity",
+                "id": "catalyst_yearly_influential_house_is_antagonistic_minimal",
+                "name": "Antagonistic House Catalyst",
+                "points": {
+                  "value": 1
+                }
+              },
+              {
+                "desc": "A Supporter of Caliphal Authority and Detractor of the Caliphate become Rival or Nemesis",
+                "id": "catalyst_becomes_rival_supporter_detractor",
+                "name": "Escalated rivalry Catalyst",
+                "points": {
+                  "value": 5
+                }
+              },
+              {
+                "desc": "Acquire a Claim on a Title under the De Jure of Persian Empire",
+                "id": "catalyst_gain_claim_on_title_fp3",
+                "name": "Acquired Claim Catalyst",
+                "points": {
+                  "value": 3
+                }
+              },
+              {
+                "desc": "Usurp a Title which is part of the De Jure of Persian Empire",
+                "id": "catalyst_usurp_title_fp3",
+                "name": "Usurped a Title Catalyst",
+                "points": {
+                  "value": 5
+                }
+              },
+              {
+                "desc": "Create a new House by Cadet Branching",
+                "id": "catalyst_cadet_branch_created",
+                "name": "Created a Cadet Branch Catalyst",
+                "points": {
+                  "value": 10
+                }
+              },
+              {
+                "desc": "A Supporter of Caliphal Authority becomes a Detractor of the Caliphate",
+                "id": "catalyst_turn_supporter_into_detractor",
+                "name": "Changed side Catalyst",
+                "points": {
+                  "value": 5
+                }
+              },
+              {
+                "desc": "Reveal non-… Secret Faith",
+                "id": "catalyst_revealed_secret_faith_non_islam",
+                "name": "Revealed non-… Secret Faith Catalyst",
+                "points": {
+                  "value": 5
+                }
+              },
+              {
+                "desc": "Start a War against another Involved Ruler (of lower Tier) as a Detractor of the Caliphate",
+                "id": "catalyst_detractor_declare_unfair_war_within_the_region",
+                "name": "Started a War Catalyst",
+                "points": {
+                  "value": 5
+                }
+              },
+              {
+                "desc": "Start a War against another Involved Ruler (of same Tier or higher) as a Detractor of the Caliphate",
+                "id": "catalyst_detractor_declare_fair_war_within_the_region",
+                "name": "Started a War Catalyst",
+                "points": {
+                  "value": 10
+                }
+              },
+              {
+                "desc": "Win a War started against another Involved Ruler (of lower Tier) as a Detractor of the Caliphate",
+                "id": "catalyst_detractor_win_unfair_war_within_the_region",
+                "name": "Won a War Catalyst",
+                "points": {
+                  "value": 10
+                }
+              },
+              {
+                "desc": "Win a War started against another Involved Ruler (of same Tier or higher) as a Detractor of the Caliphate",
+                "id": "catalyst_detractor_win_fair_war_within_the_region",
+                "name": "Won a War Catalyst",
+                "points": {
+                  "value": 25
+                }
+              },
+              {
+                "desc": "Convert a Supporter of Caliphal Authority Ruler",
+                "id": "catalyst_supporter_forced_conversion",
+                "name": "Converted Catalyst",
+                "points": {
+                  "value": 5
+                }
+              },
+              {
+                "desc": "Imprison a Supporter of Caliphal Authority",
+                "id": "catalyst_imprison_supporter",
+                "name": "Imprisoned Supporter of Caliphal Authority Catalyst",
+                "points": {
+                  "value": 3
+                }
+              },
+              {
+                "desc": "Reveal the Secret of a Supporter of Caliphal Authority Ruler",
+                "id": "catalyst_reveal_secret_supporter",
+                "name": "Exposed Secret Catalyst",
+                "points": {
+                  "value": 5
+                }
+              },
+              {
+                "desc": "Execute a Supporter of Caliphal Authority",
+                "id": "catalyst_execute_supporter",
+                "name": "Executed a Supporter of Caliphal Authority Catalyst",
+                "points": {
+                  "value": 5
+                }
+              },
+              {
+                "desc": "A Supporter of Caliphal Authority Ruler is killed",
+                "id": "catalyst_unnatural_death_supporter",
+                "name": "Murdered Catalyst",
+                "points": {
+                  "value": 5
+                }
+              },
+              {
+                "desc": "Form an Alliance with an Uninvolved Realm as a Detractor of the Caliphate",
+                "id": "catalyst_forming_alliance_between_detractor_uninvolved_rulers",
+                "name": "Allied with foreign power Catalyst",
+                "points": {
+                  "value": 5
+                }
+              },
+              {
+                "desc": "Important Character takes the Find a New Faith for Persia Decision",
+                "id": "catalyst_ruler_chooses_persian_faith",
+                "name": "An important Character took the Find a New Faith for Persia Decision",
+                "points": {
+                  "value": 10
+                }
+              },
+              {
+                "desc": "Important Character takes the Decision to become a Detractor of the Caliphate",
+                "id": "catalyst_became_detractor_fp3",
+                "name": "An important Character took the Decision to become a Detractor of the Caliphate",
+                "points": {
+                  "value": 25
+                }
+              },
+              {
+                "desc": "A heated discussion between a Supporter of Caliphal Authority and Detractor of the Caliphate during a Coronation ended in loud support of shaking up the status quo",
+                "id": "catalyst_coronation_event_unrest",
+                "name": "A loud proclamation of dissatisfaction during a coronation",
+                "points": {
+                  "value": 1
+                }
+              }
+            ],
+            "default": false,
+            "to": "struggle_persia_phase_unrest",
+            "toName": "Unrest"
+          },
+          {
+            "catalysts": [
+              {
+                "desc": "Yearly Drift: Natural flow towards this Struggle Phase",
+                "id": "catalyst_passing_of_time",
+                "name": "Yearly Drift Catalyst",
+                "points": {
+                  "rules": "base 1 (if current year >= 960: add 1) (if current year >= 1000: add 3)"
+                }
+              },
+              {
+                "desc": "A War between a Supporter of Caliphal Authority and Detractor of the Caliphate ends with White Peace",
+                "id": "catalyst_war_ends_in_white_peace_between_supporter_detractor",
+                "name": "Had a War end in White Peace",
+                "points": {
+                  "value": 3
+                }
+              },
+              {
+                "desc": "A Supporter of Caliphal Authority and Detractor of the Caliphate become Best Friends or Soulmates",
+                "id": "catalyst_became_best_friend_soulmate_supporter_detractor",
+                "name": "Twin Souls Catalyst",
+                "points": {
+                  "value": 3
+                }
+              },
+              {
+                "desc": "A Supporter of Caliphal Authority and Detractor of the Caliphate become Friends or Lovers",
+                "id": "catalyst_became_friend_lover_supporter_detractor",
+                "name": "Twin Souls Catalyst",
+                "points": {
+                  "value": 1
+                }
+              },
+              {
+                "desc": "An Alliance is formed between a Supporter of Caliphal Authority and Detractor of the Caliphate",
+                "id": "catalyst_forming_alliance_between_supporter_detractor_rulers",
+                "name": "Alliance formed between a Supporter of Caliphal Authority and Detractor of the Caliphate Catalyst",
+                "points": {
+                  "value": 2
+                }
+              },
+              {
+                "desc": "A Hook is abandoned between a Supporter of Caliphal Authority and Detractor of the Caliphate",
+                "id": "catalyst_abandon_hook_on_supporter_detractor",
+                "name": "Hook abandoned Catalyst",
+                "points": {
+                  "value": 3
+                }
+              },
+              {
+                "desc": "A Crime is pardoned between a Supporter of Caliphal Authority and Detractor of the Caliphate",
+                "id": "catalyst_grants_pardon_supporter_detractor",
+                "name": "Pardon granted Catalyst",
+                "points": {
+                  "value": 1
+                }
+              },
+              {
+                "desc": "Someone is released from Prison without any demands made between a Supporter of Caliphal Authority and Detractor of the Caliphate",
+                "id": "catalyst_release_supporter_detractor",
+                "name": "Released a Ruler Catalyst",
+                "points": {
+                  "value": 3
+                }
+              },
+              {
+                "desc": "Ransom an Involved Ruler between a Supporter of Caliphal Authority and Detractor of the Caliphate",
+                "id": "catalyst_ransom_supporter_detractor",
+                "name": "Ransom Catalyst",
+                "points": {
+                  "value": 1
+                }
+              },
+              {
+                "desc": "A Vassal is transferred to their De Jure liege between a Supporter of Caliphal Authority and Detractor of the Caliphate",
+                "id": "catalyst_grants_vassal_to_de_jure_liege_supporter_detractor",
+                "name": "Transferred to De Jure liege Catalyst",
+                "points": {
+                  "value": 3
+                }
+              },
+              {
+                "desc": "A Gift or Artifact is sent between a Supporter of Caliphal Authority and Detractor of the Caliphate",
+                "id": "catalyst_gift_supporter_detractor_ruler",
+                "name": "Gift sent Catalyst",
+                "points": {
+                  "value": 1
+                }
+              },
+              {
+                "desc": "Lose a Title within the Struggle Region to an Interloper or Uninvolved Ruler",
+                "id": "catalyst_interloper_uninvolved_gain_struggle_titles",
+                "name": "Lost a Title to Involved Catalyst",
+                "points": {
+                  "value": 3
+                }
+              },
+              {
+                "desc": "Complete a Raid against an Involved Ruler",
+                "id": "catalyst_raided_involved",
+                "name": "Raided Involved Ruler Catalyst",
+                "points": {
+                  "value": 3
+                }
+              },
+              {
+                "desc": "Yearly Drift: either the Sunni Caliphate or the Arabian Empire are destroyed",
+                "id": "catalyst_missing_caliphate_or_arabian_empire",
+                "name": "Yearly Drift: either the Sunni Caliphate or the Arabian Empire were destroyed",
+                "points": {
+                  "value": 20
+                }
+              },
+              {
+                "desc": "The Holder of the Sunni Caliphate or the Arabian Empire loses a Civil War",
+                "id": "catalyst_caliph_or_emperor_loses_revolt_war",
+                "name": "Holder of the Sunni Caliphate or the Arabian Empire lost a Civil War",
+                "points": {
+                  "value": 10
+                }
+              },
+              {
+                "desc": "The Holder of the Sunni Caliphate or the Arabian Empire accepts a Faction's demands",
+                "id": "catalyst_caliph_or_emperor_accepts_faction_demands",
+                "name": "Holder of the Sunni Caliphate or the Arabian Empire accepted a Faction's demands",
+                "points": {
+                  "value": 3
+                }
+              },
+              {
+                "desc": "The Sunni … dies violently\n(… year cooldown)",
+                "id": "catalyst_caliph_died_violently",
+                "name": "The Sunni … died violently",
+                "points": {
+                  "value": 25
+                }
+              },
+              {
+                "desc": "The Sunni … dies naturally\n(… year cooldown)",
+                "id": "catalyst_caliph_died_naturally",
+                "name": "The Sunni … died naturally",
+                "points": {
+                  "value": 10
+                }
+              },
+              {
+                "desc": "A heated discussion between a Supporter of Caliphal Authority and Detractor of the Caliphate during a Coronation ended in loud support of finding a middle ground",
+                "id": "catalyst_coronation_event_concession",
+                "name": "A loud proclamation of dissatisfaction during a coronation",
+                "points": {
+                  "value": 1
+                }
+              }
+            ],
+            "default": false,
+            "to": "struggle_persia_ending_phase_concession",
+            "toName": "Concession"
+          }
+        ]
+      },
+      {
+        "desc": "Beset by rebellions and intrigues, the Caliphate crumbles. Ambitious warlords and cunning governors alike grasp at whatever power they can usurp, squabbling constantly.\n\nOver time, unless the situation is resolved by an Ending Phase, the realm will enter a Stabilization phase as desperate supporters claw back caliphal authority.",
+        "durationPoints": {
+          "value": 500
+        },
+        "effects": [
+          {
+            "buckets": [
+              {
+                "audience": "involved",
+                "items": [
+                  {
+                    "key": "install_loyalist_cb_unlocked",
+                    "text": "The Install Loyalist Casus Belli is unlocked for Supporter of Caliphal Authority Rulers"
+                  },
+                  {
+                    "key": "offer_vassalization_removes_disloyalty",
+                    "text": "Offer Vassalization removes the disloyal trait from recipients if successful"
+                  },
+                  {
+                    "key": "fp3_caliph_gets_cheaper_subjugation_cb",
+                    "text": "The Subjugation Casus Belli is … cheaper for the holder of the Sunni Caliphate"
+                  },
+                  {
+                    "key": "cheaper_incursions_vs_caliph",
+                    "text": "The Request Incursion Interaction is 50% cheaper against the Caliph"
+                  }
+                ],
+                "kind": "parameters"
+              },
+              {
+                "audience": "common",
+                "items": [
+                  {
+                    "key": "supply_limit_mult",
+                    "polarity": "good",
+                    "text": "+100% Supply Limit"
+                  },
+                  {
+                    "key": "levy_reinforcement_rate_friendly_territory",
+                    "polarity": "good",
+                    "text": "+100% Friendly Territory Levy Reinforcement Rate"
+                  }
+                ],
+                "kind": "county"
+              },
+              {
+                "audience": "involved",
+                "items": [
+                  {
+                    "key": "levy_size",
+                    "polarity": "good",
+                    "text": "+100% Levy Size"
+                  },
+                  {
+                    "key": "garrison_size",
+                    "polarity": "bad",
+                    "text": "-50% Garrison Size"
+                  }
+                ],
+                "kind": "county"
+              },
+              {
+                "audience": "interloper",
+                "items": [
+                  {
+                    "key": "levy_size",
+                    "polarity": "good",
+                    "text": "+50% Levy Size"
+                  },
+                  {
+                    "key": "garrison_size",
+                    "polarity": "bad",
+                    "text": "-25% Garrison Size"
+                  }
+                ],
+                "kind": "county"
+              },
+              {
+                "audience": "uninvolved",
+                "items": [
+                  {
+                    "key": "levy_size",
+                    "polarity": "bad",
+                    "text": "-50% Levy Size"
+                  },
+                  {
+                    "key": "garrison_size",
+                    "polarity": "bad",
+                    "text": "-75% Garrison Size"
+                  }
+                ],
+                "kind": "county"
+              },
+              {
+                "audience": "involved",
+                "items": [
+                  {
+                    "key": "same_heritage_county_advantage_add",
+                    "polarity": "good",
+                    "text": "+5 Same Heritage County Advantage Add"
+                  },
+                  {
+                    "key": "mercenary_hire_cost_mult",
+                    "polarity": "good",
+                    "text": "-25% Mercenary Hire Cost"
+                  },
+                  {
+                    "key": "led_by_owner_extra_advantage_add",
+                    "polarity": "good",
+                    "text": "+5 Led By Owner Extra Advantage Add"
+                  },
+                  {
+                    "key": "ai_war_chance",
+                    "polarity": "good",
+                    "text": "+2 Ai War Chance"
+                  },
+                  {
+                    "key": "ai_war_cooldown",
+                    "polarity": "bad",
+                    "text": "-0.25 Ai War Cooldown"
+                  }
+                ],
+                "kind": "character"
+              },
+              {
+                "audience": "interloper",
+                "items": [
+                  {
+                    "key": "mercenary_hire_cost_mult",
+                    "polarity": "good",
+                    "text": "-35% Mercenary Hire Cost"
+                  },
+                  {
+                    "key": "led_by_owner_extra_advantage_add",
+                    "polarity": "good",
+                    "text": "+10 Led By Owner Extra Advantage Add"
+                  },
+                  {
+                    "key": "ai_war_chance",
+                    "polarity": "good",
+                    "text": "+10 Ai War Chance"
+                  },
+                  {
+                    "key": "ai_war_cooldown",
+                    "polarity": "bad",
+                    "text": "-0.5 Ai War Cooldown"
+                  }
+                ],
+                "kind": "character"
+              }
+            ],
+            "group": "war_effects",
+            "name": "(War)"
+          },
+          {
+            "buckets": [
+              {
+                "audience": "involved",
+                "items": [
+                  {
+                    "key": "completing_building_in_temple_gives_piety",
+                    "text": "Completing buildings in Temple Holdings provides …Piety"
+                  },
+                  {
+                    "key": "demand_submission_interaction_unlocked",
+                    "text": "The Demand Submission Interaction is unlocked for the …"
+                  },
+                  {
+                    "key": "piety_level_affects_vassalage_acceptance",
+                    "text": "Level of Devotion factors into Offer Vassalage acceptance chance"
+                  },
+                  {
+                    "key": "can_trade_piety_for_marriage_acceptance",
+                    "text": "Piety can be used to increase acceptance in Marriage proposals"
+                  },
+                  {
+                    "key": "piety_from_converting_county",
+                    "text": "Converting a County gives …Piety"
+                  },
+                  {
+                    "key": "piety_from_converting_involved_rulers",
+                    "text": "Converting a Involved Characters gives …Piety"
+                  }
+                ],
+                "kind": "parameters"
+              },
+              {
+                "audience": "involved",
+                "items": [
+                  {
+                    "key": "zealot_opinion",
+                    "polarity": "good",
+                    "text": "+20 Zealot Vassal Opinion"
+                  },
+                  {
+                    "key": "zealot_levy_contribution_mult",
+                    "polarity": "good",
+                    "text": "+50% Zealot Vassal Levy Contribution"
+                  },
+                  {
+                    "key": "zealot_tax_contribution_mult",
+                    "polarity": "good",
+                    "text": "+50% Zealot Vassal Tax Contribution"
+                  },
+                  {
+                    "key": "zealot_ai_vengefulness",
+                    "polarity": "good",
+                    "text": "+75 Zealot Personality Vengefulness"
+                  },
+                  {
+                    "key": "zealot_ai_zeal",
+                    "polarity": "good",
+                    "text": "+75 Zealot Personality Zeal"
+                  },
+                  {
+                    "key": "zealot_ai_boldness",
+                    "polarity": "good",
+                    "text": "+50 Zealot Personality Boldness"
+                  },
+                  {
+                    "key": "church_holding_build_gold_cost",
+                    "polarity": "good",
+                    "text": "-30% Temple Buildings Construction Cost"
+                  }
+                ],
+                "kind": "character"
+              }
+            ],
+            "group": "faith_effects",
+            "name": "(Faith)"
+          },
+          {
+            "buckets": [
+              {
+                "audience": "involved",
+                "items": [
+                  {
+                    "key": "struggle_prestige_from_befriending_same_culture",
+                    "text": "Befriending Involved Characters of the same Culture gives …Prestige"
+                  },
+                  {
+                    "key": "struggle_prestige_install_same_culture_claimant",
+                    "text": "Helping a Claimant of the same Culture taking their Title gives …Prestige"
+                  },
+                  {
+                    "key": "struggle_different_culture_more_likely_to_use_minority_stance",
+                    "text": "Vassals of a different Culture are more likely to use the Minority Vassal Stance"
+                  }
+                ],
+                "kind": "parameters"
+              },
+              {
+                "audience": "involved",
+                "items": [
+                  {
+                    "key": "minority_opinion",
+                    "polarity": "bad",
+                    "text": "-10 Minority Vassal Opinion"
+                  },
+                  {
+                    "key": "minority_tax_contribution_mult",
+                    "polarity": "bad",
+                    "text": "-50% Minority Vassal Tax Contribution"
+                  },
+                  {
+                    "key": "minority_levy_contribution_mult",
+                    "polarity": "bad",
+                    "text": "-50% Minority Vassal Levy Contribution"
+                  },
+                  {
+                    "key": "minority_ai_energy",
+                    "polarity": "good",
+                    "text": "+50 Minority Personality Energy"
+                  },
+                  {
+                    "key": "minority_different_faith_opinion",
+                    "polarity": "bad",
+                    "text": "-10 Minority Vassal Opinion (Different Faith)"
+                  }
+                ],
+                "kind": "character"
+              }
+            ],
+            "group": "culture_effects",
+            "name": "(Culture)"
+          },
+          {
+            "buckets": [
+              {
+                "audience": "common",
+                "items": [
+                  {
+                    "key": "build_speed",
+                    "polarity": "good",
+                    "text": "-50% Build Speed"
+                  },
+                  {
+                    "key": "travel_danger",
+                    "polarity": "bad",
+                    "text": "+25 Danger"
+                  }
+                ],
+                "kind": "county"
+              },
+              {
+                "audience": "involved",
+                "items": [
+                  {
+                    "key": "monthly_county_control_decline_at_war_add",
+                    "polarity": "good",
+                    "text": "+0.02 Monthly County Control Decline At War Add /month"
+                  }
+                ],
+                "kind": "county"
+              },
+              {
+                "audience": "interloper",
+                "items": [
+                  {
+                    "key": "monthly_county_control_decline_at_war_add",
+                    "polarity": "good",
+                    "text": "+0.01 Monthly County Control Decline At War Add /month"
+                  }
+                ],
+                "kind": "county"
+              },
+              {
+                "audience": "uninvolved",
+                "items": [
+                  {
+                    "key": "monthly_county_control_decline_at_war_add",
+                    "polarity": "good",
+                    "text": "+0.03 Monthly County Control Decline At War Add /month"
+                  }
+                ],
+                "kind": "county"
+              },
+              {
+                "audience": "involved",
+                "items": [
+                  {
+                    "key": "owned_hostile_scheme_success_chance_add",
+                    "polarity": "good",
+                    "text": "+20% Owned Hostile Scheme Success Chance Add"
+                  },
+                  {
+                    "key": "claim_throne_scheme_phase_duration_add",
+                    "polarity": "good",
+                    "text": "100 Claim Throne Phase Length days faster per Scheme Phase"
+                  }
+                ],
+                "kind": "character"
+              },
+              {
+                "audience": "involved",
+                "items": [
+                  {
+                    "key": "unlocks_abandon_hook_for_all",
+                    "text": "Unlocks the Abandon Hook Interaction"
+                  },
+                  {
+                    "key": "unlocks_claim_throne_for_all",
+                    "text": "Unlocks the Claim Throne Scheme against Involved Rulers"
+                  },
+                  {
+                    "key": "fp3_sway_scheme_more_powerful",
+                    "text": "Successful Sway Schemes increase the success chance of the Offer Vassalization Interaction"
+                  },
+                  {
+                    "key": "fp3_sway_vassals_removes_disloyalty",
+                    "text": "Successful Sway Schemes against disloyal Vassals have a chance of removing their disloyal Trait"
+                  },
+                  {
+                    "key": "empowered_vizierate",
+                    "text": "Increases the balance point of the Scales of Power by +… for Viziers"
+                  },
+                  {
+                    "key": "unlocks_challenge_house_head_for_clans",
+                    "text": "House members challenge their House Head to a Trial-by-Combat in order to take their place"
+                  },
+                  {
+                    "key": "less_dissolution_more_claimants",
+                    "text": "The Dissolution Faction is less common but Claimant Factions are more common"
+                  },
+                  {
+                    "key": "caliph_cant_be_dissolutioned",
+                    "text": "Dissolution Factions cannot be used against the Sunni Caliphate or the Arabian Empire"
+                  }
+                ],
+                "kind": "parameters"
+              },
+              {
+                "audience": "interloper",
+                "items": [
+                  {
+                    "key": "less_dissolution_more_claimants",
+                    "text": "The Dissolution Faction is less common but Claimant Factions are more common"
+                  }
+                ],
+                "kind": "parameters"
+              }
+            ],
+            "group": "other_effects",
+            "name": "(Other)"
+          }
+        ],
+        "ending": false,
+        "endingDecisions": [
+          {
+            "id": "struggle_persia_ending_foundation_decision",
+            "name": "Struggle Persia Ending Foundation Decision"
+          },
+          {
+            "id": "struggle_persia_ending_assertion_decision",
+            "name": "Struggle Persia Ending Assertion Decision"
+          },
+          {
+            "id": "struggle_persia_ending_rekindle_iran_decision",
+            "name": "Struggle Persia Ending Rekindle Iran Decision"
+          }
+        ],
+        "id": "struggle_persia_phase_unrest",
+        "name": "Unrest",
+        "transitions": [
+          {
+            "catalysts": [
+              {
+                "desc": "Yearly Drift: … or more Involved House Heads with Harmonious House Unity",
+                "id": "catalyst_yearly_influential_house_is_harmonious_major",
+                "name": "Harmonious House Catalyst",
+                "points": {
+                  "value": 10
+                }
+              },
+              {
+                "desc": "Yearly Drift: … or more Involved House Heads with Harmonious House Unity",
+                "id": "catalyst_yearly_influential_house_is_harmonious_medium",
+                "name": "Harmonious House Catalyst",
+                "points": {
+                  "value": 5
+                }
+              },
+              {
+                "desc": "Yearly Drift: … or more Involved House Heads with Harmonious House Unity",
+                "id": "catalyst_yearly_influential_house_is_harmonious_minor",
+                "name": "Harmonious House Catalyst",
+                "points": {
+                  "value": 3
+                }
+              },
+              {
+                "desc": "Yearly Drift: … or more Involved House Heads with Harmonious House Unity",
+                "id": "catalyst_yearly_influential_house_is_harmonious_minimal",
+                "name": "Harmonious House Catalyst",
+                "points": {
+                  "value": 1
+                }
+              },
+              {
+                "desc": "Vassalize an Independent Ruler",
+                "id": "catalyst_vassalize_independent_ruler",
+                "name": "Vassalized an … Catalyst",
+                "points": {
+                  "value": 10
+                }
+              },
+              {
+                "desc": "Learn the Language of an Involved Ruler",
+                "id": "catalyst_learned_new_language_important",
+                "name": "Learned Language Catalyst",
+                "points": {
+                  "value": 3
+                }
+              },
+              {
+                "desc": "Invite an Involved Ruler to a Feast or Hunt Activity as an Honorary Guest",
+                "id": "catalyst_invite_involved_as_honorary_guests_to_feast_hunt",
+                "name": "Honorary guest Catalyst",
+                "points": {
+                  "value": 5
+                }
+              },
+              {
+                "desc": "Reveal … Secret Faith",
+                "id": "catalyst_revealed_secret_faith_islam",
+                "name": "Revealed … Secret Faith Catalyst",
+                "points": {
+                  "value": 5
+                }
+              },
+              {
+                "desc": "Start a War against another Involved Ruler (of lower Tier) as a Supporter of Caliphal Authority",
+                "id": "catalyst_supporter_declare_unfair_war_within_the_region",
+                "name": "Started a War Catalyst",
+                "points": {
+                  "value": 5
+                }
+              },
+              {
+                "desc": "Start a War against another Involved Ruler (of same Tier or higher) as a Supporter of Caliphal Authority",
+                "id": "catalyst_supporter_declare_fair_war_within_the_region",
+                "name": "Started a War Catalyst",
+                "points": {
+                  "value": 10
+                }
+              },
+              {
+                "desc": "Win a War started against another Involved Ruler (of lower Tier) as a Supporter of Caliphal Authority",
+                "id": "catalyst_supporter_win_unfair_war_within_the_region",
+                "name": "Won a War Catalyst",
+                "points": {
+                  "value": 10
+                }
+              },
+              {
+                "desc": "Win a War started against another Involved Ruler (of same Tier or higher) as a Supporter of Caliphal Authority",
+                "id": "catalyst_supporter_win_fair_war_within_the_region",
+                "name": "Won a War Catalyst",
+                "points": {
+                  "value": 25
+                }
+              },
+              {
+                "desc": "Successfully use the Install a Supporter Casus Belli",
+                "id": "catalyst_install_loyalist_cb",
+                "name": "Successfully used the Install a Supporter Casus Belli",
+                "points": {
+                  "value": 10
+                }
+              },
+              {
+                "desc": "Important Character takes the Decision to become a Supporter of Caliphal Authority",
+                "id": "catalyst_became_supporter_fp3",
+                "name": "An important Character took the Decision to become a Supporter of Caliphal Authority",
+                "points": {
+                  "value": 25
+                }
+              },
+              {
+                "desc": "Imprison a Detractor of the Caliphate",
+                "id": "catalyst_imprison_detractor",
+                "name": "Imprisoned Detractor of the Caliphate Catalyst",
+                "points": {
+                  "value": 3
+                }
+              },
+              {
+                "desc": "Execute a Detractor of the Caliphate",
+                "id": "catalyst_execute_detractor",
+                "name": "Executed a Detractor of the Caliphate Catalyst",
+                "points": {
+                  "value": 5
+                }
+              },
+              {
+                "desc": "A Detractor of the Caliphate Ruler is killed",
+                "id": "catalyst_unnatural_death_detractor",
+                "name": "Murdered Catalyst",
+                "points": {
+                  "value": 5
+                }
+              },
+              {
+                "desc": "Reveal the Secret of a Detractor of the Caliphate Ruler",
+                "id": "catalyst_reveal_secret_detractor",
+                "name": "Exposed Secret Catalyst",
+                "points": {
+                  "value": 5
+                }
+              },
+              {
+                "desc": "Convert a Detractor of the Caliphate Ruler",
+                "id": "catalyst_detractor_forced_conversion",
+                "name": "Converted Catalyst",
+                "points": {
+                  "value": 5
+                }
+              },
+              {
+                "desc": "A Detractor of the Caliphate becomes a Supporter of Caliphal Authority",
+                "id": "catalyst_turn_detractor_into_supporter",
+                "name": "Changed side Catalyst",
+                "points": {
+                  "value": 5
+                }
+              },
+              {
+                "desc": "Obtain a Title within the Struggle Region from an Interloper or Uninvolved Ruler",
+                "id": "catalyst_gain_struggle_titles_from_interlopers_uninvolved",
+                "name": "Obtained Title from an Uninvolved Interloper or Uninvolved Catalyst",
+                "points": {
+                  "value": 5
+                }
+              },
+              {
+                "desc": "A heated discussion between a Supporter of Caliphal Authority and Detractor of the Caliphate during a Coronation ended in loud support of stability",
+                "id": "catalyst_coronation_event_stabilization",
+                "name": "A loud proclamation of dissatisfaction during a coronation",
+                "points": {
+                  "value": 1
+                }
+              }
+            ],
+            "default": false,
+            "to": "struggle_persia_phase_stabilisation",
+            "toName": "Stabilization"
+          },
+          {
+            "catalysts": [
+              {
+                "desc": "Yearly Drift: Natural flow towards this Struggle Phase",
+                "id": "catalyst_passing_of_time",
+                "name": "Yearly Drift Catalyst",
+                "points": {
+                  "rules": "base 1 (if current year >= 960: add 1) (if current year >= 1000: add 3)"
+                }
+              },
+              {
+                "desc": "A War between a Supporter of Caliphal Authority and Detractor of the Caliphate ends with White Peace",
+                "id": "catalyst_war_ends_in_white_peace_between_supporter_detractor",
+                "name": "Had a War end in White Peace",
+                "points": {
+                  "value": 3
+                }
+              },
+              {
+                "desc": "A Supporter of Caliphal Authority and Detractor of the Caliphate become Best Friends or Soulmates",
+                "id": "catalyst_became_best_friend_soulmate_supporter_detractor",
+                "name": "Twin Souls Catalyst",
+                "points": {
+                  "value": 3
+                }
+              },
+              {
+                "desc": "A Supporter of Caliphal Authority and Detractor of the Caliphate become Friends or Lovers",
+                "id": "catalyst_became_friend_lover_supporter_detractor",
+                "name": "Twin Souls Catalyst",
+                "points": {
+                  "value": 1
+                }
+              },
+              {
+                "desc": "An Alliance is formed between a Supporter of Caliphal Authority and Detractor of the Caliphate",
+                "id": "catalyst_forming_alliance_between_supporter_detractor_rulers",
+                "name": "Alliance formed between a Supporter of Caliphal Authority and Detractor of the Caliphate Catalyst",
+                "points": {
+                  "value": 2
+                }
+              },
+              {
+                "desc": "A Hook is abandoned between a Supporter of Caliphal Authority and Detractor of the Caliphate",
+                "id": "catalyst_abandon_hook_on_supporter_detractor",
+                "name": "Hook abandoned Catalyst",
+                "points": {
+                  "value": 3
+                }
+              },
+              {
+                "desc": "A Crime is pardoned between a Supporter of Caliphal Authority and Detractor of the Caliphate",
+                "id": "catalyst_grants_pardon_supporter_detractor",
+                "name": "Pardon granted Catalyst",
+                "points": {
+                  "value": 1
+                }
+              },
+              {
+                "desc": "Someone is released from Prison without any demands made between a Supporter of Caliphal Authority and Detractor of the Caliphate",
+                "id": "catalyst_release_supporter_detractor",
+                "name": "Released a Ruler Catalyst",
+                "points": {
+                  "value": 3
+                }
+              },
+              {
+                "desc": "Ransom an Involved Ruler between a Supporter of Caliphal Authority and Detractor of the Caliphate",
+                "id": "catalyst_ransom_supporter_detractor",
+                "name": "Ransom Catalyst",
+                "points": {
+                  "value": 1
+                }
+              },
+              {
+                "desc": "A Vassal is transferred to their De Jure liege between a Supporter of Caliphal Authority and Detractor of the Caliphate",
+                "id": "catalyst_grants_vassal_to_de_jure_liege_supporter_detractor",
+                "name": "Transferred to De Jure liege Catalyst",
+                "points": {
+                  "value": 3
+                }
+              },
+              {
+                "desc": "A Gift or Artifact is sent between a Supporter of Caliphal Authority and Detractor of the Caliphate",
+                "id": "catalyst_gift_supporter_detractor_ruler",
+                "name": "Gift sent Catalyst",
+                "points": {
+                  "value": 1
+                }
+              },
+              {
+                "desc": "Lose a Title within the Struggle Region to an Interloper or Uninvolved Ruler",
+                "id": "catalyst_interloper_uninvolved_gain_struggle_titles",
+                "name": "Lost a Title to Involved Catalyst",
+                "points": {
+                  "value": 3
+                }
+              },
+              {
+                "desc": "Complete a Raid against an Involved Ruler",
+                "id": "catalyst_raided_involved",
+                "name": "Raided Involved Ruler Catalyst",
+                "points": {
+                  "value": 3
+                }
+              },
+              {
+                "desc": "Yearly Drift: either the Sunni Caliphate or the Arabian Empire are destroyed",
+                "id": "catalyst_missing_caliphate_or_arabian_empire",
+                "name": "Yearly Drift: either the Sunni Caliphate or the Arabian Empire were destroyed",
+                "points": {
+                  "value": 20
+                }
+              },
+              {
+                "desc": "The Holder of the Sunni Caliphate or the Arabian Empire loses a Civil War",
+                "id": "catalyst_caliph_or_emperor_loses_revolt_war",
+                "name": "Holder of the Sunni Caliphate or the Arabian Empire lost a Civil War",
+                "points": {
+                  "value": 10
+                }
+              },
+              {
+                "desc": "The Holder of the Sunni Caliphate or the Arabian Empire accepts a Faction's demands",
+                "id": "catalyst_caliph_or_emperor_accepts_faction_demands",
+                "name": "Holder of the Sunni Caliphate or the Arabian Empire accepted a Faction's demands",
+                "points": {
+                  "value": 3
+                }
+              },
+              {
+                "desc": "The Sunni … dies violently\n(… year cooldown)",
+                "id": "catalyst_caliph_died_violently",
+                "name": "The Sunni … died violently",
+                "points": {
+                  "value": 25
+                }
+              },
+              {
+                "desc": "The Sunni … dies naturally\n(… year cooldown)",
+                "id": "catalyst_caliph_died_naturally",
+                "name": "The Sunni … died naturally",
+                "points": {
+                  "value": 10
+                }
+              },
+              {
+                "desc": "A heated discussion between a Supporter of Caliphal Authority and Detractor of the Caliphate during a Coronation ended in loud support of finding a middle ground",
+                "id": "catalyst_coronation_event_concession",
+                "name": "A loud proclamation of dissatisfaction during a coronation",
+                "points": {
+                  "value": 1
+                }
+              }
+            ],
+            "default": false,
+            "to": "struggle_persia_ending_phase_concession",
+            "toName": "Concession"
+          }
+        ]
+      },
+      {
+        "desc": "Over time, as tensions in Persia calm down and both supporters and detractors of the Caliphate tire of constant bloodshed, the Iranian Intermezzo might come to end naturally: not with a bang, but with a whimper.",
+        "durationPoints": null,
+        "effects": [],
+        "ending": true,
+        "endingDecisions": [],
+        "id": "struggle_persia_ending_phase_concession",
+        "name": "Concession",
+        "transitions": []
+      }
+    ],
+    "regions": [
+      {
+        "id": "world_persian_empire",
+        "name": "Ancient Persia"
+      },
+      {
+        "id": "ghw_region_kurdistan",
+        "name": "Kurdistan"
+      }
+    ],
+    "sourceFile": "persian_struggle_script.txt",
+    "startPhase": "struggle_persia_phase_unrest",
+    "transitionDuration": "3 months"
+  }
+]

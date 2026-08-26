@@ -1,0 +1,2334 @@
+{
+  "attributes": [
+    {
+      "adjective": "Charming",
+      "categories": [
+        "common",
+        "personality",
+        "unscrupulous",
+        "social",
+        "diplomacy",
+        "intrigue",
+        "personal_schemer",
+        "disliked",
+        "courtly",
+        "subtle"
+      ],
+      "dlc": "Tours & Tournaments",
+      "features": [],
+      "group": "common",
+      "icon": "accolade_trait_courtly_purple",
+      "id": "charmer_attribute",
+      "name": "Charmer",
+      "noun": "Charmer",
+      "ranks": [
+        {
+          "knight": [],
+          "knightArmy": [],
+          "liege": [
+            "10 Seduce Phase Length days faster per Scheme Phase"
+          ],
+          "maa": [],
+          "params": [
+            "Your Courtiers are slightly more vulnerable to the Seduce Schemes of any Character"
+          ],
+          "rank": 1
+        },
+        {
+          "knight": [],
+          "knightArmy": [],
+          "liege": [
+            "20 Seduce Phase Length days faster per Scheme Phase"
+          ],
+          "maa": [],
+          "params": [
+            "Your Courtiers are slightly more vulnerable to the Seduce Schemes of any Character",
+            "Increased Fertility and Attraction Opinion while hosting a Feast or Grand Wedding"
+          ],
+          "rank": 2
+        },
+        {
+          "knight": [],
+          "knightArmy": [],
+          "liege": [
+            "40 Seduce Phase Length days faster per Scheme Phase"
+          ],
+          "maa": [],
+          "params": [
+            "Your Courtiers are slightly more vulnerable to the Seduce Schemes of any Character",
+            "Highly increased Fertility and Attraction Opinion while hosting a Feast or Grand Wedding"
+          ],
+          "rank": 3
+        }
+      ],
+      "skills": [
+        "diplomacy",
+        "intrigue"
+      ],
+      "sourceFile": "04_ep2_common_attributes.txt",
+      "unlock": [
+        "The Acclaimed Knight is a Seducer",
+        "The Acclaimed Knight is Lustful",
+        "May become available to the Acclaimed Knight after you complete a Seduce Scheme"
+      ]
+    },
+    {
+      "adjective": "Disciplined",
+      "categories": [
+        "common",
+        "personality",
+        "righteous",
+        "stewardship",
+        "martial",
+        "army_bonus",
+        "causes_stress",
+        "ethical",
+        "forceful",
+        "militant",
+        "leader"
+      ],
+      "dlc": "Tours & Tournaments",
+      "features": [],
+      "group": "common",
+      "icon": "accolade_trait_ethical_red",
+      "id": "disciplinarian_attribute",
+      "name": "Disciplinarian",
+      "noun": "Disciplinarian",
+      "ranks": [
+        {
+          "knight": [],
+          "knightArmy": [],
+          "liege": [
+            "+10% Levy Reinforcement Rate",
+            "+2% Vassal Herd Contribution"
+          ],
+          "maa": [],
+          "params": [],
+          "rank": 1
+        },
+        {
+          "knight": [],
+          "knightArmy": [
+            "-40% Hostile County Attrition"
+          ],
+          "liege": [
+            "+20% Levy Reinforcement Rate",
+            "-10% Levy Maintenance",
+            "+5% Vassal Herd Contribution"
+          ],
+          "maa": [],
+          "params": [],
+          "rank": 2
+        },
+        {
+          "knight": [],
+          "knightArmy": [
+            "-80% Hostile County Attrition"
+          ],
+          "liege": [
+            "+30% Levy Reinforcement Rate",
+            "-20% Levy Maintenance",
+            "+10% Vassal Herd Contribution"
+          ],
+          "maa": [],
+          "params": [],
+          "rank": 3
+        }
+      ],
+      "skills": [
+        "martial",
+        "stewardship"
+      ],
+      "sourceFile": "04_ep2_common_attributes.txt",
+      "unlock": [
+        "The Acclaimed Knight is an Organizer",
+        "The Acclaimed Knight is an Overseer",
+        "The Acclaimed Knight is Diligent",
+        "The Acclaimed Knight is Temperate",
+        "The Acclaimed Knight is Stubborn",
+        "May become available when the Acclaimed Knight is in an Army that loses a Battle"
+      ]
+    },
+    {
+      "adjective": "Fanatical",
+      "categories": [
+        "common",
+        "personality",
+        "righteous",
+        "learning",
+        "army_bonus",
+        "disliked",
+        "militant",
+        "ethical",
+        "forceful",
+        "aggressive"
+      ],
+      "dlc": "Tours & Tournaments",
+      "features": [],
+      "group": "common",
+      "icon": "accolade_trait_ethical_blue",
+      "id": "fanatic_attribute",
+      "name": "Fanatic",
+      "noun": "Fanatic",
+      "ranks": [
+        {
+          "knight": [],
+          "knightArmy": [],
+          "liege": [
+            "+10 Zealot Vassal Opinion"
+          ],
+          "maa": [],
+          "params": [],
+          "rank": 1
+        },
+        {
+          "knight": [],
+          "knightArmy": [],
+          "liege": [
+            "+15 Zealot Vassal Opinion"
+          ],
+          "maa": [],
+          "params": [
+            "Piety cost of Holy Wars reduced",
+            "Joining Holy Wars provides Piety"
+          ],
+          "rank": 2
+        },
+        {
+          "knight": [],
+          "knightArmy": [],
+          "liege": [
+            "+25 Zealot Vassal Opinion"
+          ],
+          "maa": [],
+          "params": [
+            "Piety cost of Holy Wars highly reduced",
+            "Joining Holy Wars provides significant Piety"
+          ],
+          "rank": 3
+        }
+      ],
+      "skills": [
+        "learning"
+      ],
+      "sourceFile": "04_ep2_common_attributes.txt",
+      "unlock": [
+        "The Acclaimed Knight is a Faithful Blade",
+        "The Acclaimed Knight is Zealous",
+        "May become available when the Acclaimed Knight is in an Army that Battles a hostile Faith"
+      ]
+    },
+    {
+      "adjective": "Idealistic",
+      "categories": [
+        "common",
+        "personality",
+        "benevolent",
+        "social",
+        "diplomacy",
+        "vassal_manager",
+        "foreign_relations",
+        "courtly",
+        "ethical",
+        "defensive",
+        "leader"
+      ],
+      "dlc": "Tours & Tournaments",
+      "features": [],
+      "group": "common",
+      "icon": "accolade_trait_leadership_green",
+      "id": "idealist_attribute",
+      "name": "Idealist",
+      "noun": "Idealist",
+      "ranks": [
+        {
+          "knight": [],
+          "knightArmy": [],
+          "liege": [
+            "+5 Courtly Vassal Opinion",
+            "+3 Minority Vassal Opinion",
+            "+3 Minor Landholder Vassal Opinion"
+          ],
+          "maa": [],
+          "params": [],
+          "rank": 1
+        },
+        {
+          "knight": [],
+          "knightArmy": [],
+          "liege": [
+            "+8 Courtly Vassal Opinion",
+            "+6 Minority Vassal Opinion",
+            "+6 Minor Landholder Vassal Opinion"
+          ],
+          "maa": [],
+          "params": [],
+          "rank": 2
+        },
+        {
+          "knight": [],
+          "knightArmy": [],
+          "liege": [
+            "+10 Courtly Vassal Opinion",
+            "+10 Minority Vassal Opinion",
+            "+10 Minor Landholder Vassal Opinion"
+          ],
+          "maa": [],
+          "params": [
+            "Negotiating a White Peace provides Prestige"
+          ],
+          "rank": 3
+        }
+      ],
+      "skills": [
+        "diplomacy"
+      ],
+      "sourceFile": "04_ep2_common_attributes.txt",
+      "unlock": [
+        "The Acclaimed Knight is Compassionate",
+        "The Acclaimed Knight is Forgiving",
+        "The Acclaimed Knight is Generous",
+        "The Acclaimed Knight is Trusting",
+        "May become available to the Acclaimed Knight after you release a Prisoner without conditions"
+      ]
+    },
+    {
+      "adjective": "Marauding",
+      "categories": [
+        "common",
+        "personality",
+        "villainous",
+        "martial",
+        "intrigue",
+        "dreadful",
+        "disliked",
+        "army_bonus",
+        "amoral",
+        "forceful",
+        "aggressive",
+        "militant"
+      ],
+      "dlc": "Tours & Tournaments",
+      "features": [],
+      "group": "common",
+      "icon": "accolade_trait_aggressive_red",
+      "id": "marauder_attribute",
+      "name": "Marauder",
+      "noun": "Marauder",
+      "ranks": [
+        {
+          "knight": [],
+          "knightArmy": [
+            "+2 Uncontrolled Territory Attacker Advantage"
+          ],
+          "liege": [
+            "+0.1% Monthly Prestige per Dread"
+          ],
+          "maa": [],
+          "params": [],
+          "rank": 1
+        },
+        {
+          "knight": [],
+          "knightArmy": [
+            "+3 Uncontrolled Territory Attacker Advantage"
+          ],
+          "liege": [
+            "+0.2% Monthly Prestige per Dread"
+          ],
+          "maa": [],
+          "params": [],
+          "rank": 2
+        },
+        {
+          "knight": [],
+          "knightArmy": [
+            "+5 Uncontrolled Territory Attacker Advantage"
+          ],
+          "liege": [
+            "+0.3% Monthly Prestige per Dread"
+          ],
+          "maa": [],
+          "params": [],
+          "rank": 3
+        }
+      ],
+      "skills": [
+        "martial",
+        "intrigue"
+      ],
+      "sourceFile": "04_ep2_common_attributes.txt",
+      "unlock": [
+        "The Acclaimed Knight is Sadistic",
+        "The Acclaimed Knight is Callous",
+        "The Acclaimed Knight is Vengeful",
+        "May become available after an Army containing the Acclaimed Knight successfully Occupies a Holding"
+      ]
+    },
+    {
+      "adjective": "Scoundrel",
+      "categories": [
+        "common",
+        "personality",
+        "amoral",
+        "martial",
+        "intrigue",
+        "army_bonus",
+        "subtle",
+        "unscrupulous"
+      ],
+      "dlc": "Tours & Tournaments",
+      "features": [],
+      "group": "common",
+      "icon": "accolade_trait_amoral_red",
+      "id": "scoundrel_attribute",
+      "name": "Scoundrel",
+      "noun": "Scoundrel",
+      "ranks": [
+        {
+          "knight": [],
+          "knightArmy": [],
+          "liege": [
+            "-10% Mercenary Hire Cost"
+          ],
+          "maa": [],
+          "params": [],
+          "rank": 1
+        },
+        {
+          "knight": [],
+          "knightArmy": [],
+          "liege": [
+            "+2 Martial per Stress Level",
+            "-20% Mercenary Hire Cost"
+          ],
+          "maa": [],
+          "params": [],
+          "rank": 2
+        },
+        {
+          "knight": [],
+          "knightArmy": [],
+          "liege": [
+            "+5 Martial per Stress Level",
+            "-30% Mercenary Hire Cost"
+          ],
+          "maa": [],
+          "params": [],
+          "rank": 3
+        }
+      ],
+      "skills": [
+        "martial",
+        "intrigue"
+      ],
+      "sourceFile": "04_ep2_common_attributes.txt",
+      "unlock": [
+        "The Acclaimed Knight is Ambitious",
+        "The Acclaimed Knight is Gregarious",
+        "The Acclaimed Knight is Greedy",
+        "The Acclaimed Knight is Deceitful",
+        "The Acclaimed Knight is a Veteran Adventurer",
+        "May become available to the Acclaimed Knight after you complete any Hostile Scheme other than Murder Scheme"
+      ]
+    },
+    {
+      "adjective": "Stalwart",
+      "categories": [
+        "common",
+        "personality",
+        "righteous",
+        "army_bonus",
+        "ethical",
+        "forceful",
+        "defensive",
+        "leader",
+        "benevolent"
+      ],
+      "dlc": "Tours & Tournaments",
+      "features": [],
+      "group": "common",
+      "icon": "accolade_trait_defensive_blue",
+      "id": "stalwart_attribute",
+      "name": "Stalwart",
+      "noun": "Stalwart",
+      "ranks": [
+        {
+          "knight": [],
+          "knightArmy": [],
+          "liege": [
+            "+5 Travel Safety"
+          ],
+          "maa": [],
+          "params": [],
+          "rank": 1
+        },
+        {
+          "knight": [],
+          "knightArmy": [
+            "+10% Army Toughness"
+          ],
+          "liege": [
+            "+10 Travel Safety"
+          ],
+          "maa": [],
+          "params": [],
+          "rank": 2
+        },
+        {
+          "knight": [],
+          "knightArmy": [
+            "+15% Army Toughness"
+          ],
+          "liege": [
+            "+15 Travel Safety"
+          ],
+          "maa": [],
+          "params": [],
+          "rank": 3
+        }
+      ],
+      "skills": [],
+      "sourceFile": "04_ep2_common_attributes.txt",
+      "unlock": [
+        "The Acclaimed Knight is Honest",
+        "The Acclaimed Knight is Just",
+        "The Acclaimed Knight is Patient",
+        "The Acclaimed Knight is an Defender",
+        "May become available when Acclaimed Knight is Traveling in your Entourage through Provinces with high Danger"
+      ]
+    },
+    {
+      "adjective": "Thuggish",
+      "categories": [
+        "common",
+        "personality",
+        "unscrupulous",
+        "prowess",
+        "hostile_schemer",
+        "activities",
+        "dreadful",
+        "disliked",
+        "amoral",
+        "forceful",
+        "aggressive",
+        "champion"
+      ],
+      "dlc": "Tours & Tournaments",
+      "features": [],
+      "group": "common",
+      "icon": "accolade_trait_forceful_red",
+      "id": "thug_attribute",
+      "name": "Thug",
+      "noun": "Thug",
+      "ranks": [
+        {
+          "knight": [],
+          "knightArmy": [],
+          "liege": [
+            "+0.2 Dread Gain per Tyranny"
+          ],
+          "maa": [],
+          "params": [],
+          "rank": 1
+        },
+        {
+          "knight": [],
+          "knightArmy": [],
+          "liege": [
+            "+0.4 Dread Gain per Tyranny"
+          ],
+          "maa": [],
+          "params": [
+            "Imprison Chance: +15"
+          ],
+          "rank": 2
+        },
+        {
+          "knight": [],
+          "knightArmy": [],
+          "liege": [
+            "+0.8 Dread Gain per Tyranny"
+          ],
+          "maa": [],
+          "params": [
+            "Imprison Chance: +25"
+          ],
+          "rank": 3
+        }
+      ],
+      "skills": [
+        "prowess"
+      ],
+      "sourceFile": "04_ep2_common_attributes.txt",
+      "unlock": [
+        "The Acclaimed Knight is a Pillager",
+        "The Acclaimed Knight is Wrathful",
+        "The Acclaimed Knight is Arbitrary",
+        "The Acclaimed Knight is Arrogant",
+        "The Acclaimed Knight is Impatient",
+        "May become available when the Acclaimed Knight is in an Army that slays enemy Knights"
+      ]
+    },
+    {
+      "adjective": "Valiant",
+      "categories": [
+        "common",
+        "personality",
+        "righteous",
+        "prowess",
+        "army_bonus",
+        "army_penalty",
+        "militant",
+        "forceful",
+        "aggressive",
+        "militant",
+        "champion"
+      ],
+      "dlc": "Tours & Tournaments",
+      "features": [],
+      "group": "common",
+      "icon": "accolade_trait_forceful_blue",
+      "id": "valiant_attribute",
+      "name": "Valiant",
+      "noun": "Valiant",
+      "ranks": [
+        {
+          "knight": [],
+          "knightArmy": [
+            "+10% Army Damage"
+          ],
+          "liege": [],
+          "maa": [],
+          "params": [],
+          "rank": 1
+        },
+        {
+          "knight": [],
+          "knightArmy": [
+            "+20% Army Damage"
+          ],
+          "liege": [
+            "+15 Glory Hound Vassal Opinion"
+          ],
+          "maa": [],
+          "params": [],
+          "rank": 2
+        },
+        {
+          "knight": [],
+          "knightArmy": [
+            "+30% Army Damage"
+          ],
+          "liege": [
+            "+25 Glory Hound Vassal Opinion"
+          ],
+          "maa": [],
+          "params": [],
+          "rank": 3
+        }
+      ],
+      "skills": [
+        "prowess"
+      ],
+      "sourceFile": "04_ep2_common_attributes.txt",
+      "unlock": [
+        "The Acclaimed Knight is Brave",
+        "The Acclaimed Knight is a Berserker",
+        "The Acclaimed Knight is Reckless",
+        "May become available when the Acclaimed Knight is in an Army that Battles a numerically superior enemy"
+      ]
+    },
+    {
+      "adjective": "Fearsome",
+      "categories": [
+        "skilled",
+        "skill",
+        "champion",
+        "forceful",
+        "warlike",
+        "prowess"
+      ],
+      "dlc": "Tours & Tournaments",
+      "features": [],
+      "group": "skilled",
+      "icon": "accolade_trait_aggressive_blue",
+      "id": "contender_attribute",
+      "name": "Contender",
+      "noun": "Contender",
+      "ranks": [
+        {
+          "knight": [],
+          "knightArmy": [],
+          "liege": [
+            "+10% Hastiluder Trait Experience Gain",
+            "+3 Belligerent Vassal Opinion"
+          ],
+          "maa": [],
+          "params": [
+            "This Knight gains +10 Hastiluder Experience from Grand Tournament attendance"
+          ],
+          "rank": 1
+        },
+        {
+          "knight": [],
+          "knightArmy": [],
+          "liege": [
+            "+20% Hastiluder Trait Experience Gain",
+            "+6 Belligerent Vassal Opinion"
+          ],
+          "maa": [],
+          "params": [
+            "This Knight gains +15 Hastiluder Experience from Grand Tournament attendance",
+            "All your Knights gain +5 Hastiluder Experience from Grand Tournament attendance"
+          ],
+          "rank": 2
+        },
+        {
+          "knight": [],
+          "knightArmy": [],
+          "liege": [
+            "+2% Monthly Prestige per Knight",
+            "+30% Hastiluder Trait Experience Gain",
+            "+10 Belligerent Vassal Opinion"
+          ],
+          "maa": [],
+          "params": [
+            "This Knight gains +20 Hastiluder Experience from Grand Tournament attendance",
+            "All your Knights gain +10 Hastiluder Experience from Grand Tournament attendance"
+          ],
+          "rank": 3
+        }
+      ],
+      "skills": [
+        "prowess"
+      ],
+      "sourceFile": "04_ep2_skilled_attributes.txt",
+      "unlock": [
+        "Acclaimed Knight's Prowess is 24 or higher",
+        "Acclaimed Knight's Hastiluder Foot Trait Experience is 50 or higher",
+        "Acclaimed Knight's Hastiluder Horse Trait Experience is 50 or higher",
+        "Acclaimed Knight's Hastiluder Wit Trait Experience is 50 or higher",
+        "Acclaimed Knight's Hastiluder Bow Trait Experience is 50 or higher"
+      ]
+    },
+    {
+      "adjective": "Manipulative",
+      "categories": [
+        "skilled",
+        "skill",
+        "subtle",
+        "courtly",
+        "aggressive",
+        "amoral",
+        "intrigue"
+      ],
+      "dlc": "Tours & Tournaments",
+      "features": [],
+      "group": "skilled",
+      "icon": "accolade_trait_amoral_purple",
+      "id": "manipulator_attribute",
+      "name": "Manipulator",
+      "noun": "Manipulator",
+      "ranks": [
+        {
+          "knight": [],
+          "knightArmy": [],
+          "liege": [
+            "5 Intrigue Scheme Phase Length days faster per Scheme Phase"
+          ],
+          "maa": [],
+          "params": [],
+          "rank": 1
+        },
+        {
+          "knight": [],
+          "knightArmy": [],
+          "liege": [
+            "10 Intrigue Scheme Phase Length days faster per Scheme Phase",
+            "+0.3% Knight Effectiveness per Dread",
+            "+1 Intrigue"
+          ],
+          "maa": [],
+          "params": [],
+          "rank": 2
+        },
+        {
+          "knight": [],
+          "knightArmy": [],
+          "liege": [
+            "15 Intrigue Scheme Phase Length days faster per Scheme Phase",
+            "+0.5% Knight Effectiveness per Dread",
+            "+20 Natural Dread",
+            "+2 Intrigue"
+          ],
+          "maa": [],
+          "params": [],
+          "rank": 3
+        }
+      ],
+      "skills": [
+        "intrigue"
+      ],
+      "sourceFile": "04_ep2_skilled_attributes.txt",
+      "unlock": [
+        "The Acclaimed Knight is a Schemer",
+        "The Acclaimed Knight's Intrigue Skill is 15 or higher",
+        "May become available to the Acclaimed Knight after you complete a Murder Scheme"
+      ]
+    },
+    {
+      "adjective": "Sagely",
+      "categories": [
+        "skilled",
+        "skill",
+        "subtle",
+        "courtly",
+        "ethical",
+        "leader",
+        "learning"
+      ],
+      "dlc": "Tours & Tournaments",
+      "features": [],
+      "group": "skilled",
+      "icon": "accolade_trait_leadership_blue",
+      "id": "mentor_attribute",
+      "name": "Mentor",
+      "noun": "Mentor",
+      "ranks": [
+        {
+          "knight": [],
+          "knightArmy": [],
+          "liege": [
+            "+1 Number of Knights"
+          ],
+          "maa": [],
+          "params": [],
+          "rank": 1
+        },
+        {
+          "knight": [],
+          "knightArmy": [],
+          "liege": [
+            "+1 Number of Knights",
+            "+1 Learning"
+          ],
+          "maa": [],
+          "params": [
+            "The Train Commanders Councillor Task occasionally increases a Knight's Hastiluder Experience",
+            "Adolescents of your Court gain additional Prestige and Prowess"
+          ],
+          "rank": 2
+        },
+        {
+          "knight": [],
+          "knightArmy": [],
+          "liege": [
+            "+2 Number of Knights",
+            "+2 Learning"
+          ],
+          "maa": [],
+          "params": [
+            "The Train Commanders Councillor Task occasionally highly increases a Knight's Hastiluder Experience",
+            "Adolescents of your Court gain significant extra Prestige and Prowess"
+          ],
+          "rank": 3
+        }
+      ],
+      "skills": [
+        "learning"
+      ],
+      "sourceFile": "04_ep2_skilled_attributes.txt",
+      "unlock": [
+        "The Acclaimed Knight is Whole of Body",
+        "The Acclaimed Knight's Learning Skill is 15 or higher",
+        "May become available when the Acclaimed Knight is a Guardian of your child"
+      ]
+    },
+    {
+      "adjective": "Politicking",
+      "categories": [
+        "skilled",
+        "skill",
+        "social",
+        "personality",
+        "diplomacy",
+        "vassal_manager",
+        "courtly",
+        "subtle"
+      ],
+      "dlc": "Tours & Tournaments",
+      "features": [],
+      "group": "skilled",
+      "icon": "accolade_trait_courtly_blue",
+      "id": "politicker_attribute",
+      "name": "Politicker",
+      "noun": "Politicker",
+      "ranks": [
+        {
+          "knight": [],
+          "knightArmy": [],
+          "liege": [
+            "+3 Courtly Vassal Opinion",
+            "+3 Minor Landholder Vassal Opinion",
+            "+5 Minority Vassal Opinion"
+          ],
+          "maa": [],
+          "params": [],
+          "rank": 1
+        },
+        {
+          "knight": [],
+          "knightArmy": [],
+          "liege": [
+            "+6 Courtly Vassal Opinion",
+            "+6 Minor Landholder Vassal Opinion",
+            "+8 Minority Vassal Opinion",
+            "+1 Diplomacy"
+          ],
+          "maa": [],
+          "params": [
+            "Entrenched Regency Scales of Power Balancing Point: -10"
+          ],
+          "rank": 2
+        },
+        {
+          "knight": [],
+          "knightArmy": [],
+          "liege": [
+            "+10 Courtly Vassal Opinion",
+            "+10 Minor Landholder Vassal Opinion",
+            "+10 Minority Vassal Opinion",
+            "+2 Diplomacy"
+          ],
+          "maa": [],
+          "params": [
+            "Grand Tours boost Vassal Levy Base Contribution and Siege Progress against Revolts, after completion",
+            "Entrenched Regency Scales of Power Balancing Point: -15"
+          ],
+          "rank": 3
+        }
+      ],
+      "skills": [
+        "diplomacy"
+      ],
+      "sourceFile": "04_ep2_skilled_attributes.txt",
+      "unlock": [
+        "The Acclaimed Knight is a Diplomat",
+        "The Acclaimed Knight's Diplomacy Skill is 15",
+        "May become available when the Acclaimed Knight attends a Coronation or Grand Wedding Activity"
+      ]
+    },
+    {
+      "adjective": "Calculating",
+      "categories": [
+        "skilled",
+        "skill",
+        "subtle",
+        "courtly",
+        "leader",
+        "stewardship"
+      ],
+      "dlc": "Tours & Tournaments",
+      "features": [],
+      "group": "skilled",
+      "icon": "accolade_trait_subtle_green",
+      "id": "reeve_attribute",
+      "name": "Reeve",
+      "noun": "Reeve",
+      "ranks": [
+        {
+          "knight": [],
+          "knightArmy": [],
+          "liege": [
+            "+10 Parochial Vassal Opinion"
+          ],
+          "maa": [],
+          "params": [],
+          "rank": 1
+        },
+        {
+          "knight": [],
+          "knightArmy": [],
+          "liege": [
+            "+15 Parochial Vassal Opinion",
+            "+1 Stewardship"
+          ],
+          "maa": [],
+          "params": [
+            "Completing a Grand Tournament grants +50 Development Growth in your least-developed County"
+          ],
+          "rank": 2
+        },
+        {
+          "knight": [],
+          "knightArmy": [],
+          "liege": [
+            "+25 Parochial Vassal Opinion",
+            "+2 Stewardship"
+          ],
+          "maa": [],
+          "params": [
+            "Completing a Grand Tournament grants +1 Development Level to your least-developed County",
+            "The Increase Control in County Councillor Task will occasionally gain a significant boost"
+          ],
+          "rank": 3
+        }
+      ],
+      "skills": [
+        "stewardship"
+      ],
+      "sourceFile": "04_ep2_skilled_attributes.txt",
+      "unlock": [
+        "The Acclaimed Knight is an Administrator",
+        "The Acclaimed Knight's Stewardship Skill is 15 or higher",
+        "May become available when the Acclaimed Knight attends a Grand Tour Activity"
+      ]
+    },
+    {
+      "adjective": "Strategic",
+      "categories": [
+        "skilled",
+        "skill",
+        "warlike",
+        "leader",
+        "subtle",
+        "martial"
+      ],
+      "dlc": "Tours & Tournaments",
+      "features": [],
+      "group": "skilled",
+      "icon": "accolade_trait_militant_blue",
+      "id": "tactician_attribute",
+      "name": "Tactician",
+      "noun": "Tactician",
+      "ranks": [
+        {
+          "knight": [],
+          "knightArmy": [],
+          "liege": [
+            "+15% Monthly Martial Lifestyle Experience"
+          ],
+          "maa": [],
+          "params": [],
+          "rank": 1
+        },
+        {
+          "knight": [],
+          "knightArmy": [
+            "+25% Counter Efficiency"
+          ],
+          "liege": [
+            "+25% Monthly Martial Lifestyle Experience",
+            "+1 Martial"
+          ],
+          "maa": [],
+          "params": [],
+          "rank": 2
+        },
+        {
+          "knight": [],
+          "knightArmy": [
+            "+35% Counter Efficiency"
+          ],
+          "liege": [
+            "+35% Monthly Martial Lifestyle Experience",
+            "+2 Martial"
+          ],
+          "maa": [],
+          "params": [
+            "The Organize Army Councillor Task occasionally boosts Levy Reinforcement Rate"
+          ],
+          "rank": 3
+        }
+      ],
+      "skills": [
+        "martial"
+      ],
+      "sourceFile": "04_ep2_skilled_attributes.txt",
+      "unlock": [
+        "The Acclaimed Knight is a Strategist",
+        "The Acclaimed Knight's Martial Skill is 15 or higher",
+        "May become available after the Acclaimed Knight is challenged to play Board Games"
+      ]
+    },
+    {
+      "adjective": "Blade-Besting",
+      "categories": [
+        "eminent",
+        "rare_traits",
+        "prowess",
+        "infantry",
+        "educator",
+        "army_bonus",
+        "knights_bonus",
+        "tournaments",
+        "activities",
+        "militant",
+        "champion",
+        "aggressive"
+      ],
+      "dlc": "Tours & Tournaments",
+      "features": [],
+      "group": "eminent",
+      "icon": "accolade_trait_ethical_green",
+      "id": "blademaster_attribute",
+      "name": "Blademaster",
+      "noun": "Blademaster",
+      "ranks": [
+        {
+          "knight": [],
+          "knightArmy": [],
+          "liege": [
+            "+0.15 Blademaster Trait Experience"
+          ],
+          "maa": [],
+          "params": [
+            "You and your Primary Heir may gain the Blademaster Trait every few years",
+            "Slightly increased chance of death in battle for Knights fighting the Acclaimed Knight."
+          ],
+          "rank": 1
+        },
+        {
+          "knight": [],
+          "knightArmy": [],
+          "liege": [
+            "+0.25 Blademaster Trait Experience",
+            "+40% Knight Effectiveness"
+          ],
+          "maa": [],
+          "params": [
+            "You and your Primary Heir may gain the Blademaster Trait every few years",
+            "Moderately increased chance of death in battle for Knights fighting the Acclaimed Knight."
+          ],
+          "rank": 2
+        },
+        {
+          "knight": [],
+          "knightArmy": [],
+          "liege": [
+            "+0.35 Blademaster Trait Experience",
+            "+80% Knight Effectiveness"
+          ],
+          "maa": [],
+          "params": [
+            "You and your Primary Heir may gain the Blademaster Trait every few years",
+            "Grand Tournament Guest Invitation Acceptance: +20",
+            "Highly increased chance of death in battle for Knights fighting the Acclaimed Knight."
+          ],
+          "rank": 3
+        }
+      ],
+      "skills": [
+        "prowess"
+      ],
+      "sourceFile": "04_ep2_eminent_attributes.txt",
+      "unlock": [
+        "The Acclaimed Knight is a Blademaster",
+        "Blademaster experience is 100 or higher"
+      ]
+    },
+    {
+      "adjective": "House",
+      "categories": [
+        "eminent",
+        "relationship",
+        "dynasty",
+        "educator",
+        "defensive",
+        "champion"
+      ],
+      "dlc": "Tours & Tournaments",
+      "features": [],
+      "group": "eminent",
+      "icon": "accolade_trait_champion_blue",
+      "id": "house_knight_attribute",
+      "name": "House Paragon",
+      "noun": "House Paragon",
+      "ranks": [
+        {
+          "knight": [],
+          "knightArmy": [],
+          "liege": [],
+          "maa": [],
+          "params": [
+            "House members in an Army with this Knight are somewhat less likely to be Wounded or Killed"
+          ],
+          "rank": 1
+        },
+        {
+          "knight": [],
+          "knightArmy": [],
+          "liege": [
+            "+5% Monthly Renown"
+          ],
+          "maa": [],
+          "params": [
+            "Your children gain Hastiluder when they come of age (according to Martial Custom)",
+            "House members in an Army with this Knight are less likely to be Wounded or Killed"
+          ],
+          "rank": 2
+        },
+        {
+          "knight": [],
+          "knightArmy": [],
+          "liege": [
+            "+15% Monthly Renown"
+          ],
+          "maa": [],
+          "params": [
+            "Your children gain Hastiluder and some Experience when they come of age (according to Martial Custom)",
+            "House members in an Army with this Knight are much less likely to be Wounded or Killed"
+          ],
+          "rank": 3
+        }
+      ],
+      "skills": [],
+      "sourceFile": "04_ep2_eminent_attributes.txt",
+      "unlock": [
+        "The Acclaimed Knight is of your House",
+        "The Acclaimed Knight is Loyal",
+        "The Acclaimed Knight is your Friend"
+      ]
+    },
+    {
+      "adjective": "Hunt-Leading",
+      "categories": [
+        "eminent",
+        "rare_traits",
+        "prowess",
+        "ranged_fighter",
+        "activities",
+        "hunting",
+        "educator",
+        "logistics",
+        "subtle",
+        "courtly",
+        "leader",
+        "equestrian"
+      ],
+      "dlc": "Tours & Tournaments",
+      "features": [],
+      "group": "eminent",
+      "icon": "accolade_trait_ranged_fighter_green",
+      "id": "huntsmaster_attribute",
+      "name": "Huntsmaster",
+      "noun": "Huntsmaster",
+      "ranks": [
+        {
+          "knight": [],
+          "knightArmy": [],
+          "liege": [
+            "+15% Venator (Hunter) Trait Experience Gain"
+          ],
+          "maa": [],
+          "params": [
+            "You and your Primary Heir may gain the Hunter Trait every few years"
+          ],
+          "rank": 1
+        },
+        {
+          "knight": [],
+          "knightArmy": [],
+          "liege": [
+            "+25% Venator (Hunter) Trait Experience Gain"
+          ],
+          "maa": [],
+          "params": [
+            "You and your Primary Heir may gain the Hunter Trait every few years",
+            "Reduced Hunt Peril"
+          ],
+          "rank": 2
+        },
+        {
+          "knight": [],
+          "knightArmy": [],
+          "liege": [
+            "+35% Venator (Hunter) Trait Experience Gain"
+          ],
+          "maa": [],
+          "params": [
+            "You and your Primary Heir may gain the Hunter Trait every few years",
+            "Significantly reduced Hunt Peril"
+          ],
+          "rank": 3
+        }
+      ],
+      "skills": [
+        "prowess"
+      ],
+      "sourceFile": "04_ep2_eminent_attributes.txt",
+      "unlock": [
+        "The Acclaimed Knight is a Hunter",
+        "Your and Acclaimed Knight's Cultures do not have the Vegetarians Tradition",
+        "May become available when the Acclaimed Knight attends a Hunt"
+      ]
+    },
+    {
+      "adjective": "Revel-Leading",
+      "categories": [
+        "eminent",
+        "rare_traits",
+        "social",
+        "diplomacy",
+        "activities",
+        "foreign_relations",
+        "vassal_manager",
+        "educator",
+        "army_bonus",
+        "prestige",
+        "courtly",
+        "leader",
+        "subtle"
+      ],
+      "dlc": "Tours & Tournaments",
+      "features": [],
+      "group": "eminent",
+      "icon": "accolade_trait_courtly_red",
+      "id": "master_of_revels_attribute",
+      "name": "Master of Revels",
+      "noun": "Master of Revels",
+      "ranks": [
+        {
+          "knight": [],
+          "knightArmy": [],
+          "liege": [
+            "+15% Reveler Trait Experience Gain"
+          ],
+          "maa": [],
+          "params": [
+            "You and your Primary Heir may gain the Reveler Trait every few years"
+          ],
+          "rank": 1
+        },
+        {
+          "knight": [],
+          "knightArmy": [],
+          "liege": [
+            "+25% Reveler Trait Experience Gain"
+          ],
+          "maa": [],
+          "params": [
+            "You and your Primary Heir may gain the Reveler Trait every few years",
+            "Prestige gained from this Knight's victories in Battle"
+          ],
+          "rank": 2
+        },
+        {
+          "knight": [],
+          "knightArmy": [],
+          "liege": [
+            "+35% Reveler Trait Experience Gain"
+          ],
+          "maa": [],
+          "params": [
+            "You and your Primary Heir may gain the Reveler Trait every few years",
+            "Feast and Grand Wedding Guest Invitation Acceptance: +20",
+            "Significant Prestige gained from this Knight's victories in Battle"
+          ],
+          "rank": 3
+        }
+      ],
+      "skills": [
+        "diplomacy"
+      ],
+      "sourceFile": "04_ep2_eminent_attributes.txt",
+      "unlock": [
+        "The Acclaimed Knight is a Reveler",
+        "May become available when the Acclaimed Knight attends a Feast"
+      ]
+    },
+    {
+      "adjective": "Bow-Leading",
+      "categories": [
+        "men_at_arms",
+        "army_bonus",
+        "militant",
+        "leader",
+        "subtle",
+        "ranged_fighter"
+      ],
+      "dlc": "Tours & Tournaments",
+      "features": [],
+      "group": "men_at_arms",
+      "icon": "accolade_trait_ranged_fighter_red",
+      "id": "archer_attribute",
+      "name": "Archer",
+      "noun": "Archer",
+      "ranks": [
+        {
+          "knight": [],
+          "knightArmy": [
+            "+10% Archer Damage",
+            "+10% Archer Toughness"
+          ],
+          "liege": [
+            "+1 Max Size of Archer Regiments"
+          ],
+          "maa": [],
+          "params": [],
+          "rank": 1
+        },
+        {
+          "knight": [],
+          "knightArmy": [
+            "+40% Archer Damage",
+            "+20% Archer Toughness"
+          ],
+          "liege": [
+            "-15% Archer Maintenance",
+            "+2 Max Size of Archer Regiments"
+          ],
+          "maa": [
+            {
+              "id": "accolade_maa_archers",
+              "name": "Retinue Archers"
+            }
+          ],
+          "params": [],
+          "rank": 2
+        },
+        {
+          "knight": [],
+          "knightArmy": [
+            "+60% Archer Damage",
+            "+30% Archer Toughness"
+          ],
+          "liege": [
+            "-25% Archer Maintenance",
+            "+3 Max Size of Archer Regiments"
+          ],
+          "maa": [
+            {
+              "id": "accolade_maa_archers",
+              "name": "Retinue Archers"
+            }
+          ],
+          "params": [],
+          "rank": 3
+        }
+      ],
+      "skills": [],
+      "sourceFile": "04_ep2_maa_attributes.txt",
+      "unlock": [
+        "The Acclaimed Knight is a Forest Fighter",
+        "Acclaimed Knight's Hastiluder Bow Trait Experience is 30 or higher",
+        "May become available when the Acclaimed Knight fights a Battle alongside any Archer Men-at-Arms"
+      ]
+    },
+    {
+      "adjective": "Besieging",
+      "categories": [
+        "men_at_arms",
+        "army_bonus",
+        "militant",
+        "aggressive",
+        "subtle",
+        "leader",
+        "ranged_fighter",
+        "siege"
+      ],
+      "dlc": "Tours & Tournaments",
+      "features": [],
+      "group": "men_at_arms",
+      "icon": "accolade_trait_defensive_red",
+      "id": "besieger_attribute",
+      "name": "Besieger",
+      "noun": "Besieger",
+      "ranks": [
+        {
+          "knight": [],
+          "knightArmy": [
+            "-10% Siege Phase Time",
+            "+10% Daily Siege Progress"
+          ],
+          "liege": [
+            "+1 Max Size of Siege Weapon Regiments"
+          ],
+          "maa": [],
+          "params": [],
+          "rank": 1
+        },
+        {
+          "knight": [],
+          "knightArmy": [
+            "-15% Siege Phase Time",
+            "+15% Daily Siege Progress"
+          ],
+          "liege": [
+            "+2 Max Size of Siege Weapon Regiments"
+          ],
+          "maa": [],
+          "params": [],
+          "rank": 2
+        },
+        {
+          "knight": [],
+          "knightArmy": [
+            "-20% Siege Phase Time",
+            "+20% Daily Siege Progress"
+          ],
+          "liege": [
+            "+4 Max Size of Siege Weapon Regiments"
+          ],
+          "maa": [],
+          "params": [],
+          "rank": 3
+        }
+      ],
+      "skills": [],
+      "sourceFile": "04_ep2_maa_attributes.txt",
+      "unlock": [
+        "The Acclaimed Knight is a Military Engineer",
+        "The Acclaimed Knight is a Logistician",
+        "May become available when the Acclaimed Knight fights a Battle alongside any Siege Weapons Men-at-Arms"
+      ]
+    },
+    {
+      "adjective": "Camel-Riding",
+      "categories": [
+        "men_at_arms",
+        "army_bonus",
+        "militant",
+        "aggressive",
+        "defensive",
+        "cavalry",
+        "light_fighter"
+      ],
+      "dlc": "Tours & Tournaments",
+      "features": [],
+      "group": "men_at_arms",
+      "icon": "accolade_trait_champion_green",
+      "id": "camelry_attribute",
+      "name": "Camelier",
+      "noun": "Camelier",
+      "ranks": [
+        {
+          "knight": [],
+          "knightArmy": [
+            "+10% Camel Cavalry Damage",
+            "+10% Camel Cavalry Toughness",
+            "+10% Camel Cavalry Pursuit",
+            "+10% Camel Cavalry Screen",
+            "+5% Army Movement Speed"
+          ],
+          "liege": [
+            "+1 Max Size of Camel Cavalry Regiments"
+          ],
+          "maa": [],
+          "params": [],
+          "rank": 1
+        },
+        {
+          "knight": [],
+          "knightArmy": [
+            "+40% Camel Cavalry Damage",
+            "+20% Camel Cavalry Toughness",
+            "+20% Camel Cavalry Pursuit",
+            "+20% Camel Cavalry Screen",
+            "+10% Army Movement Speed"
+          ],
+          "liege": [
+            "-10% Camel Cavalry Maintenance",
+            "+2 Max Size of Camel Cavalry Regiments"
+          ],
+          "maa": [
+            {
+              "id": "accolade_maa_cameliers",
+              "name": "Retinue Camel Riders"
+            }
+          ],
+          "params": [],
+          "rank": 2
+        },
+        {
+          "knight": [],
+          "knightArmy": [
+            "+60% Camel Cavalry Damage",
+            "+30% Camel Cavalry Toughness",
+            "+30% Camel Cavalry Pursuit",
+            "+30% Camel Cavalry Screen",
+            "+15% Army Movement Speed"
+          ],
+          "liege": [
+            "-20% Camel Cavalry Maintenance",
+            "+2 Max Size of Camel Cavalry Regiments"
+          ],
+          "maa": [
+            {
+              "id": "accolade_maa_cameliers",
+              "name": "Retinue Camel Riders"
+            }
+          ],
+          "params": [],
+          "rank": 3
+        }
+      ],
+      "skills": [],
+      "sourceFile": "04_ep2_maa_attributes.txt",
+      "unlock": [
+        "The Acclaimed Knight is a Desert Warrior",
+        "Acclaimed Knight's Hastiluder Horse Trait Experience is 30 or higher",
+        "May become available when the Acclaimed Knight fights a Battle alongside any Camel Cavalry Men-at-Arms"
+      ]
+    },
+    {
+      "adjective": "Crossbow-Leading",
+      "categories": [
+        "men_at_arms",
+        "army_bonus",
+        "militant",
+        "defensive",
+        "leader",
+        "subtle",
+        "ranged_fighter"
+      ],
+      "dlc": "Tours & Tournaments",
+      "features": [],
+      "group": "men_at_arms",
+      "icon": "accolade_trait_militant_green",
+      "id": "crossbowmen_attribute",
+      "name": "Crossbow Captain",
+      "noun": "Crossbow Captain",
+      "ranks": [
+        {
+          "knight": [],
+          "knightArmy": [
+            "+0.1 Archer Siege Progress",
+            "+30% Archer Screen"
+          ],
+          "liege": [
+            "+1 Capital Fort Level"
+          ],
+          "maa": [],
+          "params": [
+            "Slightly increased chance of death in battle for Knights fighting the Acclaimed Knight."
+          ],
+          "rank": 1
+        },
+        {
+          "knight": [],
+          "knightArmy": [
+            "+0.3 Archer Siege Progress",
+            "+60% Archer Screen"
+          ],
+          "liege": [
+            "+2 Capital Fort Level"
+          ],
+          "maa": [
+            {
+              "id": "accolade_maa_crossbowers",
+              "name": "Retinue Crossbowmen"
+            }
+          ],
+          "params": [
+            "Moderately increased chance of death in battle for Knights fighting the Acclaimed Knight."
+          ],
+          "rank": 2
+        },
+        {
+          "knight": [],
+          "knightArmy": [
+            "+0.3 Archer Siege Progress",
+            "+100% Archer Screen"
+          ],
+          "liege": [
+            "+3 Capital Fort Level"
+          ],
+          "maa": [
+            {
+              "id": "accolade_maa_crossbowers",
+              "name": "Retinue Crossbowmen"
+            }
+          ],
+          "params": [
+            "Highly increased chance of death in battle for Knights fighting the Acclaimed Knight."
+          ],
+          "rank": 3
+        }
+      ],
+      "skills": [],
+      "sourceFile": "04_ep2_maa_attributes.txt",
+      "unlock": [
+        "The Acclaimed Knight is a Cautious Leader",
+        "Acclaimed Knight's Hastiluder Bow Trait Experience is 30 or higher",
+        "May become available when the Acclaimed Knight fights a Battle alongside any Crossbowmen Men-at-Arms"
+      ]
+    },
+    {
+      "adjective": "Elephant-Riding",
+      "categories": [
+        "men_at_arms",
+        "army_bonus",
+        "militant",
+        "forceful",
+        "leader",
+        "aggressive",
+        "defensive",
+        "cavalry",
+        "heavy_fighter"
+      ],
+      "dlc": "Tours & Tournaments",
+      "features": [],
+      "group": "men_at_arms",
+      "icon": "accolade_trait_aggressive_green",
+      "id": "elephantry_attribute",
+      "name": "Elephant Rider",
+      "noun": "Elephant Rider",
+      "ranks": [
+        {
+          "knight": [],
+          "knightArmy": [],
+          "liege": [
+            "-20% Elephant Cavalry Maintenance"
+          ],
+          "maa": [],
+          "params": [],
+          "rank": 1
+        },
+        {
+          "knight": [],
+          "knightArmy": [
+            "+20% Elephant Cavalry Damage"
+          ],
+          "liege": [
+            "-35% Elephant Cavalry Maintenance",
+            "+1 Max Size of Elephant Cavalry Regiments"
+          ],
+          "maa": [
+            {
+              "id": "accolade_maa_elephantiers",
+              "name": "Retinue War Elephants"
+            }
+          ],
+          "params": [],
+          "rank": 2
+        },
+        {
+          "knight": [],
+          "knightArmy": [
+            "+20% Elephant Cavalry Damage",
+            "+20% Elephant Cavalry Toughness"
+          ],
+          "liege": [
+            "-50% Elephant Cavalry Maintenance",
+            "+2 Max Size of Elephant Cavalry Regiments"
+          ],
+          "maa": [
+            {
+              "id": "accolade_maa_elephantiers",
+              "name": "Retinue War Elephants"
+            }
+          ],
+          "params": [],
+          "rank": 3
+        }
+      ],
+      "skills": [],
+      "sourceFile": "04_ep2_maa_attributes.txt",
+      "unlock": [
+        "The Acclaimed Knight is a Jungle Stalker",
+        "Acclaimed Knight's Hastiluder Horse Trait Experience is 30 or higher",
+        "May become available when the Acclaimed Knight fights a Battle alongside any Elephant Cavalry Men-at-Arms"
+      ]
+    },
+    {
+      "adjective": "Gunnery-Using",
+      "categories": [
+        "men_at_arms",
+        "army_bonus",
+        "militant",
+        "leader",
+        "subtle",
+        "ranged_fighter"
+      ],
+      "dlc": "Tours & Tournaments",
+      "features": [],
+      "group": "men_at_arms",
+      "icon": "accolade_trait_militant_red",
+      "id": "gunpowder_attribute",
+      "name": "Gunner",
+      "noun": "Master Gunner",
+      "ranks": [
+        {
+          "knight": [],
+          "knightArmy": [
+            "+10% Handgunner Damage",
+            "+10% Handgunner Toughness"
+          ],
+          "liege": [
+            "+1 Max Size of Handgunner Regiments"
+          ],
+          "maa": [],
+          "params": [],
+          "rank": 1
+        },
+        {
+          "knight": [],
+          "knightArmy": [
+            "+40% Handgunner Damage",
+            "+20% Handgunner Toughness"
+          ],
+          "liege": [
+            "-10% Handgunner Maintenance",
+            "+2 Max Size of Handgunner Regiments"
+          ],
+          "maa": [
+            {
+              "id": "accolade_maa_handgunners",
+              "name": "Retinue Handgunners"
+            }
+          ],
+          "params": [],
+          "rank": 2
+        },
+        {
+          "knight": [],
+          "knightArmy": [
+            "+60% Handgunner Damage",
+            "+30% Handgunner Toughness"
+          ],
+          "liege": [
+            "-25% Handgunner Maintenance",
+            "+2 Max Size of Handgunner Regiments"
+          ],
+          "maa": [
+            {
+              "id": "accolade_maa_handgunners",
+              "name": "Retinue Handgunners"
+            }
+          ],
+          "params": [],
+          "rank": 3
+        }
+      ],
+      "skills": [],
+      "sourceFile": "04_ep2_maa_attributes.txt",
+      "unlock": [
+        "The Acclaimed Knight is a Scholar",
+        "The Acclaimed Knight's Learning Skill is 12 or higher",
+        "May become available when the Acclaimed Knight fights a Battle alongside any Handgunner Men-at-Arms"
+      ]
+    },
+    {
+      "adjective": "Horse-Arching",
+      "categories": [
+        "men_at_arms",
+        "army_bonus",
+        "militant",
+        "subtle",
+        "equestrian",
+        "aggressive",
+        "defensive",
+        "cavalry",
+        "ranged_fighter",
+        "light_fighter"
+      ],
+      "dlc": "Tours & Tournaments",
+      "features": [],
+      "group": "men_at_arms",
+      "icon": "accolade_trait_ranged_fighter_blue",
+      "id": "horse_archer_attribute",
+      "name": "Horse Archer",
+      "noun": "Horse Archer",
+      "ranks": [
+        {
+          "knight": [],
+          "knightArmy": [
+            "+10% Archer Cavalry Damage",
+            "+10% Archer Cavalry Toughness",
+            "+10% Archer Cavalry Pursuit",
+            "+5% Army Movement Speed"
+          ],
+          "liege": [
+            "+1 Max Size of Archer Cavalry Regiments"
+          ],
+          "maa": [],
+          "params": [],
+          "rank": 1
+        },
+        {
+          "knight": [],
+          "knightArmy": [
+            "+40% Archer Cavalry Damage",
+            "+20% Archer Cavalry Toughness",
+            "+20% Archer Cavalry Pursuit",
+            "+10% Army Movement Speed"
+          ],
+          "liege": [
+            "-10% Archer Cavalry Maintenance",
+            "+1 Max Size of Archer Cavalry Regiments"
+          ],
+          "maa": [
+            {
+              "id": "accolade_maa_horse_archers",
+              "name": "Retinue Horse Archers"
+            }
+          ],
+          "params": [],
+          "rank": 2
+        },
+        {
+          "knight": [],
+          "knightArmy": [
+            "+60% Archer Cavalry Damage",
+            "+30% Archer Cavalry Toughness",
+            "+40% Archer Cavalry Pursuit",
+            "+15% Army Movement Speed"
+          ],
+          "liege": [
+            "-20% Archer Cavalry Maintenance",
+            "+2 Max Size of Archer Cavalry Regiments"
+          ],
+          "maa": [
+            {
+              "id": "accolade_maa_horse_archers",
+              "name": "Retinue Horse Archers"
+            }
+          ],
+          "params": [],
+          "rank": 3
+        }
+      ],
+      "skills": [],
+      "sourceFile": "04_ep2_maa_attributes.txt",
+      "unlock": [
+        "The Acclaimed Knight is a Flexible Leader",
+        "Acclaimed Knight's Hastiluder Horse Trait Experience is 30 or higher",
+        "Acclaimed Knight's Hastiluder Bow Trait Experience is 30 or higher",
+        "May become available when the Acclaimed Knight fights a Battle alongside any Archer Cavalry Men-at-Arms"
+      ]
+    },
+    {
+      "adjective": "Lancer",
+      "categories": [
+        "men_at_arms",
+        "army_bonus",
+        "militant",
+        "forceful",
+        "aggressive",
+        "equestrian",
+        "cavalry",
+        "heavy_fighter"
+      ],
+      "dlc": "Tours & Tournaments",
+      "features": [],
+      "group": "men_at_arms",
+      "icon": "accolade_trait_equestrian_blue",
+      "id": "lancer_attribute",
+      "name": "Lancer",
+      "noun": "Lancer",
+      "ranks": [
+        {
+          "knight": [],
+          "knightArmy": [
+            "+10% Heavy Cavalry Damage",
+            "+10% Heavy Cavalry Toughness"
+          ],
+          "liege": [],
+          "maa": [],
+          "params": [],
+          "rank": 1
+        },
+        {
+          "knight": [],
+          "knightArmy": [
+            "+40% Heavy Cavalry Damage",
+            "+20% Heavy Cavalry Toughness"
+          ],
+          "liege": [
+            "-10% Heavy Cavalry Maintenance",
+            "+1 Max Size of Heavy Cavalry Regiments"
+          ],
+          "maa": [
+            {
+              "id": "accolade_maa_lancers",
+              "name": "Retinue Lancers"
+            }
+          ],
+          "params": [],
+          "rank": 2
+        },
+        {
+          "knight": [],
+          "knightArmy": [
+            "+60% Heavy Cavalry Damage",
+            "+30% Heavy Cavalry Toughness"
+          ],
+          "liege": [
+            "-20% Heavy Cavalry Maintenance",
+            "+2 Max Size of Heavy Cavalry Regiments"
+          ],
+          "maa": [
+            {
+              "id": "accolade_maa_lancers",
+              "name": "Retinue Lancers"
+            }
+          ],
+          "params": [],
+          "rank": 3
+        }
+      ],
+      "skills": [],
+      "sourceFile": "04_ep2_maa_attributes.txt",
+      "unlock": [
+        "The Acclaimed Knight is an Aggressive Attacker",
+        "Acclaimed Knight's Hastiluder Horse Trait Experience is 30 or higher",
+        "May become available when the Acclaimed Knight fights a Battle alongside any Heavy Cavalry Men-at-Arms"
+      ]
+    },
+    {
+      "adjective": "Outriding",
+      "categories": [
+        "men_at_arms",
+        "army_bonus",
+        "militant",
+        "equestrian",
+        "subtle",
+        "champion",
+        "aggressive",
+        "cavalry",
+        "light_fighter"
+      ],
+      "dlc": "Tours & Tournaments",
+      "features": [],
+      "group": "men_at_arms",
+      "icon": "accolade_trait_equestrian_red",
+      "id": "outrider_attribute",
+      "name": "Outrider",
+      "noun": "Outrider",
+      "ranks": [
+        {
+          "knight": [],
+          "knightArmy": [
+            "+10% Light Cavalry Damage",
+            "+10% Light Cavalry Toughness",
+            "+10% Light Cavalry Pursuit",
+            "+5% Army Movement Speed"
+          ],
+          "liege": [
+            "+1 Max Size of Light Cavalry Regiments"
+          ],
+          "maa": [],
+          "params": [],
+          "rank": 1
+        },
+        {
+          "knight": [],
+          "knightArmy": [
+            "+40% Light Cavalry Damage",
+            "+20% Light Cavalry Toughness",
+            "+20% Light Cavalry Pursuit",
+            "+10% Army Movement Speed"
+          ],
+          "liege": [
+            "-10% Light Cavalry Maintenance",
+            "+2 Max Size of Light Cavalry Regiments"
+          ],
+          "maa": [
+            {
+              "id": "accolade_maa_outriders",
+              "name": "Retinue Outriders"
+            }
+          ],
+          "params": [],
+          "rank": 2
+        },
+        {
+          "knight": [],
+          "knightArmy": [
+            "+60% Light Cavalry Damage",
+            "+30% Light Cavalry Toughness",
+            "+40% Light Cavalry Pursuit",
+            "+15% Army Movement Speed"
+          ],
+          "liege": [
+            "-20% Light Cavalry Maintenance",
+            "+2 Max Size of Light Cavalry Regiments"
+          ],
+          "maa": [
+            {
+              "id": "accolade_maa_outriders",
+              "name": "Retinue Outriders"
+            }
+          ],
+          "params": [],
+          "rank": 3
+        }
+      ],
+      "skills": [],
+      "sourceFile": "04_ep2_maa_attributes.txt",
+      "unlock": [
+        "The Acclaimed Knight is an Open Terrain Expert",
+        "Acclaimed Knight's Hastiluder Horse Trait Experience is 30 or higher",
+        "May become available when the Acclaimed Knight fights a Battle alongside any Light Cavalry Men-at-Arms"
+      ]
+    },
+    {
+      "adjective": "Pike-Leading",
+      "categories": [
+        "men_at_arms",
+        "army_bonus",
+        "militant",
+        "leader",
+        "defensive",
+        "forceful",
+        "infantry"
+      ],
+      "dlc": "Tours & Tournaments",
+      "features": [],
+      "group": "men_at_arms",
+      "icon": "accolade_trait_champion_red",
+      "id": "pike_attribute",
+      "name": "Pike Captain",
+      "noun": "Pike Captain",
+      "ranks": [
+        {
+          "knight": [],
+          "knightArmy": [
+            "+10% Spearmen Damage",
+            "+10% Spearmen Toughness"
+          ],
+          "liege": [
+            "+1 Max Size of Spearmen Regiments"
+          ],
+          "maa": [],
+          "params": [],
+          "rank": 1
+        },
+        {
+          "knight": [],
+          "knightArmy": [
+            "+30% Spearmen Damage",
+            "+40% Spearmen Toughness"
+          ],
+          "liege": [
+            "-10% Spearmen Maintenance",
+            "+2 Max Size of Spearmen Regiments"
+          ],
+          "maa": [
+            {
+              "id": "accolade_maa_pikes",
+              "name": "Retinue Pikemen"
+            }
+          ],
+          "params": [],
+          "rank": 2
+        },
+        {
+          "knight": [],
+          "knightArmy": [
+            "+50% Spearmen Damage",
+            "+60% Spearmen Toughness"
+          ],
+          "liege": [
+            "-20% Spearmen Maintenance",
+            "+3 Max Size of Spearmen Regiments"
+          ],
+          "maa": [
+            {
+              "id": "accolade_maa_pikes",
+              "name": "Retinue Pikemen"
+            }
+          ],
+          "params": [],
+          "rank": 3
+        }
+      ],
+      "skills": [],
+      "sourceFile": "04_ep2_maa_attributes.txt",
+      "unlock": [
+        "The Acclaimed Knight is a Rough Terrain Expert",
+        "Acclaimed Knight's Hastiluder Foot Trait Experience is 30 or higher",
+        "May become available when the Acclaimed Knight fights a Battle alongside any Spearmen Men-at-Arms"
+      ]
+    },
+    {
+      "adjective": "Skirmishing",
+      "categories": [
+        "men_at_arms",
+        "army_bonus",
+        "militant",
+        "champion",
+        "subtle",
+        "ranged_fighter",
+        "infantry"
+      ],
+      "dlc": "Tours & Tournaments",
+      "features": [],
+      "group": "men_at_arms",
+      "icon": "accolade_trait_subtle_red",
+      "id": "skirmisher_attribute",
+      "name": "Skirmisher",
+      "noun": "Skirmisher",
+      "ranks": [
+        {
+          "knight": [],
+          "knightArmy": [
+            "+10% Skirmisher Damage",
+            "+10% Skirmisher Toughness",
+            "+10% Skirmisher Screen",
+            "+10% Movement Speed in Provinces affected by Winter"
+          ],
+          "liege": [
+            "+1 Max Size of Skirmisher Regiments"
+          ],
+          "maa": [],
+          "params": [],
+          "rank": 1
+        },
+        {
+          "knight": [],
+          "knightArmy": [
+            "+40% Skirmisher Damage",
+            "+20% Skirmisher Toughness",
+            "+30% Skirmisher Screen",
+            "+15% Movement Speed in Provinces affected by Winter"
+          ],
+          "liege": [
+            "-15% Skirmisher Maintenance",
+            "+3 Max Size of Skirmisher Regiments"
+          ],
+          "maa": [
+            {
+              "id": "accolade_maa_skirmishers",
+              "name": "Retinue Skirmishers"
+            }
+          ],
+          "params": [],
+          "rank": 2
+        },
+        {
+          "knight": [],
+          "knightArmy": [
+            "+60% Skirmisher Damage",
+            "+30% Skirmisher Toughness",
+            "+50% Skirmisher Screen",
+            "+20% Movement Speed in Provinces affected by Winter"
+          ],
+          "liege": [
+            "-25% Skirmisher Maintenance",
+            "+4 Max Size of Skirmisher Regiments"
+          ],
+          "maa": [
+            {
+              "id": "accolade_maa_skirmishers",
+              "name": "Retinue Skirmishers"
+            }
+          ],
+          "params": [],
+          "rank": 3
+        }
+      ],
+      "skills": [],
+      "sourceFile": "04_ep2_maa_attributes.txt",
+      "unlock": [
+        "The Acclaimed Knight is a Winter Soldier",
+        "The Acclaimed Knight is a Jungle Stalker",
+        "Acclaimed Knight's Hastiluder Bow Trait Experience is 30 or higher",
+        "Acclaimed Knight's Hastiluder Foot Trait Experience is 30 or higher",
+        "May become available when the Acclaimed Knight fights a Battle alongside any Skirmisher Men-at-Arms"
+      ]
+    },
+    {
+      "adjective": "Vanguard",
+      "categories": [
+        "men_at_arms",
+        "army_bonus",
+        "militant",
+        "forceful",
+        "aggressive",
+        "defensive",
+        "infantry",
+        "heavy_fighter"
+      ],
+      "dlc": "Tours & Tournaments",
+      "features": [],
+      "group": "men_at_arms",
+      "icon": "accolade_trait_forceful_green",
+      "id": "vanguard_attribute",
+      "name": "Vanguard",
+      "noun": "Vanguard",
+      "ranks": [
+        {
+          "knight": [],
+          "knightArmy": [
+            "+10% Heavy Infantry Damage",
+            "+10% Heavy Infantry Toughness"
+          ],
+          "liege": [
+            "+1 Max Size of Heavy Infantry Regiments"
+          ],
+          "maa": [],
+          "params": [],
+          "rank": 1
+        },
+        {
+          "knight": [],
+          "knightArmy": [
+            "+40% Heavy Infantry Damage",
+            "+20% Heavy Infantry Toughness"
+          ],
+          "liege": [
+            "-10% Heavy Infantry Maintenance",
+            "+2 Max Size of Heavy Infantry Regiments"
+          ],
+          "maa": [
+            {
+              "id": "accolade_maa_vanguards",
+              "name": "Retinue Vanguard"
+            }
+          ],
+          "params": [],
+          "rank": 2
+        },
+        {
+          "knight": [],
+          "knightArmy": [
+            "+60% Heavy Infantry Damage",
+            "+30% Heavy Infantry Toughness"
+          ],
+          "liege": [
+            "-20% Heavy Infantry Maintenance",
+            "+2 Max Size of Heavy Infantry Regiments"
+          ],
+          "maa": [
+            {
+              "id": "accolade_maa_vanguards",
+              "name": "Retinue Vanguard"
+            }
+          ],
+          "params": [],
+          "rank": 3
+        }
+      ],
+      "skills": [],
+      "sourceFile": "04_ep2_maa_attributes.txt",
+      "unlock": [
+        "The Acclaimed Knight is Strong",
+        "The Acclaimed Knight is Athletic",
+        "The Acclaimed Knight has either Hale, Robust or Divine",
+        "Acclaimed Knight's Hastiluder Foot Trait Experience is 30 or higher",
+        "May become available when the Acclaimed Knight fights a Battle alongside any Heavy Infantry Men-at-Arms"
+      ]
+    }
+  ],
+  "gloryLevels": [
+    100,
+    300,
+    600,
+    1000,
+    1500,
+    2100
+  ],
+  "maxAttributes": 3,
+  "rankFlavors": [
+    "Unsung (Rank 0)",
+    "Established (Rank 1)",
+    "Recognized (Rank 2)",
+    "Fêted (Rank 3)",
+    "Lionized (Rank 4)",
+    "August (Rank 5)",
+    "Glorious (Rank 6)"
+  ]
+}

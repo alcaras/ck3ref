@@ -1,0 +1,3708 @@
+[
+  {
+    "constructionTime": {
+      "rules": "base 1825; multiply (base 1; if top_participant_group:dynastic_cycle …: add -0.5)"
+    },
+    "contributionThreshold": null,
+    "contributions": [
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base (base 0; if has_treasury = True: add medium_treasury_value; else …; min 250); multiply 4"
+          }
+        },
+        "desc": null,
+        "id": "base_materials",
+        "name": "Construction Materials",
+        "required": true
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base (base 0; if has_treasury = True: add medium_treasury_value; else …; min 250); multiply 4"
+          }
+        },
+        "desc": null,
+        "id": "fort_material",
+        "name": "Fortification Materials",
+        "required": true
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base (base 0; if has_treasury = True: add medium_treasury_value; else …; min 250); multiply 2"
+          }
+        },
+        "desc": null,
+        "id": "work_force",
+        "name": "Workforce",
+        "required": true
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base (base 0; if has_treasury = True: add medium_treasury_value; else …; min 250); multiply 2"
+          }
+        },
+        "desc": null,
+        "id": "soldiers",
+        "name": "Soldiers",
+        "required": true
+      }
+    ],
+    "contributorCooldown": {
+      "n": 21
+    },
+    "contributors": [
+      "owner",
+      "vassals"
+    ],
+    "cost": {
+      "gold": {
+        "fromTreasury": true,
+        "rules": "base 0; if has_treasury = True: add major_treasury_value; else …; min 500"
+      }
+    },
+    "dlc": "All Under Heaven",
+    "grantsBuildings": [
+      {
+        "id": "celestial_great_barracks_01",
+        "name": "Great Barracks"
+      }
+    ],
+    "group": "major",
+    "icon": "great_projects/city_china",
+    "id": "construct_great_barracks",
+    "isImportant": false,
+    "name": "Construct Great Barracks",
+    "owner": "top liege of the province",
+    "plannable": true,
+    "provinceFilter": "top_realm",
+    "provinceFilterTarget": null,
+    "requirements": [
+      {
+        "building": null,
+        "key": "government_is_celestial",
+        "kind": "government_flag",
+        "name": "Celestial government",
+        "negated": false
+      },
+      {
+        "building": null,
+        "key": "is_independent_ruler",
+        "kind": "fact",
+        "name": "Independent ruler",
+        "negated": false
+      },
+      {
+        "building": null,
+        "key": "highest_held_title_tier",
+        "kind": "threshold",
+        "name": "Highest held title tier >= empire",
+        "negated": false
+      },
+      {
+        "building": null,
+        "key": "title:e_minister_of_war",
+        "kind": "title",
+        "name": "Ministry of War",
+        "negated": false
+      },
+      {
+        "building": null,
+        "key": "title:e_minister_grand_marshal",
+        "kind": "title",
+        "name": "Commission",
+        "negated": false
+      },
+      {
+        "building": null,
+        "key": "title:e_minister_of_works",
+        "kind": "title",
+        "name": "Ministry of Works",
+        "negated": false
+      },
+      {
+        "building": null,
+        "key": "only_single_great_project_type_allowed",
+        "kind": "condition",
+        "name": "Great Project of this type is not already being planned or ongoing",
+        "negated": false
+      },
+      {
+        "building": null,
+        "key": "innovation_barracks",
+        "kind": "innovation",
+        "name": "Barracks",
+        "negated": false
+      },
+      {
+        "building": null,
+        "key": "great_project_type_construct_great_barracks_military_governor_duchy_capital",
+        "kind": "condition",
+        "name": "Is the De Jure Duchy Capital of a Military …",
+        "negated": false
+      },
+      {
+        "building": null,
+        "key": "great_project_type_construct_great_barracks_does_not_already_have_barracks",
+        "kind": "condition",
+        "name": "Does not already have a Great Barracks Building",
+        "negated": false
+      }
+    ],
+    "showInList": true,
+    "sourceFile": "00_great_project_types.txt",
+    "targetTitleTier": null
+  },
+  {
+    "constructionTime": {
+      "rules": "base 1825; multiply (base 1; if top_participant_group:dynastic_cycle …: add -0.5)"
+    },
+    "contributionThreshold": null,
+    "contributions": [
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base 0; if has_treasury = True: add medium_treasury_value; else …; min 250"
+          }
+        },
+        "desc": "A project of this size will require a vast amount of construction materials.",
+        "id": "materials",
+        "name": "Materials",
+        "required": true
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base 0; if has_treasury = True: add medium_treasury_value; else …; min 250"
+          }
+        },
+        "desc": "Projects of this size requires a considerable amount of planning.",
+        "id": "logistics",
+        "name": "Logistics",
+        "required": true
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base 0; if has_treasury = True: add medium_treasury_value; else …; min 250"
+          }
+        },
+        "desc": null,
+        "id": "personnel_construction",
+        "name": "Construction Crew",
+        "required": true
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base 0; if has_treasury = True: add medium_treasury_value; else …; min 250"
+          }
+        },
+        "desc": null,
+        "id": "personnel_dig",
+        "name": "Dig Crew",
+        "required": true
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base 0; if has_treasury = True: add medium_treasury_value; else …; min 250"
+          }
+        },
+        "desc": null,
+        "id": "engineers",
+        "name": "Engineers",
+        "required": true
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base 0; if has_treasury = True: add medium_treasury_value; else …; min 250"
+          }
+        },
+        "desc": null,
+        "id": "dredging_boats",
+        "name": "Dredging Boats",
+        "required": true
+      }
+    ],
+    "contributorCooldown": {
+      "n": 21
+    },
+    "contributors": [
+      "owner",
+      "tributaries",
+      "vassals"
+    ],
+    "cost": {
+      "gold": {
+        "fromTreasury": true,
+        "rules": "base (base 0; if has_treasury = True: add major_treasury_value; else …; min 500); multiply 1.5"
+      }
+    },
+    "dlc": "All Under Heaven",
+    "grantsBuildings": [],
+    "group": "major",
+    "icon": "great_projects/grand_canals",
+    "id": "grand_canals",
+    "isImportant": false,
+    "name": "The Grand Canals",
+    "owner": "top liege of the province",
+    "plannable": true,
+    "provinceFilter": "geographical_region",
+    "provinceFilterTarget": "dlc_tgp_grand_canal_region",
+    "requirements": [
+      {
+        "building": null,
+        "key": "title:h_china",
+        "kind": "title",
+        "name": "China",
+        "negated": false
+      },
+      {
+        "building": null,
+        "key": "title:e_minister_of_works",
+        "kind": "title",
+        "name": "Ministry of Works",
+        "negated": false
+      },
+      {
+        "building": null,
+        "key": "grand_secretariat",
+        "kind": "diarchy",
+        "name": "Grand Secretariat",
+        "negated": false
+      },
+      {
+        "building": null,
+        "key": "only_single_great_project_type_allowed",
+        "kind": "condition",
+        "name": "Great Project of this type is not already being planned or ongoing",
+        "negated": false
+      }
+    ],
+    "showInList": true,
+    "sourceFile": "00_great_project_types.txt",
+    "targetTitleTier": null
+  },
+  {
+    "constructionTime": {
+      "rules": "base 1825; multiply (base 1; if top_participant_group:dynastic_cycle …: add -0.5)"
+    },
+    "contributionThreshold": null,
+    "contributions": [
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base (base 0; if has_treasury = True: add medium_treasury_value; else …; min 250); multiply 2"
+          }
+        },
+        "desc": "Fortifications must be taken seriously! The most skilled minds must be tasked with overseeing this Great Project, to ensure that the best materials are used, the hardiest laborers are employed, and the strongest walls are made.",
+        "id": "master_builder",
+        "name": "Hire a Master Builder and Begin Construction",
+        "required": true
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base 0; if has_treasury = True: add major_treasury_value; min 500"
+          }
+        },
+        "desc": "The protection of the realm calls for every frontier to be properly fortified. It behooves us to inspect and renovate the walls of Wulan.",
+        "id": "walls_01",
+        "name": "Improve the Walls of Wulan",
+        "required": false
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base 0; if has_treasury = True: add major_treasury_value; min 500"
+          }
+        },
+        "desc": "The protection of the realm calls for every frontier to be properly fortified. It behooves us to inspect and renovate the walls of Feng'an.",
+        "id": "walls_02",
+        "name": "Improve the Walls of Feng'an",
+        "required": false
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base 0; if has_treasury = True: add major_treasury_value; min 500"
+          }
+        },
+        "desc": "The protection of the realm calls for every frontier to be properly fortified. It behooves us to inspect and renovate the walls of Mingsha.",
+        "id": "walls_03",
+        "name": "Improve the Walls of Mingsha",
+        "required": false
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base 0; if has_treasury = True: add major_treasury_value; min 500"
+          }
+        },
+        "desc": "The protection of the realm calls for every frontier to be properly fortified. It behooves us to inspect and renovate the walls of Yaode.",
+        "id": "walls_04",
+        "name": "Improve the Walls of Yaode",
+        "required": false
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base 0; if has_treasury = True: add major_treasury_value; min 500"
+          }
+        },
+        "desc": "The protection of the realm calls for every frontier to be properly fortified. It behooves us to inspect and renovate the walls of Huile.",
+        "id": "walls_05",
+        "name": "Improve the Walls of Huile",
+        "required": false
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base 0; if has_treasury = True: add major_treasury_value; min 500"
+          }
+        },
+        "desc": "The protection of the realm calls for every frontier to be properly fortified. It behooves us to inspect and renovate the walls of Baojing.",
+        "id": "walls_06",
+        "name": "Improve the Walls of Baojing",
+        "required": false
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base 0; if has_treasury = True: add major_treasury_value; min 500"
+          }
+        },
+        "desc": "The protection of the realm calls for every frontier to be properly fortified. It behooves us to inspect and renovate the walls of Huaiyuan.",
+        "id": "walls_07",
+        "name": "Improve the Walls of Huaiyuan",
+        "required": false
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base 0; if has_treasury = True: add major_treasury_value; min 500"
+          }
+        },
+        "desc": "The protection of the realm calls for every frontier to be properly fortified. It behooves us to inspect and renovate the walls of Shengwei.",
+        "id": "walls_08",
+        "name": "Improve the Walls of Shengwei",
+        "required": false
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base 0; if has_treasury = True: add major_treasury_value; min 500"
+          }
+        },
+        "desc": "The protection of the realm calls for every frontier to be properly fortified. It behooves us to inspect and renovate the walls of Hequ.",
+        "id": "walls_09",
+        "name": "Improve the Walls of Hequ",
+        "required": false
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base 0; if has_treasury = True: add major_treasury_value; min 500"
+          }
+        },
+        "desc": "The protection of the realm calls for every frontier to be properly fortified. It behooves us to inspect and renovate the walls of Helan.",
+        "id": "walls_10",
+        "name": "Improve the Walls of Helan",
+        "required": false
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base 0; if has_treasury = True: add major_treasury_value; min 500"
+          }
+        },
+        "desc": "The protection of the realm calls for every frontier to be properly fortified. It behooves us to inspect and renovate the walls of Dengkou.",
+        "id": "walls_11",
+        "name": "Improve the Walls of Dengkou",
+        "required": false
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base 0; if has_treasury = True: add major_treasury_value; min 500"
+          }
+        },
+        "desc": "The protection of the realm calls for every frontier to be properly fortified. It behooves us to inspect and renovate the walls of Wuluhai.",
+        "id": "walls_12",
+        "name": "Improve the Walls of Wuluhai",
+        "required": false
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base 0; if has_treasury = True: add major_treasury_value; min 500"
+          }
+        },
+        "desc": "The protection of the realm calls for every frontier to be properly fortified. It behooves us to inspect and renovate the walls of Yongfeng.",
+        "id": "walls_13",
+        "name": "Improve the Walls of Yongfeng",
+        "required": false
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base 0; if has_treasury = True: add major_treasury_value; min 500"
+          }
+        },
+        "desc": "The protection of the realm calls for every frontier to be properly fortified. It behooves us to inspect and renovate the walls of Jiuyuan.",
+        "id": "walls_14",
+        "name": "Improve the Walls of Jiuyuan",
+        "required": false
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base 0; if has_treasury = True: add major_treasury_value; min 500"
+          }
+        },
+        "desc": "The protection of the realm calls for every frontier to be properly fortified. It behooves us to inspect and renovate the walls of Tiande.",
+        "id": "walls_15",
+        "name": "Improve the Walls of Tiande",
+        "required": false
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base 0; if has_treasury = True: add major_treasury_value; min 500"
+          }
+        },
+        "desc": "The protection of the realm calls for every frontier to be properly fortified. It behooves us to inspect and renovate the walls of Jincheng.",
+        "id": "walls_16",
+        "name": "Improve the Walls of Jincheng",
+        "required": false
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base 0; if has_treasury = True: add major_treasury_value; min 500"
+          }
+        },
+        "desc": "The protection of the realm calls for every frontier to be properly fortified. It behooves us to inspect and renovate the walls of Tong'an.",
+        "id": "walls_17",
+        "name": "Improve the Walls of Tong'an",
+        "required": false
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base 0; if has_treasury = True: add major_treasury_value; min 500"
+          }
+        },
+        "desc": "The protection of the realm calls for every frontier to be properly fortified. It behooves us to inspect and renovate the walls of Huairong.",
+        "id": "walls_18",
+        "name": "Improve the Walls of Huairong",
+        "required": false
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base 0; if has_treasury = True: add major_treasury_value; min 500"
+          }
+        },
+        "desc": "The protection of the realm calls for every frontier to be properly fortified. It behooves us to inspect and renovate the walls of Pinggao.",
+        "id": "walls_19",
+        "name": "Improve the Walls of Pinggao",
+        "required": false
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base 0; if has_treasury = True: add major_treasury_value; min 500"
+          }
+        },
+        "desc": "The protection of the realm calls for every frontier to be properly fortified. It behooves us to inspect and renovate the walls of Huaide.",
+        "id": "walls_20",
+        "name": "Improve the Walls of Huaide",
+        "required": false
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base 0; if has_treasury = True: add major_treasury_value; min 500"
+          }
+        },
+        "desc": "The protection of the realm calls for every frontier to be properly fortified. It behooves us to inspect and renovate the walls of Fangqu.",
+        "id": "walls_21",
+        "name": "Improve the Walls of Fangqu",
+        "required": false
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base 0; if has_treasury = True: add major_treasury_value; min 500"
+          }
+        },
+        "desc": "The protection of the realm calls for every frontier to be properly fortified. It behooves us to inspect and renovate the walls of Huai'an.",
+        "id": "walls_22",
+        "name": "Improve the Walls of Huai'an",
+        "required": false
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base 0; if has_treasury = True: add major_treasury_value; min 500"
+          }
+        },
+        "desc": "The protection of the realm calls for every frontier to be properly fortified. It behooves us to inspect and renovate the walls of Luoyuan.",
+        "id": "walls_23",
+        "name": "Improve the Walls of Luoyuan",
+        "required": false
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base 0; if has_treasury = True: add major_treasury_value; min 500"
+          }
+        },
+        "desc": "The protection of the realm calls for every frontier to be properly fortified. It behooves us to inspect and renovate the walls of Hengshan.",
+        "id": "walls_24",
+        "name": "Improve the Walls of Hengshan",
+        "required": false
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base 0; if has_treasury = True: add major_treasury_value; min 500"
+          }
+        },
+        "desc": "The protection of the realm calls for every frontier to be properly fortified. It behooves us to inspect and renovate the walls of Wuyan.",
+        "id": "walls_25",
+        "name": "Improve the Walls of Wuyan",
+        "required": false
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base 0; if has_treasury = True: add major_treasury_value; min 500"
+          }
+        },
+        "desc": "The protection of the realm calls for every frontier to be properly fortified. It behooves us to inspect and renovate the walls of Ningshuo.",
+        "id": "walls_26",
+        "name": "Improve the Walls of Ningshuo",
+        "required": false
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base 0; if has_treasury = True: add major_treasury_value; min 500"
+          }
+        },
+        "desc": "The protection of the realm calls for every frontier to be properly fortified. It behooves us to inspect and renovate the walls of Longquan.",
+        "id": "walls_27",
+        "name": "Improve the Walls of Longquan",
+        "required": false
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base 0; if has_treasury = True: add major_treasury_value; min 500"
+          }
+        },
+        "desc": "The protection of the realm calls for every frontier to be properly fortified. It behooves us to inspect and renovate the walls of Rulin.",
+        "id": "walls_28",
+        "name": "Improve the Walls of Rulin",
+        "required": false
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base 0; if has_treasury = True: add major_treasury_value; min 500"
+          }
+        },
+        "desc": "The protection of the realm calls for every frontier to be properly fortified. It behooves us to inspect and renovate the walls of Kaiguang.",
+        "id": "walls_29",
+        "name": "Improve the Walls of Kaiguang",
+        "required": false
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base 0; if has_treasury = True: add major_treasury_value; min 500"
+          }
+        },
+        "desc": "The protection of the realm calls for every frontier to be properly fortified. It behooves us to inspect and renovate the walls of Yincheng.",
+        "id": "walls_30",
+        "name": "Improve the Walls of Yincheng",
+        "required": false
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base 0; if has_treasury = True: add major_treasury_value; min 500"
+          }
+        },
+        "desc": "The protection of the realm calls for every frontier to be properly fortified. It behooves us to inspect and renovate the walls of Datong.",
+        "id": "walls_31",
+        "name": "Improve the Walls of Datong",
+        "required": false
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base 0; if has_treasury = True: add major_treasury_value; min 500"
+          }
+        },
+        "desc": "The protection of the realm calls for every frontier to be properly fortified. It behooves us to inspect and renovate the walls of Xuande.",
+        "id": "walls_32",
+        "name": "Improve the Walls of Xuande",
+        "required": false
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base 0; if has_treasury = True: add major_treasury_value; min 500"
+          }
+        },
+        "desc": "The protection of the realm calls for every frontier to be properly fortified. It behooves us to inspect and renovate the walls of Baishui.",
+        "id": "walls_33",
+        "name": "Improve the Walls of Baishui",
+        "required": false
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base 0; if has_treasury = True: add major_treasury_value; min 500"
+          }
+        },
+        "desc": "The protection of the realm calls for every frontier to be properly fortified. It behooves us to inspect and renovate the walls of Rouxuan.",
+        "id": "walls_34",
+        "name": "Improve the Walls of Rouxuan",
+        "required": false
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base 0; if has_treasury = True: add major_treasury_value; min 500"
+          }
+        },
+        "desc": "The protection of the realm calls for every frontier to be properly fortified. It behooves us to inspect and renovate the walls of Yangcheng.",
+        "id": "walls_35",
+        "name": "Improve the Walls of Yangcheng",
+        "required": false
+      }
+    ],
+    "contributorCooldown": {
+      "n": 21
+    },
+    "contributors": [
+      "owner",
+      "tributaries",
+      "vassals"
+    ],
+    "cost": {
+      "gold": {
+        "fromTreasury": true,
+        "rules": "base (base 0; if has_treasury = True: add major_treasury_value; else …; min 500); multiply 0.3"
+      }
+    },
+    "dlc": "All Under Heaven",
+    "grantsBuildings": [
+      {
+        "id": "the_great_wall_04",
+        "name": "The Great Wall"
+      }
+    ],
+    "group": "major",
+    "icon": "great_projects/great_wall",
+    "id": "great_wall",
+    "isImportant": false,
+    "name": "Improve the Great Wall",
+    "owner": "top liege of the province",
+    "plannable": true,
+    "provinceFilter": null,
+    "provinceFilterTarget": null,
+    "requirements": [
+      {
+        "building": null,
+        "key": "title:h_china",
+        "kind": "title",
+        "name": "China",
+        "negated": false
+      },
+      {
+        "building": null,
+        "key": "title:e_minister_of_works",
+        "kind": "title",
+        "name": "Ministry of Works",
+        "negated": false
+      },
+      {
+        "building": null,
+        "key": "grand_secretariat",
+        "kind": "diarchy",
+        "name": "Grand Secretariat",
+        "negated": false
+      },
+      {
+        "building": "the_great_wall_01",
+        "key": "the_great_wall_01",
+        "kind": "building",
+        "name": "The Great Wall",
+        "negated": false
+      },
+      {
+        "building": null,
+        "key": "only_single_great_project_type_allowed",
+        "kind": "condition",
+        "name": "Great Project of this type is not already being planned or ongoing",
+        "negated": false
+      }
+    ],
+    "showInList": true,
+    "sourceFile": "00_great_project_types.txt",
+    "targetTitleTier": null
+  },
+  {
+    "constructionTime": {
+      "rules": "base 3650; multiply (base 1; if top_participant_group:dynastic_cycle …: add -0.5)"
+    },
+    "contributionThreshold": null,
+    "contributions": [
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base 0; if has_treasury = True: add major_treasury_value; min 500"
+          }
+        },
+        "desc": null,
+        "id": "materials",
+        "name": "Construction Materials",
+        "required": true
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base 0; if has_treasury = True: add major_treasury_value; min 500"
+          }
+        },
+        "desc": null,
+        "id": "workforce",
+        "name": "Workforce",
+        "required": true
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base 0; if has_treasury = True: add major_treasury_value; min 500"
+          }
+        },
+        "desc": "Projects of this size requires a considerable amount of planning.",
+        "id": "logistics",
+        "name": "Logistics",
+        "required": true
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base 0; if has_treasury = True: add major_treasury_value; min 500"
+          }
+        },
+        "desc": null,
+        "id": "engineers",
+        "name": "Engineers",
+        "required": true
+      }
+    ],
+    "contributorCooldown": {
+      "n": 0
+    },
+    "contributors": [
+      "owner",
+      "tributaries",
+      "vassals"
+    ],
+    "cost": {
+      "gold": {
+        "fromTreasury": true,
+        "rules": "base 0; if has_treasury = True: add major_treasury_value; min 500"
+      }
+    },
+    "dlc": "All Under Heaven",
+    "grantsBuildings": [
+      {
+        "id": "the_great_wall_04",
+        "name": "The Great Wall"
+      },
+      {
+        "id": "the_great_wall_liaodong",
+        "name": "The Great Wall"
+      }
+    ],
+    "group": "major",
+    "icon": "great_projects/great_wall",
+    "id": "great_wall_extend_to_liaodong",
+    "isImportant": false,
+    "name": "Extend the Great Wall to Liaodong",
+    "owner": "top liege of the province",
+    "plannable": true,
+    "provinceFilter": null,
+    "provinceFilterTarget": null,
+    "requirements": [
+      {
+        "building": null,
+        "key": "title:h_china",
+        "kind": "title",
+        "name": "China",
+        "negated": false
+      },
+      {
+        "building": null,
+        "key": "title:e_minister_of_works",
+        "kind": "title",
+        "name": "Ministry of Works",
+        "negated": false
+      },
+      {
+        "building": null,
+        "key": "grand_secretariat",
+        "kind": "diarchy",
+        "name": "Grand Secretariat",
+        "negated": false
+      },
+      {
+        "building": null,
+        "key": "only_single_great_project_type_allowed",
+        "kind": "condition",
+        "name": "Great Project of this type is not already being planned or ongoing",
+        "negated": false
+      },
+      {
+        "building": null,
+        "key": "great_wall_extend_to_top_liege_of_province",
+        "kind": "condition",
+        "name": "… has a Holding and you are its Top Liege",
+        "negated": false
+      }
+    ],
+    "showInList": true,
+    "sourceFile": "00_great_project_types.txt",
+    "targetTitleTier": null
+  },
+  {
+    "constructionTime": {
+      "rules": "base 3650; multiply (base 1; if top_participant_group:dynastic_cycle …: add -0.5)"
+    },
+    "contributionThreshold": null,
+    "contributions": [
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base 0; if has_treasury = True: add major_treasury_value; min 500"
+          }
+        },
+        "desc": null,
+        "id": "materials",
+        "name": "Construction Materials",
+        "required": true
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base 0; if has_treasury = True: add major_treasury_value; min 500"
+          }
+        },
+        "desc": null,
+        "id": "land_clearance",
+        "name": "Land Clearance",
+        "required": true
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base 0; if has_treasury = True: add major_treasury_value; min 500"
+          }
+        },
+        "desc": null,
+        "id": "engineers",
+        "name": "Engineers",
+        "required": true
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base 0; if has_treasury = True: add major_treasury_value; min 500"
+          }
+        },
+        "desc": null,
+        "id": "logistics",
+        "name": "Logistics",
+        "required": true
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base 0; if has_treasury = True: add major_treasury_value; min 500"
+          }
+        },
+        "desc": null,
+        "id": "personnel_construction",
+        "name": "Construction Crew",
+        "required": true
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base 0; if has_treasury = True: add major_treasury_value; min 500"
+          }
+        },
+        "desc": null,
+        "id": "personnel_dig",
+        "name": "Dig Crew",
+        "required": true
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base 0; if has_treasury = True: add major_treasury_value; min 500"
+          }
+        },
+        "desc": null,
+        "id": "architects",
+        "name": "Skilled Architects",
+        "required": true
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base 0; if has_treasury = True: add major_treasury_value; min 500"
+          }
+        },
+        "desc": null,
+        "id": "fort_material",
+        "name": "Fortification Materials",
+        "required": true
+      }
+    ],
+    "contributorCooldown": {
+      "n": 0
+    },
+    "contributors": [
+      "owner",
+      "tributaries",
+      "vassals"
+    ],
+    "cost": {
+      "gold": {
+        "fromTreasury": true,
+        "rules": "base 0; if has_treasury = True: add major_treasury_value; min 500"
+      }
+    },
+    "dlc": "All Under Heaven",
+    "grantsBuildings": [
+      {
+        "id": "the_great_wall_04",
+        "name": "The Great Wall"
+      },
+      {
+        "id": "the_great_wall_shanhai_pass",
+        "name": "The Great Wall"
+      }
+    ],
+    "group": "major",
+    "icon": "great_projects/great_wall",
+    "id": "great_wall_extend_to_shanhai_pass",
+    "isImportant": false,
+    "name": "Extend the Great Wall to Shanhai Pass",
+    "owner": "top liege of the province",
+    "plannable": true,
+    "provinceFilter": null,
+    "provinceFilterTarget": null,
+    "requirements": [
+      {
+        "building": null,
+        "key": "title:h_china",
+        "kind": "title",
+        "name": "China",
+        "negated": false
+      },
+      {
+        "building": null,
+        "key": "title:e_minister_of_works",
+        "kind": "title",
+        "name": "Ministry of Works",
+        "negated": false
+      },
+      {
+        "building": null,
+        "key": "grand_secretariat",
+        "kind": "diarchy",
+        "name": "Grand Secretariat",
+        "negated": false
+      },
+      {
+        "building": null,
+        "key": "only_single_great_project_type_allowed",
+        "kind": "condition",
+        "name": "Great Project of this type is not already being planned or ongoing",
+        "negated": false
+      },
+      {
+        "building": null,
+        "key": "great_wall_extend_to_top_liege_of_province",
+        "kind": "condition",
+        "name": "… has a Holding and you are its Top Liege",
+        "negated": false
+      }
+    ],
+    "showInList": true,
+    "sourceFile": "00_great_project_types.txt",
+    "targetTitleTier": null
+  },
+  {
+    "constructionTime": {
+      "n": 1825
+    },
+    "contributionThreshold": null,
+    "contributions": [
+      {
+        "contributors": [
+          "owner"
+        ],
+        "cost": null,
+        "desc": "We shall prove our worth in being allowed to build a Ornate Temple, competing for the devotion of the denizens in this De Jure Kingdom!",
+        "id": "rite_of_worthiness",
+        "name": "Rite of Worthiness",
+        "required": true
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "rules": "if is_ai = True: value mandala_contribution_low_gold_cost; else …"
+          }
+        },
+        "desc": "This temple will venerate the divine, but its construction has earthly demands. Supplying the Great Project with the material it needs is one of the greatest contributions possible.",
+        "id": "slabs_of_sandstone",
+        "name": "Slabs of Sandstone",
+        "required": true
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "rules": "base monthly_character_income; multiply 3; if has_treasury = True, this != top_liege, is_landed = True: multiply 0.25; min 15; max (base 150; if exists = culture: culture …); divide 5; ceiling True; multiply 5"
+          },
+          "piety": {
+            "rules": "if is_ai = True: value 0; else …"
+          }
+        },
+        "desc": "Laterite soil is necessary for a sturdy foundation, as well as decoration.",
+        "id": "laterite_blocks",
+        "name": "Laterite Blocks",
+        "required": true
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "rules": "base monthly_character_income; multiply 3; if has_treasury = True, this != top_liege, is_landed = True: multiply 0.25; min 15; max (base 150; if exists = culture: culture …); divide 5; ceiling True; multiply 5"
+          },
+          "piety": {
+            "rules": "if is_ai = True: value 0; else …"
+          }
+        },
+        "desc": "We shall use all the timber we need in order to support the structure with beams, roofs, pivoting doors — and also make allowances for decorative paneling.",
+        "id": "timber",
+        "name": "Timber",
+        "required": true
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "piety": {
+            "rules": "if is_ai = True: value 0; else …"
+          }
+        },
+        "desc": "Stones don't move themselves! We will supply the Great Project with the raw manpower needed to complete this glorious task.",
+        "id": "work_force",
+        "name": "Workforce",
+        "required": true
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "piety": {
+            "rules": "if is_ai = True: value 0; else …"
+          }
+        },
+        "desc": "In addition to the decorative paneling, we shall create carvings and etchings to venerate the divine and bring blessings upon our people.",
+        "id": "woodcarvings",
+        "name": "Woodcarvings",
+        "required": false
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "rules": "if is_ai = True: value mandala_contribution_low_gold_cost; else …"
+          },
+          "piety": {
+            "rules": "if is_ai = True: value 0; else …"
+          }
+        },
+        "desc": "We shall manifest domes — a man-made construction that allows us to reflect on our own ingenuity.",
+        "id": "sanctified_domes",
+        "name": "Sanctified Domes",
+        "required": false
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "rules": "if is_ai = True: value mandala_contribution_low_gold_cost; else …"
+          }
+        },
+        "desc": "Reliefs featuring devatas, apsaras and depicting divine moments shall fill this place, to the astonishment of its worshipers.",
+        "id": "ornate_reliefs",
+        "name": "Ornate Reliefs",
+        "required": false
+      },
+      {
+        "contributors": [
+          "owner"
+        ],
+        "cost": {
+          "gold": {
+            "rules": "if is_ai = True: value mandala_contribution_low_gold_cost; else …"
+          },
+          "piety": {
+            "rules": "if is_ai = True: value 0; else …"
+          }
+        },
+        "desc": "A dedicated Shrine to our great rulers progeny will be erected.",
+        "id": "family_shrine",
+        "name": "Family Shrine",
+        "required": false
+      }
+    ],
+    "contributorCooldown": {
+      "n": 21
+    },
+    "contributors": [
+      "owner",
+      "tributaries",
+      "vassals"
+    ],
+    "cost": {
+      "piety": {
+        "n": 250
+      }
+    },
+    "dlc": "All Under Heaven",
+    "grantsBuildings": [
+      {
+        "id": "mandala_capital_01",
+        "name": "Ornate Temple"
+      }
+    ],
+    "group": "major",
+    "icon": "great_projects/mandala_capital",
+    "id": "mandala_capital_01",
+    "isImportant": true,
+    "name": "Capital Temple Complex",
+    "owner": "direct owner of the province",
+    "plannable": true,
+    "provinceFilter": null,
+    "provinceFilterTarget": null,
+    "requirements": [
+      {
+        "building": null,
+        "key": "government_is_mandala",
+        "kind": "government_flag",
+        "name": "Mandala government",
+        "negated": false
+      },
+      {
+        "building": null,
+        "key": "piety_level",
+        "kind": "threshold",
+        "name": "Piety level >= medium",
+        "negated": false
+      },
+      {
+        "building": null,
+        "key": "number_of_tributaries",
+        "kind": "threshold",
+        "name": "Number of tributaries >= 1",
+        "negated": false
+      },
+      {
+        "building": null,
+        "key": "legitimacy_level",
+        "kind": "threshold",
+        "name": "Legitimacy level >= 1",
+        "negated": false
+      },
+      {
+        "building": null,
+        "key": "is_independent_ruler",
+        "kind": "fact",
+        "name": "Independent ruler",
+        "negated": false
+      },
+      {
+        "building": null,
+        "key": "great_project_mandala_capital_pick_aspect_tt",
+        "kind": "condition",
+        "name": "You have assumed a Mandala Aspect",
+        "negated": false
+      },
+      {
+        "building": null,
+        "key": "not_already_full_on_mandala_capitals",
+        "kind": "condition",
+        "name": "A maximum of … Ornate Temples may be active, being Rebuilt or under construction in the same De Jure Kingdom",
+        "negated": false
+      }
+    ],
+    "showInList": true,
+    "sourceFile": "00_great_project_types.txt",
+    "targetTitleTier": null
+  },
+  {
+    "constructionTime": {
+      "n": 1825
+    },
+    "contributionThreshold": null,
+    "contributions": [
+      {
+        "contributors": [
+          "owner"
+        ],
+        "cost": null,
+        "desc": "We shall prove our worth in being allowed to further our Ornate Temple, competing for the devotion of the denizens in this De Jure Kingdom!",
+        "id": "rite_of_worthiness",
+        "name": "Rite of Worthiness",
+        "required": true
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "rules": "if is_ai = True: value mandala_contribution_low_gold_cost; else …"
+          }
+        },
+        "desc": "More cannot be created from nothing. We will provide the Great Project with all the brick it needs to complete work on the Majestic Temple.",
+        "id": "brick",
+        "name": "Brick",
+        "required": true
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "rules": "if is_ai = True: value mandala_contribution_low_gold_cost; else …"
+          },
+          "piety": {
+            "rules": "if is_ai = True: value 100; else …"
+          }
+        },
+        "desc": "A well-functioning roof is a tiled roof. We shall send our best tiles to the Great Project and protect it from the damp!",
+        "id": "tiles",
+        "name": "Stacks of Tiles",
+        "required": true
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "rules": "if is_ai = True: value mandala_contribution_low_gold_cost; else …"
+          },
+          "piety": {
+            "rules": "if is_ai = True: value 100; else …"
+          }
+        },
+        "desc": "Water features are essential for providing cool but also to tie us to the divine plane.",
+        "id": "shallow_pools",
+        "name": "Shallow Pools",
+        "required": true
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "piety": {
+            "rules": "if is_ai = True: value 250; else …"
+          }
+        },
+        "desc": "Great labor is needed for great feats! We must supply more manpower for the Great Project to finish renovations on this Majestic Temple.",
+        "id": "work_force",
+        "name": "Workforce",
+        "required": true
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "rules": "if is_ai = True: value mandala_contribution_low_gold_cost; else …"
+          }
+        },
+        "desc": "Let us indulge and add decorative tiles to the roofs. Curved edges. Intricate carving. More magnificence to please the eye as well as the divine.",
+        "id": "decorative_tiles",
+        "name": "Decorative Tiles",
+        "required": false
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "rules": "if is_ai = True: value mandala_contribution_low_gold_cost; else_if …; else …"
+          },
+          "piety": {
+            "rules": "if is_ai = True: value 250; else_if …; else …"
+          }
+        },
+        "desc": "A good dome is a round dome. They will be round, with ridges and interesting motifs in no time.",
+        "id": "decorated_domes",
+        "name": "Decorated Domes",
+        "required": false
+      },
+      {
+        "contributors": [
+          "owner"
+        ],
+        "cost": {
+          "gold": {
+            "rules": "if is_ai = True: value mandala_contribution_mid_gold_cost; else …"
+          },
+          "piety": {
+            "rules": "if is_ai = True: value 250; else …"
+          }
+        },
+        "desc": "The heirs of our divine lineage will have their sacred visages carved in stone statues, so that they may be remembered for all time.",
+        "id": "family_statues",
+        "name": "Sacred Statue of Heir",
+        "required": false
+      }
+    ],
+    "contributorCooldown": {
+      "n": 21
+    },
+    "contributors": [
+      "owner",
+      "tributaries",
+      "vassals"
+    ],
+    "cost": {
+      "piety": {
+        "n": 500
+      }
+    },
+    "dlc": "All Under Heaven",
+    "grantsBuildings": [
+      {
+        "id": "mandala_capital_02",
+        "name": "Majestic Temple"
+      }
+    ],
+    "group": "major",
+    "icon": "great_projects/mandala_capital",
+    "id": "mandala_capital_02",
+    "isImportant": true,
+    "name": "Capital Temple Complex Upgrade",
+    "owner": "direct owner of the province",
+    "plannable": true,
+    "provinceFilter": null,
+    "provinceFilterTarget": null,
+    "requirements": [
+      {
+        "building": null,
+        "key": "government_is_mandala",
+        "kind": "government_flag",
+        "name": "Mandala government",
+        "negated": false
+      },
+      {
+        "building": null,
+        "key": "piety_level",
+        "kind": "threshold",
+        "name": "Piety level >= high",
+        "negated": false
+      },
+      {
+        "building": null,
+        "key": "mandala_capital_tier_2_amount_of_subjects",
+        "kind": "condition",
+        "name": "You have at least … Subjects",
+        "negated": false
+      },
+      {
+        "building": null,
+        "key": "legitimacy_level",
+        "kind": "threshold",
+        "name": "Legitimacy level >= 2",
+        "negated": false
+      },
+      {
+        "building": null,
+        "key": "is_independent_ruler",
+        "kind": "fact",
+        "name": "Independent ruler",
+        "negated": false
+      },
+      {
+        "building": null,
+        "key": "not_already_full_on_mandala_capitals",
+        "kind": "condition",
+        "name": "A maximum of … Ornate Temples may be active, being Rebuilt or under construction in the same De Jure Kingdom",
+        "negated": false
+      }
+    ],
+    "showInList": true,
+    "sourceFile": "00_great_project_types.txt",
+    "targetTitleTier": null
+  },
+  {
+    "constructionTime": {
+      "n": 3650
+    },
+    "contributionThreshold": null,
+    "contributions": [
+      {
+        "contributors": [
+          "owner"
+        ],
+        "cost": null,
+        "desc": "We shall prove our worth in being allowed to further our Ornate Temple, ascending further into the annals of history!",
+        "id": "rite_of_worthiness",
+        "name": "Rite of Worthiness",
+        "required": true
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "rules": "if is_ai = True: value mandala_contribution_mid_gold_cost; else …"
+          }
+        },
+        "desc": "The loftiest ambitions need the most solid bases. We shall provide the Great Project with the volcanic rock needed to build solid foundations that will last forever.",
+        "id": "volcanic_stone",
+        "name": "Volcanic Stone",
+        "required": true
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "rules": "if is_ai = True: value mandala_contribution_mid_gold_cost; else …"
+          },
+          "piety": {
+            "rules": "if is_ai = True: value 250; else …"
+          }
+        },
+        "desc": "As we expand the temple, we need proper frames to carry the construction. These gateways shall help guide those who wander the grounds in search for enlightenment.",
+        "id": "corbel_gateways",
+        "name": "Corbel Gateways",
+        "required": true
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "rules": "if is_ai = True: value mandala_contribution_mid_gold_cost; else …"
+          },
+          "piety": {
+            "rules": "if is_ai = True: value 250; else …"
+          }
+        },
+        "desc": "These giant heads might seem imposing, but in essence they sanctify this place, instilling a sense of atmosphere and virtue.",
+        "id": "divine_statues",
+        "name": "Divine Statues",
+        "required": true
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "piety": {
+            "rules": "if is_ai = True: value 250; else …"
+          }
+        },
+        "desc": "To reach the divine, we must labor hard. More men are needed to build the Temple Grounds, and our contribution would be richly rewarded.",
+        "id": "work_force",
+        "name": "Workforce",
+        "required": true
+      },
+      {
+        "contributors": [
+          "owner"
+        ],
+        "cost": {
+          "gold": {
+            "rules": "if is_ai = True: value mandala_contribution_mid_gold_cost; else …"
+          },
+          "piety": {
+            "rules": "if is_ai = True: value 250; else …"
+          }
+        },
+        "desc": "These giant heads stare off into the distance, preoccupied planning, organizing — upholding life in this plane and the next. They bear a striking resemblance to our divine ruler.",
+        "id": "creation_aspect",
+        "name": "Statues of Creation",
+        "required": false
+      },
+      {
+        "contributors": [
+          "owner"
+        ],
+        "cost": {
+          "gold": {
+            "rules": "if is_ai = True: value mandala_contribution_mid_gold_cost; else …"
+          },
+          "piety": {
+            "rules": "if is_ai = True: value 250; else …"
+          }
+        },
+        "desc": "These giant heads have a sense of peace and tranquility, seemingly having reached enlightenment. They bear a striking resemblance to our divine ruler.",
+        "id": "serenity_aspect",
+        "name": "Statues of Serenity",
+        "required": false
+      },
+      {
+        "contributors": [
+          "owner"
+        ],
+        "cost": {
+          "gold": {
+            "rules": "if is_ai = True: value mandala_contribution_mid_gold_cost; else …"
+          },
+          "piety": {
+            "rules": "if is_ai = True: value 250; else …"
+          }
+        },
+        "desc": "These giant heads have a fearsome grimace on their faces, ready to run and charge at enemies who dare trespass on these holy grounds. They bear a striking resemblance to our divine ruler.",
+        "id": "destruction_aspect",
+        "name": "Statues of Destruction",
+        "required": false
+      },
+      {
+        "contributors": [
+          "owner"
+        ],
+        "cost": {
+          "gold": {
+            "rules": "if is_ai = True: value mandala_contribution_mid_gold_cost; else …"
+          },
+          "piety": {
+            "rules": "if is_ai = True: value 250; else …"
+          }
+        },
+        "desc": "These giant heads have a mischievous smile and instills the sense that they see through you — both in the literal and philosophical sense. They bear a striking resemblance to our divine ruler.",
+        "id": "trickery_aspect",
+        "name": "Statues of Trickery",
+        "required": false
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "rules": "if is_ai = True: value mandala_contribution_mid_gold_cost; else …"
+          }
+        },
+        "desc": "To truly radiate its splendor, the domes of the Temple Grounds must be covered in the finest gold that can be offered.",
+        "id": "gilded_domes",
+        "name": "Gilded Domes",
+        "required": false
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "rules": "if is_ai = True: value mandala_contribution_mid_gold_cost; else …"
+          },
+          "piety": {
+            "rules": "if is_ai = True: value 250; else …"
+          }
+        },
+        "desc": "A sacred compound for the worship of the sons and daughters of the divine ruler that built these great temples.",
+        "id": "family_temple_compound",
+        "name": "Family Temple Compound",
+        "required": false
+      }
+    ],
+    "contributorCooldown": {
+      "n": 21
+    },
+    "contributors": [
+      "owner",
+      "tributaries",
+      "vassals"
+    ],
+    "cost": {
+      "piety": {
+        "rules": "base 500; multiply 1.5"
+      }
+    },
+    "dlc": "All Under Heaven",
+    "grantsBuildings": [
+      {
+        "id": "mandala_capital_03",
+        "name": "Temple Grounds"
+      }
+    ],
+    "group": "major",
+    "icon": "great_projects/mandala_capital",
+    "id": "mandala_capital_03",
+    "isImportant": true,
+    "name": "Capital Temple Complex Upgrade",
+    "owner": "direct owner of the province",
+    "plannable": true,
+    "provinceFilter": null,
+    "provinceFilterTarget": null,
+    "requirements": [
+      {
+        "building": null,
+        "key": "government_is_mandala",
+        "kind": "government_flag",
+        "name": "Mandala government",
+        "negated": false
+      },
+      {
+        "building": null,
+        "key": "piety_level",
+        "kind": "threshold",
+        "name": "Piety level >= high",
+        "negated": false
+      },
+      {
+        "building": null,
+        "key": "mandala_capital_tier_3_amount_of_subjects",
+        "kind": "condition",
+        "name": "You have at least … Subjects",
+        "negated": false
+      },
+      {
+        "building": null,
+        "key": "legitimacy_level",
+        "kind": "threshold",
+        "name": "Legitimacy level >= 4",
+        "negated": false
+      },
+      {
+        "building": null,
+        "key": "is_independent_ruler",
+        "kind": "fact",
+        "name": "Independent ruler",
+        "negated": false
+      },
+      {
+        "building": null,
+        "key": "not_already_full_on_mandala_capitals",
+        "kind": "condition",
+        "name": "A maximum of … Ornate Temples may be active, being Rebuilt or under construction in the same De Jure Kingdom",
+        "negated": false
+      }
+    ],
+    "showInList": true,
+    "sourceFile": "00_great_project_types.txt",
+    "targetTitleTier": null
+  },
+  {
+    "constructionTime": {
+      "n": 3650
+    },
+    "contributionThreshold": null,
+    "contributions": [
+      {
+        "contributors": [
+          "owner"
+        ],
+        "cost": null,
+        "desc": "We shall prove our indubitable worth in being allowed to further our Ornate Temple, making our mark upon the world!",
+        "id": "rite_of_worthiness",
+        "name": "Rite of Worthiness",
+        "required": true
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "rules": "if is_ai = True: value mandala_contribution_mid_gold_cost; else …"
+          }
+        },
+        "desc": "The only immortal image is one carved in masonry. We will provide the finest stone to create art for the Grand Temple Complex which will last an eternity.",
+        "id": "slabs_of_granite",
+        "name": "Slabs of Granite",
+        "required": true
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "rules": "if is_ai = True: value mandala_contribution_mid_gold_cost; else …"
+          },
+          "piety": {
+            "rules": "if is_ai = True: value 250; else …"
+          }
+        },
+        "desc": "Divine staircases are an important part of moving upwards and thus coming closer to divinity. It is also a splendid spot for market stalls and other necessities.",
+        "id": "zaungdans",
+        "name": "Zaungdans",
+        "required": true
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "rules": "if is_ai = True: value mandala_contribution_mid_gold_cost; else …"
+          },
+          "piety": {
+            "rules": "if is_ai = True: value 250; else …"
+          }
+        },
+        "desc": "We will have shrines featuring idols; and each deity contained within each idol shall show us mercy and assist our divine ruler.",
+        "id": "gilded_shrines",
+        "name": "Gilded Shrines",
+        "required": true
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "piety": {
+            "rules": "if is_ai = True: value 0; else …"
+          }
+        },
+        "desc": "Such grand work requires not just muscle and sweat, but keen eyes, delicate tools, and an artisan's mind. The labor we provide will not simply haul basic material around, but will create the intricate works of art that the Great Project so dearly needs.",
+        "id": "work_force",
+        "name": "Workforce",
+        "required": true
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "rules": "if is_ai = True: value mandala_contribution_mid_gold_cost; else …"
+          },
+          "piety": {
+            "rules": "if is_ai = True: value 0; else …"
+          }
+        },
+        "desc": "The finest marble shall be offered for the Divine Temple Palace, that it may rest on the most elegant foundations.",
+        "id": "bell_stupas",
+        "name": "Bell Stupas",
+        "required": false
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "rules": "base (base monthly_character_income; multiply 36; if has_treasury = True, this != top_liege, is_landed = True: multiply 0.25; min 200; max (base 1500; if exists = culture: culture …); divide 5; ceiling True; multiply 5); divide 5; ceiling True; multiply 5"
+          },
+          "piety": {
+            "rules": "if is_ai = True: value 0; else …"
+          }
+        },
+        "desc": "The heavens must shine on this Grand Temple Complex, and we will provide the Great Project with the jewels needed to make it look as if the stars themselves rest among the pillars of this divine complex.",
+        "id": "bejeweled_domes",
+        "name": "Bejeweled Domes",
+        "required": false
+      },
+      {
+        "contributors": [
+          "owner"
+        ],
+        "cost": {
+          "gold": {
+            "rules": "if is_ai = True: value mandala_contribution_mid_gold_cost; else …"
+          },
+          "piety": {
+            "rules": "if is_ai = True: value 0; else …"
+          }
+        },
+        "desc": "The progeny of our great Devaraja will be honored with their own Temple complex within the royal city. Here they will be worshiped long before they themselves take up the reins of power.",
+        "id": "family_temple_complex",
+        "name": "Family Temple Complex",
+        "required": false
+      }
+    ],
+    "contributorCooldown": {
+      "n": 21
+    },
+    "contributors": [
+      "owner",
+      "tributaries",
+      "vassals"
+    ],
+    "cost": {
+      "piety": {
+        "rules": "base 500; multiply 2"
+      }
+    },
+    "dlc": "All Under Heaven",
+    "grantsBuildings": [
+      {
+        "id": "mandala_capital_04",
+        "name": "Grand Temple Complex"
+      }
+    ],
+    "group": "major",
+    "icon": "great_projects/mandala_capital",
+    "id": "mandala_capital_04",
+    "isImportant": true,
+    "name": "Capital Temple Complex Upgrade",
+    "owner": "direct owner of the province",
+    "plannable": true,
+    "provinceFilter": null,
+    "provinceFilterTarget": null,
+    "requirements": [
+      {
+        "building": null,
+        "key": "government_is_mandala",
+        "kind": "government_flag",
+        "name": "Mandala government",
+        "negated": false
+      },
+      {
+        "building": null,
+        "key": "piety_level",
+        "kind": "threshold",
+        "name": "Piety level >= very high",
+        "negated": false
+      },
+      {
+        "building": null,
+        "key": "mandala_capital_tier_4_amount_of_subjects",
+        "kind": "condition",
+        "name": "You have at least … Subjects",
+        "negated": false
+      },
+      {
+        "building": null,
+        "key": "legitimacy_level",
+        "kind": "threshold",
+        "name": "Legitimacy level >= 5",
+        "negated": false
+      },
+      {
+        "building": null,
+        "key": "is_independent_ruler",
+        "kind": "fact",
+        "name": "Independent ruler",
+        "negated": false
+      },
+      {
+        "building": null,
+        "key": "not_already_full_on_mandala_capitals",
+        "kind": "condition",
+        "name": "A maximum of … Ornate Temples may be active, being Rebuilt or under construction in the same De Jure Kingdom",
+        "negated": false
+      }
+    ],
+    "showInList": true,
+    "sourceFile": "00_great_project_types.txt",
+    "targetTitleTier": null
+  },
+  {
+    "constructionTime": {
+      "n": 5475
+    },
+    "contributionThreshold": null,
+    "contributions": [
+      {
+        "contributors": [
+          "owner"
+        ],
+        "cost": null,
+        "desc": "We shall prove our indubitable worth in being allowed to further our Ornate Temple, turning it into something truly transcendent!",
+        "id": "rite_of_worthiness",
+        "name": "Rite of Worthiness",
+        "required": true
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "rules": "if is_ai = True: value mandala_contribution_high_gold_cost; else …"
+          }
+        },
+        "desc": "The finest marble shall be offered for the Divine Temple Palace, that it may rest on the most elegant foundations.",
+        "id": "marble_foundation",
+        "name": "Marble Foundation",
+        "required": true
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "rules": "if is_ai = True: value mandala_contribution_high_gold_cost; else …"
+          },
+          "piety": {
+            "rules": "if is_ai = True: value mandala_contribution_high_piety_cost; else …"
+          }
+        },
+        "desc": "Our structure shall have the deepest of pools, those that guard us from enemies as well as connect us to the spirit plane.",
+        "id": "divine_barays",
+        "name": "Divine Barays",
+        "required": true
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "piety": {
+            "rules": "if is_ai = True: value mandala_contribution_high_piety_cost; else …"
+          }
+        },
+        "desc": "We shall provide laborers of every skill, from the humblest peasant to the wisest scholar, drawn from every corner of the realm, to assist in the construction of the Divine Temple Palace.",
+        "id": "work_force",
+        "name": "Workforce",
+        "required": true
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "rules": "if is_ai = True: value mandala_contribution_high_gold_cost; else …"
+          },
+          "piety": {
+            "rules": "if is_ai = True: value 100; else …"
+          }
+        },
+        "desc": "Celestial dancers shall cover the walls, projecting grace as they stride, complete with their marvelous bejeweled attires.",
+        "id": "bejeweled_reliefs",
+        "name": "Bejeweled Reliefs",
+        "required": false
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "rules": "if is_ai = True: value mandala_contribution_high_gold_cost; else …"
+          },
+          "piety": {
+            "rules": "if is_ai = True: value mandala_contribution_high_piety_cost; else …"
+          }
+        },
+        "desc": "Veneration of such an august and righteous monument requires the more refined and profound gifts. We shall provide the Divine Temple Palace with a display of trees and flowers made of gold, exquisitely crafted by the finest artisans.",
+        "id": "bunga_mas_forest",
+        "name": "Forest of Bunga Mas",
+        "required": false
+      },
+      {
+        "contributors": [
+          "owner"
+        ],
+        "cost": {
+          "gold": {
+            "rules": "if is_ai = True: value mandala_contribution_high_gold_cost; else …"
+          },
+          "piety": {
+            "rules": "if is_ai = True: value mandala_contribution_high_piety_cost; else …"
+          }
+        },
+        "desc": "A section of capital temple complex for our Devaraja will be dedicated to the worship of our lineage and its scions.",
+        "id": "dynastic_temple_complex",
+        "name": "Dynastic Temple Area",
+        "required": false
+      }
+    ],
+    "contributorCooldown": {
+      "n": 21
+    },
+    "contributors": [
+      "owner",
+      "tributaries",
+      "vassals"
+    ],
+    "cost": {
+      "piety": {
+        "rules": "base 500; multiply 3"
+      }
+    },
+    "dlc": "All Under Heaven",
+    "grantsBuildings": [
+      {
+        "id": "mandala_capital_05",
+        "name": "Divine Temple Palace"
+      }
+    ],
+    "group": "major",
+    "icon": "great_projects/mandala_capital",
+    "id": "mandala_capital_05",
+    "isImportant": true,
+    "name": "Capital Temple Complex Upgrade",
+    "owner": "direct owner of the province",
+    "plannable": true,
+    "provinceFilter": null,
+    "provinceFilterTarget": null,
+    "requirements": [
+      {
+        "building": null,
+        "key": "government_is_mandala",
+        "kind": "government_flag",
+        "name": "Mandala government",
+        "negated": false
+      },
+      {
+        "building": null,
+        "key": "piety_level",
+        "kind": "threshold",
+        "name": "Piety level >= very high",
+        "negated": false
+      },
+      {
+        "building": null,
+        "key": "mandala_capital_tier_5_amount_of_subjects",
+        "kind": "condition",
+        "name": "You have at least … Subjects",
+        "negated": false
+      },
+      {
+        "building": null,
+        "key": "legitimacy_level",
+        "kind": "threshold",
+        "name": "Legitimacy level >= 7",
+        "negated": false
+      },
+      {
+        "building": null,
+        "key": "is_independent_ruler",
+        "kind": "fact",
+        "name": "Independent ruler",
+        "negated": false
+      },
+      {
+        "building": null,
+        "key": "not_already_full_on_mandala_capitals",
+        "kind": "condition",
+        "name": "A maximum of … Ornate Temples may be active, being Rebuilt or under construction in the same De Jure Kingdom",
+        "negated": false
+      }
+    ],
+    "showInList": true,
+    "sourceFile": "00_great_project_types.txt",
+    "targetTitleTier": null
+  },
+  {
+    "constructionTime": {
+      "rules": "base 1825; multiply (base 1; if top_participant_group:dynastic_cycle …: add -0.5)"
+    },
+    "contributionThreshold": null,
+    "contributions": [
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base (base 0; if has_treasury = True: add medium_treasury_value; else …; min 250); multiply 2"
+          }
+        },
+        "desc": null,
+        "id": "materials",
+        "name": "Construction Materials",
+        "required": true
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base (base 0; if has_treasury = True: add medium_treasury_value; else …; min 250); multiply 2"
+          }
+        },
+        "desc": null,
+        "id": "workforce",
+        "name": "Workforce",
+        "required": true
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base (base 0; if has_treasury = True: add medium_treasury_value; else …; min 250); multiply 1.5"
+          }
+        },
+        "desc": null,
+        "id": "architects",
+        "name": "Skilled Architects",
+        "required": false
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base (base 0; if has_treasury = True: add medium_treasury_value; else …; min 250); multiply 1.5"
+          }
+        },
+        "desc": null,
+        "id": "engineers",
+        "name": "Talented Engineers",
+        "required": false
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base (base 0; if has_treasury = True: add medium_treasury_value; else …; min 250); multiply 1.5"
+          }
+        },
+        "desc": null,
+        "id": "sculptors",
+        "name": "Marvellous Sculptors",
+        "required": false
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base (base 0; if has_treasury = True: add medium_treasury_value; else …; min 250); multiply 3"
+          }
+        },
+        "desc": null,
+        "id": "forbidden_city",
+        "name": "The Forbidden City",
+        "required": false
+      }
+    ],
+    "contributorCooldown": {
+      "n": 21
+    },
+    "contributors": [
+      "owner",
+      "vassals"
+    ],
+    "cost": {
+      "gold": {
+        "fromTreasury": true,
+        "rules": "base (base 0; if has_treasury = True: add major_treasury_value; else …; min 500); multiply 2"
+      }
+    },
+    "dlc": "All Under Heaven",
+    "grantsBuildings": [
+      {
+        "id": "forbidden_city_01",
+        "name": "The Forbidden City"
+      }
+    ],
+    "group": "major",
+    "icon": "great_projects/city_china",
+    "id": "strengthen_capital",
+    "isImportant": false,
+    "name": "Strengthen Capital",
+    "owner": "top liege of the province",
+    "plannable": true,
+    "provinceFilter": null,
+    "provinceFilterTarget": null,
+    "requirements": [
+      {
+        "building": null,
+        "key": "title:h_china",
+        "kind": "title",
+        "name": "China",
+        "negated": false
+      },
+      {
+        "building": null,
+        "key": "title:e_minister_of_works",
+        "kind": "title",
+        "name": "Ministry of Works",
+        "negated": false
+      },
+      {
+        "building": null,
+        "key": "only_single_great_project_type_allowed",
+        "kind": "condition",
+        "name": "Great Project of this type is not already being planned or ongoing",
+        "negated": false
+      },
+      {
+        "building": null,
+        "key": "is_independent_ruler",
+        "kind": "fact",
+        "name": "Independent ruler",
+        "negated": false
+      }
+    ],
+    "showInList": true,
+    "sourceFile": "00_great_project_types.txt",
+    "targetTitleTier": null
+  },
+  {
+    "constructionTime": {
+      "rules": "base 1825; multiply 5"
+    },
+    "contributionThreshold": 80,
+    "contributions": [
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base 0; if has_treasury = True: add medium_treasury_value; else …; min 250"
+          }
+        },
+        "desc": null,
+        "id": "attack_1",
+        "name": "Pledge to Conquer selected Duchy",
+        "required": true
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base 0; if has_treasury = True: add medium_treasury_value; else …; min 250"
+          }
+        },
+        "desc": null,
+        "id": "attack_2",
+        "name": "Pledge to Conquer selected Duchy",
+        "required": false
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base 0; if has_treasury = True: add medium_treasury_value; else …; min 250"
+          }
+        },
+        "desc": null,
+        "id": "attack_3",
+        "name": "Pledge to Conquer selected Duchy",
+        "required": false
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base 0; if has_treasury = True: add medium_treasury_value; else …; min 250"
+          }
+        },
+        "desc": null,
+        "id": "attack_4",
+        "name": "Pledge to Conquer selected Duchy",
+        "required": false
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base 0; if has_treasury = True: add medium_treasury_value; else …; min 250"
+          }
+        },
+        "desc": null,
+        "id": "attack_5",
+        "name": "Pledge to Conquer selected Duchy",
+        "required": false
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base 0; if has_treasury = True: add medium_treasury_value; else …; min 250"
+          }
+        },
+        "desc": null,
+        "id": "attack_6",
+        "name": "Pledge to Conquer selected Duchy",
+        "required": false
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base 0; if has_treasury = True: add medium_treasury_value; else …; min 250"
+          }
+        },
+        "desc": null,
+        "id": "attack_7",
+        "name": "Pledge to Conquer selected Duchy",
+        "required": false
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base 0; if has_treasury = True: add medium_treasury_value; else …; min 250"
+          }
+        },
+        "desc": null,
+        "id": "attack_8",
+        "name": "Pledge to Conquer selected Duchy",
+        "required": false
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base 0; if has_treasury = True: add medium_treasury_value; else …; min 250"
+          }
+        },
+        "desc": null,
+        "id": "attack_9",
+        "name": "Pledge to Conquer selected Duchy",
+        "required": false
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base 0; if has_treasury = True: add medium_treasury_value; else …; min 250"
+          }
+        },
+        "desc": null,
+        "id": "attack_10",
+        "name": "Pledge to Conquer selected Duchy",
+        "required": false
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base 0; if has_treasury = True: add medium_treasury_value; else …; min 250"
+          }
+        },
+        "desc": null,
+        "id": "attack_11",
+        "name": "Pledge to Conquer selected Duchy",
+        "required": false
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base 0; if has_treasury = True: add medium_treasury_value; else …; min 250"
+          }
+        },
+        "desc": null,
+        "id": "attack_12",
+        "name": "Pledge to Conquer selected Duchy",
+        "required": false
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base 0; if has_treasury = True: add medium_treasury_value; else …; min 250"
+          }
+        },
+        "desc": null,
+        "id": "attack_13",
+        "name": "Pledge to Conquer selected Duchy",
+        "required": false
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base 0; if has_treasury = True: add medium_treasury_value; else …; min 250"
+          }
+        },
+        "desc": null,
+        "id": "attack_14",
+        "name": "Pledge to Conquer selected Duchy",
+        "required": false
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base 0; if has_treasury = True: add medium_treasury_value; else …; min 250"
+          }
+        },
+        "desc": null,
+        "id": "attack_15",
+        "name": "Pledge to Conquer selected Duchy",
+        "required": false
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base 0; if has_treasury = True: add medium_treasury_value; else …; min 250"
+          }
+        },
+        "desc": null,
+        "id": "attack_16",
+        "name": "Pledge to Conquer selected Duchy",
+        "required": false
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base 0; if has_treasury = True: add medium_treasury_value; else …; min 250"
+          }
+        },
+        "desc": null,
+        "id": "attack_17",
+        "name": "Pledge to Conquer selected Duchy",
+        "required": false
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base 0; if has_treasury = True: add medium_treasury_value; else …; min 250"
+          }
+        },
+        "desc": null,
+        "id": "attack_18",
+        "name": "Pledge to Conquer selected Duchy",
+        "required": false
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base 0; if has_treasury = True: add medium_treasury_value; else …; min 250"
+          }
+        },
+        "desc": null,
+        "id": "attack_19",
+        "name": "Pledge to Conquer selected Duchy",
+        "required": false
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base 0; if has_treasury = True: add medium_treasury_value; else …; min 250"
+          }
+        },
+        "desc": null,
+        "id": "attack_20",
+        "name": "Pledge to Conquer selected Duchy",
+        "required": false
+      }
+    ],
+    "contributorCooldown": {
+      "n": 21
+    },
+    "contributors": [
+      "owner",
+      "vassals"
+    ],
+    "cost": {
+      "gold": {
+        "fromTreasury": true,
+        "rules": "base (base 0; if has_treasury = True: add major_treasury_value; else …; min 500); if has_title = title:h_china: multiply 2"
+      },
+      "influence": {
+        "rules": "base 100; if has_title = title:h_china: multiply 2"
+      }
+    },
+    "dlc": "All Under Heaven",
+    "grantsBuildings": [],
+    "group": "major",
+    "icon": "court_position_types/grand_guardian_court_position",
+    "id": "grand_campaign_project",
+    "isImportant": true,
+    "name": "…China Grand Campaign",
+    "owner": "holder of the founder's top liege title",
+    "plannable": true,
+    "provinceFilter": "top_liege_border_outer",
+    "provinceFilterTarget": null,
+    "requirements": [
+      {
+        "building": null,
+        "key": "title:h_china",
+        "kind": "title",
+        "name": "China",
+        "negated": false
+      },
+      {
+        "building": null,
+        "key": "title:e_minister_grand_marshal",
+        "kind": "title",
+        "name": "Commission",
+        "negated": false
+      },
+      {
+        "building": null,
+        "key": "grand_secretariat",
+        "kind": "diarchy",
+        "name": "Grand Secretariat",
+        "negated": false
+      },
+      {
+        "building": null,
+        "key": "only_single_great_project_type_allowed",
+        "kind": "condition",
+        "name": "Great Project of this type is not already being planned or ongoing",
+        "negated": false
+      }
+    ],
+    "showInList": true,
+    "sourceFile": "00_ministry_projects.txt",
+    "targetTitleTier": null
+  },
+  {
+    "constructionTime": {
+      "rules": "base 1825; multiply 7; scope:great_project …; multiply (base 1; if top_participant_group:dynastic_cycle …: add -0.5)"
+    },
+    "contributionThreshold": null,
+    "contributions": [
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base (base 0; if has_treasury = True: add medium_treasury_value; else …; min 250); multiply 0.5"
+          }
+        },
+        "desc": null,
+        "id": "religious_liason",
+        "name": "Provide a Religious Liaison",
+        "required": true
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base (base 0; if has_treasury = True: add medium_treasury_value; else …; min 250); multiply 0.25"
+          }
+        },
+        "desc": null,
+        "id": "construct_new_shrines",
+        "name": "Construct New Shrines",
+        "required": false
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base (base 0; if has_treasury = True: add medium_treasury_value; else …; min 250); multiply 0.25"
+          }
+        },
+        "desc": null,
+        "id": "investigate_improper_rites",
+        "name": "Investigate Improper Rites",
+        "required": false
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base (base 0; if has_treasury = True: add medium_treasury_value; else …; min 250); multiply 0.25"
+          }
+        },
+        "desc": null,
+        "id": "promote_faithful_relocation",
+        "name": "Promote Faithful Relocation",
+        "required": false
+      }
+    ],
+    "contributorCooldown": {
+      "n": 21
+    },
+    "contributors": [
+      "owner",
+      "top_liege",
+      "vassals"
+    ],
+    "cost": {
+      "gold": {
+        "fromTreasury": true,
+        "rules": "base (base 0; if has_treasury = True: add major_treasury_value; else …; min 500); multiply 0.2; if is_councillor = True: multiply 0.5"
+      }
+    },
+    "dlc": "All Under Heaven",
+    "grantsBuildings": [],
+    "group": "major",
+    "icon": "court_position_types/court_guru_court_position",
+    "id": "minister_compel_religious_uniformity",
+    "isImportant": false,
+    "name": "Compel Religious Uniformity",
+    "owner": "top liege of the province",
+    "plannable": true,
+    "provinceFilter": "top_realm",
+    "provinceFilterTarget": null,
+    "requirements": [
+      {
+        "building": null,
+        "key": "title:h_china",
+        "kind": "title",
+        "name": "China",
+        "negated": false
+      },
+      {
+        "building": null,
+        "key": "title:e_minister_of_rites",
+        "kind": "title",
+        "name": "Ministry of Rites",
+        "negated": false
+      },
+      {
+        "building": null,
+        "key": "grand_secretariat",
+        "kind": "diarchy",
+        "name": "Grand Secretariat",
+        "negated": false
+      },
+      {
+        "building": null,
+        "key": "not_same_faith_as_top_liege_desc",
+        "kind": "condition",
+        "name": "County Faith is different from the Top Liege's Faith",
+        "negated": false
+      },
+      {
+        "building": null,
+        "key": "GREAT_PROJECT_CAN_PLAN",
+        "kind": "condition",
+        "name": "You can plan this Great Project",
+        "negated": false
+      }
+    ],
+    "showInList": true,
+    "sourceFile": "00_ministry_projects.txt",
+    "targetTitleTier": null
+  },
+  {
+    "constructionTime": {
+      "rules": "base 1825; multiply (base 1; if top_participant_group:dynastic_cycle …: add -0.5)"
+    },
+    "contributionThreshold": null,
+    "contributions": [
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base 0; if has_treasury = True: add medium_treasury_value; else …; min 250"
+          }
+        },
+        "desc": null,
+        "id": "conduct_census",
+        "name": "Census",
+        "required": true
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base 0; if has_treasury = True: add medium_treasury_value; else …; min 250"
+          }
+        },
+        "desc": null,
+        "id": "purge_treasury_debt",
+        "name": "Purge Treasury Debt",
+        "required": false
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base 0; if has_treasury = True: add medium_treasury_value; else …; min 250"
+          }
+        },
+        "desc": null,
+        "id": "verify_passed_exams",
+        "name": "Verify Passed Exams",
+        "required": false
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base 0; if has_treasury = True: add medium_treasury_value; else …; min 250"
+          }
+        },
+        "desc": null,
+        "id": "fertility_effort",
+        "name": "Fertility Effort",
+        "required": false
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base 0; if has_treasury = True: add medium_treasury_value; else …; min 250"
+          }
+        },
+        "desc": null,
+        "id": "natural_disaster_insurance",
+        "name": "Natural Disaster Insurance",
+        "required": false
+      }
+    ],
+    "contributorCooldown": {
+      "n": 0
+    },
+    "contributors": [
+      "owner",
+      "tributaries",
+      "vassals"
+    ],
+    "cost": {
+      "gold": {
+        "fromTreasury": true,
+        "rules": "base (base 0; if has_treasury = True: add major_treasury_value; else …; min 500); multiply 2; if is_councillor = True: divide 2"
+      }
+    },
+    "dlc": "All Under Heaven",
+    "grantsBuildings": [],
+    "group": "major",
+    "icon": "great_projects/minister_project_conduct_census",
+    "id": "minister_project_conduct_census",
+    "isImportant": false,
+    "name": "Conduct Census",
+    "owner": "top liege of the province",
+    "plannable": true,
+    "provinceFilter": "top_realm",
+    "provinceFilterTarget": null,
+    "requirements": [
+      {
+        "building": null,
+        "key": "title:h_china",
+        "kind": "title",
+        "name": "China",
+        "negated": false
+      },
+      {
+        "building": null,
+        "key": "title:e_minister_of_revenue",
+        "kind": "title",
+        "name": "Ministry of Revenue",
+        "negated": false
+      },
+      {
+        "building": null,
+        "key": "grand_secretariat",
+        "kind": "diarchy",
+        "name": "Grand Secretariat",
+        "negated": false
+      },
+      {
+        "building": null,
+        "key": "GREAT_PROJECT_CAN_PLAN",
+        "kind": "condition",
+        "name": "You can plan this Great Project",
+        "negated": false
+      }
+    ],
+    "showInList": true,
+    "sourceFile": "00_ministry_projects.txt",
+    "targetTitleTier": null
+  },
+  {
+    "constructionTime": {
+      "rules": "base 1825; multiply 7; scope:great_project …; multiply (base 1; if top_participant_group:dynastic_cycle …: add -0.5)"
+    },
+    "contributionThreshold": null,
+    "contributions": [
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base (base 0; if has_treasury = True: add medium_treasury_value; else …; min 250); multiply 0.5"
+          }
+        },
+        "desc": null,
+        "id": "cultural_liason",
+        "name": "Provide a Cultural Liaison",
+        "required": true
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base (base 0; if has_treasury = True: add medium_treasury_value; else …; min 250); multiply 0.25"
+          }
+        },
+        "desc": null,
+        "id": "send_inhabitants",
+        "name": "Send Inhabitants",
+        "required": false
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base (base 0; if has_treasury = True: add medium_treasury_value; else …; min 250); multiply 0.25"
+          }
+        },
+        "desc": null,
+        "id": "send_inhabitants_2",
+        "name": "Send Inhabitants",
+        "required": false
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base (base 0; if has_treasury = True: add medium_treasury_value; else …; min 250); multiply 0.25"
+          }
+        },
+        "desc": null,
+        "id": "send_inhabitants_3",
+        "name": "Send Inhabitants",
+        "required": false
+      }
+    ],
+    "contributorCooldown": {
+      "n": 21
+    },
+    "contributors": [
+      "owner",
+      "top_liege",
+      "vassals"
+    ],
+    "cost": {
+      "gold": {
+        "fromTreasury": true,
+        "rules": "base (base 0; if has_treasury = True: add major_treasury_value; else …; min 500); multiply 0.2; if is_councillor = True: multiply 0.5"
+      }
+    },
+    "dlc": "All Under Heaven",
+    "grantsBuildings": [],
+    "group": "major",
+    "icon": "court_position_types/minister_bureaucrat_court_position",
+    "id": "minister_project_culture",
+    "isImportant": false,
+    "name": "Culture Convert Area",
+    "owner": "top liege of the province",
+    "plannable": true,
+    "provinceFilter": "top_realm",
+    "provinceFilterTarget": null,
+    "requirements": [
+      {
+        "building": null,
+        "key": "title:h_china",
+        "kind": "title",
+        "name": "China",
+        "negated": false
+      },
+      {
+        "building": null,
+        "key": "title:e_minister_of_rites",
+        "kind": "title",
+        "name": "Ministry of Rites",
+        "negated": false
+      },
+      {
+        "building": null,
+        "key": "grand_secretariat",
+        "kind": "diarchy",
+        "name": "Grand Secretariat",
+        "negated": false
+      },
+      {
+        "building": null,
+        "key": "not_same_culture_as_top_liege_desc",
+        "kind": "condition",
+        "name": "County Culture is different from the Top Liege's Culture",
+        "negated": false
+      },
+      {
+        "building": null,
+        "key": "GREAT_PROJECT_CAN_PLAN",
+        "kind": "condition",
+        "name": "You can plan this Great Project",
+        "negated": false
+      }
+    ],
+    "showInList": true,
+    "sourceFile": "00_ministry_projects.txt",
+    "targetTitleTier": null
+  },
+  {
+    "constructionTime": {
+      "rules": "base 3650; scope:great_project …; multiply (base 1; if top_participant_group:dynastic_cycle …: add -0.5)"
+    },
+    "contributionThreshold": null,
+    "contributions": [
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base 0; if has_treasury = True: add medium_treasury_value; else …; min 250"
+          }
+        },
+        "desc": null,
+        "id": "personnel",
+        "name": "Send Construction Crew",
+        "required": true
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base 0; if has_treasury = True: add medium_treasury_value; else …; min 250"
+          }
+        },
+        "desc": null,
+        "id": "engineers",
+        "name": "Provide Engineers",
+        "required": true
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base (base 0; if has_treasury = True: add medium_treasury_value; else …; min 250); multiply 2"
+          }
+        },
+        "desc": null,
+        "id": "infrastructure",
+        "name": "Expand Infrastructure",
+        "required": false
+      }
+    ],
+    "contributorCooldown": {
+      "n": 0
+    },
+    "contributors": [
+      "owner",
+      "top_liege",
+      "vassals"
+    ],
+    "cost": {
+      "gold": {
+        "fromTreasury": true,
+        "rules": "base (base 0; if has_treasury = True: add medium_treasury_value; else …; min 250); multiply 4; if is_councillor = True: divide 2"
+      }
+    },
+    "dlc": "All Under Heaven",
+    "grantsBuildings": [],
+    "group": "major",
+    "icon": "great_projects/city_china",
+    "id": "minister_project_development",
+    "isImportant": false,
+    "name": "Develop Communities",
+    "owner": "top liege of the province",
+    "plannable": true,
+    "provinceFilter": "top_realm",
+    "provinceFilterTarget": null,
+    "requirements": [
+      {
+        "building": null,
+        "key": "title:e_minister_of_works",
+        "kind": "title",
+        "name": "Ministry of Works",
+        "negated": false
+      },
+      {
+        "building": null,
+        "key": "grand_secretariat",
+        "kind": "diarchy",
+        "name": "Grand Secretariat",
+        "negated": false
+      },
+      {
+        "building": null,
+        "key": "co_emperorship",
+        "kind": "diarchy",
+        "name": "Co Emperorship",
+        "negated": false
+      },
+      {
+        "building": null,
+        "key": "only_single_great_project_type_allowed",
+        "kind": "condition",
+        "name": "Great Project of this type is not already being planned or ongoing",
+        "negated": false
+      },
+      {
+        "building": null,
+        "key": "GREAT_PROJECT_CAN_PLAN",
+        "kind": "condition",
+        "name": "You can plan this Great Project",
+        "negated": false
+      }
+    ],
+    "showInList": true,
+    "sourceFile": "00_ministry_projects.txt",
+    "targetTitleTier": null
+  },
+  {
+    "constructionTime": {
+      "rules": "base 1825; multiply (base 1; if top_participant_group:dynastic_cycle …: add -0.5)"
+    },
+    "contributionThreshold": null,
+    "contributions": [
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base 0; if has_treasury = True: add medium_treasury_value; else …; min 250"
+          }
+        },
+        "desc": null,
+        "id": "city_guards",
+        "name": "City Guards",
+        "required": true
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base 0; if has_treasury = True: add medium_treasury_value; else …; min 250"
+          }
+        },
+        "desc": null,
+        "id": "highway_patrols",
+        "name": "Highway Patrols",
+        "required": true
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base 0; if has_treasury = True: add medium_treasury_value; else …; min 250"
+          }
+        },
+        "desc": null,
+        "id": "administrators",
+        "name": "Administrators",
+        "required": true
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base 0; if has_treasury = True: add medium_treasury_value; else …; min 250"
+          }
+        },
+        "desc": null,
+        "id": "court_magistrates",
+        "name": "Court Magistrates",
+        "required": true
+      }
+    ],
+    "contributorCooldown": {
+      "n": 0
+    },
+    "contributors": [
+      "owner",
+      "tributaries",
+      "vassals"
+    ],
+    "cost": {
+      "gold": {
+        "fromTreasury": true,
+        "rules": "base (base 0; if has_treasury = True: add major_treasury_value; else …; min 500); multiply 2; if is_councillor = True: divide 2"
+      }
+    },
+    "dlc": "All Under Heaven",
+    "grantsBuildings": [],
+    "group": "major",
+    "icon": "icon_game_concept_house_realm_county_control",
+    "id": "minister_project_establish_control",
+    "isImportant": false,
+    "name": "Establish Control",
+    "owner": "top liege of the province",
+    "plannable": true,
+    "provinceFilter": "top_realm",
+    "provinceFilterTarget": null,
+    "requirements": [
+      {
+        "building": null,
+        "key": "title:h_china",
+        "kind": "title",
+        "name": "China",
+        "negated": false
+      },
+      {
+        "building": null,
+        "key": "title:e_minister_of_justice",
+        "kind": "title",
+        "name": "Ministry of Justice",
+        "negated": false
+      },
+      {
+        "building": null,
+        "key": "grand_secretariat",
+        "kind": "diarchy",
+        "name": "Grand Secretariat",
+        "negated": false
+      },
+      {
+        "building": null,
+        "key": "has_low_control_or_county_corruption_desc",
+        "kind": "condition",
+        "name": "Has low County Control or County Corruption",
+        "negated": false
+      },
+      {
+        "building": null,
+        "key": "GREAT_PROJECT_CAN_PLAN",
+        "kind": "condition",
+        "name": "You can plan this Great Project",
+        "negated": false
+      }
+    ],
+    "showInList": true,
+    "sourceFile": "00_ministry_projects.txt",
+    "targetTitleTier": null
+  },
+  {
+    "constructionTime": {
+      "rules": "base 1825; multiply (base 1; if top_participant_group:dynastic_cycle …: add -0.5)"
+    },
+    "contributionThreshold": null,
+    "contributions": [
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base 0; if has_treasury = True: add medium_treasury_value; else …; min 250"
+          }
+        },
+        "desc": null,
+        "id": "train_troops",
+        "name": "Mandatory Troop Exercises",
+        "required": true
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base 0; if has_treasury = True: add medium_treasury_value; else …; min 250"
+          }
+        },
+        "desc": null,
+        "id": "military_academy",
+        "name": "Military Academy Courses",
+        "required": false
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base 0; if has_treasury = True: add medium_treasury_value; else …; min 250"
+          }
+        },
+        "desc": null,
+        "id": "levy_bootcamp",
+        "name": "Bootcamp for Levies",
+        "required": false
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base 0; if has_treasury = True: add medium_treasury_value; else …; min 250"
+          }
+        },
+        "desc": null,
+        "id": "equipment_check",
+        "name": "Equipment Checkup",
+        "required": false
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base 0; if has_treasury = True: add medium_treasury_value; else …; min 250"
+          }
+        },
+        "desc": null,
+        "id": "siege_exercise",
+        "name": "Siege Exercise",
+        "required": false
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base 0; if has_treasury = True: add medium_treasury_value; else …; min 250"
+          }
+        },
+        "desc": null,
+        "id": "natural_disaster_test",
+        "name": "Natural Disaster Test",
+        "required": false
+      }
+    ],
+    "contributorCooldown": {
+      "n": 0
+    },
+    "contributors": [
+      "owner",
+      "tributaries",
+      "vassals"
+    ],
+    "cost": {
+      "gold": {
+        "fromTreasury": true,
+        "rules": "base (base 0; if has_treasury = True: add major_treasury_value; else …; min 500); multiply 2; if is_councillor = True: divide 2"
+      }
+    },
+    "dlc": "All Under Heaven",
+    "grantsBuildings": [],
+    "group": "major",
+    "icon": "great_projects/minister_project_train_troops",
+    "id": "minister_project_train_troops",
+    "isImportant": false,
+    "name": "Military Operation Exercise",
+    "owner": "top liege of the province",
+    "plannable": true,
+    "provinceFilter": "top_realm",
+    "provinceFilterTarget": null,
+    "requirements": [
+      {
+        "building": null,
+        "key": "title:h_china",
+        "kind": "title",
+        "name": "China",
+        "negated": false
+      },
+      {
+        "building": null,
+        "key": "title:e_minister_of_war",
+        "kind": "title",
+        "name": "Ministry of War",
+        "negated": false
+      },
+      {
+        "building": null,
+        "key": "grand_secretariat",
+        "kind": "diarchy",
+        "name": "Grand Secretariat",
+        "negated": false
+      },
+      {
+        "building": null,
+        "key": "holder_has_military_appointment_tt",
+        "kind": "condition",
+        "name": "… … is not a military Governorship",
+        "negated": false
+      },
+      {
+        "building": null,
+        "key": "GREAT_PROJECT_CAN_PLAN",
+        "kind": "condition",
+        "name": "You can plan this Great Project",
+        "negated": false
+      }
+    ],
+    "showInList": true,
+    "sourceFile": "00_ministry_projects.txt",
+    "targetTitleTier": null
+  },
+  {
+    "constructionTime": {
+      "n": 60
+    },
+    "contributionThreshold": null,
+    "contributions": [
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "rules": "base 0; if has_treasury = False: add natural_disaster_contributions_cost_value; add natural_disaster_contributions_cost_base_discount; multiply …; if …; if …"
+          },
+          "treasury": {
+            "rules": "base 0; if has_treasury = True: add natural_disaster_contributions_cost_treasury_value; add natural_disaster_contributions_cost_base_discount; multiply …; if …; if …"
+          }
+        },
+        "desc": null,
+        "id": "recovery",
+        "name": "Survivor Recovery",
+        "required": true
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "rules": "base 0; if has_treasury = False: add natural_disaster_contributions_cost_value; add natural_disaster_contributions_cost_base_discount; if …; if …; if …; if …"
+          },
+          "treasury": {
+            "rules": "base 0; if has_treasury = True: add natural_disaster_contributions_cost_treasury_value; add natural_disaster_contributions_cost_base_discount; if …; if …; if …; if …"
+          }
+        },
+        "desc": null,
+        "id": "cleanup",
+        "name": "Debris Removal",
+        "required": true
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "rules": "base 0; if has_treasury = False: add natural_disaster_contributions_cost_value; add natural_disaster_contributions_cost_base_discount; multiply …; multiply …; if …; if …; if …; if …"
+          },
+          "treasury": {
+            "rules": "base 0; if has_treasury = True: add natural_disaster_contributions_cost_treasury_value; add natural_disaster_contributions_cost_base_discount; multiply …; multiply …; if …; if …; if …; if …"
+          }
+        },
+        "desc": null,
+        "id": "reconstruction",
+        "name": "Housing Reconstruction",
+        "required": true
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "rules": "base 0; if has_treasury = False: add natural_disaster_contributions_cost_value; add natural_disaster_contributions_cost_base_discount; multiply …"
+          },
+          "treasury": {
+            "rules": "base 0; if has_treasury = True: add natural_disaster_contributions_cost_treasury_value; add natural_disaster_contributions_cost_base_discount; multiply …"
+          }
+        },
+        "desc": null,
+        "id": "resettlement",
+        "name": "Refugee Resettlement",
+        "required": false
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "rules": "base 0; if has_treasury = False: add natural_disaster_contributions_cost_value; add natural_disaster_contributions_cost_base_discount; multiply …"
+          },
+          "treasury": {
+            "rules": "base 0; if has_treasury = True: add natural_disaster_contributions_cost_treasury_value; add natural_disaster_contributions_cost_base_discount; multiply …"
+          }
+        },
+        "desc": null,
+        "id": "aid",
+        "name": "Aid for Victims",
+        "required": false
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "rules": "base 0; if has_treasury = False: add …; add natural_disaster_contributions_cost_base_discount; if …; if …; if …"
+          },
+          "treasury": {
+            "rules": "base 0; if has_treasury = True: add …; add natural_disaster_contributions_cost_base_discount; if …; if …; if …"
+          }
+        },
+        "desc": null,
+        "id": "memorial",
+        "name": "Memorial Fortifications",
+        "required": false
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "treasury": {
+            "rules": "base 0; if has_treasury = True: add …; add natural_disaster_contributions_cost_base_discount; if …; if …; if …"
+          }
+        },
+        "desc": null,
+        "id": "minister_sends_aid",
+        "name": "Send Department Aide",
+        "required": false
+      }
+    ],
+    "contributorCooldown": {
+      "n": 21
+    },
+    "contributors": [
+      "owner",
+      "vassals"
+    ],
+    "cost": null,
+    "dlc": null,
+    "grantsBuildings": [],
+    "group": "environmental_project",
+    "icon": "great_projects/city_china",
+    "id": "great_project_earthquake",
+    "isImportant": true,
+    "name": "… Earthquake Relief",
+    "owner": "top liege of the province",
+    "plannable": false,
+    "provinceFilter": null,
+    "provinceFilterTarget": null,
+    "requirements": [],
+    "showInList": false,
+    "sourceFile": "00_natural_disasters.txt",
+    "targetTitleTier": null
+  },
+  {
+    "constructionTime": {
+      "n": 60
+    },
+    "contributionThreshold": null,
+    "contributions": [
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "rules": "base 0; if has_treasury = False: add natural_disaster_contributions_cost_value; add natural_disaster_contributions_cost_base_discount; multiply …; if …; if …"
+          },
+          "treasury": {
+            "rules": "base 0; if has_treasury = True: add natural_disaster_contributions_cost_treasury_value; add natural_disaster_contributions_cost_base_discount; multiply …; if …; if …"
+          }
+        },
+        "desc": null,
+        "id": "recovery",
+        "name": "Survivor Recovery",
+        "required": true
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "rules": "base 0; if has_treasury = False: add natural_disaster_contributions_cost_value; add natural_disaster_contributions_cost_base_discount; if …; if …"
+          },
+          "treasury": {
+            "rules": "base 0; if has_treasury = True: add natural_disaster_contributions_cost_treasury_value; add natural_disaster_contributions_cost_base_discount; if …; if …"
+          }
+        },
+        "desc": null,
+        "id": "drainage",
+        "name": "Land Drainage",
+        "required": true
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "rules": "base 0; if has_treasury = False: add natural_disaster_contributions_cost_value; add natural_disaster_contributions_cost_base_discount; multiply …; multiply …; if …; if …; if …; if …"
+          },
+          "treasury": {
+            "rules": "base 0; if has_treasury = True: add natural_disaster_contributions_cost_treasury_value; add natural_disaster_contributions_cost_base_discount; multiply …; multiply …; if …; if …; if …; if …"
+          }
+        },
+        "desc": null,
+        "id": "reconstruction",
+        "name": "Housing Reconstruction",
+        "required": true
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "rules": "base 0; if has_treasury = False: add natural_disaster_contributions_cost_value; add natural_disaster_contributions_cost_base_discount; multiply …"
+          },
+          "treasury": {
+            "rules": "base 0; if has_treasury = True: add natural_disaster_contributions_cost_treasury_value; add natural_disaster_contributions_cost_base_discount; multiply …"
+          }
+        },
+        "desc": null,
+        "id": "resettlement",
+        "name": "Refugee Resettlement",
+        "required": false
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "rules": "base 0; if has_treasury = False: add natural_disaster_contributions_cost_value; add natural_disaster_contributions_cost_base_discount; multiply …"
+          },
+          "treasury": {
+            "rules": "base 0; if has_treasury = True: add natural_disaster_contributions_cost_treasury_value; add natural_disaster_contributions_cost_base_discount; multiply …"
+          }
+        },
+        "desc": null,
+        "id": "aid",
+        "name": "Aid for Victims",
+        "required": false
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "rules": "base 0; if has_treasury = False: add …; add natural_disaster_contributions_cost_base_discount; if …; if …; if …"
+          },
+          "treasury": {
+            "rules": "base 0; if has_treasury = True: add …; add natural_disaster_contributions_cost_base_discount; if …; if …; if …"
+          }
+        },
+        "desc": null,
+        "id": "memorial",
+        "name": "Memorial Fortifications",
+        "required": false
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "treasury": {
+            "rules": "base 0; if has_treasury = True: add …; add natural_disaster_contributions_cost_base_discount; if …; if …; if …"
+          }
+        },
+        "desc": null,
+        "id": "minister_sends_aid",
+        "name": "Send Department Aide",
+        "required": false
+      }
+    ],
+    "contributorCooldown": {
+      "n": 21
+    },
+    "contributors": [
+      "owner",
+      "vassals"
+    ],
+    "cost": null,
+    "dlc": null,
+    "grantsBuildings": [],
+    "group": "environmental_project",
+    "icon": "great_projects/city_china",
+    "id": "great_project_flood",
+    "isImportant": true,
+    "name": "… Flood Relief",
+    "owner": "top liege of the province",
+    "plannable": false,
+    "provinceFilter": null,
+    "provinceFilterTarget": null,
+    "requirements": [],
+    "showInList": false,
+    "sourceFile": "00_natural_disasters.txt",
+    "targetTitleTier": null
+  }
+]

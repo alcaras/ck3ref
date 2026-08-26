@@ -1,0 +1,115 @@
+---
+import Base from '../layouts/Base.astro';
+import defines from '../data/defines.json';
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const NS = ['NCombat', 'NArmy', 'NSiege', 'NWar', 'NDeclareWar', 'NCombatPrediction'];
+const rows = defines.filter((d: any) => NS.includes(d.ns));
+const get = (k: string) => rows.find((d: any) => d.key === k)?.value ?? '?';
+
+// Curated groupings — the raw constants stay visible below, unedited.
+const GROUPS: { title: string; blurb: string; keys: string[] }[] = [
+  {
+    title: 'Battle rhythm',
+    blurb: 'A battle resolves in rolls, not one shot. Each roll both sides deal damage; the maneuver phase opens and the pursuit phase closes the fight.',
+    keys: ['COMBAT_ROLL_DAYS', 'MANEUVER_PHASE_DAYS', 'PURSUIT_PHASE_DAYS', 'COMBAT_EVENT_DAYS', 'MIN_DAYS_BEFORE_MANUAL_RETREAT'],
+  },
+  {
+    title: 'Damage and casualties',
+    blurb: 'Damage scales off the attacker\'s damage stat against the defender\'s toughness; a share of soft casualties converts to permanent losses.',
+    keys: ['DAMAGE_SCALING_FACTOR', 'ADVANTAGE_DAMAGE_SCALING_FACTOR', 'BASE_RATIO_CASUALTIES_CONVERSION', 'BASE_WIDTH_RATIO'],
+  },
+  {
+    title: 'Counters',
+    blurb: 'Countering caps out at a ratio, not a stack: past the ratio below, extra countering regiments add nothing.',
+    keys: ['MEN_AT_ARMS_MAX_COUNTER', 'RATIO_FOR_MAX_COUNTER'],
+  },
+  {
+    title: 'Levies',
+    blurb: 'Every levy soldier is identical — the numbers men-at-arms are measured against.',
+    keys: ['LEVY_TOUGHNESS', 'LEVY_ATTACK', 'LEVY_SIEGE', 'LEVY_PURSUIT', 'LEVY_SCREEN'],
+  },
+  {
+    title: 'War score from battles',
+    blurb: 'A single battle is capped in how much war score it can swing.',
+    keys: ['WAR_ATTACKER_COMBAT_SCORE_SCALE', 'WAR_DEFENDER_COMBAT_SCORE_SCALE', 'WAR_ATTACKER_COMBAT_MAX_SCORE', 'WAR_DEFENDER_COMBAT_MAX_SCORE'],
+  },
+];
+const inGroups = new Set(GROUPS.flatMap((g) => g.keys));
+const rest = rows.filter((d: any) => !inGroups.has(d.key));
+const find = (k: string) => rows.find((d: any) => d.key === k);
+---
+<Base
+  title="Combat Mechanics"
+  active="combat"
+  lede="How battles resolve, read from the engine's own constants. The groupings and prose below are editorial; every number is the game's, with its own inline comment shown."
+  stats={[
+    { value: rows.length, label: 'combat constants' },
+    { value: `${get('COMBAT_ROLL_DAYS')}d`, label: 'per combat roll' },
+    { value: `${Number(get('MEN_AT_ARMS_MAX_COUNTER')) * 100}%`, label: 'max counter penalty' },
+  ]}
+>
+  {GROUPS.map((g) => (
+    <section>
+      <h2 class="group-h" id={g.title.toLowerCase().replace(/ /g, '-')}>{g.title}</h2>
+      <p class="blurb">{g.blurb}</p>
+      <div class="tbl-scroll">
+        <table class="ntbl">
+          <thead><tr><th>Constant</th><th class="num">Value</th><th>The game's comment</th></tr></thead>
+          <tbody>
+            {g.keys.map((k) => {
+              const d = find(k);
+              return d ? (
+                <tr id={k}>
+                  <td class="k">{k}</td>
+                  <td class="num v">{d.value}</td>
+                  <td class="c">{d.comment ?? <span class="subtle">—</span>}</td>
+                </tr>
+              ) : null;
+            })}
+          </tbody>
+        </table>
+      </div>
+    </section>
+  ))}
+
+  <section>
+    <h2 class="group-h" id="more">Every other combat constant <span class="count">{rest.length}</span></h2>
+    <p class="blurb">
+      Uncurated, straight from <code>defines</code>. See also the full
+      <a href={`${base}/defines`}>defines explorer</a>, the
+      <a href={`${base}/counters`}>counters matrix</a>, and the
+      <a href={`${base}/army-builder`}>army builder</a>.
+    </p>
+    <div class="tbl-scroll">
+      <table class="ntbl">
+        <thead><tr><th>Constant</th><th class="num">Value</th><th>Comment</th><th>Namespace</th></tr></thead>
+        <tbody>
+          {rest.map((d: any) => (
+            <tr id={d.key}>
+              <td class="k">{d.key}</td>
+              <td class="num v">{d.value}</td>
+              <td class="c">{d.comment ?? <span class="subtle">—</span>}</td>
+              <td class="subtle">{d.ns}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <p class="prov">
+    Provenance: values are extracted from <code>common/defines/</code> on every
+    build, so they follow the game. The prose framing each group is written for
+    this site and is not extracted — treat it as a reading aid, not a source.
+  </p>
+
+  <style>
+    .blurb { color: var(--dim); max-width: 70ch; margin: 0 0 0.6rem; }
+    .k { font-family: var(--font-mono); font-size: 0.78rem; }
+    .v { font-family: var(--font-mono); color: var(--brass); }
+    .c { color: var(--dim); font-size: 0.8rem; max-width: 42rem; }
+    .prov { color: var(--faint); font-size: 0.78rem; max-width: 64ch; margin-top: 2rem; }
+    code { font-family: var(--font-mono); }
+  </style>
+</Base>

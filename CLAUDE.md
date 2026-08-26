@@ -62,6 +62,24 @@ hover, ruling). Six skill colors (`--sk-*`) are the only other hues.
   `game/gfx/interface/icons/<category>/<key>.dds` → `public/img/<cat>/…webp`
   from the mirror (Pillow reads DDS directly).
 
+## Status (2026-08-26)
+
+All 47 catalog pages are built — `src/data/tabs.ts` has no placeholders left.
+40+ build scripts, ~6.4k registered entities, 9,823 indexed events, ~3.4k
+converted icons. Remaining known gaps, in rough priority order:
+
+- `tax_slots/`, `lease_contracts/` — admin-government taxation, still in
+  audit SKIP; deserve a page with the Realm section.
+- `character_interactions/` (470), `secret_types/`, `hook_types/`,
+  `factions/`, `succession_election/`, `succession_appointment/`,
+  `vassal_stances/`, `court_types/`, `court_amenities/`, `inspirations/`,
+  `game_rules/` — data is present and audited-as-skipped; pages were scoped
+  but not built.
+- Event option trees are not rendered (effect-script layer).
+- Culture "where it starts at 867/1066" — needs history/provinces joined to
+  the start-dates builder.
+- Backlinks are computed but only surfaced on a few pages.
+
 ## Adding a page (the men-at-arms pattern)
 
 1. Read the category's `_*.info` schema doc in `reference/game/common/<dir>/`.

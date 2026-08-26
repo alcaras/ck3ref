@@ -1,0 +1,2638 @@
+[
+  {
+    "adminTiers": {
+      "appointment": "duchy",
+      "main": "duchy",
+      "provincialMaa": "duchy"
+    },
+    "blockedSubjectCourts": [
+      "Meritocratic",
+      "Celestial",
+      "Ritsuryō",
+      "Administrative",
+      "Meritocratic Khanate"
+    ],
+    "characterModifiers": [
+      {
+        "key": "levy_size",
+        "polarity": "bad",
+        "text": "-50% Levy Size"
+      },
+      {
+        "key": "feudal_government_tax_contribution_mult",
+        "polarity": "bad",
+        "text": "-50% Feudal Vassal Tax Contribution"
+      },
+      {
+        "key": "feudal_government_levy_contribution_mult",
+        "polarity": "bad",
+        "text": "-50% Feudal Government Levy Contribution Mult"
+      },
+      {
+        "key": "clan_government_tax_contribution_mult",
+        "polarity": "bad",
+        "text": "-50% Clan Vassal Tax Contribution"
+      },
+      {
+        "key": "clan_government_levy_contribution_mult",
+        "polarity": "bad",
+        "text": "-50% Clan Vassal Levy Contribution"
+      },
+      {
+        "key": "men_at_arms_cap",
+        "polarity": "bad",
+        "text": "-2 Max Men-at-Arms Regiments"
+      },
+      {
+        "key": "men_at_arms_limit",
+        "polarity": "bad",
+        "text": "-2 Size of Men-at-Arms Regiments"
+      },
+      {
+        "key": "knight_limit",
+        "polarity": "bad",
+        "text": "-5 Number of …Knights"
+      },
+      {
+        "key": "vassal_limit",
+        "polarity": "good",
+        "text": "+100 Vassal Limit"
+      },
+      {
+        "key": "accolades",
+        "polarity": "bad",
+        "text": "-1 Accolades"
+      },
+      {
+        "key": "title_creation_cost_mult",
+        "polarity": "good",
+        "text": "-50% Title Creation Cost"
+      },
+      {
+        "key": "mercenary_hire_cost_mult",
+        "polarity": "bad",
+        "text": "+200% Mercenary Hire Cost"
+      },
+      {
+        "key": "men_at_arms_maintenance",
+        "polarity": "bad",
+        "text": "+50% Men-at-Arms Maintenance"
+      },
+      {
+        "key": "monthly_treasury_from_liege_mult",
+        "polarity": "bad",
+        "text": "-15% Monthly Treasury"
+      }
+    ],
+    "color": "#48065c",
+    "compatibleSuccession": [],
+    "courtGenerateCommanders": null,
+    "currencyLevelCaps": {},
+    "desc": "Administrative is a Bureaucratic Government Form that appoints Characters as Governors, to manage and preside over land, called Provinces, on behalf of their Liege.\n\nAdministrative Characters have access to Influence and some also have a personal Family Estate.\n\nOnly Independent Rulers of an Administrative Realm have Legitimacy, while Vassals do not.\n\nGovernor Vassals cannot declare War against each other — Instead, they are encouraged to spend Influence for Appointment Succession and use Schemes to acquire Titles\n\nAdministrative is a highly centralized government, where power mainly resides within the capital. Birthright, while still important, is not as prominent as in a feudal realm. With enough skill and ambition anyone, even from the most humble of origin, may rise up to become an influential governor or make a play for the throne and become emperor.",
+    "dlc": "Roads to Power",
+    "domicileType": "estate",
+    "fallback": 3,
+    "features": [],
+    "flags": [
+      {
+        "key": "government_is_administrative",
+        "name": "Has access to an Estate"
+      },
+      {
+        "key": "government_has_influence",
+        "name": "Uses Influence"
+      },
+      {
+        "key": "government_has_treasury",
+        "name": "Uses Treasury"
+      },
+      {
+        "key": "government_has_title_men_at_arms",
+        "name": "Allows recruitment of Title Men-at-Arms"
+      },
+      {
+        "key": "government_has_powerful_families",
+        "name": "Enables Noble Families"
+      },
+      {
+        "key": "government_is_settled",
+        "name": null
+      },
+      {
+        "key": "government_uses_domicile_but_not_adventurer",
+        "name": null
+      },
+      {
+        "key": "government_uses_domain_limit",
+        "name": null
+      },
+      {
+        "key": "government_uses_admin_province_obligations",
+        "name": null
+      }
+    ],
+    "icon": "administrative_government",
+    "id": "administrative_government",
+    "isMechanicDefault": true,
+    "maxDread": null,
+    "mechanicType": "administrative",
+    "name": "Administrative",
+    "preferredReligions": [],
+    "prestigeOpinionOverride": null,
+    "primaryHeritages": [],
+    "primaryHolding": {
+      "key": "castle_holding",
+      "name": "Castle"
+    },
+    "requiredCountyHoldings": [
+      {
+        "key": "castle_holding",
+        "name": "Castle"
+      },
+      {
+        "key": "city_holding",
+        "name": "City"
+      },
+      {
+        "key": "church_holding",
+        "name": "Temple"
+      }
+    ],
+    "royalCourt": "any",
+    "rules": {
+      "admin_allows_holding_multiple_primary_tier_titles": true,
+      "administrative": true,
+      "allow_accolades": true,
+      "allow_as_base_for_baronies": false,
+      "create_cadet_branches": true,
+      "dynasty_named_realms": false,
+      "house_aspirations": true,
+      "inherit_from_dynastic_government": false,
+      "landless_playable": true,
+      "legitimacy": true,
+      "noble_families": true,
+      "replace_gold_cost_by_treasury": true,
+      "rulers_should_have_dynasty": true,
+      "state_faith": true,
+      "sticky_government": true,
+      "treasury": true,
+      "use_as_base_on_landed": true,
+      "use_as_base_on_rank_up": true
+    },
+    "sourceFile": "00_government_types.txt",
+    "supplyLimitMultForOthers": null,
+    "titleMaaSetup": null,
+    "topLiegeModifiers": [
+      {
+        "key": "monthly_treasury_from_vassals",
+        "polarity": "good",
+        "text": "+85% Treasury from Vassals"
+      },
+      {
+        "key": "men_at_arms_maintenance",
+        "polarity": "bad",
+        "text": "+150% Men-at-Arms Maintenance"
+      },
+      {
+        "key": "men_at_arms_recruitment_cost",
+        "polarity": "bad",
+        "text": "+100% Men-at-Arms Recruitment Cost"
+      }
+    ],
+    "validHoldings": [
+      {
+        "key": "city_holding",
+        "name": "City"
+      },
+      {
+        "key": "temple_citadel_holding",
+        "name": "Temple Citadel"
+      }
+    ],
+    "vassalContractGroup": {
+      "key": "admin_vassal",
+      "name": "Administrative"
+    }
+  },
+  {
+    "adminTiers": null,
+    "blockedSubjectCourts": [],
+    "characterModifiers": [
+      {
+        "key": "knight_limit",
+        "polarity": "good",
+        "text": "+2 Number of …Knights"
+      },
+      {
+        "key": "men_at_arms_cap",
+        "polarity": "bad",
+        "text": "-3 Max Men-at-Arms Regiments"
+      },
+      {
+        "key": "men_at_arms_limit",
+        "polarity": "bad",
+        "text": "-2 Size of Men-at-Arms Regiments"
+      },
+      {
+        "key": "character_travel_speed",
+        "polarity": "good",
+        "text": "+20 Travel Speed"
+      },
+      {
+        "key": "siege_weapon_siege_value_mult",
+        "polarity": "bad",
+        "text": "-50% Siege Weapon Effectiveness"
+      },
+      {
+        "key": "mercenary_hire_cost_mult",
+        "polarity": "bad",
+        "text": "+100% Mercenary Hire Cost"
+      },
+      {
+        "key": "short_reign_duration_mult",
+        "polarity": "good",
+        "text": "-500% Short Reign Duration"
+      },
+      {
+        "key": "long_reign_bonus_mult",
+        "polarity": "bad",
+        "text": "-100% Long Reign Bonus"
+      },
+      {
+        "key": "domicile_travel_speed",
+        "polarity": "bad",
+        "text": "-75% Move Domicile Travel Speed"
+      },
+      {
+        "key": "monthly_wanderer_lifestyle_xp_gain_mult",
+        "polarity": "good",
+        "text": "+15% Monthly Wandering Lifestyle Experience"
+      }
+    ],
+    "color": "#a8a8a8",
+    "compatibleSuccession": [],
+    "courtGenerateCommanders": false,
+    "currencyLevelCaps": {},
+    "desc": "An Adventurer is an Unlanded Character who leads a Camp.\n\nThey do not have Vassals, nor do they earn income passively in the usual fashion — instead, they must take Contracts to earn their coin, or call in favors from their Roll of Patrons.\n\nAdventurers may freely roam the map. Their main concern is making sure they have enough Provisions to survive on the move.\n\nInstead of Crown Authority, most Adventurers will set a Camp Purpose. This indicates what type of group they have and why they stick together.\n\nDriven seventh sons with no inheritance, ambitious nomads, petulant run-aways, curious scholars, vicious sell-swords, and deposed nobles alike all flesh out the ranks of these tireless wanderers.\n\nTheir sole uniting factor is a hunger for something more than a quiet life of obscurity, and the will to do something about it.",
+    "dlc": "Roads to Power",
+    "domicileType": "camp",
+    "fallback": null,
+    "features": [],
+    "flags": [
+      {
+        "key": "cannot_be_vassal_or_liege",
+        "name": null
+      },
+      {
+        "key": "government_is_landless_adventurer",
+        "name": "Has access to a Camp"
+      },
+      {
+        "key": "has_unique_government_perks",
+        "name": null
+      }
+    ],
+    "icon": "landless_adventurer_government",
+    "id": "landless_adventurer_government",
+    "isMechanicDefault": true,
+    "maxDread": null,
+    "mechanicType": "landless_adventurer",
+    "name": "Adventurer",
+    "preferredReligions": [],
+    "prestigeOpinionOverride": null,
+    "primaryHeritages": [],
+    "primaryHolding": null,
+    "requiredCountyHoldings": [],
+    "royalCourt": null,
+    "rules": {
+      "allow_accolades": false,
+      "allow_out_of_realm_inheritance": true,
+      "conditional_maa_refill": true,
+      "council": false,
+      "court_generate_spouses": false,
+      "create_cadet_branches": true,
+      "landless_playable": true,
+      "mercenary": true,
+      "rulers_should_have_dynasty": true,
+      "use_as_base_on_landed": true,
+      "use_maa_maintenance": false,
+      "use_title_tier_modifiers": false
+    },
+    "sourceFile": "00_government_types.txt",
+    "supplyLimitMultForOthers": null,
+    "titleMaaSetup": null,
+    "topLiegeModifiers": [],
+    "validHoldings": [
+      {
+        "key": "tribal_holding",
+        "name": "Tribe"
+      },
+      {
+        "key": "church_holding",
+        "name": "Temple"
+      },
+      {
+        "key": "castle_holding",
+        "name": "Castle"
+      },
+      {
+        "key": "city_holding",
+        "name": "City"
+      },
+      {
+        "key": "temple_citadel_holding",
+        "name": "Temple Citadel"
+      }
+    ],
+    "vassalContractGroup": null
+  },
+  {
+    "adminTiers": null,
+    "blockedSubjectCourts": [],
+    "characterModifiers": [],
+    "color": "#0a8a35",
+    "compatibleSuccession": [],
+    "courtGenerateCommanders": null,
+    "currencyLevelCaps": {},
+    "desc": "Clans are a Government Form in which the amount of Levies and Taxes given to a Liege by their Vassals is determined by the Aptitude of said Liege's Tax Collector. Clans also make use of House Unity.\n\nThe clan is united by kinship — either by blood or a shared relation with a symbolic ancestor. A clan leader relies heavily on the support of the clan. United, they are a strength to be reckoned with, but a discontent clan withers from within.",
+    "dlc": null,
+    "domicileType": null,
+    "fallback": 2,
+    "features": [],
+    "flags": [
+      {
+        "key": "government_is_clan",
+        "name": "Uses Tax Jurisdictions"
+      },
+      {
+        "key": "may_appoint_viziers",
+        "name": "May appoint Viziers"
+      },
+      {
+        "key": "government_is_settled",
+        "name": null
+      },
+      {
+        "key": "government_uses_crown_authority",
+        "name": null
+      },
+      {
+        "key": "government_uses_domain_limit",
+        "name": null
+      }
+    ],
+    "icon": "clan_government",
+    "id": "clan_government",
+    "isMechanicDefault": true,
+    "maxDread": null,
+    "mechanicType": "clan",
+    "name": "Clan",
+    "preferredReligions": [
+      "Islam"
+    ],
+    "prestigeOpinionOverride": null,
+    "primaryHeritages": [
+      "Arabic",
+      "Iranian",
+      "Turkic"
+    ],
+    "primaryHolding": {
+      "key": "castle_holding",
+      "name": "Castle"
+    },
+    "requiredCountyHoldings": [
+      {
+        "key": "castle_holding",
+        "name": "Castle"
+      },
+      {
+        "key": "city_holding",
+        "name": "City"
+      },
+      {
+        "key": "church_holding",
+        "name": "Temple"
+      }
+    ],
+    "royalCourt": "any",
+    "rules": {
+      "allow_accolades": true,
+      "always_use_patronym": true,
+      "create_cadet_branches": true,
+      "dynasty_named_realms": true,
+      "legitimacy": true,
+      "rulers_should_have_dynasty": true
+    },
+    "sourceFile": "00_government_types.txt",
+    "supplyLimitMultForOthers": null,
+    "titleMaaSetup": null,
+    "topLiegeModifiers": [],
+    "validHoldings": [
+      {
+        "key": "temple_citadel_holding",
+        "name": "Temple Citadel"
+      }
+    ],
+    "vassalContractGroup": {
+      "key": "clan_vassal",
+      "name": "Clan"
+    }
+  },
+  {
+    "adminTiers": null,
+    "blockedSubjectCourts": [],
+    "characterModifiers": [],
+    "color": "#0400c7",
+    "compatibleSuccession": [],
+    "courtGenerateCommanders": null,
+    "currencyLevelCaps": {},
+    "desc": "Under the Feudal Government Form, a Liege gives their Vassals Land to govern in exchange for Levies and Taxes, regulated by individual Vassal Contract between Vassal and Liege.\n\nFeudalism was the dominant government form in Europe between the 9th and the 15th century. The feudal system is based on the relationship between the landholder and those who provide services and labor in order to live there. The rulers who hold the land appoint vassals which are given fiefs to govern. In return, the vassals provide their liege with Soldiers and Taxes.",
+    "dlc": null,
+    "domicileType": null,
+    "fallback": 1,
+    "features": [],
+    "flags": [
+      {
+        "key": "government_is_feudal",
+        "name": "Uses Vassal Contracts"
+      },
+      {
+        "key": "government_is_settled",
+        "name": null
+      },
+      {
+        "key": "may_elevate_co_monarch",
+        "name": "Allows Rulers of at least Kingdom-Tier to elevate a Co-Monarch from amongst their adult Children"
+      },
+      {
+        "key": "government_uses_crown_authority",
+        "name": null
+      },
+      {
+        "key": "government_uses_domain_limit",
+        "name": null
+      }
+    ],
+    "icon": "feudal_government",
+    "id": "feudal_government",
+    "isMechanicDefault": true,
+    "maxDread": null,
+    "mechanicType": "feudal",
+    "name": "Feudal",
+    "preferredReligions": [],
+    "prestigeOpinionOverride": null,
+    "primaryHeritages": [],
+    "primaryHolding": {
+      "key": "castle_holding",
+      "name": "Castle"
+    },
+    "requiredCountyHoldings": [
+      {
+        "key": "castle_holding",
+        "name": "Castle"
+      },
+      {
+        "key": "city_holding",
+        "name": "City"
+      },
+      {
+        "key": "church_holding",
+        "name": "Temple"
+      }
+    ],
+    "royalCourt": "any",
+    "rules": {
+      "allow_accolades": true,
+      "create_cadet_branches": true,
+      "dynasty_named_realms": true,
+      "legitimacy": true,
+      "rulers_should_have_dynasty": true
+    },
+    "sourceFile": "00_government_types.txt",
+    "supplyLimitMultForOthers": null,
+    "titleMaaSetup": null,
+    "topLiegeModifiers": [],
+    "validHoldings": [
+      {
+        "key": "temple_citadel_holding",
+        "name": "Temple Citadel"
+      }
+    ],
+    "vassalContractGroup": {
+      "key": "feudal_vassal",
+      "name": "Feudal"
+    }
+  },
+  {
+    "adminTiers": null,
+    "blockedSubjectCourts": [],
+    "characterModifiers": [
+      {
+        "key": "knight_limit",
+        "polarity": "bad",
+        "text": "-100 Number of …Knights"
+      },
+      {
+        "key": "county_opinion_add",
+        "polarity": "good",
+        "text": "+100 Popular Opinion"
+      },
+      {
+        "key": "monthly_income_mult",
+        "polarity": "bad",
+        "text": "-1000% Monthly Income"
+      }
+    ],
+    "color": "#ebd534",
+    "compatibleSuccession": [],
+    "courtGenerateCommanders": null,
+    "currencyLevelCaps": {},
+    "desc": "Herder realms are removed from all aspects of rulership. They do not command Armies, own Buildings, create Alliances, or declare Wars. When Nomads Migrate a Holding, herders will slowly replenish the local County Fertility by virtue of their smaller flock.\n\nThey are intimidated by proper Nomad Rulers and will immediately surrender their land when challenged.\n\nHerders do not concern themselves with any aspects of rulership. They tend to their flock, and just their flock.",
+    "dlc": null,
+    "domicileType": null,
+    "fallback": null,
+    "features": [],
+    "flags": [
+      {
+        "key": "government_is_herder",
+        "name": "Is unplayable"
+      },
+      {
+        "key": "government_has_herd",
+        "name": null
+      },
+      {
+        "key": "ignores_faith_marriage_penalties",
+        "name": "Ignores Faith when arranging Marriages with Nomadic or Herder Rulers or their Tributaries"
+      }
+    ],
+    "icon": "herder_government",
+    "id": "herder_government",
+    "isMechanicDefault": true,
+    "maxDread": null,
+    "mechanicType": "herder",
+    "name": "Herder",
+    "preferredReligions": [],
+    "prestigeOpinionOverride": null,
+    "primaryHeritages": [],
+    "primaryHolding": {
+      "key": "herder_holding",
+      "name": "Herder Camp"
+    },
+    "requiredCountyHoldings": [
+      {
+        "key": "herder_holding",
+        "name": "Herder Camp"
+      }
+    ],
+    "royalCourt": null,
+    "rules": {
+      "allow_accolades": false,
+      "buildings": false,
+      "council": false,
+      "court_generate_spouses": false,
+      "create_cadet_branches": false,
+      "deny_powerful_vassal": true,
+      "redirects_wars_to_overlord": true,
+      "replenishes_county_fertility": true,
+      "rulers_should_have_dynasty": false,
+      "uses_county_fertility": true
+    },
+    "sourceFile": "00_government_types.txt",
+    "supplyLimitMultForOthers": null,
+    "titleMaaSetup": null,
+    "topLiegeModifiers": [],
+    "validHoldings": [
+      {
+        "key": "herder_holding",
+        "name": "Herder Camp"
+      },
+      {
+        "key": "castle_holding",
+        "name": "Castle"
+      },
+      {
+        "key": "tribal_holding",
+        "name": "Tribe"
+      }
+    ],
+    "vassalContractGroup": {
+      "key": "herder_vassal",
+      "name": "Herder"
+    }
+  },
+  {
+    "adminTiers": null,
+    "blockedSubjectCourts": [],
+    "characterModifiers": [],
+    "color": "#a8a8a8",
+    "compatibleSuccession": [],
+    "courtGenerateCommanders": 5,
+    "currencyLevelCaps": {},
+    "desc": "The holy warriors of the orders have dedicated their life to fighting infidels and serving their faith. They may hold castles given to them by pious landholders. The order leader is chosen within the order ranks.",
+    "dlc": null,
+    "domicileType": null,
+    "fallback": null,
+    "features": [],
+    "flags": [
+      {
+        "key": "government_uses_crown_authority",
+        "name": null
+      },
+      {
+        "key": "cannot_be_vassal_or_liege",
+        "name": null
+      },
+      {
+        "key": "government_is_holy_order",
+        "name": "Is unplayable"
+      }
+    ],
+    "icon": "holy_order_government",
+    "id": "holy_order_government",
+    "isMechanicDefault": true,
+    "maxDread": null,
+    "mechanicType": "holy_order",
+    "name": "Holy Order",
+    "preferredReligions": [],
+    "prestigeOpinionOverride": null,
+    "primaryHeritages": [],
+    "primaryHolding": null,
+    "requiredCountyHoldings": [],
+    "royalCourt": null,
+    "rules": {
+      "allow_accolades": false,
+      "council": false,
+      "court_generate_spouses": false,
+      "inherit_from_dynastic_government": false
+    },
+    "sourceFile": "00_government_types.txt",
+    "supplyLimitMultForOthers": null,
+    "titleMaaSetup": null,
+    "topLiegeModifiers": [],
+    "validHoldings": [
+      {
+        "key": "castle_holding",
+        "name": "Castle"
+      },
+      {
+        "key": "city_holding",
+        "name": "City"
+      },
+      {
+        "key": "temple_citadel_holding",
+        "name": "Temple Citadel"
+      }
+    ],
+    "vassalContractGroup": null
+  },
+  {
+    "adminTiers": null,
+    "blockedSubjectCourts": [],
+    "characterModifiers": [
+      {
+        "key": "clergy_opinion",
+        "polarity": "good",
+        "text": "+5 Clergy Opinion"
+      },
+      {
+        "key": "zealot_opinion",
+        "polarity": "good",
+        "text": "+5 Zealot Vassal Opinion"
+      },
+      {
+        "key": "domain_limit_max",
+        "polarity": "good",
+        "text": "+2 Maximum Domain Limit"
+      },
+      {
+        "key": "vassal_limit_max",
+        "polarity": "good",
+        "text": "+2 Maximum Vassal Limit"
+      },
+      {
+        "key": "zealot_tax_contribution_mult",
+        "polarity": "good",
+        "text": "+5% Zealot Vassal Tax Contribution"
+      },
+      {
+        "key": "zealot_levy_contribution_mult",
+        "polarity": "good",
+        "text": "+5% Zealot Vassal Levy Contribution"
+      },
+      {
+        "key": "monthly_piety_gain_mult",
+        "polarity": "good",
+        "text": "+15% Monthly Piety"
+      }
+    ],
+    "color": "#2a3864",
+    "compatibleSuccession": [],
+    "courtGenerateCommanders": null,
+    "currencyLevelCaps": {
+      "piety": 8
+    },
+    "desc": "Under the Mandala Government Form, the Domain Limit and amount of Direct Vassals are limited. Instead the Liege and Suzerain are reliant on Tributaries for expanding their realm. \n\nA Mandala Ruler can aspire to be seen as a God King, or Devaraja, and then relies on Mandala Radiance to acquire and keep Tributaries.\n\nA Ruler must maintain Opinion and grow relations with their Tributaries to keep them long-term. On succession Tributaries may scatter unless the Ruler is a worthy Devaraja Successor.\n\nThe petals of the Mandala government may wither and die, but at the core stands the divine right, manifested in the Devaraja. An ambitious enough ruler can make the Mandala last, eternally.",
+    "dlc": "The Great People",
+    "domicileType": null,
+    "fallback": null,
+    "features": [],
+    "flags": [
+      {
+        "key": "uses_mandala_aspects",
+        "name": "Uses Mandala Aspects"
+      },
+      {
+        "key": "uses_mandala_decrees",
+        "name": "Uses Mandala Decrees"
+      },
+      {
+        "key": "government_is_mandala",
+        "name": "Uses the Mandala Ornate Temple Great Project and Great Building"
+      },
+      {
+        "key": "has_coerce_tributary_scheme",
+        "name": "May use the Coerce Tributary Scheme"
+      },
+      {
+        "key": "additional_piety_from_religious_buildings",
+        "name": "Gains additional Piety from constructing Pious Buildings and Temple Citadels"
+      },
+      {
+        "key": "can_perform_ritual_contracts",
+        "name": "Realm provinces and Subjects occasionally spawn Mandala Rituals"
+      },
+      {
+        "key": "subjects_gain_piety_based_on_overlord_piety_level",
+        "name": null
+      },
+      {
+        "key": "has_special_house_aspirations",
+        "name": null
+      },
+      {
+        "key": "government_is_settled",
+        "name": null
+      },
+      {
+        "key": "has_unique_government_perks",
+        "name": null
+      },
+      {
+        "key": "no_powerful_vassals",
+        "name": null
+      }
+    ],
+    "icon": "mandala_government",
+    "id": "mandala_government",
+    "isMechanicDefault": true,
+    "maxDread": null,
+    "mechanicType": "mandala",
+    "name": "Mandala",
+    "preferredReligions": [],
+    "prestigeOpinionOverride": null,
+    "primaryHeritages": [],
+    "primaryHolding": {
+      "key": "temple_citadel_holding",
+      "name": "Temple Citadel"
+    },
+    "requiredCountyHoldings": [
+      {
+        "key": "temple_citadel_holding",
+        "name": "Temple Citadel"
+      },
+      {
+        "key": "city_holding",
+        "name": "City"
+      }
+    ],
+    "royalCourt": "any",
+    "rules": {
+      "allow_accolades": true,
+      "ask_for_tribute": true,
+      "considers_piety_for_title_creation": true,
+      "count_tributaries_for_title_requirements": true,
+      "create_cadet_branches": true,
+      "deny_powerful_vassal": true,
+      "dynasty_named_realms": true,
+      "house_aspirations": true,
+      "legitimacy": true,
+      "radiance": true,
+      "rulers_should_have_dynasty": true,
+      "use_as_base_on_landed": true,
+      "use_as_base_on_rank_up": true
+    },
+    "sourceFile": "00_government_types.txt",
+    "supplyLimitMultForOthers": null,
+    "titleMaaSetup": null,
+    "topLiegeModifiers": [],
+    "validHoldings": [
+      {
+        "key": "church_holding",
+        "name": "Temple"
+      },
+      {
+        "key": "castle_holding",
+        "name": "Castle"
+      }
+    ],
+    "vassalContractGroup": {
+      "key": "mandala_vassal",
+      "name": "Mandala"
+    }
+  },
+  {
+    "adminTiers": null,
+    "blockedSubjectCourts": [],
+    "characterModifiers": [],
+    "color": "#a8a8a8",
+    "compatibleSuccession": [],
+    "courtGenerateCommanders": 5,
+    "currencyLevelCaps": {},
+    "desc": "Mercenary companies roam the lands in search of employment, and take up arms for the highest bidder. Loyalty is essential to a good reputation, but it only lasts until the end of their contract. The mercenary leader is chosen from within the company's ranks.",
+    "dlc": null,
+    "domicileType": null,
+    "fallback": null,
+    "features": [],
+    "flags": [
+      {
+        "key": "government_uses_crown_authority",
+        "name": null
+      },
+      {
+        "key": "cannot_be_vassal_or_liege",
+        "name": null
+      },
+      {
+        "key": "government_is_mercenary",
+        "name": "Is unplayable"
+      }
+    ],
+    "icon": "mercenary_government",
+    "id": "mercenary_government",
+    "isMechanicDefault": true,
+    "maxDread": null,
+    "mechanicType": "mercenary",
+    "name": "Mercenary Company",
+    "preferredReligions": [],
+    "prestigeOpinionOverride": null,
+    "primaryHeritages": [],
+    "primaryHolding": null,
+    "requiredCountyHoldings": [],
+    "royalCourt": null,
+    "rules": {
+      "allow_accolades": false,
+      "council": false,
+      "court_generate_spouses": false,
+      "inherit_from_dynastic_government": false
+    },
+    "sourceFile": "00_government_types.txt",
+    "supplyLimitMultForOthers": null,
+    "titleMaaSetup": null,
+    "topLiegeModifiers": [],
+    "validHoldings": [],
+    "vassalContractGroup": null
+  },
+  {
+    "adminTiers": null,
+    "blockedSubjectCourts": [],
+    "characterModifiers": [
+      {
+        "key": "steppe_travel_danger",
+        "polarity": "neutral",
+        "text": "-50 Steppe Danger"
+      },
+      {
+        "key": "plains_travel_danger",
+        "polarity": "neutral",
+        "text": "-50 Plains Danger"
+      },
+      {
+        "key": "drylands_travel_danger",
+        "polarity": "neutral",
+        "text": "-22.33 Drylands Danger"
+      },
+      {
+        "key": "mountains_travel_danger",
+        "polarity": "neutral",
+        "text": "-42.33 Mountains Danger"
+      },
+      {
+        "key": "steppe_cancel_negative_supply",
+        "polarity": "neutral",
+        "text": "Negate Supply Limit Penalty in Steppe"
+      },
+      {
+        "key": "ignore_negative_opinion_of_culture",
+        "polarity": "neutral",
+        "text": "No Negative Opinion of Other Cultures"
+      },
+      {
+        "key": "county_fertility_decline_add",
+        "polarity": "bad",
+        "text": "-15 County Fertility Consumption"
+      },
+      {
+        "key": "movement_speed",
+        "polarity": "good",
+        "text": "+10% Army Movement Speed"
+      },
+      {
+        "key": "movement_speed_land_raiding",
+        "polarity": "good",
+        "text": "+10% Movement Speed over land while Raiding"
+      },
+      {
+        "key": "the_great_steppe_supply_limit_add",
+        "polarity": "good",
+        "text": "+10000 Supply Limit in The Great Steppe"
+      },
+      {
+        "key": "game_rule_extra_nomads_arabs_supply_limit_add",
+        "polarity": "good",
+        "text": "+10000 Supply Limit in Al-Bādiya"
+      },
+      {
+        "key": "game_rule_extra_nomads_horn_supply_limit_add",
+        "polarity": "good",
+        "text": "+10000 Supply Limit in Bilād as-Sūmāl"
+      },
+      {
+        "key": "game_rule_extra_nomads_sahel_supply_limit_add",
+        "polarity": "good",
+        "text": "+10000 Supply Limit in Tiniri"
+      },
+      {
+        "key": "game_rule_extra_nomads_sami_supply_limit_add",
+        "polarity": "good",
+        "text": "+10000 Supply Limit in The Taiga and Tundra"
+      },
+      {
+        "key": "game_rule_extra_nomads_tibet_supply_limit_add",
+        "polarity": "good",
+        "text": "+10000 Game Rule Extra Nomads Tibet Supply Limit Add"
+      },
+      {
+        "key": "domain_limit",
+        "polarity": "bad",
+        "text": "-1 Domain Limit"
+      },
+      {
+        "key": "ai_war_cooldown",
+        "polarity": "bad",
+        "text": "-0.5 Ai War Cooldown"
+      },
+      {
+        "key": "ai_war_chance",
+        "polarity": "good",
+        "text": "+2 Ai War Chance"
+      },
+      {
+        "key": "men_at_arms_maintenance",
+        "polarity": "good",
+        "text": "-50% Men-at-Arms Maintenance"
+      },
+      {
+        "key": "supply_duration",
+        "polarity": "good",
+        "text": "+100% Supply Duration"
+      },
+      {
+        "key": "county_opinion_add",
+        "polarity": "good",
+        "text": "+25 Popular Opinion"
+      },
+      {
+        "key": "title_creation_cost_mult",
+        "polarity": "good",
+        "text": "-50% Title Creation Cost"
+      }
+    ],
+    "color": "#ff7f50",
+    "compatibleSuccession": [],
+    "courtGenerateCommanders": null,
+    "currencyLevelCaps": {},
+    "desc": "Nomadic Rulers graze County Fertility to grow their Herd. They can use Herd as Nomadic Horde, which can be upgraded to Men-at-Arms. They have a Nomadic Capital.\n\nNomads can Migrate to find more fertile lands, though large nomadic Realms can grow their herd through Tributaries or by reaching a high Fertility Equilibrium.\n\nNomads have a higher maximum Dread.\n\nFor nomads, moving is their way of life. Ensuring that the herd can grow is their primary concern. Every ruler is only as strong as the strength of their people.",
+    "dlc": "Khans of the Steppe",
+    "domicileType": "yurt",
+    "fallback": null,
+    "features": [],
+    "flags": [
+      {
+        "key": "government_is_nomadic",
+        "name": "Has Herd"
+      },
+      {
+        "key": "government_has_herd",
+        "name": null
+      },
+      {
+        "key": "government_can_raid_rule",
+        "name": "Government allows the Raiding of foreign Counties for Loot"
+      },
+      {
+        "key": "government_can_use_tributary_men_at_arms",
+        "name": "Can recruit Men-at-Arms from Tributaries"
+      },
+      {
+        "key": "can_start_war_with_raised_troops",
+        "name": "Can start Wars with raised Armies"
+      },
+      {
+        "key": "ignores_faith_marriage_penalties",
+        "name": "Ignores Faith when arranging Marriages with Nomadic or Herder Rulers or their Tributaries"
+      },
+      {
+        "key": "no_hostile_attrition_in_steppe",
+        "name": "No Hostile County Attrition while Raiding in The Great Steppe"
+      },
+      {
+        "key": "movement_speed_from_government",
+        "name": "Army Movement Speed: +10%"
+      },
+      {
+        "key": "land_raiding_movement_speed_from_government",
+        "name": "Movement Speed over land while Raiding: +10%"
+      },
+      {
+        "key": "can_raze_holdings",
+        "name": "Can Raze Holdings for Gold"
+      },
+      {
+        "key": "government_uses_domicile_but_not_adventurer",
+        "name": null
+      }
+    ],
+    "icon": "nomad_government",
+    "id": "nomad_government",
+    "isMechanicDefault": true,
+    "maxDread": 150,
+    "mechanicType": "nomad",
+    "name": "Nomadic",
+    "preferredReligions": [],
+    "prestigeOpinionOverride": null,
+    "primaryHeritages": [],
+    "primaryHolding": {
+      "key": "nomad_holding",
+      "name": "Nomadic Settlement"
+    },
+    "requiredCountyHoldings": [
+      {
+        "key": "nomad_holding",
+        "name": "Nomadic Settlement"
+      }
+    ],
+    "royalCourt": "any",
+    "rules": {
+      "affected_by_development": false,
+      "allow_accolades": true,
+      "buildings": false,
+      "conditional_maa_refill": true,
+      "create_cadet_branches": true,
+      "dynasty_named_realms": false,
+      "landless_playable": true,
+      "legitimacy": true,
+      "no_capital_movement_cooldown": true,
+      "obedience": true,
+      "rulers_should_have_dynasty": true,
+      "sticky_government": true,
+      "subject_men_at_arms": true,
+      "use_as_base_on_landed": true,
+      "use_as_base_on_rank_up": true,
+      "uses_county_fertility": true,
+      "uses_culture_and_house_head_named_realms": true
+    },
+    "sourceFile": "00_government_types.txt",
+    "supplyLimitMultForOthers": null,
+    "titleMaaSetup": null,
+    "topLiegeModifiers": [],
+    "validHoldings": [
+      {
+        "key": "castle_holding",
+        "name": "Castle"
+      },
+      {
+        "key": "tribal_holding",
+        "name": "Tribe"
+      },
+      {
+        "key": "temple_citadel_holding",
+        "name": "Temple Citadel"
+      }
+    ],
+    "vassalContractGroup": {
+      "key": "nomad_vassal",
+      "name": "Nomadic"
+    }
+  },
+  {
+    "adminTiers": null,
+    "blockedSubjectCourts": [],
+    "characterModifiers": [],
+    "color": "#c7c7c7",
+    "compatibleSuccession": [],
+    "courtGenerateCommanders": null,
+    "currencyLevelCaps": {},
+    "desc": "Theocracy is an unplayable Government Form available for some Faiths depending on Doctrines. They are usually lead by a Head of Faith or a Landed Realm Priest. A Bishop might also become an Independent Theocratic ruler in their own right.\n\nIn a theocratic government, all authority belongs to a religious institution. It is ruled by a priest or priestess who carries out the will of the divine on Earth.",
+    "dlc": null,
+    "domicileType": null,
+    "fallback": null,
+    "features": [],
+    "flags": [
+      {
+        "key": "government_is_theocracy",
+        "name": "Is unplayable"
+      },
+      {
+        "key": "government_is_settled",
+        "name": null
+      },
+      {
+        "key": "government_uses_domain_limit",
+        "name": null
+      }
+    ],
+    "icon": "theocracy_government",
+    "id": "theocracy_government",
+    "isMechanicDefault": true,
+    "maxDread": null,
+    "mechanicType": "theocracy",
+    "name": "Theocracy",
+    "preferredReligions": [],
+    "prestigeOpinionOverride": null,
+    "primaryHeritages": [],
+    "primaryHolding": {
+      "key": "church_holding",
+      "name": "Temple"
+    },
+    "requiredCountyHoldings": [
+      {
+        "key": "church_holding",
+        "name": "Temple"
+      },
+      {
+        "key": "castle_holding",
+        "name": "Castle"
+      },
+      {
+        "key": "city_holding",
+        "name": "City"
+      }
+    ],
+    "royalCourt": null,
+    "rules": {
+      "inherit_from_dynastic_government": false,
+      "religious": true
+    },
+    "sourceFile": "00_government_types.txt",
+    "supplyLimitMultForOthers": null,
+    "titleMaaSetup": null,
+    "topLiegeModifiers": [],
+    "validHoldings": [
+      {
+        "key": "castle_holding",
+        "name": "Castle"
+      },
+      {
+        "key": "tribal_holding",
+        "name": "Tribe"
+      },
+      {
+        "key": "nomad_holding",
+        "name": "Nomadic Settlement"
+      },
+      {
+        "key": "herder_holding",
+        "name": "Herder Camp"
+      },
+      {
+        "key": "temple_citadel_holding",
+        "name": "Temple Citadel"
+      }
+    ],
+    "vassalContractGroup": {
+      "key": "theocracy_vassal",
+      "name": "Theocracy"
+    }
+  },
+  {
+    "adminTiers": {
+      "appointment": "county",
+      "main": "duchy",
+      "provincialMaa": "county"
+    },
+    "blockedSubjectCourts": [
+      "Meritocratic",
+      "Celestial",
+      "Ritsuryō",
+      "Administrative",
+      "Meritocratic Khanate"
+    ],
+    "characterModifiers": [
+      {
+        "key": "levy_size",
+        "polarity": "bad",
+        "text": "-50% Levy Size"
+      },
+      {
+        "key": "feudal_government_tax_contribution_mult",
+        "polarity": "bad",
+        "text": "-50% Feudal Vassal Tax Contribution"
+      },
+      {
+        "key": "feudal_government_levy_contribution_mult",
+        "polarity": "bad",
+        "text": "-50% Feudal Government Levy Contribution Mult"
+      },
+      {
+        "key": "clan_government_tax_contribution_mult",
+        "polarity": "bad",
+        "text": "-50% Clan Vassal Tax Contribution"
+      },
+      {
+        "key": "clan_government_levy_contribution_mult",
+        "polarity": "bad",
+        "text": "-50% Clan Vassal Levy Contribution"
+      },
+      {
+        "key": "men_at_arms_limit",
+        "polarity": "bad",
+        "text": "-2 Size of Men-at-Arms Regiments"
+      },
+      {
+        "key": "knight_limit",
+        "polarity": "bad",
+        "text": "-5 Number of …Knights"
+      },
+      {
+        "key": "vassal_limit",
+        "polarity": "good",
+        "text": "+20 Vassal Limit"
+      },
+      {
+        "key": "accolades",
+        "polarity": "bad",
+        "text": "-1 Accolades"
+      },
+      {
+        "key": "character_max_merit_level_add",
+        "polarity": "good",
+        "text": "+1 Character Max Merit Level Add"
+      },
+      {
+        "key": "mercenary_hire_cost_mult",
+        "polarity": "bad",
+        "text": "+200% Mercenary Hire Cost"
+      },
+      {
+        "key": "monthly_treasury_from_liege_mult",
+        "polarity": "bad",
+        "text": "-25% Monthly Treasury"
+      }
+    ],
+    "color": "#fae60a",
+    "compatibleSuccession": [],
+    "courtGenerateCommanders": null,
+    "currencyLevelCaps": {
+      "merit": 9
+    },
+    "desc": "Celestial is a Bureaucratic Government Form in which the Liege appoints characters as Governors, of which there are two types, Civilian and Military.\n\nCharacters have access to Influence, Noble Families, Family Estates, and Treasury.\n\nIndependent Rulers have Legitimacy, while Vassals focus on obtaining Merit.\n\nThe Celestial system refers to the centralized Administrative government of China, overseen by the Son of Heaven.",
+    "dlc": "Roads to Power",
+    "domicileType": "east_asian_estate",
+    "fallback": 3,
+    "features": [],
+    "flags": [
+      {
+        "key": "government_is_celestial",
+        "name": "Has access to an Estate and Top Liege has Mandate of Heaven"
+      },
+      {
+        "key": "government_has_merit",
+        "name": "Uses Merit"
+      },
+      {
+        "key": "government_has_influence",
+        "name": "Uses Influence"
+      },
+      {
+        "key": "government_has_treasury",
+        "name": "Uses Treasury"
+      },
+      {
+        "key": "government_has_title_men_at_arms",
+        "name": "Allows recruitment of Title Men-at-Arms"
+      },
+      {
+        "key": "government_has_powerful_families",
+        "name": "Enables Noble Families"
+      },
+      {
+        "key": "government_has_county_tier_noble_families",
+        "name": null
+      },
+      {
+        "key": "government_is_settled",
+        "name": null
+      },
+      {
+        "key": "government_uses_domicile_but_not_adventurer",
+        "name": null
+      },
+      {
+        "key": "government_uses_domain_limit",
+        "name": null
+      },
+      {
+        "key": "government_uses_admin_province_obligations",
+        "name": null
+      },
+      {
+        "key": "government_uses_merit_family_aspirations",
+        "name": null
+      },
+      {
+        "key": "has_special_house_aspirations",
+        "name": null
+      }
+    ],
+    "icon": "celestial_government",
+    "id": "celestial_government",
+    "isMechanicDefault": false,
+    "maxDread": null,
+    "mechanicType": null,
+    "name": "Celestial",
+    "preferredReligions": [],
+    "prestigeOpinionOverride": null,
+    "primaryHeritages": [],
+    "primaryHolding": {
+      "key": "castle_holding",
+      "name": "Castle"
+    },
+    "requiredCountyHoldings": [
+      {
+        "key": "castle_holding",
+        "name": "Castle"
+      },
+      {
+        "key": "city_holding",
+        "name": "City"
+      },
+      {
+        "key": "church_holding",
+        "name": "Temple"
+      }
+    ],
+    "royalCourt": "any",
+    "rules": {
+      "admin_allows_holding_multiple_primary_tier_titles": false,
+      "administrative": true,
+      "allow_accolades": true,
+      "allow_as_base_for_baronies": false,
+      "block_alliance_child_marriage": true,
+      "create_cadet_branches": true,
+      "deny_powerful_vassal": true,
+      "disable_regnal_numbers": true,
+      "dynasty_named_realms": false,
+      "house_aspirations": true,
+      "inherit_from_dynastic_government": false,
+      "landless_playable": true,
+      "legitimacy": true,
+      "merit": true,
+      "noble_families": true,
+      "replace_gold_cost_by_treasury": true,
+      "rulers_should_have_dynasty": true,
+      "sticky_government": true,
+      "treasury": true,
+      "use_as_base_on_landed": true,
+      "use_as_base_on_rank_up": true
+    },
+    "sourceFile": "00_government_types.txt",
+    "supplyLimitMultForOthers": null,
+    "titleMaaSetup": "vassals_and_top_liege",
+    "topLiegeModifiers": [
+      {
+        "key": "monthly_treasury_from_vassals",
+        "polarity": "good",
+        "text": "+95% Treasury from Vassals"
+      }
+    ],
+    "validHoldings": [
+      {
+        "key": "city_holding",
+        "name": "City"
+      },
+      {
+        "key": "temple_citadel_holding",
+        "name": "Temple Citadel"
+      },
+      {
+        "key": "tribal_holding",
+        "name": "Tribe"
+      }
+    ],
+    "vassalContractGroup": {
+      "key": "celestial_vassal",
+      "name": "Celestial"
+    }
+  },
+  {
+    "adminTiers": {
+      "appointment": "county",
+      "main": "duchy",
+      "provincialMaa": "duchy"
+    },
+    "blockedSubjectCourts": [
+      "Meritocratic",
+      "Celestial",
+      "Ritsuryō",
+      "Administrative",
+      "Meritocratic Khanate"
+    ],
+    "characterModifiers": [
+      {
+        "key": "levy_size",
+        "polarity": "bad",
+        "text": "-50% Levy Size"
+      },
+      {
+        "key": "feudal_government_tax_contribution_mult",
+        "polarity": "bad",
+        "text": "-50% Feudal Vassal Tax Contribution"
+      },
+      {
+        "key": "feudal_government_levy_contribution_mult",
+        "polarity": "bad",
+        "text": "-50% Feudal Government Levy Contribution Mult"
+      },
+      {
+        "key": "clan_government_tax_contribution_mult",
+        "polarity": "bad",
+        "text": "-50% Clan Vassal Tax Contribution"
+      },
+      {
+        "key": "clan_government_levy_contribution_mult",
+        "polarity": "bad",
+        "text": "-50% Clan Vassal Levy Contribution"
+      },
+      {
+        "key": "men_at_arms_cap",
+        "polarity": "bad",
+        "text": "-2 Max Men-at-Arms Regiments"
+      },
+      {
+        "key": "men_at_arms_limit",
+        "polarity": "bad",
+        "text": "-2 Size of Men-at-Arms Regiments"
+      },
+      {
+        "key": "knight_limit",
+        "polarity": "bad",
+        "text": "-5 Number of …Knights"
+      },
+      {
+        "key": "vassal_limit",
+        "polarity": "good",
+        "text": "+20 Vassal Limit"
+      },
+      {
+        "key": "accolades",
+        "polarity": "bad",
+        "text": "-1 Accolades"
+      },
+      {
+        "key": "title_creation_cost_mult",
+        "polarity": "good",
+        "text": "-50% Title Creation Cost"
+      },
+      {
+        "key": "character_max_merit_level_add",
+        "polarity": "good",
+        "text": "+2 Character Max Merit Level Add"
+      },
+      {
+        "key": "mercenary_hire_cost_mult",
+        "polarity": "bad",
+        "text": "+200% Mercenary Hire Cost"
+      },
+      {
+        "key": "monthly_treasury_from_liege_mult",
+        "polarity": "bad",
+        "text": "-40% Monthly Treasury"
+      }
+    ],
+    "color": "#fa6400",
+    "compatibleSuccession": [],
+    "courtGenerateCommanders": null,
+    "currencyLevelCaps": {
+      "merit": 5
+    },
+    "desc": "Meritocratic is a Bureaucratic Government Form similar to Celestial, in which the Liege appoints characters as Governors, of which there are two types, Civil and Military.\n\nCharacters have access to Influence, Noble Families, and Family Estates.\n\nIndependent Rulers have Legitimacy, while Vassals focus on obtaining Merit.\n\nThe Meritocratic system refers to the centralized Administrative government of China's neighbors, inspired by the Confucian bureaucracy.",
+    "dlc": "The Great People",
+    "domicileType": "east_asian_estate",
+    "fallback": null,
+    "features": [],
+    "flags": [
+      {
+        "key": "government_is_meritocratic",
+        "name": "Has access to an Estate"
+      },
+      {
+        "key": "government_has_merit",
+        "name": "Uses Merit"
+      },
+      {
+        "key": "government_has_influence",
+        "name": "Uses Influence"
+      },
+      {
+        "key": "government_has_treasury",
+        "name": "Uses Treasury"
+      },
+      {
+        "key": "government_has_title_men_at_arms",
+        "name": "Allows recruitment of Title Men-at-Arms"
+      },
+      {
+        "key": "government_has_powerful_families",
+        "name": "Enables Noble Families"
+      },
+      {
+        "key": "government_has_county_tier_noble_families",
+        "name": null
+      },
+      {
+        "key": "government_is_settled",
+        "name": null
+      },
+      {
+        "key": "government_uses_domicile_but_not_adventurer",
+        "name": null
+      },
+      {
+        "key": "government_uses_domain_limit",
+        "name": null
+      },
+      {
+        "key": "government_uses_admin_province_obligations",
+        "name": null
+      },
+      {
+        "key": "government_uses_merit_family_aspirations",
+        "name": null
+      },
+      {
+        "key": "has_special_house_aspirations",
+        "name": null
+      }
+    ],
+    "icon": "meritocratic_government",
+    "id": "meritocratic_government",
+    "isMechanicDefault": false,
+    "maxDread": null,
+    "mechanicType": null,
+    "name": "Meritocratic",
+    "preferredReligions": [],
+    "prestigeOpinionOverride": null,
+    "primaryHeritages": [],
+    "primaryHolding": {
+      "key": "castle_holding",
+      "name": "Castle"
+    },
+    "requiredCountyHoldings": [
+      {
+        "key": "castle_holding",
+        "name": "Castle"
+      },
+      {
+        "key": "city_holding",
+        "name": "City"
+      },
+      {
+        "key": "church_holding",
+        "name": "Temple"
+      }
+    ],
+    "royalCourt": "any",
+    "rules": {
+      "administrative": true,
+      "allow_accolades": true,
+      "allow_as_base_for_baronies": false,
+      "create_cadet_branches": true,
+      "deny_powerful_vassal": true,
+      "disable_regnal_numbers": true,
+      "dynasty_named_realms": false,
+      "house_aspirations": true,
+      "inherit_from_dynastic_government": false,
+      "landless_playable": true,
+      "legitimacy": true,
+      "merit": true,
+      "noble_families": true,
+      "replace_gold_cost_by_treasury": true,
+      "rulers_should_have_dynasty": true,
+      "sticky_government": true,
+      "treasury": true,
+      "use_as_base_on_landed": true,
+      "use_as_base_on_rank_up": true
+    },
+    "sourceFile": "00_government_types.txt",
+    "supplyLimitMultForOthers": null,
+    "titleMaaSetup": null,
+    "topLiegeModifiers": [
+      {
+        "key": "monthly_treasury_from_vassals",
+        "polarity": "good",
+        "text": "+95% Treasury from Vassals"
+      }
+    ],
+    "validHoldings": [
+      {
+        "key": "city_holding",
+        "name": "City"
+      },
+      {
+        "key": "temple_citadel_holding",
+        "name": "Temple Citadel"
+      },
+      {
+        "key": "tribal_holding",
+        "name": "Tribe"
+      }
+    ],
+    "vassalContractGroup": {
+      "key": "meritocratic_vassal",
+      "name": "Meritocratic"
+    }
+  },
+  {
+    "adminTiers": {
+      "appointment": "county",
+      "main": "duchy",
+      "provincialMaa": "duchy"
+    },
+    "blockedSubjectCourts": [
+      "Meritocratic",
+      "Celestial",
+      "Ritsuryō",
+      "Administrative",
+      "Meritocratic Khanate"
+    ],
+    "characterModifiers": [
+      {
+        "key": "levy_size",
+        "polarity": "bad",
+        "text": "-50% Levy Size"
+      },
+      {
+        "key": "feudal_government_tax_contribution_mult",
+        "polarity": "bad",
+        "text": "-50% Feudal Vassal Tax Contribution"
+      },
+      {
+        "key": "feudal_government_levy_contribution_mult",
+        "polarity": "bad",
+        "text": "-50% Feudal Government Levy Contribution Mult"
+      },
+      {
+        "key": "clan_government_tax_contribution_mult",
+        "polarity": "bad",
+        "text": "-50% Clan Vassal Tax Contribution"
+      },
+      {
+        "key": "clan_government_levy_contribution_mult",
+        "polarity": "bad",
+        "text": "-50% Clan Vassal Levy Contribution"
+      },
+      {
+        "key": "men_at_arms_cap",
+        "polarity": "bad",
+        "text": "-2 Max Men-at-Arms Regiments"
+      },
+      {
+        "key": "men_at_arms_limit",
+        "polarity": "bad",
+        "text": "-2 Size of Men-at-Arms Regiments"
+      },
+      {
+        "key": "knight_limit",
+        "polarity": "bad",
+        "text": "-5 Number of …Knights"
+      },
+      {
+        "key": "vassal_limit",
+        "polarity": "good",
+        "text": "+20 Vassal Limit"
+      },
+      {
+        "key": "accolades",
+        "polarity": "bad",
+        "text": "-1 Accolades"
+      },
+      {
+        "key": "ignore_negative_opinion_of_culture",
+        "polarity": "neutral",
+        "text": "No Negative Opinion of Other Cultures"
+      },
+      {
+        "key": "movement_speed",
+        "polarity": "good",
+        "text": "+10% Army Movement Speed"
+      },
+      {
+        "key": "movement_speed_land_raiding",
+        "polarity": "good",
+        "text": "+10% Movement Speed over land while Raiding"
+      },
+      {
+        "key": "ai_war_cooldown",
+        "polarity": "bad",
+        "text": "-0.5 Ai War Cooldown"
+      },
+      {
+        "key": "ai_war_chance",
+        "polarity": "good",
+        "text": "+2 Ai War Chance"
+      },
+      {
+        "key": "title_creation_cost_mult",
+        "polarity": "good",
+        "text": "-50% Title Creation Cost"
+      },
+      {
+        "key": "character_max_merit_level_add",
+        "polarity": "good",
+        "text": "+2 Character Max Merit Level Add"
+      },
+      {
+        "key": "mercenary_hire_cost_mult",
+        "polarity": "bad",
+        "text": "+200% Mercenary Hire Cost"
+      },
+      {
+        "key": "monthly_treasury_from_liege_mult",
+        "polarity": "bad",
+        "text": "-40% Monthly Treasury"
+      }
+    ],
+    "color": "#ff6e28",
+    "compatibleSuccession": [],
+    "courtGenerateCommanders": null,
+    "currencyLevelCaps": {
+      "merit": 5
+    },
+    "desc": "Meritocratic Khanate is a Bureaucratic Government Form similar to the Celestial and Meritocratic, but originating from a Nomadic Government Form. The Liege appoints characters as Governors, of which there are two types, Civil and Military. They still maintain Tributaries, enforce Obedience, and have a higher maximum Dread.\n\nCharacters have access to Influence, Noble Families, and Family Estates.\n\nIndependent Rulers have Legitimacy, while Vassals focus on obtaining Merit.\n\nThe Meritocratic Khanate system refers to a fusion of the nomadic way of life with the Confucian bureaucracy of the centralized Chinese Administrative government.",
+    "dlc": "The Great People",
+    "domicileType": "east_asian_estate",
+    "fallback": null,
+    "features": [],
+    "flags": [
+      {
+        "key": "government_is_steppe_admin",
+        "name": "Has access to an Estate and uses Obedience"
+      },
+      {
+        "key": "government_can_raid_rule",
+        "name": "Government allows the Raiding of foreign Counties for Loot"
+      },
+      {
+        "key": "government_can_use_tributary_men_at_arms",
+        "name": "Can recruit Men-at-Arms from Tributaries"
+      },
+      {
+        "key": "government_has_merit",
+        "name": "Uses Merit"
+      },
+      {
+        "key": "government_has_influence",
+        "name": "Uses Influence"
+      },
+      {
+        "key": "government_has_treasury",
+        "name": "Uses Treasury"
+      },
+      {
+        "key": "government_has_title_men_at_arms",
+        "name": "Allows recruitment of Title Men-at-Arms"
+      },
+      {
+        "key": "government_has_powerful_families",
+        "name": "Enables Noble Families"
+      },
+      {
+        "key": "government_has_county_tier_noble_families",
+        "name": null
+      },
+      {
+        "key": "ignores_faith_marriage_penalties",
+        "name": "Ignores Faith when arranging Marriages with Nomadic or Herder Rulers or their Tributaries"
+      },
+      {
+        "key": "land_raiding_movement_speed_from_government",
+        "name": "Movement Speed over land while Raiding: +10%"
+      },
+      {
+        "key": "can_raze_holdings",
+        "name": "Can Raze Holdings for Gold"
+      },
+      {
+        "key": "government_is_settled",
+        "name": null
+      },
+      {
+        "key": "government_uses_domicile_but_not_adventurer",
+        "name": null
+      },
+      {
+        "key": "government_uses_domain_limit",
+        "name": null
+      },
+      {
+        "key": "government_uses_admin_province_obligations",
+        "name": null
+      },
+      {
+        "key": "government_uses_merit_family_aspirations",
+        "name": null
+      },
+      {
+        "key": "has_special_house_aspirations",
+        "name": null
+      }
+    ],
+    "icon": "steppe_admin_government",
+    "id": "steppe_admin_government",
+    "isMechanicDefault": false,
+    "maxDread": 150,
+    "mechanicType": null,
+    "name": "Meritocratic Khanate",
+    "preferredReligions": [],
+    "prestigeOpinionOverride": null,
+    "primaryHeritages": [],
+    "primaryHolding": {
+      "key": "castle_holding",
+      "name": "Castle"
+    },
+    "requiredCountyHoldings": [
+      {
+        "key": "castle_holding",
+        "name": "Castle"
+      },
+      {
+        "key": "city_holding",
+        "name": "City"
+      },
+      {
+        "key": "church_holding",
+        "name": "Temple"
+      }
+    ],
+    "royalCourt": "any",
+    "rules": {
+      "administrative": true,
+      "allow_accolades": true,
+      "allow_as_base_for_baronies": false,
+      "create_cadet_branches": true,
+      "deny_powerful_vassal": true,
+      "disable_regnal_numbers": true,
+      "dynasty_named_realms": false,
+      "government_ignores_rightful_liege_penalties": true,
+      "house_aspirations": true,
+      "inherit_from_dynastic_government": false,
+      "landless_playable": true,
+      "legitimacy": true,
+      "merit": true,
+      "noble_families": true,
+      "obedience": true,
+      "replace_gold_cost_by_treasury": true,
+      "rulers_should_have_dynasty": true,
+      "sticky_government": true,
+      "subject_men_at_arms": true,
+      "treasury": true,
+      "use_as_base_on_landed": true,
+      "use_as_base_on_rank_up": true
+    },
+    "sourceFile": "00_government_types.txt",
+    "supplyLimitMultForOthers": null,
+    "titleMaaSetup": null,
+    "topLiegeModifiers": [
+      {
+        "key": "monthly_treasury_from_vassals",
+        "polarity": "good",
+        "text": "+95% Treasury from Vassals"
+      }
+    ],
+    "validHoldings": [
+      {
+        "key": "city_holding",
+        "name": "City"
+      },
+      {
+        "key": "temple_citadel_holding",
+        "name": "Temple Citadel"
+      },
+      {
+        "key": "tribal_holding",
+        "name": "Tribe"
+      }
+    ],
+    "vassalContractGroup": {
+      "key": "meritocratic_vassal",
+      "name": "Meritocratic"
+    }
+  },
+  {
+    "adminTiers": null,
+    "blockedSubjectCourts": [],
+    "characterModifiers": [],
+    "color": "#fa0000",
+    "compatibleSuccession": [],
+    "courtGenerateCommanders": null,
+    "currencyLevelCaps": {},
+    "desc": "Republican Government is an unplayable Government Form where an elected citizen rules for life — the Government Form of burghers and merchants.\n\nRepublican Vassals have static Obligations that cannot be changed, and thus always provide a dependable and predictable amount of Levies and Taxes.\n\nTowns are ruled by the privileged citizens of the burgher class, among whom one is chosen as mayor. While the mayor has significant influence, they depend on popularity to be re-elected.",
+    "dlc": null,
+    "domicileType": null,
+    "fallback": null,
+    "features": [],
+    "flags": [
+      {
+        "key": "government_is_republic",
+        "name": "Is unplayable"
+      },
+      {
+        "key": "government_is_settled",
+        "name": null
+      },
+      {
+        "key": "government_uses_domain_limit",
+        "name": null
+      }
+    ],
+    "icon": "republic_government",
+    "id": "republic_government",
+    "isMechanicDefault": false,
+    "maxDread": null,
+    "mechanicType": null,
+    "name": "Republic",
+    "preferredReligions": [],
+    "prestigeOpinionOverride": null,
+    "primaryHeritages": [],
+    "primaryHolding": {
+      "key": "city_holding",
+      "name": "City"
+    },
+    "requiredCountyHoldings": [
+      {
+        "key": "city_holding",
+        "name": "City"
+      },
+      {
+        "key": "castle_holding",
+        "name": "Castle"
+      },
+      {
+        "key": "church_holding",
+        "name": "Temple"
+      }
+    ],
+    "royalCourt": null,
+    "rules": {
+      "inherit_from_dynastic_government": false
+    },
+    "sourceFile": "00_government_types.txt",
+    "supplyLimitMultForOthers": null,
+    "titleMaaSetup": null,
+    "topLiegeModifiers": [],
+    "validHoldings": [
+      {
+        "key": "castle_holding",
+        "name": "Castle"
+      }
+    ],
+    "vassalContractGroup": {
+      "key": "republic_vassal",
+      "name": "Republic"
+    }
+  },
+  {
+    "adminTiers": {
+      "appointment": "county",
+      "main": "county",
+      "provincialMaa": "duchy"
+    },
+    "blockedSubjectCourts": [
+      "Meritocratic",
+      "Celestial",
+      "Ritsuryō",
+      "Administrative",
+      "Meritocratic Khanate"
+    ],
+    "characterModifiers": [
+      {
+        "key": "japan_feudal_government_tax_contribution_mult",
+        "polarity": "bad",
+        "text": "-50% Sōryō Vassal Tax Contribution"
+      },
+      {
+        "key": "japan_feudal_government_levy_contribution_mult",
+        "polarity": "bad",
+        "text": "-50% Sōryō Vassal Levy Contribution"
+      },
+      {
+        "key": "garrison_size",
+        "polarity": "bad",
+        "text": "-50% Garrison Size"
+      },
+      {
+        "key": "men_at_arms_cap",
+        "polarity": "bad",
+        "text": "-2 Max Men-at-Arms Regiments"
+      },
+      {
+        "key": "men_at_arms_limit",
+        "polarity": "bad",
+        "text": "-2 Size of Men-at-Arms Regiments"
+      },
+      {
+        "key": "knight_limit",
+        "polarity": "bad",
+        "text": "-5 Number of …Knights"
+      },
+      {
+        "key": "vassal_limit",
+        "polarity": "good",
+        "text": "+50 Vassal Limit"
+      },
+      {
+        "key": "domain_limit_max",
+        "polarity": "good",
+        "text": "+1 Maximum Domain Limit"
+      },
+      {
+        "key": "domain_tax_mult",
+        "polarity": "good",
+        "text": "+30% Domain Taxes"
+      }
+    ],
+    "color": "#fa5a96",
+    "compatibleSuccession": [
+      "Sōryō"
+    ],
+    "courtGenerateCommanders": null,
+    "currencyLevelCaps": {},
+    "desc": "Ritsuryō is a type of Administrative Government unique to Japan.\n\nIt is a centralized Bureaucratic Government Form where Characters are appointed as Governors on behalf of their Liege, have access to Influence, and Noble Family Heads have a Family Manor and House Aspiration.\n\nA Kampaku governs the Realm on behalf of the Japanese Emperor, and may be elected from among Noble Family Heads, or imposed by Faction demand.\n\nRitsuryō Vassals generally govern only a single County, but may reject the centralized system and become local Sōryō lords to build their own power, though this is usually considered a Criminal act.\n\nRitsuryō House Heads may create and join House Blocs within the Realm, which will support the Leading House in becoming Kampaku.\n\nJapanese Governments have a lower Domain Limit than others, which may be increased by upgrading the Family Manor.\n\nThe Ritsuryō system refers to the centralized administrative government of Japan, inspired by the Chinese Confucian bureaucracy.",
+    "dlc": "The Great People",
+    "domicileType": "japanese_manor",
+    "fallback": null,
+    "features": [],
+    "flags": [
+      {
+        "key": "government_is_japan_administrative",
+        "name": "Has access to Manor, Blocs, and House Aspirations"
+      },
+      {
+        "key": "government_has_influence",
+        "name": "Uses Influence"
+      },
+      {
+        "key": "government_has_title_men_at_arms",
+        "name": "Allows recruitment of Title Men-at-Arms"
+      },
+      {
+        "key": "government_has_powerful_families",
+        "name": "Enables Noble Families"
+      },
+      {
+        "key": "government_has_county_tier_noble_families",
+        "name": null
+      },
+      {
+        "key": "has_special_house_aspirations",
+        "name": null
+      },
+      {
+        "key": "government_is_settled",
+        "name": null
+      },
+      {
+        "key": "government_uses_domicile_but_not_adventurer",
+        "name": null
+      },
+      {
+        "key": "has_unique_government_perks",
+        "name": null
+      },
+      {
+        "key": "government_uses_admin_province_obligations",
+        "name": null
+      },
+      {
+        "key": "government_has_house_blocs",
+        "name": null
+      }
+    ],
+    "icon": "japan_administrative_government",
+    "id": "japan_administrative_government",
+    "isMechanicDefault": false,
+    "maxDread": null,
+    "mechanicType": null,
+    "name": "Ritsuryō",
+    "preferredReligions": [],
+    "prestigeOpinionOverride": null,
+    "primaryHeritages": [
+      "Japonic"
+    ],
+    "primaryHolding": {
+      "key": "castle_holding",
+      "name": "Castle"
+    },
+    "requiredCountyHoldings": [
+      {
+        "key": "castle_holding",
+        "name": "Castle"
+      },
+      {
+        "key": "city_holding",
+        "name": "City"
+      },
+      {
+        "key": "church_holding",
+        "name": "Temple"
+      }
+    ],
+    "royalCourt": "any",
+    "rules": {
+      "administrative": true,
+      "allow_accolades": true,
+      "create_cadet_branches": true,
+      "deny_powerful_vassal": true,
+      "disable_regnal_numbers": true,
+      "dynasty_named_realms": false,
+      "house_aspirations": true,
+      "inherit_from_dynastic_government": false,
+      "landless_playable": true,
+      "legitimacy": true,
+      "noble_families": true,
+      "rulers_should_have_dynasty": true,
+      "sticky_government": true,
+      "use_as_base_on_landed": true,
+      "use_as_base_on_rank_up": true
+    },
+    "sourceFile": "01_japan_government_types.txt",
+    "supplyLimitMultForOthers": null,
+    "titleMaaSetup": null,
+    "topLiegeModifiers": [],
+    "validHoldings": [
+      {
+        "key": "city_holding",
+        "name": "City"
+      },
+      {
+        "key": "temple_citadel_holding",
+        "name": "Temple Citadel"
+      },
+      {
+        "key": "tribal_holding",
+        "name": "Tribe"
+      }
+    ],
+    "vassalContractGroup": {
+      "key": "japan_administrative_vassal",
+      "name": "Ritsuryō"
+    }
+  },
+  {
+    "adminTiers": null,
+    "blockedSubjectCourts": [],
+    "characterModifiers": [
+      {
+        "key": "japan_administrative_government_tax_contribution_mult",
+        "polarity": "bad",
+        "text": "-50% Ritsuryō Vassal Tax Contribution"
+      },
+      {
+        "key": "japan_administrative_government_levy_contribution_mult",
+        "polarity": "bad",
+        "text": "-50% Ritsuryō Vassal Levy Contribution"
+      },
+      {
+        "key": "garrison_size",
+        "polarity": "bad",
+        "text": "-50% Garrison Size"
+      },
+      {
+        "key": "vassal_limit",
+        "polarity": "good",
+        "text": "+50 Vassal Limit"
+      },
+      {
+        "key": "knight_effectiveness_mult",
+        "polarity": "good",
+        "text": "+10% Knight Effectiveness"
+      },
+      {
+        "key": "knight_limit",
+        "polarity": "good",
+        "text": "+2 Number of …Knights"
+      },
+      {
+        "key": "domain_limit_max",
+        "polarity": "good",
+        "text": "+2 Maximum Domain Limit"
+      },
+      {
+        "key": "archer_cavalry_recruitment_cost_mult",
+        "polarity": "good",
+        "text": "-25% Archer Cavalry Recruitment Cost"
+      },
+      {
+        "key": "heavy_infantry_recruitment_cost_mult",
+        "polarity": "good",
+        "text": "-25% Heavy Infantry Recruitment Cost"
+      }
+    ],
+    "color": "#4464fa",
+    "compatibleSuccession": [
+      "Ritsuryō"
+    ],
+    "courtGenerateCommanders": null,
+    "currencyLevelCaps": {},
+    "desc": "Sōryō is a type of Feudal Government unique to Japan.\n\nSōryō represents local lords who have discarded or supplanted the reach of the central Ritsuryō government and rule provinces as their own fiefs.\n\nSōryō Characters do not use Influence, but Noble Family Heads retain their Family Manor and House Aspiration.\n\nThough they cannot be elected Ruling Regent, Sōryō Rulers may take power via the Install Ruling Regent Faction, and use the Formalize Shōgunate Decision.\n\nSōryō Ruling Regents govern the Realm on behalf of the Japanese Emperor, inherit by Primogeniture Succession, and may be overthrown by Faction demand.\n\nSōryō House Heads may create and join House Blocs within the Realm.\n\nJapanese Governments have a lower Domain Limit than others, which may be increased by upgrading the Family Manor.\n\nSōryō refers to the early stages of Japanese feudalization beginning in the Heian-period, increasingly formalized under the Kamakura-period's first Shōgunate.",
+    "dlc": "The Great People",
+    "domicileType": "japanese_manor",
+    "fallback": null,
+    "features": [],
+    "flags": [
+      {
+        "key": "may_elevate_co_monarch",
+        "name": "Allows Rulers of at least Kingdom-Tier to elevate a Co-Monarch from amongst their adult Children"
+      },
+      {
+        "key": "government_is_japan_feudal",
+        "name": "Has access to Manor, Blocs, and House Aspirations"
+      },
+      {
+        "key": "government_has_county_tier_noble_families",
+        "name": null
+      },
+      {
+        "key": "has_special_house_aspirations",
+        "name": null
+      },
+      {
+        "key": "government_is_settled",
+        "name": null
+      },
+      {
+        "key": "government_uses_domicile_but_not_adventurer",
+        "name": null
+      },
+      {
+        "key": "has_unique_government_perks",
+        "name": null
+      },
+      {
+        "key": "government_has_house_blocs",
+        "name": null
+      }
+    ],
+    "icon": "japan_feudal_government",
+    "id": "japan_feudal_government",
+    "isMechanicDefault": false,
+    "maxDread": null,
+    "mechanicType": null,
+    "name": "Sōryō",
+    "preferredReligions": [],
+    "prestigeOpinionOverride": null,
+    "primaryHeritages": [
+      "Japonic"
+    ],
+    "primaryHolding": {
+      "key": "castle_holding",
+      "name": "Castle"
+    },
+    "requiredCountyHoldings": [
+      {
+        "key": "castle_holding",
+        "name": "Castle"
+      },
+      {
+        "key": "city_holding",
+        "name": "City"
+      },
+      {
+        "key": "church_holding",
+        "name": "Temple"
+      }
+    ],
+    "royalCourt": "any",
+    "rules": {
+      "allow_accolades": true,
+      "create_cadet_branches": true,
+      "disable_regnal_numbers": true,
+      "dynasty_named_non_independent_landed_rulers": true,
+      "house_aspirations": true,
+      "landless_playable": true,
+      "legitimacy": true,
+      "noble_families": true,
+      "rulers_should_have_dynasty": true,
+      "use_as_base_on_landed": true,
+      "use_as_base_on_rank_up": true
+    },
+    "sourceFile": "01_japan_government_types.txt",
+    "supplyLimitMultForOthers": null,
+    "titleMaaSetup": null,
+    "topLiegeModifiers": [],
+    "validHoldings": [
+      {
+        "key": "temple_citadel_holding",
+        "name": "Temple Citadel"
+      },
+      {
+        "key": "tribal_holding",
+        "name": "Tribe"
+      }
+    ],
+    "vassalContractGroup": {
+      "key": "japan_feudal_vassal",
+      "name": "Sōryō"
+    }
+  },
+  {
+    "adminTiers": null,
+    "blockedSubjectCourts": [],
+    "characterModifiers": [
+      {
+        "key": "title_creation_cost_mult",
+        "polarity": "good",
+        "text": "-50% Title Creation Cost"
+      },
+      {
+        "key": "army_maintenance_mult",
+        "polarity": "good",
+        "text": "-50% Army Gold Maintenance"
+      },
+      {
+        "key": "feudal_government_vassal_opinion",
+        "polarity": "bad",
+        "text": "-20 Feudal Vassal Opinion"
+      },
+      {
+        "key": "clan_government_vassal_opinion",
+        "polarity": "bad",
+        "text": "-20 Clan Vassal Opinion"
+      },
+      {
+        "key": "republic_government_vassal_opinion",
+        "polarity": "bad",
+        "text": "-20 Republic Vassal Opinion"
+      },
+      {
+        "key": "character_travel_safety",
+        "polarity": "good",
+        "text": "+10 Travel Safety"
+      },
+      {
+        "key": "ai_war_chance",
+        "polarity": "good",
+        "text": "+0.25 Ai War Chance"
+      },
+      {
+        "key": "monthly_prestige",
+        "polarity": "good",
+        "text": "+0.2 Prestige /month"
+      }
+    ],
+    "color": "#5c1f17",
+    "compatibleSuccession": [],
+    "courtGenerateCommanders": null,
+    "currencyLevelCaps": {},
+    "desc": "Tribal realms have stunted county Development, cannot advance past Tribal Era Innovations, cannot construct new Holdings, and are usually unable to change their Succession Law.\n\nHowever, they can make use of Prestige rather than Gold to build their realms and hire Men-at-Arms, and have access to more Casus Belli compared to Feudal Realms. Non-Tribal armies suffer a Supply Limit penalty in hostile Tribal territory.\n\nIn the tribe, strength means everything. A tribal leader depends on respect and renown rather than coin to develop their realm and bolster their armies.",
+    "dlc": null,
+    "domicileType": null,
+    "fallback": null,
+    "features": [],
+    "flags": [
+      {
+        "key": "government_is_tribal",
+        "name": "Is a Tribal-type Government"
+      },
+      {
+        "key": "government_is_tribal_excluding_wanua",
+        "name": null
+      },
+      {
+        "key": "use_prestige_to_buy_maa",
+        "name": "Uses Prestige to buy Men-at-Arms"
+      },
+      {
+        "key": "government_is_settled",
+        "name": null
+      },
+      {
+        "key": "government_can_raid_rule",
+        "name": "Government allows the Raiding of foreign Counties for Loot"
+      },
+      {
+        "key": "may_elevate_co_monarch",
+        "name": "Allows Rulers of at least Kingdom-Tier to elevate a Co-Monarch from amongst their adult Children"
+      },
+      {
+        "key": "government_uses_domain_limit",
+        "name": null
+      }
+    ],
+    "icon": "tribal_government",
+    "id": "tribal_government",
+    "isMechanicDefault": false,
+    "maxDread": null,
+    "mechanicType": null,
+    "name": "Tribal",
+    "preferredReligions": [],
+    "prestigeOpinionOverride": [
+      -10,
+      0,
+      3,
+      5,
+      10,
+      20
+    ],
+    "primaryHeritages": [],
+    "primaryHolding": {
+      "key": "tribal_holding",
+      "name": "Tribe"
+    },
+    "requiredCountyHoldings": [
+      {
+        "key": "tribal_holding",
+        "name": "Tribe"
+      }
+    ],
+    "royalCourt": "any",
+    "rules": {
+      "affected_by_development": false,
+      "allow_accolades": true,
+      "always_use_patronym": true,
+      "legitimacy": true,
+      "regiments_prestige_as_gold": true,
+      "rulers_should_have_dynasty": true
+    },
+    "sourceFile": "00_government_types.txt",
+    "supplyLimitMultForOthers": -0.5,
+    "titleMaaSetup": null,
+    "topLiegeModifiers": [],
+    "validHoldings": [
+      {
+        "key": "castle_holding",
+        "name": "Castle"
+      },
+      {
+        "key": "temple_citadel_holding",
+        "name": "Temple Citadel"
+      }
+    ],
+    "vassalContractGroup": {
+      "key": "tribal_vassal",
+      "name": "Tribal"
+    }
+  },
+  {
+    "adminTiers": null,
+    "blockedSubjectCourts": [],
+    "characterModifiers": [
+      {
+        "key": "title_creation_cost_mult",
+        "polarity": "good",
+        "text": "-50% Title Creation Cost"
+      },
+      {
+        "key": "embarkation_cost_mult",
+        "polarity": "good",
+        "text": "-100% Embarkation Cost"
+      },
+      {
+        "key": "sea_travel_danger",
+        "polarity": "neutral",
+        "text": "-45 Sea Danger"
+      },
+      {
+        "key": "coastal_sea_travel_danger",
+        "polarity": "neutral",
+        "text": "-45 Coastal Sea Danger"
+      },
+      {
+        "key": "ai_war_chance",
+        "polarity": "bad",
+        "text": "-0.5 Ai War Chance"
+      },
+      {
+        "key": "domain_limit_max",
+        "polarity": "good",
+        "text": "+2 Maximum Domain Limit"
+      },
+      {
+        "key": "vassal_limit_max",
+        "polarity": "good",
+        "text": "+2 Maximum Vassal Limit"
+      }
+    ],
+    "color": "#55cfc6",
+    "compatibleSuccession": [],
+    "courtGenerateCommanders": null,
+    "currencyLevelCaps": {},
+    "desc": "The Wanua Government shares weaknesses with the Government, but also have reduced Domain Limit and Vassal Limit. While they use Gold to construct Buildings and recruit Men-at-Arms, they earn very little Gold from Buildings.\n\nHowever, they can …Barter, Raid, and have synergies with the Mandala Government as they gain Legitimacy from being a Tributary.\n\nFrom their coastal settlements, … rulers are able to cross the seas to barter and raid far more effectively than their continental Tribal counterparts.",
+    "dlc": "The Great People",
+    "domicileType": null,
+    "fallback": null,
+    "features": [],
+    "flags": [
+      {
+        "key": "government_is_tribal",
+        "name": "Is a Tribal-type Government"
+      },
+      {
+        "key": "government_is_wanua",
+        "name": "Enables …Bartering"
+      },
+      {
+        "key": "government_is_settled",
+        "name": null
+      },
+      {
+        "key": "government_can_raid_rule",
+        "name": "Government allows the Raiding of foreign Counties for Loot"
+      },
+      {
+        "key": "government_enables_naval_raiding",
+        "name": "Unlocks the ability to Raid over seas, if you can already Raid"
+      },
+      {
+        "key": "government_enables_river_travel",
+        "name": "Unlocks the ability to sail in Major Rivers"
+      },
+      {
+        "key": "may_elevate_co_monarch",
+        "name": "Allows Rulers of at least Kingdom-Tier to elevate a Co-Monarch from amongst their adult Children"
+      }
+    ],
+    "icon": "wanua_government",
+    "id": "wanua_government",
+    "isMechanicDefault": false,
+    "maxDread": null,
+    "mechanicType": null,
+    "name": "Wanua",
+    "preferredReligions": [],
+    "prestigeOpinionOverride": [
+      -10,
+      0,
+      3,
+      5,
+      10,
+      20
+    ],
+    "primaryHeritages": [
+      "Austronesian"
+    ],
+    "primaryHolding": {
+      "key": "tribal_holding",
+      "name": "Tribe"
+    },
+    "requiredCountyHoldings": [
+      {
+        "key": "tribal_holding",
+        "name": "Tribe"
+      }
+    ],
+    "royalCourt": "any",
+    "rules": {
+      "affected_by_development": false,
+      "allow_accolades": true,
+      "always_use_patronym": true,
+      "barter": true,
+      "gain_legitimacy_becoming_tributary": true,
+      "legitimacy": true,
+      "regiments_use_barter_goods_as_gold": true,
+      "rulers_should_have_dynasty": true
+    },
+    "sourceFile": "00_government_types.txt",
+    "supplyLimitMultForOthers": -0.5,
+    "titleMaaSetup": null,
+    "topLiegeModifiers": [],
+    "validHoldings": [
+      {
+        "key": "city_holding",
+        "name": "City"
+      },
+      {
+        "key": "castle_holding",
+        "name": "Castle"
+      },
+      {
+        "key": "temple_citadel_holding",
+        "name": "Temple Citadel"
+      }
+    ],
+    "vassalContractGroup": {
+      "key": "wanua_vassal",
+      "name": "Wanua"
+    }
+  }
+]

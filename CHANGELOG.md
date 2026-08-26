@@ -2,7 +2,120 @@
 
 ## build-a533805123
 
-- 🌱 `backlinks.json` now tracked (77 entries)
-- 🌱 `entities.json` now tracked (2 entries)
-- 🌱 `maa.json` now tracked (110 entries)
+- 🌱 `accolades.json` now tracked (4 entries)
+- 🌱 `activities.json` now tracked (5 entries)
+- 🌱 `artifacts.json` now tracked (4 entries)
+- 🌱 `buildings.json` now tracked (975 entries)
+- 🌱 `cbs.json` now tracked (3 entries)
+- 🌱 `concepts.json` now tracked (1027 entries)
+- 🌱 `contracts.json` now tracked (2 entries)
+- 🌱 `council.json` now tracked (2 entries)
+- 🌱 `court_positions.json` now tracked (2 entries)
+- 🌱 `cultures.json` now tracked (244 entries)
+- 🌱 `decisions.json` now tracked (2 entries)
+- 🌱 `defines.json` now tracked (2095 entries)
+- 🌱 `dlc.json` now tracked (15 entries)
+- 🌱 `doctrines.json` now tracked (2 entries)
+- 🌱 `domiciles.json` now tracked (2 entries)
+- ✏️ `entities.json` changed (2 → 2 entries)
+- 🌱 `epidemics.json` now tracked (7 entries)
+- 🌱 `event-categories.json` now tracked (32 entries)
+- 🌱 `faiths.json` now tracked (3 entries)
+- 🌱 `genetics.json` now tracked (3 entries)
+- 🌱 `governments.json` now tracked (18 entries)
+- 🌱 `great_projects.json` now tracked (20 entries)
+- 🌱 `holdings.json` now tracked (7 entries)
+- 🌱 `holy_sites.json` now tracked (326 entries)
+- 🌱 `house.json` now tracked (6 entries)
+- 🌱 `innovations.json` now tracked (108 entries)
+- 🌱 `laws.json` now tracked (27 entries)
+- 🌱 `legacies.json` now tracked (21 entries)
+- 🌱 `legends.json` now tracked (3 entries)
+- 🌱 `lifestyles.json` now tracked (3 entries)
+- ✏️ `maa.json` **asawira**: requirements
+- ✏️ `maa.json` **emishi_horse_archers**: requirements
+- ✏️ `maa.json` **heavy_horse_archers**: requirements
+- ✏️ `maa.json` **horse_archers**: requirements
+- ✏️ `maa.json` **japanese_horse_archers**: requirements
+- ✏️ `maa.json` **kheshig**: requirements
+- ✏️ `maa.json` **mangudai**: requirements
+- ✏️ `maa.json` **archers_of_the_nile**: requirements
+- ✏️ `maa.json` **ballistrai**: requirements
+- ✏️ `maa.json` **bowmen**: requirements
+- ✏️ `maa.json` **bush_hunter**: requirements
+- ✏️ `maa.json` **crossbowmen**: requirements
+- ✏️ `maa.json` **gakgung_archers**: requirements
+- ✏️ `maa.json` **longbowmen**: requirements
+- ✏️ `maa.json` **maturkan_warriors**: requirements
+- ✏️ `maa.json` **metsanvartija**: requirements
+- ✏️ `maa.json` **vigmen**: requirements
+- ✏️ `maa.json` **ballista_elephant**: requirements
+- ✏️ `maa.json` **war_elephant**: requirements
+- ✏️ `maa.json` **accolade_maa_handgunners**: requirements
+- ✏️ `maa.json` **fire_lancers**: requirements
+- ✏️ `maa.json` **handgunners**: requirements
+- ✏️ `maa.json` **armored_horsemen**: requirements
+- ✏️ `maa.json` **black_armor_cavalry**: requirements
+- ✏️ `maa.json` **cataphract**: requirements
+- ✏️ `maa.json` **cataphract_archers**: requirements
+- ✏️ `maa.json` **conrois**: requirements
+- ✏️ `maa.json` **monaspa**: requirements
+- ✏️ `maa.json` **nomad_lancers**: requirements
+- ✏️ `maa.json` **tarkhan**: requirements
+- ✏️ `maa.json` **accolade_maa_vanguards**: requirements
+- ✏️ `maa.json` **armored_footmen**: requirements
+- ✏️ `maa.json` **ayyar**: requirements
+- ✏️ `maa.json` **burenjia**: requirements
+- ✏️ `maa.json` **druzhina**: requirements
+- ✏️ `maa.json` **garudas**: requirements
+- ✏️ `maa.json` **handpicked_faithful**: requirements
+- ✏️ `maa.json` **house_guard**: requirements
+- ✏️ `maa.json` **huscarl**: requirements
+- ✏️ `maa.json` **khandayat**: requirements
+- ✏️ `maa.json` **mountaineer**: requirements
+- ✏️ `maa.json` **mubarizun**: requirements
+- ✏️ `maa.json` **palace_guards**: requirements
+- ✏️ `maa.json` **samurai**: requirements
+- ✏️ `maa.json` **varangian_guards**: requirements
+- ✏️ `maa.json` **varangian_veterans**: requirements
+- ✏️ `maa.json` **zbrojnosh**: requirements
+- ✏️ `maa.json` **zhanmadao_infantry**: requirements
+- ✏️ `maa.json` **ayrudzi**: requirements
+- ✏️ `maa.json` **hussar**: requirements
+- ✏️ `maa.json` **light_horsemen**: requirements
+- ✏️ `maa.json` **mulaththamun**: requirements
+- ✏️ `maa.json` **tawashi**: requirements
+- ✏️ `maa.json` **teulu**: requirements
+- ✏️ `maa.json` **bondi**: requirements
+- ✏️ `maa.json` **pikemen_unit**: requirements
+- ✏️ `maa.json` **skoutatoi**: requirements
+- ✏️ `maa.json` **warrior_monks**: requirements
+- ✏️ `maa.json` **zupin_warrior**: requirements
+- ✏️ `maa.json` **ballista**: requirements
+- ✏️ `maa.json` **bombard**: requirements
+- ✏️ `maa.json` **cannon**: requirements
+- ✏️ `maa.json` **cloud_ladder**: requirements
+- ✏️ `maa.json` **mangonel**: requirements
+- ✏️ `maa.json` **onager**: requirements
+- ✏️ `maa.json` **siege_tower**: requirements
+- ✏️ `maa.json` **torch_bearers**: requirements
+- ✏️ `maa.json` **trebuchet**: requirements
+- ✏️ `maa.json` **abudrar**: requirements
+- ✏️ `maa.json` **akritai**: requirements
+- ✏️ `maa.json` **guinea_warrior**: requirements
+- ✏️ `maa.json` **horn_warrior**: requirements
+- ✏️ `maa.json` **light_footmen**: requirements
+- ✏️ `maa.json` **pesilat_warriors**: requirements
+- ✏️ `maa.json` **shomer**: requirements
+- 🌱 `nicknames.json` now tracked (683 entries)
+- 🌱 `pillars.json` now tracked (162 entries)
+- 🌱 `schemes.json` now tracked (3 entries)
+- 🌱 `situations.json` now tracked (10 entries)
+- 🌱 `startdates.json` now tracked (2 entries)
+- 🌱 `struggles.json` now tracked (2 entries)
+- 🌱 `task_contracts.json` now tracked (153 entries)
+- 🌱 `terrain.json` now tracked (17 entries)
+- 🌱 `titles.json` now tracked (2 entries)
+- 🌱 `traditions.json` now tracked (2 entries)
+- 🌱 `traits.json` now tracked (295 entries)
 

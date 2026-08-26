@@ -1,0 +1,2368 @@
+{
+  "positions": [
+    {
+      "desc": "The Chancellor is the Councillor in charge of diplomatic efforts, both inside and outside the Realm.",
+      "dlc": null,
+      "features": [],
+      "id": "councillor_chancellor",
+      "isClergy": false,
+      "modifiers": [
+        {
+          "polarity": "good",
+          "scale": "liege tier",
+          "text": "+5 Fellow Vassal Opinion"
+        },
+        {
+          "polarity": "good",
+          "scale": "liege tier",
+          "text": "+5% Monthly Diplomacy Lifestyle Experience"
+        },
+        {
+          "polarity": "good",
+          "scale": "monthly income",
+          "text": "+1 Prestige /month"
+        },
+        {
+          "polarity": "good",
+          "scale": "admin",
+          "text": "+1 Influence /month"
+        },
+        {
+          "polarity": "good",
+          "scale": "admin",
+          "text": "-5% Enemy Political Scheme Success Chance Max Add"
+        }
+      ],
+      "name": "Chancellor",
+      "ownerModifiers": [
+        {
+          "polarity": "good",
+          "scale": "chancellor learn on the job",
+          "text": "+1 Diplomacy"
+        },
+        {
+          "polarity": "good",
+          "scale": "chancellor reliable house",
+          "text": "+1 Diplomacy"
+        }
+      ],
+      "requirements": [
+        {
+          "name": "Landless Adventurer government",
+          "negated": true
+        },
+        {
+          "name": "Nomadic government",
+          "negated": true
+        }
+      ],
+      "seats": 1,
+      "skill": "diplomacy",
+      "sourceFile": "00_council_positions.txt"
+    },
+    {
+      "desc": "The Steward is the Councillor in charge of Domain administration, for example matters of Taxation, Culture and Development.",
+      "dlc": null,
+      "features": [],
+      "id": "councillor_steward",
+      "isClergy": false,
+      "modifiers": [
+        {
+          "polarity": "good",
+          "scale": "monthly income",
+          "text": "+1 Tax /month"
+        },
+        {
+          "polarity": "good",
+          "scale": "liege tier",
+          "text": "-2.5% Build Gold Cost"
+        },
+        {
+          "polarity": "good",
+          "scale": "liege tier",
+          "text": "+5% Monthly Stewardship Lifestyle Experience"
+        },
+        {
+          "polarity": "good",
+          "scale": "liege tier",
+          "text": "+2.5% Domain Taxes"
+        },
+        {
+          "polarity": "good",
+          "scale": "admin",
+          "text": "+1 Influence /month"
+        },
+        {
+          "polarity": "good",
+          "scale": "admin",
+          "text": "-5% Domicile Building Construction Cost"
+        }
+      ],
+      "name": "Steward",
+      "ownerModifiers": [
+        {
+          "polarity": "good",
+          "scale": "steward learn on the job",
+          "text": "+1 Stewardship"
+        },
+        {
+          "polarity": "good",
+          "scale": "steward reliable house",
+          "text": "+1 Stewardship"
+        }
+      ],
+      "requirements": [
+        {
+          "name": "Landless Adventurer government",
+          "negated": true
+        },
+        {
+          "name": "Nomadic government",
+          "negated": true
+        }
+      ],
+      "seats": 1,
+      "skill": "stewardship",
+      "sourceFile": "00_council_positions.txt"
+    },
+    {
+      "desc": "The Marshal is your chief Commander and the Councillor in charge of military matters in general.",
+      "dlc": null,
+      "features": [],
+      "id": "councillor_marshal",
+      "isClergy": false,
+      "modifiers": [
+        {
+          "polarity": "good",
+          "scale": "liege tier",
+          "text": "+1 Prowess"
+        },
+        {
+          "polarity": "good",
+          "scale": "liege tier",
+          "text": "-5% Army Gold Maintenance"
+        },
+        {
+          "polarity": "good",
+          "scale": "liege tier",
+          "text": "+5% Monthly Martial Lifestyle Experience"
+        },
+        {
+          "polarity": "good",
+          "scale": "liege tier not admin",
+          "text": "+5% Levy Size"
+        },
+        {
+          "polarity": "good",
+          "scale": "admin",
+          "text": "+1 Influence /month"
+        },
+        {
+          "polarity": "good",
+          "scale": "admin",
+          "text": "+4% Men-at-Arms Toughness"
+        },
+        {
+          "polarity": "good",
+          "scale": "celestial ministry",
+          "text": "+1 Merit /month"
+        }
+      ],
+      "name": "Marshal",
+      "ownerModifiers": [
+        {
+          "polarity": "good",
+          "scale": "marshal learn on the job",
+          "text": "+1 Martial"
+        },
+        {
+          "polarity": "good",
+          "scale": "marshal reliable house",
+          "text": "+1 Martial"
+        }
+      ],
+      "requirements": [
+        {
+          "name": "Landless Adventurer government",
+          "negated": true
+        },
+        {
+          "name": "Nomadic government",
+          "negated": true
+        }
+      ],
+      "seats": 1,
+      "skill": "martial",
+      "sourceFile": "00_council_positions.txt"
+    },
+    {
+      "desc": "The Spymaster is your Councillor in charge of matters of intrigue and intelligence. Beware of having a disloyal Spymaster, for they can easily conceal and participate in a Murder against you and your close family!",
+      "dlc": null,
+      "features": [],
+      "id": "councillor_spymaster",
+      "isClergy": false,
+      "modifiers": [
+        {
+          "polarity": "good",
+          "scale": "liege tier",
+          "text": "+5% Monthly Intrigue Lifestyle Experience"
+        },
+        {
+          "polarity": "good",
+          "scale": "liege tier",
+          "text": "+10 Natural Dread"
+        },
+        {
+          "polarity": "good",
+          "text": "10 Hostile Scheme Phase Length days faster per Scheme Phase"
+        },
+        {
+          "polarity": "good",
+          "text": "+10% Owned Hostile Scheme Success Chance Max Add"
+        },
+        {
+          "polarity": "good",
+          "scale": "admin",
+          "text": "+1 Influence /month"
+        },
+        {
+          "polarity": "good",
+          "scale": "admin",
+          "text": "+5% Scheme Secrecy"
+        }
+      ],
+      "name": "Spymaster",
+      "ownerModifiers": [
+        {
+          "polarity": "good",
+          "scale": "spymaster learn on the job",
+          "text": "+1 Intrigue"
+        },
+        {
+          "polarity": "good",
+          "scale": "spymaster reliable house",
+          "text": "+1 Intrigue"
+        }
+      ],
+      "requirements": [
+        {
+          "name": "Landless Adventurer government",
+          "negated": true
+        }
+      ],
+      "seats": 1,
+      "skill": "intrigue",
+      "sourceFile": "00_council_positions.txt"
+    },
+    {
+      "desc": "The Court Chaplain is the Councillor in charge of religious and spiritual affairs in Faiths with the Lay Clergy Doctrine.\n\nFaiths with the Theocratic Doctrine have the far more powerful (and troublesome) Realm Priest instead of a Court Chaplain.",
+      "dlc": null,
+      "features": [],
+      "id": "councillor_court_chaplain",
+      "isClergy": true,
+      "modifiers": [
+        {
+          "polarity": "good",
+          "scale": "liege tier",
+          "text": "+5 Popular Opinion"
+        },
+        {
+          "polarity": "good",
+          "scale": "liege tier",
+          "text": "+5% Monthly Learning Lifestyle Experience"
+        },
+        {
+          "polarity": "good",
+          "scale": "monthly income",
+          "text": "+1 Piety /month"
+        }
+      ],
+      "name": "Court Chaplain",
+      "ownerModifiers": [
+        {
+          "polarity": "good",
+          "scale": "court chaplain learn on the job",
+          "text": "+1 Learning"
+        },
+        {
+          "polarity": "good",
+          "scale": "court chaplain reliable house",
+          "text": "+1 Learning"
+        }
+      ],
+      "requirements": [
+        {
+          "name": "Landless Adventurer government",
+          "negated": true
+        },
+        {
+          "name": "Nomadic government",
+          "negated": true
+        }
+      ],
+      "seats": 1,
+      "skill": "learning",
+      "sourceFile": "00_council_positions.txt"
+    },
+    {
+      "desc": "A Spouse is a Character's husband or wife; the result of a Marriage.\n\nIn order to have legitimate offspring and produce Heirs, you should have a Spouse or Concubine (though Bastards can be legitimized).\n\nThe only way of forging an Alliance is through marriage or Betrothal; your own or that of a close relative.\n\nYour (main) Spouse is also a member of your Council and can perform many useful Councillor Tasks.\n\nFaith Doctrines determine how many Spouses you can have and how they can be Divorced.",
+      "dlc": null,
+      "features": [],
+      "id": "councillor_spouse",
+      "isClergy": false,
+      "modifiers": [],
+      "name": "Spouse",
+      "ownerModifiers": [],
+      "requirements": [],
+      "seats": 1,
+      "skill": null,
+      "sourceFile": "00_council_positions.txt"
+    },
+    {
+      "desc": "As a Clan Government Ruler you can decide to assign either your Vizier or any of your Spouses as your Confidant. Whoever you choose will support you in your daily tasks.",
+      "dlc": null,
+      "features": [],
+      "id": "councillor_vizier",
+      "isClergy": false,
+      "modifiers": [],
+      "name": "Confidant",
+      "ownerModifiers": [],
+      "requirements": [
+        {
+          "name": "May Appoint Viziers government",
+          "negated": false
+        }
+      ],
+      "seats": 1,
+      "skill": null,
+      "sourceFile": "00_council_positions.txt"
+    },
+    {
+      "desc": "The Kurultai replaces the Council for the Nomadic Government. The Kurultai members are among the elite of the realm, and should either be appeased or forced into Obedience to assure a smooth Succession.\n\nAfter the event of a chaotic succession, they may steal some Herd, abandon their new Liege, they will gain a Claim on the Realm Title.",
+      "dlc": "Khans of the Steppe",
+      "features": [],
+      "id": "councillor_kurultai_1",
+      "isClergy": false,
+      "modifiers": [
+        {
+          "polarity": "good",
+          "scale": "monthly income",
+          "text": "+0.5 Tax /month"
+        },
+        {
+          "polarity": "good",
+          "scale": "liege tier nomad",
+          "text": "+0.15 Prestige /month"
+        },
+        {
+          "polarity": "good",
+          "scale": "liege tier nomad",
+          "text": "+5% Herd Gain"
+        },
+        {
+          "polarity": "good",
+          "scale": "liege tier nomad",
+          "text": "+5% Herd Capacity"
+        },
+        {
+          "polarity": "good",
+          "scale": "liege tier not nomad",
+          "text": "+0.15 Prestige /month"
+        },
+        {
+          "polarity": "good",
+          "scale": "liege tier not nomad",
+          "text": "+5% Levy Size"
+        },
+        {
+          "polarity": "good",
+          "text": "+10 Fellow Vassal Opinion"
+        }
+      ],
+      "name": "Kurultai Member",
+      "ownerModifiers": [
+        {
+          "polarity": "good",
+          "scale": "kurultai chancellor learn on the job",
+          "text": "+1 Diplomacy"
+        },
+        {
+          "polarity": "good",
+          "scale": "kurultai steward learn on the job",
+          "text": "+1 Stewardship"
+        },
+        {
+          "polarity": "good",
+          "scale": "kurultai marshal learn on the job",
+          "text": "+1 Martial"
+        },
+        {
+          "polarity": "good",
+          "scale": "kurultai court chaplain learn on the job",
+          "text": "+1 Learning"
+        }
+      ],
+      "requirements": [
+        {
+          "name": "Nomadic government",
+          "negated": false
+        }
+      ],
+      "seats": 4,
+      "skill": null,
+      "sourceFile": "00_council_positions.txt"
+    },
+    {
+      "desc": "The Minister of Personnel is the Minister in charge of all matters related to Appointments and can greatly impact the Candidate Score of other Characters.\n\nThe minister can, for example:\nUse Request Retirement Interaction to fire Governors regardless of the Retirement Age Law\nInvite any type of Courtier with the Summon Courtiers for the Celestial Bureau Decision\nCompel acceptance of the Offer Courtier and Demand Courtier Interactions\nAccess special Influence Career Interaction options, and at a reduced cost",
+      "dlc": "The Great People",
+      "features": [],
+      "id": "minister_personnel",
+      "isClergy": false,
+      "modifiers": [
+        {
+          "polarity": "good",
+          "scale": "liege tier",
+          "text": "+5 Fellow Vassal Opinion"
+        },
+        {
+          "polarity": "good",
+          "scale": "liege tier",
+          "text": "+5% Monthly Diplomacy Lifestyle Experience"
+        },
+        {
+          "polarity": "good",
+          "scale": "monthly income",
+          "text": "+1 Prestige /month"
+        },
+        {
+          "polarity": "good",
+          "scale": "admin",
+          "text": "+1 Influence /month"
+        },
+        {
+          "polarity": "good",
+          "scale": "admin",
+          "text": "-5% Enemy Political Scheme Success Chance Max Add"
+        }
+      ],
+      "name": "Minister of Personnel",
+      "ownerModifiers": [
+        {
+          "polarity": "good",
+          "scale": "chancellor learn on the job",
+          "text": "+1 Diplomacy"
+        },
+        {
+          "polarity": "good",
+          "scale": "chancellor reliable house",
+          "text": "+1 Diplomacy"
+        }
+      ],
+      "requirements": [
+        {
+          "name": "Hegemon of China (Celestial government)",
+          "negated": false
+        }
+      ],
+      "seats": 1,
+      "skill": "diplomacy",
+      "sourceFile": "01_ministry_positions.txt"
+    },
+    {
+      "desc": "The Minister of Justice is the Minister in charge of legal affairs and assisting Son of Heaven to maintain a righteous rule.\n\nThe minister can, for example:\nStart the Establish Control Great Project\nUse Imprison Interaction on Vassals and Courtiers, who cannot refuse\nUse Grant Pardon Interaction on Characters who have committed Crimes\nUse Find Secrets (Scheme) Interaction to find Secrets in Vassal Courts and Imprison or pardon known Criminals\nExposing Secrets will trigger Minister of Justice exposed a Governor Dynastic Cycle Catalyst\nAccess special Influence Career Interaction options",
+      "dlc": "The Great People",
+      "features": [],
+      "id": "minister_justice",
+      "isClergy": false,
+      "modifiers": [
+        {
+          "polarity": "good",
+          "scale": "liege tier",
+          "text": "+5 Fellow Vassal Opinion"
+        },
+        {
+          "polarity": "good",
+          "scale": "liege tier",
+          "text": "+5% Monthly Diplomacy Lifestyle Experience"
+        },
+        {
+          "polarity": "good",
+          "scale": "monthly income",
+          "text": "+1 Prestige /month"
+        },
+        {
+          "polarity": "good",
+          "scale": "admin",
+          "text": "+1 Influence /month"
+        },
+        {
+          "polarity": "good",
+          "scale": "admin",
+          "text": "-5% Enemy Political Scheme Success Chance Max Add"
+        }
+      ],
+      "name": "Minister of Justice",
+      "ownerModifiers": [
+        {
+          "polarity": "good",
+          "scale": "chancellor learn on the job",
+          "text": "+1 Diplomacy"
+        },
+        {
+          "polarity": "good",
+          "scale": "chancellor reliable house",
+          "text": "+1 Diplomacy"
+        }
+      ],
+      "requirements": [
+        {
+          "name": "Hegemon of China (Celestial government)",
+          "negated": false
+        }
+      ],
+      "seats": 1,
+      "skill": "learning",
+      "sourceFile": "01_ministry_positions.txt"
+    },
+    {
+      "desc": "The Minister of Works is the Minister in charge of construction and development throughout the Realm, and may start Great Projects.\n\nThe minister can, for example:\nStart the Develop Communities Great Project\nStart the The Grand Canals Great Project\nStart the Improve the Great Wall Great Project\nCan construct Buildings and Holdings inside the Realm\nCan construct Buildings and Holdings inside Tributaries of Son of Heaven in … Era\nAccess special Influence Career Interaction options",
+      "dlc": "The Great People",
+      "features": [],
+      "id": "minister_works",
+      "isClergy": false,
+      "modifiers": [
+        {
+          "polarity": "good",
+          "scale": "liege tier",
+          "text": "-3% Build Gold Cost"
+        },
+        {
+          "polarity": "good",
+          "scale": "liege tier",
+          "text": "-2% Build Speed"
+        },
+        {
+          "polarity": "good",
+          "scale": "liege tier",
+          "text": "+5% Monthly Stewardship Lifestyle Experience"
+        },
+        {
+          "polarity": "good",
+          "scale": "admin",
+          "text": "+1 Influence /month"
+        },
+        {
+          "polarity": "good",
+          "scale": "admin",
+          "text": "-5% Domicile Building Construction Cost"
+        },
+        {
+          "polarity": "good",
+          "scale": "celestial ministry",
+          "text": "+1 Merit /month"
+        },
+        {
+          "polarity": "good",
+          "scale": "celestial ministry favored",
+          "text": "+1 Influence /month"
+        },
+        {
+          "polarity": "good",
+          "scale": "celestial ministry favored",
+          "text": "+25% Monthly Ministry Base Rate"
+        }
+      ],
+      "name": "Minister of Works",
+      "ownerModifiers": [
+        {
+          "polarity": "good",
+          "scale": "steward learn on the job",
+          "text": "+1 Stewardship"
+        },
+        {
+          "polarity": "good",
+          "scale": "steward reliable house",
+          "text": "+1 Stewardship"
+        }
+      ],
+      "requirements": [
+        {
+          "name": "Hegemon of China (Celestial government)",
+          "negated": false
+        }
+      ],
+      "seats": 1,
+      "skill": "stewardship",
+      "sourceFile": "01_ministry_positions.txt"
+    },
+    {
+      "desc": "The Grand Marshal is the highest ranking commander in the Realm and commands an Army of Title Men-at-Arms.\n\nThe Marshal can be the designated Secretary Director, depending on the Grand Secretariat Control Law.\n\nThe minister can, for example:\nStart the Grand Campaign Great Project\nStart the Construct Great Barracks Great Project\nUse Seize Hegemonic County and Seize Hegemonic Duchy Casus Bellis in … and … Eras\nAccess special Influence Career Interaction options",
+      "dlc": "The Great People",
+      "features": [],
+      "id": "minister_grand_marshal",
+      "isClergy": false,
+      "modifiers": [
+        {
+          "polarity": "good",
+          "scale": "liege tier",
+          "text": "-6% Army Gold Maintenance"
+        },
+        {
+          "polarity": "good",
+          "scale": "liege tier",
+          "text": "+5% Monthly Martial Lifestyle Experience"
+        },
+        {
+          "polarity": "good",
+          "scale": "admin",
+          "text": "+1 Influence /month"
+        },
+        {
+          "polarity": "good",
+          "scale": "admin",
+          "text": "+4% Men-at-Arms Toughness"
+        },
+        {
+          "polarity": "good",
+          "scale": "celestial ministry",
+          "text": "+1 Merit /month"
+        },
+        {
+          "polarity": "good",
+          "text": "-15% Men-at-Arms Recruitment Cost"
+        }
+      ],
+      "name": "Grand Marshal",
+      "ownerModifiers": [
+        {
+          "polarity": "good",
+          "scale": "marshal learn on the job",
+          "text": "+1 Martial"
+        },
+        {
+          "polarity": "good",
+          "scale": "marshal reliable house",
+          "text": "+1 Martial"
+        }
+      ],
+      "requirements": [
+        {
+          "name": "Hegemon of China (Celestial government)",
+          "negated": false
+        }
+      ],
+      "seats": 1,
+      "skill": "martial",
+      "sourceFile": "01_ministry_positions.txt"
+    }
+  ],
+  "tasks": [
+    {
+      "cloneOf": null,
+      "councillorMods": [],
+      "countyMods": [],
+      "countyTarget": null,
+      "dlc": "The Royal Court",
+      "effectDesc": null,
+      "icon": "task_bestow_royal_favor",
+      "id": "task_bestow_royal_favor",
+      "name": "Bestow Royal Favor",
+      "ownerMods": [
+        {
+          "polarity": "good",
+          "scale": "chancellor bestow royal favor prestige",
+          "text": "+1 Prestige /month"
+        }
+      ],
+      "position": "councillor_chancellor",
+      "progress": "percentage",
+      "skill": null,
+      "sourceFile": "00_chancellor_tasks.txt",
+      "taskType": "court"
+    },
+    {
+      "cloneOf": null,
+      "councillorMods": [],
+      "countyMods": [],
+      "countyTarget": null,
+      "dlc": null,
+      "effectDesc": null,
+      "icon": "task_domestic_affairs",
+      "id": "task_domestic_affairs",
+      "name": "Domestic Affairs",
+      "ownerMods": [
+        {
+          "polarity": "good",
+          "scale": "chancellor domestic affairs opinion",
+          "text": "+1 Direct Vassal Opinion"
+        },
+        {
+          "polarity": "good",
+          "scale": "chancellor domestic affairs opinion",
+          "text": "+1 Parochial Vassal Opinion"
+        },
+        {
+          "polarity": "good",
+          "scale": "chancellor domestic affairs tyranny",
+          "text": "+1% Tyranny Loss"
+        }
+      ],
+      "position": "councillor_chancellor",
+      "progress": "infinite",
+      "skill": null,
+      "sourceFile": "00_chancellor_tasks.txt",
+      "taskType": "general"
+    },
+    {
+      "cloneOf": null,
+      "councillorMods": [],
+      "countyMods": [],
+      "countyTarget": null,
+      "dlc": null,
+      "effectDesc": null,
+      "icon": "task_foreign_affairs",
+      "id": "task_foreign_affairs",
+      "name": "Foreign Affairs",
+      "ownerMods": [
+        {
+          "polarity": "good",
+          "scale": "chancellor foreign affairs prestige",
+          "text": "+1 Prestige /month"
+        },
+        {
+          "polarity": "good",
+          "scale": "chancellor foreign affairs independent opinion",
+          "text": "+1 Independent Ruler Opinion"
+        },
+        {
+          "polarity": "good",
+          "scale": "chancellor foreign affairs realm opinion",
+          "text": "+1 Fellow Vassal Opinion"
+        }
+      ],
+      "position": "councillor_chancellor",
+      "progress": "infinite",
+      "skill": null,
+      "sourceFile": "00_chancellor_tasks.txt",
+      "taskType": "general"
+    },
+    {
+      "cloneOf": null,
+      "councillorMods": [],
+      "countyMods": [],
+      "countyTarget": "realm",
+      "dlc": null,
+      "effectDesc": "At 100%:\nThe target title becomes De Jure part of your Primary Title",
+      "icon": "task_integrate_title",
+      "id": "task_integrate_title",
+      "name": "Integrate Title",
+      "ownerMods": [],
+      "position": "councillor_chancellor",
+      "progress": "value",
+      "skill": null,
+      "sourceFile": "00_chancellor_tasks.txt",
+      "taskType": "county"
+    },
+    {
+      "cloneOf": null,
+      "councillorMods": [],
+      "countyMods": [],
+      "countyTarget": "realm",
+      "dlc": "The Royal Court",
+      "effectDesc": null,
+      "icon": "task_accept_culture",
+      "id": "task_accept_culture",
+      "name": "Promote Cultural Acceptance",
+      "ownerMods": [],
+      "position": "councillor_steward",
+      "progress": "infinite",
+      "skill": null,
+      "sourceFile": "00_steward_tasks.txt",
+      "taskType": "county"
+    },
+    {
+      "cloneOf": null,
+      "councillorMods": [],
+      "countyMods": [],
+      "countyTarget": null,
+      "dlc": null,
+      "effectDesc": "Domain Taxes: …+…%\n… … Stewardship Skill: +…%",
+      "icon": "task_collect_taxes",
+      "id": "task_collect_taxes",
+      "name": "Collect Taxes",
+      "ownerMods": [
+        {
+          "polarity": "good",
+          "scale": "steward collect taxes total",
+          "text": "+100% Domain Taxes"
+        }
+      ],
+      "position": "councillor_steward",
+      "progress": "infinite",
+      "skill": null,
+      "sourceFile": "00_steward_tasks.txt",
+      "taskType": "general"
+    },
+    {
+      "cloneOf": null,
+      "councillorMods": [],
+      "countyMods": [],
+      "countyTarget": "neighbor_land",
+      "dlc": "The Royal Court",
+      "effectDesc": "At 100%:\nThe target County requires its Ruler to hand it over to its De Jure liege",
+      "icon": "task_convince_dejure",
+      "id": "task_convince_dejure",
+      "name": "Convince De Jure Territory",
+      "ownerMods": [],
+      "position": "councillor_steward",
+      "progress": "percentage",
+      "skill": null,
+      "sourceFile": "00_steward_tasks.txt",
+      "taskType": "county"
+    },
+    {
+      "cloneOf": null,
+      "councillorMods": [],
+      "countyMods": [
+        {
+          "polarity": "good",
+          "scale": "steward develop county ÷100",
+          "text": "+100 Development Growth /month"
+        },
+        {
+          "polarity": "good",
+          "scale": "steward develop county ÷100",
+          "text": "-700% Holding Build Speed"
+        },
+        {
+          "polarity": "good",
+          "scale": "steward develop county ÷100",
+          "text": "-700% Build Speed"
+        },
+        {
+          "polarity": "good",
+          "scale": "current development penalty ÷100",
+          "text": "+100 Development Growth /month"
+        },
+        {
+          "polarity": "good",
+          "scale": "situational",
+          "text": "+100 Development Growth /month"
+        }
+      ],
+      "countyTarget": "realm",
+      "dlc": null,
+      "effectDesc": null,
+      "icon": "task_develop_county",
+      "id": "task_develop_county",
+      "name": "Increase Development in County",
+      "ownerMods": [],
+      "position": "councillor_steward",
+      "progress": "value",
+      "skill": null,
+      "sourceFile": "00_steward_tasks.txt",
+      "taskType": "county"
+    },
+    {
+      "cloneOf": null,
+      "councillorMods": [],
+      "countyMods": [],
+      "countyTarget": "realm",
+      "dlc": null,
+      "effectDesc": "At 100%:\nThe County changes Culture to …",
+      "icon": "task_promote_culture",
+      "id": "task_promote_culture",
+      "name": "Promote Culture",
+      "ownerMods": [],
+      "position": "councillor_steward",
+      "progress": "percentage",
+      "skill": null,
+      "sourceFile": "00_steward_tasks.txt",
+      "taskType": "county"
+    },
+    {
+      "cloneOf": null,
+      "councillorMods": [],
+      "countyMods": [
+        {
+          "polarity": "good",
+          "scale": "marshal increase control",
+          "text": "+1 Monthly County Control Growth Add /month"
+        }
+      ],
+      "countyTarget": "realm",
+      "dlc": null,
+      "effectDesc": "Chance of removing County Corruption: …%/month\nCouncillor: +…\nCounty Control: +…\n\nWhile Control is being increased, the County will not acquire Corruption",
+      "icon": "task_increase_control",
+      "id": "task_increase_control",
+      "name": "Increase Control in County",
+      "ownerMods": [],
+      "position": "councillor_marshal",
+      "progress": "value",
+      "skill": null,
+      "sourceFile": "00_marshal_tasks.txt",
+      "taskType": "county"
+    },
+    {
+      "cloneOf": null,
+      "councillorMods": [],
+      "countyMods": [],
+      "countyTarget": null,
+      "dlc": "The Royal Court",
+      "effectDesc": null,
+      "icon": "task_manage_guards",
+      "id": "task_manage_guards",
+      "name": "Manage Royal Guards",
+      "ownerMods": [
+        {
+          "polarity": "good",
+          "scale": "marshal overtime boost ÷100",
+          "text": "+100% Knight Effectiveness"
+        },
+        {
+          "polarity": "good",
+          "scale": "marshal overtime decrease",
+          "text": "-1% Enemy Hostile Scheme Success Chance Add"
+        }
+      ],
+      "position": "councillor_marshal",
+      "progress": "infinite",
+      "skill": null,
+      "sourceFile": "00_marshal_tasks.txt",
+      "taskType": "general"
+    },
+    {
+      "cloneOf": null,
+      "councillorMods": [],
+      "countyMods": [],
+      "countyTarget": null,
+      "dlc": null,
+      "effectDesc": "Garrison Size and Levy Reinforcement Rate: +…%\nBase: +…%\n… Martial Skill: +…%",
+      "icon": "task_organize_levies",
+      "id": "task_organize_levies",
+      "name": "Organize Army",
+      "ownerMods": [
+        {
+          "polarity": "good",
+          "scale": "marshal organize levies modifier",
+          "text": "+1% Garrison Size"
+        },
+        {
+          "polarity": "good",
+          "scale": "marshal organize levies modifier",
+          "text": "+1% Levy Reinforcement Rate"
+        },
+        {
+          "polarity": "good",
+          "scale": "marshal organize levies maintenance",
+          "text": "-1% Army Gold Maintenance"
+        }
+      ],
+      "position": "councillor_marshal",
+      "progress": "infinite",
+      "skill": null,
+      "sourceFile": "00_marshal_tasks.txt",
+      "taskType": "general"
+    },
+    {
+      "cloneOf": null,
+      "councillorMods": [
+        {
+          "polarity": "good",
+          "scale": "marshal maa overtime boost ÷100",
+          "text": "+100% Skirmisher Damage"
+        },
+        {
+          "polarity": "good",
+          "scale": "marshal maa overtime boost ÷100",
+          "text": "+100% Skirmisher Toughness"
+        },
+        {
+          "polarity": "good",
+          "scale": "marshal maa overtime boost ÷100",
+          "text": "+100% Spearmen Damage"
+        },
+        {
+          "polarity": "good",
+          "scale": "marshal maa overtime boost ÷100",
+          "text": "+100% Spearmen Toughness"
+        },
+        {
+          "polarity": "good",
+          "scale": "marshal maa overtime boost ÷100",
+          "text": "+100% Heavy Infantry Damage"
+        },
+        {
+          "polarity": "good",
+          "scale": "marshal maa overtime boost ÷100",
+          "text": "+100% Heavy Infantry Toughness"
+        },
+        {
+          "polarity": "good",
+          "scale": "marshal maa overtime boost ÷100",
+          "text": "+100% Archer Damage"
+        },
+        {
+          "polarity": "good",
+          "scale": "marshal maa overtime boost ÷100",
+          "text": "+100% Archer Toughness"
+        },
+        {
+          "polarity": "good",
+          "scale": "marshal maa overtime boost ÷100",
+          "text": "+100% Light Cavalry Damage"
+        },
+        {
+          "polarity": "good",
+          "scale": "marshal maa overtime boost ÷100",
+          "text": "+100% Light Cavalry Toughness"
+        },
+        {
+          "polarity": "good",
+          "scale": "marshal maa overtime boost ÷100",
+          "text": "+100% Heavy Cavalry Damage"
+        },
+        {
+          "polarity": "good",
+          "scale": "marshal maa overtime boost ÷100",
+          "text": "+100% Heavy Cavalry Toughness"
+        },
+        {
+          "polarity": "good",
+          "scale": "marshal maa overtime boost ÷100",
+          "text": "+100% Archer Cavalry Damage"
+        },
+        {
+          "polarity": "good",
+          "scale": "marshal maa overtime boost ÷100",
+          "text": "+100% Archer Cavalry Toughness"
+        },
+        {
+          "polarity": "good",
+          "scale": "marshal maa overtime boost ÷100",
+          "text": "+100% Camel Cavalry Damage"
+        },
+        {
+          "polarity": "good",
+          "scale": "marshal maa overtime boost ÷100",
+          "text": "+100% Camel Cavalry Toughness"
+        },
+        {
+          "polarity": "good",
+          "scale": "marshal maa overtime boost ÷100",
+          "text": "+100% Elephant Cavalry Damage"
+        },
+        {
+          "polarity": "good",
+          "scale": "marshal maa overtime boost ÷100",
+          "text": "+100% Elephant Cavalry Toughness"
+        },
+        {
+          "polarity": "good",
+          "scale": "marshal maa overtime boost ÷100",
+          "text": "+100% Handgunner Damage"
+        },
+        {
+          "polarity": "good",
+          "scale": "marshal maa overtime boost ÷100",
+          "text": "+100% Handgunner Toughness"
+        },
+        {
+          "polarity": "good",
+          "scale": "marshal maa overtime boost ÷100",
+          "text": "+100% Siege Weapon Damage"
+        },
+        {
+          "polarity": "good",
+          "scale": "marshal maa overtime boost ÷100",
+          "text": "+100% Siege Weapon Toughness"
+        }
+      ],
+      "countyMods": [],
+      "countyTarget": null,
+      "dlc": null,
+      "effectDesc": "…% chance of improving or finding a new Commander or Knight each month\n… Martial Skill: +…%",
+      "icon": "task_train_commanders",
+      "id": "task_train_commanders",
+      "name": "Train Commanders",
+      "ownerMods": [
+        {
+          "polarity": "good",
+          "scale": "marshal knights overtime boost ÷100",
+          "text": "+100% Knight Effectiveness"
+        },
+        {
+          "polarity": "good",
+          "scale": "marshal maa overtime boost ÷100",
+          "text": "+100% Skirmisher Damage"
+        },
+        {
+          "polarity": "good",
+          "scale": "marshal maa overtime boost ÷100",
+          "text": "+100% Skirmisher Toughness"
+        },
+        {
+          "polarity": "good",
+          "scale": "marshal maa overtime boost ÷100",
+          "text": "+100% Spearmen Damage"
+        },
+        {
+          "polarity": "good",
+          "scale": "marshal maa overtime boost ÷100",
+          "text": "+100% Spearmen Toughness"
+        },
+        {
+          "polarity": "good",
+          "scale": "marshal maa overtime boost ÷100",
+          "text": "+100% Heavy Infantry Damage"
+        },
+        {
+          "polarity": "good",
+          "scale": "marshal maa overtime boost ÷100",
+          "text": "+100% Heavy Infantry Toughness"
+        },
+        {
+          "polarity": "good",
+          "scale": "marshal maa overtime boost ÷100",
+          "text": "+100% Archer Damage"
+        },
+        {
+          "polarity": "good",
+          "scale": "marshal maa overtime boost ÷100",
+          "text": "+100% Archer Toughness"
+        },
+        {
+          "polarity": "good",
+          "scale": "marshal maa overtime boost ÷100",
+          "text": "+100% Light Cavalry Damage"
+        },
+        {
+          "polarity": "good",
+          "scale": "marshal maa overtime boost ÷100",
+          "text": "+100% Light Cavalry Toughness"
+        },
+        {
+          "polarity": "good",
+          "scale": "marshal maa overtime boost ÷100",
+          "text": "+100% Heavy Cavalry Damage"
+        },
+        {
+          "polarity": "good",
+          "scale": "marshal maa overtime boost ÷100",
+          "text": "+100% Heavy Cavalry Toughness"
+        },
+        {
+          "polarity": "good",
+          "scale": "marshal maa overtime boost ÷100",
+          "text": "+100% Archer Cavalry Damage"
+        },
+        {
+          "polarity": "good",
+          "scale": "marshal maa overtime boost ÷100",
+          "text": "+100% Archer Cavalry Toughness"
+        },
+        {
+          "polarity": "good",
+          "scale": "marshal maa overtime boost ÷100",
+          "text": "+100% Camel Cavalry Damage"
+        },
+        {
+          "polarity": "good",
+          "scale": "marshal maa overtime boost ÷100",
+          "text": "+100% Camel Cavalry Toughness"
+        },
+        {
+          "polarity": "good",
+          "scale": "marshal maa overtime boost ÷100",
+          "text": "+100% Elephant Cavalry Damage"
+        },
+        {
+          "polarity": "good",
+          "scale": "marshal maa overtime boost ÷100",
+          "text": "+100% Elephant Cavalry Toughness"
+        },
+        {
+          "polarity": "good",
+          "scale": "marshal maa overtime boost ÷100",
+          "text": "+100% Handgunner Damage"
+        },
+        {
+          "polarity": "good",
+          "scale": "marshal maa overtime boost ÷100",
+          "text": "+100% Handgunner Toughness"
+        },
+        {
+          "polarity": "good",
+          "scale": "marshal maa overtime boost ÷100",
+          "text": "+100% Siege Weapon Damage"
+        },
+        {
+          "polarity": "good",
+          "scale": "marshal maa overtime boost ÷100",
+          "text": "+100% Siege Weapon Toughness"
+        }
+      ],
+      "position": "councillor_marshal",
+      "progress": "infinite",
+      "skill": null,
+      "sourceFile": "00_marshal_tasks.txt",
+      "taskType": "general"
+    },
+    {
+      "cloneOf": null,
+      "councillorMods": [],
+      "countyMods": [],
+      "countyTarget": null,
+      "dlc": null,
+      "effectDesc": null,
+      "icon": "task_disrupt_schemes",
+      "id": "task_disrupt_schemes",
+      "name": "Disrupt Schemes",
+      "ownerMods": [
+        {
+          "polarity": "good",
+          "scale": "spymaster disrupt schemes modifier base",
+          "text": "1 Enemy Hostile Scheme Phase Length days slower per Scheme Phase"
+        },
+        {
+          "polarity": "good",
+          "scale": "spymaster disrupt schemes court of shadows modifier",
+          "text": "1 Enemy Hostile Scheme Phase Length days slower per Scheme Phase"
+        },
+        {
+          "polarity": "good",
+          "scale": "spymaster disrupt schemes erudition legacy 5 modifier",
+          "text": "1 Enemy Hostile Scheme Phase Length days slower per Scheme Phase"
+        },
+        {
+          "polarity": "good",
+          "scale": "spymaster disrupt schemes family business modifier",
+          "text": "1 Enemy Hostile Scheme Phase Length days slower per Scheme Phase"
+        },
+        {
+          "polarity": "good",
+          "scale": "spymaster disrupt schemes scheme discovery modifier ÷200",
+          "text": "-100% Enemy Scheme Secrecy"
+        },
+        {
+          "polarity": "good",
+          "scale": "spymaster disrupt schemes court of shadows scheme discovery modifier ÷200",
+          "text": "-100% Enemy Scheme Secrecy"
+        },
+        {
+          "polarity": "good",
+          "scale": "spymaster disrupt schemes erudition legacy 5 discovery modifier ÷200",
+          "text": "-100% Enemy Scheme Secrecy"
+        },
+        {
+          "polarity": "good",
+          "scale": "spymaster disrupt schemes family business discovery modifier ÷200",
+          "text": "-100% Enemy Scheme Secrecy"
+        },
+        {
+          "polarity": "good",
+          "scale": "spymaster disrupt schemes determination discovery modifier ÷200",
+          "text": "-100% Enemy Scheme Secrecy"
+        }
+      ],
+      "position": "councillor_spymaster",
+      "progress": "infinite",
+      "skill": null,
+      "sourceFile": "00_spymaster_tasks.txt",
+      "taskType": "general"
+    },
+    {
+      "cloneOf": null,
+      "councillorMods": [],
+      "countyMods": [],
+      "countyTarget": null,
+      "dlc": null,
+      "effectDesc": "If any Secrets exist at court:\n…% chance of learning a Secret",
+      "icon": "task_find_secrets",
+      "id": "task_find_secrets",
+      "name": "Find Secrets",
+      "ownerMods": [],
+      "position": "councillor_spymaster",
+      "progress": "percentage",
+      "skill": null,
+      "sourceFile": "00_spymaster_tasks.txt",
+      "taskType": "court"
+    },
+    {
+      "cloneOf": null,
+      "councillorMods": [],
+      "countyMods": [],
+      "countyTarget": null,
+      "dlc": "The Royal Court",
+      "effectDesc": null,
+      "icon": "task_support_schemes",
+      "id": "task_support_schemes",
+      "name": "Support Schemes",
+      "ownerMods": [
+        {
+          "polarity": "bad",
+          "scale": "spymaster espionage modifier final",
+          "text": "1 Hostile Scheme Phase Length days slower per Scheme Phase"
+        },
+        {
+          "polarity": "good",
+          "scale": "spymaster espionage success chance",
+          "text": "+1% Owned Hostile Scheme Success Chance Add"
+        }
+      ],
+      "position": "councillor_spymaster",
+      "progress": "infinite",
+      "skill": null,
+      "sourceFile": "00_spymaster_tasks.txt",
+      "taskType": "general"
+    },
+    {
+      "cloneOf": null,
+      "councillorMods": [],
+      "countyMods": [],
+      "countyTarget": "realm",
+      "dlc": null,
+      "effectDesc": "At 100%:\nThe County will change Faith to…",
+      "icon": "task_conversion",
+      "id": "task_conversion",
+      "name": "Convert Faith in County",
+      "ownerMods": [],
+      "position": "councillor_court_chaplain",
+      "progress": "percentage",
+      "skill": null,
+      "sourceFile": "00_court_chaplain_tasks.txt",
+      "taskType": "county"
+    },
+    {
+      "cloneOf": "task_kurultai_culture_1",
+      "councillorMods": [],
+      "countyMods": [],
+      "countyTarget": null,
+      "dlc": null,
+      "effectDesc": null,
+      "icon": "task_kurultai_culture",
+      "id": "task_culture_minister",
+      "name": "Explore Cultures",
+      "ownerMods": [],
+      "position": "councillor_court_chaplain",
+      "progress": "infinite",
+      "skill": null,
+      "sourceFile": "01_ministry_tasks.txt",
+      "taskType": "general"
+    },
+    {
+      "cloneOf": null,
+      "councillorMods": [],
+      "countyMods": [],
+      "countyTarget": "all",
+      "dlc": null,
+      "effectDesc": "At 100%:\nOpportunity to get an Unpressed Claim",
+      "icon": "task_fabricate_claim",
+      "id": "task_fabricate_claim",
+      "name": "Fabricate Claim on County",
+      "ownerMods": [],
+      "position": "councillor_court_chaplain",
+      "progress": "percentage",
+      "skill": null,
+      "sourceFile": "00_court_chaplain_tasks.txt",
+      "taskType": "county"
+    },
+    {
+      "cloneOf": null,
+      "councillorMods": [],
+      "countyMods": [],
+      "countyTarget": null,
+      "dlc": null,
+      "effectDesc": null,
+      "icon": "task_religious_relations",
+      "id": "task_religious_relations",
+      "name": "Religious Relations",
+      "ownerMods": [
+        {
+          "polarity": "good",
+          "scale": "court chaplain religious relations total piety gain",
+          "text": "+1 Piety /month"
+        },
+        {
+          "polarity": "good",
+          "scale": "court chaplain religious relations opinion modifier",
+          "text": "+1 Theocratic Ruler of Same Faith Opinion"
+        },
+        {
+          "polarity": "good",
+          "scale": "court chaplain religious relations no hof opinion modifier",
+          "text": "+1 Same Faith Opinion"
+        }
+      ],
+      "position": "councillor_court_chaplain",
+      "progress": "infinite",
+      "skill": null,
+      "sourceFile": "00_court_chaplain_tasks.txt",
+      "taskType": "general"
+    },
+    {
+      "cloneOf": null,
+      "councillorMods": [],
+      "countyMods": [],
+      "countyTarget": null,
+      "dlc": null,
+      "effectDesc": "… focuses on your soldiers and your commanders\n\n… support gives you:\n…",
+      "icon": "task_chivalry",
+      "id": "task_chivalry",
+      "name": "Chivalry",
+      "ownerMods": [
+        {
+          "polarity": "good",
+          "scale": "spouse task chivalry",
+          "text": "+1 Martial"
+        }
+      ],
+      "position": "councillor_spouse",
+      "progress": "infinite",
+      "skill": "martial",
+      "sourceFile": "00_spouse_tasks.txt",
+      "taskType": "general"
+    },
+    {
+      "cloneOf": null,
+      "councillorMods": [],
+      "countyMods": [],
+      "countyTarget": null,
+      "dlc": null,
+      "effectDesc": "… focuses on rumors and whispers at court\n\n… support gives you:\n…",
+      "icon": "task_court_intrigue",
+      "id": "task_court_intrigue",
+      "name": "Court Intrigue",
+      "ownerMods": [
+        {
+          "polarity": "good",
+          "scale": "spouse task court intrigue",
+          "text": "+1 Intrigue"
+        }
+      ],
+      "position": "councillor_spouse",
+      "progress": "infinite",
+      "skill": "intrigue",
+      "sourceFile": "00_spouse_tasks.txt",
+      "taskType": "general"
+    },
+    {
+      "cloneOf": null,
+      "councillorMods": [],
+      "countyMods": [],
+      "countyTarget": null,
+      "dlc": null,
+      "effectDesc": "… focuses on your court and those closest to you\n\n… support gives you:\n…",
+      "icon": "task_court_politics",
+      "id": "task_court_politics",
+      "name": "Court Politics",
+      "ownerMods": [
+        {
+          "polarity": "good",
+          "scale": "spouse task court politics",
+          "text": "+1 Diplomacy"
+        }
+      ],
+      "position": "councillor_spouse",
+      "progress": "infinite",
+      "skill": "diplomacy",
+      "sourceFile": "00_spouse_tasks.txt",
+      "taskType": "general"
+    },
+    {
+      "cloneOf": null,
+      "councillorMods": [],
+      "countyMods": [],
+      "countyTarget": null,
+      "dlc": null,
+      "effectDesc": "… focuses on your domain and your personal holdings\n\n… support gives you:\n…",
+      "icon": "task_manage_domain",
+      "id": "task_manage_domain",
+      "name": "Manage Domain",
+      "ownerMods": [
+        {
+          "polarity": "good",
+          "scale": "spouse task manage domain",
+          "text": "+1 Stewardship"
+        }
+      ],
+      "position": "councillor_spouse",
+      "progress": "infinite",
+      "skill": "stewardship",
+      "sourceFile": "00_spouse_tasks.txt",
+      "taskType": "general"
+    },
+    {
+      "cloneOf": null,
+      "councillorMods": [],
+      "countyMods": [],
+      "countyTarget": null,
+      "dlc": null,
+      "effectDesc": "… focuses on matters of culture, religion and education\n\n… support gives you:\n…",
+      "icon": "task_patronage",
+      "id": "task_patronage",
+      "name": "Patronage",
+      "ownerMods": [
+        {
+          "polarity": "good",
+          "scale": "spouse task patronage",
+          "text": "+1 Learning"
+        }
+      ],
+      "position": "councillor_spouse",
+      "progress": "infinite",
+      "skill": "learning",
+      "sourceFile": "00_spouse_tasks.txt",
+      "taskType": "general"
+    },
+    {
+      "cloneOf": null,
+      "councillorMods": [],
+      "countyMods": [],
+      "countyTarget": null,
+      "dlc": null,
+      "effectDesc": "… helps you run the Realm in general\n\n… support gives you:\n…",
+      "icon": "task_spouse_default",
+      "id": "task_spouse_default",
+      "name": "Assist Ruler",
+      "ownerMods": [
+        {
+          "polarity": "good",
+          "scale": "spouse default task diplomacy",
+          "text": "+1 Diplomacy"
+        },
+        {
+          "polarity": "good",
+          "scale": "spouse default task martial",
+          "text": "+1 Martial"
+        },
+        {
+          "polarity": "good",
+          "scale": "spouse default task stewardship",
+          "text": "+1 Stewardship"
+        },
+        {
+          "polarity": "good",
+          "scale": "spouse default task intrigue",
+          "text": "+1 Intrigue"
+        },
+        {
+          "polarity": "good",
+          "scale": "spouse default task learning",
+          "text": "+1 Learning"
+        }
+      ],
+      "position": "councillor_spouse",
+      "progress": "infinite",
+      "skill": null,
+      "sourceFile": "00_spouse_tasks.txt",
+      "taskType": "general"
+    },
+    {
+      "cloneOf": null,
+      "councillorMods": [],
+      "countyMods": [],
+      "countyTarget": null,
+      "dlc": null,
+      "effectDesc": "… focuses on your soldiers and your commanders\n\n… support gives you:\n…",
+      "icon": "task_vizier_chivalry",
+      "id": "task_vizier_chivalry",
+      "name": "Chivalry",
+      "ownerMods": [
+        {
+          "polarity": "good",
+          "scale": "vizier task chivalry",
+          "text": "+1 Martial"
+        }
+      ],
+      "position": "councillor_vizier",
+      "progress": "infinite",
+      "skill": "martial",
+      "sourceFile": "00_vizier_tasks.txt",
+      "taskType": "general"
+    },
+    {
+      "cloneOf": null,
+      "councillorMods": [],
+      "countyMods": [],
+      "countyTarget": null,
+      "dlc": null,
+      "effectDesc": "… focuses on rumors and whispers at court\n\n… support gives you:\n…",
+      "icon": "task_vizier_court_intrigue",
+      "id": "task_vizier_court_intrigue",
+      "name": "Court Intrigue",
+      "ownerMods": [
+        {
+          "polarity": "good",
+          "scale": "vizier task court intrigue",
+          "text": "+1 Intrigue"
+        }
+      ],
+      "position": "councillor_vizier",
+      "progress": "infinite",
+      "skill": "intrigue",
+      "sourceFile": "00_vizier_tasks.txt",
+      "taskType": "general"
+    },
+    {
+      "cloneOf": null,
+      "councillorMods": [],
+      "countyMods": [],
+      "countyTarget": null,
+      "dlc": null,
+      "effectDesc": "… focuses on your court and those closest to you\n\n… support gives you:\n…",
+      "icon": "task_vizier_court_politics",
+      "id": "task_vizier_court_politics",
+      "name": "Court Politics",
+      "ownerMods": [
+        {
+          "polarity": "good",
+          "scale": "vizier task court politics",
+          "text": "+1 Diplomacy"
+        }
+      ],
+      "position": "councillor_vizier",
+      "progress": "infinite",
+      "skill": "diplomacy",
+      "sourceFile": "00_vizier_tasks.txt",
+      "taskType": "general"
+    },
+    {
+      "cloneOf": null,
+      "councillorMods": [],
+      "countyMods": [],
+      "countyTarget": null,
+      "dlc": null,
+      "effectDesc": "… helps you run the Realm in general\n\n… support gives you:\n…",
+      "icon": "task_vizier_default",
+      "id": "task_vizier_default",
+      "name": "Assist Ruler",
+      "ownerMods": [
+        {
+          "polarity": "good",
+          "scale": "vizier default task diplomacy",
+          "text": "+1 Diplomacy"
+        },
+        {
+          "polarity": "good",
+          "scale": "vizier default task martial",
+          "text": "+1 Martial"
+        },
+        {
+          "polarity": "good",
+          "scale": "vizier default task stewardship",
+          "text": "+1 Stewardship"
+        },
+        {
+          "polarity": "good",
+          "scale": "vizier default task intrigue",
+          "text": "+1 Intrigue"
+        },
+        {
+          "polarity": "good",
+          "scale": "vizier default task learning",
+          "text": "+1 Learning"
+        }
+      ],
+      "position": "councillor_vizier",
+      "progress": "infinite",
+      "skill": null,
+      "sourceFile": "00_vizier_tasks.txt",
+      "taskType": "general"
+    },
+    {
+      "cloneOf": null,
+      "councillorMods": [],
+      "countyMods": [],
+      "countyTarget": null,
+      "dlc": null,
+      "effectDesc": "… focuses on your domain and your personal holdings\n\n… support gives you:\n…",
+      "icon": "task_vizier_manage_domain",
+      "id": "task_vizier_manage_domain",
+      "name": "Manage Domain",
+      "ownerMods": [
+        {
+          "polarity": "good",
+          "scale": "vizier task manage domain",
+          "text": "+1 Stewardship"
+        }
+      ],
+      "position": "councillor_vizier",
+      "progress": "infinite",
+      "skill": "stewardship",
+      "sourceFile": "00_vizier_tasks.txt",
+      "taskType": "general"
+    },
+    {
+      "cloneOf": null,
+      "councillorMods": [],
+      "countyMods": [],
+      "countyTarget": null,
+      "dlc": null,
+      "effectDesc": "… focuses on matters of culture, religion and education\n\n… support gives you:\n…",
+      "icon": "task_vizier_patronage",
+      "id": "task_vizier_patronage",
+      "name": "Patronage",
+      "ownerMods": [
+        {
+          "polarity": "good",
+          "scale": "vizier task patronage",
+          "text": "+1 Learning"
+        }
+      ],
+      "position": "councillor_vizier",
+      "progress": "infinite",
+      "skill": "learning",
+      "sourceFile": "00_vizier_tasks.txt",
+      "taskType": "general"
+    },
+    {
+      "cloneOf": null,
+      "councillorMods": [],
+      "countyMods": [
+        {
+          "polarity": "good",
+          "scale": "marshal increase control",
+          "text": "+1 Monthly County Control Growth Add /month"
+        }
+      ],
+      "countyTarget": "realm",
+      "dlc": "Khans of the Steppe",
+      "effectDesc": null,
+      "icon": "task_kurultai_control",
+      "id": "task_kurultai_control_1",
+      "name": "Increase Control",
+      "ownerMods": [],
+      "position": "councillor_kurultai_1",
+      "progress": "value",
+      "skill": null,
+      "sourceFile": "00_kurultai_tasks.txt",
+      "taskType": "county"
+    },
+    {
+      "cloneOf": null,
+      "councillorMods": [],
+      "countyMods": [],
+      "countyTarget": null,
+      "dlc": "Khans of the Steppe",
+      "effectDesc": null,
+      "icon": "task_kurultai_court_astrologer",
+      "id": "task_kurultai_court_astrologer_1",
+      "name": "Aid Stargazer",
+      "ownerMods": [
+        {
+          "polarity": "good",
+          "scale": "kurultai court astrologer piety final",
+          "text": "+1% Monthly Piety"
+        }
+      ],
+      "position": "councillor_kurultai_1",
+      "progress": "infinite",
+      "skill": null,
+      "sourceFile": "00_kurultai_tasks.txt",
+      "taskType": "general"
+    },
+    {
+      "cloneOf": null,
+      "councillorMods": [],
+      "countyMods": [],
+      "countyTarget": null,
+      "dlc": "Khans of the Steppe",
+      "effectDesc": null,
+      "icon": "task_kurultai_culture",
+      "id": "task_kurultai_culture_1",
+      "name": "Explore Cultures",
+      "ownerMods": [],
+      "position": "councillor_kurultai_1",
+      "progress": "infinite",
+      "skill": null,
+      "sourceFile": "00_kurultai_tasks.txt",
+      "taskType": "general"
+    },
+    {
+      "cloneOf": null,
+      "councillorMods": [],
+      "countyMods": [],
+      "countyTarget": null,
+      "dlc": "Khans of the Steppe",
+      "effectDesc": null,
+      "icon": "task_kurultai_default",
+      "id": "task_kurultai_default_1",
+      "name": "Support Herders",
+      "ownerMods": [
+        {
+          "polarity": "good",
+          "scale": "kurultai manage herd final",
+          "text": "+1% Herd Gain"
+        },
+        {
+          "polarity": "good",
+          "scale": "kurultai manage herd final",
+          "text": "+1% Herd Capacity"
+        }
+      ],
+      "position": "councillor_kurultai_1",
+      "progress": "infinite",
+      "skill": null,
+      "sourceFile": "00_kurultai_tasks.txt",
+      "taskType": "general"
+    },
+    {
+      "cloneOf": null,
+      "councillorMods": [],
+      "countyMods": [],
+      "countyTarget": null,
+      "dlc": "Khans of the Steppe",
+      "effectDesc": null,
+      "icon": "task_kurultai_domestic_affairs",
+      "id": "task_kurultai_domestic_affairs_1",
+      "name": "Domestic Affairs",
+      "ownerMods": [
+        {
+          "polarity": "good",
+          "scale": "chancellor domestic affairs opinion",
+          "text": "+1 Direct Vassal Opinion"
+        },
+        {
+          "polarity": "good",
+          "scale": "chancellor domestic affairs opinion",
+          "text": "+1 Parochial Vassal Opinion"
+        },
+        {
+          "polarity": "good",
+          "scale": "chancellor domestic affairs tyranny",
+          "text": "+1% Tyranny Loss"
+        }
+      ],
+      "position": "councillor_kurultai_1",
+      "progress": "infinite",
+      "skill": null,
+      "sourceFile": "00_kurultai_tasks.txt",
+      "taskType": "general"
+    },
+    {
+      "cloneOf": null,
+      "councillorMods": [],
+      "countyMods": [
+        {
+          "polarity": "bad",
+          "scale": "kurultai exploit area fertility final",
+          "text": "-1 County Fertility Consumption"
+        }
+      ],
+      "countyTarget": "domain",
+      "dlc": "Khans of the Steppe",
+      "effectDesc": null,
+      "icon": "task_kurultai_exploit_area",
+      "id": "task_kurultai_exploit_area_1",
+      "name": "Exploit Lands",
+      "ownerMods": [
+        {
+          "polarity": "good",
+          "scale": "kurultai exploit area income final",
+          "text": "+1% Monthly Income from Herd"
+        }
+      ],
+      "position": "councillor_kurultai_1",
+      "progress": "value",
+      "skill": null,
+      "sourceFile": "00_kurultai_tasks.txt",
+      "taskType": "county"
+    },
+    {
+      "cloneOf": null,
+      "councillorMods": [],
+      "countyMods": [
+        {
+          "polarity": "good",
+          "scale": "kurultai increased fertility scale",
+          "text": "+1% County Fertility Growth"
+        }
+      ],
+      "countyTarget": "realm",
+      "dlc": "Khans of the Steppe",
+      "effectDesc": null,
+      "icon": "task_kurultai_fertility",
+      "id": "task_kurultai_fertility_1",
+      "name": "Manage Fertility",
+      "ownerMods": [],
+      "position": "councillor_kurultai_1",
+      "progress": "value",
+      "skill": null,
+      "sourceFile": "00_kurultai_tasks.txt",
+      "taskType": "county"
+    },
+    {
+      "cloneOf": null,
+      "councillorMods": [],
+      "countyMods": [],
+      "countyTarget": null,
+      "dlc": "Khans of the Steppe",
+      "effectDesc": null,
+      "icon": "task_kurultai_raider",
+      "id": "task_kurultai_raider_1",
+      "name": "Organize Raiders",
+      "ownerMods": [
+        {
+          "polarity": "good",
+          "scale": "kurultai organize raiders loot final",
+          "text": "-1% Hostile County Attrition while Raiding"
+        },
+        {
+          "polarity": "good",
+          "scale": "kurultai organize raiders loot final",
+          "text": "+1% Army Loot Capacity"
+        },
+        {
+          "polarity": "good",
+          "scale": "kurultai organize raiders raid final",
+          "text": "+1% Raid Speed"
+        },
+        {
+          "polarity": "good",
+          "scale": "kurultai organize raiders raid final",
+          "text": "+1% Movement Speed over land while Raiding"
+        }
+      ],
+      "position": "councillor_kurultai_1",
+      "progress": "infinite",
+      "skill": null,
+      "sourceFile": "00_kurultai_tasks.txt",
+      "taskType": "general"
+    },
+    {
+      "cloneOf": "task_bestow_royal_favor",
+      "councillorMods": [],
+      "countyMods": [],
+      "countyTarget": null,
+      "dlc": "The Royal Court",
+      "effectDesc": null,
+      "icon": "task_bestow_royal_favor",
+      "id": "task_bestow_royal_favor_minister_of_personnel",
+      "name": "Bestow Royal Favor",
+      "ownerMods": [
+        {
+          "polarity": "good",
+          "scale": "chancellor bestow royal favor prestige",
+          "text": "+1 Prestige /month"
+        }
+      ],
+      "position": "minister_personnel",
+      "progress": "percentage",
+      "skill": null,
+      "sourceFile": "01_ministry_tasks.txt",
+      "taskType": "court"
+    },
+    {
+      "cloneOf": null,
+      "councillorMods": [],
+      "countyMods": [],
+      "countyTarget": null,
+      "dlc": null,
+      "effectDesc": null,
+      "icon": "task_manage_talent",
+      "id": "task_manage_talent",
+      "name": "Manage Talent",
+      "ownerMods": [
+        {
+          "polarity": "good",
+          "scale": "task manage talent opinion total scale",
+          "text": "+1 Courtier and Guest Opinion"
+        }
+      ],
+      "position": "minister_personnel",
+      "progress": "infinite",
+      "skill": null,
+      "sourceFile": "01_ministry_tasks.txt",
+      "taskType": "general"
+    },
+    {
+      "cloneOf": "task_fabricate_claim",
+      "councillorMods": [],
+      "countyMods": [],
+      "countyTarget": "all",
+      "dlc": null,
+      "effectDesc": "At 100%:\nOpportunity to get an Unpressed Claim",
+      "icon": "task_fabricate_claim",
+      "id": "task_fabricate_claim_minister_of_rites",
+      "name": "Fabricate Claim on County",
+      "ownerMods": [],
+      "position": "minister_justice",
+      "progress": "percentage",
+      "skill": null,
+      "sourceFile": "01_ministry_tasks.txt",
+      "taskType": "county"
+    },
+    {
+      "cloneOf": null,
+      "councillorMods": [],
+      "countyMods": [],
+      "countyTarget": null,
+      "dlc": null,
+      "effectDesc": "Legitimacy Gain: …+…%\n… Learning Skill: +…%",
+      "icon": "task_justify_rule",
+      "id": "task_justify_rule",
+      "name": "Justify Rule",
+      "ownerMods": [
+        {
+          "polarity": "good",
+          "scale": "task justify rule total scale",
+          "text": "+1% Legitimacy Gain"
+        },
+        {
+          "polarity": "good",
+          "scale": "task justify rule tyranny total scale",
+          "text": "+1% Tyranny Loss"
+        }
+      ],
+      "position": "minister_justice",
+      "progress": "infinite",
+      "skill": null,
+      "sourceFile": "01_ministry_tasks.txt",
+      "taskType": "general"
+    },
+    {
+      "cloneOf": "task_develop_county",
+      "councillorMods": [],
+      "countyMods": [
+        {
+          "polarity": "good",
+          "scale": "steward develop county ÷100",
+          "text": "+100 Development Growth /month"
+        },
+        {
+          "polarity": "good",
+          "scale": "steward develop county ÷100",
+          "text": "-700% Holding Build Speed"
+        },
+        {
+          "polarity": "good",
+          "scale": "steward develop county ÷100",
+          "text": "-700% Build Speed"
+        },
+        {
+          "polarity": "good",
+          "scale": "current development penalty ÷100",
+          "text": "+100 Development Growth /month"
+        },
+        {
+          "polarity": "good",
+          "scale": "situational",
+          "text": "+100 Development Growth /month"
+        }
+      ],
+      "countyTarget": "realm",
+      "dlc": null,
+      "effectDesc": null,
+      "icon": "task_develop_county",
+      "id": "task_develop_county_minister_of_works",
+      "name": "Increase Development in County",
+      "ownerMods": [],
+      "position": "minister_works",
+      "progress": "value",
+      "skill": null,
+      "sourceFile": "01_ministry_tasks.txt",
+      "taskType": "county"
+    },
+    {
+      "cloneOf": null,
+      "councillorMods": [],
+      "countyMods": [],
+      "countyTarget": null,
+      "dlc": null,
+      "effectDesc": "Great Project Construction Time: -…%\n… Stewardship Skill: -…%",
+      "icon": "task_great_project",
+      "id": "task_great_projects",
+      "name": "Support Great Projects",
+      "ownerMods": [
+        {
+          "polarity": "good",
+          "scale": "task great projects total scale",
+          "text": "-5% Great Project Build Speed"
+        }
+      ],
+      "position": "minister_works",
+      "progress": "infinite",
+      "skill": null,
+      "sourceFile": "01_ministry_tasks.txt",
+      "taskType": "general"
+    },
+    {
+      "cloneOf": null,
+      "councillorMods": [
+        {
+          "polarity": "good",
+          "scale": "task lead troops total scale",
+          "text": "-1% Friendly Fatal Casualties"
+        },
+        {
+          "polarity": "good",
+          "scale": "task lead troops total scale",
+          "text": "+1% Enemy Fatal Casualties"
+        },
+        {
+          "polarity": "good",
+          "scale": "task lead troops total scale",
+          "text": "+1 Advantage"
+        }
+      ],
+      "countyMods": [],
+      "countyTarget": null,
+      "dlc": "The Great People",
+      "effectDesc": "The … gains the following …Command Modifiers:\nAdvantage: +…",
+      "icon": "task_lead_troops",
+      "id": "task_lead_troops",
+      "name": "Lead Troops",
+      "ownerMods": [],
+      "position": "minister_grand_marshal",
+      "progress": "infinite",
+      "skill": null,
+      "sourceFile": "01_ministry_tasks.txt",
+      "taskType": "general"
+    },
+    {
+      "cloneOf": "task_train_commanders",
+      "councillorMods": [
+        {
+          "polarity": "good",
+          "scale": "marshal maa overtime boost ÷100",
+          "text": "+100% Skirmisher Damage"
+        },
+        {
+          "polarity": "good",
+          "scale": "marshal maa overtime boost ÷100",
+          "text": "+100% Skirmisher Toughness"
+        },
+        {
+          "polarity": "good",
+          "scale": "marshal maa overtime boost ÷100",
+          "text": "+100% Spearmen Damage"
+        },
+        {
+          "polarity": "good",
+          "scale": "marshal maa overtime boost ÷100",
+          "text": "+100% Spearmen Toughness"
+        },
+        {
+          "polarity": "good",
+          "scale": "marshal maa overtime boost ÷100",
+          "text": "+100% Heavy Infantry Damage"
+        },
+        {
+          "polarity": "good",
+          "scale": "marshal maa overtime boost ÷100",
+          "text": "+100% Heavy Infantry Toughness"
+        },
+        {
+          "polarity": "good",
+          "scale": "marshal maa overtime boost ÷100",
+          "text": "+100% Archer Damage"
+        },
+        {
+          "polarity": "good",
+          "scale": "marshal maa overtime boost ÷100",
+          "text": "+100% Archer Toughness"
+        },
+        {
+          "polarity": "good",
+          "scale": "marshal maa overtime boost ÷100",
+          "text": "+100% Light Cavalry Damage"
+        },
+        {
+          "polarity": "good",
+          "scale": "marshal maa overtime boost ÷100",
+          "text": "+100% Light Cavalry Toughness"
+        },
+        {
+          "polarity": "good",
+          "scale": "marshal maa overtime boost ÷100",
+          "text": "+100% Heavy Cavalry Damage"
+        },
+        {
+          "polarity": "good",
+          "scale": "marshal maa overtime boost ÷100",
+          "text": "+100% Heavy Cavalry Toughness"
+        },
+        {
+          "polarity": "good",
+          "scale": "marshal maa overtime boost ÷100",
+          "text": "+100% Archer Cavalry Damage"
+        },
+        {
+          "polarity": "good",
+          "scale": "marshal maa overtime boost ÷100",
+          "text": "+100% Archer Cavalry Toughness"
+        },
+        {
+          "polarity": "good",
+          "scale": "marshal maa overtime boost ÷100",
+          "text": "+100% Camel Cavalry Damage"
+        },
+        {
+          "polarity": "good",
+          "scale": "marshal maa overtime boost ÷100",
+          "text": "+100% Camel Cavalry Toughness"
+        },
+        {
+          "polarity": "good",
+          "scale": "marshal maa overtime boost ÷100",
+          "text": "+100% Elephant Cavalry Damage"
+        },
+        {
+          "polarity": "good",
+          "scale": "marshal maa overtime boost ÷100",
+          "text": "+100% Elephant Cavalry Toughness"
+        },
+        {
+          "polarity": "good",
+          "scale": "marshal maa overtime boost ÷100",
+          "text": "+100% Handgunner Damage"
+        },
+        {
+          "polarity": "good",
+          "scale": "marshal maa overtime boost ÷100",
+          "text": "+100% Handgunner Toughness"
+        },
+        {
+          "polarity": "good",
+          "scale": "marshal maa overtime boost ÷100",
+          "text": "+100% Siege Weapon Damage"
+        },
+        {
+          "polarity": "good",
+          "scale": "marshal maa overtime boost ÷100",
+          "text": "+100% Siege Weapon Toughness"
+        }
+      ],
+      "countyMods": [],
+      "countyTarget": null,
+      "dlc": null,
+      "effectDesc": "…% chance of improving or finding a new Commander or Knight each month\n… Martial Skill: +…%",
+      "icon": "task_train_commanders",
+      "id": "task_train_commanders_grand_marshal",
+      "name": "Train Commanders",
+      "ownerMods": [
+        {
+          "polarity": "good",
+          "scale": "marshal knights overtime boost ÷100",
+          "text": "+100% Knight Effectiveness"
+        },
+        {
+          "polarity": "good",
+          "scale": "marshal maa overtime boost ÷100",
+          "text": "+100% Skirmisher Damage"
+        },
+        {
+          "polarity": "good",
+          "scale": "marshal maa overtime boost ÷100",
+          "text": "+100% Skirmisher Toughness"
+        },
+        {
+          "polarity": "good",
+          "scale": "marshal maa overtime boost ÷100",
+          "text": "+100% Spearmen Damage"
+        },
+        {
+          "polarity": "good",
+          "scale": "marshal maa overtime boost ÷100",
+          "text": "+100% Spearmen Toughness"
+        },
+        {
+          "polarity": "good",
+          "scale": "marshal maa overtime boost ÷100",
+          "text": "+100% Heavy Infantry Damage"
+        },
+        {
+          "polarity": "good",
+          "scale": "marshal maa overtime boost ÷100",
+          "text": "+100% Heavy Infantry Toughness"
+        },
+        {
+          "polarity": "good",
+          "scale": "marshal maa overtime boost ÷100",
+          "text": "+100% Archer Damage"
+        },
+        {
+          "polarity": "good",
+          "scale": "marshal maa overtime boost ÷100",
+          "text": "+100% Archer Toughness"
+        },
+        {
+          "polarity": "good",
+          "scale": "marshal maa overtime boost ÷100",
+          "text": "+100% Light Cavalry Damage"
+        },
+        {
+          "polarity": "good",
+          "scale": "marshal maa overtime boost ÷100",
+          "text": "+100% Light Cavalry Toughness"
+        },
+        {
+          "polarity": "good",
+          "scale": "marshal maa overtime boost ÷100",
+          "text": "+100% Heavy Cavalry Damage"
+        },
+        {
+          "polarity": "good",
+          "scale": "marshal maa overtime boost ÷100",
+          "text": "+100% Heavy Cavalry Toughness"
+        },
+        {
+          "polarity": "good",
+          "scale": "marshal maa overtime boost ÷100",
+          "text": "+100% Archer Cavalry Damage"
+        },
+        {
+          "polarity": "good",
+          "scale": "marshal maa overtime boost ÷100",
+          "text": "+100% Archer Cavalry Toughness"
+        },
+        {
+          "polarity": "good",
+          "scale": "marshal maa overtime boost ÷100",
+          "text": "+100% Camel Cavalry Damage"
+        },
+        {
+          "polarity": "good",
+          "scale": "marshal maa overtime boost ÷100",
+          "text": "+100% Camel Cavalry Toughness"
+        },
+        {
+          "polarity": "good",
+          "scale": "marshal maa overtime boost ÷100",
+          "text": "+100% Elephant Cavalry Damage"
+        },
+        {
+          "polarity": "good",
+          "scale": "marshal maa overtime boost ÷100",
+          "text": "+100% Elephant Cavalry Toughness"
+        },
+        {
+          "polarity": "good",
+          "scale": "marshal maa overtime boost ÷100",
+          "text": "+100% Handgunner Damage"
+        },
+        {
+          "polarity": "good",
+          "scale": "marshal maa overtime boost ÷100",
+          "text": "+100% Handgunner Toughness"
+        },
+        {
+          "polarity": "good",
+          "scale": "marshal maa overtime boost ÷100",
+          "text": "+100% Siege Weapon Damage"
+        },
+        {
+          "polarity": "good",
+          "scale": "marshal maa overtime boost ÷100",
+          "text": "+100% Siege Weapon Toughness"
+        }
+      ],
+      "position": "minister_grand_marshal",
+      "progress": "infinite",
+      "skill": null,
+      "sourceFile": "01_ministry_tasks.txt",
+      "taskType": "general"
+    }
+  ]
+}

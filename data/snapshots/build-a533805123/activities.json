@@ -1,0 +1,5205 @@
+{
+  "activities": [
+    {
+      "cooldown": {
+        "unit": "years",
+        "value": 20
+      },
+      "desc": "Spend a semester at a renowned center of studies, learning from the wisest minds of the land.\n\nIt is an occasion to fill the gaps in your youthful education, but also to improve yourself all around, develop your skills, learn new abilities, and make important connections.",
+      "dlc": null,
+      "group": "activities",
+      "guestIntents": [
+        "study_hard_intent",
+        "university_revelry_intent"
+      ],
+      "hostIntents": [
+        "study_hard_intent",
+        "university_revelry_intent"
+      ],
+      "icon": "activity_adult_education",
+      "id": "activity_adult_education",
+      "inviteRules": [],
+      "maxGuests": 20,
+      "name": "University Visit",
+      "numPickablePhases": null,
+      "openInvite": false,
+      "optionCategories": [
+        {
+          "id": "adult_education_option_books",
+          "name": "Study Materials",
+          "options": [
+            {
+              "blockedPhases": [],
+              "cost": {
+                "gold": {
+                  "scales": true
+                }
+              },
+              "dlc": "Tours & Tournaments",
+              "id": "adult_education_books_bad",
+              "name": "Scrap Parchments",
+              "requirements": []
+            },
+            {
+              "blockedPhases": [],
+              "cost": {
+                "gold": {
+                  "scales": true
+                }
+              },
+              "dlc": null,
+              "id": "adult_education_books_normal",
+              "name": "Books and Notes",
+              "requirements": []
+            },
+            {
+              "blockedPhases": [],
+              "cost": {
+                "gold": {
+                  "scales": true
+                }
+              },
+              "dlc": "Tours & Tournaments",
+              "id": "adult_education_books_good",
+              "name": "Library of Knowledge",
+              "requirements": []
+            }
+          ]
+        }
+      ],
+      "phases": [
+        {
+          "cost": {},
+          "id": "education_study_phase",
+          "name": "University Visit",
+          "order": 0,
+          "predefined": true
+        }
+      ],
+      "predictedCost": {
+        "gold": {
+          "scales": true
+        }
+      },
+      "requirements": [
+        {
+          "name": "Barony tier+",
+          "negated": false
+        }
+      ],
+      "sortOrder": 0,
+      "sourceFile": "university_visit.txt",
+      "specialGuests": [],
+      "specialOptions": []
+    },
+    {
+      "cooldown": {
+        "scales": true,
+        "unit": "years"
+      },
+      "desc": "Hold a small celebration at your camp, funded by …Gold but modified by your stocks of …Provisions. Invitees will include everyone from the camp, plus optionally local rulers.\n\nCamp Parties provide an opportunity to befriend your followers, gain special Contracts, and manage Stress.",
+      "dlc": "Roads to Power",
+      "group": "activities",
+      "guestIntents": [
+        "reduce_stress_intent",
+        "befriend_attendee_intent"
+      ],
+      "hostIntents": [
+        "reduce_stress_intent",
+        "befriend_attendee_intent",
+        "fireside_chat_intent"
+      ],
+      "icon": "activity_camp_party",
+      "id": "activity_camp_party",
+      "inviteRules": [
+        "Followers",
+        "Local Ruler",
+        "Friends",
+        "Potential Friends",
+        "Lovers",
+        "Potential Lovers"
+      ],
+      "maxGuests": 50,
+      "name": "Camp Revelry",
+      "numPickablePhases": null,
+      "openInvite": false,
+      "optionCategories": [
+        {
+          "id": "camp_party_option_food",
+          "name": "Food",
+          "options": [
+            {
+              "blockedPhases": [],
+              "cost": {},
+              "dlc": null,
+              "id": "camp_party_food_none",
+              "name": "Meager Food",
+              "requirements": []
+            },
+            {
+              "blockedPhases": [],
+              "cost": {
+                "gold": {
+                  "scales": true
+                }
+              },
+              "dlc": null,
+              "id": "camp_party_food_simple",
+              "name": "Simple Meals",
+              "requirements": [
+                {
+                  "name": "You need the … Domicile Building",
+                  "negated": false
+                }
+              ]
+            },
+            {
+              "blockedPhases": [],
+              "cost": {
+                "gold": {
+                  "scales": true
+                }
+              },
+              "dlc": null,
+              "id": "camp_party_food_lavish",
+              "name": "Lavish Spread",
+              "requirements": [
+                {
+                  "name": "You need the … Domicile Building",
+                  "negated": false
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "camp_party_option_drinks",
+          "name": "Drinks",
+          "options": [
+            {
+              "blockedPhases": [],
+              "cost": {},
+              "dlc": null,
+              "id": "camp_party_drinks_none",
+              "name": "Sparse Drinks",
+              "requirements": []
+            },
+            {
+              "blockedPhases": [],
+              "cost": {
+                "gold": {
+                  "scales": true
+                }
+              },
+              "dlc": null,
+              "id": "camp_party_drinks_adequate",
+              "name": "Adequate Drinks",
+              "requirements": [
+                {
+                  "name": "You need the … Domicile Building",
+                  "negated": false
+                }
+              ]
+            },
+            {
+              "blockedPhases": [],
+              "cost": {
+                "gold": {
+                  "scales": true
+                }
+              },
+              "dlc": null,
+              "id": "camp_party_drinks_abundant",
+              "name": "Abundant Drinks",
+              "requirements": [
+                {
+                  "name": "You need the … Camp Upgrade",
+                  "negated": false
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "phases": [
+        {
+          "cost": {},
+          "id": "phase_camp_party",
+          "name": "Camp Revelry",
+          "order": 0,
+          "predefined": true
+        }
+      ],
+      "predictedCost": {
+        "gold": {
+          "base": 15,
+          "scales": true
+        }
+      },
+      "requirements": [
+        {
+          "name": "Adventurer",
+          "negated": false
+        }
+      ],
+      "sortOrder": 0,
+      "sourceFile": "camp_party.txt",
+      "specialGuests": [
+        {
+          "id": "camp_party_honorary_guest",
+          "name": "Camp Party Honorary Guest",
+          "required": false
+        }
+      ],
+      "specialOptions": []
+    },
+    {
+      "cooldown": {
+        "unit": "years",
+        "value": 10
+      },
+      "desc": "As the …, I alone may hold spectacular chariot races to thrill the … and draw the notables of the … to the capital.\n\nThrough these public occasions, the people come to know me as their master; in the roar of the crowd, I may hope to hear acclaim.",
+      "dlc": "Roads to Power",
+      "group": "activities",
+      "guestIntents": [
+        "reduce_stress_intent",
+        "increase_influence_intent",
+        "sow_discord_intent",
+        "murder_attendee_intent",
+        "woo_attendee_intent",
+        "befriend_attendee_intent",
+        "spread_legend_intent"
+      ],
+      "hostIntents": [
+        "reduce_stress_intent",
+        "increase_influence_intent",
+        "appease_populace_intent",
+        "murder_attendee_intent",
+        "woo_attendee_intent",
+        "befriend_attendee_intent",
+        "spread_legend_intent",
+        "legitimacy_intent"
+      ],
+      "icon": "activity_chariot_race",
+      "id": "activity_chariot_race",
+      "inviteRules": [
+        "Other Players",
+        "All Subjects",
+        "Confederates",
+        "Tributaries",
+        "Charioteers",
+        "Friends",
+        "Potential Friends",
+        "Lovers",
+        "Potential Lovers",
+        "Close Family",
+        "Extended Family",
+        "Court Guests",
+        "Adventurers"
+      ],
+      "maxGuests": 300,
+      "name": "Chariot Race",
+      "numPickablePhases": null,
+      "openInvite": false,
+      "optionCategories": [
+        {
+          "id": "chariot_option_entertainment",
+          "name": "Spectacles",
+          "options": [
+            {
+              "blockedPhases": [],
+              "cost": {
+                "gold": {
+                  "scales": true
+                }
+              },
+              "dlc": null,
+              "id": "chariot_entertainment_bad",
+              "name": "Paltry Amusements",
+              "requirements": []
+            },
+            {
+              "blockedPhases": [],
+              "cost": {
+                "gold": {
+                  "scales": true
+                }
+              },
+              "dlc": null,
+              "id": "chariot_entertainment_normal",
+              "name": "Traditional Ceremonies",
+              "requirements": []
+            },
+            {
+              "blockedPhases": [],
+              "cost": {
+                "gold": {
+                  "scales": true
+                }
+              },
+              "dlc": null,
+              "id": "chariot_entertainment_good",
+              "name": "Delights for the Masses",
+              "requirements": []
+            }
+          ]
+        }
+      ],
+      "phases": [
+        {
+          "cost": {},
+          "id": "chariot_race_gambling",
+          "name": "Placing Bets",
+          "order": 1,
+          "predefined": true
+        },
+        {
+          "cost": {},
+          "id": "chariot_race_phase",
+          "name": "Racing",
+          "order": 2,
+          "predefined": true
+        },
+        {
+          "cost": {},
+          "id": "chariot_race_phase_ceremony",
+          "name": "Ceremony",
+          "order": 3,
+          "predefined": true
+        }
+      ],
+      "predictedCost": {
+        "gold": {
+          "base": 200,
+          "scales": true
+        }
+      },
+      "requirements": [
+        {
+          "name": "Empire tier+",
+          "negated": false
+        },
+        {
+          "name": "May host the Chariot Race Activity and hire both a Champion Charioteer and a Bookmaker",
+          "negated": false
+        }
+      ],
+      "sortOrder": 0,
+      "sourceFile": "chariot_race.txt",
+      "specialGuests": [
+        {
+          "id": "chariot_race_honorary_guest",
+          "name": "Honorary Guest",
+          "required": false
+        }
+      ],
+      "specialOptions": []
+    },
+    {
+      "cooldown": {
+        "unit": "years",
+        "value": 3
+      },
+      "desc": "Invite the great and powerful of the realm to witness your ascension to the throne. This will forge the foundations for a long and successful rule.",
+      "dlc": "Crowns of the World",
+      "group": "activities",
+      "guestIntents": [
+        "coronation_bear_witness",
+        "coronation_offer_support",
+        "coronation_advocate_domain",
+        "coronation_profess_rights",
+        "coronation_seize_advantages",
+        "coronation_disrupt_loyalists"
+      ],
+      "hostIntents": [
+        "coronation_impress_attendees",
+        "coronation_embrace_supporters",
+        "coronation_weaken_detractors",
+        "coronation_exalt_crown"
+      ],
+      "icon": "activity_coronation",
+      "id": "activity_coronation",
+      "inviteRules": [
+        "Rivals",
+        "Lovers",
+        "Potential Lovers",
+        "Head of Faith",
+        "Other Players",
+        "Close Family",
+        "Spouses' Close Family",
+        "Extended Family",
+        "Spouses' Extended Family",
+        "Friends",
+        "Potential Friends",
+        "Councillors",
+        "Vassals",
+        "Tributaries",
+        "Fellow Vassals",
+        "Courtiers",
+        "Court Guests",
+        "All Lieges",
+        "Neighboring Rulers",
+        "Nearby Adventurers"
+      ],
+      "maxGuests": 100,
+      "name": "Coronation",
+      "numPickablePhases": null,
+      "openInvite": false,
+      "optionCategories": [
+        {
+          "id": "ceremony_size",
+          "name": "Ceremony",
+          "options": [
+            {
+              "blockedPhases": [],
+              "cost": {},
+              "dlc": null,
+              "id": "coronation_small_ceremony",
+              "name": "Simple Rites",
+              "requirements": [
+                {
+                  "name": "Activity Option not available for Anointment",
+                  "negated": false
+                }
+              ]
+            },
+            {
+              "blockedPhases": [],
+              "cost": {
+                "gold": {
+                  "scales": true
+                }
+              },
+              "dlc": null,
+              "id": "coronation_medium_ceremony",
+              "name": "Time-Honored Finery",
+              "requirements": []
+            },
+            {
+              "blockedPhases": [],
+              "cost": {
+                "gold": {
+                  "scales": true
+                }
+              },
+              "dlc": null,
+              "id": "coronation_large_ceremony",
+              "name": "Glory and Splendor",
+              "requirements": []
+            }
+          ]
+        },
+        {
+          "id": "ceremony_feast_type",
+          "name": "Celebrations",
+          "options": [
+            {
+              "blockedPhases": [],
+              "cost": {},
+              "dlc": null,
+              "id": "ceremony_feast_type_austere",
+              "name": "Austere Observances",
+              "requirements": [
+                {
+                  "name": "Activity Option not available for Anointment",
+                  "negated": false
+                }
+              ]
+            },
+            {
+              "blockedPhases": [],
+              "cost": {
+                "gold": {
+                  "scales": true
+                }
+              },
+              "dlc": null,
+              "id": "ceremony_feast_type_regular",
+              "name": "Suitable Revels",
+              "requirements": []
+            },
+            {
+              "blockedPhases": [],
+              "cost": {
+                "gold": {
+                  "scales": true
+                }
+              },
+              "dlc": null,
+              "id": "ceremony_feast_type_lavish",
+              "name": "Lavish Banquets",
+              "requirements": []
+            }
+          ]
+        }
+      ],
+      "phases": [
+        {
+          "cost": {},
+          "id": "coronation_phase_preparations",
+          "name": "Prelude",
+          "order": 1,
+          "predefined": true
+        },
+        {
+          "cost": {},
+          "id": "coronation_phase_coronation",
+          "name": "Ceremony",
+          "order": 2,
+          "predefined": true
+        },
+        {
+          "cost": {},
+          "id": "coronation_phase_feast",
+          "name": "Feast",
+          "order": 3,
+          "predefined": true
+        }
+      ],
+      "predictedCost": {
+        "gold": {
+          "base": 40,
+          "scales": true
+        },
+        "herd": {
+          "scales": true
+        }
+      },
+      "requirements": [
+        {
+          "name": "You are not at least 12 years old",
+          "negated": false
+        },
+        {
+          "name": "Kingdom tier+",
+          "negated": false
+        }
+      ],
+      "sortOrder": 0,
+      "sourceFile": "coronation.txt",
+      "specialGuests": [
+        {
+          "id": "coronation_hof_guest",
+          "name": "Head of Faith",
+          "required": true
+        }
+      ],
+      "specialOptions": [
+        {
+          "blockedPhases": [],
+          "cost": {},
+          "dlc": null,
+          "id": "coronation_type_normal",
+          "name": "Coronation",
+          "requirements": [
+            {
+              "name": "Already Crowned",
+              "negated": false
+            }
+          ]
+        },
+        {
+          "blockedPhases": [],
+          "cost": {},
+          "dlc": null,
+          "id": "coronation_type_anointment",
+          "name": "Anointment",
+          "requirements": [
+            {
+              "name": "Spiritual",
+              "negated": false
+            },
+            {
+              "name": "Empire tier+",
+              "negated": false
+            },
+            {
+              "name": "Excommunicated",
+              "negated": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "cooldown": {
+        "unit": "years",
+        "value": 5
+      },
+      "desc": "Merit, influence, power — These matter little if you are incapable of putting forth valid arguments for you and your cause.\n\nCall for a debate to convince others that you are worthy of more power, or challenge another movement to put your own in a more favorable position.",
+      "dlc": "All Under Heaven",
+      "group": "activities",
+      "guestIntents": [
+        "debate_increase_movement_power_intent",
+        "debate_gain_elder_intent"
+      ],
+      "hostIntents": [
+        "debate_increase_movement_power_intent",
+        "debate_gain_disciples_intent"
+      ],
+      "icon": "activity_debate",
+      "id": "activity_debate",
+      "inviteRules": [
+        "Close Family",
+        "… Members",
+        "Other Movement Members"
+      ],
+      "maxGuests": 100,
+      "name": "Debate",
+      "numPickablePhases": null,
+      "openInvite": true,
+      "optionCategories": [
+        {
+          "id": "debate_option_books",
+          "name": "Study Materials",
+          "options": [
+            {
+              "blockedPhases": [],
+              "cost": {
+                "gold": {
+                  "scales": true
+                }
+              },
+              "dlc": null,
+              "id": "debate_books_bad",
+              "name": "Scrap Parchments",
+              "requirements": []
+            },
+            {
+              "blockedPhases": [],
+              "cost": {
+                "gold": {
+                  "scales": true
+                }
+              },
+              "dlc": null,
+              "id": "debate_books_normal",
+              "name": "Scrolls and Notes",
+              "requirements": []
+            },
+            {
+              "blockedPhases": [],
+              "cost": {
+                "gold": {
+                  "scales": true
+                }
+              },
+              "dlc": null,
+              "id": "debate_books_good",
+              "name": "Library of Knowledge",
+              "requirements": []
+            }
+          ]
+        }
+      ],
+      "phases": [
+        {
+          "cost": {},
+          "id": "debate_phase_discussion",
+          "name": "Preparation",
+          "order": 1,
+          "predefined": true
+        },
+        {
+          "cost": {},
+          "id": "debate_phase_debate",
+          "name": "Debate",
+          "order": 2,
+          "predefined": true
+        }
+      ],
+      "predictedCost": {
+        "gold": {
+          "base": 10,
+          "scales": true
+        }
+      },
+      "requirements": [
+        {
+          "name": "Has Merit government",
+          "negated": false
+        }
+      ],
+      "sortOrder": 0,
+      "sourceFile": "debate.txt",
+      "specialGuests": [
+        {
+          "id": "movement_leader",
+          "name": "Challenged Movement Leader",
+          "required": true
+        }
+      ],
+      "specialOptions": [
+        {
+          "blockedPhases": [],
+          "cost": {},
+          "dlc": null,
+          "id": "debate_type_leadership",
+          "name": "Debate Movement",
+          "requirements": [
+            {
+              "name": "You are the Movement Leader",
+              "negated": false
+            }
+          ]
+        },
+        {
+          "blockedPhases": [],
+          "cost": {},
+          "dlc": null,
+          "id": "debate_type_favor",
+          "name": "Imperial Debate",
+          "requirements": [
+            {
+              "name": "The … is already the Favored Movement",
+              "negated": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "cooldown": {
+        "base": 5,
+        "scales": true,
+        "unit": "years"
+      },
+      "desc": "Strengthen bonds of loyalty by inviting vassals and neighbors into your halls to eat, drink, and be merry!\n\nWell-timed feasts will keep your realm stable by appeasing subjects and forging friendships.",
+      "dlc": null,
+      "group": "activities",
+      "guestIntents": [
+        "reduce_stress_intent",
+        "murder_attendee_intent",
+        "woo_attendee_intent",
+        "befriend_attendee_intent",
+        "banquet_mischief_intent",
+        "spread_legend_intent",
+        "legitimacy_intent"
+      ],
+      "hostIntents": [
+        "reduce_stress_intent",
+        "murder_attendee_intent",
+        "woo_attendee_intent",
+        "befriend_attendee_intent",
+        "spread_legend_intent",
+        "legitimacy_intent"
+      ],
+      "icon": "activity_feast",
+      "id": "activity_feast",
+      "inviteRules": [
+        "Rivals",
+        "Extended Family",
+        "Neighboring Rulers",
+        "Knights",
+        "Other Players",
+        "Friends",
+        "Potential Friends",
+        "Lovers",
+        "Potential Lovers",
+        "Close Family",
+        "Liege",
+        "Suzerain",
+        "Tributaries",
+        "Confederates",
+        "Vassals",
+        "Fellow Vassals",
+        "Courtiers",
+        "Court Guests",
+        "Spouses",
+        "Nearby Friendly Adventurers"
+      ],
+      "maxGuests": 40,
+      "name": "Feast",
+      "numPickablePhases": null,
+      "openInvite": false,
+      "optionCategories": [
+        {
+          "id": "feast_option_food",
+          "name": "Dish Complexity",
+          "options": [
+            {
+              "blockedPhases": [],
+              "cost": {},
+              "dlc": "Tours & Tournaments",
+              "id": "feast_food_bad",
+              "name": "Simple Trenchers",
+              "requirements": []
+            },
+            {
+              "blockedPhases": [],
+              "cost": {
+                "barter_goods": {
+                  "scales": true
+                },
+                "gold": {
+                  "scales": true
+                },
+                "piety": {
+                  "scales": true
+                }
+              },
+              "dlc": null,
+              "id": "feast_food_normal",
+              "name": "Exotic Delicacies",
+              "requirements": []
+            },
+            {
+              "blockedPhases": [],
+              "cost": {
+                "barter_goods": {
+                  "scales": true
+                },
+                "gold": {
+                  "scales": true
+                },
+                "piety": {
+                  "scales": true
+                }
+              },
+              "dlc": "Tours & Tournaments",
+              "id": "feast_food_good",
+              "name": "Culinary Artpieces",
+              "requirements": []
+            }
+          ]
+        },
+        {
+          "id": "feast_option_courses",
+          "name": "Number of Courses",
+          "options": [
+            {
+              "blockedPhases": [],
+              "cost": {},
+              "dlc": "Tours & Tournaments",
+              "id": "feast_courses_bad",
+              "name": "Satisfactory",
+              "requirements": []
+            },
+            {
+              "blockedPhases": [],
+              "cost": {
+                "barter_goods": {
+                  "scales": true
+                },
+                "gold": {
+                  "scales": true
+                },
+                "piety": {
+                  "scales": true
+                }
+              },
+              "dlc": null,
+              "id": "feast_courses_normal",
+              "name": "Appropriate",
+              "requirements": []
+            },
+            {
+              "blockedPhases": [],
+              "cost": {
+                "barter_goods": {
+                  "scales": true
+                },
+                "gold": {
+                  "scales": true
+                },
+                "piety": {
+                  "scales": true
+                }
+              },
+              "dlc": "Tours & Tournaments",
+              "id": "feast_courses_good",
+              "name": "Exorbitant",
+              "requirements": []
+            }
+          ]
+        },
+        {
+          "id": "feast_option_wine",
+          "name": "Wine Selection",
+          "options": [
+            {
+              "blockedPhases": [],
+              "cost": {},
+              "dlc": "Tours & Tournaments",
+              "id": "feast_wine_none",
+              "name": "No Wine",
+              "requirements": []
+            },
+            {
+              "blockedPhases": [],
+              "cost": {
+                "gold": {
+                  "scales": true
+                }
+              },
+              "dlc": "Tours & Tournaments",
+              "id": "feast_wine_limited",
+              "name": "Limited Wine Selection",
+              "requirements": []
+            },
+            {
+              "blockedPhases": [],
+              "cost": {
+                "gold": {
+                  "scales": true
+                }
+              },
+              "dlc": "Tours & Tournaments",
+              "id": "feast_wine_normal",
+              "name": "Adequate Wine Selection",
+              "requirements": []
+            },
+            {
+              "blockedPhases": [],
+              "cost": {
+                "gold": {
+                  "scales": true
+                }
+              },
+              "dlc": "Tours & Tournaments",
+              "id": "feast_wine_extensive",
+              "name": "Generous Wine Selection",
+              "requirements": []
+            }
+          ]
+        }
+      ],
+      "phases": [
+        {
+          "cost": {},
+          "id": "feast_phase_meal",
+          "name": "Banquet",
+          "order": 1,
+          "predefined": true
+        },
+        {
+          "cost": {},
+          "id": "feast_phase_toast",
+          "name": "Final Toast",
+          "order": 2,
+          "predefined": true
+        }
+      ],
+      "predictedCost": {
+        "barter_goods": {
+          "base": 30,
+          "scales": true
+        },
+        "gold": {
+          "base": 30,
+          "scales": true
+        },
+        "piety": {
+          "base": 30,
+          "scales": true
+        }
+      },
+      "requirements": [
+        {
+          "name": "Barony tier+",
+          "negated": false
+        }
+      ],
+      "sortOrder": 0,
+      "sourceFile": "feast.txt",
+      "specialGuests": [
+        {
+          "id": "honorary_guest_regular",
+          "name": "Honorary Guest",
+          "required": false
+        },
+        {
+          "id": "honorary_guest",
+          "name": "Honorary Guest",
+          "required": true
+        }
+      ],
+      "specialOptions": [
+        {
+          "blockedPhases": [],
+          "cost": {},
+          "dlc": null,
+          "id": "feast_type_generic",
+          "name": "Feast",
+          "requirements": []
+        },
+        {
+          "blockedPhases": [],
+          "cost": {},
+          "dlc": "Legends of the Dead",
+          "id": "feast_type_legendary",
+          "name": "Legendary Feast",
+          "requirements": [
+            {
+              "name": "You do not have an Promoted Legend",
+              "negated": false
+            }
+          ]
+        },
+        {
+          "blockedPhases": [],
+          "cost": {
+            "gold": {
+              "base": 30,
+              "scales": true
+            }
+          },
+          "dlc": "Tours & Tournaments",
+          "id": "feast_type_murder",
+          "name": "Murder Feast",
+          "requirements": [
+            {
+              "name": "Forever Infamous",
+              "negated": false
+            },
+            {
+              "name": "You have hosted a Murder Feast in the past 15 years",
+              "negated": false
+            }
+          ]
+        },
+        {
+          "blockedPhases": [],
+          "cost": {
+            "gold": {
+              "base": 30,
+              "scales": true
+            }
+          },
+          "dlc": "Khans of the Steppe",
+          "id": "feast_type_tsagaan_sar",
+          "name": "Tsagaan Sar",
+          "requirements": [
+            {
+              "name": "Nomadic government",
+              "negated": false
+            },
+            {
+              "name": "Mongolic",
+              "negated": false
+            },
+            {
+              "name": "Turkic",
+              "negated": false
+            },
+            {
+              "name": "You have hosted a Tsagaan Sar Feast in the past 5 years",
+              "negated": false
+            },
+            {
+              "name": "A Tsagaan Sar can only be hosted from January to March",
+              "negated": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "cooldown": {
+        "unit": "years",
+        "value": 5
+      },
+      "desc": "Festivals are opportunities for the people to deepen their connections with their heritage and the divine, and for their rulers to display magnanimity and reinforce their authority.",
+      "dlc": "All Under Heaven",
+      "group": "activities",
+      "guestIntents": [
+        "reduce_stress_intent",
+        "raise_cohesion_intent",
+        "add_to_bloc_intent",
+        "remove_from_bloc_intent"
+      ],
+      "hostIntents": [
+        "reduce_stress_intent",
+        "raise_cohesion_intent",
+        "add_to_bloc_intent",
+        "remove_from_bloc_intent"
+      ],
+      "icon": "activity_festival",
+      "id": "activity_festival",
+      "inviteRules": [
+        "Other Bloc Members",
+        "Friends",
+        "Lovers",
+        "Close Family",
+        "Extended Family",
+        "Courtiers",
+        "Court Guests",
+        "Other Players",
+        "Bloc House Heads",
+        "Fellow Vassals",
+        "Liege",
+        "Vassals"
+      ],
+      "maxGuests": 50,
+      "name": "Festival",
+      "numPickablePhases": null,
+      "openInvite": false,
+      "optionCategories": [
+        {
+          "id": "festival_option_activity",
+          "name": "Festival Scale",
+          "options": [
+            {
+              "blockedPhases": [],
+              "cost": {},
+              "dlc": "Tours & Tournaments",
+              "id": "festival_activity_modest",
+              "name": "Modest Merrymaking",
+              "requirements": []
+            },
+            {
+              "blockedPhases": [],
+              "cost": {
+                "gold": {
+                  "scales": true
+                }
+              },
+              "dlc": null,
+              "id": "festival_activity_normal",
+              "name": "Elaborate Celebration",
+              "requirements": []
+            },
+            {
+              "blockedPhases": [],
+              "cost": {
+                "gold": {
+                  "scales": true
+                }
+              },
+              "dlc": "Tours & Tournaments",
+              "id": "festival_activity_extravagant",
+              "name": "Extravagant Festivities",
+              "requirements": []
+            }
+          ]
+        }
+      ],
+      "phases": [
+        {
+          "cost": {},
+          "id": "festival_phase",
+          "name": "Festival",
+          "order": 0,
+          "predefined": true
+        }
+      ],
+      "predictedCost": {
+        "gold": {
+          "base": 30,
+          "scales": true
+        }
+      },
+      "requirements": [
+        {
+          "name": "Barony tier+",
+          "negated": false
+        },
+        {
+          "name": "You are not Landed or the Ceremonial Monarch",
+          "negated": false
+        }
+      ],
+      "sortOrder": 0,
+      "sourceFile": "festival.txt",
+      "specialGuests": [],
+      "specialOptions": []
+    },
+    {
+      "cooldown": {
+        "unit": "years",
+        "value": 5
+      },
+      "desc": "Assemble the weeping realm for a Funeral, a chance to give a proper sendoff to a venerated member of the nobility.",
+      "dlc": "Legends of the Dead",
+      "group": "activities",
+      "guestIntents": [
+        "mourn_intent",
+        "murder_attendee_intent",
+        "woo_attendee_intent",
+        "befriend_attendee_intent",
+        "legitimacy_intent"
+      ],
+      "hostIntents": [
+        "mourn_intent",
+        "murder_attendee_intent",
+        "woo_attendee_intent",
+        "befriend_attendee_intent",
+        "legitimacy_intent"
+      ],
+      "icon": "activity_funeral",
+      "id": "activity_funeral",
+      "inviteRules": [
+        "Rivals",
+        "Extended Family",
+        "Neighboring Rulers",
+        "Knights",
+        "Other Players",
+        "Friends",
+        "Potential Friends",
+        "Lovers",
+        "Potential Lovers",
+        "Close Family",
+        "Liege",
+        "Suzerain",
+        "Tributaries",
+        "Vassals",
+        "Confederates",
+        "Fellow Vassals",
+        "Courtiers",
+        "Court Guests",
+        "Spouses",
+        "Nearby Adventurers"
+      ],
+      "maxGuests": 40,
+      "name": "Funeral",
+      "numPickablePhases": null,
+      "openInvite": false,
+      "optionCategories": [
+        {
+          "id": "funeral_option_ceremony",
+          "name": "Ceremonials",
+          "options": [
+            {
+              "blockedPhases": [],
+              "cost": {},
+              "dlc": "Tours & Tournaments",
+              "id": "funeral_ceremony_bad",
+              "name": "Humble Ceremonials",
+              "requirements": []
+            },
+            {
+              "blockedPhases": [],
+              "cost": {
+                "gold": {
+                  "scales": true
+                }
+              },
+              "dlc": null,
+              "id": "funeral_ceremony_normal",
+              "name": "Dignified Ceremonials",
+              "requirements": []
+            },
+            {
+              "blockedPhases": [],
+              "cost": {
+                "gold": {
+                  "scales": true
+                }
+              },
+              "dlc": "Tours & Tournaments",
+              "id": "funeral_ceremony_good",
+              "name": "Extravagant Ceremonials",
+              "requirements": []
+            }
+          ]
+        }
+      ],
+      "phases": [
+        {
+          "cost": {},
+          "id": "funeral_phase_wake",
+          "name": "…",
+          "order": 1,
+          "predefined": true
+        },
+        {
+          "cost": {},
+          "id": "funeral_phase_ceremony",
+          "name": "…",
+          "order": 2,
+          "predefined": true
+        }
+      ],
+      "predictedCost": {
+        "gold": {
+          "base": 30,
+          "scales": true
+        }
+      },
+      "requirements": [
+        {
+          "name": "Barony tier+",
+          "negated": false
+        },
+        {
+          "name": "You must have had a recent bereavement",
+          "negated": false
+        }
+      ],
+      "sortOrder": 0,
+      "sourceFile": "funeral.txt",
+      "specialGuests": [],
+      "specialOptions": []
+    },
+    {
+      "cooldown": {
+        "base": 9,
+        "scales": true,
+        "unit": "years"
+      },
+      "desc": "It is high time that all … comes together to make sacrifice to …. These rituals not only bind the faithful together, they confirm my place as … of all the land.",
+      "dlc": "Northern Lords",
+      "group": "activities",
+      "guestIntents": [
+        "reduce_stress_intent"
+      ],
+      "hostIntents": [
+        "reduce_stress_intent"
+      ],
+      "icon": "activity_gruesome_festival",
+      "id": "activity_gruesome_festival",
+      "inviteRules": [
+        "Other Players",
+        "Courtiers",
+        "Vassals",
+        "Court Guests"
+      ],
+      "maxGuests": 50,
+      "name": "Blót",
+      "numPickablePhases": null,
+      "openInvite": false,
+      "optionCategories": [
+        {
+          "id": "gruesome_festival_option_size",
+          "name": "Festival Size",
+          "options": [
+            {
+              "blockedPhases": [],
+              "cost": {
+                "gold": {
+                  "base": 15,
+                  "scales": true
+                }
+              },
+              "dlc": null,
+              "id": "gruesome_festival_size_small",
+              "name": "Small Festival",
+              "requirements": []
+            },
+            {
+              "blockedPhases": [],
+              "cost": {
+                "gold": {
+                  "base": 40,
+                  "scales": true
+                }
+              },
+              "dlc": null,
+              "id": "gruesome_festival_size_medium",
+              "name": "Medium Festival",
+              "requirements": [
+                {
+                  "name": "You don't own at least 2 County Rank Titles",
+                  "negated": false
+                }
+              ]
+            },
+            {
+              "blockedPhases": [],
+              "cost": {
+                "gold": {
+                  "base": 120,
+                  "scales": true
+                }
+              },
+              "dlc": null,
+              "id": "gruesome_festival_size_large",
+              "name": "Large Festival",
+              "requirements": [
+                {
+                  "name": "Duchy tier+",
+                  "negated": false
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "gruesome_festival_option_sacrifice",
+          "name": "Sacrifice Fodder",
+          "options": [
+            {
+              "blockedPhases": [],
+              "cost": {},
+              "dlc": null,
+              "id": "gruesome_festival_sacrifice_animals_genuine",
+              "name": "Animals",
+              "requirements": []
+            },
+            {
+              "blockedPhases": [],
+              "cost": {
+                "gold": {
+                  "base": 40,
+                  "scales": true
+                }
+              },
+              "dlc": null,
+              "id": "gruesome_festival_sacrifice_animals_magnificent_genuine",
+              "name": "Animals - Majestic",
+              "requirements": []
+            },
+            {
+              "blockedPhases": [],
+              "cost": {},
+              "dlc": null,
+              "id": "gruesome_festival_sacrifice_humans_genuine",
+              "name": "Human",
+              "requirements": []
+            },
+            {
+              "blockedPhases": [],
+              "cost": {
+                "gold": {
+                  "base": 40,
+                  "scales": true
+                }
+              },
+              "dlc": null,
+              "id": "gruesome_festival_sacrifice_humans_magnificent_genuine",
+              "name": "Human - Majestic",
+              "requirements": []
+            },
+            {
+              "blockedPhases": [],
+              "cost": {},
+              "dlc": null,
+              "id": "gruesome_festival_sacrifice_animals_poser",
+              "name": "Animals",
+              "requirements": []
+            },
+            {
+              "blockedPhases": [],
+              "cost": {
+                "gold": {
+                  "base": 40,
+                  "scales": true
+                }
+              },
+              "dlc": null,
+              "id": "gruesome_festival_sacrifice_animals_magnificent_poser",
+              "name": "Animals - Majestic",
+              "requirements": []
+            },
+            {
+              "blockedPhases": [],
+              "cost": {},
+              "dlc": null,
+              "id": "gruesome_festival_sacrifice_humans_poser",
+              "name": "Human",
+              "requirements": [
+                {
+                  "name": "County tier+",
+                  "negated": false
+                }
+              ]
+            },
+            {
+              "blockedPhases": [],
+              "cost": {
+                "gold": {
+                  "base": 40,
+                  "scales": true
+                }
+              },
+              "dlc": null,
+              "id": "gruesome_festival_sacrifice_humans_magnificent_poser",
+              "name": "Human - Majestic",
+              "requirements": []
+            }
+          ]
+        }
+      ],
+      "phases": [
+        {
+          "cost": {},
+          "id": "gruesome_festival_phase",
+          "name": "Blót",
+          "order": 1,
+          "predefined": true
+        }
+      ],
+      "predictedCost": {
+        "gold": {
+          "base": 15,
+          "scales": true
+        },
+        "prestige": {
+          "scales": true
+        }
+      },
+      "requirements": [
+        {
+          "name": "Barony tier+",
+          "negated": false
+        },
+        {
+          "name": "Duchy tier+",
+          "negated": false
+        },
+        {
+          "name": "You don't control any County of a faith that would allow a Blót",
+          "negated": false
+        }
+      ],
+      "sortOrder": 0,
+      "sourceFile": "gruesome_festival.txt",
+      "specialGuests": [],
+      "specialOptions": []
+    },
+    {
+      "cooldown": {
+        "scales": true,
+        "unit": "years"
+      },
+      "desc": "…",
+      "dlc": null,
+      "group": "activities",
+      "guestIntents": [
+        "reduce_stress_intent",
+        "slay_beast_intent",
+        "murder_attendee_intent",
+        "woo_attendee_intent",
+        "befriend_attendee_intent",
+        "successful_nerge_intent",
+        "dreadful_nerge_intent"
+      ],
+      "hostIntents": [
+        "reduce_stress_intent",
+        "slay_beast_intent",
+        "murder_attendee_intent",
+        "woo_attendee_intent",
+        "befriend_attendee_intent",
+        "successful_nerge_intent",
+        "dreadful_nerge_intent",
+        "impose_obedience_intent"
+      ],
+      "icon": "activity_hunt",
+      "id": "activity_hunt",
+      "inviteRules": [
+        "Rivals",
+        "Extended Family",
+        "Court Guests",
+        "Other Players",
+        "Liege",
+        "Suzerain",
+        "Tributaries",
+        "Vassals",
+        "Confederates",
+        "Close Family",
+        "Friends",
+        "Potential Friends",
+        "Lovers",
+        "Potential Lovers",
+        "Glory Hound Vassals",
+        "Court Hunters",
+        "Knights",
+        "Courtiers",
+        "Fellow Vassals",
+        "Nearby Adventurers"
+      ],
+      "maxGuests": 20,
+      "name": "Hunt",
+      "numPickablePhases": null,
+      "openInvite": false,
+      "optionCategories": [
+        {
+          "id": "hunt_option_attendants",
+          "name": "Attendants",
+          "options": [
+            {
+              "blockedPhases": [],
+              "cost": {},
+              "dlc": "Tours & Tournaments",
+              "id": "hunt_attendants_few",
+              "name": "Local Gamekeepers",
+              "requirements": [
+                {
+                  "name": "Nomadic government",
+                  "negated": true
+                }
+              ]
+            },
+            {
+              "blockedPhases": [],
+              "cost": {
+                "gold": {
+                  "scales": true
+                },
+                "herd": {
+                  "scales": true
+                },
+                "piety": {
+                  "scales": true
+                }
+              },
+              "dlc": null,
+              "id": "hunt_attendants_normal",
+              "name": "Search Parties",
+              "requirements": [
+                {
+                  "name": "Nomadic government",
+                  "negated": true
+                }
+              ]
+            },
+            {
+              "blockedPhases": [],
+              "cost": {
+                "gold": {
+                  "scales": true
+                },
+                "herd": {
+                  "scales": true
+                },
+                "piety": {
+                  "scales": true
+                }
+              },
+              "dlc": "Tours & Tournaments",
+              "id": "hunt_attendants_many",
+              "name": "Flushing Gangs",
+              "requirements": [
+                {
+                  "name": "Nomadic government",
+                  "negated": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "hunt_option_party_size",
+          "name": "Party Size",
+          "options": [
+            {
+              "blockedPhases": [],
+              "cost": {},
+              "dlc": "Tours & Tournaments",
+              "id": "hunt_party_size_few",
+              "name": "Intimate Party",
+              "requirements": []
+            },
+            {
+              "blockedPhases": [],
+              "cost": {
+                "gold": {
+                  "scales": true
+                },
+                "herd": {
+                  "scales": true
+                },
+                "piety": {
+                  "scales": true
+                }
+              },
+              "dlc": null,
+              "id": "hunt_party_size_normal",
+              "name": "Reasonable Party",
+              "requirements": []
+            },
+            {
+              "blockedPhases": [],
+              "cost": {
+                "gold": {
+                  "scales": true
+                },
+                "herd": {
+                  "scales": true
+                },
+                "piety": {
+                  "scales": true
+                }
+              },
+              "dlc": "Tours & Tournaments",
+              "id": "hunt_party_size_many",
+              "name": "Substantial Party",
+              "requirements": []
+            }
+          ]
+        }
+      ],
+      "phases": [
+        {
+          "cost": {},
+          "id": "hunt_phase",
+          "name": "Hunt",
+          "order": 0,
+          "predefined": true
+        }
+      ],
+      "predictedCost": {
+        "gold": {
+          "base": 30,
+          "scales": true
+        },
+        "herd": {
+          "scales": true
+        },
+        "piety": {
+          "base": 30,
+          "scales": true
+        }
+      },
+      "requirements": [
+        {
+          "name": "Barony tier+",
+          "negated": false
+        }
+      ],
+      "sortOrder": 0,
+      "sourceFile": "hunt.txt",
+      "specialGuests": [],
+      "specialOptions": [
+        {
+          "blockedPhases": [],
+          "cost": {},
+          "dlc": null,
+          "id": "hunt_type_standard",
+          "name": "Hunt",
+          "requirements": []
+        },
+        {
+          "blockedPhases": [],
+          "cost": {
+            "gold": {
+              "base": 30,
+              "scales": true
+            },
+            "herd": {
+              "scales": true
+            }
+          },
+          "dlc": "Tours & Tournaments",
+          "id": "hunt_type_falconry",
+          "name": "Falconry",
+          "requirements": []
+        },
+        {
+          "blockedPhases": [],
+          "cost": {},
+          "dlc": null,
+          "id": "hunt_type_nerge",
+          "name": "Nerge",
+          "requirements": [
+            {
+              "name": "Nomadic government",
+              "negated": false
+            }
+          ]
+        },
+        {
+          "blockedPhases": [],
+          "cost": {},
+          "dlc": null,
+          "id": "hunt_type_legendary",
+          "name": "Legendary",
+          "requirements": [
+            {
+              "name": "Requires a Legendary Sighting reported by you in your Realm",
+              "negated": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "cooldown": {
+        "unit": "years",
+        "value": 5
+      },
+      "desc": "It is our honor and duty to uphold the structure and arrange these examinations. They allow us to evaluate, determine and award Merit to the most suited individuals — to ensure the future prosperity of the realm.",
+      "dlc": "All Under Heaven",
+      "group": "activities",
+      "guestIntents": [
+        "imperial_exam_taker_intent",
+        "imperial_exam_support_entrants_intent",
+        "exam_assist_exam_intent"
+      ],
+      "hostIntents": [
+        "legitimacy_intent",
+        "exam_recruit_courtiers_intent"
+      ],
+      "icon": "activity_imperial_examination",
+      "id": "activity_imperial_examination",
+      "inviteRules": [
+        "Commanded Family Members",
+        "Regional Nominees",
+        "Guests"
+      ],
+      "maxGuests": null,
+      "name": "Capital Examination",
+      "numPickablePhases": null,
+      "openInvite": true,
+      "optionCategories": [
+        {
+          "id": "imperial_examination_breadth",
+          "name": "Examination Breadth",
+          "options": [
+            {
+              "blockedPhases": [],
+              "cost": {
+                "gold": {
+                  "scales": true
+                }
+              },
+              "dlc": null,
+              "id": "imperial_examination_breadth_exclusive",
+              "name": "Exclusive Summons",
+              "requirements": []
+            },
+            {
+              "blockedPhases": [],
+              "cost": {
+                "gold": {
+                  "scales": true
+                }
+              },
+              "dlc": null,
+              "id": "imperial_examination_breadth_restricted",
+              "name": "Restricted Summons",
+              "requirements": []
+            },
+            {
+              "blockedPhases": [],
+              "cost": {
+                "gold": {
+                  "scales": true
+                }
+              },
+              "dlc": null,
+              "id": "imperial_examination_breadth_open",
+              "name": "Open Summons",
+              "requirements": []
+            }
+          ]
+        },
+        {
+          "id": "imperial_examination_passing_grade",
+          "name": "Examination Passing Grade",
+          "options": [
+            {
+              "blockedPhases": [],
+              "cost": {},
+              "dlc": null,
+              "id": "imperial_examination_passing_grade_low",
+              "name": "Low Grade",
+              "requirements": []
+            },
+            {
+              "blockedPhases": [],
+              "cost": {},
+              "dlc": null,
+              "id": "imperial_examination_passing_grade_mediocre",
+              "name": "Mediocre Grade",
+              "requirements": []
+            },
+            {
+              "blockedPhases": [],
+              "cost": {},
+              "dlc": null,
+              "id": "imperial_examination_passing_grade_high",
+              "name": "High Grade",
+              "requirements": []
+            },
+            {
+              "blockedPhases": [],
+              "cost": {},
+              "dlc": null,
+              "id": "imperial_examination_passing_grade_extreme",
+              "name": "Extreme Grade",
+              "requirements": []
+            }
+          ]
+        }
+      ],
+      "phases": [
+        {
+          "cost": {},
+          "id": "imperial_examination_phase_assembly",
+          "name": "Assembly",
+          "order": 1,
+          "predefined": true
+        },
+        {
+          "cost": {},
+          "id": "imperial_examination_phase_preparation",
+          "name": "Preparation",
+          "order": 2,
+          "predefined": true
+        },
+        {
+          "cost": {},
+          "id": "imperial_examination_phase_examination",
+          "name": "Metropolitan Examination",
+          "order": 3,
+          "predefined": true
+        },
+        {
+          "cost": {},
+          "id": "imperial_examination_phase_palace_examination",
+          "name": "Palace Examination",
+          "order": 4,
+          "predefined": true
+        }
+      ],
+      "predictedCost": {
+        "gold": {
+          "base": 30,
+          "scales": true
+        }
+      },
+      "requirements": [
+        {
+          "name": "Celestial government",
+          "negated": false
+        },
+        {
+          "name": "Hegemony tier",
+          "negated": false
+        }
+      ],
+      "sortOrder": 0,
+      "sourceFile": "imperial_examination.txt",
+      "specialGuests": [],
+      "specialOptions": [
+        {
+          "blockedPhases": [],
+          "cost": {},
+          "dlc": null,
+          "id": "imperial_examination_focus_learning",
+          "name": "Insightful Scholars",
+          "requirements": []
+        },
+        {
+          "blockedPhases": [],
+          "cost": {
+            "gold": {
+              "base": 30,
+              "scales": true
+            }
+          },
+          "dlc": null,
+          "id": "imperial_examination_focus_martial",
+          "name": "Military Strategists",
+          "requirements": []
+        },
+        {
+          "blockedPhases": [],
+          "cost": {
+            "gold": {
+              "base": 30,
+              "scales": true
+            }
+          },
+          "dlc": null,
+          "id": "imperial_examination_focus_stewardship",
+          "name": "Efficient Governance",
+          "requirements": []
+        }
+      ]
+    },
+    {
+      "cooldown": {
+        "unit": "years",
+        "value": 3
+      },
+      "desc": "Undertake an expedition to a famous monument or landmark to improve yourself by delving into the history, knowledge, and mysteries that dwell there.",
+      "dlc": "Wandering Nobles",
+      "group": "activities",
+      "guestIntents": [
+        "journey_knowledge_hoarding_intent"
+      ],
+      "hostIntents": [
+        "journey_knowledge_hoarding_intent",
+        "journey_curiosity_intent",
+        "spread_legend_intent"
+      ],
+      "icon": "activity_journey",
+      "id": "activity_journey",
+      "inviteRules": [],
+      "maxGuests": 200,
+      "name": "Monument Expedition",
+      "numPickablePhases": null,
+      "openInvite": false,
+      "optionCategories": [
+        {
+          "id": "journey_option_scribes",
+          "name": "Scribes",
+          "options": [
+            {
+              "blockedPhases": [],
+              "cost": {},
+              "dlc": null,
+              "id": "journey_no_scribes",
+              "name": "No Scribes",
+              "requirements": []
+            },
+            {
+              "blockedPhases": [],
+              "cost": {
+                "gold": {
+                  "scales": true
+                }
+              },
+              "dlc": null,
+              "id": "journey_skilled_scribes",
+              "name": "Recruit Competent Scribes",
+              "requirements": []
+            }
+          ]
+        }
+      ],
+      "phases": [
+        {
+          "cost": {
+            "gold": {
+              "scales": true
+            }
+          },
+          "id": "phase_experience",
+          "name": "Exploration",
+          "order": 0,
+          "predefined": true
+        }
+      ],
+      "predictedCost": {
+        "gold": {
+          "base": 10,
+          "scales": true
+        }
+      },
+      "requirements": [
+        {
+          "name": "County tier+",
+          "negated": false
+        },
+        {
+          "name": "Journey",
+          "negated": false
+        }
+      ],
+      "sortOrder": 0,
+      "sourceFile": "monument_expedition.txt",
+      "specialGuests": [],
+      "specialOptions": []
+    },
+    {
+      "cooldown": {
+        "unit": "years",
+        "value": 3
+      },
+      "desc": "It is our honor and duty to uphold the structure and arrange these examinations. They allow us to evaluate, determine and award Merit to the most suited individuals — to ensure the future prosperity of the realm.",
+      "dlc": "All Under Heaven",
+      "group": "activities",
+      "guestIntents": [
+        "local_exam_taker_intent",
+        "local_exam_support_entrants_intent",
+        "exam_assist_exam_intent"
+      ],
+      "hostIntents": [
+        "exam_give_favor_intent",
+        "exam_recruit_courtiers_intent"
+      ],
+      "icon": "activity_local_examination",
+      "id": "activity_local_examination",
+      "inviteRules": [
+        "Commanded Family Members",
+        "Local Candidates",
+        "Noble Family Heads",
+        "Family Candidates",
+        "Guests"
+      ],
+      "maxGuests": null,
+      "name": "Local Examination",
+      "numPickablePhases": null,
+      "openInvite": true,
+      "optionCategories": [
+        {
+          "id": "imperial_examination_breadth",
+          "name": "Examination Breadth",
+          "options": [
+            {
+              "blockedPhases": [],
+              "cost": {
+                "gold": {
+                  "scales": true
+                }
+              },
+              "dlc": null,
+              "id": "imperial_examination_breadth_exclusive",
+              "name": "Exclusive Summons",
+              "requirements": []
+            },
+            {
+              "blockedPhases": [],
+              "cost": {
+                "gold": {
+                  "scales": true
+                }
+              },
+              "dlc": null,
+              "id": "imperial_examination_breadth_restricted",
+              "name": "Restricted Summons",
+              "requirements": []
+            },
+            {
+              "blockedPhases": [],
+              "cost": {
+                "gold": {
+                  "scales": true
+                }
+              },
+              "dlc": null,
+              "id": "imperial_examination_breadth_open",
+              "name": "Open Summons",
+              "requirements": []
+            }
+          ]
+        },
+        {
+          "id": "imperial_examination_passing_grade",
+          "name": "Examination Passing Grade",
+          "options": [
+            {
+              "blockedPhases": [],
+              "cost": {},
+              "dlc": null,
+              "id": "imperial_examination_passing_grade_low",
+              "name": "Low Grade",
+              "requirements": []
+            },
+            {
+              "blockedPhases": [],
+              "cost": {},
+              "dlc": null,
+              "id": "imperial_examination_passing_grade_mediocre",
+              "name": "Mediocre Grade",
+              "requirements": []
+            },
+            {
+              "blockedPhases": [],
+              "cost": {},
+              "dlc": null,
+              "id": "imperial_examination_passing_grade_high",
+              "name": "High Grade",
+              "requirements": []
+            },
+            {
+              "blockedPhases": [],
+              "cost": {},
+              "dlc": null,
+              "id": "imperial_examination_passing_grade_extreme",
+              "name": "Extreme Grade",
+              "requirements": []
+            }
+          ]
+        }
+      ],
+      "phases": [
+        {
+          "cost": {},
+          "id": "local_examination_phase_assembly",
+          "name": "Assembly",
+          "order": 1,
+          "predefined": true
+        },
+        {
+          "cost": {},
+          "id": "local_examination_phase_preparation",
+          "name": "Preparation",
+          "order": 2,
+          "predefined": true
+        },
+        {
+          "cost": {},
+          "id": "local_examination_phase_examination",
+          "name": "Provincial Examination",
+          "order": 3,
+          "predefined": true
+        }
+      ],
+      "predictedCost": {
+        "gold": {
+          "base": 30,
+          "scales": true
+        }
+      },
+      "requirements": [
+        {
+          "name": "Government allows merit",
+          "negated": false
+        },
+        {
+          "name": "Ministry of Rites",
+          "negated": false
+        }
+      ],
+      "sortOrder": 0,
+      "sourceFile": "local_examination.txt",
+      "specialGuests": [],
+      "specialOptions": []
+    },
+    {
+      "cooldown": null,
+      "desc": "Characters of most Faiths can choose to undertake an Activity to go on a Pilgrimage to a Holy Site. Each Holy Site has an individual grace period before you can revisit. \n\nSuch a journey may be filled with both opportunity and peril, but upon reaching their destination characters will earn Piety and may receive other rewards.",
+      "dlc": null,
+      "group": "activities",
+      "guestIntents": [
+        "reflection_intent"
+      ],
+      "hostIntents": [
+        "reflection_intent",
+        "altruism_intent",
+        "zealot_intent"
+      ],
+      "icon": "activity_pilgrimage",
+      "id": "activity_pilgrimage",
+      "inviteRules": [],
+      "maxGuests": 30,
+      "name": "Pilgrimage",
+      "numPickablePhases": null,
+      "openInvite": false,
+      "optionCategories": [
+        {
+          "id": "pilgrimage_option_fidelity",
+          "name": "Fidelity",
+          "options": [
+            {
+              "blockedPhases": [],
+              "cost": {},
+              "dlc": "Tours & Tournaments",
+              "id": "pilgrimage_fidelity_obligatory",
+              "name": "Obligatory",
+              "requirements": []
+            },
+            {
+              "blockedPhases": [],
+              "cost": {},
+              "dlc": null,
+              "id": "pilgrimage_fidelity_pilgrim",
+              "name": "Pilgrim",
+              "requirements": []
+            },
+            {
+              "blockedPhases": [],
+              "cost": {},
+              "dlc": "Tours & Tournaments",
+              "id": "pilgrimage_fidelity_contemplative",
+              "name": "Contemplative",
+              "requirements": [
+                {
+                  "name": "At least one of these",
+                  "negated": false
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "pilgrimage_option_pomp",
+          "name": "Pomp",
+          "options": [
+            {
+              "blockedPhases": [],
+              "cost": {
+                "gold": {
+                  "scales": true
+                }
+              },
+              "dlc": "Tours & Tournaments",
+              "id": "pilgrimage_pomp_humble",
+              "name": "Humble",
+              "requirements": []
+            },
+            {
+              "blockedPhases": [],
+              "cost": {},
+              "dlc": null,
+              "id": "pilgrimage_pomp_appropriate",
+              "name": "Appropriate",
+              "requirements": []
+            },
+            {
+              "blockedPhases": [],
+              "cost": {
+                "gold": {
+                  "scales": true
+                }
+              },
+              "dlc": "Tours & Tournaments",
+              "id": "pilgrimage_pomp_ceremonial",
+              "name": "Ceremonial",
+              "requirements": []
+            },
+            {
+              "blockedPhases": [],
+              "cost": {
+                "gold": {
+                  "scales": true
+                }
+              },
+              "dlc": "Tours & Tournaments",
+              "id": "pilgrimage_pomp_throng",
+              "name": "Throng",
+              "requirements": []
+            }
+          ]
+        }
+      ],
+      "phases": [
+        {
+          "cost": {
+            "gold": {
+              "scales": true
+            }
+          },
+          "id": "pilgrimage_phase_solo",
+          "name": "Pilgrimage",
+          "order": 0,
+          "predefined": true
+        }
+      ],
+      "predictedCost": {
+        "gold": {
+          "base": 30,
+          "scales": true
+        }
+      },
+      "requirements": [
+        {
+          "name": "Barony tier+",
+          "negated": false
+        }
+      ],
+      "sortOrder": 0,
+      "sourceFile": "pilgrimage.txt",
+      "specialGuests": [],
+      "specialOptions": [
+        {
+          "blockedPhases": [],
+          "cost": {},
+          "dlc": null,
+          "id": "pilgrimage_type_pious",
+          "name": "Pious Pilgrimage",
+          "requirements": []
+        },
+        {
+          "blockedPhases": [],
+          "cost": {},
+          "dlc": null,
+          "id": "pilgrimage_type_worldly",
+          "name": "Worldly Pilgrimage",
+          "requirements": []
+        },
+        {
+          "blockedPhases": [],
+          "cost": {},
+          "dlc": null,
+          "id": "pilgrimage_type_hajj",
+          "name": "Hajj",
+          "requirements": [
+            {
+              "name": "You cannot undertake the Hajj pilgrimage as your capital is Mecca",
+              "negated": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "cooldown": {
+        "unit": "days",
+        "value": 1095
+      },
+      "desc": "Inviting every small lord and lady in the realm, below the age of …, to enjoy themselves in the company of other children is a liberating and fun experience!",
+      "dlc": null,
+      "group": "activities",
+      "guestIntents": [
+        "reduce_stress_intent"
+      ],
+      "hostIntents": [
+        "reduce_stress_intent"
+      ],
+      "icon": "activity_playdate",
+      "id": "activity_playdate",
+      "inviteRules": [
+        "Other Players",
+        "Vassal's Children",
+        "Liege",
+        "Siblings",
+        "Vassals",
+        "Confederates",
+        "Friends",
+        "Crushes",
+        "Scheme Targets",
+        "Powerful Vassals' Children",
+        "Fellow Vassals",
+        "Fellow Vassal's Children"
+      ],
+      "maxGuests": 30,
+      "name": "Meet Peers",
+      "numPickablePhases": null,
+      "openInvite": false,
+      "optionCategories": [],
+      "phases": [
+        {
+          "cost": {},
+          "id": "playdate_phase",
+          "name": "Meet",
+          "order": 0,
+          "predefined": true
+        }
+      ],
+      "predictedCost": {
+        "gold": {
+          "base": 10,
+          "scales": true
+        }
+      },
+      "requirements": [
+        {
+          "name": "Barony tier+",
+          "negated": false
+        }
+      ],
+      "sortOrder": 0,
+      "sourceFile": "playdate.txt",
+      "specialGuests": [],
+      "specialOptions": []
+    },
+    {
+      "cooldown": {
+        "unit": "months",
+        "value": 18
+      },
+      "desc": "Set out on a solitary expedition to the hidden corners of the realm. This adventure provides a break from the pressures of courtly existence, giving you the opportunity to rest amid age-old forests and gentle hills.",
+      "dlc": "Wandering Nobles",
+      "group": "activities",
+      "guestIntents": [
+        "reduce_stress_intent"
+      ],
+      "hostIntents": [
+        "reduce_stress_intent",
+        "roaming_storyteller_intent",
+        "roaming_befriend_intent",
+        "roaming_mystic_intent"
+      ],
+      "icon": "activity_roaming",
+      "id": "activity_roaming",
+      "inviteRules": [
+        "Lovers",
+        "Friends",
+        "Close Family",
+        "Spouses",
+        "Knights"
+      ],
+      "maxGuests": 1,
+      "name": "Hike",
+      "numPickablePhases": null,
+      "openInvite": false,
+      "optionCategories": [
+        {
+          "id": "roaming_option_travel_length",
+          "name": "Travel Length",
+          "options": [
+            {
+              "blockedPhases": [],
+              "cost": {},
+              "dlc": null,
+              "id": "roaming_short_length",
+              "name": "Short Hike",
+              "requirements": []
+            },
+            {
+              "blockedPhases": [],
+              "cost": {
+                "gold": {
+                  "base": 35,
+                  "scales": true
+                }
+              },
+              "dlc": null,
+              "id": "roaming_long_length",
+              "name": "Long Hike",
+              "requirements": [
+                {
+                  "name": "The Home Away From Home",
+                  "negated": false
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "phases": [
+        {
+          "cost": {},
+          "id": "phase_roaming",
+          "name": "Roaming",
+          "order": 0,
+          "predefined": true
+        }
+      ],
+      "predictedCost": {
+        "gold": {
+          "base": 25,
+          "scales": true
+        }
+      },
+      "requirements": [
+        {
+          "name": "County tier+",
+          "negated": false
+        },
+        {
+          "name": "Storyteller",
+          "negated": false
+        }
+      ],
+      "sortOrder": 0,
+      "sourceFile": "hike.txt",
+      "specialGuests": [
+        {
+          "id": "honorary_guest_traveling_companion",
+          "name": "Traveling Companion",
+          "required": false
+        }
+      ],
+      "specialOptions": []
+    },
+    {
+      "cooldown": {
+        "unit": "years",
+        "value": 2
+      },
+      "desc": "Perform a thorough inspection of your lands to ensure your realm is a well-running machine, and look for opportunities to improve upon the current bureaucracy and situation.",
+      "dlc": "All Under Heaven",
+      "group": "activities",
+      "guestIntents": [
+        "survey_learning_intent_guest"
+      ],
+      "hostIntents": [
+        "survey_overseer_intent",
+        "survey_learning_intent"
+      ],
+      "icon": "activity_survey",
+      "id": "activity_survey",
+      "inviteRules": [],
+      "maxGuests": 20,
+      "name": "Inspection",
+      "numPickablePhases": null,
+      "openInvite": false,
+      "optionCategories": [
+        {
+          "id": "inspection_option_allocated_funds",
+          "name": "Inspection Finances",
+          "options": [
+            {
+              "blockedPhases": [],
+              "cost": {},
+              "dlc": null,
+              "id": "inspection_no_funding",
+              "name": "No Funding",
+              "requirements": []
+            },
+            {
+              "blockedPhases": [],
+              "cost": {
+                "gold": {
+                  "base": 20,
+                  "scales": true
+                }
+              },
+              "dlc": null,
+              "id": "inspection_small_fund",
+              "name": "Adequate Funding",
+              "requirements": []
+            },
+            {
+              "blockedPhases": [],
+              "cost": {
+                "gold": {
+                  "base": 40,
+                  "scales": true
+                }
+              },
+              "dlc": null,
+              "id": "inspection_large_fund",
+              "name": "Significant Funding",
+              "requirements": []
+            }
+          ]
+        }
+      ],
+      "phases": [
+        {
+          "cost": {},
+          "id": "phase_surveying",
+          "name": "Realm Inspection",
+          "order": 0,
+          "predefined": true
+        }
+      ],
+      "predictedCost": {
+        "gold": {
+          "base": 50,
+          "scales": true
+        },
+        "piety": {
+          "base": 50,
+          "scales": true
+        }
+      },
+      "requirements": [
+        {
+          "name": "County tier+",
+          "negated": false
+        },
+        {
+          "name": "Settled government",
+          "negated": false
+        },
+        {
+          "name": "Inspection",
+          "negated": false
+        },
+        {
+          "name": "Government allows administrative",
+          "negated": false
+        }
+      ],
+      "sortOrder": 0,
+      "sourceFile": "inspection.txt",
+      "specialGuests": [],
+      "specialOptions": []
+    },
+    {
+      "cooldown": {
+        "unit": "years",
+        "value": 10
+      },
+      "desc": "Host a magnificent Tour and pay a visit to your Vassals and their lands. Each Stop will have a 2 months duration.",
+      "dlc": "Tours & Tournaments",
+      "group": "grand",
+      "guestIntents": [
+        "reduce_stress_intent"
+      ],
+      "hostIntents": [
+        "reduce_stress_intent",
+        "lechery_intent",
+        "altruism_intent",
+        "justice_intent",
+        "spread_legend_intent",
+        "legitimacy_intent"
+      ],
+      "icon": "activity_tour",
+      "id": "activity_tour",
+      "inviteRules": [],
+      "maxGuests": 100,
+      "name": "Grand Tour",
+      "numPickablePhases": 10,
+      "openInvite": false,
+      "optionCategories": [
+        {
+          "id": "tour_entourage",
+          "name": "Entourage",
+          "options": [
+            {
+              "blockedPhases": [],
+              "cost": {
+                "gold": {
+                  "scales": true
+                }
+              },
+              "dlc": null,
+              "id": "tour_entourage_small",
+              "name": "Small Entourage",
+              "requirements": []
+            },
+            {
+              "blockedPhases": [],
+              "cost": {
+                "gold": {
+                  "scales": true
+                }
+              },
+              "dlc": null,
+              "id": "tour_entourage_normal",
+              "name": "Modest Entourage",
+              "requirements": [
+                {
+                  "name": "You must have more than 5 Courtiers",
+                  "negated": false
+                }
+              ]
+            },
+            {
+              "blockedPhases": [],
+              "cost": {
+                "gold": {
+                  "scales": true
+                }
+              },
+              "dlc": null,
+              "id": "tour_entourage_grand",
+              "name": "Grand Entourage",
+              "requirements": [
+                {
+                  "name": "You must have more than 10 Courtiers",
+                  "negated": false
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "tour_luxuries",
+          "name": "Luxuries",
+          "options": [
+            {
+              "blockedPhases": [],
+              "cost": {
+                "gold": {
+                  "scales": true
+                }
+              },
+              "dlc": null,
+              "id": "tour_luxuries_bad",
+              "name": "No Luxuries",
+              "requirements": []
+            },
+            {
+              "blockedPhases": [],
+              "cost": {
+                "gold": {
+                  "scales": true
+                }
+              },
+              "dlc": null,
+              "id": "tour_luxuries_normal",
+              "name": "Essential Luxuries",
+              "requirements": []
+            },
+            {
+              "blockedPhases": [],
+              "cost": {
+                "gold": {
+                  "scales": true
+                }
+              },
+              "dlc": null,
+              "id": "tour_luxuries_good",
+              "name": "Extravagant Luxuries",
+              "requirements": [
+                {
+                  "name": "Your Government is",
+                  "negated": false
+                }
+              ]
+            },
+            {
+              "blockedPhases": [],
+              "cost": {
+                "gold": {
+                  "scales": true
+                }
+              },
+              "dlc": null,
+              "id": "tour_furniture_normal",
+              "name": "Luxurious Furniture",
+              "requirements": [
+                {
+                  "name": "Your Government is",
+                  "negated": false
+                }
+              ]
+            },
+            {
+              "blockedPhases": [],
+              "cost": {
+                "gold": {
+                  "scales": true
+                }
+              },
+              "dlc": null,
+              "id": "tour_furniture_good",
+              "name": "Excessive Furniture",
+              "requirements": [
+                {
+                  "name": "Your Government is",
+                  "negated": false
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "phases": [
+        {
+          "cost": {
+            "gold": {
+              "scales": true
+            }
+          },
+          "id": "tour_phase_cultural_festival",
+          "name": "Cultural Festival",
+          "order": 1,
+          "predefined": false
+        },
+        {
+          "cost": {
+            "gold": {
+              "scales": true
+            }
+          },
+          "id": "tour_phase_dinner",
+          "name": "Hosted Dinner",
+          "order": 1,
+          "predefined": false
+        },
+        {
+          "cost": {
+            "gold": {
+              "scales": true
+            }
+          },
+          "id": "tour_phase_tour_grounds",
+          "name": "Tour the Grounds",
+          "order": 1,
+          "predefined": false
+        },
+        {
+          "cost": {},
+          "id": "tour_phase_journey_home",
+          "name": "Return Home",
+          "order": 2,
+          "predefined": true
+        }
+      ],
+      "predictedCost": {
+        "gold": {
+          "base": 50,
+          "scales": true
+        }
+      },
+      "requirements": [
+        {
+          "name": "Barony tier+",
+          "negated": false
+        },
+        {
+          "name": "Administrative government",
+          "negated": true
+        },
+        {
+          "name": "Duchy tier+",
+          "negated": false
+        },
+        {
+          "name": "You must have at least 3 Vassals",
+          "negated": false
+        },
+        {
+          "name": "You must have at least 5 Courtiers",
+          "negated": false
+        }
+      ],
+      "sortOrder": 0,
+      "sourceFile": "tour.txt",
+      "specialGuests": [],
+      "specialOptions": [
+        {
+          "blockedPhases": [],
+          "cost": {},
+          "dlc": null,
+          "id": "tour_type_majesty",
+          "name": "Majesty Tour",
+          "requirements": []
+        },
+        {
+          "blockedPhases": [],
+          "cost": {},
+          "dlc": null,
+          "id": "tour_type_intimidation",
+          "name": "Intimidation Tour",
+          "requirements": []
+        },
+        {
+          "blockedPhases": [],
+          "cost": {},
+          "dlc": null,
+          "id": "tour_type_taxation",
+          "name": "Taxation Tour",
+          "requirements": [
+            {
+              "name": "You are Tribal",
+              "negated": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "cooldown": {
+        "unit": "years",
+        "value": 10
+      },
+      "desc": "Host a magnificent set of martial or cultural Contests, attracting contenders from near and far to compete in hastiludes for Prizes and Prestige.",
+      "dlc": "Tours & Tournaments",
+      "group": "grand",
+      "guestIntents": [
+        "reduce_stress_intent",
+        "win_contest_intent",
+        "recruit_knights_intent",
+        "murder_attendee_intent",
+        "woo_attendee_intent",
+        "befriend_attendee_intent"
+      ],
+      "hostIntents": [
+        "reduce_stress_intent",
+        "win_contest_intent",
+        "recruit_knights_intent",
+        "murder_attendee_intent",
+        "woo_attendee_intent",
+        "befriend_attendee_intent"
+      ],
+      "icon": "activity_tournament",
+      "id": "activity_tournament",
+      "inviteRules": [],
+      "maxGuests": 250,
+      "name": "Grand Tournament",
+      "numPickablePhases": null,
+      "openInvite": true,
+      "optionCategories": [
+        {
+          "id": "tournament_option_accommodations",
+          "name": "Accommodations",
+          "options": [
+            {
+              "blockedPhases": [],
+              "cost": {
+                "gold": {
+                  "scales": true
+                }
+              },
+              "dlc": null,
+              "id": "tournament_accommodations_bad",
+              "name": "Ramshackle Tents",
+              "requirements": []
+            },
+            {
+              "blockedPhases": [],
+              "cost": {
+                "gold": {
+                  "scales": true
+                }
+              },
+              "dlc": null,
+              "id": "tournament_accommodations_normal",
+              "name": "Simple Pavilions",
+              "requirements": []
+            },
+            {
+              "blockedPhases": [],
+              "cost": {
+                "gold": {
+                  "scales": true
+                }
+              },
+              "dlc": null,
+              "id": "tournament_accommodations_good",
+              "name": "Luxurious Encampments",
+              "requirements": []
+            }
+          ]
+        },
+        {
+          "id": "tournament_option_prizes",
+          "name": "Prizes",
+          "options": [
+            {
+              "blockedPhases": [],
+              "cost": {
+                "gold": {
+                  "scales": true
+                }
+              },
+              "dlc": null,
+              "id": "tournament_prizes_bad",
+              "name": "Simple Prizes",
+              "requirements": []
+            },
+            {
+              "blockedPhases": [],
+              "cost": {
+                "gold": {
+                  "scales": true
+                }
+              },
+              "dlc": null,
+              "id": "tournament_prizes_normal",
+              "name": "Decent Prizes",
+              "requirements": []
+            },
+            {
+              "blockedPhases": [],
+              "cost": {
+                "gold": {
+                  "scales": true
+                }
+              },
+              "dlc": null,
+              "id": "tournament_prizes_good",
+              "name": "Fine Prizes",
+              "requirements": []
+            },
+            {
+              "blockedPhases": [],
+              "cost": {
+                "gold": {
+                  "scales": true
+                }
+              },
+              "dlc": null,
+              "id": "tournament_prizes_very_good",
+              "name": "Good Prizes",
+              "requirements": []
+            },
+            {
+              "blockedPhases": [],
+              "cost": {
+                "gold": {
+                  "scales": true
+                }
+              },
+              "dlc": null,
+              "id": "tournament_prizes_splendid",
+              "name": "Splendid Prizes",
+              "requirements": []
+            }
+          ]
+        }
+      ],
+      "phases": [
+        {
+          "cost": {
+            "gold": {
+              "scales": true
+            },
+            "prestige": {
+              "scales": true
+            }
+          },
+          "id": "tournament_phase_archery",
+          "name": "Archery",
+          "order": 0,
+          "predefined": false
+        },
+        {
+          "cost": {
+            "gold": {
+              "scales": true
+            },
+            "prestige": {
+              "scales": true
+            }
+          },
+          "id": "tournament_phase_board_game",
+          "name": "Board Game",
+          "order": 0,
+          "predefined": false
+        },
+        {
+          "cost": {
+            "gold": {
+              "scales": true
+            },
+            "prestige": {
+              "scales": true
+            }
+          },
+          "id": "tournament_phase_duel",
+          "name": "Duel",
+          "order": 0,
+          "predefined": false
+        },
+        {
+          "cost": {
+            "gold": {
+              "scales": true
+            },
+            "prestige": {
+              "scales": true
+            }
+          },
+          "id": "tournament_phase_horse_race",
+          "name": "Horse Race",
+          "order": 0,
+          "predefined": false
+        },
+        {
+          "cost": {
+            "gold": {
+              "scales": true
+            },
+            "prestige": {
+              "scales": true
+            }
+          },
+          "id": "tournament_phase_joust",
+          "name": "Joust",
+          "order": 0,
+          "predefined": false
+        },
+        {
+          "cost": {
+            "gold": {
+              "scales": true
+            },
+            "prestige": {
+              "scales": true
+            }
+          },
+          "id": "tournament_phase_melee",
+          "name": "Melee",
+          "order": 0,
+          "predefined": false
+        },
+        {
+          "cost": {
+            "gold": {
+              "scales": true
+            },
+            "prestige": {
+              "scales": true
+            }
+          },
+          "id": "tournament_phase_recital",
+          "name": "Recital",
+          "order": 0,
+          "predefined": false
+        },
+        {
+          "cost": {
+            "gold": {
+              "scales": true
+            },
+            "prestige": {
+              "scales": true
+            }
+          },
+          "id": "tournament_phase_wrestling",
+          "name": "Wrestling",
+          "order": 0,
+          "predefined": false
+        },
+        {
+          "cost": {},
+          "id": "tournament_phase_ceremony",
+          "name": "Ceremony",
+          "order": 2,
+          "predefined": true
+        }
+      ],
+      "predictedCost": {
+        "gold": {
+          "base": 100,
+          "scales": true
+        }
+      },
+      "requirements": [
+        {
+          "name": "Barony tier+",
+          "negated": false
+        }
+      ],
+      "sortOrder": 0,
+      "sourceFile": "tournament.txt",
+      "specialGuests": [
+        {
+          "id": "special_guest_champion",
+          "name": "Champion",
+          "required": false
+        }
+      ],
+      "specialOptions": []
+    },
+    {
+      "cooldown": null,
+      "desc": "A grandiose celebration of the union of a couple.\n\nHowever, this is not just a wedding ceremony; it's a public show of influence, and a social event where the nobility gather to practice the arts of diplomacy, seduction, and murder — or to share a drink with friends!",
+      "dlc": "Tours & Tournaments",
+      "group": "grand",
+      "guestIntents": [
+        "reduce_stress_intent",
+        "murder_attendee_intent",
+        "woo_attendee_intent",
+        "diplomatic_intent",
+        "banquet_mischief_intent",
+        "spread_legend_intent",
+        "legitimacy_intent"
+      ],
+      "hostIntents": [
+        "reduce_stress_intent",
+        "murder_attendee_intent",
+        "woo_attendee_intent",
+        "diplomatic_intent",
+        "matchmaking_intent",
+        "spread_legend_intent",
+        "legitimacy_intent"
+      ],
+      "icon": "activity_wedding",
+      "id": "activity_wedding",
+      "inviteRules": [
+        "Rivals",
+        "Extended Family",
+        "Lovers",
+        "Potential Lovers",
+        "Head of Faith",
+        "Other Players",
+        "Friends",
+        "Potential Friends",
+        "Close Family",
+        "Tributaries",
+        "Vassals",
+        "Confederates",
+        "Fellow Vassals",
+        "Courtiers",
+        "Court Guests",
+        "All Lieges",
+        "Spouses' Close Family",
+        "Spouses' Extended Family",
+        "Neighboring Rulers",
+        "Nearby Adventurers"
+      ],
+      "maxGuests": 80,
+      "name": "Grand Wedding",
+      "numPickablePhases": null,
+      "openInvite": false,
+      "optionCategories": [
+        {
+          "id": "wedding_option_entertainment",
+          "name": "Entertainment",
+          "options": [
+            {
+              "blockedPhases": [],
+              "cost": {
+                "gold": {
+                  "scales": true
+                }
+              },
+              "dlc": null,
+              "id": "wedding_entertainment_bad",
+              "name": "Home Entertainment",
+              "requirements": []
+            },
+            {
+              "blockedPhases": [],
+              "cost": {
+                "gold": {
+                  "scales": true
+                }
+              },
+              "dlc": null,
+              "id": "wedding_entertainment_normal",
+              "name": "Acrobats and Musicians",
+              "requirements": []
+            },
+            {
+              "blockedPhases": [],
+              "cost": {
+                "gold": {
+                  "scales": true
+                }
+              },
+              "dlc": null,
+              "id": "wedding_entertainment_good",
+              "name": "Troubadours and Exotic Fiends",
+              "requirements": []
+            }
+          ]
+        },
+        {
+          "id": "wedding_option_food",
+          "name": "Food and Drinks",
+          "options": [
+            {
+              "blockedPhases": [],
+              "cost": {
+                "gold": {
+                  "scales": true
+                }
+              },
+              "dlc": null,
+              "id": "wedding_food_bad",
+              "name": "Modest Feast",
+              "requirements": []
+            },
+            {
+              "blockedPhases": [],
+              "cost": {
+                "gold": {
+                  "scales": true
+                }
+              },
+              "dlc": null,
+              "id": "wedding_food_normal",
+              "name": "Generous Feast",
+              "requirements": []
+            },
+            {
+              "blockedPhases": [],
+              "cost": {
+                "gold": {
+                  "scales": true
+                }
+              },
+              "dlc": null,
+              "id": "wedding_food_good",
+              "name": "Gargantuan Meal",
+              "requirements": []
+            }
+          ]
+        },
+        {
+          "id": "wedding_option_decoration",
+          "name": "Wedding Venue",
+          "options": [
+            {
+              "blockedPhases": [],
+              "cost": {
+                "gold": {
+                  "scales": true
+                }
+              },
+              "dlc": null,
+              "id": "wedding_decoration_bad",
+              "name": "Wildflowers",
+              "requirements": []
+            },
+            {
+              "blockedPhases": [],
+              "cost": {
+                "gold": {
+                  "scales": true
+                }
+              },
+              "dlc": null,
+              "id": "wedding_decoration_normal",
+              "name": "Garlands and Torches",
+              "requirements": []
+            },
+            {
+              "blockedPhases": [],
+              "cost": {
+                "gold": {
+                  "scales": true
+                }
+              },
+              "dlc": null,
+              "id": "wedding_decoration_good",
+              "name": "Silver and Gold",
+              "requirements": []
+            }
+          ]
+        }
+      ],
+      "phases": [
+        {
+          "cost": {},
+          "id": "wedding_phase_ceremony",
+          "name": "Wedding Ceremony",
+          "order": 1,
+          "predefined": true
+        },
+        {
+          "cost": {},
+          "id": "wedding_phase_banquet",
+          "name": "Wedding Banquet",
+          "order": 2,
+          "predefined": true
+        },
+        {
+          "cost": {},
+          "id": "wedding_phase_wnight",
+          "name": "Wedding Night",
+          "order": 3,
+          "predefined": true
+        }
+      ],
+      "predictedCost": {
+        "gold": {
+          "base": 25,
+          "scales": true
+        }
+      },
+      "requirements": [
+        {
+          "name": "Barony tier+",
+          "negated": false
+        },
+        {
+          "name": "You need to have Promised a Grand Wedding to organize one!",
+          "negated": false
+        }
+      ],
+      "sortOrder": 0,
+      "sourceFile": "wedding.txt",
+      "specialGuests": [
+        {
+          "id": "spouse_1",
+          "name": "Spouse",
+          "required": true
+        },
+        {
+          "id": "spouse_2",
+          "name": "Spouse",
+          "required": true
+        }
+      ],
+      "specialOptions": [
+        {
+          "blockedPhases": [],
+          "cost": {},
+          "dlc": null,
+          "id": "wedding_type_normal",
+          "name": "Grand Wedding",
+          "requirements": []
+        },
+        {
+          "blockedPhases": [],
+          "cost": {
+            "gold": {
+              "base": 25,
+              "scales": true
+            }
+          },
+          "dlc": null,
+          "id": "wedding_type_bloody",
+          "name": "Bloody Wedding",
+          "requirements": [
+            {
+              "name": "Accomplished Forger",
+              "negated": false
+            },
+            {
+              "name": "You have hosted a Bloody Grand Wedding in the past 15 years",
+              "negated": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "cooldown": {
+        "unit": "days",
+        "value": 1825
+      },
+      "desc": "True followers with the witch Trait are invited to celebrate the might of …, and delve deep into the mysteries.",
+      "dlc": null,
+      "group": "activities",
+      "guestIntents": [
+        "worship_devil_intent"
+      ],
+      "hostIntents": [
+        "worship_devil_intent"
+      ],
+      "icon": "activity_witch_ritual",
+      "id": "activity_witch_ritual",
+      "inviteRules": [
+        "Other Players",
+        "House",
+        "Other"
+      ],
+      "maxGuests": 30,
+      "name": "Grand Rite",
+      "numPickablePhases": null,
+      "openInvite": false,
+      "optionCategories": [],
+      "phases": [
+        {
+          "cost": {},
+          "id": "witch_ritual_phase",
+          "name": "Dark Ritual",
+          "order": 0,
+          "predefined": true
+        }
+      ],
+      "predictedCost": {
+        "gold": {
+          "scales": true
+        }
+      },
+      "requirements": [
+        {
+          "name": "Barony tier+",
+          "negated": false
+        }
+      ],
+      "sortOrder": 0,
+      "sourceFile": "witch_ritual.txt",
+      "specialGuests": [],
+      "specialOptions": []
+    }
+  ],
+  "groups": [
+    {
+      "id": "joinable",
+      "name": "Joinable Activities",
+      "sortOrder": 220
+    },
+    {
+      "id": "invitations",
+      "name": "Activity Invitations",
+      "sortOrder": 210
+    },
+    {
+      "id": "grand",
+      "name": "Grand Activities",
+      "sortOrder": 200
+    },
+    {
+      "id": "activities",
+      "name": "Activities",
+      "sortOrder": 10
+    },
+    {
+      "id": "unavailable",
+      "name": "Unavailable Activities",
+      "sortOrder": 5
+    },
+    {
+      "id": "debug",
+      "name": "Debug Activities",
+      "sortOrder": -1
+    }
+  ],
+  "intents": [
+    {
+      "desc": "Gather round the fire. Share stories. Share drinks. Attract useful strangers.",
+      "dlc": null,
+      "family": "Camp Party",
+      "icon": "intent_crash_wedding",
+      "id": "fireside_chat_intent",
+      "name": "Fireside Chat",
+      "requirements": [],
+      "sourceFile": "camp_party_intents.txt",
+      "targeted": false
+    },
+    {
+      "desc": "You aim to increase your Legitimacy and Popular Opinion in your Realm Capital, …. This will counteract attendees using the Sow Discord Intent out of hostility towards you.",
+      "dlc": "Tours & Tournaments",
+      "family": "Chariot Race",
+      "icon": "intent_appease_populace",
+      "id": "appease_populace_intent",
+      "name": "Appease the Populace",
+      "requirements": [],
+      "sourceFile": "chariot_race_intents.txt",
+      "targeted": false
+    },
+    {
+      "desc": "With all the Strategoi and Noble Families gathered in the Hippodrome, you will turn your focus towards rubbing shoulders and gaining Influence.",
+      "dlc": "Tours & Tournaments",
+      "family": "Chariot Race",
+      "icon": "intent_influence",
+      "id": "increase_influence_intent",
+      "name": "Increase Influence",
+      "requirements": [
+        {
+          "name": "Has Influence government",
+          "negated": false
+        }
+      ],
+      "sourceFile": "chariot_race_intents.txt",
+      "targeted": false
+    },
+    {
+      "desc": "There is no better opportunity for sabotaging the capital's County Control and Popular Opinion, tarnishing the … rule to the gain of … aspiring successors... a most effective strategy against unpopular sovereigns.",
+      "dlc": "Tours & Tournaments",
+      "family": "Chariot Race",
+      "icon": "intent_sow_discord",
+      "id": "sow_discord_intent",
+      "name": "Sow Discord",
+      "requirements": [],
+      "sourceFile": "chariot_race_intents.txt",
+      "targeted": false
+    },
+    {
+      "desc": "You press your sovereign for policies that foster Development, Control and Popular Opinion in your sub-Realm.",
+      "dlc": null,
+      "family": "Coronation",
+      "icon": "advocate_domain_intent",
+      "id": "coronation_advocate_domain",
+      "name": "Advocate Domain",
+      "requirements": [],
+      "sourceFile": "coronation_intents.txt",
+      "targeted": false
+    },
+    {
+      "desc": "By appearing on this historic occasion, you expect to enjoy Piety, Legitimacy and Cultural Acceptance.",
+      "dlc": null,
+      "family": "Coronation",
+      "icon": "bear_witness_intent",
+      "id": "coronation_bear_witness",
+      "name": "Bear Witness",
+      "requirements": [],
+      "sourceFile": "coronation_intents.txt",
+      "targeted": false
+    },
+    {
+      "desc": "You seek to reduce the Coronation's …Magnificence, swell Factions and their Discontent, and create problems for the Activity Host and their Supporters.",
+      "dlc": null,
+      "family": "Coronation",
+      "icon": "disrupt_loyalists_intent",
+      "id": "coronation_disrupt_loyalists",
+      "name": "Disrupt Loyalists",
+      "requirements": [],
+      "sourceFile": "coronation_intents.txt",
+      "targeted": false
+    },
+    {
+      "desc": "Your regime will be built by the loyal, collaborating to gain Prestige, form Special Relations and enrich your Realms.\nThis Intent pleases Supporters, especially Glory Hound and Zealot Vassals.",
+      "dlc": null,
+      "family": "Coronation",
+      "icon": "empower_loyalists_intent",
+      "id": "coronation_embrace_supporters",
+      "name": "Embrace Supporters",
+      "requirements": [],
+      "sourceFile": "coronation_intents.txt",
+      "targeted": false
+    },
+    {
+      "desc": "Reverence for your mandate endows Coronation sites, Artifacts and Oaths with lasting benefices like Renown.\nThis Intent pleases Parochial Vassals.",
+      "dlc": null,
+      "family": "Coronation",
+      "icon": "support_liege_intent",
+      "id": "coronation_exalt_crown",
+      "name": "Exalt the Crown",
+      "requirements": [],
+      "sourceFile": "coronation_intents.txt",
+      "targeted": false
+    },
+    {
+      "desc": "You shall be the very image of a sovereign, earning Legitimacy, Cultural Acceptance and …Magnificence.\nThis Intent pleases Courtly and Minority Vassals.",
+      "dlc": null,
+      "family": "Coronation",
+      "icon": "extoll_reign_intent",
+      "id": "coronation_impress_attendees",
+      "name": "Impress Attendees",
+      "requirements": [],
+      "sourceFile": "coronation_intents.txt",
+      "targeted": false
+    },
+    {
+      "desc": "By giving staunch support to the crown, you hope to gain Opinion, a Special Relation, or an Alliance with its wearer.",
+      "dlc": null,
+      "family": "Coronation",
+      "icon": "altruism_intent",
+      "id": "coronation_offer_support",
+      "name": "Offer Support",
+      "requirements": [],
+      "sourceFile": "coronation_intents.txt",
+      "targeted": false
+    },
+    {
+      "desc": "You stand proudly resolute, demanding a Favor Hook or Vassal Contract improvement from your liege.",
+      "dlc": null,
+      "family": "Coronation",
+      "icon": "profess_rights_intent",
+      "id": "coronation_profess_rights",
+      "name": "Profess Rights",
+      "requirements": [],
+      "sourceFile": "coronation_intents.txt",
+      "targeted": false
+    },
+    {
+      "desc": "…",
+      "dlc": null,
+      "family": "Coronation",
+      "icon": "seize_advantages_intent",
+      "id": "coronation_seize_advantages",
+      "name": "Seize Advantages",
+      "requirements": [],
+      "sourceFile": "coronation_intents.txt",
+      "targeted": false
+    },
+    {
+      "desc": "With your crowning begins the downfall of Claimants and the breaking of Factions and Confederations.\nThis Intent harms Detractors, and pleases non-Detractor Belligerent Vassals.",
+      "dlc": null,
+      "family": "Coronation",
+      "icon": "isolate_opponents_intent",
+      "id": "coronation_weaken_detractors",
+      "name": "Weaken Detractors",
+      "requirements": [],
+      "sourceFile": "coronation_intents.txt",
+      "targeted": false
+    },
+    {
+      "desc": "You seek to discover budding scholarly talent and recruit new Disciples.",
+      "dlc": null,
+      "family": "Debate",
+      "icon": "scout_talent_intent",
+      "id": "debate_gain_disciples_intent",
+      "name": "Gain Disciples",
+      "requirements": [
+        {
+          "name": "You have reached the maximum amount of disciples",
+          "negated": false
+        }
+      ],
+      "sourceFile": "debate_intents.txt",
+      "targeted": false
+    },
+    {
+      "desc": "You seek to find an Elder or replace your current Elder with a scholar of superior wit.",
+      "dlc": null,
+      "family": "Debate",
+      "icon": "scout_talent_intent",
+      "id": "debate_gain_elder_intent",
+      "name": "Gain Elder",
+      "requirements": [],
+      "sourceFile": "debate_intents.txt",
+      "targeted": false
+    },
+    {
+      "desc": "You wish to further the position of your Movement, through besmirching other movements or increasing your own Movement Power.",
+      "dlc": null,
+      "family": "Debate",
+      "icon": "intent_sow_discord",
+      "id": "debate_increase_movement_power_intent",
+      "name": "Increase Movement Power",
+      "requirements": [],
+      "sourceFile": "debate_intents.txt",
+      "targeted": false
+    },
+    {
+      "desc": "You came a long way to study here, and you plan to make the absolute most of it.",
+      "dlc": null,
+      "family": "Education",
+      "icon": "intent_study_hard",
+      "id": "study_hard_intent",
+      "name": "Study Hard",
+      "requirements": [],
+      "sourceFile": "education_intents.txt",
+      "targeted": false
+    },
+    {
+      "desc": "You intend to experience the life of the student, inside and outside the walls of the University.",
+      "dlc": "Tours & Tournaments",
+      "family": "Education",
+      "icon": "intent_revelry",
+      "id": "university_revelry_intent",
+      "name": "Goliardic Lifestyle",
+      "requirements": [],
+      "sourceFile": "education_intents.txt",
+      "targeted": false
+    },
+    {
+      "desc": "You will attempt to improve your relations with another House Head and draw them toward your Bloc.",
+      "dlc": null,
+      "family": "Festival",
+      "icon": "add_to_bloc_intent",
+      "id": "add_to_bloc_intent",
+      "name": "Coax to Bloc",
+      "requirements": [],
+      "sourceFile": "festival_intents.txt",
+      "targeted": true
+    },
+    {
+      "desc": "You wish to cultivate a greater sense of Cohesion within your Bloc.",
+      "dlc": null,
+      "family": "Festival",
+      "icon": "raise_cohesion_intent",
+      "id": "raise_cohesion_intent",
+      "name": "Encourage Cohesion",
+      "requirements": [],
+      "sourceFile": "festival_intents.txt",
+      "targeted": false
+    },
+    {
+      "desc": "You seek to sow dissent and alienate another House Head from their Bloc.",
+      "dlc": null,
+      "family": "Festival",
+      "icon": "remove_from_bloc_intent",
+      "id": "remove_from_bloc_intent",
+      "name": "Sideline from Bloc",
+      "requirements": [],
+      "sourceFile": "festival_intents.txt",
+      "targeted": true
+    },
+    {
+      "desc": "This is a time for mourning the dead, a critical time for demonstrating Piety.",
+      "dlc": null,
+      "family": "Funeral",
+      "icon": "intent_mourn",
+      "id": "mourn_intent",
+      "name": "Mourn",
+      "requirements": [],
+      "sourceFile": "funeral_intents.txt",
+      "targeted": false
+    },
+    {
+      "desc": "Look for any opportunity to make a gruesome impression on the other Nerge members.\nWill look for opportunities to gain extra …Dread",
+      "dlc": "Tours & Tournaments",
+      "family": "Hunt",
+      "icon": "overseer_intent",
+      "id": "dreadful_nerge_intent",
+      "name": "Dreadful",
+      "requirements": [],
+      "sourceFile": "hunt_intents.txt",
+      "targeted": false
+    },
+    {
+      "desc": "You just want a good hunt, and to be the one who brings down the quarry.",
+      "dlc": "Tours & Tournaments",
+      "family": "Hunt",
+      "icon": "acquire_pelts_intent",
+      "id": "slay_beast_intent",
+      "name": "Slay Beast",
+      "requirements": [],
+      "sourceFile": "hunt_intents.txt",
+      "targeted": false
+    },
+    {
+      "desc": "Look for any opportunity to ensure the success of the Nerge.\nWill increase Nerge Outcome gain",
+      "dlc": null,
+      "family": "Hunt",
+      "icon": "acquire_pelts_intent",
+      "id": "successful_nerge_intent",
+      "name": "Succeed",
+      "requirements": [],
+      "sourceFile": "hunt_intents.txt",
+      "targeted": false
+    },
+    {
+      "desc": "You wish to rub elbows with prospective officials and cultivate your Confucian Education.",
+      "dlc": null,
+      "family": "Imperial Examination",
+      "icon": "intent_storyteller",
+      "id": "exam_assist_exam_intent",
+      "name": "Assist Examination",
+      "requirements": [],
+      "sourceFile": "imperial_examination_intents.txt",
+      "targeted": false
+    },
+    {
+      "desc": "You will attempt to further the chances of your Dynasty Members.",
+      "dlc": null,
+      "family": "Imperial Examination",
+      "icon": "favoritism_intent",
+      "id": "exam_give_favor_intent",
+      "name": "Favoritism",
+      "requirements": [],
+      "sourceFile": "imperial_examination_intents.txt",
+      "targeted": false
+    },
+    {
+      "desc": "You seek to discover talent among selected individuals from all across the realm.",
+      "dlc": null,
+      "family": "Imperial Examination",
+      "icon": "scout_talent_intent",
+      "id": "exam_recruit_courtiers_intent",
+      "name": "Scout Talent",
+      "requirements": [],
+      "sourceFile": "imperial_examination_intents.txt",
+      "targeted": false
+    },
+    {
+      "desc": "You seek opportunities to further the chances of your available Disciples and Close Family Members.",
+      "dlc": null,
+      "family": "Imperial Examination",
+      "icon": "intent_influence",
+      "id": "imperial_exam_support_entrants_intent",
+      "name": "Support Entrants",
+      "requirements": [
+        {
+          "name": "No available family or disciple candidates",
+          "negated": false
+        }
+      ],
+      "sourceFile": "imperial_examination_intents.txt",
+      "targeted": false
+    },
+    {
+      "desc": "You will attempt to pass the examination, increasing your Merit.",
+      "dlc": null,
+      "family": "Imperial Examination",
+      "icon": "intent_study_hard",
+      "id": "imperial_exam_taker_intent",
+      "name": "Take Examination",
+      "requirements": [
+        {
+          "name": "Already passed examination",
+          "negated": false
+        },
+        {
+          "name": "You are a Governor",
+          "negated": false
+        }
+      ],
+      "sourceFile": "imperial_examination_intents.txt",
+      "targeted": false
+    },
+    {
+      "desc": "You seek opportunities to further the chances of your available Disciples and Close Family Members.",
+      "dlc": null,
+      "family": "Imperial Examination",
+      "icon": "intent_influence",
+      "id": "local_exam_support_entrants_intent",
+      "name": "Support Entrants",
+      "requirements": [
+        {
+          "name": "No available family or disciple candidates",
+          "negated": false
+        }
+      ],
+      "sourceFile": "imperial_examination_intents.txt",
+      "targeted": false
+    },
+    {
+      "desc": "You will attempt to pass the examination, increasing your Merit.",
+      "dlc": null,
+      "family": "Imperial Examination",
+      "icon": "intent_study_hard",
+      "id": "local_exam_taker_intent",
+      "name": "Take Examination",
+      "requirements": [
+        {
+          "name": "Already passed examination",
+          "negated": false
+        }
+      ],
+      "sourceFile": "imperial_examination_intents.txt",
+      "targeted": false
+    },
+    {
+      "desc": "There is much to uncover not only in the monuments themselves, but in the people who live near them. You will gain more Cultural Acceptance and Strong Hooks on those you recruit.",
+      "dlc": null,
+      "family": "Journey",
+      "icon": "intent_curiosity",
+      "id": "journey_curiosity_intent",
+      "name": "Curiosity",
+      "requirements": [],
+      "sourceFile": "journey_intents.txt",
+      "targeted": false
+    },
+    {
+      "desc": "You have one purpose and one purpose only – to gather as much knowledge as you possibly can. You can choose to increase your chance for an extra Skill Point in exchange for Stress.",
+      "dlc": null,
+      "family": "Journey",
+      "icon": "intent_knowledge",
+      "id": "journey_knowledge_hoarding_intent",
+      "name": "Knowledge Hoarding",
+      "requirements": [],
+      "sourceFile": "journey_intents.txt",
+      "targeted": false
+    },
+    {
+      "desc": "You have adopted a mindful approach to your journey and will be looking for opportunities to relieve stress.",
+      "dlc": null,
+      "family": "Pilgrimage",
+      "icon": "reduce_stress_intent",
+      "id": "reflection_intent",
+      "name": "Reflection",
+      "requirements": [],
+      "sourceFile": "pilgrimage_intents.txt",
+      "targeted": false
+    },
+    {
+      "desc": "You are particularly firm in your beliefs and will be looking for opportunities to share your conviction with others.",
+      "dlc": "Tours & Tournaments",
+      "family": "Pilgrimage",
+      "icon": "pious_intent",
+      "id": "zealot_intent",
+      "name": "Zealotry",
+      "requirements": [],
+      "sourceFile": "pilgrimage_intents.txt",
+      "targeted": false
+    },
+    {
+      "desc": "You seek opportunities to gain Opinion with your Traveling Companion. You should remember to bring someone!",
+      "dlc": "Tours & Tournaments",
+      "family": "Roaming",
+      "icon": "befriend_intent",
+      "id": "roaming_befriend_intent",
+      "name": "Befriend",
+      "requirements": [],
+      "sourceFile": "roaming_intents.txt",
+      "targeted": false
+    },
+    {
+      "desc": "You wish for moments to be left alone with your thoughts. Higher chance of gaining Trait Experience.",
+      "dlc": "Tours & Tournaments",
+      "family": "Roaming",
+      "icon": "intent_mystic",
+      "id": "roaming_mystic_intent",
+      "name": "Mystic",
+      "requirements": [
+        {
+          "name": "Mystic",
+          "negated": false
+        }
+      ],
+      "sourceFile": "roaming_intents.txt",
+      "targeted": false
+    },
+    {
+      "desc": "You look for moments that would make for a good and memorable story! Will increase Fame gained from the activity.",
+      "dlc": "Tours & Tournaments",
+      "family": "Roaming",
+      "icon": "intent_storyteller",
+      "id": "roaming_storyteller_intent",
+      "name": "Storyteller",
+      "requirements": [
+        {
+          "name": "Storyteller",
+          "negated": false
+        }
+      ],
+      "sourceFile": "roaming_intents.txt",
+      "targeted": false
+    },
+    {
+      "desc": "You are set to gain your target's favor. This often leads to friendly events and options.",
+      "dlc": "Tours & Tournaments",
+      "family": "Shared",
+      "icon": "befriend_intent",
+      "id": "befriend_attendee_intent",
+      "name": "Befriend",
+      "requirements": [],
+      "sourceFile": "shared_intents.txt",
+      "targeted": true
+    },
+    {
+      "desc": "A show of force is the only thing on your mind. This often leads to opportunities to gain your target's Obedience.",
+      "dlc": "Khans of the Steppe",
+      "family": "Shared",
+      "icon": "impose_obedience_intent",
+      "id": "impose_obedience_intent",
+      "name": "Impose Obedience",
+      "requirements": [
+        {
+          "name": "Nomadic government",
+          "negated": false
+        }
+      ],
+      "sourceFile": "shared_intents.txt",
+      "targeted": true
+    },
+    {
+      "desc": "You intend to use this gathering as a means to promote your Legitimacy.",
+      "dlc": "Legends of the Dead",
+      "family": "Shared",
+      "icon": "intent_legitimacy",
+      "id": "legitimacy_intent",
+      "name": "Espouse Legitimacy",
+      "requirements": [
+        {
+          "name": "… must have the Sons of our Fathers Perk",
+          "negated": false
+        }
+      ],
+      "sourceFile": "shared_intents.txt",
+      "targeted": false
+    },
+    {
+      "desc": "You're focused on ending the life of your target. This often results in murder occasions and special options.",
+      "dlc": "Tours & Tournaments",
+      "family": "Shared",
+      "icon": "murder_intent",
+      "id": "murder_attendee_intent",
+      "name": "Murder",
+      "requirements": [],
+      "sourceFile": "shared_intents.txt",
+      "targeted": true
+    },
+    {
+      "desc": "You want to focus on reducing stress by looking for Stress-relieving opportunities.",
+      "dlc": null,
+      "family": "Shared",
+      "icon": "reduce_stress_intent",
+      "id": "reduce_stress_intent",
+      "name": "Recreation",
+      "requirements": [],
+      "sourceFile": "shared_intents.txt",
+      "targeted": false
+    },
+    {
+      "desc": "You will use this activity as an opportunity to spread your Legend.",
+      "dlc": "Legends of the Dead",
+      "family": "Shared",
+      "icon": "intent_spread_legend",
+      "id": "spread_legend_intent",
+      "name": "Spread Legend",
+      "requirements": [
+        {
+          "name": "You don't currently own a Legend",
+          "negated": false
+        }
+      ],
+      "sourceFile": "shared_intents.txt",
+      "targeted": false
+    },
+    {
+      "desc": "You have one and only one thing in mind: seducing your target. This often leads to special events and options to fullfil that desire.",
+      "dlc": "Tours & Tournaments",
+      "family": "Shared",
+      "icon": "romance_intent",
+      "id": "woo_attendee_intent",
+      "name": "Seduce",
+      "requirements": [],
+      "sourceFile": "shared_intents.txt",
+      "targeted": true
+    },
+    {
+      "desc": "See what learnings we can bring from the local bureaucracy back home to our capital.\n\nA chance to gain additional bonuses for the Capital",
+      "dlc": "Tours & Tournaments",
+      "family": "Survey",
+      "icon": "capital_intent",
+      "id": "survey_learning_intent",
+      "name": "Survey Intent",
+      "requirements": [],
+      "sourceFile": "survey_intents.txt",
+      "targeted": false
+    },
+    {
+      "desc": "See what learnings we can bring from the local bureaucracy back home to our capital.",
+      "dlc": null,
+      "family": "Survey",
+      "icon": "capital_intent",
+      "id": "survey_learning_intent_guest",
+      "name": "Survey Intent",
+      "requirements": [],
+      "sourceFile": "survey_intents.txt",
+      "targeted": false
+    },
+    {
+      "desc": "The local stewards and nobles are known for their extra taxes and deep pockets, let's put an end to that.\n\nImproves the Success Chance",
+      "dlc": null,
+      "family": "Survey",
+      "icon": "overseer_intent",
+      "id": "survey_overseer_intent",
+      "name": "Overseer Intent",
+      "requirements": [],
+      "sourceFile": "survey_intents.txt",
+      "targeted": false
+    },
+    {
+      "desc": "You seek to improve the lives of others by looking for opportunities to take altruistic actions. This often leads to an increase in Popular Opinion and Piety. Zealous, Generous, and Improvident characters may lose Stress.",
+      "dlc": "Tours & Tournaments",
+      "family": "Tour",
+      "icon": "altruism_intent",
+      "id": "altruism_intent",
+      "name": "Altruism",
+      "requirements": [],
+      "sourceFile": "tour_intents.txt",
+      "targeted": false
+    },
+    {
+      "desc": "You seek to distribute justice to even the pettiest of criminals within your realm. This often leads to an increase in Control and Just characters may lose Stress.",
+      "dlc": null,
+      "family": "Tour",
+      "icon": "justice_intent",
+      "id": "justice_intent",
+      "name": "Justice",
+      "requirements": [],
+      "sourceFile": "tour_intents.txt",
+      "targeted": false
+    },
+    {
+      "desc": "You intend to embrace you carnal desires and seek sexual encounters with a plethora of partners. This often results in Stress reduction for Lustful characters.",
+      "dlc": null,
+      "family": "Tour",
+      "icon": "lechery_intent",
+      "id": "lechery_intent",
+      "name": "Lechery",
+      "requirements": [
+        {
+          "name": "Celibate",
+          "negated": true
+        }
+      ],
+      "sourceFile": "tour_intents.txt",
+      "targeted": false
+    },
+    {
+      "desc": "You seek to improve your court with new and powerful Knights. This often leads to recruiting opportunities.",
+      "dlc": null,
+      "family": "Tournament",
+      "icon": "recruit_knights_intent",
+      "id": "recruit_knights_intent",
+      "name": "Recruit",
+      "requirements": [],
+      "sourceFile": "tournament_intents.txt",
+      "targeted": false
+    },
+    {
+      "desc": "Win contests at this Grand Tournament, at the cost of all else. This often leads to increased Progress to Victory rewards and special options and events.",
+      "dlc": null,
+      "family": "Tournament",
+      "icon": "win_contest_intent",
+      "id": "win_contest_intent",
+      "name": "Triumph",
+      "requirements": [],
+      "sourceFile": "tournament_intents.txt",
+      "targeted": false
+    },
+    {
+      "desc": "Cause mayhem and increase your Stress loss with potential unfortunate consequences.",
+      "dlc": "Tours & Tournaments",
+      "family": "Wedding",
+      "icon": "intent_crash_wedding",
+      "id": "banquet_mischief_intent",
+      "name": "Mischief",
+      "requirements": [],
+      "sourceFile": "wedding_intents.txt",
+      "targeted": false
+    },
+    {
+      "desc": "Gain an alliance with the selected character, or even wow them into submission",
+      "dlc": null,
+      "family": "Wedding",
+      "icon": "intent_diplomacy",
+      "id": "diplomatic_intent",
+      "name": "Diplomacy",
+      "requirements": [],
+      "sourceFile": "wedding_intents.txt",
+      "targeted": true
+    },
+    {
+      "desc": "Find a good match for the selected character and set up a betrothal",
+      "dlc": null,
+      "family": "Wedding",
+      "icon": "intent_matchmaking",
+      "id": "matchmaking_intent",
+      "name": "Matchmaking",
+      "requirements": [],
+      "sourceFile": "wedding_intents.txt",
+      "targeted": true
+    },
+    {
+      "desc": "Devote yourself to the hidden one. In body. In mind.",
+      "dlc": null,
+      "family": "Witch Ritual",
+      "icon": "worship_devil_intent",
+      "id": "worship_devil_intent",
+      "name": "Worship …",
+      "requirements": [],
+      "sourceFile": "witch_ritual_intents.txt",
+      "targeted": false
+    }
+  ],
+  "pois": [
+    {
+      "icon": "poi_battles",
+      "id": "poi_battles",
+      "name": "Battles",
+      "rewards": [],
+      "sourceFile": "travel_point_of_interest_types.txt",
+      "visitText": "Visited Battle of … Site"
+    },
+    {
+      "icon": "poi_battles_historical",
+      "id": "poi_battles_historical",
+      "name": "Battles Historical",
+      "rewards": [],
+      "sourceFile": "travel_point_of_interest_types.txt",
+      "visitText": null
+    },
+    {
+      "icon": "poi_capitals",
+      "id": "poi_capitals",
+      "name": "Capitals",
+      "rewards": [
+        "… All Followers increase their Skill by 1 point"
+      ],
+      "sourceFile": "travel_point_of_interest_types.txt",
+      "visitText": "Visited capital of the …"
+    },
+    {
+      "icon": "poi_grand_city",
+      "id": "poi_grand_city",
+      "name": "Grand City",
+      "rewards": [
+        "Will trigger a Sight-Seeing Event"
+      ],
+      "sourceFile": "travel_point_of_interest_types.txt",
+      "visitText": "Visited the Great City of …"
+    },
+    {
+      "icon": "poi_legend_capitals",
+      "id": "poi_legend_capitals",
+      "name": "Legend Capitals",
+      "rewards": [],
+      "sourceFile": "travel_point_of_interest_types.txt",
+      "visitText": "Visited the origin place of …"
+    },
+    {
+      "icon": "poi_lighthouse_of_alexandria",
+      "id": "poi_lighthouse_of_alexandria",
+      "name": "Lighthouse Of Alexandria",
+      "rewards": [],
+      "sourceFile": "travel_point_of_interest_types.txt",
+      "visitText": "Visited the Lighthouse of Alexandria"
+    },
+    {
+      "icon": "poi_mandala_capital",
+      "id": "poi_mandala_capital",
+      "name": "Mandala Capital",
+      "rewards": [],
+      "sourceFile": "travel_point_of_interest_types.txt",
+      "visitText": null
+    },
+    {
+      "icon": "poi_mausoleum_at_halicarnassus",
+      "id": "poi_mausoleum_at_halicarnassus",
+      "name": "Mausoleum At Halicarnassus",
+      "rewards": [],
+      "sourceFile": "travel_point_of_interest_types.txt",
+      "visitText": "Visited the Mausoleum at Halicarnassus"
+    },
+    {
+      "icon": "poi_natural_feature",
+      "id": "poi_natural_feature",
+      "name": "Natural Feature",
+      "rewards": [],
+      "sourceFile": "travel_point_of_interest_types.txt",
+      "visitText": "Visited …"
+    },
+    {
+      "icon": "poi_silk_road_node",
+      "id": "poi_silk_road_node",
+      "name": "Silk Road Node",
+      "rewards": [],
+      "sourceFile": "travel_point_of_interest_types.txt",
+      "visitText": null
+    },
+    {
+      "icon": "poi_special_buildings_diplomatic",
+      "id": "poi_special_buildings_diplomatic",
+      "name": "Special Buildings Diplomatic",
+      "rewards": [],
+      "sourceFile": "travel_point_of_interest_types.txt",
+      "visitText": null
+    },
+    {
+      "icon": "poi_special_buildings_economic",
+      "id": "poi_special_buildings_economic",
+      "name": "Special Buildings Economic",
+      "rewards": [],
+      "sourceFile": "travel_point_of_interest_types.txt",
+      "visitText": null
+    },
+    {
+      "icon": "poi_special_buildings_learning",
+      "id": "poi_special_buildings_learning",
+      "name": "Special Buildings Learning",
+      "rewards": [],
+      "sourceFile": "travel_point_of_interest_types.txt",
+      "visitText": null
+    },
+    {
+      "icon": "poi_special_buildings_martial",
+      "id": "poi_special_buildings_martial",
+      "name": "Special Buildings Martial",
+      "rewards": [],
+      "sourceFile": "travel_point_of_interest_types.txt",
+      "visitText": null
+    },
+    {
+      "icon": "poi_special_buildings_religious",
+      "id": "poi_special_buildings_religious",
+      "name": "Special Buildings Religious",
+      "rewards": [],
+      "sourceFile": "travel_point_of_interest_types.txt",
+      "visitText": null
+    },
+    {
+      "icon": "poi_special_buildings_stress_relief",
+      "id": "poi_special_buildings_stress_relief",
+      "name": "Special Buildings Stress Relief",
+      "rewards": [],
+      "sourceFile": "travel_point_of_interest_types.txt",
+      "visitText": null
+    },
+    {
+      "icon": "poi_special_buildings_wonder",
+      "id": "poi_special_buildings_wonder",
+      "name": "Special Buildings Wonder",
+      "rewards": [],
+      "sourceFile": "travel_point_of_interest_types.txt",
+      "visitText": null
+    }
+  ],
+  "travelOptions": [
+    {
+      "cost": {},
+      "dlc": "Wandering Nobles",
+      "effectText": [],
+      "icon": "appeasement_option",
+      "id": "appeasement_option",
+      "name": "Appeasement",
+      "ownerMods": [
+        {
+          "polarity": "good",
+          "text": "-0.8 Monthly Tyranny"
+        },
+        {
+          "polarity": "bad",
+          "text": "-0.4 Dread /month"
+        }
+      ],
+      "requirements": [
+        {
+          "name": "Local Hero",
+          "negated": false
+        }
+      ],
+      "sourceFile": "travel_options.txt",
+      "travelSafety": null,
+      "travelSpeed": null
+    },
+    {
+      "cost": {
+        "gold": {
+          "scales": true
+        },
+        "herd": {
+          "scales": true
+        }
+      },
+      "dlc": null,
+      "effectText": [],
+      "icon": "court_physician_option",
+      "id": "court_physician_option",
+      "name": "Bring Medical Equipment",
+      "ownerMods": [
+        {
+          "polarity": "neutral",
+          "text": "-52.33 Epidemic Travel Danger"
+        }
+      ],
+      "requirements": [
+        {
+          "name": "You must employ a Personal Physician eligible for travel",
+          "negated": false
+        }
+      ],
+      "sourceFile": "travel_options.txt",
+      "travelSafety": null,
+      "travelSpeed": null
+    },
+    {
+      "cost": {},
+      "dlc": null,
+      "effectText": [],
+      "icon": "circumspect_option",
+      "id": "circumspect_option",
+      "name": "Circumspect",
+      "ownerMods": [
+        {
+          "polarity": "neutral",
+          "text": "60 Enemy Hostile Scheme Phase Length days slower per Scheme Phase"
+        },
+        {
+          "polarity": "good",
+          "text": "-50% Enemy Hostile Scheme Success Chance Add"
+        }
+      ],
+      "requirements": [
+        {
+          "name": "Fickle",
+          "negated": false
+        },
+        {
+          "name": "Arbitrary",
+          "negated": false
+        },
+        {
+          "name": "Paranoid",
+          "negated": false
+        }
+      ],
+      "sourceFile": "travel_options.txt",
+      "travelSafety": null,
+      "travelSpeed": -10
+    },
+    {
+      "cost": {},
+      "dlc": null,
+      "effectText": [
+        "Your Followers may spontaneously form Friendships, become Lovers, or Marry — either with each other or with Wanderers as you Travel past Baronies. Every relationship formed this way will give you …Prestige.\n(Your Children, Spouses, or others you care about will not Marry or take Lovers. This will not cause Followers to become Adulterers.)"
+      ],
+      "icon": "adventurers_encourage_relationships_option",
+      "id": "adventurers_encourage_relationships_option",
+      "name": "Encourage Relationships",
+      "ownerMods": [],
+      "requirements": [
+        {
+          "name": "Adventurer",
+          "negated": false
+        },
+        {
+          "name": "Chains of Loyalty",
+          "negated": false
+        }
+      ],
+      "sourceFile": "travel_options.txt",
+      "travelSafety": -5,
+      "travelSpeed": 5
+    },
+    {
+      "cost": {},
+      "dlc": null,
+      "effectText": [],
+      "icon": "adventurers_forward_scouts_option",
+      "id": "adventurers_forward_scouts_option",
+      "name": "Forward Scouts",
+      "ownerMods": [],
+      "requirements": [
+        {
+          "name": "Adventurer",
+          "negated": false
+        },
+        {
+          "name": "You have the … Domicile Building",
+          "negated": false
+        }
+      ],
+      "sourceFile": "travel_options.txt",
+      "travelSafety": 20,
+      "travelSpeed": -5
+    },
+    {
+      "cost": {},
+      "dlc": null,
+      "effectText": [
+        "When passing through a Barony, a random Follower has a chance to become Inspired\n(Chance % equal to a sixth of your …)"
+      ],
+      "icon": "adventurers_gather_inspiration_option",
+      "id": "adventurers_gather_inspiration_option",
+      "name": "Gather Inspiration",
+      "ownerMods": [],
+      "requirements": [
+        {
+          "name": "Adventurer",
+          "negated": false
+        },
+        {
+          "name": "Popular Figurehead",
+          "negated": false
+        }
+      ],
+      "sourceFile": "travel_options.txt",
+      "travelSafety": -5,
+      "travelSpeed": 5
+    },
+    {
+      "cost": {},
+      "dlc": null,
+      "effectText": [
+        "When passing through a Barony, you gain 25% of the Holding's Loot value as …Gold\n(can only gain Gold once per Holding)"
+      ],
+      "icon": "adventurers_make_local_deals_option",
+      "id": "adventurers_make_local_deals_option",
+      "name": "High-stakes Bartering",
+      "ownerMods": [],
+      "requirements": [
+        {
+          "name": "Adventurer",
+          "negated": false
+        },
+        {
+          "name": "Fearful Troops",
+          "negated": false
+        }
+      ],
+      "sourceFile": "travel_options.txt",
+      "travelSafety": -20,
+      "travelSpeed": null
+    },
+    {
+      "cost": {
+        "gold": {
+          "scales": true
+        },
+        "herd": {
+          "scales": true
+        }
+      },
+      "dlc": null,
+      "effectText": [
+        "A Cultural Ambassador with high Diplomacy will be recruited to your entourage and will go back to being a Wanderer immediately when Travel ends"
+      ],
+      "icon": "cultural_ambassador_option",
+      "id": "cultural_ambassador_option",
+      "name": "Hire Cultural Ambassador",
+      "ownerMods": [],
+      "requirements": [],
+      "sourceFile": "travel_options.txt",
+      "travelSafety": null,
+      "travelSpeed": null
+    },
+    {
+      "cost": {
+        "gold": {
+          "scales": true
+        },
+        "herd": {
+          "scales": true
+        }
+      },
+      "dlc": null,
+      "effectText": [
+        "A guide with the Desert Warrior trait will join your entourage and will go back to being a Wanderer immediately when Travel ends"
+      ],
+      "icon": "hire_desert_warrior_option",
+      "id": "hire_desert_warrior_option",
+      "name": "Hire Desert Warrior",
+      "ownerMods": [
+        {
+          "polarity": "neutral",
+          "text": "-32.33 Desert Danger"
+        },
+        {
+          "polarity": "neutral",
+          "text": "-32.33 Steppe Danger"
+        },
+        {
+          "polarity": "neutral",
+          "text": "-22.33 Drylands Danger"
+        }
+      ],
+      "requirements": [],
+      "sourceFile": "travel_options.txt",
+      "travelSafety": null,
+      "travelSpeed": null
+    },
+    {
+      "cost": {
+        "gold": {
+          "scales": true
+        },
+        "herd": {
+          "scales": true
+        }
+      },
+      "dlc": null,
+      "effectText": [
+        "A seafarer with the Forder trait will join your entourage and will go back to being a Wanderer immediately when Travel ends"
+      ],
+      "icon": "experienced_captains_option",
+      "id": "experienced_captains_option",
+      "name": "Hire Experienced Captains",
+      "ownerMods": [
+        {
+          "polarity": "neutral",
+          "text": "-45 Coastal Sea Danger"
+        },
+        {
+          "polarity": "neutral",
+          "text": "-45 Sea Danger"
+        }
+      ],
+      "requirements": [],
+      "sourceFile": "travel_options.txt",
+      "travelSafety": null,
+      "travelSpeed": null
+    },
+    {
+      "cost": {
+        "gold": {
+          "scales": true
+        },
+        "herd": {
+          "scales": true
+        }
+      },
+      "dlc": null,
+      "effectText": [
+        "A guide with the Forder trait will join your entourage and will go back to being a Wanderer immediately when Travel ends"
+      ],
+      "icon": "hire_forder_option",
+      "id": "hire_forder_option",
+      "name": "Hire Forder",
+      "ownerMods": [
+        {
+          "polarity": "neutral",
+          "text": "-42.33 Wetlands Danger"
+        },
+        {
+          "polarity": "neutral",
+          "text": "-22.33 Floodplains Danger"
+        }
+      ],
+      "requirements": [],
+      "sourceFile": "travel_options.txt",
+      "travelSafety": null,
+      "travelSpeed": null
+    },
+    {
+      "cost": {
+        "gold": {
+          "scales": true
+        },
+        "herd": {
+          "scales": true
+        }
+      },
+      "dlc": null,
+      "effectText": [
+        "A guide with the Forest Fighter trait will join your entourage and will go back to being a Wanderer immediately when Travel ends"
+      ],
+      "icon": "hire_rough_terrain_expert_option",
+      "id": "hire_rough_terrain_expert_option",
+      "name": "Hire Forest Guide",
+      "ownerMods": [
+        {
+          "polarity": "neutral",
+          "text": "-32 Forest Danger"
+        },
+        {
+          "polarity": "neutral",
+          "text": "-37.67 Taiga Danger"
+        }
+      ],
+      "requirements": [],
+      "sourceFile": "travel_options.txt",
+      "travelSafety": null,
+      "travelSpeed": null
+    },
+    {
+      "cost": {
+        "gold": {
+          "scales": true
+        },
+        "herd": {
+          "scales": true
+        }
+      },
+      "dlc": null,
+      "effectText": [
+        "A guide with the Jungle Stalker trait will join your entourage and will go back to being a Wanderer immediately when Travel ends"
+      ],
+      "icon": "hire_jungle_expert_option",
+      "id": "hire_jungle_expert_option",
+      "name": "Hire Jungle Stalker",
+      "ownerMods": [
+        {
+          "polarity": "neutral",
+          "text": "-42.33 Jungle Danger"
+        }
+      ],
+      "requirements": [],
+      "sourceFile": "travel_options.txt",
+      "travelSafety": null,
+      "travelSpeed": null
+    },
+    {
+      "cost": {
+        "gold": {
+          "scales": true
+        },
+        "herd": {
+          "scales": true
+        }
+      },
+      "dlc": null,
+      "effectText": [
+        "A Mercenary captain will join your entourage and will go back to being a Wanderer immediately when Travel ends"
+      ],
+      "icon": "hire_experienced_mercenaries_option",
+      "id": "hire_experienced_mercenaries_option",
+      "name": "Hire Mercenary Guards",
+      "ownerMods": [],
+      "requirements": [
+        {
+          "name": "There is an available, unhired Mercenary within range",
+          "negated": false
+        }
+      ],
+      "sourceFile": "travel_options.txt",
+      "travelSafety": 20,
+      "travelSpeed": 10
+    },
+    {
+      "cost": {
+        "gold": {
+          "scales": true
+        },
+        "herd": {
+          "scales": true
+        }
+      },
+      "dlc": null,
+      "effectText": [
+        "A guide with the Rough Terrain Expert trait will join your entourage and will go back to being a Wanderer immediately when Travel ends"
+      ],
+      "icon": "hire_mountaineer_option",
+      "id": "hire_mountaineer_option",
+      "name": "Hire Mountaineer",
+      "ownerMods": [
+        {
+          "polarity": "neutral",
+          "text": "-42.33 Mountains Danger"
+        },
+        {
+          "polarity": "neutral",
+          "text": "-42.33 Desert Mountains Danger"
+        },
+        {
+          "polarity": "neutral",
+          "text": "-32 Hills Danger"
+        }
+      ],
+      "requirements": [],
+      "sourceFile": "travel_options.txt",
+      "travelSafety": null,
+      "travelSpeed": null
+    },
+    {
+      "cost": {},
+      "dlc": null,
+      "effectText": [],
+      "icon": "estate_mounts_option",
+      "id": "estate_mounts_option",
+      "name": "Magnificent Horses",
+      "ownerMods": [
+        {
+          "polarity": "good",
+          "text": "+10 Travel Companion Opinion"
+        },
+        {
+          "polarity": "good",
+          "text": "+1 Prestige /month"
+        }
+      ],
+      "requirements": [],
+      "sourceFile": "travel_options.txt",
+      "travelSafety": null,
+      "travelSpeed": 10
+    },
+    {
+      "cost": {},
+      "dlc": null,
+      "effectText": [],
+      "icon": "anxious_option",
+      "id": "anxious_option",
+      "name": "Make Haste",
+      "ownerMods": [],
+      "requirements": [
+        {
+          "name": "Impatient",
+          "negated": false
+        },
+        {
+          "name": "Craven",
+          "negated": false
+        },
+        {
+          "name": "Reckless",
+          "negated": false
+        }
+      ],
+      "sourceFile": "travel_options.txt",
+      "travelSafety": -10,
+      "travelSpeed": 20
+    },
+    {
+      "cost": {},
+      "dlc": "Wandering Nobles",
+      "effectText": [],
+      "icon": "leisurely_option",
+      "id": "leisurely_option",
+      "name": "Mellow Journey",
+      "ownerMods": [
+        {
+          "polarity": "good",
+          "text": "-50% Stress Gain"
+        }
+      ],
+      "requirements": [
+        {
+          "name": "Local Hero",
+          "negated": false
+        }
+      ],
+      "sourceFile": "travel_options.txt",
+      "travelSafety": null,
+      "travelSpeed": -20
+    },
+    {
+      "cost": {},
+      "dlc": "Wandering Nobles",
+      "effectText": [],
+      "icon": "hire_allied_mercenaries_option",
+      "id": "hire_allied_mercenaries_option",
+      "name": "Private Army",
+      "ownerMods": [],
+      "requirements": [
+        {
+          "name": "Mercenary Contacts",
+          "negated": false
+        }
+      ],
+      "sourceFile": "travel_options.txt",
+      "travelSafety": 5,
+      "travelSpeed": 5
+    },
+    {
+      "cost": {},
+      "dlc": null,
+      "effectText": [
+        "When passing through a Barony, you may convert a Wanderer residing there to your Faith and gain …Piety\n(Chance % equal to your …)"
+      ],
+      "icon": "adventurers_proselytize_zealously_option",
+      "id": "adventurers_proselytize_zealously_option",
+      "name": "Proselytize to Locals",
+      "ownerMods": [],
+      "requirements": [
+        {
+          "name": "Adventurer",
+          "negated": false
+        },
+        {
+          "name": "Zealous Proselytizer",
+          "negated": false
+        }
+      ],
+      "sourceFile": "travel_options.txt",
+      "travelSafety": -5,
+      "travelSpeed": 5
+    },
+    {
+      "cost": {
+        "gold": {
+          "scales": true
+        }
+      },
+      "dlc": null,
+      "effectText": [],
+      "icon": "purchase_desert_gear_option",
+      "id": "purchase_desert_gear_option",
+      "name": "Purchase Arid Explorer's Pack",
+      "ownerMods": [
+        {
+          "polarity": "neutral",
+          "text": "-18.67 Desert Danger"
+        },
+        {
+          "polarity": "neutral",
+          "text": "-18.67 Steppe Danger"
+        },
+        {
+          "polarity": "neutral",
+          "text": "-13.67 Drylands Danger"
+        },
+        {
+          "polarity": "neutral",
+          "text": "-23.67 Desert Mountains Danger"
+        }
+      ],
+      "requirements": [
+        {
+          "name": "Adventurer",
+          "negated": false
+        }
+      ],
+      "sourceFile": "travel_options.txt",
+      "travelSafety": null,
+      "travelSpeed": null
+    },
+    {
+      "cost": {
+        "gold": {
+          "scales": true
+        }
+      },
+      "dlc": null,
+      "effectText": [],
+      "icon": "purchase_rough_terrain_gear_option",
+      "id": "purchase_rough_terrain_gear_option",
+      "name": "Purchase Pathfinder's Gear",
+      "ownerMods": [
+        {
+          "polarity": "neutral",
+          "text": "-23.67 Mountains Danger"
+        },
+        {
+          "polarity": "neutral",
+          "text": "-14 Hills Danger"
+        },
+        {
+          "polarity": "neutral",
+          "text": "-23.67 Wetlands Danger"
+        },
+        {
+          "polarity": "neutral",
+          "text": "-13.67 Floodplains Danger"
+        }
+      ],
+      "requirements": [
+        {
+          "name": "Adventurer",
+          "negated": false
+        }
+      ],
+      "sourceFile": "travel_options.txt",
+      "travelSafety": null,
+      "travelSpeed": null
+    },
+    {
+      "cost": {
+        "gold": {
+          "scales": true
+        }
+      },
+      "dlc": null,
+      "effectText": [],
+      "icon": "purchase_forest_gear_option",
+      "id": "purchase_forest_gear_option",
+      "name": "Purchase Wilderness Kit",
+      "ownerMods": [
+        {
+          "polarity": "neutral",
+          "text": "-14 Forest Danger"
+        },
+        {
+          "polarity": "neutral",
+          "text": "-19.33 Taiga Danger"
+        },
+        {
+          "polarity": "neutral",
+          "text": "-23.67 Jungle Danger"
+        }
+      ],
+      "requirements": [
+        {
+          "name": "Adventurer",
+          "negated": false
+        }
+      ],
+      "sourceFile": "travel_options.txt",
+      "travelSafety": null,
+      "travelSpeed": null
+    },
+    {
+      "cost": {},
+      "dlc": null,
+      "effectText": [
+        "Enables Events to recruit Wanderers for …Gold if you have open positions for Officers"
+      ],
+      "icon": "adventurers_scout_for_talent_option",
+      "id": "adventurers_scout_for_talent_option",
+      "name": "Scout for Talent",
+      "ownerMods": [],
+      "requirements": [
+        {
+          "name": "Adventurer",
+          "negated": false
+        },
+        {
+          "name": "Toe the Line",
+          "negated": true
+        }
+      ],
+      "sourceFile": "travel_options.txt",
+      "travelSafety": null,
+      "travelSpeed": -5
+    },
+    {
+      "cost": {},
+      "dlc": null,
+      "effectText": [
+        "When passing through a Barony, you may learn a Secret of someone residing there\n(Chance % equal to your …)"
+      ],
+      "icon": "adventurers_search_for_secrets_option",
+      "id": "adventurers_search_for_secrets_option",
+      "name": "Search for Secrets",
+      "ownerMods": [],
+      "requirements": [
+        {
+          "name": "Adventurer",
+          "negated": false
+        },
+        {
+          "name": "Digging for Dirt",
+          "negated": false
+        }
+      ],
+      "sourceFile": "travel_options.txt",
+      "travelSafety": -10,
+      "travelSpeed": 10
+    },
+    {
+      "cost": {},
+      "dlc": null,
+      "effectText": [],
+      "icon": "superior_armaments_option",
+      "id": "superior_armaments_option",
+      "name": "Superior Armaments",
+      "ownerMods": [
+        {
+          "polarity": "good",
+          "text": "-20% Artifact Decay Reduction"
+        }
+      ],
+      "requirements": [],
+      "sourceFile": "travel_options.txt",
+      "travelSafety": 10,
+      "travelSpeed": null
+    },
+    {
+      "cost": {},
+      "dlc": null,
+      "effectText": [],
+      "icon": "fancy_mounts_option",
+      "id": "fancy_mounts_option",
+      "name": "Superior Mounts",
+      "ownerMods": [],
+      "requirements": [],
+      "sourceFile": "travel_options.txt",
+      "travelSafety": null,
+      "travelSpeed": 20
+    },
+    {
+      "cost": {},
+      "dlc": null,
+      "effectText": [],
+      "icon": "military_recruits_option",
+      "id": "military_recruits_option",
+      "name": "Train Knights",
+      "ownerMods": [],
+      "requirements": [],
+      "sourceFile": "travel_options.txt",
+      "travelSafety": 10,
+      "travelSpeed": null
+    },
+    {
+      "cost": {},
+      "dlc": "Wandering Nobles",
+      "effectText": [
+        "Your heir, …, will be brought into your entourage.",
+        "Your Heir will be brought into your entourage."
+      ],
+      "icon": "tutor_child_option",
+      "id": "tutor_child_option",
+      "name": "Tutoring Trip",
+      "ownerMods": [
+        {
+          "polarity": "good",
+          "text": "+5 Child Opinion"
+        }
+      ],
+      "requirements": [
+        {
+          "name": "Know Your Land, Know Your People",
+          "negated": false
+        }
+      ],
+      "sourceFile": "travel_options.txt",
+      "travelSafety": null,
+      "travelSpeed": -5
+    }
+  ]
+}
