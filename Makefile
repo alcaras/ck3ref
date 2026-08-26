@@ -23,6 +23,7 @@ data:
 	@python3 scripts/build_holy_sites.py
 	@python3 scripts/build_cbs.py
 	@python3 scripts/build_titles.py
+	@python3 scripts/build_startdates.py
 	@python3 scripts/build_concepts.py
 	@python3 scripts/build_traditions.py
 	@python3 scripts/build_innovations.py

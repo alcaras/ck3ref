@@ -1,0 +1,156 @@
+---
+import Base from '../layouts/Base.astro';
+import holdings from '../data/holdings.json';
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+
+const ORDER = [
+  'castle_holding', 'city_holding', 'church_holding', 'tribal_holding',
+  'temple_citadel_holding', 'nomad_holding', 'herder_holding',
+];
+const ordered = [...holdings].sort(
+  (a, b) => ORDER.indexOf(a.id) - ORDER.indexOf(b.id),
+);
+
+const PARAM_NOTE: Record<string, string> = {
+  no_buildings: 'no buildings can be constructed',
+  no_levies: 'raises no levies',
+  county_fertility: 'income scales with County Fertility',
+};
+
+type Ref = { id: string; name: string; category: string | null; tiers: number | null; dlc: string | null };
+
+function byCategory(buildings: Ref[]): [string, Ref[]][] {
+  const groups = new Map<string, Ref[]>();
+  for (const b of buildings) {
+    const cat = b.category ?? 'Other';
+    if (!groups.has(cat)) groups.set(cat, []);
+    groups.get(cat)!.push(b);
+  }
+  return [...groups.entries()].sort((a, b) => a[0].localeCompare(b[0]));
+}
+
+const totalLines = holdings.reduce((n, h) => n + h.buildings.length, 0);
+---
+<Base
+  title="Holdings"
+  active="holdings"
+  lede="The seven holding types a barony can carry: the primary building chain each is founded on, which building lines it may construct, and its inheritance and domain rules — read from common/holdings."
+  stats={[
+    { value: holdings.length, label: 'holding types' },
+    { value: totalLines, label: 'buildable building lines' },
+  ]}
+>
+  <div class="cards">
+    {ordered.map((h) => (
+      <article class="hcard" id={h.id}>
+        <header>
+          <img src={`${base}/img/holdings/${h.id}.webp`} alt="" width="44" height="44" loading="lazy" onerror="this.style.visibility='hidden'" />
+          <div>
+            <h2>{h.name}</h2>
+            <p class="primary">
+              Founded on{' '}
+              <a href={`${base}/buildings#${h.primaryBuilding.id}`}>{h.primaryBuilding.name}</a>
+              {h.primaryBuilding.tiers && h.primaryBuilding.tiers > 1 && (
+                <span class="subtle"> — a {h.primaryBuilding.tiers}-tier chain</span>
+              )}
+            </p>
+          </div>
+        </header>
+
+        <ul class="rules">
+          <li class:list={[{ 'is-no': !h.canBeInherited }]}>
+            {h.canBeInherited ? 'Can be inherited' : 'Cannot be inherited'}
+          </li>
+          {!h.countsTowardDomainLimitIfDisabled && (
+            <li>Does not count toward the Domain Limit while disabled</li>
+          )}
+          {h.requiredHeirGovernments.length > 0 && (
+            <li>
+              County heir must be{' '}
+              {h.requiredHeirGovernments.map((g, i) => (
+                <>
+                  {i > 0 && ' or '}
+                  <span class="chip chip--req">{g.name}</span>
+                </>
+              ))}{' '}
+              government
+            </li>
+          )}
+          {h.parameters.map((p) => (
+            <li class="param" title={`holding parameter ${p}`}>
+              {PARAM_NOTE[p] ?? p.replace(/_/g, ' ')}
+            </li>
+          ))}
+        </ul>
+
+        {h.buildings.length > 0 ? (
+          <div class="roster">
+            <h3>Buildable lines <span class="count">{h.buildings.length}</span></h3>
+            {byCategory(h.buildings).map(([cat, list]) => (
+              <p class="cat-row">
+                <b>{cat}</b>
+                <span class="chips">
+                  {list.map((b) => (
+                    <a
+                      class="chip"
+                      href={`${base}/buildings#${b.id}`}
+                      title={`${b.tiers} tier${b.tiers === 1 ? '' : 's'}${b.dlc ? ` · ${b.dlc}` : ''}`}
+                    >
+                      {b.name}
+                    </a>
+                  ))}
+                </span>
+              </p>
+            ))}
+          </div>
+        ) : (
+          <p class="roster none">No constructible buildings — this holding grows through its primary building alone.</p>
+        )}
+      </article>
+    ))}
+  </div>
+
+  <p class="footnote">
+    Building lines listed here are first tiers; costs, upgrade tiers, and each building's own
+    terrain or innovation gates live on the <a href={`${base}/buildings`}>Buildings</a> page. Some
+    lines are additionally gated by culture or faith (e.g. Monastic Schools require a faith tenet;
+    tribal Tradeports a culture parameter) — those gates are on the building itself. The game also
+    auto-generates per-holding-type construction modifiers
+    (<code>&lt;holding&gt;_build_speed</code>, <code>_build_gold_cost</code>, …) which appear
+    wherever modifiers are rendered.
+  </p>
+
+  <style>
+    .cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 1rem; }
+    .hcard {
+      background: var(--panel); border: 1px solid var(--line-soft); border-radius: var(--r);
+      padding: 0.9rem 1rem;
+    }
+    .hcard header { display: flex; gap: 0.7rem; align-items: center; margin-bottom: 0.5rem; }
+    .hcard header img { width: 44px; height: 44px; object-fit: contain; flex: none;
+      filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.6)); }
+    .hcard h2 {
+      font-family: var(--font-display); font-size: 1.1rem; font-weight: 600; margin: 0;
+      display: flex; gap: 0.4rem; align-items: baseline;
+    }
+    .hcard h2::before { content: '❧'; color: var(--rubric); font-size: 0.85rem; }
+    .primary { margin: 0.1rem 0 0; font-size: 0.83rem; color: var(--dim); }
+    .rules { list-style: none; margin: 0 0 0.6rem; padding: 0; font-size: 0.83rem; }
+    .rules li { padding: 0.1rem 0; }
+    .rules li.is-no { color: var(--bad); }
+    .rules li.param { color: var(--dim); }
+    .rules li.param::before { content: '· '; color: var(--faint); }
+    .roster h3 {
+      font-size: 0.78rem; font-weight: 600; color: var(--dim); margin: 0 0 0.35rem;
+    }
+    .roster h3 .count { color: var(--faint); font-family: var(--font-mono); font-size: 0.72rem; }
+    .roster.none { color: var(--faint); font-size: 0.83rem; margin: 0; }
+    .cat-row { margin: 0.25rem 0; font-size: 0.8rem; display: flex; gap: 0.45rem; }
+    .cat-row b { color: var(--faint); font-weight: 600; flex: none; width: 7.5rem; }
+    .cat-row .chips { max-width: none; }
+    .cat-row .chip { border-bottom: none; }
+    .footnote { color: var(--faint); font-size: 0.78rem; max-width: 78ch; margin-top: 2rem; }
+    .footnote code { font-family: var(--font-mono); font-size: 0.95em; }
+  </style>
+</Base>

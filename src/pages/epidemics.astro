@@ -1,0 +1,143 @@
+---
+import Base from '../layouts/Base.astro';
+import epidemics from '../data/epidemics.json';
+import { getEntity } from '../lib/entities';
+
+type Mod = { key: string; text: string; polarity?: string };
+type Val = { value?: number; rules?: string };
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+
+const dlcs = [...new Set(epidemics.map((e) => e.dlc).filter(Boolean))];
+const valText = (v: Val | null | undefined) =>
+  v == null ? '—' : v.value != null ? `${v.value}%` : 'varies';
+const valTitle = (v: Val | null | undefined) => (v?.rules ? v.rules : undefined);
+const traitLink = (id: string) => (getEntity(id) ? `${base}/traits#${id}` : null);
+---
+<Base
+  title="Epidemics"
+  active="epidemics"
+  lede="The seven diseases that can sweep the map — from local smallpox outbreaks to the Black Death — with each intensity's outbreak odds, spread, reach, and the province penalties at every infection level."
+  stats={[
+    { value: epidemics.length, label: 'diseases' },
+    { value: 3, label: 'outbreak intensities' },
+    { value: dlcs.length, label: 'DLC-locked' },
+  ]}
+>
+  <div class="jump chips">
+    {epidemics.map((e) => <a class="chip" href={`#${e.id}`}>{e.name}</a>)}
+  </div>
+
+  {epidemics.map((e) => (
+    <section id={e.id}>
+      <h2 class="group-h">
+        {e.name}
+        {e.dlc && <span class="badge-dlc">{e.dlc}</span>}
+      </h2>
+      <div class="pills">
+        {e.trait && (
+          <span class="pill">
+            infects with{' '}
+            {traitLink(e.trait) ? (
+              <a href={traitLink(e.trait)!}><b>{e.traitName}</b></a>
+            ) : (
+              <b>{e.traitName}</b>
+            )}
+            <span class="subtle"> — symptoms &amp; lethality on the trait</span>
+          </span>
+        )}
+        <span class="pill" title={valTitle(e.infectionChance)}>
+          monthly character infection <b>{valText(e.infectionChance)}</b>
+        </span>
+      </div>
+
+      <div class="two-col">
+        <div>
+          <h3>Outbreak intensities</h3>
+          <div class="tbl-scroll">
+            <table class="ntbl">
+              <thead>
+                <tr>
+                  <th>Intensity</th>
+                  <th class="num" title="yearly chance per province to spawn an outbreak">Outbreak</th>
+                  <th class="num" title="monthly chance to spread to an adjacent province">Spread</th>
+                  <th class="num" title="maximum provinces this intensity can infect">Reach</th>
+                  <th title="days for a province to reach full infection">Ramp-up</th>
+                  <th title="how long full infection lasts">Peak</th>
+                  <th title="recovery time after the peak has run its course">Recovery</th>
+                </tr>
+              </thead>
+              <tbody>
+                {e.intensities.map((i) => (
+                  <tr>
+                    <td class="name">{i.name}</td>
+                    <td class="num cost"><span class="var" title={valTitle(i.outbreakChance)}>{valText(i.outbreakChance)}</span></td>
+                    <td class="num cost"><span class="var" title={valTitle(i.spreadChance)}>{valText(i.spreadChance)}</span></td>
+                    <td class="num">{i.maxProvinces}</td>
+                    <td>{i.progressDuration ?? '—'}</td>
+                    <td>{i.infectionDuration ?? '—'}</td>
+                    <td>{i.recoveryDuration ?? '—'}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div>
+          <h3>Province penalties by infection level</h3>
+          <div class="tbl-scroll">
+            <table class="ntbl">
+              <thead>
+                <tr>
+                  <th class="num" title="province infection level (0–100) at which these effects apply">Level</th>
+                  <th>Effects</th>
+                </tr>
+              </thead>
+              <tbody>
+                {e.levels.map((l) => (
+                  <tr>
+                    <td class="num">{l.threshold}+</td>
+                    <td>
+                      <ul class="fx">
+                        {((l.provinceModifiers ?? []) as Mod[]).map((m) => (
+                          <li class={m.polarity ? `is-${m.polarity}` : 'is-neutral'}>{m.text}</li>
+                        ))}
+                        {((l.countyModifiers ?? []) as Mod[]).map((m) => (
+                          <li class={m.polarity ? `is-${m.polarity}` : 'is-neutral'}>{m.text} <span class="subtle">(county)</span></li>
+                        ))}
+                        {((l.realmModifiers ?? []) as Mod[]).map((m) => (
+                          <li class={m.polarity ? `is-${m.polarity}` : 'is-neutral'}>{m.text} <span class="subtle">(realm, per province)</span></li>
+                        ))}
+                      </ul>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+  ))}
+
+  <p class="footnote">
+    Outbreak and spread chances are formulas over development, terrain, sea access, recent epidemics,
+    and game rules — hover "varies" for the resolved rule chain. The apocalyptic tier of bubonic
+    plague is the Black Death, with its own historical-occurrence game rules. Character symptoms,
+    health impact, and death risk live on each disease's trait.
+  </p>
+
+  <style>
+    .jump { margin: 0 0 1rem; }
+    .jump .chip { border-bottom: none; }
+    .pills { margin-bottom: 0.7rem; }
+    .two-col { display: grid; grid-template-columns: minmax(340px, 3fr) minmax(280px, 2fr); gap: 1rem; align-items: start; }
+    @media (max-width: 900px) { .two-col { grid-template-columns: 1fr; } }
+    .two-col h3 { font-size: 0.85rem; font-weight: 600; color: var(--dim); margin: 0 0 0.35rem; }
+    .fx { list-style: none; margin: 0; padding: 0; font-size: 0.8rem; }
+    .fx li.is-good { color: var(--good); }
+    .fx li.is-bad { color: var(--bad); }
+    .cost .var { color: inherit; cursor: help; border-bottom: 1px dotted var(--faint); }
+    .footnote { color: var(--faint); font-size: 0.78rem; max-width: 70ch; margin-top: 2rem; }
+  </style>
+</Base>

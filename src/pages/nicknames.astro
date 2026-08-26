@@ -1,0 +1,137 @@
+---
+import Base from '../layouts/Base.astro';
+import nicknames from '../data/nicknames.json';
+
+const groups: { key: string; label: string; rows: typeof nicknames }[] = [];
+const byDlc = new Map<string, typeof nicknames>();
+for (const n of nicknames) {
+  const key = n.dlc ?? 'base';
+  if (!byDlc.has(key)) byDlc.set(key, []);
+  byDlc.get(key)!.push(n);
+}
+groups.push({ key: 'base', label: 'Base game', rows: byDlc.get('base') ?? [] });
+for (const key of [...byDlc.keys()].filter((k) => k !== 'base').sort()) {
+  groups.push({ key, label: key, rows: byDlc.get(key)! });
+}
+
+const badCount = nicknames.filter((n) => n.isBad).length;
+const prefixCount = nicknames.filter((n) => n.isPrefix).length;
+const dlcs = groups.filter((g) => g.key !== 'base').map((g) => g.key);
+---
+<Base
+  title="Nicknames"
+  active="nicknames"
+  lede="Every nickname a character can earn. Nicknames are handed out by events and decisions — the data defines only the name and whether it is flattering; prefix nicknames go before the character's name (Good King Wenceslaus) rather than after it."
+  stats={[
+    { value: nicknames.length, label: 'nicknames' },
+    { value: badCount, label: 'unflattering' },
+    { value: prefixCount, label: 'prefix style' },
+    { value: dlcs.length, label: 'DLCs add content' },
+  ]}
+>
+  <div class="filterbar">
+    <input type="search" id="q" placeholder="Filter by name or key…" autocomplete="off" />
+    <select id="fkind">
+      <option value="">good &amp; bad</option>
+      <option value="good">good only</option>
+      <option value="bad">bad only</option>
+    </select>
+    <select id="fprefix">
+      <option value="">any placement</option>
+      <option value="suffix">after the name</option>
+      <option value="prefix">before the name</option>
+    </select>
+    <select id="fdlc">
+      <option value="">base game + DLC</option>
+      <option value="base">base game only</option>
+      {dlcs.map((d) => <option value={d}>{d}</option>)}
+    </select>
+    <span class="hint" id="count"></span>
+  </div>
+
+  {groups.map((g) => (
+    <section data-group={g.key}>
+      <h2 class="group-h" id={g.key.toLowerCase().replace(/[^a-z0-9]+/g, '-')}>
+        {g.label}
+        <span class="count">{g.rows.length}</span>
+      </h2>
+      <div class="tbl-scroll">
+        <table class="ntbl ntbl--dense">
+          <thead>
+            <tr>
+              <th>Nickname</th>
+              <th>Key</th>
+              <th title="Bad nicknames are unflattering; characters resent them">Tone</th>
+              <th title="Prefix nicknames go before the character's name">Placement</th>
+              <th>DLC</th>
+            </tr>
+          </thead>
+          <tbody>
+            {g.rows.map((n) => (
+              <tr
+                id={n.id}
+                data-name={`${n.name} ${n.id}`.toLowerCase()}
+                data-kind={n.isBad ? 'bad' : 'good'}
+                data-prefix={n.isPrefix ? 'prefix' : 'suffix'}
+                data-dlc={n.dlc ?? 'base'}
+              >
+                <td class="name nick">
+                  {n.isPrefix
+                    ? <><b class:list={[{ 'is-bad': n.isBad }]}>{n.name}</b> <span class="ph">Name</span></>
+                    : <><span class="ph">Name</span> <b class:list={[{ 'is-bad': n.isBad }]}>{n.name}</b></>}
+                </td>
+                <td class="key">{n.id}</td>
+                <td>{n.isBad ? <span class="tone tone--bad">bad</span> : <span class="tone">good</span>}</td>
+                <td>{n.isPrefix ? 'before' : <span class="subtle">after</span>}</td>
+                <td>{n.dlc ? <span class="badge-dlc">{n.dlc}</span> : <span class="subtle">—</span>}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </section>
+  ))}
+
+  <script>
+    const q = document.getElementById('q') as HTMLInputElement;
+    const fkind = document.getElementById('fkind') as HTMLSelectElement;
+    const fprefix = document.getElementById('fprefix') as HTMLSelectElement;
+    const fdlc = document.getElementById('fdlc') as HTMLSelectElement;
+    const count = document.getElementById('count')!;
+    const rows = [...document.querySelectorAll<HTMLTableRowElement>('tbody tr')];
+    const groups = [...document.querySelectorAll<HTMLElement>('section[data-group]')];
+
+    function apply() {
+      const needle = q.value.trim().toLowerCase();
+      const k = fkind.value;
+      const p = fprefix.value;
+      const d = fdlc.value;
+      let shown = 0;
+      for (const r of rows) {
+        const ok =
+          (!needle || (r.dataset.name ?? '').includes(needle)) &&
+          (!k || r.dataset.kind === k) &&
+          (!p || r.dataset.prefix === p) &&
+          (!d || (d === 'base' ? r.dataset.dlc === 'base' : r.dataset.dlc === d));
+        r.hidden = !ok;
+        if (ok) shown++;
+      }
+      for (const g of groups) {
+        g.hidden = ![...g.querySelectorAll('tbody tr')].some((r) => !(r as HTMLTableRowElement).hidden);
+      }
+      count.textContent = `${shown} of ${rows.length}`;
+    }
+    for (const el of [q, fkind, fprefix, fdlc]) el.addEventListener('input', apply);
+    apply();
+  </script>
+
+  <style>
+    .ntbl--dense tbody td { padding: 0.22rem 0.6rem; }
+    .nick .ph { color: var(--faint); font-style: italic; }
+    .nick b { font-weight: 600; }
+    .nick b.is-bad { color: color-mix(in oklab, var(--bad) 75%, var(--vellum)); }
+    .key { font-family: var(--font-mono); font-size: 0.72rem; color: var(--faint); }
+    .tone { font-size: 0.78rem; color: var(--good); }
+    .tone--bad { color: var(--bad); }
+  </style>
+</Base>

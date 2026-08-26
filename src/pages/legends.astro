@@ -1,0 +1,226 @@
+---
+import Base from '../layouts/Base.astro';
+import legends from '../data/legends.json';
+
+type Mod = { key: string; text: string; polarity?: string };
+type CostPart = { value?: number; rules?: string };
+type Cost = Record<string, CostPart> | null;
+
+const { types, seeds, chronicles } = legends;
+
+const qualities = ['famed', 'illustrious', 'mythical'];
+const seedTypes = [...new Set(seeds.map((s) => s.type))];
+
+function costText(c: Cost): string {
+  if (c == null || Object.keys(c).length === 0) return '—';
+  return Object.entries(c)
+    .map(([res, v]) => (v.value != null ? `${v.value} ${res}` : `${res} varies`))
+    .join(' + ');
+}
+function costTitle(c: Cost): string | undefined {
+  if (c == null) return undefined;
+  const rules = Object.entries(c)
+    .filter(([, v]) => v.rules)
+    .map(([res, v]) => `${res}: ${v.rules}`);
+  return rules.length ? rules.join('\n') : undefined;
+}
+const impactLabel: Record<string, string> = {
+  province_modifier: 'provinces',
+  county_modifier: 'counties',
+  owner_modifier: 'owner',
+  promoter_modifier: 'promoters',
+};
+---
+<Base
+  title="Legends"
+  active="legends"
+  lede="The Legends of the Dead system: the three legend types with their per-quality costs and effects, the 38 pre-scripted legend seeds, and the chronicles their stories are told through."
+  stats={[
+    { value: types.length, label: 'legend types' },
+    { value: seeds.length, label: 'legend seeds' },
+    { value: chronicles.length, label: 'chronicles' },
+  ]}
+>
+  <h2 class="group-h" id="types">Legend types <span class="count">{types.length}</span></h2>
+  {types.map((t) => (
+    <article class="ltype" id={t.id}>
+      <h3>
+        {t.name}
+        {t.dlc && <span class="badge-dlc">{t.dlc}</span>}
+        {t.protagonist.map((r) => (
+          <span class="chip chip--req">{r.negated && <span class="neg">not </span>}protagonist: {r.name.toLowerCase()}</span>
+        ))}
+      </h3>
+      {t.desc && <p class="desc">{t.desc}</p>}
+      <div class="tbl-scroll">
+        <table class="ntbl">
+          <thead>
+            <tr>
+              <th>Quality</th>
+              <th class="num" title="maximum provinces the legend can spread to">Reach</th>
+              <th class="num">Create</th>
+              <th class="num" title="monthly cost for the legend owner">Upkeep</th>
+              <th class="num" title="monthly cost for each promoter">Promote</th>
+              <th class="num" title="cost to upgrade the legend to this quality">Upgrade</th>
+              <th title="how long provinces keep the legend once it is unowned or completed">Fades over</th>
+              <th>Effects while active</th>
+            </tr>
+          </thead>
+          <tbody>
+            {t.qualities.map((q) => (
+              <tr>
+                <td class="name">{q.name}</td>
+                <td class="num">{q.maxProvinces}</td>
+                <td class="num cost"><span class="var" title={costTitle(q.creationCost)}>{costText(q.creationCost)}</span></td>
+                <td class="num cost"><span class="var" title={costTitle(q.ownerCost)}>{costText(q.ownerCost)}</span></td>
+                <td class="num cost"><span class="var" title={costTitle(q.promoterCost)}>{costText(q.promoterCost)}</span></td>
+                <td class="num cost"><span class="var" title={costTitle(q.upgradeCost)}>{costText(q.upgradeCost)}</span></td>
+                <td>{q.removalDuration ?? '—'}</td>
+                <td>
+                  <ul class="fx">
+                    {Object.entries(q.impact).flatMap(([target, mods]) =>
+                      (mods as Mod[]).map((m) => (
+                        <li class={m.polarity ? `is-${m.polarity}` : 'is-neutral'}>
+                          {m.text} <span class="subtle">({impactLabel[target]})</span>
+                        </li>
+                      )),
+                    )}
+                  </ul>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </article>
+  ))}
+  <p class="footnote">
+    Completing a legend grants its event-scripted rewards — the Legend trait line, dynasty renown,
+    and (at higher qualities) a legendary building slot or a legendary adventure — which the game
+    resolves through events rather than static modifiers. Costs marked "varies" scale with title
+    tier, era, culture, and game rules; hover for the formula.
+  </p>
+
+  <h2 class="group-h" id="seeds">Legend seeds <span class="count">{seeds.length}</span></h2>
+  <div class="filterbar">
+    <input type="search" id="q" placeholder="Filter by name, chronicle, requirement…" autocomplete="off" />
+    <select id="ftype">
+      <option value="">every type</option>
+      {seedTypes.map((t) => <option value={t}>{types.find((x) => x.id === t)?.name ?? t}</option>)}
+    </select>
+    <span class="hint" id="count"></span>
+  </div>
+  <div class="tbl-scroll">
+    <table class="ntbl" id="seed-tbl">
+      <thead>
+        <tr>
+          <th>Seed</th>
+          <th>Type</th>
+          <th>Quality</th>
+          <th>Chronicle</th>
+          <th>Available to</th>
+          <th>DLC</th>
+        </tr>
+      </thead>
+      <tbody>
+        {seeds.map((s) => (
+          <tr
+            id={s.id}
+            data-name={`${s.name} ${s.chronicleName ?? ''} ${s.requirements.map((r) => r.name).join(' ')}`.toLowerCase()}
+            data-type={s.type}
+          >
+            <td class="name">
+              <span class="u-name" title={s.desc ?? undefined}>{s.name}</span>
+            </td>
+            <td>{s.typeName}</td>
+            <td>{s.qualityName}</td>
+            <td>{s.chronicleName ?? <span class="subtle">—</span>}</td>
+            <td>
+              <span class="chips">
+                {s.requirements.map((r) => (
+                  <span class="chip chip--req">{r.negated && <span class="neg">not </span>}{r.name}</span>
+                ))}
+              </span>
+            </td>
+            <td>{s.dlc ? <span class="badge-dlc">{s.dlc}</span> : <span class="subtle">—</span>}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
+
+  <h2 class="group-h" id="chronicles">Chronicles <span class="count">{chronicles.length}</span></h2>
+  <p class="desc">
+    Every legend tells its story through a chronicle — a template of chapters filled in with the
+    protagonist, titles, and deeds it commemorates. Seeds reference these; the rest are earned
+    through play (won wars, tournaments, sainthood, struggle endings…).
+  </p>
+  <div class="tbl-scroll">
+    <table class="ntbl">
+      <thead>
+        <tr>
+          <th>Chronicle</th>
+          <th class="num">Chapters</th>
+          <th>Story slots</th>
+          <th>Extra effects</th>
+        </tr>
+      </thead>
+      <tbody>
+        {chronicles.map((c) => (
+          <tr id={`chronicle-${c.id}`}>
+            <td class="name"><span class="u-name" title={c.desc ?? undefined}>{c.name}</span></td>
+            <td class="num">{c.chapters.length}</td>
+            <td><span class="chips">{c.properties.map((p) => <span class="chip">{p.replace(/_/g, ' ')}</span>)}</span></td>
+            <td>
+              <ul class="fx">
+                {Object.entries(c.impact).flatMap(([target, mods]) =>
+                  (mods as Mod[]).map((m) => (
+                    <li class={m.polarity ? `is-${m.polarity}` : 'is-neutral'}>
+                      {m.text} <span class="subtle">({impactLabel[target]})</span>
+                    </li>
+                  )),
+                )}
+              </ul>
+              {Object.keys(c.impact).length === 0 && <span class="subtle">—</span>}
+            </td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
+
+  <script>
+    const q = document.getElementById('q') as HTMLInputElement;
+    const ftype = document.getElementById('ftype') as HTMLSelectElement;
+    const count = document.getElementById('count')!;
+    const rows = [...document.querySelectorAll<HTMLTableRowElement>('#seed-tbl tbody tr')];
+
+    function apply() {
+      const needle = q.value.trim().toLowerCase();
+      const t = ftype.value;
+      let shown = 0;
+      for (const r of rows) {
+        const ok =
+          (!needle || (r.dataset.name ?? '').includes(needle)) &&
+          (!t || r.dataset.type === t);
+        r.hidden = !ok;
+        if (ok) shown++;
+      }
+      count.textContent = `${shown} of ${rows.length}`;
+    }
+    for (const el of [q, ftype]) el.addEventListener('input', apply);
+    apply();
+  </script>
+
+  <style>
+    .desc { color: var(--dim); max-width: 72ch; margin: 0.2rem 0 0.7rem; }
+    .ltype { margin: 0 0 1.6rem; }
+    .ltype h3 { font-family: var(--font-display); font-size: 1rem; margin: 0.6rem 0 0.3rem; display: flex; gap: 0.55rem; align-items: baseline; flex-wrap: wrap; }
+    .fx { list-style: none; margin: 0; padding: 0; font-size: 0.8rem; max-width: 24rem; }
+    .fx li.is-good { color: var(--good); }
+    .fx li.is-bad { color: var(--bad); }
+    .cost .var { color: inherit; cursor: help; border-bottom: 1px dotted var(--faint); }
+    .chip .neg { color: var(--bad); }
+    .footnote { color: var(--faint); font-size: 0.78rem; max-width: 70ch; margin: 0.8rem 0 1.6rem; }
+  </style>
+</Base>

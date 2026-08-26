@@ -1,0 +1,194 @@
+---
+import Base from '../layouts/Base.astro';
+import data from '../data/decisions.json';
+
+const { groups, decisions } = data;
+const usedGroups = groups.filter((g) => decisions.some((d) => d.group === g.id));
+const dlcs = [...new Set(decisions.map((d) => d.dlc).filter(Boolean))].sort();
+const majorCount = decisions.filter((d) => d.major).length;
+
+type Money = { value?: number; base?: number; scales?: boolean };
+const RES_LABEL: Record<string, string> = {
+  gold: 'gold', prestige: 'prestige', piety: 'piety', renown: 'renown',
+  herd: 'herd', influence: 'influence', merit: 'merit',
+};
+function moneyText(m: Money): string {
+  if (m.value != null) return String(m.value);
+  if (m.base != null) return `~${m.base}+`;
+  return 'varies';
+}
+function costLines(cost: Record<string, Money>): { text: string; scales: boolean }[] {
+  return Object.entries(cost).map(([res, m]) => ({
+    text: `${moneyText(m)} ${RES_LABEL[res] ?? res.replace(/_/g, ' ')}`,
+    scales: !!m.scales,
+  }));
+}
+function cooldownText(cd: (Money & { unit: string }) | null): string {
+  if (!cd) return '—';
+  const n = cd.value ?? cd.base;
+  if (n == null) return 'varies';
+  const unit = n === 1 ? cd.unit.replace(/s$/, '') : cd.unit;
+  return `${n} ${unit}${cd.scales ? '*' : ''}`;
+}
+function nameTip(d: any): string {
+  const parts = [];
+  if (d.desc) parts.push(d.desc);
+  if (d.tooltip && d.tooltip !== d.desc) parts.push(d.tooltip);
+  return parts.join('\n\n');
+}
+---
+<Base
+  title="Decisions"
+  active="decisions"
+  lede="Every decision a ruler can take, grouped the way the game's decision tab folds them — with costs, cooldowns, and the requirements each one checks. Effect text is the game's own tooltip phrasing where the script provides one."
+  stats={[
+    { value: decisions.length, label: 'decisions' },
+    { value: usedGroups.length, label: 'groups' },
+    { value: majorCount, label: 'major' },
+  ]}
+>
+  <div class="filterbar">
+    <input type="search" id="q" placeholder="Filter by name, requirement…" autocomplete="off" />
+    <select id="fgrp">
+      <option value="">every group</option>
+      {usedGroups.map((g) => <option value={g.id}>{g.name}</option>)}
+    </select>
+    <select id="fdlc">
+      <option value="">base game + DLC</option>
+      <option value="base">base game only</option>
+      {dlcs.map((d) => <option value={d}>{d}</option>)}
+    </select>
+    <span class="hint" id="count"></span>
+  </div>
+
+  {usedGroups.map((g) => (
+    <section data-group={g.id}>
+      <h2 class="group-h" id={g.id}>
+        {g.name}
+        {g.important && <span class="badge-major" title="decisions in this group are highlighted as important">major</span>}
+        <span class="count">{decisions.filter((d) => d.group === g.id).length}</span>
+      </h2>
+      <div class="tbl-scroll">
+        <table class="ntbl">
+          <thead>
+            <tr>
+              <th>Decision</th>
+              <th class="num">Cost</th>
+              <th class="num">Cooldown</th>
+              <th>Requirements</th>
+              <th>Effects (game tooltip text)</th>
+              <th>DLC</th>
+            </tr>
+          </thead>
+          <tbody>
+            {decisions
+              .filter((d) => d.group === g.id)
+              .map((d) => (
+                <tr
+                  id={d.id}
+                  data-name={`${d.name} ${d.id} ${d.requirements.map((r: any) => r.name).join(' ')}`.toLowerCase()}
+                  data-dlc={d.dlc ?? 'base'}
+                >
+                  <td class="name dec-name">
+                    <span class="u-name" title={nameTip(d)}>{d.name}</span>
+                    {d.invisible && (
+                      <span class="u-sub"><br />via another screen, not the decisions tab</span>
+                    )}
+                  </td>
+                  <td class="num cost">
+                    {costLines(d.cost).length
+                      ? costLines(d.cost).map((c) => (
+                          <div title={c.scales ? 'scales with era and realm tier' : undefined}>{c.text}</div>
+                        ))
+                      : '—'}
+                    {costLines(d.minimumCost).map((c) => (
+                      <div class="subtle" title="must be affordable but is applied by the decision's own follow-up">
+                        ({c.text})
+                      </div>
+                    ))}
+                  </td>
+                  <td class="num" title={d.cooldown?.scales ? '* scales with modifiers' : undefined}>
+                    {cooldownText(d.cooldown)}
+                  </td>
+                  <td>
+                    <span class="chips chips--wide">
+                      {d.requirements.map((r: any) => (
+                        <span class="chip chip--req">
+                          {r.negated && <span class="neg">not </span>}{r.name}
+                        </span>
+                      ))}
+                    </span>
+                  </td>
+                  <td class="fx-cell">
+                    {d.effectText.length ? (
+                      <>
+                        {d.effectText.slice(0, 2).map((e: string) => (
+                          <div class="fx-text" title={e}>{e.split('\n')[0]}</div>
+                        ))}
+                        {d.effectText.length > 2 && (
+                          <div class="subtle fx-more" title={d.effectText.slice(2).join('\n\n')}>
+                            +{d.effectText.length - 2} more
+                          </div>
+                        )}
+                      </>
+                    ) : (
+                      <span class="subtle" title="the effect script carries no tooltip text of its own">—</span>
+                    )}
+                  </td>
+                  <td>{d.dlc ? <span class="badge-dlc">{d.dlc}</span> : <span class="subtle">—</span>}</td>
+                </tr>
+              ))}
+          </tbody>
+        </table>
+      </div>
+    </section>
+  ))}
+
+  <script>
+    const q = document.getElementById('q') as HTMLInputElement;
+    const fgrp = document.getElementById('fgrp') as HTMLSelectElement;
+    const fdlc = document.getElementById('fdlc') as HTMLSelectElement;
+    const count = document.getElementById('count')!;
+    const rows = [...document.querySelectorAll<HTMLTableRowElement>('tbody tr')];
+    const groups = [...document.querySelectorAll<HTMLElement>('section[data-group]')];
+
+    function apply() {
+      const needle = q.value.trim().toLowerCase();
+      const g = fgrp.value;
+      const d = fdlc.value;
+      let shown = 0;
+      for (const r of rows) {
+        const sec = r.closest('section[data-group]') as HTMLElement;
+        const ok =
+          (!needle || (r.dataset.name ?? '').includes(needle)) &&
+          (!g || sec.dataset.group === g) &&
+          (!d || (d === 'base' ? r.dataset.dlc === 'base' : r.dataset.dlc === d));
+        r.hidden = !ok;
+        if (ok) shown++;
+      }
+      for (const s of groups) {
+        s.hidden = ![...s.querySelectorAll('tbody tr')].some((r) => !(r as HTMLTableRowElement).hidden);
+      }
+      count.textContent = `${shown} of ${rows.length}`;
+    }
+    for (const el of [q, fgrp, fdlc]) el.addEventListener('input', apply);
+    apply();
+  </script>
+
+  <style>
+    .dec-name { max-width: 16rem; white-space: normal; }
+    .dec-name .u-name { font-weight: 600; cursor: help; }
+    .dec-name .u-sub { color: var(--faint); font-size: 0.72rem; }
+    .badge-major {
+      font-family: var(--font-mono); font-size: 0.66rem; color: var(--rubric);
+      border: 1px solid color-mix(in oklab, var(--rubric) 45%, transparent);
+      border-radius: 3px; padding: 0.02rem 0.3rem; align-self: center;
+    }
+    .chips--wide { max-width: 26rem; }
+    .chip .neg { color: var(--bad); }
+    .cost div { white-space: nowrap; }
+    .fx-cell { max-width: 24rem; font-size: 0.8rem; }
+    .fx-text { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; max-width: 23rem; cursor: help; }
+    .fx-more { cursor: help; }
+  </style>
+</Base>

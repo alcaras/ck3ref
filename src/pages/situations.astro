@@ -1,0 +1,203 @@
+---
+import Base from '../layouts/Base.astro';
+import situations from '../data/situations.json';
+
+type Mod = { key: string; text: string; polarity?: string; doctrine?: string };
+type Param = { key: string; text: string };
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+
+const phaseCount = situations.reduce((n, s) => n + s.phases.length, 0);
+const regionCount = situations.reduce((n, s) => n + s.subRegions.length, 0);
+const groupOrder = ['major', 'struggles', 'story_cycles', 'natural_disasters', 'minor'];
+const groupTypes = [...new Set(situations.map((s) => s.groupType))].sort(
+  (a, b) => groupOrder.indexOf(a) - groupOrder.indexOf(b),
+);
+const pointsText = (p: { value?: number; rules?: string } | null | undefined) =>
+  p == null ? '—' : p.value != null ? String(p.value) : 'varies';
+const NEXT_LABEL: Record<string, string> = {
+  highest_points: 'highest catalyst points wins',
+  weighted_random_points: 'random, weighted by points',
+  random_non_takeover: 'random among the regular seasons',
+  weighted_non_takover: 'highest weight wins',
+};
+---
+<Base
+  title="Situations"
+  active="situations"
+  lede="Region-bound world events that move through phases — the Great Steppe's seasons and its nomad-region cousins, China's Dynastic Cycle, the Silk Road, and natural disasters — with each phase's effects per participant group."
+  stats={[
+    { value: situations.length, label: 'situations' },
+    { value: phaseCount, label: 'phases' },
+    { value: regionCount, label: 'sub-regions' },
+  ]}
+>
+  <div class="jump chips">
+    {situations.map((s) => <a class="chip" href={`#${s.id}`}>{s.name}</a>)}
+  </div>
+
+  {groupTypes.map((gt) => (
+    <>
+      {situations.filter((s) => s.groupType === gt).map((s) => (
+        <section id={s.id}>
+          <h2 class="group-h">
+            {s.name}
+            <span class="count">{s.groupTypeName.toLowerCase()} · {s.phases.length} phases</span>
+            {s.dlc && <span class="badge-dlc">{s.dlc}</span>}
+          </h2>
+          {s.desc && <p class="desc">{s.desc}</p>}
+          <div class="pills">
+            {s.unique && <span class="pill">unique — <b>one in the world</b></span>}
+            {s.migration && <span class="pill">enables <b>migration AI</b></span>}
+            <span class="pill">sub-regions <b>{s.subRegions.map((r) => r.name).join(' · ')}</b></span>
+          </div>
+
+          {s.groups.length > 0 && (
+            <div class="tbl-scroll groups-tbl">
+              <table class="ntbl">
+                <thead>
+                  <tr><th>Participant group</th><th>Who belongs</th></tr>
+                </thead>
+                <tbody>
+                  {s.groups.map((g) => (
+                    <tr>
+                      <td class="name">{g.name}</td>
+                      <td>
+                        <span class="chips">
+                          {g.requirements.map((r) => (
+                            <span class="chip chip--req">{r.negated && <span class="neg">not </span>}{r.name}</span>
+                          ))}
+                          {g.capitalInRegion && <span class="chip">capital in region</span>}
+                          {!g.capitalInRegion && g.realmInRegion && <span class="chip">realm in region</span>}
+                          {g.domainInRegion && <span class="chip">domain in region</span>}
+                        </span>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          )}
+
+          {s.phases.map((p) => (
+            <article class="phase" id={`${s.id}-${p.id}`}>
+              <h3>
+                <span class="ph-name">{p.name}</span>
+                {s.startPhase === p.id && <span class="tag tag--start">starting phase</span>}
+                {p.maxDuration && (
+                  <span class="tag" title={`then: ${NEXT_LABEL[p.nextSelection] ?? p.nextSelection}`}>
+                    up to {p.maxDuration}
+                  </span>
+                )}
+              </h3>
+              {p.desc && <p class="desc">{p.desc}</p>}
+              {(p.parameters as Param[]).length > 0 && (
+                <ul class="fx phase-params">
+                  {(p.parameters as Param[]).map((it) => <li class="is-neutral">{it.text}</li>)}
+                </ul>
+              )}
+
+              {p.sets.length > 0 && (
+                <div class="fx-grid">
+                  {p.sets.map((set) => (
+                    <div class="fx-col">
+                      <h4>{set.name}</h4>
+                      {set.perGroup.map((pg) => (
+                        <div class="bucket">
+                          <span class="aud">{pg.groupName}</span>
+                          <ul class="fx">
+                            {(pg.characterModifiers as Mod[]).map((m) => (
+                              <li class={m.polarity ? `is-${m.polarity}` : 'is-neutral'}>
+                                {m.text}
+                                {m.doctrine && <span class="subtle"> ({m.doctrine.replace(/^doctrine_/, '').replace(/_/g, ' ')})</span>}
+                              </li>
+                            ))}
+                            {(pg.countyModifiers as Mod[]).map((m) => (
+                              <li class={m.polarity ? `is-${m.polarity}` : 'is-neutral'}>{m.text} <span class="subtle">(counties)</span></li>
+                            ))}
+                            {(pg.parameters as Param[]).map((it) => <li class="is-neutral">{it.text}</li>)}
+                          </ul>
+                        </div>
+                      ))}
+                    </div>
+                  ))}
+                </div>
+              )}
+
+              {p.transitions.filter((t) => t.catalysts.length || t.takeoverPoints || t.takeoverDuration).map((t) => (
+                <div class="transition">
+                  <h4>
+                    <span class="arrow">→</span> {t.toName}
+                    {t.takeoverType === 'points' && t.takeoverPoints && (
+                      <span class="subtle"> — takes over at {pointsText(t.takeoverPoints)} points</span>
+                    )}
+                    {t.takeoverType === 'duration' && t.takeoverDuration && (
+                      <span class="subtle"> — takes over after {t.takeoverDuration}</span>
+                    )}
+                  </h4>
+                  {t.catalysts.length > 0 && (
+                    <div class="tbl-scroll">
+                      <table class="ntbl">
+                        <thead>
+                          <tr><th>Catalyst</th><th class="num">Points</th></tr>
+                        </thead>
+                        <tbody>
+                          {t.catalysts.map((c) => (
+                            <tr>
+                              <td title={c.desc ?? undefined}>{c.name}</td>
+                              <td class="num">{pointsText(c.points)}</td>
+                            </tr>
+                          ))}
+                        </tbody>
+                      </table>
+                    </div>
+                  )}
+                </div>
+              ))}
+              {p.transitions.length > 0 &&
+                p.transitions.every((t) => !t.catalysts.length && !t.takeoverPoints && !t.takeoverDuration) && (
+                <p class="next-line subtle">
+                  may be followed by {p.transitions.map((t) => t.toName).join(', ')} ({NEXT_LABEL[p.nextSelection] ?? p.nextSelection})
+                </p>
+              )}
+            </article>
+          ))}
+        </section>
+      ))}
+    </>
+  ))}
+
+  <p class="footnote">
+    Participant groups list rulers automatically when they match the group's conditions; a character
+    joins the first group they qualify for. Phase effects apply per sub-region — each sub-region
+    tracks its own current phase. Catalyst point values resolve through the game's script values.
+  </p>
+
+  <style>
+    .jump { margin: 0 0 1rem; }
+    .jump .chip { border-bottom: none; }
+    .desc { color: var(--dim); max-width: 72ch; margin: 0.2rem 0 0.7rem; white-space: pre-line; }
+    .pills { margin-bottom: 0.7rem; }
+    .groups-tbl { max-width: 56rem; margin-bottom: 0.6rem; }
+    .phase { margin: 1.4rem 0 2rem; padding-left: 0.9rem; border-left: 2px solid var(--line-soft); }
+    .phase h3 { font-family: var(--font-display); font-size: 1rem; margin: 0 0 0.3rem; display: flex; gap: 0.55rem; align-items: baseline; flex-wrap: wrap; }
+    .tag { font-family: var(--font-mono); font-size: 0.68rem; color: var(--dim); border: 1px solid var(--line); border-radius: 999px; padding: 0.05rem 0.5rem; }
+    .tag--start { color: var(--rubric); border-color: color-mix(in oklab, var(--rubric) 50%, var(--line)); }
+    .phase-params { margin: 0 0 0.5rem; }
+    .fx-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 0.8rem; margin: 0.6rem 0; }
+    .fx-col { background: var(--panel); border: 1px solid var(--line-soft); border-radius: var(--r); padding: 0.55rem 0.7rem; }
+    .fx-col h4 { margin: 0 0 0.35rem; font-size: 0.8rem; color: var(--brass); font-weight: 600; }
+    .bucket { margin: 0.35rem 0; }
+    .aud { display: block; color: var(--faint); font-size: 0.72rem; margin-bottom: 0.1rem; }
+    .fx { list-style: none; margin: 0; padding: 0; font-size: 0.8rem; }
+    .fx li.is-good { color: var(--good); }
+    .fx li.is-bad { color: var(--bad); }
+    .transition { margin: 0.8rem 0; }
+    .transition h4 { margin: 0 0 0.3rem; font-size: 0.85rem; font-weight: 600; }
+    .transition .arrow { color: var(--rubric); }
+    .transition .tbl-scroll { max-width: 44rem; }
+    .next-line { font-size: 0.8rem; margin: 0.4rem 0 0; }
+    .chip .neg { color: var(--bad); }
+    .footnote { color: var(--faint); font-size: 0.78rem; max-width: 70ch; margin-top: 2rem; }
+  </style>
+</Base>

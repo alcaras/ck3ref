@@ -1,0 +1,120 @@
+---
+import Base from '../layouts/Base.astro';
+import terrains from '../data/terrain.json';
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+
+type Mod = { text: string; polarity: string };
+
+const land = terrains.filter((t) => !['sea', 'coastal_sea'].includes(t.id));
+const water = terrains.filter((t) => ['sea', 'coastal_sea'].includes(t.id));
+const rows = [...land, ...water];
+
+const num = (v: unknown): string =>
+  typeof v === 'number' ? String(v) : v == null ? '—' : 'varies';
+const mult = (v: unknown): string =>
+  typeof v === 'number' ? `×${v}` : 'varies';
+---
+<Base
+  title="Terrain"
+  active="terrain"
+  lede="Every terrain type: map color, army movement and combat width, the defender's advantage, supply and development effects, county fertility, and travel danger — read from terrain_types, with script-valued numbers resolved."
+  stats={[
+    { value: terrains.length, label: 'terrain types' },
+    { value: land.length, label: 'land terrains' },
+  ]}
+>
+  <div class="tbl-scroll">
+    <table class="ntbl">
+      <thead>
+        <tr>
+          <th>Terrain</th>
+          <th class="num" title="Army movement speed multiplier">Move</th>
+          <th class="num" title="Combat width multiplier">Width</th>
+          <th class="num" title="Advantage granted to the defending army">Def. adv.</th>
+          <th>Combat side effects</th>
+          <th>Province</th>
+          <th>County capital</th>
+          <th class="num" title="County Fertility contributed by this terrain">Fertility</th>
+          <th class="num" title="Travel danger score">Danger</th>
+          <th class="num" title="Provision cost when moving a domicile across this terrain">Provisions</th>
+        </tr>
+      </thead>
+      <tbody>
+        {rows.map((t) => (
+          <tr id={t.id}>
+            <td class="name">
+              <span class="terr">
+                <span class="swatch" style={`--c:${t.color}`} title={t.color ?? ''} />
+                <span class="u-name">{t.name}</span>
+              </span>
+            </td>
+            <td class="num">{mult(t.movementSpeed)}</td>
+            <td class="num">{mult(t.combatWidth)}</td>
+            <td class="num">
+              {typeof t.defenderAdvantage === 'number' ? (
+                <span class="adv">+{t.defenderAdvantage}</span>
+              ) : (
+                <span class="subtle">—</span>
+              )}
+            </td>
+            <td>
+              <ul class="fx">
+                {(t.attackerModifiers as Mod[]).map((m) => (
+                  <li class={`is-${m.polarity}`}>{m.text} <span class="subtle">(attacker)</span></li>
+                ))}
+                {(t.defenderModifiers as Mod[]).map((m) => (
+                  <li class={`is-${m.polarity}`}>{m.text} <span class="subtle">(defender)</span></li>
+                ))}
+                {!t.attackerModifiers.length && !t.defenderModifiers.length && (
+                  <li class="subtle">—</li>
+                )}
+              </ul>
+            </td>
+            <td>
+              <ul class="fx">
+                {(t.provinceModifiers as Mod[]).map((m) => (
+                  <li class={`is-${m.polarity}`}>{m.text}</li>
+                ))}
+                {!t.provinceModifiers.length && <li class="subtle">—</li>}
+              </ul>
+            </td>
+            <td>
+              <ul class="fx">
+                {(t.countyCapitalModifiers as Mod[]).map((m) => (
+                  <li class={`is-${m.polarity}`}>{m.text}</li>
+                ))}
+                {!t.countyCapitalModifiers.length && <li class="subtle">—</li>}
+              </ul>
+            </td>
+            <td class="num">{t.countyFertility || <span class="subtle">—</span>}</td>
+            <td class="num">{num(t.travelDangerScore)}</td>
+            <td class="num">{num(t.provisionCost)}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
+
+  <p class="footnote">
+    Swatches are the terrain map-mode colors from the game files. County-capital modifiers apply
+    only when the county capital sits on this terrain; province modifiers apply to every province
+    of it. Sea rows matter for travel danger and voyage provisioning only. Men-at-Arms terrain
+    bonuses are on the <a href={`${base}/men-at-arms`}>Men-at-Arms</a> page; per-terrain building
+    gates on <a href={`${base}/buildings`}>Buildings</a>. Winter severity is assigned per province,
+    not per terrain, and is not derivable here.
+  </p>
+
+  <style>
+    .terr { display: flex; align-items: center; gap: 0.55rem; }
+    .swatch {
+      width: 16px; height: 16px; border-radius: 3px; flex: none;
+      background: var(--c); border: 1px solid color-mix(in oklab, var(--vellum) 25%, transparent);
+    }
+    .adv { color: var(--good); }
+    .fx { list-style: none; margin: 0; padding: 0; max-width: 20rem; font-size: 0.8rem; }
+    .fx li.is-good { color: var(--good); }
+    .fx li.is-bad { color: var(--bad); }
+    .footnote { color: var(--faint); font-size: 0.78rem; max-width: 78ch; margin-top: 2rem; }
+  </style>
+</Base>

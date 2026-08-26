@@ -1,0 +1,448 @@
+---
+import Base from '../layouts/Base.astro';
+import data from '../data/schemes.json';
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+
+const { schemes, agents, countermeasures } = data;
+
+const CATEGORIES: { key: string; label: string; blurb: string }[] = [
+  { key: 'hostile', label: 'Hostile', blurb: 'Plots against a character. The target resists with skill, spymaster, and countermeasures; discovery has consequences.' },
+  { key: 'political', label: 'Political', blurb: 'Maneuvering for influence, legitimacy, and position — mostly open rather than secret.' },
+  { key: 'personal', label: 'Personal', blurb: 'Relationship and self-improvement schemes: befriend, romance, study.' },
+  { key: 'contract', label: 'Contract', blurb: 'Jobs taken by landless adventurers and ministers. Agents for these are picked through events during the scheme, not fixed slots.' },
+];
+
+const agentById = new Map(agents.map((a) => [a.id, a]));
+const dlcs = [...new Set(schemes.map((s) => s.dlc).filter(Boolean))].sort() as string[];
+
+const CONTRIB = {
+  success_chance_max: 'max success chance',
+  success_chance: 'success chance',
+  success_chance_growth: 'success growth',
+  speed: 'speed',
+  secrecy: 'secrecy',
+} as Record<string, string>;
+
+function factorSign(add: number | null, label: string): string {
+  if (add != null) return add > 0 ? 'good' : add < 0 ? 'bad' : '';
+  const m = label.match(/([+-])\d+(\.\d+)?\s*$/);
+  return m ? (m[1] === '+' ? 'good' : 'bad') : '';
+}
+function agentName(id: string): string {
+  return agentById.get(id)?.name ?? id.replace(/^agent_/, '').replace(/_/g, ' ');
+}
+---
+<Base
+  title="Schemes"
+  active="schemes"
+  lede="Every scheme type with its phase length, success and secrecy structure, agent slots, and requirements — plus the agent types that can join them and the countermeasures that blunt them. Formulas are shown as the game defines them, not precomputed."
+  stats={[
+    { value: schemes.length, label: 'scheme types' },
+    { value: agents.length, label: 'agent types' },
+    { value: countermeasures.length, label: 'countermeasures' },
+    { value: dlcs.length, label: 'DLCs add content' },
+  ]}
+>
+  <div class="filterbar">
+    <input type="search" id="q" placeholder="Filter schemes, agents, countermeasures…" autocomplete="off" />
+    <select id="fcat">
+      <option value="">every category</option>
+      {CATEGORIES.map((c) => <option value={c.key}>{c.label}</option>)}
+    </select>
+    <select id="fdlc">
+      <option value="">base game + DLC</option>
+      <option value="base">base game only</option>
+      {dlcs.map((d) => <option value={d}>{d}</option>)}
+    </select>
+    <span class="hint" id="count"></span>
+  </div>
+
+  {CATEGORIES.map((cat) => {
+    const rows = schemes.filter((s) => s.category === cat.key);
+    return (
+      <section data-group={cat.key} data-kind="scheme">
+        <h2 class="group-h" id={cat.key}>
+          {cat.label} schemes
+          <span class="count">{rows.length}</span>
+        </h2>
+        <p class="blurb">{cat.blurb}</p>
+        <div class="tbl-scroll">
+          <table class="ntbl">
+            <thead>
+              <tr>
+                <th>Scheme</th>
+                <th>Skill</th>
+                <th class="num" title="Base phase length in days; skill shortens it">Phase</th>
+                <th class="num" title="Base maximum success chance; grows each phase">Max&nbsp;%</th>
+                <th title="Maximum secrecy / secrecy breaches before the scheme collapses">Secrecy</th>
+                <th>Agents</th>
+                <th>Odds &amp; factors</th>
+                <th>Requirements</th>
+                <th class="num">Cooldown</th>
+                <th title="Which countermeasure class works against this scheme">Countered</th>
+                <th>DLC</th>
+              </tr>
+            </thead>
+            <tbody>
+              {rows.map((s) => (
+                <tr
+                  id={s.id}
+                  data-name={`${s.name} ${s.desc ?? ''} ${s.gates.map((g) => g.name).join(' ')}`.toLowerCase()}
+                  data-cat={s.category}
+                  data-dlc={s.dlc ?? 'base'}
+                >
+                  <td class="name">
+                    <span class="unit">
+                      <img src={`${base}/img/schemes/${s.id}.webp`} alt="" width="30" height="30" loading="lazy" onerror="this.style.visibility='hidden'" />
+                      <span>
+                        <span class="u-name" title={s.desc ?? undefined}>{s.name}</span>
+                        <span class="u-sub"><br />
+                          {s.targetType === 'title' ? 'targets a title' : 'targets a character'}
+                          {s.isSecret && ' · secret'}
+                          {s.conditionalSecrecy && ' · sometimes secret'}
+                          {s.isBasic && ' · basic (no agents)'}
+                          {s.freezeWhenTraveling && ' · freezes while traveling'}
+                        </span>
+                      </span>
+                    </span>
+                  </td>
+                  <td><span class="chip chip--skill" style={`--c: var(--sk-${s.skill})`}><span class="dot" />{s.skillName}</span></td>
+                  <td class="num">
+                    {s.phaseLengthDays != null ? `${s.phaseLengthDays}d` : 'varies'}
+                    {s.speedPerSkillPoint != null && s.speedPerSkillPoint !== 0 && (
+                      <span class="subtle" title={`days per phase per point of ${s.skillName}${s.speedPerTargetSkillPoint ? `; target skill ${s.speedPerTargetSkillPoint > 0 ? 'adds' : 'removes'} ${Math.abs(s.speedPerTargetSkillPoint)}d/pt` : ''}`}>
+                        {' '}{s.speedPerSkillPoint}/pt
+                      </span>
+                    )}
+                  </td>
+                  <td class="num">
+                    {s.baseMaxSuccess ?? '—'}
+                    {s.successGrowthPerSkillPoint != null && (
+                      <span class="subtle" title={`success chance growth per phase per point of ${s.skillName}`}> +{s.successGrowthPerSkillPoint}/pt</span>
+                    )}
+                  </td>
+                  <td class="num">
+                    {s.isSecret || s.conditionalSecrecy
+                      ? <>{s.maxSecrecy ?? 100}%{s.maxBreaches != null && <span class="subtle" title="secrecy breaches before the scheme forcibly ends"> · {s.maxBreaches}br</span>}</>
+                      : <span class="subtle">open</span>}
+                  </td>
+                  <td>
+                    <span class="chips">
+                      {s.agentSlots.map((sl) => (
+                        <a class="chip chip--agent" href={`#${sl.type}`} title={sl.conditional ? 'conditional slot' : undefined}>
+                          {sl.count > 1 && <span class="x">{sl.count}×</span>}{agentName(sl.type)}{sl.conditional && '?'}
+                        </a>
+                      ))}
+                      {s.agentSlots.length === 0 && !s.isBasic && s.category === 'contract' && (
+                        <span class="subtle" title="agent slots for contract schemes are chosen through events while the scheme runs">via events</span>
+                      )}
+                      {s.agentSlots.length === 0 && !s.isBasic && s.category !== 'contract' && (
+                        <span class="subtle" title="agent slots assigned by script events">via events</span>
+                      )}
+                      {s.isBasic && <span class="subtle">—</span>}
+                    </span>
+                  </td>
+                  <td>
+                    {(s.successChance?.factors.length || s.odds?.factors.length || s.secrecy) ? (
+                      <details class="facts">
+                        <summary>
+                          {s.successChance?.base != null && `base ${s.successChance.base}`}
+                          {s.successChance?.base != null && s.successChance.factors.length > 0 && ' + '}
+                          {s.successChance && s.successChance.factors.length > 0 && `${s.successChance.factors.length} factors`}
+                        </summary>
+                        <div class="facts__panel">
+                          {s.successDesc && <p class="facts__outcome">On success: {s.successDesc}</p>}
+                          {s.successChance && s.successChance.factors.length > 0 && (
+                            <>
+                              <h4>Success chance{s.successChance.base != null && ` — base ${s.successChance.base}`}</h4>
+                              <ul>
+                                {s.successChance.factors.map((f) => (
+                                  <li class={factorSign(f.add, f.label)}>{f.group === 'first-match' && <span class="subtle">(first match) </span>}{f.label}</li>
+                                ))}
+                              </ul>
+                            </>
+                          )}
+                          {s.secrecy && (
+                            <>
+                              <h4>Secrecy{s.secrecy.base != null && ` — base ${s.secrecy.base}`}</h4>
+                              <ul>{s.secrecy.factors.map((f) => <li>{f.label}</li>)}</ul>
+                            </>
+                          )}
+                          {s.odds && s.odds.factors.length > 0 && (
+                            <>
+                              <h4>Odds prediction</h4>
+                              <ul>{s.odds.factors.map((f) => <li>{f.label}</li>)}</ul>
+                            </>
+                          )}
+                          <p class="facts__note">Structure as scripted — values marked with numbers are flat adds; the rest scale with the situation.</p>
+                        </div>
+                      </details>
+                    ) : (
+                      <span class="subtle">—</span>
+                    )}
+                  </td>
+                  <td>
+                    <span class="chips">
+                      {s.gates.filter((g) => g.stage === 'start').map((g) => (
+                        <span class="chip chip--req" title={`${g.anyOf ? 'one of several paths · ' : ''}${g.scope ? `${g.scope}: ` : ''}${g.detail ?? 'to start'}`}>
+                          {g.negated && <span class="neg">not </span>}{g.scope === 'Target' && <span class="subtle">tgt: </span>}{g.name}{g.anyOf && <span class="subtle">*</span>}
+                        </span>
+                      ))}
+                      {s.gates.filter((g) => g.stage === 'ongoing').map((g) => (
+                        <span class="chip chip--req chip--ongoing" title={`${g.scope ? `${g.scope}: ` : ''}must stay true while the scheme runs`}>
+                          {g.negated && <span class="neg">not </span>}{g.scope === 'Target' && <span class="subtle">tgt: </span>}{g.name}
+                        </span>
+                      ))}
+                    </span>
+                  </td>
+                  <td class="num">{s.cooldown ?? '—'}</td>
+                  <td>
+                    {s.counterClass ? (
+                      <a class="chip chip--counter" href="#countermeasures" title={`countermeasures against ${s.counterClass} schemes reduce this scheme's success chance${s.counterSecrecy ? '; detection countermeasures also cut its secrecy' : ''}`}>
+                        {s.counterClass}
+                      </a>
+                    ) : s.counterSecrecy ? (
+                      <a class="chip chip--counter" href="#countermeasures" title="detection countermeasures cut this scheme's secrecy">detection</a>
+                    ) : (
+                      <span class="subtle">—</span>
+                    )}
+                  </td>
+                  <td>{s.dlc ? <span class="badge-dlc">{s.dlc}</span> : <span class="subtle">—</span>}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </section>
+    );
+  })}
+
+  <section data-kind="agents">
+    <h2 class="group-h" id="agents">Agent types<span class="count">{agents.length}</span></h2>
+    <p class="blurb">
+      Agents join a scheme's slots and contribute to one of its numbers. Their contribution scales
+      with the listed skills (capped) and shifts with their personality — the game rates traits on a
+      ±1–3 scale, resolved here to ±3/±6/±9.
+    </p>
+    <div class="tbl-scroll">
+      <table class="ntbl">
+        <thead>
+          <tr>
+            <th>Agent</th>
+            <th>Contributes to</th>
+            <th>Skills</th>
+            <th>Better if</th>
+            <th>Worse if</th>
+            <th>Slot requires</th>
+            <th>Used by</th>
+          </tr>
+        </thead>
+        <tbody>
+          {agents.map((a) => (
+            <tr id={a.id} data-name={`${a.name} ${a.traits.map((t) => t.trait).join(' ')}`.toLowerCase()}>
+              <td class="name"><span class="u-name">{a.name}</span></td>
+              <td>{CONTRIB[a.contributionType] ?? a.contributionType}</td>
+              <td>
+                <span class="chips">
+                  {a.skills.map((sk) => (
+                    <span class="chip chip--skill" style={`--c: var(--sk-${sk.skill})`} title={sk.cap != null ? `capped at ${sk.cap}` : undefined}>
+                      <span class="dot" />{sk.skill}{sk.mult != null && <span class="x">×{sk.mult}</span>}
+                    </span>
+                  ))}
+                </span>
+              </td>
+              <td>
+                <span class="chips">
+                  {a.traits.filter((t) => t.tier > 0).map((t) => (
+                    <span class="chip" title={`${'+'.repeat(t.tier)}${t.situational ? ' · situational' : ''}`}>{t.trait}{t.situational && '*'}</span>
+                  ))}
+                  {a.other.filter((o) => o.tier > 0).map((o) => (
+                    <span class="chip chip--terrain" title={`${'+'.repeat(o.tier)} situational bonus`}>{o.label}</span>
+                  ))}
+                </span>
+              </td>
+              <td>
+                <span class="chips">
+                  {a.traits.filter((t) => t.tier < 0).map((t) => (
+                    <span class="chip chip--bad" title={`${'−'.repeat(-t.tier)}${t.situational ? ' · situational' : ''}`}>{t.trait}{t.situational && '*'}</span>
+                  ))}
+                  {a.other.filter((o) => o.tier < 0).map((o) => (
+                    <span class="chip chip--bad" title="situational malus">{o.label}</span>
+                  ))}
+                </span>
+              </td>
+              <td>
+                <span class="chips">
+                  {a.gates.map((g) => (
+                    <span class="chip chip--req">{g.negated && <span class="neg">not </span>}{g.name}</span>
+                  ))}
+                  {a.gates.length === 0 && <span class="subtle">—</span>}
+                </span>
+              </td>
+              <td>
+                <span class="chips">
+                  {a.usedBy.map((sid) => {
+                    const sch = schemes.find((s) => s.id === sid);
+                    return <a class="chip" href={`#${sid}`}>{sch?.name ?? sid}</a>;
+                  })}
+                  {a.usedBy.length === 0 && <span class="subtle" title="added through events or scheme-specific script">events</span>}
+                </span>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section data-kind="countermeasures">
+    <h2 class="group-h" id="countermeasures">Countermeasures<span class="count">{countermeasures.length}</span></h2>
+    <p class="blurb">
+      A ruler sets one countermeasure for their court; better tiers unlock with intrigue innovations
+      and other sources. Effects apply to schemes targeting anyone hosted there — negative numbers
+      hurt the schemer. Each has an upkeep cost paid by the court owner.
+    </p>
+    <div class="tbl-scroll">
+      <table class="ntbl">
+        <thead>
+          <tr>
+            <th>Countermeasure</th>
+            <th class="num">Tier</th>
+            <th>Effect on schemes against you</th>
+            <th>Cost to you</th>
+            <th>Requires</th>
+          </tr>
+        </thead>
+        <tbody>
+          {countermeasures.map((cm) =>
+            cm.tiers.map((t, i) => (
+              <tr id={i === 0 ? cm.id : undefined} data-name={`${cm.name} ${cm.desc ?? ''}`.toLowerCase()}>
+                {i === 0 && (
+                  <td class="name" rowspan={cm.tiers.length}>
+                    <span class="unit">
+                      <img src={`${base}/img/countermeasures/${cm.id}.webp`} alt="" width="30" height="30" loading="lazy" onerror="this.style.visibility='hidden'" />
+                      <span>
+                        <span class="u-name">{cm.name}</span>
+                        {cm.desc && <span class="u-sub"><br />{cm.desc}</span>}
+                      </span>
+                    </span>
+                  </td>
+                )}
+                <td class="num"><span class={`tier tier--${t.frame ?? 'bronze'}`} title={t.frame ?? undefined}>{t.tier}</span></td>
+                <td>
+                  <span class="chips">
+                    {t.effects.map((e) => (
+                      <span class={`chip ${e.add != null && e.add > 0 ? 'chip--bad' : ''}`} title={e.label}>
+                        {e.vs === 'all' ? 'secrecy, all schemes' : e.vs ? `${e.vs} schemes` : e.label}
+                        {e.add != null && <span class="x">{e.add > 0 ? `+${e.add}` : e.add}</span>}
+                      </span>
+                    ))}
+                  </span>
+                </td>
+                <td class="mods">{t.ownerModifiers.join(' · ') || '—'}</td>
+                <td>
+                  {cm.gates.length > 0
+                    ? cm.gates.map((g) => <span class="chip chip--req">{g}</span>)
+                    : <span class="subtle">tier unlocks</span>}
+                </td>
+              </tr>
+            ))
+          )}
+        </tbody>
+      </table>
+    </div>
+    <p class="blurb">
+      Which schemes each class covers is shown in the "Countered" column above: calculated
+      (e.g. murder, abduction), opportunistic (e.g. theft, seduction-adjacent plots), indirect,
+      and political schemes. "Secrecy, all schemes" makes any secret scheme against the court
+      easier to detect.
+    </p>
+  </section>
+
+  <script>
+    const q = document.getElementById('q') as HTMLInputElement;
+    const fcat = document.getElementById('fcat') as HTMLSelectElement;
+    const fdlc = document.getElementById('fdlc') as HTMLSelectElement;
+    const count = document.getElementById('count')!;
+    const schemeRows = [...document.querySelectorAll<HTMLTableRowElement>('section[data-kind="scheme"] tbody tr')];
+    const otherRows = [...document.querySelectorAll<HTMLTableRowElement>('section[data-kind="agents"] tbody tr, section[data-kind="countermeasures"] tbody tr')];
+    const groups = [...document.querySelectorAll<HTMLElement>('section[data-group]')];
+
+    function apply() {
+      const needle = q.value.trim().toLowerCase();
+      const c = fcat.value;
+      const d = fdlc.value;
+      let shown = 0;
+      for (const r of schemeRows) {
+        const ok =
+          (!needle || (r.dataset.name ?? '').includes(needle)) &&
+          (!c || r.dataset.cat === c) &&
+          (!d || (d === 'base' ? r.dataset.dlc === 'base' : r.dataset.dlc === d));
+        r.hidden = !ok;
+        if (ok) shown++;
+      }
+      for (const r of otherRows) {
+        // rowspan'd countermeasure cells: filter only via search, and keep tier
+        // rows in sync with their family's first row
+        r.hidden = !!needle && !(r.dataset.name ?? '').includes(needle);
+      }
+      for (const g of groups) {
+        g.hidden = ![...g.querySelectorAll('tbody tr')].some((r) => !(r as HTMLTableRowElement).hidden);
+      }
+      count.textContent = `${shown} of ${schemeRows.length} schemes`;
+    }
+    for (const el of [q, fcat, fdlc]) el.addEventListener('input', apply);
+    apply();
+  </script>
+
+  <style>
+    .blurb { color: var(--dim); max-width: 72ch; margin: 0 0 0.7rem; font-size: 0.85rem; }
+    .chip--skill { border-color: color-mix(in oklab, var(--c, var(--line)) 55%, var(--line)); }
+    .chip--skill .x { color: var(--dim); font-family: var(--font-mono); font-size: 0.68rem; }
+    .chip--agent { border-color: color-mix(in oklab, var(--sk-intrigue) 45%, var(--line)); }
+    .chip--agent .x { color: var(--sk-intrigue); font-family: var(--font-mono); font-size: 0.68rem; }
+    .chip--bad { border-color: color-mix(in oklab, var(--bad) 45%, var(--line)); }
+    .chip--ongoing { border-style: dashed; }
+    .chip .neg { color: var(--bad); }
+    .chip .x { margin-left: 0.1rem; }
+
+    .facts summary {
+      cursor: pointer; color: var(--brass); font-size: 0.78rem; white-space: nowrap;
+      list-style: none;
+    }
+    .facts summary::-webkit-details-marker { display: none; }
+    .facts summary::after { content: ' ▾'; color: var(--faint); }
+    .facts[open] summary::after { content: ' ▴'; }
+    .facts__panel {
+      margin-top: 0.4rem; padding: 0.5rem 0.65rem; max-width: 26rem;
+      background: var(--panel); border: 1px solid var(--line); border-radius: var(--r);
+      font-size: 0.78rem;
+    }
+    .facts__panel h4 {
+      margin: 0.4rem 0 0.2rem; font-size: 0.72rem; color: var(--dim);
+      font-family: var(--font-mono); font-weight: 400;
+    }
+    .facts__panel h4:first-child { margin-top: 0; }
+    .facts__panel ul { margin: 0; padding-left: 1rem; }
+    .facts__panel li { padding: 0.05rem 0; }
+    .facts__panel li.good { color: var(--good); }
+    .facts__panel li.bad { color: var(--bad); }
+    .facts__outcome { margin: 0 0 0.3rem; color: var(--vellum); }
+    .facts__note { margin: 0.4rem 0 0; color: var(--faint); font-size: 0.72rem; }
+
+    .tier {
+      display: inline-block; min-width: 1.4rem; text-align: center;
+      font-family: var(--font-mono); font-size: 0.75rem;
+      border: 1px solid var(--line); border-radius: 3px; padding: 0.02rem 0.25rem;
+    }
+    .tier--bronze { border-color: #8a5a3b; color: #c08552; }
+    .tier--silver { border-color: #8d949c; color: #b9c0c7; }
+    .tier--gold { border-color: var(--brass); color: var(--brass-bright); }
+    .tier--purple { border-color: var(--sk-intrigue); color: var(--sk-intrigue); }
+
+    .mods { font-size: 0.78rem; color: var(--dim); max-width: 18rem; }
+    .u-sub { color: var(--faint); font-size: 0.72rem; }
+    td .u-sub { display: inline-block; max-width: 22rem; white-space: normal; }
+  </style>
+</Base>

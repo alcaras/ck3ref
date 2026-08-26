@@ -1,0 +1,211 @@
+---
+import Base from '../layouts/Base.astro';
+import projects from '../data/great_projects.json';
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+
+const SECTIONS: [string, string, string][] = [
+  ['00_great_project_types.txt', 'Great works',
+   'Monumental construction projects — the Mandala capital temples, the Great Wall, the Grand Canals — that raise real buildings when completed.'],
+  ['00_ministry_projects.txt', 'Ministry projects',
+   'Realm undertakings planned through the Celestial ministries: campaigns, censuses, conversion and development drives.'],
+  ['00_natural_disasters.txt', 'Disaster relief',
+   'Relief efforts that appear when an earthquake or flood strikes — they cannot be planned, only funded.'],
+];
+
+type Cost = Record<string, { n?: number; rules?: string; fromTreasury?: boolean }> | null;
+
+function costParts(c: Cost): { label: string; text: string; varies: string | null }[] {
+  if (!c) return [];
+  return Object.entries(c).map(([k, v]) => ({
+    label: k,
+    text: v.n != null ? String(v.n) : 'varies',
+    varies: v.rules ?? null,
+  }));
+}
+function timeText(t: { n?: number; rules?: string } | null): { text: string; varies: string | null } {
+  if (!t) return { text: '—', varies: null };
+  if (t.n != null) {
+    const yrs = Math.round((t.n / 365) * 10) / 10;
+    return { text: `${t.n} days (~${yrs} yr${yrs === 1 ? '' : 's'})`, varies: null };
+  }
+  return { text: 'varies', varies: t.rules ?? null };
+}
+const pretty = (s: string | null | undefined) => (s ? s.replace(/_/g, ' ') : null);
+
+const dlcs = [...new Set(projects.map((p) => p.dlc).filter(Boolean))].sort();
+const inSection = (f: string) => projects.filter((p) => p.sourceFile === f);
+---
+<Base
+  title="Great Projects"
+  active="great-projects"
+  lede="The collaboratively funded Great Projects: a founder plans the work, then rulers fund its contribution line-items until it completes. Wonders raised this way are cross-referenced to their entries on the Buildings page rather than repeated here."
+  stats={[
+    { value: projects.length, label: 'project types' },
+    { value: projects.reduce((n, p) => n + p.contributions.length, 0), label: 'contribution items' },
+    { value: dlcs.length, label: 'DLCs add content' },
+  ]}
+>
+  {SECTIONS.map(([file, label, blurb]) => (
+    <section>
+      <h2 class="group-h" id={label.toLowerCase().replace(/ /g, '-')}>
+        {label}
+        <span class="count">{inSection(file).length}</span>
+      </h2>
+      <p class="sec-blurb">{blurb}</p>
+
+      {inSection(file).map((p) => (
+        <article class="pcard" id={p.id}>
+          <header>
+          <img src={`${base}/img/great-projects/${p.id}.webp`} alt="" width="36" height="36" loading="lazy" onerror="this.style.visibility='hidden'" />
+            <h3>{p.name}</h3>
+            {!p.plannable && <span class="chip">event-driven — cannot be planned</span>}
+            {p.dlc && <span class="badge-dlc">{p.dlc}</span>}
+          </header>
+
+          {p.requirements.length > 0 && (
+            <p class="req-row">
+              <b>To plan:</b>
+              <span class="chips">
+                {p.requirements.map((r) => (
+                  <span class="chip chip--req" title={r.kind.replace(/_/g, ' ')}>
+                    {r.negated && <span class="neg">not </span>}{r.name}
+                  </span>
+                ))}
+              </span>
+            </p>
+          )}
+
+          <p class="meta">
+            {costParts(p.cost as Cost).length > 0 && (
+              <span>
+                <b>Planning cost</b>
+                {costParts(p.cost as Cost).map((c, i) => (
+                  <>
+                    {i > 0 && ', '}
+                    {c.varies ? (
+                      <span class="var" title={c.varies}>varies</span>
+                    ) : (
+                      c.text
+                    )}{' '}
+                    {c.label}
+                  </>
+                ))}
+              </span>
+            )}
+            {p.constructionTime && (
+              <span>
+                <b>Construction</b>
+                {timeText(p.constructionTime).varies ? (
+                  <span class="var" title={timeText(p.constructionTime).varies}>varies</span>
+                ) : (
+                  timeText(p.constructionTime).text
+                )}
+              </span>
+            )}
+            {p.contributionThreshold != null && (
+              <span><b>Contributions close at</b>{p.contributionThreshold}% progress</span>
+            )}
+            {p.provinceFilter && (
+              <span>
+                <b>Planned in</b>
+                {pretty(p.provinceFilter)}{p.provinceFilterTarget ? ` (${pretty(p.provinceFilterTarget)})` : ''}
+              </span>
+            )}
+            <span><b>Owner</b>{p.owner}</span>
+            <span><b>Funded by</b>{p.contributors.join(', ')}</span>
+          </p>
+
+          {p.grantsBuildings.length > 0 && (
+            <p class="grants">
+              <b>Builds:</b>
+              {p.grantsBuildings.map((g, i) => (
+                <>
+                  {i > 0 && ', '}
+                  <a href={`${base}/buildings#${g.id}`}>{g.name}</a>
+                </>
+              ))}
+            </p>
+          )}
+
+          {p.contributions.length > 0 && (
+            <div class="tbl-scroll">
+              <table class="ntbl">
+                <thead>
+                  <tr>
+                    <th>Contribution</th>
+                    <th>Needed</th>
+                    <th class="num">Cost</th>
+                    <th>Funded by</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {p.contributions.map((c) => (
+                    <tr>
+                      <td class="name">
+                        <span class="u-name">{c.name}</span>
+                        {c.desc && <span class="u-sub"><br />{c.desc}</span>}
+                      </td>
+                      <td>
+                        {c.required ? 'required' : <span class="subtle">optional</span>}
+                      </td>
+                      <td class="num cost">
+                        {costParts(c.cost as Cost).length === 0 && <span class="subtle">free</span>}
+                        {costParts(c.cost as Cost).map((cc, i) => (
+                          <>
+                            {i > 0 && ', '}
+                            {cc.varies ? (
+                              <span class="var" title={cc.varies}>varies</span>
+                            ) : (
+                              cc.text
+                            )}{' '}
+                            {cc.label}
+                          </>
+                        ))}
+                      </td>
+                      <td class="subtle">{c.contributors ? c.contributors.join(', ') : 'project default'}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          )}
+        </article>
+      ))}
+    </section>
+  ))}
+
+  <p class="footnote">
+    Conditional numbers show as <span class="var">varies</span> — hover for the game's rule chain
+    (most planning costs scale with treasury size, and construction time halves in certain Dynastic
+    Cycle phases). Contribution costs marked "treasury" draw on the Imperial Treasury. Relief
+    projects appear only during their natural-disaster situation. The wonders these projects raise
+    are listed with full stats under
+    <a href={`${base}/buildings#great-projects`}>Buildings → Great projects</a>.
+  </p>
+
+  <style>
+    .sec-blurb { color: var(--dim); font-size: 0.85rem; max-width: 72ch; margin: -0.2rem 0 0.8rem; }
+    .pcard {
+      background: var(--panel); border: 1px solid var(--line-soft); border-radius: var(--r);
+      padding: 0.8rem 1rem; margin: 0 0 0.9rem;
+    }
+    .pcard header { display: flex; align-items: center; gap: 0.6rem; flex-wrap: wrap; margin-bottom: 0.45rem; }
+    .pcard header img { width: 36px; height: 36px; object-fit: contain; flex: none;
+      filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.6)); }
+    .pcard h3 { font-family: var(--font-display); font-size: 1rem; font-weight: 600; margin: 0; }
+    .req-row { display: flex; gap: 0.45rem; margin: 0 0 0.45rem; font-size: 0.82rem; align-items: baseline; }
+    .req-row b, .grants b { color: var(--dim); font-weight: 600; flex: none; }
+    .req-row .chips { max-width: none; }
+    .chip .neg { color: var(--bad); }
+    .meta { margin: 0 0 0.45rem; font-size: 0.8rem; color: var(--vellum); display: flex; flex-wrap: wrap; gap: 0.3rem 1.4rem; }
+    .meta b { color: var(--dim); font-weight: 600; margin-right: 0.35rem; }
+    .grants { margin: 0 0 0.5rem; font-size: 0.82rem; }
+    .pcard .tbl-scroll { margin-top: 0.2rem; }
+    .pcard .ntbl { font-size: 0.8rem; }
+    .u-sub { color: var(--faint); font-size: 0.72rem; }
+    .pcard td.name { white-space: normal; min-width: 14rem; }
+    .var { color: var(--sk-intrigue); cursor: help; border-bottom: 1px dotted var(--sk-intrigue); }
+    .footnote { color: var(--faint); font-size: 0.78rem; max-width: 78ch; margin-top: 2rem; }
+  </style>
+</Base>

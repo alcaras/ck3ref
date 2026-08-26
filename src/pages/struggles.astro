@@ -1,0 +1,169 @@
+---
+import Base from '../layouts/Base.astro';
+import struggles from '../data/struggles.json';
+
+type Mod = { key: string; text: string; polarity?: string; doctrine?: string };
+type Param = { key: string; text: string };
+type Bucket = { audience: string; kind: string; items: (Mod & Param)[] };
+
+const AUDIENCE_LABEL: Record<string, string> = {
+  common: 'Everyone in the struggle region',
+  involved: 'Involved rulers',
+  interloper: 'Interlopers',
+  uninvolved: 'Uninvolved rulers',
+};
+const KIND_LABEL: Record<string, string> = {
+  parameters: '',
+  character: 'character',
+  county: 'counties',
+  doctrine: 'with doctrine',
+};
+
+const phaseCount = struggles.reduce((n, s) => n + s.phases.length, 0);
+const catalystIds = new Set(
+  struggles.flatMap((s) => s.phases.flatMap((p) => p.transitions.flatMap((t) => t.catalysts.map((c) => c.id)))),
+);
+const pct = (v: number) => `${Math.round(v * 100)}%`;
+const pointsText = (p: { value?: number; rules?: string } | null) =>
+  p == null ? '—' : p.value != null ? String(p.value) : 'varies';
+---
+<Base
+  title="Struggles"
+  active="struggles"
+  lede="The two regional struggles — Iberia and Persia — with every phase's effects on war, faith, and culture, and the catalysts that push each phase toward the next."
+  stats={[
+    { value: struggles.length, label: 'struggles' },
+    { value: phaseCount, label: 'phases' },
+    { value: catalystIds.size, label: 'distinct catalysts' },
+  ]}
+>
+  {struggles.map((s) => (
+    <section id={s.id}>
+      <h2 class="group-h">
+        {s.name}
+        <span class="count">{s.phases.length} phases</span>
+        {s.dlc && <span class="badge-dlc">{s.dlc}</span>}
+      </h2>
+      {s.desc && <p class="desc">{s.desc}</p>}
+      <div class="pills">
+        <span class="pill">region <b>{s.regions.map((r) => r.name).join(', ')}</b></span>
+        <span class="pill" title="share of a culture's or faith's counties that must lie inside the struggle region for it to become involved">
+          involvement <b>{pct(s.involvementPct)}</b>
+        </span>
+        {s.transitionDuration && <span class="pill">phase change takes <b>{s.transitionDuration}</b></span>}
+      </div>
+      <div class="who">
+        <span class="who-label">cultures</span>
+        <span class="chips">{s.cultures.map((c) => <span class="chip">{c.name}</span>)}</span>
+      </div>
+      <div class="who">
+        <span class="who-label">faiths</span>
+        <span class="chips">{s.faiths.map((f) => <span class="chip">{f.name}</span>)}</span>
+      </div>
+
+      {s.phases.map((p) => (
+        <article class="phase" id={p.id}>
+          <h3>
+            <span class="ph-name">{p.name}</span>
+            {s.startPhase === p.id && <span class="tag tag--start">starting phase</span>}
+            {p.ending && <span class="tag tag--end">ending phase</span>}
+            {p.durationPoints?.value != null && (
+              <span class="tag" title="catalyst points a future phase must accumulate to take over">{p.durationPoints.value} points to leave</span>
+            )}
+          </h3>
+          {p.desc && <p class="desc">{p.desc}</p>}
+
+          {p.effects.length > 0 && (
+            <div class="fx-grid">
+              {p.effects.map((e) => (
+                <div class="fx-col">
+                  <h4>{e.name.replace(/[()]/g, '') || e.group}</h4>
+                  {(e.buckets as Bucket[]).map((b) => (
+                    <div class="bucket">
+                      <span class="aud">{AUDIENCE_LABEL[b.audience]}{KIND_LABEL[b.kind] && ` — ${KIND_LABEL[b.kind]}`}</span>
+                      <ul class="fx">
+                        {b.items.map((it) => (
+                          <li class={it.polarity ? `is-${it.polarity}` : 'is-neutral'}>
+                            {it.text}
+                            {it.doctrine && <span class="subtle"> ({it.doctrine.replace(/^doctrine_/, '').replace(/_/g, ' ')})</span>}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  ))}
+                </div>
+              ))}
+            </div>
+          )}
+
+          {p.transitions.map((t) => (
+            <div class="transition">
+              <h4>
+                <span class="arrow">→</span> {t.toName}
+                <span class="subtle"> — pushed by</span>
+              </h4>
+              <div class="tbl-scroll">
+                <table class="ntbl">
+                  <thead>
+                    <tr><th>Catalyst</th><th class="num">Points</th></tr>
+                  </thead>
+                  <tbody>
+                    {t.catalysts.map((c) => (
+                      <tr>
+                        <td title={c.desc ?? undefined}>{c.name}</td>
+                        <td class="num">{pointsText(c.points)}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          ))}
+
+          {p.endingDecisions.length > 0 && (
+            <div class="who">
+              <span class="who-label">ending decisions</span>
+              <span class="chips">
+                {p.endingDecisions.map((d) => (
+                  <span class="chip chip--req" title={d.id}>{d.name}</span>
+                ))}
+              </span>
+            </div>
+          )}
+        </article>
+      ))}
+    </section>
+  ))}
+
+  <p class="footnote">
+    Effects are read from each phase's war/faith/culture/other blocks; catalyst point values resolve
+    through the game's script values (minimal 1 · minor 3 · medium 5 · major 10 · massive 25).
+    "varies" marks a value that depends on game state — hover for details where available.
+  </p>
+
+  <style>
+    .desc { color: var(--dim); max-width: 72ch; margin: 0.2rem 0 0.7rem; }
+    .pills { margin-bottom: 0.6rem; }
+    .who { display: flex; gap: 0.6rem; align-items: baseline; margin: 0.35rem 0; }
+    .who-label { color: var(--faint); font-family: var(--font-mono); font-size: 0.72rem; flex: none; width: 8.5rem; text-align: right; }
+    .phase { margin: 1.6rem 0 2.2rem; padding-left: 0.9rem; border-left: 2px solid var(--line-soft); }
+    .phase h3 { font-family: var(--font-display); font-size: 1rem; margin: 0 0 0.3rem; display: flex; gap: 0.55rem; align-items: baseline; flex-wrap: wrap; }
+    .ph-name { color: var(--vellum); }
+    .tag { font-family: var(--font-mono); font-size: 0.68rem; color: var(--dim); border: 1px solid var(--line); border-radius: 999px; padding: 0.05rem 0.5rem; }
+    .tag--start { color: var(--rubric); border-color: color-mix(in oklab, var(--rubric) 50%, var(--line)); }
+    .tag--end { color: var(--brass); border-color: color-mix(in oklab, var(--brass) 50%, var(--line)); }
+    .fx-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 0.8rem; margin: 0.6rem 0; }
+    .fx-col { background: var(--panel); border: 1px solid var(--line-soft); border-radius: var(--r); padding: 0.55rem 0.7rem; }
+    .fx-col h4 { margin: 0 0 0.35rem; font-size: 0.8rem; color: var(--brass); font-weight: 600; }
+    .bucket { margin: 0.35rem 0; }
+    .aud { display: block; color: var(--faint); font-size: 0.72rem; margin-bottom: 0.1rem; }
+    .fx { list-style: none; margin: 0; padding: 0; font-size: 0.8rem; }
+    .fx li.is-good { color: var(--good); }
+    .fx li.is-bad { color: var(--bad); }
+    .transition { margin: 0.8rem 0; }
+    .transition h4 { margin: 0 0 0.3rem; font-size: 0.85rem; font-weight: 600; }
+    .transition .arrow { color: var(--rubric); }
+    .transition .tbl-scroll { max-width: 44rem; }
+    .footnote { color: var(--faint); font-size: 0.78rem; max-width: 70ch; margin-top: 2rem; }
+  </style>
+</Base>

@@ -1,0 +1,391 @@
+---
+import Base from '../layouts/Base.astro';
+import data from '../data/activities.json';
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+
+const { groups, activities, intents, travelOptions, pois } = data;
+const activityGroups = groups.filter((g) => activities.some((a) => a.group === g.id));
+
+const dlcs = [
+  ...new Set([...activities, ...intents, ...travelOptions].map((r: any) => r.dlc).filter(Boolean)),
+].sort();
+
+type Money = { value?: number; base?: number; scales?: boolean };
+const RES_LABEL: Record<string, string> = {
+  gold: 'gold', prestige: 'prestige', piety: 'piety', renown: 'renown',
+  herd: 'herd', barter_goods: 'provisions',
+};
+function moneyText(m: Money): string {
+  if (m.value != null) return String(m.value);
+  if (m.base != null) return `~${m.base}+`;
+  return 'varies';
+}
+function costLines(cost: Record<string, Money> | undefined): { text: string; scales: boolean }[] {
+  if (!cost) return [];
+  return Object.entries(cost).map(([res, m]) => ({
+    text: `${moneyText(m)} ${RES_LABEL[res] ?? res.replace(/_/g, ' ')}`,
+    scales: !!m.scales,
+  }));
+}
+function cooldownText(cd: (Money & { unit: string }) | null): string {
+  if (!cd) return '—';
+  const n = cd.value ?? cd.base;
+  if (n == null) return 'varies';
+  const unit = n === 1 ? cd.unit.replace(/s$/, '') : cd.unit;
+  return `${n} ${unit}${cd.scales ? '*' : ''}`;
+}
+function optionTip(o: any): string {
+  const parts = [];
+  const cl = costLines(o.cost).map((c) => c.text).join(', ');
+  if (cl) parts.push(`cost: ${cl}`);
+  if (o.requirements?.length)
+    parts.push(`conditions: ${o.requirements.map((r: any) => (r.negated ? 'not ' : '') + r.name).join(', ')}`);
+  if (o.blockedPhases?.length) parts.push(`blocks: ${o.blockedPhases.join(', ')}`);
+  if (o.dlc) parts.push(o.dlc);
+  return parts.join(' · ') || 'no extra cost';
+}
+function catTip(c: any): string {
+  return c.options.map((o: any) => o.name).join(' · ');
+}
+const searchText = (r: any, extra = '') =>
+  `${r.name ?? ''} ${r.id} ${extra}`.toLowerCase();
+---
+<Base
+  title="Activities"
+  active="activities"
+  lede="Every hostable activity with its variants, contests, predicted costs, and guest rules — plus activity intents, travel options, and the points of interest a journey can visit. Costs marked ~ scale with era and realm tier; the base shown is the game's own County/Early-Era baseline."
+  stats={[
+    { value: activities.length, label: 'activities' },
+    { value: intents.length, label: 'intents' },
+    { value: travelOptions.length, label: 'travel options' },
+    { value: pois.length, label: 'points of interest' },
+  ]}
+>
+  <div class="filterbar">
+    <input type="search" id="q" placeholder="Filter by name, option, contest…" autocomplete="off" />
+    <select id="fsec">
+      <option value="">everything</option>
+      {activityGroups.map((g) => <option value={g.id}>{g.name}</option>)}
+      <option value="intents">Intents</option>
+      <option value="travel">Travel options</option>
+      <option value="poi">Points of interest</option>
+    </select>
+    <select id="fdlc">
+      <option value="">base game + DLC</option>
+      <option value="base">base game only</option>
+      {dlcs.map((d) => <option value={d}>{d}</option>)}
+    </select>
+    <span class="hint" id="count"></span>
+  </div>
+
+  {activityGroups.map((g) => (
+    <section data-group={g.id}>
+      <h2 class="group-h" id={g.id}>
+        {g.name}
+        <span class="count">{activities.filter((a) => a.group === g.id).length}</span>
+      </h2>
+      <div class="tbl-scroll">
+        <table class="ntbl">
+          <thead>
+            <tr>
+              <th>Activity</th>
+              <th>Variants &amp; options</th>
+              <th>Phases</th>
+              <th class="num" title="ui_predicted_cost — the game's own planning estimate">Cost</th>
+              <th class="num">Cooldown</th>
+              <th class="num" title="Maximum guests">Guests</th>
+              <th>Requirements</th>
+              <th>DLC</th>
+            </tr>
+          </thead>
+          <tbody>
+            {activities
+              .filter((a) => a.group === g.id)
+              .map((a) => (
+                <tr
+                  id={a.id}
+                  data-name={searchText(a, [
+                    ...a.specialOptions.map((o: any) => o.name),
+                    ...a.optionCategories.flatMap((c: any) => [c.name, ...c.options.map((o: any) => o.name)]),
+                    ...a.phases.map((p: any) => p.name),
+                  ].join(' '))}
+                  data-dlc={a.dlc ?? 'base'}
+                >
+                  <td class="name">
+                    <span class="unit">
+                      <img src={`${base}/img/activities/${a.id}.webp`} alt="" width="34" height="34" loading="lazy" />
+                      <span>
+                        <span class="u-name" title={a.desc}>{a.name}</span>
+                        {a.openInvite && <span class="u-sub"><br />open invite</span>}
+                      </span>
+                    </span>
+                  </td>
+                  <td>
+                    <span class="chips">
+                      {a.specialOptions.map((o: any) => (
+                        <span class="chip chip--variant" title={optionTip(o)}>{o.name}</span>
+                      ))}
+                      {a.optionCategories.map((c: any) => (
+                        <span class="chip chip--terrain" title={catTip(c)}>
+                          {c.name}<span class="x">×{c.options.length}</span>
+                        </span>
+                      ))}
+                    </span>
+                  </td>
+                  <td>
+                    {a.phases.length > 0 && (
+                      <span class="chips">
+                        {a.phases.map((p: any) => (
+                          <span class="chip chip--terrain" title={p.predefined ? 'always part of the activity' : optionTip(p)}>
+                            {p.name}
+                          </span>
+                        ))}
+                        {a.numPickablePhases != null && <span class="subtle pick-n">pick {a.numPickablePhases}</span>}
+                      </span>
+                    )}
+                  </td>
+                  <td class="num cost">
+                    {costLines(a.predictedCost).length
+                      ? costLines(a.predictedCost).map((c) => (
+                          <div title={c.scales ? 'scales with era and realm tier' : undefined}>{c.text}</div>
+                        ))
+                      : '—'}
+                  </td>
+                  <td class="num" title={a.cooldown?.scales ? '* scales (cultural traditions etc.)' : undefined}>
+                    {cooldownText(a.cooldown)}
+                  </td>
+                  <td class="num">{a.maxGuests ?? '—'}</td>
+                  <td>
+                    <span class="chips">
+                      {a.requirements.map((r: any) => (
+                        <span class="chip chip--req">
+                          {r.negated && <span class="neg">not </span>}{r.name}
+                        </span>
+                      ))}
+                    </span>
+                  </td>
+                  <td>{a.dlc ? <span class="badge-dlc">{a.dlc}</span> : <span class="subtle">—</span>}</td>
+                </tr>
+              ))}
+          </tbody>
+        </table>
+      </div>
+    </section>
+  ))}
+
+  <section data-group="intents">
+    <h2 class="group-h" id="intents">
+      Intents
+      <span class="count">{intents.length}</span>
+    </h2>
+    <p class="sec-note">
+      The personal goal a host or guest pursues during an activity — picked when joining, resolved through
+      the activity's events.
+    </p>
+    <div class="tbl-scroll">
+      <table class="ntbl">
+        <thead>
+          <tr>
+            <th>Intent</th>
+            <th>Used in</th>
+            <th>Description</th>
+            <th>Requirements</th>
+            <th>DLC</th>
+          </tr>
+        </thead>
+        <tbody>
+          {intents.map((i) => (
+            <tr id={i.id} data-name={searchText(i, i.family)} data-dlc={i.dlc ?? 'base'}>
+              <td class="name">
+                <span class="unit">
+                  <img src={`${base}/img/intents/${i.icon}.webp`} alt="" width="26" height="26" loading="lazy" />
+                  <span>
+                    <span class="u-name">{i.name}</span>
+                    {i.targeted && <span class="u-sub"><br />targets a character</span>}
+                  </span>
+                </span>
+              </td>
+              <td>{i.family}</td>
+              <td class="desc-cell">{i.desc ?? <span class="subtle">—</span>}</td>
+              <td>
+                <span class="chips">
+                  {i.requirements.map((r: any) => (
+                    <span class="chip chip--req">
+                      {r.negated && <span class="neg">not </span>}{r.name}
+                    </span>
+                  ))}
+                </span>
+              </td>
+              <td>{i.dlc ? <span class="badge-dlc">{i.dlc}</span> : <span class="subtle">—</span>}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section data-group="travel">
+    <h2 class="group-h" id="travel">
+      Travel options
+      <span class="count">{travelOptions.length}</span>
+    </h2>
+    <p class="sec-note">
+      Preparations picked while planning a journey — each trades speed, safety, gold, or a special effect.
+    </p>
+    <div class="tbl-scroll">
+      <table class="ntbl">
+        <thead>
+          <tr>
+            <th>Option</th>
+            <th class="num" title="Travel speed modifier">Speed</th>
+            <th class="num" title="Travel safety modifier">Safety</th>
+            <th>Other effects</th>
+            <th class="num">Cost</th>
+            <th>Requirements</th>
+            <th>DLC</th>
+          </tr>
+        </thead>
+        <tbody>
+          {travelOptions.map((t) => (
+            <tr id={t.id} data-name={searchText(t)} data-dlc={t.dlc ?? 'base'}>
+              <td class="name">
+                <span class="unit">
+                  <img src={`${base}/img/travel-options/${t.id}.webp`} alt="" width="26" height="26" loading="lazy" />
+                  <span class="u-name">{t.name}</span>
+                </span>
+              </td>
+              <td class="num">
+                {t.travelSpeed != null ? (
+                  <span class={t.travelSpeed > 0 ? 'pos' : 'negv'}>{t.travelSpeed > 0 ? '+' : ''}{t.travelSpeed}%</span>
+                ) : (
+                  <span class="subtle">—</span>
+                )}
+              </td>
+              <td class="num">
+                {t.travelSafety != null ? (
+                  <span class={t.travelSafety > 0 ? 'pos' : 'negv'}>{t.travelSafety > 0 ? '+' : ''}{t.travelSafety}</span>
+                ) : (
+                  <span class="subtle">—</span>
+                )}
+              </td>
+              <td class="fx-cell">
+                {t.ownerMods.map((m: any) => (
+                  <div class={m.polarity === 'bad' ? 'negv' : m.polarity === 'good' ? 'pos' : undefined}>{m.text}</div>
+                ))}
+                {t.effectText.map((e: string) => (
+                  <div class="subtle fx-text" title={e}>{e.split('\n')[0]}</div>
+                ))}
+                {t.ownerMods.length === 0 && t.effectText.length === 0 && <span class="subtle">—</span>}
+              </td>
+              <td class="num cost">
+                {costLines(t.cost).length
+                  ? costLines(t.cost).map((c) => (
+                      <div title={c.scales ? 'scales with era and realm tier' : undefined}>{c.text}</div>
+                    ))
+                  : '—'}
+              </td>
+              <td>
+                <span class="chips">
+                  {t.requirements.map((r: any) => (
+                    <span class="chip chip--req">
+                      {r.negated && <span class="neg">not </span>}{r.name}
+                    </span>
+                  ))}
+                </span>
+              </td>
+              <td>{t.dlc ? <span class="badge-dlc">{t.dlc}</span> : <span class="subtle">—</span>}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section data-group="poi">
+    <h2 class="group-h" id="points-of-interest">
+      Points of interest
+      <span class="count">{pois.length}</span>
+    </h2>
+    <p class="sec-note">
+      Notable places a travel route can detour past — visiting one grants travel experience and the rewards
+      below. Names are per-place in game; these are the underlying types.
+    </p>
+    <div class="tbl-scroll">
+      <table class="ntbl">
+        <thead>
+          <tr>
+            <th>Type</th>
+            <th>Visit message</th>
+            <th>Rewards (game tooltip text)</th>
+          </tr>
+        </thead>
+        <tbody>
+          {pois.map((p) => (
+            <tr id={p.id} data-name={searchText(p)} data-dlc="base">
+              <td class="name">
+                <span class="unit">
+                  <img src={`${base}/img/poi/${p.id}.webp`} alt="" width="26" height="26" loading="lazy" />
+                  <span class="u-name">{p.name}</span>
+                </span>
+              </td>
+              <td>{p.visitText ?? <span class="subtle">—</span>}</td>
+              <td class="fx-cell">
+                {p.rewards.length
+                  ? p.rewards.map((e: string) => <div class="subtle fx-text" title={e}>{e.split('\n')[0]}</div>)
+                  : <span class="subtle">event-scripted</span>}
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <script>
+    const q = document.getElementById('q') as HTMLInputElement;
+    const fsec = document.getElementById('fsec') as HTMLSelectElement;
+    const fdlc = document.getElementById('fdlc') as HTMLSelectElement;
+    const count = document.getElementById('count')!;
+    const rows = [...document.querySelectorAll<HTMLTableRowElement>('tbody tr')];
+    const groups = [...document.querySelectorAll<HTMLElement>('section[data-group]')];
+
+    function apply() {
+      const needle = q.value.trim().toLowerCase();
+      const s = fsec.value;
+      const d = fdlc.value;
+      let shown = 0;
+      for (const r of rows) {
+        const sec = r.closest('section[data-group]') as HTMLElement;
+        const ok =
+          (!needle || (r.dataset.name ?? '').includes(needle)) &&
+          (!s || sec.dataset.group === s) &&
+          (!d || (d === 'base' ? r.dataset.dlc === 'base' : r.dataset.dlc === d));
+        r.hidden = !ok;
+        if (ok) shown++;
+      }
+      for (const g of groups) {
+        g.hidden = ![...g.querySelectorAll('tbody tr')].some((r) => !(r as HTMLTableRowElement).hidden);
+      }
+      count.textContent = `${shown} of ${rows.length}`;
+    }
+    for (const el of [q, fsec, fdlc]) el.addEventListener('input', apply);
+    apply();
+  </script>
+
+  <style>
+    .sec-note { color: var(--dim); font-size: 0.83rem; max-width: 68ch; margin: -0.2rem 0 0.7rem; }
+    .chip--variant { border-color: color-mix(in oklab, var(--rubric) 45%, var(--line)); cursor: help; }
+    .chip--terrain .x { color: var(--faint); font-family: var(--font-mono); font-size: 0.68rem; }
+    .chip .neg { color: var(--bad); }
+    .pick-n { font-size: 0.72rem; align-self: center; }
+    .cost div { white-space: nowrap; }
+    .pos { color: var(--good); }
+    .negv { color: var(--bad); }
+    .fx-cell { max-width: 22rem; font-size: 0.8rem; }
+    .fx-cell div { margin: 0.05rem 0; }
+    .fx-text { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; max-width: 21rem; cursor: help; }
+    .desc-cell { max-width: 26rem; color: var(--dim); font-size: 0.8rem; }
+    .unit img[width='26'] { width: 26px; height: 26px; }
+  </style>
+</Base>

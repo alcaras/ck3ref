@@ -1,0 +1,130 @@
+---
+import Base from '../layouts/Base.astro';
+import data from '../data/startdates.json';
+
+const { dates, realms } = data as {
+  dates: string[];
+  realms: Record<string, {
+    title: string; name: string; tier: string; color: string | null;
+    counties: number; ruler: string; female: boolean; dynasty: string | null;
+    culture: string; faith: string; government: string | null;
+  }[]>;
+};
+const labels: Record<string, string> = { '867.1.1': '867', '1066.9.15': '1066' };
+const tiers = ['hegemony', 'empire', 'kingdom', 'duchy', 'county', 'barony'];
+const maxCounties = Math.max(...dates.flatMap((d) => realms[d].map((r) => r.counties)));
+---
+<Base
+  title="Start Dates"
+  active="start-dates"
+  lede="Every independent realm at each bookmark, reconstructed from the game's title history: ruler, dynasty, culture, faith, government, and realm size in counties."
+  stats={dates.map((d) => ({ value: realms[d].length, label: `realms in ${labels[d]}` }))}
+>
+  <div class="filterbar">
+    <div class="datetoggle" role="tablist">
+      {dates.map((d, i) => (
+        <button class:list={['dt', { 'is-on': i === 0 }]} data-date={d} role="tab">{labels[d]}</button>
+      ))}
+    </div>
+    <input type="search" id="q" placeholder="Filter by realm, ruler, culture, faith…" autocomplete="off" />
+    <select id="ftier">
+      <option value="">every tier</option>
+      {tiers.map((t) => <option value={t}>{t}</option>)}
+    </select>
+    <span class="hint" id="count"></span>
+  </div>
+
+  {dates.map((d, i) => (
+    <section data-date={d} hidden={i !== 0}>
+      <div class="tbl-scroll">
+        <table class="ntbl">
+          <thead>
+            <tr>
+              <th>Realm</th>
+              <th>Tier</th>
+              <th>Ruler</th>
+              <th>Culture</th>
+              <th>Faith</th>
+              <th>Government</th>
+              <th class="num">Counties</th>
+            </tr>
+          </thead>
+          <tbody>
+            {realms[d].map((r) => (
+              <tr
+                id={`${labels[d]}-${r.title}`}
+                data-name={`${r.name} ${r.ruler} ${r.dynasty ?? ''} ${r.culture} ${r.faith}`.toLowerCase()}
+                data-tier={r.tier}
+              >
+                <td class="name">
+                  <span class="sw" style={`--c:${r.color ?? 'var(--line)'}`} />
+                  {r.name}
+                </td>
+                <td class="subtle">{r.tier}</td>
+                <td>
+                  {r.ruler}
+                  {r.dynasty && <span class="subtle"> {r.dynasty}</span>}
+                </td>
+                <td>{r.culture || <span class="subtle">—</span>}</td>
+                <td>{r.faith || <span class="subtle">—</span>}</td>
+                <td class="subtle">{r.government ?? '—'}</td>
+                <td class="num">
+                  <span class="stat" style={`--w:${Math.round((r.counties / maxCounties) * 100)}%`}>
+                    {r.counties}
+                    <span class="bar" />
+                  </span>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </section>
+  ))}
+
+  <script>
+    const q = document.getElementById('q') as HTMLInputElement;
+    const ftier = document.getElementById('ftier') as HTMLSelectElement;
+    const count = document.getElementById('count')!;
+    const buttons = [...document.querySelectorAll<HTMLButtonElement>('.dt')];
+    const sections = [...document.querySelectorAll<HTMLElement>('section[data-date]')];
+    let active = sections[0]?.dataset.date ?? '';
+
+    function apply() {
+      const needle = q.value.trim().toLowerCase();
+      const t = ftier.value;
+      let shown = 0, total = 0;
+      for (const s of sections) {
+        const on = s.dataset.date === active;
+        s.hidden = !on;
+        if (!on) continue;
+        for (const r of s.querySelectorAll<HTMLTableRowElement>('tbody tr')) {
+          total++;
+          const ok = (!needle || (r.dataset.name ?? '').includes(needle)) &&
+            (!t || r.dataset.tier === t);
+          r.hidden = !ok;
+          if (ok) shown++;
+        }
+      }
+      count.textContent = `${shown} of ${total}`;
+    }
+    for (const b of buttons)
+      b.addEventListener('click', () => {
+        active = b.dataset.date!;
+        buttons.forEach((x) => x.classList.toggle('is-on', x === b));
+        apply();
+      });
+    for (const el of [q, ftier]) el.addEventListener('input', apply);
+    apply();
+  </script>
+
+  <style>
+    .datetoggle { display: flex; gap: 0; border: 1px solid var(--line); border-radius: var(--r); overflow: hidden; }
+    .dt {
+      background: var(--ink); color: var(--dim); border: none; cursor: pointer;
+      font: 600 0.9rem var(--font-display); padding: 0.3rem 0.9rem;
+    }
+    .dt.is-on { background: var(--rubric); color: var(--vellum); }
+    .sw { display: inline-block; width: 11px; height: 16px; border-radius: 2px; background: var(--c); vertical-align: -2px; margin-right: 0.4rem; }
+  </style>
+</Base>
