@@ -1,0 +1,157 @@
+---
+import Base from '../layouts/Base.astro';
+import doctrinesData from '../data/doctrines.json';
+import faithsData from '../data/faiths.json';
+
+const { doctrines, groups } = doctrinesData as any;
+const faiths = (faithsData as any).faiths;
+
+// client payload: only what the math needs
+const docMap = Object.fromEntries(doctrines.map((d: any) => [d.id, {
+  n: d.name, cost: d.pietyCost, tenet: d.isTenet,
+}]));
+const creatableGroups = groups.filter((g: any) =>
+  g.category !== 'not_creatable' && g.doctrines.some((id: string) => docMap[id]));
+const tenetIds = doctrines.filter((d: any) => d.isTenet).map((d: any) => d.id);
+const faithMap = Object.fromEntries(faiths.map((f: any) => [f.id, {
+  n: f.name, d: f.doctrines,
+  t: f.tenets.map((t: any) => (typeof t === 'string' ? t : t.key)),
+}]));
+const contexts = ['Christianity or Islam', 'Judaism or Buddhism or Jainism', 'otherwise'];
+---
+<Base
+  title="Faith Cost Calculator"
+  active="faith-creator"
+  lede="Pick a starting faith, change doctrines and tenets, and see the piety bill — keeping a doctrine costs half, per the game's own cost chains."
+  stats={[
+    { value: creatableGroups.length, label: 'doctrine groups' },
+    { value: tenetIds.length, label: 'tenets' },
+  ]}
+>
+  <div class="filterbar">
+    <label>Starting faith
+      <select id="basefaith">
+        {faiths.map((f: any) => <option value={f.id}>{f.name}</option>)}
+      </select>
+    </label>
+    <label>Cost context
+      <select id="ctx">
+        {contexts.map((c) => <option value={c}>{c}</option>)}
+      </select>
+    </label>
+    <span class="hint total">Total: <b id="total">0</b> piety</span>
+  </div>
+
+  <section>
+    <h2 class="group-h">Tenets <span class="count">3 picks</span></h2>
+    <div class="pickgrid" id="tenets">
+      {[0, 1, 2].map((i) => (
+        <label class="pick">
+          <span class="subtle">tenet {i + 1}</span>
+          <select data-tenet={i}>
+            {tenetIds.map((id: string) => <option value={id}>{docMap[id].n}</option>)}
+          </select>
+          <span class="pcost subtle"></span>
+        </label>
+      ))}
+    </div>
+  </section>
+
+  <section>
+    <h2 class="group-h">Doctrines <span class="count">{creatableGroups.length} groups</span></h2>
+    <div class="pickgrid" id="doctrines">
+      {creatableGroups.map((g: any) => (
+        <label class="pick">
+          <span class="subtle">{g.name}</span>
+          <select data-group={g.id}>
+            {g.doctrines.filter((id: string) => docMap[id]).map((id: string) => (
+              <option value={id}>{docMap[id].n}</option>
+            ))}
+          </select>
+          <span class="pcost subtle"></span>
+        </label>
+      ))}
+    </div>
+  </section>
+
+  <p class="prov">
+    Costs come from each doctrine's own <code>piety_cost</code> chain (tenets
+    500–1,500 by religion, doctrines 200–600), with the game's universal ×0.5
+    keep-same multiplier applied to unchanged picks. Situational surcharges
+    (two-step switches, conversion catalysts) and the fixed reformation cost
+    of unreformed faiths are not included.
+  </p>
+
+  <script define:vars={{ docMap, faithMap, contexts }}>
+    const baseSel = document.getElementById('basefaith');
+    const ctxSel = document.getElementById('ctx');
+    const totalEl = document.getElementById('total');
+
+    function costOf(id, unchanged) {
+      const d = docMap[id];
+      if (!d || !d.cost) return 0;
+      let v = d.cost.base;
+      if (v == null && d.cost.values) {
+        const ctx = ctxSel.value;
+        const hit = d.cost.values.find((x) => x.when === ctx) ??
+          d.cost.values.find((x) => x.when === 'otherwise') ?? d.cost.values[0];
+        v = hit ? hit.value : 0;
+      }
+      if (typeof v !== 'number') v = 0;
+      if (unchanged) {
+        const keep = (d.cost.mults ?? []).find((m) => (m.when ?? '').includes('keeping'));
+        v *= keep ? keep.factor : 0.5;
+      }
+      return v;
+    }
+
+    function currentPicks() {
+      return faithMap[baseSel.value] ?? { d: [], t: [] };
+    }
+
+    function initFromFaith() {
+      const f = currentPicks();
+      document.querySelectorAll('[data-tenet]').forEach((sel, i) => {
+        if (f.t[i] && [...sel.options].some((o) => o.value === f.t[i])) sel.value = f.t[i];
+      });
+      document.querySelectorAll('[data-group]').forEach((sel) => {
+        const cur = f.d.find((id) => [...sel.options].some((o) => o.value === id));
+        if (cur) sel.value = cur;
+      });
+    }
+
+    function update() {
+      const f = currentPicks();
+      let total = 0;
+      document.querySelectorAll('.pick').forEach((p) => {
+        const sel = p.querySelector('select');
+        const id = sel.value;
+        const unchanged = f.d.includes(id) || f.t.includes(id);
+        const c = costOf(id, unchanged);
+        total += c;
+        p.querySelector('.pcost').textContent =
+          c ? `${Math.round(c)} piety${unchanged ? ' (kept ×0.5)' : ''}` : 'free';
+      });
+      totalEl.textContent = Math.round(total).toLocaleString();
+    }
+
+    baseSel.addEventListener('input', () => { initFromFaith(); update(); });
+    ctxSel.addEventListener('input', update);
+    document.querySelectorAll('.pick select').forEach((s) => s.addEventListener('input', update));
+    initFromFaith();
+    update();
+  </script>
+
+  <style>
+    .filterbar label { color: var(--dim); font-size: 0.8rem; display: flex; gap: 0.4rem; align-items: center; }
+    .filterbar select { max-width: 15rem; }
+    .total { font-size: 0.95rem; color: var(--vellum); }
+    .total b { color: var(--rubric); font-family: var(--font-mono); font-size: 1.1rem; }
+    .pickgrid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 0.6rem; }
+    .pick { display: flex; flex-direction: column; gap: 0.2rem; background: var(--panel); border: 1px solid var(--line-soft); border-radius: var(--r); padding: 0.5rem 0.65rem; }
+    .pick select { background: var(--ink); color: var(--vellum); border: 1px solid var(--line); border-radius: var(--r); padding: 0.25rem 0.4rem; font-size: 0.82rem; }
+    .pcost { font-family: var(--font-mono); font-size: 0.72rem; min-height: 1em; }
+    .prov { color: var(--faint); font-size: 0.78rem; max-width: 64ch; margin-top: 2rem; }
+    .prov code { font-family: var(--font-mono); }
+  </style>
+</Base>
