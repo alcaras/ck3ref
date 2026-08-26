@@ -1,0 +1,28 @@
+---
+import { getEntity } from '../lib/entities';
+
+interface Props {
+  id: string;
+  label?: string;
+  showIcon?: boolean;
+}
+const { id, label, showIcon = false } = Astro.props;
+const e = getEntity(id);
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const text = label ?? e?.name ?? id;
+const href = e?.page ? `${base}/${e.page}#${e.slug}` : null;
+---
+{href ? (
+  <a class="term" href={href}>
+    {showIcon && e?.icon && <img src={`${base}/${e.icon}`} alt="" width="16" height="16" loading="lazy" />}{text}
+  </a>
+) : e ? (
+  <span class="term term--noref">{text}</span>
+) : (
+  <span class="term term--unknown" title={`unknown entity: ${id}`}>{text}</span>
+)}
+<style>
+  .term img { vertical-align: -3px; margin-right: 0.25em; }
+  .term--noref { color: var(--vellum); }
+  .term--unknown { color: var(--bad); }
+</style>

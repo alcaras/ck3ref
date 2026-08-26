@@ -1,0 +1,82 @@
+---
+import '../styles/theme.css';
+import { SECTIONS, TABS } from '../data/tabs';
+import patch from '../../data/patch.json';
+
+interface Props {
+  title: string;
+  active?: string;
+  lede?: string;
+  stats?: { label: string; value: string | number }[];
+}
+const { title, active, lede, stats = [] } = Astro.props;
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const versal = title.slice(0, 1);
+const rest = title.slice(1);
+---
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title} — CK3 Reference</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Inter:wght@400;600&family=JetBrains+Mono:wght@400&display=swap"
+    />
+  </head>
+  <body>
+    <header class="hdr">
+      <a class="hdr__title" href={`${base}/`}><span class="rubric">C</span>K3 Reference</a>
+      <nav class="nav" aria-label="Sections">
+        {SECTIONS.map((section) => (
+          <details>
+            <summary>{section}</summary>
+            <div class="menu">
+              {TABS.filter((t) => t.section === section).map((t) =>
+                t.status === 'built' ? (
+                  <a href={`${base}/${t.slug}`} class:list={[{ 'is-active': t.slug === active }]}>{t.label}</a>
+                ) : (
+                  <a href={`${base}/${t.slug}`}>{t.label}<span class="soon">planned</span></a>
+                )
+              )}
+            </div>
+          </details>
+        ))}
+      </nav>
+    </header>
+    <main class="wrap">
+      <div class="page-meta">
+        <h1><span class="versal">{versal}</span>{rest}</h1>
+        {lede && <p class="lede">{lede}</p>}
+        {stats.length > 0 && (
+          <div class="pills">
+            {stats.map((s) => (
+              <span class="pill"><b>{s.value}</b> {s.label}</span>
+            ))}
+          </div>
+        )}
+      </div>
+      <slot />
+    </main>
+    <footer class="foot">
+      <span>ck3reference · data generated from the game's own files</span>
+      <span>game build {patch.buildId}{patch.syncedAt ? ` · synced ${patch.syncedAt.slice(0, 10)}` : ''}</span>
+    </footer>
+    <script>
+      // close any open nav dropdown when another opens or on outside click
+      const details = [...document.querySelectorAll('.nav details')];
+      for (const d of details) {
+        d.addEventListener('toggle', () => {
+          if ((d as HTMLDetailsElement).open)
+            for (const o of details) if (o !== d) (o as HTMLDetailsElement).open = false;
+        });
+      }
+      document.addEventListener('click', (ev) => {
+        if (!(ev.target as Element).closest('.nav'))
+          for (const o of details) (o as HTMLDetailsElement).open = false;
+      });
+    </script>
+  </body>
+</html>

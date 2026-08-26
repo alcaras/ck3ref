@@ -1,0 +1,7788 @@
+[
+  {
+    "buyCost": {
+      "gold": 270
+    },
+    "counters": {
+      "heavy_infantry": 2,
+      "skirmishers": 2
+    },
+    "dlc": null,
+    "features": [],
+    "flavor": "Retinue Men-at-Arms\nCommon steppe riders possess a lifetime of skill: these veteran horsemen, yet more. To stand against them is pain; to chase after them is death.",
+    "highMaintenance": {
+      "gold": 1.35
+    },
+    "holdingBonus": {},
+    "icon": "accolade_maa_horse_archers",
+    "id": "accolade_maa_horse_archers",
+    "lowMaintenance": {
+      "gold": 0.45
+    },
+    "mainPhase": true,
+    "maxRegiments": 1,
+    "maxSizeBonus": null,
+    "maxSubRegiments": null,
+    "name": "Retinue Horse Archers",
+    "provisionCost": 7,
+    "requirements": [],
+    "siegeTier": null,
+    "siegeValue": null,
+    "sourceFile": "01_accolade_maa_types.txt",
+    "specialRecruitOnly": false,
+    "stack": 100,
+    "stats": {
+      "damage": 45,
+      "pursuit": 40,
+      "screen": 30,
+      "toughness": 20
+    },
+    "terrainBonus": {
+      "desert_mountains": {
+        "damage": -30,
+        "pursuit": -30
+      },
+      "drylands": {
+        "damage": 20
+      },
+      "jungle": {
+        "damage": -20,
+        "pursuit": -20
+      },
+      "mountains": {
+        "damage": -30,
+        "pursuit": -30
+      },
+      "plains": {
+        "damage": 20
+      },
+      "steppe": {
+        "damage": 45
+      },
+      "wetlands": {
+        "damage": -30,
+        "pursuit": -30
+      }
+    },
+    "type": "archer_cavalry",
+    "typeName": "Archer Cavalry",
+    "winterBonus": {}
+  },
+  {
+    "buyCost": {
+      "gold": 300
+    },
+    "counters": {
+      "heavy_infantry": 2,
+      "skirmishers": 2
+    },
+    "dlc": "Legacy of Persia",
+    "features": [],
+    "flavor": "The ranks of the Asawira are composed of Iranian nobles skilled with both lance and bow. Now restored as a military force, they stand ready to assail the enemies of Persia.",
+    "highMaintenance": {
+      "gold": 3
+    },
+    "holdingBonus": {},
+    "icon": "asawira",
+    "id": "asawira",
+    "lowMaintenance": {
+      "gold": 1
+    },
+    "mainPhase": true,
+    "maxRegiments": null,
+    "maxSizeBonus": null,
+    "maxSubRegiments": null,
+    "name": "Asawira",
+    "provisionCost": 12,
+    "requirements": [
+      {
+        "detail": null,
+        "key": "fp3_khvarenah_legacy_4",
+        "kind": "dynasty_perk",
+        "name": "Ancient Authority",
+        "negated": false
+      }
+    ],
+    "siegeTier": null,
+    "siegeValue": null,
+    "sourceFile": "00_fp3_maa_types.txt",
+    "specialRecruitOnly": false,
+    "stack": 50,
+    "stats": {
+      "damage": 90,
+      "pursuit": 35,
+      "screen": 10,
+      "toughness": 35
+    },
+    "terrainBonus": {
+      "desert_mountains": {
+        "damage": 10,
+        "pursuit": 10
+      },
+      "drylands": {
+        "damage": 30
+      },
+      "hills": {
+        "damage": -10
+      },
+      "mountains": {
+        "damage": -50
+      },
+      "plains": {
+        "damage": 30
+      },
+      "wetlands": {
+        "damage": -50,
+        "pursuit": -20,
+        "toughness": -15
+      }
+    },
+    "type": "archer_cavalry",
+    "typeName": "Archer Cavalry",
+    "winterBonus": {
+      "harsh_winter": {
+        "damage": -30,
+        "toughness": -10
+      },
+      "normal_winter": {
+        "damage": -15,
+        "toughness": -5
+      }
+    }
+  },
+  {
+    "buyCost": {
+      "gold": 85
+    },
+    "counters": {
+      "heavy_infantry": 1
+    },
+    "dlc": "The Great People",
+    "features": [],
+    "flavor": "Forced to defend themselves from stronger threats, Emishi horse archers are masters of hit-and-run tactics, raiding, and ambushes.",
+    "highMaintenance": {
+      "gold": 1.05
+    },
+    "holdingBonus": {},
+    "icon": "emishi_horse_archers",
+    "id": "emishi_horse_archers",
+    "lowMaintenance": {
+      "gold": 0.35
+    },
+    "mainPhase": true,
+    "maxRegiments": null,
+    "maxSizeBonus": null,
+    "maxSubRegiments": null,
+    "name": "Emishi Riders",
+    "provisionCost": 7,
+    "requirements": [
+      {
+        "detail": "Can recruit Emishi Riders as Men-at-Arms",
+        "key": "unlock_emishi_horse_archers_units",
+        "kind": "cultural_parameter",
+        "name": "Cultural tradition",
+        "negated": false
+      }
+    ],
+    "siegeTier": null,
+    "siegeValue": null,
+    "sourceFile": "10_tgp_maa_types.txt",
+    "specialRecruitOnly": false,
+    "stack": 100,
+    "stats": {
+      "damage": 28,
+      "pursuit": 35,
+      "screen": 30,
+      "toughness": 12
+    },
+    "terrainBonus": {
+      "forest": {
+        "damage": 12,
+        "pursuit": 12
+      },
+      "hills": {
+        "damage": 6,
+        "pursuit": 8
+      },
+      "mountains": {
+        "damage": 4,
+        "pursuit": 6
+      },
+      "plains": {
+        "damage": 6,
+        "pursuit": 8
+      },
+      "terraced_hills": {
+        "damage": 4,
+        "toughness": 6
+      }
+    },
+    "type": "archer_cavalry",
+    "typeName": "Archer Cavalry",
+    "winterBonus": {}
+  },
+  {
+    "buyCost": {
+      "gold": 157.5
+    },
+    "counters": {
+      "elephant_cavalry": 1,
+      "light_cavalry": 1
+    },
+    "dlc": "Khans of the Steppe",
+    "features": [],
+    "flavor": "Armored riders carrying strong bows. As each leads a string of fine horses, these nomads can fight tirelessly on the open field.",
+    "highMaintenance": {
+      "gold": 1.57
+    },
+    "holdingBonus": {},
+    "icon": "heavy_horse_archers",
+    "id": "heavy_horse_archers",
+    "lowMaintenance": {
+      "gold": 0.53
+    },
+    "mainPhase": true,
+    "maxRegiments": null,
+    "maxSizeBonus": null,
+    "maxSubRegiments": null,
+    "name": "Heavy Horse Archers",
+    "provisionCost": 21,
+    "requirements": [
+      {
+        "detail": null,
+        "key": "government_is_nomadic",
+        "kind": "government_flag",
+        "name": "Nomadic",
+        "negated": false
+      }
+    ],
+    "siegeTier": null,
+    "siegeValue": null,
+    "sourceFile": "09_mpo_maa_types.txt",
+    "specialRecruitOnly": false,
+    "stack": 50,
+    "stats": {
+      "damage": 92,
+      "pursuit": 24,
+      "screen": 24,
+      "toughness": 42
+    },
+    "terrainBonus": {
+      "desert_mountains": {
+        "damage": -85,
+        "pursuit": -40
+      },
+      "forest": {
+        "damage": -20,
+        "pursuit": -10
+      },
+      "jungle": {
+        "damage": -50,
+        "pursuit": -25
+      },
+      "mountains": {
+        "damage": -85,
+        "pursuit": -40
+      },
+      "plains": {
+        "damage": 40
+      },
+      "steppe": {
+        "damage": 80
+      },
+      "taiga": {
+        "damage": -20,
+        "pursuit": -10
+      },
+      "wetlands": {
+        "damage": -85,
+        "pursuit": -40
+      }
+    },
+    "type": "archer_cavalry",
+    "typeName": "Archer Cavalry",
+    "winterBonus": {
+      "harsh_winter": {
+        "damage": -20,
+        "toughness": -10
+      },
+      "normal_winter": {
+        "damage": -10,
+        "toughness": -5
+      }
+    }
+  },
+  {
+    "buyCost": {
+      "gold": 135
+    },
+    "counters": {
+      "heavy_infantry": 1,
+      "skirmishers": 1
+    },
+    "dlc": null,
+    "features": [],
+    "flavor": "Horse archers are used by nomadic tribes to unleash hails of arrows while being almost impossible to catch.",
+    "highMaintenance": {
+      "gold": 1.35
+    },
+    "holdingBonus": {},
+    "icon": "horse_archers",
+    "id": "horse_archers",
+    "lowMaintenance": {
+      "gold": 0.45
+    },
+    "mainPhase": true,
+    "maxRegiments": null,
+    "maxSizeBonus": null,
+    "maxSubRegiments": null,
+    "name": "Horse Archers",
+    "provisionCost": 7,
+    "requirements": [
+      {
+        "detail": "Can recruit Horse Archers as Men-at-Arms",
+        "key": "unlock_maa_horse_archers",
+        "kind": "cultural_parameter",
+        "name": "Cultural tradition",
+        "negated": false
+      }
+    ],
+    "siegeTier": null,
+    "siegeValue": null,
+    "sourceFile": "00_cultural_maa_types.txt",
+    "specialRecruitOnly": false,
+    "stack": 100,
+    "stats": {
+      "damage": 36,
+      "pursuit": 40,
+      "screen": 30,
+      "toughness": 18
+    },
+    "terrainBonus": {
+      "desert_mountains": {
+        "damage": -30,
+        "pursuit": -30
+      },
+      "drylands": {
+        "damage": 20
+      },
+      "jungle": {
+        "damage": -20,
+        "pursuit": -20
+      },
+      "mountains": {
+        "damage": -30,
+        "pursuit": -30
+      },
+      "plains": {
+        "damage": 20
+      },
+      "steppe": {
+        "damage": 45
+      },
+      "wetlands": {
+        "damage": -30,
+        "pursuit": -30
+      }
+    },
+    "type": "archer_cavalry",
+    "typeName": "Archer Cavalry",
+    "winterBonus": {}
+  },
+  {
+    "buyCost": {
+      "gold": 135
+    },
+    "counters": {
+      "heavy_infantry": 1,
+      "skirmishers": 1
+    },
+    "dlc": "The Great People",
+    "features": [],
+    "flavor": "Adopting the techniques of the northern Emishi but using heavier armor, samurai take to the saddle, yumi in hand, and harry their foes with arrows.",
+    "highMaintenance": {
+      "gold": 1.35
+    },
+    "holdingBonus": {},
+    "icon": "japanese_horse_archers",
+    "id": "japanese_horse_archers",
+    "lowMaintenance": {
+      "gold": 0.45
+    },
+    "mainPhase": true,
+    "maxRegiments": null,
+    "maxSizeBonus": null,
+    "maxSubRegiments": null,
+    "name": "Mounted Samurai",
+    "provisionCost": 15,
+    "requirements": [
+      {
+        "detail": "Can recruit Mounted Samurai as Men-at-Arms",
+        "key": "unlock_mounted_samurai_units",
+        "kind": "cultural_parameter",
+        "name": "Cultural tradition",
+        "negated": false
+      }
+    ],
+    "siegeTier": null,
+    "siegeValue": null,
+    "sourceFile": "10_tgp_maa_types.txt",
+    "specialRecruitOnly": false,
+    "stack": 50,
+    "stats": {
+      "damage": 96,
+      "pursuit": 40,
+      "screen": 20,
+      "toughness": 34
+    },
+    "terrainBonus": {
+      "desert_mountains": {
+        "damage": -30,
+        "pursuit": -30
+      },
+      "drylands": {
+        "damage": 20
+      },
+      "jungle": {
+        "damage": -30,
+        "pursuit": -30
+      },
+      "plains": {
+        "damage": 20
+      },
+      "steppe": {
+        "damage": 20
+      },
+      "wetlands": {
+        "damage": -50,
+        "pursuit": -50
+      }
+    },
+    "type": "archer_cavalry",
+    "typeName": "Archer Cavalry",
+    "winterBonus": {
+      "harsh_winter": {
+        "damage": -10,
+        "toughness": -5
+      }
+    }
+  },
+  {
+    "buyCost": {
+      "gold": 225
+    },
+    "counters": {
+      "elephant_cavalry": 1,
+      "heavy_cavalry": 0.5,
+      "light_cavalry": 1
+    },
+    "dlc": "Khans of the Steppe",
+    "features": [],
+    "flavor": "The elite guard of a nomadic ruler, the Kheshig guarantee the safety of their liege, day and night. The khorchin, their battle division, extends this guard onto the field of battle.",
+    "highMaintenance": {
+      "gold": 2.25
+    },
+    "holdingBonus": {},
+    "icon": "keshig",
+    "id": "kheshig",
+    "lowMaintenance": {
+      "gold": 0.75
+    },
+    "mainPhase": true,
+    "maxRegiments": 1,
+    "maxSizeBonus": null,
+    "maxSubRegiments": null,
+    "name": "Kheshig",
+    "provisionCost": 7,
+    "requirements": [
+      {
+        "detail": null,
+        "key": "mpo_nomad_legacy_4",
+        "kind": "dynasty_perk",
+        "name": "The Punishment of God",
+        "negated": false
+      }
+    ],
+    "siegeTier": null,
+    "siegeValue": null,
+    "sourceFile": "09_mpo_maa_types.txt",
+    "specialRecruitOnly": false,
+    "stack": 50,
+    "stats": {
+      "damage": 94,
+      "pursuit": 24,
+      "screen": 36,
+      "toughness": 60
+    },
+    "terrainBonus": {
+      "desert_mountains": {
+        "damage": -70,
+        "pursuit": -40
+      },
+      "drylands": {
+        "damage": 20
+      },
+      "jungle": {
+        "damage": -40,
+        "pursuit": -20
+      },
+      "mountains": {
+        "damage": -70,
+        "pursuit": -40
+      },
+      "plains": {
+        "damage": 50,
+        "screen": 10
+      },
+      "steppe": {
+        "damage": 90,
+        "screen": 20
+      },
+      "wetlands": {
+        "damage": -70,
+        "pursuit": -40
+      }
+    },
+    "type": "archer_cavalry",
+    "typeName": "Archer Cavalry",
+    "winterBonus": {}
+  },
+  {
+    "buyCost": {
+      "gold": 99.0
+    },
+    "counters": {
+      "heavy_infantry": 1,
+      "peasant_militia": 2,
+      "pikemen": 0.5
+    },
+    "dlc": "Khans of the Steppe",
+    "features": [],
+    "flavor": "Brave volunteer riders — 'those already dead' — are the very first to crash into the enemy and, by their ruin, draw the foe into reckless disorder.",
+    "highMaintenance": {
+      "gold": 0.99
+    },
+    "holdingBonus": {},
+    "icon": "mangudai",
+    "id": "mangudai",
+    "lowMaintenance": {
+      "gold": 0.33
+    },
+    "mainPhase": true,
+    "maxRegiments": null,
+    "maxSizeBonus": null,
+    "maxSubRegiments": null,
+    "name": "Mangudai",
+    "provisionCost": 7,
+    "requirements": [
+      {
+        "detail": "Can recruit Mangudai as Men-at-Arms",
+        "key": "unlock_maa_mangudai",
+        "kind": "cultural_parameter",
+        "name": "Cultural tradition",
+        "negated": false
+      }
+    ],
+    "siegeTier": null,
+    "siegeValue": null,
+    "sourceFile": "09_mpo_maa_types.txt",
+    "specialRecruitOnly": false,
+    "stack": 100,
+    "stats": {
+      "damage": 50,
+      "pursuit": 60,
+      "screen": 10,
+      "toughness": 6
+    },
+    "terrainBonus": {
+      "desert_mountains": {
+        "damage": -30,
+        "pursuit": -30
+      },
+      "hills": {
+        "damage": 10
+      },
+      "jungle": {
+        "damage": -20,
+        "pursuit": -20
+      },
+      "mountains": {
+        "damage": -10,
+        "pursuit": -10
+      },
+      "plains": {
+        "damage": 20
+      },
+      "steppe": {
+        "damage": 45
+      },
+      "wetlands": {
+        "damage": -30,
+        "pursuit": -30
+      }
+    },
+    "type": "archer_cavalry",
+    "typeName": "Archer Cavalry",
+    "winterBonus": {}
+  },
+  {
+    "buyCost": {
+      "gold": 110
+    },
+    "counters": {
+      "skirmishers": 2
+    },
+    "dlc": null,
+    "features": [],
+    "flavor": "Retinue Men-at-Arms\nThese elite archers are no rabble of poachers: they are relentlessly drilled to rain arrows accurately and at great speed.",
+    "highMaintenance": {
+      "gold": 0.6
+    },
+    "holdingBonus": {},
+    "icon": "accolade_maa_archers",
+    "id": "accolade_maa_archers",
+    "lowMaintenance": {
+      "gold": 0.2
+    },
+    "mainPhase": true,
+    "maxRegiments": 1,
+    "maxSizeBonus": null,
+    "maxSubRegiments": null,
+    "name": "Retinue Archers",
+    "provisionCost": 3,
+    "requirements": [],
+    "siegeTier": null,
+    "siegeValue": null,
+    "sourceFile": "01_accolade_maa_types.txt",
+    "specialRecruitOnly": false,
+    "stack": 100,
+    "stats": {
+      "damage": 30,
+      "pursuit": 0,
+      "screen": 0,
+      "toughness": 15
+    },
+    "terrainBonus": {
+      "forest": {
+        "screen": 8,
+        "toughness": 8
+      },
+      "hills": {
+        "damage": 20,
+        "toughness": 8
+      },
+      "taiga": {
+        "screen": 8,
+        "toughness": 8
+      }
+    },
+    "type": "archers",
+    "typeName": "Archers",
+    "winterBonus": {}
+  },
+  {
+    "buyCost": {
+      "gold": 176.0
+    },
+    "counters": {
+      "archer_cavalry": 1,
+      "heavy_cavalry": 2,
+      "heavy_infantry": 2
+    },
+    "dlc": null,
+    "features": [],
+    "flavor": "Retinue Men-at-Arms\nKnight or knave: any can be pierced through by the carefully-placed iron bolts of these highly-trained crossbow-wielders.",
+    "highMaintenance": {
+      "gold": 0.9
+    },
+    "holdingBonus": {},
+    "icon": "accolade_maa_crossbowers",
+    "id": "accolade_maa_crossbowers",
+    "lowMaintenance": {
+      "gold": 0.3
+    },
+    "mainPhase": true,
+    "maxRegiments": 1,
+    "maxSizeBonus": null,
+    "maxSubRegiments": null,
+    "name": "Retinue Crossbowmen",
+    "provisionCost": 7,
+    "requirements": [],
+    "siegeTier": null,
+    "siegeValue": null,
+    "sourceFile": "01_accolade_maa_types.txt",
+    "specialRecruitOnly": false,
+    "stack": 100,
+    "stats": {
+      "damage": 60,
+      "pursuit": 0,
+      "screen": 0,
+      "toughness": 30
+    },
+    "terrainBonus": {
+      "desert": {
+        "toughness": -4
+      },
+      "drylands": {
+        "toughness": -4
+      },
+      "hills": {
+        "damage": 20
+      },
+      "plains": {
+        "toughness": -4
+      }
+    },
+    "type": "archers",
+    "typeName": "Archers",
+    "winterBonus": {}
+  },
+  {
+    "buyCost": {
+      "gold": 60.5
+    },
+    "counters": {
+      "skirmishers": 1
+    },
+    "dlc": null,
+    "features": [],
+    "flavor": "For thousands of years the Nubians have protected their homeland by mastering the bow from a young age, fighting off the raids from surrounding desert peoples and invaders alike.",
+    "highMaintenance": {
+      "gold": 0.66
+    },
+    "holdingBonus": {},
+    "icon": "bowmen",
+    "id": "archers_of_the_nile",
+    "lowMaintenance": {
+      "gold": 0.22
+    },
+    "mainPhase": true,
+    "maxRegiments": null,
+    "maxSizeBonus": null,
+    "maxSubRegiments": null,
+    "name": "Nile Archers",
+    "provisionCost": 7,
+    "requirements": [
+      {
+        "detail": "Can recruit Nile Archers as Men-at-Arms",
+        "key": "unlock_maa_archers_of_the_nile",
+        "kind": "cultural_parameter",
+        "name": "Cultural tradition",
+        "negated": false
+      }
+    ],
+    "siegeTier": null,
+    "siegeValue": null,
+    "sourceFile": "00_cultural_maa_types.txt",
+    "specialRecruitOnly": false,
+    "stack": 100,
+    "stats": {
+      "damage": 30,
+      "pursuit": 10,
+      "screen": 10,
+      "toughness": 14
+    },
+    "terrainBonus": {
+      "desert": {
+        "damage": -5,
+        "toughness": -5
+      },
+      "drylands": {
+        "damage": 10,
+        "toughness": 10
+      },
+      "floodplains": {
+        "damage": 15,
+        "pursuit": 10,
+        "screen": 10,
+        "toughness": 15
+      },
+      "oasis": {
+        "damage": 15,
+        "pursuit": 5,
+        "screen": 5
+      }
+    },
+    "type": "archers",
+    "typeName": "Archers",
+    "winterBonus": {}
+  },
+  {
+    "buyCost": {
+      "gold": 63.25
+    },
+    "counters": {
+      "heavy_infantry": 0.5,
+      "peasant_militia": 1,
+      "pikemen": 0.5
+    },
+    "dlc": "Roads to Power",
+    "features": [],
+    "flavor": "Spear-sized bolts soar from these torsion-based machines into besieged settlements and enemy formations alike, causing fear and disorder.",
+    "highMaintenance": {
+      "gold": 0.45
+    },
+    "holdingBonus": {},
+    "icon": "ballistrai",
+    "id": "ballistrai",
+    "lowMaintenance": {
+      "gold": 0.15
+    },
+    "mainPhase": true,
+    "maxRegiments": null,
+    "maxSizeBonus": null,
+    "maxSubRegiments": null,
+    "name": "Ballistrai",
+    "provisionCost": 12,
+    "requirements": [
+      {
+        "detail": "Can recruit Ballistrai as Men-at-Arms",
+        "key": "unlock_maa_ballistrai",
+        "kind": "cultural_parameter",
+        "name": "Cultural tradition",
+        "negated": false
+      }
+    ],
+    "siegeTier": null,
+    "siegeValue": 0.1,
+    "sourceFile": "07_ep3_maa_types.txt",
+    "specialRecruitOnly": false,
+    "stack": 50,
+    "stats": {
+      "damage": 35,
+      "pursuit": 0,
+      "screen": 0,
+      "toughness": 12
+    },
+    "terrainBonus": {
+      "farmlands": {
+        "damage": 8,
+        "toughness": 6
+      },
+      "hills": {
+        "damage": 8
+      },
+      "plains": {
+        "damage": 8
+      }
+    },
+    "type": "archers",
+    "typeName": "Archers",
+    "winterBonus": {}
+  },
+  {
+    "buyCost": {
+      "gold": 55
+    },
+    "counters": {
+      "skirmishers": 1
+    },
+    "dlc": null,
+    "features": [],
+    "flavor": "Professional archers fill the air with arrows, devastating the foremost enemy troops.",
+    "highMaintenance": {
+      "gold": 0.6
+    },
+    "holdingBonus": {},
+    "icon": "bowmen",
+    "id": "bowmen",
+    "lowMaintenance": {
+      "gold": 0.2
+    },
+    "mainPhase": true,
+    "maxRegiments": null,
+    "maxSizeBonus": null,
+    "maxSubRegiments": null,
+    "name": "Bowmen",
+    "provisionCost": 7,
+    "requirements": [
+      {
+        "detail": null,
+        "key": "government_is_nomadic",
+        "kind": "government_flag",
+        "name": "Nomadic",
+        "negated": true
+      },
+      {
+        "detail": null,
+        "key": "government_is_herder",
+        "kind": "government_flag",
+        "name": "Herder",
+        "negated": true
+      }
+    ],
+    "siegeTier": null,
+    "siegeValue": null,
+    "sourceFile": "00_maa_types.txt",
+    "specialRecruitOnly": false,
+    "stack": 100,
+    "stats": {
+      "damage": 25,
+      "pursuit": 0,
+      "screen": 0,
+      "toughness": 10
+    },
+    "terrainBonus": {
+      "forest": {
+        "screen": 4,
+        "toughness": 4
+      },
+      "hills": {
+        "damage": 10,
+        "toughness": 4
+      },
+      "taiga": {
+        "screen": 4,
+        "toughness": 4
+      }
+    },
+    "type": "archers",
+    "typeName": "Archers",
+    "winterBonus": {}
+  },
+  {
+    "buyCost": {
+      "gold": 55
+    },
+    "counters": {
+      "skirmishers": 1
+    },
+    "dlc": null,
+    "features": [],
+    "flavor": "These West African archers turn the difficult terrain of the bush to their advantage.",
+    "highMaintenance": {
+      "gold": 0.66
+    },
+    "holdingBonus": {},
+    "icon": "bowmen",
+    "id": "bush_hunter",
+    "lowMaintenance": {
+      "gold": 0.22
+    },
+    "mainPhase": true,
+    "maxRegiments": null,
+    "maxSizeBonus": null,
+    "maxSubRegiments": null,
+    "name": "Bush Hunters",
+    "provisionCost": 3,
+    "requirements": [
+      {
+        "detail": "Can recruit Bush Hunters as Men-at-Arms",
+        "key": "unlock_maa_bush_hunter",
+        "kind": "cultural_parameter",
+        "name": "Cultural tradition",
+        "negated": false
+      }
+    ],
+    "siegeTier": null,
+    "siegeValue": null,
+    "sourceFile": "00_cultural_maa_types.txt",
+    "specialRecruitOnly": false,
+    "stack": 100,
+    "stats": {
+      "damage": 30,
+      "pursuit": 5,
+      "screen": 0,
+      "toughness": 12
+    },
+    "terrainBonus": {
+      "forest": {
+        "damage": 8,
+        "toughness": 4
+      },
+      "hills": {
+        "damage": 8,
+        "toughness": 4
+      },
+      "jungle": {
+        "damage": 8,
+        "toughness": 4
+      }
+    },
+    "type": "archers",
+    "typeName": "Archers",
+    "winterBonus": {}
+  },
+  {
+    "buyCost": {
+      "gold": 88.0
+    },
+    "counters": {
+      "archer_cavalry": 0.5,
+      "heavy_cavalry": 1,
+      "heavy_infantry": 1
+    },
+    "dlc": null,
+    "features": [],
+    "flavor": "Though slow to reload, crossbows are easy to use and fire bolts which can pierce through most armor at a good range.",
+    "highMaintenance": {
+      "gold": 0.9
+    },
+    "holdingBonus": {},
+    "icon": "crossbowmen",
+    "id": "crossbowmen",
+    "lowMaintenance": {
+      "gold": 0.3
+    },
+    "mainPhase": true,
+    "maxRegiments": null,
+    "maxSizeBonus": null,
+    "maxSubRegiments": null,
+    "name": "Crossbowmen",
+    "provisionCost": 7,
+    "requirements": [
+      {
+        "detail": null,
+        "key": "innovation_advanced_bowmaking",
+        "kind": "innovation",
+        "name": "Advanced Bowmaking",
+        "negated": false
+      },
+      {
+        "detail": null,
+        "key": "government_is_nomadic",
+        "kind": "government_flag",
+        "name": "Nomadic",
+        "negated": true
+      },
+      {
+        "detail": null,
+        "key": "government_is_herder",
+        "kind": "government_flag",
+        "name": "Herder",
+        "negated": true
+      }
+    ],
+    "siegeTier": null,
+    "siegeValue": null,
+    "sourceFile": "00_maa_types.txt",
+    "specialRecruitOnly": false,
+    "stack": 100,
+    "stats": {
+      "damage": 42,
+      "pursuit": 0,
+      "screen": 0,
+      "toughness": 18
+    },
+    "terrainBonus": {
+      "desert": {
+        "toughness": -8
+      },
+      "drylands": {
+        "toughness": -8
+      },
+      "hills": {
+        "damage": 10
+      },
+      "plains": {
+        "toughness": -8
+      }
+    },
+    "type": "archers",
+    "typeName": "Archers",
+    "winterBonus": {}
+  },
+  {
+    "buyCost": {
+      "gold": 66.0
+    },
+    "counters": {
+      "gunpowder": 1,
+      "heavy_cavalry": 1,
+      "skirmishers": 1
+    },
+    "dlc": "The Great People",
+    "features": [],
+    "flavor": "Equipped with powerful reflex bows and thumb rings to strengthen their draw, these archers can fire arrows over an incredible range.",
+    "highMaintenance": {
+      "gold": 0.72
+    },
+    "holdingBonus": {},
+    "icon": "gakgung_archers",
+    "id": "gakgung_archers",
+    "lowMaintenance": {
+      "gold": 0.24
+    },
+    "mainPhase": true,
+    "maxRegiments": null,
+    "maxSizeBonus": null,
+    "maxSubRegiments": null,
+    "name": "Gakgung Archers",
+    "provisionCost": 7,
+    "requirements": [
+      {
+        "detail": "Can recruit Gakgung Archers as Men-at-Arms",
+        "key": "unlock_maa_gakgung_archers",
+        "kind": "cultural_parameter",
+        "name": "Cultural tradition",
+        "negated": false
+      }
+    ],
+    "siegeTier": null,
+    "siegeValue": null,
+    "sourceFile": "10_tgp_maa_types.txt",
+    "specialRecruitOnly": false,
+    "stack": 100,
+    "stats": {
+      "damage": 25,
+      "pursuit": 0,
+      "screen": 0,
+      "toughness": 8
+    },
+    "terrainBonus": {
+      "forest": {
+        "screen": 4,
+        "toughness": 4
+      },
+      "hills": {
+        "damage": 10,
+        "toughness": 6
+      },
+      "mountains": {
+        "damage": 6,
+        "toughness": 10
+      },
+      "terraced_hills": {
+        "damage": 10,
+        "toughness": 6
+      },
+      "wetlands": {
+        "damage": -2
+      }
+    },
+    "type": "archers",
+    "typeName": "Archers",
+    "winterBonus": {}
+  },
+  {
+    "buyCost": {
+      "gold": 66.0
+    },
+    "counters": {
+      "heavy_cavalry": 1,
+      "skirmishers": 1
+    },
+    "dlc": null,
+    "features": [],
+    "flavor": "Though they require a lifetime to properly master, the longbows of England and Wales are powerful enough to pierce plate and can loose volleys at an almost-unequaled rate.",
+    "highMaintenance": {
+      "gold": 0.72
+    },
+    "holdingBonus": {},
+    "icon": "bowmen",
+    "id": "longbowmen",
+    "lowMaintenance": {
+      "gold": 0.24
+    },
+    "mainPhase": true,
+    "maxRegiments": null,
+    "maxSizeBonus": null,
+    "maxSubRegiments": null,
+    "name": "Longbowmen",
+    "provisionCost": 7,
+    "requirements": [
+      {
+        "detail": "Can recruit Longbowmen as Men-at-Arms",
+        "key": "unlock_maa_longbowmen",
+        "kind": "cultural_parameter",
+        "name": "Cultural tradition",
+        "negated": false
+      }
+    ],
+    "siegeTier": null,
+    "siegeValue": null,
+    "sourceFile": "00_cultural_maa_types.txt",
+    "specialRecruitOnly": false,
+    "stack": 100,
+    "stats": {
+      "damage": 20,
+      "pursuit": 0,
+      "screen": 0,
+      "toughness": 8
+    },
+    "terrainBonus": {
+      "hills": {
+        "damage": 12,
+        "toughness": 4
+      }
+    },
+    "type": "archers",
+    "typeName": "Archers",
+    "winterBonus": {}
+  },
+  {
+    "buyCost": {
+      "gold": 63.0
+    },
+    "counters": {
+      "skirmishers": 1
+    },
+    "dlc": "Roads to Power",
+    "features": [],
+    "flavor": "Scum of the earth, these men have forsaken lawfulness for a life of crime.",
+    "highMaintenance": {
+      "gold": 0.63
+    },
+    "holdingBonus": {},
+    "icon": "bowmen",
+    "id": "maa_poachers",
+    "lowMaintenance": {
+      "gold": 0.21
+    },
+    "mainPhase": true,
+    "maxRegiments": null,
+    "maxSizeBonus": null,
+    "maxSubRegiments": null,
+    "name": "Poachers",
+    "provisionCost": 3,
+    "requirements": [],
+    "siegeTier": null,
+    "siegeValue": null,
+    "sourceFile": "07_ep3_maa_types.txt",
+    "specialRecruitOnly": true,
+    "stack": 50,
+    "stats": {
+      "damage": 30,
+      "pursuit": 10,
+      "screen": 10,
+      "toughness": 15
+    },
+    "terrainBonus": {
+      "forest": {
+        "screen": 10,
+        "toughness": 10
+      },
+      "hills": {
+        "damage": 10,
+        "toughness": 6
+      },
+      "jungle": {
+        "screen": 10,
+        "toughness": 10
+      }
+    },
+    "type": "archers",
+    "typeName": "Archers",
+    "winterBonus": {}
+  },
+  {
+    "buyCost": {
+      "gold": 57.75
+    },
+    "counters": {
+      "skirmishers": 1
+    },
+    "dlc": "Khans of the Steppe",
+    "features": [],
+    "flavor": "These war-princes are the defenders of the cold taiga, and fight well where horses and raiding-parties can scarcely go.",
+    "highMaintenance": {
+      "gold": 0.63
+    },
+    "holdingBonus": {},
+    "icon": "maturkan_warriors",
+    "id": "maturkan_warriors",
+    "lowMaintenance": {
+      "gold": 0.21
+    },
+    "mainPhase": true,
+    "maxRegiments": null,
+    "maxSizeBonus": null,
+    "maxSubRegiments": null,
+    "name": "Maturkan Warriors",
+    "provisionCost": 3,
+    "requirements": [
+      {
+        "detail": "Can recruit Maturkan Warriors as Men-at-Arms",
+        "key": "unlock_maa_maturkan_warriors",
+        "kind": "cultural_parameter",
+        "name": "Cultural tradition",
+        "negated": false
+      }
+    ],
+    "siegeTier": null,
+    "siegeValue": null,
+    "sourceFile": "09_mpo_maa_types.txt",
+    "specialRecruitOnly": false,
+    "stack": 100,
+    "stats": {
+      "damage": 16,
+      "pursuit": 0,
+      "screen": 16,
+      "toughness": 15
+    },
+    "terrainBonus": {
+      "forest": {
+        "damage": 10,
+        "toughness": 4
+      },
+      "hills": {
+        "damage": 6,
+        "toughness": 3
+      },
+      "mountains": {
+        "damage": 6,
+        "toughness": 3
+      },
+      "taiga": {
+        "damage": 12,
+        "toughness": 6
+      }
+    },
+    "type": "archers",
+    "typeName": "Archers",
+    "winterBonus": {
+      "harsh_winter": {
+        "screen": 12,
+        "toughness": 6
+      },
+      "normal_winter": {
+        "screen": 8,
+        "toughness": 4
+      }
+    }
+  },
+  {
+    "buyCost": {
+      "gold": 60.5
+    },
+    "counters": {
+      "skirmishers": 1
+    },
+    "dlc": null,
+    "features": [],
+    "flavor": "Uralic Metsänvartija can ambush invaders with a hail of arrows before melting back into the trees.",
+    "highMaintenance": {
+      "gold": 0.66
+    },
+    "holdingBonus": {},
+    "icon": "bowmen",
+    "id": "metsanvartija",
+    "lowMaintenance": {
+      "gold": 0.22
+    },
+    "mainPhase": true,
+    "maxRegiments": null,
+    "maxSizeBonus": null,
+    "maxSubRegiments": null,
+    "name": "Metsänvartija",
+    "provisionCost": 3,
+    "requirements": [
+      {
+        "detail": "Can recruit Metsänvartija as Men-at-Arms",
+        "key": "unlock_maa_metsanvartija",
+        "kind": "cultural_parameter",
+        "name": "Cultural tradition",
+        "negated": false
+      }
+    ],
+    "siegeTier": null,
+    "siegeValue": null,
+    "sourceFile": "00_cultural_maa_types.txt",
+    "specialRecruitOnly": false,
+    "stack": 100,
+    "stats": {
+      "damage": 30,
+      "pursuit": 10,
+      "screen": 10,
+      "toughness": 14
+    },
+    "terrainBonus": {
+      "forest": {
+        "damage": 10,
+        "toughness": 4
+      },
+      "taiga": {
+        "damage": 10,
+        "toughness": 4
+      }
+    },
+    "type": "archers",
+    "typeName": "Archers",
+    "winterBonus": {
+      "harsh_winter": {
+        "screen": 8,
+        "toughness": 4
+      },
+      "normal_winter": {
+        "screen": 8,
+        "toughness": 4
+      }
+    }
+  },
+  {
+    "buyCost": {
+      "gold": 60.5
+    },
+    "counters": {
+      "elephant_cavalry": 1
+    },
+    "dlc": null,
+    "features": [],
+    "flavor": "Footmen have been the mainstay of Indian armies for centuries, and no weapon is as common as the simple bamboo bow which many Indian commoners practice through hunting from young age.",
+    "highMaintenance": {
+      "gold": 0.66
+    },
+    "holdingBonus": {},
+    "icon": "paiks",
+    "id": "paiks",
+    "lowMaintenance": {
+      "gold": 0.22
+    },
+    "mainPhase": true,
+    "maxRegiments": null,
+    "maxSizeBonus": null,
+    "maxSubRegiments": null,
+    "name": "Paiks",
+    "provisionCost": 7,
+    "requirements": [],
+    "siegeTier": null,
+    "siegeValue": null,
+    "sourceFile": "00_cultural_maa_types.txt",
+    "specialRecruitOnly": false,
+    "stack": 100,
+    "stats": {
+      "damage": 28,
+      "pursuit": 10,
+      "screen": 10,
+      "toughness": 16
+    },
+    "terrainBonus": {
+      "forest": {
+        "damage": 15,
+        "pursuit": 5,
+        "screen": 5
+      },
+      "hills": {
+        "damage": 10,
+        "toughness": 10
+      },
+      "jungle": {
+        "damage": 15,
+        "pursuit": 10,
+        "screen": 10,
+        "toughness": 15
+      }
+    },
+    "type": "archers",
+    "typeName": "Archers",
+    "winterBonus": {}
+  },
+  {
+    "buyCost": {
+      "gold": 68.75
+    },
+    "counters": {
+      "heavy_infantry": 0.5,
+      "peasant_militia": 1,
+      "pikemen": 0.5
+    },
+    "dlc": "The Great People",
+    "features": [],
+    "flavor": "A handful of men can hit the enemy with the force of a hundred archers with a single spark of flame, although it might be worth keeping an eye on the kind of men who would willing work with this sort of device.",
+    "highMaintenance": {
+      "gold": 0.54
+    },
+    "holdingBonus": {},
+    "icon": "hwacha",
+    "id": "rocket_carts",
+    "lowMaintenance": {
+      "gold": 0.18
+    },
+    "mainPhase": true,
+    "maxRegiments": null,
+    "maxSizeBonus": null,
+    "maxSubRegiments": null,
+    "name": "Rocket Carts",
+    "provisionCost": 12,
+    "requirements": [],
+    "siegeTier": null,
+    "siegeValue": 0.1,
+    "sourceFile": "10_tgp_maa_types.txt",
+    "specialRecruitOnly": false,
+    "stack": 50,
+    "stats": {
+      "damage": 45,
+      "pursuit": 0,
+      "screen": 0,
+      "toughness": 12
+    },
+    "terrainBonus": {
+      "farmlands": {
+        "damage": 8,
+        "toughness": 6
+      },
+      "hills": {
+        "damage": 8
+      },
+      "plains": {
+        "damage": 8
+      },
+      "terraced_hills": {
+        "damage": 8
+      }
+    },
+    "type": "archers",
+    "typeName": "Archers",
+    "winterBonus": {}
+  },
+  {
+    "buyCost": {
+      "gold": 96.25
+    },
+    "counters": {
+      "heavy_cavalry": 1.25,
+      "heavy_infantry": 1.25,
+      "peasant_militia": 2,
+      "pikemen": 1
+    },
+    "dlc": null,
+    "features": [],
+    "flavor": "These elite crossbowmen are armed with the mighty Shenbigong, the \"Divine Arm Bow\". Each bolt loosed can punch through armor and formations with unnerving accuracy.",
+    "highMaintenance": {
+      "gold": 1.05
+    },
+    "holdingBonus": {},
+    "icon": "shenbigong",
+    "id": "shenbigong",
+    "lowMaintenance": {
+      "gold": 0.35
+    },
+    "mainPhase": true,
+    "maxRegiments": null,
+    "maxSizeBonus": null,
+    "maxSubRegiments": null,
+    "name": "Shenbigong",
+    "provisionCost": 12,
+    "requirements": [],
+    "siegeTier": null,
+    "siegeValue": null,
+    "sourceFile": "00_cultural_maa_types.txt",
+    "specialRecruitOnly": false,
+    "stack": 100,
+    "stats": {
+      "damage": 44,
+      "pursuit": 0,
+      "screen": 0,
+      "toughness": 18
+    },
+    "terrainBonus": {
+      "desert": {
+        "toughness": -8
+      },
+      "drylands": {
+        "toughness": -8
+      },
+      "hills": {
+        "damage": 10,
+        "toughness": 4
+      },
+      "mountains": {
+        "damage": 8,
+        "toughness": 2
+      },
+      "plains": {
+        "toughness": -8
+      },
+      "steppe": {
+        "toughness": -8
+      }
+    },
+    "type": "archers",
+    "typeName": "Archers",
+    "winterBonus": {}
+  },
+  {
+    "buyCost": {
+      "gold": 60.5
+    },
+    "counters": {
+      "skirmishers": 1
+    },
+    "dlc": "Northern Lords",
+    "features": [],
+    "flavor": "Warriors in the front present an impenetrable wall of shields to protect archers in the rear. This tactic deters skirmishers while allowing a steady advance.",
+    "highMaintenance": {
+      "gold": 0.66
+    },
+    "holdingBonus": {},
+    "icon": "vigmen",
+    "id": "vigmen",
+    "lowMaintenance": {
+      "gold": 0.22
+    },
+    "mainPhase": true,
+    "maxRegiments": null,
+    "maxSizeBonus": null,
+    "maxSubRegiments": null,
+    "name": "Vigmen",
+    "provisionCost": 3,
+    "requirements": [
+      {
+        "detail": "Can recruit Vigmen as Men-at-Arms",
+        "key": "unlock_maa_vigmen",
+        "kind": "cultural_parameter",
+        "name": "Cultural tradition",
+        "negated": false
+      }
+    ],
+    "siegeTier": null,
+    "siegeValue": null,
+    "sourceFile": "01_fp1_maa_types.txt",
+    "specialRecruitOnly": false,
+    "stack": 100,
+    "stats": {
+      "damage": 18,
+      "pursuit": 0,
+      "screen": 22,
+      "toughness": 20
+    },
+    "terrainBonus": {
+      "farmlands": {
+        "damage": 10,
+        "screen": 6,
+        "toughness": 6
+      },
+      "plains": {
+        "damage": 6,
+        "screen": 4,
+        "toughness": 4
+      },
+      "taiga": {
+        "damage": 4,
+        "screen": 6
+      }
+    },
+    "type": "archers",
+    "typeName": "Archers",
+    "winterBonus": {
+      "harsh_winter": {
+        "screen": 5,
+        "toughness": 3
+      },
+      "normal_winter": {
+        "screen": 5,
+        "toughness": 3
+      }
+    }
+  },
+  {
+    "buyCost": {
+      "gold": 170
+    },
+    "counters": {
+      "light_cavalry": 2
+    },
+    "dlc": null,
+    "features": [],
+    "flavor": "Retinue Men-at-Arms\nFeared across the Middle East and North Africa, the world boasts scarce-few such skilled camelry.",
+    "highMaintenance": {
+      "gold": 0.84
+    },
+    "holdingBonus": {},
+    "icon": "accolade_maa_cameliers",
+    "id": "accolade_maa_cameliers",
+    "lowMaintenance": {
+      "gold": 0.28
+    },
+    "mainPhase": true,
+    "maxRegiments": 1,
+    "maxSizeBonus": null,
+    "maxSubRegiments": null,
+    "name": "Retinue Camel Riders",
+    "provisionCost": 15,
+    "requirements": [],
+    "siegeTier": null,
+    "siegeValue": null,
+    "sourceFile": "01_accolade_maa_types.txt",
+    "specialRecruitOnly": false,
+    "stack": 100,
+    "stats": {
+      "damage": 30,
+      "pursuit": 30,
+      "screen": 30,
+      "toughness": 20
+    },
+    "terrainBonus": {
+      "desert": {
+        "damage": 40,
+        "toughness": 16
+      },
+      "desert_mountains": {
+        "damage": -5,
+        "pursuit": -5
+      },
+      "drylands": {
+        "damage": 30,
+        "toughness": 16
+      },
+      "floodplains": {
+        "damage": 10
+      },
+      "hills": {
+        "damage": -5
+      },
+      "mountains": {
+        "damage": -8,
+        "pursuit": -10
+      },
+      "oasis": {
+        "damage": 30
+      },
+      "wetlands": {
+        "damage": -8,
+        "pursuit": -10,
+        "screen": -10,
+        "toughness": -5
+      }
+    },
+    "type": "camel_cavalry",
+    "typeName": "Camel Cavalry",
+    "winterBonus": {
+      "harsh_winter": {
+        "damage": -5,
+        "toughness": -2
+      },
+      "normal_winter": {
+        "damage": -3
+      }
+    }
+  },
+  {
+    "buyCost": {
+      "gold": 85
+    },
+    "counters": {
+      "light_cavalry": 1
+    },
+    "dlc": null,
+    "features": [],
+    "flavor": "Better suited to desert warfare than traditional cavalry, these riders dominate the sands.",
+    "highMaintenance": {
+      "gold": 0.84
+    },
+    "holdingBonus": {},
+    "icon": "camel_riders",
+    "id": "camel_rider",
+    "lowMaintenance": {
+      "gold": 0.28
+    },
+    "mainPhase": true,
+    "maxRegiments": null,
+    "maxSizeBonus": null,
+    "maxSubRegiments": null,
+    "name": "Camel Riders",
+    "provisionCost": 21,
+    "requirements": [],
+    "siegeTier": null,
+    "siegeValue": null,
+    "sourceFile": "00_regional_maa_types.txt",
+    "specialRecruitOnly": false,
+    "stack": 100,
+    "stats": {
+      "damage": 22,
+      "pursuit": 20,
+      "screen": 20,
+      "toughness": 15
+    },
+    "terrainBonus": {
+      "desert": {
+        "damage": 20,
+        "toughness": 8
+      },
+      "desert_mountains": {
+        "damage": -10,
+        "pursuit": -10
+      },
+      "drylands": {
+        "damage": 15,
+        "toughness": 8
+      },
+      "floodplains": {
+        "damage": 5
+      },
+      "hills": {
+        "damage": -10
+      },
+      "mountains": {
+        "damage": -15,
+        "pursuit": -20
+      },
+      "oasis": {
+        "damage": 15
+      },
+      "wetlands": {
+        "damage": -15,
+        "pursuit": -20,
+        "screen": -20,
+        "toughness": -10
+      }
+    },
+    "type": "camel_cavalry",
+    "typeName": "Camel Cavalry",
+    "winterBonus": {
+      "harsh_winter": {
+        "damage": -5,
+        "toughness": -2
+      },
+      "normal_winter": {
+        "damage": -3
+      }
+    }
+  },
+  {
+    "buyCost": {
+      "gold": 800
+    },
+    "counters": {
+      "heavy_infantry": 2,
+      "skirmishers": 2
+    },
+    "dlc": null,
+    "features": [],
+    "flavor": "Retinue Men-at-Arms\nFrom towering howdahs, these beasts' skilled mahouts prove the only thing harder to stop than a charging elephant is another, larger elephant.",
+    "highMaintenance": {
+      "gold": 2.94
+    },
+    "holdingBonus": {},
+    "icon": "accolade_maa_elephantiers",
+    "id": "accolade_maa_elephantiers",
+    "lowMaintenance": {
+      "gold": 0.84
+    },
+    "mainPhase": true,
+    "maxRegiments": 1,
+    "maxSizeBonus": null,
+    "maxSubRegiments": null,
+    "name": "Retinue War Elephants",
+    "provisionCost": 30,
+    "requirements": [],
+    "siegeTier": null,
+    "siegeValue": 0.2,
+    "sourceFile": "01_accolade_maa_types.txt",
+    "specialRecruitOnly": false,
+    "stack": 25,
+    "stats": {
+      "damage": 400,
+      "pursuit": 0,
+      "screen": 0,
+      "toughness": 100
+    },
+    "terrainBonus": {
+      "desert_mountains": {
+        "damage": -100
+      },
+      "jungle": {
+        "damage": 100
+      },
+      "mountains": {
+        "damage": -100
+      },
+      "terraced_hills": {
+        "damage": 25
+      },
+      "wetlands": {
+        "damage": -150,
+        "toughness": -20
+      }
+    },
+    "type": "elephant_cavalry",
+    "typeName": "Elephant Cavalry",
+    "winterBonus": {
+      "harsh_winter": {
+        "damage": -60,
+        "toughness": -10
+      },
+      "normal_winter": {
+        "damage": -30,
+        "toughness": -5
+      }
+    }
+  },
+  {
+    "buyCost": {
+      "gold": 440.0
+    },
+    "counters": {
+      "heavy_infantry": 2,
+      "skirmishers": 2
+    },
+    "dlc": "The Great People",
+    "features": [],
+    "flavor": "A charging elephant is alarming enough, but a charging elephant equipped with a powerful ballista on its back is sure to unnerve even the most battle-hardened foes.",
+    "highMaintenance": {
+      "gold": 3.36
+    },
+    "holdingBonus": {},
+    "icon": "ballista_elephant",
+    "id": "ballista_elephant",
+    "lowMaintenance": {
+      "gold": 0.98
+    },
+    "mainPhase": true,
+    "maxRegiments": null,
+    "maxSizeBonus": null,
+    "maxSubRegiments": null,
+    "name": "Ballista Elephants",
+    "provisionCost": 30,
+    "requirements": [
+      {
+        "detail": null,
+        "key": "innovation_elephantry",
+        "kind": "innovation",
+        "name": "Elephantry",
+        "negated": false
+      },
+      {
+        "detail": null,
+        "key": "innovation_advanced_bowmaking",
+        "kind": "innovation",
+        "name": "Advanced Bowmaking",
+        "negated": false
+      }
+    ],
+    "siegeTier": null,
+    "siegeValue": 0.1,
+    "sourceFile": "10_tgp_maa_types.txt",
+    "specialRecruitOnly": false,
+    "stack": 25,
+    "stats": {
+      "damage": 180,
+      "pursuit": 30,
+      "screen": 20,
+      "toughness": 75
+    },
+    "terrainBonus": {
+      "desert_mountains": {
+        "damage": -50
+      },
+      "jungle": {
+        "damage": 50
+      },
+      "mountains": {
+        "damage": -50
+      },
+      "wetlands": {
+        "damage": -50,
+        "toughness": -20
+      }
+    },
+    "type": "elephant_cavalry",
+    "typeName": "Elephant Cavalry",
+    "winterBonus": {
+      "harsh_winter": {
+        "damage": -40,
+        "toughness": -10
+      },
+      "normal_winter": {
+        "damage": -20,
+        "toughness": -5
+      }
+    }
+  },
+  {
+    "buyCost": {
+      "gold": 400
+    },
+    "counters": {
+      "heavy_infantry": 2,
+      "skirmishers": 2
+    },
+    "dlc": null,
+    "features": [],
+    "flavor": "A charging elephant is almost impossible to stop, making them excellent shock troops.",
+    "highMaintenance": {
+      "gold": 2.94
+    },
+    "holdingBonus": {},
+    "icon": "war_elephants",
+    "id": "war_elephant",
+    "lowMaintenance": {
+      "gold": 0.84
+    },
+    "mainPhase": true,
+    "maxRegiments": null,
+    "maxSizeBonus": null,
+    "maxSubRegiments": null,
+    "name": "War Elephants",
+    "provisionCost": 30,
+    "requirements": [
+      {
+        "detail": null,
+        "key": "innovation_elephantry",
+        "kind": "innovation",
+        "name": "Elephantry",
+        "negated": false
+      },
+      {
+        "detail": null,
+        "key": "landless_adventurer_government",
+        "kind": "government",
+        "name": "Adventurer",
+        "negated": true
+      }
+    ],
+    "siegeTier": null,
+    "siegeValue": 0.1,
+    "sourceFile": "00_regional_maa_types.txt",
+    "specialRecruitOnly": false,
+    "stack": 25,
+    "stats": {
+      "damage": 250,
+      "pursuit": 0,
+      "screen": 0,
+      "toughness": 50
+    },
+    "terrainBonus": {
+      "desert_mountains": {
+        "damage": -100
+      },
+      "jungle": {
+        "damage": 50
+      },
+      "mountains": {
+        "damage": -100
+      },
+      "terraced_hills": {
+        "damage": 25
+      },
+      "wetlands": {
+        "damage": -150,
+        "toughness": -20
+      }
+    },
+    "type": "elephant_cavalry",
+    "typeName": "Elephant Cavalry",
+    "winterBonus": {
+      "harsh_winter": {
+        "damage": -60,
+        "toughness": -10
+      },
+      "normal_winter": {
+        "damage": -30,
+        "toughness": -5
+      }
+    }
+  },
+  {
+    "buyCost": {
+      "gold": 76
+    },
+    "counters": {
+      "heavy_infantry": 1
+    },
+    "dlc": null,
+    "features": [],
+    "flavor": "Retinue Men-at-Arms\nSteadily advancing through the gunpowder smoke, these highly drilled handgunners can shatter the enemy ranks with their master-crafted guns.",
+    "highMaintenance": {
+      "gold": 1.05
+    },
+    "holdingBonus": {},
+    "icon": "accolade_maa_handgunners",
+    "id": "accolade_maa_handgunners",
+    "lowMaintenance": {
+      "gold": 0.35
+    },
+    "mainPhase": true,
+    "maxRegiments": 1,
+    "maxSizeBonus": null,
+    "maxSubRegiments": null,
+    "name": "Retinue Handgunners",
+    "provisionCost": 7,
+    "requirements": [
+      {
+        "detail": null,
+        "key": "innovation_gunpowder",
+        "kind": "innovation",
+        "name": "Gunpowder",
+        "negated": false
+      }
+    ],
+    "siegeTier": null,
+    "siegeValue": null,
+    "sourceFile": "01_accolade_maa_types.txt",
+    "specialRecruitOnly": false,
+    "stack": 100,
+    "stats": {
+      "damage": 56,
+      "pursuit": 0,
+      "screen": 5,
+      "toughness": 20
+    },
+    "terrainBonus": {},
+    "type": "gunpowder",
+    "typeName": "Handgunner",
+    "winterBonus": {}
+  },
+  {
+    "buyCost": {
+      "gold": 88.0
+    },
+    "counters": {
+      "heavy_infantry": 1
+    },
+    "dlc": "The Great People",
+    "features": [],
+    "flavor": "Using experimental formulas, men armed with strange polearms are able to rain fire down upon terrified enemies.\nEnabled by the ….",
+    "highMaintenance": {
+      "gold": 0.9
+    },
+    "holdingBonus": {},
+    "icon": "fire_lance",
+    "id": "fire_lancers",
+    "lowMaintenance": {
+      "gold": 0.3
+    },
+    "mainPhase": true,
+    "maxRegiments": null,
+    "maxSizeBonus": null,
+    "maxSubRegiments": null,
+    "name": "Fire Lancers",
+    "provisionCost": 7,
+    "requirements": [
+      {
+        "detail": "Can recruit Fire Lancers as Men-at-Arms",
+        "key": "unlock_fire_lancers_units",
+        "kind": "cultural_parameter",
+        "name": "Cultural tradition",
+        "negated": false
+      }
+    ],
+    "siegeTier": null,
+    "siegeValue": null,
+    "sourceFile": "10_tgp_maa_types.txt",
+    "specialRecruitOnly": false,
+    "stack": 100,
+    "stats": {
+      "damage": 40,
+      "pursuit": 0,
+      "screen": 0,
+      "toughness": 8
+    },
+    "terrainBonus": {
+      "floodplains": {
+        "damage": -5
+      },
+      "wetlands": {
+        "damage": -10
+      }
+    },
+    "type": "gunpowder",
+    "typeName": "Handgunner",
+    "winterBonus": {}
+  },
+  {
+    "buyCost": {
+      "gold": 76
+    },
+    "counters": {
+      "heavy_infantry": 1
+    },
+    "dlc": null,
+    "features": [],
+    "flavor": "Expensive and explosive in equal measure, these crude firearms are incredibly effective weapons.\nEnabled by the ….",
+    "highMaintenance": {
+      "gold": 1.05
+    },
+    "holdingBonus": {},
+    "icon": "handgonne",
+    "id": "handgunners",
+    "lowMaintenance": {
+      "gold": 0.35
+    },
+    "mainPhase": true,
+    "maxRegiments": null,
+    "maxSizeBonus": null,
+    "maxSubRegiments": null,
+    "name": "Handgunners",
+    "provisionCost": 7,
+    "requirements": [
+      {
+        "detail": "Can recruit Handgunners as Men-at-Arms",
+        "key": "unlock_late_medieval_gunpowder_units",
+        "kind": "cultural_parameter",
+        "name": "Cultural tradition",
+        "negated": false
+      }
+    ],
+    "siegeTier": null,
+    "siegeValue": null,
+    "sourceFile": "00_maa_types.txt",
+    "specialRecruitOnly": false,
+    "stack": 100,
+    "stats": {
+      "damage": 52,
+      "pursuit": 0,
+      "screen": 5,
+      "toughness": 12
+    },
+    "terrainBonus": {
+      "floodplains": {
+        "damage": -5
+      },
+      "wetlands": {
+        "damage": -10
+      }
+    },
+    "type": "gunpowder",
+    "typeName": "Handgunner",
+    "winterBonus": {}
+  },
+  {
+    "buyCost": {
+      "gold": 400
+    },
+    "counters": {
+      "archers": 2,
+      "gunpowder": 2
+    },
+    "dlc": null,
+    "features": [],
+    "flavor": "Retinue Men-at-Arms\nCoursing into the fray with thunderous clamor and true nobility, the serried ranks of these horsemen inspire a terrible awe on any battlefield.",
+    "highMaintenance": {
+      "gold": 2.1
+    },
+    "holdingBonus": {},
+    "icon": "accolade_maa_lancers",
+    "id": "accolade_maa_lancers",
+    "lowMaintenance": {
+      "gold": 0.7
+    },
+    "mainPhase": true,
+    "maxRegiments": 1,
+    "maxSizeBonus": null,
+    "maxSubRegiments": null,
+    "name": "Retinue Lancers",
+    "provisionCost": 21,
+    "requirements": [],
+    "siegeTier": null,
+    "siegeValue": null,
+    "sourceFile": "01_accolade_maa_types.txt",
+    "specialRecruitOnly": false,
+    "stack": 50,
+    "stats": {
+      "damage": 200,
+      "pursuit": 40,
+      "screen": 0,
+      "toughness": 70
+    },
+    "terrainBonus": {
+      "desert_mountains": {
+        "damage": -35
+      },
+      "drylands": {
+        "damage": 60
+      },
+      "hills": {
+        "damage": -10
+      },
+      "mountains": {
+        "damage": -35
+      },
+      "plains": {
+        "damage": 60
+      },
+      "wetlands": {
+        "damage": -35,
+        "pursuit": -5,
+        "toughness": -5
+      }
+    },
+    "type": "heavy_cavalry",
+    "typeName": "Heavy Cavalry",
+    "winterBonus": {
+      "harsh_winter": {
+        "damage": -20,
+        "toughness": -10
+      },
+      "normal_winter": {
+        "damage": -10,
+        "toughness": -5
+      }
+    }
+  },
+  {
+    "buyCost": {
+      "gold": 200
+    },
+    "counters": {
+      "archers": 1,
+      "gunpowder": 1
+    },
+    "dlc": null,
+    "features": [],
+    "flavor": "Heavily armed and armored, these horsemen dominate warfare in the open plains.",
+    "highMaintenance": {
+      "gold": 2.1
+    },
+    "holdingBonus": {},
+    "icon": "armored_horsemen",
+    "id": "armored_horsemen",
+    "lowMaintenance": {
+      "gold": 0.7
+    },
+    "mainPhase": true,
+    "maxRegiments": null,
+    "maxSizeBonus": null,
+    "maxSubRegiments": null,
+    "name": "Armored Horsemen",
+    "provisionCost": 21,
+    "requirements": [
+      {
+        "detail": null,
+        "key": "innovation_arched_saddle",
+        "kind": "innovation",
+        "name": "Arched Saddle",
+        "negated": false
+      },
+      {
+        "detail": null,
+        "key": "government_is_nomadic",
+        "kind": "government_flag",
+        "name": "Nomadic",
+        "negated": true
+      },
+      {
+        "detail": null,
+        "key": "government_is_herder",
+        "kind": "government_flag",
+        "name": "Herder",
+        "negated": true
+      },
+      {
+        "detail": "Heavy Infantry, Heavy Cavalry and Elephant Cavalry Men-at-Arms cannot be recruited by Rulers of this Culture",
+        "key": "strength_in_numbers_heavy_maa_ban",
+        "kind": "cultural_parameter",
+        "name": "Strength In Numbers ban",
+        "negated": true
+      }
+    ],
+    "siegeTier": null,
+    "siegeValue": null,
+    "sourceFile": "00_maa_types.txt",
+    "specialRecruitOnly": false,
+    "stack": 50,
+    "stats": {
+      "damage": 100,
+      "pursuit": 20,
+      "screen": 0,
+      "toughness": 35
+    },
+    "terrainBonus": {
+      "desert_mountains": {
+        "damage": -75
+      },
+      "drylands": {
+        "damage": 30
+      },
+      "hills": {
+        "damage": -20
+      },
+      "mountains": {
+        "damage": -75
+      },
+      "plains": {
+        "damage": 30
+      },
+      "wetlands": {
+        "damage": -75,
+        "pursuit": -10,
+        "toughness": -10
+      }
+    },
+    "type": "heavy_cavalry",
+    "typeName": "Heavy Cavalry",
+    "winterBonus": {
+      "harsh_winter": {
+        "damage": -20,
+        "toughness": -10
+      },
+      "normal_winter": {
+        "damage": -10,
+        "toughness": -5
+      }
+    }
+  },
+  {
+    "buyCost": {
+      "gold": 260.0
+    },
+    "counters": {
+      "archers": 1,
+      "gunpowder": 1,
+      "pikemen": 1
+    },
+    "dlc": "The Great People",
+    "features": [],
+    "flavor": "An elite imperial guard unit known for its dark, oxidized iron armor.",
+    "highMaintenance": {
+      "gold": 2.73
+    },
+    "holdingBonus": {},
+    "icon": "black_armor_cavalry",
+    "id": "black_armor_cavalry",
+    "lowMaintenance": {
+      "gold": 0.91
+    },
+    "mainPhase": true,
+    "maxRegiments": null,
+    "maxSizeBonus": null,
+    "maxSubRegiments": null,
+    "name": "Black-Armored Cavalry",
+    "provisionCost": 30,
+    "requirements": [
+      {
+        "detail": "Can recruit Black-Armored Cavalry as Men-at-Arms",
+        "key": "unlock_maa_black_armor_cavalry",
+        "kind": "cultural_parameter",
+        "name": "Cultural tradition",
+        "negated": false
+      },
+      {
+        "detail": "Heavy Infantry, Heavy Cavalry and Elephant Cavalry Men-at-Arms cannot be recruited by Rulers of this Culture",
+        "key": "strength_in_numbers_heavy_maa_ban",
+        "kind": "cultural_parameter",
+        "name": "Strength In Numbers ban",
+        "negated": true
+      }
+    ],
+    "siegeTier": null,
+    "siegeValue": null,
+    "sourceFile": "10_tgp_maa_types.txt",
+    "specialRecruitOnly": false,
+    "stack": 100,
+    "stats": {
+      "damage": 45,
+      "pursuit": 15,
+      "screen": 10,
+      "toughness": 20
+    },
+    "terrainBonus": {
+      "desert_mountains": {
+        "damage": -25
+      },
+      "drylands": {
+        "damage": 15
+      },
+      "hills": {
+        "damage": -5
+      },
+      "jungle": {
+        "damage": -40,
+        "pursuit": -10,
+        "toughness": -15
+      },
+      "mountains": {
+        "damage": -25
+      },
+      "plains": {
+        "damage": 15,
+        "toughness": 2
+      },
+      "terraced_hills": {
+        "damage": -5
+      },
+      "wetlands": {
+        "damage": -40,
+        "pursuit": -10,
+        "toughness": -15
+      }
+    },
+    "type": "heavy_cavalry",
+    "typeName": "Heavy Cavalry",
+    "winterBonus": {
+      "harsh_winter": {
+        "damage": -15,
+        "toughness": -5
+      },
+      "normal_winter": {
+        "damage": -8,
+        "toughness": -2
+      }
+    }
+  },
+  {
+    "buyCost": {
+      "gold": 260.0
+    },
+    "counters": {
+      "archers": 1,
+      "gunpowder": 1
+    },
+    "dlc": null,
+    "features": [],
+    "flavor": "Armored in coats of iron, Greek cataphracts can break almost any defensive line with their charge.",
+    "highMaintenance": {
+      "gold": 2.73
+    },
+    "holdingBonus": {},
+    "icon": "cataphracts",
+    "id": "cataphract",
+    "lowMaintenance": {
+      "gold": 0.91
+    },
+    "mainPhase": true,
+    "maxRegiments": null,
+    "maxSizeBonus": null,
+    "maxSubRegiments": null,
+    "name": "Kataphraktoi",
+    "provisionCost": 30,
+    "requirements": [
+      {
+        "detail": "Can recruit Kataphraktoi as Men-at-Arms",
+        "key": "unlock_maa_cataphract",
+        "kind": "cultural_parameter",
+        "name": "Cultural tradition",
+        "negated": false
+      },
+      {
+        "detail": "Heavy Infantry, Heavy Cavalry and Elephant Cavalry Men-at-Arms cannot be recruited by Rulers of this Culture",
+        "key": "strength_in_numbers_heavy_maa_ban",
+        "kind": "cultural_parameter",
+        "name": "Strength In Numbers ban",
+        "negated": true
+      }
+    ],
+    "siegeTier": null,
+    "siegeValue": null,
+    "sourceFile": "00_cultural_maa_types.txt",
+    "specialRecruitOnly": false,
+    "stack": 50,
+    "stats": {
+      "damage": 125,
+      "pursuit": 10,
+      "screen": 0,
+      "toughness": 35
+    },
+    "terrainBonus": {
+      "desert_mountains": {
+        "damage": -50
+      },
+      "drylands": {
+        "damage": 30
+      },
+      "hills": {
+        "damage": -10
+      },
+      "mountains": {
+        "damage": -50
+      },
+      "plains": {
+        "damage": 30,
+        "toughness": 5
+      },
+      "wetlands": {
+        "damage": -80,
+        "pursuit": -10,
+        "toughness": -15
+      }
+    },
+    "type": "heavy_cavalry",
+    "typeName": "Heavy Cavalry",
+    "winterBonus": {
+      "harsh_winter": {
+        "damage": -30,
+        "toughness": -10
+      },
+      "normal_winter": {
+        "damage": -15,
+        "toughness": -5
+      }
+    }
+  },
+  {
+    "buyCost": {
+      "gold": 260.0
+    },
+    "counters": {
+      "archer_cavalry": 1,
+      "archers": 1,
+      "gunpowder": 0.5
+    },
+    "dlc": "Khans of the Steppe",
+    "features": [],
+    "flavor": "Arrows and blades ping harmlessly off the lamellar coats of these horsemen and their steeds. Meanwhile, their bows deal death and misery.",
+    "highMaintenance": {
+      "gold": 2.73
+    },
+    "holdingBonus": {},
+    "icon": "cataphract_archers",
+    "id": "cataphract_archers",
+    "lowMaintenance": {
+      "gold": 0.91
+    },
+    "mainPhase": true,
+    "maxRegiments": null,
+    "maxSizeBonus": null,
+    "maxSubRegiments": null,
+    "name": "Cataphract Archers",
+    "provisionCost": 21,
+    "requirements": [
+      {
+        "detail": "Can recruit Cataphract Archers as Men-at-Arms",
+        "key": "unlock_maa_cataphract_archers",
+        "kind": "cultural_parameter",
+        "name": "Cultural tradition",
+        "negated": false
+      },
+      {
+        "detail": "Heavy Infantry, Heavy Cavalry and Elephant Cavalry Men-at-Arms cannot be recruited by Rulers of this Culture",
+        "key": "strength_in_numbers_heavy_maa_ban",
+        "kind": "cultural_parameter",
+        "name": "Strength In Numbers ban",
+        "negated": true
+      },
+      {
+        "detail": null,
+        "key": "government_is_nomadic",
+        "kind": "government_flag",
+        "name": "Nomadic",
+        "negated": true
+      }
+    ],
+    "siegeTier": null,
+    "siegeValue": null,
+    "sourceFile": "09_mpo_maa_types.txt",
+    "specialRecruitOnly": false,
+    "stack": 50,
+    "stats": {
+      "damage": 90,
+      "pursuit": 20,
+      "screen": 10,
+      "toughness": 52
+    },
+    "terrainBonus": {
+      "desert_mountains": {
+        "damage": -50
+      },
+      "drylands": {
+        "damage": 40
+      },
+      "hills": {
+        "damage": -20
+      },
+      "mountains": {
+        "damage": -75
+      },
+      "plains": {
+        "damage": 40
+      },
+      "steppe": {
+        "damage": 40
+      },
+      "wetlands": {
+        "damage": -75,
+        "pursuit": -10,
+        "toughness": -10
+      }
+    },
+    "type": "heavy_cavalry",
+    "typeName": "Heavy Cavalry",
+    "winterBonus": {
+      "harsh_winter": {
+        "damage": -20,
+        "toughness": -10
+      },
+      "normal_winter": {
+        "damage": -10,
+        "toughness": -5
+      }
+    }
+  },
+  {
+    "buyCost": {
+      "gold": 170.0
+    },
+    "counters": {
+      "archers": 1,
+      "gunpowder": 1,
+      "light_cavalry": 1
+    },
+    "dlc": "Roads to Power",
+    "features": [],
+    "flavor": "Spurring hard with lances couched, these reckless Norman horsemen plunge into any weakness to be found in enemy formations, eager to snatch victory through shock and terror.",
+    "highMaintenance": {
+      "gold": 1.78
+    },
+    "holdingBonus": {},
+    "icon": "conrois",
+    "id": "conrois",
+    "lowMaintenance": {
+      "gold": 0.59
+    },
+    "mainPhase": true,
+    "maxRegiments": null,
+    "maxSizeBonus": null,
+    "maxSubRegiments": null,
+    "name": "Conrois",
+    "provisionCost": 7,
+    "requirements": [
+      {
+        "detail": "Can recruit Conrois as Men-at-Arms",
+        "key": "unlock_maa_conrois",
+        "kind": "cultural_parameter",
+        "name": "Cultural tradition",
+        "negated": false
+      },
+      {
+        "detail": "Heavy Infantry, Heavy Cavalry and Elephant Cavalry Men-at-Arms cannot be recruited by Rulers of this Culture",
+        "key": "strength_in_numbers_heavy_maa_ban",
+        "kind": "cultural_parameter",
+        "name": "Strength In Numbers ban",
+        "negated": true
+      }
+    ],
+    "siegeTier": null,
+    "siegeValue": null,
+    "sourceFile": "07_ep3_maa_types.txt",
+    "specialRecruitOnly": false,
+    "stack": 50,
+    "stats": {
+      "damage": 100,
+      "pursuit": 10,
+      "screen": 0,
+      "toughness": 25
+    },
+    "terrainBonus": {
+      "desert_mountains": {
+        "damage": -75
+      },
+      "drylands": {
+        "damage": 30
+      },
+      "farmlands": {
+        "damage": 30
+      },
+      "hills": {
+        "damage": -20
+      },
+      "jungle": {
+        "damage": -75,
+        "pursuit": -10,
+        "toughness": -10
+      },
+      "mountains": {
+        "damage": -75
+      },
+      "plains": {
+        "damage": 30
+      },
+      "wetlands": {
+        "damage": -75,
+        "pursuit": -10,
+        "toughness": -10
+      }
+    },
+    "type": "heavy_cavalry",
+    "typeName": "Heavy Cavalry",
+    "winterBonus": {
+      "harsh_winter": {
+        "damage": -25,
+        "toughness": -10
+      },
+      "normal_winter": {
+        "damage": -15,
+        "toughness": -5
+      }
+    }
+  },
+  {
+    "buyCost": {
+      "gold": 240.0
+    },
+    "counters": {
+      "archers": 1,
+      "gunpowder": 1
+    },
+    "dlc": null,
+    "features": [],
+    "flavor": "French Gendarmes are the shining pinnacle of heavy cavalry, inspiring awe around the world.",
+    "highMaintenance": {
+      "gold": 2.52
+    },
+    "holdingBonus": {},
+    "icon": "heavy_cavalry",
+    "id": "gendarme",
+    "lowMaintenance": {
+      "gold": 0.84
+    },
+    "mainPhase": true,
+    "maxRegiments": null,
+    "maxSizeBonus": null,
+    "maxSubRegiments": null,
+    "name": "Gendarmes",
+    "provisionCost": 21,
+    "requirements": [],
+    "siegeTier": null,
+    "siegeValue": null,
+    "sourceFile": "00_cultural_maa_types.txt",
+    "specialRecruitOnly": false,
+    "stack": 50,
+    "stats": {
+      "damage": 125,
+      "pursuit": 20,
+      "screen": 10,
+      "toughness": 40
+    },
+    "terrainBonus": {
+      "desert_mountains": {
+        "damage": -50
+      },
+      "drylands": {
+        "damage": 30
+      },
+      "hills": {
+        "damage": -10
+      },
+      "jungle": {
+        "damage": -25
+      },
+      "mountains": {
+        "damage": -50
+      },
+      "plains": {
+        "damage": 30
+      },
+      "wetlands": {
+        "damage": -75
+      }
+    },
+    "type": "heavy_cavalry",
+    "typeName": "Heavy Cavalry",
+    "winterBonus": {
+      "harsh_winter": {
+        "damage": -30,
+        "toughness": -10
+      },
+      "normal_winter": {
+        "damage": -15,
+        "toughness": -5
+      }
+    }
+  },
+  {
+    "buyCost": {
+      "gold": 250.0
+    },
+    "counters": {
+      "archers": 1,
+      "gunpowder": 1
+    },
+    "dlc": null,
+    "features": [],
+    "flavor": "Formed from the core of the bodyguards of the Georgian kings the Monaspa are a fearsome heavy cavalry force that is well at home in the undulating terrain of the Caucasus.",
+    "highMaintenance": {
+      "gold": 2.62
+    },
+    "holdingBonus": {},
+    "icon": "monaspa",
+    "id": "monaspa",
+    "lowMaintenance": {
+      "gold": 0.88
+    },
+    "mainPhase": true,
+    "maxRegiments": null,
+    "maxSizeBonus": null,
+    "maxSubRegiments": null,
+    "name": "Monaspa",
+    "provisionCost": 15,
+    "requirements": [
+      {
+        "detail": "Can recruit Monaspa as Men-at-Arms",
+        "key": "unlock_maa_monaspa",
+        "kind": "cultural_parameter",
+        "name": "Cultural tradition",
+        "negated": false
+      },
+      {
+        "detail": "Heavy Infantry, Heavy Cavalry and Elephant Cavalry Men-at-Arms cannot be recruited by Rulers of this Culture",
+        "key": "strength_in_numbers_heavy_maa_ban",
+        "kind": "cultural_parameter",
+        "name": "Strength In Numbers ban",
+        "negated": true
+      }
+    ],
+    "siegeTier": null,
+    "siegeValue": null,
+    "sourceFile": "00_cultural_maa_types.txt",
+    "specialRecruitOnly": false,
+    "stack": 50,
+    "stats": {
+      "damage": 110,
+      "pursuit": 25,
+      "screen": 10,
+      "toughness": 30
+    },
+    "terrainBonus": {
+      "desert_mountains": {
+        "damage": -30
+      },
+      "hills": {
+        "damage": 20,
+        "pursuit": 10
+      },
+      "mountains": {
+        "damage": 20,
+        "pursuit": 10
+      },
+      "wetlands": {
+        "damage": -80,
+        "pursuit": -20,
+        "toughness": -15
+      }
+    },
+    "type": "heavy_cavalry",
+    "typeName": "Heavy Cavalry",
+    "winterBonus": {
+      "harsh_winter": {
+        "damage": -20,
+        "toughness": -5
+      },
+      "normal_winter": {
+        "damage": -10,
+        "toughness": -5
+      }
+    }
+  },
+  {
+    "buyCost": {
+      "gold": 190.0
+    },
+    "counters": {
+      "archers": 0.5,
+      "gunpowder": 0.5
+    },
+    "dlc": "Khans of the Steppe",
+    "features": [],
+    "flavor": "Hook-bearing lances and horsehair banners rise above this gleaming battle-line of elite, ferocious nomadic cavalry.",
+    "highMaintenance": {
+      "gold": 1.99
+    },
+    "holdingBonus": {},
+    "icon": "nomad_lancers",
+    "id": "nomad_lancers",
+    "lowMaintenance": {
+      "gold": 0.66
+    },
+    "mainPhase": true,
+    "maxRegiments": null,
+    "maxSizeBonus": null,
+    "maxSubRegiments": null,
+    "name": "Nomad Lancers",
+    "provisionCost": 21,
+    "requirements": [
+      {
+        "detail": "Heavy Infantry, Heavy Cavalry and Elephant Cavalry Men-at-Arms cannot be recruited by Rulers of this Culture",
+        "key": "strength_in_numbers_heavy_maa_ban",
+        "kind": "cultural_parameter",
+        "name": "Strength In Numbers ban",
+        "negated": true
+      }
+    ],
+    "siegeTier": null,
+    "siegeValue": null,
+    "sourceFile": "09_mpo_maa_types.txt",
+    "specialRecruitOnly": false,
+    "stack": 50,
+    "stats": {
+      "damage": 120,
+      "pursuit": 20,
+      "screen": 0,
+      "toughness": 30
+    },
+    "terrainBonus": {
+      "desert_mountains": {
+        "damage": -75
+      },
+      "drylands": {
+        "damage": 10
+      },
+      "hills": {
+        "damage": -20
+      },
+      "mountains": {
+        "damage": -75
+      },
+      "plains": {
+        "damage": 40
+      },
+      "steppe": {
+        "damage": 50
+      },
+      "wetlands": {
+        "damage": -75,
+        "pursuit": -10,
+        "toughness": -10
+      }
+    },
+    "type": "heavy_cavalry",
+    "typeName": "Heavy Cavalry",
+    "winterBonus": {
+      "harsh_winter": {
+        "damage": -20,
+        "toughness": -10
+      },
+      "normal_winter": {
+        "damage": -10,
+        "toughness": -5
+      }
+    }
+  },
+  {
+    "buyCost": {
+      "gold": 260.0
+    },
+    "counters": {
+      "gunpowder": 1,
+      "heavy_cavalry": 0.5,
+      "heavy_infantry": 1
+    },
+    "dlc": "Legacy of Persia",
+    "features": [],
+    "flavor": "Elite cavalry of the steppes, the Tarkhans' combination of lance, mace and bow can break almost any defense.",
+    "highMaintenance": {
+      "gold": 2.73
+    },
+    "holdingBonus": {},
+    "icon": "tarkhan",
+    "id": "tarkhan",
+    "lowMaintenance": {
+      "gold": 0.91
+    },
+    "mainPhase": true,
+    "maxRegiments": null,
+    "maxSizeBonus": null,
+    "maxSubRegiments": null,
+    "name": "Tarkhans",
+    "provisionCost": 21,
+    "requirements": [
+      {
+        "detail": null,
+        "key": "landless_adventurer_government",
+        "kind": "government",
+        "name": "Adventurer",
+        "negated": false
+      },
+      {
+        "detail": "Can recruit Tarkhans as Men-at-Arms",
+        "key": "unlock_maa_tarkhan",
+        "kind": "cultural_parameter",
+        "name": "Cultural tradition",
+        "negated": false
+      },
+      {
+        "detail": "Can recruit Tarkhans as Men-at-Arms",
+        "key": "unlock_maa_tarkhan",
+        "kind": "cultural_parameter",
+        "name": "Cultural tradition",
+        "negated": false
+      },
+      {
+        "detail": "Heavy Infantry, Heavy Cavalry and Elephant Cavalry Men-at-Arms cannot be recruited by Rulers of this Culture",
+        "key": "strength_in_numbers_heavy_maa_ban",
+        "kind": "cultural_parameter",
+        "name": "Strength In Numbers ban",
+        "negated": true
+      }
+    ],
+    "siegeTier": null,
+    "siegeValue": null,
+    "sourceFile": "00_fp3_maa_types.txt",
+    "specialRecruitOnly": false,
+    "stack": 50,
+    "stats": {
+      "damage": 110,
+      "pursuit": 30,
+      "screen": 10,
+      "toughness": 30
+    },
+    "terrainBonus": {
+      "desert": {
+        "damage": 10,
+        "pursuit": 10
+      },
+      "drylands": {
+        "damage": 25
+      },
+      "mountains": {
+        "damage": -30
+      },
+      "oasis": {
+        "damage": 30
+      },
+      "wetlands": {
+        "damage": -80,
+        "pursuit": -20,
+        "toughness": -15
+      }
+    },
+    "type": "heavy_cavalry",
+    "typeName": "Heavy Cavalry",
+    "winterBonus": {
+      "harsh_winter": {
+        "damage": -20,
+        "toughness": -5
+      },
+      "normal_winter": {
+        "damage": -10,
+        "toughness": -5
+      }
+    }
+  },
+  {
+    "buyCost": {
+      "gold": 260.0
+    },
+    "counters": {
+      "archers": 1,
+      "gunpowder": 1,
+      "pikemen": 1
+    },
+    "dlc": "The Great People",
+    "features": [],
+    "flavor": "Known as Iron Pagodas, these heavily armed cavalrymen were introduced to China by the Jurchen Jin dynasty. Pairing skilled horsemanship with heavy armor, they are a fierce enemy on any battlefield.",
+    "highMaintenance": {
+      "gold": 2.73
+    },
+    "holdingBonus": {},
+    "icon": "tiefutu_cavalry",
+    "id": "tiefutu",
+    "lowMaintenance": {
+      "gold": 0.91
+    },
+    "mainPhase": true,
+    "maxRegiments": null,
+    "maxSizeBonus": null,
+    "maxSubRegiments": null,
+    "name": "Tiefutu",
+    "provisionCost": 30,
+    "requirements": [],
+    "siegeTier": null,
+    "siegeValue": null,
+    "sourceFile": "10_tgp_maa_types.txt",
+    "specialRecruitOnly": false,
+    "stack": 50,
+    "stats": {
+      "damage": 100,
+      "pursuit": 15,
+      "screen": 10,
+      "toughness": 40
+    },
+    "terrainBonus": {
+      "desert_mountains": {
+        "damage": -50
+      },
+      "drylands": {
+        "damage": 30
+      },
+      "hills": {
+        "damage": -10
+      },
+      "jungle": {
+        "damage": -80,
+        "pursuit": -10,
+        "toughness": -15
+      },
+      "mountains": {
+        "damage": -50
+      },
+      "plains": {
+        "damage": 30,
+        "toughness": 5
+      },
+      "terraced_hills": {
+        "damage": -10
+      },
+      "wetlands": {
+        "damage": -80,
+        "pursuit": -10,
+        "toughness": -15
+      }
+    },
+    "type": "heavy_cavalry",
+    "typeName": "Heavy Cavalry",
+    "winterBonus": {
+      "harsh_winter": {
+        "damage": -30,
+        "toughness": -10
+      },
+      "normal_winter": {
+        "damage": -15,
+        "toughness": -5
+      }
+    }
+  },
+  {
+    "buyCost": {
+      "gold": 180
+    },
+    "counters": {
+      "peasant_militia": 4,
+      "pikemen": 2
+    },
+    "dlc": null,
+    "features": [],
+    "flavor": "Retinue Men-at-Arms\nAfforded pride of place in the thick of the fight, these disciplined and resplendent heavy infantry are a force few foes can withstand.",
+    "highMaintenance": {
+      "gold": 1.2
+    },
+    "holdingBonus": {},
+    "icon": "accolade_maa_vanguards",
+    "id": "accolade_maa_vanguards",
+    "lowMaintenance": {
+      "gold": 0.4
+    },
+    "mainPhase": true,
+    "maxRegiments": 1,
+    "maxSizeBonus": null,
+    "maxSubRegiments": null,
+    "name": "Retinue Vanguard",
+    "provisionCost": 12,
+    "requirements": [
+      {
+        "detail": "Heavy Infantry, Heavy Cavalry and Elephant Cavalry Men-at-Arms cannot be recruited by Rulers of this Culture",
+        "key": "strength_in_numbers_heavy_maa_ban",
+        "kind": "cultural_parameter",
+        "name": "Strength In Numbers ban",
+        "negated": true
+      }
+    ],
+    "siegeTier": null,
+    "siegeValue": null,
+    "sourceFile": "01_accolade_maa_types.txt",
+    "specialRecruitOnly": false,
+    "stack": 100,
+    "stats": {
+      "damage": 45,
+      "pursuit": 0,
+      "screen": 0,
+      "toughness": 35
+    },
+    "terrainBonus": {},
+    "type": "heavy_infantry",
+    "typeName": "Heavy Infantry",
+    "winterBonus": {}
+  },
+  {
+    "buyCost": {
+      "gold": 90
+    },
+    "counters": {
+      "peasant_militia": 2,
+      "pikemen": 1
+    },
+    "dlc": null,
+    "features": [],
+    "flavor": "Heavily armed and well-trained, these troops specialize in smashing massed infantry.",
+    "highMaintenance": {
+      "gold": 1.2
+    },
+    "holdingBonus": {},
+    "icon": "armored_footmen",
+    "id": "armored_footmen",
+    "lowMaintenance": {
+      "gold": 0.4
+    },
+    "mainPhase": true,
+    "maxRegiments": null,
+    "maxSizeBonus": null,
+    "maxSubRegiments": null,
+    "name": "Armored Footmen",
+    "provisionCost": 7,
+    "requirements": [
+      {
+        "detail": null,
+        "key": "innovation_quilted_armor",
+        "kind": "innovation",
+        "name": "Quilted Armor",
+        "negated": false
+      },
+      {
+        "detail": "Heavy Infantry, Heavy Cavalry and Elephant Cavalry Men-at-Arms cannot be recruited by Rulers of this Culture",
+        "key": "strength_in_numbers_heavy_maa_ban",
+        "kind": "cultural_parameter",
+        "name": "Strength In Numbers ban",
+        "negated": true
+      },
+      {
+        "detail": null,
+        "key": "government_is_nomadic",
+        "kind": "government_flag",
+        "name": "Nomadic",
+        "negated": true
+      },
+      {
+        "detail": null,
+        "key": "government_is_herder",
+        "kind": "government_flag",
+        "name": "Herder",
+        "negated": true
+      }
+    ],
+    "siegeTier": null,
+    "siegeValue": null,
+    "sourceFile": "00_maa_types.txt",
+    "specialRecruitOnly": false,
+    "stack": 100,
+    "stats": {
+      "damage": 32,
+      "pursuit": 0,
+      "screen": 0,
+      "toughness": 22
+    },
+    "terrainBonus": {},
+    "type": "heavy_infantry",
+    "typeName": "Heavy Infantry",
+    "winterBonus": {}
+  },
+  {
+    "buyCost": {
+      "gold": 75
+    },
+    "counters": {
+      "peasant_militia": 2,
+      "pikemen": 1
+    },
+    "dlc": null,
+    "features": [],
+    "flavor": "Young and eager, members of the Ayyar fighting clubs serve as willing and able soldiers ready to be called upon at a moment's notice.",
+    "highMaintenance": {
+      "gold": 1.08
+    },
+    "holdingBonus": {},
+    "icon": "ayyar",
+    "id": "ayyar",
+    "lowMaintenance": {
+      "gold": 0.36
+    },
+    "mainPhase": true,
+    "maxRegiments": null,
+    "maxSizeBonus": null,
+    "maxSubRegiments": null,
+    "name": "Ayyar",
+    "provisionCost": 12,
+    "requirements": [
+      {
+        "detail": "Can recruit Ayyar as Men-at-Arms",
+        "key": "unlock_maa_ayyar",
+        "kind": "cultural_parameter",
+        "name": "Cultural tradition",
+        "negated": false
+      },
+      {
+        "detail": "Heavy Infantry, Heavy Cavalry and Elephant Cavalry Men-at-Arms cannot be recruited by Rulers of this Culture",
+        "key": "strength_in_numbers_heavy_maa_ban",
+        "kind": "cultural_parameter",
+        "name": "Strength In Numbers ban",
+        "negated": true
+      }
+    ],
+    "siegeTier": null,
+    "siegeValue": null,
+    "sourceFile": "00_cultural_maa_types.txt",
+    "specialRecruitOnly": false,
+    "stack": 100,
+    "stats": {
+      "damage": 35,
+      "pursuit": 12,
+      "screen": 0,
+      "toughness": 22
+    },
+    "terrainBonus": {},
+    "type": "heavy_infantry",
+    "typeName": "Heavy Infantry",
+    "winterBonus": {}
+  },
+  {
+    "buyCost": {
+      "gold": 75
+    },
+    "counters": {
+      "archers": 1.5,
+      "peasant_militia": 2,
+      "pikemen": 1
+    },
+    "dlc": "The Great People",
+    "features": [],
+    "flavor": "Deployed in great numbers, in tight formations, this infantry is the backbone of Imperial armies. Composed of up to 1000 lamellar pieces, their heavy armor allows them to stand against almost any invader.",
+    "highMaintenance": {
+      "gold": 0.9
+    },
+    "holdingBonus": {},
+    "icon": "burenjia_infantry",
+    "id": "burenjia",
+    "lowMaintenance": {
+      "gold": 0.36
+    },
+    "mainPhase": true,
+    "maxRegiments": null,
+    "maxSizeBonus": null,
+    "maxSubRegiments": null,
+    "name": "Burenjia Infantry",
+    "provisionCost": 12,
+    "requirements": [
+      {
+        "detail": "Can recruit Burenjia Infantry as Men-at-Arms",
+        "key": "unlock_burenjia",
+        "kind": "cultural_parameter",
+        "name": "Cultural tradition",
+        "negated": false
+      },
+      {
+        "detail": "Heavy Infantry, Heavy Cavalry and Elephant Cavalry Men-at-Arms cannot be recruited by Rulers of this Culture",
+        "key": "strength_in_numbers_heavy_maa_ban",
+        "kind": "cultural_parameter",
+        "name": "Strength In Numbers ban",
+        "negated": true
+      }
+    ],
+    "siegeTier": null,
+    "siegeValue": null,
+    "sourceFile": "10_tgp_maa_types.txt",
+    "specialRecruitOnly": false,
+    "stack": 100,
+    "stats": {
+      "damage": 22,
+      "pursuit": 0,
+      "screen": 0,
+      "toughness": 38
+    },
+    "terrainBonus": {
+      "farmlands": {
+        "damage": 5,
+        "toughness": 6
+      },
+      "hills": {
+        "damage": 5,
+        "toughness": 6
+      },
+      "plains": {
+        "damage": 5,
+        "toughness": 6
+      },
+      "terraced_hills": {
+        "damage": 5,
+        "toughness": 6
+      }
+    },
+    "type": "heavy_infantry",
+    "typeName": "Heavy Infantry",
+    "winterBonus": {}
+  },
+  {
+    "buyCost": {
+      "gold": 117.0
+    },
+    "counters": {
+      "peasant_militia": 2,
+      "pikemen": 1
+    },
+    "dlc": null,
+    "features": [],
+    "flavor": "Russian Druzhina are skilled bodyguards who have devoted themselves to protecting their allies.",
+    "highMaintenance": {
+      "gold": 1.56
+    },
+    "holdingBonus": {},
+    "icon": "heavy_infantry",
+    "id": "druzhina",
+    "lowMaintenance": {
+      "gold": 0.52
+    },
+    "mainPhase": true,
+    "maxRegiments": null,
+    "maxSizeBonus": null,
+    "maxSubRegiments": null,
+    "name": "Druzhina",
+    "provisionCost": 7,
+    "requirements": [
+      {
+        "detail": "Can recruit Druzhina as Men-at-Arms",
+        "key": "unlock_maa_druzhina",
+        "kind": "cultural_parameter",
+        "name": "Cultural tradition",
+        "negated": false
+      },
+      {
+        "detail": "Heavy Infantry, Heavy Cavalry and Elephant Cavalry Men-at-Arms cannot be recruited by Rulers of this Culture",
+        "key": "strength_in_numbers_heavy_maa_ban",
+        "kind": "cultural_parameter",
+        "name": "Strength In Numbers ban",
+        "negated": true
+      }
+    ],
+    "siegeTier": null,
+    "siegeValue": null,
+    "sourceFile": "00_cultural_maa_types.txt",
+    "specialRecruitOnly": false,
+    "stack": 100,
+    "stats": {
+      "damage": 40,
+      "pursuit": 0,
+      "screen": 30,
+      "toughness": 30
+    },
+    "terrainBonus": {},
+    "type": "heavy_infantry",
+    "typeName": "Heavy Infantry",
+    "winterBonus": {}
+  },
+  {
+    "buyCost": {
+      "gold": 115.2
+    },
+    "counters": {
+      "archers": 1,
+      "peasant_militia": 2,
+      "pikemen": 1
+    },
+    "dlc": null,
+    "features": [],
+    "flavor": "Garuda Warriors are famous for their loyalty, and for fighting to the death. Once a Garuda warrior fall his entire retinue of Lenka warriors are expected to die with him.",
+    "highMaintenance": {
+      "gold": 1.54
+    },
+    "holdingBonus": {},
+    "icon": "garudas",
+    "id": "garudas",
+    "lowMaintenance": {
+      "gold": 0.51
+    },
+    "mainPhase": true,
+    "maxRegiments": null,
+    "maxSizeBonus": null,
+    "maxSubRegiments": null,
+    "name": "Lenkas",
+    "provisionCost": 12,
+    "requirements": [
+      {
+        "detail": "Can recruit Lenkas as Men-at-Arms",
+        "key": "unlock_maa_garudas",
+        "kind": "cultural_parameter",
+        "name": "Cultural tradition",
+        "negated": false
+      },
+      {
+        "detail": "Heavy Infantry, Heavy Cavalry and Elephant Cavalry Men-at-Arms cannot be recruited by Rulers of this Culture",
+        "key": "strength_in_numbers_heavy_maa_ban",
+        "kind": "cultural_parameter",
+        "name": "Strength In Numbers ban",
+        "negated": true
+      }
+    ],
+    "siegeTier": null,
+    "siegeValue": null,
+    "sourceFile": "00_cultural_maa_types.txt",
+    "specialRecruitOnly": false,
+    "stack": 100,
+    "stats": {
+      "damage": 42,
+      "pursuit": 24,
+      "screen": 0,
+      "toughness": 22
+    },
+    "terrainBonus": {
+      "forest": {
+        "damage": 8
+      },
+      "jungle": {
+        "damage": 8
+      }
+    },
+    "type": "heavy_infantry",
+    "typeName": "Heavy Infantry",
+    "winterBonus": {}
+  },
+  {
+    "buyCost": {
+      "gold": 67.5
+    },
+    "counters": {
+      "heavy_cavalry": 1,
+      "peasant_militia": 2,
+      "pikemen": 1
+    },
+    "dlc": "Roads to Power",
+    "features": [],
+    "flavor": "Individually outstanding in valor, loyalty, and talent, these fighters are ready to lay down their lives to protect their leader.",
+    "highMaintenance": {
+      "gold": 0.9
+    },
+    "holdingBonus": {},
+    "icon": "heavy_infantry",
+    "id": "handpicked_faithful",
+    "lowMaintenance": {
+      "gold": 0.3
+    },
+    "mainPhase": true,
+    "maxRegiments": null,
+    "maxSizeBonus": null,
+    "maxSubRegiments": null,
+    "name": "Handpicked Faithful",
+    "provisionCost": 7,
+    "requirements": [
+      {
+        "detail": "Heavy Infantry, Heavy Cavalry and Elephant Cavalry Men-at-Arms cannot be recruited by Rulers of this Culture",
+        "key": "strength_in_numbers_heavy_maa_ban",
+        "kind": "cultural_parameter",
+        "name": "Strength In Numbers ban",
+        "negated": true
+      }
+    ],
+    "siegeTier": null,
+    "siegeValue": null,
+    "sourceFile": "07_ep3_maa_types.txt",
+    "specialRecruitOnly": false,
+    "stack": 100,
+    "stats": {
+      "damage": 38,
+      "pursuit": 5,
+      "screen": 5,
+      "toughness": 28
+    },
+    "terrainBonus": {
+      "forest": {
+        "damage": 6,
+        "toughness": 4
+      },
+      "hills": {
+        "damage": 6,
+        "toughness": 4
+      },
+      "jungle": {
+        "damage": 6,
+        "toughness": 4
+      }
+    },
+    "type": "heavy_infantry",
+    "typeName": "Heavy Infantry",
+    "winterBonus": {}
+  },
+  {
+    "buyCost": {
+      "gold": 50
+    },
+    "counters": {
+      "archers": 2,
+      "peasant_militia": 4,
+      "pikemen": 2
+    },
+    "dlc": null,
+    "features": [],
+    "flavor": "This elite regiment is in the service of a specific Dynasty. The warriors are hand-picked from the most loyal subjects.",
+    "highMaintenance": {
+      "gold": 1
+    },
+    "holdingBonus": {},
+    "icon": "house_guard",
+    "id": "house_guard",
+    "lowMaintenance": {
+      "gold": 0
+    },
+    "mainPhase": true,
+    "maxRegiments": 1,
+    "maxSizeBonus": null,
+    "maxSubRegiments": null,
+    "name": "House Guard",
+    "provisionCost": 12,
+    "requirements": [
+      {
+        "detail": null,
+        "key": "warfare_legacy_5",
+        "kind": "dynasty_perk",
+        "name": "Private Army",
+        "negated": false
+      },
+      {
+        "detail": "Heavy Infantry, Heavy Cavalry and Elephant Cavalry Men-at-Arms cannot be recruited by Rulers of this Culture",
+        "key": "strength_in_numbers_heavy_maa_ban",
+        "kind": "cultural_parameter",
+        "name": "Strength In Numbers ban",
+        "negated": true
+      }
+    ],
+    "siegeTier": null,
+    "siegeValue": null,
+    "sourceFile": "00_maa_types.txt",
+    "specialRecruitOnly": false,
+    "stack": 100,
+    "stats": {
+      "damage": 40,
+      "pursuit": 0,
+      "screen": 24,
+      "toughness": 32
+    },
+    "terrainBonus": {},
+    "type": "heavy_infantry",
+    "typeName": "Heavy Infantry",
+    "winterBonus": {}
+  },
+  {
+    "buyCost": {
+      "gold": 115.2
+    },
+    "counters": {
+      "archers": 1,
+      "peasant_militia": 2,
+      "pikemen": 1
+    },
+    "dlc": null,
+    "features": [],
+    "flavor": "Germanic Huscarls are masters of using shield walls to block incoming volleys of arrows.",
+    "highMaintenance": {
+      "gold": 1.54
+    },
+    "holdingBonus": {},
+    "icon": "danish_huskarls",
+    "id": "huscarl",
+    "lowMaintenance": {
+      "gold": 0.51
+    },
+    "mainPhase": true,
+    "maxRegiments": null,
+    "maxSizeBonus": null,
+    "maxSubRegiments": null,
+    "name": "Huscarls",
+    "provisionCost": 3,
+    "requirements": [
+      {
+        "detail": "Can recruit Huscarls as Men-at-Arms",
+        "key": "unlock_maa_huscarls",
+        "kind": "cultural_parameter",
+        "name": "Cultural tradition",
+        "negated": false
+      },
+      {
+        "detail": "Heavy Infantry, Heavy Cavalry and Elephant Cavalry Men-at-Arms cannot be recruited by Rulers of this Culture",
+        "key": "strength_in_numbers_heavy_maa_ban",
+        "kind": "cultural_parameter",
+        "name": "Strength In Numbers ban",
+        "negated": true
+      }
+    ],
+    "siegeTier": null,
+    "siegeValue": null,
+    "sourceFile": "00_cultural_maa_types.txt",
+    "specialRecruitOnly": false,
+    "stack": 100,
+    "stats": {
+      "damage": 40,
+      "pursuit": 0,
+      "screen": 24,
+      "toughness": 26
+    },
+    "terrainBonus": {
+      "forest": {
+        "damage": 8
+      },
+      "taiga": {
+        "damage": 8
+      }
+    },
+    "type": "heavy_infantry",
+    "typeName": "Heavy Infantry",
+    "winterBonus": {
+      "harsh_winter": {
+        "screen": 6,
+        "toughness": 6
+      },
+      "normal_winter": {
+        "screen": 6,
+        "toughness": 6
+      }
+    }
+  },
+  {
+    "buyCost": {
+      "gold": 108.0
+    },
+    "counters": {
+      "light_cavalry": 1,
+      "peasant_militia": 2,
+      "pikemen": 1
+    },
+    "dlc": null,
+    "features": [],
+    "flavor": "Indian Khandayats are master swordsmen who can easily cut down both men and horse alike.",
+    "highMaintenance": {
+      "gold": 1.44
+    },
+    "holdingBonus": {},
+    "icon": "khandayat",
+    "id": "khandayat",
+    "lowMaintenance": {
+      "gold": 0.48
+    },
+    "mainPhase": true,
+    "maxRegiments": null,
+    "maxSizeBonus": null,
+    "maxSubRegiments": null,
+    "name": "Khandayat",
+    "provisionCost": 15,
+    "requirements": [
+      {
+        "detail": "Can recruit Khandayat as Men-at-Arms",
+        "key": "unlock_maa_khandayat",
+        "kind": "cultural_parameter",
+        "name": "Cultural tradition",
+        "negated": false
+      },
+      {
+        "detail": "Heavy Infantry, Heavy Cavalry and Elephant Cavalry Men-at-Arms cannot be recruited by Rulers of this Culture",
+        "key": "strength_in_numbers_heavy_maa_ban",
+        "kind": "cultural_parameter",
+        "name": "Strength In Numbers ban",
+        "negated": true
+      }
+    ],
+    "siegeTier": null,
+    "siegeValue": null,
+    "sourceFile": "00_cultural_maa_types.txt",
+    "specialRecruitOnly": false,
+    "stack": 100,
+    "stats": {
+      "damage": 42,
+      "pursuit": 0,
+      "screen": 0,
+      "toughness": 22
+    },
+    "terrainBonus": {
+      "jungle": {
+        "damage": 12,
+        "toughness": 8
+      }
+    },
+    "type": "heavy_infantry",
+    "typeName": "Heavy Infantry",
+    "winterBonus": {}
+  },
+  {
+    "buyCost": {
+      "gold": 108.0
+    },
+    "counters": {
+      "peasant_militia": 2,
+      "pikemen": 1
+    },
+    "dlc": null,
+    "features": [],
+    "flavor": "Intense training at high altitudes makes Tibetan soldiers the undisputed champions of their domain.",
+    "highMaintenance": {
+      "gold": 1.44
+    },
+    "holdingBonus": {},
+    "icon": "mountaineer",
+    "id": "mountaineer",
+    "lowMaintenance": {
+      "gold": 0.48
+    },
+    "mainPhase": true,
+    "maxRegiments": null,
+    "maxSizeBonus": null,
+    "maxSubRegiments": null,
+    "name": "Mountaineers",
+    "provisionCost": 7,
+    "requirements": [
+      {
+        "detail": "Can recruit Mountaineers as Men-at-Arms",
+        "key": "unlock_maa_mountaineer",
+        "kind": "cultural_parameter",
+        "name": "Cultural tradition",
+        "negated": false
+      },
+      {
+        "detail": "Heavy Infantry, Heavy Cavalry and Elephant Cavalry Men-at-Arms cannot be recruited by Rulers of this Culture",
+        "key": "strength_in_numbers_heavy_maa_ban",
+        "kind": "cultural_parameter",
+        "name": "Strength In Numbers ban",
+        "negated": true
+      }
+    ],
+    "siegeTier": null,
+    "siegeValue": null,
+    "sourceFile": "00_cultural_maa_types.txt",
+    "specialRecruitOnly": false,
+    "stack": 100,
+    "stats": {
+      "damage": 40,
+      "pursuit": 0,
+      "screen": 0,
+      "toughness": 26
+    },
+    "terrainBonus": {
+      "desert_mountains": {
+        "damage": 12,
+        "toughness": 12
+      },
+      "mountains": {
+        "damage": 12,
+        "toughness": 12
+      }
+    },
+    "type": "heavy_infantry",
+    "typeName": "Heavy Infantry",
+    "winterBonus": {
+      "harsh_winter": {
+        "damage": 5
+      },
+      "normal_winter": {
+        "damage": 5
+      }
+    }
+  },
+  {
+    "buyCost": {
+      "gold": 108.0
+    },
+    "counters": {
+      "heavy_infantry": 1,
+      "peasant_militia": 2,
+      "pikemen": 1
+    },
+    "dlc": null,
+    "features": [],
+    "flavor": "Trained in both formation fighting and single combat, Arabic Mubarizun can crush most other infantry in battle.",
+    "highMaintenance": {
+      "gold": 1.44
+    },
+    "holdingBonus": {},
+    "icon": "mubarizun",
+    "id": "mubarizun",
+    "lowMaintenance": {
+      "gold": 0.48
+    },
+    "mainPhase": true,
+    "maxRegiments": null,
+    "maxSizeBonus": null,
+    "maxSubRegiments": null,
+    "name": "Mubarizun",
+    "provisionCost": 7,
+    "requirements": [
+      {
+        "detail": "Can recruit Mubarizun as Men-at-Arms",
+        "key": "unlock_maa_mubarizun",
+        "kind": "cultural_parameter",
+        "name": "Cultural tradition",
+        "negated": false
+      },
+      {
+        "detail": "Heavy Infantry, Heavy Cavalry and Elephant Cavalry Men-at-Arms cannot be recruited by Rulers of this Culture",
+        "key": "strength_in_numbers_heavy_maa_ban",
+        "kind": "cultural_parameter",
+        "name": "Strength In Numbers ban",
+        "negated": true
+      }
+    ],
+    "siegeTier": null,
+    "siegeValue": null,
+    "sourceFile": "00_cultural_maa_types.txt",
+    "specialRecruitOnly": false,
+    "stack": 100,
+    "stats": {
+      "damage": 45,
+      "pursuit": 0,
+      "screen": 0,
+      "toughness": 25
+    },
+    "terrainBonus": {},
+    "type": "heavy_infantry",
+    "typeName": "Heavy Infantry",
+    "winterBonus": {}
+  },
+  {
+    "buyCost": {
+      "gold": 108.0
+    },
+    "counters": {
+      "peasant_militia": 4,
+      "pikemen": 2
+    },
+    "dlc": null,
+    "features": [],
+    "flavor": "Usually standing guard and keeping the peace, these versatile warriors can form the backbone of any army.",
+    "highMaintenance": {
+      "gold": 1.44
+    },
+    "holdingBonus": {},
+    "icon": "palace_guards",
+    "id": "palace_guards",
+    "lowMaintenance": {
+      "gold": 0.48
+    },
+    "mainPhase": true,
+    "maxRegiments": null,
+    "maxSizeBonus": null,
+    "maxSubRegiments": null,
+    "name": "Palace Guards",
+    "provisionCost": 15,
+    "requirements": [
+      {
+        "detail": "Can recruit Palace Guards as Men-at-Arms",
+        "key": "unlock_maa_palace_guards",
+        "kind": "cultural_parameter",
+        "name": "Cultural tradition",
+        "negated": false
+      },
+      {
+        "detail": "Heavy Infantry, Heavy Cavalry and Elephant Cavalry Men-at-Arms cannot be recruited by Rulers of this Culture",
+        "key": "strength_in_numbers_heavy_maa_ban",
+        "kind": "cultural_parameter",
+        "name": "Strength In Numbers ban",
+        "negated": true
+      }
+    ],
+    "siegeTier": null,
+    "siegeValue": null,
+    "sourceFile": "00_cultural_maa_types.txt",
+    "specialRecruitOnly": false,
+    "stack": 100,
+    "stats": {
+      "damage": 38,
+      "pursuit": 0,
+      "screen": 20,
+      "toughness": 24
+    },
+    "terrainBonus": {
+      "hills": {
+        "damage": 8,
+        "toughness": 4
+      },
+      "jungle": {
+        "damage": 10,
+        "toughness": 6
+      }
+    },
+    "type": "heavy_infantry",
+    "typeName": "Heavy Infantry",
+    "winterBonus": {}
+  },
+  {
+    "buyCost": {
+      "gold": 180
+    },
+    "counters": {
+      "peasant_militia": 2,
+      "pikemen": 1
+    },
+    "dlc": null,
+    "features": [],
+    "flavor": "The best of the best, Palatini are elite Roman soldiers who serve the Emperor directly.",
+    "highMaintenance": {
+      "gold": 2.4
+    },
+    "holdingBonus": {},
+    "icon": "heavy_infantry",
+    "id": "praetorian",
+    "lowMaintenance": {
+      "gold": 0.8
+    },
+    "mainPhase": true,
+    "maxRegiments": null,
+    "maxSizeBonus": null,
+    "maxSubRegiments": null,
+    "name": "Palatini",
+    "provisionCost": 15,
+    "requirements": [],
+    "siegeTier": null,
+    "siegeValue": null,
+    "sourceFile": "00_cultural_maa_types.txt",
+    "specialRecruitOnly": false,
+    "stack": 100,
+    "stats": {
+      "damage": 60,
+      "pursuit": 0,
+      "screen": 20,
+      "toughness": 30
+    },
+    "terrainBonus": {},
+    "type": "heavy_infantry",
+    "typeName": "Heavy Infantry",
+    "winterBonus": {}
+  },
+  {
+    "buyCost": {
+      "gold": 150.3
+    },
+    "counters": {
+      "heavy_cavalry": 1,
+      "peasant_militia": 2,
+      "pikemen": 1
+    },
+    "dlc": "The Great People",
+    "features": [],
+    "flavor": "Bushi retainers attend to the needs of nobility and the highest levels of society, armed with a sword and protected with lacquered leather or metal armor.",
+    "highMaintenance": {
+      "gold": 2.0
+    },
+    "holdingBonus": {},
+    "icon": "samurai",
+    "id": "samurai",
+    "lowMaintenance": {
+      "gold": 0.67
+    },
+    "mainPhase": true,
+    "maxRegiments": null,
+    "maxSizeBonus": null,
+    "maxSubRegiments": null,
+    "name": "Samurai",
+    "provisionCost": 12,
+    "requirements": [
+      {
+        "detail": "Can recruit Samurai as Men-at-Arms",
+        "key": "unlock_infantry_samurai_units",
+        "kind": "cultural_parameter",
+        "name": "Cultural tradition",
+        "negated": false
+      },
+      {
+        "detail": "Heavy Infantry, Heavy Cavalry and Elephant Cavalry Men-at-Arms cannot be recruited by Rulers of this Culture",
+        "key": "strength_in_numbers_heavy_maa_ban",
+        "kind": "cultural_parameter",
+        "name": "Strength In Numbers ban",
+        "negated": true
+      }
+    ],
+    "siegeTier": null,
+    "siegeValue": null,
+    "sourceFile": "10_tgp_maa_types.txt",
+    "specialRecruitOnly": false,
+    "stack": 100,
+    "stats": {
+      "damage": 45,
+      "pursuit": 12,
+      "screen": 0,
+      "toughness": 25
+    },
+    "terrainBonus": {
+      "farmlands": {
+        "damage": 6,
+        "toughness": 4
+      },
+      "mountains": {
+        "damage": 6,
+        "toughness": 4
+      },
+      "plains": {
+        "damage": 6,
+        "toughness": 4
+      },
+      "terraced_hills": {
+        "damage": 6,
+        "toughness": 4
+      }
+    },
+    "type": "heavy_infantry",
+    "typeName": "Heavy Infantry",
+    "winterBonus": {}
+  },
+  {
+    "buyCost": {
+      "gold": 108.0
+    },
+    "counters": {
+      "light_cavalry": 1
+    },
+    "dlc": null,
+    "features": [],
+    "flavor": "The Sarawit is a well-trained army at home in the Ethiopian highlands.",
+    "highMaintenance": {
+      "gold": 1.44
+    },
+    "holdingBonus": {},
+    "icon": "heavy_infantry",
+    "id": "sarawit",
+    "lowMaintenance": {
+      "gold": 0.48
+    },
+    "mainPhase": true,
+    "maxRegiments": null,
+    "maxSizeBonus": null,
+    "maxSubRegiments": null,
+    "name": "Sarawit",
+    "provisionCost": 7,
+    "requirements": [],
+    "siegeTier": null,
+    "siegeValue": null,
+    "sourceFile": "00_cultural_maa_types.txt",
+    "specialRecruitOnly": false,
+    "stack": 100,
+    "stats": {
+      "damage": 32,
+      "pursuit": 0,
+      "screen": 10,
+      "toughness": 26
+    },
+    "terrainBonus": {
+      "desert": {
+        "screen": -10,
+        "toughness": -10
+      },
+      "desert_mountains": {
+        "damage": 10,
+        "toughness": 8
+      },
+      "drylands": {
+        "screen": -10
+      },
+      "hills": {
+        "damage": 8,
+        "toughness": 5
+      },
+      "mountains": {
+        "damage": 12,
+        "toughness": 10
+      }
+    },
+    "type": "heavy_infantry",
+    "typeName": "Heavy Infantry",
+    "winterBonus": {}
+  },
+  {
+    "buyCost": {
+      "gold": 90
+    },
+    "counters": {
+      "peasant_militia": 2,
+      "pikemen": 1
+    },
+    "dlc": null,
+    "features": [],
+    "flavor": "Heavily armored and zealous knights, specializing in massed infantry battles in addition to their heavy cavalry charges.",
+    "highMaintenance": {
+      "gold": 1.2
+    },
+    "holdingBonus": {},
+    "icon": "heavy_infantry",
+    "id": "teutonic_knights",
+    "lowMaintenance": {
+      "gold": 0.4
+    },
+    "mainPhase": true,
+    "maxRegiments": null,
+    "maxSizeBonus": null,
+    "maxSubRegiments": null,
+    "name": "Order Knights",
+    "provisionCost": 12,
+    "requirements": [],
+    "siegeTier": null,
+    "siegeValue": null,
+    "sourceFile": "00_holy_order_maa_types.txt",
+    "specialRecruitOnly": true,
+    "stack": 100,
+    "stats": {
+      "damage": 36,
+      "pursuit": 0,
+      "screen": 0,
+      "toughness": 26
+    },
+    "terrainBonus": {},
+    "type": "heavy_infantry",
+    "typeName": "Heavy Infantry",
+    "winterBonus": {}
+  },
+  {
+    "buyCost": {
+      "gold": 72.0
+    },
+    "counters": {
+      "heavy_cavalry": 1,
+      "peasant_militia": 2,
+      "pikemen": 1
+    },
+    "dlc": "Roads to Power",
+    "features": [],
+    "flavor": "These famed axe-wielding Germanic mercenaries are the unwavering core of the imperial host.\n\n They will claim some Gold after the Basileus's death.",
+    "highMaintenance": {
+      "gold": 0.96
+    },
+    "holdingBonus": {},
+    "icon": "varangian_guard",
+    "id": "varangian_guards",
+    "lowMaintenance": {
+      "gold": 0.32
+    },
+    "mainPhase": true,
+    "maxRegiments": null,
+    "maxSizeBonus": null,
+    "maxSubRegiments": null,
+    "name": "Varangian Guards",
+    "provisionCost": 7,
+    "requirements": [
+      {
+        "detail": "Heavy Infantry, Heavy Cavalry and Elephant Cavalry Men-at-Arms cannot be recruited by Rulers of this Culture",
+        "key": "strength_in_numbers_heavy_maa_ban",
+        "kind": "cultural_parameter",
+        "name": "Strength In Numbers ban",
+        "negated": true
+      }
+    ],
+    "siegeTier": null,
+    "siegeValue": null,
+    "sourceFile": "07_ep3_maa_types.txt",
+    "specialRecruitOnly": false,
+    "stack": 100,
+    "stats": {
+      "damage": 45,
+      "pursuit": 10,
+      "screen": 5,
+      "toughness": 32
+    },
+    "terrainBonus": {
+      "farmlands": {
+        "damage": 12,
+        "toughness": 8
+      },
+      "hills": {
+        "damage": 6,
+        "toughness": 4
+      },
+      "plains": {
+        "damage": 6,
+        "toughness": 4
+      }
+    },
+    "type": "heavy_infantry",
+    "typeName": "Heavy Infantry",
+    "winterBonus": {
+      "harsh_winter": {
+        "screen": 6,
+        "toughness": 6
+      },
+      "normal_winter": {
+        "screen": 6,
+        "toughness": 6
+      }
+    }
+  },
+  {
+    "buyCost": {
+      "gold": 150.3
+    },
+    "counters": {
+      "heavy_cavalry": 1,
+      "peasant_militia": 2,
+      "pikemen": 1
+    },
+    "dlc": "Northern Lords",
+    "features": [],
+    "flavor": "Explorers, adventurers, warriors, and mercenaries from all around the far-flung Nordic colonies. Some have even served in the Varangian Guard.",
+    "highMaintenance": {
+      "gold": 2.0
+    },
+    "holdingBonus": {},
+    "icon": "varangian_guard",
+    "id": "varangian_veterans",
+    "lowMaintenance": {
+      "gold": 0.67
+    },
+    "mainPhase": true,
+    "maxRegiments": 1,
+    "maxSizeBonus": null,
+    "maxSubRegiments": null,
+    "name": "Varangian Veterans",
+    "provisionCost": 3,
+    "requirements": [
+      {
+        "detail": "Can recruit Varangian Veterans as Men-at-Arms",
+        "key": "unlock_maa_varangian_veterans",
+        "kind": "cultural_parameter",
+        "name": "Cultural tradition",
+        "negated": false
+      },
+      {
+        "detail": "Heavy Infantry, Heavy Cavalry and Elephant Cavalry Men-at-Arms cannot be recruited by Rulers of this Culture",
+        "key": "strength_in_numbers_heavy_maa_ban",
+        "kind": "cultural_parameter",
+        "name": "Strength In Numbers ban",
+        "negated": true
+      }
+    ],
+    "siegeTier": null,
+    "siegeValue": null,
+    "sourceFile": "01_fp1_maa_types.txt",
+    "specialRecruitOnly": false,
+    "stack": 100,
+    "stats": {
+      "damage": 45,
+      "pursuit": 10,
+      "screen": 0,
+      "toughness": 30
+    },
+    "terrainBonus": {
+      "farmlands": {
+        "damage": 6,
+        "toughness": 4
+      },
+      "hills": {
+        "damage": 6,
+        "toughness": 4
+      },
+      "plains": {
+        "damage": 6,
+        "toughness": 4
+      }
+    },
+    "type": "heavy_infantry",
+    "typeName": "Heavy Infantry",
+    "winterBonus": {
+      "harsh_winter": {
+        "screen": 6,
+        "toughness": 6
+      },
+      "normal_winter": {
+        "screen": 6,
+        "toughness": 6
+      }
+    }
+  },
+  {
+    "buyCost": {
+      "gold": 99.0
+    },
+    "counters": {
+      "archers": 1,
+      "peasant_militia": 2,
+      "pikemen": 1
+    },
+    "dlc": null,
+    "features": [],
+    "flavor": "At home in the hills and forests of Central Europe, the Zbrojnosh are feared far and wide.",
+    "highMaintenance": {
+      "gold": 1.32
+    },
+    "holdingBonus": {},
+    "icon": "heavy_infantry",
+    "id": "zbrojnosh",
+    "lowMaintenance": {
+      "gold": 0.44
+    },
+    "mainPhase": true,
+    "maxRegiments": null,
+    "maxSizeBonus": null,
+    "maxSubRegiments": null,
+    "name": "Zbrojnosh",
+    "provisionCost": 12,
+    "requirements": [
+      {
+        "detail": "Can recruit Zbrojnosh as Men-at-Arms",
+        "key": "unlock_maa_zbrojnosh",
+        "kind": "cultural_parameter",
+        "name": "Cultural tradition",
+        "negated": false
+      },
+      {
+        "detail": "Heavy Infantry, Heavy Cavalry and Elephant Cavalry Men-at-Arms cannot be recruited by Rulers of this Culture",
+        "key": "strength_in_numbers_heavy_maa_ban",
+        "kind": "cultural_parameter",
+        "name": "Strength In Numbers ban",
+        "negated": true
+      }
+    ],
+    "siegeTier": null,
+    "siegeValue": null,
+    "sourceFile": "00_cultural_maa_types.txt",
+    "specialRecruitOnly": false,
+    "stack": 100,
+    "stats": {
+      "damage": 34,
+      "pursuit": 0,
+      "screen": 10,
+      "toughness": 20
+    },
+    "terrainBonus": {
+      "forest": {
+        "damage": 6
+      },
+      "hills": {
+        "damage": 8,
+        "toughness": 5
+      },
+      "mountains": {
+        "damage": 6
+      },
+      "wetlands": {
+        "damage": -10,
+        "pursuit": -10
+      }
+    },
+    "type": "heavy_infantry",
+    "typeName": "Heavy Infantry",
+    "winterBonus": {}
+  },
+  {
+    "buyCost": {
+      "gold": 85.5
+    },
+    "counters": {
+      "camel_cavalry": 1,
+      "heavy_cavalry": 1,
+      "light_cavalry": 1,
+      "peasant_militia": 1,
+      "pikemen": 0.5
+    },
+    "dlc": "The Great People",
+    "features": [],
+    "flavor": "Equipped with enormous two-handed swords, these soldiers are trained to use their blades to counter cavalry with a dazzling array of thrusts, slashes, and feints.",
+    "highMaintenance": {
+      "gold": 1.26
+    },
+    "holdingBonus": {},
+    "icon": "zhanmadao_infantry",
+    "id": "zhanmadao_infantry",
+    "lowMaintenance": {
+      "gold": 0.42
+    },
+    "mainPhase": true,
+    "maxRegiments": null,
+    "maxSizeBonus": null,
+    "maxSubRegiments": null,
+    "name": "Zhanmadao Infantry",
+    "provisionCost": 12,
+    "requirements": [
+      {
+        "detail": "Can recruit Zhanmadao Infantry as Men-at-Arms",
+        "key": "unlock_zhanmadao",
+        "kind": "cultural_parameter",
+        "name": "Cultural tradition",
+        "negated": false
+      },
+      {
+        "detail": "Heavy Infantry, Heavy Cavalry and Elephant Cavalry Men-at-Arms cannot be recruited by Rulers of this Culture",
+        "key": "strength_in_numbers_heavy_maa_ban",
+        "kind": "cultural_parameter",
+        "name": "Strength In Numbers ban",
+        "negated": true
+      }
+    ],
+    "siegeTier": null,
+    "siegeValue": null,
+    "sourceFile": "10_tgp_maa_types.txt",
+    "specialRecruitOnly": false,
+    "stack": 50,
+    "stats": {
+      "damage": 85,
+      "pursuit": 0,
+      "screen": 0,
+      "toughness": 35
+    },
+    "terrainBonus": {
+      "farmlands": {
+        "damage": 12,
+        "toughness": 8
+      },
+      "plains": {
+        "damage": 12,
+        "toughness": 8
+      },
+      "terraced_hills": {
+        "damage": 12,
+        "toughness": 8
+      }
+    },
+    "type": "heavy_infantry",
+    "typeName": "Heavy Infantry",
+    "winterBonus": {}
+  },
+  {
+    "buyCost": {
+      "gold": 170
+    },
+    "counters": {
+      "archers": 2,
+      "gunpowder": 2
+    },
+    "dlc": null,
+    "features": [],
+    "flavor": "Retinue Men-at-Arms\nAtop swift steeds, these elite horsemen can outrun any foe and strike always where least expected and least welcome.",
+    "highMaintenance": {
+      "gold": 1.05
+    },
+    "holdingBonus": {},
+    "icon": "accolade_maa_outriders",
+    "id": "accolade_maa_outriders",
+    "lowMaintenance": {
+      "gold": 0.35
+    },
+    "mainPhase": true,
+    "maxRegiments": 1,
+    "maxSizeBonus": null,
+    "maxSubRegiments": null,
+    "name": "Retinue Outriders",
+    "provisionCost": 7,
+    "requirements": [],
+    "siegeTier": null,
+    "siegeValue": null,
+    "sourceFile": "01_accolade_maa_types.txt",
+    "specialRecruitOnly": false,
+    "stack": 100,
+    "stats": {
+      "damage": 30,
+      "pursuit": 40,
+      "screen": 40,
+      "toughness": 20
+    },
+    "terrainBonus": {
+      "desert_mountains": {
+        "damage": -8,
+        "pursuit": -10
+      },
+      "drylands": {
+        "damage": 30
+      },
+      "hills": {
+        "damage": -3
+      },
+      "mountains": {
+        "damage": -5,
+        "pursuit": -10
+      },
+      "plains": {
+        "damage": 30
+      },
+      "wetlands": {
+        "damage": -8,
+        "pursuit": -15,
+        "screen": -15,
+        "toughness": -5
+      }
+    },
+    "type": "light_cavalry",
+    "typeName": "Light Cavalry",
+    "winterBonus": {
+      "harsh_winter": {
+        "damage": -5,
+        "toughness": -2
+      }
+    }
+  },
+  {
+    "buyCost": {
+      "gold": 85
+    },
+    "counters": {
+      "archer_cavalry": 0.5,
+      "archers": 1,
+      "gunpowder": 1
+    },
+    "dlc": "Roads to Power",
+    "features": [],
+    "flavor": "Fast-riding and clever in their use of harsh terrain, yet clad in solid armor, these fierce nobles can serve as both harassing cavalry and a formidable vanguard.",
+    "highMaintenance": {
+      "gold": 1.05
+    },
+    "holdingBonus": {},
+    "icon": "ayrudzi",
+    "id": "ayrudzi",
+    "lowMaintenance": {
+      "gold": 0.35
+    },
+    "mainPhase": true,
+    "maxRegiments": null,
+    "maxSizeBonus": null,
+    "maxSubRegiments": null,
+    "name": "Ayrudzi",
+    "provisionCost": 7,
+    "requirements": [
+      {
+        "detail": "Can recruit Ayrudzi as Men-at-Arms",
+        "key": "unlock_maa_ayrudzi",
+        "kind": "cultural_parameter",
+        "name": "Cultural tradition",
+        "negated": false
+      }
+    ],
+    "siegeTier": null,
+    "siegeValue": null,
+    "sourceFile": "07_ep3_maa_types.txt",
+    "specialRecruitOnly": false,
+    "stack": 50,
+    "stats": {
+      "damage": 50,
+      "pursuit": 20,
+      "screen": 30,
+      "toughness": 30
+    },
+    "terrainBonus": {
+      "drylands": {
+        "damage": 10
+      },
+      "hills": {
+        "damage": 30,
+        "toughness": 20
+      },
+      "jungle": {
+        "damage": -30,
+        "pursuit": -20,
+        "screen": -25,
+        "toughness": -20
+      },
+      "mountains": {
+        "damage": 20,
+        "toughness": 10
+      },
+      "plains": {
+        "damage": 10
+      },
+      "wetlands": {
+        "damage": -30,
+        "pursuit": -20,
+        "screen": -25,
+        "toughness": -20
+      }
+    },
+    "type": "light_cavalry",
+    "typeName": "Light Cavalry",
+    "winterBonus": {
+      "harsh_winter": {
+        "damage": -5
+      }
+    }
+  },
+  {
+    "buyCost": {
+      "gold": 85
+    },
+    "counters": {
+      "archers": 1,
+      "gunpowder": 1
+    },
+    "dlc": null,
+    "features": [],
+    "flavor": "Unlike most cavalry, Iberian Caballeros are at home both on flat plains and in rough hilly terrain.",
+    "highMaintenance": {
+      "gold": 1.15
+    },
+    "holdingBonus": {},
+    "icon": "light_cavalry",
+    "id": "caballero",
+    "lowMaintenance": {
+      "gold": 0.39
+    },
+    "mainPhase": true,
+    "maxRegiments": null,
+    "maxSizeBonus": null,
+    "maxSubRegiments": null,
+    "name": "Caballeros",
+    "provisionCost": 7,
+    "requirements": [],
+    "siegeTier": null,
+    "siegeValue": null,
+    "sourceFile": "00_cultural_maa_types.txt",
+    "specialRecruitOnly": false,
+    "stack": 100,
+    "stats": {
+      "damage": 22,
+      "pursuit": 30,
+      "screen": 50,
+      "toughness": 16
+    },
+    "terrainBonus": {
+      "desert_mountains": {
+        "damage": -12,
+        "pursuit": -20
+      },
+      "drylands": {
+        "damage": 10
+      },
+      "hills": {
+        "damage": 15,
+        "toughness": 10
+      },
+      "mountains": {
+        "damage": -8,
+        "pursuit": -10
+      },
+      "plains": {
+        "damage": 10
+      },
+      "wetlands": {
+        "damage": -15,
+        "pursuit": -20,
+        "screen": -20,
+        "toughness": -10
+      }
+    },
+    "type": "light_cavalry",
+    "typeName": "Light Cavalry",
+    "winterBonus": {
+      "harsh_winter": {
+        "damage": -5,
+        "toughness": -2
+      }
+    }
+  },
+  {
+    "buyCost": {
+      "gold": 110.5
+    },
+    "counters": {
+      "archers": 1,
+      "gunpowder": 1
+    },
+    "dlc": null,
+    "features": [],
+    "flavor": "Outremer knights have mastered both European horsemenship and Levantine desert tactics.",
+    "highMaintenance": {
+      "gold": 1.36
+    },
+    "holdingBonus": {},
+    "icon": "light_cavalry",
+    "id": "chasseur",
+    "lowMaintenance": {
+      "gold": 0.45
+    },
+    "mainPhase": true,
+    "maxRegiments": null,
+    "maxSizeBonus": null,
+    "maxSubRegiments": null,
+    "name": "Chasseurs",
+    "provisionCost": 15,
+    "requirements": [],
+    "siegeTier": null,
+    "siegeValue": null,
+    "sourceFile": "00_cultural_maa_types.txt",
+    "specialRecruitOnly": false,
+    "stack": 100,
+    "stats": {
+      "damage": 40,
+      "pursuit": 40,
+      "screen": 15,
+      "toughness": 15
+    },
+    "terrainBonus": {
+      "desert": {
+        "damage": 10
+      },
+      "desert_mountains": {
+        "damage": -25
+      },
+      "drylands": {
+        "damage": 10
+      },
+      "hills": {
+        "damage": -5
+      },
+      "mountains": {
+        "damage": -25
+      },
+      "plains": {
+        "damage": 10
+      },
+      "wetlands": {
+        "damage": -30,
+        "pursuit": -25,
+        "screen": -15,
+        "toughness": -10
+      }
+    },
+    "type": "light_cavalry",
+    "typeName": "Light Cavalry",
+    "winterBonus": {
+      "harsh_winter": {
+        "damage": -5,
+        "toughness": -2
+      }
+    }
+  },
+  {
+    "buyCost": {
+      "gold": 93.5
+    },
+    "counters": {
+      "archers": 1,
+      "gunpowder": 1
+    },
+    "dlc": null,
+    "features": [],
+    "flavor": "Fast and agile, Celtic Hobelars can easily raid the forests and hills other cavalry avoid.",
+    "highMaintenance": {
+      "gold": 1.15
+    },
+    "holdingBonus": {},
+    "icon": "light_cavalry",
+    "id": "hobelar",
+    "lowMaintenance": {
+      "gold": 0.39
+    },
+    "mainPhase": true,
+    "maxRegiments": null,
+    "maxSizeBonus": null,
+    "maxSubRegiments": null,
+    "name": "Hobelars",
+    "provisionCost": 7,
+    "requirements": [],
+    "siegeTier": null,
+    "siegeValue": null,
+    "sourceFile": "00_cultural_maa_types.txt",
+    "specialRecruitOnly": false,
+    "stack": 100,
+    "stats": {
+      "damage": 22,
+      "pursuit": 50,
+      "screen": 30,
+      "toughness": 15
+    },
+    "terrainBonus": {
+      "desert_mountains": {
+        "damage": -15,
+        "pursuit": -30
+      },
+      "forest": {
+        "damage": 15
+      },
+      "hills": {
+        "damage": 10
+      },
+      "mountains": {
+        "damage": -10,
+        "pursuit": -30
+      },
+      "wetlands": {
+        "damage": -10,
+        "pursuit": -20,
+        "screen": -15
+      }
+    },
+    "type": "light_cavalry",
+    "typeName": "Light Cavalry",
+    "winterBonus": {
+      "harsh_winter": {
+        "damage": -5
+      }
+    }
+  },
+  {
+    "buyCost": {
+      "gold": 110.5
+    },
+    "counters": {
+      "archers": 1,
+      "gunpowder": 1
+    },
+    "dlc": null,
+    "features": [],
+    "flavor": "Masters of raiding, the infamous Konni light cavalry of Eastern Europe can make short work of a fleeing enemy army.",
+    "highMaintenance": {
+      "gold": 1.36
+    },
+    "holdingBonus": {},
+    "icon": "light_cavalry",
+    "id": "hussar",
+    "lowMaintenance": {
+      "gold": 0.45
+    },
+    "mainPhase": true,
+    "maxRegiments": null,
+    "maxSizeBonus": null,
+    "maxSubRegiments": null,
+    "name": "Konni",
+    "provisionCost": 7,
+    "requirements": [
+      {
+        "detail": "Can recruit Konni as Men-at-Arms",
+        "key": "unlock_maa_hussar",
+        "kind": "cultural_parameter",
+        "name": "Cultural tradition",
+        "negated": false
+      }
+    ],
+    "siegeTier": null,
+    "siegeValue": null,
+    "sourceFile": "00_cultural_maa_types.txt",
+    "specialRecruitOnly": false,
+    "stack": 100,
+    "stats": {
+      "damage": 25,
+      "pursuit": 60,
+      "screen": 20,
+      "toughness": 15
+    },
+    "terrainBonus": {
+      "desert_mountains": {
+        "damage": -20,
+        "pursuit": -50
+      },
+      "drylands": {
+        "damage": 15
+      },
+      "hills": {
+        "damage": -15
+      },
+      "mountains": {
+        "damage": -15,
+        "pursuit": -40
+      },
+      "plains": {
+        "damage": 15
+      },
+      "wetlands": {
+        "damage": -15,
+        "pursuit": -50,
+        "screen": -20,
+        "toughness": -10
+      }
+    },
+    "type": "light_cavalry",
+    "typeName": "Light Cavalry",
+    "winterBonus": {
+      "harsh_winter": {
+        "damage": -5
+      }
+    }
+  },
+  {
+    "buyCost": {
+      "gold": 85
+    },
+    "counters": {
+      "archers": 1,
+      "gunpowder": 1
+    },
+    "dlc": null,
+    "features": [],
+    "flavor": "Light and swift, these horsemen are excellent at flanking, and devastating when pursuing routing enemies.",
+    "highMaintenance": {
+      "gold": 1.05
+    },
+    "holdingBonus": {},
+    "icon": "light_horsemen",
+    "id": "light_horsemen",
+    "lowMaintenance": {
+      "gold": 0.35
+    },
+    "mainPhase": true,
+    "maxRegiments": null,
+    "maxSizeBonus": null,
+    "maxSubRegiments": null,
+    "name": "Light Horsemen",
+    "provisionCost": 7,
+    "requirements": [
+      {
+        "detail": null,
+        "key": "government_is_nomadic",
+        "kind": "government_flag",
+        "name": "Nomadic",
+        "negated": true
+      },
+      {
+        "detail": null,
+        "key": "government_is_herder",
+        "kind": "government_flag",
+        "name": "Herder",
+        "negated": true
+      }
+    ],
+    "siegeTier": null,
+    "siegeValue": null,
+    "sourceFile": "00_maa_types.txt",
+    "specialRecruitOnly": false,
+    "stack": 100,
+    "stats": {
+      "damage": 22,
+      "pursuit": 30,
+      "screen": 30,
+      "toughness": 15
+    },
+    "terrainBonus": {
+      "desert_mountains": {
+        "damage": -15,
+        "pursuit": -20
+      },
+      "drylands": {
+        "damage": 15
+      },
+      "hills": {
+        "damage": -5
+      },
+      "mountains": {
+        "damage": -10,
+        "pursuit": -20
+      },
+      "plains": {
+        "damage": 15
+      },
+      "wetlands": {
+        "damage": -15,
+        "pursuit": -30,
+        "screen": -30,
+        "toughness": -10
+      }
+    },
+    "type": "light_cavalry",
+    "typeName": "Light Cavalry",
+    "winterBonus": {
+      "harsh_winter": {
+        "damage": -5,
+        "toughness": -2
+      }
+    }
+  },
+  {
+    "buyCost": {
+      "gold": 63.0
+    },
+    "counters": {
+      "archers": 1,
+      "gunpowder": 1
+    },
+    "dlc": "Roads to Power",
+    "features": [],
+    "flavor": "Scum of the earth, these men have forsaken lawfulness for a life of crime.",
+    "highMaintenance": {
+      "gold": 0.63
+    },
+    "holdingBonus": {},
+    "icon": "light_cavalry",
+    "id": "maa_marauders",
+    "lowMaintenance": {
+      "gold": 0.21
+    },
+    "mainPhase": true,
+    "maxRegiments": null,
+    "maxSizeBonus": null,
+    "maxSubRegiments": null,
+    "name": "Marauders",
+    "provisionCost": 7,
+    "requirements": [],
+    "siegeTier": null,
+    "siegeValue": null,
+    "sourceFile": "07_ep3_maa_types.txt",
+    "specialRecruitOnly": true,
+    "stack": 50,
+    "stats": {
+      "damage": 30,
+      "pursuit": 40,
+      "screen": 30,
+      "toughness": 15
+    },
+    "terrainBonus": {
+      "drylands": {
+        "damage": 15
+      },
+      "farmlands": {
+        "damage": 25
+      },
+      "plains": {
+        "damage": 15
+      }
+    },
+    "type": "light_cavalry",
+    "typeName": "Light Cavalry",
+    "winterBonus": {}
+  },
+  {
+    "buyCost": {
+      "gold": 85
+    },
+    "counters": {
+      "archers": 1,
+      "gunpowder": 1
+    },
+    "dlc": null,
+    "features": [],
+    "flavor": "These riders have honed their skills during a lifetime in close connection with the desert and cover their faces with the Litham veil, protecting them from the sand and from recognition by the enemy.",
+    "highMaintenance": {
+      "gold": 1.15
+    },
+    "holdingBonus": {},
+    "icon": "light_cavalry",
+    "id": "mulaththamun",
+    "lowMaintenance": {
+      "gold": 0.39
+    },
+    "mainPhase": true,
+    "maxRegiments": null,
+    "maxSizeBonus": null,
+    "maxSubRegiments": null,
+    "name": "Mulathamūn",
+    "provisionCost": 7,
+    "requirements": [
+      {
+        "detail": "Can recruit Mulathamūn as Men-at-Arms",
+        "key": "unlock_maa_mulaththamun",
+        "kind": "cultural_parameter",
+        "name": "Cultural tradition",
+        "negated": false
+      }
+    ],
+    "siegeTier": null,
+    "siegeValue": null,
+    "sourceFile": "00_cultural_maa_types.txt",
+    "specialRecruitOnly": false,
+    "stack": 100,
+    "stats": {
+      "damage": 22,
+      "pursuit": 30,
+      "screen": 40,
+      "toughness": 15
+    },
+    "terrainBonus": {
+      "desert": {
+        "damage": 10,
+        "pursuit": 10,
+        "screen": 20,
+        "toughness": 5
+      },
+      "desert_mountains": {
+        "damage": -12,
+        "pursuit": -20
+      },
+      "drylands": {
+        "damage": 10,
+        "pursuit": 5,
+        "screen": 10,
+        "toughness": 5
+      },
+      "mountains": {
+        "damage": -8,
+        "pursuit": -10
+      },
+      "oasis": {
+        "damage": 10
+      },
+      "plains": {
+        "damage": 10,
+        "pursuit": 5,
+        "screen": 5,
+        "toughness": 3
+      },
+      "wetlands": {
+        "damage": -15,
+        "pursuit": -20,
+        "screen": -20,
+        "toughness": -10
+      }
+    },
+    "type": "light_cavalry",
+    "typeName": "Light Cavalry",
+    "winterBonus": {
+      "harsh_winter": {
+        "damage": -5,
+        "toughness": -2
+      }
+    }
+  },
+  {
+    "buyCost": {
+      "gold": 90
+    },
+    "counters": {
+      "archers": 1,
+      "gunpowder": 1,
+      "heavy_infantry": 1
+    },
+    "dlc": null,
+    "features": [],
+    "flavor": "Sahel Riders are mounted warriors who use light quilted armor and javelins to devastate their enemies",
+    "highMaintenance": {
+      "gold": 1.15
+    },
+    "holdingBonus": {},
+    "icon": "light_cavalry",
+    "id": "sahel_horsemen",
+    "lowMaintenance": {
+      "gold": 0.39
+    },
+    "mainPhase": true,
+    "maxRegiments": null,
+    "maxSizeBonus": null,
+    "maxSubRegiments": null,
+    "name": "Sahel Horsemen",
+    "provisionCost": 7,
+    "requirements": [],
+    "siegeTier": null,
+    "siegeValue": null,
+    "sourceFile": "00_cultural_maa_types.txt",
+    "specialRecruitOnly": false,
+    "stack": 100,
+    "stats": {
+      "damage": 22,
+      "pursuit": 30,
+      "screen": 30,
+      "toughness": 15
+    },
+    "terrainBonus": {
+      "desert": {
+        "damage": 10
+      },
+      "desert_mountains": {
+        "damage": -10,
+        "pursuit": -20
+      },
+      "drylands": {
+        "damage": 15,
+        "toughness": 3
+      },
+      "floodplains": {
+        "damage": 15,
+        "toughness": 3
+      },
+      "hills": {
+        "damage": -10,
+        "pursuit": -10
+      },
+      "mountains": {
+        "damage": -15,
+        "pursuit": -20
+      },
+      "oasis": {
+        "damage": 10
+      },
+      "wetlands": {
+        "damage": -15,
+        "pursuit": -30,
+        "screen": -30,
+        "toughness": -10
+      }
+    },
+    "type": "light_cavalry",
+    "typeName": "Light Cavalry",
+    "winterBonus": {
+      "harsh_winter": {
+        "damage": -5,
+        "toughness": -2
+      }
+    }
+  },
+  {
+    "buyCost": {
+      "gold": 76.5
+    },
+    "counters": {
+      "archers": 1,
+      "gunpowder": 1
+    },
+    "dlc": "Khans of the Steppe",
+    "features": [],
+    "flavor": "Though outfitted as scouts, these outriders rarely hesitate to charge isolated enemies and wreak swift violence on the unwary.",
+    "highMaintenance": {
+      "gold": 0.94
+    },
+    "holdingBonus": {},
+    "icon": "steppe_raiders",
+    "id": "steppe_raiders",
+    "lowMaintenance": {
+      "gold": 0.32
+    },
+    "mainPhase": true,
+    "maxRegiments": null,
+    "maxSizeBonus": null,
+    "maxSubRegiments": null,
+    "name": "Steppe Raiders",
+    "provisionCost": 7,
+    "requirements": [],
+    "siegeTier": null,
+    "siegeValue": null,
+    "sourceFile": "09_mpo_maa_types.txt",
+    "specialRecruitOnly": false,
+    "stack": 100,
+    "stats": {
+      "damage": 22,
+      "pursuit": 30,
+      "screen": 30,
+      "toughness": 15
+    },
+    "terrainBonus": {
+      "desert": {
+        "damage": 10
+      },
+      "desert_mountains": {
+        "damage": -5,
+        "pursuit": -10
+      },
+      "drylands": {
+        "damage": 15
+      },
+      "forest": {
+        "damage": 5
+      },
+      "mountains": {
+        "damage": -5,
+        "pursuit": -10
+      },
+      "plains": {
+        "damage": 15
+      },
+      "steppe": {
+        "damage": 15
+      },
+      "taiga": {
+        "damage": 5
+      },
+      "wetlands": {
+        "damage": -10,
+        "pursuit": -15,
+        "screen": -15,
+        "toughness": -5
+      }
+    },
+    "type": "light_cavalry",
+    "typeName": "Light Cavalry",
+    "winterBonus": {}
+  },
+  {
+    "buyCost": {
+      "gold": 93.5
+    },
+    "counters": {
+      "archers": 1,
+      "gunpowder": 1,
+      "heavy_infantry": 1
+    },
+    "dlc": "Legacy of Persia",
+    "features": [],
+    "flavor": "This flexible cavalry force combines sword, spear and bow to defend their mountainous homelands from outsiders.",
+    "highMaintenance": {
+      "gold": 1.15
+    },
+    "holdingBonus": {},
+    "icon": "tawashi",
+    "id": "tawashi",
+    "lowMaintenance": {
+      "gold": 0.39
+    },
+    "mainPhase": true,
+    "maxRegiments": null,
+    "maxSizeBonus": null,
+    "maxSubRegiments": null,
+    "name": "Tawashi",
+    "provisionCost": 15,
+    "requirements": [
+      {
+        "detail": null,
+        "key": "landless_adventurer_government",
+        "kind": "government",
+        "name": "Adventurer",
+        "negated": false
+      },
+      {
+        "detail": "Can recruit Tawashi as Men-at-Arms",
+        "key": "unlock_maa_tawashi",
+        "kind": "cultural_parameter",
+        "name": "Cultural tradition",
+        "negated": false
+      },
+      {
+        "detail": "Can recruit Tawashi as Men-at-Arms",
+        "key": "unlock_maa_tawashi",
+        "kind": "cultural_parameter",
+        "name": "Cultural tradition",
+        "negated": false
+      }
+    ],
+    "siegeTier": null,
+    "siegeValue": null,
+    "sourceFile": "00_fp3_maa_types.txt",
+    "specialRecruitOnly": false,
+    "stack": 100,
+    "stats": {
+      "damage": 25,
+      "pursuit": 30,
+      "screen": 30,
+      "toughness": 15
+    },
+    "terrainBonus": {
+      "desert_mountains": {
+        "damage": 10,
+        "pursuit": 10
+      },
+      "drylands": {
+        "damage": 10
+      },
+      "hills": {
+        "damage": 10
+      },
+      "mountains": {
+        "damage": 10,
+        "pursuit": 10
+      },
+      "plains": {
+        "damage": 10
+      },
+      "wetlands": {
+        "damage": -15,
+        "pursuit": -30,
+        "screen": -30,
+        "toughness": -10
+      }
+    },
+    "type": "light_cavalry",
+    "typeName": "Light Cavalry",
+    "winterBonus": {
+      "harsh_winter": {
+        "damage": -5,
+        "toughness": -3
+      }
+    }
+  },
+  {
+    "buyCost": {
+      "gold": 102.0
+    },
+    "counters": {
+      "archers": 1,
+      "gunpowder": 1
+    },
+    "dlc": null,
+    "features": [],
+    "flavor": "Sworn by ancient oaths, these Brythonic horsemen ride as their lord’s loyal spear and shield.",
+    "highMaintenance": {
+      "gold": 1.26
+    },
+    "holdingBonus": {},
+    "icon": "teulu",
+    "id": "teulu",
+    "lowMaintenance": {
+      "gold": 0.42
+    },
+    "mainPhase": true,
+    "maxRegiments": null,
+    "maxSizeBonus": null,
+    "maxSubRegiments": null,
+    "name": "Teulu",
+    "provisionCost": 3,
+    "requirements": [
+      {
+        "detail": null,
+        "key": "heritage_brythonic",
+        "kind": "cultural_pillar",
+        "name": "Heritage Brythonic",
+        "negated": false
+      }
+    ],
+    "siegeTier": null,
+    "siegeValue": null,
+    "sourceFile": "00_cultural_maa_types.txt",
+    "specialRecruitOnly": false,
+    "stack": 100,
+    "stats": {
+      "damage": 25,
+      "pursuit": 35,
+      "screen": 30,
+      "toughness": 25
+    },
+    "terrainBonus": {
+      "desert_mountains": {
+        "damage": -15,
+        "pursuit": -20
+      },
+      "forest": {
+        "pursuit": 5,
+        "toughness": 10
+      },
+      "hills": {
+        "pursuit": 5,
+        "toughness": 10
+      },
+      "mountains": {
+        "damage": -10,
+        "pursuit": -20
+      },
+      "plains": {
+        "damage": 10,
+        "pursuit": 5,
+        "toughness": 10
+      },
+      "wetlands": {
+        "damage": -15,
+        "pursuit": -30,
+        "screen": -30,
+        "toughness": -10
+      }
+    },
+    "type": "light_cavalry",
+    "typeName": "Light Cavalry",
+    "winterBonus": {}
+  },
+  {
+    "buyCost": null,
+    "counters": {},
+    "dlc": "Khans of the Steppe",
+    "features": [],
+    "flavor": "Born on a saddle, Horde Riders are trained from birth to ride into battle.",
+    "highMaintenance": null,
+    "holdingBonus": {},
+    "icon": "nomadic_riders",
+    "id": "nomadic_riders",
+    "lowMaintenance": null,
+    "mainPhase": true,
+    "maxRegiments": null,
+    "maxSizeBonus": null,
+    "maxSubRegiments": null,
+    "name": "Horde Riders",
+    "provisionCost": 7,
+    "requirements": [],
+    "siegeTier": null,
+    "siegeValue": null,
+    "sourceFile": "09_mpo_maa_types.txt",
+    "specialRecruitOnly": true,
+    "stack": 100,
+    "stats": {
+      "damage": 12,
+      "pursuit": 10,
+      "screen": 15,
+      "toughness": 12
+    },
+    "terrainBonus": {
+      "drylands": {
+        "damage": 4,
+        "pursuit": 6
+      },
+      "plains": {
+        "damage": 4,
+        "pursuit": 6
+      },
+      "steppe": {
+        "damage": 8,
+        "pursuit": 10
+      }
+    },
+    "type": "nomadic_horde",
+    "typeName": "Nomadic Horde",
+    "winterBonus": {}
+  },
+  {
+    "buyCost": {
+      "gold": 0
+    },
+    "counters": {
+      "camel_cavalry": 1,
+      "heavy_cavalry": 0.5,
+      "light_cavalry": 1
+    },
+    "dlc": null,
+    "features": [],
+    "flavor": "Ready to fight for their land and dignity. Pushed to the brink of desperation, they will target any noble landlord to take what's due.",
+    "highMaintenance": {
+      "gold": 0
+    },
+    "holdingBonus": {},
+    "icon": "pikemen_militia",
+    "id": "pikemen_militia",
+    "lowMaintenance": {
+      "gold": 0
+    },
+    "mainPhase": true,
+    "maxRegiments": null,
+    "maxSizeBonus": null,
+    "maxSubRegiments": null,
+    "name": "Pikemen Militia",
+    "provisionCost": 12,
+    "requirements": [],
+    "siegeTier": null,
+    "siegeValue": null,
+    "sourceFile": "00_maa_types.txt",
+    "specialRecruitOnly": true,
+    "stack": 100,
+    "stats": {
+      "damage": 12,
+      "pursuit": 10,
+      "screen": 0,
+      "toughness": 16
+    },
+    "terrainBonus": {
+      "desert_mountains": {
+        "toughness": 8
+      },
+      "farmlands": {
+        "toughness": 8
+      },
+      "floodplains": {
+        "toughness": 8
+      },
+      "hills": {
+        "toughness": 4
+      },
+      "mountains": {
+        "toughness": 8
+      },
+      "terraced_hills": {
+        "toughness": 8
+      }
+    },
+    "type": "peasant_militia",
+    "typeName": "Peasant Militia",
+    "winterBonus": {}
+  },
+  {
+    "buyCost": {
+      "gold": 150
+    },
+    "counters": {
+      "camel_cavalry": 2,
+      "elephant_cavalry": 2,
+      "heavy_cavalry": 2,
+      "light_cavalry": 2
+    },
+    "dlc": null,
+    "features": [],
+    "flavor": "Retinue Men-at-Arms\nBedecked in fine armor and bearing long pikes, these infantrymen form the unbreakable core of their liege's army.",
+    "highMaintenance": {
+      "gold": 0.9
+    },
+    "holdingBonus": {},
+    "icon": "accolade_maa_pikes",
+    "id": "accolade_maa_pikes",
+    "lowMaintenance": {
+      "gold": 0.3
+    },
+    "mainPhase": true,
+    "maxRegiments": 1,
+    "maxSizeBonus": null,
+    "maxSubRegiments": null,
+    "name": "Retinue Pikemen",
+    "provisionCost": 3,
+    "requirements": [],
+    "siegeTier": null,
+    "siegeValue": null,
+    "sourceFile": "01_accolade_maa_types.txt",
+    "specialRecruitOnly": false,
+    "stack": 100,
+    "stats": {
+      "damage": 30,
+      "pursuit": 0,
+      "screen": 0,
+      "toughness": 30
+    },
+    "terrainBonus": {
+      "desert_mountains": {
+        "toughness": 24
+      },
+      "hills": {
+        "toughness": 16
+      },
+      "mountains": {
+        "toughness": 24
+      }
+    },
+    "type": "pikemen",
+    "typeName": "Spearmen",
+    "winterBonus": {}
+  },
+  {
+    "buyCost": {
+      "gold": 50.25
+    },
+    "counters": {
+      "archers": 1,
+      "light_cavalry": 1
+    },
+    "dlc": "Northern Lords",
+    "features": [],
+    "flavor": "The Bondí are part of a class of free landholders, often competent sailors, that use longships to trade or to go viking. They fight using spears and shields.",
+    "highMaintenance": {
+      "gold": 0.6
+    },
+    "holdingBonus": {},
+    "icon": "bondi",
+    "id": "bondi",
+    "lowMaintenance": {
+      "gold": 0.2
+    },
+    "mainPhase": true,
+    "maxRegiments": null,
+    "maxSizeBonus": null,
+    "maxSubRegiments": null,
+    "name": "Bondí",
+    "provisionCost": 3,
+    "requirements": [
+      {
+        "detail": "Can recruit Bondí as Men-at-Arms",
+        "key": "unlock_maa_bondi",
+        "kind": "cultural_parameter",
+        "name": "Cultural tradition",
+        "negated": false
+      }
+    ],
+    "siegeTier": null,
+    "siegeValue": null,
+    "sourceFile": "01_fp1_maa_types.txt",
+    "specialRecruitOnly": false,
+    "stack": 100,
+    "stats": {
+      "damage": 14,
+      "pursuit": 12,
+      "screen": 0,
+      "toughness": 18
+    },
+    "terrainBonus": {
+      "desert_mountains": {
+        "damage": -4,
+        "pursuit": -6
+      },
+      "farmlands": {
+        "damage": 10,
+        "pursuit": 10,
+        "toughness": 6
+      },
+      "hills": {
+        "damage": -4,
+        "pursuit": -6
+      },
+      "mountains": {
+        "damage": -4,
+        "pursuit": -6
+      },
+      "plains": {
+        "damage": 6,
+        "pursuit": 6,
+        "toughness": 4
+      }
+    },
+    "type": "pikemen",
+    "typeName": "Spearmen",
+    "winterBonus": {
+      "harsh_winter": {
+        "damage": 4,
+        "pursuit": 5
+      },
+      "normal_winter": {
+        "damage": 4,
+        "pursuit": 5
+      }
+    }
+  },
+  {
+    "buyCost": {
+      "gold": 90.0
+    },
+    "counters": {
+      "heavy_cavalry": 2,
+      "light_cavalry": 2,
+      "peasant_militia": 1,
+      "pikemen": 0.5
+    },
+    "dlc": null,
+    "features": [],
+    "flavor": "German Landsknechts can use their massive zweihanders to tear through the massed ranks of enemy spearmen.",
+    "highMaintenance": {
+      "gold": 1.08
+    },
+    "holdingBonus": {},
+    "icon": "pikemen",
+    "id": "landsknecht",
+    "lowMaintenance": {
+      "gold": 0.36
+    },
+    "mainPhase": true,
+    "maxRegiments": null,
+    "maxSizeBonus": null,
+    "maxSubRegiments": null,
+    "name": "Landsknechts",
+    "provisionCost": 3,
+    "requirements": [],
+    "siegeTier": null,
+    "siegeValue": null,
+    "sourceFile": "00_cultural_maa_types.txt",
+    "specialRecruitOnly": false,
+    "stack": 100,
+    "stats": {
+      "damage": 30,
+      "pursuit": 0,
+      "screen": 0,
+      "toughness": 24
+    },
+    "terrainBonus": {
+      "desert_mountains": {
+        "damage": 5,
+        "toughness": 12
+      },
+      "hills": {
+        "damage": 3,
+        "toughness": 8
+      },
+      "mountains": {
+        "damage": 5,
+        "toughness": 12
+      }
+    },
+    "type": "pikemen",
+    "typeName": "Spearmen",
+    "winterBonus": {}
+  },
+  {
+    "buyCost": {
+      "gold": 63.0
+    },
+    "counters": {
+      "camel_cavalry": 1,
+      "elephant_cavalry": 1,
+      "heavy_cavalry": 1,
+      "light_cavalry": 1
+    },
+    "dlc": "Roads to Power",
+    "features": [],
+    "flavor": "Scum of the earth, these men have forsaken lawfulness for a life of crime.",
+    "highMaintenance": {
+      "gold": 0.63
+    },
+    "holdingBonus": {},
+    "icon": "pikemen",
+    "id": "maa_thieves",
+    "lowMaintenance": {
+      "gold": 0.21
+    },
+    "mainPhase": true,
+    "maxRegiments": null,
+    "maxSizeBonus": null,
+    "maxSubRegiments": null,
+    "name": "Looters",
+    "provisionCost": 3,
+    "requirements": [],
+    "siegeTier": null,
+    "siegeValue": null,
+    "sourceFile": "07_ep3_maa_types.txt",
+    "specialRecruitOnly": true,
+    "stack": 50,
+    "stats": {
+      "damage": 30,
+      "pursuit": 10,
+      "screen": 10,
+      "toughness": 20
+    },
+    "terrainBonus": {
+      "desert_mountains": {
+        "toughness": 15
+      },
+      "hills": {
+        "toughness": 10
+      },
+      "mountains": {
+        "toughness": 15
+      }
+    },
+    "type": "pikemen",
+    "typeName": "Spearmen",
+    "winterBonus": {}
+  },
+  {
+    "buyCost": {
+      "gold": 97.5
+    },
+    "counters": {
+      "camel_cavalry": 1,
+      "elephant_cavalry": 1,
+      "heavy_cavalry": 1,
+      "light_cavalry": 1
+    },
+    "dlc": null,
+    "features": [],
+    "flavor": "The mobile formations used by Latin Picchieri make them more deadly than traditional pikemen.",
+    "highMaintenance": {
+      "gold": 1.17
+    },
+    "holdingBonus": {},
+    "icon": "pikemen",
+    "id": "picchieri",
+    "lowMaintenance": {
+      "gold": 0.39
+    },
+    "mainPhase": true,
+    "maxRegiments": null,
+    "maxSizeBonus": null,
+    "maxSubRegiments": null,
+    "name": "Picchieri",
+    "provisionCost": 3,
+    "requirements": [],
+    "siegeTier": null,
+    "siegeValue": null,
+    "sourceFile": "00_cultural_maa_types.txt",
+    "specialRecruitOnly": false,
+    "stack": 100,
+    "stats": {
+      "damage": 40,
+      "pursuit": 0,
+      "screen": 0,
+      "toughness": 24
+    },
+    "terrainBonus": {
+      "desert_mountains": {
+        "toughness": 12
+      },
+      "hills": {
+        "toughness": 10
+      },
+      "mountains": {
+        "toughness": 12
+      }
+    },
+    "type": "pikemen",
+    "typeName": "Spearmen",
+    "winterBonus": {}
+  },
+  {
+    "buyCost": {
+      "gold": 75
+    },
+    "counters": {
+      "camel_cavalry": 1,
+      "elephant_cavalry": 1,
+      "heavy_cavalry": 1,
+      "light_cavalry": 1
+    },
+    "dlc": null,
+    "features": [],
+    "flavor": "Long pikes allow these regiments to form walls of spikes that can stop a cavalry charge dead.",
+    "highMaintenance": {
+      "gold": 0.9
+    },
+    "holdingBonus": {},
+    "icon": "pikemen_unit",
+    "id": "pikemen_unit",
+    "lowMaintenance": {
+      "gold": 0.3
+    },
+    "mainPhase": true,
+    "maxRegiments": null,
+    "maxSizeBonus": null,
+    "maxSubRegiments": null,
+    "name": "Pikemen",
+    "provisionCost": 12,
+    "requirements": [
+      {
+        "detail": null,
+        "key": "government_is_nomadic",
+        "kind": "government_flag",
+        "name": "Nomadic",
+        "negated": true
+      },
+      {
+        "detail": null,
+        "key": "government_is_herder",
+        "kind": "government_flag",
+        "name": "Herder",
+        "negated": true
+      }
+    ],
+    "siegeTier": null,
+    "siegeValue": null,
+    "sourceFile": "00_maa_types.txt",
+    "specialRecruitOnly": false,
+    "stack": 100,
+    "stats": {
+      "damage": 22,
+      "pursuit": 0,
+      "screen": 0,
+      "toughness": 24
+    },
+    "terrainBonus": {
+      "desert_mountains": {
+        "toughness": 12
+      },
+      "hills": {
+        "toughness": 8
+      },
+      "mountains": {
+        "toughness": 12
+      }
+    },
+    "type": "pikemen",
+    "typeName": "Spearmen",
+    "winterBonus": {}
+  },
+  {
+    "buyCost": {
+      "gold": 112.5
+    },
+    "counters": {
+      "heavy_cavalry": 1,
+      "light_cavalry": 1
+    },
+    "dlc": null,
+    "features": [],
+    "flavor": "The incredible discipline of Scottish pikemen lets them easily break enemy charges, even on open plains.",
+    "highMaintenance": {
+      "gold": 1.35
+    },
+    "holdingBonus": {},
+    "icon": "pikemen",
+    "id": "schiltron",
+    "lowMaintenance": {
+      "gold": 0.45
+    },
+    "mainPhase": true,
+    "maxRegiments": null,
+    "maxSizeBonus": null,
+    "maxSubRegiments": null,
+    "name": "Schiltron",
+    "provisionCost": 7,
+    "requirements": [],
+    "siegeTier": null,
+    "siegeValue": null,
+    "sourceFile": "00_cultural_maa_types.txt",
+    "specialRecruitOnly": false,
+    "stack": 100,
+    "stats": {
+      "damage": 36,
+      "pursuit": 0,
+      "screen": 0,
+      "toughness": 28
+    },
+    "terrainBonus": {
+      "desert_mountains": {
+        "toughness": 12
+      },
+      "hills": {
+        "toughness": 8
+      },
+      "mountains": {
+        "toughness": 12
+      },
+      "plains": {
+        "damage": 8
+      }
+    },
+    "type": "pikemen",
+    "typeName": "Spearmen",
+    "winterBonus": {}
+  },
+  {
+    "buyCost": {
+      "gold": 82.5
+    },
+    "counters": {
+      "camel_cavalry": 1,
+      "elephant_cavalry": 1,
+      "heavy_cavalry": 1,
+      "light_cavalry": 1
+    },
+    "dlc": "Roads to Power",
+    "features": [],
+    "flavor": "The tall skouton shields these infantry array against the foe is their namesake. Yet their chief virtue in battle is discipline, which affords them good order in both advance and retreat.",
+    "highMaintenance": {
+      "gold": 0.99
+    },
+    "holdingBonus": {},
+    "icon": "skoutatoi",
+    "id": "skoutatoi",
+    "lowMaintenance": {
+      "gold": 0.33
+    },
+    "mainPhase": true,
+    "maxRegiments": null,
+    "maxSizeBonus": null,
+    "maxSubRegiments": null,
+    "name": "Skoutatoi",
+    "provisionCost": 7,
+    "requirements": [
+      {
+        "detail": "Can recruit Skoutatoi as Men-at-Arms",
+        "key": "unlock_maa_skoutatoi",
+        "kind": "cultural_parameter",
+        "name": "Cultural tradition",
+        "negated": false
+      }
+    ],
+    "siegeTier": null,
+    "siegeValue": null,
+    "sourceFile": "07_ep3_maa_types.txt",
+    "specialRecruitOnly": false,
+    "stack": 100,
+    "stats": {
+      "damage": 22,
+      "pursuit": 0,
+      "screen": 20,
+      "toughness": 26
+    },
+    "terrainBonus": {
+      "desert_mountains": {
+        "toughness": 8
+      },
+      "hills": {
+        "toughness": 8
+      },
+      "mountains": {
+        "toughness": 8
+      },
+      "plains": {
+        "damage": 8
+      }
+    },
+    "type": "pikemen",
+    "typeName": "Spearmen",
+    "winterBonus": {}
+  },
+  {
+    "buyCost": {
+      "piety": 200
+    },
+    "counters": {
+      "heavy_cavalry": 1,
+      "light_cavalry": 1
+    },
+    "dlc": "The Great People",
+    "features": [],
+    "flavor": "Defending the faithful and serving their patrons, these monks' lives of devotion give plentiful time for training, and strong convictions.",
+    "highMaintenance": {
+      "piety": 0.6
+    },
+    "holdingBonus": {},
+    "icon": "warrior_monks",
+    "id": "warrior_monks",
+    "lowMaintenance": {
+      "piety": 0.2
+    },
+    "mainPhase": true,
+    "maxRegiments": null,
+    "maxSizeBonus": null,
+    "maxSubRegiments": null,
+    "name": "Warrior Monks",
+    "provisionCost": 7,
+    "requirements": [
+      {
+        "detail": "Can recruit Warrior Monks as Men-at-Arms",
+        "key": "unlock_warrior_monk_units",
+        "kind": "cultural_parameter",
+        "name": "Cultural tradition",
+        "negated": false
+      }
+    ],
+    "siegeTier": null,
+    "siegeValue": null,
+    "sourceFile": "10_tgp_maa_types.txt",
+    "specialRecruitOnly": false,
+    "stack": 100,
+    "stats": {
+      "damage": 24,
+      "pursuit": 0,
+      "screen": 20,
+      "toughness": 16
+    },
+    "terrainBonus": {
+      "desert_mountains": {
+        "toughness": 8
+      },
+      "hills": {
+        "toughness": 8
+      },
+      "mountains": {
+        "toughness": 8
+      },
+      "plains": {
+        "damage": 8
+      },
+      "terraced_hills": {
+        "toughness": 8
+      }
+    },
+    "type": "pikemen",
+    "typeName": "Spearmen",
+    "winterBonus": {}
+  },
+  {
+    "buyCost": {
+      "gold": 50.25
+    },
+    "counters": {
+      "heavy_cavalry": 0.5,
+      "heavy_infantry": 1,
+      "light_cavalry": 1
+    },
+    "dlc": "Legacy of Persia",
+    "features": [],
+    "flavor": "These Daylamite warriors are a highly flexible force, equally able to form strong shield walls and fan out and hurl their short spears at the enemy.",
+    "highMaintenance": {
+      "gold": 0.6
+    },
+    "holdingBonus": {},
+    "icon": "zupin_spearmen",
+    "id": "zupin_warrior",
+    "lowMaintenance": {
+      "gold": 0.2
+    },
+    "mainPhase": true,
+    "maxRegiments": null,
+    "maxSizeBonus": null,
+    "maxSubRegiments": null,
+    "name": "Zupin Spearmen",
+    "provisionCost": 7,
+    "requirements": [
+      {
+        "detail": null,
+        "key": "landless_adventurer_government",
+        "kind": "government",
+        "name": "Adventurer",
+        "negated": false
+      },
+      {
+        "detail": "Can recruit Zupin Spearmen as Men-at-Arms",
+        "key": "unlock_maa_zupin_warrior",
+        "kind": "cultural_parameter",
+        "name": "Cultural tradition",
+        "negated": false
+      },
+      {
+        "detail": "Can recruit Zupin Spearmen as Men-at-Arms",
+        "key": "unlock_maa_zupin_warrior",
+        "kind": "cultural_parameter",
+        "name": "Cultural tradition",
+        "negated": false
+      }
+    ],
+    "siegeTier": null,
+    "siegeValue": null,
+    "sourceFile": "00_fp3_maa_types.txt",
+    "specialRecruitOnly": false,
+    "stack": 100,
+    "stats": {
+      "damage": 16,
+      "pursuit": 0,
+      "screen": 10,
+      "toughness": 16
+    },
+    "terrainBonus": {
+      "desert_mountains": {
+        "toughness": 12
+      },
+      "forest": {
+        "damage": 4,
+        "pursuit": 4,
+        "toughness": 8
+      },
+      "hills": {
+        "damage": 4,
+        "toughness": 8
+      },
+      "mountains": {
+        "toughness": 12
+      }
+    },
+    "type": "pikemen",
+    "typeName": "Spearmen",
+    "winterBonus": {
+      "normal_winter": {
+        "damage": 4,
+        "pursuit": 5
+      }
+    }
+  },
+  {
+    "buyCost": {
+      "gold": 60
+    },
+    "counters": {},
+    "dlc": "The Great People",
+    "features": [],
+    "flavor": "Large crossbows mounted on a wheeled platform that can launch steel-tipped bolts to impressive distances.",
+    "highMaintenance": {
+      "gold": 0.3
+    },
+    "holdingBonus": {},
+    "icon": "ballista",
+    "id": "ballista",
+    "lowMaintenance": {
+      "gold": 0.1
+    },
+    "mainPhase": false,
+    "maxRegiments": null,
+    "maxSizeBonus": null,
+    "maxSubRegiments": null,
+    "name": "Siege Crossbows",
+    "provisionCost": 6,
+    "requirements": [
+      {
+        "detail": null,
+        "key": "innovation_catapult",
+        "kind": "innovation",
+        "name": "Onager",
+        "negated": false
+      },
+      {
+        "detail": null,
+        "key": "heritage_chinese",
+        "kind": "cultural_pillar",
+        "name": "Heritage Chinese",
+        "negated": false
+      },
+      {
+        "detail": null,
+        "key": "heritage_korean",
+        "kind": "cultural_pillar",
+        "name": "Heritage Korean",
+        "negated": false
+      },
+      {
+        "detail": null,
+        "key": "heritage_japonic",
+        "kind": "cultural_pillar",
+        "name": "Heritage Japonic",
+        "negated": false
+      },
+      {
+        "detail": null,
+        "key": "government_is_nomadic",
+        "kind": "government_flag",
+        "name": "Nomadic",
+        "negated": true
+      },
+      {
+        "detail": null,
+        "key": "government_is_herder",
+        "kind": "government_flag",
+        "name": "Herder",
+        "negated": true
+      }
+    ],
+    "siegeTier": 1,
+    "siegeValue": 0.2,
+    "sourceFile": "10_tgp_maa_types.txt",
+    "specialRecruitOnly": false,
+    "stack": 10,
+    "stats": {
+      "damage": 0,
+      "pursuit": 0,
+      "screen": 0,
+      "toughness": 12
+    },
+    "terrainBonus": {},
+    "type": "siege_weapon",
+    "typeName": "Siege Weapons",
+    "winterBonus": {}
+  },
+  {
+    "buyCost": {
+      "gold": 96.0
+    },
+    "counters": {},
+    "dlc": null,
+    "features": [],
+    "flavor": "No longer constrained by the limits of levers and pulleys, these cannons can blast through fortifications with ease.",
+    "highMaintenance": {
+      "gold": 0.48
+    },
+    "holdingBonus": {},
+    "icon": "bombard",
+    "id": "bombard",
+    "lowMaintenance": {
+      "gold": 0.16
+    },
+    "mainPhase": false,
+    "maxRegiments": null,
+    "maxSizeBonus": null,
+    "maxSubRegiments": null,
+    "name": "Bombards",
+    "provisionCost": 24,
+    "requirements": [
+      {
+        "detail": "Can recruit Handgunners as Men-at-Arms",
+        "key": "unlock_late_medieval_gunpowder_units",
+        "kind": "cultural_parameter",
+        "name": "Cultural tradition",
+        "negated": false
+      },
+      {
+        "detail": null,
+        "key": "heritage_chinese",
+        "kind": "cultural_pillar",
+        "name": "Heritage Chinese",
+        "negated": true
+      },
+      {
+        "detail": null,
+        "key": "heritage_korean",
+        "kind": "cultural_pillar",
+        "name": "Heritage Korean",
+        "negated": true
+      },
+      {
+        "detail": null,
+        "key": "heritage_japonic",
+        "kind": "cultural_pillar",
+        "name": "Heritage Japonic",
+        "negated": true
+      },
+      {
+        "detail": null,
+        "key": "government_is_nomadic",
+        "kind": "government_flag",
+        "name": "Nomadic",
+        "negated": true
+      },
+      {
+        "detail": null,
+        "key": "government_is_herder",
+        "kind": "government_flag",
+        "name": "Herder",
+        "negated": true
+      }
+    ],
+    "siegeTier": 4,
+    "siegeValue": 0.6,
+    "sourceFile": "00_maa_types.txt",
+    "specialRecruitOnly": false,
+    "stack": 10,
+    "stats": {
+      "damage": 0,
+      "pursuit": 0,
+      "screen": 0,
+      "toughness": 12
+    },
+    "terrainBonus": {},
+    "type": "siege_weapon",
+    "typeName": "Siege Weapons",
+    "winterBonus": {}
+  },
+  {
+    "buyCost": {
+      "gold": 121.6
+    },
+    "counters": {},
+    "dlc": "The Great People",
+    "features": [],
+    "flavor": "These relatively small but deadly guns were propped up at the muzzle end and pinned to the ground to deaden the recoil.",
+    "highMaintenance": {
+      "gold": 1.68
+    },
+    "holdingBonus": {},
+    "icon": "cannon",
+    "id": "cannon",
+    "lowMaintenance": {
+      "gold": 0.56
+    },
+    "mainPhase": false,
+    "maxRegiments": null,
+    "maxSizeBonus": null,
+    "maxSubRegiments": null,
+    "name": "Fire Dragon Engines",
+    "provisionCost": 24,
+    "requirements": [
+      {
+        "detail": "Can recruit Handgunners as Men-at-Arms",
+        "key": "unlock_late_medieval_gunpowder_units",
+        "kind": "cultural_parameter",
+        "name": "Cultural tradition",
+        "negated": false
+      },
+      {
+        "detail": null,
+        "key": "heritage_chinese",
+        "kind": "cultural_pillar",
+        "name": "Heritage Chinese",
+        "negated": false
+      },
+      {
+        "detail": null,
+        "key": "heritage_korean",
+        "kind": "cultural_pillar",
+        "name": "Heritage Korean",
+        "negated": false
+      },
+      {
+        "detail": null,
+        "key": "heritage_japonic",
+        "kind": "cultural_pillar",
+        "name": "Heritage Japonic",
+        "negated": false
+      },
+      {
+        "detail": null,
+        "key": "government_is_nomadic",
+        "kind": "government_flag",
+        "name": "Nomadic",
+        "negated": true
+      },
+      {
+        "detail": null,
+        "key": "government_is_herder",
+        "kind": "government_flag",
+        "name": "Herder",
+        "negated": true
+      }
+    ],
+    "siegeTier": 4,
+    "siegeValue": 0.6,
+    "sourceFile": "10_tgp_maa_types.txt",
+    "specialRecruitOnly": false,
+    "stack": 10,
+    "stats": {
+      "damage": 0,
+      "pursuit": 0,
+      "screen": 0,
+      "toughness": 12
+    },
+    "terrainBonus": {},
+    "type": "siege_weapon",
+    "typeName": "Siege Weapons",
+    "winterBonus": {}
+  },
+  {
+    "buyCost": {
+      "gold": 66.0
+    },
+    "counters": {},
+    "dlc": "The Great People",
+    "features": [],
+    "flavor": "A hinged folding ladder with a simple pulling mechanism to unfold once within reach of the enemy walls.",
+    "highMaintenance": {
+      "gold": 0.33
+    },
+    "holdingBonus": {},
+    "icon": "cloud_ladder",
+    "id": "cloud_ladder",
+    "lowMaintenance": {
+      "gold": 0.11
+    },
+    "mainPhase": false,
+    "maxRegiments": null,
+    "maxSizeBonus": null,
+    "maxSubRegiments": null,
+    "name": "Cloud Ladders",
+    "provisionCost": 12,
+    "requirements": [
+      {
+        "detail": null,
+        "key": "innovation_mangonel",
+        "kind": "innovation",
+        "name": "Mangonels",
+        "negated": false
+      },
+      {
+        "detail": null,
+        "key": "heritage_chinese",
+        "kind": "cultural_pillar",
+        "name": "Heritage Chinese",
+        "negated": false
+      },
+      {
+        "detail": null,
+        "key": "heritage_korean",
+        "kind": "cultural_pillar",
+        "name": "Heritage Korean",
+        "negated": false
+      },
+      {
+        "detail": null,
+        "key": "heritage_japonic",
+        "kind": "cultural_pillar",
+        "name": "Heritage Japonic",
+        "negated": false
+      },
+      {
+        "detail": null,
+        "key": "government_is_nomadic",
+        "kind": "government_flag",
+        "name": "Nomadic",
+        "negated": true
+      },
+      {
+        "detail": null,
+        "key": "government_is_herder",
+        "kind": "government_flag",
+        "name": "Herder",
+        "negated": true
+      }
+    ],
+    "siegeTier": 2,
+    "siegeValue": 0.3,
+    "sourceFile": "10_tgp_maa_types.txt",
+    "specialRecruitOnly": false,
+    "stack": 10,
+    "stats": {
+      "damage": 0,
+      "pursuit": 0,
+      "screen": 0,
+      "toughness": 12
+    },
+    "terrainBonus": {},
+    "type": "siege_weapon",
+    "typeName": "Siege Weapons",
+    "winterBonus": {}
+  },
+  {
+    "buyCost": {
+      "gold": 66.0
+    },
+    "counters": {},
+    "dlc": null,
+    "features": [],
+    "flavor": "The traction-powered mangonel is easier to operate than the onager while also boasting a faster rate-of-fire.",
+    "highMaintenance": {
+      "gold": 0.33
+    },
+    "holdingBonus": {},
+    "icon": "mangonel",
+    "id": "mangonel",
+    "lowMaintenance": {
+      "gold": 0.11
+    },
+    "mainPhase": false,
+    "maxRegiments": null,
+    "maxSizeBonus": null,
+    "maxSubRegiments": null,
+    "name": "Mangonels",
+    "provisionCost": 12,
+    "requirements": [
+      {
+        "detail": null,
+        "key": "innovation_mangonel",
+        "kind": "innovation",
+        "name": "Mangonels",
+        "negated": false
+      },
+      {
+        "detail": null,
+        "key": "heritage_chinese",
+        "kind": "cultural_pillar",
+        "name": "Heritage Chinese",
+        "negated": true
+      },
+      {
+        "detail": null,
+        "key": "heritage_korean",
+        "kind": "cultural_pillar",
+        "name": "Heritage Korean",
+        "negated": true
+      },
+      {
+        "detail": null,
+        "key": "heritage_japonic",
+        "kind": "cultural_pillar",
+        "name": "Heritage Japonic",
+        "negated": true
+      },
+      {
+        "detail": null,
+        "key": "government_is_nomadic",
+        "kind": "government_flag",
+        "name": "Nomadic",
+        "negated": true
+      },
+      {
+        "detail": null,
+        "key": "government_is_herder",
+        "kind": "government_flag",
+        "name": "Herder",
+        "negated": true
+      }
+    ],
+    "siegeTier": 2,
+    "siegeValue": 0.3,
+    "sourceFile": "00_maa_types.txt",
+    "specialRecruitOnly": false,
+    "stack": 10,
+    "stats": {
+      "damage": 0,
+      "pursuit": 0,
+      "screen": 0,
+      "toughness": 12
+    },
+    "terrainBonus": {},
+    "type": "siege_weapon",
+    "typeName": "Siege Weapons",
+    "winterBonus": {}
+  },
+  {
+    "buyCost": {
+      "gold": 60
+    },
+    "counters": {},
+    "dlc": null,
+    "features": [],
+    "flavor": "These small torsion catapults can tear down enemy fortifications by hurling stone projectiles over a distance.",
+    "highMaintenance": {
+      "gold": 0.3
+    },
+    "holdingBonus": {},
+    "icon": "onager",
+    "id": "onager",
+    "lowMaintenance": {
+      "gold": 0.1
+    },
+    "mainPhase": false,
+    "maxRegiments": null,
+    "maxSizeBonus": null,
+    "maxSubRegiments": null,
+    "name": "Onagers",
+    "provisionCost": 6,
+    "requirements": [
+      {
+        "detail": null,
+        "key": "innovation_catapult",
+        "kind": "innovation",
+        "name": "Onager",
+        "negated": false
+      },
+      {
+        "detail": null,
+        "key": "heritage_chinese",
+        "kind": "cultural_pillar",
+        "name": "Heritage Chinese",
+        "negated": true
+      },
+      {
+        "detail": null,
+        "key": "heritage_korean",
+        "kind": "cultural_pillar",
+        "name": "Heritage Korean",
+        "negated": true
+      },
+      {
+        "detail": null,
+        "key": "heritage_japonic",
+        "kind": "cultural_pillar",
+        "name": "Heritage Japonic",
+        "negated": true
+      },
+      {
+        "detail": null,
+        "key": "government_is_nomadic",
+        "kind": "government_flag",
+        "name": "Nomadic",
+        "negated": true
+      },
+      {
+        "detail": null,
+        "key": "government_is_herder",
+        "kind": "government_flag",
+        "name": "Herder",
+        "negated": true
+      }
+    ],
+    "siegeTier": 1,
+    "siegeValue": 0.2,
+    "sourceFile": "00_maa_types.txt",
+    "specialRecruitOnly": false,
+    "stack": 10,
+    "stats": {
+      "damage": 0,
+      "pursuit": 0,
+      "screen": 0,
+      "toughness": 12
+    },
+    "terrainBonus": {},
+    "type": "siege_weapon",
+    "typeName": "Siege Weapons",
+    "winterBonus": {}
+  },
+  {
+    "buyCost": {
+      "gold": 78.0
+    },
+    "counters": {},
+    "dlc": "The Great People",
+    "features": [],
+    "flavor": "A large wooden tower on wheels that can be pushed up to enemy walls, offering more protection and stability than siege ladders.",
+    "highMaintenance": {
+      "gold": 0.39
+    },
+    "holdingBonus": {},
+    "icon": "siege_tower",
+    "id": "siege_tower",
+    "lowMaintenance": {
+      "gold": 0.13
+    },
+    "mainPhase": false,
+    "maxRegiments": null,
+    "maxSizeBonus": null,
+    "maxSubRegiments": null,
+    "name": "Mobile Towers",
+    "provisionCost": 18,
+    "requirements": [
+      {
+        "detail": null,
+        "key": "innovation_trebuchet",
+        "kind": "innovation",
+        "name": "Trebuchet",
+        "negated": false
+      },
+      {
+        "detail": null,
+        "key": "heritage_chinese",
+        "kind": "cultural_pillar",
+        "name": "Heritage Chinese",
+        "negated": false
+      },
+      {
+        "detail": null,
+        "key": "heritage_korean",
+        "kind": "cultural_pillar",
+        "name": "Heritage Korean",
+        "negated": false
+      },
+      {
+        "detail": null,
+        "key": "heritage_japonic",
+        "kind": "cultural_pillar",
+        "name": "Heritage Japonic",
+        "negated": false
+      },
+      {
+        "detail": null,
+        "key": "government_is_nomadic",
+        "kind": "government_flag",
+        "name": "Nomadic",
+        "negated": true
+      },
+      {
+        "detail": null,
+        "key": "government_is_herder",
+        "kind": "government_flag",
+        "name": "Herder",
+        "negated": true
+      }
+    ],
+    "siegeTier": 3,
+    "siegeValue": 0.4,
+    "sourceFile": "10_tgp_maa_types.txt",
+    "specialRecruitOnly": false,
+    "stack": 10,
+    "stats": {
+      "damage": 0,
+      "pursuit": 0,
+      "screen": 0,
+      "toughness": 12
+    },
+    "terrainBonus": {},
+    "type": "siege_weapon",
+    "typeName": "Siege Weapons",
+    "winterBonus": {}
+  },
+  {
+    "buyCost": {
+      "gold": 30.0
+    },
+    "counters": {},
+    "dlc": "Khans of the Steppe",
+    "features": [],
+    "flavor": "On the boundless steppe, there's no need for siege towers or catapults — just a blazing torch and a swift horse, enough to set every yurt aflame.",
+    "highMaintenance": {
+      "gold": 0.15
+    },
+    "holdingBonus": {
+      "nomad_holding": {
+        "siege_value": 0.3
+      },
+      "tribal_holding": {
+        "siege_value": 0.1
+      }
+    },
+    "icon": "torch_bearers",
+    "id": "torch_bearers",
+    "lowMaintenance": {
+      "gold": 0.05
+    },
+    "mainPhase": false,
+    "maxRegiments": null,
+    "maxSizeBonus": null,
+    "maxSubRegiments": null,
+    "name": "Torch-Bearers",
+    "provisionCost": 6,
+    "requirements": [
+      {
+        "detail": null,
+        "key": "government_is_nomadic",
+        "kind": "government_flag",
+        "name": "Nomadic",
+        "negated": false
+      }
+    ],
+    "siegeTier": 1,
+    "siegeValue": 0.1,
+    "sourceFile": "09_mpo_maa_types.txt",
+    "specialRecruitOnly": false,
+    "stack": 10,
+    "stats": {
+      "damage": 20,
+      "pursuit": 0,
+      "screen": 0,
+      "toughness": 12
+    },
+    "terrainBonus": {},
+    "type": "siege_weapon",
+    "typeName": "Siege Weapons",
+    "winterBonus": {}
+  },
+  {
+    "buyCost": {
+      "gold": 78.0
+    },
+    "counters": {},
+    "dlc": null,
+    "features": [],
+    "flavor": "The counterweight trebuchet can hurl large projectiles with much greater force than mangonels or onagers.",
+    "highMaintenance": {
+      "gold": 0.39
+    },
+    "holdingBonus": {},
+    "icon": "trebuchet",
+    "id": "trebuchet",
+    "lowMaintenance": {
+      "gold": 0.13
+    },
+    "mainPhase": false,
+    "maxRegiments": null,
+    "maxSizeBonus": null,
+    "maxSubRegiments": null,
+    "name": "Trebuchets",
+    "provisionCost": 18,
+    "requirements": [
+      {
+        "detail": null,
+        "key": "innovation_trebuchet",
+        "kind": "innovation",
+        "name": "Trebuchet",
+        "negated": false
+      },
+      {
+        "detail": null,
+        "key": "heritage_chinese",
+        "kind": "cultural_pillar",
+        "name": "Heritage Chinese",
+        "negated": true
+      },
+      {
+        "detail": null,
+        "key": "heritage_korean",
+        "kind": "cultural_pillar",
+        "name": "Heritage Korean",
+        "negated": true
+      },
+      {
+        "detail": null,
+        "key": "heritage_japonic",
+        "kind": "cultural_pillar",
+        "name": "Heritage Japonic",
+        "negated": true
+      },
+      {
+        "detail": null,
+        "key": "government_is_nomadic",
+        "kind": "government_flag",
+        "name": "Nomadic",
+        "negated": true
+      },
+      {
+        "detail": null,
+        "key": "government_is_herder",
+        "kind": "government_flag",
+        "name": "Herder",
+        "negated": true
+      }
+    ],
+    "siegeTier": 3,
+    "siegeValue": 0.4,
+    "sourceFile": "00_maa_types.txt",
+    "specialRecruitOnly": false,
+    "stack": 10,
+    "stats": {
+      "damage": 0,
+      "pursuit": 0,
+      "screen": 0,
+      "toughness": 12
+    },
+    "terrainBonus": {},
+    "type": "siege_weapon",
+    "typeName": "Siege Weapons",
+    "winterBonus": {}
+  },
+  {
+    "buyCost": {
+      "gold": 81.0
+    },
+    "counters": {
+      "heavy_infantry": 1,
+      "light_cavalry": 1
+    },
+    "dlc": null,
+    "features": [],
+    "flavor": "The Abudrar mountaineers know every gorge and wadi of their homeland.",
+    "highMaintenance": {
+      "gold": 0.81
+    },
+    "holdingBonus": {},
+    "icon": "skirmishers",
+    "id": "abudrar",
+    "lowMaintenance": {
+      "gold": 0.27
+    },
+    "mainPhase": true,
+    "maxRegiments": null,
+    "maxSizeBonus": null,
+    "maxSubRegiments": null,
+    "name": "Abudrar",
+    "provisionCost": 3,
+    "requirements": [
+      {
+        "detail": "Can recruit Abudrar as Men-at-Arms",
+        "key": "unlock_maa_abudrar",
+        "kind": "cultural_parameter",
+        "name": "Cultural tradition",
+        "negated": false
+      }
+    ],
+    "siegeTier": null,
+    "siegeValue": null,
+    "sourceFile": "00_cultural_maa_types.txt",
+    "specialRecruitOnly": false,
+    "stack": 100,
+    "stats": {
+      "damage": 20,
+      "pursuit": 20,
+      "screen": 10,
+      "toughness": 16
+    },
+    "terrainBonus": {
+      "desert": {
+        "pursuit": -10,
+        "screen": -10
+      },
+      "desert_mountains": {
+        "damage": 10,
+        "toughness": 8
+      },
+      "hills": {
+        "damage": 8,
+        "toughness": 6
+      },
+      "mountains": {
+        "damage": 8,
+        "toughness": 6
+      }
+    },
+    "type": "skirmishers",
+    "typeName": "Skirmishers",
+    "winterBonus": {}
+  },
+  {
+    "buyCost": {
+      "gold": 90
+    },
+    "counters": {
+      "heavy_infantry": 2
+    },
+    "dlc": null,
+    "features": [],
+    "flavor": "Retinue Men-at-Arms\nA mix of lightly-equipped elite warriors and seasoned mercenary raiders, feared for their skill at ambushes and unconventional warfare.",
+    "highMaintenance": {
+      "gold": 0.45
+    },
+    "holdingBonus": {},
+    "icon": "accolade_maa_skirmishers",
+    "id": "accolade_maa_skirmishers",
+    "lowMaintenance": {
+      "gold": 0.15
+    },
+    "mainPhase": true,
+    "maxRegiments": 1,
+    "maxSizeBonus": null,
+    "maxSubRegiments": null,
+    "name": "Retinue Skirmishers",
+    "provisionCost": 3,
+    "requirements": [],
+    "siegeTier": null,
+    "siegeValue": null,
+    "sourceFile": "01_accolade_maa_types.txt",
+    "specialRecruitOnly": false,
+    "stack": 100,
+    "stats": {
+      "damage": 20,
+      "pursuit": 16,
+      "screen": 20,
+      "toughness": 20
+    },
+    "terrainBonus": {
+      "forest": {
+        "damage": 8,
+        "toughness": 12
+      },
+      "jungle": {
+        "damage": 8,
+        "toughness": 12
+      },
+      "taiga": {
+        "damage": 8,
+        "toughness": 12
+      }
+    },
+    "type": "skirmishers",
+    "typeName": "Skirmishers",
+    "winterBonus": {}
+  },
+  {
+    "buyCost": {
+      "gold": 40.5
+    },
+    "counters": {
+      "heavy_infantry": 1
+    },
+    "dlc": "Roads to Power",
+    "features": [],
+    "flavor": "Veteran rural conscripts, defenders of the rocky passes, who use careful timing and local knowledge to harass even the mightiest of hosts.",
+    "highMaintenance": {
+      "gold": 0.4
+    },
+    "holdingBonus": {},
+    "icon": "akritai",
+    "id": "akritai",
+    "lowMaintenance": {
+      "gold": 0.14
+    },
+    "mainPhase": true,
+    "maxRegiments": null,
+    "maxSizeBonus": null,
+    "maxSubRegiments": null,
+    "name": "Akritai",
+    "provisionCost": 3,
+    "requirements": [
+      {
+        "detail": "Can recruit Akritai as Men-at-Arms",
+        "key": "unlock_maa_akritai",
+        "kind": "cultural_parameter",
+        "name": "Cultural tradition",
+        "negated": false
+      }
+    ],
+    "siegeTier": null,
+    "siegeValue": null,
+    "sourceFile": "07_ep3_maa_types.txt",
+    "specialRecruitOnly": false,
+    "stack": 100,
+    "stats": {
+      "damage": 10,
+      "pursuit": 12,
+      "screen": 18,
+      "toughness": 14
+    },
+    "terrainBonus": {
+      "desert_mountains": {
+        "damage": 6,
+        "toughness": 6
+      },
+      "forest": {
+        "toughness": 4
+      },
+      "hills": {
+        "damage": 6,
+        "toughness": 6
+      },
+      "mountains": {
+        "damage": 10,
+        "toughness": 10
+      },
+      "wetlands": {
+        "toughness": 4
+      }
+    },
+    "type": "skirmishers",
+    "typeName": "Skirmishers",
+    "winterBonus": {}
+  },
+  {
+    "buyCost": {
+      "gold": 45
+    },
+    "counters": {
+      "heavy_cavalry": 1,
+      "heavy_infantry": 1
+    },
+    "dlc": null,
+    "features": [],
+    "flavor": "The Flemish goedendag is a spiked club which can be braced against cavalry charges.",
+    "highMaintenance": {
+      "gold": 0.45
+    },
+    "holdingBonus": {},
+    "icon": "skirmishers",
+    "id": "goedendag",
+    "lowMaintenance": {
+      "gold": 0.15
+    },
+    "mainPhase": true,
+    "maxRegiments": null,
+    "maxSizeBonus": null,
+    "maxSubRegiments": null,
+    "name": "Goedendag Militia",
+    "provisionCost": 3,
+    "requirements": [],
+    "siegeTier": null,
+    "siegeValue": null,
+    "sourceFile": "00_cultural_maa_types.txt",
+    "specialRecruitOnly": false,
+    "stack": 100,
+    "stats": {
+      "damage": 13,
+      "pursuit": 0,
+      "screen": 16,
+      "toughness": 18
+    },
+    "terrainBonus": {},
+    "type": "skirmishers",
+    "typeName": "Skirmishers",
+    "winterBonus": {}
+  },
+  {
+    "buyCost": {
+      "gold": 54.0
+    },
+    "counters": {
+      "heavy_infantry": 1
+    },
+    "dlc": null,
+    "features": [],
+    "flavor": "Armed with long vaulting poles, these nimble warriors are able to navigate craggy and mountainous terrain with ease and can even vault over some fortifications.",
+    "highMaintenance": {
+      "gold": 0.54
+    },
+    "holdingBonus": {},
+    "icon": "skirmishers",
+    "id": "guanch_vaulter",
+    "lowMaintenance": {
+      "gold": 0.18
+    },
+    "mainPhase": true,
+    "maxRegiments": null,
+    "maxSizeBonus": null,
+    "maxSubRegiments": null,
+    "name": "Vaulter Infantry",
+    "provisionCost": 7,
+    "requirements": [],
+    "siegeTier": null,
+    "siegeValue": 0.1,
+    "sourceFile": "00_cultural_maa_types.txt",
+    "specialRecruitOnly": false,
+    "stack": 100,
+    "stats": {
+      "damage": 10,
+      "pursuit": 15,
+      "screen": 20,
+      "toughness": 12
+    },
+    "terrainBonus": {
+      "desert_mountains": {
+        "damage": 4,
+        "pursuit": 6
+      },
+      "hills": {
+        "damage": 4,
+        "toughness": 6
+      },
+      "mountains": {
+        "damage": 4,
+        "pursuit": 6
+      },
+      "wetlands": {
+        "damage": 4,
+        "pursuit": 6
+      }
+    },
+    "type": "skirmishers",
+    "typeName": "Skirmishers",
+    "winterBonus": {}
+  },
+  {
+    "buyCost": {
+      "gold": 54.0
+    },
+    "counters": {
+      "heavy_infantry": 1
+    },
+    "dlc": null,
+    "features": [],
+    "flavor": "Warriors of the uplands of Guinea move fast, and their javelins are precise and deadly.",
+    "highMaintenance": {
+      "gold": 0.54
+    },
+    "holdingBonus": {},
+    "icon": "skirmishers",
+    "id": "guinea_warrior",
+    "lowMaintenance": {
+      "gold": 0.18
+    },
+    "mainPhase": true,
+    "maxRegiments": null,
+    "maxSizeBonus": null,
+    "maxSubRegiments": null,
+    "name": "Guinean Uplanders",
+    "provisionCost": 3,
+    "requirements": [
+      {
+        "detail": "Can recruit Guinean Uplanders as Men-at-Arms",
+        "key": "unlock_maa_guinea_warrior",
+        "kind": "cultural_parameter",
+        "name": "Cultural tradition",
+        "negated": false
+      }
+    ],
+    "siegeTier": null,
+    "siegeValue": null,
+    "sourceFile": "00_cultural_maa_types.txt",
+    "specialRecruitOnly": false,
+    "stack": 100,
+    "stats": {
+      "damage": 18,
+      "pursuit": 0,
+      "screen": 20,
+      "toughness": 14
+    },
+    "terrainBonus": {
+      "drylands": {
+        "damage": 6,
+        "toughness": 4
+      },
+      "forest": {
+        "damage": 10,
+        "toughness": 8
+      },
+      "hills": {
+        "damage": 6,
+        "toughness": 4
+      }
+    },
+    "type": "skirmishers",
+    "typeName": "Skirmishers",
+    "winterBonus": {}
+  },
+  {
+    "buyCost": {
+      "gold": 45
+    },
+    "counters": {
+      "heavy_infantry": 1
+    },
+    "dlc": null,
+    "features": [],
+    "flavor": "Practiced in mountainous warfare, warriors from the Horn of Africa are not to be underestimated.",
+    "highMaintenance": {
+      "gold": 0.45
+    },
+    "holdingBonus": {},
+    "icon": "skirmishers",
+    "id": "horn_warrior",
+    "lowMaintenance": {
+      "gold": 0.15
+    },
+    "mainPhase": true,
+    "maxRegiments": null,
+    "maxSizeBonus": null,
+    "maxSubRegiments": null,
+    "name": "Horn Warriors",
+    "provisionCost": 7,
+    "requirements": [
+      {
+        "detail": "Can recruit Horn Warriors as Men-at-Arms",
+        "key": "unlock_maa_horn_warrior",
+        "kind": "cultural_parameter",
+        "name": "Cultural tradition",
+        "negated": false
+      }
+    ],
+    "siegeTier": null,
+    "siegeValue": null,
+    "sourceFile": "00_cultural_maa_types.txt",
+    "specialRecruitOnly": false,
+    "stack": 100,
+    "stats": {
+      "damage": 12,
+      "pursuit": 0,
+      "screen": 20,
+      "toughness": 16
+    },
+    "terrainBonus": {
+      "desert_mountains": {
+        "damage": 10,
+        "toughness": 10
+      },
+      "hills": {
+        "damage": 4,
+        "toughness": 6
+      },
+      "mountains": {
+        "damage": 10,
+        "toughness": 10
+      }
+    },
+    "type": "skirmishers",
+    "typeName": "Skirmishers",
+    "winterBonus": {}
+  },
+  {
+    "buyCost": {
+      "gold": 63.0
+    },
+    "counters": {
+      "archers": 1,
+      "heavy_infantry": 1
+    },
+    "dlc": "Northern Lords",
+    "features": [],
+    "flavor": "Some of the most notorious reavers ever to ply the Baltic, the Jomsvikings excel at injecting chaos into battle, drawing it out before excelling in the aftermath.",
+    "highMaintenance": {
+      "gold": 0.63
+    },
+    "holdingBonus": {},
+    "icon": "jomsviking_pirates",
+    "id": "jomsviking_pirates",
+    "lowMaintenance": {
+      "gold": 0.21
+    },
+    "mainPhase": true,
+    "maxRegiments": null,
+    "maxSizeBonus": null,
+    "maxSubRegiments": null,
+    "name": "Jomsviking Pirates",
+    "provisionCost": 3,
+    "requirements": [],
+    "siegeTier": null,
+    "siegeValue": null,
+    "sourceFile": "01_fp1_maa_types.txt",
+    "specialRecruitOnly": true,
+    "stack": 100,
+    "stats": {
+      "damage": 30,
+      "pursuit": 40,
+      "screen": 40,
+      "toughness": 30
+    },
+    "terrainBonus": {},
+    "type": "skirmishers",
+    "typeName": "Skirmishers",
+    "winterBonus": {
+      "harsh_winter": {
+        "damage": 8,
+        "pursuit": 8
+      },
+      "normal_winter": {
+        "damage": 8,
+        "pursuit": 8
+      }
+    }
+  },
+  {
+    "buyCost": {
+      "gold": 45
+    },
+    "counters": {
+      "heavy_infantry": 1
+    },
+    "dlc": null,
+    "features": [],
+    "flavor": "Veteran skirmishers are invaluable harriers, disrupting enemy flanks and chipping away at morale.",
+    "highMaintenance": {
+      "gold": 0.45
+    },
+    "holdingBonus": {},
+    "icon": "light_footmen",
+    "id": "light_footmen",
+    "lowMaintenance": {
+      "gold": 0.15
+    },
+    "mainPhase": true,
+    "maxRegiments": null,
+    "maxSizeBonus": null,
+    "maxSubRegiments": null,
+    "name": "Light Footmen",
+    "provisionCost": 3,
+    "requirements": [
+      {
+        "detail": null,
+        "key": "government_is_nomadic",
+        "kind": "government_flag",
+        "name": "Nomadic",
+        "negated": true
+      },
+      {
+        "detail": null,
+        "key": "government_is_herder",
+        "kind": "government_flag",
+        "name": "Herder",
+        "negated": true
+      }
+    ],
+    "siegeTier": null,
+    "siegeValue": null,
+    "sourceFile": "00_maa_types.txt",
+    "specialRecruitOnly": false,
+    "stack": 100,
+    "stats": {
+      "damage": 10,
+      "pursuit": 10,
+      "screen": 16,
+      "toughness": 16
+    },
+    "terrainBonus": {
+      "forest": {
+        "damage": 4,
+        "toughness": 6
+      },
+      "jungle": {
+        "damage": 4,
+        "toughness": 6
+      },
+      "taiga": {
+        "damage": 4,
+        "toughness": 6
+      }
+    },
+    "type": "skirmishers",
+    "typeName": "Skirmishers",
+    "winterBonus": {}
+  },
+  {
+    "buyCost": {
+      "gold": 63.0
+    },
+    "counters": {
+      "archers": 1,
+      "heavy_infantry": 1
+    },
+    "dlc": "Roads to Power",
+    "features": [],
+    "flavor": "Scum of the earth, these men have forsaken lawfulness for a life of crime.",
+    "highMaintenance": {
+      "gold": 0.63
+    },
+    "holdingBonus": {},
+    "icon": "skirmishers",
+    "id": "maa_bandits",
+    "lowMaintenance": {
+      "gold": 0.21
+    },
+    "mainPhase": true,
+    "maxRegiments": null,
+    "maxSizeBonus": null,
+    "maxSubRegiments": null,
+    "name": "Bandits",
+    "provisionCost": 3,
+    "requirements": [],
+    "siegeTier": null,
+    "siegeValue": null,
+    "sourceFile": "07_ep3_maa_types.txt",
+    "specialRecruitOnly": true,
+    "stack": 50,
+    "stats": {
+      "damage": 15,
+      "pursuit": 20,
+      "screen": 25,
+      "toughness": 20
+    },
+    "terrainBonus": {
+      "forest": {
+        "damage": 4,
+        "toughness": 6
+      },
+      "hills": {
+        "damage": 4,
+        "toughness": 6
+      },
+      "jungle": {
+        "damage": 4,
+        "toughness": 6
+      }
+    },
+    "type": "skirmishers",
+    "typeName": "Skirmishers",
+    "winterBonus": {}
+  },
+  {
+    "buyCost": {
+      "gold": 40.5
+    },
+    "counters": {
+      "heavy_infantry": 1
+    },
+    "dlc": "The Great People",
+    "features": [],
+    "flavor": "Although they are often armed with a kris, a golok, or a myriad array of other melee weapons, silat practitioners are equally well-versed in unarmed combat.",
+    "highMaintenance": {
+      "gold": 0.4
+    },
+    "holdingBonus": {},
+    "icon": "pesilat_warrior",
+    "id": "pesilat_warriors",
+    "lowMaintenance": {
+      "gold": 0.14
+    },
+    "mainPhase": true,
+    "maxRegiments": null,
+    "maxSizeBonus": null,
+    "maxSubRegiments": null,
+    "name": "Pesilat Warriors",
+    "provisionCost": 3,
+    "requirements": [
+      {
+        "detail": "Can recruit Pesilat Warriors as Men-at-Arms",
+        "key": "unlock_maa_pesilat",
+        "kind": "cultural_parameter",
+        "name": "Cultural tradition",
+        "negated": false
+      }
+    ],
+    "siegeTier": null,
+    "siegeValue": null,
+    "sourceFile": "10_tgp_maa_types.txt",
+    "specialRecruitOnly": false,
+    "stack": 100,
+    "stats": {
+      "damage": 24,
+      "pursuit": 12,
+      "screen": 5,
+      "toughness": 10
+    },
+    "terrainBonus": {
+      "jungle": {
+        "screen": 6,
+        "toughness": 6
+      },
+      "terraced_hills": {
+        "damage": 6,
+        "toughness": 6
+      },
+      "wetlands": {
+        "screen": 3,
+        "toughness": 4
+      }
+    },
+    "type": "skirmishers",
+    "typeName": "Skirmishers",
+    "winterBonus": {}
+  },
+  {
+    "buyCost": {
+      "gold": 45
+    },
+    "counters": {
+      "heavy_infantry": 1
+    },
+    "dlc": null,
+    "features": [],
+    "flavor": "Devoted to protecting their kin, Jewish shomer are adept at covering for their fellows in battle.",
+    "highMaintenance": {
+      "gold": 0.45
+    },
+    "holdingBonus": {},
+    "icon": "skirmishers",
+    "id": "shomer",
+    "lowMaintenance": {
+      "gold": 0.15
+    },
+    "mainPhase": true,
+    "maxRegiments": null,
+    "maxSizeBonus": null,
+    "maxSubRegiments": null,
+    "name": "Shomer",
+    "provisionCost": 7,
+    "requirements": [
+      {
+        "detail": "Can recruit Shomer as Men-at-Arms",
+        "key": "unlock_maa_shomer",
+        "kind": "cultural_parameter",
+        "name": "Cultural tradition",
+        "negated": false
+      }
+    ],
+    "siegeTier": null,
+    "siegeValue": null,
+    "sourceFile": "00_cultural_maa_types.txt",
+    "specialRecruitOnly": false,
+    "stack": 100,
+    "stats": {
+      "damage": 10,
+      "pursuit": 0,
+      "screen": 40,
+      "toughness": 24
+    },
+    "terrainBonus": {},
+    "type": "skirmishers",
+    "typeName": "Skirmishers",
+    "winterBonus": {}
+  }
+]

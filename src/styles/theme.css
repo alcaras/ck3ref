@@ -1,0 +1,251 @@
+/* ck3reference design system — "rubricated manuscript" direction.
+ *
+ * The ground is candle-lit iron-gall near-black; text is vellum. Two accents
+ * with manuscript roles, never swapped: RUBRIC red is structural emphasis
+ * (versals, section fleurons, active states) the way scribes rubricated
+ * headings; BRASS is the interactive metal (links, hover, header ruling).
+ * Skill colors mirror the game's six attributes and are the only other hues.
+ * Dark only, like the game. No all-caps outside mono microcopy.
+ */
+
+:root {
+  color-scheme: dark;
+
+  --ink: #17120d;
+  --panel: #1e1812;
+  --panel-2: #252016;
+  --line: #3a3122;
+  --line-soft: #292217;
+
+  --vellum: #e8dcc0;
+  --dim: #a5967b;
+  --faint: #6f6350;
+
+  --rubric: #b6452c;
+  --rubric-dim: #8a3521;
+  --brass: #b18d4e;
+  --brass-bright: #d3ac63;
+
+  --good: #82aa6d;
+  --bad: #c05f47;
+
+  --sk-diplomacy: #6d9f6a;
+  --sk-martial: #bc5940;
+  --sk-stewardship: #c39b45;
+  --sk-intrigue: #9273b8;
+  --sk-learning: #6690b8;
+  --sk-prowess: #97a0a8;
+
+  --font-display: 'Cinzel', 'Times New Roman', serif;
+  --font-ui: 'Inter', -apple-system, 'Segoe UI', sans-serif;
+  --font-mono: 'JetBrains Mono', 'SF Mono', Menlo, monospace;
+
+  --r: 4px;
+}
+
+* { box-sizing: border-box; }
+
+html { background: var(--ink); }
+
+body {
+  margin: 0;
+  background: var(--ink);
+  color: var(--vellum);
+  font: 14px/1.55 var(--font-ui);
+  font-variant-numeric: tabular-nums;
+}
+
+a { color: var(--brass); text-decoration: none; border-bottom: 1px dotted color-mix(in oklab, var(--brass) 45%, transparent); }
+a:hover { color: var(--brass-bright); border-bottom-color: var(--brass-bright); }
+:focus-visible { outline: 2px solid var(--brass); outline-offset: 2px; border-radius: 2px; }
+
+@media (prefers-reduced-motion: no-preference) {
+  a, .chip, button { transition: color 120ms ease, background 120ms ease, border-color 120ms ease; }
+}
+
+/* ---------- header ---------- */
+
+.hdr {
+  position: sticky; top: 0; z-index: 50;
+  display: flex; align-items: baseline; gap: 1.4rem;
+  padding: 0.65rem 1.25rem 0.55rem;
+  background: color-mix(in oklab, var(--ink) 92%, black);
+  /* double ruling, like the pricked-and-ruled margin of a manuscript page */
+  border-bottom: 1px solid var(--brass);
+  box-shadow: 0 3px 0 -2px color-mix(in oklab, var(--brass) 45%, transparent);
+}
+
+.hdr__title {
+  font-family: var(--font-display);
+  font-weight: 700; font-size: 1.05rem; letter-spacing: 0.03em;
+  color: var(--vellum); border-bottom: none;
+}
+.hdr__title:hover { color: var(--brass-bright); }
+.hdr__title .rubric { color: var(--rubric); }
+
+.nav { display: flex; gap: 0.15rem; flex-wrap: wrap; }
+.nav details { position: relative; }
+.nav summary {
+  list-style: none; cursor: pointer; user-select: none;
+  padding: 0.2rem 0.55rem; border-radius: var(--r);
+  color: var(--dim); font-size: 0.85rem;
+}
+.nav summary::-webkit-details-marker { display: none; }
+.nav summary:hover { color: var(--vellum); background: var(--panel-2); }
+.nav details[open] summary { color: var(--vellum); background: var(--panel-2); }
+.nav .menu {
+  position: absolute; top: 100%; left: 0; min-width: 14rem; z-index: 60;
+  background: var(--panel); border: 1px solid var(--line); border-radius: var(--r);
+  padding: 0.35rem; box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+}
+.nav .menu a {
+  display: block; padding: 0.3rem 0.5rem; border-bottom: none; border-radius: 3px;
+  color: var(--vellum); font-size: 0.85rem;
+}
+.nav .menu a:hover { background: var(--panel-2); color: var(--brass-bright); }
+.nav .menu a .soon { color: var(--faint); font-size: 0.72rem; margin-left: 0.4rem; }
+.nav .menu a.is-active { color: var(--rubric); }
+
+/* ---------- page chrome ---------- */
+
+.wrap { max-width: 1280px; margin: 0 auto; padding: 1.5rem 1.25rem 4rem; }
+
+.page-meta { margin: 0.5rem 0 1.4rem; }
+.page-meta h1 {
+  font-family: var(--font-display); font-weight: 600;
+  font-size: 1.9rem; letter-spacing: 0.02em; margin: 0 0 0.35rem;
+}
+/* the rubricated versal — the page's signature mark */
+.page-meta h1 .versal { color: var(--rubric); font-size: 1.18em; }
+.page-meta .lede { color: var(--dim); max-width: 62ch; margin: 0 0 0.7rem; }
+
+.pills { display: flex; gap: 0.45rem; flex-wrap: wrap; }
+.pill {
+  font-family: var(--font-mono); font-size: 0.72rem; color: var(--dim);
+  border: 1px solid var(--line); border-radius: 999px; padding: 0.12rem 0.6rem;
+  background: var(--panel);
+}
+.pill b { color: var(--vellum); font-weight: 600; }
+
+/* section group heading with rubricated fleuron */
+.group-h {
+  display: flex; align-items: baseline; gap: 0.5rem;
+  font-family: var(--font-display); font-weight: 600; font-size: 1.15rem;
+  margin: 2rem 0 0.6rem;
+}
+.group-h::before { content: '❧'; color: var(--rubric); font-size: 1rem; }
+.group-h .count { color: var(--faint); font-family: var(--font-mono); font-size: 0.75rem; }
+
+/* ---------- filter bar ---------- */
+
+.filterbar {
+  display: flex; gap: 0.6rem; flex-wrap: wrap; align-items: center;
+  padding: 0.6rem 0.75rem; margin: 0 0 1rem;
+  background: var(--panel); border: 1px solid var(--line-soft); border-radius: var(--r);
+}
+.filterbar input[type='search'], .filterbar select {
+  background: var(--ink); color: var(--vellum);
+  border: 1px solid var(--line); border-radius: var(--r);
+  padding: 0.3rem 0.55rem; font: 0.85rem var(--font-ui);
+}
+.filterbar input[type='search'] { min-width: 16rem; }
+.filterbar .hint { color: var(--faint); font-size: 0.75rem; margin-left: auto; }
+
+/* ---------- table system ---------- */
+
+.tbl-scroll { overflow-x: auto; border: 1px solid var(--line-soft); border-radius: var(--r); }
+
+table.ntbl { border-collapse: collapse; width: 100%; font-size: 0.85rem; }
+.ntbl thead th {
+  position: sticky; top: 0; z-index: 5;
+  background: var(--panel); color: var(--dim);
+  font-weight: 600; font-size: 0.75rem; text-align: left;
+  padding: 0.45rem 0.6rem; border-bottom: 1px solid var(--line);
+  white-space: nowrap;
+}
+.ntbl thead th.num { text-align: right; }
+.ntbl tbody td {
+  padding: 0.45rem 0.6rem; border-bottom: 1px solid var(--line-soft);
+  vertical-align: top;
+}
+.ntbl tbody tr:hover { background: var(--panel-2); }
+.ntbl td.num { text-align: right; font-family: var(--font-mono); font-size: 0.8rem; white-space: nowrap; }
+.ntbl td.name { white-space: nowrap; }
+.ntbl .subtle { color: var(--faint); }
+
+.unit { display: flex; align-items: center; gap: 0.55rem; }
+.unit img {
+  width: 34px; height: 34px; object-fit: contain; flex: none;
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.6));
+}
+.unit .u-name { font-weight: 600; }
+.unit .u-sub { color: var(--faint); font-size: 0.72rem; }
+
+/* stat cell: number over a fixed-track data-ink bar (fill = share of max) */
+.stat { display: inline-block; width: 2.75rem; text-align: right; }
+.stat .bar {
+  display: block; height: 3px; margin-top: 2px; border-radius: 1px; width: 100%;
+  background: linear-gradient(to right,
+    color-mix(in oklab, var(--brass) 75%, transparent) var(--w, 0%),
+    var(--line-soft) var(--w, 0%));
+}
+.stat.is-zero { color: var(--faint); }
+.stat.is-zero .bar { background: var(--line-soft); }
+
+/* ---------- chips & badges ---------- */
+
+.chips { display: flex; flex-wrap: wrap; gap: 0.25rem; max-width: 20rem; }
+.chip {
+  display: inline-flex; align-items: center; gap: 0.3rem;
+  font-size: 0.72rem; padding: 0.08rem 0.45rem; border-radius: 999px;
+  border: 1px solid var(--line); background: var(--panel); color: var(--vellum);
+  white-space: nowrap;
+}
+.chip .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--c, var(--faint)); }
+.chip--counter { border-color: color-mix(in oklab, var(--rubric) 45%, var(--line)); }
+.chip--counter .x { color: var(--rubric); font-family: var(--font-mono); font-size: 0.68rem; }
+.chip--terrain { border-style: dashed; cursor: help; }
+.chip--req { border-color: color-mix(in oklab, var(--sk-learning) 40%, var(--line)); }
+
+.badge-dlc {
+  font-family: var(--font-mono); font-size: 0.68rem; color: var(--brass);
+  border: 1px solid color-mix(in oklab, var(--brass) 40%, transparent);
+  border-radius: 3px; padding: 0.05rem 0.35rem; white-space: nowrap;
+}
+
+.cost { font-family: var(--font-mono); font-size: 0.8rem; }
+.cost .var { color: var(--sk-intrigue); cursor: help; border-bottom: 1px dotted var(--sk-intrigue); }
+
+/* ---------- home index ---------- */
+
+.home-hero { margin: 2.5rem 0 2rem; max-width: 70ch; }
+.home-hero h1 { font-family: var(--font-display); font-weight: 600; font-size: 2.3rem; margin: 0 0 0.5rem; }
+.home-hero h1 .versal { color: var(--rubric); font-size: 1.18em; }
+.home-hero p { color: var(--dim); }
+
+.sec-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1rem; }
+.sec-card { background: var(--panel); border: 1px solid var(--line-soft); border-radius: var(--r); padding: 0.9rem 1rem; }
+.sec-card h2 {
+  font-family: var(--font-display); font-size: 1rem; font-weight: 600; margin: 0 0 0.5rem;
+  display: flex; gap: 0.45rem; align-items: baseline;
+}
+.sec-card h2::before { content: '❧'; color: var(--rubric); font-size: 0.85rem; }
+.sec-card ul { list-style: none; margin: 0; padding: 0; }
+.sec-card li { padding: 0.12rem 0; font-size: 0.85rem; }
+.sec-card .soon { color: var(--faint); }
+.sec-card .soon::after { content: ' ·'; color: var(--line); }
+
+/* ---------- footer ---------- */
+
+.foot {
+  margin-top: 4rem; padding: 1rem 1.25rem 2rem;
+  border-top: 1px solid var(--line-soft);
+  color: var(--faint); font-family: var(--font-mono); font-size: 0.72rem;
+  display: flex; gap: 1.5rem; flex-wrap: wrap;
+}
+.foot a { color: var(--dim); border-bottom-color: color-mix(in oklab, var(--dim) 40%, transparent); }
+
+@media (max-width: 720px) {
+  .hdr { flex-wrap: wrap; gap: 0.5rem; }
+  .filterbar input[type='search'] { min-width: 10rem; }
+}

@@ -1,0 +1,21 @@
+---
+import Base from '../layouts/Base.astro';
+import { TABS } from '../data/tabs';
+
+export function getStaticPaths() {
+  return TABS.filter((t) => t.status !== 'built').map((t) => ({
+    params: { slug: t.slug },
+    props: { tab: t },
+  }));
+}
+const { tab } = Astro.props;
+---
+<Base title={tab.label} active={tab.slug} lede={tab.summary}>
+  <p class="placeholder">
+    This page is planned but not built yet. The data for it already lives in the
+    game files — see the roadmap on the home page.
+  </p>
+</Base>
+<style>
+  .placeholder { color: var(--dim); border: 1px dashed var(--line); border-radius: var(--r); padding: 1.5rem; max-width: 46rem; }
+</style>

@@ -1,0 +1,197 @@
+---
+import Base from '../layouts/Base.astro';
+import maa from '../data/maa.json';
+import { getEntity } from '../lib/entities';
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+
+const TYPE_ORDER = [
+  'heavy_infantry', 'pikemen', 'skirmishers', 'archers', 'crossbowmen',
+  'light_cavalry', 'heavy_cavalry', 'archer_cavalry', 'camel_cavalry',
+  'elephant_cavalry', 'siege_weapon',
+];
+const types = [...new Set(maa.map((m) => m.type).filter(Boolean))].sort((a, b) => {
+  const ia = TYPE_ORDER.indexOf(a), ib = TYPE_ORDER.indexOf(b);
+  return (ia === -1 ? 99 : ia) - (ib === -1 ? 99 : ib) || a.localeCompare(b);
+});
+
+const maxStat = Math.max(...maa.flatMap((m) => [m.stats.damage, m.stats.toughness]));
+const dlcs = [...new Set(maa.map((m) => m.dlc).filter(Boolean))].sort();
+
+const typeName = (t: string) => getEntity(`maa_type_${t}`)?.name ?? t;
+const terrainName = (t: string) => getEntity(`terrain_${t}`)?.name ?? t.replace(/_/g, ' ');
+const winterName = (w: string) => (w === 'harsh_winter' ? 'harsh winter' : w === 'normal_winter' ? 'winter' : w.replace(/_/g, ' '));
+
+function bonusText(bonuses: Record<string, number>): string {
+  return Object.entries(bonuses).map(([k, v]) => `${v > 0 ? '+' : ''}${v} ${k.replace(/_/g, ' ')}`).join(', ');
+}
+function costText(c: unknown): string {
+  if (c == null) return '—';
+  if (typeof c === 'number') return String(Math.round(c * 100) / 100);
+  return 'varies';
+}
+---
+<Base
+  title="Men-at-Arms"
+  active="men-at-arms"
+  lede="Every recruitable regiment type, with stats, counters, terrain and winter effects, and costs — read from men_at_arms_types and resolved through the game's script values."
+  stats={[
+    { value: maa.length, label: 'regiment types' },
+    { value: types.length, label: 'archetypes' },
+    { value: dlcs.length, label: 'DLCs add content' },
+  ]}
+>
+  <div class="filterbar">
+    <input type="search" id="q" placeholder="Filter by name, counter, terrain…" autocomplete="off" />
+    <select id="ftype">
+      <option value="">every archetype</option>
+      {types.map((t) => <option value={t}>{typeName(t)}</option>)}
+    </select>
+    <select id="fdlc">
+      <option value="">base game + DLC</option>
+      <option value="base">base game only</option>
+      {dlcs.map((d) => <option value={d}>{d}</option>)}
+    </select>
+    <span class="hint" id="count"></span>
+  </div>
+
+  {types.map((t) => (
+    <section data-group={t}>
+      <h2 class="group-h" id={t}>
+        {typeName(t)}
+        <span class="count">{maa.filter((m) => m.type === t).length}</span>
+      </h2>
+      <div class="tbl-scroll">
+        <table class="ntbl">
+          <thead>
+            <tr>
+              <th>Regiment</th>
+              <th class="num" title="Damage">Dmg</th>
+              <th class="num" title="Toughness">Tough</th>
+              <th class="num" title="Pursuit">Pur</th>
+              <th class="num" title="Screen">Scr</th>
+              <th>Counters</th>
+              <th>Terrain &amp; winter</th>
+              <th class="num" title="Recruitment cost, gold">Gold</th>
+              <th class="num" title="Maintenance raised (unraised), gold/month">Maint</th>
+              <th class="num">Stack</th>
+              <th>Unlocked by</th>
+              <th>DLC</th>
+            </tr>
+          </thead>
+          <tbody>
+            {maa
+              .filter((m) => m.type === t)
+              .map((m) => (
+                <tr
+                  id={m.id}
+                  data-name={`${m.name} ${Object.keys(m.counters).join(' ')} ${Object.keys(m.terrainBonus).join(' ')}`.toLowerCase()}
+                  data-type={m.type}
+                  data-dlc={m.dlc ?? 'base'}
+                >
+                  <td class="name">
+                    <span class="unit">
+                      <img src={`${base}/img/maa/${m.id}.webp`} alt="" width="34" height="34" loading="lazy" />
+                      <span>
+                        <span class="u-name">{m.name}</span>
+                        {m.specialRecruitOnly && <span class="u-sub"><br />event/effect only</span>}
+                      </span>
+                    </span>
+                  </td>
+                  {(['damage', 'toughness', 'pursuit', 'screen'] as const).map((s) => (
+                    <td class="num">
+                      <span class:list={['stat', { 'is-zero': !m.stats[s] }]} style={`--w:${Math.round((m.stats[s] / maxStat) * 100)}%`}>
+                        {m.stats[s]}
+                        <span class="bar" />
+                      </span>
+                    </td>
+                  ))}
+                  <td>
+                    <span class="chips">
+                      {Object.entries(m.counters).map(([arch, n]) => (
+                        <a class="chip chip--counter" href={`#${arch}`}>
+                          {typeName(arch)}<span class="x">×{n}</span>
+                        </a>
+                      ))}
+                    </span>
+                  </td>
+                  <td>
+                    <span class="chips">
+                      {Object.entries(m.terrainBonus).map(([terr, b]) => (
+                        <span class="chip chip--terrain" title={bonusText(b)}>{terrainName(terr)}</span>
+                      ))}
+                      {Object.entries(m.winterBonus).map(([w, b]) => (
+                        <span class="chip chip--terrain chip--winter" title={bonusText(b)}>{winterName(w)}</span>
+                      ))}
+                      {Object.entries(m.holdingBonus).map(([h, b]) => (
+                        <span class="chip chip--terrain" title={bonusText(b)}>{h.replace(/_/g, ' ')}</span>
+                      ))}
+                    </span>
+                  </td>
+                  <td class="num cost">
+                    {typeof m.buyCost?.gold === 'object' && m.buyCost?.gold != null ? (
+                      <span class="var" title="conditional cost — depends on government or situation">varies</span>
+                    ) : (
+                      costText(m.buyCost?.gold)
+                    )}
+                    {m.buyCost && 'prestige' in m.buyCost && <span class="subtle"> +{costText(m.buyCost.prestige)}p</span>}
+                    {m.buyCost && 'piety' in m.buyCost && <span class="subtle"> +{costText(m.buyCost.piety)}pi</span>}
+                  </td>
+                  <td class="num cost">
+                    {costText(m.highMaintenance?.gold)}
+                    <span class="subtle"> ({costText(m.lowMaintenance?.gold)})</span>
+                  </td>
+                  <td class="num">{m.stack ?? '—'}</td>
+                  <td>
+                    <span class="chips">
+                      {m.requirements.map((r) => (
+                        <span class="chip chip--req" title={r.detail ?? r.kind.replace(/_/g, ' ')}>
+                          {r.negated && <span class="neg">not </span>}{r.name}
+                        </span>
+                      ))}
+                    </span>
+                  </td>
+                  <td>{m.dlc ? <span class="badge-dlc">{m.dlc}</span> : <span class="subtle">—</span>}</td>
+                </tr>
+              ))}
+          </tbody>
+        </table>
+      </div>
+    </section>
+  ))}
+
+  <script>
+    const q = document.getElementById('q') as HTMLInputElement;
+    const ftype = document.getElementById('ftype') as HTMLSelectElement;
+    const fdlc = document.getElementById('fdlc') as HTMLSelectElement;
+    const count = document.getElementById('count')!;
+    const rows = [...document.querySelectorAll<HTMLTableRowElement>('tbody tr')];
+    const groups = [...document.querySelectorAll<HTMLElement>('section[data-group]')];
+
+    function apply() {
+      const needle = q.value.trim().toLowerCase();
+      const t = ftype.value;
+      const d = fdlc.value;
+      let shown = 0;
+      for (const r of rows) {
+        const ok =
+          (!needle || (r.dataset.name ?? '').includes(needle)) &&
+          (!t || r.dataset.type === t) &&
+          (!d || (d === 'base' ? r.dataset.dlc === 'base' : r.dataset.dlc === d));
+        r.hidden = !ok;
+        if (ok) shown++;
+      }
+      for (const g of groups) {
+        g.hidden = ![...g.querySelectorAll('tbody tr')].some((r) => !(r as HTMLTableRowElement).hidden);
+      }
+      count.textContent = `${shown} of ${rows.length}`;
+    }
+    for (const el of [q, ftype, fdlc]) el.addEventListener('input', apply);
+    apply();
+  </script>
+
+  <style>
+    .chip--winter { border-color: color-mix(in oklab, var(--sk-learning) 55%, var(--line)); }
+    .chip .neg { color: var(--bad); }
+  </style>
+</Base>
