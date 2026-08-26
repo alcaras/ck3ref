@@ -43,6 +43,7 @@ MAPPED = {
     "travel": "build_activities.py",
     "decisions": "build_decisions.py",
     "decision_group_types": "build_decisions.py",
+    "defines": "build_defines.py",
     "schemes": "build_schemes.py (pulse_actions skipped: flavor-event scheduling)",
     "nicknames": "build_nicknames.py",
     "struggle": "build_struggles.py",
@@ -68,7 +69,7 @@ SKIP = {
     "diarchies", "confederation_types", "legitimacy", "house_unities",
     "house_aspirations", "house_relation_types", "dynasty_houses", "dynasties",
     "dynasty_house_mottos", "dynasty_house_motto_inserts", "inspirations",
-    "story_cycles", "bookmarks", "game_rules", "defines", "flavorization",
+    "story_cycles", "bookmarks", "game_rules", "flavorization",
     "court_types", "court_amenities", "raids",
     # engine/plumbing — no reference value planned
     "on_action", "scripted_effects", "scripted_triggers", "scripted_modifiers",

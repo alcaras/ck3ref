@@ -46,6 +46,7 @@ data:
 	@python3 scripts/build_contracts.py
 	@python3 scripts/build_dlc.py
 	@python3 scripts/build_genetics.py
+	@python3 scripts/build_defines.py
 	@python3 scripts/build_entities.py
 	@python3 scripts/build_backlinks.py
 	@python3 scripts/build_search_index.py

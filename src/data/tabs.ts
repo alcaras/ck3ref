@@ -74,7 +74,7 @@ export const TABS: Tab[] = [
   { slug: 'events', label: 'Events', section: 'Activities', status: 'placeholder', summary: 'The 9,792-event browser.' },
   // Concepts
   { slug: 'concepts', label: 'Glossary', section: 'Concepts', status: 'built', summary: 'Every game concept, auto-linked.' },
-  { slug: 'defines', label: 'Defines', section: 'Concepts', status: 'placeholder', summary: '1,122 engine constants, annotated.' },
+  { slug: 'defines', label: 'Defines', section: 'Concepts', status: 'built', summary: '1,122 engine constants, annotated.' },
   { slug: 'dlc', label: 'DLC Index', section: 'Concepts', status: 'built', summary: 'What each DLC adds.' },
   { slug: 'patch-notes', label: 'Patch Notes', section: 'Concepts', status: 'placeholder', summary: 'Auto-generated data changelog.' },
   // Tools

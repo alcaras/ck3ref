@@ -1,0 +1,74 @@
+---
+import Base from '../layouts/Base.astro';
+import defines from '../data/defines.json';
+
+const namespaces = [...new Set(defines.map((d) => d.ns))];
+const byNs = new Map(namespaces.map((ns) => [ns, defines.filter((d) => d.ns === ns)]));
+---
+<Base
+  title="Defines"
+  active="defines"
+  lede="Every engine constant, with the game's own inline comments. These are the raw dials behind the mechanics — the numbers pages elsewhere on this site resolve against."
+  stats={[
+    { value: defines.length, label: 'constants' },
+    { value: namespaces.length, label: 'namespaces' },
+  ]}
+>
+  <div class="filterbar">
+    <input type="search" id="q" placeholder="Filter by key, value, or comment…" autocomplete="off" />
+    <select id="fns">
+      <option value="">every namespace</option>
+      {namespaces.map((ns) => <option value={ns}>{ns}</option>)}
+    </select>
+    <span class="hint" id="count"></span>
+  </div>
+
+  {namespaces.map((ns) => (
+    <section data-group={ns}>
+      <h2 class="group-h" id={ns}>{ns} <span class="count">{byNs.get(ns)!.length}</span></h2>
+      <div class="tbl-scroll">
+        <table class="ntbl">
+          <thead><tr><th>Key</th><th>Value</th><th>Comment</th></tr></thead>
+          <tbody>
+            {byNs.get(ns)!.map((d) => (
+              <tr id={`${ns}-${d.key}`} data-name={`${d.key} ${d.value} ${d.comment ?? ''}`.toLowerCase()} data-ns={ns}>
+                <td class="k">{d.key}</td>
+                <td class="v">{d.value}</td>
+                <td class="c">{d.comment ?? <span class="subtle">—</span>}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </section>
+  ))}
+
+  <script>
+    const q = document.getElementById('q') as HTMLInputElement;
+    const fns = document.getElementById('fns') as HTMLSelectElement;
+    const count = document.getElementById('count')!;
+    const rows = [...document.querySelectorAll<HTMLTableRowElement>('tbody tr')];
+    const sections = [...document.querySelectorAll<HTMLElement>('section[data-group]')];
+    function apply() {
+      const needle = q.value.trim().toLowerCase();
+      const ns = fns.value;
+      let shown = 0;
+      for (const r of rows) {
+        const ok = (!needle || (r.dataset.name ?? '').includes(needle)) && (!ns || r.dataset.ns === ns);
+        r.hidden = !ok;
+        if (ok) shown++;
+      }
+      for (const s of sections)
+        s.hidden = ![...s.querySelectorAll('tbody tr')].some((r) => !(r as HTMLTableRowElement).hidden);
+      count.textContent = `${shown} of ${rows.length}`;
+    }
+    for (const el of [q, fns]) el.addEventListener('input', apply);
+    apply();
+  </script>
+
+  <style>
+    .k { font-family: var(--font-mono); font-size: 0.78rem; color: var(--vellum); }
+    .v { font-family: var(--font-mono); font-size: 0.78rem; color: var(--brass); white-space: nowrap; max-width: 16rem; overflow: hidden; text-overflow: ellipsis; }
+    .c { color: var(--dim); font-size: 0.8rem; max-width: 34rem; }
+  </style>
+</Base>
