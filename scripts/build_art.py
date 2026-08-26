@@ -56,6 +56,7 @@ CATEGORIES = [
     ("epidemics.json", None, "epidemics", "epidemics", "icon", "id", False),
     ("legends.json", "types", "legend_types", "legends-types", "icon", "id", False),
     ("artifacts.json", "named", "artifact", "artifacts", "icon", "icon", False),
+    ("interactions.json", None, "character_interactions", "interactions", "icon", "id", True),
     ("domiciles.json", "buildings", "", "domiciles", "icon", "id", True),
 ]
 
