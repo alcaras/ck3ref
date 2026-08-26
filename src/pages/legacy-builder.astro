@@ -36,6 +36,8 @@ const nthCost = (n: number) => COST.base + n * COST.perStep; // n = already owne
     </span>
   </div>
 
+  <div id="tip" class="tip" hidden></div>
+
   <div class="cols">
     <section class="picker">
       <h2 class="group-h">Tracks</h2>
@@ -43,7 +45,8 @@ const nthCost = (n: number) => COST.base + n * COST.perStep; // n = already owne
       <div class="tracks">
         {tracks.map((t) => (
           <div class="track" data-track={t.id}>
-            <div class="tk-banner" style={`--art:url(${base}/img/legacy-banners/${t.id}.webp)`}>
+            <div class="tk-banner" data-trackinfo={t.id} tabindex="0"
+              style={`--art:url(${base}/img/legacy-banners/${t.id}.webp)`}>
               <img class="tk-icon" src={`${base}/img/legacies/${t.id}.webp`} alt="" width="30" height="30" loading="lazy" onerror="this.hidden=true" />
               <b>{t.name}</b>
               {t.dlc && <span class="badge-dlc">{t.dlc}</span>}
@@ -52,7 +55,7 @@ const nthCost = (n: number) => COST.base + n * COST.perStep; // n = already owne
             <div class="steps">
               {t.perks.map((p: any, i: number) => (
                 <button class="step" data-track={t.id} data-step={i}
-                  title={p.effects.join('\n') || p.name}>
+                  aria-label={`${p.name}: ${p.effects.join('; ') || 'no direct modifiers'}`}>
                   <span class="n">{i + 1}</span>{p.name}
                 </button>
               ))}
@@ -181,6 +184,72 @@ const nthCost = (n: number) => COST.base + n * COST.perStep; // n = already owne
       setTimeout(() => (b.textContent = t), 1500);
     });
 
+    // ---- tooltips: perk effects on hover/focus, track blurb on the banner
+    const tip = $('tip');
+    function showTip(html, ev) {
+      tip.innerHTML = html;
+      tip.hidden = false;
+      const r = tip.getBoundingClientRect();
+      const pad = 12;
+      let x = ev.clientX + pad;
+      let y = ev.clientY + pad;
+      if (x + r.width > window.innerWidth - 8) x = ev.clientX - r.width - pad;
+      if (y + r.height > window.innerHeight - 8) y = ev.clientY - r.height - pad;
+      tip.style.transform = `translate(${Math.max(8, x)}px, ${Math.max(8, y)}px)`;
+    }
+    const hideTip = () => { tip.hidden = true; };
+
+    function perkTip(trackId, step) {
+      const t = byId.get(trackId);
+      const perk = t.perks[step];
+      // what this pick would cost given the plan as it stands
+      const already = plan.length;
+      const cost = COST.base + already * COST.perStep;
+      const owned = plan.some((p) => p.track === trackId && p.step === step);
+      const fx = perk.effects.length
+        ? `<ul>${perk.effects.map((e) => `<li>${esc(e)}</li>`).join('')}</ul>`
+        : `<p class="tip-none">No direct modifiers — this perk unlocks or enables something.</p>`;
+      return `<div class="tip-h"><b>${esc(perk.name)}</b>` +
+        `<span class="tip-sub">${esc(t.name)} · step ${step + 1}</span></div>${fx}` +
+        (owned ? `<p class="tip-cost">already in your build</p>`
+               : `<p class="tip-cost">next pick would cost ${cost.toLocaleString()} renown</p>`);
+    }
+
+    function trackTip(trackId) {
+      const t = byId.get(trackId);
+      const bits = [`<div class="tip-h"><b>${esc(t.name)}</b></div>`];
+      if (t.desc) bits.push(`<p>${esc(t.desc)}</p>`);
+      if (t.gate) bits.push(`<p class="tip-gate">Requires: ${esc(t.gate)}</p>`);
+      bits.push(`<p class="tip-cost">${t.perks.length} perks</p>`);
+      return bits.join('');
+    }
+
+    document.addEventListener('mouseover', (ev) => {
+      const step = ev.target.closest('.step');
+      if (step) return showTip(perkTip(step.dataset.track, +step.dataset.step), ev);
+      const bn = ev.target.closest('[data-trackinfo]');
+      if (bn) return showTip(trackTip(bn.dataset.trackinfo), ev);
+      if (!ev.target.closest('.tip')) hideTip();
+    });
+    document.addEventListener('mousemove', (ev) => {
+      if (tip.hidden) return;
+      const over = ev.target.closest('.step, [data-trackinfo]');
+      if (over) showTip(tip.innerHTML, ev);
+      else hideTip();
+    });
+    document.addEventListener('mouseleave', hideTip);
+    // keyboard parity
+    document.addEventListener('focusin', (ev) => {
+      const el = ev.target.closest('.step, [data-trackinfo]');
+      if (!el) return hideTip();
+      const r = el.getBoundingClientRect();
+      const fake = { clientX: r.left, clientY: r.bottom };
+      showTip(el.classList.contains('step')
+        ? perkTip(el.dataset.track, +el.dataset.step)
+        : trackTip(el.dataset.trackinfo), fake);
+    });
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') hideTip(); });
+
     loadFromURL();
     render();
   </script>
@@ -240,5 +309,26 @@ const nthCost = (n: number) => COST.base + n * COST.perStep; // n = already owne
     .btn-primary { border-color: color-mix(in oklab, var(--rubric) 60%, var(--line)); }
     .hint b { color: var(--rubric); font-family: var(--font-mono); }
     .prov { color: var(--faint); font-size: 0.78rem; max-width: 64ch; margin-top: 2rem; }
+    .tip {
+      position: fixed; top: 0; left: 0; z-index: 90; pointer-events: none;
+      max-width: 22rem; background: var(--panel);
+      border: 1px solid var(--brass); border-radius: var(--r);
+      padding: 0.5rem 0.7rem; box-shadow: 0 10px 28px rgba(0, 0, 0, 0.6);
+      font-size: 0.82rem;
+    }
+    .tk-banner { cursor: help; }
+    .tk-banner:focus-visible { outline: 2px solid var(--brass); outline-offset: -2px; }
   </style>
 </Base>
+<style is:global>
+  /* injected at runtime by the tooltip, so it cannot be scoped */
+  #tip .tip-h { display: flex; flex-direction: column; margin-bottom: 0.3rem; }
+  #tip .tip-h b { font-family: var(--font-display); font-size: 0.95rem; line-height: 1.2; }
+  #tip .tip-sub { color: var(--faint); font-size: 0.7rem; font-family: var(--font-mono); }
+  #tip ul { margin: 0; padding-left: 1rem; color: var(--vellum); }
+  #tip li { padding: 0.05rem 0; }
+  #tip p { margin: 0.3rem 0 0; color: var(--dim); }
+  #tip .tip-cost { color: var(--brass); font-family: var(--font-mono); font-size: 0.75rem; }
+  #tip .tip-gate { color: var(--sk-learning); }
+  #tip .tip-none { font-style: italic; }
+</style>
