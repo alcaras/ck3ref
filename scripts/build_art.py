@@ -30,6 +30,9 @@ CATEGORIES = [
     ("buildings.json", None, "building_types", "buildings", "icon", "icon", False),
     ("faiths.json", "faiths", "faith", "faith", "icon", "id", False),
     ("doctrines.json", "doctrines", "faith_doctrines", "faith_doctrines", "icon", "id", True),
+    ("innovations.json", None, "culture_innovations", "innovations", "icon", "id", False),
+    ("pillars.json", None, "culture_pillars", "pillars", "icon", "id", True),
+    ("traditions.json", "traditions", "culture_tradition/4-items", "traditions", "icon", "id", True),
 ]
 
 

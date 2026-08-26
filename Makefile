@@ -22,6 +22,9 @@ data:
 	@python3 scripts/build_doctrines.py
 	@python3 scripts/build_holy_sites.py
 	@python3 scripts/build_concepts.py
+	@python3 scripts/build_traditions.py
+	@python3 scripts/build_innovations.py
+	@python3 scripts/build_pillars.py
 	@python3 scripts/build_entities.py
 	@python3 scripts/build_backlinks.py
 

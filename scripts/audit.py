@@ -28,7 +28,9 @@ MAPPED = {
     "buildings": "build_buildings.py",
     "religion": "build_faiths.py / build_doctrines.py / build_holy_sites.py",
     "terrain_types": "build_entities.py",
-    "game_concepts": "lib/ck3.py (concept link targets)",
+    "game_concepts": "build_concepts.py + lib/ck3.py link targets",
+    "culture": "build_traditions.py / build_innovations.py / build_pillars.py"
+               " (subdirs cultures/eras/name_lists pending phase 2)",
     "modifier_definition_formats": "lib/ck3.py (modifier formatter)",
     "script_values": "lib/ck3.py (value resolver)",
 }
@@ -37,7 +39,7 @@ MAPPED = {
 # won't be in either set and fails the audit — that's the point.
 SKIP = {
     # phase 1
-    "culture", "holdings", "laws",
+    "holdings", "laws",
     "governments", "subject_contracts", "casus_belli_types", "casus_belli_groups",
     "court_positions", "council_positions", "council_tasks", "great_projects",
     # phase 2

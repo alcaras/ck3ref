@@ -81,7 +81,18 @@ def main():
             scan=False, slug=r["id"])
 
     for r in load("concepts.json") or []:
-        add(r["id"], "concept", r["name"], "concepts", scan=False)
+        add(f"concept_{r['id']}", "concept", r["name"], "concepts",
+            scan=" " in r["name"], slug=r["id"])
+
+    tr = load("traditions.json") or {"traditions": []}
+    for r in tr["traditions"]:
+        add(r["id"], "tradition", r["name"], "traditions",
+            scan=" " in r["name"])
+    for r in load("innovations.json") or []:
+        add(r["id"], "innovation", r["name"], "innovations",
+            f"img/innovations/{r['id']}.webp", scan=True)
+    for r in load("pillars.json") or []:
+        add(r["id"], "pillar", r["name"], "pillars", scan=False)
 
     # de-dup by id (later registrations win nothing; first wins)
     seen = {}

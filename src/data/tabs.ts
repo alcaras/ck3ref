@@ -38,9 +38,9 @@ export const TABS: Tab[] = [
   { slug: 'house', label: 'House Mechanics', section: 'Dynasty', status: 'placeholder', summary: 'Unity, aspirations, mottos.' },
   { slug: 'accolades', label: 'Accolades', section: 'Dynasty', status: 'placeholder', summary: 'Knight accolade types and pairings.' },
   // Culture
-  { slug: 'traditions', label: 'Traditions', section: 'Culture', status: 'placeholder', summary: '196 traditions: cost, gates, effects.' },
-  { slug: 'innovations', label: 'Innovations', section: 'Culture', status: 'placeholder', summary: '108 innovations by era.' },
-  { slug: 'pillars', label: 'Pillars', section: 'Culture', status: 'placeholder', summary: 'Ethos, heritage, language, martial custom.' },
+  { slug: 'traditions', label: 'Traditions', section: 'Culture', status: 'built', summary: '197 traditions: cost, gates, effects.' },
+  { slug: 'innovations', label: 'Innovations', section: 'Culture', status: 'built', summary: '108 innovations by era.' },
+  { slug: 'pillars', label: 'Pillars', section: 'Culture', status: 'built', summary: '162 pillars: ethos, heritage, language, martial custom.' },
   { slug: 'cultures', label: 'Cultures', section: 'Culture', status: 'placeholder', summary: 'All 193 cultures and their setups.' },
   // Faith
   { slug: 'faiths', label: 'Faiths', section: 'Faith', status: 'built', summary: '140 faiths under 49 religions.' },
