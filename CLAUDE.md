@@ -77,26 +77,38 @@ hover, ruling). Six skill colors (`--sk-*`) are the only other hues.
 
 ## Status (2026-08-26)
 
-All 54 catalog pages are built — `src/data/tabs.ts` has no placeholders. Live at
-https://alcaras.github.io/ck3ref/ (repo `alcaras/ck3ref`, Pages via Actions;
-CI compiles Astro only, data + art are committed).
+**Live: https://alcaras.github.io/ck3ref/** — repo `alcaras/ck3ref`, Pages via
+Actions (CI compiles Astro only; data and art are committed).
 
-~50 build scripts, ~7k registered entities, 10k+ backlinks, 9,823 indexed
-events, ~3.8k converted icons + 21 panoramic legacy banners.
+57 catalog pages, no placeholders. **8,811 routes** — the bulk is one page per
+event (8,659). ~55 build scripts, ~7k registered entities, 10k+ backlinks,
+~4.2k converted icons plus 21 panoramic legacy banners and 97 decision scenes.
+Full build ≈ 15s.
+
+Tools (all client-side, all shareable by URL):
+`legacy-builder` (dynasty legacy path, purchase order matters),
+`culture-builder` (hybridize / diverge / reform), `province-planner`
+(what you can build in a holding), `genetics`, `faith-creator`,
+`culture-calculator`, `army-builder`.
 
 Known gaps / next steps:
 
-- **More illustration art is available and unused.** `gfx/interface/illustrations/`
-  has 44 folders; only `legacy_tracks` is wired up. `activities` has 5 scenes
-  (of 21 activities — the rest are in `activity_backgrounds`,
-  `activity_header_backgrounds`, `activity_splash_screens`), `decisions` has 66
-  shared scene illustrations addressed via each decision's `picture` field
-  (which `build_decisions.py` currently skips). Wiring either needs a
-  name-resolution pass, not just a CATEGORIES row.
-- Event option trees are not rendered (effect-script layer).
-- Backlinks are surfaced on 6 pages; the graph covers far more.
-- `province_terrain`, `on_action`, and the scripted_* dirs remain conscious
-  SKIPs (engine plumbing).
+- **Event option outcomes are partial by design.** `effect_localization`
+  covers 989 effects; anything the game does not phrase is COUNTED, never
+  invented ("+N further scripted effects with no tooltip text"). Expanding
+  coverage means adding a real effect renderer, not more guessing.
+- **Unused illustration art**: `gfx/interface/illustrations/` has 44 folders;
+  only `legacy_tracks` and `decisions` are wired. `activities` has scenes for
+  5 of 21 activity types (rest live in `activity_backgrounds`,
+  `activity_header_backgrounds`, `activity_splash_screens`) — needs a
+  name-resolution pass, not a CATEGORIES row.
+- **Province planner** cannot know per-county terrain, other holdings in the
+  county, or faith — those conditions are surfaced as "N conditions depend on
+  your realm" rather than resolved. Per-county terrain would need
+  `history/provinces` joined to `landed_titles` (the join already exists in
+  `build_startworld.py`).
+- Backlinks surface on 10 pages; the graph covers more.
+- `on_action`, `scripted_*` dirs remain conscious SKIPs (engine plumbing).
 
 ## Adding a page (the men-at-arms pattern)
 
@@ -170,3 +182,41 @@ Known gaps / next steps:
   (`illustrations/legacy_tracks/<track>.dds`) share the same key.
 - game_concepts: no `.info` doc; `parent` may name an alias; 20 concepts have
   `shown_in_encyclopedia = no` (exclude, as the game does).
+- **Alpha-mask icons.** Several icon sets (buildings, holdings, legacies,
+  domiciles, travel options, faith doctrines, pillars) ship with RGB all zero
+  and the shape in the ALPHA channel — the game tints them at runtime.
+  Converted as-is they render black-on-black and look "missing".
+  `build_art.py::_is_alpha_mask` detects this (every visible pixel black) and
+  tints with `MASK_TINT`. If an icon set looks invisible, check this first.
+- **Astro scoped CSS does not reach `innerHTML`-injected markup.** Anything a
+  page builds at runtime (tooltips, builder panels, planner cards) must be
+  styled in a `<style is:global>` block, ideally keyed on a container id.
+  Symptom: text runs together / no spacing, only in the dynamic parts.
+- **Never `import fs from 'node:fs'` in Astro frontmatter.** It fails the
+  build with a misleading "Unterminated string literal" pointing at an
+  unrelated line. To test for a file's existence at build time use
+  `import.meta.glob('/public/img/{a,b}/*.webp')` and match on the keys.
+- **Effect text comes from `common/effect_localization/`** — the game's own
+  map from each scriptable effect to the loc keys it uses in tooltips (989
+  entries; prefer the `first` variant). Fill its `$VALUE|fmt$` slot with the
+  scripted amount BEFORE `render_text`, and never substitute a bare `VALUE`
+  token — that also matches inside nested keys like `$DREAD_VALUE_GAIN$` and
+  destroys them.
+- **Inline icon tokens carry meaning.** `[dread_i]`-style tokens in loc
+  templates are where the noun lives ("You gain [dread_i]+10"); `render_text`
+  resolves them to the concept name, otherwise outcomes read "You gain +10".
+- **Building categories say which holding a chain belongs to** (they come from
+  the game's own file grouping): Castle/City/Temple holdings, Temple citadels,
+  Tribal, Nomadic. Everything else is holding-agnostic. Used by the province
+  planner for holding-type gating.
+- **`special` and `great_building` chains are site-specific** — their triggers
+  name a county, so no terrain/holding setting makes them "buildable here".
+  280 of 366 chains are in this bucket; treat them separately or they swamp
+  any buildability list.
+- **Dynasty legacy perk cost is GLOBAL, not per track**: `PERK_COST_BASE` +
+  `PERK_COST_MULTIPLIER` x perks already unlocked (250 + 500N). See hard rule 6.
+- **Hybridization is gated on cultural acceptance, not prestige**: base 40
+  (`hybridization_threshold_flat_number_value`), x0.5 / x2 from the traditions
+  carrying `easier_to_hybridize` / `harder_to_hybridize` (the target culture's
+  parameter applies too), clamped 0-100. Cooldowns: 50y hybrid, 100y
+  divergence, 50y per tradition change.
