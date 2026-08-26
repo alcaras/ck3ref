@@ -35,9 +35,9 @@ export const TABS: Tab[] = [
   { slug: 'nicknames', label: 'Nicknames', section: 'Characters', status: 'built', summary: 'All 683 nicknames: good, bad, prefix, DLC.' },
   // Dynasty
   { slug: 'legacies', label: 'Dynasty Legacies', section: 'Dynasty', status: 'built', summary: '21 legacy tracks, five steps each.' },
-  { slug: 'house', label: 'House Mechanics', section: 'Dynasty', status: 'placeholder', summary: 'Unity, aspirations, mottos.' },
+  { slug: 'house', label: 'House Mechanics', section: 'Dynasty', status: 'built', summary: 'Unity, aspirations, mottos.' },
   { slug: 'artifacts', label: 'Artifacts', section: 'Dynasty', status: 'built', summary: '109 named artifacts and their real modifier sets, plus slot types and crafting features.' },
-  { slug: 'accolades', label: 'Accolades', section: 'Dynasty', status: 'placeholder', summary: 'Knight accolade types and pairings.' },
+  { slug: 'accolades', label: 'Accolades', section: 'Dynasty', status: 'built', summary: 'Knight accolade types and pairings.' },
   // Culture
   { slug: 'traditions', label: 'Traditions', section: 'Culture', status: 'built', summary: '197 traditions: cost, gates, effects.' },
   { slug: 'innovations', label: 'Innovations', section: 'Culture', status: 'built', summary: '108 innovations by era.' },
@@ -51,7 +51,8 @@ export const TABS: Tab[] = [
   { slug: 'governments', label: 'Governments', section: 'Realm', status: 'built', summary: 'Feudal to nomadic: every government type.' },
   { slug: 'laws', label: 'Laws', section: 'Realm', status: 'built', summary: 'Crown authority, succession, admin policies.' },
   { slug: 'contracts', label: 'Vassal Contracts', section: 'Realm', status: 'built', summary: 'Obligations, stances, tax slots.' },
-  { slug: 'domiciles', label: 'Domiciles', section: 'Realm', status: 'placeholder', summary: 'Camps and estates for landless play.' },
+  { slug: 'task-contracts', label: 'Task Contracts', section: 'Realm', status: 'built', summary: 'The adventurer job board: 153 contracts, requirements, and pay.' },
+  { slug: 'domiciles', label: 'Domiciles', section: 'Realm', status: 'built', summary: 'Camps and estates for landless play.' },
   // Holdings
   { slug: 'buildings', label: 'Buildings', section: 'Holdings', status: 'built', summary: '975 buildings in 366 upgrade chains.' },
   { slug: 'holdings', label: 'Holdings', section: 'Holdings', status: 'built', summary: 'Castle, city, temple, tribe.' },

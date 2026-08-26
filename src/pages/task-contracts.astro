@@ -1,0 +1,112 @@
+---
+import Base from '../layouts/Base.astro';
+import contracts from '../data/task_contracts.json';
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const groups = [...new Set(contracts.map((c: any) => c.group))];
+const groupName = (g: string) =>
+  (contracts.find((c: any) => c.group === g) as any)?.groupName ?? g.replace(/_/g, ' ');
+const dlcs = [...new Set(contracts.map((c: any) => c.dlc).filter(Boolean))].sort();
+const rewardText = (r: any) =>
+  typeof r === 'string' ? r : [r.name ?? r.kind, r.amount ?? r.value].filter(Boolean).join(' ');
+---
+<Base
+  title="Task Contracts"
+  active="task-contracts"
+  lede="The adventurer job board: every contract landless characters can take, with who offers it, what it demands, and what it pays."
+  stats={[
+    { value: contracts.length, label: 'contracts' },
+    { value: groups.length, label: 'categories' },
+  ]}
+>
+  <div class="filterbar">
+    <input type="search" id="q" placeholder="Filter by name, requirement, reward…" autocomplete="off" />
+    <select id="fgroup">
+      <option value="">every category</option>
+      {groups.map((g: string) => <option value={g}>{groupName(g)}</option>)}
+    </select>
+    <select id="fdlc">
+      <option value="">base game + DLC</option>
+      <option value="base">base game only</option>
+      {dlcs.map((d: any) => <option value={d}>{d}</option>)}
+    </select>
+    <span class="hint" id="count"></span>
+  </div>
+
+  {groups.map((g: string) => (
+    <section data-group={g}>
+      <h2 class="group-h" id={g}>
+        {groupName(g)}
+        <span class="count">{contracts.filter((c: any) => c.group === g).length}</span>
+      </h2>
+      <div class="tbl-scroll">
+        <table class="ntbl">
+          <thead>
+            <tr><th>Contract</th><th>Requirements</th><th>Rewards</th><th>Travel</th><th>DLC</th></tr>
+          </thead>
+          <tbody>
+            {contracts.filter((c: any) => c.group === g).map((c: any) => (
+              <tr
+                id={c.id}
+                data-name={`${c.name} ${(c.criteria ?? []).map((x: any) => x.name).join(' ')} ${(c.rewards ?? []).map(rewardText).join(' ')}`.toLowerCase()}
+                data-grp={g}
+                data-dlc={c.dlc ?? 'base'}
+              >
+                <td class="name">
+                  <span class="u-name">{c.name}</span>
+                  {c.isCriminal && <span class="chip chip--counter crim">criminal</span>}
+                  {c.desc && <div class="u-sub">{c.desc}</div>}
+                </td>
+                <td>
+                  <span class="chips">
+                    {(c.criteria ?? []).slice(0, 6).map((r: any) => (
+                      <span class="chip chip--req" title={r.detail ?? r.kind}>
+                        {r.negated && <span class="neg">not </span>}{r.name}
+                      </span>
+                    ))}
+                  </span>
+                </td>
+                <td class="fx">{(c.rewards ?? []).slice(0, 6).map((r: any) => <div>{rewardText(r)}</div>)}</td>
+                <td class="subtle">{c.travel ? 'travels' : c.useDiplomaticRange ? 'in range' : '—'}</td>
+                <td>{c.dlc ? <span class="badge-dlc">{c.dlc}</span> : <span class="subtle">—</span>}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </section>
+  ))}
+
+  <script>
+    const q = document.getElementById('q') as HTMLInputElement;
+    const fgroup = document.getElementById('fgroup') as HTMLSelectElement;
+    const fdlc = document.getElementById('fdlc') as HTMLSelectElement;
+    const count = document.getElementById('count')!;
+    const rows = [...document.querySelectorAll<HTMLTableRowElement>('tbody tr')];
+    const sections = [...document.querySelectorAll<HTMLElement>('section[data-group]')];
+    function apply() {
+      const needle = q.value.trim().toLowerCase();
+      const g = fgroup.value, d = fdlc.value;
+      let shown = 0;
+      for (const r of rows) {
+        const ok = (!needle || (r.dataset.name ?? '').includes(needle)) &&
+          (!g || r.dataset.grp === g) &&
+          (!d || (d === 'base' ? r.dataset.dlc === 'base' : r.dataset.dlc === d));
+        r.hidden = !ok;
+        if (ok) shown++;
+      }
+      for (const s of sections)
+        s.hidden = ![...s.querySelectorAll('tbody tr')].some((r) => !(r as HTMLTableRowElement).hidden);
+      count.textContent = `${shown} of ${rows.length}`;
+    }
+    for (const el of [q, fgroup, fdlc]) el.addEventListener('input', apply);
+    apply();
+  </script>
+
+  <style>
+    .ntbl td.name { white-space: normal; max-width: 20rem; }
+    .fx { font-size: 0.8rem; max-width: 20rem; }
+    .crim { margin-left: 0.4rem; }
+    .chips { max-width: 26rem; }
+  </style>
+</Base>

@@ -45,6 +45,10 @@ data:
 	@python3 scripts/build_governments.py
 	@python3 scripts/build_laws.py
 	@python3 scripts/build_contracts.py
+	@python3 scripts/build_accolades.py
+	@python3 scripts/build_house.py
+	@python3 scripts/build_domiciles.py
+	@python3 scripts/build_task_contracts.py
 	@python3 scripts/build_artifacts.py
 	@python3 scripts/build_dlc.py
 	@python3 scripts/build_genetics.py

@@ -1,0 +1,147 @@
+---
+import Base from '../layouts/Base.astro';
+import data from '../data/domiciles.json';
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const { types, buildings } = data as any;
+
+const byType = new Map<string, any[]>();
+for (const b of buildings) {
+  if (!byType.has(b.domicileType)) byType.set(b.domicileType, []);
+  byType.get(b.domicileType)!.push(b);
+}
+// chain roots: buildings nothing upgrades from
+const chainsFor = (t: string) => {
+  const list = byType.get(t) ?? [];
+  const roots = list.filter((b) => !b.previousBuilding);
+  const next = new Map(list.filter((b) => b.previousBuilding).map((b) => [b.previousBuilding, b]));
+  return roots.map((root) => {
+    const chain = [root];
+    let cur = next.get(root.id);
+    while (cur) { chain.push(cur); cur = next.get(cur.id); }
+    return chain;
+  }).sort((a, b) => (a[0].name ?? '').localeCompare(b[0].name ?? ''));
+};
+const num = (v: any) => (typeof v === 'number' ? v : typeof v?.value === 'number' ? v.value : null);
+const cost = (b: any) => {
+  const g = num(b.cost?.gold ?? b.cost);
+  return g == null ? '—' : Math.round(g);
+};
+---
+<Base
+  title="Domiciles"
+  active="domiciles"
+  lede="Camps and estates for landless play: every domicile type and the building trees you develop inside them."
+  stats={[
+    { value: types.length, label: 'domicile types' },
+    { value: buildings.length, label: 'buildings' },
+  ]}
+>
+  <div class="filterbar">
+    <input type="search" id="q" placeholder="Filter by building, effect…" autocomplete="off" />
+    <select id="ftype">
+      <option value="">every domicile</option>
+      {types.map((t: any) => <option value={t.id}>{t.name}</option>)}
+    </select>
+    <span class="hint" id="count"></span>
+  </div>
+
+  <section>
+    <h2 class="group-h">Domicile types</h2>
+    <div class="tgrid">
+      {types.map((t: any) => (
+        <div class="tcard" id={t.id}>
+          <div class="t-h">
+            <b>{t.name}</b>
+            {t.dlc && <span class="badge-dlc">{t.dlc}</span>}
+          </div>
+          <div class="subtle">
+            {t.slots?.main ?? 0} main · {t.slots?.external ?? 0} external slots
+            {t.provisions && ' · uses provisions'}
+            {t.herd && ' · herd'}
+            {t.canMoveManually && ' · movable'}
+          </div>
+          <div class="subtle small">{(byType.get(t.id) ?? []).length} buildings</div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  {types.map((t: any) => (
+    <section data-group={t.id}>
+      <h2 class="group-h" id={`b-${t.id}`}>
+        {t.name} buildings
+        <span class="count">{chainsFor(t.id).length} chains</span>
+      </h2>
+      <div class="tbl-scroll">
+        <table class="ntbl">
+          <thead>
+            <tr><th>Building chain</th><th class="num">Tiers</th><th class="num">Gold</th><th>Effects at final tier</th><th>Slot</th><th>DLC</th></tr>
+          </thead>
+          <tbody>
+            {chainsFor(t.id).map((chain: any[]) => {
+              const last = chain[chain.length - 1];
+              const lines = [...(last.modifiers ?? []), ...(last.provinceModifiers ?? []), ...(last.parameters ?? [])];
+              return (
+                <tr
+                  id={chain[0].id}
+                  data-name={`${chain.map((c) => c.name).join(' ')} ${lines.join(' ')}`.toLowerCase()}
+                  data-type={t.id}
+                >
+                  <td class="name">
+                    <span class="unit">
+                      <img src={`${base}/img/domiciles/${chain[0].id}.webp`} alt="" width="28" height="28" loading="lazy" onerror="this.hidden=true" />
+                      <span>
+                        <span class="u-name">{chain[0].name}</span>
+                        {chain.length > 1 && last.name !== chain[0].name && <span class="subtle"> → {last.name}</span>}
+                        {chain[0].desc && <div class="u-sub">{chain[0].desc}</div>}
+                      </span>
+                    </span>
+                  </td>
+                  <td class="num">{chain.length}</td>
+                  <td class="num cost">{cost(chain[0])}{chain.length > 1 && ` → ${cost(last)}`}</td>
+                  <td class="fx">{lines.slice(0, 5).map((l: string) => <div>{l}</div>)}</td>
+                  <td class="subtle">{last.slotType ?? '—'}</td>
+                  <td>{last.dlc ? <span class="badge-dlc">{last.dlc}</span> : <span class="subtle">—</span>}</td>
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
+      </div>
+    </section>
+  ))}
+
+  <script>
+    const q = document.getElementById('q') as HTMLInputElement;
+    const ftype = document.getElementById('ftype') as HTMLSelectElement;
+    const count = document.getElementById('count')!;
+    const rows = [...document.querySelectorAll<HTMLTableRowElement>('tbody tr')];
+    const sections = [...document.querySelectorAll<HTMLElement>('section[data-group]')];
+    function apply() {
+      const needle = q.value.trim().toLowerCase();
+      const t = ftype.value;
+      let shown = 0;
+      for (const r of rows) {
+        const ok = (!needle || (r.dataset.name ?? '').includes(needle)) && (!t || r.dataset.type === t);
+        r.hidden = !ok;
+        if (ok) shown++;
+      }
+      for (const s of sections)
+        s.hidden = ![...s.querySelectorAll('tbody tr')].some((r) => !(r as HTMLTableRowElement).hidden);
+      count.textContent = `${shown} of ${rows.length}`;
+    }
+    for (const el of [q, ftype]) el.addEventListener('input', apply);
+    apply();
+  </script>
+
+  <style>
+    .tgrid { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 0.6rem; margin-bottom: 1rem; }
+    .tcard { background: var(--panel); border: 1px solid var(--line-soft); border-radius: var(--r); padding: 0.6rem 0.75rem; }
+    .t-h { display: flex; gap: 0.5rem; align-items: baseline; margin-bottom: 0.2rem; }
+    .t-h b { font-family: var(--font-display); font-size: 1rem; }
+    .small { font-size: 0.72rem; }
+    .fx { font-size: 0.8rem; max-width: 26rem; }
+    .ntbl td.name { white-space: normal; max-width: 22rem; }
+  </style>
+</Base>

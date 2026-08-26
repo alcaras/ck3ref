@@ -1,0 +1,214 @@
+---
+import Base from '../layouts/Base.astro';
+import data from '../data/accolades.json';
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+
+const attrs = data.attributes;
+const GROUPS: Record<string, string> = {
+  common: 'Common — Personality',
+  skilled: 'Skilled',
+  eminent: 'Eminent',
+  men_at_arms: 'Men-at-Arms',
+};
+const groups = Object.keys(GROUPS).filter((g) => attrs.some((a) => a.group === g));
+
+const SKILL_LABEL: Record<string, string> = {
+  diplomacy: 'Diplomacy', martial: 'Martial', stewardship: 'Stewardship',
+  intrigue: 'Intrigue', learning: 'Learning', prowess: 'Prowess',
+};
+
+const dlcs = [...new Set(attrs.map((a) => a.dlc).filter(Boolean))].sort();
+
+const searchText = (a: (typeof attrs)[number]) =>
+  [a.name, a.adjective, a.noun, ...a.skills, ...a.unlock,
+   ...a.ranks.flatMap((r) => [...r.liege, ...r.knight, ...r.knightArmy,
+                              ...r.params, ...r.maa.map((m) => m.name)])]
+    .join(' ')
+    .toLowerCase();
+---
+<Base
+  title="Accolades"
+  active="accolades"
+  lede="Every accolade attribute an acclaimed knight can carry, with the per-rank effects for liege and army — read from accolade_types, requirements taken from the game's own unlock tooltips. An accolade pairs a primary and a secondary attribute (up to three total) and advances their ranks as it accrues glory."
+  stats={[
+    { value: attrs.length, label: 'attribute types' },
+    { value: groups.length, label: 'attribute sets' },
+    { value: data.gloryLevels.length, label: 'glory ranks' },
+  ]}
+>
+  <section class="glory">
+    <h2 class="group-h" id="glory-ranks">Glory ranks</h2>
+    <p class="note">
+      An accolade starts with {data.gloryLevels[0]} glory and climbs the rank ladder at these
+      thresholds (defines, NAccolade). An acclaimed knight can hold up to {data.maxAttributes} attributes.
+    </p>
+    <div class="tbl-scroll">
+      <table class="ntbl">
+        <thead>
+          <tr>
+            <th>Rank</th>
+            {data.rankFlavors.map((f, i) => <th class="num">{f ?? `Rank ${i}`}</th>)}
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="name">Glory required</td>
+            <td class="num">0</td>
+            {data.gloryLevels.map((g) => <td class="num">{g}</td>)}
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <div class="filterbar">
+    <input type="search" id="q" placeholder="Filter by attribute, effect, requirement…" autocomplete="off" />
+    <select id="fgroup">
+      <option value="">every set</option>
+      {groups.map((g) => <option value={g}>{GROUPS[g]}</option>)}
+    </select>
+    <select id="fskill">
+      <option value="">any skill</option>
+      {Object.entries(SKILL_LABEL).map(([k, v]) => <option value={k}>{v}</option>)}
+    </select>
+    <span class="hint" id="count"></span>
+  </div>
+
+  {groups.map((g) => (
+    <section data-group={g}>
+      <h2 class="group-h" id={g}>
+        {GROUPS[g]}
+        <span class="count">{attrs.filter((a) => a.group === g).length}</span>
+      </h2>
+      <div class="cards">
+        {attrs
+          .filter((a) => a.group === g)
+          .map((a) => (
+            <article
+              class="acc"
+              id={a.id}
+              data-name={searchText(a)}
+              data-group={a.group}
+              data-skills={a.skills.join(' ')}
+            >
+              <header class="acc-head">
+                <img src={`${base}/img/accolades/${a.id}.webp`} alt="" width="40" height="40" loading="lazy" />
+                <div>
+                  <span class="acc-name">{a.name}</span>
+                  {a.adjective && a.adjective !== a.name && (
+                    <span class="acc-adj">“{a.adjective}”</span>
+                  )}
+                  <div class="chips">
+                    {a.skills.map((s) => (
+                      <span class="chip chip-skill" style={`--c: var(--sk-${s})`}>
+                        <span class="dot" />{SKILL_LABEL[s]}
+                      </span>
+                    ))}
+                    {a.dlc && <span class="badge-dlc">{a.dlc}</span>}
+                  </div>
+                </div>
+              </header>
+              {a.unlock.length > 0 && (
+                <div class="req">
+                  <span class="req-h" title="A knight fits this attribute when any of these hold (squire_perfect_fit)">
+                    Knight fits with any of
+                  </span>
+                  <ul>
+                    {a.unlock.map((u) => <li>{u}</li>)}
+                  </ul>
+                </div>
+              )}
+              <div class="ranks">
+                {a.ranks.map((r) => (
+                  <div class="rank">
+                    <div class="rank-h">Rank {r.rank}</div>
+                    <ul class="fx">
+                      {r.liege.map((e) => <li><span class="who" title="applies to the liege while this accolade is active">liege</span>{e}</li>)}
+                      {r.knight.map((e) => <li><span class="who" title="applies to the acclaimed knight personally">knight</span>{e}</li>)}
+                      {r.knightArmy.map((e) => <li><span class="who who-army" title="applies to the army the knight fights in">army</span>{e}</li>)}
+                      {r.maa.map((m) => (
+                        <li><span class="who who-maa" title="unlocks this regiment for the liege">unlock</span>
+                          <a href={`${base}/men-at-arms#${m.id}`}>{m.name}</a>
+                        </li>
+                      ))}
+                      {r.params.map((p) => <li><span class="who who-p" title="special rule">rule</span>{p}</li>)}
+                    </ul>
+                  </div>
+                ))}
+              </div>
+            </article>
+          ))}
+      </div>
+    </section>
+  ))}
+
+  <script>
+    const q = document.getElementById('q') as HTMLInputElement;
+    const fgroup = document.getElementById('fgroup') as HTMLSelectElement;
+    const fskill = document.getElementById('fskill') as HTMLSelectElement;
+    const count = document.getElementById('count')!;
+    const cards = [...document.querySelectorAll<HTMLElement>('.acc')];
+    const groups = [...document.querySelectorAll<HTMLElement>('section[data-group]')];
+
+    function apply() {
+      const needle = q.value.trim().toLowerCase();
+      const g = fgroup.value;
+      const s = fskill.value;
+      let shown = 0;
+      for (const c of cards) {
+        const ok =
+          (!needle || (c.dataset.name ?? '').includes(needle)) &&
+          (!g || c.dataset.group === g) &&
+          (!s || (c.dataset.skills ?? '').split(' ').includes(s));
+        c.hidden = !ok;
+        if (ok) shown++;
+      }
+      for (const sec of groups) {
+        sec.hidden = ![...sec.querySelectorAll<HTMLElement>('.acc')].some((c) => !c.hidden);
+      }
+      count.textContent = `${shown} of ${cards.length}`;
+    }
+    for (const el of [q, fgroup, fskill]) el.addEventListener('input', apply);
+    apply();
+  </script>
+
+  <style>
+    .note { color: var(--dim); font-size: 0.85rem; max-width: 70ch; margin: -0.2rem 0 0.6rem; }
+    .glory .ntbl td.name { color: var(--dim); }
+
+    .cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(24rem, 1fr)); gap: 0.8rem; }
+    .acc {
+      background: var(--panel); border: 1px solid var(--line-soft); border-radius: var(--r);
+      padding: 0.7rem 0.8rem;
+    }
+    .acc-head { display: flex; gap: 0.6rem; align-items: flex-start; margin-bottom: 0.5rem; }
+    .acc-head img { object-fit: contain; flex: none; filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.6)); }
+    .acc-name { font-family: var(--font-display); font-weight: 600; font-size: 1rem; }
+    .acc-adj { color: var(--faint); font-style: italic; font-size: 0.8rem; margin-left: 0.4rem; }
+    .acc-head .chips { margin-top: 0.25rem; }
+    .chip-skill .dot { background: var(--c); }
+
+    .req { border-top: 1px solid var(--line-soft); padding-top: 0.4rem; margin-bottom: 0.5rem; }
+    .req-h { color: var(--sk-learning); font-size: 0.72rem; font-weight: 600; cursor: help; }
+    .req ul { list-style: none; margin: 0.15rem 0 0; padding: 0; }
+    .req li { font-size: 0.76rem; color: var(--dim); padding: 0.06rem 0; }
+    .req li::before { content: '›'; color: var(--faint); margin-right: 0.35rem; }
+
+    .ranks { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.5rem; }
+    .rank { border: 1px solid var(--line-soft); border-radius: var(--r); padding: 0.4rem 0.5rem; background: var(--ink); }
+    .rank-h { font-family: var(--font-mono); font-size: 0.7rem; color: var(--rubric); margin-bottom: 0.25rem; }
+    .fx { list-style: none; margin: 0; padding: 0; }
+    .fx li { font-size: 0.75rem; padding: 0.12rem 0; }
+    .fx li + li { border-top: 1px dotted var(--line-soft); }
+    .who {
+      display: inline-block; font-family: var(--font-mono); font-size: 0.62rem;
+      color: var(--brass); margin-right: 0.35rem; cursor: help;
+    }
+    .who-army { color: var(--sk-martial); }
+    .who-maa { color: var(--good); }
+    .who-p { color: var(--sk-intrigue); }
+
+    @media (max-width: 900px) { .ranks { grid-template-columns: 1fr; } }
+  </style>
+</Base>

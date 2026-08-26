@@ -111,6 +111,15 @@ def main():
         add(r["id"], "epidemic", r["name"], "epidemics",
             f"img/epidemics/{r['id']}.webp", scan=True)
 
+    for r in load("task_contracts.json") or []:
+        add(r["id"], "task_contract", r["name"], "task-contracts", scan=False)
+    dom = load("domiciles.json") or {"types": []}
+    for r in dom.get("types", []):
+        add(r["id"], "domicile", r["name"], "domiciles", scan=False)
+    acc = load("accolades.json") or {}
+    for r in (acc.get("attributes", []) if isinstance(acc, dict) else []):
+        add(r["id"], "accolade", r.get("name"), "accolades", scan=False)
+
     art = load("artifacts.json") or {"named": []}
     for r in art.get("named", []):
         add(r["id"], "artifact", r["name"], "artifacts", scan=False)

@@ -51,6 +51,15 @@ MAPPED = {
     "legends": "build_legends.py",
     "epidemics": "build_epidemics.py",
     "artifacts": "build_artifacts.py",
+    "accolade_types": "build_accolades.py",
+    "accolade_names": "build_accolades.py",
+    "house_unities": "build_house.py",
+    "house_aspirations": "build_house.py",
+    "house_relation_types": "build_house.py",
+    "legitimacy": "build_house.py",
+    "diarchies": "build_house.py",
+    "domiciles": "build_domiciles.py",
+    "task_contracts": "build_task_contracts.py",
     "game_concepts": "build_concepts.py + lib/ck3.py link targets",
     "culture": "build_traditions.py / build_innovations.py / build_pillars.py"
                " / build_cultures.py (subdirs eras/name_lists pending)",
@@ -62,12 +71,10 @@ MAPPED = {
 # won't be in either set and fails the audit — that's the point.
 SKIP = {
     # phase 2
-        "domiciles", "task_contracts", "accolade_types", "accolade_names",
-    "accolade_icons", "character_interactions", "character_interaction_categories",
+        "accolade_icons", "character_interactions", "character_interaction_categories",
     "secret_types", "hook_types", "factions", "succession_election",
     "succession_appointment", "tax_slots", "lease_contracts", "vassal_stances",
-    "diarchies", "confederation_types", "legitimacy", "house_unities",
-    "house_aspirations", "house_relation_types", "dynasty_houses", "dynasties",
+    "confederation_types", "dynasty_houses", "dynasties",
     "dynasty_house_mottos", "dynasty_house_motto_inserts", "inspirations",
     "story_cycles", "bookmarks", "game_rules", "flavorization",
     "court_types", "court_amenities", "raids",

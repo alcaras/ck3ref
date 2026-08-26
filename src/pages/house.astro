@@ -1,0 +1,175 @@
+---
+import Base from '../layouts/Base.astro';
+import data from '../data/house.json';
+
+const { unity, aspirations, relations, legitimacy, diarchies, mandates } = data as any;
+const total = [unity, aspirations, relations, legitimacy, diarchies, mandates]
+  .reduce((n, s) => n + (s?.length ?? 0), 0);
+const lines = (mods: any[]) => (mods ?? []).flatMap((m: any) => m.lines ?? []);
+---
+<Base
+  title="House Mechanics"
+  active="house"
+  lede="Everything the dynasty screen governs: house unity and its stages, aspirations, house relations, legitimacy ladders, and the regency systems."
+  stats={[
+    { value: legitimacy?.length ?? 0, label: 'legitimacy ladders' },
+    { value: diarchies?.length ?? 0, label: 'diarchy types' },
+    { value: total, label: 'entries' },
+  ]}
+>
+  {(legitimacy ?? []).length > 0 && (
+    <section>
+      <h2 class="group-h" id="legitimacy">Legitimacy <span class="count">{legitimacy.length}</span></h2>
+      {legitimacy.map((l: any) => (
+        <div class="mech" id={l.id}>
+          <div class="m-h">
+            <b>{(l.appliesTo ?? []).join(', ') || l.id}</b>
+            {l.belowExpectationsOpinion != null && (
+              <span class="subtle">below expectations: {l.belowExpectationsOpinion} opinion</span>
+            )}
+            {l.dlc && <span class="badge-dlc">{l.dlc}</span>}
+          </div>
+          <div class="tbl-scroll">
+            <table class="ntbl">
+              <thead><tr><th>Level</th><th>Effects</th><th>Notes</th></tr></thead>
+              <tbody>
+                {(l.levels ?? []).map((lv: any, i: number) => (
+                  <tr>
+                    <td class="name">{lv.name ?? `Level ${i}`}</td>
+                    <td class="fx">{lines(lv.modifiers).map((x: string) => <div>{x}</div>)}</td>
+                    <td class="subtle">{(lv.flags ?? []).join(' · ')}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      ))}
+    </section>
+  )}
+
+  {(unity ?? []).map((u: any) => (
+    <section>
+      <h2 class="group-h" id={u.id}>{u.name} <span class="count">{u.minValue}–{u.maxValue}, starts {u.defaultValue}</span></h2>
+      <div class="tbl-scroll">
+        <table class="ntbl">
+          <thead><tr><th>Stage</th><th>Effects</th><th>Unlocks</th></tr></thead>
+          <tbody>
+            {(u.stages ?? []).map((s: any) => (
+              <tr id={s.id}>
+                <td class="name">{s.name ?? s.id}{s.threshold != null && <span class="subtle"> ≥{s.threshold}</span>}</td>
+                <td class="fx">{lines(s.modifiers).map((x: string) => <div>{x}</div>)}</td>
+                <td>
+                  <span class="chips">
+                    {(s.decisions ?? []).map((d: any) => <span class="chip">{d.name ?? d.id}</span>)}
+                  </span>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </section>
+  ))}
+
+  {(aspirations ?? []).length > 0 && (
+    <section>
+      <h2 class="group-h" id="aspirations">House Aspirations <span class="count">{aspirations.length}</span></h2>
+      {aspirations.map((a: any) => (
+        <div class="mech">
+          {(a.entries ?? []).map((e: any) => (
+            <div class="asp" id={e.id}>
+              <div class="m-h">
+                <b>{e.name ?? e.id}</b>
+                {e.cooldownYears && <span class="subtle">{e.cooldownYears}y cooldown</span>}
+                {e.dlc && <span class="badge-dlc">{e.dlc}</span>}
+              </div>
+              {e.desc && <div class="subtle">{e.desc}</div>}
+              <span class="chips">
+                {(e.gates ?? []).map((g: any) => (
+                  <span class="chip chip--req">{g.negated && <span class="neg">not </span>}{g.name}</span>
+                ))}
+              </span>
+              <div class="fx">{lines(e.modifiers).map((x: string) => <div>{x}</div>)}</div>
+            </div>
+          ))}
+        </div>
+      ))}
+    </section>
+  )}
+
+  {(relations ?? []).map((r: any) => (
+    <section>
+      <h2 class="group-h" id={r.id}>House Relations <span class="count">{(r.levels ?? []).length} levels</span></h2>
+      <div class="tbl-scroll">
+        <table class="ntbl">
+          <thead><tr><th>Level</th><th class="num">Opinion</th><th class="num">Cohesion</th><th>Effects</th></tr></thead>
+          <tbody>
+            {(r.levels ?? []).map((lv: any) => (
+              <tr id={lv.id}>
+                <td class="name">{lv.name}{lv.desc && <div class="u-sub">{lv.desc}</div>}</td>
+                <td class="num">{lv.opinion ?? '—'}</td>
+                <td class="num">{lv.cohesion ?? '—'}</td>
+                <td class="fx">{[...(lv.params ?? []), ...lines(lv.modifiers)].map((x: string) => <div>{x}</div>)}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </section>
+  ))}
+
+  {(diarchies ?? []).length > 0 && (
+    <section>
+      <h2 class="group-h" id="diarchies">Regencies & Diarchies <span class="count">{diarchies.length}</span></h2>
+      <div class="tbl-scroll">
+        <table class="ntbl">
+          <thead><tr><th>Type</th><th>Liege effects</th><th>Diarch effects</th><th>Ends by</th></tr></thead>
+          <tbody>
+            {diarchies.map((d: any) => (
+              <tr id={d.id}>
+                <td class="name">{d.name ?? d.id}<div class="u-sub">{d.groupLabel}</div></td>
+                <td class="fx">{lines(d.liegeModifiers).map((x: string) => <div>{x}</div>)}</td>
+                <td class="fx">{lines(d.diarchModifiers).map((x: string) => <div>{x}</div>)}</td>
+                <td class="subtle">{d.endInteraction ?? '—'}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </section>
+  )}
+
+  {(mandates ?? []).length > 0 && (
+    <section>
+      <h2 class="group-h" id="mandates">Regency Mandates <span class="count">{mandates.length}</span></h2>
+      <div class="tbl-scroll">
+        <table class="ntbl">
+          <thead><tr><th>Mandate</th><th>Effects</th><th>Favoured by</th></tr></thead>
+          <tbody>
+            {mandates.map((m: any) => (
+              <tr id={m.id}>
+                <td class="name">{m.name ?? m.id}</td>
+                <td class="fx">{(m.effects ?? []).map((x: string) => <div>{x}</div>)}</td>
+                <td>
+                  <span class="chips">
+                    {(m.bonusTraits ?? []).map((t: string) => <span class="chip">{t}</span>)}
+                  </span>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </section>
+  )}
+
+  <style>
+    .mech { margin-bottom: 1.2rem; }
+    .m-h { display: flex; gap: 0.7rem; align-items: baseline; margin-bottom: 0.35rem; }
+    .m-h b { font-family: var(--font-display); font-size: 1rem; }
+    .asp { background: var(--panel); border: 1px solid var(--line-soft); border-radius: var(--r); padding: 0.6rem 0.8rem; margin-bottom: 0.5rem; }
+    .fx { font-size: 0.8rem; max-width: 30rem; }
+    .ntbl td.name { white-space: normal; max-width: 18rem; }
+  </style>
+</Base>
