@@ -33,6 +33,7 @@ CATEGORIES = [
     ("innovations.json", None, "culture_innovations", "innovations", "icon", "id", False),
     ("pillars.json", None, "culture_pillars", "pillars", "icon", "id", True),
     ("traditions.json", "traditions", "culture_tradition/4-items", "traditions", "icon", "id", True),
+    ("cbs.json", "cbs", "casus_bellis", "cb", "icon", "id", True),
 ]
 
 

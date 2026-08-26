@@ -1,0 +1,227 @@
+---
+import Base from '../layouts/Base.astro';
+import data from '../data/cbs.json';
+
+const { cbs, groups, meta } = data as {
+  cbs: any[];
+  groups: Record<string, { label: string; scriptOnly: boolean; debug: boolean; requirements: any[] }>;
+  meta: { defaultTruceDays: number | null; defaultTruceVaries: boolean };
+};
+
+// Player-relevant groups first; script-only and debug wars sink to the bottom.
+const GROUP_ORDER = [
+  'claim', 'conquest', 'de_jure', 'religious', 'religious_disorganised',
+  'invasion', 'vassalization', 'subjugation', 'independence', 'struggle',
+  'humiliation', 'artifact', 'mandala', 'celestial',
+  'religious_script_only', 'civil_war', 'event', 'migration', 'debug',
+];
+const usedGroups = [...new Set(cbs.map((c) => c.group).filter(Boolean))].sort((a, b) => {
+  const ia = GROUP_ORDER.indexOf(a), ib = GROUP_ORDER.indexOf(b);
+  return (ia === -1 ? 99 : ia) - (ib === -1 ? 99 : ib) || a.localeCompare(b);
+});
+const dlcs = [...new Set(cbs.map((c) => c.dlc).filter(Boolean))].sort();
+
+const TARGETS: Record<string, string> = {
+  all: 'any title',
+  neighbor_land: 'neighboring realm (land border)',
+  neighbor_land_or_water: 'neighboring realm (land or coast)',
+  neighbor_land_tributary: 'neighboring realm or tributary',
+  neighbor_land_or_water_tributary: 'neighboring realm or tributary',
+  claim: 'claimed titles',
+  de_jure: 'de jure titles',
+  independence_domain: 'own domain (independence)',
+  none: 'the ruler, not a title',
+};
+const groupLabel = (g: string) => groups[g]?.label ?? g;
+const defaultTruceYears = meta.defaultTruceDays ? Math.round(meta.defaultTruceDays / 365) : null;
+
+function costLine(res: string, c: any): { text: string; varies: boolean } {
+  if (typeof c === 'number') return { text: `${c} ${res}`, varies: false };
+  if (c && c.varies) {
+    return c.base != null
+      ? { text: `${c.base} ${res} base`, varies: true }
+      : { text: `${res}: varies`, varies: true };
+  }
+  return { text: `${c} ${res}`, varies: false };
+}
+---
+<Base
+  title="Casus Belli"
+  active="casus-belli"
+  lede="Every way to declare war: what you can target, what it costs, and what each ending does — outcome text rendered from the game's own war-conclusion descriptions in casus_belli_types."
+  stats={[
+    { value: cbs.length, label: 'casus belli' },
+    { value: usedGroups.length, label: 'groups' },
+    { value: dlcs.length, label: 'DLCs add content' },
+  ]}
+>
+  <div class="filterbar">
+    <input type="search" id="q" placeholder="Filter by name, target, outcome…" autocomplete="off" />
+    <select id="fgroup">
+      <option value="">every group</option>
+      {usedGroups.map((g) => <option value={g}>{groupLabel(g)}</option>)}
+    </select>
+    <select id="fdlc">
+      <option value="">base game + DLC</option>
+      <option value="base">base game only</option>
+      {dlcs.map((d) => <option value={d}>{d}</option>)}
+    </select>
+    <span class="hint" id="count"></span>
+  </div>
+
+  {usedGroups.map((g) => {
+    const g_ = groups[g];
+    const rows = cbs.filter((c) => c.group === g);
+    return (
+      <section data-group={g}>
+        <h2 class="group-h" id={g}>
+          {groupLabel(g)}
+          <span class="count">{rows.length}</span>
+          {g_?.scriptOnly && <span class="chip chip--script">event/script only</span>}
+          {g_?.requirements.map((r) => (
+            <span class="chip chip--req">{r.negated && <span class="neg">not </span>}{r.name}</span>
+          ))}
+        </h2>
+        <div class="tbl-scroll">
+          <table class="ntbl cbt">
+            <thead>
+              <tr>
+                <th>Casus belli</th>
+                <th>Targets</th>
+                <th>Cost to declare</th>
+                <th>Outcomes</th>
+                <th>Available for</th>
+                <th class="num">Truce</th>
+                <th>DLC</th>
+              </tr>
+            </thead>
+            <tbody>
+              {rows.map((c) => (
+                <tr
+                  id={c.id}
+                  data-name={`${c.name} ${c.warName ?? ''} ${TARGETS[c.targetTitles] ?? ''} ${Object.values(c.outcomes).join(' ')}`.toLowerCase()}
+                  data-group={c.group}
+                  data-dlc={c.dlc ?? 'base'}
+                >
+                  <td class="name">
+                    <span class="cb-name">{c.name}</span>
+                    {c.isGreatHolyWar && <span class="chip chip--ghw">Great Holy War</span>}
+                    {c.warName && c.warName !== c.name && <span class="u-sub">{c.warName}</span>}
+                    <span class="cb-flags">
+                      {c.defenderFaithCanJoin && <span class="flag" title="Rulers of the defender's faith can join the defence">faith may join defence</span>}
+                      {c.onAttackerDeath === 'invalidate' && <span class="flag" title="The war ends inconclusively if the attacker dies">invalidates on attacker death</span>}
+                    </span>
+                  </td>
+                  <td class="tgt">
+                    {c.targetTitles ? (
+                      <>
+                        {TARGETS[c.targetTitles] ?? c.targetTitles}
+                        {c.targetTier && c.targetTier !== 'all' && <span class="tier"> · {c.targetTier} tier</span>}
+                        {c.deJureRegionsAbove && <span class="subtle"> · incl. de jure holders</span>}
+                      </>
+                    ) : (
+                      <span class="subtle">the ruler, not a title</span>
+                    )}
+                  </td>
+                  <td class="cost">
+                    {c.costs && Object.keys(c.costs).length ? (
+                      Object.entries(c.costs).map(([res, v]) => {
+                        const l = costLine(res, v);
+                        return (
+                          <span class="cost-line">
+                            {l.text}
+                            {l.varies && <span class="var" title="conditional cost — modified by faith relations, innovations, legitimacy, and situation">±</span>}
+                          </span>
+                        );
+                      })
+                    ) : (
+                      <span class="subtle">free</span>
+                    )}
+                  </td>
+                  <td class="outcomes">
+                    {c.outcomes.victory && <span class="o o-v"><b>Victory</b> {c.outcomes.victory}</span>}
+                    {c.outcomes.defeat && <span class="o o-d"><b>Defeat</b> {c.outcomes.defeat}</span>}
+                    {c.whitePeacePossible
+                      ? c.outcomes.whitePeace && <span class="o o-w"><b>White peace</b> {c.outcomes.whitePeace}</span>
+                      : <span class="o o-w"><b>White peace</b> <span class="subtle">not possible</span></span>}
+                  </td>
+                  <td>
+                    <span class="chips">
+                      {c.requirements.map((r) => (
+                        <span class="chip chip--req" title={r.kind.replace(/_/g, ' ')}>
+                          {r.negated && <span class="neg">not </span>}{r.name}
+                        </span>
+                      ))}
+                    </span>
+                  </td>
+                  <td class="num">
+                    {c.truceDays
+                      ? (c.truceDays >= 365 ? `${Math.round(c.truceDays / 365)} y` : `${c.truceDays} d`)
+                      : <span class="subtle" title="default truce — 5 years base, modified by perks and situation">{defaultTruceYears} y*</span>}
+                  </td>
+                  <td>{c.dlc ? <span class="badge-dlc">{c.dlc}</span> : <span class="subtle">—</span>}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </section>
+    );
+  })}
+
+  <script>
+    const q = document.getElementById('q') as HTMLInputElement;
+    const fgroup = document.getElementById('fgroup') as HTMLSelectElement;
+    const fdlc = document.getElementById('fdlc') as HTMLSelectElement;
+    const count = document.getElementById('count')!;
+    const rows = [...document.querySelectorAll<HTMLTableRowElement>('tbody tr')];
+    const groups = [...document.querySelectorAll<HTMLElement>('section[data-group]')];
+
+    function apply() {
+      const needle = q.value.trim().toLowerCase();
+      const g = fgroup.value;
+      const d = fdlc.value;
+      let shown = 0;
+      for (const r of rows) {
+        const ok =
+          (!needle || (r.dataset.name ?? '').includes(needle)) &&
+          (!g || r.dataset.group === g) &&
+          (!d || (d === 'base' ? r.dataset.dlc === 'base' : r.dataset.dlc === d));
+        r.hidden = !ok;
+        if (ok) shown++;
+      }
+      for (const s of groups) {
+        s.hidden = ![...s.querySelectorAll('tbody tr')].some((r) => !(r as HTMLTableRowElement).hidden);
+      }
+      count.textContent = `${shown} of ${rows.length}`;
+    }
+    for (const el of [q, fgroup, fdlc]) el.addEventListener('input', apply);
+    apply();
+  </script>
+
+  <style>
+    .cbt td.name { white-space: normal; min-width: 11rem; max-width: 14rem; }
+    .cb-name { font-weight: 600; display: block; }
+    .cbt .u-sub { display: block; color: var(--faint); font-size: 0.72rem; }
+    .cb-flags { display: block; }
+    .cb-flags .flag {
+      display: inline-block; margin-top: 0.15rem; margin-right: 0.4rem;
+      color: var(--dim); font-size: 0.7rem; border-bottom: 1px dotted var(--faint);
+      cursor: help;
+    }
+    .cbt td.tgt { min-width: 9rem; max-width: 12rem; font-size: 0.8rem; }
+    .cbt .tier { color: var(--brass); }
+    .cost-line { display: block; white-space: nowrap; }
+    .cost .var { color: var(--sk-intrigue); cursor: help; border-bottom: none; margin-left: 0.1rem; }
+    .cbt td.outcomes { min-width: 18rem; max-width: 26rem; font-size: 0.78rem; }
+    .o { display: block; margin-bottom: 0.15rem; color: var(--dim); }
+    .o b { font-weight: 600; font-size: 0.7rem; margin-right: 0.25rem; }
+    .o-v b { color: var(--good); }
+    .o-d b { color: var(--bad); }
+    .o-w b { color: var(--faint); }
+    .chip--ghw { border-color: color-mix(in oklab, var(--rubric) 60%, var(--line)); color: var(--rubric); }
+    .chip--script { border-style: dashed; color: var(--dim); font-size: 0.68rem; }
+    .group-h .chip { font-weight: 400; }
+    .chip .neg { color: var(--bad); }
+  </style>
+</Base>

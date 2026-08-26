@@ -86,3 +86,42 @@ hover, ruling). Six skill colors (`--sk-*`) are the only other hues.
   hand-maintained in `ck3.FEATURE_TO_DLC`.
 - Some icons legitimately share art via the `icon =` field; `build_art.py`
   falls back to `_default.dds` and warns (Dropbox may also still be syncing).
+  Categories where absence is normal (doctrines, pillars, traditions) run
+  `quiet=True`. The FUSE mount sometimes returns an EMPTY folder listing until
+  an `ls` materializes it — a 0/N art run usually means that, not missing art.
+- **Loc key patterns confirmed per category**: traits `trait_<key>`; perks &
+  focuses & doctrines & tenets & pillars & dynasty perks & doctrine groups
+  `<key>_name` (+`_desc`); buildings `building_<key>`; faiths/religions bare
+  `<key>` (+`_adj`/`_adherent`); holy sites `holy_site_<key>_name`; concepts
+  `game_concept_<key>`; traditions `<key>_name`; innovations bare `<key>`;
+  culture params `culture_parameter_<key>`; MAA bare `<key>` + `<key>_flavor`.
+- **Dynamic `name`/`desc` blocks** (first_valid/triggered_desc) appear on ~57
+  perks, 24 doctrines, 52 traits — extract loc refs from the block and prefer
+  the LAST (untriggered fallback) entry.
+- Dynasty perk order = file definition order, NOT the key's numeric suffix.
+- `effect` blocks' player text resolves three ways: direct loc key,
+  `effect_localization/` entry, or the implicit `<key>_global` loc convention.
+- Tradition costs: prestige only — base 2000 (4000 ritual) + conditional
+  penalties (+2000 wrong ethos, +3000 unmet criteria) ×0.5 "inspired" ×1.5
+  replacement; no per-count scaling (cap is 5 traditions).
+- Doctrine piety costs chain through `faith_doctrine_cost_low/mid/high`
+  (200/400/600) and `faith_tenet_cost_*` (500/1000/1500), nearly always with
+  the ×0.5 unchanged-doctrine multiplier. Never collapse to one number.
+- DLC gating variants: `requires_dlc_flag` (concepts; cosmetic building
+  assets — NOT a badge source for buildings), `has_dlc_feature` (most),
+  DLC scripted triggers (`has_*_dlc_trigger` in
+  scripted_triggers/00_has_dlc_scripted_triggers.txt — doctrines),
+  filename prefixes. Faiths have NO derivable DLC provenance.
+- `custom_tooltip` texts inside `can_pick`/`is_shown` are UNMET-state
+  phrasings ("Your Government is Nomadic" = blocker) — label as conditions,
+  never as positive requirements.
+- Building terrain gates live one level down in
+  `building_*_requirement_terrain` scripted triggers; an empty (commented-out)
+  trigger body = no restriction. `building_requirement_castle_city_church =
+  { LEVEL = N }` → "Holding level N".
+- Scripted-trigger macros invoked with argument blocks
+  (`valid_for_maa_trigger = { PARAMETER = x }`) — collect the macro's args,
+  don't recurse into them as triggers.
+- Modifier VALUES can be script-value names — `render_modifier` resolves them.
+- game_concepts: no `.info` doc; `parent` may name an alias; 20 concepts have
+  `shown_in_encyclopedia = no` (exclude, as the game does).

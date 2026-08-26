@@ -21,6 +21,7 @@ data:
 	@python3 scripts/build_faiths.py
 	@python3 scripts/build_doctrines.py
 	@python3 scripts/build_holy_sites.py
+	@python3 scripts/build_cbs.py
 	@python3 scripts/build_concepts.py
 	@python3 scripts/build_traditions.py
 	@python3 scripts/build_innovations.py

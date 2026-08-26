@@ -1,0 +1,5287 @@
+{
+  "cbs": [
+    {
+      "allowHostages": false,
+      "costs": {
+        "prestige": {
+          "base": 150,
+          "varies": true
+        }
+      },
+      "deJureRegionsAbove": false,
+      "defenderFaithCanJoin": false,
+      "dlc": "The Royal Court",
+      "features": [],
+      "group": "artifact",
+      "icon": "artifact_war",
+      "id": "artifact_war",
+      "isGreatHolyWar": false,
+      "isHolyWar": false,
+      "name": "Artifact",
+      "onAttackerDeath": "inherit",
+      "onDefenderDeath": "inherit",
+      "outcomes": {
+        "defeat": "No Artifacts change hands.",
+        "invalidated": "Artifact Claim War invalidated!",
+        "victory": "You take ownership of all Artifacts that you have a claim on belonging to the defender and their Vassals.",
+        "whitePeace": "No Artifacts change hands."
+      },
+      "requirements": [
+        {
+          "key": "government_is_landless_adventurer",
+          "kind": "government_flag",
+          "name": "Landless adventurer",
+          "negated": true
+        }
+      ],
+      "sourceFile": "01_ep1_wars.txt",
+      "targetTier": null,
+      "targetTitles": null,
+      "truceDays": null,
+      "warName": "Artifact Claim War",
+      "whitePeacePossible": true
+    },
+    {
+      "allowHostages": false,
+      "costs": {
+        "prestige": {
+          "base": 150,
+          "varies": true
+        }
+      },
+      "deJureRegionsAbove": false,
+      "defenderFaithCanJoin": false,
+      "dlc": "The Royal Court",
+      "features": [],
+      "group": "artifact",
+      "icon": "reclaim_relic_artifact_war",
+      "id": "reclaim_relic_artifact_war",
+      "isGreatHolyWar": false,
+      "isHolyWar": false,
+      "name": "Relic Artifact Reclamation",
+      "onAttackerDeath": "inherit",
+      "onDefenderDeath": "inherit",
+      "outcomes": {
+        "defeat": "No Artifacts change hands.",
+        "invalidated": "Reclaim Relics War invalidated!",
+        "victory": "You take ownership of all the attacker's Artifacts that are held by the defender and their non-the attacker's Vassals.",
+        "whitePeace": "No Artifacts change hands."
+      },
+      "requirements": [
+        {
+          "key": "highest_held_title_tier >= tier_duchy",
+          "kind": "tier",
+          "name": "Highest title >= duchy",
+          "negated": false
+        },
+        {
+          "key": "government_is_landless_adventurer",
+          "kind": "government_flag",
+          "name": "Landless adventurer",
+          "negated": true
+        }
+      ],
+      "sourceFile": "01_ep1_wars.txt",
+      "targetTier": null,
+      "targetTitles": null,
+      "truceDays": null,
+      "warName": "Reclaim Relics War",
+      "whitePeacePossible": true
+    },
+    {
+      "allowHostages": true,
+      "costs": {
+        "prestige": {
+          "base": 50,
+          "varies": true
+        }
+      },
+      "deJureRegionsAbove": false,
+      "defenderFaithCanJoin": false,
+      "dlc": "The Great People",
+      "features": [],
+      "group": "celestial",
+      "icon": "county_conquest_cb",
+      "id": "china_hegemon_seize_county_cb",
+      "isGreatHolyWar": false,
+      "isHolyWar": false,
+      "name": "Seize Hegemonic County",
+      "onAttackerDeath": "inherit",
+      "onDefenderDeath": "inherit",
+      "outcomes": {
+        "defeat": "The defender keeps the contested Title.",
+        "invalidated": null,
+        "victory": "The attacker gains the contested Title.",
+        "whitePeace": "The defender keeps the contested Title."
+      },
+      "requirements": [
+        {
+          "key": "title:h_china",
+          "kind": "title",
+          "name": "China",
+          "negated": false
+        },
+        {
+          "key": "title:e_minister_grand_marshal",
+          "kind": "title",
+          "name": "Commission",
+          "negated": false
+        }
+      ],
+      "sourceFile": "10_tgp_china_wars.txt",
+      "targetTier": "county",
+      "targetTitles": "all",
+      "truceDays": null,
+      "warName": "The attacker's Seizure of the target title",
+      "whitePeacePossible": true
+    },
+    {
+      "allowHostages": true,
+      "costs": {
+        "prestige": {
+          "base": 50,
+          "varies": true
+        }
+      },
+      "deJureRegionsAbove": false,
+      "defenderFaithCanJoin": false,
+      "dlc": "The Great People",
+      "features": [],
+      "group": "celestial",
+      "icon": "duchy_conquest_cb",
+      "id": "china_hegemon_seize_duchy_cb",
+      "isGreatHolyWar": false,
+      "isHolyWar": false,
+      "name": "Seize Hegemonic Duchy",
+      "onAttackerDeath": "inherit",
+      "onDefenderDeath": "inherit",
+      "outcomes": {
+        "defeat": "The defender keeps the contested Title.",
+        "invalidated": null,
+        "victory": "The attacker gains the contested Title.",
+        "whitePeace": "The defender keeps the contested Title."
+      },
+      "requirements": [
+        {
+          "key": "title:h_china",
+          "kind": "title",
+          "name": "China",
+          "negated": false
+        },
+        {
+          "key": "title:e_minister_grand_marshal",
+          "kind": "title",
+          "name": "Commission",
+          "negated": false
+        }
+      ],
+      "sourceFile": "10_tgp_china_wars.txt",
+      "targetTier": "duchy",
+      "targetTitles": "all",
+      "truceDays": null,
+      "warName": "The attacker's Seizure of the target title",
+      "whitePeacePossible": true
+    },
+    {
+      "allowHostages": true,
+      "costs": {
+        "prestige": {
+          "base": 50,
+          "varies": true
+        }
+      },
+      "deJureRegionsAbove": false,
+      "defenderFaithCanJoin": false,
+      "dlc": "The Great People",
+      "features": [],
+      "group": "celestial",
+      "icon": "county_conquest_cb",
+      "id": "china_seize_county_cb",
+      "isGreatHolyWar": false,
+      "isHolyWar": false,
+      "name": "Seize Hegemonic County",
+      "onAttackerDeath": "inherit",
+      "onDefenderDeath": "inherit",
+      "outcomes": {
+        "defeat": "The defender keeps the contested Title.",
+        "invalidated": null,
+        "victory": "The attacker gains the contested Title.",
+        "whitePeace": "The defender keeps the contested Title."
+      },
+      "requirements": [
+        {
+          "key": "is_independent_ruler",
+          "kind": "status",
+          "name": "Independent ruler",
+          "negated": true
+        },
+        {
+          "key": "title:h_china",
+          "kind": "title",
+          "name": "China",
+          "negated": false
+        },
+        {
+          "key": "government_is_celestial",
+          "kind": "government_flag",
+          "name": "Celestial",
+          "negated": true
+        }
+      ],
+      "sourceFile": "10_tgp_china_wars.txt",
+      "targetTier": "county",
+      "targetTitles": "neighbor_land",
+      "truceDays": null,
+      "warName": "The attacker's Seizure of the target title",
+      "whitePeacePossible": true
+    },
+    {
+      "allowHostages": true,
+      "costs": {
+        "prestige": {
+          "base": 50,
+          "varies": true
+        }
+      },
+      "deJureRegionsAbove": false,
+      "defenderFaithCanJoin": false,
+      "dlc": "The Great People",
+      "features": [],
+      "group": "celestial",
+      "icon": "duchy_conquest_cb",
+      "id": "china_seize_duchy_cb",
+      "isGreatHolyWar": false,
+      "isHolyWar": false,
+      "name": "Seize Hegemonic Duchy",
+      "onAttackerDeath": "inherit",
+      "onDefenderDeath": "inherit",
+      "outcomes": {
+        "defeat": "The defender keeps the contested Title.",
+        "invalidated": null,
+        "victory": "The attacker gains the contested Title.",
+        "whitePeace": "The defender keeps the contested Title."
+      },
+      "requirements": [
+        {
+          "key": "is_independent_ruler",
+          "kind": "status",
+          "name": "Independent ruler",
+          "negated": true
+        },
+        {
+          "key": "title:h_china",
+          "kind": "title",
+          "name": "China",
+          "negated": false
+        },
+        {
+          "key": "government_is_celestial",
+          "kind": "government_flag",
+          "name": "Celestial",
+          "negated": true
+        }
+      ],
+      "sourceFile": "10_tgp_china_wars.txt",
+      "targetTier": "duchy",
+      "targetTitles": "neighbor_land",
+      "truceDays": null,
+      "warName": "The attacker's Seizure of the target title",
+      "whitePeacePossible": true
+    },
+    {
+      "allowHostages": true,
+      "costs": {
+        "piety": {
+          "varies": true
+        },
+        "prestige": {
+          "varies": true
+        }
+      },
+      "deJureRegionsAbove": true,
+      "defenderFaithCanJoin": false,
+      "dlc": "The Great People",
+      "features": [],
+      "group": "celestial",
+      "icon": "celestial",
+      "id": "chinese_consolidation_cb",
+      "isGreatHolyWar": false,
+      "isHolyWar": false,
+      "name": "Chinese Consolidation War",
+      "onAttackerDeath": "inherit",
+      "onDefenderDeath": "inherit",
+      "outcomes": {
+        "defeat": "The defender keeps the contested titles.",
+        "invalidated": null,
+        "victory": "The attacker vassalizes the defender or take all of their Titles that are part of the China of the same or higher Tier than the attacker's Primary Title.",
+        "whitePeace": "The defender keeps the contested titles."
+      },
+      "requirements": [
+        {
+          "key": "heritage_chinese",
+          "kind": "cultural_pillar",
+          "name": "Heritage chinese",
+          "negated": false
+        },
+        {
+          "key": "government_is_nomadic",
+          "kind": "government_flag",
+          "name": "Nomadic",
+          "negated": false
+        },
+        {
+          "key": "government_is_steppe_admin",
+          "kind": "government_flag",
+          "name": "Steppe admin",
+          "negated": false
+        }
+      ],
+      "sourceFile": "10_tgp_china_wars.txt",
+      "targetTier": null,
+      "targetTitles": "neighbor_land_or_water",
+      "truceDays": null,
+      "warName": "Chinese Consolidation War",
+      "whitePeacePossible": true
+    },
+    {
+      "allowHostages": true,
+      "costs": {
+        "piety": {
+          "varies": true
+        },
+        "prestige": {
+          "varies": true
+        }
+      },
+      "deJureRegionsAbove": true,
+      "defenderFaithCanJoin": false,
+      "dlc": "The Great People",
+      "features": [],
+      "group": "celestial",
+      "icon": "celestial",
+      "id": "chinese_reunification_cb",
+      "isGreatHolyWar": false,
+      "isHolyWar": false,
+      "name": "Consolidate Land Under Heaven (Dynastic Cycle)",
+      "onAttackerDeath": "inherit",
+      "onDefenderDeath": "inherit",
+      "outcomes": {
+        "defeat": "The defender keeps the contested titles.",
+        "invalidated": "The war has ended: the defender no longer … any land in the target region.",
+        "victory": "The attacker seizes all titles within the defender's realm belonging De Jure to the target title, and all occupied counties outside it.",
+        "whitePeace": "The defender keeps the contested titles."
+      },
+      "requirements": [],
+      "sourceFile": "10_tgp_china_wars.txt",
+      "targetTier": "kingdom",
+      "targetTitles": "neighbor_land_or_water",
+      "truceDays": null,
+      "warName": "Chinese Consolidation War",
+      "whitePeacePossible": true
+    },
+    {
+      "allowHostages": true,
+      "costs": {
+        "piety": {
+          "varies": true
+        },
+        "prestige": {
+          "base": 2000,
+          "varies": true
+        }
+      },
+      "deJureRegionsAbove": false,
+      "defenderFaithCanJoin": false,
+      "dlc": "The Great People",
+      "features": [],
+      "group": "celestial",
+      "icon": "celestial",
+      "id": "claim_the_mandate_cb",
+      "isGreatHolyWar": false,
+      "isHolyWar": false,
+      "name": "Seize the Mandate of Heaven",
+      "onAttackerDeath": "inherit",
+      "onDefenderDeath": "inherit",
+      "outcomes": {
+        "defeat": "The defender keeps all their titles and remains independent.",
+        "invalidated": null,
+        "victory": "The attacker takes the defender's Primary Title and makes the defender a Vassal.",
+        "whitePeace": "The defender keeps all their titles and remains independent."
+      },
+      "requirements": [
+        {
+          "key": "is_independent_ruler",
+          "kind": "status",
+          "name": "Independent ruler",
+          "negated": false
+        },
+        {
+          "key": "title:h_china",
+          "kind": "title",
+          "name": "China",
+          "negated": false
+        }
+      ],
+      "sourceFile": "10_tgp_china_wars.txt",
+      "targetTier": null,
+      "targetTitles": "none",
+      "truceDays": null,
+      "warName": "The attacker's Seizure of the Mandate of Heaven",
+      "whitePeacePossible": true
+    },
+    {
+      "allowHostages": false,
+      "costs": {
+        "prestige": {
+          "base": 50,
+          "varies": true
+        }
+      },
+      "deJureRegionsAbove": true,
+      "defenderFaithCanJoin": false,
+      "dlc": "The Great People",
+      "features": [],
+      "group": "celestial",
+      "icon": "duchy_conquest_cb",
+      "id": "grand_campaign_kingdom_invasion_cb",
+      "isGreatHolyWar": false,
+      "isHolyWar": false,
+      "name": "… China Grand Campaign",
+      "onAttackerDeath": "inherit",
+      "onDefenderDeath": "inherit",
+      "outcomes": {
+        "defeat": "The defender keeps the contested Title.",
+        "invalidated": "The war has ended: the defender no longer … any land in the target region.",
+        "victory": "The attacker gains the contested Title.",
+        "whitePeace": "The defender keeps the contested Title."
+      },
+      "requirements": [
+        {
+          "key": "title:e_minister_grand_marshal",
+          "kind": "title",
+          "name": "Commission",
+          "negated": false
+        }
+      ],
+      "sourceFile": "10_tgp_china_wars.txt",
+      "targetTier": null,
+      "targetTitles": "all",
+      "truceDays": null,
+      "warName": "… China Grand Campaign",
+      "whitePeacePossible": true
+    },
+    {
+      "allowHostages": false,
+      "costs": null,
+      "deJureRegionsAbove": false,
+      "defenderFaithCanJoin": false,
+      "dlc": "The Great People",
+      "features": [],
+      "group": "civil_war",
+      "icon": "claim_cb",
+      "id": "ceremonial_claimant_faction_war",
+      "isGreatHolyWar": false,
+      "isHolyWar": false,
+      "name": "Ceremonial Claimant Faction",
+      "onAttackerDeath": "inherit_faction",
+      "onDefenderDeath": "inherit",
+      "outcomes": {
+        "defeat": "The Ceremonial Monarch remains unchanged. All rebelling Vassals are Imprisoned.",
+        "invalidated": null,
+        "victory": "The Claimant becomes the Ceremonial Monarch.",
+        "whitePeace": "The Ceremonial Monarch remains unchanged. A Title Revocation Reason is given on every rebelling vassal."
+      },
+      "requirements": [
+        {
+          "key": "ceremonial_claimant_faction",
+          "kind": "faction",
+          "name": "Ceremonial Claimant",
+          "negated": false
+        }
+      ],
+      "sourceFile": "10_tgp_faction_wars.txt",
+      "targetTier": null,
+      "targetTitles": "claim",
+      "truceDays": null,
+      "warName": "War for the claimant's Claim to the target title",
+      "whitePeacePossible": true
+    },
+    {
+      "allowHostages": false,
+      "costs": null,
+      "deJureRegionsAbove": true,
+      "defenderFaithCanJoin": false,
+      "dlc": null,
+      "features": [],
+      "group": "civil_war",
+      "icon": "claim_cb",
+      "id": "claimant_faction_war",
+      "isGreatHolyWar": false,
+      "isHolyWar": false,
+      "name": "Claimant Faction",
+      "onAttackerDeath": "inherit_faction",
+      "onDefenderDeath": "inherit",
+      "outcomes": {
+        "defeat": "The contested Title remains with the defender. All rebelling Vassals are Imprisoned.",
+        "invalidated": null,
+        "victory": "The Claimant takes control of the contested Title.",
+        "whitePeace": "The contested Title remains with the defender. A Title Revocation Reason is given on every rebelling vassal."
+      },
+      "requirements": [
+        {
+          "key": "claimant_faction",
+          "kind": "faction",
+          "name": "Claimant Faction",
+          "negated": false
+        }
+      ],
+      "sourceFile": "00_civil_war.txt",
+      "targetTier": null,
+      "targetTitles": "claim",
+      "truceDays": null,
+      "warName": "War for the claimant's Claim on the target title",
+      "whitePeacePossible": true
+    },
+    {
+      "allowHostages": false,
+      "costs": null,
+      "deJureRegionsAbove": true,
+      "defenderFaithCanJoin": false,
+      "dlc": null,
+      "features": [],
+      "group": "civil_war",
+      "icon": "dissolution_war",
+      "id": "depose_war",
+      "isGreatHolyWar": false,
+      "isHolyWar": false,
+      "name": "Depose",
+      "onAttackerDeath": "inherit_faction",
+      "onDefenderDeath": "inherit",
+      "outcomes": {
+        "defeat": "The defender keeps their Titles and imprison all rebelling Vassals.",
+        "invalidated": null,
+        "victory": "The defender is Deposed.",
+        "whitePeace": "The defender keeps their Titles. A Title Revocation Reason is given on every rebelling Vassal."
+      },
+      "requirements": [],
+      "sourceFile": "00_civil_war.txt",
+      "targetTier": null,
+      "targetTitles": "none",
+      "truceDays": null,
+      "warName": "War against the Tyranny of the defender",
+      "whitePeacePossible": true
+    },
+    {
+      "allowHostages": false,
+      "costs": null,
+      "deJureRegionsAbove": true,
+      "defenderFaithCanJoin": false,
+      "dlc": "The Great People",
+      "features": [],
+      "group": "civil_war",
+      "icon": "dissolution_war",
+      "id": "imperial_policy_faction_war",
+      "isGreatHolyWar": false,
+      "isHolyWar": false,
+      "name": "Imperial Policy Faction",
+      "onAttackerDeath": "inherit_faction",
+      "onDefenderDeath": "inherit",
+      "outcomes": {
+        "defeat": "The defender imprisons every rebellious vassal and gains a Title Revocation Reason against each of them.",
+        "invalidated": null,
+        "victory": "The attacker will select a new Imperial Policy",
+        "whitePeace": "The defender gets a truce and a Title Revocation Reason against all rebelling vassals."
+      },
+      "requirements": [
+        {
+          "key": "imperial_policy_faction",
+          "kind": "faction",
+          "name": "Imperial Policy",
+          "negated": false
+        }
+      ],
+      "sourceFile": "10_tgp_faction_wars.txt",
+      "targetTier": null,
+      "targetTitles": null,
+      "truceDays": null,
+      "warName": "Imperial Policy War",
+      "whitePeacePossible": true
+    },
+    {
+      "allowHostages": false,
+      "costs": null,
+      "deJureRegionsAbove": true,
+      "defenderFaithCanJoin": false,
+      "dlc": null,
+      "features": [],
+      "group": "civil_war",
+      "icon": "independence_faction_war",
+      "id": "independence_faction_war",
+      "isGreatHolyWar": false,
+      "isHolyWar": false,
+      "name": "Independence Faction",
+      "onAttackerDeath": "inherit_faction",
+      "onDefenderDeath": "inherit",
+      "outcomes": {
+        "defeat": "The Independence Faction is disbanded, and its members cannot join factions for … years.",
+        "invalidated": null,
+        "victory": "All rebellious vassals of the defender become independent.",
+        "whitePeace": "The Independence Faction is disbanded, and its members cannot join factions for … years."
+      },
+      "requirements": [
+        {
+          "key": "independence_faction",
+          "kind": "faction",
+          "name": "Independence Faction",
+          "negated": false
+        },
+        {
+          "key": "government_is_landless_adventurer",
+          "kind": "government_flag",
+          "name": "Landless adventurer",
+          "negated": true
+        }
+      ],
+      "sourceFile": "00_civil_war.txt",
+      "targetTier": null,
+      "targetTitles": "independence_domain",
+      "truceDays": null,
+      "warName": "Independence War",
+      "whitePeacePossible": true
+    },
+    {
+      "allowHostages": false,
+      "costs": null,
+      "deJureRegionsAbove": true,
+      "defenderFaithCanJoin": false,
+      "dlc": "The Great People",
+      "features": [],
+      "group": "civil_war",
+      "icon": "dissolution_war",
+      "id": "japan_refused_ritsuryo_cb",
+      "isGreatHolyWar": false,
+      "isHolyWar": false,
+      "name": "Japan Refused Ritsuryo",
+      "onAttackerDeath": "invalidate",
+      "onDefenderDeath": "inherit",
+      "outcomes": {
+        "defeat": "The defender Imprisons the attacker.",
+        "invalidated": null,
+        "victory": "The attacker becomes Ruling Regent.",
+        "whitePeace": "The attacker and the defender establish a truce. the defender gets a Title Revocation Reason against the attacker."
+      },
+      "requirements": [
+        {
+          "key": "government_is_japan_administrative",
+          "kind": "government_flag",
+          "name": "Japan administrative",
+          "negated": true
+        }
+      ],
+      "sourceFile": "10_tgp_japan_wars.txt",
+      "targetTier": null,
+      "targetTitles": null,
+      "truceDays": null,
+      "warName": "War to Maintain Sōryō Government",
+      "whitePeacePossible": true
+    },
+    {
+      "allowHostages": false,
+      "costs": null,
+      "deJureRegionsAbove": true,
+      "defenderFaithCanJoin": false,
+      "dlc": null,
+      "features": [],
+      "group": "civil_war",
+      "icon": "dissolution_war",
+      "id": "liberty_faction_war",
+      "isGreatHolyWar": false,
+      "isHolyWar": false,
+      "name": "Liberty Faction",
+      "onAttackerDeath": "inherit_faction",
+      "onDefenderDeath": "inherit",
+      "outcomes": {
+        "defeat": "The Liberty Faction is disbanded, its members cannot join factions for … years.",
+        "invalidated": null,
+        "victory": "The Crown Authority of the defender is reduced one step, and the defender will owe every Liberty Faction member a Favor.",
+        "whitePeace": "The Liberty Faction is disbanded, its members cannot join factions for … years."
+      },
+      "requirements": [
+        {
+          "key": "liberty_faction",
+          "kind": "faction",
+          "name": "Liberty Faction",
+          "negated": false
+        }
+      ],
+      "sourceFile": "00_civil_war.txt",
+      "targetTier": null,
+      "targetTitles": null,
+      "truceDays": null,
+      "warName": "Liberty War",
+      "whitePeacePossible": true
+    },
+    {
+      "allowHostages": false,
+      "costs": null,
+      "deJureRegionsAbove": false,
+      "defenderFaithCanJoin": false,
+      "dlc": null,
+      "features": [],
+      "group": "civil_war",
+      "icon": "dissolution_war",
+      "id": "nation_fracturing_faction_war",
+      "isGreatHolyWar": false,
+      "isHolyWar": false,
+      "name": "Dissolution Faction",
+      "onAttackerDeath": "inherit",
+      "onDefenderDeath": "inherit",
+      "outcomes": {
+        "defeat": "The defender Imprisons the attacker, and gains a Title Revocation Reason.",
+        "invalidated": null,
+        "victory": "The defender is destroyed and the defender's Vassals become Independent.",
+        "whitePeace": "The attacker remain a Vassal of the defender."
+      },
+      "requirements": [],
+      "sourceFile": "00_civil_war.txt",
+      "targetTier": null,
+      "targetTitles": null,
+      "truceDays": null,
+      "warName": "Dissolution War",
+      "whitePeacePossible": true
+    },
+    {
+      "allowHostages": false,
+      "costs": null,
+      "deJureRegionsAbove": true,
+      "defenderFaithCanJoin": false,
+      "dlc": null,
+      "features": [],
+      "group": "civil_war",
+      "icon": "nomadic_riders",
+      "id": "nomadic_war",
+      "isGreatHolyWar": false,
+      "isHolyWar": false,
+      "name": "Nomadic Uprising",
+      "onAttackerDeath": "invalidate",
+      "onDefenderDeath": "inherit",
+      "outcomes": {
+        "defeat": "Rebelling Counties and Vassals remain part of the realm. the attacker is imprisoned. All rebelling Counties have their Popular Opinion forcibly increased.",
+        "invalidated": null,
+        "victory": "Rebelling Counties become independent Nomadic Realms.",
+        "whitePeace": "Rebelling Counties and Vassals remain part of the realm."
+      },
+      "requirements": [
+        {
+          "key": "nomadic_faction",
+          "kind": "faction",
+          "name": "Nomadic Faction",
+          "negated": false
+        }
+      ],
+      "sourceFile": "00_civil_war.txt",
+      "targetTier": null,
+      "targetTitles": "all",
+      "truceDays": null,
+      "warName": "The attacker the attacker's Nomadic Uprising",
+      "whitePeacePossible": true
+    },
+    {
+      "allowHostages": true,
+      "costs": null,
+      "deJureRegionsAbove": true,
+      "defenderFaithCanJoin": false,
+      "dlc": null,
+      "features": [],
+      "group": "civil_war",
+      "icon": "peasant_war",
+      "id": "peasant_war",
+      "isGreatHolyWar": false,
+      "isHolyWar": false,
+      "name": "Peasant War",
+      "onAttackerDeath": "invalidate",
+      "onDefenderDeath": "inherit",
+      "outcomes": {
+        "defeat": "The Peasant Faction is disbanded and the attacker is imprisoned. All rebelling Counties have their Popular Opinion forcibly increased.",
+        "invalidated": null,
+        "victory": "All rebellious Counties lose … Control.",
+        "whitePeace": "The Peasant Faction is disbanded."
+      },
+      "requirements": [
+        {
+          "key": "peasant_faction",
+          "kind": "faction",
+          "name": "Peasant Faction",
+          "negated": false
+        },
+        {
+          "key": "government_is_landless_adventurer",
+          "kind": "government_flag",
+          "name": "Landless adventurer",
+          "negated": true
+        }
+      ],
+      "sourceFile": "00_peasant_war_new.txt",
+      "targetTier": null,
+      "targetTitles": "none",
+      "truceDays": null,
+      "warName": "Peasant Uprising",
+      "whitePeacePossible": true
+    },
+    {
+      "allowHostages": false,
+      "costs": null,
+      "deJureRegionsAbove": true,
+      "defenderFaithCanJoin": false,
+      "dlc": null,
+      "features": [],
+      "group": "civil_war",
+      "icon": "peasant_war",
+      "id": "populist_war",
+      "isGreatHolyWar": false,
+      "isHolyWar": false,
+      "name": "Rebellion",
+      "onAttackerDeath": "invalidate",
+      "onDefenderDeath": "inherit",
+      "outcomes": {
+        "defeat": "Rebelling Counties and Vassals remain part of the realm. All rebelling Vassals are Imprisoned by the defender.",
+        "invalidated": null,
+        "victory": "Rebelling Counties will take De Jure Duchies and become independent realms with each attacker as its ruler.",
+        "whitePeace": "Rebelling Counties and Vassals remain part of the realm."
+      },
+      "requirements": [
+        {
+          "key": "populist_faction",
+          "kind": "faction",
+          "name": "Populist Faction",
+          "negated": false
+        },
+        {
+          "key": "escalated_peasant_faction",
+          "kind": "faction",
+          "name": "Escalated Peasant Faction",
+          "negated": false
+        }
+      ],
+      "sourceFile": "00_civil_war.txt",
+      "targetTier": null,
+      "targetTitles": "claim",
+      "truceDays": null,
+      "warName": "The attacker the attacker's Uprising",
+      "whitePeacePossible": true
+    },
+    {
+      "allowHostages": false,
+      "costs": null,
+      "deJureRegionsAbove": true,
+      "defenderFaithCanJoin": false,
+      "dlc": null,
+      "features": [],
+      "group": "civil_war",
+      "icon": "dissolution_war",
+      "id": "refused_liege_demand_war",
+      "isGreatHolyWar": false,
+      "isHolyWar": false,
+      "name": "Rebellion",
+      "onAttackerDeath": "invalidate",
+      "onDefenderDeath": "inherit",
+      "outcomes": {
+        "defeat": "The defender Imprisons the attacker.",
+        "invalidated": null,
+        "victory": "The defender is Deposed.",
+        "whitePeace": "The attacker and the defender establish a truce. the defender gets a Title Revocation Reason against the attacker."
+      },
+      "requirements": [
+        {
+          "key": "liberty_faction",
+          "kind": "faction",
+          "name": "Liberty Faction",
+          "negated": false
+        }
+      ],
+      "sourceFile": "00_civil_war.txt",
+      "targetTier": null,
+      "targetTitles": null,
+      "truceDays": null,
+      "warName": "War against the Tyranny of the defender",
+      "whitePeacePossible": true
+    },
+    {
+      "allowHostages": false,
+      "costs": null,
+      "deJureRegionsAbove": true,
+      "defenderFaithCanJoin": false,
+      "dlc": "The Great People",
+      "features": [],
+      "group": "civil_war",
+      "icon": "dissolution_war",
+      "id": "replace_ceremonial_regent_faction_war",
+      "isGreatHolyWar": false,
+      "isHolyWar": false,
+      "name": "Install Ruling Regent",
+      "onAttackerDeath": "inherit_faction",
+      "onDefenderDeath": "inherit",
+      "outcomes": {
+        "defeat": "The defender keeps their Titles and imprisons all rebelling Vassals.",
+        "invalidated": null,
+        "victory": "The defender will be Imprisoned and have all land confiscated by the attacker.",
+        "whitePeace": "The defender keeps their Titles. A Title Revocation Reason is given on every rebelling Vassal."
+      },
+      "requirements": [
+        {
+          "key": "replace_ceremonial_regent_faction",
+          "kind": "faction",
+          "name": "Install Ruling Regent",
+          "negated": false
+        }
+      ],
+      "sourceFile": "10_tgp_faction_wars.txt",
+      "targetTier": null,
+      "targetTitles": null,
+      "truceDays": null,
+      "warName": "War to Install the claimant as Regent",
+      "whitePeacePossible": true
+    },
+    {
+      "allowHostages": false,
+      "costs": null,
+      "deJureRegionsAbove": true,
+      "defenderFaithCanJoin": false,
+      "dlc": "The Great People",
+      "features": [],
+      "group": "civil_war",
+      "icon": "dissolution_war",
+      "id": "restore_ceremonial_liege_faction_war",
+      "isGreatHolyWar": false,
+      "isHolyWar": false,
+      "name": "Restore Ceremonial Monarch",
+      "onAttackerDeath": "inherit_faction",
+      "onDefenderDeath": "inherit",
+      "outcomes": {
+        "defeat": "The Faction is disbanded, the attacker and other rebels are Imprisoned. the claimant is deposed.",
+        "invalidated": null,
+        "victory": "The defender will lose all Titles, be Imprisoned, and be deposed.",
+        "whitePeace": "The defender will keep all Titles. A Title Revocation Reason is given on every rebelling Vassal."
+      },
+      "requirements": [
+        {
+          "key": "restore_ceremonial_liege_faction",
+          "kind": "faction",
+          "name": "Restore Ceremonial Monarch",
+          "negated": false
+        }
+      ],
+      "sourceFile": "10_tgp_faction_wars.txt",
+      "targetTier": null,
+      "targetTitles": null,
+      "truceDays": null,
+      "warName": "War to Restore the claimant",
+      "whitePeacePossible": true
+    },
+    {
+      "allowHostages": true,
+      "costs": {
+        "piety": {
+          "varies": true
+        },
+        "prestige": {
+          "varies": true
+        }
+      },
+      "deJureRegionsAbove": false,
+      "defenderFaithCanJoin": false,
+      "dlc": null,
+      "features": [],
+      "group": "claim",
+      "icon": "claim_cb",
+      "id": "claim_cb",
+      "isGreatHolyWar": false,
+      "isHolyWar": false,
+      "name": "Claim",
+      "onAttackerDeath": "inherit",
+      "onDefenderDeath": "inherit",
+      "outcomes": {
+        "defeat": "The defender keeps the contested Title. the attacker loses their Claim.",
+        "invalidated": "The war has ended: the defender no longer … any of the claimed Counties.",
+        "victory": "The claimant gains the contested Title.",
+        "whitePeace": "The defender keeps the contested Title."
+      },
+      "requirements": [
+        {
+          "key": "camp_purpose_legitimists",
+          "kind": "law",
+          "name": "Legitimists",
+          "negated": false
+        }
+      ],
+      "sourceFile": "00_claim.txt",
+      "targetTier": null,
+      "targetTitles": "claim",
+      "truceDays": null,
+      "warName": "The attacker's War for the claimant's Claim on the target title",
+      "whitePeacePossible": true
+    },
+    {
+      "allowHostages": true,
+      "costs": {
+        "prestige": {
+          "varies": true
+        }
+      },
+      "deJureRegionsAbove": false,
+      "defenderFaithCanJoin": false,
+      "dlc": "Legacy of Persia",
+      "features": [],
+      "group": "claim",
+      "icon": "fp3_house_unification_cb",
+      "id": "fp3_unify_house_cb",
+      "isGreatHolyWar": false,
+      "isHolyWar": false,
+      "name": "Unify The House",
+      "onAttackerDeath": "invalidate",
+      "onDefenderDeath": "invalidate",
+      "outcomes": {
+        "defeat": "Any the attacker House Vassals remain under the defender's rule.",
+        "invalidated": null,
+        "victory": "All of the defender's Vassals under the attacker House becomes the attacker's Vassals.",
+        "whitePeace": "Any the attacker House Vassals remain under the defender's rule."
+      },
+      "requirements": [
+        {
+          "key": "government_is_clan",
+          "kind": "government_flag",
+          "name": "Clan",
+          "negated": false
+        },
+        {
+          "key": "thicker_than_water_perk",
+          "kind": "perk",
+          "name": "Bound by Blood",
+          "negated": false
+        },
+        {
+          "key": "is_independent_ruler",
+          "kind": "status",
+          "name": "Independent ruler",
+          "negated": false
+        },
+        {
+          "key": "government_is_landless_adventurer",
+          "kind": "government_flag",
+          "name": "Landless adventurer",
+          "negated": true
+        }
+      ],
+      "sourceFile": "05_fp3_wars.txt",
+      "targetTier": null,
+      "targetTitles": null,
+      "truceDays": null,
+      "warName": "The attacker's War to Unify the attacker House",
+      "whitePeacePossible": true
+    },
+    {
+      "allowHostages": true,
+      "costs": {
+        "piety": {
+          "varies": true
+        },
+        "prestige": {
+          "varies": true
+        }
+      },
+      "deJureRegionsAbove": true,
+      "defenderFaithCanJoin": false,
+      "dlc": "Community Pack 1 (free)",
+      "features": [],
+      "group": "claim",
+      "icon": "invasion",
+      "id": "mythical_ancestor_war",
+      "isGreatHolyWar": false,
+      "isHolyWar": false,
+      "name": "Ancestral Claim",
+      "onAttackerDeath": "inherit",
+      "onDefenderDeath": "inherit",
+      "outcomes": {
+        "defeat": "The defender keeps their titles.",
+        "invalidated": null,
+        "victory": "You may only attempt one invasion War against a Kingdom-tier Title per lifetime",
+        "whitePeace": "The defender keeps their titles."
+      },
+      "requirements": [
+        {
+          "key": "government_is_landless_adventurer",
+          "kind": "government_flag",
+          "name": "Landless adventurer",
+          "negated": true
+        }
+      ],
+      "sourceFile": "06_ce1_wars.txt",
+      "targetTier": "all",
+      "targetTitles": "all",
+      "truceDays": null,
+      "warName": "The attacker's Ancestral Claim on the target title",
+      "whitePeacePossible": true
+    },
+    {
+      "allowHostages": true,
+      "costs": {
+        "piety": {
+          "varies": true
+        },
+        "prestige": {
+          "varies": true
+        }
+      },
+      "deJureRegionsAbove": true,
+      "defenderFaithCanJoin": false,
+      "dlc": "Roads to Power",
+      "features": [],
+      "group": "conquest",
+      "icon": "duchy_expansion",
+      "id": "admin_barbarian_conquest_cb",
+      "isGreatHolyWar": false,
+      "isHolyWar": false,
+      "name": "Seize Peripheral Duchy",
+      "onAttackerDeath": "inherit",
+      "onDefenderDeath": "inherit",
+      "outcomes": {
+        "defeat": "The defender keeps the contested Title.",
+        "invalidated": null,
+        "victory": "The attacker gains the contested Title.",
+        "whitePeace": "The defender keeps the contested Title."
+      },
+      "requirements": [
+        {
+          "key": "government_is_landless_adventurer",
+          "kind": "government_flag",
+          "name": "Landless adventurer",
+          "negated": true
+        },
+        {
+          "key": "is_landed",
+          "kind": "status",
+          "name": "Landed",
+          "negated": false
+        }
+      ],
+      "sourceFile": "07_ep3_wars.txt",
+      "targetTier": "duchy",
+      "targetTitles": "neighbor_land_or_water",
+      "truceDays": null,
+      "warName": "The attacker's Conquest of the target title",
+      "whitePeacePossible": true
+    },
+    {
+      "allowHostages": true,
+      "costs": {
+        "piety": {
+          "varies": true
+        },
+        "prestige": {
+          "varies": true
+        }
+      },
+      "deJureRegionsAbove": false,
+      "defenderFaithCanJoin": false,
+      "dlc": null,
+      "features": [],
+      "group": "conquest",
+      "icon": "county_conquest_cb",
+      "id": "county_conquest_cb",
+      "isGreatHolyWar": false,
+      "isHolyWar": false,
+      "name": "County Conquest",
+      "onAttackerDeath": "inherit",
+      "onDefenderDeath": "inherit",
+      "outcomes": {
+        "defeat": "The defender keeps the contested Title.",
+        "invalidated": null,
+        "victory": "The attacker gains the contested Title.",
+        "whitePeace": "The defender keeps the contested Title."
+      },
+      "requirements": [
+        {
+          "key": "government_is_landless_adventurer",
+          "kind": "government_flag",
+          "name": "Landless adventurer",
+          "negated": true
+        }
+      ],
+      "sourceFile": "00_conquest.txt",
+      "targetTier": "county",
+      "targetTitles": "all",
+      "truceDays": null,
+      "warName": "The attacker's Conquest of the target title",
+      "whitePeacePossible": true
+    },
+    {
+      "allowHostages": true,
+      "costs": {
+        "piety": {
+          "varies": true
+        },
+        "prestige": {
+          "varies": true
+        }
+      },
+      "deJureRegionsAbove": true,
+      "defenderFaithCanJoin": false,
+      "dlc": null,
+      "features": [],
+      "group": "conquest",
+      "icon": "county_conquest_cb",
+      "id": "ducal_conquest_cb",
+      "isGreatHolyWar": false,
+      "isHolyWar": false,
+      "name": "Ducal Conquest",
+      "onAttackerDeath": "inherit",
+      "onDefenderDeath": "inherit",
+      "outcomes": {
+        "defeat": "The defender keeps the contested Titles.",
+        "invalidated": null,
+        "victory": "The attacker gains the contested Titles.",
+        "whitePeace": "The defender keeps the contested Titles."
+      },
+      "requirements": [
+        {
+          "key": "ducal_conquest_perk",
+          "kind": "perk",
+          "name": "Ducal Conquest",
+          "negated": false
+        },
+        {
+          "key": "government_is_landless_adventurer",
+          "kind": "government_flag",
+          "name": "Landless adventurer",
+          "negated": true
+        },
+        {
+          "key": "government_is_nomadic",
+          "kind": "government_flag",
+          "name": "Nomadic",
+          "negated": true
+        }
+      ],
+      "sourceFile": "00_conquest.txt",
+      "targetTier": "all",
+      "targetTitles": "neighbor_land",
+      "truceDays": null,
+      "warName": "The attacker's Ducal Conquest of the target title",
+      "whitePeacePossible": true
+    },
+    {
+      "allowHostages": true,
+      "costs": {
+        "piety": {
+          "varies": true
+        },
+        "prestige": {
+          "varies": true
+        }
+      },
+      "deJureRegionsAbove": true,
+      "defenderFaithCanJoin": false,
+      "dlc": null,
+      "features": [],
+      "group": "conquest",
+      "icon": "duchy_conquest_cb",
+      "id": "duchy_conquest_cb",
+      "isGreatHolyWar": false,
+      "isHolyWar": false,
+      "name": "Duchy Conquest",
+      "onAttackerDeath": "inherit",
+      "onDefenderDeath": "inherit",
+      "outcomes": {
+        "defeat": "The defender keeps the contested Title.",
+        "invalidated": null,
+        "victory": "The attacker gains the contested Title.",
+        "whitePeace": "The defender keeps the contested Title."
+      },
+      "requirements": [
+        {
+          "key": "government_is_landless_adventurer",
+          "kind": "government_flag",
+          "name": "Landless adventurer",
+          "negated": true
+        },
+        {
+          "key": "prestige_level > -1",
+          "kind": "level",
+          "name": "Prestige level ≥ -1–3 (varies by rank)",
+          "negated": false
+        }
+      ],
+      "sourceFile": "00_conquest.txt",
+      "targetTier": "duchy",
+      "targetTitles": "all",
+      "truceDays": null,
+      "warName": "The attacker's Conquest of the target title",
+      "whitePeacePossible": true
+    },
+    {
+      "allowHostages": true,
+      "costs": {
+        "influence": {
+          "base": 50,
+          "varies": true
+        },
+        "prestige": {
+          "base": 100,
+          "varies": true
+        }
+      },
+      "deJureRegionsAbove": true,
+      "defenderFaithCanJoin": false,
+      "dlc": "Roads to Power",
+      "features": [],
+      "group": "conquest",
+      "icon": "duchy_expansion",
+      "id": "duchy_expansion_cb",
+      "isGreatHolyWar": false,
+      "isHolyWar": false,
+      "name": "Duchy Expansion",
+      "onAttackerDeath": "inherit",
+      "onDefenderDeath": "inherit",
+      "outcomes": {
+        "defeat": "The defender keeps the contested Title.",
+        "invalidated": null,
+        "victory": "The attacker gains the contested Title.",
+        "whitePeace": "The defender keeps the contested Title."
+      },
+      "requirements": [
+        {
+          "key": "administrative",
+          "kind": "government_type",
+          "name": "Administrative",
+          "negated": false
+        },
+        {
+          "key": "government_is_landless_adventurer",
+          "kind": "government_flag",
+          "name": "Landless adventurer",
+          "negated": true
+        },
+        {
+          "key": "prestige_level >= 2",
+          "kind": "level",
+          "name": "Prestige level ≥ 2–3 (varies by rank)",
+          "negated": false
+        }
+      ],
+      "sourceFile": "07_ep3_admin_cbs.txt",
+      "targetTier": "duchy",
+      "targetTitles": "neighbor_land",
+      "truceDays": null,
+      "warName": "The attacker's Expansion of the target title",
+      "whitePeacePossible": true
+    },
+    {
+      "allowHostages": false,
+      "costs": {
+        "influence": 30
+      },
+      "deJureRegionsAbove": false,
+      "defenderFaithCanJoin": false,
+      "dlc": "Roads to Power",
+      "features": [],
+      "group": "conquest",
+      "icon": "ducal_conquest_cb",
+      "id": "ep3_pillaging_foray",
+      "isGreatHolyWar": false,
+      "isHolyWar": false,
+      "name": "Pillaging Foray",
+      "onAttackerDeath": "invalidate",
+      "onDefenderDeath": "inherit",
+      "outcomes": {
+        "defeat": "The attacker must pay Gold reparations for attempting the raid.",
+        "invalidated": null,
+        "victory": "The attacker gains Gold in proportion to the Development of the target County, which will decrease.\nA Building may also be destroyed.\nNo Titles will change hands.",
+        "whitePeace": "The attacker fails to complete their raid."
+      },
+      "requirements": [
+        {
+          "key": "government_is_landless_adventurer",
+          "kind": "government_flag",
+          "name": "Landless adventurer",
+          "negated": true
+        }
+      ],
+      "sourceFile": "07_ep3_wars.txt",
+      "targetTier": "county",
+      "targetTitles": "neighbor_land",
+      "truceDays": null,
+      "warName": "The attacker's Pillaging Foray of the target title",
+      "whitePeacePossible": true
+    },
+    {
+      "allowHostages": true,
+      "costs": {
+        "influence": {
+          "base": 25,
+          "varies": true
+        },
+        "prestige": {
+          "base": 50,
+          "varies": true
+        }
+      },
+      "deJureRegionsAbove": false,
+      "defenderFaithCanJoin": false,
+      "dlc": "Roads to Power",
+      "features": [],
+      "group": "conquest",
+      "icon": "county_expansion",
+      "id": "expansion_cb",
+      "isGreatHolyWar": false,
+      "isHolyWar": false,
+      "name": "County Expansion",
+      "onAttackerDeath": "inherit",
+      "onDefenderDeath": "inherit",
+      "outcomes": {
+        "defeat": "The defender keeps the contested Title.",
+        "invalidated": null,
+        "victory": "The attacker gains the contested Title.",
+        "whitePeace": "The defender keeps the contested Title."
+      },
+      "requirements": [
+        {
+          "key": "administrative",
+          "kind": "government_type",
+          "name": "Administrative",
+          "negated": false
+        },
+        {
+          "key": "government_is_landless_adventurer",
+          "kind": "government_flag",
+          "name": "Landless adventurer",
+          "negated": true
+        },
+        {
+          "key": "government_is_celestial",
+          "kind": "government_flag",
+          "name": "Celestial",
+          "negated": true
+        }
+      ],
+      "sourceFile": "07_ep3_admin_cbs.txt",
+      "targetTier": "county",
+      "targetTitles": "neighbor_land",
+      "truceDays": null,
+      "warName": "The attacker's Expansion of the target title",
+      "whitePeacePossible": true
+    },
+    {
+      "allowHostages": true,
+      "costs": {
+        "piety": {
+          "varies": true
+        },
+        "prestige": {
+          "base": 1000,
+          "varies": true
+        }
+      },
+      "deJureRegionsAbove": true,
+      "defenderFaithCanJoin": false,
+      "dlc": "Northern Lords",
+      "features": [],
+      "group": "conquest",
+      "icon": "fp1_varangian_adventurer_conquest",
+      "id": "fp1_varangian_adventurer_conquest",
+      "isGreatHolyWar": false,
+      "isHolyWar": false,
+      "name": "Varangian Adventurer",
+      "onAttackerDeath": "inherit",
+      "onDefenderDeath": "inherit",
+      "outcomes": {
+        "defeat": "The defender keeps the contested Title.",
+        "invalidated": null,
+        "victory": "The attacker gains the contested Title.",
+        "whitePeace": "The defender keeps the contested Title."
+      },
+      "requirements": [
+        {
+          "key": "innovation_varangian_adventurers",
+          "kind": "innovation",
+          "name": "Varangian Adventurers",
+          "negated": false
+        },
+        {
+          "key": "ambitious",
+          "kind": "trait",
+          "name": "Ambitious",
+          "negated": false
+        },
+        {
+          "key": "greedy",
+          "kind": "trait",
+          "name": "Greedy",
+          "negated": false
+        },
+        {
+          "key": "brave",
+          "kind": "trait",
+          "name": "Brave",
+          "negated": false
+        },
+        {
+          "key": "arrogant",
+          "kind": "trait",
+          "name": "Arrogant",
+          "negated": false
+        },
+        {
+          "key": "adventurer",
+          "kind": "trait",
+          "name": "Veteran Adventurer",
+          "negated": false
+        },
+        {
+          "key": "fp1_scandi_adventurers_apocalyptic",
+          "kind": "game_rule",
+          "name": "Fp1 scandi adventurers apocalyptic",
+          "negated": false
+        },
+        {
+          "key": "government_is_landless_adventurer",
+          "kind": "government_flag",
+          "name": "Landless adventurer",
+          "negated": true
+        },
+        {
+          "key": "highest_held_title_tier <= tier_duchy",
+          "kind": "tier",
+          "name": "Highest title <= duchy",
+          "negated": false
+        },
+        {
+          "key": "prestige_level >= 1",
+          "kind": "level",
+          "name": "Prestige level ≥ 0–2 (varies by rank)",
+          "negated": false
+        }
+      ],
+      "sourceFile": "01_fp1_wars.txt",
+      "targetTier": "duchy",
+      "targetTitles": "all",
+      "truceDays": null,
+      "warName": "The attacker's Varangian Adventure against the defender",
+      "whitePeacePossible": true
+    },
+    {
+      "allowHostages": false,
+      "costs": {
+        "piety": {
+          "varies": true
+        },
+        "prestige": {
+          "varies": true
+        }
+      },
+      "deJureRegionsAbove": true,
+      "defenderFaithCanJoin": false,
+      "dlc": "Fate of Iberia",
+      "features": [],
+      "group": "conquest",
+      "icon": "struggle",
+      "id": "fp2_expel_interloper",
+      "isGreatHolyWar": false,
+      "isHolyWar": false,
+      "name": "Iberian Reclamation",
+      "onAttackerDeath": "inherit",
+      "onDefenderDeath": "inherit",
+      "outcomes": {
+        "defeat": "… will keep the contested Titles",
+        "invalidated": null,
+        "victory": "EFFECT_LIST_BULLETthe attacker becomes Liege of the defender's Involved lower Rank Vassals in the target Duchy",
+        "whitePeace": "The defender will keep the contested Titles"
+      },
+      "requirements": [
+        {
+          "key": "government_is_landless_adventurer",
+          "kind": "government_flag",
+          "name": "Landless adventurer",
+          "negated": true
+        }
+      ],
+      "sourceFile": "03_fp2_wars.txt",
+      "targetTier": "duchy",
+      "targetTitles": "neighbor_land_or_water",
+      "truceDays": null,
+      "warName": "The attacker's Iberian Reclamation of the target title",
+      "whitePeacePossible": true
+    },
+    {
+      "allowHostages": true,
+      "costs": {
+        "prestige": {
+          "varies": true
+        }
+      },
+      "deJureRegionsAbove": false,
+      "defenderFaithCanJoin": false,
+      "dlc": "Fate of Iberia",
+      "features": [],
+      "group": "conquest",
+      "icon": "fp1_varangian_adventurer_conquest",
+      "id": "fp2_mediterranean_conquest_cb",
+      "isGreatHolyWar": false,
+      "isHolyWar": false,
+      "name": "Mediterranean Conquest",
+      "onAttackerDeath": "inherit",
+      "onDefenderDeath": "inherit",
+      "outcomes": {
+        "defeat": "The defender keeps the contested Title.",
+        "invalidated": null,
+        "victory": "The attacker gains the contested Title.",
+        "whitePeace": "The defender keeps the contested Title."
+      },
+      "requirements": [
+        {
+          "key": "is_landed",
+          "kind": "status",
+          "name": "Landed",
+          "negated": false
+        },
+        {
+          "key": "title:d_mallorca",
+          "kind": "title",
+          "name": "Mallorca",
+          "negated": false
+        },
+        {
+          "key": "title:d_sardinia",
+          "kind": "title",
+          "name": "Sardinia",
+          "negated": false
+        },
+        {
+          "key": "title:d_sicily",
+          "kind": "title",
+          "name": "Sicily",
+          "negated": false
+        },
+        {
+          "key": "government_is_landless_adventurer",
+          "kind": "government_flag",
+          "name": "Landless adventurer",
+          "negated": true
+        }
+      ],
+      "sourceFile": "03_fp2_wars.txt",
+      "targetTier": "county",
+      "targetTitles": "all",
+      "truceDays": null,
+      "warName": "The attacker's Conquest of the target title",
+      "whitePeacePossible": true
+    },
+    {
+      "allowHostages": true,
+      "costs": {
+        "piety": {
+          "varies": true
+        },
+        "prestige": {
+          "varies": true
+        }
+      },
+      "deJureRegionsAbove": true,
+      "defenderFaithCanJoin": false,
+      "dlc": "Roads to Power",
+      "features": [],
+      "group": "conquest",
+      "icon": "duchy_expansion",
+      "id": "greek_anarchy_cb",
+      "isGreatHolyWar": false,
+      "isHolyWar": false,
+      "name": "Seize Imperial Duchy",
+      "onAttackerDeath": "inherit",
+      "onDefenderDeath": "inherit",
+      "outcomes": {
+        "defeat": "The defender keeps the contested Title.",
+        "invalidated": null,
+        "victory": "The attacker gains the contested Title.",
+        "whitePeace": "The defender keeps the contested Title."
+      },
+      "requirements": [],
+      "sourceFile": "07_ep3_wars.txt",
+      "targetTier": "duchy",
+      "targetTitles": "neighbor_land_or_water",
+      "truceDays": null,
+      "warName": "The attacker's Seizure of the Imperial the target title",
+      "whitePeacePossible": true
+    },
+    {
+      "allowHostages": true,
+      "costs": {
+        "piety": {
+          "varies": true
+        },
+        "prestige": {
+          "varies": true
+        }
+      },
+      "deJureRegionsAbove": true,
+      "defenderFaithCanJoin": false,
+      "dlc": "Roads to Power",
+      "features": [],
+      "group": "conquest",
+      "icon": "invasion",
+      "id": "imperial_expedition_cb",
+      "isGreatHolyWar": false,
+      "isHolyWar": false,
+      "name": "Imperial Expedition",
+      "onAttackerDeath": "inherit",
+      "onDefenderDeath": "inherit",
+      "outcomes": {
+        "defeat": "The defender keeps the contested Titles, and the attacker must pay them war reparations.",
+        "invalidated": null,
+        "victory": "The attacker gains the contested Titles, and must then decide whether to turn them over to their Liege for Influence or keep them for themselves",
+        "whitePeace": "The defender keeps the contested Title."
+      },
+      "requirements": [
+        {
+          "key": "government_is_landless_adventurer",
+          "kind": "government_flag",
+          "name": "Landless adventurer",
+          "negated": true
+        }
+      ],
+      "sourceFile": "07_ep3_wars.txt",
+      "targetTier": "duchy",
+      "targetTitles": "all",
+      "truceDays": null,
+      "warName": "The attacker's Imperial Expedition for the target title",
+      "whitePeacePossible": true
+    },
+    {
+      "allowHostages": true,
+      "costs": {
+        "piety": {
+          "varies": true
+        },
+        "prestige": {
+          "varies": true
+        }
+      },
+      "deJureRegionsAbove": true,
+      "defenderFaithCanJoin": false,
+      "dlc": null,
+      "features": [],
+      "group": "conquest",
+      "icon": "county_conquest_cb",
+      "id": "ireland_laudabiliter_conquest_cb",
+      "isGreatHolyWar": false,
+      "isHolyWar": false,
+      "name": "Laudabiliter Conquest",
+      "onAttackerDeath": "inherit",
+      "onDefenderDeath": "inherit",
+      "outcomes": {
+        "defeat": "The defender keeps all contested titles.",
+        "invalidated": null,
+        "victory": "The attacker takes all titles the defender holds in Ireland.",
+        "whitePeace": "The defender keeps all contested titles."
+      },
+      "requirements": [],
+      "sourceFile": "00_conquest.txt",
+      "targetTier": "all",
+      "targetTitles": "all",
+      "truceDays": null,
+      "warName": "Conquest by Laudabiliter of the target title",
+      "whitePeacePossible": true
+    },
+    {
+      "allowHostages": false,
+      "costs": {
+        "prestige": {
+          "base": 100,
+          "varies": true
+        }
+      },
+      "deJureRegionsAbove": false,
+      "defenderFaithCanJoin": false,
+      "dlc": "The Great People",
+      "features": [],
+      "group": "conquest",
+      "icon": "ritsuryo_government",
+      "id": "japan_imperial_expansion_cb",
+      "isGreatHolyWar": false,
+      "isHolyWar": false,
+      "name": "Imperial County Pacification",
+      "onAttackerDeath": "inherit",
+      "onDefenderDeath": "inherit",
+      "outcomes": {
+        "defeat": "The defender keeps the contested Title.",
+        "invalidated": "The war has ended: the defender joined the Realm, or holds no valid target County",
+        "victory": "Your service to the attacker will be recognized.",
+        "whitePeace": "The defender keeps the contested Title."
+      },
+      "requirements": [
+        {
+          "key": "imperial_expansion_law",
+          "kind": "law",
+          "name": "Imperial Pacification",
+          "negated": false
+        }
+      ],
+      "sourceFile": "10_tgp_japan_wars.txt",
+      "targetTier": "county",
+      "targetTitles": "all",
+      "truceDays": null,
+      "warName": "Pacification of the target title",
+      "whitePeacePossible": true
+    },
+    {
+      "allowHostages": true,
+      "costs": {
+        "prestige": {
+          "base": 100,
+          "varies": true
+        }
+      },
+      "deJureRegionsAbove": false,
+      "defenderFaithCanJoin": false,
+      "dlc": "The Great People",
+      "features": [],
+      "group": "conquest",
+      "icon": "soryo",
+      "id": "japan_soryo_conquest_county_cb",
+      "isGreatHolyWar": false,
+      "isHolyWar": false,
+      "name": "Sōryō Conquest",
+      "onAttackerDeath": "inherit",
+      "onDefenderDeath": "inherit",
+      "outcomes": {
+        "defeat": "Since the defender is a Ritsuryō Vassal, the attacker will consider this a Crime.",
+        "invalidated": "Sōryō Conquest was invalidated",
+        "victory": "Since the defender is a Ritsuryō Vassal, the attacker will consider this a Crime.",
+        "whitePeace": "Since the defender is a Ritsuryō Vassal, the attacker will consider this a Crime."
+      },
+      "requirements": [
+        {
+          "key": "is_landed",
+          "kind": "status",
+          "name": "Landed",
+          "negated": false
+        }
+      ],
+      "sourceFile": "10_tgp_japan_wars.txt",
+      "targetTier": "county",
+      "targetTitles": "neighbor_land_or_water",
+      "truceDays": null,
+      "warName": "The attacker's Conquest of the target title",
+      "whitePeacePossible": true
+    },
+    {
+      "allowHostages": false,
+      "costs": {
+        "prestige": {
+          "base": 100,
+          "varies": true
+        }
+      },
+      "deJureRegionsAbove": true,
+      "defenderFaithCanJoin": false,
+      "dlc": "The Great People",
+      "features": [],
+      "group": "conquest",
+      "icon": "soryo",
+      "id": "japan_soryo_conquest_county_landless_cb",
+      "isGreatHolyWar": false,
+      "isHolyWar": false,
+      "name": "Sōryō Conquest",
+      "onAttackerDeath": "inherit",
+      "onDefenderDeath": "inherit",
+      "outcomes": {
+        "defeat": "Since the defender is a Ritsuryō Vassal, the attacker will consider this a Crime.",
+        "invalidated": "Sōryō Conquest was invalidated",
+        "victory": "Since the defender is a Ritsuryō Vassal, the attacker will consider this a Crime.",
+        "whitePeace": "Since the defender is a Ritsuryō Vassal, the attacker will consider this a Crime."
+      },
+      "requirements": [
+        {
+          "key": "is_landed",
+          "kind": "status",
+          "name": "Landed",
+          "negated": true
+        }
+      ],
+      "sourceFile": "10_tgp_japan_wars.txt",
+      "targetTier": "county",
+      "targetTitles": "all",
+      "truceDays": null,
+      "warName": "ORDER the attacker Conquest of the target title",
+      "whitePeacePossible": true
+    },
+    {
+      "allowHostages": true,
+      "costs": {
+        "piety": {
+          "varies": true
+        },
+        "prestige": {
+          "varies": true
+        }
+      },
+      "deJureRegionsAbove": false,
+      "defenderFaithCanJoin": false,
+      "dlc": "Community Pack 1 (free)",
+      "features": [],
+      "group": "conquest",
+      "icon": "de_jure_cb",
+      "id": "leg_demand_fealty_cb",
+      "isGreatHolyWar": false,
+      "isHolyWar": false,
+      "name": "Demand Fealty",
+      "onAttackerDeath": "inherit",
+      "onDefenderDeath": "inherit",
+      "outcomes": {
+        "defeat": "The defender keeps the contested titles, and the attacker must pay them war reparations.",
+        "invalidated": null,
+        "victory": "The defender becomes the attacker's Vassal",
+        "whitePeace": "The defender keeps the contested titles."
+      },
+      "requirements": [
+        {
+          "key": "government_is_landless_adventurer",
+          "kind": "government_flag",
+          "name": "Landless adventurer",
+          "negated": true
+        }
+      ],
+      "sourceFile": "06_ce1_wars.txt",
+      "targetTier": null,
+      "targetTitles": "none",
+      "truceDays": null,
+      "warName": "The attacker's Vassalization of the defender",
+      "whitePeacePossible": true
+    },
+    {
+      "allowHostages": true,
+      "costs": {
+        "piety": {
+          "varies": true
+        },
+        "prestige": {
+          "base": 1000,
+          "varies": true
+        }
+      },
+      "deJureRegionsAbove": true,
+      "defenderFaithCanJoin": false,
+      "dlc": "Community Pack 1 (free)",
+      "features": [],
+      "group": "conquest",
+      "icon": "invasion",
+      "id": "legendary_adventure",
+      "isGreatHolyWar": false,
+      "isHolyWar": false,
+      "name": "Legendary Adventure",
+      "onAttackerDeath": "inherit",
+      "onDefenderDeath": "inherit",
+      "outcomes": {
+        "defeat": "The defender keeps the contested Title.",
+        "invalidated": null,
+        "victory": "The attacker gains the contested Title.",
+        "whitePeace": "The defender keeps the contested Title."
+      },
+      "requirements": [
+        {
+          "key": "highest_held_title_tier >= tier_duchy",
+          "kind": "tier",
+          "name": "Highest title >= duchy",
+          "negated": false
+        },
+        {
+          "key": "government_is_landless_adventurer",
+          "kind": "government_flag",
+          "name": "Landless adventurer",
+          "negated": true
+        }
+      ],
+      "sourceFile": "06_ce1_wars.txt",
+      "targetTier": "kingdom",
+      "targetTitles": "all",
+      "truceDays": null,
+      "warName": "The attacker's Legendary Adventure for the target title",
+      "whitePeacePossible": true
+    },
+    {
+      "allowHostages": true,
+      "costs": {
+        "influence": {
+          "base": 50,
+          "varies": true
+        },
+        "prestige": {
+          "base": 100,
+          "varies": true
+        }
+      },
+      "deJureRegionsAbove": true,
+      "defenderFaithCanJoin": false,
+      "dlc": "Roads to Power",
+      "features": [],
+      "group": "conquest",
+      "icon": "naval_duchy_expansion",
+      "id": "naval_duchy_expansion_cb",
+      "isGreatHolyWar": false,
+      "isHolyWar": false,
+      "name": "Naval Duchy Expansion",
+      "onAttackerDeath": "inherit",
+      "onDefenderDeath": "inherit",
+      "outcomes": {
+        "defeat": "The defender keeps the contested Title.",
+        "invalidated": null,
+        "victory": "The attacker gains the contested Title.",
+        "whitePeace": "The defender keeps the contested Title."
+      },
+      "requirements": [
+        {
+          "key": "administrative",
+          "kind": "government_type",
+          "name": "Administrative",
+          "negated": false
+        },
+        {
+          "key": "government_is_landless_adventurer",
+          "kind": "government_flag",
+          "name": "Landless adventurer",
+          "negated": true
+        },
+        {
+          "key": "government_is_celestial",
+          "kind": "government_flag",
+          "name": "Celestial",
+          "negated": true
+        },
+        {
+          "key": "prestige_level >= 2",
+          "kind": "level",
+          "name": "Prestige level ≥ 2–3 (varies by rank)",
+          "negated": false
+        }
+      ],
+      "sourceFile": "07_ep3_admin_cbs.txt",
+      "targetTier": "duchy",
+      "targetTitles": "neighbor_land_or_water",
+      "truceDays": null,
+      "warName": "The attacker's Expansion of the target title",
+      "whitePeacePossible": true
+    },
+    {
+      "allowHostages": true,
+      "costs": {
+        "influence": {
+          "base": 25,
+          "varies": true
+        },
+        "prestige": {
+          "base": 50,
+          "varies": true
+        }
+      },
+      "deJureRegionsAbove": false,
+      "defenderFaithCanJoin": false,
+      "dlc": "Roads to Power",
+      "features": [],
+      "group": "conquest",
+      "icon": "naval_county_expansion",
+      "id": "naval_expansion_cb",
+      "isGreatHolyWar": false,
+      "isHolyWar": false,
+      "name": "Naval County Expansion",
+      "onAttackerDeath": "inherit",
+      "onDefenderDeath": "inherit",
+      "outcomes": {
+        "defeat": "The defender keeps the contested Title.",
+        "invalidated": null,
+        "victory": "The attacker gains the contested Title.",
+        "whitePeace": "The defender keeps the contested Title."
+      },
+      "requirements": [
+        {
+          "key": "administrative",
+          "kind": "government_type",
+          "name": "Administrative",
+          "negated": false
+        },
+        {
+          "key": "government_is_landless_adventurer",
+          "kind": "government_flag",
+          "name": "Landless adventurer",
+          "negated": true
+        },
+        {
+          "key": "government_is_celestial",
+          "kind": "government_flag",
+          "name": "Celestial",
+          "negated": true
+        }
+      ],
+      "sourceFile": "07_ep3_admin_cbs.txt",
+      "targetTier": "county",
+      "targetTitles": "neighbor_land_or_water",
+      "truceDays": null,
+      "warName": "The attacker's Expansion of the target title",
+      "whitePeacePossible": true
+    },
+    {
+      "allowHostages": true,
+      "costs": {
+        "prestige": {
+          "varies": true
+        }
+      },
+      "deJureRegionsAbove": false,
+      "defenderFaithCanJoin": false,
+      "dlc": null,
+      "features": [],
+      "group": "conquest",
+      "icon": "county_conquest_cb",
+      "id": "nomadic_conquest_cb",
+      "isGreatHolyWar": false,
+      "isHolyWar": false,
+      "name": "Nomadic County Quarrel",
+      "onAttackerDeath": "inherit",
+      "onDefenderDeath": "inherit",
+      "outcomes": {
+        "defeat": "The defender keeps the contested Title.",
+        "invalidated": null,
+        "victory": "The attacker gains the contested Title.",
+        "whitePeace": "The defender keeps the contested Title."
+      },
+      "requirements": [
+        {
+          "key": "government_is_nomadic",
+          "kind": "government_flag",
+          "name": "Nomadic",
+          "negated": false
+        }
+      ],
+      "sourceFile": "00_nomadic_conquest.txt",
+      "targetTier": "county",
+      "targetTitles": "neighbor_land",
+      "truceDays": null,
+      "warName": "The attacker's Conquest of the target title",
+      "whitePeacePossible": true
+    },
+    {
+      "allowHostages": true,
+      "costs": {
+        "prestige": {
+          "varies": true
+        }
+      },
+      "deJureRegionsAbove": true,
+      "defenderFaithCanJoin": false,
+      "dlc": null,
+      "features": [],
+      "group": "conquest",
+      "icon": "duchy_conquest_cb",
+      "id": "nomadic_conquest_duchy_cb",
+      "isGreatHolyWar": false,
+      "isHolyWar": false,
+      "name": "Nomadic Duchy Quarrel",
+      "onAttackerDeath": "inherit",
+      "onDefenderDeath": "inherit",
+      "outcomes": {
+        "defeat": "The defender keeps the contested Title.",
+        "invalidated": null,
+        "victory": "The attacker gains the contested Title.",
+        "whitePeace": "The defender keeps the contested Title."
+      },
+      "requirements": [
+        {
+          "key": "government_is_nomadic",
+          "kind": "government_flag",
+          "name": "Nomadic",
+          "negated": false
+        }
+      ],
+      "sourceFile": "00_nomadic_conquest.txt",
+      "targetTier": "duchy",
+      "targetTitles": "neighbor_land",
+      "truceDays": null,
+      "warName": "The attacker's Conquest of the target title",
+      "whitePeacePossible": true
+    },
+    {
+      "allowHostages": true,
+      "costs": {
+        "piety": {
+          "varies": true
+        },
+        "prestige": {
+          "varies": true
+        }
+      },
+      "deJureRegionsAbove": false,
+      "defenderFaithCanJoin": false,
+      "dlc": null,
+      "features": [],
+      "group": "de_jure",
+      "icon": "de_jure_cb",
+      "id": "de_jure_cb",
+      "isGreatHolyWar": false,
+      "isHolyWar": false,
+      "name": "De Jure",
+      "onAttackerDeath": "inherit",
+      "onDefenderDeath": "inherit",
+      "outcomes": {
+        "defeat": "The defender keeps the contested titles, and the attacker must pay them war reparations.",
+        "invalidated": null,
+        "victory": "The attacker gains the contested titles.",
+        "whitePeace": "The defender keeps the contested titles."
+      },
+      "requirements": [
+        {
+          "key": "innovation_divine_right",
+          "kind": "innovation",
+          "name": "Divine Right",
+          "negated": false
+        },
+        {
+          "key": "government_is_landless_adventurer",
+          "kind": "government_flag",
+          "name": "Landless adventurer",
+          "negated": true
+        },
+        {
+          "key": "government_is_nomadic",
+          "kind": "government_flag",
+          "name": "Nomadic",
+          "negated": true
+        }
+      ],
+      "sourceFile": "00_dejure_war.txt",
+      "targetTier": null,
+      "targetTitles": "de_jure",
+      "truceDays": null,
+      "warName": "The attacker's De Jure War",
+      "whitePeacePossible": true
+    },
+    {
+      "allowHostages": true,
+      "costs": {
+        "prestige": {
+          "varies": true
+        }
+      },
+      "deJureRegionsAbove": true,
+      "defenderFaithCanJoin": false,
+      "dlc": "Khans of the Steppe",
+      "features": [],
+      "group": "de_jure",
+      "icon": "individual_duchy_de_jure_cb",
+      "id": "de_jure_cb_nomadic",
+      "isGreatHolyWar": false,
+      "isHolyWar": false,
+      "name": "Expand Dominance",
+      "onAttackerDeath": "inherit",
+      "onDefenderDeath": "inherit",
+      "outcomes": {
+        "defeat": "The defender keeps the contested titles, and the attacker must pay them war reparations.",
+        "invalidated": "The war has ended: the defender no longer … any land in the targeted duchy.",
+        "victory": "The attacker gains the contested titles.",
+        "whitePeace": "The defender keeps the contested titles."
+      },
+      "requirements": [
+        {
+          "key": "highest_held_title_tier >= tier_kingdom",
+          "kind": "tier",
+          "name": "Highest title >= kingdom",
+          "negated": false
+        },
+        {
+          "key": "government_is_nomadic",
+          "kind": "government_flag",
+          "name": "Nomadic",
+          "negated": false
+        },
+        {
+          "key": "highest_held_title_tier >= tier_duchy",
+          "kind": "tier",
+          "name": "Highest title >= duchy",
+          "negated": false
+        }
+      ],
+      "sourceFile": "09_mpo_wars.txt",
+      "targetTier": "all",
+      "targetTitles": "neighbor_land",
+      "truceDays": null,
+      "warName": "The attacker's Dominance Expansion over the target title",
+      "whitePeacePossible": true
+    },
+    {
+      "allowHostages": true,
+      "costs": null,
+      "deJureRegionsAbove": false,
+      "defenderFaithCanJoin": false,
+      "dlc": null,
+      "features": [],
+      "group": "de_jure",
+      "icon": "dissolution_war",
+      "id": "dismantle_byz_pretender_cb",
+      "isGreatHolyWar": false,
+      "isHolyWar": false,
+      "name": "Dismantle Pretender",
+      "onAttackerDeath": "inherit",
+      "onDefenderDeath": "inherit",
+      "outcomes": {
+        "defeat": "The Byzantine Empire remains intact. The Roman Empire must pay war reparations.",
+        "invalidated": null,
+        "victory": "The Byzantine Empire is destroyed. All De Jure Byzantine vassal titles become a de jure part of theRoman Empire instead.",
+        "whitePeace": "There can be no white peace"
+      },
+      "requirements": [],
+      "sourceFile": "00_dejure_war.txt",
+      "targetTier": "all",
+      "targetTitles": "all",
+      "truceDays": null,
+      "warName": "The attacker-the defender's Imperial War of Legitimacy",
+      "whitePeacePossible": false
+    },
+    {
+      "allowHostages": true,
+      "costs": null,
+      "deJureRegionsAbove": false,
+      "defenderFaithCanJoin": false,
+      "dlc": null,
+      "features": [],
+      "group": "de_jure",
+      "icon": "dissolution_war",
+      "id": "dismantle_holy_pretender_cb",
+      "isGreatHolyWar": false,
+      "isHolyWar": false,
+      "name": "Dismantle Pretender",
+      "onAttackerDeath": "inherit",
+      "onDefenderDeath": "inherit",
+      "outcomes": {
+        "defeat": "The Holy Roman Empire remains intact. The Roman Empire must pay war reparations.",
+        "invalidated": null,
+        "victory": "The Holy Roman Empire is destroyed. All De Jure Holy Roman vassal titles become a de jure part of theRoman Empire instead.",
+        "whitePeace": "There can be no white peace"
+      },
+      "requirements": [],
+      "sourceFile": "00_dejure_war.txt",
+      "targetTier": "all",
+      "targetTitles": "all",
+      "truceDays": null,
+      "warName": "The attacker-the defender's Imperial War of Legitimacy",
+      "whitePeacePossible": false
+    },
+    {
+      "allowHostages": true,
+      "costs": {
+        "prestige": {
+          "base": 75,
+          "varies": true
+        }
+      },
+      "deJureRegionsAbove": false,
+      "defenderFaithCanJoin": false,
+      "dlc": "Legacy of Persia",
+      "features": [],
+      "group": "de_jure",
+      "icon": "fp3_free_house_member",
+      "id": "fp3_free_house_member_cb",
+      "isGreatHolyWar": false,
+      "isHolyWar": false,
+      "name": "Rescue House Members",
+      "onAttackerDeath": "invalidate",
+      "onDefenderDeath": "inherit",
+      "outcomes": {
+        "defeat": "The attacker's House members remain Imprisoned by the defender.",
+        "invalidated": null,
+        "victory": "Every the attacker House member Imprisoned by the defender is released.",
+        "whitePeace": "The attacker's House members remain Imprisoned by the defender."
+      },
+      "requirements": [
+        {
+          "key": "government_is_clan",
+          "kind": "government_flag",
+          "name": "Clan",
+          "negated": false
+        },
+        {
+          "key": "thicker_than_water_perk",
+          "kind": "perk",
+          "name": "Bound by Blood",
+          "negated": false
+        },
+        {
+          "key": "government_is_landless_adventurer",
+          "kind": "government_flag",
+          "name": "Landless adventurer",
+          "negated": true
+        }
+      ],
+      "sourceFile": "05_fp3_wars.txt",
+      "targetTier": null,
+      "targetTitles": null,
+      "truceDays": null,
+      "warName": "The attacker's War to Rescue the attacker House Members",
+      "whitePeacePossible": true
+    },
+    {
+      "allowHostages": true,
+      "costs": null,
+      "deJureRegionsAbove": true,
+      "defenderFaithCanJoin": false,
+      "dlc": null,
+      "features": [],
+      "group": "de_jure",
+      "icon": "de_jure_cb",
+      "id": "imperial_reconquest_cb",
+      "isGreatHolyWar": false,
+      "isHolyWar": false,
+      "name": "Imperial Reconquest",
+      "onAttackerDeath": "inherit",
+      "onDefenderDeath": "inherit",
+      "outcomes": {
+        "defeat": "The defender keeps the contested titles, and the attacker must pay them war reparations.",
+        "invalidated": null,
+        "victory": "The attacker gains the contested titles.",
+        "whitePeace": "The defender keeps the contested titles."
+      },
+      "requirements": [],
+      "sourceFile": "00_dejure_war.txt",
+      "targetTier": "all",
+      "targetTitles": "all",
+      "truceDays": null,
+      "warName": "The attacker-the defender's Imperial Reconquest",
+      "whitePeacePossible": true
+    },
+    {
+      "allowHostages": true,
+      "costs": {
+        "piety": {
+          "varies": true
+        },
+        "prestige": {
+          "varies": true
+        }
+      },
+      "deJureRegionsAbove": true,
+      "defenderFaithCanJoin": false,
+      "dlc": null,
+      "features": [],
+      "group": "de_jure",
+      "icon": "individual_county_de_jure_cb",
+      "id": "individual_county_de_jure_cb",
+      "isGreatHolyWar": false,
+      "isHolyWar": false,
+      "name": "Individual De Jure County",
+      "onAttackerDeath": "inherit",
+      "onDefenderDeath": "inherit",
+      "outcomes": {
+        "defeat": "The defender keeps the contested County, and the attacker must pay them war reparations.",
+        "invalidated": "The war has ended: the defender no longer … the County.",
+        "victory": "The attacker gains the contested County.",
+        "whitePeace": "The defender keeps the contested County."
+      },
+      "requirements": [
+        {
+          "key": "innovation_casus_belli",
+          "kind": "innovation",
+          "name": "Casus Belli",
+          "negated": false
+        },
+        {
+          "key": "government_is_nomadic",
+          "kind": "government_flag",
+          "name": "Nomadic",
+          "negated": true
+        }
+      ],
+      "sourceFile": "00_dejure_war.txt",
+      "targetTier": "all",
+      "targetTitles": "all",
+      "truceDays": null,
+      "warName": "The attacker's De Jure War for the target title",
+      "whitePeacePossible": true
+    },
+    {
+      "allowHostages": true,
+      "costs": {
+        "piety": {
+          "varies": true
+        },
+        "prestige": {
+          "varies": true
+        }
+      },
+      "deJureRegionsAbove": true,
+      "defenderFaithCanJoin": false,
+      "dlc": null,
+      "features": [],
+      "group": "de_jure",
+      "icon": "individual_duchy_de_jure_cb",
+      "id": "individual_duchy_de_jure_cb",
+      "isGreatHolyWar": false,
+      "isHolyWar": false,
+      "name": "Individual De Jure Duchy",
+      "onAttackerDeath": "inherit",
+      "onDefenderDeath": "inherit",
+      "outcomes": {
+        "defeat": "The defender keeps the contested titles, and the attacker must pay them war reparations.",
+        "invalidated": "The war has ended: the defender no longer … any land in the targeted duchy.",
+        "victory": "The attacker gains the contested titles.",
+        "whitePeace": "The defender keeps the contested titles."
+      },
+      "requirements": [
+        {
+          "key": "innovation_casus_belli",
+          "kind": "innovation",
+          "name": "Casus Belli",
+          "negated": false
+        },
+        {
+          "key": "government_is_nomadic",
+          "kind": "government_flag",
+          "name": "Nomadic",
+          "negated": true
+        }
+      ],
+      "sourceFile": "00_dejure_war.txt",
+      "targetTier": "all",
+      "targetTitles": "all",
+      "truceDays": null,
+      "warName": "The attacker's De Jure War for the target title",
+      "whitePeacePossible": true
+    },
+    {
+      "allowHostages": false,
+      "costs": {
+        "prestige": {
+          "varies": true
+        }
+      },
+      "deJureRegionsAbove": true,
+      "defenderFaithCanJoin": false,
+      "dlc": "The Great People",
+      "features": [],
+      "group": "de_jure",
+      "icon": "ritsuryo_government",
+      "id": "japan_imperial_reconquest_cb",
+      "isGreatHolyWar": false,
+      "isHolyWar": false,
+      "name": "Imperial Reconquest of Japan (De Jure)",
+      "onAttackerDeath": "inherit",
+      "onDefenderDeath": "inherit",
+      "outcomes": {
+        "defeat": "The defender keeps the contested Title.",
+        "invalidated": "The war has ended: the defender joined the Realm, or holds no valid target County",
+        "victory": "Your service to the attacker will be recognized.",
+        "whitePeace": "The defender keeps the contested Title."
+      },
+      "requirements": [
+        {
+          "key": "defense_mobilization_law",
+          "kind": "law",
+          "name": "Defense Mobilization",
+          "negated": false
+        }
+      ],
+      "sourceFile": "10_tgp_japan_wars.txt",
+      "targetTier": "all",
+      "targetTitles": "all",
+      "truceDays": null,
+      "warName": "Imperial Reconquest of Japan",
+      "whitePeacePossible": true
+    },
+    {
+      "allowHostages": true,
+      "costs": {},
+      "deJureRegionsAbove": false,
+      "defenderFaithCanJoin": false,
+      "dlc": null,
+      "features": [],
+      "group": "debug",
+      "icon": "debug_artifact_war",
+      "id": "debug_artifact_war",
+      "isGreatHolyWar": false,
+      "isHolyWar": false,
+      "name": "Debug Artifact War",
+      "onAttackerDeath": "inherit",
+      "onDefenderDeath": "inherit",
+      "outcomes": {
+        "defeat": "Attacker takes nothing.",
+        "invalidated": "(DEBUG) Debug Artifact War invalidated!",
+        "victory": "Attacker takes all artifacts belonging to the defender.",
+        "whitePeace": "Attacker takes nothing."
+      },
+      "requirements": [],
+      "sourceFile": "00_casus_belli_types.txt",
+      "targetTier": null,
+      "targetTitles": null,
+      "truceDays": null,
+      "warName": "(DEBUG) Debug Artifact War",
+      "whitePeacePossible": true
+    },
+    {
+      "allowHostages": true,
+      "costs": {},
+      "deJureRegionsAbove": false,
+      "defenderFaithCanJoin": false,
+      "dlc": null,
+      "features": [],
+      "group": "debug",
+      "icon": "debug_war",
+      "id": "debug_war",
+      "isGreatHolyWar": false,
+      "isHolyWar": false,
+      "name": "Debug War",
+      "onAttackerDeath": "inherit",
+      "onDefenderDeath": "inherit",
+      "outcomes": {
+        "defeat": "Defender keeps the target titles.",
+        "invalidated": "(DEBUG) Debug War invalidated",
+        "victory": "Attacker takes the target titles.",
+        "whitePeace": "Defender keeps the target titles."
+      },
+      "requirements": [],
+      "sourceFile": "00_casus_belli_types.txt",
+      "targetTier": "all",
+      "targetTitles": "all",
+      "truceDays": null,
+      "warName": "(DEBUG) the attacker-the defender's Debug War for the target title",
+      "whitePeacePossible": true
+    },
+    {
+      "allowHostages": false,
+      "costs": {},
+      "deJureRegionsAbove": true,
+      "defenderFaithCanJoin": false,
+      "dlc": null,
+      "features": [],
+      "group": "event",
+      "icon": "invasion",
+      "id": "azariqa_rebellion_cb",
+      "isGreatHolyWar": false,
+      "isHolyWar": false,
+      "name": "Azariqa Rebellion",
+      "onAttackerDeath": "inherit",
+      "onDefenderDeath": "inherit",
+      "outcomes": {
+        "defeat": "The defender keeps their titles.",
+        "invalidated": null,
+        "victory": "The attacker seizes all titles within the defender's realm belonging De Jure to the target title, and all occupied counties outside it.",
+        "whitePeace": "The defender keeps their titles."
+      },
+      "requirements": [],
+      "sourceFile": "00_event_war.txt",
+      "targetTier": "kingdom",
+      "targetTitles": "all",
+      "truceDays": null,
+      "warName": "The attacker's Invasion of the target title",
+      "whitePeacePossible": true
+    },
+    {
+      "allowHostages": false,
+      "costs": null,
+      "deJureRegionsAbove": false,
+      "defenderFaithCanJoin": false,
+      "dlc": null,
+      "features": [],
+      "group": "event",
+      "icon": "vassalization",
+      "id": "diarch_vassalisation_cb",
+      "isGreatHolyWar": false,
+      "isHolyWar": false,
+      "name": "Diarch Seizure",
+      "onAttackerDeath": "inherit",
+      "onDefenderDeath": "inherit",
+      "outcomes": {
+        "defeat": "The defender loses nothing to the attacker.",
+        "invalidated": null,
+        "victory": "The defender surrenders all Titles and Vassals that De Jure belong to the attacker",
+        "whitePeace": "The defender loses nothing to the attacker."
+      },
+      "requirements": [],
+      "sourceFile": "00_event_war.txt",
+      "targetTier": null,
+      "targetTitles": "de_jure",
+      "truceDays": null,
+      "warName": "The attacker-the defender's De Jure Land Seizure",
+      "whitePeacePossible": true
+    },
+    {
+      "allowHostages": true,
+      "costs": {
+        "prestige": {
+          "varies": true
+        }
+      },
+      "deJureRegionsAbove": true,
+      "defenderFaithCanJoin": false,
+      "dlc": "Khans of the Steppe",
+      "features": [],
+      "group": "event",
+      "icon": "county_conquest_cb",
+      "id": "domination_cb",
+      "isGreatHolyWar": false,
+      "isHolyWar": false,
+      "name": "Domination War",
+      "onAttackerDeath": "inherit",
+      "onDefenderDeath": "inherit",
+      "outcomes": {
+        "defeat": "The defender keeps the contested Title.",
+        "invalidated": null,
+        "victory": "The attacker gains the contested Title.",
+        "whitePeace": "You keep the contested Title."
+      },
+      "requirements": [],
+      "sourceFile": "09_mpo_wars.txt",
+      "targetTier": null,
+      "targetTitles": "all",
+      "truceDays": null,
+      "warName": "The attacker's Domination of the target title",
+      "whitePeacePossible": false
+    },
+    {
+      "allowHostages": false,
+      "costs": null,
+      "deJureRegionsAbove": false,
+      "defenderFaithCanJoin": false,
+      "dlc": "Roads to Power",
+      "features": [],
+      "group": "event",
+      "icon": "dissolution_war",
+      "id": "ep3_hasan_assassin_war",
+      "isGreatHolyWar": false,
+      "isHolyWar": false,
+      "name": "Assassin Dissolution",
+      "onAttackerDeath": "inherit",
+      "onDefenderDeath": "inherit",
+      "outcomes": {
+        "defeat": "The defender Imprisons the attacker, and gains a Title Revocation Reason.",
+        "invalidated": null,
+        "victory": "The defender is destroyed and the defender's Vassals become Independent.",
+        "whitePeace": "The attacker remain a Vassal of the defender."
+      },
+      "requirements": [],
+      "sourceFile": "07_ep3_wars.txt",
+      "targetTier": null,
+      "targetTitles": null,
+      "truceDays": null,
+      "warName": "The attacker's Dissolution of the defender",
+      "whitePeacePossible": true
+    },
+    {
+      "allowHostages": false,
+      "costs": null,
+      "deJureRegionsAbove": false,
+      "defenderFaithCanJoin": false,
+      "dlc": "Roads to Power",
+      "features": [],
+      "group": "event",
+      "icon": "apprehend_adventurer",
+      "id": "ep3_laamp_apprehend_adventurer_cb",
+      "isGreatHolyWar": false,
+      "isHolyWar": false,
+      "name": "Resist Capture",
+      "onAttackerDeath": "inherit",
+      "onDefenderDeath": "inherit",
+      "outcomes": {
+        "defeat": "The defender will imprison the attacker, seizing all possessions, and disbanding the Camp",
+        "invalidated": "The war has ended: it was no longer valid to continue.",
+        "victory": "The attacker will depose the defender",
+        "whitePeace": "The attacker will gain a Truce with the defender"
+      },
+      "requirements": [],
+      "sourceFile": "07_ep3_wars.txt",
+      "targetTier": null,
+      "targetTitles": null,
+      "truceDays": null,
+      "warName": "The attacker's Resistance against the defender",
+      "whitePeacePossible": true
+    },
+    {
+      "allowHostages": true,
+      "costs": null,
+      "deJureRegionsAbove": true,
+      "defenderFaithCanJoin": false,
+      "dlc": null,
+      "features": [],
+      "group": "event",
+      "icon": "fp1_varangian_adventurer_conquest",
+      "id": "fp1_scandi_adventurer_conquest",
+      "isGreatHolyWar": false,
+      "isHolyWar": false,
+      "name": "Viking Adventurer",
+      "onAttackerDeath": "inherit",
+      "onDefenderDeath": "inherit",
+      "outcomes": {
+        "defeat": "The defender keeps the contested Title.",
+        "invalidated": null,
+        "victory": "The attacker gains the contested Title.",
+        "whitePeace": "The defender keeps the contested Title."
+      },
+      "requirements": [],
+      "sourceFile": "00_event_war.txt",
+      "targetTier": "duchy",
+      "targetTitles": "all",
+      "truceDays": null,
+      "warName": "The attacker's Conquest of the target title",
+      "whitePeacePossible": true
+    },
+    {
+      "allowHostages": false,
+      "costs": {},
+      "deJureRegionsAbove": true,
+      "defenderFaithCanJoin": false,
+      "dlc": "Legacy of Persia",
+      "features": [],
+      "group": "event",
+      "icon": "invasion",
+      "id": "fp3_seljuk_invasion_cb",
+      "isGreatHolyWar": false,
+      "isHolyWar": false,
+      "name": "Nomadic Invasion",
+      "onAttackerDeath": "inherit",
+      "onDefenderDeath": "inherit",
+      "outcomes": {
+        "defeat": "The Seljuk Nomads are broken and forced to leave your lands.",
+        "invalidated": null,
+        "victory": "The Seljuk Nomads take the contested Titles by force.",
+        "whitePeace": "The Seljuk Nomads are granted lands in recognition of their prowess."
+      },
+      "requirements": [],
+      "sourceFile": "05_fp3_wars.txt",
+      "targetTier": null,
+      "targetTitles": null,
+      "truceDays": 3650,
+      "warName": "Seljuk Nomadic Invasion of the target title",
+      "whitePeacePossible": true
+    },
+    {
+      "allowHostages": true,
+      "costs": null,
+      "deJureRegionsAbove": true,
+      "defenderFaithCanJoin": false,
+      "dlc": "Legacy of Persia",
+      "features": [],
+      "group": "event",
+      "icon": "request_mercenary",
+      "id": "fp3_turkic_invasion_cb",
+      "isGreatHolyWar": false,
+      "isHolyWar": false,
+      "name": "Sponsored Conquest",
+      "onAttackerDeath": "invalidate",
+      "onDefenderDeath": "inherit",
+      "outcomes": {
+        "defeat": "The defender keeps the contested Title.",
+        "invalidated": null,
+        "victory": "The beneficiary gains the contested Titles.",
+        "whitePeace": "The defender keeps the contested Title."
+      },
+      "requirements": [],
+      "sourceFile": "05_fp3_wars.txt",
+      "targetTier": "duchy",
+      "targetTitles": null,
+      "truceDays": null,
+      "warName": "Sponsored Conquest of the target title",
+      "whitePeacePossible": true
+    },
+    {
+      "allowHostages": true,
+      "costs": null,
+      "deJureRegionsAbove": true,
+      "defenderFaithCanJoin": false,
+      "dlc": "Legacy of Persia",
+      "features": [],
+      "group": "event",
+      "icon": "peasant_war",
+      "id": "fp3_zanj_rebellion_war",
+      "isGreatHolyWar": false,
+      "isHolyWar": false,
+      "name": "Zanj Rebellion",
+      "onAttackerDeath": "inherit",
+      "onDefenderDeath": "inherit",
+      "outcomes": {
+        "defeat": "The defender keeps the contested Title.",
+        "invalidated": null,
+        "victory": "The attacker gains the contested Title.",
+        "whitePeace": "The defender keeps the contested Title."
+      },
+      "requirements": [],
+      "sourceFile": "05_fp3_wars.txt",
+      "targetTier": "duchy",
+      "targetTitles": "all",
+      "truceDays": null,
+      "warName": "Zanj Rebellion",
+      "whitePeacePossible": false
+    },
+    {
+      "allowHostages": false,
+      "costs": {},
+      "deJureRegionsAbove": false,
+      "defenderFaithCanJoin": false,
+      "dlc": "Roads to Power",
+      "features": [],
+      "group": "event",
+      "icon": "duchy_expansion",
+      "id": "influence_war_cb",
+      "isGreatHolyWar": false,
+      "isHolyWar": false,
+      "name": "Sponsored Administrative War",
+      "onAttackerDeath": "inherit",
+      "onDefenderDeath": "inherit",
+      "outcomes": {
+        "defeat": "The defender keeps the contested Title.",
+        "invalidated": null,
+        "victory": null,
+        "whitePeace": "The defender keeps the contested Title."
+      },
+      "requirements": [
+        {
+          "key": "administrative",
+          "kind": "government_type",
+          "name": "Administrative",
+          "negated": false
+        },
+        {
+          "key": "government_is_landless_adventurer",
+          "kind": "government_flag",
+          "name": "Landless adventurer",
+          "negated": true
+        }
+      ],
+      "sourceFile": "07_ep3_admin_cbs.txt",
+      "targetTier": null,
+      "targetTitles": null,
+      "truceDays": null,
+      "warName": "The attacker's Expansion of the target title",
+      "whitePeacePossible": true
+    },
+    {
+      "allowHostages": false,
+      "costs": {},
+      "deJureRegionsAbove": false,
+      "defenderFaithCanJoin": false,
+      "dlc": "Tours & Tournaments",
+      "features": [
+        "accolades"
+      ],
+      "group": "event",
+      "icon": "migration_cb",
+      "id": "mpo_great_war_of_defiance_cb",
+      "isGreatHolyWar": false,
+      "isHolyWar": false,
+      "name": "Great War of Defiance",
+      "onAttackerDeath": "inherit",
+      "onDefenderDeath": "inherit",
+      "outcomes": {
+        "defeat": "Defeated Independent Nomads become the defender's Obedient Vassals. All other Truces with the defender are removed. the defender becomes Greatest of Khans and receives powerful bonuses towards universal conquest.",
+        "invalidated": "The war has no purpose: the defender cannot become Greatest of Khans.",
+        "victory": "The defender is imprisoned by the attacker, humiliated, impoverished, and loses all Landed Titles. their Vassals, Counties and Tributaries become independent.",
+        "whitePeace": null
+      },
+      "requirements": [],
+      "sourceFile": "09_mpo_wars.txt",
+      "targetTier": "all",
+      "targetTitles": "claim",
+      "truceDays": null,
+      "warName": "Great War of Defiance against the defender",
+      "whitePeacePossible": false
+    },
+    {
+      "allowHostages": false,
+      "costs": {},
+      "deJureRegionsAbove": false,
+      "defenderFaithCanJoin": false,
+      "dlc": null,
+      "features": [],
+      "group": "event",
+      "icon": "invasion",
+      "id": "norman_conquest_cb",
+      "isGreatHolyWar": false,
+      "isHolyWar": false,
+      "name": "Invasion",
+      "onAttackerDeath": "inherit",
+      "onDefenderDeath": "inherit",
+      "outcomes": {
+        "defeat": "The defender keeps the Kingdom of England. the attacker loses their Claim to it.",
+        "invalidated": null,
+        "victory": "The attacker seizes the Kingdom of England and personally takes all titles in southern England.",
+        "whitePeace": "The defender keeps the Kingdom of England. the attacker's Claims become Pressed."
+      },
+      "requirements": [],
+      "sourceFile": "00_event_war.txt",
+      "targetTier": null,
+      "targetTitles": "claim",
+      "truceDays": null,
+      "warName": "The attacker's War for the claimant's Claim on the target title",
+      "whitePeacePossible": true
+    },
+    {
+      "allowHostages": false,
+      "costs": {},
+      "deJureRegionsAbove": false,
+      "defenderFaithCanJoin": false,
+      "dlc": null,
+      "features": [],
+      "group": "event",
+      "icon": "invasion",
+      "id": "norwegian_invasion_cb",
+      "isGreatHolyWar": false,
+      "isHolyWar": false,
+      "name": "Invasion",
+      "onAttackerDeath": "inherit",
+      "onDefenderDeath": "inherit",
+      "outcomes": {
+        "defeat": "The defender keeps the Kingdom of England. the attacker loses their Claim to it.",
+        "invalidated": null,
+        "victory": "The attacker seizes the Kingdom of England and personally takes all titles in northern England.",
+        "whitePeace": "The defender keeps the Kingdom of England. the attacker's Claims become Pressed."
+      },
+      "requirements": [],
+      "sourceFile": "00_event_war.txt",
+      "targetTier": null,
+      "targetTitles": "claim",
+      "truceDays": null,
+      "warName": "The attacker's War for the claimant's Claim on the target title",
+      "whitePeacePossible": true
+    },
+    {
+      "allowHostages": false,
+      "costs": {},
+      "deJureRegionsAbove": true,
+      "defenderFaithCanJoin": false,
+      "dlc": null,
+      "features": [],
+      "group": "event",
+      "icon": "claim_cb",
+      "id": "raiktor_claim_cb",
+      "isGreatHolyWar": false,
+      "isHolyWar": false,
+      "name": "Raiktor's Claim",
+      "onAttackerDeath": "inherit",
+      "onDefenderDeath": "inherit",
+      "outcomes": {
+        "defeat": "The defender keeps the contested Title. the attacker loses their Claim.",
+        "invalidated": null,
+        "victory": "The claimant gains the contested Title.",
+        "whitePeace": "The defender keeps the contested Title."
+      },
+      "requirements": [],
+      "sourceFile": "00_event_war.txt",
+      "targetTier": "all",
+      "targetTitles": "claim",
+      "truceDays": null,
+      "warName": "The attacker's War for the claimant's Claim on the target title",
+      "whitePeacePossible": true
+    },
+    {
+      "allowHostages": false,
+      "costs": {},
+      "deJureRegionsAbove": true,
+      "defenderFaithCanJoin": false,
+      "dlc": null,
+      "features": [],
+      "group": "event",
+      "icon": "claim_cb",
+      "id": "raiktor_conquest_cb",
+      "isGreatHolyWar": false,
+      "isHolyWar": false,
+      "name": "Raiktor's \"Claim\"",
+      "onAttackerDeath": "inherit",
+      "onDefenderDeath": "inherit",
+      "outcomes": {
+        "defeat": "The defender keeps their titles.",
+        "invalidated": null,
+        "victory": "The attacker gains the contested Title.",
+        "whitePeace": "The defender keeps their titles."
+      },
+      "requirements": [],
+      "sourceFile": "00_event_war.txt",
+      "targetTier": "all",
+      "targetTitles": "all",
+      "truceDays": null,
+      "warName": "The attacker's Conquest of the target title",
+      "whitePeacePossible": true
+    },
+    {
+      "allowHostages": false,
+      "costs": {},
+      "deJureRegionsAbove": false,
+      "defenderFaithCanJoin": false,
+      "dlc": null,
+      "features": [],
+      "group": "event",
+      "icon": "dissolution_war",
+      "id": "remove_regent_cb",
+      "isGreatHolyWar": false,
+      "isHolyWar": false,
+      "name": "Remove Regent",
+      "onAttackerDeath": "inherit",
+      "onDefenderDeath": "inherit",
+      "outcomes": {
+        "defeat": "The attacker is Imprisoned and fined",
+        "invalidated": null,
+        "victory": "The defender is removed as Regent",
+        "whitePeace": "The defender stays as Regent"
+      },
+      "requirements": [],
+      "sourceFile": "00_event_war.txt",
+      "targetTier": null,
+      "targetTitles": null,
+      "truceDays": null,
+      "warName": "War to remove the defender as Regent",
+      "whitePeacePossible": true
+    },
+    {
+      "allowHostages": false,
+      "costs": {},
+      "deJureRegionsAbove": true,
+      "defenderFaithCanJoin": false,
+      "dlc": null,
+      "features": [],
+      "group": "event",
+      "icon": "fp1_varangian_adventurer_conquest",
+      "id": "sons_of_lothbrok_invasion_cb",
+      "isGreatHolyWar": false,
+      "isHolyWar": false,
+      "name": "Invasion",
+      "onAttackerDeath": "inherit",
+      "onDefenderDeath": "inherit",
+      "outcomes": {
+        "defeat": "The defender keeps their titles. the attacker loses Prestige and pays reparations to the defender.",
+        "invalidated": null,
+        "victory": "The attacker seizes all of the defender's titles within the target kingdom.",
+        "whitePeace": "The defender keeps their titles. the attacker loses Prestige."
+      },
+      "requirements": [],
+      "sourceFile": "00_event_war.txt",
+      "targetTier": "all",
+      "targetTitles": "none",
+      "truceDays": null,
+      "warName": "The attacker's Conquest of the target title",
+      "whitePeacePossible": true
+    },
+    {
+      "allowHostages": false,
+      "costs": {
+        "prestige": {
+          "base": 75,
+          "varies": true
+        }
+      },
+      "deJureRegionsAbove": false,
+      "defenderFaithCanJoin": false,
+      "dlc": "Khans of the Steppe",
+      "features": [],
+      "group": "humiliation",
+      "icon": "humiliation_cb",
+      "id": "humiliation_cb",
+      "isGreatHolyWar": false,
+      "isHolyWar": false,
+      "name": "Humiliation War",
+      "onAttackerDeath": "inherit",
+      "onDefenderDeath": "inherit",
+      "outcomes": {
+        "defeat": "… has not been humiliated.",
+        "invalidated": null,
+        "victory": "The attacker humiliates the defender.",
+        "whitePeace": "The defender has not been humiliated."
+      },
+      "requirements": [
+        {
+          "key": "government_is_nomadic",
+          "kind": "government_flag",
+          "name": "Nomadic",
+          "negated": false
+        },
+        {
+          "key": "is_landed",
+          "kind": "status",
+          "name": "Landed",
+          "negated": false
+        }
+      ],
+      "sourceFile": "09_mpo_wars.txt",
+      "targetTier": null,
+      "targetTitles": null,
+      "truceDays": null,
+      "warName": "Humiliation War",
+      "whitePeacePossible": true
+    },
+    {
+      "allowHostages": false,
+      "costs": {
+        "prestige": {
+          "base": 75,
+          "varies": true
+        }
+      },
+      "deJureRegionsAbove": false,
+      "defenderFaithCanJoin": false,
+      "dlc": "Khans of the Steppe",
+      "features": [],
+      "group": "humiliation",
+      "icon": "retaliation_cb",
+      "id": "retaliation_cb",
+      "isGreatHolyWar": false,
+      "isHolyWar": false,
+      "name": "Retaliation War",
+      "onAttackerDeath": "inherit",
+      "onDefenderDeath": "inherit",
+      "outcomes": {
+        "defeat": "… does not become … tributary.",
+        "invalidated": null,
+        "victory": "The attacker makes the defender their tributary.",
+        "whitePeace": "The defender does not become the attacker's tributary."
+      },
+      "requirements": [
+        {
+          "key": "obedience",
+          "kind": "government_type",
+          "name": "Obedience",
+          "negated": false
+        },
+        {
+          "key": "is_landed",
+          "kind": "status",
+          "name": "Landed",
+          "negated": false
+        }
+      ],
+      "sourceFile": "09_mpo_wars.txt",
+      "targetTier": null,
+      "targetTitles": null,
+      "truceDays": null,
+      "warName": "Retaliation War",
+      "whitePeacePossible": true
+    },
+    {
+      "allowHostages": false,
+      "costs": {
+        "piety": {
+          "varies": true
+        },
+        "prestige": {
+          "base": 500,
+          "varies": true
+        }
+      },
+      "deJureRegionsAbove": false,
+      "defenderFaithCanJoin": false,
+      "dlc": null,
+      "features": [],
+      "group": "independence",
+      "icon": "independence_faction_war",
+      "id": "independence_war",
+      "isGreatHolyWar": false,
+      "isHolyWar": false,
+      "name": "Independence War",
+      "onAttackerDeath": "inherit",
+      "onDefenderDeath": "inherit",
+      "outcomes": {
+        "defeat": "The defender Imprisons the attacker, and gains a Title Revocation Reason.",
+        "invalidated": null,
+        "victory": "The attacker gain independence from the defender.",
+        "whitePeace": "The attacker remain a vassal of the defender."
+      },
+      "requirements": [
+        {
+          "key": "administrative",
+          "kind": "government_type",
+          "name": "Administrative",
+          "negated": true
+        }
+      ],
+      "sourceFile": "00_civil_war.txt",
+      "targetTier": null,
+      "targetTitles": null,
+      "truceDays": null,
+      "warName": "Independence War",
+      "whitePeacePossible": true
+    },
+    {
+      "allowHostages": false,
+      "costs": {
+        "prestige": {
+          "base": 100,
+          "varies": true
+        }
+      },
+      "deJureRegionsAbove": false,
+      "defenderFaithCanJoin": false,
+      "dlc": null,
+      "features": [],
+      "group": "independence",
+      "icon": "independence_faction_war",
+      "id": "tributary_independence_war",
+      "isGreatHolyWar": false,
+      "isHolyWar": false,
+      "name": "Independence",
+      "onAttackerDeath": "inherit",
+      "onDefenderDeath": "inherit",
+      "outcomes": {
+        "defeat": "The attacker remains a Tributary of the defender.",
+        "invalidated": null,
+        "victory": "The attacker is released from their Tributary obligations to the defender.",
+        "whitePeace": "The attacker remains a Tributary of the defender."
+      },
+      "requirements": [],
+      "sourceFile": "00_tributarize.txt",
+      "targetTier": null,
+      "targetTitles": null,
+      "truceDays": null,
+      "warName": "Independence War",
+      "whitePeacePossible": true
+    },
+    {
+      "allowHostages": false,
+      "costs": {
+        "piety": {
+          "varies": true
+        },
+        "prestige": {
+          "base": 200,
+          "varies": true
+        }
+      },
+      "deJureRegionsAbove": true,
+      "defenderFaithCanJoin": false,
+      "dlc": null,
+      "features": [],
+      "group": "invasion",
+      "icon": "vassalization",
+      "id": "clan_invasion_war",
+      "isGreatHolyWar": false,
+      "isHolyWar": false,
+      "name": "Clan Invasion",
+      "onAttackerDeath": "inherit",
+      "onDefenderDeath": "inherit",
+      "outcomes": {
+        "defeat": "The defender keeps their titles.",
+        "invalidated": null,
+        "victory": "You may only attempt one invasion War against a Kingdom-tier Title per lifetime",
+        "whitePeace": "The defender keeps their titles."
+      },
+      "requirements": [
+        {
+          "key": "government_is_clan",
+          "kind": "government_flag",
+          "name": "Clan",
+          "negated": false
+        },
+        {
+          "key": "prestige_level >= 2",
+          "kind": "level",
+          "name": "Prestige level ≥ 2–4 (varies by rank)",
+          "negated": false
+        }
+      ],
+      "sourceFile": "00_invasion_war.txt",
+      "targetTier": "all",
+      "targetTitles": "all",
+      "truceDays": null,
+      "warName": "The attacker's Invasion of the target title",
+      "whitePeacePossible": true
+    },
+    {
+      "allowHostages": false,
+      "costs": {
+        "piety": {
+          "varies": true
+        },
+        "prestige": {
+          "varies": true
+        }
+      },
+      "deJureRegionsAbove": true,
+      "defenderFaithCanJoin": false,
+      "dlc": "Roads to Power",
+      "features": [],
+      "group": "invasion",
+      "icon": "invasion",
+      "id": "ep3_laamp_adventurer_county_invasion",
+      "isGreatHolyWar": false,
+      "isHolyWar": false,
+      "name": "Adventurer Invasion",
+      "onAttackerDeath": "inherit",
+      "onDefenderDeath": "inherit",
+      "outcomes": {
+        "defeat": "The defender keeps the contested Title.",
+        "invalidated": null,
+        "victory": "The attacker will support you",
+        "whitePeace": "The defender keeps the contested Title."
+      },
+      "requirements": [
+        {
+          "key": "prestige_level >= 1",
+          "kind": "level",
+          "name": "Prestige level ≥ 1–2 (varies by rank)",
+          "negated": false
+        }
+      ],
+      "sourceFile": "07_ep3_wars.txt",
+      "targetTier": "county",
+      "targetTitles": "all",
+      "truceDays": null,
+      "warName": "The attacker's Adventurer Invasion of the target title",
+      "whitePeacePossible": true
+    },
+    {
+      "allowHostages": false,
+      "costs": {
+        "piety": {
+          "varies": true
+        },
+        "prestige": {
+          "varies": true
+        }
+      },
+      "deJureRegionsAbove": true,
+      "defenderFaithCanJoin": false,
+      "dlc": "Roads to Power",
+      "features": [],
+      "group": "invasion",
+      "icon": "invasion",
+      "id": "ep3_laamp_adventurer_duchy_invasion",
+      "isGreatHolyWar": false,
+      "isHolyWar": false,
+      "name": "Adventurer Invasion",
+      "onAttackerDeath": "inherit",
+      "onDefenderDeath": "inherit",
+      "outcomes": {
+        "defeat": "The defender keeps the contested Title.",
+        "invalidated": null,
+        "victory": "The attacker will support you with Soldiers",
+        "whitePeace": "The defender keeps the contested Title."
+      },
+      "requirements": [
+        {
+          "key": "prestige_level >= 2",
+          "kind": "level",
+          "name": "Prestige level ≥ 2–3 (varies by rank)",
+          "negated": false
+        }
+      ],
+      "sourceFile": "07_ep3_wars.txt",
+      "targetTier": "duchy",
+      "targetTitles": "all",
+      "truceDays": null,
+      "warName": "The attacker's Adventurer Invasion of the target title",
+      "whitePeacePossible": true
+    },
+    {
+      "allowHostages": false,
+      "costs": {
+        "piety": {
+          "varies": true
+        },
+        "prestige": {
+          "varies": true
+        }
+      },
+      "deJureRegionsAbove": false,
+      "defenderFaithCanJoin": false,
+      "dlc": "Roads to Power",
+      "features": [],
+      "group": "invasion",
+      "icon": "invasion",
+      "id": "ep3_laamp_adventurer_empire_invasion",
+      "isGreatHolyWar": false,
+      "isHolyWar": false,
+      "name": "Adventurer Invasion",
+      "onAttackerDeath": "inherit",
+      "onDefenderDeath": "inherit",
+      "outcomes": {
+        "defeat": "The defender keeps the contested Title.",
+        "invalidated": null,
+        "victory": "The attacker will support you",
+        "whitePeace": "The defender keeps the contested Title."
+      },
+      "requirements": [
+        {
+          "key": "prestige_level >= 4",
+          "kind": "level",
+          "name": "Prestige level ≥ 4–5 (varies by rank)",
+          "negated": false
+        }
+      ],
+      "sourceFile": "07_ep3_wars.txt",
+      "targetTier": "empire",
+      "targetTitles": "all",
+      "truceDays": null,
+      "warName": "The attacker's Adventurer Invasion of the target title",
+      "whitePeacePossible": true
+    },
+    {
+      "allowHostages": false,
+      "costs": {
+        "piety": {
+          "varies": true
+        },
+        "prestige": {
+          "varies": true
+        }
+      },
+      "deJureRegionsAbove": false,
+      "defenderFaithCanJoin": false,
+      "dlc": "Roads to Power",
+      "features": [],
+      "group": "invasion",
+      "icon": "invasion",
+      "id": "ep3_laamp_adventurer_kingdom_invasion",
+      "isGreatHolyWar": false,
+      "isHolyWar": false,
+      "name": "Adventurer Invasion",
+      "onAttackerDeath": "inherit",
+      "onDefenderDeath": "inherit",
+      "outcomes": {
+        "defeat": "The defender keeps the contested Title.",
+        "invalidated": null,
+        "victory": "The attacker will support you",
+        "whitePeace": "The defender keeps the contested Title."
+      },
+      "requirements": [
+        {
+          "key": "prestige_level >= 3",
+          "kind": "level",
+          "name": "Prestige level ≥ 3–4 (varies by rank)",
+          "negated": false
+        }
+      ],
+      "sourceFile": "07_ep3_wars.txt",
+      "targetTier": "kingdom",
+      "targetTitles": "all",
+      "truceDays": null,
+      "warName": "The attacker's Adventurer Invasion of the target title",
+      "whitePeacePossible": true
+    },
+    {
+      "allowHostages": false,
+      "costs": null,
+      "deJureRegionsAbove": true,
+      "defenderFaithCanJoin": false,
+      "dlc": "Roads to Power",
+      "features": [],
+      "group": "invasion",
+      "icon": "invasion",
+      "id": "ep3_laamp_peasant_war",
+      "isGreatHolyWar": false,
+      "isHolyWar": false,
+      "name": "Peasant Uprising",
+      "onAttackerDeath": "invalidate",
+      "onDefenderDeath": "inherit",
+      "outcomes": {
+        "defeat": "The defender keeps the contested Title.",
+        "invalidated": null,
+        "victory": "You gain the contested Titles.",
+        "whitePeace": "The defender keeps the contested Title."
+      },
+      "requirements": [
+        {
+          "key": "government_is_landless_adventurer",
+          "kind": "government_flag",
+          "name": "Landless adventurer",
+          "negated": false
+        }
+      ],
+      "sourceFile": "07_ep3_wars.txt",
+      "targetTier": null,
+      "targetTitles": null,
+      "truceDays": null,
+      "warName": "Peasant Uprising",
+      "whitePeacePossible": true
+    },
+    {
+      "allowHostages": false,
+      "costs": {},
+      "deJureRegionsAbove": false,
+      "defenderFaithCanJoin": false,
+      "dlc": "Roads to Power",
+      "features": [],
+      "group": "invasion",
+      "icon": "ducal_conquest_cb",
+      "id": "ep3_laamp_raid_contract_cb",
+      "isGreatHolyWar": false,
+      "isHolyWar": false,
+      "name": "Raid for Captives Contract",
+      "onAttackerDeath": "inherit",
+      "onDefenderDeath": "inherit",
+      "outcomes": {
+        "defeat": "Your reputation as a capable adventurer suffers",
+        "invalidated": null,
+        "victory": "You imprison more characters and gain gold from captured prisoners",
+        "whitePeace": "No additional gains for neither side"
+      },
+      "requirements": [],
+      "sourceFile": "07_ep3_wars.txt",
+      "targetTier": null,
+      "targetTitles": null,
+      "truceDays": null,
+      "warName": "The attacker's Raid for Captives against the defender",
+      "whitePeacePossible": true
+    },
+    {
+      "allowHostages": false,
+      "costs": {
+        "prestige": 750
+      },
+      "deJureRegionsAbove": false,
+      "defenderFaithCanJoin": false,
+      "dlc": "Roads to Power",
+      "features": [],
+      "group": "invasion",
+      "icon": "ducal_conquest_cb",
+      "id": "ep3_roman_empire_border_war",
+      "isGreatHolyWar": false,
+      "isHolyWar": false,
+      "name": "Border Raid against the Roman Empire",
+      "onAttackerDeath": "invalidate",
+      "onDefenderDeath": "inherit",
+      "outcomes": {
+        "defeat": "The attacker must pay Gold reparations for attempting the raid.",
+        "invalidated": null,
+        "victory": "The attacker gains Gold in proportion to the Development of the target County, which will decrease.\nA Building may also be destroyed.\nNo Titles will change hands.",
+        "whitePeace": "The attacker fails to complete their raid."
+      },
+      "requirements": [],
+      "sourceFile": "07_ep3_wars.txt",
+      "targetTier": "county",
+      "targetTitles": "neighbor_land",
+      "truceDays": null,
+      "warName": "Border Raid against the target title",
+      "whitePeacePossible": true
+    },
+    {
+      "allowHostages": true,
+      "costs": null,
+      "deJureRegionsAbove": true,
+      "defenderFaithCanJoin": false,
+      "dlc": null,
+      "features": [],
+      "group": "invasion",
+      "icon": "invasion",
+      "id": "hungarian_migration_cb",
+      "isGreatHolyWar": false,
+      "isHolyWar": false,
+      "name": "Migrate to Pannonia",
+      "onAttackerDeath": "inherit",
+      "onDefenderDeath": "inherit",
+      "outcomes": {
+        "defeat": "The defender keeps their titles.",
+        "invalidated": null,
+        "victory": "The Migration may only be attempted once per campaign by anyone at all.",
+        "whitePeace": "The defender keeps their titles."
+      },
+      "requirements": [
+        {
+          "key": "unreformed",
+          "kind": "doctrine_parameter",
+          "name": "Unreformed",
+          "negated": false
+        }
+      ],
+      "sourceFile": "00_event_war.txt",
+      "targetTier": "kingdom",
+      "targetTitles": "all",
+      "truceDays": null,
+      "warName": "Mogyër Migration into the target title",
+      "whitePeacePossible": true
+    },
+    {
+      "allowHostages": false,
+      "costs": {
+        "piety": {
+          "varies": true
+        },
+        "prestige": {
+          "varies": true
+        }
+      },
+      "deJureRegionsAbove": true,
+      "defenderFaithCanJoin": false,
+      "dlc": null,
+      "features": [],
+      "group": "invasion",
+      "icon": "invasion",
+      "id": "invasion_war",
+      "isGreatHolyWar": false,
+      "isHolyWar": false,
+      "name": "Invasion",
+      "onAttackerDeath": "inherit",
+      "onDefenderDeath": "inherit",
+      "outcomes": {
+        "defeat": "The defender keeps their titles.",
+        "invalidated": null,
+        "victory": "You may only attempt one invasion War against a Kingdom-tier Title per lifetime",
+        "whitePeace": "The defender keeps their titles."
+      },
+      "requirements": [
+        {
+          "key": "government_is_tribal",
+          "kind": "government_flag",
+          "name": "Tribal",
+          "negated": false
+        },
+        {
+          "key": "government_is_nomadic",
+          "kind": "government_flag",
+          "name": "Nomadic",
+          "negated": false
+        },
+        {
+          "key": "invasion_cb_enabled",
+          "kind": "doctrine_parameter",
+          "name": "Invasion cb enabled",
+          "negated": false
+        },
+        {
+          "key": "government_is_landless_adventurer",
+          "kind": "government_flag",
+          "name": "Landless adventurer",
+          "negated": true
+        },
+        {
+          "key": "prestige_level >= 0",
+          "kind": "level",
+          "name": "Prestige level ≥ 0–4 (varies by rank)",
+          "negated": false
+        }
+      ],
+      "sourceFile": "00_invasion_war.txt",
+      "targetTier": "kingdom",
+      "targetTitles": "all",
+      "truceDays": null,
+      "warName": "The attacker's Invasion of the target title",
+      "whitePeacePossible": true
+    },
+    {
+      "allowHostages": false,
+      "costs": {
+        "piety": {
+          "varies": true
+        },
+        "prestige": {
+          "base": 200,
+          "varies": true
+        }
+      },
+      "deJureRegionsAbove": true,
+      "defenderFaithCanJoin": false,
+      "dlc": null,
+      "features": [],
+      "group": "invasion",
+      "icon": "invasion",
+      "id": "mongol_invasion_war",
+      "isGreatHolyWar": false,
+      "isHolyWar": false,
+      "name": "Mongol Invasion",
+      "onAttackerDeath": "inherit",
+      "onDefenderDeath": "inherit",
+      "outcomes": {
+        "defeat": "The defender keeps their titles.",
+        "invalidated": null,
+        "victory": "The attacker seizes all titles within the defender's realm belonging De Jure to the target title.",
+        "whitePeace": "The defender keeps their titles."
+      },
+      "requirements": [
+        {
+          "key": "prestige_level >= 1",
+          "kind": "level",
+          "name": "Prestige level >= 1",
+          "negated": false
+        }
+      ],
+      "sourceFile": "00_invasion_war.txt",
+      "targetTier": "all",
+      "targetTitles": "neighbor_land_or_water",
+      "truceDays": null,
+      "warName": "Mongol Invasion of the target title",
+      "whitePeacePossible": true
+    },
+    {
+      "allowHostages": false,
+      "costs": {
+        "piety": {
+          "varies": true
+        },
+        "prestige": {
+          "base": 200,
+          "varies": true
+        }
+      },
+      "deJureRegionsAbove": true,
+      "defenderFaithCanJoin": false,
+      "dlc": null,
+      "features": [],
+      "group": "invasion",
+      "icon": "invasion",
+      "id": "mongol_realm_invasion_war",
+      "isGreatHolyWar": false,
+      "isHolyWar": false,
+      "name": "Mongol Realm Invasion",
+      "onAttackerDeath": "inherit",
+      "onDefenderDeath": "inherit",
+      "outcomes": {
+        "defeat": "The defender keeps their titles.",
+        "invalidated": null,
+        "victory": "The attacker seizes all titles within the defender's realm belonging De Jure to the target title, and all occupied counties outside it.",
+        "whitePeace": "The defender keeps their titles."
+      },
+      "requirements": [
+        {
+          "key": "prestige_level >= 1",
+          "kind": "level",
+          "name": "Prestige level >= 1",
+          "negated": false
+        }
+      ],
+      "sourceFile": "00_invasion_war.txt",
+      "targetTier": "all",
+      "targetTitles": "neighbor_land_or_water",
+      "truceDays": null,
+      "warName": "Mongol Invasion of the target title",
+      "whitePeacePossible": true
+    },
+    {
+      "allowHostages": false,
+      "costs": {
+        "piety": {
+          "varies": true
+        },
+        "prestige": {
+          "base": 500,
+          "varies": true
+        }
+      },
+      "deJureRegionsAbove": false,
+      "defenderFaithCanJoin": false,
+      "dlc": "Khans of the Steppe",
+      "features": [],
+      "group": "invasion",
+      "icon": "migration_cb",
+      "id": "mpo_gok_onslaught_cb",
+      "isGreatHolyWar": false,
+      "isHolyWar": false,
+      "name": "Greatest of Khans' Onslaught",
+      "onAttackerDeath": "inherit",
+      "onDefenderDeath": "inherit",
+      "outcomes": {
+        "defeat": "… remains an independent ruler, losing only occupied counties. the attacker is humiliated.",
+        "invalidated": null,
+        "victory": "The attacker takes all of the defender's lands, as well as titles belonging to them and their stronger vassals.",
+        "whitePeace": "The defender remains an independent ruler, losing only occupied counties."
+      },
+      "requirements": [
+        {
+          "key": "prestige_level >= 1",
+          "kind": "level",
+          "name": "Prestige level >= 1",
+          "negated": false
+        }
+      ],
+      "sourceFile": "09_mpo_wars.txt",
+      "targetTier": null,
+      "targetTitles": null,
+      "truceDays": null,
+      "warName": "The attacker's Onslaught into the defender",
+      "whitePeacePossible": true
+    },
+    {
+      "allowHostages": false,
+      "costs": {
+        "piety": {
+          "varies": true
+        },
+        "prestige": {
+          "base": 800,
+          "varies": true
+        }
+      },
+      "deJureRegionsAbove": true,
+      "defenderFaithCanJoin": false,
+      "dlc": "Khans of the Steppe",
+      "features": [],
+      "group": "invasion",
+      "icon": "migration_cb",
+      "id": "mpo_nomad_duchy_invasion_cb",
+      "isGreatHolyWar": false,
+      "isHolyWar": false,
+      "name": "Overrun Kingdom",
+      "onAttackerDeath": "inherit",
+      "onDefenderDeath": "inherit",
+      "outcomes": {
+        "defeat": "The attacker loses significant the attackerLegitimacy and Dread.",
+        "invalidated": null,
+        "victory": "The attacker loses all Nomadic titles. the attacker's Nomadic Vassals either gain taken titles or become Independent.",
+        "whitePeace": "The attacker loses some the attackerLegitimacy and Dread."
+      },
+      "requirements": [
+        {
+          "key": "is_independent_ruler",
+          "kind": "status",
+          "name": "Independent ruler",
+          "negated": false
+        },
+        {
+          "key": "government_is_nomadic",
+          "kind": "government_flag",
+          "name": "Nomadic",
+          "negated": false
+        },
+        {
+          "key": "highest_held_title_tier < tier_kingdom",
+          "kind": "tier",
+          "name": "Highest title < kingdom",
+          "negated": false
+        },
+        {
+          "key": "nomadic_authority_2",
+          "kind": "law",
+          "name": "Limited Dominance",
+          "negated": false
+        },
+        {
+          "key": "is_landed",
+          "kind": "status",
+          "name": "Landed",
+          "negated": true
+        },
+        {
+          "key": "nomadic_authority_1",
+          "kind": "law",
+          "name": "Unruly Nomads",
+          "negated": true
+        }
+      ],
+      "sourceFile": "09_mpo_wars.txt",
+      "targetTier": "duchy",
+      "targetTitles": "all",
+      "truceDays": null,
+      "warName": "The attacker's Overrunning of the target title",
+      "whitePeacePossible": true
+    },
+    {
+      "allowHostages": false,
+      "costs": {
+        "piety": {
+          "varies": true
+        },
+        "prestige": {
+          "base": 2000,
+          "varies": true
+        }
+      },
+      "deJureRegionsAbove": true,
+      "defenderFaithCanJoin": false,
+      "dlc": "Khans of the Steppe",
+      "features": [],
+      "group": "invasion",
+      "icon": "migration_cb",
+      "id": "mpo_nomad_invasion_cb",
+      "isGreatHolyWar": false,
+      "isHolyWar": false,
+      "name": "Overrun Kingdom",
+      "onAttackerDeath": "inherit",
+      "onDefenderDeath": "inherit",
+      "outcomes": {
+        "defeat": "The attacker loses significant the attackerLegitimacy and Dread.",
+        "invalidated": "The war has ended: the defender no longer … any of the claimed Counties.",
+        "victory": "The attacker loses all Nomadic titles. the attacker's Nomadic Vassals either gain taken titles or become Independent.",
+        "whitePeace": "The attacker loses some the attackerLegitimacy and Dread."
+      },
+      "requirements": [
+        {
+          "key": "is_independent_ruler",
+          "kind": "status",
+          "name": "Independent ruler",
+          "negated": false
+        },
+        {
+          "key": "government_is_nomadic",
+          "kind": "government_flag",
+          "name": "Nomadic",
+          "negated": false
+        },
+        {
+          "key": "is_landed",
+          "kind": "status",
+          "name": "Landed",
+          "negated": true
+        },
+        {
+          "key": "nomadic_authority_3",
+          "kind": "law",
+          "name": "High Dominance",
+          "negated": false
+        },
+        {
+          "key": "nomadic_authority_4",
+          "kind": "law",
+          "name": "Absolute Dominance",
+          "negated": false
+        },
+        {
+          "key": "nomadic_authority_5",
+          "kind": "law",
+          "name": "Unrestricted Dominance",
+          "negated": false
+        }
+      ],
+      "sourceFile": "09_mpo_wars.txt",
+      "targetTier": "kingdom",
+      "targetTitles": "all",
+      "truceDays": null,
+      "warName": "The attacker's Overrunning of the target title",
+      "whitePeacePossible": true
+    },
+    {
+      "allowHostages": false,
+      "costs": {
+        "piety": {
+          "varies": true
+        },
+        "prestige": {
+          "base": 200,
+          "varies": true
+        }
+      },
+      "deJureRegionsAbove": true,
+      "defenderFaithCanJoin": false,
+      "dlc": null,
+      "features": [],
+      "group": "invasion",
+      "icon": "invasion",
+      "id": "pax_romana_invasion_war",
+      "isGreatHolyWar": false,
+      "isHolyWar": false,
+      "name": "Pax Romana",
+      "onAttackerDeath": "inherit",
+      "onDefenderDeath": "inherit",
+      "outcomes": {
+        "defeat": "The defender keeps their titles.",
+        "invalidated": null,
+        "victory": "The attacker seizes all titles within the defender's realm belonging De Jure to the target title.",
+        "whitePeace": "The defender keeps their titles."
+      },
+      "requirements": [
+        {
+          "key": "government_is_administrative",
+          "kind": "government_flag",
+          "name": "Administrative",
+          "negated": false
+        },
+        {
+          "key": "prestige_level >= 1",
+          "kind": "level",
+          "name": "Prestige level >= 1",
+          "negated": false
+        }
+      ],
+      "sourceFile": "00_invasion_war.txt",
+      "targetTier": "all",
+      "targetTitles": "neighbor_land_or_water",
+      "truceDays": null,
+      "warName": "Roman Invasion of the target title",
+      "whitePeacePossible": true
+    },
+    {
+      "allowHostages": true,
+      "costs": {
+        "piety": {
+          "base": 100,
+          "varies": true
+        }
+      },
+      "deJureRegionsAbove": false,
+      "defenderFaithCanJoin": false,
+      "dlc": "The Great People",
+      "features": [],
+      "group": "mandala",
+      "icon": "retaliation_cb",
+      "id": "mandala_plunder_cb",
+      "isGreatHolyWar": false,
+      "isHolyWar": false,
+      "name": "Plunder for Contribution",
+      "onAttackerDeath": "inherit",
+      "onDefenderDeath": "inherit",
+      "outcomes": {
+        "defeat": "The attacker's divine reputation is tarnished.",
+        "invalidated": "The war has ended: either the attacker … no longer an Aspect of Destruction Mandala Ruler with a planned Great Project, or the defender … no longer a Mandala Ruler.",
+        "victory": "The defender is forced to Contribute to your Great Project.",
+        "whitePeace": "The defender does not Contribute to your Great Project."
+      },
+      "requirements": [
+        {
+          "key": "government_is_mandala",
+          "kind": "government_flag",
+          "name": "Mandala",
+          "negated": false
+        }
+      ],
+      "sourceFile": "tgp_eastasia_wars.txt",
+      "targetTier": null,
+      "targetTitles": null,
+      "truceDays": null,
+      "warName": "The attacker's Plunder War",
+      "whitePeacePossible": true
+    },
+    {
+      "allowHostages": true,
+      "costs": {
+        "piety": {
+          "base": 100,
+          "varies": true
+        }
+      },
+      "deJureRegionsAbove": false,
+      "defenderFaithCanJoin": false,
+      "dlc": "The Great People",
+      "features": [],
+      "group": "mandala",
+      "icon": "raze_capital_structure",
+      "id": "mandala_raze_capital_structure_cb",
+      "isGreatHolyWar": false,
+      "isHolyWar": false,
+      "name": "Raze Ornate Temple",
+      "onAttackerDeath": "inherit",
+      "onDefenderDeath": "inherit",
+      "outcomes": {
+        "defeat": "The attacker's Ornate Temple becomes Ruined.",
+        "invalidated": "The war has ended: either the attacker … no longer a Mandala Ruler with an unRuined Capital, or the defender … no longer a Mandala Ruler with an unruined Capital.",
+        "victory": "The defender's Ornate Temple becomes Ruined.",
+        "whitePeace": "The defender's Ornate Temple remains immaculate."
+      },
+      "requirements": [
+        {
+          "key": "government_is_mandala",
+          "kind": "government_flag",
+          "name": "Mandala",
+          "negated": false
+        }
+      ],
+      "sourceFile": "tgp_eastasia_wars.txt",
+      "targetTier": null,
+      "targetTitles": null,
+      "truceDays": null,
+      "warName": "The attacker's Devastation War",
+      "whitePeacePossible": true
+    },
+    {
+      "allowHostages": false,
+      "costs": {},
+      "deJureRegionsAbove": true,
+      "defenderFaithCanJoin": false,
+      "dlc": "Khans of the Steppe",
+      "features": [],
+      "group": "migration",
+      "icon": "migration_cb",
+      "id": "migration_cb",
+      "isGreatHolyWar": false,
+      "isHolyWar": false,
+      "name": "Migration War",
+      "onAttackerDeath": "inherit",
+      "onDefenderDeath": "inherit",
+      "outcomes": {
+        "defeat": "The defender stays in the contested Title",
+        "invalidated": null,
+        "victory": "The attacker migrates to the contested Title.",
+        "whitePeace": "The defender stays in the contested Title"
+      },
+      "requirements": [
+        {
+          "key": "government_is_nomadic",
+          "kind": "government_flag",
+          "name": "Nomadic",
+          "negated": false
+        }
+      ],
+      "sourceFile": "09_mpo_wars.txt",
+      "targetTier": null,
+      "targetTitles": null,
+      "truceDays": null,
+      "warName": "The attacker's Migration to the target title",
+      "whitePeacePossible": false
+    },
+    {
+      "allowHostages": false,
+      "costs": null,
+      "deJureRegionsAbove": true,
+      "defenderFaithCanJoin": false,
+      "dlc": null,
+      "features": [],
+      "group": "religious",
+      "icon": "directed_great_holy_war",
+      "id": "directed_great_holy_war",
+      "isGreatHolyWar": true,
+      "isHolyWar": false,
+      "name": "Great Holy War",
+      "onAttackerDeath": "inherit",
+      "onDefenderDeath": "inherit",
+      "outcomes": {
+        "defeat": "No titles change hands. The defenders divide Piety won.",
+        "invalidated": null,
+        "victory": "The main contributor gets the target kingdom. Titles in the target kingdom are handed out to the beneficiaries",
+        "whitePeace": "There can be no white peace"
+      },
+      "requirements": [],
+      "sourceFile": "00_religious_war.txt",
+      "targetTier": "all",
+      "targetTitles": "all",
+      "truceDays": null,
+      "warName": "The attacker for the target title",
+      "whitePeacePossible": false
+    },
+    {
+      "allowHostages": false,
+      "costs": null,
+      "deJureRegionsAbove": true,
+      "defenderFaithCanJoin": false,
+      "dlc": null,
+      "features": [],
+      "group": "religious",
+      "icon": "excommunication",
+      "id": "excommunication_war",
+      "isGreatHolyWar": false,
+      "isHolyWar": false,
+      "name": "Excommunication",
+      "onAttackerDeath": "invalidate",
+      "onDefenderDeath": "inherit",
+      "outcomes": {
+        "defeat": "The defender keeps their titles and gains Piety.",
+        "invalidated": "The war has ended: it was no longer valid to continue.",
+        "victory": "The defender is Deposed.",
+        "whitePeace": "The defender keeps their titles."
+      },
+      "requirements": [],
+      "sourceFile": "00_religious_war.txt",
+      "targetTier": null,
+      "targetTitles": null,
+      "truceDays": null,
+      "warName": "Excommunication War against the defender",
+      "whitePeacePossible": true
+    },
+    {
+      "allowHostages": true,
+      "costs": {
+        "piety": {
+          "base": 750,
+          "varies": true
+        }
+      },
+      "deJureRegionsAbove": true,
+      "defenderFaithCanJoin": true,
+      "dlc": null,
+      "features": [],
+      "group": "religious",
+      "icon": "major_religious_war",
+      "id": "major_religious_war",
+      "isGreatHolyWar": false,
+      "isHolyWar": true,
+      "name": "Major Holy",
+      "onAttackerDeath": "inherit",
+      "onDefenderDeath": "inherit",
+      "outcomes": {
+        "defeat": "No Titles change hands.",
+        "invalidated": "The war has ended: the attacker cannot Holy War the defender's Faith.",
+        "victory": "You may only attempt one Holy War against a Kingdom-tier Title per lifetime",
+        "whitePeace": "No Titles change hands."
+      },
+      "requirements": [
+        {
+          "key": "unreformed",
+          "kind": "doctrine_parameter",
+          "name": "Unreformed",
+          "negated": true
+        },
+        {
+          "key": "government_is_nomadic",
+          "kind": "government_flag",
+          "name": "Nomadic",
+          "negated": true
+        },
+        {
+          "key": "government_is_celestial",
+          "kind": "government_flag",
+          "name": "Celestial",
+          "negated": true
+        },
+        {
+          "key": "piety_level >= 1",
+          "kind": "level",
+          "name": "Piety level ≥ 1–3 (varies by rank)",
+          "negated": false
+        }
+      ],
+      "sourceFile": "00_religious_war.txt",
+      "targetTier": "all",
+      "targetTitles": "neighbor_land_or_water",
+      "truceDays": null,
+      "warName": "Holy War for the target title",
+      "whitePeacePossible": true
+    },
+    {
+      "allowHostages": true,
+      "costs": {
+        "piety": {
+          "base": 100,
+          "varies": true
+        }
+      },
+      "deJureRegionsAbove": true,
+      "defenderFaithCanJoin": true,
+      "dlc": null,
+      "features": [],
+      "group": "religious",
+      "icon": "minor_religious_war",
+      "id": "minor_religious_war",
+      "isGreatHolyWar": false,
+      "isHolyWar": true,
+      "name": "Minor Holy",
+      "onAttackerDeath": "inherit",
+      "onDefenderDeath": "inherit",
+      "outcomes": {
+        "defeat": "No Titles change hands.",
+        "invalidated": "The war has ended: the attacker cannot Holy War the defender's Faith.",
+        "victory": "Within the target Title, all titles held by the defender's rulers are seized, and any the attacker's rulers are vassalized by the attacker.",
+        "whitePeace": "No Titles change hands."
+      },
+      "requirements": [
+        {
+          "key": "unreformed",
+          "kind": "doctrine_parameter",
+          "name": "Unreformed",
+          "negated": true
+        },
+        {
+          "key": "holy_wars_forbidden",
+          "kind": "doctrine_parameter",
+          "name": "Holy wars forbidden",
+          "negated": true
+        },
+        {
+          "key": "government_is_landless_adventurer",
+          "kind": "government_flag",
+          "name": "Landless adventurer",
+          "negated": true
+        },
+        {
+          "key": "government_is_nomadic",
+          "kind": "government_flag",
+          "name": "Nomadic",
+          "negated": true
+        },
+        {
+          "key": "government_is_celestial",
+          "kind": "government_flag",
+          "name": "Celestial",
+          "negated": true
+        },
+        {
+          "key": "piety_level >= 0",
+          "kind": "level",
+          "name": "Piety level ≥ 0–1 (varies by rank)",
+          "negated": false
+        }
+      ],
+      "sourceFile": "00_religious_war.txt",
+      "targetTier": "all",
+      "targetTitles": "neighbor_land_or_water",
+      "truceDays": null,
+      "warName": "Holy War for the target title",
+      "whitePeacePossible": true
+    },
+    {
+      "allowHostages": true,
+      "costs": {
+        "piety": {
+          "base": 200,
+          "varies": true
+        }
+      },
+      "deJureRegionsAbove": true,
+      "defenderFaithCanJoin": true,
+      "dlc": null,
+      "features": [],
+      "group": "religious",
+      "icon": "minor_religious_war",
+      "id": "religious_war",
+      "isGreatHolyWar": false,
+      "isHolyWar": true,
+      "name": "Holy War",
+      "onAttackerDeath": "inherit",
+      "onDefenderDeath": "inherit",
+      "outcomes": {
+        "defeat": "No Titles change hands.",
+        "invalidated": "The war has ended: the attacker cannot Holy War the defender's Faith.",
+        "victory": "Within the target Title, all titles held by the defender's rulers are seized, and any the attacker's rulers are vassalized by the attacker.",
+        "whitePeace": "No Titles change hands."
+      },
+      "requirements": [
+        {
+          "key": "unreformed",
+          "kind": "doctrine_parameter",
+          "name": "Unreformed",
+          "negated": true
+        },
+        {
+          "key": "holy_wars_forbidden",
+          "kind": "doctrine_parameter",
+          "name": "Holy wars forbidden",
+          "negated": true
+        },
+        {
+          "key": "government_is_nomadic",
+          "kind": "government_flag",
+          "name": "Nomadic",
+          "negated": true
+        },
+        {
+          "key": "government_is_celestial",
+          "kind": "government_flag",
+          "name": "Celestial",
+          "negated": true
+        },
+        {
+          "key": "piety_level >= 0",
+          "kind": "level",
+          "name": "Piety level ≥ 0–2 (varies by rank)",
+          "negated": false
+        }
+      ],
+      "sourceFile": "00_religious_war.txt",
+      "targetTier": "all",
+      "targetTitles": "neighbor_land_or_water",
+      "truceDays": null,
+      "warName": "Holy War for the target title",
+      "whitePeacePossible": true
+    },
+    {
+      "allowHostages": false,
+      "costs": {
+        "piety": {
+          "base": 100,
+          "varies": true
+        }
+      },
+      "deJureRegionsAbove": false,
+      "defenderFaithCanJoin": false,
+      "dlc": null,
+      "features": [],
+      "group": "religious_disorganised",
+      "icon": "ducal_conquest_cb",
+      "id": "flowery_war_cb",
+      "isGreatHolyWar": false,
+      "isHolyWar": false,
+      "name": "Raid for Captives",
+      "onAttackerDeath": "inherit",
+      "onDefenderDeath": "inherit",
+      "outcomes": {
+        "defeat": "No sacrifice is made.",
+        "invalidated": "The war has ended: neither main participant openly practices human sacrifice.",
+        "victory": "Characters and county inhabitants of the defender's realm are sacrificed by the attacker.",
+        "whitePeace": "No sacrifice is made."
+      },
+      "requirements": [
+        {
+          "key": "flower_war_cb_active",
+          "kind": "doctrine_parameter",
+          "name": "Flower war cb active",
+          "negated": false
+        }
+      ],
+      "sourceFile": "00_religious_war.txt",
+      "targetTier": null,
+      "targetTitles": null,
+      "truceDays": null,
+      "warName": "Raid for Captives against the defender",
+      "whitePeacePossible": true
+    },
+    {
+      "allowHostages": true,
+      "costs": {},
+      "deJureRegionsAbove": false,
+      "defenderFaithCanJoin": false,
+      "dlc": "Roads to Power",
+      "features": [],
+      "group": "religious_script_only",
+      "icon": "undirected_great_holy_war",
+      "id": "crusading_claim_cb",
+      "isGreatHolyWar": false,
+      "isHolyWar": false,
+      "name": "Crusader War for Imperial Claim",
+      "onAttackerDeath": "inherit",
+      "onDefenderDeath": "inherit",
+      "outcomes": {
+        "defeat": "The defender keeps the contested Title. the attacker loses their Claim.",
+        "invalidated": "The war has ended: the defender no longer … any of the claimed Counties.",
+        "victory": "The claimant gains the contested Title.",
+        "whitePeace": "The defender keeps the contested Title."
+      },
+      "requirements": [],
+      "sourceFile": "07_ep3_wars.txt",
+      "targetTier": "all",
+      "targetTitles": "claim",
+      "truceDays": null,
+      "warName": "Crusader War for the claimant's Claim on the target title",
+      "whitePeacePossible": true
+    },
+    {
+      "allowHostages": false,
+      "costs": null,
+      "deJureRegionsAbove": true,
+      "defenderFaithCanJoin": false,
+      "dlc": null,
+      "features": [],
+      "group": "religious_script_only",
+      "icon": "undirected_great_holy_war",
+      "id": "undirected_great_holy_war",
+      "isGreatHolyWar": true,
+      "isHolyWar": false,
+      "name": "Great Holy War",
+      "onAttackerDeath": "inherit",
+      "onDefenderDeath": "inherit",
+      "outcomes": {
+        "defeat": "No titles change hands. The defenders divide Piety won.",
+        "invalidated": null,
+        "victory": "Titles in the target kingdom are handed out to the beneficiaries. Gold and Piety is spread among all participants.",
+        "whitePeace": "There can be no white peace"
+      },
+      "requirements": [],
+      "sourceFile": "00_religious_war.txt",
+      "targetTier": "all",
+      "targetTitles": "all",
+      "truceDays": null,
+      "warName": "The attacker for the target title",
+      "whitePeacePossible": false
+    },
+    {
+      "allowHostages": true,
+      "costs": {
+        "piety": {
+          "varies": true
+        },
+        "prestige": {
+          "varies": true
+        }
+      },
+      "deJureRegionsAbove": false,
+      "defenderFaithCanJoin": false,
+      "dlc": null,
+      "features": [],
+      "group": "struggle",
+      "icon": "struggle",
+      "id": "county_struggle_cb",
+      "isGreatHolyWar": false,
+      "isHolyWar": false,
+      "name": "Struggle Clash",
+      "onAttackerDeath": "inherit",
+      "onDefenderDeath": "inherit",
+      "outcomes": {
+        "defeat": "… keeps the contested Title.",
+        "invalidated": null,
+        "victory": "… gains the contested Title.",
+        "whitePeace": "… keeps the contested Title."
+      },
+      "requirements": [
+        {
+          "key": "government_is_landless_adventurer",
+          "kind": "government_flag",
+          "name": "Landless adventurer",
+          "negated": true
+        }
+      ],
+      "sourceFile": "00_struggle_war.txt",
+      "targetTier": "county",
+      "targetTitles": "all",
+      "truceDays": null,
+      "warName": "The attacker's Clash against the defender",
+      "whitePeacePossible": true
+    },
+    {
+      "allowHostages": false,
+      "costs": {
+        "piety": {
+          "varies": true
+        },
+        "prestige": {
+          "varies": true
+        }
+      },
+      "deJureRegionsAbove": false,
+      "defenderFaithCanJoin": false,
+      "dlc": "Fate of Iberia",
+      "features": [],
+      "group": "struggle",
+      "icon": "struggle",
+      "id": "fp2_border_raid",
+      "isGreatHolyWar": false,
+      "isHolyWar": false,
+      "name": "Border Raid",
+      "onAttackerDeath": "invalidate",
+      "onDefenderDeath": "inherit",
+      "outcomes": {
+        "defeat": "The attacker must pay Gold reparations for attempting the raid.",
+        "invalidated": null,
+        "victory": "The attacker gains Gold in proportion to the Development of the target County, which will decrease.\nA Building may also be destroyed.\nNo Titles will change hands.",
+        "whitePeace": "The attacker fails to complete their raid."
+      },
+      "requirements": [
+        {
+          "key": "government_is_landless_adventurer",
+          "kind": "government_flag",
+          "name": "Landless adventurer",
+          "negated": true
+        }
+      ],
+      "sourceFile": "03_fp2_wars.txt",
+      "targetTier": "county",
+      "targetTitles": "neighbor_land",
+      "truceDays": null,
+      "warName": "The attacker's Border Raid of the target title",
+      "whitePeacePossible": true
+    },
+    {
+      "allowHostages": true,
+      "costs": {
+        "piety": {
+          "base": 250,
+          "varies": true
+        }
+      },
+      "deJureRegionsAbove": false,
+      "defenderFaithCanJoin": false,
+      "dlc": "Legacy of Persia",
+      "features": [],
+      "group": "struggle",
+      "icon": "fp3_install_loyalist_war",
+      "id": "fp3_install_loyalist_cb",
+      "isGreatHolyWar": false,
+      "isHolyWar": false,
+      "name": "Install Loyalist",
+      "onAttackerDeath": "invalidate",
+      "onDefenderDeath": "inherit",
+      "outcomes": {
+        "defeat": "The defender remains under the impartial rule of the defender.",
+        "invalidated": null,
+        "victory": "The Ruler of the defender is deposed and replaced with a Supporter of Caliphal Authority of the Caliph.",
+        "whitePeace": "The defender remains under the impartial rule of the defender."
+      },
+      "requirements": [
+        {
+          "key": "fp3_struggle_supporter",
+          "kind": "trait",
+          "name": "Supporter of Caliphal Authority",
+          "negated": false
+        },
+        {
+          "key": "government_is_landless_adventurer",
+          "kind": "government_flag",
+          "name": "Landless adventurer",
+          "negated": true
+        }
+      ],
+      "sourceFile": "05_fp3_wars.txt",
+      "targetTier": null,
+      "targetTitles": null,
+      "truceDays": 180,
+      "warName": "Install Loyalist in the defender",
+      "whitePeacePossible": true
+    },
+    {
+      "allowHostages": false,
+      "costs": {
+        "prestige": {
+          "base": 100,
+          "varies": true
+        }
+      },
+      "deJureRegionsAbove": false,
+      "defenderFaithCanJoin": false,
+      "dlc": "The Great People",
+      "features": [],
+      "group": "subjugation",
+      "icon": "execute",
+      "id": "eradicate_house_cb",
+      "isGreatHolyWar": false,
+      "isHolyWar": false,
+      "name": "Eradicate Rival House",
+      "onAttackerDeath": "inherit",
+      "onDefenderDeath": "inherit",
+      "outcomes": {
+        "defeat": "The attacker's House will be eradicated by the defender.",
+        "invalidated": "Eradicate House … was invalidated",
+        "victory": "The defender's House will be eradicated by the attacker's hand!",
+        "whitePeace": "The defender will preserve their honor."
+      },
+      "requirements": [],
+      "sourceFile": "10_tgp_japan_wars.txt",
+      "targetTier": null,
+      "targetTitles": null,
+      "truceDays": null,
+      "warName": "The attacker Attempts to Eradicate the defender",
+      "whitePeacePossible": true
+    },
+    {
+      "allowHostages": true,
+      "costs": {
+        "prestige": {
+          "base": 100,
+          "varies": true
+        }
+      },
+      "deJureRegionsAbove": false,
+      "defenderFaithCanJoin": false,
+      "dlc": "The Great People",
+      "features": [],
+      "group": "subjugation",
+      "icon": "bloc",
+      "id": "japan_bloc_war_cb",
+      "isGreatHolyWar": false,
+      "isHolyWar": false,
+      "name": "…-… Bloc Supremacy War",
+      "onAttackerDeath": "inherit",
+      "onDefenderDeath": "inherit",
+      "outcomes": {
+        "defeat": "The attacker … forced to recognize the superiority of the defender.",
+        "invalidated": "…-… Bloc Supremacy War was invalidated",
+        "victory": "The defender … forced to recognize the superiority of the attacker.",
+        "whitePeace": "The defender will preserve the honor of the defender."
+      },
+      "requirements": [],
+      "sourceFile": "10_tgp_japan_wars.txt",
+      "targetTier": null,
+      "targetTitles": null,
+      "truceDays": null,
+      "warName": "The attacker-the defender Bloc Supremacy War",
+      "whitePeacePossible": true
+    },
+    {
+      "allowHostages": false,
+      "costs": {
+        "prestige": {
+          "base": 100,
+          "varies": true
+        }
+      },
+      "deJureRegionsAbove": false,
+      "defenderFaithCanJoin": false,
+      "dlc": "The Great People",
+      "features": [],
+      "group": "subjugation",
+      "icon": "ritsuryo",
+      "id": "japan_demand_administrative_cb",
+      "isGreatHolyWar": false,
+      "isHolyWar": false,
+      "name": "Enforce Administrative Integration",
+      "onAttackerDeath": "inherit",
+      "onDefenderDeath": "inherit",
+      "outcomes": {
+        "defeat": "As the attacker … not the attacker, the defender will remain a Sōryō Vassal.",
+        "invalidated": "The war has ended: the defender is not Sōryō or left the Realm",
+        "victory": "Your service to the attacker will be recognized.",
+        "whitePeace": "The defender will remain a Sōryō Vassal."
+      },
+      "requirements": [
+        {
+          "key": "government_is_japan_administrative",
+          "kind": "government_flag",
+          "name": "Japan administrative",
+          "negated": false
+        }
+      ],
+      "sourceFile": "10_tgp_japan_wars.txt",
+      "targetTier": null,
+      "targetTitles": null,
+      "truceDays": null,
+      "warName": "The attacker's Enforced Administrative Integration of the defender",
+      "whitePeacePossible": true
+    },
+    {
+      "allowHostages": false,
+      "costs": null,
+      "deJureRegionsAbove": false,
+      "defenderFaithCanJoin": false,
+      "dlc": "The Great People",
+      "features": [],
+      "group": "subjugation",
+      "icon": "soryo",
+      "id": "japan_establish_soryo_administration_cb",
+      "isGreatHolyWar": false,
+      "isHolyWar": false,
+      "name": "Establish Sōryō Administration",
+      "onAttackerDeath": "inherit",
+      "onDefenderDeath": "inherit",
+      "outcomes": {
+        "defeat": "The defender, and all Bloc members, will adopt Sōryō … and imprison all attackers.",
+        "invalidated": "Establish Sōryō Administration was invalidated",
+        "victory": "The attacker will replace the defender as ruler of the defender and imprison all defenders.",
+        "whitePeace": "The defender will remain Ritsuryō."
+      },
+      "requirements": [],
+      "sourceFile": "10_tgp_japan_wars.txt",
+      "targetTier": null,
+      "targetTitles": null,
+      "truceDays": null,
+      "warName": "The defender War to establish Sōryō Administration",
+      "whitePeacePossible": true
+    },
+    {
+      "allowHostages": false,
+      "costs": {
+        "prestige": {
+          "base": 100,
+          "varies": true
+        }
+      },
+      "deJureRegionsAbove": false,
+      "defenderFaithCanJoin": false,
+      "dlc": "The Great People",
+      "features": [],
+      "group": "subjugation",
+      "icon": "bloc",
+      "id": "japan_install_bloc_member_cb",
+      "isGreatHolyWar": false,
+      "isHolyWar": false,
+      "name": "Bloc Expansion",
+      "onAttackerDeath": "inherit",
+      "onDefenderDeath": "inherit",
+      "outcomes": {
+        "defeat": "Since the defender is a Ritsuryō Vassal, the attacker will consider this a Crime.",
+        "invalidated": "Bloc Expansion was invalidated",
+        "victory": "Since the defender is a Ritsuryō Vassal, the attacker will consider this a Crime.",
+        "whitePeace": "Since the defender is a Ritsuryō Vassal, the attacker will consider this a Crime."
+      },
+      "requirements": [
+        {
+          "key": "is_landed",
+          "kind": "status",
+          "name": "Landed",
+          "negated": false
+        },
+        {
+          "key": "highest_held_title_tier >= tier_county",
+          "kind": "tier",
+          "name": "Highest title >= county",
+          "negated": false
+        }
+      ],
+      "sourceFile": "10_tgp_japan_wars.txt",
+      "targetTier": "county",
+      "targetTitles": "all",
+      "truceDays": null,
+      "warName": "The attacker Expansion War",
+      "whitePeacePossible": true
+    },
+    {
+      "allowHostages": true,
+      "costs": {
+        "piety": {
+          "varies": true
+        },
+        "prestige": {
+          "varies": true
+        }
+      },
+      "deJureRegionsAbove": false,
+      "defenderFaithCanJoin": false,
+      "dlc": null,
+      "features": [],
+      "group": "subjugation",
+      "icon": "make_tributary_cb",
+      "id": "make_tributary_cb",
+      "isGreatHolyWar": false,
+      "isHolyWar": false,
+      "name": "Bring Under Tribute",
+      "onAttackerDeath": "invalidate",
+      "onDefenderDeath": "inherit",
+      "outcomes": {
+        "defeat": "The defender remains independent.",
+        "invalidated": null,
+        "victory": "The defender becomes the attacker's Tributary.",
+        "whitePeace": "The defender remains independent."
+      },
+      "requirements": [
+        {
+          "key": "is_landed",
+          "kind": "status",
+          "name": "Landed",
+          "negated": false
+        }
+      ],
+      "sourceFile": "00_tributarize.txt",
+      "targetTier": null,
+      "targetTitles": null,
+      "truceDays": null,
+      "warName": "The attacker-the defender's Tributary War",
+      "whitePeacePossible": true
+    },
+    {
+      "allowHostages": true,
+      "costs": {
+        "prestige": {
+          "varies": true
+        }
+      },
+      "deJureRegionsAbove": false,
+      "defenderFaithCanJoin": false,
+      "dlc": "Khans of the Steppe",
+      "features": [],
+      "group": "subjugation",
+      "icon": "retaliation_cb",
+      "id": "sovereignty_cb",
+      "isGreatHolyWar": false,
+      "isHolyWar": false,
+      "name": "Sovereignty War",
+      "onAttackerDeath": "inherit",
+      "onDefenderDeath": "inherit",
+      "outcomes": {
+        "defeat": "The defender keeps the contested tributaries, and the attacker must pay them war reparations.",
+        "invalidated": null,
+        "victory": "The attacker gains the contested tributaries.",
+        "whitePeace": "The defender keeps the contested tributaries."
+      },
+      "requirements": [
+        {
+          "key": "is_landed",
+          "kind": "status",
+          "name": "Landed",
+          "negated": false
+        },
+        {
+          "key": "highest_held_title_tier >= tier_kingdom",
+          "kind": "tier",
+          "name": "Highest title >= kingdom",
+          "negated": false
+        },
+        {
+          "key": "government_is_nomadic",
+          "kind": "government_flag",
+          "name": "Nomadic",
+          "negated": false
+        }
+      ],
+      "sourceFile": "09_mpo_wars.txt",
+      "targetTier": null,
+      "targetTitles": "none",
+      "truceDays": null,
+      "warName": "Sovereignty War",
+      "whitePeacePossible": true
+    },
+    {
+      "allowHostages": true,
+      "costs": {
+        "piety": {
+          "varies": true
+        },
+        "prestige": {
+          "varies": true
+        }
+      },
+      "deJureRegionsAbove": false,
+      "defenderFaithCanJoin": false,
+      "dlc": null,
+      "features": [],
+      "group": "subjugation",
+      "icon": "vassalization",
+      "id": "tribal_subjugation_cb",
+      "isGreatHolyWar": false,
+      "isHolyWar": false,
+      "name": "Subjugation",
+      "onAttackerDeath": "inherit",
+      "onDefenderDeath": "inherit",
+      "outcomes": {
+        "defeat": "The defender keeps all their titles and remains independent.",
+        "invalidated": null,
+        "victory": "You may only attempt one Subjugation War per lifetime",
+        "whitePeace": "The defender keeps all their titles and remains independent."
+      },
+      "requirements": [
+        {
+          "key": "government_is_tribal",
+          "kind": "government_flag",
+          "name": "Tribal",
+          "negated": false
+        },
+        {
+          "key": "doctrine_temporal_head",
+          "kind": "doctrine",
+          "name": "Temporal",
+          "negated": false
+        },
+        {
+          "key": "eastern_hostility_doctrine",
+          "kind": "doctrine",
+          "name": "Dharmic",
+          "negated": false
+        },
+        {
+          "key": "government_is_landless_adventurer",
+          "kind": "government_flag",
+          "name": "Landless adventurer",
+          "negated": true
+        },
+        {
+          "key": "administrative",
+          "kind": "government_type",
+          "name": "Administrative",
+          "negated": true
+        }
+      ],
+      "sourceFile": "00_subjugation.txt",
+      "targetTier": null,
+      "targetTitles": null,
+      "truceDays": null,
+      "warName": "The attacker-the defender's Subjugation War",
+      "whitePeacePossible": true
+    },
+    {
+      "allowHostages": true,
+      "costs": {
+        "piety": {
+          "varies": true
+        },
+        "prestige": {
+          "varies": true
+        }
+      },
+      "deJureRegionsAbove": false,
+      "defenderFaithCanJoin": false,
+      "dlc": "The Great People",
+      "features": [],
+      "group": "vassalization",
+      "icon": "vassalization",
+      "id": "silk_road_vassalization_cb",
+      "isGreatHolyWar": false,
+      "isHolyWar": false,
+      "name": "……-… Vassalization War (Dynastic Cycle)",
+      "onAttackerDeath": "inherit",
+      "onDefenderDeath": "inherit",
+      "outcomes": {
+        "defeat": "The defender remains independent.",
+        "invalidated": null,
+        "victory": "The defender becomes the attacker's Vassal.",
+        "whitePeace": "The defender remains independent."
+      },
+      "requirements": [],
+      "sourceFile": "10_tgp_china_wars.txt",
+      "targetTier": null,
+      "targetTitles": null,
+      "truceDays": null,
+      "warName": "……-… Vassalization War (Dynastic Cycle)",
+      "whitePeacePossible": true
+    },
+    {
+      "allowHostages": true,
+      "costs": {
+        "piety": {
+          "varies": true
+        },
+        "prestige": {
+          "varies": true
+        }
+      },
+      "deJureRegionsAbove": false,
+      "defenderFaithCanJoin": false,
+      "dlc": null,
+      "features": [],
+      "group": "vassalization",
+      "icon": "vassalization",
+      "id": "vassalization_cb",
+      "isGreatHolyWar": false,
+      "isHolyWar": false,
+      "name": "Vassalization",
+      "onAttackerDeath": "inherit",
+      "onDefenderDeath": "inherit",
+      "outcomes": {
+        "defeat": "The defender remains independent.",
+        "invalidated": null,
+        "victory": "The defender becomes the attacker's Vassal.",
+        "whitePeace": "The defender remains independent."
+      },
+      "requirements": [
+        {
+          "key": "forced_vassalage_perk",
+          "kind": "perk",
+          "name": "Forced Vassalage",
+          "negated": false
+        },
+        {
+          "key": "default_conquerors_bonuses",
+          "kind": "game_rule",
+          "name": "Default conquerors bonuses",
+          "negated": false
+        },
+        {
+          "key": "extreme_conquerors_bonuses",
+          "kind": "game_rule",
+          "name": "Extreme conquerors bonuses",
+          "negated": false
+        },
+        {
+          "key": "random_conquerors_bonuses",
+          "kind": "game_rule",
+          "name": "Random conquerors bonuses",
+          "negated": false
+        },
+        {
+          "key": "reduced_random_conquerors_bonuses",
+          "kind": "game_rule",
+          "name": "Reduced random conquerors bonuses",
+          "negated": false
+        },
+        {
+          "key": "government_is_landless_adventurer",
+          "kind": "government_flag",
+          "name": "Landless adventurer",
+          "negated": true
+        }
+      ],
+      "sourceFile": "00_vassalization.txt",
+      "targetTier": null,
+      "targetTitles": null,
+      "truceDays": null,
+      "warName": "The attacker-the defender's Vassalization War",
+      "whitePeacePossible": true
+    }
+  ],
+  "groups": {
+    "artifact": {
+      "debug": false,
+      "label": "Artifact",
+      "requirements": [],
+      "scriptOnly": false
+    },
+    "celestial": {
+      "debug": false,
+      "label": "Celestial",
+      "requirements": [],
+      "scriptOnly": false
+    },
+    "civil_war": {
+      "debug": false,
+      "label": "Civil War",
+      "requirements": [],
+      "scriptOnly": true
+    },
+    "claim": {
+      "debug": false,
+      "label": "Claim",
+      "requirements": [],
+      "scriptOnly": false
+    },
+    "conquest": {
+      "debug": false,
+      "label": "Conquest",
+      "requirements": [],
+      "scriptOnly": false
+    },
+    "de_jure": {
+      "debug": false,
+      "label": "De Jure",
+      "requirements": [],
+      "scriptOnly": false
+    },
+    "debug": {
+      "debug": true,
+      "label": "Debug",
+      "requirements": [],
+      "scriptOnly": false
+    },
+    "event": {
+      "debug": false,
+      "label": "Event Wars",
+      "requirements": [],
+      "scriptOnly": true
+    },
+    "humiliation": {
+      "debug": false,
+      "label": "Humiliation",
+      "requirements": [],
+      "scriptOnly": false
+    },
+    "independence": {
+      "debug": false,
+      "label": "Independence",
+      "requirements": [],
+      "scriptOnly": false
+    },
+    "invasion": {
+      "debug": false,
+      "label": "Invasion",
+      "requirements": [],
+      "scriptOnly": false
+    },
+    "mandala": {
+      "debug": false,
+      "label": "Mandala",
+      "requirements": [],
+      "scriptOnly": false
+    },
+    "migration": {
+      "debug": false,
+      "label": "Migration",
+      "requirements": [],
+      "scriptOnly": true
+    },
+    "religious": {
+      "debug": false,
+      "label": "Religious",
+      "requirements": [
+        {
+          "key": "unreformed",
+          "kind": "doctrine_parameter",
+          "name": "Unreformed",
+          "negated": true
+        },
+        {
+          "key": "holy_wars_forbidden",
+          "kind": "doctrine_parameter",
+          "name": "Holy wars forbidden",
+          "negated": true
+        }
+      ],
+      "scriptOnly": false
+    },
+    "religious_disorganised": {
+      "debug": false,
+      "label": "Religious (disorganised)",
+      "requirements": [
+        {
+          "key": "holy_wars_forbidden",
+          "kind": "doctrine_parameter",
+          "name": "Holy wars forbidden",
+          "negated": true
+        }
+      ],
+      "scriptOnly": false
+    },
+    "religious_script_only": {
+      "debug": false,
+      "label": "Religious (event wars)",
+      "requirements": [],
+      "scriptOnly": true
+    },
+    "struggle": {
+      "debug": false,
+      "label": "Struggle",
+      "requirements": [],
+      "scriptOnly": false
+    },
+    "subjugation": {
+      "debug": false,
+      "label": "Subjugation",
+      "requirements": [],
+      "scriptOnly": false
+    },
+    "vassalization": {
+      "debug": false,
+      "label": "Vassalization",
+      "requirements": [],
+      "scriptOnly": false
+    }
+  },
+  "meta": {
+    "defaultTruceDays": 1825,
+    "defaultTruceVaries": true
+  }
+}

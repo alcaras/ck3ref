@@ -1,0 +1,207 @@
+---
+import Base from '../layouts/Base.astro';
+import maa from '../data/maa.json';
+import { getEntity } from '../lib/entities';
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+
+const TYPE_ORDER = [
+  'heavy_infantry', 'pikemen', 'skirmishers', 'archers', 'crossbowmen',
+  'light_cavalry', 'heavy_cavalry', 'archer_cavalry', 'camel_cavalry',
+  'elephant_cavalry', 'gunpowder', 'peasant_militia', 'nomadic_horde',
+  'siege_weapon',
+];
+const types = [...new Set(maa.map((m) => m.type).filter(Boolean))].sort((a, b) => {
+  const ia = TYPE_ORDER.indexOf(a), ib = TYPE_ORDER.indexOf(b);
+  return (ia === -1 ? 99 : ia) - (ib === -1 ? 99 : ib) || a.localeCompare(b);
+});
+
+// The archetype's baseline is its plain base unit's counter set (the pattern
+// the game teaches); every other unit's deviations are footnoted below.
+// Falls back to the per-target modal value if a base unit ever disappears.
+const BASE_UNIT: Record<string, string> = {
+  heavy_infantry: 'armored_footmen', pikemen: 'pikemen_unit',
+  skirmishers: 'light_footmen', archers: 'bowmen',
+  light_cavalry: 'light_horsemen', heavy_cavalry: 'armored_horsemen',
+  archer_cavalry: 'horse_archers', camel_cavalry: 'camel_rider',
+  elephant_cavalry: 'war_elephant', gunpowder: 'handgunners',
+  peasant_militia: 'pikemen_militia', nomadic_horde: 'nomadic_riders',
+  siege_weapon: 'onager',
+};
+
+type CounterMap = Record<string, number>;
+const unitsOf = (t: string) => maa.filter((m) => m.type === t);
+
+function modalBaseline(t: string): CounterMap {
+  const units = unitsOf(t);
+  const targets = new Set(units.flatMap((u) => Object.keys(u.counters)));
+  const out: CounterMap = {};
+  for (const tgt of targets) {
+    const freq = new Map<number, number>();
+    for (const u of units) {
+      const v = (u.counters as CounterMap)[tgt] ?? 0;
+      freq.set(v, (freq.get(v) ?? 0) + 1);
+    }
+    const best = [...freq.entries()].sort((a, b) => b[1] - a[1] || a[0] - b[0])[0];
+    if (best && best[0] > 0) out[tgt] = best[0];
+  }
+  return out;
+}
+
+const baseline: Record<string, CounterMap> = {};
+for (const t of types) {
+  const bu = maa.find((m) => m.id === BASE_UNIT[t]);
+  baseline[t] = bu ? (bu.counters as CounterMap) : modalBaseline(t);
+}
+
+// Column set: every archetype that anything counters, in row order.
+const targets = types.filter((t) =>
+  maa.some((m) => (m.counters as CounterMap)[t] != null),
+);
+
+// Unit-level exceptions: any unit whose counters differ from its archetype baseline.
+interface Diff { target: string; unit: number; base: number }
+const exceptions: { id: string; name: string; type: string; dlc: string | null; diffs: Diff[] }[] = [];
+for (const t of types) {
+  for (const u of unitsOf(t)) {
+    const b = baseline[t];
+    const uc = u.counters as CounterMap;
+    const keys = new Set([...Object.keys(b), ...Object.keys(uc)]);
+    const diffs: Diff[] = [];
+    for (const k of keys) {
+      const uv = uc[k] ?? 0, bv = b[k] ?? 0;
+      if (uv !== bv) diffs.push({ target: k, unit: uv, base: bv });
+    }
+    if (diffs.length && u.id !== BASE_UNIT[t]) {
+      exceptions.push({ id: u.id, name: u.name ?? u.id, type: t, dlc: u.dlc, diffs });
+    }
+  }
+}
+
+const typeName = (t: string) => getEntity(`maa_type_${t}`)?.name ?? t.replace(/_/g, ' ');
+const tint = (v: number) => Math.min(48, Math.round(v * 22));
+const fmt = (v: number) => `×${v}`;
+function diffText(d: Diff): string {
+  if (!d.base) return `also counters ${typeName(d.target)} ${fmt(d.unit)}`;
+  if (!d.unit) return `does not counter ${typeName(d.target)}`;
+  return `${typeName(d.target)} ${fmt(d.unit)} instead of ${fmt(d.base)}`;
+}
+---
+<Base
+  title="Counters Matrix"
+  active="counters"
+  lede="Which archetype counters which, in one grid — each row is the baseline counter set of the archetype's basic regiment. Units that deviate from their archetype's baseline are footnoted below."
+  stats={[
+    { value: types.length, label: 'archetypes' },
+    { value: maa.length, label: 'regiment types' },
+    { value: exceptions.length, label: 'units deviate from baseline' },
+  ]}
+>
+  <h2 class="group-h">Archetype baseline</h2>
+  <div class="tbl-scroll cmx-scroll">
+    <table class="ntbl cmx">
+      <thead>
+        <tr>
+          <th class="corner">counters →</th>
+          {targets.map((t) => <th class="tgt"><a href={`${base}/men-at-arms#${t}`}>{typeName(t)}</a></th>)}
+        </tr>
+      </thead>
+      <tbody>
+        {types.map((t) => (
+          <tr>
+            <th class="rowh"><a href={`${base}/men-at-arms#${t}`}>{typeName(t)}</a></th>
+            {targets.map((tgt) => {
+              const v = baseline[t][tgt];
+              return v ? (
+                <td class="hit" style={`--tint:${tint(v)}%`}>{fmt(v)}</td>
+              ) : (
+                <td class="miss">·</td>
+              );
+            })}
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
+  <p class="legend">
+    ×N is counter effectiveness: countering reduces the countered regiment's
+    damage by up to 90%, and a ×2 counter is twice as effective per soldier at
+    doing so (defines <code>MEN_AT_ARMS_MAX_COUNTER</code>,
+    <code>RATIO_FOR_MAX_COUNTER</code>). Baselines read from each archetype's
+    basic regiment in <code>men_at_arms_types</code>.
+  </p>
+
+  <h2 class="group-h" id="exceptions">
+    Unit-level exceptions
+    <span class="count">{exceptions.length}</span>
+  </h2>
+  <p class="legend">
+    Regiments whose counter set differs from their archetype's baseline —
+    special, cultural, and accolade units mostly counter more, or different,
+    archetypes.
+  </p>
+  <div class="tbl-scroll">
+    <table class="ntbl">
+      <thead>
+        <tr>
+          <th>Regiment</th>
+          <th>Archetype</th>
+          <th>Differs from baseline</th>
+          <th>DLC</th>
+        </tr>
+      </thead>
+      <tbody>
+        {exceptions.map((e) => (
+          <tr>
+            <td class="name">
+              <span class="unit">
+                <img src={`${base}/img/maa/${e.id}.webp`} alt="" width="26" height="26" loading="lazy" />
+                <a href={`${base}/men-at-arms#${e.id}`}>{e.name}</a>
+              </span>
+            </td>
+            <td>{typeName(e.type)}</td>
+            <td>
+              <span class="chips">
+                {e.diffs.map((d) => (
+                  <span class:list={['chip', d.unit >= d.base ? 'chip--counter' : 'chip--drop']}>
+                    {diffText(d)}
+                  </span>
+                ))}
+              </span>
+            </td>
+            <td>{e.dlc ? <span class="badge-dlc">{e.dlc}</span> : <span class="subtle">—</span>}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
+
+  <style>
+    .cmx-scroll { max-width: fit-content; }
+    .cmx th.tgt, .cmx td { text-align: center; }
+    .cmx th.tgt a, .cmx th.rowh a { color: var(--dim); border-bottom: none; }
+    .cmx th.tgt a:hover, .cmx th.rowh a:hover { color: var(--brass-bright); }
+    .cmx td { font-family: var(--font-mono); font-size: 0.8rem; min-width: 4.6rem; }
+    /* sticky on both axes: thead comes from .ntbl; the row-header column here */
+    .cmx th.corner, .cmx th.rowh {
+      position: sticky; left: 0; text-align: left; white-space: nowrap;
+      background: var(--panel);
+    }
+    .cmx th.corner { z-index: 6; color: var(--faint); font-weight: 400; }
+    .cmx th.rowh {
+      z-index: 4; color: var(--dim); font-weight: 600; font-size: 0.8rem;
+      padding: 0.45rem 0.6rem; border-bottom: 1px solid var(--line-soft);
+      border-right: 1px solid var(--line);
+    }
+    .cmx td.hit {
+      color: var(--vellum);
+      background: color-mix(in oklab, var(--rubric) var(--tint), transparent);
+    }
+    .cmx td.miss { color: var(--faint); }
+    .cmx tbody tr:hover th.rowh { background: var(--panel-2); }
+    .legend { color: var(--faint); font-size: 0.8rem; max-width: 62ch; }
+    .legend code { font-family: var(--font-mono); font-size: 0.75rem; }
+    .chip--drop { border-color: color-mix(in oklab, var(--sk-learning) 40%, var(--line)); color: var(--dim); }
+    .unit img { width: 26px; height: 26px; }
+  </style>
+</Base>

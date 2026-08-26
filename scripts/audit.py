@@ -27,6 +27,8 @@ MAPPED = {
     "dynasty_perks": "build_legacies.py",
     "buildings": "build_buildings.py",
     "religion": "build_faiths.py / build_doctrines.py / build_holy_sites.py",
+    "casus_belli_types": "build_cbs.py",
+    "casus_belli_groups": "build_cbs.py",
     "terrain_types": "build_entities.py",
     "game_concepts": "build_concepts.py + lib/ck3.py link targets",
     "culture": "build_traditions.py / build_innovations.py / build_pillars.py"
@@ -40,7 +42,7 @@ MAPPED = {
 SKIP = {
     # phase 1
     "holdings", "laws",
-    "governments", "subject_contracts", "casus_belli_types", "casus_belli_groups",
+    "governments", "subject_contracts",
     "court_positions", "council_positions", "council_tasks", "great_projects",
     # phase 2
     "landed_titles", "decisions", "decision_group_types", "activities", "travel",

@@ -58,8 +58,8 @@ export const TABS: Tab[] = [
   { slug: 'terrain', label: 'Terrain', section: 'Holdings', status: 'placeholder', summary: 'Terrain modifiers and building gates.' },
   // Warfare
   { slug: 'men-at-arms', label: 'Men-at-Arms', section: 'Warfare', status: 'built', summary: 'All 110 regiment types: stats, counters, terrain, costs.' },
-  { slug: 'counters', label: 'Counters Matrix', section: 'Warfare', status: 'placeholder', summary: 'Who counters whom, in one grid.' },
-  { slug: 'casus-belli', label: 'Casus Belli', section: 'Warfare', status: 'placeholder', summary: '121 war declarations and their terms.' },
+  { slug: 'counters', label: 'Counters Matrix', section: 'Warfare', status: 'built', summary: 'Who counters whom, in one grid.' },
+  { slug: 'casus-belli', label: 'Casus Belli', section: 'Warfare', status: 'built', summary: '121 war declarations and their terms.' },
   { slug: 'combat', label: 'Combat Mechanics', section: 'Warfare', status: 'placeholder', summary: 'Advantage, phases, knights — from defines.' },
   // World
   { slug: 'titles', label: 'Titles', section: 'World', status: 'placeholder', summary: 'De jure trees for every empire, kingdom, duchy.' },

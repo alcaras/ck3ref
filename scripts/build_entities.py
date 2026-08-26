@@ -80,6 +80,10 @@ def main():
         add(f"holy_site_{r['id']}", "holy_site", r["name"], "holy-sites",
             scan=False, slug=r["id"])
 
+    for r in (load("cbs.json") or {"cbs": []})["cbs"]:
+        add(r["id"], "cb", r["name"], "casus-belli",
+            f"img/cb/{r['id']}.webp", scan=False)
+
     for r in load("concepts.json") or []:
         add(f"concept_{r['id']}", "concept", r["name"], "concepts",
             scan=" " in r["name"], slug=r["id"])
