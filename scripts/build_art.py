@@ -61,13 +61,40 @@ CATEGORIES = [
 ]
 
 
+# Some icon sets (buildings, and any other set the game tints at runtime) ship
+# as pure ALPHA MASKS: RGB is all zero and the shape lives in the alpha
+# channel. Saved as-is they render black-on-black. The game colours them with
+# its own palette, so we do the same with the site's parchment foreground.
+MASK_TINT = (232, 220, 192)  # --vellum
+
+
+def _is_alpha_mask(im) -> bool:
+    """True when every VISIBLE pixel is black — the shape is carried by alpha
+    alone, so the image would render invisible on a dark page."""
+    import numpy as np
+    a = np.array(im)
+    vis = a[..., 3] > 20
+    if not vis.any():
+        return False
+    return int(a[..., :3][vis].max()) == 0
+
+
 def convert(src: Path, dst: Path) -> bool:
     if not src.exists():
         return False
     if dst.exists() and dst.stat().st_mtime >= src.stat().st_mtime:
         return True
     dst.parent.mkdir(parents=True, exist_ok=True)
-    Image.open(src).convert("RGBA").save(dst, "WEBP", lossless=False, quality=90)
+    im = Image.open(src).convert("RGBA")
+    if _is_alpha_mask(im):
+        a = im.split()[3]
+        im = Image.merge("RGBA", (
+            Image.new("L", im.size, MASK_TINT[0]),
+            Image.new("L", im.size, MASK_TINT[1]),
+            Image.new("L", im.size, MASK_TINT[2]),
+            a,
+        ))
+    im.save(dst, "WEBP", lossless=False, quality=90)
     return True
 
 
