@@ -328,6 +328,8 @@ def render_text(s, _depth=0):
         inner = m.group(1).strip()
         if re.search(r"\.Get\w*Icon\w*(\|\w+)?$", inner):
             return ""  # inline icon call — nothing to say in plain text
+        if re.match(r"^\w+_i$", inner):
+            return ""  # [gold_i]-style inline icon token
         cm = _CONCEPT_FN.match(inner)
         if cm:
             return cm.group(2)

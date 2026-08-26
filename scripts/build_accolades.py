@@ -49,6 +49,10 @@ GROUP_BY_FILE = {
 # does — resolve before render_text turns it into "…".
 _SCRIPT_VALUE = re.compile(r"\[EmptyScope\.ScriptValue\(\s*'(\w+)'\s*\)(\|[\w+=\-]+)?\]")
 
+# GetTrait first tries the bare key in ck3's generic chain, which the
+# 'adventurer' camp-name loc shadows — resolve trait names directly.
+_GET_TRAIT = re.compile(r"\[GetTrait\(\s*'(\w+)'\s*\)\.Get\w*Name\w*(\([^)]*\))?(\|\w+)?\]")
+
 
 def resolve_scriptvalue_calls(s):
     def sub(m):
@@ -69,6 +73,7 @@ def render_loc_lines(raw):
     # yml files — treat it as a line break so each bullet becomes a line.
     raw = raw.replace("$EFFECT_LIST_BULLET$", "\\n")
     raw = re.sub(r"\[\w+_i\]", "", raw)  # [prestige_i]-style inline icons
+    raw = _GET_TRAIT.sub(lambda m: ck3.loc(f"trait_{m.group(1)}") or m.group(0), raw)
     text = ck3.render_text(resolve_scriptvalue_calls(raw))
     lines = []
     for line in text.split("\n"):

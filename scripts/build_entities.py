@@ -111,6 +111,9 @@ def main():
         add(r["id"], "epidemic", r["name"], "epidemics",
             f"img/epidemics/{r['id']}.webp", scan=True)
 
+    for r in load("cultures.json") or []:
+        add(r["id"], "culture", r["name"], "cultures", scan=True)
+
     for r in load("governments.json") or []:
         add(r["id"], "government", r["name"], "governments",
             f"img/governments/{r['id']}.webp", scan=False)

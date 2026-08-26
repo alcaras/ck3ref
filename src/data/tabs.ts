@@ -41,7 +41,7 @@ export const TABS: Tab[] = [
   { slug: 'traditions', label: 'Traditions', section: 'Culture', status: 'built', summary: '197 traditions: cost, gates, effects.' },
   { slug: 'innovations', label: 'Innovations', section: 'Culture', status: 'built', summary: '108 innovations by era.' },
   { slug: 'pillars', label: 'Pillars', section: 'Culture', status: 'built', summary: '162 pillars: ethos, heritage, language, martial custom.' },
-  { slug: 'cultures', label: 'Cultures', section: 'Culture', status: 'placeholder', summary: 'All 193 cultures and their setups.' },
+  { slug: 'cultures', label: 'Cultures', section: 'Culture', status: 'built', summary: 'All 244 cultures: pillars, traditions, hybrids.' },
   // Faith
   { slug: 'faiths', label: 'Faiths', section: 'Faith', status: 'built', summary: '140 faiths under 49 religions.' },
   { slug: 'doctrines', label: 'Doctrines & Tenets', section: 'Faith', status: 'built', summary: 'Every doctrine and tenet, with piety costs.' },

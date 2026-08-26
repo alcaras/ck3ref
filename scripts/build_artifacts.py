@@ -169,10 +169,21 @@ def describe_trigger(blk, depth=0):
             out.append(f"Doctrine: {ck3.render_text(raw) if raw else pretty(v)}")
         elif k == "faith" and isinstance(v, Block):
             out.extend(f"Faith {p[0].lower() + p[1:]}" for p in describe_trigger(v, depth + 1))
-        elif isinstance(v, str) and "var:" in str(v) or (isinstance(v, Block) and k.startswith("scope:artifact")):
-            var = re.search(r"var:(\w+)", str(v) if isinstance(v, str) else repr(v.triples))
-            out.append(f"Matches the artifact's {var.group(1).replace('_', ' ')}" if var
-                       else "Tied to this artifact's origin")
+        elif isinstance(v, str) and "var:" in v:
+            var = re.search(r"var:(\w+)", v)
+            out.append(f"Matches the artifact's {var.group(1).replace('_', ' ')}")
+        elif k.startswith("scope:artifact") and isinstance(v, Block):
+            var = re.search(r"var:(\w+)", repr(v.triples))
+            if var:
+                out.append(f"Matches the artifact's {var.group(1).replace('_', ' ')}")
+            else:
+                inner = describe_trigger(v, depth + 1)
+                out.append("artifact " + "; ".join(inner) if inner else "artifact state")
+        elif k == "category" and isinstance(v, str):
+            out.append(f"in a {v} slot")
+        elif re.match(r"^has_\w+_dlc_trigger$", k):
+            token = re.match(r"^has_(\w+?)_dlc_trigger$", k).group(1)
+            out.append(f"{SE_TOKEN_DLC.get(token, pretty(token))} DLC")
         elif k.endswith("_trigger"):
             out.append(pretty(k))  # scripted-trigger macro: name only, never recurse
         elif op in ("<", ">", "<=", ">="):

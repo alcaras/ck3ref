@@ -52,7 +52,7 @@ MAPPED = {
     "epidemics": "build_epidemics.py",
     "game_concepts": "build_concepts.py + lib/ck3.py link targets",
     "culture": "build_traditions.py / build_innovations.py / build_pillars.py"
-               " (subdirs cultures/eras/name_lists pending phase 2)",
+               " / build_cultures.py (subdirs eras/name_lists pending)",
     "modifier_definition_formats": "lib/ck3.py (modifier formatter)",
     "script_values": "lib/ck3.py (value resolver)",
 }
