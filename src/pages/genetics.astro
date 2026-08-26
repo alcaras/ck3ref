@@ -1,0 +1,220 @@
+---
+import Base from '../layouts/Base.astro';
+import data from '../data/genetics.json';
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const { constants, families, standalone } = data as any;
+const famOrder = ['intellect_good', 'beauty_good', 'physique_good',
+  'intellect_bad', 'beauty_bad', 'physique_bad'];
+const fams = famOrder.map((k) => families.find((f: any) => f.key === k)).filter(Boolean);
+---
+<Base
+  title="Genetics Calculator"
+  active="genetics"
+  lede="Odds that a child inherits each congenital trait, from the game's own inheritance constants. Pick what each parent has — active, or a known recessive carrier."
+  stats={[
+    { value: fams.length, label: 'tiered lines' },
+    { value: standalone.length, label: 'single traits' },
+  ]}
+>
+  <section>
+    <h2 class="group-h">Tiered traits</h2>
+    <div class="tbl-scroll">
+      <table class="ntbl gcalc" id="tiered">
+        <thead>
+          <tr><th>Line</th><th>Father</th><th>Mother</th><th>Child odds</th></tr>
+        </thead>
+        <tbody>
+          {fams.map((f: any) => (
+            <tr data-fam={f.key} class:list={[{ bad: !f.good }]}>
+              <td class="name">
+                <span class="u-name">{f.levels.map((l: any) => l.name).join(' → ')}</span>
+                <div class="u-sub">{f.levels[f.levels.length - 1].effects.join(' · ')}</div>
+              </td>
+              {['f', 'm'].map((side) => (
+                <td>
+                  <select data-side={side}>
+                    <option value="">none</option>
+                    {f.levels.map((l: any) => <option value={l.level}>{l.name}</option>)}
+                    {f.levels.map((l: any) => <option value={`c${l.level}`}>carrier ({l.name})</option>)}
+                  </select>
+                </td>
+              ))}
+              <td class="odds"><div class="obar"></div><div class="olabel subtle">—</div></td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="group-h">Single congenital traits</h2>
+    <div class="tbl-scroll">
+      <table class="ntbl gcalc" id="single">
+        <thead>
+          <tr><th>Trait</th><th>Father</th><th>Mother</th><th>Child odds</th></tr>
+        </thead>
+        <tbody>
+          {standalone.map((t: any) => (
+            <tr data-trait={t.id} class:list={[{ bad: !t.good }]}>
+              <td class="name">
+                <span class="unit">
+                  <img src={`${base}/img/traits/${t.id}.webp`} alt="" width="28" height="28" loading="lazy" />
+                  <span>
+                    <span class="u-name">{t.name}</span>
+                    <div class="u-sub">{t.effects.slice(0, 3).join(' · ')}</div>
+                  </span>
+                </span>
+              </td>
+              {['f', 'm'].map((side) => (
+                <td>
+                  <select data-side={side}>
+                    <option value="">none</option>
+                    <option value="1">has trait</option>
+                    <option value="c1">carrier</option>
+                  </select>
+                </td>
+              ))}
+              <td class="odds"><div class="obar"></div><div class="olabel subtle">—</div></td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <p class="prov">
+    Constants read from <code>defines NChildbirth</code>: active inheritance
+    {constants.ACTIVE_TRAIT_CHANCE_ACTIVE_ACTIVE}% / {constants.ACTIVE_TRAIT_CHANCE_ACTIVE_INACTIVE}% /
+    {constants.ACTIVE_TRAIT_CHANCE_ACTIVE_NONE}% / {constants.ACTIVE_TRAIT_CHANCE_INACTIVE_INACTIVE}% /
+    {constants.ACTIVE_TRAIT_CHANCE_INACTIVE_NONE}% (both / active+carrier / one / two carriers / one carrier),
+    reinforcement {constants.TRAIT_REINFORCEMENT_CHANCE * 100}%. Single-trait odds
+    are exact; the tiered-descent steps follow the algorithm documented in the
+    defines comments and are marked as interpretive where that comment is
+    ambiguous. Dynasty legacy and lifestyle modifiers to these chances are not
+    yet modeled.
+  </p>
+
+  <script define:vars={{ constants }}>
+    const C = constants;
+    const A = {
+      AA: C.ACTIVE_TRAIT_CHANCE_ACTIVE_ACTIVE, AI: C.ACTIVE_TRAIT_CHANCE_ACTIVE_INACTIVE,
+      AN: C.ACTIVE_TRAIT_CHANCE_ACTIVE_NONE, II: C.ACTIVE_TRAIT_CHANCE_INACTIVE_INACTIVE,
+      IN: C.ACTIVE_TRAIT_CHANCE_INACTIVE_NONE, NN: 0,
+    };
+    const R = {
+      AA: C.INACTIVE_TRAIT_CHANCE_ACTIVE_ACTIVE, AI: C.INACTIVE_TRAIT_CHANCE_ACTIVE_INACTIVE,
+      AN: C.INACTIVE_TRAIT_CHANCE_ACTIVE_NONE, II: C.INACTIVE_TRAIT_CHANCE_INACTIVE_INACTIVE,
+      IN: C.INACTIVE_TRAIT_CHANCE_INACTIVE_NONE, NN: 0,
+    };
+    const pair = (a, b) => {
+      const s = [a, b].sort().reverse().join('');
+      return { AA: 'AA', AI: 'AI', AN: 'AN', II: 'II', IN: 'IN', NN: 'NN' }[s] ?? 'NN';
+    };
+    const parse = (v) => v === '' ? { lvl: 0, carrier: 0 }
+      : v.startsWith('c') ? { lvl: 0, carrier: +v.slice(1) } : { lvl: +v, carrier: 0 };
+
+    // state of one parent relative to tier t → 'A' | 'I' | 'N', with a gap
+    // penalty multiplier for active-at-lower-tier (MATCHED_TRAIT_DIFFERENCE_MULT
+    // per tier beyond the first below t).
+    function classify(p, t) {
+      if (p.lvl === t) return { s: 'A', mult: 1 };
+      if (p.lvl > 0 && p.lvl < t) {
+        const extra = t - p.lvl - 1;
+        return { s: 'I', mult: Math.pow(C.MATCHED_TRAIT_DIFFERENCE_MULT, Math.max(0, extra)) };
+      }
+      if (p.lvl > t) return { s: 'A', mult: 1 };
+      if (p.carrier >= t) return { s: 'I', mult: 1 };
+      if (p.carrier > 0) {
+        const extra = t - p.carrier - 1;
+        return { s: 'I', mult: Math.pow(C.MATCHED_TRAIT_DIFFERENCE_MULT, Math.max(0, extra)) };
+      }
+      return { s: 'N', mult: 1 };
+    }
+
+    function tieredOdds(maxLevel, f, m) {
+      const top = Math.max(f.lvl, m.lvl, f.carrier, m.carrier);
+      if (top === 0) return null;
+      const out = { active: {}, carrier: 0, none: 0 };
+      let remaining = 100;
+      let descents = 0;
+      for (let t = top; t >= 1; t--) {
+        const cf = classify(f, t), cm = classify(m, t);
+        let chance = A[pair(cf.s, cm.s)] * cf.mult * cm.mult;
+        if (descents > 0) chance = Math.min(100, chance + C.TIER_TRAIT_REDUCTION_MULT * 100 * 0); // descent bonus is interpretive; kept at documented pair chance
+        chance = Math.min(100, chance);
+        let p = remaining * (chance / 100);
+        // reinforcement: both active at this tier can push one level up
+        if (cf.s === 'A' && cm.s === 'A' && t < maxLevel) {
+          const up = p * C.TRAIT_REINFORCEMENT_CHANCE;
+          out.active[t + 1] = (out.active[t + 1] ?? 0) + up;
+          p -= up;
+        }
+        out.active[t] = (out.active[t] ?? 0) + p;
+        remaining -= remaining * (chance / 100);
+        descents++;
+      }
+      const cf = classify(f, top), cm = classify(m, top);
+      const rc = Math.min(100, R[pair(cf.s, cm.s)] * cf.mult * cm.mult);
+      out.carrier = remaining * (rc / 100);
+      out.none = remaining - out.carrier;
+      return out;
+    }
+
+    function render(row, odds, names) {
+      const bar = row.querySelector('.obar');
+      const label = row.querySelector('.olabel');
+      if (!odds) { bar.innerHTML = ''; label.textContent = '—'; return; }
+      const segs = [];
+      const parts = [];
+      const levels = Object.keys(odds.active).map(Number).sort((a, b) => b - a);
+      for (const l of levels) {
+        const p = odds.active[l];
+        if (p >= 0.5) {
+          segs.push(`<span class="seg seg-a" style="width:${p}%" title="${names[l] ?? 'level ' + l}"></span>`);
+          parts.push(`${(names[l] ?? 'L' + l)} ${p.toFixed(0)}%`);
+        }
+      }
+      if (odds.carrier >= 0.5) {
+        segs.push(`<span class="seg seg-c" style="width:${odds.carrier}%"></span>`);
+        parts.push(`carrier ${odds.carrier.toFixed(0)}%`);
+      }
+      bar.innerHTML = segs.join('');
+      parts.push(`none ${odds.none.toFixed(0)}%`);
+      label.textContent = parts.join(' · ');
+    }
+
+    for (const row of document.querySelectorAll('#tiered tbody tr')) {
+      const selects = row.querySelectorAll('select');
+      const names = {};
+      row.querySelectorAll('option[value="1"],option[value="2"],option[value="3"]')
+        .forEach((o) => { names[+o.value] = o.textContent; });
+      const maxLevel = Math.max(...Object.keys(names).map(Number));
+      const update = () => render(row, tieredOdds(maxLevel, parse(selects[0].value), parse(selects[1].value)), names);
+      selects.forEach((s) => s.addEventListener('input', update));
+    }
+    for (const row of document.querySelectorAll('#single tbody tr')) {
+      const selects = row.querySelectorAll('select');
+      const name = row.querySelector('.u-name').textContent;
+      const update = () => {
+        const f = parse(selects[0].value), m = parse(selects[1].value);
+        if (!f.lvl && !f.carrier && !m.lvl && !m.carrier) return render(row, null, {});
+        render(row, tieredOdds(1, f, m), { 1: name });
+      };
+      selects.forEach((s) => s.addEventListener('input', update));
+    }
+  </script>
+
+  <style>
+    .gcalc select { background: var(--ink); color: var(--vellum); border: 1px solid var(--line); border-radius: var(--r); padding: 0.2rem 0.4rem; font-size: 0.82rem; }
+    .gcalc .odds { min-width: 17rem; }
+    .obar { display: flex; height: 8px; border-radius: 2px; overflow: hidden; background: var(--line-soft); margin-bottom: 3px; }
+    .seg-a { background: var(--good); }
+    tr.bad .seg-a { background: var(--bad); }
+    .seg-c { background: var(--sk-intrigue); }
+    .olabel { font-size: 0.75rem; }
+    .prov { color: var(--faint); font-size: 0.78rem; max-width: 64ch; margin-top: 2rem; }
+    .prov code { font-family: var(--font-mono); }
+  </style>
+</Base>

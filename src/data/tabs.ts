@@ -77,7 +77,7 @@ export const TABS: Tab[] = [
   { slug: 'dlc', label: 'DLC Index', section: 'Concepts', status: 'built', summary: 'What each DLC adds.' },
   { slug: 'patch-notes', label: 'Patch Notes', section: 'Concepts', status: 'placeholder', summary: 'Auto-generated data changelog.' },
   // Tools
-  { slug: 'genetics', label: 'Genetics Calculator', section: 'Tools', status: 'placeholder', summary: 'Congenital trait inheritance odds.' },
+  { slug: 'genetics', label: 'Genetics Calculator', section: 'Tools', status: 'built', summary: 'Congenital trait inheritance odds.' },
   { slug: 'faith-creator', label: 'Faith Cost Calculator', section: 'Tools', status: 'placeholder', summary: 'Reformation piety costs.' },
   { slug: 'culture-calculator', label: 'Culture Calculator', section: 'Tools', status: 'placeholder', summary: 'Hybrid and divergence costs.' },
   { slug: 'army-builder', label: 'Army Builder', section: 'Tools', status: 'placeholder', summary: 'MAA comps vs counters and terrain.' },

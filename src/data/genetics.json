@@ -1,0 +1,484 @@
+{
+  "constants": {
+    "ACTIVE_TRAIT_CHANCE_ACTIVE_ACTIVE": 80.0,
+    "ACTIVE_TRAIT_CHANCE_ACTIVE_INACTIVE": 50.0,
+    "ACTIVE_TRAIT_CHANCE_ACTIVE_NONE": 25.0,
+    "ACTIVE_TRAIT_CHANCE_INACTIVE_INACTIVE": 10.0,
+    "ACTIVE_TRAIT_CHANCE_INACTIVE_NONE": 2.0,
+    "INACTIVE_TRAIT_CHANCE_ACTIVE_ACTIVE": 150.0,
+    "INACTIVE_TRAIT_CHANCE_ACTIVE_INACTIVE": 100.0,
+    "INACTIVE_TRAIT_CHANCE_ACTIVE_NONE": 75.0,
+    "INACTIVE_TRAIT_CHANCE_INACTIVE_INACTIVE": 50.0,
+    "INACTIVE_TRAIT_CHANCE_INACTIVE_NONE": 25.0,
+    "MATCHED_TRAIT_DIFFERENCE_MULT": 0.2,
+    "TIER_TRAIT_REDUCTION_MULT": 0.4,
+    "TRAIT_REINFORCEMENT_CHANCE": 0.5
+  },
+  "families": [
+    {
+      "good": false,
+      "key": "beauty_bad",
+      "levels": [
+        {
+          "birth": 0.5,
+          "effects": [
+            "-10% Fertility",
+            "-10 Attraction Opinion",
+            "-1 Diplomacy"
+          ],
+          "good": false,
+          "id": "beauty_bad_1",
+          "level": 1,
+          "name": "Homely"
+        },
+        {
+          "birth": 0.25,
+          "effects": [
+            "-20% Fertility",
+            "-20 Attraction Opinion",
+            "-2 Diplomacy"
+          ],
+          "good": false,
+          "id": "beauty_bad_2",
+          "level": 2,
+          "name": "Ugly"
+        },
+        {
+          "birth": 0.15,
+          "effects": [
+            "-30% Fertility",
+            "-30 Attraction Opinion",
+            "-3 Diplomacy"
+          ],
+          "good": false,
+          "id": "beauty_bad_3",
+          "level": 3,
+          "name": "Hideous"
+        }
+      ],
+      "name": "Beauty Bad"
+    },
+    {
+      "good": true,
+      "key": "beauty_good",
+      "levels": [
+        {
+          "birth": 0.5,
+          "effects": [
+            "+10% Fertility",
+            "+10 Attraction Opinion",
+            "+1 Diplomacy"
+          ],
+          "good": true,
+          "id": "beauty_good_1",
+          "level": 1,
+          "name": "Comely"
+        },
+        {
+          "birth": 0.25,
+          "effects": [
+            "+20% Fertility",
+            "+20 Attraction Opinion",
+            "+2 Diplomacy"
+          ],
+          "good": true,
+          "id": "beauty_good_2",
+          "level": 2,
+          "name": "Attractive"
+        },
+        {
+          "birth": 0.15,
+          "effects": [
+            "+30% Fertility",
+            "+30 Attraction Opinion",
+            "+3 Diplomacy"
+          ],
+          "good": true,
+          "id": "beauty_good_3",
+          "level": 3,
+          "name": "Beautiful"
+        }
+      ],
+      "name": "Beauty Good"
+    },
+    {
+      "good": false,
+      "key": "intellect_bad",
+      "levels": [
+        {
+          "birth": 0.5,
+          "effects": [
+            "-10% Monthly Lifestyle Experience",
+            "-2 Diplomacy",
+            "-2 Intrigue",
+            "-2 Learning",
+            "-2 Martial",
+            "-2 Stewardship"
+          ],
+          "good": false,
+          "id": "intellect_bad_1",
+          "level": 1,
+          "name": "Slow"
+        },
+        {
+          "birth": 0.25,
+          "effects": [
+            "-20% Monthly Lifestyle Experience",
+            "-4 Diplomacy",
+            "-4 Intrigue",
+            "-4 Learning",
+            "-4 Martial",
+            "-4 Stewardship"
+          ],
+          "good": false,
+          "id": "intellect_bad_2",
+          "level": 2,
+          "name": "Stupid"
+        },
+        {
+          "birth": 0.05,
+          "effects": [
+            "-30% Monthly Lifestyle Experience",
+            "-8 Diplomacy",
+            "-8 Intrigue",
+            "-8 Learning",
+            "-8 Martial",
+            "-8 Stewardship"
+          ],
+          "good": false,
+          "id": "intellect_bad_3",
+          "level": 3,
+          "name": "Imbecile"
+        }
+      ],
+      "name": "Intellect Bad"
+    },
+    {
+      "good": true,
+      "key": "intellect_good",
+      "levels": [
+        {
+          "birth": 0.5,
+          "effects": [
+            "+10% Monthly Lifestyle Experience",
+            "+1 Diplomacy",
+            "+1 Intrigue",
+            "+1 Learning",
+            "+1 Martial",
+            "+1 Stewardship"
+          ],
+          "good": true,
+          "id": "intellect_good_1",
+          "level": 1,
+          "name": "Quick"
+        },
+        {
+          "birth": 0.25,
+          "effects": [
+            "+20% Monthly Lifestyle Experience",
+            "+3 Diplomacy",
+            "+3 Intrigue",
+            "+3 Learning",
+            "+3 Martial",
+            "+3 Stewardship"
+          ],
+          "good": true,
+          "id": "intellect_good_2",
+          "level": 2,
+          "name": "Intelligent"
+        },
+        {
+          "birth": 0.05,
+          "effects": [
+            "+30% Monthly Lifestyle Experience",
+            "+5 Diplomacy",
+            "+5 Intrigue",
+            "+5 Learning",
+            "+5 Martial",
+            "+5 Stewardship"
+          ],
+          "good": true,
+          "id": "intellect_good_3",
+          "level": 3,
+          "name": "Genius"
+        }
+      ],
+      "name": "Intellect Good"
+    },
+    {
+      "good": false,
+      "key": "physique_bad",
+      "levels": [
+        {
+          "birth": 0.5,
+          "effects": [
+            "-0 Health",
+            "-2 Prowess"
+          ],
+          "good": false,
+          "id": "physique_bad_1",
+          "level": 1,
+          "name": "Delicate"
+        },
+        {
+          "birth": 0.25,
+          "effects": [
+            "-0 Health",
+            "-5 Attraction Opinion",
+            "-4 Prowess"
+          ],
+          "good": false,
+          "id": "physique_bad_2",
+          "level": 2,
+          "name": "Frail"
+        },
+        {
+          "birth": 0.15,
+          "effects": [
+            "-1 Health",
+            "-10 Attraction Opinion",
+            "-6 Prowess"
+          ],
+          "good": false,
+          "id": "physique_bad_3",
+          "level": 3,
+          "name": "Feeble"
+        }
+      ],
+      "name": "Physique Bad"
+    },
+    {
+      "good": true,
+      "key": "physique_good",
+      "levels": [
+        {
+          "birth": 0.5,
+          "effects": [
+            "+0 Health",
+            "+5 Attraction Opinion",
+            "+2 Prowess"
+          ],
+          "good": true,
+          "id": "physique_good_1",
+          "level": 1,
+          "name": "Hale"
+        },
+        {
+          "birth": 0.25,
+          "effects": [
+            "+0 Health",
+            "+10 Attraction Opinion",
+            "+4 Prowess"
+          ],
+          "good": true,
+          "id": "physique_good_2",
+          "level": 2,
+          "name": "Robust"
+        },
+        {
+          "birth": 0.15,
+          "effects": [
+            "+1 Health",
+            "+15 Attraction Opinion",
+            "+8 Prowess"
+          ],
+          "good": true,
+          "id": "physique_good_3",
+          "level": 3,
+          "name": "Divine"
+        }
+      ],
+      "name": "Physique Good"
+    }
+  ],
+  "standalone": [
+    {
+      "birth": null,
+      "effects": [
+        "+50% Fertility",
+        "+5 Life Expectancy (years)",
+        "+5 Years of Fertility"
+      ],
+      "good": true,
+      "id": "fecund",
+      "level": null,
+      "name": "Fecund"
+    },
+    {
+      "birth": 0.5,
+      "effects": [
+        "-10 General Opinion",
+        "+15 Natural Dread"
+      ],
+      "good": false,
+      "id": "albino",
+      "level": null,
+      "name": "Albino"
+    },
+    {
+      "birth": 0.5,
+      "effects": [
+        "-2 Health",
+        "-10 Vassal Opinion"
+      ],
+      "good": false,
+      "id": "bleeder",
+      "level": null,
+      "name": "Bleeder"
+    },
+    {
+      "birth": 0.5,
+      "effects": [
+        "-10 Attraction Opinion",
+        "-2 Prowess"
+      ],
+      "good": false,
+      "id": "clubfooted",
+      "level": null,
+      "name": "Club-footed"
+    },
+    {
+      "birth": 0.5,
+      "effects": [
+        "-20 Attraction Opinion",
+        "-4 Prowess"
+      ],
+      "good": false,
+      "id": "dwarf",
+      "level": null,
+      "name": "Dwarf"
+    },
+    {
+      "birth": 0.5,
+      "effects": [
+        "-0 Health",
+        "-5 Attraction Opinion",
+        "+10 Tribal Ruler Opinion",
+        "+10 Glory Hound Vassal Opinion",
+        "+6 Prowess"
+      ],
+      "good": false,
+      "id": "giant",
+      "level": null,
+      "name": "Giant"
+    },
+    {
+      "birth": 0.5,
+      "effects": [
+        "-30 Attraction Opinion",
+        "-10 Vassal Opinion",
+        "-2 Prowess"
+      ],
+      "good": false,
+      "id": "hunchbacked",
+      "level": null,
+      "name": "Hunchbacked"
+    },
+    {
+      "birth": 0.5,
+      "effects": [
+        "-50% Fertility"
+      ],
+      "good": false,
+      "id": "infertile",
+      "level": null,
+      "name": "Infertile"
+    },
+    {
+      "birth": 0.5,
+      "effects": [
+        "-2 Diplomacy"
+      ],
+      "good": false,
+      "id": "lisping",
+      "level": null,
+      "name": "Lisping"
+    },
+    {
+      "birth": 0.5,
+      "effects": [
+        "-0 Health",
+        "-10 Vassal Opinion",
+        "-10 Attraction Opinion",
+        "10 Enemy Hostile Scheme Phase Length days slower per Scheme Phase"
+      ],
+      "good": false,
+      "id": "lunatic_genetic",
+      "level": 2,
+      "name": "Lunatic"
+    },
+    {
+      "birth": 0.5,
+      "effects": [
+        "-0 Health",
+        "-10% Fertility",
+        "-1 Diplomacy",
+        "-1 Intrigue",
+        "-1 Martial",
+        "-1 Stewardship"
+      ],
+      "good": false,
+      "id": "depressed_genetic",
+      "level": 2,
+      "name": "Melancholic"
+    },
+    {
+      "birth": 0.5,
+      "effects": [
+        "+10% Monthly Learning Lifestyle Experience",
+        "-0 Health",
+        "-10 Attraction Opinion"
+      ],
+      "good": false,
+      "id": "possessed_genetic",
+      "level": 2,
+      "name": "Possessed"
+    },
+    {
+      "birth": 0.5,
+      "effects": [
+        "-20% Fertility",
+        "-30 Attraction Opinion",
+        "-10 Vassal Opinion",
+        "+10 Natural Dread"
+      ],
+      "good": false,
+      "id": "scaly",
+      "level": null,
+      "name": "Scaly"
+    },
+    {
+      "birth": 0.5,
+      "effects": [
+        "-0 Health",
+        "-10 Attraction Opinion",
+        "-1 Prowess"
+      ],
+      "good": false,
+      "id": "spindly",
+      "level": null,
+      "name": "Spindly"
+    },
+    {
+      "birth": 0.5,
+      "effects": [
+        "-2 Diplomacy"
+      ],
+      "good": false,
+      "id": "stuttering",
+      "level": null,
+      "name": "Stuttering"
+    },
+    {
+      "birth": 0.5,
+      "effects": [
+        "-0 Health",
+        "-10 Vassal Opinion"
+      ],
+      "good": false,
+      "id": "wheezing",
+      "level": null,
+      "name": "Wheezing"
+    }
+  ]
+}
