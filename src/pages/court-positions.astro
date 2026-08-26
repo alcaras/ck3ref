@@ -1,5 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
+import Backlinks from '../components/Backlinks.astro';
 import court from '../data/court_positions.json';
 
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
@@ -234,4 +235,6 @@ const skillTitle = (s: string) => s.charAt(0).toUpperCase() + s.slice(1);
     .fx .scaled { color: var(--faint); margin-left: 0.25rem; cursor: help; }
     .footnote { color: var(--faint); font-size: 0.78rem; max-width: 70ch; margin-top: 2rem; }
   </style>
+
+  <Backlinks ids={positions.map((x: any) => x.id)} />
 </Base>

@@ -1,5 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
+import Backlinks from '../components/Backlinks.astro';
 import cultures from '../data/cultures.json';
 import startworld from '../data/startworld.json';
 
@@ -189,4 +190,6 @@ const yearOf = (d: string | null) => (d ? d.split('.')[0] : null);
     .start { font-size: 0.78rem; white-space: nowrap; }
     .start b { font-family: var(--font-mono); color: var(--brass); }
   </style>
+
+  <Backlinks ids={cultures.map((x: any) => x.id)} />
 </Base>

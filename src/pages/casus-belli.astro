@@ -1,5 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
+import Backlinks from '../components/Backlinks.astro';
 import data from '../data/cbs.json';
 
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
@@ -226,6 +227,8 @@ function costLine(res: string, c: any): { text: string; varies: boolean } {
     .group-h .chip { font-weight: 400; }
     .chip .neg { color: var(--bad); }
   </style>
+
+  <Backlinks ids={cbs.map((x: any) => x.id)} />
 </Base>
 
 <style is:global>

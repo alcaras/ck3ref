@@ -1,5 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
+import Backlinks from '../components/Backlinks.astro';
 import traits from '../data/traits.json';
 
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
@@ -181,4 +182,6 @@ const pct = (v: number) => `${Math.round(v * 100)}%`;
     .track div { color: var(--dim); padding-left: 0.6rem; }
     .track b { color: var(--vellum); font-family: var(--font-mono); font-weight: 400; }
   </style>
+
+  <Backlinks ids={traits.map((x: any) => x.id)} />
 </Base>

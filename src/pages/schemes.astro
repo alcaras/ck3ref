@@ -1,5 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
+import Backlinks from '../components/Backlinks.astro';
 import data from '../data/schemes.json';
 
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
@@ -445,4 +446,6 @@ function agentName(id: string): string {
     .u-sub { color: var(--faint); font-size: 0.72rem; }
     td .u-sub { display: inline-block; max-width: 22rem; white-space: normal; }
   </style>
+
+  <Backlinks ids={schemes.map((x: any) => x.id)} />
 </Base>
