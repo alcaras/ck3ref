@@ -2,6 +2,8 @@
 import Base from '../layouts/Base.astro';
 import innovations from '../data/innovations.json';
 
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+
 const ERA_ORDER = [
   'culture_era_tribal',
   'culture_era_early_medieval',
@@ -98,6 +100,7 @@ function searchText(i: any): string {
                   data-dlc={i.dlc ?? 'base'}
                 >
                   <td class="name">
+                    <img class="i-icon" src={`${base}/img/innovations/${i.id}.webp`} alt="" width="30" height="30" loading="lazy" />
                     <span class="u-name">{i.name}</span>
                     {i.desc && <div class="i-desc">{i.desc}</div>}
                     {i.requirements.length > 0 && (
@@ -212,3 +215,6 @@ function searchText(i: any): string {
     .chip .neg { color: var(--bad); }
   </style>
 </Base>
+<style is:global>
+  .i-icon { float: left; margin-right: 0.45rem; }
+</style>
