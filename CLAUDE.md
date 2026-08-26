@@ -64,21 +64,26 @@ hover, ruling). Six skill colors (`--sk-*`) are the only other hues.
 
 ## Status (2026-08-26)
 
-All 47 catalog pages are built — `src/data/tabs.ts` has no placeholders left.
-40+ build scripts, ~6.4k registered entities, 9,823 indexed events, ~3.4k
-converted icons. Remaining known gaps, in rough priority order:
+All 54 catalog pages are built — `src/data/tabs.ts` has no placeholders. Live at
+https://alcaras.github.io/ck3ref/ (repo `alcaras/ck3ref`, Pages via Actions;
+CI compiles Astro only, data + art are committed).
 
-- `tax_slots/`, `lease_contracts/` — admin-government taxation, still in
-  audit SKIP; deserve a page with the Realm section.
-- `character_interactions/` (470), `secret_types/`, `hook_types/`,
-  `factions/`, `succession_election/`, `succession_appointment/`,
-  `vassal_stances/`, `court_types/`, `court_amenities/`, `inspirations/`,
-  `game_rules/` — data is present and audited-as-skipped; pages were scoped
-  but not built.
+~50 build scripts, ~7k registered entities, 10k+ backlinks, 9,823 indexed
+events, ~3.8k converted icons + 21 panoramic legacy banners.
+
+Known gaps / next steps:
+
+- **More illustration art is available and unused.** `gfx/interface/illustrations/`
+  has 44 folders; only `legacy_tracks` is wired up. `activities` has 5 scenes
+  (of 21 activities — the rest are in `activity_backgrounds`,
+  `activity_header_backgrounds`, `activity_splash_screens`), `decisions` has 66
+  shared scene illustrations addressed via each decision's `picture` field
+  (which `build_decisions.py` currently skips). Wiring either needs a
+  name-resolution pass, not just a CATEGORIES row.
 - Event option trees are not rendered (effect-script layer).
-- Culture "where it starts at 867/1066" — needs history/provinces joined to
-  the start-dates builder.
-- Backlinks are computed but only surfaced on a few pages.
+- Backlinks are surfaced on 6 pages; the graph covers far more.
+- `province_terrain`, `on_action`, and the scripted_* dirs remain conscious
+  SKIPs (engine plumbing).
 
 ## Adding a page (the men-at-arms pattern)
 
@@ -141,5 +146,14 @@ converted icons. Remaining known gaps, in rough priority order:
   (`valid_for_maa_trigger = { PARAMETER = x }`) — collect the macro's args,
   don't recurse into them as triggers.
 - Modifier VALUES can be script-value names — `render_modifier` resolves them.
+- **Icons vs illustrations are different trees.** `gfx/interface/icons/<cat>/`
+  holds small square icons (CATEGORIES in build_art.py);
+  `gfx/interface/illustrations/<cat>/` holds large art — legacy tracks are
+  4216x368 panoramas, activity scenes are 1592x848. Wide art goes through
+  `ILLUSTRATIONS` in build_art.py, which downscales; running it through the
+  icon path would emit multi-MB files.
+- Dynasty legacies have NO per-perk art — the game reuses the track icon for
+  every step. Track icon (`icons/dynasty/<track>.dds`) and track banner
+  (`illustrations/legacy_tracks/<track>.dds`) share the same key.
 - game_concepts: no `.info` doc; `parent` may name an alias; 20 concepts have
   `shown_in_encyclopedia = no` (exclude, as the game does).
