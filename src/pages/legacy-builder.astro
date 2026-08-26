@@ -40,8 +40,8 @@ const STEP_COSTS = [1000, 1500, 2000, 2500, 3000];
       <div class="tracks">
         {tracks.map((t) => (
           <div class="track" data-track={t.id}>
-            <div class="tk-h">
-              <img src={`${base}/img/legacies/${t.id}.webp`} alt="" width="26" height="26" loading="lazy" onerror="this.hidden=true" />
+            <div class="tk-banner" style={`--art:url(${base}/img/legacy-banners/${t.id}.webp)`}>
+              <img class="tk-icon" src={`${base}/img/legacies/${t.id}.webp`} alt="" width="30" height="30" loading="lazy" onerror="this.hidden=true" />
               <b>{t.name}</b>
               {t.dlc && <span class="badge-dlc">{t.dlc}</span>}
             </div>
@@ -91,7 +91,7 @@ const STEP_COSTS = [1000, 1500, 2000, 2500, 3000];
         const t = byId.get(p.track);
         const perk = t.perks[p.step];
         return `<li data-i="${i}">
-          <img src="${base}/img/legacies/${t.id}.webp" alt="" width="22" height="22" onerror="this.hidden=true">
+          <img src="${base}/img/legacies/${t.id}.webp" alt="" width="26" height="26" onerror="this.hidden=true">
           <span class="pl-n"><b>${esc(perk.name)}</b>
             <span class="subtle">${esc(t.name)} ${p.step + 1}</span></span>
           <span class="pl-c">${STEP_COSTS[p.step].toLocaleString()}</span>
@@ -183,9 +183,25 @@ const STEP_COSTS = [1000, 1500, 2000, 2500, 3000];
     @media (max-width: 950px) { .cols { grid-template-columns: 1fr; } }
     .tracks { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 0.6rem; }
     .track { background: var(--panel); border: 1px solid var(--line-soft); border-radius: var(--r); padding: 0.55rem 0.7rem; }
-    .tk-h { display: flex; gap: 0.45rem; align-items: center; margin-bottom: 0.25rem; }
-    .tk-h b { font-family: var(--font-display); font-size: 0.95rem; }
+    .track { padding: 0; overflow: hidden; }
+    .tk-banner {
+      display: flex; gap: 0.45rem; align-items: center;
+      padding: 0.5rem 0.7rem; margin-bottom: 0.3rem;
+      background-image: linear-gradient(to right,
+        color-mix(in oklab, var(--ink) 88%, transparent),
+        color-mix(in oklab, var(--ink) 55%, transparent)), var(--art);
+      background-size: cover; background-position: center;
+      border-bottom: 1px solid var(--line);
+    }
+    .tk-banner b { font-family: var(--font-display); font-size: 0.98rem;
+      text-shadow: 0 1px 3px rgba(0,0,0,0.85); }
+    .tk-icon { filter: drop-shadow(0 1px 2px rgba(0,0,0,0.8)); }
+    .gate, .steps { padding: 0 0.7rem; }
+    .steps { padding-bottom: 0.5rem; }
     .gate { font-size: 0.72rem; margin-bottom: 0.3rem; }
+    .plan-banner { height: 34px; border-radius: 3px; background-size: cover;
+      background-position: center; margin: 0.35rem 0 0.2rem;
+      border: 1px solid var(--line-soft); }
     .steps { display: flex; flex-direction: column; gap: 0.15rem; }
     .step {
       display: flex; gap: 0.45rem; align-items: baseline; text-align: left;

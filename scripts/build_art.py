@@ -19,6 +19,13 @@ import ck3
 
 MIRROR = Path(os.environ.get("CK3REF_DIR", Path.home() / "Library/CloudStorage/Dropbox/cc/ck3ref"))
 ICONS = MIRROR / "game/gfx/interface/icons"
+ILLUS = MIRROR / "game/gfx/interface/illustrations"
+
+# Wide panoramic art (not icons): downscaled to a web-sane width.
+# (source subfolder, output subdir, max width px)
+ILLUSTRATIONS = [
+    ("legacy_tracks", "legacy-banners", 1200),
+]
 
 # (json file, records path, gfx subfolder, output subdir, icon field, id field,
 #  quiet) — quiet=True: absence is expected (game has no art for some entries),
@@ -63,7 +70,30 @@ def convert(src: Path, dst: Path) -> bool:
     return True
 
 
+def convert_wide(src: Path, dst: Path, maxw: int) -> bool:
+    if not src.exists():
+        return False
+    if dst.exists() and dst.stat().st_mtime >= src.stat().st_mtime:
+        return True
+    dst.parent.mkdir(parents=True, exist_ok=True)
+    im = Image.open(src).convert("RGB")
+    if im.width > maxw:
+        im = im.resize((maxw, max(1, round(im.height * maxw / im.width))))
+    im.save(dst, "WEBP", quality=82)
+    return True
+
+
 def main():
+    for sub, out_sub, maxw in ILLUSTRATIONS:
+        src_dir = ILLUS / sub
+        if not src_dir.exists():
+            continue
+        n = 0
+        for f in sorted(src_dir.glob("*.dds")):
+            if convert_wide(f, ck3.ROOT / "public/img" / out_sub / f"{f.stem}.webp", maxw):
+                n += 1
+        print(f"✓ art: {n} {out_sub} illustrations → public/img/{out_sub}/")
+
     for json_file, rec_path, gfx_sub, out_sub, icon_field, id_field, quiet in CATEGORIES:
         path = ck3.ROOT / "src/data" / json_file
         if not path.exists():
