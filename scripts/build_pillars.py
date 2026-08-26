@@ -144,7 +144,7 @@ def modifier_lines(blk):
             n, _rules = ck3.resolve_value(v)
             if n is not None:
                 v = n
-        lines.append(ck3.render_modifier(k, v))
+        lines.append(culture_text.render_modifier(k, v))
     return lines
 
 
@@ -187,7 +187,7 @@ def main():
             if isinstance(dcm, Block):
                 doctrine = dcm.get("doctrine")
                 dname = _render(ck3.loc(doctrine) or ck3.loc(f"{doctrine}_name") or str(doctrine))
-                lines = [ck3.render_modifier(k, v) for k, _o, v in dcm
+                lines = [culture_text.render_modifier(k, v) for k, _o, v in dcm
                          if k not in (None, "doctrine")]
                 if lines:
                     mods[f"Characters ({dname} faiths)"] = lines

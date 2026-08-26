@@ -69,9 +69,11 @@ def modifier_lines(block, skills=None, exclude=frozenset()):
         if is_modifier_key(k):
             if k.endswith("_opinion") and k not in ck3.modifier_formats():
                 base = k.removesuffix("_opinion").replace("_", " ").title()
-                lines.append(f"{v:+g} {base} opinion")
+                lines.append({"t": f"{v:+g} {base} opinion",
+                              "p": "good" if isinstance(v, (int, float)) and v > 0 else "bad"})
             else:
-                lines.append(ck3.render_modifier(k, v))
+                lines.append({"t": ck3.render_modifier(k, v),
+                              "p": ck3.modifier_polarity(k, v)})
     return lines
 
 
@@ -108,9 +110,10 @@ def track_levels(blk):
             if lvl is not None and isinstance(entry, Block):
                 skills = {}
                 lines = modifier_lines(entry, skills)
-                lines = [f"{v:+g} {k.title()}" for k, v in skills.items()] + lines
+                lines = [{"t": f"{v:+g} {k.title()}", "p": "good" if v > 0 else "bad"}
+                         for k, v in skills.items()] + lines
                 if lines:
-                    levels[str(lvl)] = lines
+                    levels[str(lvl)] = [ln["t"] for ln in lines]
         if levels:
             tracks[tname] = levels
     return tracks

@@ -373,7 +373,7 @@
     "aliases": [
       "Appointment Levels"
     ],
-    "desc": "An Appointment Level is used by some Appointment Succession Laws as a requirement for Characters to become eligible candidates.\n\nLevels are based on the level of a specific currency and each law can use a different currency as a requirement. A higher tier Title will typically require a higher level.\n\nFor example: Celestial Appointment Succession requires Merit - A Duchy requires a Merit Rank of … or above, while a Kingdom requires … or above.",
+    "desc": "An Appointment Level is used by some Appointment Succession Laws as a requirement for Characters to become eligible candidates.\n\nLevels are based on the level of a specific currency and each law can use a different currency as a requirement. A higher tier Title will typically require a higher level.\n\nFor example: Celestial Appointment Succession requires Merit - A Duchy requires a Merit Rank of 7th Rank or above, while a Kingdom requires 5th Rank or above.",
     "dlc": "Roads to Power",
     "features": [],
     "id": "appointment_level",
@@ -466,7 +466,7 @@
     "aliases": [
       "Artifact Claims"
     ],
-    "desc": "An Artifact Claim represents someone's legal rights to an Artifact.\n\nHaving a Claim on an Artifact means that you can take various actions towards that artifact, and its owner, if you do not currently possess it (for example using the … Scheme).\n\nThere are Personal Artifact Claims for Character, and House Artifact Claims for Houses.\n\nArtifact claims are simpler than those for Title Claims; they either exist, or they don't. They are also not inherited past the first generation.",
+    "desc": "An Artifact Claim represents someone's legal rights to an Artifact.\n\nHaving a Claim on an Artifact means that you can take various actions towards that artifact, and its owner, if you do not currently possess it (for example using the Steal Artifact Scheme).\n\nThere are Personal Artifact Claims for Character, and House Artifact Claims for Houses.\n\nArtifact claims are simpler than those for Title Claims; they either exist, or they don't. They are also not inherited past the first generation.",
     "dlc": null,
     "features": [],
     "id": "artifact_claim",
@@ -506,7 +506,7 @@
   },
   {
     "aliases": [],
-    "desc": "With the promise to boost production and incur abundance for their followers, the Creation Aspect give bonuses to economical and organizational undertakings.\n•Focuses on Stewardship\n•Chaining construction awards … stacks\n•Regular construction awards Piety\n•Rearing Legitimate Children awards Piety\n•Has access to the … Scheme\n•May only die from Natural Cause or Religious Deaths",
+    "desc": "With the promise to boost production and incur abundance for their followers, the Creation Aspect give bonuses to economical and organizational undertakings.\n•Focuses on Stewardship\n•Chaining construction awards Aspect of Creation stacks\n•Regular construction awards Piety\n•Rearing Legitimate Children awards Piety\n•Has access to the Coerce Contribution Scheme\n•May only die from Natural Cause or Religious Deaths",
     "dlc": "All Under Heaven",
     "features": [
       "all_under_heaven"
@@ -528,7 +528,7 @@
   },
   {
     "aliases": [],
-    "desc": "A peaceful realm is a prosperous realm — the Serenity Aspect cherishes tranquility and diplomatic dealings, awarding bonuses to those who align with its cause.\n•Focuses on Diplomacy\n•Avoiding Offensive Wars is premiered by … stacks\n•… and … Schemes are more successful\n•May also Request Great Project Contributions from Allies\n•May only die from Natural Cause or Religious Deaths",
+    "desc": "A peaceful realm is a prosperous realm — the Serenity Aspect cherishes tranquility and diplomatic dealings, awarding bonuses to those who align with its cause.\n•Focuses on Diplomacy\n•Avoiding Offensive Wars is premiered by Aspect of Serenity stacks\n•Sway and Befriend Schemes are more successful\n•May also Request Great Project Contributions from Allies\n•May only die from Natural Cause or Religious Deaths",
     "dlc": "All Under Heaven",
     "features": [
       "all_under_heaven"
@@ -539,7 +539,7 @@
   },
   {
     "aliases": [],
-    "desc": "Benevolent or devious; the Trickster Aspect rewards being able to control others without them knowing it. What is godhood for if not to shape the world in your image?\n•Focuses on Intrigue\n•May use Piety to bribe Agents in Schemes\n•Has access to the … Scheme\n•May only die from Natural Cause, Religious or Murder Deaths",
+    "desc": "Benevolent or devious; the Trickster Aspect rewards being able to control others without them knowing it. What is godhood for if not to shape the world in your image?\n•Focuses on Intrigue\n•May use Piety to bribe Agents in Schemes\n•Has access to the Leverage Contribution Scheme\n•May only die from Natural Cause, Religious or Murder Deaths",
     "dlc": "All Under Heaven",
     "features": [
       "all_under_heaven"
@@ -574,7 +574,7 @@
     "aliases": [
       "At Peace"
     ],
-    "desc": "Characters who have the … Tenet as part of their Faith will have the 'At Peace Opinion' instead of the Offensive War Opinion penalty.\n\nIf you are at peace for too long, your Vassals will think less of you (if they share your Faith).",
+    "desc": "Characters who have the Warmonger Tenet as part of their Faith will have the 'At Peace Opinion' instead of the Offensive War Opinion penalty.\n\nIf you are at peace for too long, your Vassals will think less of you (if they share your Faith).",
     "dlc": null,
     "features": [],
     "id": "at_peace_opinion",
@@ -699,7 +699,7 @@
       "",
       "Barters"
     ],
-    "desc": "Wanua Rulers can raise Barterers to gain Gold through peaceful means. Bartering works similarly to Raiding, with some key differences — it is not a Hostile action, and you need Barter Goods.\n\nYou need 2 Barter Goods to gain 1 Loot from a Holding. If you have too little, nothing will happen.\n\nBartering is a friendly action, and the targeted holding will gain … upon completion. Unlike Raiding, you can freely Barter in the lands of your Tributaries and Suzerain.",
+    "desc": "Wanua Rulers can raise Barterers to gain Gold through peaceful means. Bartering works similarly to Raiding, with some key differences — it is not a Hostile action, and you need Barter Goods.\n\nYou need 2 Barter Goods to gain 1 Loot from a Holding. If you have too little, nothing will happen.\n\nBartering is a friendly action, and the targeted holding will gain Recently Bartered upon completion. Unlike Raiding, you can freely Barter in the lands of your Tributaries and Suzerain.",
     "dlc": "All Under Heaven",
     "features": [
       "all_under_heaven"
@@ -1109,7 +1109,7 @@
     "aliases": [
       "Bureaucratic Government"
     ],
-    "desc": "Some Governments are Bureaucratic. Which are highly centralized Governments that typically rely on Governors, Appointment, and landless Noble Families to manage Provinces within the Realm.\n\nOther common features include Domiciles, Influence, and Title Men-at-Arms.\n\nThere are several Bureaucratic Governments:\n• …",
+    "desc": "Some Governments are Bureaucratic. Which are highly centralized Governments that typically rely on Governors, Appointment, and landless Noble Families to manage Provinces within the Realm.\n\nOther common features include Domiciles, Influence, and Title Men-at-Arms.\n\nThere are several Bureaucratic Governments:\n•\n•\n•\n•\n•",
     "dlc": "The Great People",
     "features": [],
     "id": "government_bureaucratic_type",
@@ -1492,7 +1492,7 @@
     "aliases": [
       "Church Holding"
     ],
-    "desc": "Church Holdings are Temples under the control of a Realm Priest.\n\nIn Faiths with the … Doctrine, there are no Church Holdings and Temples can be directly held by secular Rulers without penalty.",
+    "desc": "Church Holdings are Temples under the control of a Realm Priest.\n\nIn Faiths with the Lay Clergy Doctrine, there are no Church Holdings and Temples can be directly held by secular Rulers without penalty.",
     "dlc": null,
     "features": [],
     "id": "church_property",
@@ -1824,7 +1824,7 @@
       "Concubine",
       "Concubines"
     ],
-    "desc": "A Concubine is of lesser status than a Spouse, allowed in Faiths with the … Doctrine.\n\nUnlike Marriage, Concubinage does not yield Alliances. Concubines can also be set aside at will, without the complications of a Divorce. The children of Concubines are considered Legitimate.\n\nConcubinage is mutually exclusive with ….",
+    "desc": "A Concubine is of lesser status than a Spouse, allowed in Faiths with the Concubines Doctrine.\n\nUnlike Marriage, Concubinage does not yield Alliances. Concubines can also be set aside at will, without the complications of a Divorce. The children of Concubines are considered Legitimate.\n\nConcubinage is mutually exclusive with Polygamous.",
     "dlc": null,
     "features": [],
     "id": "concubinage",
@@ -1970,7 +1970,7 @@
       "",
       "Tier"
     ],
-    "desc": "Contract Tier is reflective of the Tier of the Contractor.\n\nBarons and Counts are one star, Dukes are two stars, and Kings and Emperors are three stars.\n\nContractors won't offer work to Adventurers with insufficient Level of Fame for their Rank. If you're only …, then Kings and Emperors won't even consider you.\n\nThe higher the Contract Tier, the higher the pay is scaled to be — though the difficulty of the task is generally also higher.\n\nPersonality also affects pay: Greedy Characters will pay under the going rate, Generous or Profligate Characters will pay far over it.",
+    "desc": "Contract Tier is reflective of the Tier of the Contractor.\n\nBarons and Counts are one star, Dukes are two stars, and Kings and Emperors are three stars.\n\nContractors won't offer work to Adventurers with insufficient Level of Fame for their Rank. If you're only Established, then Kings and Emperors won't even consider you.\n\nThe higher the Contract Tier, the higher the pay is scaled to be — though the difficulty of the task is generally also higher.\n\nPersonality also affects pay: Greedy Characters will pay under the going rate, Generous or Profligate Characters will pay far over it.",
     "dlc": "Roads to Power",
     "features": [],
     "id": "task_contract_tier",
@@ -2226,7 +2226,7 @@
     "aliases": [
       "Court Chaplains"
     ],
-    "desc": "The Court Chaplain is the Councillor in charge of religious and spiritual affairs in Faiths with the … Doctrine.\n\nFaiths with the … Doctrine have the far more powerful (and troublesome) Realm Priest instead of a Court Chaplain.",
+    "desc": "The Court Chaplain is the Councillor in charge of religious and spiritual affairs in Faiths with the Lay Clergy Doctrine.\n\nFaiths with the Theocratic Doctrine have the far more powerful (and troublesome) Realm Priest instead of a Court Chaplain.",
     "dlc": null,
     "features": [],
     "id": "court_chaplain",
@@ -2470,7 +2470,7 @@
   },
   {
     "aliases": [],
-    "desc": "Cultural Acceptance has a baseline which it will decay towards if exceeded. The baseline depends on:\n•Shared Heritage\n•Shared Language\n•Shared Faith and Religion, especially if … or Dharmic\n•Shared Ethos within the same Region",
+    "desc": "Cultural Acceptance has a baseline which it will decay towards if exceeded. The baseline depends on:\n•Shared Heritage\n•Shared Language\n•Shared Faith and Religion, especially if Pluralist or Dharmic\n•Shared Ethos within the same Region",
     "dlc": null,
     "features": [],
     "id": "cultural_acceptance_baseline",
@@ -3495,7 +3495,7 @@
   },
   {
     "aliases": [],
-    "desc": "As Characters grow older, they can gain age-related Traits like Faltering Heart or Fragile Bones. These normally appear around age 50, but may show up earlier.\n\nYou're less likely to get these traits if you have:\n•Good Health\n•Athletic, Hale, or Whole of Body\n•For Withering Mind: Family First, Seducer, knowing Languages, many Friends and Lovers\n\nYou're more likely to get them if you have:\n•Bad Health\n•Drunkard or reclusive\n•… or …\n•High Stress\n•Parents or grandparents with the traits",
+    "desc": "As Characters grow older, they can gain age-related Traits like Faltering Heart or Fragile Bones. These normally appear around age 50, but may show up earlier.\n\nYou're less likely to get these traits if you have:\n•Good Health\n•Athletic, Hale, or Whole of Body\n•For Withering Mind: Family First, Seducer, knowing Languages, many Friends and Lovers\n\nYou're more likely to get them if you have:\n•Bad Health\n•Drunkard or reclusive\n•Obese or Malnourished\n•High Stress\n•Parents or grandparents with the traits",
     "dlc": null,
     "features": [],
     "id": "elder_traits",
@@ -4175,7 +4175,7 @@
       "Feuds",
       "Feuding"
     ],
-    "desc": "Sometimes, a rivalry can grow into a vendetta against a particular House.\n\nKilling, Torturing, cuckolding, robbing, and winning Wars against members of the target House will increase your House's score, while falling victim to these actions will reduce it.\n\nWhile a Feud is ongoing, all House members receive a Hostile Schemes bonus against members of the target House, and will be more likely to target its members.\n\nWhen the Feud ends, your House will be rewarded based on the relative damage inflicted on its enemies, ranging from … to ….",
+    "desc": "Sometimes, a rivalry can grow into a vendetta against a particular House.\n\nKilling, Torturing, cuckolding, robbing, and winning Wars against members of the target House will increase your House's score, while falling victim to these actions will reduce it.\n\nWhile a Feud is ongoing, all House members receive a Hostile Schemes bonus against members of the target House, and will be more likely to target its members.\n\nWhen the Feud ends, your House will be rewarded based on the relative damage inflicted on its enemies, ranging from Pathetic Family to Formidable Family.",
     "dlc": "Friends & Foes",
     "features": [
       "friends_and_foes"
@@ -4627,7 +4627,7 @@
     "aliases": [
       "Great Holy Wars"
     ],
-    "desc": "A Great Holy War is a special type of War that only the Head of Faith of certain Faiths can declare, with the goal of bringing an entire Kingdom under the rule of their Faith.\n\nGreat Holy Wars target all Rulers of another Religion within a chosen Kingdom, forcing them to defend together. If victorious, all Titles within the targeted Kingdom will be seized and divided between the attackers.\n\nDepending on its Doctrines, a Faith might have access to Directed Great Holy Wars, Undirected Great Holy Wars or no Great Holy Wars at all:\n•The …, …, or … Tenets are required to access to Great Holy Wars in general\n•Faiths with a … Head only have access to Directed Great Holy Wars\n•Faiths with a … Head only have access to Undirected Great Holy Wars\n•Faiths without a Head of Faith cannot declare any Great Holy Wars, even if they would normally be eligible\n\nSome Faiths have special names for their Great Holy Wars such as 'Crusade' or 'Jihad'. These Great Holy Wars differ in name only, and function as any other Great Holy War.",
+    "desc": "A Great Holy War is a special type of War that only the Head of Faith of certain Faiths can declare, with the goal of bringing an entire Kingdom under the rule of their Faith.\n\nGreat Holy Wars target all Rulers of another Religion within a chosen Kingdom, forcing them to defend together. If victorious, all Titles within the targeted Kingdom will be seized and divided between the attackers.\n\nDepending on its Doctrines, a Faith might have access to Directed Great Holy Wars, Undirected Great Holy Wars or no Great Holy Wars at all:\n•The Armed Pilgrimages, Struggle and Submission, or Warmonger Tenets are required to access to Great Holy Wars in general\n•Faiths with a Temporal Head only have access to Directed Great Holy Wars\n•Faiths with a Spiritual Head only have access to Undirected Great Holy Wars\n•Faiths without a Head of Faith cannot declare any Great Holy Wars, even if they would normally be eligible\n\nSome Faiths have special names for their Great Holy Wars such as 'Crusade' or 'Jihad'. These Great Holy Wars differ in name only, and function as any other Great Holy War.",
     "dlc": null,
     "features": [],
     "id": "great_holy_war",
@@ -5049,7 +5049,7 @@
       "Holy Wars",
       "Holy"
     ],
-    "desc": "A Holy War is a special type of War waged by a Ruler of one Faith against a Ruler of a different Faith.\n\nHoly War are usually quite destructive, with the winner of a Holy War typically seizing all Counties in the targeted area for themselves. However, if attacker's Faith is … or the defender has Vassals of the attacker's own Faith in the targeted area, some or all Vassal Rulers in the targeted area may simply be transfered to the attacker instead.\n\nUnlike other wars, Rulers of the same Faith as the target may choose to join in their defense without the need of an Alliance.\n\nHoly Wars may be allowed or restricted depending on the different Religious Families",
+    "desc": "A Holy War is a special type of War waged by a Ruler of one Faith against a Ruler of a different Faith.\n\nHoly War are usually quite destructive, with the winner of a Holy War typically seizing all Counties in the targeted area for themselves. However, if attacker's Faith is Pluralist or the defender has Vassals of the attacker's own Faith in the targeted area, some or all Vassal Rulers in the targeted area may simply be transfered to the attacker instead.\n\nUnlike other wars, Rulers of the same Faith as the target may choose to join in their defense without the need of an Alliance.\n\nHoly Wars may be allowed or restricted depending on the different Religious Families",
     "dlc": null,
     "features": [],
     "id": "holy_war",
@@ -5159,7 +5159,7 @@
       "Hostile Schemes",
       "Hostile"
     ],
-    "desc": "Hostile Schemes are Schemes that aim to cause harm to a Character. Most Hostile Schemes make use of Secrecy.\n\nExamples of Hostile Schemes are:\n• …",
+    "desc": "Hostile Schemes are Schemes that aim to cause harm to a Character. Most Hostile Schemes make use of Secrecy.\n\nExamples of Hostile Schemes are:\n•Murder\n•Abduct\n•Claim Throne\n•Fabricate Hook",
     "dlc": null,
     "features": [],
     "id": "hostile_scheme",
@@ -6081,7 +6081,7 @@
     "aliases": [
       "Languages"
     ],
-    "desc": "A Language is the Cultural Pillar that determines what language the general populace of a Culture speaks. Cultures which speak the same language gain a permanent bonus to their Cultural Acceptance Baseline.\n\nA Character can know one or more Languages. Knowing a language cuts the Cultural Acceptance Opinion penalty in half towards Characters and Counties that speak it. It also discourages Independence and Claimant Factions.\n\nCharacters can learn additional languages by using the … Scheme. Characters can comfortably learn languages up to their Foreign Language Limit.",
+    "desc": "A Language is the Cultural Pillar that determines what language the general populace of a Culture speaks. Cultures which speak the same language gain a permanent bonus to their Cultural Acceptance Baseline.\n\nA Character can know one or more Languages. Knowing a language cuts the Cultural Acceptance Opinion penalty in half towards Characters and Counties that speak it. It also discourages Independence and Claimant Factions.\n\nCharacters can learn additional languages by using the Learn Language Scheme. Characters can comfortably learn languages up to their Foreign Language Limit.",
     "dlc": null,
     "features": [],
     "id": "language",
@@ -6306,7 +6306,7 @@
     "aliases": [
       "Level(s) of Devotion"
     ],
-    "desc": "A Character's Level of Devotion is a measure of how virtuous and devout they are, as well as their standing with other members of their Faith.\n\nEvery time a Character gains Piety, they also progress toward the next Level of Devotion.\n\n…\n\nThe Levels are:\n• …\n•……",
+    "desc": "A Character's Level of Devotion is a measure of how virtuous and devout they are, as well as their standing with other members of their Faith.\n\nEvery time a Character gains Piety, they also progress toward the next Level of Devotion.\n\n…\n\nThe Levels are:\n•Sinner\n•Dutiful\n•Faithful\n•Devoted Servant\n•Paragon of Virtue\n•Religious Icon…",
     "dlc": null,
     "features": [],
     "id": "piety_level",
@@ -6326,7 +6326,7 @@
     "aliases": [
       "Levels of Fame"
     ],
-    "desc": "A Character's Level of Fame measures their general reputation, and how well perceived they are by everyone.\n\nEach time a Character gains Prestige, they also progress towards the next Level of Fame.\n\nThe Levels are:\n• …",
+    "desc": "A Character's Level of Fame measures their general reputation, and how well perceived they are by everyone.\n\nEach time a Character gains Prestige, they also progress towards the next Level of Fame.\n\nThe Levels are:\n•Disgraced\n•Established\n•Distinguished\n•Illustrious\n•Exalted Among Men\n•Legendary Figure",
     "dlc": null,
     "features": [],
     "id": "prestige_level",
@@ -6346,7 +6346,7 @@
     "aliases": [
       "Levels of Influence"
     ],
-    "desc": "A Character's Level of Influence measures their overall political power and reach.\n\nEach time a Character gains Influence, they also gain progress towards the next Level of Influence.\n\nThe Levels are:\n• …",
+    "desc": "A Character's Level of Influence measures their overall political power and reach.\n\nEach time a Character gains Influence, they also gain progress towards the next Level of Influence.\n\nThe Levels are:\n•Impotent\n•Influential\n•Persuasive\n•Controlling\n•Authoritative\n•Imperious",
     "dlc": "Roads to Power",
     "features": [],
     "id": "influence_level",
@@ -6692,7 +6692,7 @@
       "Radiance",
       "Radiant"
     ],
-    "desc": "The magnetism to attract and maintain Subjects for a Mandala Ruler is referred to as Mandala Radiance. It is a blend of their Level of Devotion, … Great Building level as well as Mandala Aspect level.\n\nHigher rewards, more Subjects and more power await those who combine the three to become more Radiant.",
+    "desc": "The magnetism to attract and maintain Subjects for a Mandala Ruler is referred to as Mandala Radiance. It is a blend of their Level of Devotion, Ornate Temple Great Building level as well as Mandala Aspect level.\n\nHigher rewards, more Subjects and more power await those who combine the three to become more Radiant.",
     "dlc": "All Under Heaven",
     "features": [
       "all_under_heaven"
@@ -6861,7 +6861,7 @@
     "aliases": [
       "Assassin"
     ],
-    "desc": "The Master Assassin is a Court Position enabled by Faiths with the … Tenet. The Master Assassin is a dangerous fanatic who works together with lesser assassins to slay perceived enemies of the faith.",
+    "desc": "The Master Assassin is a Court Position enabled by Faiths with the Fedayeen Tenet. The Master Assassin is a dangerous fanatic who works together with lesser assassins to slay perceived enemies of the faith.",
     "dlc": "Legacy of Persia",
     "features": [
       "legacy_of_persia"
@@ -6905,7 +6905,7 @@
   },
   {
     "aliases": [],
-    "desc": "The Maximum Level of Devotion represents the highest Level of Devotion that a Ruler may achieve in their lifetime. By default, this level is ….…",
+    "desc": "The Maximum Level of Devotion represents the highest Level of Devotion that a Ruler may achieve in their lifetime. By default, this level is Religious Icon.…",
     "dlc": null,
     "features": [],
     "id": "maximum_piety_level",
@@ -7008,7 +7008,7 @@
       "",
       "Meritorious"
     ],
-    "desc": "A Character's Merit tracks their progress to the next Merit Rank. All characters with an Elder or Disciples produce a passive Merit gain.\n\nGovernors can increase their Merit by constructing Buildings in their assigned Holdings, going on an Inspection Activity, participating in a Debate and attending Examinations.\n\n… governors increase their monthly merit gain by paying more Taxes to their Liege, while … governors increase it by creating Men-at-Arms.\n\nNon-Governors can attempt to increase it by attending Examinations.",
+    "desc": "A Character's Merit tracks their progress to the next Merit Rank. All characters with an Elder or Disciples produce a passive Merit gain.\n\nGovernors can increase their Merit by constructing Buildings in their assigned Holdings, going on an Inspection Activity, participating in a Debate and attending Examinations.\n\nAvailable Administration Types governors increase their monthly merit gain by paying more Taxes to their Liege, while Available Administration Types governors increase it by creating Men-at-Arms.\n\nNon-Governors can attempt to increase it by attending Examinations.",
     "dlc": "All Under Heaven",
     "features": [
       "all_under_heaven"
@@ -7021,7 +7021,7 @@
     "aliases": [
       "Merit Ranks"
     ],
-    "desc": "A Character's Merit Rank indicates how appropriate they are as a Governor in East Asian Administrative Governments.\n\nIt represents their documented achievements and moral conduct according to Confucian ideals through the amount of Merit they have gained.\n\nAn official with a high Merit Rank has a higher Candidate Score and Governor Salary.\n\nThe Ranks are:\n• …",
+    "desc": "A Character's Merit Rank indicates how appropriate they are as a Governor in East Asian Administrative Governments.\n\nIt represents their documented achievements and moral conduct according to Confucian ideals through the amount of Merit they have gained.\n\nAn official with a high Merit Rank has a higher Candidate Score and Governor Salary.\n\nThe Ranks are:\n•No Rank\n•9th Rank\n•8th Rank\n•7th Rank\n•6th Rank\n•5th Rank\n•4th Rank\n•3rd Rank\n•2nd Rank\n•1st Rank",
     "dlc": "All Under Heaven",
     "features": [
       "all_under_heaven"
@@ -7436,7 +7436,7 @@
       "Power",
       ""
     ],
-    "desc": "Movement Power represents the political clout of a group involved in the Dynastic Cycle. It is the sum of Personal Movement Power of all of the characters in the group.\n\n… unlocks Dismiss Hook Interaction, Request Permission to Raid Interaction and … Scheme\n\nPower is derived from:\n•…Merit Rank\n•…Level of Influence\n•Age\n•Movement Power of Disciples\n•Current Military Strength (less important in …)\n•Confucian Education Trait Experience (less important in …)\n•Governor Trait Experience (less important in …)",
+    "desc": "Movement Power represents the political clout of a group involved in the Dynastic Cycle. It is the sum of Personal Movement Power of all of the characters in the group.\n\n… unlocks Dismiss Hook Interaction, Request Permission to Raid Interaction and Raid Estate Scheme\n\nPower is derived from:\n•…Merit Rank\n•…Level of Influence\n•Age\n•Movement Power of Disciples\n•Current Military Strength (less important in …)\n•Confucian Education Trait Experience (less important in …)\n•Governor Trait Experience (less important in …)",
     "dlc": "All Under Heaven",
     "features": [
       "all_under_heaven"
@@ -7751,7 +7751,7 @@
   },
   {
     "aliases": [],
-    "desc": "An Organized Faith has a religious hierarchy. Worship and practices are more organized and scriptures are formalized.\n\n… Pagan Faiths can become Organized by reforming, while other Faiths are always considered Organized.",
+    "desc": "An Organized Faith has a religious hierarchy. Worship and practices are more organized and scriptures are formalized.\n\nUnreformed Pagan Faiths can become Organized by reforming, while other Faiths are always considered Organized.",
     "dlc": null,
     "features": [],
     "id": "organized",
@@ -7932,7 +7932,7 @@
     "aliases": [
       "Perpetual Hooks"
     ],
-    "desc": "A Perpetual Hook is a Hook that you might have on a character who owes you a favor, or that you have manipulated to do your will.\n\nThey cannot be used to force someone to become your Agent in a … and do not provide a passive benefit (for that, a Strong Hook is necessary.)\n\nPerpetual Hooks are not spent when used, but instead go on a cooldown before they can be used again.",
+    "desc": "A Perpetual Hook is a Hook that you might have on a character who owes you a favor, or that you have manipulated to do your will.\n\nThey cannot be used to force someone to become your Agent in a Murder and do not provide a passive benefit (for that, a Strong Hook is necessary.)\n\nPerpetual Hooks are not spent when used, but instead go on a cooldown before they can be used again.",
     "dlc": null,
     "features": [],
     "id": "perpetual_hook",
@@ -7968,7 +7968,7 @@
       "Personal",
       "Personal Schemes"
     ],
-    "desc": "Personal Schemes are Schemes that aim to induce a status between the Scheme Owner and the Scheme Target.\n\nExamples of Personal Schemes are:\n• …",
+    "desc": "Personal Schemes are Schemes that aim to induce a status between the Scheme Owner and the Scheme Target.\n\nExamples of Personal Schemes are:\n•Sway\n•Befriend\n•Seduce\n•Elope",
     "dlc": null,
     "features": [],
     "id": "personal_scheme",
@@ -8282,7 +8282,7 @@
     "aliases": [
       "Prevent"
     ],
-    "desc": "Rarely, certain situations in the life of the Target of a … may cause the Scheme to fail in the final stages of its execution.\n\nThis overrides Success Chance.\n\nExamples include intervention by a bodyguard, a foodtaster, a shieldmaiden, or a loyal pet.",
+    "desc": "Rarely, certain situations in the life of the Target of a Murder may cause the Scheme to fail in the final stages of its execution.\n\nThis overrides Success Chance.\n\nExamples include intervention by a bodyguard, a foodtaster, a shieldmaiden, or a loyal pet.",
     "dlc": null,
     "features": [],
     "id": "prevented_murder",
@@ -8303,7 +8303,7 @@
   },
   {
     "aliases": [],
-    "desc": "In … Faiths, Rulers must choose one of their Spouses to be their Primary Spouse. A ruler's Primary Spouse gains increased Fertility with them, increased Opinion of them, and may serve on their Council.",
+    "desc": "In Polygamous Faiths, Rulers must choose one of their Spouses to be their Primary Spouse. A ruler's Primary Spouse gains increased Fertility with them, increased Opinion of them, and may serve on their Council.",
     "dlc": null,
     "features": [],
     "id": "primary_spouse",
@@ -8708,7 +8708,7 @@
       "Realm Priests",
       "Realm Priest's"
     ],
-    "desc": "A Realm Priest is a Councillor in charge of religious and spiritual affairs in Faiths with the … Doctrine.\n\nUnlike their … equivalent (Court Chaplains), Realm Priests automatically Lease all Temple Holdings in a Ruler's Domain, and also receive a portion of Taxes and Levies from Vassal Realm Priests.\n\nRealm Priests provide their Liege with Levies and Taxes if they have a positive Opinion of them. The higher the Opinion of their Liege, the more they will provide.\n\nRealm Priests with a low Opinion of their Liege will not provide them with any Taxes or Levies, and might cause problems.",
+    "desc": "A Realm Priest is a Councillor in charge of religious and spiritual affairs in Faiths with the Theocratic Doctrine.\n\nUnlike their Lay Clergy equivalent (Court Chaplains), Realm Priests automatically Lease all Temple Holdings in a Ruler's Domain, and also receive a portion of Taxes and Levies from Vassal Realm Priests.\n\nRealm Priests provide their Liege with Levies and Taxes if they have a positive Opinion of them. The higher the Opinion of their Liege, the more they will provide.\n\nRealm Priests with a low Opinion of their Liege will not provide them with any Taxes or Levies, and might cause problems.",
     "dlc": null,
     "features": [],
     "id": "realm_priest",
@@ -9345,7 +9345,7 @@
       "Scheme Owners",
       "Owner"
     ],
-    "desc": "A Scheme's Owner is the Character scheming against the Scheme Target.\n\nFor example, the would-be killer in a … Scheme.",
+    "desc": "A Scheme's Owner is the Character scheming against the Scheme Target.\n\nFor example, the would-be killer in a Murder Scheme.",
     "dlc": null,
     "features": [],
     "id": "scheme_owner",
@@ -9418,7 +9418,7 @@
       "Target",
       "Scheme Target's"
     ],
-    "desc": "A Scheme's Target is the Character being schemed against by the Scheme Owner.\n\nFor example, the potential victim in a … Scheme.",
+    "desc": "A Scheme's Target is the Character being schemed against by the Scheme Owner.\n\nFor example, the potential victim in a Murder Scheme.",
     "dlc": null,
     "features": [],
     "id": "scheme_target",
@@ -9880,7 +9880,7 @@
     "aliases": [
       "Spiritual"
     ],
-    "desc": "A … Head of Faith is Theocratic and does not have to be Landed (although they can be).\n\nSpiritual Heads of Faith usually have access to interactions such as being able to grant Claims or Gold.\n\nShould the Doctrines of the Faith allow for Great Holy Wars then they will be Undirected (e.g. Crusades).",
+    "desc": "A Spiritual Head of Faith is Theocratic and does not have to be Landed (although they can be).\n\nSpiritual Heads of Faith usually have access to interactions such as being able to grant Claims or Gold.\n\nShould the Doctrines of the Faith allow for Great Holy Wars then they will be Undirected (e.g. Crusades).",
     "dlc": null,
     "features": [],
     "id": "spiritual_head_of_faith",
@@ -9923,7 +9923,7 @@
   },
   {
     "aliases": [],
-    "desc": "The Spymaster is your Councillor in charge of matters of intrigue and intelligence. Beware of having a disloyal Spymaster, for they can easily conceal and participate in a … against you and your close family!",
+    "desc": "The Spymaster is your Councillor in charge of matters of intrigue and intelligence. Beware of having a disloyal Spymaster, for they can easily conceal and participate in a Murder against you and your close family!",
     "dlc": null,
     "features": [],
     "id": "spymaster",
@@ -10072,7 +10072,7 @@
     "aliases": [
       "Stories"
     ],
-    "desc": "A Story is a personal situation tied to a Ruler.\n\nThere are many kinds of Stories — from owning a … to becoming a Conqueror. Each is built from different elements, typically involving key Characters, Titles, or Decisions.",
+    "desc": "A Story is a personal situation tied to a Ruler.\n\nThere are many kinds of Stories — from owning a Pet Dog to becoming a Conqueror. Each is built from different elements, typically involving key Characters, Titles, or Decisions.",
     "dlc": null,
     "features": [],
     "id": "story_cycle",
@@ -10119,7 +10119,7 @@
       "Strong Hooks",
       ""
     ],
-    "desc": "A Strong Hook is a very powerful Hook that you might have on a character who you have Blackmailed.\n\nStrong Hooks are much more powerful than Weak Hooks, and can force someone to do terrible deeds for you — such as to become your Agent in a … (in addition to everything a Weak Hook can do!)\n\nA Strong Hook also prevents the target from taking any hostile actions towards the holder.\n\nStrong Hooks are not spent when used, but instead go on a cooldown before they can be used again. The passive effect is not lost when the Hook is used.",
+    "desc": "A Strong Hook is a very powerful Hook that you might have on a character who you have Blackmailed.\n\nStrong Hooks are much more powerful than Weak Hooks, and can force someone to do terrible deeds for you — such as to become your Agent in a Murder (in addition to everything a Weak Hook can do!)\n\nA Strong Hook also prevents the target from taking any hostile actions towards the holder.\n\nStrong Hooks are not spent when used, but instead go on a cooldown before they can be used again. The passive effect is not lost when the Hook is used.",
     "dlc": null,
     "features": [],
     "id": "strong_hook",
@@ -10464,7 +10464,7 @@
       "Temples",
       "Temple Holdings"
     ],
-    "desc": "Temples are a Holding Type that can be held by members of the Clergy as Church Holdings (the Theocratic Government Form). However, in Faiths with the … Doctrine, anyone can hold Temples without penalty.\n\nTemples provide a fairly even mix of Levies and Taxes.",
+    "desc": "Temples are a Holding Type that can be held by members of the Clergy as Church Holdings (the Theocratic Government Form). However, in Faiths with the Lay Clergy Doctrine, anyone can hold Temples without penalty.\n\nTemples provide a fairly even mix of Levies and Taxes.",
     "dlc": null,
     "features": [],
     "id": "temple_holding",
@@ -10475,7 +10475,7 @@
     "aliases": [
       "Temporal"
     ],
-    "desc": "A … Head of Faith acts much like a normal Ruler, with the Head of Faith Title being destroyed should they lose all their land.\n\nShould the Doctrines of the Faith allow for Great Holy Wars they will be Directed (e.g. Jihads).",
+    "desc": "A Temporal Head of Faith acts much like a normal Ruler, with the Head of Faith Title being destroyed should they lose all their land.\n\nShould the Doctrines of the Faith allow for Great Holy Wars they will be Directed (e.g. Jihads).",
     "dlc": null,
     "features": [],
     "id": "temporal_head_of_faith",
@@ -11191,7 +11191,7 @@
   },
   {
     "aliases": [],
-    "desc": "… Pagan Faiths get a Battle Advantage in Counties of their faith.",
+    "desc": "Unreformed Pagan Faiths get a Battle Advantage in Counties of their faith.",
     "dlc": null,
     "features": [],
     "id": "unreformed_pagan_combat_bonus",
@@ -11320,7 +11320,7 @@
     "aliases": [
       "Vassal Contracts"
     ],
-    "desc": "Vassal Contracts dictate the Obligations between a Vassal and their Liege.\n\nVassals of the Feudal, Clan, Administrative and Nomadic Government Forms have access to different Obligations, negotiated individually for each Vassal.\n\nAll Vassals pay a percentage of their total Taxes and Levies to their Liege, based on their Obligations. These Contributions can in turn be modified by 'fine print' options such as ….\n\nSome Special Contracts are limited to certain Ranks:\n•… and …: Duke and above\n•…: Count and above\n•…: Count only\n\nNote, Governor Obligations are also known as Province Administrations.",
+    "desc": "Vassal Contracts dictate the Obligations between a Vassal and their Liege.\n\nVassals of the Feudal, Clan, Administrative and Nomadic Government Forms have access to different Obligations, negotiated individually for each Vassal.\n\nAll Vassals pay a percentage of their total Taxes and Levies to their Liege, based on their Obligations. These Contributions can in turn be modified by 'fine print' options such as Fortification Rights.\n\nSome Special Contracts are limited to certain Ranks:\n•Special Contract and Special Contract: Duke and above\n•Special Contract: Count and above\n•Special Contract: Count only\n\nNote, Governor Obligations are also known as Province Administrations.",
     "dlc": null,
     "features": [],
     "id": "vassal_contract",
@@ -11380,7 +11380,7 @@
       "Preferred Heirs",
       "Unpreferred Heirs"
     ],
-    "desc": "Every Vassal has a Vassal Stance which affects the Opinion they have with you as their Liege, and which Heir they prefer as successor to the Realm.\n\nVassals in the same stance will like and dislike the same things. For example; all …Glory Hound Vassals dislike when you lose Wars.\n\nEvery Vassal Stance prefers one specific Heir. Upon succession, each preferred Heir will have lower Legitimacy Expectations with the Vassals of that stance.\n\nThe Vassal Stances are:\n•…Courtly\n•…Parochial\n•…Glory Hound\n•…Zealot\n•…Minority\n•…Minor Landholder\n•…Belligerent",
+    "desc": "Every Vassal has a Vassal Stance which affects the Opinion they have with you as their Liege, and which Heir they prefer as successor to the Realm.\n\nVassals in the same stance will like and dislike the same things. For example; all Glory Hound Vassals dislike when you lose Wars.\n\nEvery Vassal Stance prefers one specific Heir. Upon succession, each preferred Heir will have lower Legitimacy Expectations with the Vassals of that stance.\n\nThe Vassal Stances are:\n•Courtly\n•Parochial\n•Glory Hound\n•Zealot\n•Minority\n•Minor Landholder\n•Belligerent",
     "dlc": null,
     "features": [],
     "id": "vassal_stance",
@@ -11506,7 +11506,7 @@
       "Wanua Government",
       ""
     ],
-    "desc": "The Wanua Government shares weaknesses with the … Government, but also have reduced Domain Limit and Vassal Limit. While they use Gold to construct Buildings and recruit Men-at-Arms, they earn very little Gold from Buildings.\n\nHowever, they can …Barter, Raid, and have synergies with the Mandala Government as they gain Legitimacy from being a Tributary.",
+    "desc": "The Wanua Government shares weaknesses with the Government, but also have reduced Domain Limit and Vassal Limit. While they use Gold to construct Buildings and recruit Men-at-Arms, they earn very little Gold from Buildings.\n\nHowever, they can …Barter, Raid, and have synergies with the Mandala Government as they gain Legitimacy from being a Tributary.",
     "dlc": "All Under Heaven",
     "features": [
       "all_under_heaven"
@@ -11618,7 +11618,7 @@
     "aliases": [
       "Weak Hooks"
     ],
-    "desc": "A Weak Hook is a fairly common Hook that you might have on a character who owes you a favor, or that you have manipulated to do your will.\n\nWhile there are many interactions where a Weak Hook can be used, for example in Marriage proposals, they cannot be used to force someone to become your Agent in a … and do not provide a passive benefit (for that, a Strong Hook is necessary.)\n\nEvery child born to a Noble House also owes the House Head an initial Weak Hook.\n\nOnce a Weak Hook is used, it is spent.",
+    "desc": "A Weak Hook is a fairly common Hook that you might have on a character who owes you a favor, or that you have manipulated to do your will.\n\nWhile there are many interactions where a Weak Hook can be used, for example in Marriage proposals, they cannot be used to force someone to become your Agent in a Murder and do not provide a passive benefit (for that, a Strong Hook is necessary.)\n\nEvery child born to a Noble House also owes the House Head an initial Weak Hook.\n\nOnce a Weak Hook is used, it is spent.",
     "dlc": null,
     "features": [],
     "id": "weak_hook",

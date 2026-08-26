@@ -34,7 +34,7 @@ export const TABS: Tab[] = [
   { slug: 'council', label: 'Council', section: 'Characters', status: 'placeholder', summary: 'Council positions and tasks.' },
   { slug: 'nicknames', label: 'Nicknames', section: 'Characters', status: 'placeholder', summary: 'All 683 nicknames and how to earn them.' },
   // Dynasty
-  { slug: 'legacies', label: 'Dynasty Legacies', section: 'Dynasty', status: 'placeholder', summary: '21 legacy tracks, five steps each.' },
+  { slug: 'legacies', label: 'Dynasty Legacies', section: 'Dynasty', status: 'built', summary: '21 legacy tracks, five steps each.' },
   { slug: 'house', label: 'House Mechanics', section: 'Dynasty', status: 'placeholder', summary: 'Unity, aspirations, mottos.' },
   { slug: 'accolades', label: 'Accolades', section: 'Dynasty', status: 'placeholder', summary: 'Knight accolade types and pairings.' },
   // Culture
@@ -43,16 +43,16 @@ export const TABS: Tab[] = [
   { slug: 'pillars', label: 'Pillars', section: 'Culture', status: 'placeholder', summary: 'Ethos, heritage, language, martial custom.' },
   { slug: 'cultures', label: 'Cultures', section: 'Culture', status: 'placeholder', summary: 'All 193 cultures and their setups.' },
   // Faith
-  { slug: 'faiths', label: 'Faiths', section: 'Faith', status: 'placeholder', summary: '226 faiths under 49 religions.' },
-  { slug: 'doctrines', label: 'Doctrines & Tenets', section: 'Faith', status: 'placeholder', summary: 'Every doctrine and tenet, with piety costs.' },
-  { slug: 'holy-sites', label: 'Holy Sites', section: 'Faith', status: 'placeholder', summary: '322 holy sites and their bonuses.' },
+  { slug: 'faiths', label: 'Faiths', section: 'Faith', status: 'built', summary: '140 faiths under 49 religions.' },
+  { slug: 'doctrines', label: 'Doctrines & Tenets', section: 'Faith', status: 'built', summary: 'Every doctrine and tenet, with piety costs.' },
+  { slug: 'holy-sites', label: 'Holy Sites', section: 'Faith', status: 'built', summary: '326 holy sites and their bonuses.' },
   // Realm
   { slug: 'governments', label: 'Governments', section: 'Realm', status: 'placeholder', summary: 'Feudal to nomadic: every government type.' },
   { slug: 'laws', label: 'Laws', section: 'Realm', status: 'placeholder', summary: 'Crown authority, succession, admin policies.' },
   { slug: 'contracts', label: 'Vassal Contracts', section: 'Realm', status: 'placeholder', summary: 'Obligations, stances, tax slots.' },
   { slug: 'domiciles', label: 'Domiciles', section: 'Realm', status: 'placeholder', summary: 'Camps and estates for landless play.' },
   // Holdings
-  { slug: 'buildings', label: 'Buildings', section: 'Holdings', status: 'placeholder', summary: '981 buildings in upgrade chains.' },
+  { slug: 'buildings', label: 'Buildings', section: 'Holdings', status: 'built', summary: '975 buildings in 366 upgrade chains.' },
   { slug: 'holdings', label: 'Holdings', section: 'Holdings', status: 'placeholder', summary: 'Castle, city, temple, tribe.' },
   { slug: 'great-projects', label: 'Great Projects', section: 'Holdings', status: 'placeholder', summary: 'Special buildings and wonders.' },
   { slug: 'terrain', label: 'Terrain', section: 'Holdings', status: 'placeholder', summary: 'Terrain modifiers and building gates.' },
@@ -72,7 +72,7 @@ export const TABS: Tab[] = [
   { slug: 'decisions', label: 'Decisions', section: 'Activities', status: 'placeholder', summary: '431 decisions and their requirements.' },
   { slug: 'events', label: 'Events', section: 'Activities', status: 'placeholder', summary: 'The 9,792-event browser.' },
   // Concepts
-  { slug: 'concepts', label: 'Glossary', section: 'Concepts', status: 'placeholder', summary: 'Every game concept, auto-linked.' },
+  { slug: 'concepts', label: 'Glossary', section: 'Concepts', status: 'built', summary: 'Every game concept, auto-linked.' },
   { slug: 'defines', label: 'Defines', section: 'Concepts', status: 'placeholder', summary: '1,122 engine constants, annotated.' },
   { slug: 'dlc', label: 'DLC Index', section: 'Concepts', status: 'placeholder', summary: 'What each DLC adds.' },
   { slug: 'patch-notes', label: 'Patch Notes', section: 'Concepts', status: 'placeholder', summary: 'Auto-generated data changelog.' },

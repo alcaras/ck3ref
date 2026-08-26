@@ -16,6 +16,12 @@ data:
 	@python3 scripts/build_maa.py
 	@python3 scripts/build_traits.py
 	@python3 scripts/build_lifestyles.py
+	@python3 scripts/build_legacies.py
+	@python3 scripts/build_buildings.py
+	@python3 scripts/build_faiths.py
+	@python3 scripts/build_doctrines.py
+	@python3 scripts/build_holy_sites.py
+	@python3 scripts/build_concepts.py
 	@python3 scripts/build_entities.py
 	@python3 scripts/build_backlinks.py
 

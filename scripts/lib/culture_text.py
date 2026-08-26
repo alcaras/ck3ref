@@ -85,6 +85,59 @@ def _pretty(key):
     return key.replace("_", " ").title()
 
 
+def static_value(name):
+    """Script value -> number, folding pure-arithmetic chains that
+    ck3.resolve_value reports as rule structures (value/add/multiply/...)."""
+    n, rules = ck3.resolve_value(name)
+    if n is not None:
+        return n
+    if not isinstance(rules, list):
+        return None
+    acc = None
+    for r in rules:
+        if not isinstance(r, dict) or len(r) != 1:
+            return None
+        (op, v), = r.items()
+        if not isinstance(v, (int, float)):
+            return None
+        if op == "base":
+            acc = v
+        elif acc is None:
+            return None
+        elif op == "add":
+            acc += v
+        elif op == "subtract":
+            acc -= v
+        elif op == "multiply":
+            acc *= v
+        elif op == "divide" and v:
+            acc /= v
+        else:
+            return None
+    return acc
+
+
+def render_modifier(key, value):
+    """ck3.render_modifier, but with the modifier's display name run through
+    the same static pre-resolution (MOD_* loc can embed icon refs and
+    $knight$ chains). Falls back to ck3's version (and its missing-format
+    reporting) when no loc exists."""
+    raw = _chain(f"MOD_{key.upper()}", f"MOD_{key.upper()}_PREFIX", key)
+    if raw is None:
+        return ck3.render_modifier(key, value)
+    name = ck3.render_text(expand(raw))
+    fmt = ck3.modifier_formats().get(key, {})
+    if isinstance(value, bool):
+        return name
+    if not isinstance(value, (int, float)):
+        return f"{name}: {value}"
+    num = value * 100 if fmt.get("percent") and not fmt.get("already_percent") else value
+    decimals = fmt.get("decimals", 0)
+    magnitude = f"{num:+.{decimals}f}".rstrip("0").rstrip(".") if decimals else f"{num:+.0f}"
+    pct = "%" if fmt.get("percent") or fmt.get("already_percent") else ""
+    return f"{magnitude}{pct} {name}"
+
+
 def _chain(*keys):
     for k in keys:
         if not k:

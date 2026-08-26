@@ -393,7 +393,9 @@ _MISSING_MOD: set = set()
 
 def modifier_name(key):
     """Game-authored display name for a modifier key."""
-    for cand in (f"MOD_{key.upper()}", f"MOD_{key.upper()}_PREFIX", key):
+    up = key.upper()
+    for cand in (f"MOD_{up}", f"MOD_{up}_PREFIX", f"MOD_MONTHLY_{up}",
+                 f"MOD_CHARACTER_{up}", key):
         v = loc(cand)
         if v is not None:
             return render_text(v)
@@ -416,6 +418,8 @@ def render_modifier(key, value):
         return f"{name}: {value}"
     num = value * 100 if fmt.get("percent") and not fmt.get("already_percent") else value
     decimals = fmt.get("decimals", 0)
+    if decimals == 0 and isinstance(num, float) and num != int(num):
+        decimals = 2  # avoid squashing small floats (e.g. -0.05 monthly) to "-0"
     magnitude = f"{num:+.{decimals}f}".rstrip("0").rstrip(".") if decimals else f"{num:+.0f}"
     if fmt.get("no_difference_sign"):
         magnitude = magnitude.lstrip("+")

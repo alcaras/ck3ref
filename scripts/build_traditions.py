@@ -128,10 +128,33 @@ def extract_cost(cost_blk):
                         else:
                             amt = resolve_amount(iv)
                 if when is None:
-                    when = ck3._describe_trigger(item.get("limit"))
+                    when = describe_limit(item.get("limit"))
                 rules.append({"when": when, "op": op, "amount": amt})
         out[cur] = {"base": base, "rules": rules}
     return out
+
+
+def describe_limit(limit):
+    """Cost-rule limits whose desc the game left out: name the has_trait
+    checks (the only shape in the data); anything else falls back to the
+    library's honest shallow dump."""
+    traits = []
+
+    def walk(b, depth=0):
+        if isinstance(b, Tagged):
+            b = b.block
+        if not isinstance(b, Block) or depth > 4:
+            return
+        for k, _o, v in b:
+            if k == "has_trait" and isinstance(v, str):
+                traits.append(_render(ck3.loc(f"trait_{v}") or ck3.loc(v) or v.replace("_", " ").title()))
+            elif isinstance(v, (Block, Tagged)):
+                walk(v, depth + 1)
+
+    walk(limit)
+    if traits:
+        return "Character has the " + " or ".join(traits) + " trait"
+    return ck3._describe_trigger(limit)
 
 
 def trigger_label(key):
@@ -211,7 +234,7 @@ def modifier_lines(blk):
             n, _rules = ck3.resolve_value(v)
             if n is not None:
                 v = n
-        lines.append(ck3.render_modifier(k, v))
+        lines.append(culture_text.render_modifier(k, v))
     return lines
 
 
@@ -260,7 +283,7 @@ def main():
             if isinstance(dcm, Block):
                 doctrine = dcm.get("doctrine")
                 dname = _render(ck3.loc(doctrine) or ck3.loc(f"{doctrine}_name") or str(doctrine))
-                lines = [ck3.render_modifier(k, v) for k, _o, v in dcm
+                lines = [culture_text.render_modifier(k, v) for k, _o, v in dcm
                          if k not in (None, "doctrine")]
                 if lines:
                     mods[f"Characters ({dname} faiths)"] = lines

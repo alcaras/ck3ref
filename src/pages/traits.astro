@@ -81,7 +81,7 @@ const pct = (v: number) => `${Math.round(v * 100)}%`;
             {g.items.map((t) => (
               <tr
                 id={t.id}
-                data-name={`${t.name} ${t.modifiers.join(' ')} ${Object.keys(t.skills).join(' ')}`.toLowerCase()}
+                data-name={`${t.name} ${t.modifiers.map((m) => m.t).join(' ')} ${Object.keys(t.skills).join(' ')}`.toLowerCase()}
                 data-cat={g.label}
                 data-dlc={t.dlc ?? 'base'}
               >
@@ -104,9 +104,9 @@ const pct = (v: number) => `${Math.round(v * 100)}%`;
                   </span>
                 </td>
                 <td class="fx">
-                  {t.modifiers.map((m) => <div class:list={[{ neg: m.startsWith('-') }]}>{m}</div>)}
+                  {t.modifiers.map((m) => <div class:list={[{ neg: m.p === 'bad' }]}>{m.t}</div>)}
                   {t.conditional.map((c) => (
-                    <div class="cond" title={c.condition}>{c.lines.join(' · ')} <span class="cond-tag">conditional</span></div>
+                    <div class="cond" title={c.condition}>{c.lines.map((l) => l.t).join(' · ')} <span class="cond-tag">conditional</span></div>
                   ))}
                   {Object.entries(t.tracks).map(([tn, levels]) => (
                     <details class="track">

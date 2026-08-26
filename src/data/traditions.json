@@ -509,7 +509,7 @@
       "modifiers": {
         "Characters": [
           "+10% Levy Size",
-          "+5 Number of …Knights",
+          "+5 Number of Knights",
           "+3 Size of Men-at-Arms Regiments",
           "-25% Army Gold Maintenance",
           "-25% Men-at-Arms Recruitment Cost",
@@ -1270,7 +1270,7 @@
         "Characters": [
           "+25% Men-at-Arms Recruitment Cost",
           "+100% Knight Effectiveness",
-          "+2 Number of …Knights",
+          "+2 Number of Knights",
           "+20% Accolade Glory Gain",
           "-2 Size of Men-at-Arms Regiments",
           "-1 Max Men-at-Arms Regiments",
@@ -2458,7 +2458,7 @@
       },
       "modifiers": {
         "Characters": [
-          "20 Learn Language Phase Length days faster per Scheme Phase"
+          "-20 Learn Language Phase Length"
         ]
       },
       "name": "Astute Diplomats",
@@ -2990,7 +2990,7 @@
       "modifiers": {
         "Characters": [
           "+1 Max Learn Language Schemes",
-          "20 Learn Language Phase Length days faster per Scheme Phase"
+          "-20 Learn Language Phase Length"
         ],
         "Culture": [
           "+25% Cultural Acceptance Gain"
@@ -3153,11 +3153,11 @@
       },
       "modifiers": {
         "Characters (Female Dominated faiths)": [
-          "Name: tradition equal inheritance name",
+          "Name: tradition_equal_inheritance_name",
           "+10 Opinion of Male Rulers"
         ],
         "Characters (Male Dominated faiths)": [
-          "Name: tradition equal inheritance name",
+          "Name: tradition_equal_inheritance_name",
           "+10 Opinion of Female Rulers"
         ]
       },
@@ -4566,7 +4566,7 @@
         {
           "hasLoc": true,
           "key": "maritime_mercantilism_coastal_holdings",
-          "text": "Coastal Holdings in Counties of this Culture provide an additional +…% Tax",
+          "text": "Coastal Holdings in Counties of this Culture provide an additional +10% Tax",
           "value": true
         },
         {
@@ -6108,7 +6108,7 @@
         "Characters": [
           "+20 Eligible Child Opinion",
           "+50% Short Reign Duration",
-          "20 Hostile Scheme Phase Length days faster per Scheme Phase"
+          "-20 Hostile Scheme Phase Length"
         ]
       },
       "name": "Byzantine Traditions",
@@ -6407,7 +6407,7 @@
       },
       "modifiers": {
         "Characters": [
-          "+2 Number of …Knights",
+          "+2 Number of Knights",
           "+5 Negate Prowess Penalty Add",
           "+20% Accolade Glory Gain",
           "+5% Legend Spread Chance"
@@ -6627,7 +6627,7 @@
       },
       "modifiers": {
         "Characters": [
-          "+0.15 Piety per Legitimacy Level /month",
+          "+0.15 Piety per Legitimacy Level",
           "+5 Court Grandeur Baseline Add",
           "+5% Monthly Lifestyle Experience",
           "-15 Opinion of Different Cultures",
@@ -7069,7 +7069,7 @@
       },
       "modifiers": {
         "Characters": [
-          "+2 Number of …Knights",
+          "+2 Number of Knights",
           "+5 Negate Prowess Penalty Add",
           "+20% Accolade Glory Gain",
           "+10% Heavy Infantry Toughness"
@@ -7483,8 +7483,8 @@
       "modifiers": {
         "Characters": [
           "+20% Monthly Court Grandeur Change",
-          "10 Political Scheme Phase Length days faster per Scheme Phase",
-          "10 Personal Scheme Phase Length days faster per Scheme Phase"
+          "-10 Political Scheme Phase Length",
+          "-10 Personal Scheme Phase Length"
         ]
       },
       "name": "Palace Politics",
@@ -8346,7 +8346,7 @@
       },
       "modifiers": {
         "Characters": [
-          "+2 Number of …Knights",
+          "+2 Number of Knights",
           "+5 Negate Prowess Penalty Add",
           "+20% Accolade Glory Gain"
         ]
@@ -8673,7 +8673,7 @@
       "modifiers": {
         "Characters": [
           "-5% Cultural Head Fascination Mult",
-          "+1 Number of …Knights",
+          "+1 Number of Knights",
           "+2 Prowess",
           "+10% Accolade Glory Gain"
         ]
@@ -10570,12 +10570,12 @@
             {
               "amount": 0.75,
               "op": "multiply",
-              "when": "scope:character …"
+              "when": "Character has the Scholar trait"
             },
             {
               "amount": 0.5,
               "op": "multiply",
-              "when": "scope:character …"
+              "when": "Character has the Confucian Education trait"
             }
           ]
         }
@@ -11911,12 +11911,12 @@
       },
       "modifiers": {
         "Characters": [
-          "+10 Innovation progress chance from Fascination % / month",
+          "+10 Innovation progress chance from Fascination",
           "+5% Monthly Lifestyle Experience",
           "-25% Diplomatic Range"
         ],
         "Culture": [
-          "-20 Innovation progress chance from Spread % / month"
+          "-20 Innovation progress chance from Spread"
         ]
       },
       "name": "Inward Perfection",
@@ -13211,7 +13211,7 @@
       },
       "modifiers": {
         "Characters": [
-          "20 Learn Language Phase Length days faster per Scheme Phase"
+          "-20 Learn Language Phase Length"
         ]
       },
       "name": "Linguists",
@@ -14688,7 +14688,7 @@
       },
       "modifiers": {
         "Characters": [
-          "20 Hostile Scheme Phase Length days slower per Scheme Phase"
+          "+20 Hostile Scheme Phase Length"
         ]
       },
       "name": "Equitable",
@@ -15110,7 +15110,7 @@
       },
       "modifiers": {
         "Characters": [
-          "+1 Number of …Knights",
+          "+1 Number of Knights",
           "+10% Accolade Glory Gain"
         ]
       },
@@ -15216,7 +15216,7 @@
       },
       "modifiers": {
         "Characters": [
-          "-2 Number of …Knights",
+          "-2 Number of Knights",
           "+25% Knight Effectiveness"
         ]
       },
@@ -15288,7 +15288,7 @@
       },
       "modifiers": {
         "Characters": [
-          "+1 Number of …Knights",
+          "+1 Number of Knights",
           "+10% Accolade Glory Gain"
         ]
       },
@@ -16013,7 +16013,7 @@
       },
       "modifiers": {
         "Characters": [
-          "+2 Number of …Knights",
+          "+2 Number of Knights",
           "+5 Negate Prowess Penalty Add",
           "+10% Accolade Glory Gain"
         ]

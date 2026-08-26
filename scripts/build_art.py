@@ -20,10 +20,16 @@ import ck3
 MIRROR = Path(os.environ.get("CK3REF_DIR", Path.home() / "Library/CloudStorage/Dropbox/cc/ck3ref"))
 ICONS = MIRROR / "game/gfx/interface/icons"
 
-# (json file, gfx subfolder, output subdir, icon field, id field)
+# (json file, records path, gfx subfolder, output subdir, icon field, id field,
+#  quiet) — quiet=True: absence is expected (game has no art for some entries),
+#  skip silently with no _default fallback.
 CATEGORIES = [
-    ("maa.json", "regimenttypes", "maa", "icon", "id"),
-    ("traits.json", "traits", "traits", "icon", "id"),
+    ("maa.json", None, "regimenttypes", "maa", "icon", "id", False),
+    ("traits.json", None, "traits", "traits", "icon", "id", False),
+    ("legacies.json", None, "dynasty", "legacies", "icon", "id", False),
+    ("buildings.json", None, "building_types", "buildings", "icon", "icon", False),
+    ("faiths.json", "faiths", "faith", "faith", "icon", "id", False),
+    ("doctrines.json", "doctrines", "faith_doctrines", "faith_doctrines", "icon", "id", True),
 ]
 
 
@@ -38,27 +44,34 @@ def convert(src: Path, dst: Path) -> bool:
 
 
 def main():
-    for json_file, gfx_sub, out_sub, icon_field, id_field in CATEGORIES:
+    for json_file, rec_path, gfx_sub, out_sub, icon_field, id_field, quiet in CATEGORIES:
         path = ck3.ROOT / "src/data" / json_file
         if not path.exists():
             continue
         records = json.loads(path.read_text(encoding="utf-8"))
-        if isinstance(records, dict):
-            records = list(records.values())
+        if rec_path:
+            records = records[rec_path]
+        seen = set()
         missing = []
         done = 0
         for rec in records:
             icon = rec.get(icon_field) or rec.get(id_field)
-            dst = ck3.ROOT / "public/img" / out_sub / f"{rec[id_field]}.webp"
+            out_id = rec[id_field]
+            if out_id in seen:
+                continue
+            seen.add(out_id)
+            dst = ck3.ROOT / "public/img" / out_sub / f"{out_id}.webp"
             if convert(ICONS / gfx_sub / f"{icon}.dds", dst):
                 done += 1
+            elif quiet:
+                continue
             elif convert(ICONS / gfx_sub / "_default.dds", dst):
                 done += 1
-                missing.append(rec[id_field])
+                missing.append(out_id)
             else:
-                missing.append(rec[id_field] + " (no fallback!)")
-        print(f"✓ art: {done}/{len(records)} {out_sub} icons → public/img/{out_sub}/")
-        if missing:
+                missing.append(out_id + " (no fallback!)")
+        print(f"✓ art: {done}/{len(seen)} {out_sub} icons → public/img/{out_sub}/")
+        if missing and not quiet:
             print(f"⚠ {len(missing)} fell back or failed: {missing[:8]}"
                   " (mirror may still be Dropbox-syncing; re-run make art)")
 

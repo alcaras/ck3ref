@@ -135,7 +135,7 @@ def modifier_lines(blk):
             n, _rules = ck3.resolve_value(v)
             if n is not None:
                 v = n
-        lines.append(ck3.render_modifier(k, v))
+        lines.append(culture_text.render_modifier(k, v))
     return lines
 
 
