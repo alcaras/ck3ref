@@ -1,0 +1,53 @@
+---
+import Base from '../layouts/Base.astro';
+import dlcs from '../data/dlc.json';
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const slug = (n: string) => n.toLowerCase().replace(/ /g, '-').replace(/&/g, 'and');
+---
+<Base
+  title="DLC Index"
+  active="dlc"
+  lede="What each expansion actually adds, aggregated from the DLC provenance of every dataset on this site. Cosmetic packs (attire, music) don't add rules and aren't listed."
+  stats={[
+    { value: dlcs.length, label: 'DLCs with gameplay content' },
+    { value: dlcs.reduce((n, d) => n + d.total, 0), label: 'tagged additions' },
+  ]}
+>
+  {dlcs.map((d) => (
+    <section id={slug(d.name)}>
+      <h2 class="group-h">
+        {d.name}
+        <span class="count">{d.total} additions{d.type ? ` · ${d.type}` : ''}</span>
+      </h2>
+      <div class="dlc-row">
+        <img class="dlc-thumb" src={`${base}/img/dlc/${slug(d.name)}.webp`} alt=""
+          width="180" loading="lazy" onerror="this.hidden=true" />
+        <div class="dlc-content">
+          {Object.entries(d.content).map(([label, bucket]: [string, any]) => (
+            <div class="bucket">
+              <span class="b-label">{label}</span>
+              <span class="chips">
+                {bucket.items.slice(0, 24).map((n: string) => (
+                  <a class="chip" href={`${base}/${bucket.page}`}>{n}</a>
+                ))}
+                {bucket.items.length > 24 && (
+                  <span class="chip subtle">+{bucket.items.length - 24} more</span>
+                )}
+              </span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  ))}
+
+  <style>
+    .dlc-row { display: flex; gap: 1rem; align-items: flex-start; }
+    .dlc-thumb { border-radius: var(--r); border: 1px solid var(--line-soft); flex: none; }
+    .dlc-content { display: flex; flex-direction: column; gap: 0.5rem; }
+    .bucket { display: flex; gap: 0.6rem; align-items: baseline; }
+    .b-label { color: var(--dim); font-size: 0.78rem; min-width: 8.5rem; flex: none; }
+    @media (max-width: 720px) { .dlc-row { flex-direction: column; } }
+  </style>
+</Base>

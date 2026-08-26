@@ -13,11 +13,12 @@ set -euo pipefail
 CK3REF_DIR="${CK3REF_DIR:-$HOME/Library/CloudStorage/Dropbox/cc/ck3ref}"
 DEST="$(cd "$(dirname "$0")/.." && pwd)/reference"
 
-# Phase 0 subtrees. events/history/map_data join in phase 2 (start-date browser).
+# events joins in phase 3 (events browser).
 SUBTREES=(
   game/common
   game/localization/english
   game/dlc_metadata
+  game/history
   jomini/common
 )
 

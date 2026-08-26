@@ -74,7 +74,7 @@ export const TABS: Tab[] = [
   // Concepts
   { slug: 'concepts', label: 'Glossary', section: 'Concepts', status: 'built', summary: 'Every game concept, auto-linked.' },
   { slug: 'defines', label: 'Defines', section: 'Concepts', status: 'placeholder', summary: '1,122 engine constants, annotated.' },
-  { slug: 'dlc', label: 'DLC Index', section: 'Concepts', status: 'placeholder', summary: 'What each DLC adds.' },
+  { slug: 'dlc', label: 'DLC Index', section: 'Concepts', status: 'built', summary: 'What each DLC adds.' },
   { slug: 'patch-notes', label: 'Patch Notes', section: 'Concepts', status: 'placeholder', summary: 'Auto-generated data changelog.' },
   // Tools
   { slug: 'genetics', label: 'Genetics Calculator', section: 'Tools', status: 'placeholder', summary: 'Congenital trait inheritance odds.' },
