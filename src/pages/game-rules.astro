@@ -1,0 +1,108 @@
+---
+import Base from '../layouts/Base.astro';
+import rules from '../data/gamerules.json';
+
+const cats = [...new Set(rules.flatMap((r: any) => r.categories.length ? r.categories : ['other']))].sort();
+const catOf = (r: any) => (r.categories.length ? r.categories[0] : 'other');
+const blockers = rules.reduce(
+  (n: number, r: any) => n + r.options.filter((o: any) => o.blocksAchievements).length, 0);
+---
+<Base
+  title="Game Rules"
+  active="game-rules"
+  lede="Every rule you can set when starting a game, with its options and defaults. Options marked below disable achievements for that run."
+  stats={[
+    { value: rules.length, label: 'rules' },
+    { value: cats.length, label: 'categories' },
+    { value: blockers, label: 'block achievements' },
+  ]}
+>
+  <div class="filterbar">
+    <input type="search" id="q" placeholder="Filter by rule or option…" autocomplete="off" />
+    <select id="fcat">
+      <option value="">every category</option>
+      {cats.map((c) => <option value={c}>{c}</option>)}
+    </select>
+    <label class="chk"><input type="checkbox" id="onlyblock" /> only achievement-blocking</label>
+    <span class="hint" id="count"></span>
+  </div>
+
+  {cats.map((cat) => (
+    <section data-group={cat}>
+      <h2 class="group-h" id={cat}>
+        {cat}
+        <span class="count">{rules.filter((r: any) => catOf(r) === cat).length}</span>
+      </h2>
+      <div class="tbl-scroll">
+        <table class="ntbl">
+          <thead><tr><th>Rule</th><th>Options</th></tr></thead>
+          <tbody>
+            {rules.filter((r: any) => catOf(r) === cat).map((r: any) => (
+              <tr
+                id={r.id}
+                data-name={`${r.name} ${r.options.map((o: any) => o.name).join(' ')}`.toLowerCase()}
+                data-cat={cat}
+                data-block={r.options.some((o: any) => o.blocksAchievements) ? '1' : '0'}
+              >
+                <td class="name">
+                  <span class="u-name">{r.name}</span>
+                  {r.desc && <div class="u-sub">{r.desc}</div>}
+                </td>
+                <td>
+                  <span class="chips">
+                    {r.options.map((o: any) => (
+                      <span
+                        class:list={['chip', { 'chip--default': o.isDefault, 'chip--counter': o.blocksAchievements }]}
+                        title={[o.desc, o.blocksAchievements ? 'blocks achievements' : null]
+                          .filter(Boolean).join(' — ')}
+                      >
+                        {o.name}
+                        {o.isDefault && <span class="mark" title="default"> ●</span>}
+                        {o.blocksAchievements && <span class="mark" title="blocks achievements"> ⚑</span>}
+                      </span>
+                    ))}
+                  </span>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </section>
+  ))}
+
+  <script>
+    const q = document.getElementById('q') as HTMLInputElement;
+    const fcat = document.getElementById('fcat') as HTMLSelectElement;
+    const onlyblock = document.getElementById('onlyblock') as HTMLInputElement;
+    const count = document.getElementById('count')!;
+    const rows = [...document.querySelectorAll<HTMLTableRowElement>('tbody tr')];
+    const sections = [...document.querySelectorAll<HTMLElement>('section[data-group]')];
+    function apply() {
+      const needle = q.value.trim().toLowerCase();
+      const c = fcat.value;
+      let shown = 0;
+      for (const r of rows) {
+        const ok = (!needle || (r.dataset.name ?? '').includes(needle)) &&
+          (!c || r.dataset.cat === c) &&
+          (!onlyblock.checked || r.dataset.block === '1');
+        r.hidden = !ok;
+        if (ok) shown++;
+      }
+      for (const s of sections)
+        s.hidden = ![...s.querySelectorAll('tbody tr')].some((r) => !(r as HTMLTableRowElement).hidden);
+      count.textContent = `${shown} of ${rows.length}`;
+    }
+    for (const el of [q, fcat, onlyblock]) el.addEventListener('input', apply);
+    apply();
+  </script>
+
+  <style>
+    .ntbl td.name { white-space: normal; max-width: 20rem; }
+    .chips { max-width: 52rem; }
+    .chip--default { border-color: color-mix(in oklab, var(--brass) 55%, var(--line)); }
+    .mark { color: var(--brass); }
+    .chip--counter .mark { color: var(--rubric); }
+    .chk { color: var(--dim); font-size: 0.8rem; display: flex; gap: 0.35rem; align-items: center; }
+  </style>
+</Base>

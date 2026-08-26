@@ -1,0 +1,123 @@
+---
+import Base from '../layouts/Base.astro';
+import data from '../data/elections.json';
+
+const { elections, appointments, stances, confederations } = data as any;
+---
+<Base
+  title="Elections & Succession"
+  active="elections"
+  lede="How elected and appointed titles pick their next holder: who votes, who can stand, and which factors move a vote. The weights are the game's named contributors — the totals depend on live state, so none are collapsed into a single number here."
+  stats={[
+    { value: elections.length, label: 'election types' },
+    { value: appointments.length, label: 'appointment types' },
+    { value: stances.length, label: 'vassal stances' },
+  ]}
+>
+  <section>
+    <h2 class="group-h" id="elections">Elective succession <span class="count">{elections.length}</span></h2>
+    <div class="cards">
+      {elections.map((e: any) => (
+        <article class="card" id={e.id}>
+          <div class="c-h">
+            <b>{e.name}</b>
+            {e.dlc && <span class="badge-dlc">{e.dlc}</span>}
+          </div>
+          {e.electors.length > 0 && (
+            <div class="blk"><span class="lbl">Electors</span>
+              <ul>{e.electors.map((l: string) => <li>{l}</li>)}</ul></div>
+          )}
+          {e.voteStrength.length > 0 && (
+            <div class="blk"><span class="lbl">Vote strength</span>
+              <ul>{e.voteStrength.map((l: string) => <li>{l}</li>)}</ul></div>
+          )}
+          {e.candidateScore.length > 0 && (
+            <div class="blk"><span class="lbl">Candidate score</span>
+              <ul>{e.candidateScore.map((l: string) => <li>{l}</li>)}</ul></div>
+          )}
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <section>
+    <h2 class="group-h" id="appointments">Appointment succession <span class="count">{appointments.length}</span></h2>
+    <div class="tbl-scroll">
+      <table class="ntbl">
+        <thead><tr><th>Type</th><th>Tier</th><th>Rules</th><th>Candidate score</th><th>DLC</th></tr></thead>
+        <tbody>
+          {appointments.map((a: any) => (
+            <tr id={a.id}>
+              <td class="name">{a.name}</td>
+              <td class="subtle">{a.level ?? '—'}</td>
+              <td class="subtle">
+                {[a.allowChildren && 'children eligible', a.sameTier && 'same-tier candidates']
+                  .filter(Boolean).join(' · ') || '—'}
+              </td>
+              <td class="fx">{a.candidateScore.slice(0, 4).map((l: string) => <div>{l}</div>)}</td>
+              <td>{a.dlc ? <span class="badge-dlc">{a.dlc}</span> : <span class="subtle">—</span>}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="group-h" id="stances">Vassal stances <span class="count">{stances.length}</span></h2>
+    <p class="note">Each AI vassal adopts a stance that colours how it judges you and whom it backs.</p>
+    <div class="tbl-scroll">
+      <table class="ntbl">
+        <thead><tr><th>Stance</th><th>What drives it</th><th>DLC</th></tr></thead>
+        <tbody>
+          {stances.map((s: any) => (
+            <tr id={s.id}>
+              <td class="name">{s.name}{s.desc && <div class="u-sub">{s.desc}</div>}</td>
+              <td class="fx">{s.factors.slice(0, 5).map((l: string) => <div>{l}</div>)}</td>
+              <td>{s.dlc ? <span class="badge-dlc">{s.dlc}</span> : <span class="subtle">—</span>}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  {confederations.length > 0 && (
+    <section>
+      <h2 class="group-h" id="confederations">Confederations <span class="count">{confederations.length}</span></h2>
+      <div class="tbl-scroll">
+        <table class="ntbl">
+          <thead><tr><th>Confederation</th><th>Based on</th><th>Cohesion levels</th><th>DLC</th></tr></thead>
+          <tbody>
+            {confederations.map((c: any) => (
+              <tr id={c.id}>
+                <td class="name">{c.name}</td>
+                <td class="subtle">{c.houseBased ? 'houses' : 'characters'}</td>
+                <td class="fx">
+                  {c.levels.map((l: any) => (
+                    <div><b>{l.name}</b>{l.lines.length > 0 && ` — ${l.lines.join(' · ')}`}</div>
+                  ))}
+                </td>
+                <td>{c.dlc ? <span class="badge-dlc">{c.dlc}</span> : <span class="subtle">—</span>}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </section>
+  )}
+
+  <style>
+    .cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 0.7rem; }
+    .card { background: var(--panel); border: 1px solid var(--line-soft); border-radius: var(--r); padding: 0.7rem 0.85rem; }
+    .c-h { display: flex; gap: 0.6rem; align-items: baseline; margin-bottom: 0.4rem; }
+    .c-h b { font-family: var(--font-display); font-size: 1rem; }
+    .blk { margin-bottom: 0.4rem; }
+    .lbl { color: var(--faint); font-size: 0.7rem; font-family: var(--font-mono); }
+    .blk ul { margin: 0.1rem 0 0; padding-left: 1rem; color: var(--dim); font-size: 0.8rem; }
+    .fx { font-size: 0.8rem; max-width: 30rem; color: var(--dim); }
+    .fx b { color: var(--vellum); font-weight: 600; }
+    .note { color: var(--dim); max-width: 66ch; margin: 0 0 0.6rem; }
+    .ntbl td.name { white-space: normal; max-width: 18rem; }
+  </style>
+</Base>

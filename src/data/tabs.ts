@@ -27,6 +27,9 @@ export const SECTIONS = [
 
 export const TABS: Tab[] = [
   // Characters
+  { slug: 'royal-court', label: 'Royal Court', section: 'Characters', status: 'built', summary: 'Court types, amenity upkeep, and inspirations.' },
+  { slug: 'secrets', label: 'Secrets & Hooks', section: 'Characters', status: 'built', summary: 'What can be held over someone, and what a hook is worth.' },
+  { slug: 'interactions', label: 'Interactions', section: 'Characters', status: 'built', summary: 'Every character-window action: cost, cooldown, and conditions.' },
   { slug: 'traits', label: 'Traits', section: 'Characters', status: 'built', summary: 'All character traits: modifiers, opinions, opposites, inheritance.' },
   { slug: 'lifestyles', label: 'Lifestyles & Perks', section: 'Characters', status: 'built', summary: 'The 18 perk trees, rendered as trees.' },
   { slug: 'schemes', label: 'Schemes', section: 'Characters', status: 'built', summary: 'Scheme types, agents, countermeasures.' },
@@ -48,6 +51,9 @@ export const TABS: Tab[] = [
   { slug: 'doctrines', label: 'Doctrines & Tenets', section: 'Faith', status: 'built', summary: 'Every doctrine and tenet, with piety costs.' },
   { slug: 'holy-sites', label: 'Holy Sites', section: 'Faith', status: 'built', summary: '326 holy sites and their bonuses.' },
   // Realm
+  { slug: 'administration', label: 'Administration', section: 'Realm', status: 'built', summary: 'Tax slots, obligations, and lease contracts.' },
+  { slug: 'elections', label: 'Elections & Succession', section: 'Realm', status: 'built', summary: 'Elective and appointed succession, vassal stances, confederations.' },
+  { slug: 'factions', label: 'Factions', section: 'Realm', status: 'built', summary: 'What vassals organise against you, and what they demand.' },
   { slug: 'governments', label: 'Governments', section: 'Realm', status: 'built', summary: 'Feudal to nomadic: every government type.' },
   { slug: 'laws', label: 'Laws', section: 'Realm', status: 'built', summary: 'Crown authority, succession, admin policies.' },
   { slug: 'contracts', label: 'Vassal Contracts', section: 'Realm', status: 'built', summary: 'Obligations, stances, tax slots.' },
@@ -75,6 +81,7 @@ export const TABS: Tab[] = [
   { slug: 'decisions', label: 'Decisions', section: 'Activities', status: 'built', summary: '431 decisions and their requirements.' },
   { slug: 'events', label: 'Events', section: 'Activities', status: 'built', summary: 'Searchable index of all 9,823 events.' },
   // Concepts
+  { slug: 'game-rules', label: 'Game Rules', section: 'Concepts', status: 'built', summary: 'Every start-of-game rule, its options, and achievement blockers.' },
   { slug: 'concepts', label: 'Glossary', section: 'Concepts', status: 'built', summary: 'Every game concept, auto-linked.' },
   { slug: 'defines', label: 'Defines', section: 'Concepts', status: 'built', summary: '1,122 engine constants, annotated.' },
   { slug: 'dlc', label: 'DLC Index', section: 'Concepts', status: 'built', summary: 'What each DLC adds.' },

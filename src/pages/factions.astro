@@ -1,0 +1,65 @@
+---
+import Base from '../layouts/Base.astro';
+import factions from '../data/factions.json';
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+---
+<Base
+  title="Factions"
+  active="factions"
+  lede="What your vassals can organise against you: each faction's demand, the war it declares if you refuse, and who is eligible to join."
+  stats={[
+    { value: factions.length, label: 'faction types' },
+    { value: factions.filter((f: any) => f.casusBelli).length, label: 'declare war' },
+    { value: factions.filter((f: any) => f.countyFaction).length, label: 'county factions' },
+  ]}
+>
+  <div class="tbl-scroll">
+    <table class="ntbl">
+      <thead>
+        <tr><th>Faction</th><th>If it wins</th><th>Who can join</th><th>Type</th><th>DLC</th></tr>
+      </thead>
+      <tbody>
+        {factions.map((f: any) => (
+          <tr id={f.id}>
+            <td class="name">
+              <span class="u-name">{f.name}</span>
+              {f.desc && <div class="u-sub">{f.desc}</div>}
+            </td>
+            <td class="fx">
+              {f.shortEffect && <div>{f.shortEffect}</div>}
+              {f.casusBelliName && (
+                <a class="chip chip--counter" href={`${base}/casus-belli#${f.casusBelli}`}>
+                  {f.casusBelliName}
+                </a>
+              )}
+              {!f.shortEffect && !f.casusBelliName && <span class="subtle">—</span>}
+            </td>
+            <td>
+              <span class="chips">
+                {[...f.canJoin, ...f.validWhen].slice(0, 6).map((c: any) => (
+                  <span class="chip chip--req">{c.negated && <span class="neg">not </span>}{c.name}</span>
+                ))}
+              </span>
+            </td>
+            <td class="subtle">{f.countyFaction ? 'county' : 'character'}</td>
+            <td>{f.dlc ? <span class="badge-dlc">{f.dlc}</span> : <span class="subtle">—</span>}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
+
+  <p class="prov">
+    Join conditions are the game's own trigger names, shown as written rather
+    than expanded — a faction's real eligibility also depends on live opinion
+    and power, which no static read can answer.
+  </p>
+
+  <style>
+    .ntbl td.name { white-space: normal; max-width: 20rem; }
+    .fx { font-size: 0.82rem; max-width: 24rem; }
+    .chips { max-width: 26rem; }
+    .prov { color: var(--faint); font-size: 0.78rem; max-width: 64ch; margin-top: 1.5rem; }
+  </style>
+</Base>

@@ -1,0 +1,562 @@
+{
+  "appointments": [
+    {
+      "allowChildren": true,
+      "candidateScore": [
+        "base 100 — when conditional",
+        "base 50 — when conditional",
+        "base 20 — when conditional",
+        "base 20 — when conditional",
+        "add Diplomacy",
+        "add Learning",
+        "add Martial",
+        "add Intrigue",
+        "add Stewardship",
+        "multiply 2"
+      ],
+      "dlc": null,
+      "id": "admin_emperor",
+      "level": null,
+      "name": "Admin emperor",
+      "sameTier": false
+    },
+    {
+      "allowChildren": false,
+      "candidateScore": [
+        "base Martial",
+        "add Diplomacy",
+        "add Stewardship",
+        "add Intrigue",
+        "add Learning",
+        "multiply 1",
+        "base 50 — when Blind, Incapable, Infirm",
+        "base 200 — when Disinherited",
+        "base 200 — when Gallivanter",
+        "base -30 — when Deviant"
+      ],
+      "dlc": null,
+      "id": "admin_governor",
+      "level": null,
+      "name": "Admin governor",
+      "sameTier": false
+    },
+    {
+      "allowChildren": false,
+      "candidateScore": [
+        "base 10; multiply Prestige level — when Family",
+        "base 15 — when conditional",
+        "base -10 — when conditional",
+        "base Learning",
+        "multiply 0.5",
+        "base Diplomacy",
+        "multiply 0.25",
+        "base Stewardship",
+        "multiply 0.25",
+        "base 10 — when Virtuoso Arbitrator, Golden Sovereign, Erudite Oracle"
+      ],
+      "dlc": null,
+      "id": "celestial_civic_governor",
+      "level": "merit",
+      "name": "Celestial civic governor",
+      "sameTier": true
+    },
+    {
+      "allowChildren": false,
+      "candidateScore": [
+        "base 10; multiply Prestige level — when Family",
+        "base Martial",
+        "multiply 2",
+        "base Learning; multiply 0.5 — when conditional",
+        "base Number of commander traits",
+        "multiply 20",
+        "base Prowess",
+        "base Var:merit military career score bonus — when conditional",
+        "base 10 — when conditional",
+        "base 20 — when conditional"
+      ],
+      "dlc": null,
+      "id": "celestial_military_governor",
+      "level": "merit",
+      "name": "Celestial military governor",
+      "sameTier": true
+    },
+    {
+      "allowChildren": false,
+      "candidateScore": [
+        "base 10 — when conditional",
+        "base -5 — when conditional",
+        "base 10 — when conditional",
+        "base Var:merit civilian career score bonus — when conditional",
+        "base 10 — when conditional",
+        "base 20 — when conditional",
+        "base 40 — when conditional",
+        "base 80 — when conditional",
+        "base Trait xp(lifestyle poet); multiply 0.25 — when conditional",
+        "base Trait xp(lifestyle poet); multiply 0.5 — when conditional"
+      ],
+      "dlc": null,
+      "id": "celestial_minister",
+      "level": "merit",
+      "name": "Celestial minister",
+      "sameTier": true
+    },
+    {
+      "allowChildren": false,
+      "candidateScore": [
+        "base Martial",
+        "add Diplomacy",
+        "add Stewardship",
+        "add Intrigue",
+        "add Learning",
+        "multiply 1",
+        "base 5 — when Governor",
+        "base 50 — when Blind, Incapable, Infirm",
+        "base 200 — when Disinherited",
+        "base 200 — when Gallivanter"
+      ],
+      "dlc": null,
+      "id": "japanese_governor",
+      "level": null,
+      "name": "Japanese governor",
+      "sameTier": false
+    },
+    {
+      "allowChildren": false,
+      "candidateScore": [
+        "base Martial",
+        "multiply 2",
+        "base Number of commander traits",
+        "multiply 20",
+        "base Prowess",
+        "base 10",
+        "multiply Dynasty.warfare legacy track perks",
+        "base 10 — when conditional",
+        "base 5 — when Governor",
+        "base 200 — when Disinherited"
+      ],
+      "dlc": null,
+      "id": "japanese_military_governor",
+      "level": null,
+      "name": "Japanese military governor",
+      "sameTier": false
+    },
+    {
+      "allowChildren": false,
+      "candidateScore": [
+        "base Martial",
+        "add Diplomacy",
+        "add Stewardship",
+        "add Intrigue",
+        "add Learning",
+        "multiply 1",
+        "base 5 — when Governor",
+        "base 50 — when Blind, Incapable, Infirm",
+        "base 200 — when Disinherited",
+        "base 200 — when Gallivanter"
+      ],
+      "dlc": null,
+      "id": "japanese_regent",
+      "level": null,
+      "name": "Japanese regent",
+      "sameTier": false
+    },
+    {
+      "allowChildren": false,
+      "candidateScore": [
+        "base 50 — when conditional",
+        "base 25 — when Domicile",
+        "base Var:merit civilian career score bonus — when conditional",
+        "base 10 — when conditional",
+        "base 20 — when conditional",
+        "base 40 — when conditional",
+        "base 80 — when conditional",
+        "base Age",
+        "divide 2",
+        "base Retirement age current value; subtract Age; multiply 3 — when conditional"
+      ],
+      "dlc": null,
+      "id": "meritocratic_civic_governor",
+      "level": "merit",
+      "name": "Meritocratic civic governor",
+      "sameTier": true
+    },
+    {
+      "allowChildren": false,
+      "candidateScore": [
+        "base Martial",
+        "multiply 2",
+        "base Learning; multiply 0.5 — when conditional",
+        "base Number of commander traits",
+        "multiply 20",
+        "base Prowess",
+        "base Var:merit military career score bonus — when conditional",
+        "base 10 — when conditional",
+        "base 20 — when conditional",
+        "base 40 — when conditional"
+      ],
+      "dlc": null,
+      "id": "meritocratic_military_governor",
+      "level": "merit",
+      "name": "Meritocratic military governor",
+      "sameTier": true
+    },
+    {
+      "allowChildren": false,
+      "candidateScore": [
+        "base Martial",
+        "add Diplomacy",
+        "add Stewardship",
+        "add Intrigue",
+        "add Learning",
+        "multiply 1",
+        "base 5 — when Governor",
+        "base 50 — when Blind, Incapable, Infirm",
+        "base 200 — when Disinherited",
+        "base 200 — when Gallivanter"
+      ],
+      "dlc": null,
+      "id": "meritocratic_regent",
+      "level": null,
+      "name": "Meritocratic regent",
+      "sameTier": true
+    }
+  ],
+  "confederations": [
+    {
+      "dlc": null,
+      "houseBased": true,
+      "id": "house_bloc_ceremony",
+      "levels": [
+        {
+          "lines": [],
+          "name": "Parameters"
+        },
+        {
+          "lines": [],
+          "name": "Any member house member"
+        }
+      ],
+      "name": "House bloc ceremony"
+    },
+    {
+      "dlc": null,
+      "houseBased": true,
+      "id": "house_bloc_determination",
+      "levels": [
+        {
+          "lines": [],
+          "name": "Any member house member"
+        }
+      ],
+      "name": "House bloc determination"
+    },
+    {
+      "dlc": null,
+      "houseBased": true,
+      "id": "house_bloc_humility",
+      "levels": [
+        {
+          "lines": [],
+          "name": "Any member house member"
+        }
+      ],
+      "name": "House bloc humility"
+    },
+    {
+      "dlc": null,
+      "houseBased": true,
+      "id": "house_bloc_prosperity",
+      "levels": [
+        {
+          "lines": [],
+          "name": "Parameters"
+        },
+        {
+          "lines": [],
+          "name": "Any member house member"
+        }
+      ],
+      "name": "House bloc prosperity"
+    },
+    {
+      "dlc": null,
+      "houseBased": true,
+      "id": "house_bloc_service",
+      "levels": [
+        {
+          "lines": [],
+          "name": "Parameters"
+        },
+        {
+          "lines": [],
+          "name": "Any member house member"
+        }
+      ],
+      "name": "House bloc service"
+    },
+    {
+      "dlc": null,
+      "houseBased": true,
+      "id": "house_bloc_strength",
+      "levels": [
+        {
+          "lines": [],
+          "name": "Parameters"
+        },
+        {
+          "lines": [],
+          "name": "Any member house member"
+        }
+      ],
+      "name": "House bloc strength"
+    },
+    {
+      "dlc": null,
+      "houseBased": false,
+      "id": "nomadic_confederation",
+      "levels": [],
+      "name": "Nomadic confederation"
+    }
+  ],
+  "elections": [
+    {
+      "candidateScore": [
+        "base 0"
+      ],
+      "candidates": [],
+      "dlc": null,
+      "electors": [
+        "add Holder"
+      ],
+      "id": "confederation_elective",
+      "name": "Confederation elective",
+      "voteStrength": [
+        "base 0",
+        "add 1 — when conditional",
+        "base Prestige level — when conditional",
+        "base Piety level — when conditional",
+        "add 1 — when conditional",
+        "add 1 — when conditional",
+        "add 2 — when conditional"
+      ]
+    },
+    {
+      "candidateScore": [
+        "base 0"
+      ],
+      "candidates": [],
+      "dlc": null,
+      "electors": [
+        "add Holder"
+      ],
+      "id": "feudal_elective",
+      "name": "Feudal elective",
+      "voteStrength": [
+        "base 1",
+        "add 1 — when Landed or landless administrative",
+        "add 3 — when conditional",
+        "add 2 — when conditional",
+        "add 1 — when conditional",
+        "base 1; add 1 — when conditional — when Powerful vassal",
+        "add 1 — when Is unplayable, Doctrine theocracy lay clergy",
+        "add 1 — when conditional"
+      ]
+    },
+    {
+      "candidateScore": [
+        "base 0"
+      ],
+      "candidates": [],
+      "dlc": null,
+      "electors": [
+        "add Holder"
+      ],
+      "id": "gaelic_elective",
+      "name": "Gaelic elective",
+      "voteStrength": [
+        "base 1",
+        "add 1 — when conditional",
+        "add 1 — when conditional",
+        "add 2 — when conditional",
+        "base 1; add 1 — when conditional — when Powerful vassal",
+        "add 1 — when conditional"
+      ]
+    },
+    {
+      "candidateScore": [
+        "base 0"
+      ],
+      "candidates": [],
+      "dlc": null,
+      "electors": [
+        "add Holder",
+        "base 1",
+        "add 200 — when conditional",
+        "add 75 — when conditional",
+        "base 10 — when Is unplayable"
+      ],
+      "id": "princely_elective",
+      "name": "Princely elective",
+      "voteStrength": [
+        "base 1",
+        "add 2 — when conditional",
+        "add 1 — when conditional",
+        "base 1; add 2 — when conditional — when Powerful vassal",
+        "add 2 — when Is unplayable, Doctrine theocracy lay clergy",
+        "add 4 — when conditional",
+        "add 1 — when conditional"
+      ]
+    },
+    {
+      "candidateScore": [
+        "base 0"
+      ],
+      "candidates": [],
+      "dlc": null,
+      "electors": [
+        "add Holder"
+      ],
+      "id": "saxon_elective",
+      "name": "Saxon elective",
+      "voteStrength": [
+        "base 1",
+        "add 3 — when conditional",
+        "add 2 — when conditional",
+        "add 1 — when conditional",
+        "base 1; add 1 — when conditional — when Powerful vassal",
+        "add 1 — when conditional"
+      ]
+    },
+    {
+      "candidateScore": [
+        "base 0"
+      ],
+      "candidates": [],
+      "dlc": null,
+      "electors": [
+        "add Holder"
+      ],
+      "id": "scandinavian_elective",
+      "name": "Scandinavian elective",
+      "voteStrength": [
+        "base 0",
+        "base Capital county.county opinion; multiply 0.2 — when Landed or landless administrative"
+      ]
+    },
+    {
+      "candidateScore": [
+        "base 0"
+      ],
+      "candidates": [],
+      "dlc": null,
+      "electors": [
+        "add Holder"
+      ],
+      "id": "tribal_elective",
+      "name": "Tribal elective",
+      "voteStrength": [
+        "base 0",
+        "base Capital county.county opinion; multiply 0.2 — when Landed or landless administrative"
+      ]
+    }
+  ],
+  "stances": [
+    {
+      "desc": "…",
+      "dlc": null,
+      "factors": [
+        "base Ai boldness",
+        "base Ai vengefulness",
+        "divide 2",
+        "base Ai compassion",
+        "multiply -2",
+        "base Ai honor",
+        "divide 2",
+        "add 50 — when Wrathful"
+      ],
+      "id": "belligerent",
+      "name": "Belligerent"
+    },
+    {
+      "desc": "Courtly Vassals believe in nobility and tradition, and wish to preserve existing hierarchies. Social or compassionate Vassals often adopt this Vassal Stance.\n\nCourtly Vassals like when their Liege:\nEFFECT_LIST_BULLETGives them Court Positions\nEFFECT_LIST_BULLETCreates new Titles\nEFFECT_LIST_BULLETInvites them to Feast Activities\n\nCourtly Vassals dislike when their Liege:\nEFFECT_LIST_BULLETGives Titles to Lowborn characters\nEFFECT_LIST_BULLETMarries a Lowborn character as Primary Spouse\nEFFECT_LIST_BULLETDisinherits non-disputed Heirs\n\nThey prefer social and compassionate Heirs with a high Diplomacy skill.",
+      "dlc": null,
+      "factors": [
+        "base Ai sociability",
+        "base Ai sociability",
+        "divide 2",
+        "base Ai greed",
+        "multiply -1",
+        "base Ai compassion",
+        "divide 2",
+        "add 50 — when Gregarious"
+      ],
+      "id": "courtly",
+      "name": "Courtly"
+    },
+    {
+      "desc": "Glory Hound Vassals care about standing and prestige, and showing the world the strength of the realm they're part of. Bold or discompassionate Vassals often adopt this Vassal Stance.\n\nGlory Hound Vassals like when their Liege:\nEFFECT_LIST_BULLETHas any Partition Succession Law\nEFFECT_LIST_BULLETAchieves Victory in offensive Wars\nEFFECT_LIST_BULLETInvites them to Hunt Activities\n\nGlory Hound Vassals dislike when their Liege:\nEFFECT_LIST_BULLETHas high Crown Authority\nEFFECT_LIST_BULLETSigns Defeat or White Peace in Wars\nEFFECT_LIST_BULLETMarries a Lowborn character as Primary Spouse\n\nThey prefer bold and brave Heirs with a high Martial skill.",
+      "dlc": null,
+      "factors": [
+        "base Ai boldness",
+        "base Ai compassion",
+        "multiply -1",
+        "base Ai honor",
+        "multiply -1",
+        "divide 2",
+        "add 50 — when Brave",
+        "add 50 — when Ambitious"
+      ],
+      "id": "glory_hound",
+      "name": "Glory Hound"
+    },
+    {
+      "desc": "Minor Landholder Vassals wish for freedom and low taxes. All Baron-tier Rulers will adopt this Vassal Stance.\n\nMinor Landholder Vassals like when their Liege:\nEFFECT_LIST_BULLETHas low Crown Authority\n\nMinor Landholder Vassals dislike when their Liege:\nEFFECT_LIST_BULLETRevokes Baronies\nEFFECT_LIST_BULLETHas high Crown Authority\n\nThey prefer generous and compassionate Heirs.",
+      "dlc": null,
+      "factors": [
+        "base 0",
+        "add 1000 — when conditional"
+      ],
+      "id": "barons_and_minor_landholders",
+      "name": "Minor Landholder"
+    },
+    {
+      "desc": "Minority Vassals feel that their Faith or Culture is marginalized by their Liege. Vassals of Hostile Faiths or Cultures with less than 30% Cultural Acceptance often adopt this Vassal Stance.\n\nMinority Vassals like when their Liege:\nEFFECT_LIST_BULLETUses the Promote Cultural Acceptance Councillor Task\n(as they will often change stance when above 30% Cultural Acceptance)\n\nMinority Vassals dislike when their Liege:\nEFFECT_LIST_BULLETConverts the Faith or Culture of a County\nEFFECT_LIST_BULLETHas high Crown Authority\n\nThey prefer honorable and compassionate Heirs, preferably of another faith or culture than their current Liege.",
+      "dlc": null,
+      "factors": [],
+      "id": "minority",
+      "name": "Minority"
+    },
+    {
+      "desc": "Parochial Vassals want stability, decentralization, and peace, and for the realm to stay out of outside affairs. Honorable or reserved Vassals often adopt this Vassal Stance.\n\nParochial Vassals like when their Liege:\nEFFECT_LIST_BULLETConstructs or upgrades Holdings\nEFFECT_LIST_BULLETMakes them Guardians of Close Family\nEFFECT_LIST_BULLETUses the Domestic Affairs Councillor Task\n\nParochial Vassals dislike when their Liege:\nEFFECT_LIST_BULLETHas high Crown Authority\nEFFECT_LIST_BULLETDeclares non-trivial Wars\n\nThey prefer honorable and rational Heirs with a high Stewardship skill.",
+      "dlc": null,
+      "factors": [
+        "base Ai honor",
+        "base Ai sociability",
+        "multiply -1",
+        "base Ai boldness",
+        "multiply -1",
+        "base Ai rationality",
+        "divide 2",
+        "add 50 — when Content"
+      ],
+      "id": "parochial",
+      "name": "Parochial"
+    },
+    {
+      "desc": "Zealot Vassals are focused on matters of the faith, and are swayed by pious actions. Zealous or vengeful Vassals often adopt this Vassal Stance, as do Clergy.\n\nZealot Vassals like when their Liege:\nEFFECT_LIST_BULLETConstructs or upgrades Temple Holdings\nEFFECT_LIST_BULLETSucceeds with the Learn Language Scheme\nEFFECT_LIST_BULLETHas Virtuous Traits\nEFFECT_LIST_BULLETGoes on Pilgrimage Activities\n\nZealot Vassals dislike when their Liege:\nEFFECT_LIST_BULLETAsks the Head of Faith for Gold\nEFFECT_LIST_BULLETHas Sinful Traits\n\nThey prefer zealous and virtuous Heirs with a high Learning skill.",
+      "dlc": null,
+      "factors": [
+        "base Ai zeal",
+        "base Ai zeal",
+        "divide 2",
+        "base Ai vengefulness",
+        "divide 2",
+        "add 100 — when Zealous",
+        "add 100 — when Humble",
+        "add 50 — when Students of Knowledge"
+      ],
+      "id": "zealot",
+      "name": "Zealot"
+    }
+  ]
+}

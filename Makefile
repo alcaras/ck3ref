@@ -50,6 +50,9 @@ data:
 	@python3 scripts/build_house.py
 	@python3 scripts/build_domiciles.py
 	@python3 scripts/build_task_contracts.py
+	@python3 scripts/build_interactions.py
+	@python3 scripts/build_realm2.py
+	@python3 scripts/build_court2.py
 	@python3 scripts/build_events.py
 	@python3 scripts/build_artifacts.py
 	@python3 scripts/build_dlc.py

@@ -1,0 +1,169 @@
+{
+  "leases": [
+    {
+      "dlc": null,
+      "government": "theocracy_government",
+      "hierarchy": [],
+      "id": "theocracy_lease",
+      "levy": null,
+      "maxHookOpinion": "strong",
+      "minOpinion": 1,
+      "name": "Theocracy lease",
+      "tax": null,
+      "validHoldings": [
+        "church_holding"
+      ]
+    }
+  ],
+  "obligations": [
+    {
+      "desc": "Base Obligations apply, based on the Aptitude of the assigned Tax Collector",
+      "dlc": null,
+      "gates": [],
+      "id": "default_tax_collector",
+      "levies": 0.2,
+      "liegeModifiers": [],
+      "name": "Basic Taxes",
+      "subjectModifiers": [],
+      "tax": 0.2
+    },
+    {
+      "desc": null,
+      "dlc": null,
+      "gates": [],
+      "id": "deqhan_special_rights_tax_collector",
+      "levies": 0.35,
+      "liegeModifiers": [
+        "+1% Legitimacy Gain"
+      ],
+      "name": "Dehqan",
+      "subjectModifiers": [
+        "+20% Monthly Prestige"
+      ],
+      "tax": 0.35
+    },
+    {
+      "desc": "Vassal Privilege:\nEFFECT_LIST_BULLET The Vassal pays less Piety to use Holy War Casus Bellis but more Prestige for any other Casus Bellis\nEFFECT_LIST_BULLET Enables Raiding\n\nThe Vassal is chosen as a warrior of the Faith by the Liege, charged with carrying the borders outwards through Holy War.",
+      "dlc": null,
+      "gates": [],
+      "id": "ghazi_special_rights_tax_collector",
+      "levies": null,
+      "liegeModifiers": [
+        "+2% Monthly Piety",
+        "+1 Zealot Vassal Opinion"
+      ],
+      "name": "Ghazi Status",
+      "subjectModifiers": [
+        "+0.5 Piety /month",
+        "+10% Monthly Gold Income while at War",
+        "+0.25 Monthly County Control Growth Add /month",
+        "+15% Army Siege Weapon Effectiveness",
+        "+15% Raid Speed",
+        "-0.5 Ai War Cooldown"
+      ],
+      "tax": 0.1
+    },
+    {
+      "desc": "The Vassal has lower obligations but helps contributing Men-at-Arms to the Liege.",
+      "dlc": null,
+      "gates": [],
+      "id": "iqta_special_rights_tax_collector",
+      "levies": 0.1,
+      "liegeModifiers": [
+        "+1% Men-at-Arms Damage"
+      ],
+      "name": "Iqta Grant",
+      "subjectModifiers": [
+        "-10% Men-at-Arms Maintenance",
+        "-10% Men-at-Arms Recruitment Cost",
+        "+15 Opinion of Liege"
+      ],
+      "tax": null
+    },
+    {
+      "desc": "Vassal Privileges:\nEFFECT_LIST_BULLET The Liege cannot Demand Conversion of the Vassal\nThe Liege cannot use Convert Faith in County in the Vassals' lands\nEFFECT_LIST_BULLET The Liege cannot use Faith as a reason to avoid Tyranny when revoking titles\nEFFECT_LIST_BULLET The Liege cannot revoke the Vassals' Titles\n\nThe Vassal is guaranteed ownership of their …, preventing the Liege from revoking them – regardless of the Liege having a Title Revocation Reason or not.\n\nThe Vassal is also granted a special protected status, with the realm officially recognizing their right to practice their own Faith.",
+      "dlc": null,
+      "gates": [],
+      "id": "jizya_special_rights_tax_collector",
+      "levies": -0.75,
+      "liegeModifiers": [],
+      "name": "Jizya Status",
+      "subjectModifiers": [
+        "-0.2 Prestige /month"
+      ],
+      "tax": 1
+    },
+    {
+      "desc": null,
+      "dlc": null,
+      "gates": [],
+      "id": "maguh_special_rights_tax_collector",
+      "levies": null,
+      "liegeModifiers": [
+        "+1% Development Growth"
+      ],
+      "name": "Maguh Status",
+      "subjectModifiers": [
+        "+0.1 Character Capital County Monthly Development Growth Add /month",
+        "-10% Holding Build Gold Cost",
+        "-10% Build Gold Cost",
+        "+15 Opinion of Liege"
+      ],
+      "tax": null
+    },
+    {
+      "desc": null,
+      "dlc": null,
+      "gates": [],
+      "id": "muqata_special_rights_tax_collector",
+      "levies": null,
+      "liegeModifiers": [
+        "+0.1 Prestige /month"
+      ],
+      "name": "Muqata Status",
+      "subjectModifiers": [
+        "+10% Development Growth",
+        "+10 Popular Opinion",
+        "+30 Opinion of Liege",
+        "+10 Plague Resistance",
+        "-5 Danger"
+      ],
+      "tax": null
+    },
+    {
+      "desc": null,
+      "dlc": null,
+      "gates": [],
+      "id": "strict_taxation_tax_collector",
+      "levies": 0.2,
+      "liegeModifiers": [
+        "+1% Domain Taxes"
+      ],
+      "name": "Zakat",
+      "subjectModifiers": [
+        "-30 Opinion of Liege",
+        "+10% Monthly Piety"
+      ],
+      "tax": 0.4
+    }
+  ],
+  "slots": [
+    {
+      "aptitudeFactors": [],
+      "defaultObligation": "default_tax_collector",
+      "dlc": null,
+      "id": "clan_tax_slot",
+      "name": "Tax Jurisdiction",
+      "obligations": [
+        "strict_taxation_tax_collector",
+        "iqta_special_rights_tax_collector",
+        "ghazi_special_rights_tax_collector",
+        "muqata_special_rights_tax_collector",
+        "jizya_special_rights_tax_collector",
+        "deqhan_special_rights_tax_collector",
+        "maguh_special_rights_tax_collector"
+      ],
+      "vassalLimit": null
+    }
+  ]
+}

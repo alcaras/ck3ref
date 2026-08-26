@@ -120,6 +120,25 @@ def main():
     for r in (acc.get("attributes", []) if isinstance(acc, dict) else []):
         add(r["id"], "accolade", r.get("name"), "accolades", scan=False)
 
+    for r in load("interactions.json") or []:
+        add(r["id"], "interaction", r["name"], "interactions", scan=False)
+    sec = load("secrets.json") or {"secrets": []}
+    for r in sec.get("secrets", []):
+        add(r["id"], "secret", r["name"], "secrets", scan=False)
+    for r in load("factions.json") or []:
+        add(r["id"], "faction", r["name"], "factions", scan=True)
+    el = load("elections.json") or {}
+    for r in (el.get("elections", []) if isinstance(el, dict) else []):
+        add(r["id"], "election", r["name"], "elections", scan=False)
+    adm = load("administration.json") or {}
+    for r in (adm.get("obligations", []) if isinstance(adm, dict) else []):
+        add(r["id"], "tax_obligation", r["name"], "administration", scan=False)
+    rc = load("royalcourt.json") or {}
+    for r in (rc.get("types", []) if isinstance(rc, dict) else []):
+        add(r["id"], "court_type", r["name"], "royal-court", scan=False)
+    for r in load("gamerules.json") or []:
+        add(r["id"], "game_rule", r["name"], "game-rules", scan=False)
+
     art = load("artifacts.json") or {"named": []}
     for r in art.get("named", []):
         add(r["id"], "artifact", r["name"], "artifacts", scan=False)

@@ -1,0 +1,106 @@
+---
+import Base from '../layouts/Base.astro';
+import data from '../data/royalcourt.json';
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const { types, amenities, inspirations } = data as any;
+const costText = (c: any) =>
+  c === 'scales' ? 'scales' : typeof c === 'number' ? `${c} gold/mo` : '—';
+---
+<Base
+  title="Royal Court"
+  active="royal-court"
+  lede="Your court as a system: the court type you commit to, the amenities you pay upkeep on, and the inspirations that turn gold into artifacts. Amenity upkeep scales with realm size and grandeur, so it is shown as scaling rather than a fixed number."
+  stats={[
+    { value: types.length, label: 'court types' },
+    { value: amenities.reduce((n: number, a: any) => n + a.levels.length, 0), label: 'amenity levels' },
+    { value: inspirations.length, label: 'inspirations' },
+  ]}
+>
+  <section>
+    <h2 class="group-h" id="types">Court types <span class="count">{types.length}</span></h2>
+    <div class="cards">
+      {types.map((t: any) => (
+        <article class="card" id={t.id}>
+          <div class="c-h">
+            <b>{t.name}</b>
+            {t.default && <span class="chip subtle">default</span>}
+            {t.dlc && <span class="badge-dlc">{t.dlc}</span>}
+          </div>
+          {t.desc && <p class="desc">{t.desc}</p>}
+          {t.perks.length > 0 && (
+            <ul class="perks">
+              {t.perks.map((p: any) => (
+                <li>
+                  {p.level != null && <b>Level {p.level}</b>}
+                  {p.lines.length > 0 && <span> {p.lines.join(' · ')}</span>}
+                </li>
+              ))}
+            </ul>
+          )}
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <section>
+    <h2 class="group-h" id="amenities">Amenities <span class="count">{amenities.length} settings</span></h2>
+    <div class="tbl-scroll">
+      <table class="ntbl">
+        <thead><tr><th>Setting</th><th>Level</th><th class="num">Upkeep</th><th>Effects</th></tr></thead>
+        <tbody>
+          {amenities.flatMap((a: any) =>
+            a.levels.map((l: any, i: number) => (
+              <tr id={l.id}>
+                <td class="name">{i === 0 ? a.name : ''}</td>
+                <td>
+                  {l.name}
+                  {l.isDefault && <span class="subtle"> · default</span>}
+                </td>
+                <td class="num cost">{costText(l.cost)}</td>
+                <td class="fx">{l.lines.length ? l.lines.join(' · ') : <span class="subtle">—</span>}</td>
+              </tr>
+            ))
+          )}
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="group-h" id="inspirations">Inspirations <span class="count">{inspirations.length}</span></h2>
+    <p class="note">
+      Sponsor an inspired courtier and they craft an artifact — see
+      <a href={`${base}/artifacts`}>artifacts</a> for what can come out.
+    </p>
+    <div class="tbl-scroll">
+      <table class="ntbl">
+        <thead><tr><th>Inspiration</th><th class="num">Gold</th><th class="num">Monthly progress</th><th>DLC</th></tr></thead>
+        <tbody>
+          {inspirations.map((i: any) => (
+            <tr id={i.id}>
+              <td class="name">{i.name}{i.desc && <div class="u-sub">{i.desc}</div>}</td>
+              <td class="num cost">{i.gold ?? <span class="subtle">varies</span>}</td>
+              <td class="num cost">{i.progressChance != null ? `${Math.round(i.progressChance)}%` : '—'}</td>
+              <td>{i.dlc ? <span class="badge-dlc">{i.dlc}</span> : <span class="subtle">—</span>}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <style>
+    .cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(290px, 1fr)); gap: 0.7rem; }
+    .card { background: var(--panel); border: 1px solid var(--line-soft); border-radius: var(--r); padding: 0.7rem 0.85rem; }
+    .c-h { display: flex; gap: 0.5rem; align-items: baseline; margin-bottom: 0.3rem; flex-wrap: wrap; }
+    .c-h b { font-family: var(--font-display); font-size: 1rem; }
+    .desc { color: var(--dim); font-size: 0.82rem; margin: 0 0 0.4rem; }
+    .perks { margin: 0; padding-left: 1rem; color: var(--dim); font-size: 0.8rem; }
+    .perks b { color: var(--vellum); font-weight: 600; }
+    .fx { font-size: 0.8rem; max-width: 30rem; }
+    .cost { font-family: var(--font-mono); font-size: 0.8rem; }
+    .note { color: var(--dim); max-width: 66ch; margin: 0 0 0.6rem; }
+    .ntbl td.name { white-space: normal; max-width: 16rem; }
+  </style>
+</Base>

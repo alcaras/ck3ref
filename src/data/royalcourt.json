@@ -1,0 +1,566 @@
+{
+  "amenities": [
+    {
+      "dlc": null,
+      "id": "court_fashion",
+      "levels": [
+        {
+          "cost": null,
+          "id": "court_fashion_default",
+          "isDefault": true,
+          "lines": [],
+          "name": "Last Century Fashion"
+        },
+        {
+          "cost": "scales",
+          "id": "court_fashion_acceptable",
+          "isDefault": false,
+          "lines": [
+            "+1% Monthly Prestige",
+            "+4 Court Grandeur Baseline Add",
+            "+0.2 Prestige /month"
+          ],
+          "name": "Outmoded Fashion"
+        },
+        {
+          "cost": "scales",
+          "id": "court_fashion_decent",
+          "isDefault": false,
+          "lines": [
+            "+2% Monthly Prestige",
+            "+8 Court Grandeur Baseline Add",
+            "+0.4 Prestige /month"
+          ],
+          "name": "Decent Fashion"
+        },
+        {
+          "cost": "scales",
+          "id": "court_fashion_good",
+          "isDefault": false,
+          "lines": [
+            "+3% Monthly Prestige",
+            "+12 Court Grandeur Baseline Add",
+            "+0.8 Prestige /month"
+          ],
+          "name": "Stylish Fashion"
+        },
+        {
+          "cost": "scales",
+          "id": "court_fashion_fantastic",
+          "isDefault": false,
+          "lines": [
+            "+4% Monthly Prestige",
+            "+16 Court Grandeur Baseline Add",
+            "+1.6 Prestige /month"
+          ],
+          "name": "Haute Couture Fashion"
+        }
+      ],
+      "name": "Court Fashion"
+    },
+    {
+      "dlc": null,
+      "id": "court_food_quality",
+      "levels": [
+        {
+          "cost": null,
+          "id": "court_food_quality_default",
+          "isDefault": true,
+          "lines": [],
+          "name": "Bland Food"
+        },
+        {
+          "cost": "scales",
+          "id": "court_food_quality_modest",
+          "isDefault": false,
+          "lines": [
+            "+4 Court Grandeur Baseline Add",
+            "+10% Stress Loss"
+          ],
+          "name": "Modest Food"
+        },
+        {
+          "cost": "scales",
+          "id": "court_food_quality_decent",
+          "isDefault": false,
+          "lines": [
+            "+8 Court Grandeur Baseline Add",
+            "+20% Stress Loss"
+          ],
+          "name": "Decent Food"
+        },
+        {
+          "cost": "scales",
+          "id": "court_food_quality_lavish",
+          "isDefault": false,
+          "lines": [
+            "+12 Court Grandeur Baseline Add",
+            "+30% Stress Loss"
+          ],
+          "name": "Lavish Food"
+        },
+        {
+          "cost": "scales",
+          "id": "court_food_quality_exotic",
+          "isDefault": false,
+          "lines": [
+            "+16 Court Grandeur Baseline Add",
+            "+0.2 Negate Health Penalty Add",
+            "+40% Stress Loss",
+            "+0.2 Negate Health Penalty Add"
+          ],
+          "name": "Exotic Food"
+        }
+      ],
+      "name": "Quality of Food"
+    },
+    {
+      "dlc": null,
+      "id": "court_lodging_standards",
+      "levels": [
+        {
+          "cost": null,
+          "id": "court_lodging_standards_default",
+          "isDefault": true,
+          "lines": [],
+          "name": "Minute Lodgings"
+        },
+        {
+          "cost": "scales",
+          "id": "court_lodging_standards_small",
+          "isDefault": false,
+          "lines": [
+            "+4 Court Grandeur Baseline Add",
+            "-5% Stress Gain"
+          ],
+          "name": "Small Lodgings"
+        },
+        {
+          "cost": "scales",
+          "id": "court_lodging_standards_middling",
+          "isDefault": false,
+          "lines": [
+            "+8 Court Grandeur Baseline Add",
+            "-10% Stress Gain"
+          ],
+          "name": "Middling Lodgings"
+        },
+        {
+          "cost": "scales",
+          "id": "court_lodging_standards_spacious",
+          "isDefault": false,
+          "lines": [
+            "+12 Court Grandeur Baseline Add",
+            "-15% Stress Gain"
+          ],
+          "name": "Spacious Lodgings"
+        },
+        {
+          "cost": "scales",
+          "id": "court_lodging_standards_grand",
+          "isDefault": false,
+          "lines": [
+            "+16 Court Grandeur Baseline Add",
+            "-20% Stress Gain"
+          ],
+          "name": "Grand Lodgings"
+        }
+      ],
+      "name": "Lodging Standards"
+    },
+    {
+      "dlc": null,
+      "id": "court_servants",
+      "levels": [
+        {
+          "cost": null,
+          "id": "court_servants_default",
+          "isDefault": true,
+          "lines": [],
+          "name": "Very Few Servants"
+        },
+        {
+          "cost": "scales",
+          "id": "court_servants_few",
+          "isDefault": false,
+          "lines": [
+            "+4 Court Grandeur Baseline Add",
+            "4 Enemy Hostile Scheme Phase Length days slower per Scheme Phase",
+            "4 Personal Scheme Phase Length days faster per Scheme Phase",
+            "2 Enemy Hostile Scheme Phase Length days slower per Scheme Phase",
+            "2 Personal Scheme Phase Length days faster per Scheme Phase"
+          ],
+          "name": "Few Servants"
+        },
+        {
+          "cost": "scales",
+          "id": "court_servants_some",
+          "isDefault": false,
+          "lines": [
+            "+8 Court Grandeur Baseline Add",
+            "8 Enemy Hostile Scheme Phase Length days slower per Scheme Phase",
+            "8 Personal Scheme Phase Length days faster per Scheme Phase",
+            "4 Enemy Hostile Scheme Phase Length days slower per Scheme Phase",
+            "4 Personal Scheme Phase Length days faster per Scheme Phase"
+          ],
+          "name": "Some Servants"
+        },
+        {
+          "cost": "scales",
+          "id": "court_servants_many",
+          "isDefault": false,
+          "lines": [
+            "+12 Court Grandeur Baseline Add",
+            "12 Enemy Hostile Scheme Phase Length days slower per Scheme Phase",
+            "12 Personal Scheme Phase Length days faster per Scheme Phase",
+            "6 Enemy Hostile Scheme Phase Length days slower per Scheme Phase",
+            "6 Personal Scheme Phase Length days faster per Scheme Phase"
+          ],
+          "name": "Many Servants"
+        },
+        {
+          "cost": "scales",
+          "id": "court_servants_endless",
+          "isDefault": false,
+          "lines": [
+            "+16 Court Grandeur Baseline Add",
+            "16 Enemy Hostile Scheme Phase Length days slower per Scheme Phase",
+            "16 Personal Scheme Phase Length days faster per Scheme Phase",
+            "8 Enemy Hostile Scheme Phase Length days slower per Scheme Phase",
+            "8 Personal Scheme Phase Length days faster per Scheme Phase"
+          ],
+          "name": "Endless Servants"
+        }
+      ],
+      "name": "Court Servants"
+    }
+  ],
+  "inspirations": [
+    {
+      "desc": "A character who has an Adventure Inspiration is Inspired to go on a grand adventure and bring you back an Artifact. The artifacts gained from this Inspiration can vary wildly and can be anything from the skull of a mighty beast to a stolen heirloom.",
+      "dlc": null,
+      "gold": null,
+      "id": "adventure_inspiration",
+      "name": "Adventure Inspiration",
+      "progressChance": null
+    },
+    {
+      "desc": "A character who has an Alchemy Inspiration is Inspired to explore, purify, and create substances and metals, create elixirs, and ultimately perfect the human body and soul.",
+      "dlc": null,
+      "gold": null,
+      "id": "alchemy_inspiration",
+      "name": "Alchemy Inspiration",
+      "progressChance": 75
+    },
+    {
+      "desc": "A character who has an Armor Inspiration is Inspired to forge an armor or shield Artifact. This can include anything from mail to lamellar.",
+      "dlc": null,
+      "gold": null,
+      "id": "armor_inspiration",
+      "name": "Armor Inspiration",
+      "progressChance": 75
+    },
+    {
+      "desc": "A character who has an Artisan Inspiration is Inspired to apply their expert knowledge of a specific skill to produce an Artifact of great craftsmanship. Woodworkers and tailors are examples of artisans' specializations.",
+      "dlc": null,
+      "gold": null,
+      "id": "artisan_inspiration",
+      "name": "Artisan Inspiration",
+      "progressChance": 75
+    },
+    {
+      "desc": "A character who has a Book Inspiration is Inspired to write and produce a book Artifact. The topics covered can vary wildly – as can quality – but it will result in a tome fit for royalty.",
+      "dlc": null,
+      "gold": null,
+      "id": "book_inspiration",
+      "name": "Book Inspiration",
+      "progressChance": 75
+    },
+    {
+      "desc": "A character who has a Bow Inspiration is Inspired to string a bow Artifact. This can include anything from composite bows to crossbows and it will be carried in hand.",
+      "dlc": null,
+      "gold": null,
+      "id": "bow_inspiration",
+      "name": "Bow Inspiration",
+      "progressChance": 75
+    },
+    {
+      "desc": "A character who has a Metalsmith Inspiration is Inspired to forge something more extravagant, and smaller, than a sword or an armor. These are the artists making crowns and goblets, shining and bejeweled.",
+      "dlc": null,
+      "gold": null,
+      "id": "smith_inspiration",
+      "name": "Metalsmith Inspiration",
+      "progressChance": 75
+    },
+    {
+      "desc": "A character who has a Religious Inspiration is Inspired to pour their heart and soul into researching the intricacies and mysteries of Faith. They are often great reformers or leaders of religious movements. This Inspiration is very rare.",
+      "dlc": null,
+      "gold": null,
+      "id": "religious_inspiration",
+      "name": "Religious Inspiration",
+      "progressChance": 100
+    },
+    {
+      "desc": "A character who has a Research Inspiration is Inspired to discover new knowledge for the benefit of their Sponsor. If successful, they will improve learning within their sponsor's Dynasty or even discover a new Innovation for their culture.",
+      "dlc": null,
+      "gold": null,
+      "id": "research_inspiration",
+      "name": "Research Inspiration",
+      "progressChance": 75
+    },
+    {
+      "desc": "A character who has a Weapon Inspiration is Inspired to forge a weapon Artifact. This can include anything from swords to spears and it will be carried in hand.",
+      "dlc": null,
+      "gold": null,
+      "id": "weapon_inspiration",
+      "name": "Weapon Inspiration",
+      "progressChance": 75
+    },
+    {
+      "desc": "A character who has a Weave Inspiration is Inspired to weave a tapestry Artifact. The imagery and scenes depicted can vary wildly – as can quality – but it will result in a tapestry fit to decorate the walls in your Royal Court.",
+      "dlc": null,
+      "gold": null,
+      "id": "weaver_inspiration",
+      "name": "Weave Inspiration",
+      "progressChance": 75
+    }
+  ],
+  "types": [
+    {
+      "cost": null,
+      "default": false,
+      "desc": "Only an efficient and well-maintained court will make our realm prosper. \n\nCourtiers gain the Administrative Courtier traits.",
+      "dlc": null,
+      "id": "court_administrative",
+      "name": "Administrative Court",
+      "perks": [
+        {
+          "level": null,
+          "lines": [
+            "-5% Build Gold Cost",
+            "-10% Build Speed"
+          ]
+        },
+        {
+          "level": null,
+          "lines": [
+            "+0.2 Character Capital County Monthly Development Growth Add /month"
+          ]
+        },
+        {
+          "level": null,
+          "lines": [
+            "+10% Vassal Tax Contribution"
+          ]
+        }
+      ]
+    },
+    {
+      "cost": null,
+      "default": true,
+      "desc": "Diplomacy is key to garnering the respect of our peers and keeping the realm at peace. A pleased vassal is a loyal vassal. \n\nCourtiers gain the Diplomatic Courtier traits.",
+      "dlc": null,
+      "id": "court_diplomatic",
+      "name": "Diplomatic Court",
+      "perks": [
+        {
+          "level": null,
+          "lines": [
+            "-20% Tyranny Gain"
+          ]
+        },
+        {
+          "level": null,
+          "lines": [
+            "+10 Councillor Opinion"
+          ]
+        },
+        {
+          "level": null,
+          "lines": [
+            "+1 Max Personal Schemes"
+          ]
+        }
+      ]
+    },
+    {
+      "cost": null,
+      "default": false,
+      "desc": "To leave the people at court unchecked is dangerous, and we must ensure that no one can be up to no good without us knowing. \n\nCourtiers gain the Intrigue Courtier traits.",
+      "dlc": null,
+      "id": "court_intrigue",
+      "name": "Intrigue Court",
+      "perks": [
+        {
+          "level": null,
+          "lines": [
+            "+5% Scheme Secrecy"
+          ]
+        },
+        {
+          "level": null,
+          "lines": [
+            "+1 Max Hostile Schemes"
+          ]
+        }
+      ]
+    },
+    {
+      "cost": null,
+      "default": false,
+      "desc": "Our court rides with the strength of a thousand hooves, where the bow and the blade reign supreme. Glory is earned through conquest, and our people thrive on the spoils of war. \n\nCourtiers gain the Warlike Courtier traits.",
+      "dlc": null,
+      "id": "court_nomadic",
+      "name": "Nomadic Court",
+      "perks": [
+        {
+          "level": null,
+          "lines": [
+            "+15% Herd Capacity"
+          ]
+        },
+        {
+          "level": null,
+          "lines": [
+            "+20% Raid Speed",
+            "+20% Army Loot Capacity"
+          ]
+        },
+        {
+          "level": null,
+          "lines": [
+            "+25% Venator (Hunter) Trait Experience Gain"
+          ]
+        },
+        {
+          "level": null,
+          "lines": [
+            "+5% Herd Gain"
+          ]
+        },
+        {
+          "level": null,
+          "lines": [
+            "+10 Natural Dread"
+          ]
+        },
+        {
+          "level": null,
+          "lines": [
+            "+5 Direct Vassal Opinion"
+          ]
+        },
+        {
+          "level": null,
+          "lines": [
+            "+2% Herd Conversion into Horde Riders"
+          ]
+        }
+      ]
+    },
+    {
+      "cost": null,
+      "default": false,
+      "desc": "A Court is all about attracting cultivated minds and people of exceptional skill. \n\nCourtiers gain the Scholarly Courtier traits.",
+      "dlc": null,
+      "id": "court_scholarly",
+      "name": "Scholarly Court",
+      "perks": [
+        {
+          "level": null,
+          "lines": [
+            "+15 Courtier and Guest Opinion"
+          ]
+        },
+        {
+          "level": null,
+          "lines": [
+            "+10% Monthly Lifestyle Experience"
+          ]
+        },
+        {
+          "level": null,
+          "lines": [
+            "+1 Learning per Level of Fame",
+            "+1 Learning"
+          ]
+        }
+      ]
+    },
+    {
+      "cost": null,
+      "default": false,
+      "desc": "At court, might makes right – and the halls shall be decked with loot and plunder! \n\nCourtiers gain the Warlike Courtier traits.",
+      "dlc": null,
+      "id": "court_tribal",
+      "name": "Tribal Court",
+      "perks": [
+        {
+          "level": null,
+          "lines": [
+            "+5% Knight Effectiveness"
+          ]
+        },
+        {
+          "level": null,
+          "lines": [
+            "+20% Raid Speed",
+            "+20% Army Loot Capacity"
+          ]
+        },
+        {
+          "level": null,
+          "lines": [
+            "+25% Dread Gain"
+          ]
+        },
+        {
+          "level": null,
+          "lines": [
+            "+5 Vassal Opinion"
+          ]
+        },
+        {
+          "level": null,
+          "lines": [
+            "-25% Men-at-Arms Maintenance"
+          ]
+        }
+      ]
+    },
+    {
+      "cost": null,
+      "default": false,
+      "desc": "A show of force is the only way to command awe and respect! Our knights and soldiers are famous for their prowess. \n\nCourtiers gain the Warlike Courtier traits.",
+      "dlc": null,
+      "id": "court_warlike",
+      "name": "Warlike Court",
+      "perks": [
+        {
+          "level": null,
+          "lines": [
+            "+10% Knight Effectiveness"
+          ]
+        },
+        {
+          "level": null,
+          "lines": [
+            "+10% Powerful Vassal Councillor Levy Base Contribution"
+          ]
+        },
+        {
+          "level": null,
+          "lines": [
+            "+10% Counter Efficiency"
+          ]
+        },
+        {
+          "level": null,
+          "lines": [
+            "+1 Size of Men-at-Arms Regiments"
+          ]
+        }
+      ]
+    }
+  ]
+}

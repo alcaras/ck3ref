@@ -1,0 +1,125 @@
+---
+import Base from '../layouts/Base.astro';
+import data from '../data/administration.json';
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const { slots, obligations, leases } = data as any;
+const pct = (v: number | null) => (v == null ? '—' : `${Math.round(v * 100)}%`);
+---
+<Base
+  title="Administration"
+  active="administration"
+  lede="The administrative government's taxation layer: tax slots and the obligations you set on your tax collectors, plus the lease contracts that hand holdings to governors. The feudal counterpart lives on Vassal Contracts."
+  stats={[
+    { value: obligations.length, label: 'tax obligations' },
+    { value: slots.length, label: 'tax slot types' },
+    { value: leases.length, label: 'lease contracts' },
+  ]}
+>
+  <p class="xref">
+    See also <a href={`${base}/contracts`}>vassal contracts</a> for feudal and
+    clan obligations, and <a href={`${base}/governments`}>governments</a> for
+    which realms use which system.
+  </p>
+
+  <section>
+    <h2 class="group-h" id="obligations">Tax obligations <span class="count">{obligations.length}</span></h2>
+    <div class="tbl-scroll">
+      <table class="ntbl">
+        <thead>
+          <tr><th>Obligation</th><th class="num">Tax</th><th class="num">Levies</th><th>Collector gets</th><th>Liege gets</th><th>Requires</th></tr>
+        </thead>
+        <tbody>
+          {obligations.map((o: any) => (
+            <tr id={o.id}>
+              <td class="name">
+                <span class="u-name">{o.name}</span>
+                {o.desc && <div class="u-sub">{o.desc}</div>}
+              </td>
+              <td class="num">{pct(o.tax)}</td>
+              <td class="num">{pct(o.levies)}</td>
+              <td class="fx">{o.subjectModifiers.map((l: string) => <div>{l}</div>)}</td>
+              <td class="fx">{o.liegeModifiers.map((l: string) => <div>{l}</div>)}</td>
+              <td>
+                <span class="chips">
+                  {o.gates.map((g: any) => (
+                    <span class="chip chip--req">{g.negated && <span class="neg">not </span>}{g.name}</span>
+                  ))}
+                </span>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="group-h" id="slots">Tax slots <span class="count">{slots.length}</span></h2>
+    {slots.map((s: any) => (
+      <div class="card" id={s.id}>
+        <div class="c-h">
+          <b>{s.name}</b>
+          {s.vassalLimit != null && <span class="subtle">{s.vassalLimit} vassals per slot</span>}
+          {s.dlc && <span class="badge-dlc">{s.dlc}</span>}
+        </div>
+        <div class="blk">
+          <span class="lbl">Available obligations</span>
+          <span class="chips">
+            {s.obligations.map((o: string) => (
+              <a class="chip" href={`#${o}`}>{
+                obligations.find((x: any) => x.id === o)?.name ?? o.replace(/_/g, ' ')
+              }</a>
+            ))}
+          </span>
+        </div>
+        {s.aptitudeFactors.length > 0 && (
+          <div class="blk">
+            <span class="lbl">Collector aptitude is driven by</span>
+            <ul>{s.aptitudeFactors.slice(0, 6).map((l: string) => <li>{l}</li>)}</ul>
+          </div>
+        )}
+      </div>
+    ))}
+  </section>
+
+  <section>
+    <h2 class="group-h" id="leases">Lease contracts <span class="count">{leases.length}</span></h2>
+    <div class="tbl-scroll">
+      <table class="ntbl">
+        <thead><tr><th>Contract</th><th>Government</th><th class="num">Tax</th><th class="num">Levy</th><th>Holdings</th><th>Opinion rules</th></tr></thead>
+        <tbody>
+          {leases.map((l: any) => (
+            <tr id={l.id}>
+              <td class="name">{l.name}</td>
+              <td class="subtle">{l.government ?? '—'}</td>
+              <td class="num">{pct(l.tax)}</td>
+              <td class="num">{pct(l.levy)}</td>
+              <td>
+                <span class="chips">
+                  {l.validHoldings.map((h: string) => <span class="chip">{h.replace(/_holding$/, '')}</span>)}
+                </span>
+              </td>
+              <td class="subtle">
+                {l.minOpinion != null && <div>min lessee opinion {l.minOpinion}</div>}
+                {l.maxHookOpinion != null && <div>hook caps at {l.maxHookOpinion}</div>}
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <style>
+    .xref { color: var(--dim); max-width: 70ch; }
+    .ntbl td.name { white-space: normal; max-width: 18rem; }
+    .fx { font-size: 0.8rem; max-width: 18rem; }
+    .card { background: var(--panel); border: 1px solid var(--line-soft); border-radius: var(--r); padding: 0.7rem 0.85rem; margin-bottom: 0.6rem; }
+    .c-h { display: flex; gap: 0.7rem; align-items: baseline; margin-bottom: 0.4rem; }
+    .c-h b { font-family: var(--font-display); font-size: 1rem; }
+    .blk { margin-bottom: 0.4rem; }
+    .lbl { color: var(--faint); font-size: 0.7rem; font-family: var(--font-mono); display: block; margin-bottom: 0.2rem; }
+    .blk ul { margin: 0; padding-left: 1rem; color: var(--dim); font-size: 0.8rem; }
+  </style>
+</Base>

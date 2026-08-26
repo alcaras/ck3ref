@@ -1,0 +1,3041 @@
+[
+  {
+    "categories": [
+      "ai",
+      "culture"
+    ],
+    "default": "default_divergent_culture_ai_frequency",
+    "desc": null,
+    "id": "divergent_culture_ai_frequency",
+    "name": "Divergent Culture Frequency",
+    "options": [
+      {
+        "blocksAchievements": false,
+        "desc": "The default amount of Divergent Cultures will appear.",
+        "id": "default_divergent_culture_ai_frequency",
+        "isDefault": true,
+        "name": "Default"
+      },
+      {
+        "blocksAchievements": false,
+        "desc": "Fewer Divergent Cultures will appear.",
+        "id": "less_common_divergent_culture_ai_frequency",
+        "isDefault": false,
+        "name": "Less Common"
+      },
+      {
+        "blocksAchievements": false,
+        "desc": "No non-player created Divergent Cultures will appear.",
+        "id": "none_divergent_culture_ai_frequency",
+        "isDefault": false,
+        "name": "None"
+      },
+      {
+        "blocksAchievements": false,
+        "desc": "Divergent Cultures will appear more often, with most of the harsher restrictions lifted.",
+        "id": "relaxed_divergent_culture_ai_frequency",
+        "isDefault": false,
+        "name": "Relaxed"
+      }
+    ]
+  },
+  {
+    "categories": [
+      "ai",
+      "culture"
+    ],
+    "default": "default_hybrid_culture_ai_frequency",
+    "desc": null,
+    "id": "hybrid_culture_ai_frequency",
+    "name": "Hybrid Culture Frequency",
+    "options": [
+      {
+        "blocksAchievements": false,
+        "desc": "The default amount of Hybrid Cultures will appear.",
+        "id": "default_hybrid_culture_ai_frequency",
+        "isDefault": true,
+        "name": "Default"
+      },
+      {
+        "blocksAchievements": false,
+        "desc": "Fewer Hybrid Cultures will appear.",
+        "id": "less_common_hybrid_culture_ai_frequency",
+        "isDefault": false,
+        "name": "Less Common"
+      },
+      {
+        "blocksAchievements": false,
+        "desc": "No non-player created Hybrid Cultures will appear.",
+        "id": "none_hybrid_culture_ai_frequency",
+        "isDefault": false,
+        "name": "None"
+      }
+    ]
+  },
+  {
+    "categories": [
+      "ai",
+      "historicity",
+      "culture"
+    ],
+    "default": "default_hybrid_culture_ai_restrictions",
+    "desc": null,
+    "id": "hybrid_culture_ai_restrictions",
+    "name": "Hybrid Culture Restrictions",
+    "options": [
+      {
+        "blocksAchievements": false,
+        "desc": "Non-player created Hybrid Cultures will be significantly restricted (for example, no Hybrids of two existing Hybrid cultures will emerge)",
+        "id": "default_hybrid_culture_ai_restrictions",
+        "isDefault": true,
+        "name": "Default"
+      },
+      {
+        "blocksAchievements": false,
+        "desc": "To a degree, non-player created Hybrid Cultures can emerge from existing Hybrid cultures.",
+        "id": "relaxed_hybrid_culture_ai_restrictions",
+        "isDefault": false,
+        "name": "Relaxed"
+      },
+      {
+        "blocksAchievements": false,
+        "desc": "Non-player created Hybrid Cultures only have nominal restrictions.",
+        "id": "very_relaxed_hybrid_culture_ai_restrictions",
+        "isDefault": false,
+        "name": "Very Relaxed"
+      }
+    ]
+  },
+  {
+    "categories": [
+      "difficulty",
+      "ai",
+      "tweaks"
+    ],
+    "default": "regular_embarkation_costs",
+    "desc": null,
+    "id": "ai_embarkation_cost",
+    "name": "AI Embarkation Cost",
+    "options": [
+      {
+        "blocksAchievements": false,
+        "desc": "The AI, much like the player, has to pay Gold to Embark.",
+        "id": "regular_embarkation_costs",
+        "isDefault": true,
+        "name": "Default"
+      },
+      {
+        "blocksAchievements": false,
+        "desc": "The AI, unlike the player, doesn't pay Gold to Embark.",
+        "id": "no_ai_embarkation_costs",
+        "isDefault": false,
+        "name": "None"
+      }
+    ]
+  },
+  {
+    "categories": [
+      "difficulty",
+      "health",
+      "historicity"
+    ],
+    "default": "bd_occurrence_historical",
+    "desc": null,
+    "id": "black_death_occurrence",
+    "name": "Black Death Circumstance",
+    "options": [
+      {
+        "blocksAchievements": false,
+        "desc": "The Black Death will begin in Central Asia in the 14th century and spread organically through historically popular trade routes. Milan, the Pyrenees, Poland, and other historical regions will be less affected by it.",
+        "id": "bd_occurrence_historical",
+        "isDefault": true,
+        "name": "Historical"
+      },
+      {
+        "blocksAchievements": false,
+        "desc": "The Black Death will occur in a historically plausible scenario that is reactive to the current state of the game.",
+        "id": "bd_occurrence_organic",
+        "isDefault": false,
+        "name": "Organic"
+      },
+      {
+        "blocksAchievements": false,
+        "desc": "The Black Death will originate in a completely random province on the map.",
+        "id": "bd_occurrence_random",
+        "isDefault": false,
+        "name": "Random"
+      }
+    ]
+  },
+  {
+    "categories": [
+      "difficulty",
+      "health",
+      "historicity"
+    ],
+    "default": "bd_frequency_once",
+    "desc": null,
+    "id": "black_death_frequency",
+    "name": "Black Death Frequency",
+    "options": [
+      {
+        "blocksAchievements": false,
+        "desc": "The Black Death can only occur once during your playthrough.",
+        "id": "bd_frequency_once",
+        "isDefault": true,
+        "name": "Once"
+      },
+      {
+        "blocksAchievements": false,
+        "desc": "The Black Death can appear an unlimited number of times in a campaign.",
+        "id": "bd_frequency_unlimited",
+        "isDefault": false,
+        "name": "Unlimited"
+      },
+      {
+        "blocksAchievements": true,
+        "desc": "The Black Death will never occur.",
+        "id": "bd_frequency_never",
+        "isDefault": false,
+        "name": "Never"
+      }
+    ]
+  },
+  {
+    "categories": [
+      "difficulty",
+      "game_modes"
+    ],
+    "default": "default_casus_belli_costs",
+    "desc": null,
+    "id": "casus_belli_costs",
+    "name": "Casus Belli Costs",
+    "options": [
+      {
+        "blocksAchievements": false,
+        "desc": "Casus Bellis cost resources to declare, such as Prestige or Piety.",
+        "id": "default_casus_belli_costs",
+        "isDefault": true,
+        "name": "Default"
+      },
+      {
+        "blocksAchievements": true,
+        "desc": "Casus Bellis are free to use, without any associated costs.",
+        "id": "no_cost_casus_belli_costs",
+        "isDefault": false,
+        "name": "No Costs"
+      }
+    ]
+  },
+  {
+    "categories": [
+      "difficulty",
+      "ai"
+    ],
+    "default": "default_conquerors_bonuses",
+    "desc": null,
+    "id": "conquerors_bonuses",
+    "name": "Conquerors: Bonuses",
+    "options": [
+      {
+        "blocksAchievements": false,
+        "desc": "Conquerors gain the Conqueror Trait.",
+        "id": "default_conquerors_bonuses",
+        "isDefault": true,
+        "name": "Default"
+      },
+      {
+        "blocksAchievements": false,
+        "desc": "Conquerors will be much more aggressive, but will gain no special bonuses.",
+        "id": "no_conquerors_bonuses",
+        "isDefault": false,
+        "name": "None"
+      },
+      {
+        "blocksAchievements": false,
+        "desc": "Conquerors gain the Conqueror Trait and Scourge of the Gods Modifier.",
+        "id": "extreme_conquerors_bonuses",
+        "isDefault": false,
+        "name": "Extreme"
+      },
+      {
+        "blocksAchievements": false,
+        "desc": "Conquerors gain the Conqueror Trait and have a 5% chance of gaining the Scourge of the Gods Modifier.",
+        "id": "random_conquerors_bonuses",
+        "isDefault": false,
+        "name": "Random"
+      },
+      {
+        "blocksAchievements": false,
+        "desc": "Conquerors gain the Conqueror Trait and have a 0.5% chance of gaining the Scourge of the Gods Modifier.",
+        "id": "reduced_random_conquerors_bonuses",
+        "isDefault": false,
+        "name": "Low Random"
+      }
+    ]
+  },
+  {
+    "categories": [
+      "difficulty",
+      "ai"
+    ],
+    "default": "default_conquerors_frequency",
+    "desc": null,
+    "id": "conquerors_frequency",
+    "name": "Conquerors: Frequency",
+    "options": [
+      {
+        "blocksAchievements": false,
+        "desc": "Every 5 years there is a small chance for Independent Rulers with certain Traits and Personalities to become Conquerors.",
+        "id": "default_conquerors_frequency",
+        "isDefault": true,
+        "name": "Default"
+      },
+      {
+        "blocksAchievements": false,
+        "desc": "No Conquerors will appear.",
+        "id": "no_conquerors_frequency",
+        "isDefault": false,
+        "name": "None"
+      },
+      {
+        "blocksAchievements": false,
+        "desc": "Every 5 years there is a small chance for Independent Rulers with certain Traits and Personalities to become Conquerors. The chance is reduced by 50%.",
+        "id": "few_conquerors_frequency",
+        "isDefault": false,
+        "name": "50% Reduced"
+      },
+      {
+        "blocksAchievements": false,
+        "desc": "Every 5 years there is a small chance for Independent Rulers with certain Traits and Personalities to become Conquerors. The chance is reduced by 90%.",
+        "id": "very_few_conquerors_frequency",
+        "isDefault": false,
+        "name": "90% Reduced"
+      },
+      {
+        "blocksAchievements": false,
+        "desc": "Every 5 years there is a small chance for Independent Rulers with certain Traits and Personalities to become Conquerors. The chance is increased by 100%.",
+        "id": "many_conquerors_frequency",
+        "isDefault": false,
+        "name": "100% Increased"
+      },
+      {
+        "blocksAchievements": false,
+        "desc": "Every 5 years there is a small chance for already-powerful Independent Rulers with a significant Realm Size and certain Traits and Personalities to become Conquerors.",
+        "id": "strong_default_conquerors_frequency",
+        "isDefault": false,
+        "name": "Default: Strong Only"
+      },
+      {
+        "blocksAchievements": false,
+        "desc": "Every 5 years there is a small chance for already-powerful Independent Rulers with a significant Realm Size and certain Traits and Personalities to become Conquerors. The chance is reduced by 50%.",
+        "id": "strong_few_conquerors_frequency",
+        "isDefault": false,
+        "name": "Reduced: Strong Only"
+      },
+      {
+        "blocksAchievements": false,
+        "desc": "Every 5 years there is a small chance for already-powerful Independent Rulers with a significant Realm Size and certain Traits and Personalities to become Conquerors. The chance is reduced by 90%.",
+        "id": "strong_very_few_conquerors_frequency",
+        "isDefault": false,
+        "name": "90% Reduced: Strong Only"
+      },
+      {
+        "blocksAchievements": false,
+        "desc": "Every 5 years there is a small chance for already-powerful Independent Rulers with a significant Realm Size and certain Traits and Personalities to become Conquerors. The chance is increased by 100%.",
+        "id": "strong_many_conquerors_frequency",
+        "isDefault": false,
+        "name": "100% Increased: Strong Only"
+      }
+    ]
+  },
+  {
+    "categories": [
+      "difficulty",
+      "ai"
+    ],
+    "default": "primary_conquerors_inheritance",
+    "desc": null,
+    "id": "conquerors_inheritance",
+    "name": "Conquerors: Inheritance",
+    "options": [
+      {
+        "blocksAchievements": false,
+        "desc": "The Conqueror personality and bonuses will be inherited by all Heirs that end up as Independent Rulers on Succession.",
+        "id": "default_conquerors_inheritance",
+        "isDefault": false,
+        "name": "All Heirs"
+      },
+      {
+        "blocksAchievements": false,
+        "desc": "The Conqueror personality and bonuses will only be inherited by the Primary Heir on Succession.",
+        "id": "primary_conquerors_inheritance",
+        "isDefault": true,
+        "name": "Primary Heir"
+      },
+      {
+        "blocksAchievements": false,
+        "desc": "The Conqueror personality will not be inherited.",
+        "id": "no_conquerors_inheritance",
+        "isDefault": false,
+        "name": "No Inheritance"
+      }
+    ]
+  },
+  {
+    "categories": [
+      "difficulty",
+      "tweaks"
+    ],
+    "default": "coronation_laws_on",
+    "desc": null,
+    "id": "coronation_laws",
+    "name": "Coronation Laws",
+    "options": [
+      {
+        "blocksAchievements": false,
+        "desc": "The Uncrowned Law will damage Legitimacy and Opinion for Kings and Emperors until they hold a Coronation.",
+        "id": "coronation_laws_on",
+        "isDefault": true,
+        "name": "Default"
+      },
+      {
+        "blocksAchievements": false,
+        "desc": "Kings will not become Uncrowned when they ascend to Emperor-Tier.",
+        "id": "coronation_laws_no_imperial_uncrowned",
+        "isDefault": false,
+        "name": "Crowned Imperial Accession"
+      },
+      {
+        "blocksAchievements": false,
+        "desc": "High-Tier Rulers do not have the Uncrowned Law, and are not required to hold Coronations. AI will hold Coronations less frequently. This makes the game easier.",
+        "id": "coronation_laws_off",
+        "isDefault": false,
+        "name": "No Coronation Laws"
+      }
+    ]
+  },
+  {
+    "categories": [
+      "difficulty",
+      "ai"
+    ],
+    "default": "normal_difficulty",
+    "desc": null,
+    "id": "difficulty",
+    "name": "Difficulty",
+    "options": [
+      {
+        "blocksAchievements": false,
+        "desc": "You will play on an even playing field, without any significant bonuses.",
+        "id": "normal_difficulty",
+        "isDefault": true,
+        "name": "Normal"
+      },
+      {
+        "blocksAchievements": false,
+        "desc": "AI rulers will receive bonuses, such as less stress and more stable realms. This will make AI realms much more stable and rich, which will make the game less balanced.",
+        "id": "hard_difficulty",
+        "isDefault": false,
+        "name": "Hard"
+      },
+      {
+        "blocksAchievements": false,
+        "desc": "AI rulers will receive significant bonuses, such as less stress and more stable realms. This will make AI realms extremely stable and rich, which will make the game less balanced.",
+        "id": "very_hard_difficulty",
+        "isDefault": false,
+        "name": "Very Hard"
+      },
+      {
+        "blocksAchievements": true,
+        "desc": "You will be given bonuses, such as lessening the impact of disease, hostile schemes and stress. It will also be easier to handle Factions.",
+        "id": "easy_difficulty",
+        "isDefault": false,
+        "name": "Easy"
+      },
+      {
+        "blocksAchievements": true,
+        "desc": "You will be given significant bonuses, such as lessening the impact of disease, hostile schemes and stress. It will also be much easier to handle Factions.",
+        "id": "very_easy_difficulty",
+        "isDefault": false,
+        "name": "Very Easy"
+      }
+    ]
+  },
+  {
+    "categories": [
+      "difficulty",
+      "tweaks"
+    ],
+    "default": "domain_limit_default",
+    "desc": null,
+    "id": "domain_limit_tweaks",
+    "name": "Domain Limit",
+    "options": [
+      {
+        "blocksAchievements": false,
+        "desc": "The Domain Limit is unchanged for all Rulers.",
+        "id": "domain_limit_default",
+        "isDefault": true,
+        "name": "Default"
+      },
+      {
+        "blocksAchievements": false,
+        "desc": "The Domain Limit is reduced by one for players.",
+        "id": "domain_limit_minus_one_player",
+        "isDefault": false,
+        "name": "-1, player only"
+      },
+      {
+        "blocksAchievements": false,
+        "desc": "The Domain Limit is reduced by two for players.",
+        "id": "domain_limit_minus_two_player",
+        "isDefault": false,
+        "name": "-2, player only"
+      },
+      {
+        "blocksAchievements": false,
+        "desc": "The Domain Limit is reduced by three for players.",
+        "id": "domain_limit_minus_three_player",
+        "isDefault": false,
+        "name": "-3, player only"
+      },
+      {
+        "blocksAchievements": true,
+        "desc": "The Domain Limit is increased by one for players.",
+        "id": "domain_limit_plus_one_player",
+        "isDefault": false,
+        "name": "+1, player only"
+      },
+      {
+        "blocksAchievements": true,
+        "desc": "The Domain Limit is increased by two for players.",
+        "id": "domain_limit_plus_two_player",
+        "isDefault": false,
+        "name": "+2, player only"
+      },
+      {
+        "blocksAchievements": true,
+        "desc": "The Domain Limit is increased by three for players.",
+        "id": "domain_limit_plus_three_player",
+        "isDefault": false,
+        "name": "+3, player only"
+      },
+      {
+        "blocksAchievements": false,
+        "desc": "The Domain Limit is reduced by one for all Rulers.",
+        "id": "domain_limit_minus_one",
+        "isDefault": false,
+        "name": "-1"
+      },
+      {
+        "blocksAchievements": false,
+        "desc": "The Domain Limit is reduced by two for all Rulers.",
+        "id": "domain_limit_minus_two",
+        "isDefault": false,
+        "name": "-2"
+      },
+      {
+        "blocksAchievements": false,
+        "desc": "The Domain Limit is reduced by three for all Rulers.",
+        "id": "domain_limit_minus_three",
+        "isDefault": false,
+        "name": "-3"
+      },
+      {
+        "blocksAchievements": false,
+        "desc": "The Domain Limit is increased by one for all Rulers.",
+        "id": "domain_limit_plus_one",
+        "isDefault": false,
+        "name": "+1"
+      },
+      {
+        "blocksAchievements": false,
+        "desc": "The Domain Limit is increased by two for all Rulers.",
+        "id": "domain_limit_plus_two",
+        "isDefault": false,
+        "name": "+2"
+      },
+      {
+        "blocksAchievements": false,
+        "desc": "The Domain Limit is increased by three for all Rulers.",
+        "id": "domain_limit_plus_three",
+        "isDefault": false,
+        "name": "+3"
+      }
+    ]
+  },
+  {
+    "categories": [
+      "difficulty"
+    ],
+    "default": "natural_disaster_earthquakes_regular",
+    "desc": null,
+    "id": "natural_disaster_earthquakes",
+    "name": "Earthquakes",
+    "options": [
+      {
+        "blocksAchievements": false,
+        "desc": "Earthquakes will occur at a normal rate.",
+        "id": "natural_disaster_earthquakes_regular",
+        "isDefault": true,
+        "name": "Default"
+      },
+      {
+        "blocksAchievements": false,
+        "desc": "Earthquakes will occur less frequently.",
+        "id": "natural_disaster_earthquakes_few",
+        "isDefault": false,
+        "name": "Rare"
+      },
+      {
+        "blocksAchievements": false,
+        "desc": "Earthquakes will never occur.",
+        "id": "natural_disaster_earthquakes_disabled",
+        "isDefault": false,
+        "name": "Disabled"
+      }
+    ]
+  },
+  {
+    "categories": [
+      "difficulty",
+      "health"
+    ],
+    "default": "default_elderly_health",
+    "desc": null,
+    "id": "elderly_health",
+    "name": "Elderly Health",
+    "options": [
+      {
+        "blocksAchievements": false,
+        "desc": "Elderly characters will get Traits like Clouded Eyes, Faltering Heart, Withering Mind, Fragile Bones, or Infirm.",
+        "id": "default_elderly_health",
+        "isDefault": true,
+        "name": "Default"
+      },
+      {
+        "blocksAchievements": false,
+        "desc": "Elderly characters can only get the Infirm Trait.",
+        "id": "infirm_only_elderly_health",
+        "isDefault": false,
+        "name": "Infirm Only"
+      },
+      {
+        "blocksAchievements": true,
+        "desc": "Aging comes without risk.",
+        "id": "off_elderly_health",
+        "isDefault": false,
+        "name": "None"
+      }
+    ]
+  },
+  {
+    "categories": [
+      "difficulty"
+    ],
+    "default": "natural_disaster_floods_regular",
+    "desc": null,
+    "id": "natural_disaster_floods",
+    "name": "Floods",
+    "options": [
+      {
+        "blocksAchievements": false,
+        "desc": "Floods will occur at a normal rate.",
+        "id": "natural_disaster_floods_regular",
+        "isDefault": true,
+        "name": "Default"
+      },
+      {
+        "blocksAchievements": false,
+        "desc": "Floods will occur less frequently.",
+        "id": "natural_disaster_floods_few",
+        "isDefault": false,
+        "name": "Rare"
+      },
+      {
+        "blocksAchievements": false,
+        "desc": "Floods will never occur.",
+        "id": "natural_disaster_floods_disabled",
+        "isDefault": false,
+        "name": "Disabled"
+      }
+    ]
+  },
+  {
+    "categories": [
+      "difficulty",
+      "health"
+    ],
+    "default": "default_minor_disease_frequency",
+    "desc": null,
+    "id": "minor_disease_frequency",
+    "name": "Minor Diseases",
+    "options": [
+      {
+        "blocksAchievements": false,
+        "desc": "Minor diseases will appear as per normal.",
+        "id": "default_minor_disease_frequency",
+        "isDefault": true,
+        "name": "Default"
+      },
+      {
+        "blocksAchievements": true,
+        "desc": "Minor diseases will appear less often.",
+        "id": "fewer_minor_disease_frequency",
+        "isDefault": false,
+        "name": "Fewer"
+      }
+    ]
+  },
+  {
+    "categories": [
+      "difficulty",
+      "historicity"
+    ],
+    "default": "default_mongol_invasion",
+    "desc": null,
+    "id": "mongol_invasion",
+    "name": "Mongol Invasion",
+    "options": [
+      {
+        "blocksAchievements": false,
+        "desc": "The Mongols will invade around the year 1200, permanently disabling the Become the Greatest of All Khans Decision. If Temüjin dies without forming the Mongol Empire, the Invasion will be delayed at least 50 years.",
+        "id": "default_mongol_invasion",
+        "isDefault": true,
+        "name": "Default"
+      },
+      {
+        "blocksAchievements": true,
+        "desc": "The Mongols will not invade.",
+        "id": "never_mongol_invasion",
+        "isDefault": false,
+        "name": "Never"
+      },
+      {
+        "blocksAchievements": false,
+        "desc": "The Mongols will invade at a random date. Thus, the Become the Greatest of All Khans Decision for Nomadic rulers can be permanently invalidated at any time!",
+        "id": "random_mongol_invasion",
+        "isDefault": false,
+        "name": "Random"
+      }
+    ]
+  },
+  {
+    "categories": [
+      "difficulty",
+      "health"
+    ],
+    "default": "epidemic_frequency_normal",
+    "desc": null,
+    "id": "other_epidemic_frequency",
+    "name": "Plague Frequency",
+    "options": [
+      {
+        "blocksAchievements": false,
+        "desc": "Plagues will appear and spread at a normal rate.",
+        "id": "epidemic_frequency_normal",
+        "isDefault": true,
+        "name": "Normal"
+      },
+      {
+        "blocksAchievements": false,
+        "desc": "Plagues will appear and spread more frequently.",
+        "id": "epidemic_frequency_often",
+        "isDefault": false,
+        "name": "Often"
+      },
+      {
+        "blocksAchievements": false,
+        "desc": "Plagues will appear and spread much more frequently.",
+        "id": "epidemic_frequency_very_often",
+        "isDefault": false,
+        "name": "Very Often"
+      },
+      {
+        "blocksAchievements": false,
+        "desc": "The air is thick with miasma, and the rivers run rife with corruption. Pestilence is the very air you breathe and the water you drink. There is no respite from the eternal plague.",
+        "id": "epidemic_frequency_doomsday",
+        "isDefault": false,
+        "name": "Doomsday"
+      },
+      {
+        "blocksAchievements": false,
+        "desc": "Plagues will rarely appear and spread with less frequency.",
+        "id": "epidemic_frequency_rare",
+        "isDefault": false,
+        "name": "Rare"
+      },
+      {
+        "blocksAchievements": false,
+        "desc": "Plagues will very rarely appear and spread with much less frequency.",
+        "id": "epidemic_frequency_very_rare",
+        "isDefault": false,
+        "name": "Very Rare"
+      },
+      {
+        "blocksAchievements": false,
+        "desc": "Plagues will not appear.",
+        "id": "epidemic_frequency_disabled",
+        "isDefault": false,
+        "name": "Disabled"
+      }
+    ]
+  },
+  {
+    "categories": [
+      "difficulty",
+      "health"
+    ],
+    "default": "harm_dangerous",
+    "desc": null,
+    "id": "random_harm",
+    "name": "Random Harm",
+    "options": [
+      {
+        "blocksAchievements": false,
+        "desc": "Accidents, bad luck, and the mercurial whims of Fate may inflict Death, the Incapable Trait, and loss of Health at random.",
+        "id": "harm_dangerous",
+        "isDefault": true,
+        "name": "Dangerous"
+      },
+      {
+        "blocksAchievements": false,
+        "desc": "Random Death or disabling events are much rarer. Till they aren't.",
+        "id": "harm_illusion_of_safety",
+        "isDefault": false,
+        "name": "Illusion of Safety"
+      },
+      {
+        "blocksAchievements": false,
+        "desc": "Random harmful events will not kill or cripple Characters. They may still die prematurely in other events, especially if in dangerous situations.",
+        "id": "harm_safe",
+        "isDefault": false,
+        "name": "Safe"
+      },
+      {
+        "blocksAchievements": false,
+        "desc": "Not only the Good die young — now you can too, with boosted chances of random harm events for everyone!",
+        "id": "harm_tragic",
+        "isDefault": false,
+        "name": "Tragic"
+      },
+      {
+        "blocksAchievements": false,
+        "desc": "Fate focuses its cruel wrath on Characters of note: those with high Skills, inheritable Traits, notable achievements, and so on.",
+        "id": "harm_spiteful",
+        "isDefault": false,
+        "name": "Spiteful"
+      },
+      {
+        "blocksAchievements": false,
+        "desc": "Everyone's chance of random harm events is markedly increased, but most especially anyone of note.",
+        "id": "harm_tragically_spiteful",
+        "isDefault": false,
+        "name": "Tragically Spiteful"
+      }
+    ]
+  },
+  {
+    "categories": [
+      "difficulty",
+      "health"
+    ],
+    "default": "harm_target_ai_only",
+    "desc": null,
+    "id": "random_harm_target",
+    "name": "Random Harm Target",
+    "options": [
+      {
+        "blocksAchievements": false,
+        "desc": "Events that kill, incapacitate, or hurt the Health of Characters at random can happen to any Character.",
+        "id": "harm_target_all",
+        "isDefault": false,
+        "name": "Anyone"
+      },
+      {
+        "blocksAchievements": false,
+        "desc": "Events that kill, incapacitate, or hurt the Health of Characters at random can happen to players only.",
+        "id": "harm_target_player_only",
+        "isDefault": false,
+        "name": "Player Only"
+      },
+      {
+        "blocksAchievements": false,
+        "desc": "Events that kill, incapacitate, or hurt the Health of Characters at random can happen to the AI only.",
+        "id": "harm_target_ai_only",
+        "isDefault": true,
+        "name": "AI Only"
+      }
+    ]
+  },
+  {
+    "categories": [
+      "difficulty",
+      "tweaks",
+      "ai"
+    ],
+    "default": "default_realm_stability",
+    "desc": null,
+    "id": "realm_stability",
+    "name": "Realm Stability",
+    "options": [
+      {
+        "blocksAchievements": false,
+        "desc": "A higher amount of Factions will arise, but only for AI rulers.",
+        "id": "lesser_realm_stability_ai_only",
+        "isDefault": false,
+        "name": "AI Only: Lesser"
+      },
+      {
+        "blocksAchievements": false,
+        "desc": "A higher amount of Factions will arise.",
+        "id": "lesser_realm_stability",
+        "isDefault": false,
+        "name": "Lesser"
+      },
+      {
+        "blocksAchievements": false,
+        "desc": "A higher amount of Factions will arise, but only for AI rulers. Populist and Peasant Factions are unaffected.",
+        "id": "lesser_realm_stability_regular_factions_ai_only",
+        "isDefault": false,
+        "name": "AI Only: Lesser Limited"
+      },
+      {
+        "blocksAchievements": false,
+        "desc": "A higher amount of Factions will arise. Populist and Peasant Factions are unaffected.",
+        "id": "lesser_realm_stability_regular_factions",
+        "isDefault": false,
+        "name": "Lesser Limited"
+      },
+      {
+        "blocksAchievements": false,
+        "desc": "The default amount of Factions will arise.",
+        "id": "default_realm_stability",
+        "isDefault": true,
+        "name": "Default"
+      },
+      {
+        "blocksAchievements": false,
+        "desc": "A lower amount of Factions will arise, but only for AI rulers.",
+        "id": "higher_realm_stability_ai_only",
+        "isDefault": false,
+        "name": "AI Only: Higher"
+      },
+      {
+        "blocksAchievements": false,
+        "desc": "A extremely low amount of Factions will arise, but only for AI rulers.",
+        "id": "extreme_realm_stability_ai_only",
+        "isDefault": false,
+        "name": "AI Only: Extreme"
+      },
+      {
+        "blocksAchievements": false,
+        "desc": "A lower amount of Factions will arise.",
+        "id": "higher_realm_stability",
+        "isDefault": false,
+        "name": "Higher"
+      },
+      {
+        "blocksAchievements": false,
+        "desc": "A extremely low amount of Factions will arise.",
+        "id": "extreme_realm_stability",
+        "isDefault": false,
+        "name": "Extreme"
+      },
+      {
+        "blocksAchievements": false,
+        "desc": "A lower amount of Factions will arise, but only for AI rulers. Populist and Peasant Factions are unaffected.",
+        "id": "higher_realm_stability_regular_factions_ai_only",
+        "isDefault": false,
+        "name": "AI Only: Higher Limited"
+      },
+      {
+        "blocksAchievements": false,
+        "desc": "A extremely low amount of Factions will arise, but only for AI rulers. Populist and Peasant Factions are unaffected.",
+        "id": "extreme_realm_stability_regular_factions_ai_only",
+        "isDefault": false,
+        "name": "AI Only: Extreme Limited"
+      },
+      {
+        "blocksAchievements": false,
+        "desc": "A lower amount of Factions will arise. Populist and Peasant Factions are unaffected.",
+        "id": "higher_realm_stability_regular_factions",
+        "isDefault": false,
+        "name": "Higher Limited"
+      },
+      {
+        "blocksAchievements": false,
+        "desc": "A extremely low amount of Factions will arise. Populist and Peasant Factions are unaffected.",
+        "id": "extreme_realm_stability_regular_factions",
+        "isDefault": false,
+        "name": "Extreme Limited"
+      }
+    ]
+  },
+  {
+    "categories": [
+      "difficulty",
+      "historicity",
+      "flavor"
+    ],
+    "default": "fp1_scandi_adventurers_frequent",
+    "desc": null,
+    "id": "dlc_fp1_scandinavian_adventurers",
+    "name": "Scandinavian Adventurers",
+    "options": [
+      {
+        "blocksAchievements": true,
+        "desc": "Scandinavian adventurers will try to target Russia and the North Sea every 15 years.",
+        "id": "fp1_scandi_adventurers_rare",
+        "isDefault": false,
+        "name": "Rare"
+      },
+      {
+        "blocksAchievements": false,
+        "desc": "Scandinavian adventurers will try to target Russia and the North Sea every 10 years.",
+        "id": "fp1_scandi_adventurers_occasional",
+        "isDefault": false,
+        "name": "Occasional"
+      },
+      {
+        "blocksAchievements": false,
+        "desc": "Scandinavian adventurers will try to target Russia and the North Sea every 5 years.",
+        "id": "fp1_scandi_adventurers_frequent",
+        "isDefault": true,
+        "name": "Frequent"
+      },
+      {
+        "blocksAchievements": false,
+        "desc": "Scandinavian adventurers will try to target Russia and the North Sea every year, AI characters do not require specific traits to launch Varangian Adventures.",
+        "id": "fp1_scandi_adventurers_apocalyptic",
+        "isDefault": false,
+        "name": "Apocalyptic"
+      },
+      {
+        "blocksAchievements": true,
+        "desc": "Scandinavian adventurers will never try to target Russia or the North Sea.",
+        "id": "fp1_scandi_adventurers_off",
+        "isDefault": false,
+        "name": "Off"
+      }
+    ]
+  },
+  {
+    "categories": [
+      "difficulty",
+      "historicity"
+    ],
+    "default": "default_seljuk_invasion",
+    "desc": null,
+    "id": "dlc_fp3_seljuk_invasion",
+    "name": "Seljuk Invasion",
+    "options": [
+      {
+        "blocksAchievements": false,
+        "desc": "The Seljuks will invade some time after the year 945.",
+        "id": "default_seljuk_invasion",
+        "isDefault": true,
+        "name": "Default"
+      },
+      {
+        "blocksAchievements": true,
+        "desc": "The Seljuks will not invade.",
+        "id": "never_seljuk_invasion",
+        "isDefault": false,
+        "name": "Never"
+      },
+      {
+        "blocksAchievements": false,
+        "desc": "The Seljuks will invade at a random date.",
+        "id": "random_seljuk_invasion",
+        "isDefault": false,
+        "name": "Random"
+      }
+    ]
+  },
+  {
+    "categories": [
+      "game_modes"
+    ],
+    "default": "default_adoption",
+    "desc": null,
+    "id": "adoption",
+    "name": "Adoption",
+    "options": [
+      {
+        "blocksAchievements": false,
+        "desc": "The Adoption Interaction will be disabled under all circumstances.",
+        "id": "no_adoption",
+        "isDefault": false,
+        "name": "Forbidden"
+      },
+      {
+        "blocksAchievements": false,
+        "desc": "Adoption is unlocked by the Compassionate Trait, certain Cultural Traditions, being infertile and childless, or being in a same-sex marriage.",
+        "id": "default_adoption",
+        "isDefault": true,
+        "name": "Default"
+      },
+      {
+        "blocksAchievements": true,
+        "desc": "The Adoption Interaction will be available to all characters as long as they are unmarried or the dominant partner in their marriage.",
+        "id": "adoption_always_allowed",
+        "isDefault": false,
+        "name": "Always Allowed"
+      }
+    ]
+  },
+  {
+    "categories": [
+      "game_modes"
+    ],
+    "default": "1453_end_date",
+    "desc": null,
+    "id": "end_date",
+    "name": "End Date",
+    "options": [
+      {
+        "blocksAchievements": false,
+        "desc": "The game will end in 1453.",
+        "id": "1453_end_date",
+        "isDefault": true,
+        "name": "1453"
+      },
+      {
+        "blocksAchievements": false,
+        "desc": "The game will not end at any specific given date.",
+        "id": "no_end_date_end_date",
+        "isDefault": false,
+        "name": "No End Date"
+      }
+    ]
+  },
+  {
+    "categories": [
+      "game_modes",
+      "faith"
+    ],
+    "default": "default_faith_acceptance",
+    "desc": null,
+    "id": "faith_acceptance",
+    "name": "Faith Acceptance",
+    "options": [
+      {
+        "blocksAchievements": false,
+        "desc": "A Faith's attitude towards other Faiths is dictated by their doctrines.",
+        "id": "default_faith_acceptance",
+        "isDefault": true,
+        "name": "Default"
+      },
+      {
+        "blocksAchievements": true,
+        "desc": "All Faiths have full acceptance towards other Faiths. There are no Opinion penalties for having a different Faith.",
+        "id": "full_faith_acceptance",
+        "isDefault": false,
+        "name": "Full"
+      }
+    ]
+  },
+  {
+    "categories": [
+      "game_modes"
+    ],
+    "default": "default_gender_equality",
+    "desc": null,
+    "id": "gender_equality",
+    "name": "Gender Equality",
+    "options": [
+      {
+        "blocksAchievements": false,
+        "desc": "Gender rules are determined by Gender Laws and Faith Doctrines.",
+        "id": "default_gender_equality",
+        "isDefault": true,
+        "name": "Default"
+      },
+      {
+        "blocksAchievements": false,
+        "desc": "Realm and Title laws which are set to Male Only will be changed to Male Preference.",
+        "id": "lenient_gender_equality",
+        "isDefault": false,
+        "name": "Lenient"
+      },
+      {
+        "blocksAchievements": true,
+        "desc": "All gender-related Doctrines and Laws are set to Equal. The same rules and rights apply to all characters, regardless of gender.",
+        "id": "full_gender_equality",
+        "isDefault": false,
+        "name": "Equal"
+      },
+      {
+        "blocksAchievements": false,
+        "desc": "All gender-related Doctrines and Laws are inverted. The rules and rights which applies to men under \"Default\" now apply to women, and vice versa.",
+        "id": "inversed_gender_equality",
+        "isDefault": false,
+        "name": "Inverted"
+      }
+    ]
+  },
+  {
+    "categories": [
+      "game_modes"
+    ],
+    "default": "random_ruler_placement_off",
+    "desc": null,
+    "id": "random_ruler_placement",
+    "name": "Random Ruler Placement",
+    "options": [
+      {
+        "blocksAchievements": false,
+        "desc": "Rulers have their historical Titles and Realm.",
+        "id": "random_ruler_placement_off",
+        "isDefault": true,
+        "name": "Off"
+      },
+      {
+        "blocksAchievements": true,
+        "desc": "Rulers are randomly placed on the map. The Realms are largely the same, but Titles are held by different rulers.",
+        "id": "random_ruler_placement_on",
+        "isDefault": false,
+        "name": "On"
+      },
+      {
+        "blocksAchievements": true,
+        "desc": "Rulers are randomly placed on the map. They convert to the historical holder's Faith.",
+        "id": "random_ruler_placement_on_conversion",
+        "isDefault": false,
+        "name": "On (Conversion)"
+      }
+    ]
+  },
+  {
+    "categories": [
+      "game_modes",
+      "faith"
+    ],
+    "default": "randomized_faiths_off",
+    "desc": null,
+    "id": "randomized_faiths",
+    "name": "Randomized Faiths",
+    "options": [
+      {
+        "blocksAchievements": false,
+        "desc": "Characters and Counties have historical Faiths.",
+        "id": "randomized_faiths_off",
+        "isDefault": true,
+        "name": "Off"
+      },
+      {
+        "blocksAchievements": true,
+        "desc": "Characters and Counties are assigned random Faiths. All Faiths in the game are available.",
+        "id": "randomized_faiths_on",
+        "isDefault": false,
+        "name": "On"
+      }
+    ]
+  },
+  {
+    "categories": [
+      "game_modes"
+    ],
+    "default": "default_same_sex_marriage",
+    "desc": null,
+    "id": "same_sex_marriage",
+    "name": "Same-Sex Marriage",
+    "options": [
+      {
+        "blocksAchievements": false,
+        "desc": "Same-sex marriage is not available.",
+        "id": "default_same_sex_marriage",
+        "isDefault": true,
+        "name": "Default"
+      },
+      {
+        "blocksAchievements": true,
+        "desc": "Same-sex marriage and concubinage is available for everyone whose Faith accepts it, and whose culture practices concubinage. To enable for everyone set the Same-Sex Relations Game Rule to Accepted!",
+        "id": "accepted_same_sex_marriage",
+        "isDefault": false,
+        "name": "Accepted"
+      }
+    ]
+  },
+  {
+    "categories": [
+      "game_modes"
+    ],
+    "default": "default_same_sex_relations",
+    "desc": null,
+    "id": "same_sex_relations",
+    "name": "Same-Sex Relations",
+    "options": [
+      {
+        "blocksAchievements": false,
+        "desc": "The view on same-sex relations depend on each Faith's Same-Sex Relations Doctrine.",
+        "id": "default_same_sex_relations",
+        "isDefault": true,
+        "name": "Default"
+      },
+      {
+        "blocksAchievements": true,
+        "desc": "Same-sex relations are fully accepted by all Faiths.",
+        "id": "accepted_same_sex_relations",
+        "isDefault": false,
+        "name": "Accepted"
+      }
+    ]
+  },
+  {
+    "categories": [
+      "game_modes"
+    ],
+    "default": "sexuality_distribution_default",
+    "desc": null,
+    "id": "sexuality_distribution",
+    "name": "Sexuality Distribution",
+    "options": [
+      {
+        "blocksAchievements": false,
+        "desc": "Heterosexuality is the most common Sexuality, while Homosexuality, Bisexuality, and Asexuality are less common.",
+        "id": "sexuality_distribution_default",
+        "isDefault": true,
+        "name": "Heterosexuality"
+      },
+      {
+        "blocksAchievements": false,
+        "desc": "All Sexualities in the game are equally common.",
+        "id": "sexuality_distribution_equal",
+        "isDefault": false,
+        "name": "Equal"
+      },
+      {
+        "blocksAchievements": false,
+        "desc": "Homosexuality is the most common Sexuality, while Heterosexuality, Bisexuality and Asexuality are less common.",
+        "id": "sexuality_distribution_most_common_homosexuality",
+        "isDefault": false,
+        "name": "Homosexuality"
+      },
+      {
+        "blocksAchievements": false,
+        "desc": "Bisexuality is the most common Sexuality, while Heterosexuality, Homosexuality and Asexuality are less common.",
+        "id": "sexuality_distribution_most_common_bisexuality",
+        "isDefault": false,
+        "name": "Bisexuality"
+      },
+      {
+        "blocksAchievements": false,
+        "desc": "Asexuality is the most common Sexuality, while Heterosexuality, Homosexuality and Bisexuality are less common.",
+        "id": "sexuality_distribution_most_common_asexuality",
+        "isDefault": false,
+        "name": "Asexuality"
+      }
+    ]
+  },
+  {
+    "categories": [
+      "game_modes",
+      "tweaks"
+    ],
+    "default": "unrestricted_dynasty_legacies_default",
+    "desc": null,
+    "id": "unrestricted_dynasty_legacies",
+    "name": "Unrestricted Dynasty Legacies",
+    "options": [
+      {
+        "blocksAchievements": false,
+        "desc": "Dynasty Legacy tracks use their normal cultural, governmental, and regional requirements.",
+        "id": "unrestricted_dynasty_legacies_default",
+        "isDefault": true,
+        "name": "Default"
+      },
+      {
+        "blocksAchievements": false,
+        "desc": "Player Rulers can view and unlock every Dynasty Legacy track, ignoring normal cultural, governmental, and regional requirements. DLC requirements still apply.",
+        "id": "unrestricted_dynasty_legacies_player_only",
+        "isDefault": false,
+        "name": "Player Only"
+      },
+      {
+        "blocksAchievements": false,
+        "desc": "All Rulers can view and unlock every Dynasty Legacy track, ignoring normal cultural, governmental, and regional requirements. DLC requirements still apply.",
+        "id": "unrestricted_dynasty_legacies_all",
+        "isDefault": false,
+        "name": "All Rulers"
+      }
+    ]
+  },
+  {
+    "categories": [
+      "historicity",
+      "difficulty"
+    ],
+    "default": "historicity_frankokratia_default",
+    "desc": null,
+    "id": "historicity_frankokratia",
+    "name": "Chance of Frankokratia",
+    "options": [
+      {
+        "blocksAchievements": false,
+        "desc": "The Splintered Crusade, diverting Catholics to attack Byzantium, is immediately possible from the 1178 start date. If using an earlier start, this can happen only after the first Catholic Crusade.",
+        "id": "historicity_frankokratia_default",
+        "isDefault": true,
+        "name": "Balanced"
+      },
+      {
+        "blocksAchievements": false,
+        "desc": "Catholic Crusaders will not be diverted to attack the Byzantine Empire.",
+        "id": "historicity_frankokratia_blocked",
+        "isDefault": false,
+        "name": "None"
+      },
+      {
+        "blocksAchievements": false,
+        "desc": "From earlier start dates, at least 3 Catholic Crusades must happen before the Splintered Crusade. From 1178, Catholics may attack Byzantium only after 1 Crusade.",
+        "id": "historicity_frankokratia_fourth_crusade",
+        "isDefault": false,
+        "name": "Fourth Crusade"
+      },
+      {
+        "blocksAchievements": false,
+        "desc": "Any Catholic Crusade can become a Splintered Crusade, breaking apart to launch a war against Byzantium.",
+        "id": "historicity_frankokratia_high",
+        "isDefault": false,
+        "name": "High"
+      }
+    ]
+  },
+  {
+    "categories": [
+      "historicity",
+      "titles"
+    ],
+    "default": "on_custom_duchies",
+    "desc": null,
+    "id": "custom_duchies",
+    "name": "Custom Duchies",
+    "options": [
+      {
+        "blocksAchievements": false,
+        "desc": "The creation of custom non-historical Duchies, and the ability to integrate Counties into them is allowed.",
+        "id": "on_custom_duchies",
+        "isDefault": true,
+        "name": "On"
+      },
+      {
+        "blocksAchievements": false,
+        "desc": "The creation of custom non-historical Duchies, and the ability to integrate Counties into them is allowed for players only.",
+        "id": "on_custom_duchies_player",
+        "isDefault": false,
+        "name": "Player Only"
+      },
+      {
+        "blocksAchievements": false,
+        "desc": "The creation of custom non-historical Duchies, and the ability to integrate Counties into them is disallowed.",
+        "id": "off_custom_duchies",
+        "isDefault": false,
+        "name": "Off"
+      }
+    ]
+  },
+  {
+    "categories": [
+      "historicity",
+      "titles"
+    ],
+    "default": "on_custom_kingdoms",
+    "desc": null,
+    "id": "custom_kingdoms",
+    "name": "Custom Kingdoms",
+    "options": [
+      {
+        "blocksAchievements": false,
+        "desc": "The creation of custom non-historical Kingdoms and Empires is allowed.",
+        "id": "on_custom_kingdoms",
+        "isDefault": true,
+        "name": "On"
+      },
+      {
+        "blocksAchievements": false,
+        "desc": "The creation of custom non-historical Kingdoms and Empires is disallowed.",
+        "id": "off_custom_kingdoms",
+        "isDefault": false,
+        "name": "Off"
+      }
+    ]
+  },
+  {
+    "categories": [
+      "historicity"
+    ],
+    "default": "default_easteregg_characters",
+    "desc": null,
+    "id": "easteregg_characters",
+    "name": "Easter Egg Characters",
+    "options": [
+      {
+        "blocksAchievements": false,
+        "desc": "Easter Egg characters will be present at the start of the game.",
+        "id": "default_easteregg_characters",
+        "isDefault": true,
+        "name": "Default"
+      },
+      {
+        "blocksAchievements": false,
+        "desc": "No Easter Egg characters will be present at the start of the game.",
+        "id": "no_easteregg_characters",
+        "isDefault": false,
+        "name": "None"
+      }
+    ]
+  },
+  {
+    "categories": [
+      "historicity"
+    ],
+    "default": "historicity_extra_admin_arabia_gameplay_not_administrative",
+    "desc": null,
+    "id": "historicity_extra_admin_arabia",
+    "name": "Extra Administrative Realms — Arabian Empire",
+    "options": [
+      {
+        "blocksAchievements": false,
+        "desc": "The Arabian Empire will not have an Administrative Government in any start date, in line with expected gameplay.",
+        "id": "historicity_extra_admin_arabia_gameplay_not_administrative",
+        "isDefault": true,
+        "name": "Not Administrative"
+      },
+      {
+        "blocksAchievements": false,
+        "desc": "The Arabian Empire will start with an Administrative Government in 867 to better reflect its historical organisation, though it may not function as well in play.",
+        "id": "historicity_extra_admin_arabia_historic_867",
+        "isDefault": false,
+        "name": "Administrative in 867"
+      }
+    ]
+  },
+  {
+    "categories": [
+      "historicity"
+    ],
+    "default": "historicity_extra_admin_egypt_gameplay_not_administrative",
+    "desc": null,
+    "id": "historicity_extra_admin_egypt",
+    "name": "Extra Administrative Realms — Egypt",
+    "options": [
+      {
+        "blocksAchievements": false,
+        "desc": "Egypt will not have an Administrative Government in any start date, in line with expected gameplay.",
+        "id": "historicity_extra_admin_egypt_gameplay_not_administrative",
+        "isDefault": true,
+        "name": "Not Administrative"
+      },
+      {
+        "blocksAchievements": false,
+        "desc": "Egypt will always start with an Administrative Government to better reflect its historical organisation, though it may not function as well in play.",
+        "id": "historicity_extra_admin_egypt_historic_always",
+        "isDefault": false,
+        "name": "Always Administrative"
+      }
+    ]
+  },
+  {
+    "categories": [
+      "historicity"
+    ],
+    "default": "historicity_extra_admin_ghana_gameplay_not_administrative",
+    "desc": null,
+    "id": "historicity_extra_admin_ghana",
+    "name": "Extra Administrative Realms — Ghana",
+    "options": [
+      {
+        "blocksAchievements": false,
+        "desc": "Ghana will not have an Administrative Government in any start date, in line with expected gameplay.",
+        "id": "historicity_extra_admin_ghana_gameplay_not_administrative",
+        "isDefault": true,
+        "name": "Not Administrative"
+      },
+      {
+        "blocksAchievements": false,
+        "desc": "Ghana will always start with an Administrative Government to better reflect its historical organisation, though it may not function as well in play.",
+        "id": "historicity_extra_admin_ghana_historic_always",
+        "isDefault": false,
+        "name": "Always Administrative"
+      }
+    ]
+  },
+  {
+    "categories": [
+      "historicity"
+    ],
+    "default": "historicity_extra_admin_kabulistan_gameplay_not_administrative",
+    "desc": null,
+    "id": "historicity_extra_admin_kabulistan",
+    "name": "Extra Administrative Realms — Kabulistan",
+    "options": [
+      {
+        "blocksAchievements": false,
+        "desc": "The Ghaznivids will not have an Administrative Government in any start date, in line with expected gameplay.",
+        "id": "historicity_extra_admin_kabulistan_gameplay_not_administrative",
+        "isDefault": true,
+        "name": "Not Administrative"
+      },
+      {
+        "blocksAchievements": false,
+        "desc": "The Ghaznivids will always start with an Administrative Government to better reflect its historical organisation, though it may not function as well in play.",
+        "id": "historicity_extra_admin_kabulistan_historic_always",
+        "isDefault": false,
+        "name": "Always Administrative"
+      }
+    ]
+  },
+  {
+    "categories": [
+      "historicity"
+    ],
+    "default": "historicity_extra_admin_maghreb_gameplay_not_administrative",
+    "desc": null,
+    "id": "historicity_extra_admin_maghreb",
+    "name": "Extra Administrative Realms — Maghreb",
+    "options": [
+      {
+        "blocksAchievements": false,
+        "desc": "The Maghreb will not have an Administrative Government in any start date, in line with expected gameplay.",
+        "id": "historicity_extra_admin_maghreb_gameplay_not_administrative",
+        "isDefault": true,
+        "name": "Not Administrative"
+      },
+      {
+        "blocksAchievements": false,
+        "desc": "The Maghreb will start with an Administrative Government in 1066 & 1178 to better reflect its historical organisation, though it may not function as well in play.",
+        "id": "historicity_extra_admin_maghreb_historic_post_1066",
+        "isDefault": false,
+        "name": "Administrative post-1066"
+      },
+      {
+        "blocksAchievements": false,
+        "desc": "The Maghreb will always start with an Administrative Government, which is not reflective of its historical organisation in 867.",
+        "id": "historicity_extra_admin_maghreb_alt_historic_always",
+        "isDefault": false,
+        "name": "Always Administrative"
+      }
+    ]
+  },
+  {
+    "categories": [
+      "historicity"
+    ],
+    "default": "historicity_extra_admin_persia_gameplay_not_administrative",
+    "desc": null,
+    "id": "historicity_extra_admin_persia",
+    "name": "Extra Administrative Realms — Persia",
+    "options": [
+      {
+        "blocksAchievements": false,
+        "desc": "Persia will not have an Administrative Government in any start date, in line with expected gameplay.",
+        "id": "historicity_extra_admin_persia_gameplay_not_administrative",
+        "isDefault": true,
+        "name": "Not Administrative"
+      },
+      {
+        "blocksAchievements": false,
+        "desc": "The Kingdom of Persia will start with an Administrative Government in 1178 to better reflect its historical organisation, though it may not function as well in play.",
+        "id": "historicity_extra_admin_persia_historic_1178",
+        "isDefault": false,
+        "name": "Administrative in 1178"
+      },
+      {
+        "blocksAchievements": false,
+        "desc": "The Empire of Persia & Kingdom of Persia will always start with an Administrative Government, which is not reflective of their historical organisation.",
+        "id": "historicity_extra_admin_persia_alt_historic_always",
+        "isDefault": false,
+        "name": "Always Administrative"
+      }
+    ]
+  },
+  {
+    "categories": [
+      "historicity",
+      "game_modes"
+    ],
+    "default": "historicity_extra_admin_player_wherever_gameplay_not_administrative",
+    "desc": null,
+    "id": "historicity_extra_admin_player_wherever",
+    "name": "Extra Administrative Realms — Players",
+    "options": [
+      {
+        "blocksAchievements": false,
+        "desc": "Players will only be Administrative if they select a Realm that already has the appropriate Government.",
+        "id": "historicity_extra_admin_player_wherever_gameplay_not_administrative",
+        "isDefault": true,
+        "name": "No Special Changes"
+      },
+      {
+        "blocksAchievements": false,
+        "desc": "Players that begin with at least a Kingdom-Tier Realm will automatically convert it to an Administrative Government on game start.",
+        "id": "historicity_extra_admin_player_wherever_alt_historic_always",
+        "isDefault": false,
+        "name": "Always"
+      },
+      {
+        "blocksAchievements": false,
+        "desc": "Players that have the August Trait & begin with at least a Kingdom-Tier Realm will automatically convert it to an Administrative Government on game start (intended for asynchronous Governments in multiplayer).",
+        "id": "historicity_extra_admin_player_wherever_alt_historic_with_august_trait",
+        "isDefault": false,
+        "name": "With August Trait"
+      }
+    ]
+  },
+  {
+    "categories": [
+      "historicity"
+    ],
+    "default": "historicity_extra_admin_tamilakam_gameplay_not_administrative",
+    "desc": null,
+    "id": "historicity_extra_admin_tamilakam",
+    "name": "Extra Administrative Realms — Tamilakam",
+    "options": [
+      {
+        "blocksAchievements": false,
+        "desc": "The Cholas will not have an Administrative Government in any start date, in line with expected gameplay.",
+        "id": "historicity_extra_admin_tamilakam_gameplay_not_administrative",
+        "isDefault": true,
+        "name": "Not Administrative"
+      },
+      {
+        "blocksAchievements": false,
+        "desc": "The Cholas will start with an Administrative Government in 1066 to better reflect their historical organisation, though it may not function as well in play.",
+        "id": "historicity_extra_admin_tamilakam_historic_1066",
+        "isDefault": false,
+        "name": "Administrative in 1066"
+      },
+      {
+        "blocksAchievements": false,
+        "desc": "The Cholas will always start with an Administrative Government, which is not consistently reflective of their historical organisation.",
+        "id": "historicity_extra_admin_tamilakam_alt_historic_always",
+        "isDefault": false,
+        "name": "Always Administrative"
+      }
+    ]
+  },
+  {
+    "categories": [
+      "historicity"
+    ],
+    "default": "historicity_extra_admin_carolingians_gameplay_not_administrative",
+    "desc": null,
+    "id": "historicity_extra_admin_carolingians",
+    "name": "Extra Administrative Realms — The Carolingians",
+    "options": [
+      {
+        "blocksAchievements": false,
+        "desc": "None of the Carolingian successor states will have Administrative Governments in 867, reflecting that much of the former empire has become feudal within the last generation or two.",
+        "id": "historicity_extra_admin_carolingians_gameplay_not_administrative",
+        "isDefault": true,
+        "name": "Not Administrative"
+      },
+      {
+        "blocksAchievements": false,
+        "desc": "West Francia, Lotharingia, East Francia, and Italy will all start as Administrative Governments in 867, which is not reflective of their historical organisation (but isn't that far off — yet).",
+        "id": "historicity_extra_admin_carolingians_alt_historic_all_administrative",
+        "isDefault": false,
+        "name": "All Administrative in 867"
+      },
+      {
+        "blocksAchievements": false,
+        "desc": "Only West Francia will start as an Administrative Government in 867, which is not reflective of its historical organisation.",
+        "id": "historicity_extra_admin_carolingians_alt_historic_west_francia_administrative",
+        "isDefault": false,
+        "name": "West Francia in 867"
+      },
+      {
+        "blocksAchievements": false,
+        "desc": "Only Lotharingia will start as an Administrative Government in 867, which is not reflective of its historical organisation.",
+        "id": "historicity_extra_admin_carolingians_alt_historic_lotharingia_administrative",
+        "isDefault": false,
+        "name": "Lotharingia in 867"
+      },
+      {
+        "blocksAchievements": false,
+        "desc": "Only East Francia will start as an Administrative Government in 867, which is not reflective of its historical organisation.",
+        "id": "historicity_extra_admin_carolingians_alt_historic_east_francia_administrative",
+        "isDefault": false,
+        "name": "East Francia in 867"
+      },
+      {
+        "blocksAchievements": false,
+        "desc": "Only Italy will start as an Administrative Government in 867, which is not reflective of its historical organisation.",
+        "id": "historicity_extra_admin_carolingians_alt_historic_italy_administrative",
+        "isDefault": false,
+        "name": "Italy in 867"
+      }
+    ]
+  },
+  {
+    "categories": [
+      "historicity"
+    ],
+    "default": "arabia_nomad_region_off",
+    "desc": null,
+    "id": "arabia_nomad_region",
+    "name": "Extra Nomadic Region: Arabia",
+    "options": [
+      {
+        "blocksAchievements": false,
+        "desc": "The Arabian region is unchanged.",
+        "id": "arabia_nomad_region_off",
+        "isDefault": true,
+        "name": "Default"
+      },
+      {
+        "blocksAchievements": false,
+        "desc": "The Arabian region uses Nomadic mechanics, designed for Steppe Nomads. This rule will not have any effect unless you own the Khans of the Steppe Expansion.",
+        "id": "arabia_nomad_region_on",
+        "isDefault": false,
+        "name": "Nomadic"
+      }
+    ]
+  },
+  {
+    "categories": [
+      "historicity"
+    ],
+    "default": "horn_of_africa_nomad_region_off",
+    "desc": null,
+    "id": "horn_of_africa_nomad_region",
+    "name": "Extra Nomadic Region: Horn of Africa",
+    "options": [
+      {
+        "blocksAchievements": false,
+        "desc": "The Horn of Africa region is unchanged.",
+        "id": "horn_of_africa_nomad_region_off",
+        "isDefault": true,
+        "name": "Default"
+      },
+      {
+        "blocksAchievements": false,
+        "desc": "The Horn of Africa region uses Nomadic mechanics, designed for Steppe Nomads. This rule will not have any effect unless you own the Khans of the Steppe Expansion.",
+        "id": "horn_of_africa_nomad_region_on",
+        "isDefault": false,
+        "name": "Nomadic"
+      }
+    ]
+  },
+  {
+    "categories": [
+      "historicity"
+    ],
+    "default": "sahel_nomad_region_off",
+    "desc": null,
+    "id": "sahel_nomad_region",
+    "name": "Extra Nomadic Region: Sahel",
+    "options": [
+      {
+        "blocksAchievements": false,
+        "desc": "The Sahel region is unchanged.",
+        "id": "sahel_nomad_region_off",
+        "isDefault": true,
+        "name": "Default"
+      },
+      {
+        "blocksAchievements": false,
+        "desc": "The Sahel region uses Nomadic mechanics, designed for Steppe Nomads. This rule will not have any effect unless you own the Khans of the Steppe Expansion.",
+        "id": "sahel_nomad_region_on",
+        "isDefault": false,
+        "name": "Nomadic"
+      }
+    ]
+  },
+  {
+    "categories": [
+      "historicity"
+    ],
+    "default": "sami_nomad_region_off",
+    "desc": null,
+    "id": "sami_nomad_region",
+    "name": "Extra Nomadic Region: Sápmi & Karelia",
+    "options": [
+      {
+        "blocksAchievements": false,
+        "desc": "The Sápmi region is unchanged.",
+        "id": "sami_nomad_region_off",
+        "isDefault": true,
+        "name": "Default"
+      },
+      {
+        "blocksAchievements": false,
+        "desc": "The Sápmi region uses Nomadic mechanics, designed for Steppe Nomads. This rule will not have any effect unless you own the Khans of the Steppe Expansion.",
+        "id": "sami_nomad_region_on",
+        "isDefault": false,
+        "name": "Nomadic"
+      }
+    ]
+  },
+  {
+    "categories": [
+      "historicity"
+    ],
+    "default": "tibet_nomad_region_off",
+    "desc": null,
+    "id": "tibet_nomad_region",
+    "name": "Extra Nomadic Region: Tibet",
+    "options": [
+      {
+        "blocksAchievements": false,
+        "desc": "The Tibetan region is unchanged.",
+        "id": "tibet_nomad_region_off",
+        "isDefault": true,
+        "name": "Default"
+      },
+      {
+        "blocksAchievements": false,
+        "desc": "The Tibetan region uses Nomadic mechanics, designed for Steppe Nomads. This rule will not have any effect unless you own the Khans of the Steppe Expansion.",
+        "id": "tibet_nomad_region_on",
+        "isDefault": false,
+        "name": "Nomadic"
+      }
+    ]
+  },
+  {
+    "categories": [
+      "historicity",
+      "flavor"
+    ],
+    "default": "dissolution_unconstrained",
+    "desc": null,
+    "id": "dissolution_umayyad",
+    "name": "Fall of Al-Andalus",
+    "options": [
+      {
+        "blocksAchievements": false,
+        "desc": "The Dissolution Faction can hit the Kingdom of Al-Andalus from the start of the game",
+        "id": "dissolution_unconstrained",
+        "isDefault": true,
+        "name": "No Limitation"
+      },
+      {
+        "blocksAchievements": false,
+        "desc": "The Dissolution Faction can only hit the Kingdom of Al-Andalus after the death of Sultan Muhammad Abd al-Rahman",
+        "id": "dissolution_after_caliph_death",
+        "isDefault": false,
+        "name": "Death of the Caliph"
+      },
+      {
+        "blocksAchievements": false,
+        "desc": "The Dissolution Faction is only activated after the year 1020 for the Kingdom of Al-Andalus",
+        "id": "dissolution_historical_date",
+        "isDefault": false,
+        "name": "Historical Timing"
+      }
+    ]
+  },
+  {
+    "categories": [
+      "historicity"
+    ],
+    "default": "default_historical_characters",
+    "desc": null,
+    "id": "historical_characters",
+    "name": "Historical Characters",
+    "options": [
+      {
+        "blocksAchievements": false,
+        "desc": "Various historical characters such as Thomas Aquinas, Ibn Battuta, or Hildegard von Bingen can spawn. You will only be notified if they are born in your Domain or if they are very well-known.",
+        "id": "default_historical_characters",
+        "isDefault": true,
+        "name": "Default"
+      },
+      {
+        "blocksAchievements": false,
+        "desc": "Various historical characters such as Thomas Aquinas, Ibn Battuta, or Hildegard von Bingen can spawn. You will be notified of everyone born within your entire sub-Realm.",
+        "id": "all_historical_characters",
+        "isDefault": false,
+        "name": "Notify All"
+      },
+      {
+        "blocksAchievements": false,
+        "desc": "No historical characters will spawn.",
+        "id": "no_historical_characters",
+        "isDefault": false,
+        "name": "Disable Spawns"
+      }
+    ]
+  },
+  {
+    "categories": [
+      "historicity"
+    ],
+    "default": "historical_legends_dynamic",
+    "desc": null,
+    "id": "historical_legends",
+    "name": "Historical Legends",
+    "options": [
+      {
+        "blocksAchievements": false,
+        "desc": "Both historical Legend Seeds and Seeds generated by the in game events will appear.",
+        "id": "historical_legends_dynamic",
+        "isDefault": true,
+        "name": "Dynamic"
+      },
+      {
+        "blocksAchievements": false,
+        "desc": "The only present Legend Seeds are those generated on game start, and no dynamic legends will appear.",
+        "id": "historical_legends_only",
+        "isDefault": false,
+        "name": "Only Historical Legends"
+      }
+    ]
+  },
+  {
+    "categories": [
+      "historicity",
+      "flavor"
+    ],
+    "default": "launch_immediate",
+    "desc": null,
+    "id": "hungarian_migration",
+    "name": "Hungarian Migration",
+    "options": [
+      {
+        "blocksAchievements": false,
+        "desc": "The AI will attempt to start the Hungarian Migration between 890 and 910.",
+        "id": "launch_historical",
+        "isDefault": false,
+        "name": "Historical"
+      },
+      {
+        "blocksAchievements": false,
+        "desc": "The Hungarian Migration will already be active on game start.",
+        "id": "launch_immediate",
+        "isDefault": true,
+        "name": "Immediate"
+      },
+      {
+        "blocksAchievements": false,
+        "desc": "The AI will attempt to start the Hungarian Migration any time between 5 years after game start and 910.",
+        "id": "launch_random",
+        "isDefault": false,
+        "name": "Random"
+      },
+      {
+        "blocksAchievements": true,
+        "desc": "The AI will not attempt to start the Hungarian Migration.",
+        "id": "launch_off",
+        "isDefault": false,
+        "name": "Player-Only"
+      }
+    ]
+  },
+  {
+    "categories": [
+      "historicity",
+      "game_modes"
+    ],
+    "default": "struggle_iberia_toggle_on",
+    "desc": null,
+    "id": "struggle_iberia",
+    "name": "Iberian Struggle",
+    "options": [
+      {
+        "blocksAchievements": false,
+        "desc": "Iberia's many lords will begin the game engaged in a Struggle, a complex dance of different factors pushing them through Struggle Phases with variant game rules until someone manages a dramatic conclusion.",
+        "id": "struggle_iberia_toggle_on",
+        "isDefault": true,
+        "name": "Enabled"
+      },
+      {
+        "blocksAchievements": false,
+        "desc": "The Struggle is not started when the game begins, meaning Iberia plays like any other normal part of the map.",
+        "id": "struggle_iberia_toggle_off",
+        "isDefault": false,
+        "name": "Disabled"
+      }
+    ]
+  },
+  {
+    "categories": [
+      "historicity",
+      "game_modes"
+    ],
+    "default": "struggle_persia_toggle_on",
+    "desc": null,
+    "id": "struggle_persia",
+    "name": "Iranian Intermezzo",
+    "options": [
+      {
+        "blocksAchievements": false,
+        "desc": "In 867, the rulers of Persia, Afghanistan, and Iraq will be embroiled in a climactic Struggle set to decide the fate of the Abassid Caliphate and what remains of the Arabian Empire.",
+        "id": "struggle_persia_toggle_on",
+        "isDefault": true,
+        "name": "Enabled"
+      },
+      {
+        "blocksAchievements": false,
+        "desc": "The Struggle is not started when the game begins, meaning Persia, Afghanistan, and Iraq play like any other normal part of the map.",
+        "id": "struggle_persia_toggle_off",
+        "isDefault": false,
+        "name": "Disabled"
+      }
+    ]
+  },
+  {
+    "categories": [
+      "historicity"
+    ],
+    "default": "default_matrilineal_marriages",
+    "desc": null,
+    "id": "matrilineal_marriages",
+    "name": "Matrilineal Marriages",
+    "options": [
+      {
+        "blocksAchievements": false,
+        "desc": "AI characters will arrange Matrilineal marriages if they belong to the player's close family, or a … Dynasty, or an Equal realm, or are strong Rulers. Female Dominated realms default to Matrilineal.",
+        "id": "default_matrilineal_marriages",
+        "isDefault": true,
+        "name": "Default"
+      },
+      {
+        "blocksAchievements": false,
+        "desc": "AI characters will arrange Matrilineal marriages if they belong to a … Dynasty, or an Equal realm, or are strong Rulers. Female Dominated realms default to Matrilineal.",
+        "id": "matrilineal_marriages_no_player_exception",
+        "isDefault": false,
+        "name": "Default (no Player exception)"
+      },
+      {
+        "blocksAchievements": false,
+        "desc": "AI characters will want to arrange Matrilineal marriages for all female Dynasty members. Like with Default rules, Patrilineal marriages still happen if deemed favorable enough.",
+        "id": "matrilineal_marriages_always",
+        "isDefault": false,
+        "name": "Always"
+      },
+      {
+        "blocksAchievements": false,
+        "desc": "AI characters will only arrange Matrilineal marriages if part of a Female Dominated or Equal realm. Like with Default rules, Patrilineal marriages still happen if deemed favorable enough.",
+        "id": "matrilineal_marriages_female_and_equal",
+        "isDefault": false,
+        "name": "Female Dominated & Equal"
+      },
+      {
+        "blocksAchievements": false,
+        "desc": "AI characters will never arrange Matrilineal marriages, unless part of a Female Dominated realm.",
+        "id": "matrilineal_marriages_never",
+        "isDefault": false,
+        "name": "Never"
+      }
+    ]
+  },
+  {
+    "categories": [
+      "historicity"
+    ],
+    "default": "default_name_of_byzantium",
+    "desc": null,
+    "id": "name_of_byzantium",
+    "name": "Name of Byzantium",
+    "options": [
+      {
+        "blocksAchievements": false,
+        "desc": "The name of the Byzantine Empire will be unchanged.",
+        "id": "default_name_of_byzantium",
+        "isDefault": true,
+        "name": "Byzantine Empire"
+      },
+      {
+        "blocksAchievements": false,
+        "desc": "The name of the Byzantine Empire will be changed to the Eastern Roman Empire.",
+        "id": "eastern_rome_name_of_byzantium",
+        "isDefault": false,
+        "name": "Eastern Roman Empire"
+      },
+      {
+        "blocksAchievements": false,
+        "desc": "The name of the Byzantine Empire will be changed to the Roman Empire.",
+        "id": "roman_empire_name_of_byzantium",
+        "isDefault": false,
+        "name": "Roman Empire"
+      },
+      {
+        "blocksAchievements": false,
+        "desc": "The name of the Byzantine Empire will be changed to the Empire of Romania.",
+        "id": "romania_name_of_byzantium",
+        "isDefault": false,
+        "name": "Empire of Romania"
+      },
+      {
+        "blocksAchievements": false,
+        "desc": "The name of the Byzantine Empire will be changed to the Empire of the Greeks.",
+        "id": "empire_of_the_greeks_name_of_byzantium",
+        "isDefault": false,
+        "name": "Empire of the Greeks"
+      },
+      {
+        "blocksAchievements": false,
+        "desc": "The name of the Byzantine Empire will be changed to the Basileia tōn Rhōmaiōn.",
+        "id": "rhomaion_name_of_byzantium",
+        "isDefault": false,
+        "name": "Basileia tōn Rhōmaiōn"
+      },
+      {
+        "blocksAchievements": false,
+        "desc": "The name of the Byzantine Empire will be changed to the Unholy Roman Empire.",
+        "id": "unholy_roman_empire_name_of_byzantium",
+        "isDefault": false,
+        "name": "Unholy Roman Empire"
+      }
+    ]
+  },
+  {
+    "categories": [
+      "historicity"
+    ],
+    "default": "historicity_norman_conquest_default_random",
+    "desc": null,
+    "id": "historicity_norman_conquest",
+    "name": "Outcome of the Norman Conquest",
+    "options": [
+      {
+        "blocksAchievements": false,
+        "desc": "The outcome of the Conquest is decided purely by game mechanics.",
+        "id": "historicity_norman_conquest_default_random",
+        "isDefault": true,
+        "name": "Mechanical"
+      },
+      {
+        "blocksAchievements": false,
+        "desc": "The Conquest will be forcibly won by Harold Godwin, the power-hungry warlord sat atop the English throne.",
+        "id": "historicity_norman_conquest_determined_harold",
+        "isDefault": false,
+        "name": "Harold Godwin of England"
+      },
+      {
+        "blocksAchievements": false,
+        "desc": "The Conquest will be forcibly won by Haraldr Yngling, the last viking king to attempt to claim England by force.",
+        "id": "historicity_norman_conquest_determined_harald",
+        "isDefault": false,
+        "name": "Haraldr Yngling of Norway"
+      },
+      {
+        "blocksAchievements": false,
+        "desc": "The Conquest will be forcibly won by William of Normandy, the would-be usurper whose claim rests partially on a blackmailed promise.",
+        "id": "historicity_norman_conquest_determined_william",
+        "isDefault": false,
+        "name": "William of Normandy"
+      },
+      {
+        "blocksAchievements": false,
+        "desc": "The Conquest will conclude with the death of its belligerents and the election of Eadgar the Atheling, great-nephew and chosen heir of the last king.",
+        "id": "historicity_norman_conquest_determined_edgar",
+        "isDefault": false,
+        "name": "Eadgar of Wessex"
+      },
+      {
+        "blocksAchievements": false,
+        "desc": "The Conquest will conclude with the death of its belligerents and the shock election of Margaret of Wessex, great-niece of the last king.",
+        "id": "historicity_norman_conquest_determined_margaret",
+        "isDefault": false,
+        "name": "Margaret of Wessex"
+      },
+      {
+        "blocksAchievements": false,
+        "desc": "The Conquest will conclude with the death of its belligerents and the shock election of Aelfwine Haraldson, grandson of King Canute the Great — despite his complete lack of interest.",
+        "id": "historicity_norman_conquest_determined_aelfwine",
+        "isDefault": false,
+        "name": "Aelfwine Knytling"
+      },
+      {
+        "blocksAchievements": false,
+        "desc": "The Conquest will conclude with the death of its belligerents and the shock election of King Svend of Denmark, whose family have oft held the kingship.",
+        "id": "historicity_norman_conquest_determined_svend",
+        "isDefault": false,
+        "name": "Svend of Denmark"
+      },
+      {
+        "blocksAchievements": false,
+        "desc": "The Conquest will conclude with the death of its belligerents and the shock election of Earl Cadoc of Cornwall, whose dynasty holds a near-millennium long pedigree of continuous rule in the British Isles.",
+        "id": "historicity_norman_conquest_determined_cadoc",
+        "isDefault": false,
+        "name": "Cadoc of Cornwall"
+      }
+    ]
+  },
+  {
+    "categories": [
+      "historicity",
+      "faith"
+    ],
+    "default": "default_regional_heresy",
+    "desc": null,
+    "id": "regional_heresy",
+    "name": "Regional Heresies",
+    "options": [
+      {
+        "blocksAchievements": false,
+        "desc": "Heresy outbreaks in certain regions are more likely to be historical heresies, such as Lollardy in England.",
+        "id": "default_regional_heresy",
+        "isDefault": true,
+        "name": "Default"
+      },
+      {
+        "blocksAchievements": false,
+        "desc": "Heresy outbreaks in certain regions will almost always be historical heresies.",
+        "id": "strict_regional_heresy",
+        "isDefault": false,
+        "name": "Strict"
+      },
+      {
+        "blocksAchievements": false,
+        "desc": "Heresy outbreaks do not have regional weighting, encouraging the appearance of more diverse heresies.",
+        "id": "relaxed_regional_heresy",
+        "isDefault": false,
+        "name": "Relaxed"
+      }
+    ]
+  },
+  {
+    "categories": [
+      "historicity"
+    ],
+    "default": "silk_road_starting_innovations_preset",
+    "desc": null,
+    "id": "silk_road_starting_innovations",
+    "name": "Starting Silk Road Innovations",
+    "options": [
+      {
+        "blocksAchievements": false,
+        "desc": "Starting Silk Road Innovations will be the same preset selection in each bookmark.",
+        "id": "silk_road_starting_innovations_preset",
+        "isDefault": true,
+        "name": "Preset"
+      },
+      {
+        "blocksAchievements": false,
+        "desc": "Starting Silk Road Innovations will be randomly selected from possibilities of the Era.",
+        "id": "silk_road_starting_innovations_random",
+        "isDefault": false,
+        "name": "Random"
+      }
+    ]
+  },
+  {
+    "categories": [
+      "historicity",
+      "game_modes"
+    ],
+    "default": "situation_the_great_steppe_toggle_on",
+    "desc": null,
+    "id": "situation_the_great_steppe",
+    "name": "The Great Steppe",
+    "options": [
+      {
+        "blocksAchievements": false,
+        "desc": "The Nomadic rulers of the Great Steppe will be involved in a Situation with its own Steppe Seasons and struggle to become the Gurkhan.",
+        "id": "situation_the_great_steppe_toggle_on",
+        "isDefault": true,
+        "name": "Enabled"
+      },
+      {
+        "blocksAchievements": false,
+        "desc": "The Great Steppe Situation is not enabled when the game begins, meaning that the Steppe plays like any other normal part of the map.",
+        "id": "situation_the_great_steppe_toggle_off",
+        "isDefault": false,
+        "name": "Disabled"
+      }
+    ]
+  },
+  {
+    "categories": [
+      "historicity",
+      "flavor"
+    ],
+    "default": "historicity_ruler_of_munster_classic_murchad",
+    "desc": null,
+    "id": "historicity_ruler_of_munster",
+    "name": "True King of Munster",
+    "options": [
+      {
+        "blocksAchievements": false,
+        "desc": "The Petty Kingdom of Munster is ruled by King Murchad in 1066, CK's default tutorial character since 2012.",
+        "id": "historicity_ruler_of_munster_classic_murchad",
+        "isDefault": true,
+        "name": "Classic — Murchad"
+      },
+      {
+        "blocksAchievements": false,
+        "desc": "The Petty Kingdom of Munster is ruled by King Toirdelbach in 1066, its historical ruler. Selecting Murchad as the player character will result in playing Toirdelbach.",
+        "id": "historicity_ruler_of_munster_historical_toirdelbach",
+        "isDefault": false,
+        "name": "Historic — Toirdelbach"
+      }
+    ]
+  },
+  {
+    "categories": [
+      "multiplayer"
+    ],
+    "default": "default_multiplayer_murder_schemes",
+    "desc": null,
+    "id": "multiplayer_murder_schemes",
+    "name": "Multiplayer: Murder Schemes",
+    "options": [
+      {
+        "blocksAchievements": false,
+        "desc": "Hostile Schemes can be used against players and their families.",
+        "id": "default_multiplayer_murder_schemes",
+        "isDefault": true,
+        "name": "Default"
+      },
+      {
+        "blocksAchievements": false,
+        "desc": "Players cannot start Hostile Schemes against other players.",
+        "id": "no_players_multiplayer_murder_schemes",
+        "isDefault": false,
+        "name": "No Players"
+      },
+      {
+        "blocksAchievements": false,
+        "desc": "Players cannot start Hostile Schemes against other players or their close family members.",
+        "id": "no_player_families_multiplayer_murder_schemes",
+        "isDefault": false,
+        "name": "No Player Families"
+      }
+    ]
+  },
+  {
+    "categories": [
+      "titles",
+      "tweaks"
+    ],
+    "default": "on_limited_de_jure_requirement",
+    "desc": null,
+    "id": "de_jure_requirement",
+    "name": "De Jure Requirement",
+    "options": [
+      {
+        "blocksAchievements": false,
+        "desc": "Titles with De Jure land will eventually be destroyed if a character holds no De Jure land of the title within their realm. The Player's Primary title will never be destroyed.",
+        "id": "on_limited_de_jure_requirement",
+        "isDefault": true,
+        "name": "On (Limited)"
+      },
+      {
+        "blocksAchievements": false,
+        "desc": "Titles with De Jure land will eventually be destroyed if a character holds no De Jure land of the title within their realm.",
+        "id": "on_de_jure_requirement",
+        "isDefault": false,
+        "name": "On"
+      },
+      {
+        "blocksAchievements": false,
+        "desc": "Titles with De Jure land will never be destroyed.",
+        "id": "off_de_jure_requirement",
+        "isDefault": false,
+        "name": "Off"
+      }
+    ]
+  },
+  {
+    "categories": [
+      "titles",
+      "tweaks"
+    ],
+    "default": "on_empire_obscurity_requirement",
+    "desc": null,
+    "id": "empire_obscurity_requirement",
+    "name": "Empire Obscurity",
+    "options": [
+      {
+        "blocksAchievements": false,
+        "desc": "De Jure Empires will be destroyed unless the holder controls at least 20% of its De Jure Counties.",
+        "id": "on_empire_obscurity_requirement",
+        "isDefault": true,
+        "name": "On"
+      },
+      {
+        "blocksAchievements": false,
+        "desc": "Empires will persist regardless of how much De Jure land the holder controls.",
+        "id": "off_empire_obscurity_requirement",
+        "isDefault": false,
+        "name": "Off"
+      }
+    ]
+  },
+  {
+    "categories": [
+      "titles",
+      "tweaks"
+    ],
+    "default": "ai_significant_exclave_independence",
+    "desc": null,
+    "id": "exclave_independence",
+    "name": "Exclave Independence",
+    "options": [
+      {
+        "blocksAchievements": false,
+        "desc": "Independent Rulers can have exclaves (disconnected land) anywhere in the world.",
+        "id": "off_exclave_independence",
+        "isDefault": false,
+        "name": "Off"
+      },
+      {
+        "blocksAchievements": false,
+        "desc": "Exclaves of Independent AI Rulers at peace will be removed on succession unless connected to the Capital area by one County, via a naval path or part of the De Jure territory.",
+        "id": "ai_limited_exclave_independence",
+        "isDefault": false,
+        "name": "Limited (AI Only)"
+      },
+      {
+        "blocksAchievements": false,
+        "desc": "Exclaves of Independent AI Rulers at peace will be removed on succession unless connected via a naval path or part of the De Jure territory.",
+        "id": "ai_significant_exclave_independence",
+        "isDefault": true,
+        "name": "Significant (AI Only)"
+      },
+      {
+        "blocksAchievements": false,
+        "desc": "Exclaves of Independent AI Rulers at peace will be removed on succession unless they are connected via a naval path.",
+        "id": "ai_total_exclave_independence",
+        "isDefault": false,
+        "name": "Total (AI Only)"
+      },
+      {
+        "blocksAchievements": false,
+        "desc": "Exclaves of Independent Rulers at peace will be removed on succession unless connected to the Capital area by one County, via a naval path or part of the De Jure territory.",
+        "id": "limited_exclave_independence",
+        "isDefault": false,
+        "name": "Limited"
+      },
+      {
+        "blocksAchievements": false,
+        "desc": "Exclaves of Independent Rulers at peace will be removed on succession unless connected via a naval path or part of the De Jure territory.",
+        "id": "significant_exclave_independence",
+        "isDefault": false,
+        "name": "Significant"
+      },
+      {
+        "blocksAchievements": false,
+        "desc": "Exclaves of Independent Rulers at peace will be removed on succession unless they are connected via a naval path.",
+        "id": "total_exclave_independence",
+        "isDefault": false,
+        "name": "Total"
+      }
+    ]
+  },
+  {
+    "categories": [
+      "titles",
+      "tweaks"
+    ],
+    "default": "title_creation_imperial_power_projection_none",
+    "desc": null,
+    "id": "title_creation_imperial_power_projection",
+    "name": "Imperial Power Projection",
+    "options": [
+      {
+        "blocksAchievements": false,
+        "desc": "Empires may be freely created by any Character who meets their requirements.",
+        "id": "title_creation_imperial_power_projection_none",
+        "isDefault": true,
+        "name": "None"
+      },
+      {
+        "blocksAchievements": false,
+        "desc": "Creating an Empire requires a Strong Hook on, Close Family Marriage with, or 50% more troops than every bordering Empire-Tier Realm.",
+        "id": "title_creation_imperial_power_projection_any_power_advantage",
+        "isDefault": false,
+        "name": "Any Power Advantage"
+      },
+      {
+        "blocksAchievements": false,
+        "desc": "Creating an Empire requires 50% more troops than every bordering Empire-Tier Realm.",
+        "id": "title_creation_imperial_power_projection_hard_power_only",
+        "isDefault": false,
+        "name": "Hard Power Advantage"
+      },
+      {
+        "blocksAchievements": false,
+        "desc": "Creating an Empire requires a Strong Hook on or Close Family Marriage with every bordering Empire-Tier Realm.",
+        "id": "title_creation_imperial_power_projection_soft_power_only",
+        "isDefault": false,
+        "name": "Soft Power Advantage"
+      },
+      {
+        "blocksAchievements": false,
+        "desc": "Creating an Empire requires 50% more troops than every Empire-Tier Realm that borders a Character or shares any De Jure with them.",
+        "id": "title_creation_imperial_power_projection_hard_power_only_strict",
+        "isDefault": false,
+        "name": "Strict Hard Power Advantage"
+      },
+      {
+        "blocksAchievements": false,
+        "desc": "Creating an Empire requires a Strong Hook on, Close Family Marriage with, or 50% more troops than every Empire-Tier Realm that borders a Character or shares any De Jure with them.",
+        "id": "title_creation_imperial_power_projection_any_power_strict",
+        "isDefault": false,
+        "name": "Strict Any Power Advantage"
+      }
+    ]
+  },
+  {
+    "categories": [
+      "titles",
+      "tweaks"
+    ],
+    "default": "title_creation_imperial_power_projection_targeting_ai_only",
+    "desc": null,
+    "id": "title_creation_imperial_power_projection_targeting",
+    "name": "Imperial Power Projection Target",
+    "options": [
+      {
+        "blocksAchievements": false,
+        "desc": "Extra restrictions on the creation of Empire-Tier Titles will apply only to the AI.",
+        "id": "title_creation_imperial_power_projection_targeting_ai_only",
+        "isDefault": true,
+        "name": "AI Only"
+      },
+      {
+        "blocksAchievements": false,
+        "desc": "Extra restrictions on the creation of Empire-Tier Titles will apply only to all Characters.",
+        "id": "title_creation_imperial_power_projection_targeting_both",
+        "isDefault": false,
+        "name": "Anyone"
+      },
+      {
+        "blocksAchievements": false,
+        "desc": "Extra restrictions on the creation of Empire-Tier Titles will apply only to players only",
+        "id": "title_creation_imperial_power_projection_targeting_player_only",
+        "isDefault": false,
+        "name": "Player Only"
+      }
+    ]
+  },
+  {
+    "categories": [
+      "tweaks",
+      "historicity",
+      "culture"
+    ],
+    "default": "default_culture_conversion_speed",
+    "desc": null,
+    "id": "culture_conversion_speed",
+    "name": "Culture Conversion Speed",
+    "options": [
+      {
+        "blocksAchievements": false,
+        "desc": "Conversion speed is unchanged.",
+        "id": "default_culture_conversion_speed",
+        "isDefault": true,
+        "name": "Default"
+      },
+      {
+        "blocksAchievements": true,
+        "desc": "The speed is increased, making conversion take roughly half of the time.",
+        "id": "faster_culture_conversion_speed",
+        "isDefault": false,
+        "name": "Faster"
+      },
+      {
+        "blocksAchievements": true,
+        "desc": "The speed is significantly increased, making conversion take roughly a quarter of the time.",
+        "id": "significantly_faster_culture_conversion_speed",
+        "isDefault": false,
+        "name": "Significantly Faster"
+      },
+      {
+        "blocksAchievements": false,
+        "desc": "The speed is significantly reduced, making conversion take roughly four times longer.",
+        "id": "significantly_slower_culture_conversion_speed",
+        "isDefault": false,
+        "name": "Significantly Slower"
+      },
+      {
+        "blocksAchievements": false,
+        "desc": "The speed is reduced, making conversion take roughly twice the time.",
+        "id": "slower_culture_conversion_speed",
+        "isDefault": false,
+        "name": "Slower"
+      }
+    ]
+  },
+  {
+    "categories": [
+      "tweaks",
+      "historicity"
+    ],
+    "default": "default_diplomatic_range",
+    "desc": null,
+    "id": "diplomatic_range",
+    "name": "Diplomatic Range",
+    "options": [
+      {
+        "blocksAchievements": false,
+        "desc": "The diplomatic range is unchanged.",
+        "id": "default_diplomatic_range",
+        "isDefault": true,
+        "name": "Default"
+      },
+      {
+        "blocksAchievements": false,
+        "desc": "The diplomatic range is further restricted, making non-local interactions significantly more rare.",
+        "id": "restricted_diplomatic_range",
+        "isDefault": false,
+        "name": "Restricted"
+      },
+      {
+        "blocksAchievements": true,
+        "desc": "Diplomatic range is turned off, allowing anyone on the map to interact with anyone else.",
+        "id": "unrestricted_diplomatic_range",
+        "isDefault": false,
+        "name": "Unrestricted"
+      }
+    ]
+  },
+  {
+    "categories": [
+      "tweaks",
+      "culture"
+    ],
+    "default": "default_hybrid_and_divergence_cooldowns",
+    "desc": null,
+    "id": "hybrid_and_divergence_cooldowns",
+    "name": "Divergent & Hybrid Culture Cooldowns",
+    "options": [
+      {
+        "blocksAchievements": false,
+        "desc": "Cultures can only Diverge after having existed for 100 years, and Hybridize after having existed for 50 years.",
+        "id": "default_hybrid_and_divergence_cooldowns",
+        "isDefault": true,
+        "name": "Default"
+      },
+      {
+        "blocksAchievements": false,
+        "desc": "Cultures can only Diverge after having existed for 200 years, and Hybridize after having existed for 100 years.",
+        "id": "slower_hybrid_and_divergence_cooldowns",
+        "isDefault": false,
+        "name": "Slower"
+      },
+      {
+        "blocksAchievements": true,
+        "desc": "There are no cooldowns for when a Culture is allowed to Diverge or Hybridize.",
+        "id": "no_hybrid_and_divergence_cooldowns",
+        "isDefault": false,
+        "name": "No Cooldowns"
+      },
+      {
+        "blocksAchievements": false,
+        "desc": "Cultures can only Diverge after having existed for 50 years, and Hybridize after having existed for 25 years.",
+        "id": "faster_hybrid_and_divergence_cooldowns",
+        "isDefault": false,
+        "name": "Faster"
+      }
+    ]
+  },
+  {
+    "categories": [
+      "tweaks",
+      "historicity",
+      "faith"
+    ],
+    "default": "default_faith_conversion_speed",
+    "desc": null,
+    "id": "faith_conversion_speed",
+    "name": "Faith Conversion Speed",
+    "options": [
+      {
+        "blocksAchievements": false,
+        "desc": "Conversion speed is unchanged.",
+        "id": "default_faith_conversion_speed",
+        "isDefault": true,
+        "name": "Default"
+      },
+      {
+        "blocksAchievements": true,
+        "desc": "The speed is increased, making conversion take roughly half of the time.",
+        "id": "faster_faith_conversion_speed",
+        "isDefault": false,
+        "name": "Faster"
+      },
+      {
+        "blocksAchievements": true,
+        "desc": "The speed is significantly increased, making conversion take roughly a quarter of the time.",
+        "id": "significantly_faster_faith_conversion_speed",
+        "isDefault": false,
+        "name": "Significantly Faster"
+      },
+      {
+        "blocksAchievements": false,
+        "desc": "The speed is significantly reduced, making conversion take roughly four times longer.",
+        "id": "significantly_slower_faith_conversion_speed",
+        "isDefault": false,
+        "name": "Significantly Slower"
+      },
+      {
+        "blocksAchievements": false,
+        "desc": "The speed is reduced, making conversion take roughly twice the time.",
+        "id": "slower_faith_conversion_speed",
+        "isDefault": false,
+        "name": "Slower"
+      }
+    ]
+  },
+  {
+    "categories": [
+      "tweaks",
+      "flavor"
+    ],
+    "default": "on_generate_families",
+    "desc": null,
+    "id": "generate_families",
+    "name": "Generate Families",
+    "options": [
+      {
+        "blocksAchievements": false,
+        "desc": "Most landed historical characters with no recorded family will have a spouse and up to three children generated for them. This reduces the risk of an early Game Over.",
+        "id": "on_generate_families",
+        "isDefault": true,
+        "name": "On"
+      },
+      {
+        "blocksAchievements": false,
+        "desc": "Most landed historical AI characters with no recorded family will have a spouse and up to three children generated for them. This increases the risk of an early Game Over.",
+        "id": "on_generate_families_ai_only",
+        "isDefault": false,
+        "name": "On (AI Only)"
+      },
+      {
+        "blocksAchievements": false,
+        "desc": "Landed historical characters with no recorded family will NOT have a family generated for them. This increases the risk of an early Game Over.",
+        "id": "off_generate_families",
+        "isDefault": false,
+        "name": "Off"
+      }
+    ]
+  },
+  {
+    "categories": [
+      "tweaks"
+    ],
+    "default": "advantage_damage_effect_5",
+    "desc": null,
+    "id": "advantage_damage_effect",
+    "name": "Impact of Advantage",
+    "options": [
+      {
+        "blocksAchievements": false,
+        "desc": "Each point of Advantage you have over your opponent in Battles will increase Damage by 1%",
+        "id": "advantage_damage_effect_1",
+        "isDefault": false,
+        "name": "1"
+      },
+      {
+        "blocksAchievements": false,
+        "desc": "Each point of Advantage you have over your opponent in Battles will increase Damage by 2%",
+        "id": "advantage_damage_effect_2",
+        "isDefault": false,
+        "name": "2"
+      },
+      {
+        "blocksAchievements": false,
+        "desc": "Each point of Advantage you have over your opponent in Battles will increase Damage by 5%",
+        "id": "advantage_damage_effect_5",
+        "isDefault": true,
+        "name": "5"
+      },
+      {
+        "blocksAchievements": false,
+        "desc": "Each point of Advantage you have over your opponent in Battles will increase Damage by 7%",
+        "id": "advantage_damage_effect_7",
+        "isDefault": false,
+        "name": "7"
+      },
+      {
+        "blocksAchievements": false,
+        "desc": "Each point of Advantage you have over your opponent in Battles will increase Damage by 10%",
+        "id": "advantage_damage_effect_10",
+        "isDefault": false,
+        "name": "10"
+      }
+    ]
+  },
+  {
+    "categories": [
+      "tweaks"
+    ],
+    "default": "legend_cost_normal",
+    "desc": null,
+    "id": "legend_cost",
+    "name": "Legend Cost",
+    "options": [
+      {
+        "blocksAchievements": false,
+        "desc": "Legends will cost a normal amount.",
+        "id": "legend_cost_normal",
+        "isDefault": true,
+        "name": "Normal"
+      },
+      {
+        "blocksAchievements": false,
+        "desc": "Legends will cost twice as much as normal.",
+        "id": "legend_cost_high",
+        "isDefault": false,
+        "name": "High"
+      },
+      {
+        "blocksAchievements": false,
+        "desc": "Legends will cost four times as much as normal.",
+        "id": "legend_cost_very_high",
+        "isDefault": false,
+        "name": "Very High"
+      },
+      {
+        "blocksAchievements": false,
+        "desc": "Legends will cost half as much as normal.",
+        "id": "legend_cost_low",
+        "isDefault": false,
+        "name": "Low"
+      },
+      {
+        "blocksAchievements": false,
+        "desc": "Legends will cost a quarter as much as normal.",
+        "id": "legend_cost_very_low",
+        "isDefault": false,
+        "name": "Very Low"
+      }
+    ]
+  },
+  {
+    "categories": [
+      "tweaks"
+    ],
+    "default": "legend_spread_chance_normal",
+    "desc": null,
+    "id": "legend_spread_chance",
+    "name": "Legend Spread Chance",
+    "options": [
+      {
+        "blocksAchievements": false,
+        "desc": "Legends will have a normal chance of spreading.",
+        "id": "legend_spread_chance_normal",
+        "isDefault": true,
+        "name": "Normal"
+      },
+      {
+        "blocksAchievements": false,
+        "desc": "Legends will have a higher chance of spreading to adjacent provinces.",
+        "id": "legend_spread_chance_high",
+        "isDefault": false,
+        "name": "High"
+      },
+      {
+        "blocksAchievements": false,
+        "desc": "Legends will have a much higher chance of spreading to adjacent provinces.",
+        "id": "legend_spread_chance_very_high",
+        "isDefault": false,
+        "name": "Very High"
+      },
+      {
+        "blocksAchievements": false,
+        "desc": "Legends will have a lower chance of spreading to adjacent provinces.",
+        "id": "legend_spread_chance_low",
+        "isDefault": false,
+        "name": "Low"
+      },
+      {
+        "blocksAchievements": false,
+        "desc": "Legends will have a much lower chance of spreading to adjacent provinces.",
+        "id": "legend_spread_chance_very_low",
+        "isDefault": false,
+        "name": "Very Low"
+      }
+    ]
+  },
+  {
+    "categories": [
+      "tweaks"
+    ],
+    "default": "ai_laamp_numbers_200",
+    "desc": null,
+    "id": "ai_laamp_numbers",
+    "name": "Max Amount of Landless Adventurers",
+    "options": [
+      {
+        "blocksAchievements": false,
+        "desc": "The game will rarely spawn more than 200 adventurers at once. Historical adventurers and special event adventurers might still occur in addition to this.",
+        "id": "ai_laamp_numbers_200",
+        "isDefault": true,
+        "name": "200"
+      },
+      {
+        "blocksAchievements": false,
+        "desc": "The game will rarely spawn more than 150 adventurers at once. Historical adventurers and special event adventurers might still occur in addition to this.",
+        "id": "ai_laamp_numbers_150",
+        "isDefault": false,
+        "name": "150"
+      },
+      {
+        "blocksAchievements": false,
+        "desc": "The game will rarely spawn more than 100 adventurers at once. Historical adventurers and special event adventurers might still occur in addition to this.",
+        "id": "ai_laamp_numbers_100",
+        "isDefault": false,
+        "name": "100"
+      },
+      {
+        "blocksAchievements": false,
+        "desc": "The game will rarely spawn more than 50 adventurers at once. Historical adventurers and special event adventurers might still occur in addition to this.",
+        "id": "ai_laamp_numbers_50",
+        "isDefault": false,
+        "name": "50"
+      },
+      {
+        "blocksAchievements": false,
+        "desc": "The game will rarely spawn more than 25 adventurers at once. Historical adventurers and special event adventurers might still occur in addition to this.",
+        "id": "ai_laamp_numbers_25",
+        "isDefault": false,
+        "name": "25"
+      }
+    ]
+  },
+  {
+    "categories": [
+      "tweaks",
+      "flavor"
+    ],
+    "default": "random_nickname_frequency_default",
+    "desc": null,
+    "id": "random_nickname_frequency",
+    "name": "Random Nickname Frequency",
+    "options": [
+      {
+        "blocksAchievements": false,
+        "desc": "Random Nicknames appear on rulers at the default frequency.",
+        "id": "random_nickname_frequency_default",
+        "isDefault": true,
+        "name": "Default"
+      },
+      {
+        "blocksAchievements": false,
+        "desc": "Random Nicknames appear half as often.",
+        "id": "random_nickname_frequency_halved",
+        "isDefault": false,
+        "name": "Halved"
+      },
+      {
+        "blocksAchievements": false,
+        "desc": "Random Nicknames appear one fourth as often.",
+        "id": "random_nickname_frequency_quartered",
+        "isDefault": false,
+        "name": "Quartered"
+      },
+      {
+        "blocksAchievements": false,
+        "desc": "No random Nicknames will appear.",
+        "id": "random_nickname_frequency_none",
+        "isDefault": false,
+        "name": "Disabled"
+      },
+      {
+        "blocksAchievements": false,
+        "desc": "Random Nicknames appear twice as often.",
+        "id": "random_nickname_frequency_doubled",
+        "isDefault": false,
+        "name": "Doubled"
+      }
+    ]
+  }
+]

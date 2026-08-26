@@ -25,7 +25,14 @@ TYPE_LABELS = {
     "cb": "Casus Belli", "court_position": "Court Position",
     "council_position": "Council", "culture": "Culture", "title": "Title", "title_hegemony": "Hegemony", "title_empire": "Empire", "title_kingdom": "Kingdom", "title_duchy": "Duchy",
     "decision": "Decision", "activity": "Activity", "scheme": "Scheme",
-    "nickname": "Nickname", "artifact": "Artifact",
+    "nickname": "Nickname", "artifact": "Artifact", "interaction": "Interaction",
+    "secret": "Secret", "faction": "Faction", "election": "Succession",
+    "tax_obligation": "Tax Obligation", "court_type": "Court Type",
+    "game_rule": "Game Rule", "task_contract": "Task Contract",
+    "domicile": "Domicile", "accolade": "Accolade", "holding": "Holding",
+    "great_project": "Great Project", "struggle": "Struggle",
+    "situation": "Situation", "legend_type": "Legend", "legend_seed": "Legend",
+    "epidemic": "Epidemic", "scheme": "Scheme", "perk": "Perk",
 }
 
 

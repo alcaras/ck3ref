@@ -1,0 +1,128 @@
+---
+import Base from '../layouts/Base.astro';
+import interactions from '../data/interactions.json';
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const cats = [...new Set(interactions.map((i: any) => i.categoryName))]
+  .filter((c) => !String(c).includes('DEBUG'));
+const dlcs = [...new Set(interactions.map((i: any) => i.dlc).filter(Boolean))].sort();
+const shown = interactions.filter((i: any) => !String(i.categoryName).includes('DEBUG'));
+
+const costText = (cost: any) => {
+  const parts: string[] = [];
+  for (const [k, v] of Object.entries(cost ?? {})) {
+    if (typeof v === 'number') parts.push(`${Math.round(v)} ${k}`);
+    else if ((v as any)?.varies) parts.push(`${(v as any).base ? `${(v as any).base}+ ` : ''}${k}`);
+  }
+  return parts.join(' · ');
+};
+---
+<Base
+  title="Character Interactions"
+  active="interactions"
+  lede="Every button on the character window: what it costs, how often you can use it, and what has to be true before it appears. Conditions come from the game's own trigger macros — named, not expanded."
+  stats={[
+    { value: shown.length, label: 'interactions' },
+    { value: cats.length, label: 'categories' },
+    { value: shown.filter((i: any) => i.usesHooks).length, label: 'can spend hooks' },
+  ]}
+>
+  <div class="filterbar">
+    <input type="search" id="q" placeholder="Filter by name, condition…" autocomplete="off" />
+    <select id="fcat">
+      <option value="">every category</option>
+      {cats.map((c) => <option value={c}>{c}</option>)}
+    </select>
+    <select id="fdlc">
+      <option value="">base game + DLC</option>
+      <option value="base">base game only</option>
+      {dlcs.map((d: any) => <option value={d}>{d}</option>)}
+    </select>
+    <span class="hint" id="count"></span>
+  </div>
+
+  {cats.map((cat) => (
+    <section data-group={cat}>
+      <h2 class="group-h" id={String(cat).toLowerCase().replace(/[^a-z]+/g, '-')}>
+        {cat}
+        <span class="count">{shown.filter((i: any) => i.categoryName === cat).length}</span>
+      </h2>
+      <div class="tbl-scroll">
+        <table class="ntbl">
+          <thead>
+            <tr><th>Interaction</th><th>Cost</th><th>Cooldown</th><th>Requires</th><th>Options</th><th>DLC</th></tr>
+          </thead>
+          <tbody>
+            {shown.filter((i: any) => i.categoryName === cat).map((i: any) => (
+              <tr
+                id={i.id}
+                data-name={`${i.name} ${i.desc ?? ''} ${i.gates.map((g: any) => g.name).join(' ')}`.toLowerCase()}
+                data-cat={i.categoryName}
+                data-dlc={i.dlc ?? 'base'}
+              >
+                <td class="name">
+                  <span class="unit">
+                    <img src={`${base}/img/interactions/${i.id}.webp`} alt="" width="26" height="26" loading="lazy" onerror="this.hidden=true" />
+                    <span>
+                      <span class="u-name">{i.name}</span>
+                      {i.desc && <div class="u-sub">{i.desc}</div>}
+                    </span>
+                  </span>
+                </td>
+                <td class="cost">{costText(i.cost) || <span class="subtle">—</span>}</td>
+                <td class="subtle">{i.cooldown ?? '—'}</td>
+                <td>
+                  <span class="chips">
+                    {i.gates.slice(0, 5).map((g: any) => (
+                      <span class="chip chip--req" title={g.kind}>
+                        {g.negated && <span class="neg">not </span>}{g.name}
+                      </span>
+                    ))}
+                  </span>
+                </td>
+                <td class="num subtle">
+                  {i.optionCount || '—'}
+                  {i.usesHooks && <span class="hook" title="can spend a hook"> ⚯</span>}
+                </td>
+                <td>{i.dlc ? <span class="badge-dlc">{i.dlc}</span> : <span class="subtle">—</span>}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </section>
+  ))}
+
+  <script>
+    const q = document.getElementById('q') as HTMLInputElement;
+    const fcat = document.getElementById('fcat') as HTMLSelectElement;
+    const fdlc = document.getElementById('fdlc') as HTMLSelectElement;
+    const count = document.getElementById('count')!;
+    const rows = [...document.querySelectorAll<HTMLTableRowElement>('tbody tr')];
+    const sections = [...document.querySelectorAll<HTMLElement>('section[data-group]')];
+    function apply() {
+      const needle = q.value.trim().toLowerCase();
+      const c = fcat.value, d = fdlc.value;
+      let shown = 0;
+      for (const r of rows) {
+        const ok = (!needle || (r.dataset.name ?? '').includes(needle)) &&
+          (!c || r.dataset.cat === c) &&
+          (!d || (d === 'base' ? r.dataset.dlc === 'base' : r.dataset.dlc === d));
+        r.hidden = !ok;
+        if (ok) shown++;
+      }
+      for (const s of sections)
+        s.hidden = ![...s.querySelectorAll('tbody tr')].some((r) => !(r as HTMLTableRowElement).hidden);
+      count.textContent = `${shown} of ${rows.length}`;
+    }
+    for (const el of [q, fcat, fdlc]) el.addEventListener('input', apply);
+    apply();
+  </script>
+
+  <style>
+    .ntbl td.name { white-space: normal; max-width: 22rem; }
+    .cost { font-family: var(--font-mono); font-size: 0.78rem; white-space: nowrap; }
+    .hook { color: var(--rubric); }
+    .chips { max-width: 24rem; }
+  </style>
+</Base>
