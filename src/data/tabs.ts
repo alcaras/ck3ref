@@ -27,8 +27,8 @@ export const SECTIONS = [
 
 export const TABS: Tab[] = [
   // Characters
-  { slug: 'traits', label: 'Traits', section: 'Characters', status: 'placeholder', summary: 'All 301 traits: modifiers, opinions, opposites, inheritance.' },
-  { slug: 'lifestyles', label: 'Lifestyles & Perks', section: 'Characters', status: 'placeholder', summary: 'The 18 perk trees, rendered as trees.' },
+  { slug: 'traits', label: 'Traits', section: 'Characters', status: 'built', summary: 'All character traits: modifiers, opinions, opposites, inheritance.' },
+  { slug: 'lifestyles', label: 'Lifestyles & Perks', section: 'Characters', status: 'built', summary: 'The 18 perk trees, rendered as trees.' },
   { slug: 'schemes', label: 'Schemes', section: 'Characters', status: 'placeholder', summary: 'Scheme types, agents, countermeasures.' },
   { slug: 'court-positions', label: 'Court Positions', section: 'Characters', status: 'placeholder', summary: 'Every court position and its tasks.' },
   { slug: 'council', label: 'Council', section: 'Characters', status: 'placeholder', summary: 'Council positions and tasks.' },

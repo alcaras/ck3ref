@@ -1,0 +1,141 @@
+---
+import Base from '../layouts/Base.astro';
+import data from '../data/lifestyles.json';
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const { lifestyles, trees, focuses } = data;
+
+const ORDER = ['diplomacy_lifestyle', 'martial_lifestyle', 'stewardship_lifestyle',
+  'intrigue_lifestyle', 'learning_lifestyle', 'wanderer_lifestyle'];
+const byLifestyle = ORDER.filter((l) => trees.some((t) => t.lifestyle === l)).map((l) => ({
+  lifestyle: lifestyles.find((x) => x.id === l) ?? { id: l, name: l, dlc: null },
+  trees: trees.filter((t) => t.lifestyle === l),
+}));
+
+// SVG geometry
+const NW = 148, NH = 46, XS = 162, YS = 88, PAD = 10;
+function layout(tree: (typeof trees)[number]) {
+  const xs = tree.perks.map((p) => p.x), ys = tree.perks.map((p) => p.y);
+  const minX = Math.min(...xs), minY = Math.min(...ys);
+  const pos = new Map(tree.perks.map((p) => [p.id, {
+    x: PAD + (p.x - minX) * XS, y: PAD + (p.y - minY) * YS,
+  }]));
+  return {
+    pos,
+    w: PAD * 2 + (Math.max(...xs) - minX) * XS + NW,
+    h: PAD * 2 + (Math.max(...ys) - minY) * YS + NH,
+  };
+}
+const lifestyleFocuses = focuses.filter((f) => !f.education);
+const educationFocuses = focuses.filter((f) => f.education);
+---
+<Base
+  title="Lifestyles & Perks"
+  active="lifestyles"
+  lede="The perk trees as the game lays them out — hover any perk for its full effects. Completing a tree's final perk grants its trait."
+  stats={[
+    { value: trees.length, label: 'trees' },
+    { value: trees.reduce((n, t) => n + t.perks.length, 0), label: 'perks' },
+    { value: focuses.length, label: 'focuses' },
+  ]}
+>
+  {byLifestyle.map((g) => (
+    <section>
+      <h2 class="group-h" id={g.lifestyle.id}>
+        {g.lifestyle.name}
+        {g.lifestyle.dlc && <span class="badge-dlc">{g.lifestyle.dlc}</span>}
+      </h2>
+      <div class="trees">
+        {g.trees.map((t) => {
+          const { pos, w, h } = layout(t);
+          return (
+            <figure class="tree">
+              <figcaption>{t.name}</figcaption>
+              <svg viewBox={`0 0 ${w} ${h}`} width={w} height={h} role="img" aria-label={`${t.name} perk tree`}>
+                {t.perks.flatMap((p) =>
+                  p.parents.filter((par) => pos.has(par)).map((par) => {
+                    const a = pos.get(par)!, b = pos.get(p.id)!;
+                    const x1 = a.x + NW / 2, y1 = a.y + NH, x2 = b.x + NW / 2, y2 = b.y;
+                    return <path d={`M ${x1} ${y1} C ${x1} ${(y1 + y2) / 2}, ${x2} ${(y1 + y2) / 2}, ${x2} ${y2}`} class="edge" />;
+                  })
+                )}
+                {t.perks.map((p) => {
+                  const { x, y } = pos.get(p.id)!;
+                  return (
+                    <g class:list={['node', { 'node--capstone': !!p.trait }]} transform={`translate(${x} ${y})`}>
+                      <title>{[p.name, ...p.effects, p.trait ? `Grants trait: ${p.trait.name}` : ''].filter(Boolean).join('\n')}</title>
+                      <rect width={NW} height={NH} rx="4" />
+                      <text x={NW / 2} y={p.trait ? 20 : NH / 2 + 4} text-anchor="middle">{p.name}</text>
+                      {p.trait && <text x={NW / 2} y={36} text-anchor="middle" class="cap">grants {p.trait.name}</text>}
+                    </g>
+                  );
+                })}
+              </svg>
+              <details class="perklist">
+                <summary>perk effects</summary>
+                <dl>
+                  {t.perks.map((p) => (
+                    <>
+                      <dt id={p.id}>{p.name}{p.trait && <span class="cap-tag"> → {p.trait.name}</span>}</dt>
+                      <dd>{p.effects.join(' · ') || '—'}</dd>
+                    </>
+                  ))}
+                </dl>
+              </details>
+            </figure>
+          );
+        })}
+      </div>
+    </section>
+  ))}
+
+  <section>
+    <h2 class="group-h" id="focuses">Focuses <span class="count">{lifestyleFocuses.length}</span></h2>
+    <div class="tbl-scroll">
+      <table class="ntbl">
+        <thead><tr><th>Focus</th><th>Lifestyle</th><th>Effects</th></tr></thead>
+        <tbody>
+          {lifestyleFocuses.map((f) => (
+            <tr id={f.id}>
+              <td class="name" title={f.desc}>{f.name}</td>
+              <td class="subtle">{(f.lifestyle ?? '').replace('_lifestyle', '')}</td>
+              <td class="fx">{f.effects.join(' · ')}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+    <h2 class="group-h" id="education-focuses">Childhood Education <span class="count">{educationFocuses.length}</span></h2>
+    <div class="tbl-scroll">
+      <table class="ntbl">
+        <thead><tr><th>Focus</th><th>Effects</th></tr></thead>
+        <tbody>
+          {educationFocuses.map((f) => (
+            <tr id={f.id}>
+              <td class="name" title={f.desc}>{f.name}</td>
+              <td class="fx">{f.effects.join(' · ')}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <style>
+    .trees { display: flex; gap: 1.25rem; flex-wrap: wrap; align-items: flex-start; }
+    .tree { margin: 0; background: var(--panel); border: 1px solid var(--line-soft); border-radius: var(--r); padding: 0.6rem; overflow-x: auto; max-width: 100%; }
+    .tree figcaption { font-family: var(--font-display); font-size: 0.95rem; margin-bottom: 0.4rem; color: var(--vellum); }
+    .edge { fill: none; stroke: var(--line); stroke-width: 1.5; }
+    .node rect { fill: var(--ink); stroke: var(--line); }
+    .node:hover rect { stroke: var(--brass); }
+    .node text { fill: var(--vellum); font: 11px var(--font-ui); }
+    .node--capstone rect { stroke: var(--rubric); }
+    .node .cap { fill: var(--dim); font-size: 9.5px; }
+    .perklist summary { color: var(--brass); cursor: pointer; font-size: 0.78rem; }
+    .perklist dl { margin: 0.4rem 0 0; font-size: 0.8rem; }
+    .perklist dt { color: var(--vellum); font-weight: 600; margin-top: 0.35rem; }
+    .perklist dd { margin: 0; color: var(--dim); max-width: 34rem; }
+    .cap-tag { color: var(--rubric); font-weight: 400; }
+    .fx { font-size: 0.8rem; }
+  </style>
+</Base>

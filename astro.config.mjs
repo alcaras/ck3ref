@@ -1,7 +1,9 @@
 import { defineConfig } from 'astro/config';
 
-// GH Pages project-site deploy: set site/base when the repo goes public.
+// Deployed as a GitHub Pages project site.
 export default defineConfig({
+  site: 'https://alcaras.github.io',
+  base: '/ck3ref/',
   build: { format: 'directory' },
   trailingSlash: 'ignore',
 });

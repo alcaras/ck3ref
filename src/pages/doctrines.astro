@@ -1,0 +1,281 @@
+---
+import Base from '../layouts/Base.astro';
+import data from '../data/doctrines.json';
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+
+const { groups, doctrines } = data;
+const byId = new Map(doctrines.map((d) => [d.id, d]));
+const groupById = new Map(groups.map((g) => [g.id, g]));
+
+const tenets = doctrines.filter((d) => d.isTenet);
+const tenetGroup = groupById.get('doctrine_core_tenets');
+
+const CATEGORY_ORDER = ['main_group', 'marriage', 'crimes', 'clergy', 'special', 'not_creatable'];
+const otherGroups = groups
+  .filter((g) => g.id !== 'doctrine_core_tenets')
+  .sort(
+    (a, b) =>
+      CATEGORY_ORDER.indexOf(a.category) - CATEGORY_ORDER.indexOf(b.category) ||
+      a.name.localeCompare(b.name)
+  );
+const doctrinesOf = (g: (typeof groups)[number]) =>
+  g.doctrines.map((k) => byId.get(k)).filter(Boolean) as typeof doctrines;
+const ungrouped = doctrines.filter((d) => !d.group);
+
+const dlcs = [...new Set(doctrines.map((d) => d.dlc).filter(Boolean))].sort() as string[];
+
+type Cost = (typeof doctrines)[number]['pietyCost'];
+function costParts(c: Cost): { main: string; sub: string[]; title: string } {
+  if (!c) return { main: '—', sub: [], title: '' };
+  const sub: string[] = [];
+  let main: string;
+  if (c.values.length > 0) {
+    main = c.values.map((v) => v.value).join(' / ');
+  } else {
+    main = c.base != null ? String(c.base) : '—';
+  }
+  for (const m of c.mults) sub.push(`×${m.factor} if ${m.when}`);
+  for (const n of c.notes) sub.push(String(n));
+  const title = c.values.map((v) => `${v.value} — ${v.when}`).join('; ');
+  return { main, sub, title };
+}
+const dName = (k: string) => byId.get(k)?.name ?? k;
+
+function searchText(d: (typeof doctrines)[number]): string {
+  return [d.name, ...d.nameVariants, ...d.shownForReligions, ...(d.parameters.map((p) => p.text ?? p.key)), ...d.characterModifier]
+    .join(' ')
+    .toLowerCase();
+}
+---
+<Base
+  title="Doctrines & Tenets"
+  active="doctrines"
+  lede="Every faith doctrine and core tenet: piety costs (with the rules behind conditional prices), mechanical parameters, character modifiers, added virtues and sins, and which faiths can see or pick each one."
+  stats={[
+    { value: tenets.length, label: 'tenets' },
+    { value: doctrines.length - tenets.length, label: 'doctrines' },
+    { value: groups.length, label: 'doctrine groups' },
+  ]}
+>
+  <div class="filterbar">
+    <input type="search" id="q" placeholder="Filter by name, religion, effect…" autocomplete="off" />
+    <select id="fkind">
+      <option value="">tenets &amp; doctrines</option>
+      <option value="tenet">tenets only</option>
+      <option value="doctrine">doctrines only</option>
+    </select>
+    <select id="fdlc">
+      <option value="">base game + DLC</option>
+      <option value="base">base game only</option>
+      {dlcs.map((d) => <option value={d}>{d}</option>)}
+    </select>
+    <span class="hint" id="count"></span>
+  </div>
+
+  <section data-kind="tenet">
+    <h2 class="group-h" id="doctrine_core_tenets">
+      Tenets
+      <span class="count">{tenets.length}</span>
+      <span class="picks">every faith picks {tenetGroup?.picks}</span>
+    </h2>
+    <div class="tbl-scroll">
+      <table class="ntbl">
+        <thead>
+          <tr>
+            <th>Tenet</th>
+            <th class="num" title="Piety cost when creating or reforming a faith">Piety</th>
+            <th>Effects</th>
+            <th>Available to</th>
+            <th>Incompatible with</th>
+            <th>DLC</th>
+          </tr>
+        </thead>
+        <tbody>
+          {tenets.map((d) => {
+            const cost = costParts(d.pietyCost);
+            return (
+              <tr id={d.id} data-kind="tenet" data-dlc={d.dlc ?? 'base'} data-name={searchText(d)}>
+                <td class="name">
+                  <span class="u-name">{d.name}</span>
+                  {d.nameVariants.length > 0 && <span class="u-sub"><br />also: {d.nameVariants.join(', ')}</span>}
+                  {d.desc && <div class="desc">{d.desc}</div>}
+                </td>
+                <td class="num cost">
+                  {cost.title ? <span class="var" title={cost.title}>{cost.main}</span> : cost.main}
+                  {cost.sub.map((s) => <span class="subtle"><br />{s}</span>)}
+                </td>
+                <td class="fx">
+                  {d.characterModifier.map((m) => <div>{m}</div>)}
+                  {d.clergyModifier.map((m) => <div>clergy: {m}</div>)}
+                  {d.virtues.length > 0 && <div class="virtue">Virtue: {d.virtues.join(', ')}</div>}
+                  {d.sins.length > 0 && <div class="sin">Sin: {d.sins.join(', ')}</div>}
+                  {d.parameters.filter((p) => p.text).map((p) => <div class="subtle">{p.text}</div>)}
+                  {d.parameters.filter((p) => !p.text).map((p) => <div class="subtle mono">{p.key}: {String(p.value)}</div>)}
+                </td>
+                <td>
+                  <span class="chips">
+                    {d.shownForReligions.map((r) => <span class="chip chip--req">{r}</span>)}
+                    {d.shownConditions.map((c) => <span class="chip">{c}</span>)}
+                    {d.shownForReligions.length + d.shownConditions.length === 0 && <span class="subtle">any faith</span>}
+                  </span>
+                </td>
+                <td>
+                  <span class="chips">
+                    {d.incompatibleWith.map((k) => (
+                      <a class="chip chip--counter" href={`#${k}`}>{dName(k)}</a>
+                    ))}
+                    {d.requiresDoctrines.map((k) => (
+                      <a class="chip chip--req" href={`#${k}`} title="can only be picked alongside (any of) these">requires {dName(k)}</a>
+                    ))}
+                    {d.pickNotes.map((n) => <span class="chip">{n}</span>)}
+                  </span>
+                </td>
+                <td>{d.dlc ? <span class="badge-dlc">{d.dlc}</span> : <span class="subtle">—</span>}</td>
+              </tr>
+            );
+          })}
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  {otherGroups.map((g) => {
+    const list = doctrinesOf(g);
+    if (list.length === 0) return null;
+    return (
+      <section data-kind="doctrine">
+        <h2 class="group-h" id={g.id}>
+          {g.name}
+          <span class="count">{list.length}</span>
+          {g.picks > 1 && <span class="picks">pick {g.picks}</span>}
+          <span class="cat">{g.categoryName}</span>
+          {g.availability && <span class="cat">· {g.availability.join(', ')}</span>}
+          {g.dlc && <span class="badge-dlc">{g.dlc}</span>}
+        </h2>
+        <div class="tbl-scroll">
+          <table class="ntbl">
+            <thead>
+              <tr>
+                <th>Doctrine</th>
+                <th class="num" title="Piety cost when creating or reforming a faith">Piety</th>
+                <th>Effects</th>
+                <th>Available to</th>
+                <th>Incompatible with</th>
+                <th>DLC</th>
+              </tr>
+            </thead>
+            <tbody>
+              {list.map((d) => {
+                const cost = costParts(d.pietyCost);
+                return (
+                  <tr id={d.id} data-kind="doctrine" data-dlc={d.dlc ?? 'base'} data-name={searchText(d)}>
+                    <td class="name">
+                      <span class="u-name">{d.name}</span>
+                      {!d.visible && <span class="u-sub"> (hidden)</span>}
+                      {d.nameVariants.length > 0 && <span class="u-sub"><br />also: {d.nameVariants.join(', ')}</span>}
+                    </td>
+                    <td class="num cost">
+                      {cost.title ? <span class="var" title={cost.title}>{cost.main}</span> : cost.main}
+                      {cost.sub.map((s) => <span class="subtle"><br />{s}</span>)}
+                    </td>
+                    <td class="fx">
+                      {d.characterModifier.map((m) => <div>{m}</div>)}
+                      {d.clergyModifier.map((m) => <div>clergy: {m}</div>)}
+                      {d.virtues.length > 0 && <div class="virtue">Virtue: {d.virtues.join(', ')}</div>}
+                      {d.sins.length > 0 && <div class="sin">Sin: {d.sins.join(', ')}</div>}
+                      {d.parameters.filter((p) => p.text).map((p) => <div class="subtle">{p.text}</div>)}
+                      {d.parameters.filter((p) => !p.text).map((p) => <div class="subtle mono">{p.key}: {String(p.value)}</div>)}
+                    </td>
+                    <td>
+                      <span class="chips">
+                        {d.shownForReligions.map((r) => <span class="chip chip--req">{r}</span>)}
+                        {d.shownConditions.map((c) => <span class="chip">{c}</span>)}
+                        {d.shownForReligions.length + d.shownConditions.length === 0 && <span class="subtle">any faith</span>}
+                      </span>
+                    </td>
+                    <td>
+                      <span class="chips">
+                        {d.incompatibleWith.map((k) => (
+                          <a class="chip chip--counter" href={`#${k}`}>{dName(k)}</a>
+                        ))}
+                        {d.requiresDoctrines.map((k) => (
+                          <a class="chip chip--req" href={`#${k}`} title="can only be picked alongside (any of) these">requires {dName(k)}</a>
+                        ))}
+                        {d.pickNotes.map((n) => <span class="chip">{n}</span>)}
+                      </span>
+                    </td>
+                    <td>{d.dlc ? <span class="badge-dlc">{d.dlc}</span> : <span class="subtle">—</span>}</td>
+                  </tr>
+                );
+              })}
+            </tbody>
+          </table>
+        </div>
+      </section>
+    );
+  })}
+
+  {ungrouped.length > 0 && (
+    <section data-kind="doctrine">
+      <h2 class="group-h" id="ungrouped">Ungrouped<span class="count">{ungrouped.length}</span></h2>
+      <div class="tbl-scroll">
+        <table class="ntbl">
+          <tbody>
+            {ungrouped.map((d) => (
+              <tr id={d.id} data-kind="doctrine" data-dlc={d.dlc ?? 'base'} data-name={searchText(d)}>
+                <td class="name">{d.name}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </section>
+  )}
+
+  <script>
+    const q = document.getElementById('q') as HTMLInputElement;
+    const fkind = document.getElementById('fkind') as HTMLSelectElement;
+    const fdlc = document.getElementById('fdlc') as HTMLSelectElement;
+    const count = document.getElementById('count')!;
+    const rows = [...document.querySelectorAll<HTMLTableRowElement>('tbody tr')];
+    const groups = [...document.querySelectorAll<HTMLElement>('section[data-kind]')];
+
+    function apply() {
+      const needle = q.value.trim().toLowerCase();
+      const kind = fkind.value;
+      const d = fdlc.value;
+      let shown = 0;
+      for (const r of rows) {
+        const ok =
+          (!needle || (r.dataset.name ?? '').includes(needle)) &&
+          (!kind || r.dataset.kind === kind) &&
+          (!d || (d === 'base' ? r.dataset.dlc === 'base' : r.dataset.dlc === d));
+        r.hidden = !ok;
+        if (ok) shown++;
+      }
+      for (const g of groups) {
+        g.hidden = ![...g.querySelectorAll('tbody tr')].some((r) => !(r as HTMLTableRowElement).hidden);
+      }
+      count.textContent = `${shown} of ${rows.length}`;
+    }
+    for (const el of [q, fkind, fdlc]) el.addEventListener('input', apply);
+    apply();
+  </script>
+
+  <style>
+    .group-h .picks {
+      font-family: var(--font-mono); font-size: 0.72rem; color: var(--rubric);
+      border: 1px solid color-mix(in oklab, var(--rubric) 40%, transparent);
+      border-radius: 999px; padding: 0.05rem 0.5rem;
+    }
+    .group-h .cat { color: var(--faint); font-family: var(--font-ui); font-weight: 400; font-size: 0.75rem; }
+    td.name { max-width: 20rem; white-space: normal; }
+    td.name .desc { color: var(--faint); font-size: 0.75rem; max-width: 34ch; margin-top: 0.15rem; }
+    .fx { font-size: 0.8rem; max-width: 26rem; }
+    .fx .virtue { color: var(--good); }
+    .fx .sin { color: var(--bad); }
+    .fx .mono { font-family: var(--font-mono); font-size: 0.72rem; }
+    tr:target { background: color-mix(in oklab, var(--brass) 12%, transparent); }
+  </style>
+</Base>

@@ -1,0 +1,124 @@
+---
+import Base from '../layouts/Base.astro';
+import sites from '../data/holy_sites.json';
+import faithData from '../data/faiths.json';
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+
+// reverse map: holy site -> faiths that list it
+const usedBy = new Map<string, { id: string; name: string | null; color: string | null }[]>();
+for (const f of faithData.faiths) {
+  for (const h of f.holySites) {
+    if (!usedBy.has(h.key)) usedBy.set(h.key, []);
+    usedBy.get(h.key)!.push({ id: f.id, name: f.name, color: f.color });
+  }
+}
+const usedCount = [...usedBy.keys()].filter((k) => sites.some((s) => s.id === k)).length;
+
+const religionName = new Map(faithData.religions.map((r) => [r.id, r.name]));
+const religionOf = new Map(faithData.faiths.map((f) => [f.id, f.religion]));
+const religions = [...new Set(faithData.faiths.map((f) => f.religion))].sort((a, b) =>
+  (religionName.get(a) ?? a).localeCompare(religionName.get(b) ?? b)
+);
+---
+<Base
+  title="Holy Sites"
+  active="holy-sites"
+  lede="Every holy site defined in the game, where it sits on the map, the bonuses its controller grants to all rulers of a faith that venerates it, and which faiths those are."
+  stats={[
+    { value: sites.length, label: 'holy sites' },
+    { value: usedCount, label: 'used by a faith at start' },
+    { value: faithData.faiths.length, label: 'faiths' },
+  ]}
+>
+  <div class="filterbar">
+    <input type="search" id="q" placeholder="Filter by site, county, faith…" autocomplete="off" />
+    <select id="frel">
+      <option value="">every religion</option>
+      {religions.map((r) => <option value={r}>{religionName.get(r)}</option>)}
+    </select>
+    <label class="hint"><input type="checkbox" id="fused" /> used at start only</label>
+    <span class="hint" id="count"></span>
+  </div>
+
+  <div class="tbl-scroll">
+    <table class="ntbl">
+      <thead>
+        <tr>
+          <th>Holy site</th>
+          <th>County</th>
+          <th>Bonuses for controlling faith</th>
+          <th>Faiths</th>
+        </tr>
+      </thead>
+      <tbody>
+        {sites.map((s) => {
+          const users = usedBy.get(s.id) ?? [];
+          return (
+            <tr
+              id={s.id}
+              data-name={`${s.name} ${s.countyName ?? ''} ${s.baronyName ?? ''} ${users.map((u) => u.name).join(' ')}`.toLowerCase()}
+              data-religions={users.map((u) => religionOf.get(u.id)).join(' ')}
+              data-used={users.length > 0 ? '1' : ''}
+            >
+              <td class="name"><span class="u-name">{s.name}</span></td>
+              <td>
+                {s.countyName ?? <span class="subtle">—</span>}
+                {s.baronyName && <span class="u-sub"><br />{s.baronyName}</span>}
+              </td>
+              <td class="fx">
+                {s.modifiers.map((m) => <div>{m}</div>)}
+                {s.effects && <div>{s.effects}</div>}
+                {s.parameters.map((p) => <div class="subtle">{p.text ?? p.key.replace(/_/g, ' ')}</div>)}
+                {s.modifiers.length + s.parameters.length === 0 && !s.effects && <span class="subtle">—</span>}
+              </td>
+              <td>
+                <span class="chips">
+                  {users.map((u) => (
+                    <a class="chip" href={`${base}/faiths#${u.id}`}>
+                      <span class="dot" style={`--c:${u.color ?? 'var(--faint)'}`} />
+                      {u.name}
+                    </a>
+                  ))}
+                  {users.length === 0 && <span class="subtle" title="No faith lists this site at game start — reachable via reformation or events">unused at start</span>}
+                </span>
+              </td>
+            </tr>
+          );
+        })}
+      </tbody>
+    </table>
+  </div>
+
+  <script>
+    const q = document.getElementById('q') as HTMLInputElement;
+    const frel = document.getElementById('frel') as HTMLSelectElement;
+    const fused = document.getElementById('fused') as HTMLInputElement;
+    const count = document.getElementById('count')!;
+    const rows = [...document.querySelectorAll<HTMLTableRowElement>('tbody tr')];
+
+    function apply() {
+      const needle = q.value.trim().toLowerCase();
+      const rel = frel.value;
+      let shown = 0;
+      for (const r of rows) {
+        const ok =
+          (!needle || (r.dataset.name ?? '').includes(needle)) &&
+          (!rel || (r.dataset.religions ?? '').split(' ').includes(rel)) &&
+          (!fused.checked || r.dataset.used === '1');
+        r.hidden = !ok;
+        if (ok) shown++;
+      }
+      count.textContent = `${shown} of ${rows.length}`;
+    }
+    for (const el of [q, frel, fused]) el.addEventListener('input', apply);
+    apply();
+  </script>
+
+  <style>
+    .fx { font-size: 0.8rem; max-width: 26rem; }
+    .chips { max-width: 26rem; }
+    tr:target { background: color-mix(in oklab, var(--brass) 12%, transparent); }
+    .filterbar label.hint { display: inline-flex; align-items: center; gap: 0.3rem; margin-left: 0; }
+  </style>
+</Base>

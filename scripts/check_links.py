@@ -7,6 +7,11 @@ from pathlib import Path
 
 DIST = Path(__file__).resolve().parents[1] / "dist"
 
+# strip the GH Pages base path before matching against dist routes
+_conf = (Path(__file__).resolve().parents[1] / "astro.config.mjs").read_text(encoding="utf-8")
+_m = re.search(r"base:\s*'([^']*)'", _conf)
+BASE = (_m.group(1) if _m else "/").rstrip("/")
+
 
 def main():
     if not DIST.exists():
@@ -19,7 +24,10 @@ def main():
     for p in DIST.rglob("*.html"):
         html = p.read_text(encoding="utf-8", errors="replace")
         for m in re.finditer(r'href="(/[^"#]*)', html):
-            href = m.group(1).rstrip("/") or "/"
+            href = m.group(1)
+            if BASE and href.startswith(BASE):
+                href = href[len(BASE):] or "/"
+            href = href.rstrip("/") or "/"
             if href.startswith("//") or "." in href.split("/")[-1]:
                 continue
             if href not in routes:

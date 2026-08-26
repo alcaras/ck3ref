@@ -287,10 +287,7 @@ _BRACKET = re.compile(r"\[([^\[\]]*)\]")
 _CONCEPT_FN = re.compile(r"^Concept\(\s*'(\w+)'\s*,\s*'([^']*)'\s*\)(\|\w+)?$")
 # Statically resolvable data functions: [GetMaA('kheshig').GetName] etc.
 _GET_ENTITY = re.compile(
-    r"^Get(MaA|Trait|Doctrine|Perk|Faith|Religion|Culture|Innovation|Title|Scheme|"
-    r"Dynasty|House|Terrain|Building|Law|Focus|Lifestyle|Legacy|Decision|Activity|"
-    r"CasusBelli|CouncilTask|CourtPosition|Modifier|Nickname|Trigger|Accolade\w*)"
-    r"\(\s*'([\w.-]+)'\s*\)\.GetName(\([^)]*\))?(\|\w+)?$"
+    r"^Get([A-Z]\w+)\(\s*'([\w.-]+)'\s*\)\.Get\w*Name\w*(\([^)]*\))?(\|\w+)?$"
 )
 _SIMPLE_CONCEPT = re.compile(r"^(\w+)\|E$", re.IGNORECASE)
 
@@ -329,19 +326,27 @@ def render_text(s, _depth=0):
 
     def bracket(m):
         inner = m.group(1).strip()
+        if re.search(r"\.Get\w*Icon\w*(\|\w+)?$", inner):
+            return ""  # inline icon call — nothing to say in plain text
         cm = _CONCEPT_FN.match(inner)
         if cm:
             return cm.group(2)
         gm = _GET_ENTITY.match(inner)
         if gm:
-            k = gm.group(2)
-            v = loc(k) or loc(f"{k}_name") or loc(f"trait_{k}")
+            typ, k = gm.group(1), gm.group(2)
+            snake = re.sub(r"(?<!^)(?=[A-Z])", "_", typ).lower()
+            v = (loc(k) or loc(f"{k}_name") or loc(f"trait_{k}")
+                 or loc(f"{snake}_{k}") or loc(f"game_concept_{k}"))
             if v is not None:
                 return render_text(v, _depth + 1)
         sm = _SIMPLE_CONCEPT.match(inner)
-        if sm and sm.group(1) in concept_keys():
-            name = loc("game_concept_" + sm.group(1)) or loc(sm.group(1))
-            return render_text(name, _depth + 1) if name else sm.group(1).replace("_", " ")
+        if sm:
+            k = sm.group(1)
+            name = (loc("game_concept_" + k) if k in concept_keys() else None) \
+                or loc(k) or loc(f"{k}_name")
+            if name:
+                return render_text(name, _depth + 1)
+            return k.replace("_", " ").title()  # named reference without loc
         _UNRESOLVED.append(inner)
         return "…"
 
@@ -376,6 +381,9 @@ def modifier_formats():
                     "already_percent": bool(blk.get("already_percent", False)),
                     "prefix": blk.get("prefix"),
                     "suffix": blk.get("suffix"),
+                    "negative_suffix": blk.get("negative_suffix"),
+                    "no_difference_sign": bool(blk.get("no_difference_sign", False)),
+                    "color": blk.get("color", "good"),  # is a positive value good or bad?
                 }
     return _mod_formats
 
@@ -399,13 +407,39 @@ def render_modifier(key, value):
     name = modifier_name(key)
     if isinstance(value, bool):
         return name
+    if isinstance(value, str):
+        n, _rules = resolve_value(value)
+        if n is None:
+            return f"{name}: {value.replace('_', ' ')}"
+        value = n
     if not isinstance(value, (int, float)):
         return f"{name}: {value}"
     num = value * 100 if fmt.get("percent") and not fmt.get("already_percent") else value
     decimals = fmt.get("decimals", 0)
     magnitude = f"{num:+.{decimals}f}".rstrip("0").rstrip(".") if decimals else f"{num:+.0f}"
+    if fmt.get("no_difference_sign"):
+        magnitude = magnitude.lstrip("+")
+        if num < 0:
+            magnitude = magnitude.lstrip("-")
     pct = "%" if fmt.get("percent") or fmt.get("already_percent") else ""
-    return f"{magnitude}{pct} {name}"
+    sfx_key = fmt.get("negative_suffix") if (num < 0 and fmt.get("negative_suffix")) else fmt.get("suffix")
+    suffix = ""
+    if isinstance(sfx_key, str):
+        sfx = loc(sfx_key)
+        if sfx:
+            suffix = " " + render_text(sfx).strip()
+    return f"{magnitude}{pct} {name}{suffix}"
+
+
+def modifier_polarity(key, value):
+    """'good' | 'bad' | 'neutral' — from the format table's color field."""
+    if not isinstance(value, (int, float)) or isinstance(value, bool) or value == 0:
+        return "neutral"
+    color = modifier_formats().get(key, {}).get("color", "good")
+    if color == "neutral":
+        return "neutral"
+    positive_is_good = color != "bad"
+    return "good" if (value > 0) == positive_is_good else "bad"
 
 
 def missing_modifier_report():

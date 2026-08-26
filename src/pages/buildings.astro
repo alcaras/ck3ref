@@ -1,0 +1,370 @@
+---
+import Base from '../layouts/Base.astro';
+import buildings from '../data/buildings.json';
+import { getEntity } from '../lib/entities';
+
+interface ReqChip {
+  kind: string;
+  key: string;
+  name: string;
+  detail: string | null;
+  negated: boolean;
+}
+interface ModGroup {
+  scope: string;
+  cond: string | null;
+  lines: string[];
+}
+interface Bld {
+  id: string;
+  name: string | null;
+  desc: string | null;
+  category: string;
+  type: string;
+  chain: string;
+  tier: number;
+  constructionTime: number | { rules: unknown } | null;
+  cost: Record<string, number | { rules: unknown }> | null;
+  rebuildCost: Record<string, number | { rules: unknown }> | null;
+  levy: number | null;
+  maxGarrison: number | null;
+  garrisonReinforcement: number | null;
+  modifiers: ModGroup[];
+  effects: string | null;
+  requirements: ReqChip[];
+  mandalaCapital: boolean;
+  icon: string | null;
+  dlc: string | null;
+  features: string[];
+  sourceFile: string;
+}
+
+const all = buildings as Bld[];
+
+const CATEGORY_ORDER = [
+  'Economy', 'Military', 'Fortifications', 'Common',
+  'Castle holdings', 'City holdings', 'Temple holdings', 'Temple citadels',
+  'Tribal', 'Nomadic', 'Administrative', 'Duchy capital', 'Oath buildings',
+  'Special', 'Special mines', 'Great projects', 'Legendary',
+];
+
+// chain root id -> tiers sorted 1..N
+const chainMap = new Map<string, Bld[]>();
+for (const b of all) {
+  if (!chainMap.has(b.chain)) chainMap.set(b.chain, []);
+  chainMap.get(b.chain)!.push(b);
+}
+for (const tiers of chainMap.values()) tiers.sort((a, b) => a.tier - b.tier);
+
+const categories = [...new Set(all.map((b) => b.category))].sort(
+  (a, b) => CATEGORY_ORDER.indexOf(a) - CATEGORY_ORDER.indexOf(b),
+);
+const chainsByCat = new Map<string, Bld[][]>();
+for (const c of categories) chainsByCat.set(c, []);
+for (const [root, tiers] of chainMap) {
+  chainsByCat.get(tiers[0].category)!.push(tiers);
+}
+for (const chains of chainsByCat.values()) {
+  chains.sort((a, b) => (a[0].name ?? '').localeCompare(b[0].name ?? ''));
+}
+
+const dlcs = [...new Set(all.map((b) => b.dlc).filter(Boolean))].sort() as string[];
+
+const num = (v: number | { rules: unknown } | null | undefined): number | null =>
+  typeof v === 'number' ? v : null;
+
+function fmt(v: number | { rules: unknown } | null | undefined): string {
+  const n = num(v);
+  return n == null ? '—' : String(Math.round(n * 100) / 100);
+}
+function range(tiers: Bld[], pick: (b: Bld) => number | { rules: unknown } | null): string {
+  const vals = tiers.map(pick).map(num).filter((n): n is number => n != null);
+  if (!vals.length) return '—';
+  const a = vals[0], z = vals[vals.length - 1];
+  return a === z ? fmt(a) : `${fmt(a)} → ${fmt(z)}`;
+}
+
+const chainDlc = (tiers: Bld[]) => tiers.map((t) => t.dlc).find(Boolean) ?? null;
+
+// final-tier modifier lines, unconditional groups first, for the summary cell
+function summaryLines(tiers: Bld[]): string[] {
+  const last = tiers[tiers.length - 1];
+  const groups = [...last.modifiers].sort((a, b) => Number(!!a.cond) - Number(!!b.cond));
+  return groups.flatMap((g) => g.lines.map((l) => (g.cond ? `${l} *` : l)));
+}
+
+function searchText(tiers: Bld[]): string {
+  const parts = new Set<string>();
+  for (const t of tiers) {
+    parts.add(t.id);
+    if (t.name) parts.add(t.name);
+    for (const r of t.requirements) parts.add(r.name);
+    for (const g of t.modifiers) for (const l of g.lines) parts.add(l);
+  }
+  parts.add(tiers[0].category);
+  const d = chainDlc(tiers);
+  if (d) parts.add(d);
+  return [...parts].join(' ').toLowerCase();
+}
+
+const terrainName = (t: string) => getEntity(`terrain_${t}`)?.name ?? t.replace(/_/g, ' ');
+const chipName = (r: ReqChip) => (r.kind === 'terrain' ? terrainName(r.key) : r.name);
+const chipClass = (r: ReqChip) =>
+  r.kind === 'terrain' ? 'chip chip--terrain' : 'chip chip--req';
+
+const totalChains = chainMap.size;
+---
+<Base
+  title="Buildings"
+  active="buildings"
+  lede="Every constructible building, grouped into its upgrade chain: costs, build times, levies, garrisons, and the full modifier list per tier — with terrain, holding, and innovation gates resolved from the game's construction triggers."
+  stats={[
+    { value: all.length, label: 'buildings' },
+    { value: totalChains, label: 'upgrade chains' },
+    { value: categories.length, label: 'categories' },
+  ]}
+>
+  <div class="filterbar">
+    <input type="search" id="q" placeholder="Filter by name, modifier, terrain…" autocomplete="off" />
+    <select id="fcat">
+      <option value="">every category</option>
+      {categories.map((c) => <option value={c}>{c}</option>)}
+    </select>
+    <select id="fdlc">
+      <option value="">base game + DLC</option>
+      <option value="base">base game only</option>
+      {dlcs.map((d) => <option value={d}>{d}</option>)}
+    </select>
+    <span class="hint" id="count"></span>
+  </div>
+  <p class="legend">
+    Costs and times run first tier → last tier; levy and garrison are the final tier's.
+    Effects marked <span class="cond-mark">*</span> are conditional — expand a chain for
+    the per-tier detail, requirements, and conditions.
+  </p>
+
+  {categories.map((cat) => {
+    const chains = chainsByCat.get(cat)!;
+    const nBld = chains.reduce((s, c) => s + c.length, 0);
+    return (
+      <section data-group={cat}>
+        <h2 class="group-h" id={cat.toLowerCase().replace(/ /g, '-')}>
+          {cat}
+          <span class="count">{chains.length} chains · {nBld} buildings</span>
+        </h2>
+        <div class="tbl-scroll">
+          <table class="ntbl">
+            <thead>
+              <tr>
+                <th>Building chain</th>
+                <th class="num" title="Number of upgrade tiers">Tiers</th>
+                <th class="num" title="Construction cost, first tier → last tier">Cost</th>
+                <th class="num" title="Construction time in days, first tier → last tier">Days</th>
+                <th class="num" title="Levy at final tier">Levy</th>
+                <th class="num" title="Garrison at final tier">Garrison</th>
+                <th>Effects at final tier</th>
+                <th>Requirements</th>
+                <th>DLC</th>
+              </tr>
+            </thead>
+            <tbody>
+              {chains.map((tiers) => {
+                const root = tiers[0];
+                const last = tiers[tiers.length - 1];
+                const dlc = chainDlc(tiers);
+                const lines = summaryLines(tiers);
+                const shown = lines.slice(0, 3);
+                const extraCost = ['prestige', 'piety'].filter((k) =>
+                  tiers.some((t) => t.cost && k in t.cost));
+                return (
+                  <>
+                    <tr
+                      class="sum"
+                      id={root.id}
+                      data-name={searchText(tiers)}
+                      data-cat={cat}
+                      data-dlc={dlc ?? 'base'}
+                    >
+                      <td class="name">
+                        <span class="caret">▸</span>
+                        <span class="u-name">{root.name}</span>
+                        {tiers.length > 1 && last.name !== root.name && (
+                          <span class="final subtle"> → {last.name}</span>
+                        )}
+                        {root.mandalaCapital && <span class="subtle"> · mandala capital</span>}
+                      </td>
+                      <td class="num">
+                        <span class="tierpips">{tiers.map(() => <i />)}</span> {tiers.length}
+                      </td>
+                      <td class="num cost">
+                        {range(tiers, (t) => t.cost?.gold ?? null)}
+                        {extraCost.includes('prestige') && <span class="subtle"> +p</span>}
+                        {extraCost.includes('piety') && <span class="subtle"> +pi</span>}
+                      </td>
+                      <td class="num">{range(tiers, (t) => t.constructionTime)}</td>
+                      <td class="num">{fmt(last.levy)}</td>
+                      <td class="num">{fmt(last.maxGarrison)}</td>
+                      <td class="fx">
+                        {shown.map((l) => <span class="fx-line">{l}</span>)}
+                        {lines.length > shown.length && (
+                          <span class="fx-line subtle">+{lines.length - shown.length} more…</span>
+                        )}
+                      </td>
+                      <td>
+                        <span class="chips">
+                          {root.requirements.map((r) => (
+                            <span class={chipClass(r)} title={r.detail ?? r.kind.replace(/_/g, ' ')}>
+                              {r.negated && <span class="neg">not </span>}{chipName(r)}
+                            </span>
+                          ))}
+                        </span>
+                      </td>
+                      <td>{dlc ? <span class="badge-dlc">{dlc}</span> : <span class="subtle">—</span>}</td>
+                    </tr>
+                    <tr class="det" hidden>
+                      <td colspan="9">
+                        {root.desc && <p class="b-desc">{root.desc}</p>}
+                        <div class="tiers-grid">
+                          {tiers.map((t) => (
+                            <div class="tier-card" id={t.tier > 1 ? t.id : undefined}>
+                              <div class="tier-head">
+                                <span class="tier-n">{t.tier}</span>
+                                <span class="tier-name">{t.name}</span>
+                                <span class="tier-stats">
+                                  {t.cost?.gold != null && <span>{fmt(t.cost.gold)} gold</span>}
+                                  {t.cost?.prestige != null && <span>{fmt(t.cost.prestige)} prestige</span>}
+                                  {t.cost?.piety != null && <span>{fmt(t.cost.piety)} piety</span>}
+                                  {t.constructionTime != null && <span>{fmt(t.constructionTime)} days</span>}
+                                  {t.levy != null && <span>{fmt(t.levy)} levy</span>}
+                                  {t.maxGarrison != null && <span>{fmt(t.maxGarrison)} garrison</span>}
+                                </span>
+                              </div>
+                              {t.requirements.length > 0 && (
+                                <div class="chips tier-reqs">
+                                  {t.requirements.map((r) => (
+                                    <span class={chipClass(r)} title={r.detail ?? r.kind.replace(/_/g, ' ')}>
+                                      {r.negated && <span class="neg">not </span>}{chipName(r)}
+                                    </span>
+                                  ))}
+                                </div>
+                              )}
+                              {t.modifiers.map((g) => (
+                                <div class="mod-group">
+                                  <span class="mod-scope">{g.scope}</span>
+                                  {g.cond && <span class="mod-cond">{g.cond}</span>}
+                                  <span class="mod-lines">{g.lines.join(' · ')}</span>
+                                </div>
+                              ))}
+                              {t.effects && <p class="b-fx">{t.effects}</p>}
+                            </div>
+                          ))}
+                        </div>
+                      </td>
+                    </tr>
+                  </>
+                );
+              })}
+            </tbody>
+          </table>
+        </div>
+      </section>
+    );
+  })}
+
+  <script>
+    const q = document.getElementById('q') as HTMLInputElement;
+    const fcat = document.getElementById('fcat') as HTMLSelectElement;
+    const fdlc = document.getElementById('fdlc') as HTMLSelectElement;
+    const count = document.getElementById('count')!;
+    const rows = [...document.querySelectorAll<HTMLTableRowElement>('tr.sum')];
+    const groups = [...document.querySelectorAll<HTMLElement>('section[data-group]')];
+
+    for (const r of rows) {
+      r.addEventListener('click', (e) => {
+        if ((e.target as HTMLElement).closest('a')) return;
+        const det = r.nextElementSibling as HTMLTableRowElement;
+        det.hidden = !det.hidden;
+        r.classList.toggle('open', !det.hidden);
+      });
+    }
+
+    function apply() {
+      const needle = q.value.trim().toLowerCase();
+      const c = fcat.value;
+      const d = fdlc.value;
+      let shown = 0;
+      for (const r of rows) {
+        const ok =
+          (!needle || (r.dataset.name ?? '').includes(needle)) &&
+          (!c || r.dataset.cat === c) &&
+          (!d || (d === 'base' ? r.dataset.dlc === 'base' : r.dataset.dlc === d));
+        r.hidden = !ok;
+        const det = r.nextElementSibling as HTMLTableRowElement;
+        if (!ok) {
+          det.hidden = true;
+          r.classList.remove('open');
+        }
+        if (ok) shown++;
+      }
+      for (const g of groups) {
+        g.hidden = ![...g.querySelectorAll('tr.sum')].some((r) => !(r as HTMLTableRowElement).hidden);
+      }
+      count.textContent = `${shown} of ${rows.length} chains`;
+    }
+    for (const el of [q, fcat, fdlc]) el.addEventListener('input', apply);
+    apply();
+
+    // deep links (#building_id) should open the owning chain
+    if (location.hash) {
+      const el = document.getElementById(location.hash.slice(1));
+      const sum = el?.closest('tr.det')?.previousElementSibling ?? el;
+      if (sum instanceof HTMLTableRowElement && sum.classList.contains('sum')) {
+        (sum.nextElementSibling as HTMLTableRowElement).hidden = false;
+        sum.classList.add('open');
+        sum.scrollIntoView();
+      }
+    }
+  </script>
+
+  <style>
+    .legend { color: var(--faint); font-size: 0.78rem; margin: -0.4rem 0 1rem; }
+    .cond-mark { color: var(--sk-intrigue); }
+
+    tr.sum { cursor: pointer; }
+    .caret { color: var(--faint); display: inline-block; width: 1em; font-size: 0.7rem; }
+    tr.sum.open .caret { transform: rotate(90deg); color: var(--rubric); }
+    .ntbl td.name { white-space: normal; min-width: 14rem; }
+    .final { font-size: 0.78rem; }
+
+    .tierpips { display: inline-flex; gap: 2px; margin-right: 0.3rem; vertical-align: middle; }
+    .tierpips i { width: 4px; height: 9px; background: color-mix(in oklab, var(--brass) 55%, transparent); border-radius: 1px; }
+
+    .fx { max-width: 19rem; }
+    .fx-line { display: block; font-size: 0.78rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+    tr.det > td { background: var(--panel); border-bottom: 1px solid var(--line); padding: 0.7rem 0.9rem 0.9rem; }
+    .b-desc { color: var(--dim); font-size: 0.8rem; max-width: 70ch; margin: 0 0 0.6rem; font-style: italic; }
+    .tiers-grid { display: grid; gap: 0.55rem; }
+    .tier-card { border-left: 2px solid var(--line); padding: 0.1rem 0 0.1rem 0.7rem; }
+    .tier-head { display: flex; align-items: baseline; gap: 0.55rem; flex-wrap: wrap; }
+    .tier-n {
+      font-family: var(--font-mono); font-size: 0.72rem; color: var(--rubric);
+      border: 1px solid color-mix(in oklab, var(--rubric) 45%, var(--line));
+      border-radius: 3px; padding: 0 0.3rem;
+    }
+    .tier-name { font-weight: 600; font-size: 0.85rem; }
+    .tier-stats { display: inline-flex; gap: 0.7rem; font-family: var(--font-mono); font-size: 0.72rem; color: var(--dim); flex-wrap: wrap; }
+    .tier-reqs { margin: 0.25rem 0 0.1rem; }
+    .mod-group { font-size: 0.8rem; margin-top: 0.2rem; }
+    .mod-scope {
+      font-family: var(--font-mono); font-size: 0.68rem; color: var(--brass);
+      border: 1px solid color-mix(in oklab, var(--brass) 35%, transparent);
+      border-radius: 3px; padding: 0 0.3rem; margin-right: 0.4rem;
+    }
+    .mod-cond { color: var(--sk-intrigue); font-size: 0.74rem; margin-right: 0.4rem; }
+    .mod-lines { color: var(--vellum); }
+    .b-fx { color: var(--dim); font-size: 0.78rem; margin: 0.3rem 0 0; max-width: 70ch; }
+    .chip .neg { color: var(--bad); }
+    .chips { max-width: 22rem; }
+  </style>
+</Base>

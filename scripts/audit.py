@@ -19,6 +19,10 @@ import ck3
 # Dirs handled by a build script today.
 MAPPED = {
     "men_at_arms_types": "build_maa.py",
+    "traits": "build_traits.py",
+    "lifestyles": "build_lifestyles.py",
+    "lifestyle_perks": "build_lifestyles.py",
+    "focuses": "build_lifestyles.py",
     "terrain_types": "build_entities.py",
     "game_concepts": "lib/ck3.py (concept link targets)",
     "modifier_definition_formats": "lib/ck3.py (modifier formatter)",
@@ -29,7 +33,7 @@ MAPPED = {
 # won't be in either set and fails the audit — that's the point.
 SKIP = {
     # phase 1
-    "traits", "lifestyles", "lifestyle_perks", "focuses", "dynasty_legacies",
+    "dynasty_legacies",
     "dynasty_perks", "culture", "religion", "buildings", "holdings", "laws",
     "governments", "subject_contracts", "casus_belli_types", "casus_belli_groups",
     "court_positions", "council_positions", "council_tasks", "great_projects",

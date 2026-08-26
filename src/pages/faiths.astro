@@ -1,0 +1,162 @@
+---
+import Base from '../layouts/Base.astro';
+import data from '../data/faiths.json';
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+
+const { families, religions, faiths } = data;
+const FAMILY_ORDER = ['rf_abrahamic', 'rf_eastern', 'rf_sinitic', 'rf_pagan'];
+const orderedFamilies = [...families].sort(
+  (a, b) => FAMILY_ORDER.indexOf(a.id) - FAMILY_ORDER.indexOf(b.id)
+);
+const religionsOf = (fam: string) => religions.filter((r) => r.family === fam);
+const faithsOf = (rel: string) => faiths.filter((f) => f.religion === rel);
+
+const traitText = (r: (typeof religions)[number]) =>
+  [
+    r.virtues.length ? `Virtues: ${r.virtues.map((t) => t.name).join(', ')}` : null,
+    r.sins.length ? `Sins: ${r.sins.map((t) => t.name).join(', ')}` : null,
+  ]
+    .filter(Boolean)
+    .join(' · ');
+---
+<Base
+  title="Faiths"
+  active="faiths"
+  lede="Every faith at game start, grouped by religion family and religion — with its three tenets, holy sites, religious head, and the virtues and sins of its religion. Read from religion_types, where faiths nest inside their religion."
+  stats={[
+    { value: faiths.length, label: 'faiths' },
+    { value: religions.length, label: 'religions' },
+    { value: families.length, label: 'families' },
+  ]}
+>
+  <div class="filterbar">
+    <input type="search" id="q" placeholder="Filter by faith, tenet, holy site…" autocomplete="off" />
+    <select id="ffam">
+      <option value="">every family</option>
+      {orderedFamilies.map((f) => <option value={f.id}>{f.name}</option>)}
+    </select>
+    <span class="hint" id="count"></span>
+  </div>
+
+  {orderedFamilies.map((fam) => (
+    <section data-family={fam.id}>
+      <h2 class="group-h" id={fam.id}>
+        {fam.name}
+        <span class="count">{religionsOf(fam.id).reduce((n, r) => n + faithsOf(r.id).length, 0)}</span>
+      </h2>
+      {religionsOf(fam.id).map((rel) => (
+        <section data-group={rel.id}>
+          <h3 class="rel-h" id={rel.id}>
+            {rel.name}
+            <span class="count">{faithsOf(rel.id).length}</span>
+            {traitText(rel) && <span class="rel-traits">{traitText(rel)}</span>}
+          </h3>
+          <div class="tbl-scroll">
+            <table class="ntbl">
+              <thead>
+                <tr>
+                  <th>Faith</th>
+                  <th>Tenets</th>
+                  <th>Holy sites</th>
+                  <th>Head of faith</th>
+                </tr>
+              </thead>
+              <tbody>
+                {faithsOf(rel.id).map((f) => (
+                  <tr
+                    id={f.id}
+                    data-name={`${f.name} ${f.adherent ?? ''} ${f.tenets.map((t) => t.name).join(' ')} ${f.holySites.map((h) => h.name).join(' ')}`.toLowerCase()}
+                    data-family={f.family}
+                  >
+                    <td class="name">
+                      <span class="faith">
+                        <span class="dot" style={`--c:${f.color ?? 'var(--faint)'}`} />
+                        <span>
+                          <span class="u-name">{f.name}</span>
+                          {f.adherent && f.adherent !== f.name && (
+                            <span class="u-sub"><br />{f.adherent}</span>
+                          )}
+                        </span>
+                      </span>
+                    </td>
+                    <td>
+                      <span class="chips">
+                        {f.tenets.map((t) => (
+                          <a
+                            class:list={['chip', 'chip--tenet', { 'chip--dlc': t.dlc }]}
+                            href={`${base}/doctrines#${t.key}`}
+                            title={t.dlc ? `with ${t.dlc}; otherwise ${t.fallback}` : undefined}
+                          >
+                            {t.name}
+                          </a>
+                        ))}
+                      </span>
+                    </td>
+                    <td>
+                      <span class="chips">
+                        {f.holySites.map((h) => (
+                          <a class="chip" href={`${base}/holy-sites#${h.key}`}>{h.name}</a>
+                        ))}
+                      </span>
+                    </td>
+                    <td>{f.religiousHead ? f.religiousHead.name ?? f.religiousHead.title : <span class="subtle">—</span>}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </section>
+      ))}
+    </section>
+  ))}
+
+  <script>
+    const q = document.getElementById('q') as HTMLInputElement;
+    const ffam = document.getElementById('ffam') as HTMLSelectElement;
+    const count = document.getElementById('count')!;
+    const rows = [...document.querySelectorAll<HTMLTableRowElement>('tbody tr')];
+    const groups = [...document.querySelectorAll<HTMLElement>('section[data-group]')];
+    const fams = [...document.querySelectorAll<HTMLElement>('section[data-family]')];
+
+    function apply() {
+      const needle = q.value.trim().toLowerCase();
+      const fam = ffam.value;
+      let shown = 0;
+      for (const r of rows) {
+        const ok =
+          (!needle || (r.dataset.name ?? '').includes(needle)) &&
+          (!fam || r.dataset.family === fam);
+        r.hidden = !ok;
+        if (ok) shown++;
+      }
+      for (const g of groups) {
+        g.hidden = ![...g.querySelectorAll('tbody tr')].some((r) => !(r as HTMLTableRowElement).hidden);
+      }
+      for (const g of fams) {
+        g.hidden = ![...g.querySelectorAll('section[data-group]')].some((s) => !(s as HTMLElement).hidden);
+      }
+      count.textContent = `${shown} of ${rows.length}`;
+    }
+    for (const el of [q, ffam]) el.addEventListener('input', apply);
+    apply();
+  </script>
+
+  <style>
+    .rel-h {
+      display: flex; align-items: baseline; gap: 0.5rem; flex-wrap: wrap;
+      font-family: var(--font-display); font-weight: 600; font-size: 0.95rem;
+      margin: 1.2rem 0 0.4rem;
+    }
+    .rel-h .count { color: var(--faint); font-family: var(--font-mono); font-size: 0.72rem; }
+    .rel-traits { color: var(--faint); font-family: var(--font-ui); font-weight: 400; font-size: 0.75rem; }
+    .faith { display: flex; align-items: center; gap: 0.5rem; }
+    .faith .dot {
+      width: 11px; height: 11px; border-radius: 50%; flex: none;
+      background: var(--c, var(--faint));
+      box-shadow: 0 0 0 1px color-mix(in oklab, var(--vellum) 25%, transparent);
+    }
+    .chip--tenet { border-color: color-mix(in oklab, var(--rubric) 40%, var(--line)); }
+    .chip--dlc { border-style: dashed; cursor: help; }
+  </style>
+</Base>

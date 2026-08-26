@@ -1,0 +1,231 @@
+---
+import Base from '../layouts/Base.astro';
+import data from '../data/traditions.json';
+
+const { costNote, traditions } = data as {
+  costNote: string;
+  traditions: any[];
+};
+
+const CATEGORY_ORDER = ['combat', 'realm', 'societal', 'ritual', 'regional'];
+const categories = [...new Set(traditions.map((t) => t.category).filter(Boolean))].sort(
+  (a, b) => CATEGORY_ORDER.indexOf(a) - CATEGORY_ORDER.indexOf(b),
+);
+const catName = (c: string) => traditions.find((t) => t.category === c)?.categoryName ?? c;
+const dlcs = [...new Set(traditions.map((t) => t.dlc).filter(Boolean))].sort();
+
+const fmt = (n: number) => n.toLocaleString('en-US');
+function ruleText(r: { when: string | null; op: string | null; amount: number | null }): string {
+  const amt = r.amount == null ? 'varies' : r.op === 'multiply' ? `×${r.amount}` : `+${fmt(r.amount)}`;
+  return r.when ? `${amt} — ${r.when}` : amt;
+}
+function searchText(t: any): string {
+  return [
+    t.name,
+    t.categoryName,
+    ...t.parameters.map((p: any) => p.text),
+    ...Object.values(t.modifiers).flat(),
+    ...t.requirements.map((r: any) => r.text),
+  ]
+    .join(' ')
+    .toLowerCase();
+}
+---
+<Base
+  title="Traditions"
+  active="traditions"
+  lede="Every cultural tradition: prestige cost with the game's own pricing rules, effects, parameters, and pick requirements — read from culture/traditions and rendered without collapsing conditionals."
+  stats={[
+    { value: traditions.length, label: 'traditions' },
+    { value: categories.length, label: 'categories' },
+    { value: dlcs.length, label: 'DLCs add content' },
+  ]}
+>
+  <div class="filterbar">
+    <input type="search" id="q" placeholder="Filter by name, effect, requirement…" autocomplete="off" />
+    <select id="fcat">
+      <option value="">every category</option>
+      {categories.map((c) => <option value={c}>{catName(c)}</option>)}
+    </select>
+    <select id="fdlc">
+      <option value="">base game + DLC</option>
+      <option value="base">base game only</option>
+      {dlcs.map((d) => <option value={d}>{d}</option>)}
+    </select>
+    <span class="hint" id="count"></span>
+  </div>
+
+  <p class="costnote">{costNote}</p>
+
+  {categories.map((c) => (
+    <section data-group={c}>
+      <h2 class="group-h" id={c}>
+        {catName(c)}
+        <span class="count">{traditions.filter((t) => t.category === c).length}</span>
+      </h2>
+      <div class="cards">
+        {traditions
+          .filter((t) => t.category === c)
+          .map((t) => (
+            <article class="trad" id={t.id} data-name={searchText(t)} data-cat={t.category} data-dlc={t.dlc ?? 'base'}>
+              <header>
+                <h3><a href={`#${t.id}`}>{t.name}</a></h3>
+                {t.dlc && <span class="badge-dlc">{t.dlc}</span>}
+              </header>
+              {t.desc && <p class="desc">{t.desc}</p>}
+
+              {t.cost?.prestige ? (
+                <details class="cost-d">
+                  <summary>
+                    <span class="cost">{t.cost.prestige.base != null ? fmt(t.cost.prestige.base) : 'varies'}</span> prestige base
+                    {t.cost.prestige.rules.length > 0 && <span class="subtle"> · {t.cost.prestige.rules.length} pricing rules</span>}
+                  </summary>
+                  <ul class="rules">
+                    {t.cost.prestige.rules.map((r: any) => (
+                      <li>{ruleText(r)}</li>
+                    ))}
+                  </ul>
+                </details>
+              ) : (
+                <p class="cost-d subtle">No cost — granted by event or oath only.</p>
+              )}
+
+              {Object.entries(t.modifiers).map(([scope, lines]) => (
+                <div class="modgroup">
+                  <span class="scope">{scope}</span>
+                  <ul class="mods">
+                    {(lines as string[]).map((l) => <li>{l}</li>)}
+                  </ul>
+                </div>
+              ))}
+
+              {t.parameters.length > 0 && (
+                <ul class="effects">
+                  {t.parameters.map((p: any) => (
+                    <li class:list={[{ 'is-off': p.value === false }]}>
+                      {p.text}
+                      {typeof p.value === 'number' && <span class="pval"> ({p.value})</span>}
+                      {p.value === false && <span class="pval"> (disabled)</span>}
+                    </li>
+                  ))}
+                </ul>
+              )}
+
+              {(t.requirements.length > 0 || t.shownWhen.length > 0) && (
+                <div class="reqs">
+                  {t.requirements.filter((r: any) => r.kind !== 'text').length > 0 && (
+                    <div>
+                      <span class="req-label">requires</span>
+                      <span class="chips">
+                        {t.requirements.filter((r: any) => r.kind !== 'text').map((r: any) => (
+                          <span class="chip chip--req" title={r.kind.replace(/_/g, ' ')}>
+                            {r.negated && <span class="neg">not </span>}{r.text}
+                          </span>
+                        ))}
+                      </span>
+                    </div>
+                  )}
+                  {t.requirements.filter((r: any) => r.kind === 'text').length > 0 && (
+                    <div>
+                      <span class="req-label" title="The game's own pick-condition text, quoted as it appears in the tooltip when the condition is unmet">conditions</span>
+                      <span class="chips">
+                        {t.requirements.filter((r: any) => r.kind === 'text').map((r: any) => (
+                          <span class="chip chip--block">
+                            {r.negated && <span class="neg">not </span>}{r.text}
+                          </span>
+                        ))}
+                      </span>
+                    </div>
+                  )}
+                  {t.shownWhen.length > 0 && (
+                    <div>
+                      <span class="req-label" title="Visibility gate: which cultures see this tradition when picking">shown for</span>
+                      <span class="chips">
+                        {t.shownWhen.map((r: any) => (
+                          <span class="chip" title={r.kind.replace(/_/g, ' ')}>
+                            {r.negated && <span class="neg">not </span>}{r.text}
+                          </span>
+                        ))}
+                      </span>
+                    </div>
+                  )}
+                </div>
+              )}
+            </article>
+          ))}
+      </div>
+    </section>
+  ))}
+
+  <script>
+    const q = document.getElementById('q') as HTMLInputElement;
+    const fcat = document.getElementById('fcat') as HTMLSelectElement;
+    const fdlc = document.getElementById('fdlc') as HTMLSelectElement;
+    const count = document.getElementById('count')!;
+    const cards = [...document.querySelectorAll<HTMLElement>('article.trad')];
+    const groups = [...document.querySelectorAll<HTMLElement>('section[data-group]')];
+
+    function apply() {
+      const needle = q.value.trim().toLowerCase();
+      const c = fcat.value;
+      const d = fdlc.value;
+      let shown = 0;
+      for (const el of cards) {
+        const ok =
+          (!needle || (el.dataset.name ?? '').includes(needle)) &&
+          (!c || el.dataset.cat === c) &&
+          (!d || (d === 'base' ? el.dataset.dlc === 'base' : el.dataset.dlc === d));
+        el.hidden = !ok;
+        if (ok) shown++;
+      }
+      for (const g of groups) {
+        g.hidden = ![...g.querySelectorAll('article.trad')].some((el) => !(el as HTMLElement).hidden);
+      }
+      count.textContent = `${shown} of ${cards.length}`;
+    }
+    for (const el of [q, fcat, fdlc]) el.addEventListener('input', apply);
+    apply();
+  </script>
+
+  <style>
+    .costnote { color: var(--faint); font-size: 0.78rem; max-width: 72ch; margin: -0.4rem 0 0.6rem; }
+
+    .cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 0.9rem; }
+    .trad {
+      background: var(--panel); border: 1px solid var(--line-soft); border-radius: var(--r);
+      padding: 0.8rem 0.95rem; display: flex; flex-direction: column; gap: 0.45rem;
+    }
+    .trad:target { border-color: var(--rubric); }
+    .trad header { display: flex; align-items: baseline; gap: 0.5rem; justify-content: space-between; }
+    .trad h3 { font-family: var(--font-display); font-size: 0.98rem; font-weight: 600; margin: 0; }
+    .trad h3 a { color: var(--vellum); border-bottom: none; }
+    .trad h3 a:hover { color: var(--brass-bright); }
+    .trad .desc { color: var(--dim); font-size: 0.8rem; font-style: italic; margin: 0; }
+
+    .cost-d { font-size: 0.8rem; margin: 0; }
+    .cost-d summary { cursor: pointer; list-style: none; color: var(--dim); }
+    .cost-d summary::-webkit-details-marker { display: none; }
+    .cost-d summary:hover { color: var(--vellum); }
+    .cost-d .cost { color: var(--brass-bright); }
+    .rules { margin: 0.3rem 0 0; padding-left: 1.1rem; color: var(--dim); font-size: 0.76rem; }
+    .rules li { margin: 0.1rem 0; }
+
+    .modgroup { font-size: 0.82rem; }
+    .scope { color: var(--faint); font-family: var(--font-mono); font-size: 0.68rem; }
+    .mods { margin: 0.1rem 0 0; padding-left: 1.1rem; }
+    .mods li { color: var(--good); }
+    .mods li::marker { color: var(--line); }
+
+    .effects { margin: 0; padding-left: 1.1rem; font-size: 0.82rem; }
+    .effects li::marker { color: var(--rubric); }
+    .effects li.is-off { color: var(--faint); }
+    .effects .pval { color: var(--faint); font-family: var(--font-mono); font-size: 0.72rem; }
+
+    .reqs { display: flex; flex-direction: column; gap: 0.3rem; margin-top: auto; padding-top: 0.35rem; border-top: 1px solid var(--line-soft); }
+    .reqs > div { display: flex; gap: 0.45rem; align-items: baseline; }
+    .req-label { color: var(--faint); font-family: var(--font-mono); font-size: 0.66rem; white-space: nowrap; cursor: help; }
+    .chips { max-width: none; }
+    .chip .neg { color: var(--bad); }
+    .chip--block { border-color: color-mix(in oklab, var(--bad) 40%, var(--line)); white-space: normal; }
+  </style>
+</Base>

@@ -1,0 +1,3726 @@
+{
+  "focuses": [
+    {
+      "desc": "Carry the banner of others. Make sure your name is known.",
+      "dlc": null,
+      "education": false,
+      "effects": [
+        "+10 General Opinion",
+        "+30% Travel Speed",
+        "15 …Diplomatic Scheme Phase Length days faster per Scheme Phase"
+      ],
+      "id": "diplomacy_adventurer_focus",
+      "lifestyle": "diplomacy_lifestyle",
+      "name": "diplomacy_adventurer_focus"
+    },
+    {
+      "desc": "Even if we do not choose them, those closest to us are the most important.",
+      "dlc": null,
+      "education": false,
+      "effects": [
+        "+2 Diplomacy",
+        "+20% Fertility"
+      ],
+      "id": "diplomacy_family_focus",
+      "lifestyle": "diplomacy_lifestyle",
+      "name": "diplomacy_family_focus"
+    },
+    {
+      "desc": "One can never have too many friends, near or far.",
+      "dlc": null,
+      "education": false,
+      "effects": [
+        "+3 Diplomacy"
+      ],
+      "id": "diplomacy_foreign_affairs_focus",
+      "lifestyle": "diplomacy_lifestyle",
+      "name": "diplomacy_foreign_affairs_focus"
+    },
+    {
+      "desc": "Regality flows from ritual, tradition and glory.",
+      "dlc": null,
+      "education": false,
+      "effects": [
+        "+1 Diplomacy",
+        "+1 Prestige /month"
+      ],
+      "id": "diplomacy_majesty_focus",
+      "lifestyle": "diplomacy_lifestyle",
+      "name": "diplomacy_majesty_focus"
+    },
+    {
+      "desc": "Plan carefully. Stay away from prying eyes.",
+      "dlc": null,
+      "education": false,
+      "effects": [
+        "+2.5% Owned Hostile Scheme Success Chance Growth Add",
+        "+20% Scheme Secrecy",
+        "15 …Intrigue Scheme Phase Length days faster per Scheme Phase",
+        "15 …Prowess Scheme Phase Length days faster per Scheme Phase"
+      ],
+      "id": "intrigue_adventurer_focus",
+      "lifestyle": "intrigue_lifestyle",
+      "name": "intrigue_adventurer_focus"
+    },
+    {
+      "desc": "Threats, both overt and subtle, guide the path to true power.",
+      "dlc": null,
+      "education": false,
+      "effects": [
+        "+2 Intrigue",
+        "+30 Natural Dread",
+        "-25% Dread Loss"
+      ],
+      "id": "intrigue_intimidation_focus",
+      "lifestyle": "intrigue_lifestyle",
+      "name": "intrigue_intimidation_focus"
+    },
+    {
+      "desc": "Schemes, subversion, and secrets.",
+      "dlc": null,
+      "education": false,
+      "effects": [
+        "+3 Intrigue",
+        "+15% Scheme Secrecy"
+      ],
+      "id": "intrigue_skulduggery_focus",
+      "lifestyle": "intrigue_lifestyle",
+      "name": "intrigue_skulduggery_focus"
+    },
+    {
+      "desc": "Seduction, desire, and the gentle art of twisting people around your little finger.",
+      "dlc": null,
+      "education": false,
+      "effects": [
+        "+10 Attraction Opinion",
+        "+20% Fertility",
+        "20 Seduce Phase Length days faster per Scheme Phase"
+      ],
+      "id": "intrigue_temptation_focus",
+      "lifestyle": "intrigue_lifestyle",
+      "name": "intrigue_temptation_focus"
+    },
+    {
+      "desc": "Know where to go. Know where not to go.",
+      "dlc": null,
+      "education": false,
+      "effects": [
+        "15 …Learning Scheme Phase Length days faster per Scheme Phase",
+        "-20% Stress Gain",
+        "+10 Travel Safety"
+      ],
+      "id": "learning_adventurer_focus",
+      "lifestyle": "learning_lifestyle",
+      "name": "learning_adventurer_focus"
+    },
+    {
+      "desc": "An understanding of life, beyond the vagaries of the world upon the body.",
+      "dlc": null,
+      "education": false,
+      "effects": [
+        "+1 Learning",
+        "+0 Health"
+      ],
+      "id": "learning_medicine_focus",
+      "lifestyle": "learning_lifestyle",
+      "name": "learning_medicine_focus"
+    },
+    {
+      "desc": "The knowledge of those who have come before, the knowledge of those still living, and the knowledge of perpetual truths.",
+      "dlc": null,
+      "education": false,
+      "effects": [
+        "+3 Learning",
+        "+15% Development Growth Factor"
+      ],
+      "id": "learning_scholarship_focus",
+      "lifestyle": "learning_lifestyle",
+      "name": "learning_scholarship_focus"
+    },
+    {
+      "desc": "Faith and knowledge. Understanding the divine means understanding the world.",
+      "dlc": null,
+      "education": false,
+      "effects": [
+        "+10 Head of Faith Opinion",
+        "+2 Learning",
+        "+1 Piety /month"
+      ],
+      "id": "learning_theology_focus",
+      "lifestyle": "learning_lifestyle",
+      "name": "learning_theology_focus"
+    },
+    {
+      "desc": "Take the command. Lead by example.",
+      "dlc": null,
+      "education": false,
+      "effects": [
+        "+10 Advantage",
+        "+15% Men-at-Arms Toughness",
+        "15 …Martial Scheme Phase Length days faster per Scheme Phase"
+      ],
+      "id": "martial_adventurer_focus",
+      "lifestyle": "martial_lifestyle",
+      "name": "martial_adventurer_focus"
+    },
+    {
+      "desc": "To rule is to make all the aspects of a realm move in unison and work together.",
+      "dlc": null,
+      "education": false,
+      "effects": [
+        "+1 Martial",
+        "+0.3 Monthly County Control Growth Add /month",
+        "+20% Dread Gain"
+      ],
+      "id": "martial_authority_focus",
+      "lifestyle": "martial_lifestyle",
+      "name": "martial_authority_focus"
+    },
+    {
+      "desc": "Victory comes not through blood or gold, but honor.",
+      "dlc": null,
+      "education": false,
+      "effects": [
+        "+5 Advantage",
+        "+3 Prowess",
+        "+10 Attraction Opinion"
+      ],
+      "id": "martial_chivalry_focus",
+      "lifestyle": "martial_lifestyle",
+      "name": "martial_chivalry_focus"
+    },
+    {
+      "desc": "Luck can win a duel. A fool can win a battle. It takes more to win a war.",
+      "dlc": null,
+      "education": false,
+      "effects": [
+        "+3 Martial"
+      ],
+      "id": "martial_strategy_focus",
+      "lifestyle": "martial_lifestyle",
+      "name": "martial_strategy_focus"
+    },
+    {
+      "desc": "Find the best opportunities. Do the job efficiently.",
+      "dlc": null,
+      "education": false,
+      "effects": [
+        "+2.5% Owned Contract Scheme Success Chance Growth Add",
+        "15 …Stewardship Scheme Phase Length days faster per Scheme Phase",
+        "+25% Provisions Gain"
+      ],
+      "id": "stewardship_adventurer_focus",
+      "lifestyle": "stewardship_lifestyle",
+      "name": "stewardship_adventurer_focus"
+    },
+    {
+      "desc": "My land and the people under my care are my strength.",
+      "dlc": null,
+      "education": false,
+      "effects": [
+        "+3 Stewardship"
+      ],
+      "id": "stewardship_domain_focus",
+      "lifestyle": "stewardship_lifestyle",
+      "name": "stewardship_domain_focus"
+    },
+    {
+      "desc": "The bonds of loyalty that bind us do not constrict; they show the way.",
+      "dlc": null,
+      "education": false,
+      "effects": [
+        "+1 Stewardship"
+      ],
+      "id": "stewardship_duty_focus",
+      "lifestyle": "stewardship_lifestyle",
+      "name": "stewardship_duty_focus"
+    },
+    {
+      "desc": "War, honor, and loyalty are all means to an end: gold!",
+      "dlc": null,
+      "education": false,
+      "effects": [
+        "+10% Monthly Income"
+      ],
+      "id": "stewardship_wealth_focus",
+      "lifestyle": "stewardship_lifestyle",
+      "name": "stewardship_wealth_focus"
+    },
+    {
+      "desc": "There is a world out there waiting to be seen.",
+      "dlc": null,
+      "education": false,
+      "effects": [
+        "+1 Stewardship",
+        "+1 Martial"
+      ],
+      "id": "wanderer_destination_focus",
+      "lifestyle": "wanderer_lifestyle",
+      "name": "wanderer_destination_focus"
+    },
+    {
+      "desc": "Guiding progress and prosperity through a personal touch.",
+      "dlc": null,
+      "education": false,
+      "effects": [
+        "+1 Stewardship",
+        "+1 Intrigue",
+        "+0.3 Monthly County Control Growth Add /month"
+      ],
+      "id": "wanderer_internal_affairs_focus",
+      "lifestyle": "wanderer_lifestyle",
+      "name": "wanderer_internal_affairs_focus"
+    },
+    {
+      "desc": "Every step is a journey in itself.",
+      "dlc": null,
+      "education": false,
+      "effects": [
+        "+2 Diplomacy"
+      ],
+      "id": "wanderer_journey_focus",
+      "lifestyle": "wanderer_lifestyle",
+      "name": "wanderer_journey_focus"
+    },
+    {
+      "desc": "The study of etiquette, communication and the practices of courtly life.",
+      "dlc": null,
+      "education": true,
+      "effects": [
+        "+1 Diplomacy"
+      ],
+      "id": "education_diplomacy",
+      "lifestyle": null,
+      "name": "education_diplomacy"
+    },
+    {
+      "desc": "The study of secrecy, shadows and careful planning.",
+      "dlc": null,
+      "education": true,
+      "effects": [
+        "+1 Intrigue"
+      ],
+      "id": "education_intrigue",
+      "lifestyle": null,
+      "name": "education_intrigue"
+    },
+    {
+      "desc": "The study of scholarship, theology and the pursuit of knowledge.",
+      "dlc": null,
+      "education": true,
+      "effects": [
+        "+1 Learning"
+      ],
+      "id": "education_learning",
+      "lifestyle": null,
+      "name": "education_learning"
+    },
+    {
+      "desc": "The study of warfare and combat and the commanding of armies.",
+      "dlc": null,
+      "education": true,
+      "effects": [
+        "+1 Martial"
+      ],
+      "id": "education_martial",
+      "lifestyle": null,
+      "name": "education_martial"
+    },
+    {
+      "desc": "The study of administration, management and the flow of gold.",
+      "dlc": null,
+      "education": true,
+      "effects": [
+        "+1 Stewardship"
+      ],
+      "id": "education_stewardship",
+      "lifestyle": null,
+      "name": "education_stewardship"
+    }
+  ],
+  "lifestyles": [
+    {
+      "dlc": null,
+      "id": "diplomacy_lifestyle",
+      "name": "Diplomacy"
+    },
+    {
+      "dlc": null,
+      "id": "martial_lifestyle",
+      "name": "Martial"
+    },
+    {
+      "dlc": null,
+      "id": "stewardship_lifestyle",
+      "name": "Stewardship"
+    },
+    {
+      "dlc": null,
+      "id": "intrigue_lifestyle",
+      "name": "Intrigue"
+    },
+    {
+      "dlc": null,
+      "id": "learning_lifestyle",
+      "name": "Learning"
+    },
+    {
+      "dlc": "Wandering Nobles",
+      "id": "wanderer_lifestyle",
+      "name": "Wandering"
+    }
+  ],
+  "trees": [
+    {
+      "id": "family",
+      "lifestyle": "diplomacy_lifestyle",
+      "name": "Family Hierarch",
+      "perks": [
+        {
+          "dlc": null,
+          "effects": [
+            "Automatically has access to the Befriend Scheme",
+            "20 Befriend Phase Length days faster per Scheme Phase",
+            "Unlocks the Challenge to Board Game Interaction, allowing you to play friendly games with other Characters"
+          ],
+          "features": [],
+          "icon": "node_diplomacy",
+          "id": "befriend_perk",
+          "lifestyle": "diplomacy_lifestyle",
+          "name": "Befriend",
+          "parents": [],
+          "trait": null,
+          "tree": "family",
+          "x": 0,
+          "y": 0
+        },
+        {
+          "dlc": null,
+          "effects": [
+            "+15 Close Family Opinion"
+          ],
+          "features": [],
+          "icon": "node_diplomacy",
+          "id": "familial_familiar_perk",
+          "lifestyle": "diplomacy_lifestyle",
+          "name": "Heart of the Family",
+          "parents": [],
+          "trait": null,
+          "tree": "family",
+          "x": 2,
+          "y": 0
+        },
+        {
+          "dlc": null,
+          "effects": [],
+          "features": [],
+          "icon": "node_diplomacy",
+          "id": "confidants_perk",
+          "lifestyle": "diplomacy_lifestyle",
+          "name": "Confidants",
+          "parents": [
+            "befriend_perk"
+          ],
+          "trait": null,
+          "tree": "family",
+          "x": 0,
+          "y": 1.25
+        },
+        {
+          "dlc": null,
+          "effects": [],
+          "features": [],
+          "icon": "node_diplomacy",
+          "id": "groomed_to_rule_perk",
+          "lifestyle": "diplomacy_lifestyle",
+          "name": "Groomed to Rule",
+          "parents": [
+            "familial_familiar_perk"
+          ],
+          "trait": null,
+          "tree": "family",
+          "x": 2,
+          "y": 1.25
+        },
+        {
+          "dlc": null,
+          "effects": [
+            "20 Befriend Phase Length days faster per Scheme Phase",
+            "100 Befriend Phase Length days faster per Scheme Phase (landless adventurer)"
+          ],
+          "features": [],
+          "icon": "node_diplomacy",
+          "id": "flatterer_perk",
+          "lifestyle": "diplomacy_lifestyle",
+          "name": "Flatterer",
+          "parents": [
+            "confidants_perk"
+          ],
+          "trait": null,
+          "tree": "family",
+          "x": 0,
+          "y": 2.5
+        },
+        {
+          "dlc": null,
+          "effects": [
+            "+5% Monthly Prestige from Blood Brothers (nomadic)"
+          ],
+          "features": [],
+          "icon": "node_diplomacy",
+          "id": "thicker_than_water_perk",
+          "lifestyle": "diplomacy_lifestyle",
+          "name": "Bound by Blood",
+          "parents": [
+            "groomed_to_rule_perk"
+          ],
+          "trait": null,
+          "tree": "family",
+          "x": 2,
+          "y": 2.5
+        },
+        {
+          "dlc": null,
+          "effects": [
+            "… Successful Befriend Schemes against Rulers will add the target to your Roll of Patrons"
+          ],
+          "features": [],
+          "icon": "node_diplomacy",
+          "id": "friendly_counsel_perk",
+          "lifestyle": "diplomacy_lifestyle",
+          "name": "Friendly Counsel",
+          "parents": [
+            "flatterer_perk"
+          ],
+          "trait": null,
+          "tree": "family",
+          "x": 0,
+          "y": 3.75
+        },
+        {
+          "dlc": null,
+          "effects": [],
+          "features": [],
+          "icon": "node_diplomacy",
+          "id": "sound_foundations_perk",
+          "lifestyle": "diplomacy_lifestyle",
+          "name": "Sound Foundations",
+          "parents": [
+            "thicker_than_water_perk"
+          ],
+          "trait": null,
+          "tree": "family",
+          "x": 2,
+          "y": 3.75
+        },
+        {
+          "dlc": null,
+          "effects": [],
+          "features": [],
+          "icon": "trait_family_first",
+          "id": "family_man_perk",
+          "lifestyle": "diplomacy_lifestyle",
+          "name": "Patriarch",
+          "parents": [
+            "sound_foundations_perk",
+            "friendly_counsel_perk"
+          ],
+          "trait": {
+            "id": "family_first",
+            "name": "Family First"
+          },
+          "tree": "family",
+          "x": 1,
+          "y": 5
+        }
+      ]
+    },
+    {
+      "id": "foreign_affairs",
+      "lifestyle": "diplomacy_lifestyle",
+      "name": "Diplomat",
+      "perks": [
+        {
+          "dlc": null,
+          "effects": [],
+          "features": [],
+          "icon": "node_diplomacy",
+          "id": "thoughtful_perk",
+          "lifestyle": "diplomacy_lifestyle",
+          "name": "Thoughtful",
+          "parents": [],
+          "trait": null,
+          "tree": "foreign_affairs",
+          "x": 2,
+          "y": 0
+        },
+        {
+          "dlc": null,
+          "effects": [
+            "+15% Owned Contract Scheme Success Chance Add (landless adventurer)",
+            "+20 Independent Ruler Opinion (landless adventurer)",
+            "-20% Title Creation Piety Cost (mandala)",
+            "Invert Check (has unique perks)",
+            "-20% Title Creation Cost (has unique perks)",
+            "+5% Monthly Domicile Prestige (japan feudal)"
+          ],
+          "features": [],
+          "icon": "node_diplomacy",
+          "id": "ducal_conquest_perk",
+          "lifestyle": "diplomacy_lifestyle",
+          "name": "Ducal Conquest",
+          "parents": [
+            "thoughtful_perk"
+          ],
+          "trait": null,
+          "tree": "foreign_affairs",
+          "x": 0,
+          "y": 1.25
+        },
+        {
+          "dlc": null,
+          "effects": [
+            "+1 Max Learn Language Schemes",
+            "+15 Different Culture Opinion (landless adventurer)",
+            "30 Enemy Political Scheme Phase Length days slower per Scheme Phase (administrative)"
+          ],
+          "features": [],
+          "icon": "node_diplomacy",
+          "id": "adaptive_traditions_perk",
+          "lifestyle": "diplomacy_lifestyle",
+          "name": "Adaptive Traditions",
+          "parents": [
+            "thoughtful_perk"
+          ],
+          "trait": null,
+          "tree": "foreign_affairs",
+          "x": 2,
+          "y": 1.25
+        },
+        {
+          "dlc": null,
+          "effects": [
+            "+10% Travel Safety (landless adventurer)",
+            "+10% Knight Effectiveness (landless adventurer)",
+            "Invert Check (landless adventurer)",
+            "+15 Independent Ruler Opinion (landless adventurer)",
+            "+15 Fellow Vassal Opinion (landless adventurer)",
+            "+15 Fellow Tributary Opinion (landless adventurer)",
+            "+15 Fellow Confederation Member Opinion (nomadic)",
+            "… Make a Request Acceptance for Knights or Men-at-Arms: +25"
+          ],
+          "features": [],
+          "icon": "node_diplomacy",
+          "id": "defensive_negotiations_perk",
+          "lifestyle": "diplomacy_lifestyle",
+          "name": "Defensive Negotiations",
+          "parents": [
+            "thoughtful_perk"
+          ],
+          "trait": null,
+          "tree": "foreign_affairs",
+          "x": 4,
+          "y": 1.25
+        },
+        {
+          "dlc": null,
+          "effects": [
+            "+20 … Opinion (landless adventurer)",
+            "120 Sway Phase Length days faster per Scheme Phase (landless adventurer)",
+            "+20% Monthly Merit (government has merit)",
+            "… acceptance: …"
+          ],
+          "features": [],
+          "icon": "node_diplomacy",
+          "id": "forced_vassalage_perk",
+          "lifestyle": "diplomacy_lifestyle",
+          "name": "Forced Vassalage",
+          "parents": [
+            "ducal_conquest_perk"
+          ],
+          "trait": null,
+          "tree": "foreign_affairs",
+          "x": 0,
+          "y": 2.5
+        },
+        {
+          "dlc": null,
+          "effects": [
+            "… Make a Request Acceptance: +20"
+          ],
+          "features": [],
+          "icon": "node_diplomacy",
+          "id": "flexible_truces_perk",
+          "lifestyle": "diplomacy_lifestyle",
+          "name": "Flexible Truces",
+          "parents": [
+            "adaptive_traditions_perk"
+          ],
+          "trait": null,
+          "tree": "foreign_affairs",
+          "x": 2,
+          "y": 2.5
+        },
+        {
+          "dlc": null,
+          "effects": [
+            "60 Learn Language Phase Length days faster per Scheme Phase",
+            "+20% Owned Political Scheme Success Chance Add (administrative)",
+            "… Enables the Make a Request Interaction with anyone whose Domain your Camp is located in"
+          ],
+          "features": [],
+          "icon": "node_diplomacy",
+          "id": "embassies_perk",
+          "lifestyle": "diplomacy_lifestyle",
+          "name": "Embassies",
+          "parents": [
+            "defensive_negotiations_perk"
+          ],
+          "trait": null,
+          "tree": "foreign_affairs",
+          "x": 4,
+          "y": 2.5
+        },
+        {
+          "dlc": null,
+          "effects": [
+            "+25% Scheme Secrecy (landless adventurer)",
+            "… Enables using the Elope Scheme on non-Lovers",
+            "… Elope Success Chance: +50%#"
+          ],
+          "features": [],
+          "icon": "node_diplomacy",
+          "id": "accomplished_forger_perk",
+          "lifestyle": "diplomacy_lifestyle",
+          "name": "Accomplished Forger",
+          "parents": [
+            "forced_vassalage_perk",
+            "flexible_truces_perk",
+            "embassies_perk"
+          ],
+          "trait": null,
+          "tree": "foreign_affairs",
+          "x": 2,
+          "y": 3.75
+        },
+        {
+          "dlc": null,
+          "effects": [],
+          "features": [],
+          "icon": "trait_diplomat",
+          "id": "diplomat_perk",
+          "lifestyle": "diplomacy_lifestyle",
+          "name": "Diplomat",
+          "parents": [
+            "accomplished_forger_perk"
+          ],
+          "trait": {
+            "id": "diplomat",
+            "name": "Diplomat"
+          },
+          "tree": "foreign_affairs",
+          "x": 2,
+          "y": 5
+        }
+      ]
+    },
+    {
+      "id": "majesty",
+      "lifestyle": "diplomacy_lifestyle",
+      "name": "August",
+      "perks": [
+        {
+          "dlc": null,
+          "effects": [
+            "20 Sway Phase Length days faster per Scheme Phase",
+            "+10 Tributary Opinion (mandala)",
+            "… Opinion gained with Officers recruited via Scout for Talent: +25"
+          ],
+          "features": [],
+          "icon": "node_diplomacy",
+          "id": "benevolent_intent_perk",
+          "lifestyle": "diplomacy_lifestyle",
+          "name": "Benevolent Intent",
+          "parents": [],
+          "trait": null,
+          "tree": "majesty",
+          "x": 0,
+          "y": 0
+        },
+        {
+          "dlc": null,
+          "effects": [
+            "Invert Check (landless adventurer)",
+            "+0.4% Monthly Prestige per Dread (landless adventurer)",
+            "+0.1% Knight Effectiveness per Dread (landless adventurer)",
+            "… Contract Prestige Rewards: …+20%"
+          ],
+          "features": [],
+          "icon": "node_diplomacy",
+          "id": "firm_hand_perk",
+          "lifestyle": "diplomacy_lifestyle",
+          "name": "Firm Hand",
+          "parents": [],
+          "trait": null,
+          "tree": "majesty",
+          "x": 2,
+          "y": 0
+        },
+        {
+          "dlc": null,
+          "effects": [
+            "Invert Check (has unique perks)",
+            "+4% Monthly Prestige per Powerful Vassal on the Council (has unique perks)",
+            "+10 Councillor Opinion (has unique perks)",
+            "+2% Monthly Renown from Blood Brothers (nomadic)",
+            "+1% Monthly Prestige per Court Position (japan feudal)",
+            "+10 Councillor Opinion (japan feudal)",
+            "+1% Monthly Prestige per Court Position (japan administrative)",
+            "+10 Councillor Opinion (japan administrative)",
+            "+1% Monthly Piety per Court Position (mandala)",
+            "+10 Councillor Opinion (mandala)",
+            "… Can use Make a Request to start a Feast with you as the Honorary Guest"
+          ],
+          "features": [],
+          "icon": "node_diplomacy",
+          "id": "inspiring_rule_perk",
+          "lifestyle": "diplomacy_lifestyle",
+          "name": "Inspiring Rule",
+          "parents": [
+            "benevolent_intent_perk"
+          ],
+          "trait": null,
+          "tree": "majesty",
+          "x": 0,
+          "y": 1
+        },
+        {
+          "dlc": null,
+          "effects": [
+            "+0.5% Knight Effectiveness per Diplomacy Skill (landless adventurer)",
+            "Invert Check (landless adventurer)",
+            "+1% Monthly Prestige per Knight (landless adventurer)",
+            "+1% Monthly Piety per Knight (mandala)",
+            "Increased Bodyguard Aptitude"
+          ],
+          "features": [],
+          "icon": "node_diplomacy",
+          "id": "praetorian_guard_perk",
+          "lifestyle": "diplomacy_lifestyle",
+          "name": "Praetorian Guard",
+          "parents": [
+            "firm_hand_perk"
+          ],
+          "trait": null,
+          "tree": "majesty",
+          "x": 2,
+          "y": 1
+        },
+        {
+          "dlc": null,
+          "effects": [
+            "Invert Check (landless adventurer)",
+            "+0.15 Prestige per Legitimacy Level /month (landless adventurer)",
+            "+15 Court Grandeur Baseline Add (landless adventurer)",
+            "+0.15 Piety per Legitimacy Level /month (mandala)",
+            "… Make a Request Acceptance from Level of Fame: +20%"
+          ],
+          "features": [],
+          "icon": "node_diplomacy",
+          "id": "true_ruler_perk",
+          "lifestyle": "diplomacy_lifestyle",
+          "name": "True Ruler",
+          "parents": [
+            "inspiring_rule_perk",
+            "praetorian_guard_perk"
+          ],
+          "trait": null,
+          "tree": "majesty",
+          "x": 1,
+          "y": 2
+        },
+        {
+          "dlc": null,
+          "effects": [
+            "+10% Stress loss per Level of Fame",
+            "Invert Check (landless adventurer)",
+            "+5% Legitimacy Gain (landless adventurer)",
+            "+25% Legend Spread Chance (landless adventurer)",
+            "… Steadfast Camp Temperament now also grants a scaling Personal Scheme Phase Length bonus of 25"
+          ],
+          "features": [],
+          "icon": "node_diplomacy",
+          "id": "writing_history_perk",
+          "lifestyle": "diplomacy_lifestyle",
+          "name": "Writing History",
+          "parents": [
+            "true_ruler_perk"
+          ],
+          "trait": null,
+          "tree": "majesty",
+          "x": 1,
+          "y": 3
+        },
+        {
+          "dlc": null,
+          "effects": [
+            "+100% Level of Fame Impact"
+          ],
+          "features": [],
+          "icon": "node_diplomacy",
+          "id": "a_life_of_glory_perk",
+          "lifestyle": "diplomacy_lifestyle",
+          "name": "A Life of Glory",
+          "parents": [
+            "writing_history_perk"
+          ],
+          "trait": null,
+          "tree": "majesty",
+          "x": 0,
+          "y": 4
+        },
+        {
+          "dlc": null,
+          "effects": [
+            "+1 Diplomacy per Level of Fame",
+            "Invert Check (landless adventurer)",
+            "-50% Legitimacy Loss (landless adventurer)",
+            "+1 Diplomacy per Level of Fame (landless adventurer)",
+            "+1 Martial per Level of Fame (landless adventurer)",
+            "+1 Intrigue per Level of Fame (landless adventurer)"
+          ],
+          "features": [],
+          "icon": "node_diplomacy",
+          "id": "dignitas_perk",
+          "lifestyle": "diplomacy_lifestyle",
+          "name": "Dignitas",
+          "parents": [
+            "writing_history_perk"
+          ],
+          "trait": null,
+          "tree": "majesty",
+          "x": 2,
+          "y": 4
+        },
+        {
+          "dlc": null,
+          "effects": [],
+          "features": [],
+          "icon": "trait_august",
+          "id": "august_perk",
+          "lifestyle": "diplomacy_lifestyle",
+          "name": "August",
+          "parents": [
+            "a_life_of_glory_perk",
+            "dignitas_perk"
+          ],
+          "trait": {
+            "id": "august",
+            "name": "August"
+          },
+          "tree": "majesty",
+          "x": 1,
+          "y": 5
+        }
+      ]
+    },
+    {
+      "id": "intimidation",
+      "lifestyle": "intrigue_lifestyle",
+      "name": "Torturer",
+      "perks": [
+        {
+          "dlc": null,
+          "effects": [],
+          "features": [],
+          "icon": "node_intrigue",
+          "id": "dark_insights_perk",
+          "lifestyle": "intrigue_lifestyle",
+          "name": "Dark Insights",
+          "parents": [],
+          "trait": null,
+          "tree": "intimidation",
+          "x": 0,
+          "y": 0
+        },
+        {
+          "dlc": null,
+          "effects": [
+            "+30% Dread Gain"
+          ],
+          "features": [],
+          "icon": "node_intrigue",
+          "id": "dreadful_perk",
+          "lifestyle": "intrigue_lifestyle",
+          "name": "Dreadful",
+          "parents": [],
+          "trait": null,
+          "tree": "intimidation",
+          "x": 2,
+          "y": 0
+        },
+        {
+          "dlc": null,
+          "effects": [],
+          "features": [],
+          "icon": "node_intrigue",
+          "id": "divine_retribution_perk",
+          "lifestyle": "intrigue_lifestyle",
+          "name": "Divine Retribution",
+          "parents": [
+            "dark_insights_perk"
+          ],
+          "trait": null,
+          "tree": "intimidation",
+          "x": 0,
+          "y": 1
+        },
+        {
+          "dlc": null,
+          "effects": [
+            "+4 Martial per Stress Level",
+            "+4 Intrigue per Stress Level",
+            "+6 Prowess per Stress Level"
+          ],
+          "features": [],
+          "icon": "node_intrigue",
+          "id": "thriving_in_chaos_perk",
+          "lifestyle": "intrigue_lifestyle",
+          "name": "Thriving in Chaos",
+          "parents": [
+            "dreadful_perk"
+          ],
+          "trait": null,
+          "tree": "intimidation",
+          "x": 2,
+          "y": 1
+        },
+        {
+          "dlc": null,
+          "effects": [
+            "Invert Check (landless adventurer)",
+            "+0.5 Dread Gain per Tyranny (landless adventurer)",
+            "… Criminal Contract Gold Rewards: …+100%"
+          ],
+          "features": [],
+          "icon": "node_intrigue",
+          "id": "malice_implicit_perk",
+          "lifestyle": "intrigue_lifestyle",
+          "name": "Malice Implicit",
+          "parents": [
+            "divine_retribution_perk",
+            "thriving_in_chaos_perk"
+          ],
+          "trait": null,
+          "tree": "intimidation",
+          "x": 1,
+          "y": 2
+        },
+        {
+          "dlc": null,
+          "effects": [
+            "+0.05 Prestige per Dread /month (japan feudal)",
+            "+0.05 Prestige per Dread /month (japan administrative)",
+            "+0 Piety per Dread /month (mandala)",
+            "Invert Check (has unique perks)",
+            "+15% Intimidated Vassal Tax Contribution (has unique perks)",
+            "+15% Intimidated Vassal Levy Contribution (has unique perks)",
+            "+30% Terrified Vassal Tax Contribution (has unique perks)",
+            "+30% Terrified Vassal Levy Contribution (has unique perks)",
+            "+15% Intimidated Vassal Herd Contribution (nomadic)",
+            "+30% Terrified Vassal Herd Contribution (nomadic)",
+            "+1 Domain Limit (government uses domain limit)",
+            "… Enables the Turn into Mystery Meat Execution method, allowing you to turn Prisoners into …Provisions\n(based on weight)"
+          ],
+          "features": [],
+          "icon": "node_intrigue",
+          "id": "fear_tax_perk",
+          "lifestyle": "intrigue_lifestyle",
+          "name": "Fear Tax",
+          "parents": [
+            "malice_implicit_perk"
+          ],
+          "trait": null,
+          "tree": "intimidation",
+          "x": 1,
+          "y": 3
+        },
+        {
+          "dlc": null,
+          "effects": [
+            "-1000% Dread Decay"
+          ],
+          "features": [],
+          "icon": "node_intrigue",
+          "id": "forever_infamous_perk",
+          "lifestyle": "intrigue_lifestyle",
+          "name": "Forever Infamous",
+          "parents": [
+            "fear_tax_perk"
+          ],
+          "trait": null,
+          "tree": "intimidation",
+          "x": 0,
+          "y": 4
+        },
+        {
+          "dlc": null,
+          "effects": [],
+          "features": [],
+          "icon": "node_intrigue",
+          "id": "prison_feudal_complex_perk",
+          "lifestyle": "intrigue_lifestyle",
+          "name": "Prison-Feudal Complex",
+          "parents": [
+            "fear_tax_perk"
+          ],
+          "trait": null,
+          "tree": "intimidation",
+          "x": 2,
+          "y": 4
+        },
+        {
+          "dlc": null,
+          "effects": [],
+          "features": [],
+          "icon": "trait_torturer",
+          "id": "torturer_perk",
+          "lifestyle": "intrigue_lifestyle",
+          "name": "Torturer",
+          "parents": [
+            "forever_infamous_perk",
+            "prison_feudal_complex_perk"
+          ],
+          "trait": {
+            "id": "torturer",
+            "name": "Torturer"
+          },
+          "tree": "intimidation",
+          "x": 1,
+          "y": 5
+        }
+      ]
+    },
+    {
+      "id": "skulduggery",
+      "lifestyle": "intrigue_lifestyle",
+      "name": "Schemer",
+      "perks": [
+        {
+          "dlc": null,
+          "effects": [],
+          "features": [],
+          "icon": "node_intrigue",
+          "id": "truth_is_relative_perk",
+          "lifestyle": "intrigue_lifestyle",
+          "name": "Truth is Relative",
+          "parents": [],
+          "trait": null,
+          "tree": "skulduggery",
+          "x": 2,
+          "y": 0
+        },
+        {
+          "dlc": null,
+          "effects": [
+            "…Enables the Search for Secrets Travel Option"
+          ],
+          "features": [],
+          "icon": "node_intrigue",
+          "id": "digging_for_dirt_perk",
+          "lifestyle": "intrigue_lifestyle",
+          "name": "Digging for Dirt",
+          "parents": [
+            "truth_is_relative_perk"
+          ],
+          "trait": null,
+          "tree": "skulduggery",
+          "x": 0,
+          "y": 1.25
+        },
+        {
+          "dlc": null,
+          "effects": [
+            "+10% Owned Political Scheme Success Chance Max Add (administrative)",
+            "Schemes using Grace begin with an extra … months of it",
+            "… Exposing Secrets gives …Prestige based on the Rank of the target"
+          ],
+          "features": [],
+          "icon": "node_intrigue",
+          "id": "court_of_shadows_perk",
+          "lifestyle": "intrigue_lifestyle",
+          "name": "Court of Shadows",
+          "parents": [
+            "truth_is_relative_perk"
+          ],
+          "trait": null,
+          "tree": "skulduggery",
+          "x": 2,
+          "y": 1.25
+        },
+        {
+          "dlc": null,
+          "effects": [
+            "20 Murder Phase Length days faster per Scheme Phase",
+            "100 Murder Phase Length days faster per Scheme Phase (landless adventurer)"
+          ],
+          "features": [],
+          "icon": "node_intrigue",
+          "id": "swift_execution_perk",
+          "lifestyle": "intrigue_lifestyle",
+          "name": "Swift Execution",
+          "parents": [
+            "truth_is_relative_perk"
+          ],
+          "trait": null,
+          "tree": "skulduggery",
+          "x": 4,
+          "y": 1.25
+        },
+        {
+          "dlc": null,
+          "effects": [],
+          "features": [],
+          "icon": "node_intrigue",
+          "id": "kidnapper_perk",
+          "lifestyle": "intrigue_lifestyle",
+          "name": "Kidnapper",
+          "parents": [
+            "digging_for_dirt_perk"
+          ],
+          "trait": null,
+          "tree": "skulduggery",
+          "x": 0,
+          "y": 2.5
+        },
+        {
+          "dlc": null,
+          "effects": [
+            "-25% Enemy Hostile Scheme Success Chance Add"
+          ],
+          "features": [],
+          "icon": "node_intrigue",
+          "id": "prepared_for_anything_perk",
+          "lifestyle": "intrigue_lifestyle",
+          "name": "Prepared for Anything",
+          "parents": [
+            "court_of_shadows_perk"
+          ],
+          "trait": null,
+          "tree": "skulduggery",
+          "x": 2,
+          "y": 2.5
+        },
+        {
+          "dlc": null,
+          "effects": [
+            "+25% Owned Hostile Scheme Success Chance Add",
+            "+5% Owned Hostile Scheme Success Chance Max Add"
+          ],
+          "features": [],
+          "icon": "node_intrigue",
+          "id": "a_job_done_right_perk",
+          "lifestyle": "intrigue_lifestyle",
+          "name": "A Job Done Right",
+          "parents": [
+            "swift_execution_perk"
+          ],
+          "trait": null,
+          "tree": "skulduggery",
+          "x": 4,
+          "y": 2.5
+        },
+        {
+          "dlc": null,
+          "effects": [
+            "+1 Max Hostile Schemes",
+            "+1 Max Political Schemes (administrative)"
+          ],
+          "features": [],
+          "icon": "node_intrigue",
+          "id": "twice_schemed_perk",
+          "lifestyle": "intrigue_lifestyle",
+          "name": "Twice Schemed",
+          "parents": [
+            "kidnapper_perk",
+            "prepared_for_anything_perk",
+            "a_job_done_right_perk"
+          ],
+          "trait": null,
+          "tree": "skulduggery",
+          "x": 2,
+          "y": 3.75
+        },
+        {
+          "dlc": null,
+          "effects": [],
+          "features": [],
+          "icon": "trait_schemer",
+          "id": "schemer_perk",
+          "lifestyle": "intrigue_lifestyle",
+          "name": "Schemer",
+          "parents": [
+            "twice_schemed_perk"
+          ],
+          "trait": {
+            "id": "schemer",
+            "name": "Schemer"
+          },
+          "tree": "skulduggery",
+          "x": 2,
+          "y": 5
+        }
+      ]
+    },
+    {
+      "id": "temptation",
+      "lifestyle": "intrigue_lifestyle",
+      "name": "Seducer",
+      "perks": [
+        {
+          "dlc": null,
+          "effects": [
+            "+30% Fertility"
+          ],
+          "features": [],
+          "icon": "node_intrigue",
+          "id": "like_weed_in_a_garden_perk",
+          "lifestyle": "intrigue_lifestyle",
+          "name": "Like Weeds in a Garden",
+          "parents": [],
+          "trait": null,
+          "tree": "temptation",
+          "x": 0,
+          "y": 0
+        },
+        {
+          "dlc": null,
+          "effects": [
+            "20 Seduce Phase Length days faster per Scheme Phase",
+            "100 Seduce Phase Length days faster per Scheme Phase (landless adventurer)"
+          ],
+          "features": [],
+          "icon": "node_intrigue",
+          "id": "enticing_opportunity_perk",
+          "lifestyle": "intrigue_lifestyle",
+          "name": "Enticing Opportunity",
+          "parents": [],
+          "trait": null,
+          "tree": "temptation",
+          "x": 2,
+          "y": 0
+        },
+        {
+          "dlc": null,
+          "effects": [],
+          "features": [],
+          "icon": "node_intrigue",
+          "id": "unshackled_lust_perk",
+          "lifestyle": "intrigue_lifestyle",
+          "name": "Unshackled Lust",
+          "parents": [
+            "like_weed_in_a_garden_perk"
+          ],
+          "trait": null,
+          "tree": "temptation",
+          "x": 0,
+          "y": 1.25
+        },
+        {
+          "dlc": null,
+          "effects": [],
+          "features": [],
+          "icon": "node_intrigue",
+          "id": "home_advantage_perk",
+          "lifestyle": "intrigue_lifestyle",
+          "name": "Home Advantage",
+          "parents": [
+            "enticing_opportunity_perk"
+          ],
+          "trait": null,
+          "tree": "temptation",
+          "x": 2,
+          "y": 1.25
+        },
+        {
+          "dlc": null,
+          "effects": [],
+          "features": [],
+          "icon": "node_intrigue",
+          "id": "subtle_desire_perk",
+          "lifestyle": "intrigue_lifestyle",
+          "name": "Subtle Desire",
+          "parents": [
+            "unshackled_lust_perk"
+          ],
+          "trait": null,
+          "tree": "temptation",
+          "x": 0,
+          "y": 2.5
+        },
+        {
+          "dlc": null,
+          "effects": [],
+          "features": [],
+          "icon": "node_intrigue",
+          "id": "graceful_recovery_perk",
+          "lifestyle": "intrigue_lifestyle",
+          "name": "Graceful Recovery",
+          "parents": [
+            "home_advantage_perk"
+          ],
+          "trait": null,
+          "tree": "temptation",
+          "x": 2,
+          "y": 2.5
+        },
+        {
+          "dlc": null,
+          "effects": [
+            "… Successful Seduce Schemes against Rulers will add the target to your Roll of Patrons and give you a Weak Hook if you choose to become Lovers"
+          ],
+          "features": [],
+          "icon": "node_intrigue",
+          "id": "mortal_adoration_perk",
+          "lifestyle": "intrigue_lifestyle",
+          "name": "Mortal Adoration",
+          "parents": [
+            "subtle_desire_perk"
+          ],
+          "trait": null,
+          "tree": "temptation",
+          "x": 0,
+          "y": 3.75
+        },
+        {
+          "dlc": null,
+          "effects": [],
+          "features": [],
+          "icon": "node_intrigue",
+          "id": "smooth_operator_perk",
+          "lifestyle": "intrigue_lifestyle",
+          "name": "Smooth Operator",
+          "parents": [
+            "graceful_recovery_perk"
+          ],
+          "trait": null,
+          "tree": "temptation",
+          "x": 2,
+          "y": 3.75
+        },
+        {
+          "dlc": null,
+          "effects": [],
+          "features": [],
+          "icon": "trait_seducer",
+          "id": "seducer_perk",
+          "lifestyle": "intrigue_lifestyle",
+          "name": "Seducer",
+          "parents": [
+            "mortal_adoration_perk",
+            "smooth_operator_perk"
+          ],
+          "trait": {
+            "id": "seducer",
+            "name": "Seducer"
+          },
+          "tree": "temptation",
+          "x": 1,
+          "y": 5
+        }
+      ]
+    },
+    {
+      "id": "medicine",
+      "lifestyle": "learning_lifestyle",
+      "name": "Whole of Body",
+      "perks": [
+        {
+          "dlc": null,
+          "effects": [],
+          "features": [],
+          "icon": "node_learning",
+          "id": "anatomical_studies_perk",
+          "lifestyle": "learning_lifestyle",
+          "name": "Anatomical Studies",
+          "parents": [],
+          "trait": null,
+          "tree": "medicine",
+          "x": 2,
+          "y": 0
+        },
+        {
+          "dlc": null,
+          "effects": [
+            "-20% Stress Gain"
+          ],
+          "features": [],
+          "icon": "node_learning",
+          "id": "carefree_perk",
+          "lifestyle": "learning_lifestyle",
+          "name": "Carefree",
+          "parents": [
+            "anatomical_studies_perk"
+          ],
+          "trait": null,
+          "tree": "medicine",
+          "x": 0,
+          "y": 1.25
+        },
+        {
+          "dlc": null,
+          "effects": [],
+          "features": [],
+          "icon": "node_learning",
+          "id": "restraint_perk",
+          "lifestyle": "learning_lifestyle",
+          "name": "Restraint",
+          "parents": [
+            "anatomical_studies_perk"
+          ],
+          "trait": null,
+          "tree": "medicine",
+          "x": 2,
+          "y": 1.25
+        },
+        {
+          "dlc": null,
+          "effects": [
+            "Invert Check (landless adventurer)",
+            "+5 Plague Resistance (landless adventurer)"
+          ],
+          "features": [],
+          "icon": "node_learning",
+          "id": "wash_your_hands_perk",
+          "lifestyle": "learning_lifestyle",
+          "name": "Wash Your Hands",
+          "parents": [
+            "anatomical_studies_perk"
+          ],
+          "trait": null,
+          "tree": "medicine",
+          "x": 4,
+          "y": 1.25
+        },
+        {
+          "dlc": null,
+          "effects": [],
+          "features": [],
+          "icon": "node_learning",
+          "id": "mental_resilience_perk",
+          "lifestyle": "learning_lifestyle",
+          "name": "Mental Resilience",
+          "parents": [
+            "carefree_perk"
+          ],
+          "trait": null,
+          "tree": "medicine",
+          "x": 0,
+          "y": 2.5
+        },
+        {
+          "dlc": null,
+          "effects": [],
+          "features": [],
+          "icon": "node_learning",
+          "id": "know_thyself_perk",
+          "lifestyle": "learning_lifestyle",
+          "name": "Know Thyself",
+          "parents": [
+            "restraint_perk"
+          ],
+          "trait": null,
+          "tree": "medicine",
+          "x": 2,
+          "y": 2.5
+        },
+        {
+          "dlc": null,
+          "effects": [
+            "+2 Negate Health Penalty Add",
+            "+30% Negate Fertility Penalty Add"
+          ],
+          "features": [],
+          "icon": "node_learning",
+          "id": "iron_constitution_perk",
+          "lifestyle": "learning_lifestyle",
+          "name": "Iron Constitution",
+          "parents": [
+            "wash_your_hands_perk"
+          ],
+          "trait": null,
+          "tree": "medicine",
+          "x": 4,
+          "y": 2.5
+        },
+        {
+          "dlc": null,
+          "effects": [
+            "+0 Health",
+            "Invert Check (landless adventurer)",
+            "+5 Plague Resistance (landless adventurer)"
+          ],
+          "features": [],
+          "icon": "node_learning",
+          "id": "healthy_perk",
+          "lifestyle": "learning_lifestyle",
+          "name": "Healthy",
+          "parents": [
+            "mental_resilience_perk",
+            "know_thyself_perk",
+            "iron_constitution_perk"
+          ],
+          "trait": null,
+          "tree": "medicine",
+          "x": 2,
+          "y": 3.75
+        },
+        {
+          "dlc": null,
+          "effects": [],
+          "features": [],
+          "icon": "trait_whole_of_body",
+          "id": "whole_of_body_perk",
+          "lifestyle": "learning_lifestyle",
+          "name": "Whole of Body",
+          "parents": [
+            "healthy_perk"
+          ],
+          "trait": {
+            "id": "whole_of_body",
+            "name": "Whole of Body"
+          },
+          "tree": "medicine",
+          "x": 2,
+          "y": 5
+        }
+      ]
+    },
+    {
+      "id": "scholarship",
+      "lifestyle": "learning_lifestyle",
+      "name": "Scholar",
+      "perks": [
+        {
+          "dlc": null,
+          "effects": [
+            "2 Study Phase Length days faster per Scheme Phase (government has merit)"
+          ],
+          "features": [],
+          "icon": "node_learning",
+          "id": "pedagogy_perk",
+          "lifestyle": "learning_lifestyle",
+          "name": "Pedagogy",
+          "parents": [],
+          "trait": null,
+          "tree": "scholarship",
+          "x": 0,
+          "y": 0
+        },
+        {
+          "dlc": null,
+          "effects": [
+            "Invert Check (landless adventurer)",
+            "+20% Cultural Head Fascination Mult (landless adventurer)",
+            "+25% Counter Efficiency (landless adventurer)",
+            "-15% Siege Phase Time (landless adventurer)",
+            "… Bonus Modifiers from the Steadfast Camp Temperament now also scale by number of Followers with …15 Learning or more (1 per Follower)"
+          ],
+          "features": [],
+          "icon": "node_learning",
+          "id": "scientific_perk",
+          "lifestyle": "learning_lifestyle",
+          "name": "Scientific",
+          "parents": [],
+          "trait": null,
+          "tree": "scholarship",
+          "x": 2,
+          "y": 0
+        },
+        {
+          "dlc": null,
+          "effects": [
+            "+15 Different Culture Opinion",
+            "Invert Check (landless adventurer)",
+            "+15 Minority Vassal Opinion (landless adventurer)",
+            "+20% Cultural Acceptance Gain (landless adventurer)",
+            "120 Learn Language Phase Length days faster per Scheme Phase (landless adventurer)",
+            "Can learn 2 additional Languages without any penalties"
+          ],
+          "features": [],
+          "icon": "node_learning",
+          "id": "open_minded_perk",
+          "lifestyle": "learning_lifestyle",
+          "name": "Open-Minded",
+          "parents": [
+            "pedagogy_perk"
+          ],
+          "trait": null,
+          "tree": "scholarship",
+          "x": 0,
+          "y": 1
+        },
+        {
+          "dlc": null,
+          "effects": [
+            "+100% Wanderer (…) Trait Experience Gain (landless adventurer)",
+            "-25% Men-at-Arms Recruitment Cost (landless adventurer)",
+            "+15% County Fertility Growth Mult (nomadic)",
+            "… May recruit Cultural Men-at-Arms from where you are located"
+          ],
+          "features": [],
+          "icon": "node_learning",
+          "id": "planned_cultivation_perk",
+          "lifestyle": "learning_lifestyle",
+          "name": "Planned Cultivation",
+          "parents": [
+            "scientific_perk"
+          ],
+          "trait": null,
+          "tree": "scholarship",
+          "x": 2,
+          "y": 1
+        },
+        {
+          "dlc": null,
+          "effects": [
+            "+15 Different Faith Opinion",
+            "-75% Faith Conversion Cost",
+            "… You now gain ……………+1 for every three unique Faiths your Followers have when Camp Temperament is Steadfast"
+          ],
+          "features": [],
+          "icon": "node_learning",
+          "id": "apostate_perk",
+          "lifestyle": "learning_lifestyle",
+          "name": "Apostate",
+          "parents": [
+            "open_minded_perk"
+          ],
+          "trait": null,
+          "tree": "scholarship",
+          "x": 0,
+          "y": 2
+        },
+        {
+          "dlc": null,
+          "effects": [
+            "+1 Learning per Level of Devotion",
+            "-50% Enemy Defensive Advantage (landless adventurer)",
+            "+0.5% Knight Effectiveness per Learning Skill (landless adventurer)",
+            "-1 Learning per Level of Devotion (landless adventurer)"
+          ],
+          "features": [],
+          "icon": "node_learning",
+          "id": "scholarly_circles_perk",
+          "lifestyle": "learning_lifestyle",
+          "name": "Scholarly Circles",
+          "parents": [
+            "planned_cultivation_perk"
+          ],
+          "trait": null,
+          "tree": "scholarship",
+          "x": 2,
+          "y": 2
+        },
+        {
+          "dlc": null,
+          "effects": [
+            "+200% Seasoned (…) Trait Experience Gain (landless adventurer)",
+            "… Followers will occasionally become Inspired to write Books"
+          ],
+          "features": [],
+          "icon": "node_learning",
+          "id": "learn_on_the_job_perk",
+          "lifestyle": "learning_lifestyle",
+          "name": "Learn on the Job",
+          "parents": [
+            "apostate_perk",
+            "scholarly_circles_perk"
+          ],
+          "trait": null,
+          "tree": "scholarship",
+          "x": 1,
+          "y": 3
+        },
+        {
+          "dlc": null,
+          "effects": [
+            "-75% Artifact Decay Reduction (landless adventurer)",
+            "+15% Confucian Education Trait Experience Gain (government has merit)",
+            "+2 Merit /month (government has merit)",
+            "+15% Confucian Education Trait Experience Gain (japan administrative)",
+            "+0.5 Domicile Piety /month (japan administrative)",
+            "+15% Confucian Education Trait Experience Gain (japan feudal)",
+            "+0.5 Domicile Piety /month (japan feudal)",
+            "… Followers produce significantly higher-quality Artifacts when completing Book Inspirations"
+          ],
+          "features": [],
+          "icon": "node_learning",
+          "id": "sanctioned_loopholes_perk",
+          "lifestyle": "learning_lifestyle",
+          "name": "Sanctioned Loopholes",
+          "parents": [
+            "learn_on_the_job_perk"
+          ],
+          "trait": null,
+          "tree": "scholarship",
+          "x": 1,
+          "y": 4
+        },
+        {
+          "dlc": null,
+          "effects": [],
+          "features": [],
+          "icon": "trait_scholar",
+          "id": "scholar_perk",
+          "lifestyle": "learning_lifestyle",
+          "name": "Scholar",
+          "parents": [
+            "sanctioned_loopholes_perk"
+          ],
+          "trait": {
+            "id": "scholar",
+            "name": "Scholar"
+          },
+          "tree": "scholarship",
+          "x": 1,
+          "y": 5
+        }
+      ]
+    },
+    {
+      "id": "theology",
+      "lifestyle": "learning_lifestyle",
+      "name": "Theologian",
+      "perks": [
+        {
+          "dlc": null,
+          "effects": [
+            "Doctrine: doctrine theocracy lay clergy",
+            "+10 Zealot Vassal Opinion",
+            "Doctrine: doctrine theocracy temporal",
+            "+10 Clergy Opinion",
+            "+0.5 Merit /month (government has merit)",
+            "… Steadfast Camp Temperament now also grants a scaling +1 Faith Hostility Advantage"
+          ],
+          "features": [],
+          "icon": "node_learning",
+          "id": "faithful_perk",
+          "lifestyle": "learning_lifestyle",
+          "name": "Faithful",
+          "parents": [],
+          "trait": null,
+          "tree": "theology",
+          "x": 1,
+          "y": 0
+        },
+        {
+          "dlc": null,
+          "effects": [
+            "… Enables the Proselytize to Locals Travel Option"
+          ],
+          "features": [],
+          "icon": "node_learning",
+          "id": "zealous_proselytizer_perk",
+          "lifestyle": "learning_lifestyle",
+          "name": "Zealous Proselytizer",
+          "parents": [
+            "faithful_perk"
+          ],
+          "trait": null,
+          "tree": "theology",
+          "x": 0,
+          "y": 1
+        },
+        {
+          "dlc": null,
+          "effects": [
+            "…… Pilgrimage Cost: …-50%"
+          ],
+          "features": [],
+          "icon": "node_learning",
+          "id": "clerical_justifications_perk",
+          "lifestyle": "learning_lifestyle",
+          "name": "Clerical Justifications",
+          "parents": [
+            "faithful_perk"
+          ],
+          "trait": null,
+          "tree": "theology",
+          "x": 2,
+          "y": 1
+        },
+        {
+          "dlc": null,
+          "effects": [
+            "+10% Stress loss per Level of Devotion (mandala)",
+            "… You now gain …+0.4/month for every Follower of your Faith when Camp Temperament is Steadfast"
+          ],
+          "features": [],
+          "icon": "node_learning",
+          "id": "religious_icon_perk",
+          "lifestyle": "learning_lifestyle",
+          "name": "Religious Icon",
+          "parents": [
+            "zealous_proselytizer_perk"
+          ],
+          "trait": null,
+          "tree": "theology",
+          "x": 0,
+          "y": 2
+        },
+        {
+          "dlc": null,
+          "effects": [
+            "Doctrine: doctrine theocracy lay clergy",
+            "+100% Monthly Piety from Buildings",
+            "Doctrine: doctrine theocracy temporal",
+            "+50 Realm Priest Opinion",
+            "+50 Zealot Vassal Opinion (nomadic)",
+            "+15 Same Faith Opinion (nomadic)",
+            "+5% Monthly Domicile Piety (government uses domicile but not adventurer)",
+            "… Visiting a Temple Holding awards …25",
+            "… Visiting a Religious Point of Interest awards …250"
+          ],
+          "features": [],
+          "icon": "node_learning",
+          "id": "church_and_state_perk",
+          "lifestyle": "learning_lifestyle",
+          "name": "Church and State",
+          "parents": [
+            "clerical_justifications_perk"
+          ],
+          "trait": null,
+          "tree": "theology",
+          "x": 2,
+          "y": 2
+        },
+        {
+          "dlc": null,
+          "effects": [
+            "Invert Check (government has merit)",
+            "+2% Monthly Piety per Knight (government has merit)",
+            "-50% Faith Creation and Reformation Cost (government has merit)",
+            "+20% Monthly Merit (government has merit)",
+            "+10% Stress loss per Level of Devotion (government has merit)",
+            "… Enables the Attempt to Convert Interaction with anyone whose Domain your Camp is located in",
+            "… Gain …Prestige when successfully using the Attempt to Convert Interaction"
+          ],
+          "features": [],
+          "icon": "node_learning",
+          "id": "prophet_perk",
+          "lifestyle": "learning_lifestyle",
+          "name": "Prophet",
+          "parents": [
+            "religious_icon_perk"
+          ],
+          "trait": null,
+          "tree": "theology",
+          "x": 0,
+          "y": 3
+        },
+        {
+          "dlc": null,
+          "effects": [
+            "+100% …Level of Devotion Impact",
+            "+1 Martial per Level of Devotion (landless adventurer)",
+            "+1 Intrigue per Level of Devotion (landless adventurer)",
+            "+1 Prowess per Level of Devotion (landless adventurer)"
+          ],
+          "features": [],
+          "icon": "node_learning",
+          "id": "radiant_perk",
+          "lifestyle": "learning_lifestyle",
+          "name": "Radiant",
+          "parents": [
+            "church_and_state_perk"
+          ],
+          "trait": null,
+          "tree": "theology",
+          "x": 2,
+          "y": 3
+        },
+        {
+          "dlc": null,
+          "effects": [
+            "Doctrine: doctrine pluralism fundamentalist",
+            "+10 Tolerance Advantage Mod",
+            "+2 Prowess per Level of Devotion",
+            "+20 Clergy Opinion",
+            "Doctrine: doctrine pluralism righteous",
+            "+20 Zealot Vassal Opinion",
+            "-25% Tyranny Gain",
+            "+35% Zealot Vassal Tax Contribution",
+            "+35% Zealot Vassal Levy Contribution",
+            "Doctrine: doctrine pluralism pluralistic",
+            "+1 Diplomacy per Level of Devotion",
+            "+20% Monthly Piety",
+            "… Removes the Acceptance Penalty from the target not being Cynical when using the Attempt to Convert Interaction",
+            "… Doubles Acceptance from your …Learning when using the Attempt to Convert Interaction\n(presuming your Learning is higher)"
+          ],
+          "features": [],
+          "icon": "node_learning",
+          "id": "defender_of_the_faith_perk",
+          "lifestyle": "learning_lifestyle",
+          "name": "Defender of the Faith",
+          "parents": [
+            "radiant_perk",
+            "prophet_perk"
+          ],
+          "trait": null,
+          "tree": "theology",
+          "x": 1,
+          "y": 4
+        },
+        {
+          "dlc": null,
+          "effects": [],
+          "features": [],
+          "icon": "trait_theologian",
+          "id": "theologian_perk",
+          "lifestyle": "learning_lifestyle",
+          "name": "Theologian",
+          "parents": [
+            "defender_of_the_faith_perk"
+          ],
+          "trait": {
+            "id": "theologian",
+            "name": "Theologian"
+          },
+          "tree": "theology",
+          "x": 1,
+          "y": 5
+        }
+      ]
+    },
+    {
+      "id": "authority",
+      "lifestyle": "martial_lifestyle",
+      "name": "Overseer",
+      "perks": [
+        {
+          "dlc": null,
+          "effects": [
+            "+15 Natural Dread",
+            "Invert Check (landless adventurer)",
+            "+0.3 Monthly County Control Growth Add /month (landless adventurer)",
+            "-10% Men-at-Arms Recruitment Cost (landless adventurer)"
+          ],
+          "features": [],
+          "icon": "node_martial",
+          "id": "serve_the_crown_perk",
+          "lifestyle": "martial_lifestyle",
+          "name": "Serve the Crown",
+          "parents": [],
+          "trait": null,
+          "tree": "authority",
+          "x": 1,
+          "y": 0
+        },
+        {
+          "dlc": null,
+          "effects": [
+            "+10% Provisions Capacity (landless adventurer)",
+            "Invert Check (landless adventurer)",
+            "+5 Controlled Territory Defender Advantage (landless adventurer)",
+            "+10% Domicile Income (government uses domicile but not adventurer)",
+            "… Doubles the effect of Siege Replenishment"
+          ],
+          "features": [],
+          "icon": "node_martial",
+          "id": "a_mans_home_perk",
+          "lifestyle": "martial_lifestyle",
+          "name": "A Woman's Home",
+          "parents": [
+            "serve_the_crown_perk"
+          ],
+          "trait": null,
+          "tree": "authority",
+          "x": 0,
+          "y": 1
+        },
+        {
+          "dlc": null,
+          "effects": [
+            "… Finishing a Siege awards x20 times the Holding's Loot value as …Provisions"
+          ],
+          "features": [],
+          "icon": "node_martial",
+          "id": "strict_organization_perk",
+          "lifestyle": "martial_lifestyle",
+          "name": "Strict Organization",
+          "parents": [
+            "serve_the_crown_perk"
+          ],
+          "trait": null,
+          "tree": "authority",
+          "x": 2,
+          "y": 1
+        },
+        {
+          "dlc": null,
+          "effects": [
+            "Invert Check (landless adventurer)",
+            "+1 Additional Fort Level (landless adventurer)",
+            "+10 Plague Resistance (landless adventurer)",
+            "-20% Provisions Use (landless adventurer)",
+            "+10 Defender Advantage (landless adventurer)",
+            "-25% Friendly Fatal Casualties (landless adventurer)"
+          ],
+          "features": [],
+          "icon": "node_martial",
+          "id": "enduring_hardships_perk",
+          "lifestyle": "martial_lifestyle",
+          "name": "Enduring Hardships",
+          "parents": [
+            "a_mans_home_perk"
+          ],
+          "trait": null,
+          "tree": "authority",
+          "x": 0,
+          "y": 2
+        },
+        {
+          "dlc": null,
+          "effects": [
+            "+20% Dread Gain",
+            "Invert Check (landless adventurer)",
+            "+50% Siege Progress against Revolts (landless adventurer)",
+            "+10% Men-at-Arms Damage (landless adventurer)",
+            "… Mercenary Contract and Offer Military Assistance Gold Rewards: …+25%"
+          ],
+          "features": [],
+          "icon": "node_martial",
+          "id": "hard_rule_perk",
+          "lifestyle": "martial_lifestyle",
+          "name": "Hard Rule",
+          "parents": [
+            "strict_organization_perk"
+          ],
+          "trait": null,
+          "tree": "authority",
+          "x": 2,
+          "y": 2
+        },
+        {
+          "dlc": null,
+          "effects": [
+            "Invert Check (landless adventurer)",
+            "+100% Friendly Territory Levy Reinforcement Rate (landless adventurer)",
+            "-15% Army Gold Maintenance (landless adventurer)",
+            "-20% Men-at-Arms Recruitment Cost (landless adventurer)",
+            "-20% Upgrade Nomadic Horde Regiment Cost (nomadic)",
+            "… Refill Men-at-Arms Provision cost: …-25%"
+          ],
+          "features": [],
+          "icon": "node_martial",
+          "id": "prepared_conscription_perk",
+          "lifestyle": "martial_lifestyle",
+          "name": "Prepared Conscription",
+          "parents": [
+            "enduring_hardships_perk"
+          ],
+          "trait": null,
+          "tree": "authority",
+          "x": 0,
+          "y": 3
+        },
+        {
+          "dlc": null,
+          "effects": [
+            "Invert Check (landless adventurer)",
+            "-30% Mercenary Hire Cost (landless adventurer)",
+            "-20% Men-at-Arms Recruitment Cost (landless adventurer)",
+            "… Reinforcements from Scrape the Barrel: +400%"
+          ],
+          "features": [],
+          "icon": "node_martial",
+          "id": "soldiers_of_lesser_fortune_perk",
+          "lifestyle": "martial_lifestyle",
+          "name": "Soldiers of Lesser Fortune",
+          "parents": [
+            "hard_rule_perk"
+          ],
+          "trait": null,
+          "tree": "authority",
+          "x": 2,
+          "y": 3
+        },
+        {
+          "dlc": null,
+          "effects": [
+            "+1 Domain Limit (government uses domain limit)",
+            "… Bonus Modifiers from the Steadfast Camp Temperament now also scale by …Dread (1 per 20 Dread)",
+            "Vassals no longer refuse Directives"
+          ],
+          "features": [],
+          "icon": "node_martial",
+          "id": "absolute_control_perk",
+          "lifestyle": "martial_lifestyle",
+          "name": "Absolute Control",
+          "parents": [
+            "soldiers_of_lesser_fortune_perk",
+            "prepared_conscription_perk"
+          ],
+          "trait": null,
+          "tree": "authority",
+          "x": 1,
+          "y": 4
+        },
+        {
+          "dlc": null,
+          "effects": [],
+          "features": [],
+          "icon": "trait_overseer",
+          "id": "overseer_perk",
+          "lifestyle": "martial_lifestyle",
+          "name": "Overseer",
+          "parents": [
+            "absolute_control_perk"
+          ],
+          "trait": {
+            "id": "overseer",
+            "name": "Overseer"
+          },
+          "tree": "authority",
+          "x": 1,
+          "y": 5
+        }
+      ]
+    },
+    {
+      "id": "chivalry",
+      "lifestyle": "martial_lifestyle",
+      "name": "Gallant",
+      "perks": [
+        {
+          "dlc": null,
+          "effects": [
+            "+4 Prowess",
+            "+5% Foot (Hastiluder) Trait Experience Gain",
+            "+20% Foot (Hastiluder) Trait Experience Gain (landless adventurer)",
+            "… Can use Make a Request to make Count-Rank Rulers or higher start a Grand Tournament"
+          ],
+          "features": [],
+          "icon": "node_martial",
+          "id": "stalwart_leader_perk",
+          "lifestyle": "martial_lifestyle",
+          "name": "Stalwart Leader",
+          "parents": [],
+          "trait": null,
+          "tree": "chivalry",
+          "x": 1,
+          "y": 0
+        },
+        {
+          "dlc": null,
+          "effects": [
+            "20 Romance Phase Length days faster per Scheme Phase",
+            "20 Elope Phase Length days faster per Scheme Phase",
+            "100 Romance Phase Length days faster per Scheme Phase (landless adventurer)",
+            "100 Elope Phase Length days faster per Scheme Phase (landless adventurer)"
+          ],
+          "features": [],
+          "icon": "node_martial",
+          "id": "courtship_perk",
+          "lifestyle": "martial_lifestyle",
+          "name": "Courtship",
+          "parents": [
+            "stalwart_leader_perk"
+          ],
+          "trait": null,
+          "tree": "chivalry",
+          "x": 0,
+          "y": 1
+        },
+        {
+          "dlc": null,
+          "effects": [
+            "Invert Check (administrative)",
+            "+75% Knight Effectiveness (administrative)",
+            "Invert Check (landless adventurer)",
+            "+10% Accolade Glory Gain (landless adventurer)",
+            "+25% Horse (Hastiluder) Trait Experience Gain (landless adventurer)",
+            "+5 Same Heritage County Advantage Add (administrative)"
+          ],
+          "features": [],
+          "icon": "node_martial",
+          "id": "chivalric_dominance_perk",
+          "lifestyle": "martial_lifestyle",
+          "name": "Chivalric Dominance",
+          "parents": [
+            "stalwart_leader_perk"
+          ],
+          "trait": null,
+          "tree": "chivalry",
+          "x": 2,
+          "y": 1
+        },
+        {
+          "dlc": null,
+          "effects": [],
+          "features": [],
+          "icon": "node_martial",
+          "id": "promising_prospects_perk",
+          "lifestyle": "martial_lifestyle",
+          "name": "Promising Prospects",
+          "parents": [
+            "courtship_perk"
+          ],
+          "trait": null,
+          "tree": "chivalry",
+          "x": 0,
+          "y": 2
+        },
+        {
+          "dlc": null,
+          "effects": [
+            "+5 Advantage",
+            "-20% Friendly Fatal Casualties",
+            "+10% Hastiluder Trait Experience Gain"
+          ],
+          "features": [],
+          "icon": "node_martial",
+          "id": "never_back_down_perk",
+          "lifestyle": "martial_lifestyle",
+          "name": "Never Back Down",
+          "parents": [
+            "chivalric_dominance_perk"
+          ],
+          "trait": null,
+          "tree": "chivalry",
+          "x": 2,
+          "y": 2
+        },
+        {
+          "dlc": null,
+          "effects": [
+            "+50 Spouse Opinion",
+            "+25% Wit (Hastiluder) Trait Experience Gain (landless adventurer)"
+          ],
+          "features": [],
+          "icon": "node_martial",
+          "id": "loyalty_and_respect_perk",
+          "lifestyle": "martial_lifestyle",
+          "name": "Loyalty and Respect",
+          "parents": [
+            "promising_prospects_perk"
+          ],
+          "trait": null,
+          "tree": "chivalry",
+          "x": 0,
+          "y": 3
+        },
+        {
+          "dlc": null,
+          "effects": [
+            "+25% Bow (Hastiluder) Trait Experience Gain (landless adventurer)",
+            "Invert Check (administrative)",
+            "+4 Number of …Knights (administrative)",
+            "+2 Number of …Knights (administrative)"
+          ],
+          "features": [],
+          "icon": "node_martial",
+          "id": "kingsguard_perk",
+          "lifestyle": "martial_lifestyle",
+          "name": "Household Guard",
+          "parents": [
+            "never_back_down_perk"
+          ],
+          "trait": null,
+          "tree": "chivalry",
+          "x": 2,
+          "y": 3
+        },
+        {
+          "dlc": null,
+          "effects": [],
+          "features": [],
+          "icon": "node_martial",
+          "id": "peacemaker_perk",
+          "lifestyle": "martial_lifestyle",
+          "name": "Peacemaker",
+          "parents": [
+            "loyalty_and_respect_perk",
+            "kingsguard_perk"
+          ],
+          "trait": null,
+          "tree": "chivalry",
+          "x": 1,
+          "y": 4
+        },
+        {
+          "dlc": null,
+          "effects": [],
+          "features": [],
+          "icon": "trait_gallant",
+          "id": "gallant_perk",
+          "lifestyle": "martial_lifestyle",
+          "name": "Gallant",
+          "parents": [
+            "peacemaker_perk"
+          ],
+          "trait": {
+            "id": "gallant",
+            "name": "Gallant"
+          },
+          "tree": "chivalry",
+          "x": 1,
+          "y": 5
+        }
+      ]
+    },
+    {
+      "id": "strategy",
+      "lifestyle": "martial_lifestyle",
+      "name": "Strategist",
+      "perks": [
+        {
+          "dlc": null,
+          "effects": [],
+          "features": [],
+          "icon": "node_martial",
+          "id": "bellum_justum_perk",
+          "lifestyle": "martial_lifestyle",
+          "name": "Bellum Justum",
+          "parents": [],
+          "trait": null,
+          "tree": "strategy",
+          "x": 2,
+          "y": 0
+        },
+        {
+          "dlc": null,
+          "effects": [
+            "+20% Light Cavalry Pursuit",
+            "+30% Light Cavalry Toughness",
+            "+20% Heavy Cavalry Pursuit",
+            "+30% Heavy Cavalry Toughness",
+            "+20% Camel Cavalry Pursuit",
+            "+30% Camel Cavalry Toughness",
+            "+20% Elephant Cavalry Pursuit",
+            "+30% Elephant Cavalry Toughness",
+            "+20% Archer Cavalry Pursuit",
+            "+20% Archer Cavalry Toughness",
+            "+10% Horse (Hastiluder) Trait Experience Gain"
+          ],
+          "features": [],
+          "icon": "node_martial",
+          "id": "parthian_tactics_perk",
+          "lifestyle": "martial_lifestyle",
+          "name": "Parthian Tactics",
+          "parents": [
+            "bellum_justum_perk"
+          ],
+          "trait": null,
+          "tree": "strategy",
+          "x": 0,
+          "y": 1.25
+        },
+        {
+          "dlc": null,
+          "effects": [
+            "+15% Army Movement Speed",
+            "+25% Travel Speed",
+            "+25% Heavy Infantry Screen",
+            "+25% Spearmen Screen",
+            "+25% Archer Screen",
+            "+25% Skirmisher Screen",
+            "+25% Nomadic Horde Screen (nomadic)"
+          ],
+          "features": [],
+          "icon": "node_martial",
+          "id": "organized_retreat_perk",
+          "lifestyle": "martial_lifestyle",
+          "name": "Organized March",
+          "parents": [
+            "bellum_justum_perk"
+          ],
+          "trait": null,
+          "tree": "strategy",
+          "x": 2,
+          "y": 1.25
+        },
+        {
+          "dlc": null,
+          "effects": [
+            "+40% Siege Weapon Effectiveness",
+            "+25% Naval Speed"
+          ],
+          "features": [],
+          "icon": "node_martial",
+          "id": "engineered_for_destruction_perk",
+          "lifestyle": "martial_lifestyle",
+          "name": "Engineered for Destruction",
+          "parents": [
+            "bellum_justum_perk"
+          ],
+          "trait": null,
+          "tree": "strategy",
+          "x": 4,
+          "y": 1.25
+        },
+        {
+          "dlc": null,
+          "effects": [
+            "+25% Counter Efficiency",
+            "+10% Wit (Hastiluder) Trait Experience Gain"
+          ],
+          "features": [],
+          "icon": "node_martial",
+          "id": "envelopment_perk",
+          "lifestyle": "martial_lifestyle",
+          "name": "Envelopment",
+          "parents": [
+            "parthian_tactics_perk"
+          ],
+          "trait": null,
+          "tree": "strategy",
+          "x": 0,
+          "y": 2.5
+        },
+        {
+          "dlc": null,
+          "effects": [
+            "-25% Retreat Losses",
+            "+30% Spearmen Toughness",
+            "+30% Archer Damage",
+            "+15% Heavy Infantry Toughness",
+            "+15% Heavy Infantry Damage",
+            "+20% Skirmisher Damage",
+            "+10% Skirmisher Toughness",
+            "+10% Bow (Hastiluder) Trait Experience Gain",
+            "+20% Nomadic Horde Toughness (nomadic)",
+            "+20% Nomadic Horde Damage (nomadic)"
+          ],
+          "features": [],
+          "icon": "node_martial",
+          "id": "hit_and_run_perk",
+          "lifestyle": "martial_lifestyle",
+          "name": "Hit and Run",
+          "parents": [
+            "organized_retreat_perk"
+          ],
+          "trait": null,
+          "tree": "strategy",
+          "x": 2,
+          "y": 2.5
+        },
+        {
+          "dlc": null,
+          "effects": [
+            "+200% Supply Capacity",
+            "+25% Travel Safety",
+            "Invert Check (landless adventurer)",
+            "+25% Raid Speed (landless adventurer)",
+            "-10% Provisions Loss (landless adventurer)"
+          ],
+          "features": [],
+          "icon": "node_martial",
+          "id": "living_off_the_land_perk",
+          "lifestyle": "martial_lifestyle",
+          "name": "Living Off the Land",
+          "parents": [
+            "engineered_for_destruction_perk"
+          ],
+          "trait": null,
+          "tree": "strategy",
+          "x": 4,
+          "y": 2.5
+        },
+        {
+          "dlc": null,
+          "effects": [
+            "+0.1 Heavy Infantry Siege Progress",
+            "+0.1 Spearmen Siege Progress",
+            "+0.1 Archer Siege Progress",
+            "+0.1 Skirmisher Siege Progress",
+            "+0.1 Light Cavalry Siege Progress (nomadic)",
+            "+0.1 Archer Cavalry Siege Progress (nomadic)"
+          ],
+          "features": [],
+          "icon": "node_martial",
+          "id": "sappers_perk",
+          "lifestyle": "martial_lifestyle",
+          "name": "Sappers",
+          "parents": [
+            "envelopment_perk",
+            "hit_and_run_perk",
+            "living_off_the_land_perk"
+          ],
+          "trait": null,
+          "tree": "strategy",
+          "x": 2,
+          "y": 3.75
+        },
+        {
+          "dlc": null,
+          "effects": [],
+          "features": [],
+          "icon": "trait_strategist",
+          "id": "strategist_perk",
+          "lifestyle": "martial_lifestyle",
+          "name": "Strategist",
+          "parents": [
+            "sappers_perk"
+          ],
+          "trait": {
+            "id": "strategist",
+            "name": "Strategist"
+          },
+          "tree": "strategy",
+          "x": 2,
+          "y": 5
+        }
+      ]
+    },
+    {
+      "id": "domain",
+      "lifestyle": "stewardship_lifestyle",
+      "name": "Architect",
+      "perks": [
+        {
+          "dlc": null,
+          "effects": [
+            "+0.5 Domicile Income /month (landless adventurer)",
+            "-10% Domicile Building Construction Cost (landless adventurer)",
+            "+3 Domicile Herd /month (nomadic)"
+          ],
+          "features": [],
+          "icon": "node_stewardship",
+          "id": "tax_man_perk",
+          "lifestyle": "stewardship_lifestyle",
+          "name": "Tax Man",
+          "parents": [],
+          "trait": null,
+          "tree": "domain",
+          "x": 0,
+          "y": 0
+        },
+        {
+          "dlc": null,
+          "effects": [
+            "Invert Check (landless adventurer)",
+            "-5% Holding Build Gold Cost (landless adventurer)",
+            "-5% Holding Build Piety Cost (landless adventurer)",
+            "-5% Holding Build Prestige Cost (landless adventurer)",
+            "-5% Build Gold Cost (landless adventurer)",
+            "-5% Build Piety Cost (landless adventurer)",
+            "-5% Build Prestige Cost (landless adventurer)",
+            "-5% Domicile Building Construction Cost (landless adventurer)",
+            "-10% Domicile Building Construction Cost (nomadic)",
+            "… Refill Men-at-Arms Gold cost: …-25%"
+          ],
+          "features": [],
+          "icon": "node_stewardship",
+          "id": "cutting_corners_perk",
+          "lifestyle": "stewardship_lifestyle",
+          "name": "Cutting Cornerstones",
+          "parents": [],
+          "trait": null,
+          "tree": "domain",
+          "x": 2,
+          "y": 0
+        },
+        {
+          "dlc": null,
+          "effects": [
+            "Invert Check (landless adventurer)",
+            "+20% Garrison Size (landless adventurer)",
+            "+1 Additional Fort Level (landless adventurer)",
+            "+25% Move Domicile Travel Speed (landless adventurer)",
+            "+25% Travel Speed (landless adventurer)"
+          ],
+          "features": [],
+          "icon": "node_stewardship",
+          "id": "defensive_measures_perk",
+          "lifestyle": "stewardship_lifestyle",
+          "name": "Defensive Measures",
+          "parents": [
+            "tax_man_perk"
+          ],
+          "trait": null,
+          "tree": "domain",
+          "x": 0,
+          "y": 1
+        },
+        {
+          "dlc": null,
+          "effects": [
+            "Invert Check (landless adventurer)",
+            "-30% Build Speed (landless adventurer)",
+            "-30% Holding Build Speed (landless adventurer)",
+            "-30% Domicile Build Speed (government uses domicile but not adventurer)",
+            "… Significantly improves Characters recruited in the Tavern when using the Visit Settlement Decision"
+          ],
+          "features": [],
+          "icon": "node_stewardship",
+          "id": "professional_workforce_perk",
+          "lifestyle": "stewardship_lifestyle",
+          "name": "Professional Workforce",
+          "parents": [
+            "cutting_corners_perk"
+          ],
+          "trait": null,
+          "tree": "domain",
+          "x": 2,
+          "y": 1
+        },
+        {
+          "dlc": null,
+          "effects": [
+            "Invert Check (landless adventurer)",
+            "+100% Levy Reinforcement Rate (landless adventurer)",
+            "+2% Herd Conversion into Horde Riders (nomadic)",
+            "… Visiting a Point of Interest awards ……"
+          ],
+          "features": [],
+          "icon": "node_stewardship",
+          "id": "organized_muster_rolls_perk",
+          "lifestyle": "stewardship_lifestyle",
+          "name": "Organized Muster Rolls",
+          "parents": [
+            "defensive_measures_perk"
+          ],
+          "trait": null,
+          "tree": "domain",
+          "x": 0,
+          "y": 2
+        },
+        {
+          "dlc": null,
+          "effects": [
+            "Invert Check (landless adventurer)",
+            "+0.3 Character Capital County Monthly Development Growth Add /month (landless adventurer)",
+            "+15% Herd Gain (nomadic)",
+            "… Visiting a Capital Point of Interest improves all Followers by 1 Skill point"
+          ],
+          "features": [],
+          "icon": "node_stewardship",
+          "id": "centralization_perk",
+          "lifestyle": "stewardship_lifestyle",
+          "name": "Centralization",
+          "parents": [
+            "professional_workforce_perk"
+          ],
+          "trait": null,
+          "tree": "domain",
+          "x": 2,
+          "y": 2
+        },
+        {
+          "dlc": null,
+          "effects": [
+            "Invert Check (landless adventurer)",
+            "+50 Popular Opinion (landless adventurer)",
+            "… Enables the Gather Inspiration Travel Option"
+          ],
+          "features": [],
+          "icon": "node_stewardship",
+          "id": "popular_figurehead_perk",
+          "lifestyle": "stewardship_lifestyle",
+          "name": "Popular Figurehead",
+          "parents": [
+            "organized_muster_rolls_perk",
+            "centralization_perk"
+          ],
+          "trait": null,
+          "tree": "domain",
+          "x": 1,
+          "y": 3
+        },
+        {
+          "dlc": null,
+          "effects": [
+            "-10% Domicile Build Speed (administrative)",
+            "+1 Domain Limit (government uses domain limit)",
+            "+1 Minimum Domain Limit (nomadic)",
+            "+1 Maximum Domain Limit (nomadic)",
+            "+0.5 Domicile Income /month (landless adventurer)",
+            "+1 Maximum Domain Limit (mandala)",
+            "+1 Maximum Domain Limit (japan feudal)",
+            "+1 Maximum Domain Limit (japan administrative)",
+            "+1 Maximum Domain Limit (wanua)",
+            "… Followers produce significantly higher-quality Artifacts when completing a Weapon, Armor, or Smith Inspiration"
+          ],
+          "features": [],
+          "icon": "node_stewardship",
+          "id": "divided_attention_perk",
+          "lifestyle": "stewardship_lifestyle",
+          "name": "Divided Attention",
+          "parents": [
+            "popular_figurehead_perk"
+          ],
+          "trait": null,
+          "tree": "domain",
+          "x": 1,
+          "y": 4
+        },
+        {
+          "dlc": null,
+          "effects": [],
+          "features": [],
+          "icon": "trait_architect",
+          "id": "architect_perk",
+          "lifestyle": "stewardship_lifestyle",
+          "name": "Architect",
+          "parents": [
+            "divided_attention_perk"
+          ],
+          "trait": {
+            "id": "architect",
+            "name": "Architect"
+          },
+          "tree": "domain",
+          "x": 1,
+          "y": 5
+        }
+      ]
+    },
+    {
+      "id": "duty",
+      "lifestyle": "stewardship_lifestyle",
+      "name": "Administrator",
+      "perks": [
+        {
+          "dlc": null,
+          "effects": [
+            "+15 Courtier and Guest Opinion",
+            "+15 Courtier and Guest Opinion",
+            "+5% Monthly Merit (government has merit)"
+          ],
+          "features": [],
+          "icon": "node_stewardship",
+          "id": "meritocracy_perk",
+          "lifestyle": "stewardship_lifestyle",
+          "name": "Meritocracy",
+          "parents": [],
+          "trait": null,
+          "tree": "duty",
+          "x": 1,
+          "y": 0
+        },
+        {
+          "dlc": null,
+          "effects": [
+            "Invert Check (landless adventurer)",
+            "40 Learn Language Phase Length days faster per Scheme Phase (landless adventurer)",
+            "… Enables the Encourage Relationships Travel Option"
+          ],
+          "features": [],
+          "icon": "node_stewardship",
+          "id": "chains_of_loyalty_perk",
+          "lifestyle": "stewardship_lifestyle",
+          "name": "Chains of Loyalty",
+          "parents": [
+            "meritocracy_perk"
+          ],
+          "trait": null,
+          "tree": "duty",
+          "x": 0,
+          "y": 1
+        },
+        {
+          "dlc": null,
+          "effects": [
+            "Invert Check (landless adventurer)",
+            "+20% Vassal Levy Contribution (landless adventurer)",
+            "+10% Governor Trait Experience Gain (administrative)",
+            "+20% Vassal Herd Contribution (nomadic)",
+            "+5% Monthly Income from Herd (nomadic)",
+            "… Cost of recruiting Officers via Scout for Talent: -50%"
+          ],
+          "features": [],
+          "icon": "node_stewardship",
+          "id": "large_levies_perk",
+          "lifestyle": "stewardship_lifestyle",
+          "name": "Large Levies",
+          "parents": [
+            "meritocracy_perk"
+          ],
+          "trait": null,
+          "tree": "duty",
+          "x": 2,
+          "y": 1
+        },
+        {
+          "dlc": null,
+          "effects": [
+            "Invert Check (landless adventurer)",
+            "+10 Direct Vassal Opinion (landless adventurer)",
+            "+20 Liege Opinion (landless adventurer)",
+            "+10 Tributary Opinion (landless adventurer)",
+            "+20 Suzerain Opinion (landless adventurer)",
+            "… Aptitude of Officers who are your Best Friend: +30",
+            "… Aptitude of Officers who are your Friend: +15"
+          ],
+          "features": [],
+          "icon": "node_stewardship",
+          "id": "likable_perk",
+          "lifestyle": "stewardship_lifestyle",
+          "name": "Likable",
+          "parents": [
+            "chains_of_loyalty_perk"
+          ],
+          "trait": null,
+          "tree": "duty",
+          "x": 0,
+          "y": 2
+        },
+        {
+          "dlc": null,
+          "effects": [
+            "Invert Check (landless adventurer)",
+            "-0 Monthly Tyranny (landless adventurer)",
+            "… Officer Aptitude: +10"
+          ],
+          "features": [],
+          "icon": "node_stewardship",
+          "id": "soon_forgiven_perk",
+          "lifestyle": "stewardship_lifestyle",
+          "name": "Soon Forgiven",
+          "parents": [
+            "large_levies_perk"
+          ],
+          "trait": null,
+          "tree": "duty",
+          "x": 2,
+          "y": 2
+        },
+        {
+          "dlc": null,
+          "effects": [
+            "Invert Check (landless adventurer)",
+            "+20 Councillor Opinion (landless adventurer)",
+            "… Aptitude of Officers with a Friend: +5",
+            "… Aptitude of Officers with a Lover: +5",
+            "… Aptitude of Officers who are Married: +10"
+          ],
+          "features": [],
+          "icon": "node_stewardship",
+          "id": "positions_of_power_perk",
+          "lifestyle": "stewardship_lifestyle",
+          "name": "Positions of Power",
+          "parents": [
+            "likable_perk"
+          ],
+          "trait": null,
+          "tree": "duty",
+          "x": 0,
+          "y": 3
+        },
+        {
+          "dlc": null,
+          "effects": [
+            "… The effects of the Scout for Talent Travel Option now apply to all Travels\n(Except the Speed penalty)",
+            "… The Scout for Talent Travel Option can no longer be selected"
+          ],
+          "features": [],
+          "icon": "node_stewardship",
+          "id": "toe_the_line_perk",
+          "lifestyle": "stewardship_lifestyle",
+          "name": "Toe the Line",
+          "parents": [
+            "soon_forgiven_perk"
+          ],
+          "trait": null,
+          "tree": "duty",
+          "x": 2,
+          "y": 3
+        },
+        {
+          "dlc": null,
+          "effects": [
+            "Invert Check (has unique perks)",
+            "+20% Powerful Vassal Councillor Tax Contribution (has unique perks)",
+            "+20% Powerful Vassal Councillor Levy Contribution (has unique perks)",
+            "+20% Powerful Vassal Councillor Herd Contribution (has unique perks)",
+            "+5% Tributary Taxes (mandala)",
+            "+50% Tributary Piety contributions (mandala)",
+            "+5 House Opinion (japan feudal)",
+            "+5 Close Family Opinion (japan feudal)",
+            "… Bonus Modifiers from the Steadfast Camp Temperament now also scale by number of Followers (1 per 5 Followers)",
+            "Vassals no longer refuse Directives"
+          ],
+          "features": [],
+          "icon": "node_stewardship",
+          "id": "honored_to_serve_perk",
+          "lifestyle": "stewardship_lifestyle",
+          "name": "Honored to Serve",
+          "parents": [
+            "toe_the_line_perk",
+            "positions_of_power_perk"
+          ],
+          "trait": null,
+          "tree": "duty",
+          "x": 1,
+          "y": 4
+        },
+        {
+          "dlc": null,
+          "effects": [],
+          "features": [],
+          "icon": "trait_administrator",
+          "id": "administrator_perk",
+          "lifestyle": "stewardship_lifestyle",
+          "name": "Administrator",
+          "parents": [
+            "honored_to_serve_perk"
+          ],
+          "trait": {
+            "id": "administrator",
+            "name": "Administrator"
+          },
+          "tree": "duty",
+          "x": 1,
+          "y": 5
+        }
+      ]
+    },
+    {
+      "id": "wealth",
+      "lifestyle": "stewardship_lifestyle",
+      "name": "Avaricious",
+      "perks": [
+        {
+          "dlc": null,
+          "effects": [
+            "+1 Available Tax Jurisdictions (clan)"
+          ],
+          "features": [],
+          "icon": "node_stewardship",
+          "id": "golden_obligations_perk",
+          "lifestyle": "stewardship_lifestyle",
+          "name": "Golden Obligations",
+          "parents": [],
+          "trait": null,
+          "tree": "wealth",
+          "x": 2,
+          "y": 0
+        },
+        {
+          "dlc": null,
+          "effects": [
+            "Invert Check (landless adventurer)",
+            "+10% Vassal Tax Contribution (landless adventurer)",
+            "+10% Tributary Taxes (landless adventurer)",
+            "+50% Provisions Capacity (landless adventurer)"
+          ],
+          "features": [],
+          "icon": "node_stewardship",
+          "id": "heregeld_perk",
+          "lifestyle": "stewardship_lifestyle",
+          "name": "Heregeld",
+          "parents": [
+            "golden_obligations_perk"
+          ],
+          "trait": null,
+          "tree": "wealth",
+          "x": 0,
+          "y": 1.25
+        },
+        {
+          "dlc": null,
+          "effects": [
+            "Invert Check (landless adventurer)",
+            "+10% Monthly Gold Income while at War (landless adventurer)",
+            "… Reduces the cost of buying …Provisions when using the Visit Settlement Decision by …-25%"
+          ],
+          "features": [],
+          "icon": "node_stewardship",
+          "id": "war_profiteer_perk",
+          "lifestyle": "stewardship_lifestyle",
+          "name": "War Profiteer",
+          "parents": [
+            "golden_obligations_perk"
+          ],
+          "trait": null,
+          "tree": "wealth",
+          "x": 2,
+          "y": 1.25
+        },
+        {
+          "dlc": null,
+          "effects": [
+            "+10% Domicile Income (government uses domicile but not adventurer)",
+            "… You gain +25% more …Provisions from the Gather Provisions Decision"
+          ],
+          "features": [],
+          "icon": "node_stewardship",
+          "id": "it_is_my_domain_perk",
+          "lifestyle": "stewardship_lifestyle",
+          "name": "It is MY Domain",
+          "parents": [
+            "golden_obligations_perk"
+          ],
+          "trait": null,
+          "tree": "wealth",
+          "x": 4,
+          "y": 1.25
+        },
+        {
+          "dlc": null,
+          "effects": [
+            "Invert Check (landless adventurer)",
+            "+20 Republican Ruler Opinion (landless adventurer)",
+            "+15% Republican Vassal Tax Contribution (landless adventurer)",
+            "-20% Provisions Loss (landless adventurer)",
+            "+10% Monthly Income from Herd (nomadic)",
+            "+10% Administrative Vassal Tax Contribution (administrative)",
+            "+10% Governor Salary (government has treasury)"
+          ],
+          "features": [],
+          "icon": "node_stewardship",
+          "id": "detailed_ledgers_perk",
+          "lifestyle": "stewardship_lifestyle",
+          "name": "Detailed Ledgers",
+          "parents": [
+            "heregeld_perk"
+          ],
+          "trait": null,
+          "tree": "wealth",
+          "x": 0,
+          "y": 2.5
+        },
+        {
+          "dlc": null,
+          "effects": [
+            "Invert Check (landless adventurer)",
+            "-0% Men-at-Arms Maintenance per Dread (landless adventurer)",
+            "… Enables the High-stakes Bartering Travel Option"
+          ],
+          "features": [],
+          "icon": "node_stewardship",
+          "id": "fearful_troops_perk",
+          "lifestyle": "stewardship_lifestyle",
+          "name": "Fearful Troops",
+          "parents": [
+            "war_profiteer_perk"
+          ],
+          "trait": null,
+          "tree": "wealth",
+          "x": 2,
+          "y": 2.5
+        },
+        {
+          "dlc": null,
+          "effects": [
+            "Invert Check (landless adventurer)",
+            "+10% Monthly Income per Stress Level (landless adventurer)",
+            "… When using the Gather Provisions Decision, Somewhat Effective Terrain now counts as Very Effective"
+          ],
+          "features": [],
+          "icon": "node_stewardship",
+          "id": "golden_aplomb_perk",
+          "lifestyle": "stewardship_lifestyle",
+          "name": "Golden Aplomb",
+          "parents": [
+            "it_is_my_domain_perk"
+          ],
+          "trait": null,
+          "tree": "wealth",
+          "x": 4,
+          "y": 2.5
+        },
+        {
+          "dlc": null,
+          "effects": [
+            "Invert Check (landless adventurer)",
+            "+10% Domain Taxes (landless adventurer)",
+            "… Contract Gold Rewards: …+25%\n(Not for Mercenary Contracts)"
+          ],
+          "features": [],
+          "icon": "node_stewardship",
+          "id": "at_any_cost_perk",
+          "lifestyle": "stewardship_lifestyle",
+          "name": "At Any Cost",
+          "parents": [
+            "detailed_ledgers_perk",
+            "fearful_troops_perk",
+            "golden_aplomb_perk"
+          ],
+          "trait": null,
+          "tree": "wealth",
+          "x": 2,
+          "y": 3.75
+        },
+        {
+          "dlc": null,
+          "effects": [],
+          "features": [],
+          "icon": "trait_avaricious",
+          "id": "avaricious_perk",
+          "lifestyle": "stewardship_lifestyle",
+          "name": "Avaricious",
+          "parents": [
+            "at_any_cost_perk"
+          ],
+          "trait": {
+            "id": "avaricious",
+            "name": "Avaricious"
+          },
+          "tree": "wealth",
+          "x": 2,
+          "y": 5
+        }
+      ]
+    },
+    {
+      "id": "surveyor",
+      "lifestyle": "wanderer_lifestyle",
+      "name": "Inspector",
+      "perks": [
+        {
+          "dlc": null,
+          "effects": [
+            "Traveling through Domain Holdings improves the effectiveness of your Stationed Men-at-Arms",
+            "Unlocks the Designated Terrain Decision\nDesignated Terrain Danger: …-20"
+          ],
+          "features": [],
+          "icon": "node_wanderer",
+          "id": "mustering_the_troops_perk",
+          "lifestyle": "wanderer_lifestyle",
+          "name": "Mustering",
+          "parents": [],
+          "trait": null,
+          "tree": "surveyor",
+          "x": 2,
+          "y": 0
+        },
+        {
+          "dlc": null,
+          "effects": [
+            "+10% Domain Taxes (settled)",
+            "+10% Minor Landholder Vassal Tax Contribution (settled)",
+            "Gain access to the Inspection Activity",
+            "Designated Terrain Provisions Use: …-25%\nUnlocks the Quartermaster Officer\nQuartermaster Aptitude: +10\nUnlocks the Head Porter Officer\nHead Porter Aptitude: +10",
+            "Designated Terrain County Fertility Growth: …30%"
+          ],
+          "features": [],
+          "icon": "node_wanderer",
+          "id": "local_inspection_perk",
+          "lifestyle": "wanderer_lifestyle",
+          "name": "Inspection",
+          "parents": [
+            "mustering_the_troops_perk"
+          ],
+          "trait": null,
+          "tree": "surveyor",
+          "x": 2,
+          "y": 1
+        },
+        {
+          "dlc": null,
+          "effects": [
+            "+10 Parochial Vassal Opinion (settled)",
+            "+10 Minor Landholder Vassal Opinion (settled)",
+            "Same Realm Marriage Acceptance for self: +…\nSame Realm Marriage Acceptance for Close Family & Extended Family: +…",
+            "Gather Provisions in Designated Terrain: …+50%",
+            "Unlocks the … Travel Option"
+          ],
+          "features": [],
+          "icon": "node_wanderer",
+          "id": "know_your_land_know_your_people_perk",
+          "lifestyle": "wanderer_lifestyle",
+          "name": "Know Your Land, Know Your People",
+          "parents": [
+            "local_inspection_perk"
+          ],
+          "trait": null,
+          "tree": "surveyor",
+          "x": 0,
+          "y": 2
+        },
+        {
+          "dlc": null,
+          "effects": [
+            "Gain Development and Control in owned Counties when hosting Activities in them",
+            "…Designated Terrain Advantage: +5\n…Maximum Battle Roll in Designated Terrain: +2\n…Minimum Battle Roll in Designated Terrain: +2"
+          ],
+          "features": [],
+          "icon": "node_wanderer",
+          "id": "no_stone_unturned_perk",
+          "lifestyle": "wanderer_lifestyle",
+          "name": "No Stone Unturned",
+          "parents": [
+            "local_inspection_perk"
+          ],
+          "trait": null,
+          "tree": "surveyor",
+          "x": 2,
+          "y": 2
+        },
+        {
+          "dlc": null,
+          "effects": [],
+          "features": [],
+          "icon": "node_wanderer",
+          "id": "travel_logs_perk",
+          "lifestyle": "wanderer_lifestyle",
+          "name": "Travel Logs",
+          "parents": [
+            "local_inspection_perk"
+          ],
+          "trait": null,
+          "tree": "surveyor",
+          "x": 4,
+          "y": 2
+        },
+        {
+          "dlc": null,
+          "effects": [
+            "+20% Intimidated Vassal Tax Contribution (settled)",
+            "+5 Plague Resistance (nomadic)",
+            "+0.15 Monthly County Control Growth Add /month (nomadic)",
+            "Unlocks the Local Arbitration Decision",
+            "Second Aptitude: +15",
+            "Gain Skill points based on Camp Purpose (Wanderers):\\t\\t•Your Diplomacy increases by …1\\t\\t•Your Martial increases by …1\\t\\t•Your Stewardship increases by …1\\t\\t•Your Intrigue increases by …1\\t\\t•Your Learning increases by …1",
+            "Gain Skill points based on Camp Purpose (Swords-for-Hire):\\t\\t•Your Martial increases by …2\\t\\t•Your Prowess increases by …2",
+            "Gain Skill points based on Camp Purpose (Scholars):\\t\\t•Your Learning increases by …2\\t\\t•Your Stewardship increases by …2",
+            "Gain Skill points based on Camp Purpose (Explorers):\\t\\t•Your Diplomacy increases by …2\\t\\t•Your Intrigue increases by …2",
+            "Gain Skill points based on Camp Purpose (Freebooters):\\t\\t•Your Prowess increases by …2\\t\\t•Your Intrigue increases by …2",
+            "Gain Skill points based on Camp Purpose (Legitimists):\\t\\t•Your Diplomacy increases by …2\\t\\t•Your Martial increases by …2"
+          ],
+          "features": [],
+          "icon": "node_wanderer",
+          "id": "local_arbitration_perk",
+          "lifestyle": "wanderer_lifestyle",
+          "name": "Arbitration",
+          "parents": [
+            "know_your_land_know_your_people_perk",
+            "no_stone_unturned_perk"
+          ],
+          "trait": null,
+          "tree": "surveyor",
+          "x": 1,
+          "y": 3
+        },
+        {
+          "dlc": null,
+          "effects": [
+            "Same Realm Scheme Secrecy +…",
+            "Unlocks the Create Travel Itinerary Decision"
+          ],
+          "features": [],
+          "icon": "node_wanderer",
+          "id": "realm_charts_perk",
+          "lifestyle": "wanderer_lifestyle",
+          "name": "Charts & Itineraries",
+          "parents": [
+            "no_stone_unturned_perk",
+            "travel_logs_perk"
+          ],
+          "trait": null,
+          "tree": "surveyor",
+          "x": 3,
+          "y": 3
+        },
+        {
+          "dlc": null,
+          "effects": [
+            "+1 Domain Limit (government uses domain limit)",
+            "+1 Maximum Domain Limit (nomadic)",
+            "+1 Maximum Domain Limit (mandala)",
+            "+1 Maximum Domain Limit (japan administrative)",
+            "+1 Maximum Domain Limit (japan administrative)",
+            "Holding an Inspection Activity will also apply the effects of a Local Arbitration in that County\nNo Stone Unturned Effects: +50%",
+            "Unlock the Master Terrain Decision",
+            "Effects for Master Terrain:\n•Danger: …-20\n•Provisions Use: …-25%\n•Refill Men-at-Arms Cost: ……-25%\n•Prestige and Fame from Battles: …+50%\n•…Advantage: +5\n•…Maximum Battle Roll: +1\n•…Minimum Battle Roll: +1\n•…Negate Supply Limit Penalty: Yes\n•…Attrition Taken: -50%",
+            "Know Your Land, Know Your People Effects: +50%"
+          ],
+          "features": [],
+          "icon": "node_wanderer",
+          "id": "personal_touch_perk",
+          "lifestyle": "wanderer_lifestyle",
+          "name": "Personal Touch",
+          "parents": [
+            "local_arbitration_perk",
+            "realm_charts_perk"
+          ],
+          "trait": null,
+          "tree": "surveyor",
+          "x": 2,
+          "y": 4
+        },
+        {
+          "dlc": null,
+          "effects": [],
+          "features": [],
+          "icon": "trait_surveyor",
+          "id": "surveyor_perk",
+          "lifestyle": "wanderer_lifestyle",
+          "name": "Inspector",
+          "parents": [
+            "personal_touch_perk"
+          ],
+          "trait": {
+            "id": "lifestyle_surveyor",
+            "name": "Inspector"
+          },
+          "tree": "surveyor",
+          "x": 2,
+          "y": 5
+        }
+      ]
+    },
+    {
+      "id": "voyager",
+      "lifestyle": "wanderer_lifestyle",
+      "name": "Voyager",
+      "perks": [
+        {
+          "dlc": null,
+          "effects": [
+            "-10% Provisions Use (landless adventurer)",
+            "+10% Move Domicile Travel Speed (landless adventurer)",
+            "+250 Provisions Capacity (landless adventurer)",
+            "Swing the Scales of Power has increased efficiency during Travel\nDiarchs are more loyal when their Liege is Traveling"
+          ],
+          "features": [],
+          "icon": "node_wanderer",
+          "id": "power_at_home_perk",
+          "lifestyle": "wanderer_lifestyle",
+          "name": "Power at Home",
+          "parents": [],
+          "trait": null,
+          "tree": "voyager",
+          "x": 0,
+          "y": 0
+        },
+        {
+          "dlc": null,
+          "effects": [
+            "-15% Mercenary Hire Cost",
+            "Unlocks the Private Army Travel Option"
+          ],
+          "features": [],
+          "icon": "node_wanderer",
+          "id": "mercenary_contacts_perk",
+          "lifestyle": "wanderer_lifestyle",
+          "name": "Mercenary Contacts",
+          "parents": [],
+          "trait": null,
+          "tree": "voyager",
+          "x": 2,
+          "y": 0
+        },
+        {
+          "dlc": null,
+          "effects": [
+            "250 Learn Language Phase Length days faster per Scheme Phase",
+            "Gain access to the Monument Expedition Activity",
+            "Increased … Trait Experience when you visit a Point of Interest"
+          ],
+          "features": [],
+          "icon": "node_wanderer",
+          "id": "journey_perk",
+          "lifestyle": "wanderer_lifestyle",
+          "name": "Journey",
+          "parents": [
+            "power_at_home_perk",
+            "mercenary_contacts_perk"
+          ],
+          "trait": null,
+          "tree": "voyager",
+          "x": 1,
+          "y": 1
+        },
+        {
+          "dlc": null,
+          "effects": [
+            "Point of Interest Rewards: +30%\nCan learn 1 additional Language without any penalties"
+          ],
+          "features": [],
+          "icon": "node_wanderer",
+          "id": "been_there_done_that_perk",
+          "lifestyle": "wanderer_lifestyle",
+          "name": "Been There, Done That",
+          "parents": [
+            "journey_perk"
+          ],
+          "trait": null,
+          "tree": "voyager",
+          "x": 0,
+          "y": 2
+        },
+        {
+          "dlc": null,
+          "effects": [
+            "Point of Interest Stress Loss: …-5\nPoint of Interest Prestige: …+10"
+          ],
+          "features": [],
+          "icon": "node_wanderer",
+          "id": "finally_there_perk",
+          "lifestyle": "wanderer_lifestyle",
+          "name": "Finally There",
+          "parents": [
+            "journey_perk"
+          ],
+          "trait": null,
+          "tree": "voyager",
+          "x": 2,
+          "y": 2
+        },
+        {
+          "dlc": null,
+          "effects": [
+            "+20% Provisions Capacity (landless adventurer)",
+            "The Capital will gain Development if the owner returns from a Travel to a more developed Destination",
+            "… Whenever you move your Camp, gain +10 Opinion with Courtiers and Guests",
+            "… Whenever you move your Camp, you may gain +25 Gold and +5 Gallowsbait Trait Experience (once every 3 months)"
+          ],
+          "features": [],
+          "icon": "node_wanderer",
+          "id": "souvenirs_aplenty_perk",
+          "lifestyle": "wanderer_lifestyle",
+          "name": "Souvenirs Aplenty",
+          "parents": [
+            "been_there_done_that_perk",
+            "finally_there_perk"
+          ],
+          "trait": null,
+          "tree": "voyager",
+          "x": 1,
+          "y": 3
+        },
+        {
+          "dlc": null,
+          "effects": [
+            "Gain 10 opinion with anyone Traveling to the Capital, and 10 opinion when Traveling to the Capital of others",
+            "Court Position Aptitude Increased by +3 per known Language",
+            "… Bonus Modifiers from the Steadfast Camp Temperament now also scale by number of known Languages",
+            "Gain 10 Opinion when visiting someone's Capital"
+          ],
+          "features": [],
+          "icon": "node_wanderer",
+          "id": "gracious_host_impeccable_guest_perk",
+          "lifestyle": "wanderer_lifestyle",
+          "name": "Gracious Host, Impeccable Guest",
+          "parents": [
+            "souvenirs_aplenty_perk"
+          ],
+          "trait": null,
+          "tree": "voyager",
+          "x": 0,
+          "y": 4
+        },
+        {
+          "dlc": null,
+          "effects": [
+            "+15% Diplomatic Range",
+            "Activity Options Cost: -20%"
+          ],
+          "features": [],
+          "icon": "node_wanderer",
+          "id": "journey_planner_perk",
+          "lifestyle": "wanderer_lifestyle",
+          "name": "Journey Planner",
+          "parents": [
+            "souvenirs_aplenty_perk"
+          ],
+          "trait": null,
+          "tree": "voyager",
+          "x": 2,
+          "y": 4
+        },
+        {
+          "dlc": null,
+          "effects": [],
+          "features": [],
+          "icon": "trait_voyager",
+          "id": "voyager_perk",
+          "lifestyle": "wanderer_lifestyle",
+          "name": "Voyager",
+          "parents": [
+            "gracious_host_impeccable_guest_perk",
+            "journey_planner_perk"
+          ],
+          "trait": {
+            "id": "lifestyle_voyager",
+            "name": "Voyager"
+          },
+          "tree": "voyager",
+          "x": 1,
+          "y": 5
+        }
+      ]
+    },
+    {
+      "id": "wayfarer",
+      "lifestyle": "wanderer_lifestyle",
+      "name": "Wayfarer",
+      "perks": [
+        {
+          "dlc": null,
+          "effects": [
+            "+25% Supply Duration",
+            "+10 Travel Safety",
+            "Decreased Travel Option Cost: -25%"
+          ],
+          "features": [],
+          "icon": "node_wanderer",
+          "id": "well_prepared_perk",
+          "lifestyle": "wanderer_lifestyle",
+          "name": "Well Prepared",
+          "parents": [],
+          "trait": null,
+          "tree": "wayfarer",
+          "x": 1,
+          "y": 0
+        },
+        {
+          "dlc": null,
+          "effects": [
+            "+25% Legend Spread Chance",
+            "May gain … from Travel and Hike events\nGain access to the Hike Activity"
+          ],
+          "features": [],
+          "icon": "node_wanderer",
+          "id": "roaming_perk",
+          "lifestyle": "wanderer_lifestyle",
+          "name": "Storyteller",
+          "parents": [
+            "well_prepared_perk"
+          ],
+          "trait": null,
+          "tree": "wayfarer",
+          "x": 1,
+          "y": 1
+        },
+        {
+          "dlc": null,
+          "effects": [
+            "+10 Different Faith Opinion",
+            "+10 Different Culture Opinion",
+            "Increase Fame by 10 for every visited Holding"
+          ],
+          "features": [],
+          "icon": "node_wanderer",
+          "id": "far_and_wide_perk",
+          "lifestyle": "wanderer_lifestyle",
+          "name": "Far and Wide",
+          "parents": [
+            "roaming_perk"
+          ],
+          "trait": null,
+          "tree": "wayfarer",
+          "x": 0,
+          "y": 2
+        },
+        {
+          "dlc": null,
+          "effects": [
+            "Children have a chance to gain Prowess and …"
+          ],
+          "features": [],
+          "icon": "node_wanderer",
+          "id": "just_one_more_hill_perk",
+          "lifestyle": "wanderer_lifestyle",
+          "name": "Just One More Hill",
+          "parents": [
+            "roaming_perk"
+          ],
+          "trait": null,
+          "tree": "wayfarer",
+          "x": 2,
+          "y": 2
+        },
+        {
+          "dlc": null,
+          "effects": [
+            "Promote Cultural Acceptance Effectiveness: +30%\nIncrease the Popular Opinion of a Realm County when Traveling to it",
+            "… Whenever you move your Camp, gain …Fame equal to 15 times your Diplomacy Skill (once every 3 months)"
+          ],
+          "features": [],
+          "icon": "node_wanderer",
+          "id": "of_the_people_perk",
+          "lifestyle": "wanderer_lifestyle",
+          "name": "Of the People",
+          "parents": [
+            "far_and_wide_perk"
+          ],
+          "trait": null,
+          "tree": "wayfarer",
+          "x": 0,
+          "y": 3
+        },
+        {
+          "dlc": null,
+          "effects": [
+            "+15 Travel Companion Opinion",
+            "Caravan Master Aptitude: +15"
+          ],
+          "features": [],
+          "icon": "node_wanderer",
+          "id": "travel_companion_perk",
+          "lifestyle": "wanderer_lifestyle",
+          "name": "Travel Companion",
+          "parents": [
+            "just_one_more_hill_perk"
+          ],
+          "trait": null,
+          "tree": "wayfarer",
+          "x": 2,
+          "y": 3
+        },
+        {
+          "dlc": null,
+          "effects": [
+            "+1 Diplomacy per Level of Fame",
+            "Unlocks the … Travel Option\nUnlocks the … Travel Option"
+          ],
+          "features": [],
+          "icon": "node_wanderer",
+          "id": "local_hero_perk",
+          "lifestyle": "wanderer_lifestyle",
+          "name": "Local Hero",
+          "parents": [
+            "of_the_people_perk"
+          ],
+          "trait": null,
+          "tree": "wayfarer",
+          "x": 0,
+          "y": 4
+        },
+        {
+          "dlc": null,
+          "effects": [
+            "Unlocks the Hike Activity Option Long Hike\n Stress Loss increased by +50 while Traveling"
+          ],
+          "features": [],
+          "icon": "node_wanderer",
+          "id": "the_home_away_from_home_perk",
+          "lifestyle": "wanderer_lifestyle",
+          "name": "The Home Away From Home",
+          "parents": [
+            "travel_companion_perk"
+          ],
+          "trait": null,
+          "tree": "wayfarer",
+          "x": 2,
+          "y": 4
+        },
+        {
+          "dlc": null,
+          "effects": [],
+          "features": [],
+          "icon": "trait_wayfarer",
+          "id": "wayfarer_perk",
+          "lifestyle": "wanderer_lifestyle",
+          "name": "Wayfarer",
+          "parents": [
+            "local_hero_perk",
+            "the_home_away_from_home_perk"
+          ],
+          "trait": {
+            "id": "lifestyle_wayfarer",
+            "name": "Wayfarer"
+          },
+          "tree": "wayfarer",
+          "x": 1,
+          "y": 5
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,184 @@
+---
+import Base from '../layouts/Base.astro';
+import traits from '../data/traits.json';
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+
+const CATEGORY_ORDER: [string, string][] = [
+  ['personality', 'Personality'],
+  ['education', 'Education'],
+  ['childhood', 'Childhood'],
+  ['lifestyle', 'Lifestyle'],
+  ['commander', 'Commander'],
+  ['winter_commander', 'Commander'],
+  ['health', 'Health'],
+  ['fame', 'Fame & Legend'],
+  ['court_type', 'Court'],
+  ['uncategorized', 'Other'],
+];
+const labels = new Map(CATEGORY_ORDER);
+const groups: { label: string; items: typeof traits }[] = [];
+for (const [cat, label] of CATEGORY_ORDER) {
+  const items = traits.filter((t) => t.category === cat);
+  const existing = groups.find((g) => g.label === label);
+  if (existing) existing.items.push(...items);
+  else if (items.length) groups.push({ label, items });
+}
+
+const SKILLS: Record<string, string> = {
+  diplomacy: 'Diplomacy', martial: 'Martial', stewardship: 'Stewardship',
+  intrigue: 'Intrigue', learning: 'Learning', prowess: 'Prowess',
+};
+const congenital = traits.filter((t) => t.genetic.genetic).length;
+const dlcs = [...new Set(traits.map((t) => t.dlc).filter(Boolean))].sort();
+const pct = (v: number) => `${Math.round(v * 100)}%`;
+---
+<Base
+  title="Traits"
+  active="traits"
+  lede="Every character trait: skill effects, modifiers, opinions, inheritance, and opposites — rendered with the game's own phrasing rules for each stat."
+  stats={[
+    { value: traits.length, label: 'traits' },
+    { value: congenital, label: 'congenital' },
+    { value: groups.length, label: 'categories' },
+  ]}
+>
+  <div class="filterbar">
+    <input type="search" id="q" placeholder="Filter by name or effect…" autocomplete="off" />
+    <select id="fcat">
+      <option value="">every category</option>
+      {groups.map((g) => <option value={g.label}>{g.label}</option>)}
+    </select>
+    <select id="fdlc">
+      <option value="">base game + DLC</option>
+      <option value="base">base game only</option>
+      {dlcs.map((d) => <option value={d}>{d}</option>)}
+    </select>
+    <span class="hint" id="count"></span>
+  </div>
+
+  {groups.map((g) => (
+    <section data-group={g.label}>
+      <h2 class="group-h" id={g.label.toLowerCase().replace(/[^a-z]+/g, '-')}>
+        {g.label}
+        <span class="count">{g.items.length}</span>
+      </h2>
+      <div class="tbl-scroll">
+        <table class="ntbl">
+          <thead>
+            <tr>
+              <th>Trait</th>
+              <th>Skills</th>
+              <th>Effects</th>
+              <th>Opinions</th>
+              <th>Inheritance</th>
+              <th>Opposites</th>
+              <th class="num" title="Ruler designer cost">RD</th>
+              <th>DLC</th>
+            </tr>
+          </thead>
+          <tbody>
+            {g.items.map((t) => (
+              <tr
+                id={t.id}
+                data-name={`${t.name} ${t.modifiers.join(' ')} ${Object.keys(t.skills).join(' ')}`.toLowerCase()}
+                data-cat={g.label}
+                data-dlc={t.dlc ?? 'base'}
+              >
+                <td class="name">
+                  <span class="unit">
+                    <img src={`${base}/img/traits/${t.id}.webp`} alt="" width="34" height="34" loading="lazy" />
+                    <span>
+                      <span class="u-name" title={t.desc}>{t.name}</span>
+                      {t.group && <span class="u-sub"><br />{t.group.replace(/^education_|^lifestyle_/, '').replace(/_/g, ' ')}{t.level ? ` ${t.level}` : ''}</span>}
+                    </span>
+                  </span>
+                </td>
+                <td>
+                  <span class="chips">
+                    {Object.entries(t.skills).map(([s, v]) => (
+                      <span class="chip chip--skill" style={`--c:var(--sk-${s})`} title={SKILLS[s]}>
+                        <span class="dot" />{v > 0 ? `+${v}` : v}
+                      </span>
+                    ))}
+                  </span>
+                </td>
+                <td class="fx">
+                  {t.modifiers.map((m) => <div class:list={[{ neg: m.startsWith('-') }]}>{m}</div>)}
+                  {t.conditional.map((c) => (
+                    <div class="cond" title={c.condition}>{c.lines.join(' · ')} <span class="cond-tag">conditional</span></div>
+                  ))}
+                  {Object.entries(t.tracks).map(([tn, levels]) => (
+                    <details class="track">
+                      <summary>experience track{tn !== 'default' ? `: ${tn.replace(/_/g, ' ')}` : ''}</summary>
+                      {Object.entries(levels).map(([lvl, lines]) => (
+                        <div><b>{lvl}</b> {lines.join(' · ')}</div>
+                      ))}
+                    </details>
+                  ))}
+                </td>
+                <td class="fx">{t.opinions.map((o) => <div>{o}</div>)}</td>
+                <td class="fx">
+                  {t.genetic.genetic && (
+                    <div>
+                      congenital
+                      {typeof t.genetic.birth === 'number' && ` · ${pct(t.genetic.birth)} birth`}
+                      {typeof t.genetic.inherit_chance === 'number' && ` · ${pct(t.genetic.inherit_chance)} inherit`}
+                    </div>
+                  )}
+                  {t.genetic.incapacitating && <div class="neg">incapacitating</div>}
+                  {t.genetic.can_have_children === false && <div class="neg">no children</div>}
+                  {t.genetic.immortal && <div>immortal</div>}
+                </td>
+                <td>
+                  <span class="chips">
+                    {t.opposites.map((o) => <a class="chip" href={`#${o}`}>{o.replace(/_/g, ' ')}</a>)}
+                  </span>
+                </td>
+                <td class="num">{t.rulerDesignerCost ?? '—'}</td>
+                <td>{t.dlc ? <span class="badge-dlc">{t.dlc}</span> : <span class="subtle">—</span>}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </section>
+  ))}
+
+  <script>
+    const q = document.getElementById('q') as HTMLInputElement;
+    const fcat = document.getElementById('fcat') as HTMLSelectElement;
+    const fdlc = document.getElementById('fdlc') as HTMLSelectElement;
+    const count = document.getElementById('count')!;
+    const rows = [...document.querySelectorAll<HTMLTableRowElement>('tbody tr')];
+    const groups = [...document.querySelectorAll<HTMLElement>('section[data-group]')];
+    function apply() {
+      const needle = q.value.trim().toLowerCase();
+      const c = fcat.value, d = fdlc.value;
+      let shown = 0;
+      for (const r of rows) {
+        const ok = (!needle || (r.dataset.name ?? '').includes(needle)) &&
+          (!c || r.dataset.cat === c) &&
+          (!d || (d === 'base' ? r.dataset.dlc === 'base' : r.dataset.dlc === d));
+        r.hidden = !ok;
+        if (ok) shown++;
+      }
+      for (const g of groups)
+        g.hidden = ![...g.querySelectorAll('tbody tr')].some((r) => !(r as HTMLTableRowElement).hidden);
+      count.textContent = `${shown} of ${rows.length}`;
+    }
+    for (const el of [q, fcat, fdlc]) el.addEventListener('input', apply);
+    apply();
+  </script>
+
+  <style>
+    .chip--skill { font-family: var(--font-mono); }
+    .fx { font-size: 0.8rem; max-width: 24rem; }
+    .fx .neg { color: var(--bad); }
+    .fx .cond { color: var(--dim); cursor: help; }
+    .fx .cond-tag { color: var(--faint); font-size: 0.68rem; font-family: var(--font-mono); }
+    .track summary { color: var(--brass); cursor: pointer; font-size: 0.78rem; }
+    .track div { color: var(--dim); padding-left: 0.6rem; }
+    .track b { color: var(--vellum); font-family: var(--font-mono); font-weight: 400; }
+  </style>
+</Base>

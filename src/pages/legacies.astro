@@ -1,0 +1,124 @@
+---
+import Base from '../layouts/Base.astro';
+import tracks from '../data/legacies.json';
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+
+const perkCount = tracks.reduce((n, t) => n + t.perks.length, 0);
+const dlcs = [...new Set(tracks.map((t) => t.dlc).filter(Boolean))].sort();
+
+const searchText = (t: (typeof tracks)[number], p: (typeof tracks)[number]['perks'][number]) =>
+  `${t.name} ${p.name} ${p.effects.join(' ')}`.toLowerCase();
+---
+<Base
+  title="Dynasty Legacies"
+  active="legacies"
+  lede="Every legacy track and its five perks in unlock order, with the availability gates for the culture- and government-locked tracks — read from dynasty_legacies and dynasty_perks, with effect text resolved the way the game renders it."
+  stats={[
+    { value: tracks.length, label: 'legacy tracks' },
+    { value: perkCount, label: 'perks' },
+    { value: dlcs.length, label: 'DLCs add tracks' },
+  ]}
+>
+  <div class="filterbar">
+    <input type="search" id="q" placeholder="Filter by track, perk, effect…" autocomplete="off" />
+    <select id="fdlc">
+      <option value="">base game + DLC</option>
+      <option value="base">base game only</option>
+      {dlcs.map((d) => <option value={d}>{d}</option>)}
+    </select>
+    <span class="hint" id="count"></span>
+  </div>
+
+  {tracks.map((t) => (
+    <section data-group={t.id} data-dlc={t.dlc ?? 'base'}>
+      <h2 class="group-h" id={t.id}>
+        <img class="track-icon" src={`${base}/img/legacies/${t.id}.webp`} alt="" width="30" height="30" loading="lazy" />
+        {t.name}
+        {t.dlc && <span class="badge-dlc">{t.dlc}</span>}
+        {t.gate && (
+          <span class="chip chip--req" title="Only shown to characters meeting this requirement (or with the unrestricted-legacies game rule)">
+            requires {t.gate}
+          </span>
+        )}
+      </h2>
+      {t.desc && <p class="track-desc">{t.desc}</p>}
+      <div class="steps-scroll">
+        <ol class="steps">
+          {t.perks.map((p) => (
+            <li class="perk" id={p.id} data-name={searchText(t, p)}>
+              <div class="perk-head">
+                <span class="perk-num">{p.order}</span>
+                <span class="perk-name">{p.name}</span>
+              </div>
+              <ul class="fx">
+                {p.effects.map((e) => (
+                  <li>{e}</li>
+                ))}
+              </ul>
+            </li>
+          ))}
+        </ol>
+      </div>
+    </section>
+  ))}
+
+  <script>
+    const q = document.getElementById('q') as HTMLInputElement;
+    const fdlc = document.getElementById('fdlc') as HTMLSelectElement;
+    const count = document.getElementById('count')!;
+    const perks = [...document.querySelectorAll<HTMLElement>('.perk')];
+    const groups = [...document.querySelectorAll<HTMLElement>('section[data-group]')];
+
+    function apply() {
+      const needle = q.value.trim().toLowerCase();
+      const d = fdlc.value;
+      let shown = 0;
+      for (const g of groups) {
+        const dlcOk = !d || (d === 'base' ? g.dataset.dlc === 'base' : g.dataset.dlc === d);
+        let any = false;
+        for (const p of g.querySelectorAll<HTMLElement>('.perk')) {
+          const ok = dlcOk && (!needle || (p.dataset.name ?? '').includes(needle));
+          p.classList.toggle('is-dim', Boolean(needle) && !ok && dlcOk);
+          if (ok) {
+            any = true;
+            shown++;
+          }
+        }
+        g.hidden = !any;
+      }
+      count.textContent = `${shown} of ${perks.length} perks`;
+    }
+    for (const el of [q, fdlc]) el.addEventListener('input', apply);
+    apply();
+  </script>
+
+  <style>
+    .track-icon { object-fit: contain; align-self: center; filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.6)); }
+    .group-h .chip--req { font-family: var(--font-ui); font-weight: 400; }
+    .track-desc { color: var(--dim); font-style: italic; margin: -0.2rem 0 0.6rem; max-width: 70ch; }
+
+    .steps-scroll { overflow-x: auto; }
+    .steps {
+      list-style: none; margin: 0 0 0.5rem; padding: 0;
+      display: grid; grid-template-columns: repeat(5, minmax(13rem, 1fr)); gap: 0.6rem;
+      min-width: 68rem;
+    }
+    .perk {
+      background: var(--panel); border: 1px solid var(--line-soft); border-radius: var(--r);
+      padding: 0.6rem 0.7rem;
+    }
+    .perk.is-dim { opacity: 0.35; }
+    .perk-head {
+      display: flex; align-items: baseline; gap: 0.45rem;
+      border-bottom: 1px solid var(--line-soft); padding-bottom: 0.35rem; margin-bottom: 0.4rem;
+    }
+    /* unlock order is the mechanic: perks must be taken 1 → 5 */
+    .perk-num { font-family: var(--font-mono); font-size: 0.75rem; color: var(--rubric); flex: none; }
+    .perk-num::after { content: ' ·'; color: var(--line); }
+    .perk-name { font-weight: 600; font-size: 0.9rem; }
+    .fx { list-style: none; margin: 0; padding: 0; }
+    .fx li { font-size: 0.78rem; color: var(--vellum); padding: 0.1rem 0; }
+    .fx li + li { border-top: 1px dotted var(--line-soft); }
+  </style>
+</Base>

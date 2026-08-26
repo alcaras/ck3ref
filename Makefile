@@ -14,6 +14,8 @@ version:
 
 data:
 	@python3 scripts/build_maa.py
+	@python3 scripts/build_traits.py
+	@python3 scripts/build_lifestyles.py
 	@python3 scripts/build_entities.py
 	@python3 scripts/build_backlinks.py
 

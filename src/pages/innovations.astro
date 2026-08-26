@@ -1,0 +1,214 @@
+---
+import Base from '../layouts/Base.astro';
+import innovations from '../data/innovations.json';
+
+const ERA_ORDER = [
+  'culture_era_tribal',
+  'culture_era_early_medieval',
+  'culture_era_high_medieval',
+  'culture_era_late_medieval',
+];
+const eras = [...new Set(innovations.map((i) => i.era).filter(Boolean))].sort(
+  (a, b) => ERA_ORDER.indexOf(a) - ERA_ORDER.indexOf(b),
+);
+const eraName = (e: string) => innovations.find((i) => i.era === e)?.eraName ?? e;
+const groups = [...new Set(innovations.map((i) => i.group).filter(Boolean))];
+const groupName = (g: string) => innovations.find((i) => i.group === g)?.groupName ?? g;
+const dlcs = [...new Set(innovations.map((i) => i.dlc).filter(Boolean))].sort();
+
+const UNLOCK_KIND: Record<string, string> = {
+  maa: 'unlocks men-at-arms',
+  building: 'unlocks building',
+  law: 'unlocks law',
+  casus_belli: 'unlocks casus belli',
+  decision: 'unlocks decision',
+  maa_upgrade: 'upgrades men-at-arms',
+};
+
+function searchText(i: any): string {
+  return [
+    i.name,
+    i.groupName,
+    i.regionName,
+    ...i.unlocks.map((u: any) => u.text),
+    ...i.effects,
+    ...i.parameters.map((p: any) => p.text),
+    ...Object.values(i.modifiers).flat(),
+  ]
+    .join(' ')
+    .toLowerCase();
+}
+---
+<Base
+  title="Innovations"
+  active="innovations"
+  lede="Every cultural innovation by era: what each one unlocks, its modifiers, regional availability, and the skill your Culture Head uses to fascinate it — read from culture/innovations."
+  stats={[
+    { value: innovations.length, label: 'innovations' },
+    { value: eras.length, label: 'eras' },
+    { value: innovations.filter((i) => i.region).length, label: 'regional' },
+  ]}
+>
+  <div class="filterbar">
+    <input type="search" id="q" placeholder="Filter by name, unlock, effect…" autocomplete="off" />
+    <select id="fera">
+      <option value="">every era</option>
+      {eras.map((e) => <option value={e}>{eraName(e)}</option>)}
+    </select>
+    <select id="fgroup">
+      <option value="">every group</option>
+      {groups.map((g) => <option value={g}>{groupName(g)}</option>)}
+    </select>
+    <select id="fdlc">
+      <option value="">base game + DLC</option>
+      <option value="base">base game only</option>
+      {dlcs.map((d) => <option value={d}>{d}</option>)}
+    </select>
+    <span class="hint" id="count"></span>
+  </div>
+
+  {eras.map((e) => (
+    <section data-group={e}>
+      <h2 class="group-h" id={e.replace('culture_era_', '')}>
+        {eraName(e)} Era
+        <span class="count">{innovations.filter((i) => i.era === e).length}</span>
+      </h2>
+      <div class="tbl-scroll">
+        <table class="ntbl">
+          <thead>
+            <tr>
+              <th>Innovation</th>
+              <th>Group</th>
+              <th title="Culture Head skill used for fascination progress">Skill</th>
+              <th>Unlocks &amp; effects</th>
+              <th>Modifiers</th>
+              <th>Region</th>
+              <th>DLC</th>
+            </tr>
+          </thead>
+          <tbody>
+            {innovations
+              .filter((i) => i.era === e)
+              .map((i) => (
+                <tr
+                  id={i.id}
+                  data-name={searchText(i)}
+                  data-era={i.era}
+                  data-group={i.group}
+                  data-dlc={i.dlc ?? 'base'}
+                >
+                  <td class="name">
+                    <span class="u-name">{i.name}</span>
+                    {i.desc && <div class="i-desc">{i.desc}</div>}
+                    {i.requirements.length > 0 && (
+                      <span class="chips">
+                        {i.requirements.map((r: any) => (
+                          <span class="chip chip--req" title="visibility requirement (potential)">
+                            {r.negated && <span class="neg">not </span>}{r.text}
+                          </span>
+                        ))}
+                      </span>
+                    )}
+                  </td>
+                  <td>{i.groupName}</td>
+                  <td><span class={`skill sk-${i.skill}`}>{i.skill}</span></td>
+                  <td>
+                    {i.unlocks.length > 0 && (
+                      <span class="chips">
+                        {i.unlocks.map((u: any) => (
+                          <span class:list={['chip', { 'chip--counter': u.kind === 'maa' || u.kind === 'maa_upgrade' }]} title={UNLOCK_KIND[u.kind] ?? u.kind}>
+                            {u.text}
+                          </span>
+                        ))}
+                      </span>
+                    )}
+                    {(i.effects.length > 0 || i.parameters.length > 0) && (
+                      <ul class="effects">
+                        {i.effects.map((fx: string) => <li>{fx}</li>)}
+                        {i.parameters.map((p: any) => <li>{p.text}</li>)}
+                      </ul>
+                    )}
+                  </td>
+                  <td>
+                    {Object.entries(i.modifiers).map(([scope, lines]) => (
+                      <div class="modgroup">
+                        <span class="scope">{scope}</span>
+                        <ul class="mods">
+                          {(lines as string[]).map((l) => <li>{l}</li>)}
+                        </ul>
+                      </div>
+                    ))}
+                  </td>
+                  <td>
+                    {i.regionName ? (
+                      <span class="chip chip--terrain" title={i.region}>{i.regionName}</span>
+                    ) : (
+                      <span class="subtle">—</span>
+                    )}
+                  </td>
+                  <td>{i.dlc ? <span class="badge-dlc">{i.dlc}</span> : <span class="subtle">—</span>}</td>
+                </tr>
+              ))}
+          </tbody>
+        </table>
+      </div>
+    </section>
+  ))}
+
+  <script>
+    const q = document.getElementById('q') as HTMLInputElement;
+    const fera = document.getElementById('fera') as HTMLSelectElement;
+    const fgroup = document.getElementById('fgroup') as HTMLSelectElement;
+    const fdlc = document.getElementById('fdlc') as HTMLSelectElement;
+    const count = document.getElementById('count')!;
+    const rows = [...document.querySelectorAll<HTMLTableRowElement>('tbody tr')];
+    const sections = [...document.querySelectorAll<HTMLElement>('section[data-group]')];
+
+    function apply() {
+      const needle = q.value.trim().toLowerCase();
+      const e = fera.value;
+      const g = fgroup.value;
+      const d = fdlc.value;
+      let shown = 0;
+      for (const r of rows) {
+        const ok =
+          (!needle || (r.dataset.name ?? '').includes(needle)) &&
+          (!e || r.dataset.era === e) &&
+          (!g || r.dataset.group === g) &&
+          (!d || (d === 'base' ? r.dataset.dlc === 'base' : r.dataset.dlc === d));
+        r.hidden = !ok;
+        if (ok) shown++;
+      }
+      for (const s of sections) {
+        s.hidden = ![...s.querySelectorAll('tbody tr')].some((r) => !(r as HTMLTableRowElement).hidden);
+      }
+      count.textContent = `${shown} of ${rows.length}`;
+    }
+    for (const el of [q, fera, fgroup, fdlc]) el.addEventListener('input', apply);
+    apply();
+  </script>
+
+  <style>
+    .ntbl td.name { white-space: normal; min-width: 15rem; max-width: 22rem; }
+    .i-desc { color: var(--faint); font-size: 0.74rem; font-style: italic; margin: 0.15rem 0 0.25rem; }
+
+    .skill { font-family: var(--font-mono); font-size: 0.72rem; color: var(--c, var(--dim)); }
+    .skill::before { content: '●'; margin-right: 0.3rem; font-size: 0.6rem; }
+    .sk-martial { --c: var(--sk-martial); }
+    .sk-learning { --c: var(--sk-learning); }
+    .sk-stewardship { --c: var(--sk-stewardship); }
+    .sk-diplomacy { --c: var(--sk-diplomacy); }
+    .sk-intrigue { --c: var(--sk-intrigue); }
+
+    .effects { margin: 0.2rem 0 0; padding-left: 1.05rem; font-size: 0.78rem; max-width: 24rem; }
+    .effects li::marker { color: var(--rubric); }
+
+    .modgroup { font-size: 0.78rem; }
+    .scope { color: var(--faint); font-family: var(--font-mono); font-size: 0.66rem; }
+    .mods { margin: 0.1rem 0 0.2rem; padding-left: 1.05rem; }
+    .mods li { color: var(--good); white-space: nowrap; }
+    .mods li::marker { color: var(--line); }
+
+    .chip .neg { color: var(--bad); }
+  </style>
+</Base>

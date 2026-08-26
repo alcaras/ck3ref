@@ -1,0 +1,151 @@
+---
+import Base from '../layouts/Base.astro';
+import concepts from '../data/concepts.json';
+
+const dlcs = [...new Set(concepts.map((c) => c.dlc).filter(Boolean))].sort() as string[];
+const gated = concepts.filter((c) => c.dlc).length;
+const aliasCount = concepts.reduce((n, c) => n + c.aliases.length, 0);
+
+const byId = new Map(concepts.map((c) => [c.id, c]));
+const letters = [...new Set(concepts.map((c) => c.name[0].toUpperCase()))].sort();
+const group = (l: string) => concepts.filter((c) => c.name[0].toUpperCase() === l);
+
+const paragraphs = (desc: string | null) =>
+  (desc ?? '').split('\n').map((p) => p.trim()).filter(Boolean);
+---
+<Base
+  title="Concepts"
+  active="concepts"
+  lede="The game's own glossary: every concept the encyclopedia and tooltips link to, with the game's definitions — read from game_concepts and its localization."
+  stats={[
+    { value: concepts.length, label: 'concepts' },
+    { value: gated, label: 'DLC-gated' },
+    { value: aliasCount, label: 'aliases' },
+  ]}
+>
+  <div class="filterbar">
+    <input type="search" id="q" placeholder="Filter by name or alias…" autocomplete="off" />
+    <select id="fdlc">
+      <option value="">base game + DLC</option>
+      <option value="base">base game only</option>
+      {dlcs.map((d) => <option value={d}>{d}</option>)}
+    </select>
+    <span class="hint" id="count"></span>
+  </div>
+
+  <nav class="az" aria-label="Jump to letter">
+    {letters.map((l) => <a href={`#${l}`}>{l}</a>)}
+  </nav>
+
+  {letters.map((l) => (
+    <section data-group={l}>
+      <h2 class="group-h" id={l}>
+        {l}
+        <span class="count">{group(l).length}</span>
+      </h2>
+      {group(l).map((c) => (
+        <article
+          class="concept"
+          id={c.id}
+          data-name={`${c.name} ${c.aliases.join(' ')} ${c.id.replace(/_/g, ' ')}`.toLowerCase()}
+          data-dlc={c.dlc ?? 'base'}
+        >
+          <h3 class="c-name">
+            <a href={`#${c.id}`}>{c.name}</a>
+            {c.parent && byId.get(c.parent) && (
+              <span class="c-parent">‹ <a href={`#${c.parent}`}>{byId.get(c.parent)!.name}</a></span>
+            )}
+            {c.dlc && <span class="badge-dlc">{c.dlc}</span>}
+          </h3>
+          <div class="c-desc">
+            {paragraphs(c.desc).map((p) => (
+              <p class:list={[{ bullet: p.startsWith('•') }]}>{p}</p>
+            ))}
+          </div>
+          {c.aliases.length > 0 && (
+            <p class="c-aliases">also: {c.aliases.join(' · ')}</p>
+          )}
+        </article>
+      ))}
+    </section>
+  ))}
+
+  <script>
+    const q = document.getElementById('q') as HTMLInputElement;
+    const fdlc = document.getElementById('fdlc') as HTMLSelectElement;
+    const count = document.getElementById('count')!;
+    const rows = [...document.querySelectorAll<HTMLElement>('article.concept')];
+    const groups = [...document.querySelectorAll<HTMLElement>('section[data-group]')];
+
+    function apply() {
+      const needle = q.value.trim().toLowerCase();
+      const d = fdlc.value;
+      let shown = 0;
+      for (const r of rows) {
+        const ok =
+          (!needle || (r.dataset.name ?? '').includes(needle)) &&
+          (!d || (d === 'base' ? r.dataset.dlc === 'base' : r.dataset.dlc === d));
+        r.hidden = !ok;
+        if (ok) shown++;
+      }
+      for (const g of groups) {
+        g.hidden = ![...g.querySelectorAll('article.concept')].some((r) => !(r as HTMLElement).hidden);
+      }
+      count.textContent = `${shown} of ${rows.length}`;
+    }
+    for (const el of [q, fdlc]) el.addEventListener('input', apply);
+    apply();
+
+    // when a hash targets a hidden entry, clear filters so it can show
+    window.addEventListener('hashchange', () => {
+      const el = document.getElementById(location.hash.slice(1));
+      if (el?.classList.contains('concept') && el.hidden) {
+        q.value = '';
+        fdlc.value = '';
+        apply();
+        el.scrollIntoView();
+      }
+    });
+  </script>
+
+  <style>
+    .az {
+      display: flex; flex-wrap: wrap; gap: 0.15rem;
+      font-family: var(--font-mono); font-size: 0.78rem;
+      margin: 0 0 0.5rem;
+    }
+    .az a {
+      border-bottom: none; color: var(--dim);
+      padding: 0.1rem 0.42rem; border-radius: 3px;
+    }
+    .az a:hover { color: var(--brass-bright); background: var(--panel-2); }
+
+    .concept {
+      padding: 0.55rem 0.75rem 0.6rem;
+      border-bottom: 1px solid var(--line-soft);
+    }
+    .concept:target {
+      background: linear-gradient(to right, color-mix(in oklab, var(--rubric) 12%, transparent), transparent 60%);
+      box-shadow: inset 2px 0 0 var(--rubric);
+    }
+
+    .c-name {
+      display: flex; align-items: baseline; gap: 0.6rem; flex-wrap: wrap;
+      font-family: var(--font-display); font-weight: 600; font-size: 1.02rem;
+      margin: 0 0 0.25rem;
+    }
+    .c-name > a { color: var(--vellum); border-bottom: none; }
+    .c-name > a:hover { color: var(--brass-bright); }
+    .c-parent { font-family: var(--font-ui); font-size: 0.75rem; color: var(--faint); }
+    .c-parent a { color: var(--dim); }
+
+    .c-desc { max-width: 75ch; }
+    .c-desc p { margin: 0 0 0.4rem; font-size: 0.86rem; color: var(--vellum); }
+    .c-desc p:last-child { margin-bottom: 0; }
+    .c-desc p.bullet { margin: 0 0 0.15rem 1.1rem; }
+
+    .c-aliases {
+      margin: 0.3rem 0 0; font-size: 0.75rem; color: var(--faint);
+    }
+  </style>
+</Base>

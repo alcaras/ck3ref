@@ -1,0 +1,189 @@
+---
+import Base from '../layouts/Base.astro';
+import pillars from '../data/pillars.json';
+
+const TYPE_ORDER = ['ethos', 'heritage', 'language', 'martial_custom', 'head_determination'];
+const types = [...new Set(pillars.map((p) => p.type).filter(Boolean))].sort(
+  (a, b) => TYPE_ORDER.indexOf(a) - TYPE_ORDER.indexOf(b),
+);
+const typeName = (t: string) => pillars.find((p) => p.type === t)?.typeName ?? t;
+const dlcs = [...new Set(pillars.map((p) => p.dlc).filter(Boolean))].sort();
+
+// heritage/language descriptions are one shared generic string — show it once
+// as the group lede instead of repeating it per row.
+const COMPACT_TYPES = new Set(['heritage', 'language']);
+function groupLede(t: string): string | null {
+  const descs = new Set(pillars.filter((p) => p.type === t).map((p) => p.desc));
+  return descs.size === 1 ? [...descs][0] : null;
+}
+
+const swatch = (c: number[] | null) => (c ? `rgb(${c[0]}, ${c[1]}, ${c[2]})` : 'var(--faint)');
+
+function searchText(p: any): string {
+  return [
+    p.name,
+    p.typeName,
+    ...p.parameters.map((x: any) => x.text),
+    ...Object.values(p.modifiers).flat(),
+    ...p.requirements.map((r: any) => r.text),
+  ]
+    .join(' ')
+    .toLowerCase();
+}
+---
+<Base
+  title="Pillars"
+  active="pillars"
+  lede="The five cultural pillars every culture is built on — ethos, heritage, language, martial custom, and head determination — with their modifiers and effects, read from culture/pillars."
+  stats={[
+    { value: pillars.length, label: 'pillars' },
+    { value: pillars.filter((p) => p.type === 'heritage').length, label: 'heritages' },
+    { value: pillars.filter((p) => p.type === 'language').length, label: 'languages' },
+  ]}
+>
+  <div class="filterbar">
+    <input type="search" id="q" placeholder="Filter by name, effect…" autocomplete="off" />
+    <select id="ftype">
+      <option value="">every pillar type</option>
+      {types.map((t) => <option value={t}>{typeName(t)}</option>)}
+    </select>
+    <select id="fdlc">
+      <option value="">base game + DLC</option>
+      <option value="base">base game only</option>
+      {dlcs.map((d) => <option value={d}>{d}</option>)}
+    </select>
+    <span class="hint" id="count"></span>
+  </div>
+
+  {types.map((t) => (
+    <section data-group={t}>
+      <h2 class="group-h" id={t}>
+        {typeName(t)}
+        <span class="count">{pillars.filter((p) => p.type === t).length}</span>
+      </h2>
+      {COMPACT_TYPES.has(t) && groupLede(t) && <p class="type-lede">{groupLede(t)}</p>}
+
+      {COMPACT_TYPES.has(t) ? (
+        <div class="pillar-grid">
+          {pillars
+            .filter((p) => p.type === t)
+            .map((p) => (
+              <span class="chip pillar-chip" id={p.id} data-item data-name={searchText(p)} data-type={p.type} data-dlc={p.dlc ?? 'base'}>
+                {t === 'language' && <span class="dot" style={`--c:${swatch(p.color)}`} />}
+                {p.name}
+                {p.dlc && <span class="badge-dlc">{p.dlc}</span>}
+              </span>
+            ))}
+        </div>
+      ) : (
+        <div class="tbl-scroll">
+          <table class="ntbl">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Effects</th>
+                <th>Conditions</th>
+                <th>DLC</th>
+              </tr>
+            </thead>
+            <tbody>
+              {pillars
+                .filter((p) => p.type === t)
+                .map((p) => (
+                  <tr id={p.id} data-item data-name={searchText(p)} data-type={p.type} data-dlc={p.dlc ?? 'base'}>
+                    <td class="name"><span class="u-name">{p.name}</span></td>
+                    <td class="desc-cell">{p.desc}</td>
+                    <td>
+                      {Object.entries(p.modifiers).map(([scope, lines]) => (
+                        <div class="modgroup">
+                          <span class="scope">{scope}</span>
+                          <ul class="mods">
+                            {(lines as string[]).map((l) => <li>{l}</li>)}
+                          </ul>
+                        </div>
+                      ))}
+                      {p.parameters.length > 0 && (
+                        <ul class="effects">
+                          {p.parameters.map((x: any) => <li>{x.text}</li>)}
+                        </ul>
+                      )}
+                      {Object.keys(p.modifiers).length === 0 && p.parameters.length === 0 && <span class="subtle">—</span>}
+                    </td>
+                    <td>
+                      {p.requirements.length > 0 ? (
+                        <span class="chips">
+                          {p.requirements.map((r: any) => (
+                            <span class="chip chip--block" title="The game's own pick-condition text, quoted as it appears when the condition is unmet">
+                              {r.negated && <span class="neg">not </span>}{r.text}
+                            </span>
+                          ))}
+                        </span>
+                      ) : (
+                        <span class="subtle">—</span>
+                      )}
+                    </td>
+                    <td>{p.dlc ? <span class="badge-dlc">{p.dlc}</span> : <span class="subtle">—</span>}</td>
+                  </tr>
+                ))}
+            </tbody>
+          </table>
+        </div>
+      )}
+    </section>
+  ))}
+
+  <script>
+    const q = document.getElementById('q') as HTMLInputElement;
+    const ftype = document.getElementById('ftype') as HTMLSelectElement;
+    const fdlc = document.getElementById('fdlc') as HTMLSelectElement;
+    const count = document.getElementById('count')!;
+    const items = [...document.querySelectorAll<HTMLElement>('[data-item]')];
+    const sections = [...document.querySelectorAll<HTMLElement>('section[data-group]')];
+
+    function apply() {
+      const needle = q.value.trim().toLowerCase();
+      const t = ftype.value;
+      const d = fdlc.value;
+      let shown = 0;
+      for (const el of items) {
+        const ok =
+          (!needle || (el.dataset.name ?? '').includes(needle)) &&
+          (!t || el.dataset.type === t) &&
+          (!d || (d === 'base' ? el.dataset.dlc === 'base' : el.dataset.dlc === d));
+        el.hidden = !ok;
+        if (ok) shown++;
+      }
+      for (const s of sections) {
+        s.hidden = ![...s.querySelectorAll('[data-item]')].some((el) => !(el as HTMLElement).hidden);
+      }
+      count.textContent = `${shown} of ${items.length}`;
+    }
+    for (const el of [q, ftype, fdlc]) el.addEventListener('input', apply);
+    apply();
+  </script>
+
+  <style>
+    .type-lede { color: var(--dim); font-size: 0.82rem; max-width: 72ch; margin: -0.2rem 0 0.7rem; }
+
+    .pillar-grid { display: flex; flex-wrap: wrap; gap: 0.35rem; }
+    .pillar-chip { font-size: 0.8rem; padding: 0.22rem 0.6rem; gap: 0.4rem; }
+    .pillar-chip:target { border-color: var(--rubric); }
+    .pillar-chip .dot { background: var(--c, var(--faint)); }
+    .pillar-chip .badge-dlc { font-size: 0.6rem; padding: 0 0.25rem; }
+
+    .desc-cell { color: var(--dim); font-size: 0.8rem; font-style: italic; max-width: 26rem; }
+
+    .modgroup { font-size: 0.8rem; }
+    .scope { color: var(--faint); font-family: var(--font-mono); font-size: 0.66rem; }
+    .mods { margin: 0.1rem 0 0.2rem; padding-left: 1.05rem; }
+    .mods li { color: var(--good); white-space: nowrap; }
+    .mods li::marker { color: var(--line); }
+
+    .effects { margin: 0.2rem 0 0; padding-left: 1.05rem; font-size: 0.78rem; max-width: 26rem; }
+    .effects li::marker { color: var(--rubric); }
+
+    .chip .neg { color: var(--bad); }
+    .chip--block { border-color: color-mix(in oklab, var(--bad) 40%, var(--line)); white-space: normal; }
+  </style>
+</Base>
