@@ -1,5 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
+import Backlinks from '../components/Backlinks.astro';
 import innovations from '../data/innovations.json';
 
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
@@ -214,6 +215,8 @@ function searchText(i: any): string {
 
     .chip .neg { color: var(--bad); }
   </style>
+
+  <Backlinks ids={innovations.map((x: any) => x.id)} />
 </Base>
 <style is:global>
   .i-icon { float: left; margin-right: 0.45rem; }

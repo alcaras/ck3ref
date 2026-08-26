@@ -1,5 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
+import Backlinks from '../components/Backlinks.astro';
 import data from '../data/faiths.json';
 import startworld from '../data/startworld.json';
 
@@ -173,6 +174,8 @@ const traitText = (r: (typeof religions)[number]) =>
     .chip--tenet { border-color: color-mix(in oklab, var(--rubric) 40%, var(--line)); }
     .chip--dlc { border-style: dashed; cursor: help; }
   </style>
+
+  <Backlinks ids={faiths.map((x: any) => x.id)} />
 </Base>
 <style is:global>
   .start { font-size: 0.78rem; white-space: nowrap; }

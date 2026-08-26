@@ -1,5 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
+import Backlinks from '../components/Backlinks.astro';
 import data from '../data/doctrines.json';
 
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
@@ -278,4 +279,6 @@ function searchText(d: (typeof doctrines)[number]): string {
     .fx .mono { font-family: var(--font-mono); font-size: 0.72rem; }
     tr:target { background: color-mix(in oklab, var(--brass) 12%, transparent); }
   </style>
+
+  <Backlinks ids={doctrines.map((x: any) => x.id)} />
 </Base>

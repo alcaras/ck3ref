@@ -1,0 +1,55 @@
+---
+// Renders "what references this" for a set of entity ids on the page.
+// Pass the ids the page renders; the component groups links by target so a
+// reader can see the graph without leaving the page.
+import backlinks from '../data/backlinks.json';
+import { getEntity } from '../lib/entities';
+
+interface Props {
+  ids: string[];
+  title?: string;
+  limit?: number;
+}
+const { ids, title = 'Referenced elsewhere', limit = 12 } = Astro.props;
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const map = backlinks as Record<string, { page: string; anchor: string; label: string; context: string }[]>;
+
+const rows = ids
+  .map((id) => ({ id, entity: getEntity(id), links: map[id] ?? [] }))
+  .filter((r) => r.links.length > 0)
+  .sort((a, b) => b.links.length - a.links.length);
+const totalLinks = rows.reduce((n, r) => n + r.links.length, 0);
+---
+{rows.length > 0 && (
+  <section class="backlinks">
+    <h2 class="group-h" id="backlinks">
+      {title}
+      <span class="count">{totalLinks} references</span>
+    </h2>
+    <div class="bl-grid">
+      {rows.map((r) => (
+        <div class="bl">
+          <a class="bl-target" href={`#${r.entity?.slug ?? r.id}`}>{r.entity?.name ?? r.id}</a>
+          <span class="chips">
+            {r.links.slice(0, limit).map((l) => (
+              <a class="chip" href={`${base}/${l.page}#${l.anchor}`} title={l.context}>{l.label}</a>
+            ))}
+            {r.links.length > limit && (
+              <span class="chip subtle">+{r.links.length - limit} more</span>
+            )}
+          </span>
+        </div>
+      ))}
+    </div>
+  </section>
+)}
+<style>
+  .backlinks { margin-top: 2.5rem; }
+  .bl-grid { display: flex; flex-direction: column; gap: 0.4rem; }
+  .bl { display: flex; gap: 0.7rem; align-items: baseline; flex-wrap: wrap; }
+  .bl-target {
+    font-weight: 600; min-width: 11rem; flex: none;
+    border-bottom: none; color: var(--vellum);
+  }
+  .bl-target:hover { color: var(--brass-bright); }
+</style>

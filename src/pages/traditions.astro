@@ -1,5 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
+import Backlinks from '../components/Backlinks.astro';
 import data from '../data/traditions.json';
 
 const { costNote, traditions } = data as {
@@ -228,4 +229,6 @@ function searchText(t: any): string {
     .chip .neg { color: var(--bad); }
     .chip--block { border-color: color-mix(in oklab, var(--bad) 40%, var(--line)); white-space: normal; }
   </style>
+
+  <Backlinks ids={traditions.map((x: any) => x.id)} />
 </Base>

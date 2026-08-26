@@ -1,5 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
+import Backlinks from '../components/Backlinks.astro';
 import maa from '../data/maa.json';
 import { getEntity } from '../lib/entities';
 
@@ -194,4 +195,6 @@ function costText(c: unknown): string {
     .chip--winter { border-color: color-mix(in oklab, var(--sk-learning) 55%, var(--line)); }
     .chip .neg { color: var(--bad); }
   </style>
+
+  <Backlinks ids={maa.map((x: any) => x.id)} />
 </Base>
