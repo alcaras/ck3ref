@@ -1,0 +1,316 @@
+---
+import Base from '../layouts/Base.astro';
+import maa from '../data/maa.json';
+import terrain from '../data/terrain.json';
+import sim from '../data/combat_sim.json';
+import { getEntity } from '../lib/entities';
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+
+const units = (maa as any[])
+  .filter((m) => !m.specialRecruitOnly)
+  .map((m) => ({ id: m.id, name: m.name, type: m.type }))
+  .sort((a, b) => a.name.localeCompare(b.name));
+
+const terrains = (terrain as any[])
+  .filter((t) => t.id !== 'sea' && t.id !== 'coastal_sea')
+  .map((t) => ({ id: t.id, name: t.name, defAdv: t.defenderAdvantage, width: t.combatWidth }))
+  .sort((a, b) => a.name.localeCompare(b.name));
+
+const commanderTraits = (sim.commanderTraits as any[]).map((t) => ({ id: t.id, name: t.name }));
+const eras = (sim.eraUpgrades as any).order.map((k: string) => ({
+  id: k,
+  name: k.replace('culture_era_', '').replace(/_/g, ' ').replace(/\b\w/g, (c: string) => c.toUpperCase()),
+}));
+const typeName = (t: string) => getEntity(`maa_type_${t}`)?.name ?? t.replace(/_/g, ' ');
+---
+<Base
+  title="Battle Simulator"
+  active="battle-simulator"
+  lede="Pit two armies — men-at-arms, levies, knights, a commander — against each other on any terrain and read the odds. The resolver runs the game's own combat math: advantage rolls, counters, combat width, toughness, and the 30% permanent-casualty split, all from the decompiled main phase."
+  stats={[
+    { value: units.length, label: 'unit types' },
+    { value: terrains.length, label: 'terrains' },
+    { value: '500×', label: 'Monte Carlo runs' },
+  ]}
+>
+  <div class="ctrls">
+    <label>Terrain
+      <select id="terrain">
+        {terrains.map((t) => (
+          <option value={t.id} data-adv={t.defAdv ?? 0} data-width={t.width}>
+            {t.name}{t.defAdv ? ` (+${t.defAdv} def)` : ''}
+          </option>
+        ))}
+      </select>
+    </label>
+    <label>Weather
+      <select id="weather">
+        <option value="none">none</option>
+        <option value="normal_winter">winter</option>
+        <option value="harsh_winter">harsh winter</option>
+      </select>
+    </label>
+    <label>Runs
+      <select id="runs">
+        <option value="200">200</option>
+        <option value="500" selected>500</option>
+        <option value="1000">1000</option>
+      </select>
+    </label>
+    <button id="fight" class="fight">⚔ Fight</button>
+  </div>
+
+  <div class="armies">
+    {['attacker', 'defender'].map((side) => (
+      <section class="army" data-side={side}>
+        <h2 class="group-h">{side === 'attacker' ? 'Attacker' : 'Defender'}<span class="side-tag" data-side-adv></span></h2>
+
+        <div class="addrow">
+          <select class="unitpick">
+            {units.map((u) => <option value={u.id}>{u.name} ({typeName(u.type)})</option>)}
+          </select>
+          <input class="unitmen" type="number" min="1" value="100" title="soldiers" />
+          <button class="add">Add</button>
+        </div>
+        <table class="ntbl comp">
+          <thead><tr><th>Regiment</th><th class="num">Men</th><th></th></tr></thead>
+          <tbody></tbody>
+        </table>
+
+        <div class="extra">
+          <label>Era
+            <select class="era" title="men-at-arms gain cumulative maa_upgrade stats by era (e.g. longbowmen 20→50 damage)">
+              {eras.map((e) => <option value={e.id} selected={e.id === 'culture_era_late_medieval'}>{e.name}</option>)}
+            </select>
+          </label>
+          <label>Levies <input class="levies" type="number" min="0" value="0" /></label>
+          <label>Knights <input class="knights" type="number" min="0" value="0" /></label>
+          <label>Knight prowess <input class="prowess" type="number" min="0" value="8" /></label>
+        </div>
+        <details class="cmd">
+          <summary>Commander</summary>
+          <label>Martial <input class="martial" type="number" min="0" value="0" /></label>
+          <label class="chk"><input type="checkbox" class="owntroops" /> Leads own troops (+5 advantage)</label>
+          <label>Traits
+            <select class="traits" multiple size="4">
+              {commanderTraits.map((t) => <option value={t.id}>{t.name}</option>)}
+            </select>
+          </label>
+        </details>
+      </section>
+    ))}
+  </div>
+
+  <section id="result" class="result" hidden>
+    <div class="odds">
+      <div class="oddsbar">
+        <span class="obar a" data-obar-a></span>
+        <span class="obar d" data-obar-d></span>
+      </div>
+      <div class="oddslabels">
+        <span class="ol a" data-ol-a></span>
+        <span class="ol draw" data-ol-draw></span>
+        <span class="ol d" data-ol-d></span>
+      </div>
+    </div>
+    <table class="ntbl summary">
+      <thead><tr><th></th><th class="num">Start</th><th class="num">Survivors</th><th class="num">Dead (mean)</th><th class="num">Dead range</th></tr></thead>
+      <tbody data-summary></tbody>
+    </table>
+    <div class="detail">
+      <h3>Representative battle <span class="subtle" data-detail-meta></span></h3>
+      <div class="detail-cols">
+        <div data-detail-att></div>
+        <div data-detail-def></div>
+      </div>
+    </div>
+    <p class="prov subtle" data-prov></p>
+  </section>
+
+  <p class="prov subtle foot">
+    Model: decompiled CK3 main-phase combat (fixed-point scale 100000). Damage
+    <code>= Σ(dmg·men·counter) × 0.03 × (1+adv·5%) × min(width/total,1)</code>; casualties
+    <code>= damage·(men/total)/toughness</code>, 30%×(1+mods) permanent. Men-at-arms scale with the
+    selected <strong>era</strong> — cumulative <code>maa_upgrade</code> deltas from culture eras and global
+    innovations (e.g. longbowmen 20→50 damage by Late Medieval; plate armor +20 heavy-cavalry toughness);
+    region-gated innovations are excluded. <strong>Not yet modelled:</strong>
+    morale/ordered retreat (battles resolve to destruction or a day cap), the exact
+    commander&#8209;martial advantage factor (enter advantage via the martial field only if you know it),
+    and the pursuit phase. Advantage rolls, counters, terrain, and combat width are exact.
+  </p>
+
+  <script>
+    import { monteCarlo } from '../lib/combat/run';
+    import type { ArmySpec, BattleSetup, Side } from '../lib/combat/types';
+    import maaData from '../data/maa.json';
+
+    const NAME = new Map((maaData as { id: string; name: string }[]).map((m) => [m.id, m.name]));
+    const unitLabel = (id: string) =>
+      id === '__levy' ? 'Levies' : id === '__knights' ? 'Knights' : (NAME.get(id) ?? id);
+
+    const $ = (sel: string, root: Document | Element = document) => root.querySelector(sel) as HTMLElement;
+    const num = (el: Element | null, d = 0) => {
+      const v = parseFloat((el as HTMLInputElement)?.value ?? '');
+      return Number.isFinite(v) ? v : d;
+    };
+
+    type Row = { id: string; men: number };
+    const state: Record<Side, { regs: Row[] }> = { attacker: { regs: [] }, defender: { regs: [] } };
+
+    function renderRegs(side: Side) {
+      const sec = $(`[data-side=${side}]`);
+      const tbody = sec.querySelector('tbody')!;
+      tbody.innerHTML = '';
+      const picker = sec.querySelector('.unitpick') as HTMLSelectElement;
+      const nameOf = (id: string) => picker.querySelector(`option[value="${id}"]`)?.textContent ?? id;
+      for (const [i, r] of state[side].regs.entries()) {
+        const tr = document.createElement('tr');
+        tr.innerHTML = `<td>${nameOf(r.id)}</td><td class="num">${r.men}</td>` +
+          `<td><button class="minus" data-i="${i}">−</button></td>`;
+        tbody.appendChild(tr);
+      }
+    }
+
+    function buildArmy(side: Side): ArmySpec {
+      const sec = $(`[data-side=${side}]`);
+      const traitsSel = sec.querySelector('.traits') as HTMLSelectElement;
+      const traits = Array.from(traitsSel.selectedOptions).map((o) => o.value);
+      const martial = num(sec.querySelector('.martial'));
+      const owntroops = (sec.querySelector('.owntroops') as HTMLInputElement).checked;
+      const knights = num(sec.querySelector('.knights'));
+      const prowess = num(sec.querySelector('.prowess'), 8);
+      const commander = (traits.length || martial || owntroops)
+        ? { martial, traits, leadsOwnTroops: owntroops }
+        : undefined;
+      const era = (sec.querySelector('.era') as HTMLSelectElement).value;
+      return {
+        regiments: state[side].regs.map((r) => ({ typeId: r.id, men: r.men })),
+        levies: num(sec.querySelector('.levies')),
+        knights: knights > 0 ? Array.from({ length: knights }, () => prowess) : [],
+        commander,
+        era,
+      };
+    }
+
+    function fight() {
+      const terrainSel = $('#terrain') as HTMLSelectElement;
+      const setup: BattleSetup = {
+        attacker: buildArmy('attacker'),
+        defender: buildArmy('defender'),
+        terrainId: terrainSel.value,
+        weather: ($('#weather') as HTMLSelectElement).value as BattleSetup['weather'],
+      };
+      if (!setup.attacker.regiments.length && !setup.attacker.levies && !setup.attacker.knights.length) return;
+      if (!setup.defender.regiments.length && !setup.defender.levies && !setup.defender.knights.length) return;
+
+      const runs = parseInt(($('#runs') as HTMLSelectElement).value, 10);
+      const mc = monteCarlo(setup, runs);
+
+      const res = $('#result');
+      res.hidden = false;
+      const a = Math.round(mc.winPct.attacker), d = Math.round(mc.winPct.defender), dr = Math.round(mc.winPct.draw);
+      ($('[data-obar-a]') as HTMLElement).style.width = `${mc.winPct.attacker}%`;
+      ($('[data-obar-d]') as HTMLElement).style.width = `${mc.winPct.defender}%`;
+      $('[data-ol-a]').textContent = `Attacker ${a}%`;
+      $('[data-ol-draw]').textContent = dr ? `· draw ${dr}% ·` : '';
+      $('[data-ol-d]').textContent = `Defender ${d}%`;
+
+      const fmt = (n: number) => Math.round(n).toLocaleString();
+      const sum = $('[data-summary]');
+      sum.innerHTML = ['attacker', 'defender'].map((s) => {
+        const side = s as Side;
+        const m = mc[side];
+        const start = mc.sample[side].startMen;
+        return `<tr><td>${side === 'attacker' ? 'Attacker' : 'Defender'}</td>` +
+          `<td class="num">${fmt(start)}</td>` +
+          `<td class="num">${fmt(m.survivorsMean)}</td>` +
+          `<td class="num">${fmt(m.deadMean)}</td>` +
+          `<td class="num subtle">${fmt(m.deadP10)}–${fmt(m.deadP90)}</td></tr>`;
+      }).join('');
+
+      $('[data-detail-meta]').textContent =
+        `— ${mc.sample.winner} ${mc.sample.wiped ? 'destroys enemy' : 'prevails'}, ~${mc.sample.days} days · ${mc.wipePct.toFixed(0)}% of battles end in a wipe`;
+      for (const s of ['att', 'def'] as const) {
+        const side: Side = s === 'att' ? 'attacker' : 'defender';
+        const sr = mc.sample[side];
+        const rows = sr.regiments.filter((r) => r.startMen > 0).map((r) => {
+          const label = unitLabel(r.typeId);
+          const lost = r.startMen - r.survivors;
+          const pctLost = r.startMen ? Math.round((100 * lost) / r.startMen) : 0;
+          return `<div class="dreg"><span>${label}</span><span class="subtle">${fmt(r.survivors)}/${fmt(r.startMen)} · ${r.dead} dead (${pctLost}% lost)</span></div>`;
+        }).join('');
+        ($(`[data-detail-${s}]`)).innerHTML = `<h4>${side === 'attacker' ? 'Attacker' : 'Defender'}</h4>${rows}`;
+      }
+    }
+
+    // wiring
+    for (const sec of document.querySelectorAll('.army')) {
+      const side = (sec as HTMLElement).dataset.side as Side;
+      sec.querySelector('.add')!.addEventListener('click', () => {
+        const id = (sec.querySelector('.unitpick') as HTMLSelectElement).value;
+        const men = Math.max(1, num(sec.querySelector('.unitmen'), 100));
+        state[side].regs.push({ id, men });
+        renderRegs(side);
+      });
+      sec.addEventListener('click', (e) => {
+        const b = (e.target as HTMLElement).closest('button.minus') as HTMLElement | null;
+        if (!b) return;
+        state[side].regs.splice(parseInt(b.dataset.i!, 10), 1);
+        renderRegs(side);
+      });
+    }
+    // show terrain defender-advantage hint on the defender header
+    function terrainHint() {
+      const opt = ($('#terrain') as HTMLSelectElement).selectedOptions[0];
+      const adv = parseFloat(opt.dataset.adv ?? '0');
+      const tag = document.querySelector('[data-side=defender] [data-side-adv]') as HTMLElement;
+      if (tag) tag.textContent = adv ? `  +${adv} terrain advantage` : '';
+    }
+    $('#terrain').addEventListener('input', terrainHint);
+    $('#fight').addEventListener('click', fight);
+    terrainHint();
+  </script>
+
+  <style>
+    .ctrls { display: flex; gap: 0.9rem; align-items: end; flex-wrap: wrap; margin-bottom: 1.1rem; }
+    .ctrls label { color: var(--dim); font-size: 0.8rem; display: flex; flex-direction: column; gap: 0.3rem; }
+    select, input[type=number] { background: var(--ink); color: var(--vellum); border: 1px solid var(--line); border-radius: var(--r); padding: 0.3rem 0.5rem; font: 0.85rem var(--font-ui); }
+    input[type=number] { width: 5rem; }
+    button { background: var(--panel); color: var(--vellum); border: 1px solid var(--line); border-radius: var(--r); padding: 0.3rem 0.7rem; cursor: pointer; font: 0.82rem var(--font-ui); }
+    button:hover { border-color: var(--brass); color: var(--brass-bright); }
+    .fight { padding: 0.5rem 1.4rem; font-size: 0.95rem; border-color: var(--rubric); color: var(--brass-bright); }
+    .fight:hover { background: var(--rubric); color: var(--vellum); border-color: var(--rubric); }
+
+    .armies { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; }
+    @media (max-width: 900px) { .armies { grid-template-columns: 1fr; } }
+    .side-tag { color: var(--brass); font-size: 0.75rem; font-weight: 400; font-family: var(--font-mono); }
+    .addrow { display: flex; gap: 0.5rem; margin-bottom: 0.6rem; }
+    .addrow .unitpick { flex: 1; min-width: 0; }
+    .comp .minus { padding: 0 0.45rem; }
+    .extra { display: flex; gap: 1rem; flex-wrap: wrap; margin: 0.6rem 0; }
+    .extra label { color: var(--dim); font-size: 0.78rem; display: flex; gap: 0.35rem; align-items: center; }
+    .cmd summary { color: var(--brass); cursor: pointer; font-size: 0.85rem; }
+    .cmd label { color: var(--dim); font-size: 0.78rem; display: flex; gap: 0.35rem; align-items: center; margin-top: 0.5rem; }
+    .cmd .chk { flex-direction: row; }
+    .cmd .traits { flex-direction: column; min-width: 12rem; }
+
+    .result { margin-top: 1.6rem; border-top: 1px solid var(--line); padding-top: 1.2rem; }
+    .oddsbar { display: flex; height: 1.5rem; border-radius: var(--r); overflow: hidden; border: 1px solid var(--line); background: var(--panel); }
+    .obar.a { background: color-mix(in oklab, var(--brass) 70%, var(--ink)); }
+    .obar.d { background: color-mix(in oklab, var(--rubric) 70%, var(--ink)); margin-left: auto; }
+    .oddslabels { display: flex; justify-content: space-between; margin-top: 0.4rem; font-size: 0.85rem; }
+    .oddslabels .a { color: var(--brass-bright); } .oddslabels .d { color: var(--rubric); } .oddslabels .draw { color: var(--dim); }
+    .summary { margin-top: 1rem; }
+    .detail { margin-top: 1.2rem; }
+    .detail-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; }
+    @media (max-width: 700px) { .detail-cols { grid-template-columns: 1fr; } }
+    .detail :global(h4) { color: var(--brass); font-size: 0.85rem; margin: 0 0 0.4rem; }
+    /* .dreg rows are injected via innerHTML at runtime, so they miss Astro's scoped
+       hashing — style them globally or the flex layout is silently dropped. */
+    :global(.dreg) { display: flex; justify-content: space-between; gap: 1rem; font-size: 0.82rem; padding: 0.2rem 0; border-bottom: 1px solid var(--line-soft); }
+    .prov { font-size: 0.76rem; line-height: 1.5; margin-top: 1rem; }
+    .prov code { font-size: 0.72rem; color: var(--brass); }
+    .foot { border-top: 1px solid var(--line-soft); padding-top: 0.8rem; margin-top: 1.6rem; }
+  </style>
+</Base>

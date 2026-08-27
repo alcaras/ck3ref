@@ -14,6 +14,7 @@ version:
 
 data:
 	@python3 scripts/build_maa.py
+	@python3 scripts/build_combat_sim.py
 	@python3 scripts/build_traits.py
 	@python3 scripts/build_lifestyles.py
 	@python3 scripts/build_legacies.py

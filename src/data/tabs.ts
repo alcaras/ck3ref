@@ -95,4 +95,5 @@ export const TABS: Tab[] = [
   { slug: 'culture-builder', label: 'Culture Builder', section: 'Tools', status: 'built', summary: 'Plan a hybrid, divergence, or tradition reform from any starting culture.' },
   { slug: 'culture-calculator', label: 'Culture Calculator', section: 'Tools', status: 'built', summary: 'Hybrid and divergence costs.' },
   { slug: 'army-builder', label: 'Army Builder', section: 'Tools', status: 'built', summary: 'MAA comps vs counters and terrain.' },
+  { slug: 'battle-simulator', label: 'Battle Simulator', section: 'Tools', status: 'built', summary: 'Sim battles between retinues + levies on any terrain — decompiled combat math.' },
 ];

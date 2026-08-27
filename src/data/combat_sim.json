@@ -1,0 +1,881 @@
+{
+  "advantageDamageLadder": {
+    "default": 5,
+    "pctPerAdvantageOptions": [
+      1,
+      2,
+      5,
+      7,
+      10
+    ]
+  },
+  "combatEffects": {
+    "combat_debt_level_0": {
+      "advantage": -5
+    },
+    "combat_debt_level_1": {
+      "advantage": -10
+    },
+    "combat_debt_level_2": {
+      "advantage": -15
+    },
+    "combat_debt_level_3": {
+      "advantage": -20
+    },
+    "combat_debt_level_4": {
+      "advantage": -25
+    },
+    "combat_debt_level_5": {
+      "advantage": -30
+    },
+    "combat_debt_level_6": {
+      "advantage": -40
+    },
+    "combat_debt_level_7": {
+      "advantage": -50
+    },
+    "combat_debt_level_8": {
+      "advantage": -75
+    },
+    "combat_debt_level_9": {
+      "advantage": -100
+    },
+    "combat_debt_level_no_income": {
+      "advantage": -100
+    },
+    "defender_river": {
+      "advantage": 10
+    },
+    "defender_river_large": {
+      "advantage": 20
+    },
+    "defender_strait": {
+      "advantage": 30
+    },
+    "gathering_army_advantage": {
+      "advantage": -5
+    },
+    "holding_defender_advantage": {
+      "advantage": 1
+    },
+    "recently_disembarked_advantage": {
+      "advantage": -30
+    },
+    "supply_state_running_low_advantage": {
+      "advantage": -10
+    },
+    "supply_state_starving_advantage": {
+      "advantage": -25
+    },
+    "supply_state_supplied_advantage": {
+      "advantage": 0
+    },
+    "treasury_combat_debt_level_0": {
+      "advantage": -5
+    },
+    "treasury_combat_debt_level_1": {
+      "advantage": -10
+    },
+    "treasury_combat_debt_level_2": {
+      "advantage": -15
+    },
+    "treasury_combat_debt_level_3": {
+      "advantage": -20
+    },
+    "treasury_combat_debt_level_4": {
+      "advantage": -25
+    },
+    "treasury_combat_debt_level_5": {
+      "advantage": -30
+    },
+    "treasury_combat_debt_level_6": {
+      "advantage": -40
+    },
+    "treasury_combat_debt_level_7": {
+      "advantage": -50
+    },
+    "treasury_combat_debt_level_8": {
+      "advantage": -75
+    },
+    "treasury_combat_debt_level_9": {
+      "advantage": -100
+    },
+    "unreformed_faith_province": {
+      "advantage": 10
+    }
+  },
+  "commanderTraits": [
+    {
+      "base": {
+        "enemy_hard_casualty_modifier": 0.1
+      },
+      "category": "commander",
+      "cultureParams": {
+        "dry_trait_bonuses": {
+          "desert_max_combat_roll": 1,
+          "drylands_max_combat_roll": 1
+        },
+        "forest_trait_bonuses": {
+          "forest_max_combat_roll": 1,
+          "taiga_max_combat_roll": 1
+        },
+        "hill_trait_bonuses": {
+          "hills_max_combat_roll": 1
+        },
+        "jungle_trait_bonuses": {
+          "jungle_max_combat_roll": 1
+        },
+        "winter_trait_bonuses": {
+          "winter_advantage": 1
+        }
+      },
+      "id": "aggressive_attacker",
+      "name": "Aggressive Attacker",
+      "track": {
+        "100": {
+          "advantage": 2,
+          "enemy_hard_casualty_modifier": 0.1,
+          "martial": 1
+        },
+        "33": {
+          "enemy_hard_casualty_modifier": 0.1
+        },
+        "66": {
+          "advantage": 1,
+          "enemy_hard_casualty_modifier": 0.1
+        }
+      }
+    },
+    {
+      "base": {
+        "max_combat_roll": -1,
+        "min_combat_roll": 2
+      },
+      "category": "commander",
+      "cultureParams": {
+        "forest_trait_bonuses": {
+          "forest_min_combat_roll": 1,
+          "taiga_min_combat_roll": 1
+        },
+        "jungle_trait_bonuses": {
+          "jungle_min_combat_roll": 1
+        }
+      },
+      "id": "cautious_leader",
+      "name": "Cautious Leader",
+      "track": {
+        "100": {
+          "advantage": 2,
+          "martial": 1,
+          "min_combat_roll": 2
+        },
+        "33": {
+          "max_combat_roll": -1,
+          "min_combat_roll": 2
+        },
+        "66": {
+          "advantage": 1,
+          "min_combat_roll": 2
+        }
+      }
+    },
+    {
+      "base": {
+        "desert_advantage": 2,
+        "desert_mountains_advantage": 2,
+        "drylands_advantage": 2,
+        "oasis_advantage": 2
+      },
+      "category": "commander",
+      "id": "desert_warrior",
+      "name": "Desert Warrior",
+      "track": {
+        "100": {
+          "advantage": 2,
+          "desert_advantage": 2,
+          "desert_mountains_advantage": 2,
+          "drylands_advantage": 2,
+          "martial": 1,
+          "oasis_advantage": 2
+        },
+        "33": {
+          "desert_advantage": 2,
+          "desert_mountains_advantage": 2,
+          "drylands_advantage": 2,
+          "oasis_advantage": 2
+        },
+        "66": {
+          "advantage": 1,
+          "desert_advantage": 2,
+          "desert_mountains_advantage": 2,
+          "drylands_advantage": 2,
+          "oasis_advantage": 2
+        }
+      }
+    },
+    {
+      "base": {
+        "enemy_terrain_advantage": -0.2
+      },
+      "category": "commander",
+      "cultureParams": {
+        "hill_trait_bonuses": {
+          "hills_max_combat_roll": 1
+        },
+        "mountain_trait_bonuses": {
+          "desert_mountains_min_combat_roll": 1,
+          "mountains_min_combat_roll": 1
+        }
+      },
+      "id": "flexible_leader",
+      "name": "Flexible Leader",
+      "track": {
+        "100": {
+          "advantage": 2,
+          "enemy_terrain_advantage": -0.2,
+          "martial": 1
+        },
+        "33": {
+          "enemy_terrain_advantage": -0.2
+        },
+        "66": {
+          "advantage": 1,
+          "enemy_terrain_advantage": -0.2
+        }
+      }
+    },
+    {
+      "base": {
+        "character_travel_speed": 5,
+        "no_water_crossing_penalty": true
+      },
+      "category": "commander",
+      "id": "forder",
+      "name": "Forder",
+      "track": {
+        "100": {
+          "advantage": 2,
+          "character_travel_speed": 5,
+          "coastal_advantage": 1,
+          "martial": 1
+        },
+        "33": {
+          "character_travel_speed": 5,
+          "coastal_advantage": 1
+        },
+        "66": {
+          "advantage": 1,
+          "character_travel_speed": 5,
+          "coastal_advantage": 1
+        }
+      }
+    },
+    {
+      "base": {
+        "forest_advantage": 2,
+        "taiga_advantage": 2
+      },
+      "category": "commander",
+      "id": "forest_fighter",
+      "name": "Forest Fighter",
+      "track": {
+        "100": {
+          "advantage": 2,
+          "forest_advantage": 2,
+          "martial": 1,
+          "taiga_advantage": 2
+        },
+        "33": {
+          "forest_advantage": 2,
+          "taiga_advantage": 2
+        },
+        "66": {
+          "advantage": 1,
+          "forest_advantage": 2,
+          "taiga_advantage": 2
+        }
+      }
+    },
+    {
+      "category": "commander",
+      "id": "holy_warrior",
+      "name": "Faithful Blade",
+      "track": {
+        "100": {
+          "advantage": 2,
+          "martial": 1
+        },
+        "66": {
+          "advantage": 1
+        }
+      }
+    },
+    {
+      "base": {
+        "jungle_advantage": 2,
+        "jungle_attrition_mult": -0.2
+      },
+      "category": "commander",
+      "cultureParams": {
+        "jungle_trait_bonuses": {
+          "jungle_min_combat_roll": 1
+        }
+      },
+      "id": "jungle_stalker",
+      "name": "Jungle Stalker",
+      "track": {
+        "100": {
+          "advantage": 2,
+          "jungle_advantage": 2,
+          "jungle_attrition_mult": -0.2,
+          "martial": 1
+        },
+        "33": {
+          "jungle_advantage": 2,
+          "jungle_attrition_mult": -0.2
+        },
+        "66": {
+          "advantage": 1,
+          "jungle_advantage": 2,
+          "jungle_attrition_mult": -0.2
+        }
+      }
+    },
+    {
+      "category": "commander",
+      "cultureParams": {
+        "dry_trait_bonuses": {
+          "desert_attrition_mult": -0.1,
+          "drylands_attrition_mult": -0.1
+        },
+        "forest_trait_bonuses": {
+          "forest_attrition_mult": -0.1,
+          "taiga_attrition_mult": -0.1
+        },
+        "jungle_trait_bonuses": {
+          "jungle_attrition_mult": -0.1
+        },
+        "mountain_trait_bonuses": {
+          "desert_mountains_attrition_mult": -0.15,
+          "mountains_attrition_mult": -0.15
+        },
+        "winter_trait_bonuses": {
+          "winter_movement_speed": 0.1
+        }
+      },
+      "id": "logistician",
+      "name": "Logistician",
+      "track": {
+        "100": {
+          "advantage": 2,
+          "martial": 1
+        },
+        "66": {
+          "advantage": 1
+        }
+      }
+    },
+    {
+      "base": {
+        "siege_phase_time": -0.1
+      },
+      "category": "commander",
+      "cultureParams": {
+        "hill_trait_bonuses": {
+          "hills_attrition_mult": -0.1
+        },
+        "mountain_trait_bonuses": {
+          "desert_mountains_attrition_mult": -0.1,
+          "mountains_attrition_mult": -0.1
+        }
+      },
+      "id": "military_engineer",
+      "name": "Military Engineer",
+      "track": {
+        "100": {
+          "advantage": 2,
+          "martial": 1,
+          "siege_phase_time": -0.1
+        },
+        "33": {
+          "siege_phase_time": -0.1
+        },
+        "66": {
+          "advantage": 1,
+          "siege_phase_time": -0.1
+        }
+      }
+    },
+    {
+      "base": {
+        "farmlands_advantage": 2,
+        "plains_advantage": 2,
+        "steppe_advantage": 2
+      },
+      "category": "commander",
+      "cultureParams": {
+        "dry_trait_bonuses": {
+          "desert_advantage": 1,
+          "drylands_advantage": 1
+        },
+        "winter_trait_bonuses": {
+          "winter_movement_speed": 0.1
+        }
+      },
+      "id": "open_terrain_expert",
+      "name": "Open Terrain Expert",
+      "track": {
+        "100": {
+          "advantage": 2,
+          "farmlands_advantage": 2,
+          "martial": 1,
+          "plains_advantage": 2,
+          "steppe_advantage": 2
+        },
+        "33": {
+          "farmlands_advantage": 2,
+          "plains_advantage": 2,
+          "steppe_advantage": 2
+        },
+        "66": {
+          "advantage": 1,
+          "farmlands_advantage": 2,
+          "plains_advantage": 2,
+          "steppe_advantage": 2
+        }
+      }
+    },
+    {
+      "base": {
+        "movement_speed": 0.1,
+        "retreat_losses": -0.1
+      },
+      "category": "commander",
+      "cultureParams": {
+        "dry_trait_bonuses": {
+          "desert_advantage": 1,
+          "drylands_advantage": 1
+        },
+        "mountain_trait_bonuses": {
+          "desert_mountains_attrition_mult": -0.5,
+          "mountains_attrition_mult": -0.5
+        },
+        "winter_trait_bonuses": {
+          "winter_movement_speed": 0.05
+        }
+      },
+      "id": "organizer",
+      "name": "Organizer",
+      "track": {
+        "100": {
+          "advantage": 2,
+          "martial": 1,
+          "movement_speed": 0.1,
+          "retreat_losses": -0.1
+        },
+        "33": {
+          "movement_speed": 0.1,
+          "retreat_losses": -0.1
+        },
+        "66": {
+          "advantage": 1,
+          "movement_speed": 0.1,
+          "retreat_losses": -0.1
+        }
+      }
+    },
+    {
+      "category": "commander",
+      "cultureParams": {
+        "dry_trait_bonuses": {
+          "desert_max_combat_roll": 1,
+          "drylands_max_combat_roll": 1
+        },
+        "winter_trait_bonuses": {
+          "winter_advantage": 2
+        }
+      },
+      "id": "reaver",
+      "name": "Pillager",
+      "track": {
+        "100": {
+          "advantage": 2,
+          "martial": 1
+        },
+        "66": {
+          "advantage": 1
+        }
+      }
+    },
+    {
+      "base": {
+        "max_combat_roll": 3,
+        "min_combat_roll": -2
+      },
+      "category": "commander",
+      "cultureParams": {
+        "dry_trait_bonuses": {
+          "desert_max_combat_roll": 1,
+          "drylands_max_combat_roll": 1
+        },
+        "forest_trait_bonuses": {
+          "forest_max_combat_roll": 1,
+          "taiga_max_combat_roll": 1
+        },
+        "jungle_trait_bonuses": {
+          "jungle_max_combat_roll": 1
+        }
+      },
+      "id": "reckless",
+      "name": "Reckless",
+      "track": {
+        "100": {
+          "advantage": 2,
+          "martial": 1,
+          "max_combat_roll": 3
+        },
+        "33": {
+          "max_combat_roll": 3,
+          "min_combat_roll": -2
+        },
+        "66": {
+          "advantage": 1,
+          "max_combat_roll": 3
+        }
+      }
+    },
+    {
+      "base": {
+        "hills_advantage": 2,
+        "mountains_advantage": 2,
+        "wetlands_advantage": 2
+      },
+      "category": "commander",
+      "cultureParams": {
+        "forest_trait_bonuses": {
+          "forest_advantage": 1,
+          "taiga_advantage": 1
+        },
+        "hill_trait_bonuses": {
+          "hills_min_combat_roll": 1
+        },
+        "jungle_trait_bonuses": {
+          "jungle_advantage": 1
+        },
+        "mountain_trait_bonuses": {
+          "desert_mountains_advantage": 2,
+          "desert_mountains_max_combat_roll": 1,
+          "mountains_max_combat_roll": 1
+        },
+        "winter_trait_bonuses": {
+          "winter_advantage": 2
+        }
+      },
+      "id": "rough_terrain_expert",
+      "name": "Rough Terrain Expert",
+      "track": {
+        "100": {
+          "advantage": 2,
+          "hills_advantage": 2,
+          "martial": 1,
+          "mountains_advantage": 2,
+          "wetlands_advantage": 2
+        },
+        "33": {
+          "hills_advantage": 2,
+          "mountains_advantage": 2,
+          "wetlands_advantage": 2
+        },
+        "66": {
+          "advantage": 1,
+          "hills_advantage": 2,
+          "mountains_advantage": 2,
+          "wetlands_advantage": 2
+        }
+      }
+    },
+    {
+      "base": {
+        "hard_casualty_modifier": -0.1
+      },
+      "category": "commander",
+      "cultureParams": {
+        "dry_trait_bonuses": {
+          "desert_min_combat_roll": 1,
+          "drylands_min_combat_roll": 1
+        },
+        "forest_trait_bonuses": {
+          "forest_min_combat_roll": 1,
+          "taiga_min_combat_roll": 1
+        },
+        "hill_trait_bonuses": {
+          "hills_min_combat_roll": 1
+        },
+        "jungle_trait_bonuses": {
+          "jungle_min_combat_roll": 1
+        },
+        "mountain_trait_bonuses": {
+          "desert_mountains_advantage": 1,
+          "mountains_advantage": 1
+        },
+        "winter_trait_bonuses": {
+          "winter_advantage": 1
+        }
+      },
+      "id": "unyielding_defender",
+      "name": "Defender",
+      "track": {
+        "100": {
+          "advantage": 2,
+          "hard_casualty_modifier": -0.1,
+          "martial": 1
+        },
+        "33": {
+          "hard_casualty_modifier": -0.1
+        },
+        "66": {
+          "advantage": 1,
+          "hard_casualty_modifier": -0.1
+        }
+      }
+    },
+    {
+      "base": {
+        "winter_advantage": 3,
+        "winter_movement_speed": 0.1
+      },
+      "category": "winter_commander",
+      "id": "winter_soldier",
+      "name": "Winter Soldier",
+      "track": {
+        "100": {
+          "advantage": 2,
+          "martial": 1,
+          "winter_advantage": 3,
+          "winter_movement_speed": 0.1
+        },
+        "33": {
+          "winter_advantage": 3,
+          "winter_movement_speed": 0.1
+        },
+        "66": {
+          "advantage": 1,
+          "winter_advantage": 3,
+          "winter_movement_speed": 0.1
+        }
+      }
+    }
+  ],
+  "defines": {
+    "ADVANTAGE_DAMAGE_SCALING_FACTOR": {
+      "ns": "NCombat",
+      "value": 5
+    },
+    "BASE_RATIO_CASUALTIES_CONVERSION": {
+      "ns": "NCombat",
+      "value": 0.3
+    },
+    "BASE_RATIO_CASUALTIES_CONVERSION_PURSUIT": {
+      "ns": "NCombat",
+      "value": 1
+    },
+    "BASE_TOUGHNESS_TO_PURSUIT": {
+      "ns": "NCombat",
+      "value": 0.05
+    },
+    "BASE_WIDTH_RATIO": {
+      "ns": "NCombat",
+      "value": 1
+    },
+    "COMBAT_EVENT_DAYS": {
+      "ns": "NCombat",
+      "value": 5
+    },
+    "COMBAT_ROLL_DAYS": {
+      "ns": "NCombat",
+      "value": 3
+    },
+    "COMMANDER_MAX_ROLL": {
+      "ns": "NCombat",
+      "value": 10
+    },
+    "COMMANDER_MIN_ROLL": {
+      "ns": "NCombat",
+      "value": 0
+    },
+    "DAMAGE_SCALING_FACTOR": {
+      "ns": "NCombat",
+      "value": 0.03
+    },
+    "KNIGHT_DAMAGE_PER_PROWESS": {
+      "ns": "NCombat",
+      "value": 50
+    },
+    "KNIGHT_TOUGHNESS_PER_PROWESS": {
+      "ns": "NCombat",
+      "value": 10
+    },
+    "LEVY_ATTACK": {
+      "ns": "NCombat",
+      "value": 10
+    },
+    "LEVY_PURSUIT": {
+      "ns": "NCombat",
+      "value": 0
+    },
+    "LEVY_SCREEN": {
+      "ns": "NCombat",
+      "value": 0
+    },
+    "LEVY_SIEGE": {
+      "ns": "NCombat",
+      "value": 0
+    },
+    "LEVY_TOUGHNESS": {
+      "ns": "NCombat",
+      "value": 10
+    },
+    "MANEUVER_PHASE_DAYS": {
+      "ns": "NCombat",
+      "value": 3
+    },
+    "MEN_AT_ARMS_MAX_COUNTER": {
+      "ns": "NCombat",
+      "value": 0.9
+    },
+    "MINIMUM_COMBAT_WIDTH": {
+      "ns": "NCombat",
+      "value": 100
+    },
+    "MINIMUM_PURSUIT_DAMAGE": {
+      "ns": "NCombat",
+      "value": 0.01
+    },
+    "MIN_DAYS_BEFORE_MANUAL_RETREAT": {
+      "ns": "NCombat",
+      "value": 14
+    },
+    "PURSUIT_PHASE_DAYS": {
+      "ns": "NCombat",
+      "value": 3
+    },
+    "PURSUIT_STAT_TO_PURSUIT_DAMAGE": {
+      "ns": "NCombat",
+      "value": 0.5
+    },
+    "RATIO_FOR_MAX_COUNTER": {
+      "ns": "NCombat",
+      "value": 2.0
+    },
+    "REGIMENT_DEFAULT_STACK_SIZE": {
+      "ns": "NArmy",
+      "value": 100
+    }
+  },
+  "eraUpgrades": {
+    "byEra": {
+      "culture_era_early_medieval": [
+        {
+          "damage": 10,
+          "men_at_arms": "longbowmen",
+          "toughness": 2
+        },
+        {
+          "damage": 5,
+          "men_at_arms": "gakgung_archers",
+          "toughness": 2
+        }
+      ],
+      "culture_era_high_medieval": [
+        {
+          "damage": 10,
+          "men_at_arms": "longbowmen",
+          "toughness": 2
+        },
+        {
+          "damage": 6,
+          "men_at_arms": "gakgung_archers",
+          "toughness": 2
+        },
+        {
+          "damage": 5,
+          "men_at_arms": "fire_lancers",
+          "screen": 3
+        }
+      ],
+      "culture_era_late_medieval": [
+        {
+          "damage": 10,
+          "men_at_arms": "longbowmen",
+          "toughness": 2
+        },
+        {
+          "damage": 8,
+          "men_at_arms": "gakgung_archers",
+          "toughness": 2
+        },
+        {
+          "damage": 8,
+          "men_at_arms": "fire_lancers",
+          "screen": 5
+        },
+        {
+          "toughness": 10,
+          "type": "heavy_infantry"
+        },
+        {
+          "toughness": 20,
+          "type": "heavy_cavalry"
+        }
+      ],
+      "culture_era_tribal": []
+    },
+    "order": [
+      "culture_era_tribal",
+      "culture_era_early_medieval",
+      "culture_era_high_medieval",
+      "culture_era_late_medieval"
+    ]
+  },
+  "namedModifiers": {
+    "hampered_by_false_information_modifier": {
+      "advantage": -10,
+      "army_damage_mult": -0.2,
+      "movement_speed": -0.2
+    },
+    "leading_own_troops_modifier": {
+      "advantage": 5
+    },
+    "sparring_delusions_of_superiority_modifier": {
+      "advantage": -3,
+      "prowess": -1
+    },
+    "sparring_full_of_confidence_modifier": {
+      "max_combat_roll": 7
+    },
+    "sparring_honed_skills_modifier": {
+      "prowess": 2
+    },
+    "sparring_leader_of_knights_modifier": {
+      "knight_effectiveness_mult": 0.5,
+      "prowess": 1
+    },
+    "sparring_noble_defender_modifier": {
+      "defender_advantage": 5
+    },
+    "sparring_sprained_ankle_modifier": {
+      "prowess": -3
+    },
+    "sparring_valiant_knight_modifier": {
+      "attacker_advantage": 5
+    }
+  },
+  "provenance": {
+    "advantageDamageLadder": "script:common/game_rules/00_game_rules.txt#advantage_damage_effect",
+    "combatEffects": "script:common/combat_effects/00_combat_effects.txt",
+    "commanderTraits": "script:common/traits/00_traits.txt (category=commander/winter_commander)",
+    "defines": "defines:common/defines/00_defines.txt (NCombat, NArmy)",
+    "eraUpgrades": "script:common/culture/eras/00_culture_eras.txt + common/culture/innovations/*.txt (maa_upgrade, cumulative)",
+    "namedModifiers": "script:common/modifiers/00_war_and_combat_modifiers.txt"
+  }
+}
