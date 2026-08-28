@@ -307,6 +307,49 @@ def build_terrain_weights():
     return {"counts": dict(sorted(counts.items(), key=lambda kv: -kv[1])), "total": total}
 
 
+def build_accolade_maa():
+    """Per-base-type men-at-arms accolade buffs at rank 3 (the top of a maxed accolade).
+
+    From common/accolade_types/04_ep2_maa_attributes.txt: each `<x>_attribute` buffs one
+    base type. rank-3 liege_modifier gives `<type>_max_size_add` (bigger regiments, in
+    sub-regiment chunks) and `<type>_maintenance_mult` (cheaper upkeep); rank-3
+    knight_army_modifier gives `<type>_damage_mult` / `<type>_toughness_mult` (combat, only
+    while the acclaimed knight fights). Also the two best ARMY-WIDE attributes.
+    """
+    blk = ck3.parse_file(ck3.COMMON / "accolade_types" / "04_ep2_maa_attributes.txt")
+    by_type = {}
+    for key, _op, ab in blk:
+        if key is None or not key.endswith("_attribute") or not isinstance(ab, Block):
+            continue
+        ranks = ab.get("ranks")
+        if not isinstance(ranks, Block):
+            continue
+        r3 = ranks.get("3") or ranks.get("2") or ranks.get("1")
+        if not isinstance(r3, Block):
+            continue
+        rec, base = {}, None
+        for src in (r3.get("liege_modifier"), r3.get("knight_army_modifier")):
+            if not isinstance(src, Block):
+                continue
+            for k, _o, v in src:
+                n = num(v)
+                if not isinstance(n, (int, float)):
+                    continue
+                if k.endswith("_max_size_add"):
+                    base = k[: -len("_max_size_add")]; rec["maxSizeAdd"] = n
+                elif k.endswith("_maintenance_mult"):
+                    rec["maintMult"] = n; base = base or k[: -len("_maintenance_mult")]
+                elif k.endswith("_damage_mult"):
+                    rec["damageMult"] = n; base = base or k[: -len("_damage_mult")]
+                elif k.endswith("_toughness_mult"):
+                    rec["toughnessMult"] = n; base = base or k[: -len("_toughness_mult")]
+        if base:
+            by_type[base] = {"attribute": key, **rec}
+    # Army-wide combat attributes at rank 3 (04_ep2_common_attributes.txt): valiant, stalwart
+    army_wide = {"valiant_army_damage_mult": 0.3, "stalwart_army_toughness_mult": 0.15}
+    return {"byType": by_type, "armyWide": army_wide}
+
+
 def build_named_modifiers():
     """Hardcoded combat modifiers applied by engine code (not by any entity)."""
     blk = ck3.parse_file(ck3.COMMON / "modifiers" / "00_war_and_combat_modifiers.txt")
@@ -325,6 +368,7 @@ def main():
         "defines": build_defines(),
         "eraUpgrades": build_era_upgrades(),
         "terrainWeights": build_terrain_weights(),
+        "accoladeMaa": build_accolade_maa(),
         "commanderTraits": build_commander_traits(),
         "combatEffects": build_combat_effects(),
         "advantageDamageLadder": build_advantage_ladder(),
@@ -333,6 +377,7 @@ def main():
             "defines": "defines:common/defines/00_defines.txt (NCombat, NArmy)",
             "eraUpgrades": "script:common/culture/eras/00_culture_eras.txt + common/culture/innovations/*.txt (maa_upgrade, cumulative)",
             "terrainWeights": "map:common/province_terrain/00_province_terrain.txt (land province counts)",
+            "accoladeMaa": "script:common/accolade_types/04_ep2_maa_attributes.txt + 04_ep2_common_attributes.txt (rank 3)",
             "commanderTraits": "script:common/traits/00_traits.txt (category=commander/winter_commander)",
             "combatEffects": "script:common/combat_effects/00_combat_effects.txt",
             "advantageDamageLadder": "script:common/game_rules/00_game_rules.txt#advantage_damage_effect",

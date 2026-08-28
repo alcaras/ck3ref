@@ -98,4 +98,5 @@ export const TABS: Tab[] = [
   { slug: 'matchup-matrix', label: 'Matchup Matrix', section: 'Tools', status: 'built', summary: 'Every troop type vs every other, equal regiments — who beats whom.' },
   { slug: 'tier-list', label: 'Tier List', section: 'Tools', status: 'built', summary: 'Troop types ranked S–D by regiment, recruit cost, and upkeep.' },
   { slug: 'compositions', label: 'Two-Unit Armies', section: 'Tools', status: 'built', summary: 'Do mixed armies beat single-type spam? (Short answer: no.)' },
+  { slug: 'kingdom-army', label: 'Kingdom Army', section: 'Tools', status: 'built', summary: 'Best men-at-arms for a maxed kingdom — accolades, knights, upkeep.' },
 ];

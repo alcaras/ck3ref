@@ -1,0 +1,145 @@
+---
+import Base from '../layouts/Base.astro';
+import kingdom from '../data/kingdom.json';
+import { getEntity } from '../lib/entities';
+
+const meta = kingdom.meta as any;
+const typeName = (t: string) => getEntity(`maa_type_${t}`)?.name ?? t.replace(/_/g, ' ');
+const attrLabel = (a: string | null) => a ? a.replace(/_attribute$/, '').replace(/_/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase()) : '—';
+---
+<Base
+  title="Kingdom Army"
+  active="kingdom-army"
+  lede="The best men-at-arms to fill a realistic kingdom's regiment slots, with maxed accolades and knights. Each type fields a mono-type army (single-type spam wins — see Two-Unit Armies), buffed by its own accolade attribute plus the two army-wide ones, Valiant (+30% army damage) and Stalwart (+15% army toughness). Ranked by win rate against the field of similarly-equipped kingdoms, and by that strength per gold of upkeep. Set your realm's slots and knights below; the best pick barely changes with size, but your army's men and upkeep do."
+  stats={[
+    { value: (kingdom.units as any[]).length, label: 'troop types' },
+    { value: `${meta.valiant * 100}%/${meta.stalwart * 100}%`, label: 'valiant / stalwart' },
+    { value: 'Late Med.', label: 'era' },
+  ]}
+>
+  <div class="ctrls">
+    <label class="sl">Regiment slots <output id="oSlots">12</output>
+      <input id="slots" type="range" min="4" max="20" value="12" />
+    </label>
+    <label class="sl">Knights <output id="oKnights">12</output>
+      <input id="knights" type="range" min="0" max="24" value="12" />
+    </label>
+    <label class="sl">Knight prowess <output id="oProwess">10</output>
+      <input id="prowess" type="range" min="1" max="24" value="10" />
+    </label>
+    <label>Rank by
+      <select id="sortby">
+        <option value="power" selected>Power (win vs field)</option>
+        <option value="eff">Upkeep efficiency</option>
+      </select>
+    </label>
+  </div>
+
+  <div class="pick" id="pick"></div>
+
+  <div class="matwrap">
+    <table class="ntbl karmy" id="karmy">
+      <thead><tr>
+        <th class="num">#</th><th>Men-at-arms</th><th>Accolade</th>
+        <th class="num" title="men in one regiment at maxed size">Reg size</th>
+        <th class="num" title="total men across your slots">Your men</th>
+        <th class="num" title="gold/month while raised">Upkeep</th>
+        <th class="num" title="win rate vs the field of accoladed kingdoms">Power</th>
+        <th class="num" title="win% per gold/month per regiment">Eff.</th>
+      </tr></thead>
+      <tbody></tbody>
+    </table>
+  </div>
+
+  <p class="legend subtle">
+    <strong>How to read it.</strong> <em>Power</em> is the mono-type army's win rate against every other type's
+    accoladed army, on the average map, both attacking and defending — the same engine as the
+    <a href={`${import.meta.env.BASE_URL.replace(/\/$/, '')}/battle-simulator`}>Battle Simulator</a>. It barely
+    depends on realm size (both sides scale), so the ranking is stable; the sliders scale your <em>men</em> and
+    <em>upkeep</em>. <em>Reg size</em> shows the accolade effect you flagged: <code>&lt;type&gt;_max_size_add</code>
+    makes each regiment <strong>bigger</strong> (more 100-man chunks) — it does <strong>not</strong> add regiment
+    slots (those come from your title tier + buildings/laws). Best accolade loadout for any type: its own
+    attribute (bigger, cheaper, +damage/+toughness while the acclaimed knight fights) + Valiant + Stalwart.
+    Crossbowmen are base-type archers, so they already get the archer attribute and could also take the
+    crossbowmen attribute (+screen/siege/fort) — a pursuit/defence double-dip that trades an army-wide combat
+    attribute, so it isn't in this max-power loadout. Knights add a flat power pool (prowess × 60 each) to any
+    army equally, so they don't change the ranking. Method: expected-value battles (no random rolls).
+  </p>
+
+  <script>
+    import data from '../data/kingdom.json';
+    const units = (data as any).units as any[];
+    const $ = (s: string) => document.querySelector(s) as HTMLElement;
+    const fmt = (n: number) => Math.round(n).toLocaleString();
+
+    function render() {
+      const slots = +(($('#slots') as HTMLInputElement).value);
+      const knights = +(($('#knights') as HTMLInputElement).value);
+      const prowess = +(($('#prowess') as HTMLInputElement).value);
+      const sortby = ($('#sortby') as HTMLSelectElement).value;
+      ($('#oSlots')).textContent = String(slots);
+      ($('#oKnights')).textContent = String(knights);
+      ($('#oProwess')).textContent = String(prowess);
+      const knightPower = knights * prowess * 60; // (50 dmg + 10 tough) per prowess
+
+      const rows = units.map((u) => {
+        const men = slots * u.regMen;
+        const upkeep = slots * u.upkeepPerReg;
+        const maaPower = (u.effDmg + u.effTough) * men;
+        return { ...u, men, upkeep, armyPower: maaPower + knightPower, effPerGold: u.winPct / u.upkeepPerReg };
+      });
+      rows.sort((a, b) => sortby === 'eff' ? b.effPerGold - a.effPerGold : b.winPct - a.winPct);
+
+      const best = rows[0];
+      $('#pick').innerHTML =
+        `<div class="pcard"><div class="plabel">Best ${sortby === 'eff' ? 'value' : 'army'} for your kingdom</div>` +
+        `<div class="pname">${best.name} <span class="ptype">${best.type.replace(/_/g, ' ')}</span></div>` +
+        `<div class="pstats">${slots} regiments × ${fmt(best.regMen)} = <b>${fmt(best.men)} men</b> ` +
+        `· <b>${best.winPct}%</b> vs the field · <b>${best.upkeep.toFixed(1)}g/mo</b> upkeep` +
+        `${knights ? ` · +${knights} knights (${fmt(knightPower).toLocaleString()} power)` : ''}</div>` +
+        `<div class="pacc">Accolades: <b>${best.attribute ? best.attribute.replace(/_attribute$/, '').replace(/_/g, ' ') : '—'}</b> + Valiant + Stalwart` +
+        `${best.doubleDip ? ` <span class="subtle">· crossbow double-dip available</span>` : ''}</div></div>`;
+
+      const tb = $('#karmy').querySelector('tbody')!;
+      tb.innerHTML = rows.map((u, i) => {
+        const acc = u.attribute ? u.attribute.replace(/_attribute$/, '').replace(/_/g, ' ') : '—';
+        return `<tr${i === 0 ? ' class="toprow"' : ''}><td class="num subtle">${i + 1}</td>` +
+          `<td>${u.name} <span class="subtle t">${u.type.replace(/_/g, ' ')}</span></td>` +
+          `<td class="subtle">${acc}</td>` +
+          `<td class="num">${fmt(u.regMen)}</td>` +
+          `<td class="num">${fmt(u.men)}</td>` +
+          `<td class="num">${u.upkeep.toFixed(1)}</td>` +
+          `<td class="num" style="color:${u.winPct >= 60 ? 'var(--good)' : u.winPct >= 40 ? 'var(--brass)' : 'var(--dim)'}">${u.winPct}%</td>` +
+          `<td class="num subtle">${u.effPerGold.toFixed(0)}</td></tr>`;
+      }).join('');
+    }
+
+    for (const id of ['#slots', '#knights', '#prowess', '#sortby']) $(id).addEventListener('input', render);
+    render();
+  </script>
+
+  <style>
+    .ctrls { display: flex; gap: 1.4rem; align-items: end; flex-wrap: wrap; margin-bottom: 1.1rem; }
+    .ctrls label { color: var(--dim); font-size: 0.8rem; display: flex; flex-direction: column; gap: 0.3rem; }
+    .ctrls .sl { min-width: 11rem; }
+    .ctrls output { color: var(--brass-bright); font-family: var(--font-mono); }
+    input[type=range] { accent-color: var(--rubric); }
+    select { background: var(--ink); color: var(--vellum); border: 1px solid var(--line); border-radius: var(--r); padding: 0.3rem 0.5rem; font: 0.85rem var(--font-ui); }
+    .pick { margin-bottom: 1.1rem; }
+    .pcard { background: var(--panel); border: 1px solid var(--brass); border-radius: var(--r); padding: 0.8rem 1rem; }
+    .plabel { color: var(--dim); font-size: 0.74rem; }
+    .pname { font-size: 1.2rem; color: var(--brass-bright); margin: 0.15rem 0; }
+    .pname .ptype { font-size: 0.8rem; color: var(--dim); }
+    .pstats { font-size: 0.85rem; color: var(--vellum); }
+    .pacc { font-size: 0.82rem; color: var(--dim); margin-top: 0.3rem; }
+    .pacc b { color: var(--brass); }
+    .matwrap { overflow: auto; max-height: 70vh; border: 1px solid var(--line-soft); border-radius: var(--r); }
+    .karmy { font-size: 0.82rem; width: 100%; }
+    .karmy th { position: sticky; top: 0; background: var(--panel); z-index: 1; }
+    .karmy td, .karmy th { padding: 0.28rem 0.7rem; }
+    .karmy .t { font-size: 0.72rem; }
+    .karmy .toprow { background: color-mix(in oklab, var(--brass) 12%, transparent); }
+    .legend { font-size: 0.8rem; line-height: 1.6; margin-top: 1.3rem; max-width: 74ch; }
+    .legend code { color: var(--brass); font-size: 0.74rem; }
+  </style>
+</Base>

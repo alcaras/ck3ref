@@ -1,4 +1,86 @@
 {
+  "accoladeMaa": {
+    "armyWide": {
+      "stalwart_army_toughness_mult": 0.15,
+      "valiant_army_damage_mult": 0.3
+    },
+    "byType": {
+      "archer_cavalry": {
+        "attribute": "horse_archer_attribute",
+        "damageMult": 0.6,
+        "maintMult": -0.2,
+        "maxSizeAdd": 2,
+        "toughnessMult": 0.3
+      },
+      "archers": {
+        "attribute": "archer_attribute",
+        "damageMult": 0.6,
+        "maintMult": -0.25,
+        "maxSizeAdd": 3,
+        "toughnessMult": 0.3
+      },
+      "camel_cavalry": {
+        "attribute": "camelry_attribute",
+        "damageMult": 0.6,
+        "maintMult": -0.2,
+        "maxSizeAdd": 2,
+        "toughnessMult": 0.3
+      },
+      "elephant_cavalry": {
+        "attribute": "elephantry_attribute",
+        "damageMult": 0.2,
+        "maintMult": -0.5,
+        "maxSizeAdd": 2,
+        "toughnessMult": 0.2
+      },
+      "gunpowder": {
+        "attribute": "gunpowder_attribute",
+        "damageMult": 0.6,
+        "maintMult": -0.25,
+        "maxSizeAdd": 2,
+        "toughnessMult": 0.3
+      },
+      "heavy_cavalry": {
+        "attribute": "lancer_attribute",
+        "damageMult": 0.6,
+        "maintMult": -0.2,
+        "maxSizeAdd": 2,
+        "toughnessMult": 0.3
+      },
+      "heavy_infantry": {
+        "attribute": "vanguard_attribute",
+        "damageMult": 0.6,
+        "maintMult": -0.2,
+        "maxSizeAdd": 2,
+        "toughnessMult": 0.3
+      },
+      "light_cavalry": {
+        "attribute": "outrider_attribute",
+        "damageMult": 0.6,
+        "maintMult": -0.2,
+        "maxSizeAdd": 2,
+        "toughnessMult": 0.3
+      },
+      "pikemen": {
+        "attribute": "pike_attribute",
+        "damageMult": 0.5,
+        "maintMult": -0.2,
+        "maxSizeAdd": 3,
+        "toughnessMult": 0.6
+      },
+      "siege_weapon": {
+        "attribute": "besieger_attribute",
+        "maxSizeAdd": 4
+      },
+      "skirmishers": {
+        "attribute": "skirmisher_attribute",
+        "damageMult": 0.6,
+        "maintMult": -0.25,
+        "maxSizeAdd": 4,
+        "toughnessMult": 0.3
+      }
+    }
+  },
   "advantageDamageLadder": {
     "default": 5,
     "pctPerAdvantageOptions": [
@@ -871,6 +953,7 @@
     }
   },
   "provenance": {
+    "accoladeMaa": "script:common/accolade_types/04_ep2_maa_attributes.txt + 04_ep2_common_attributes.txt (rank 3)",
     "advantageDamageLadder": "script:common/game_rules/00_game_rules.txt#advantage_damage_effect",
     "combatEffects": "script:common/combat_effects/00_combat_effects.txt",
     "commanderTraits": "script:common/traits/00_traits.txt (category=commander/winter_commander)",
