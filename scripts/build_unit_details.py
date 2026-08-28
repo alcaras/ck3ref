@@ -31,6 +31,33 @@ def era_name(key):
     return key.removeprefix("culture_era_").replace("_", " ").title()
 
 
+# DLC file-prefixes that leak into tradition keys when no localisation is loaded for them.
+_DLC_PREFIXES = ("tgp ", "fp1 ", "fp2 ", "fp3 ", "ep1 ", "ep2 ", "ep3 ", "mpo ", "bp1 ", "bp2 ")
+
+
+def trad_display_name(key):
+    loc = ck3.loc(key)
+    name = ck3.render_text(loc) if loc else None
+    if not name or name.startswith("tradition_"):
+        name = key.removeprefix("tradition_").replace("_", " ").title()
+    low = name.lower()
+    for p in _DLC_PREFIXES:
+        if low.startswith(p):
+            name = name[len(p):]
+            break
+    return name
+
+
+# Men-at-arms with no can_recruit gate in their own file — the recruit check lives in a shared
+# scripted trigger keyed on a cultural parameter, so it can't be traced from the unit block.
+# Resolved by hand from tgp_traditions.txt (the parameter -> tradition that grants it).
+MANUAL_UNLOCK = {
+    "burenjia": [{"kind": "tradition", "name": "Art of War", "era": None}],                 # unlock_burenjia
+    "japanese_horse_archers": [{"kind": "tradition", "name": "Imperial Peace", "era": None}],  # Mounted Samurai, unlock_mounted_samurai_units
+    "emishi_horse_archers": [{"kind": "tradition", "name": "Imperial Peace", "era": None}],   # Emishi Riders, unlock_emishi_horse_archers_units
+}
+
+
 def build_innovation_maps():
     """innovation_key -> era; maa_id -> unlocking innovation_key; innovation_key -> display name."""
     inno_era, unlock_by_inno, inno_name = {}, {}, {}
@@ -57,10 +84,7 @@ def build_tradition_param_map():
             tb = tb.block
         if not isinstance(tb, Block):
             continue
-        loc = ck3.loc(key)
-        name = ck3.render_text(loc) if loc else None
-        if not name or name.startswith("tradition_"):
-            name = key.removeprefix("tradition_").replace("_", " ").title()
+        name = trad_display_name(key)
         params = tb.get("parameters")
         if isinstance(params, Block):
             for pk in params.keys():
@@ -142,6 +166,10 @@ def main():
                 vias.append({"kind": "tradition", "name": param_trad[pk], "era": None})
             elif pk.startswith("unlock_"):
                 vias.append({"kind": "tradition", "name": pk.removeprefix("unlock_maa_").removeprefix("unlock_").replace("_", " ").title(), "era": None})
+
+        # units whose gate lives in a shared trigger (no can_recruit): resolved by hand
+        if not vias and key in MANUAL_UNLOCK:
+            vias = [dict(v) for v in MANUAL_UNLOCK[key]]
 
         # earliest era available: highest-ranked required innovation era, else tribal
         req_eras = [e for e in eras if e]
