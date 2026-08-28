@@ -97,17 +97,20 @@ const BASES = [
     .ttab.active { background: var(--rubric); color: var(--vellum); border-color: var(--rubric); }
     .blurb { margin: 0 0 0.9rem; font-size: 0.85rem; }
     .tiers { display: flex; flex-direction: column; gap: 0.4rem; }
-    .tierrow { display: flex; gap: 0.6rem; align-items: stretch; }
-    .tlabel { flex: 0 0 2.6rem; display: flex; align-items: center; justify-content: center; font-family: var(--font-mono); font-weight: 700; font-size: 1.1rem; border-radius: var(--r); color: var(--ink); }
-    .t-S .tlabel { background: #d3ac63; } .t-A .tlabel { background: #b6905a; }
-    .t-B .tlabel { background: #9aa06a; } .t-C .tlabel { background: #8a8172; } .t-D .tlabel { background: #a06a5a; }
-    .tunits { flex: 1; display: flex; flex-wrap: wrap; gap: 0.35rem; align-content: flex-start; padding: 0.3rem; background: var(--panel); border: 1px solid var(--line-soft); border-radius: var(--r); min-height: 2.2rem; }
-    .unit { display: inline-flex; align-items: baseline; gap: 0.3rem; background: var(--panel-2); border: 1px solid var(--line); border-radius: var(--r); padding: 0.2rem 0.5rem; font-size: 0.8rem; border-bottom: 1px solid var(--line); }
-    .unit:hover { border-color: var(--brass); }
-    .uname { color: var(--vellum); }
-    .uwin { color: var(--brass); font-family: var(--font-mono); font-size: 0.72rem; }
-    .ureg { color: var(--dim); font-family: var(--font-mono); font-size: 0.68rem; }
-    .empty { padding: 0.2rem 0.4rem; }
+    /* tier rows are injected via innerHTML, so their styles must be global or Astro's
+       scoped hashing drops them (they'd render as a plain unstyled list). */
+    :global(.tierrow) { display: flex; gap: 0.6rem; align-items: stretch; }
+    :global(.tlabel) { flex: 0 0 2.6rem; display: flex; align-items: center; justify-content: center; font-family: var(--font-mono); font-weight: 700; font-size: 1.1rem; border-radius: var(--r); color: var(--ink); }
+    :global(.t-S) .tlabel, :global(.t-S .tlabel) { background: #d3ac63; }
+    :global(.t-A .tlabel) { background: #b6905a; }
+    :global(.t-B .tlabel) { background: #9aa06a; } :global(.t-C .tlabel) { background: #8a8172; } :global(.t-D .tlabel) { background: #a06a5a; }
+    :global(.tunits) { flex: 1; display: flex; flex-wrap: wrap; gap: 0.35rem; align-content: flex-start; padding: 0.3rem; background: var(--panel); border: 1px solid var(--line-soft); border-radius: var(--r); min-height: 2.2rem; }
+    :global(.tunits .unit) { display: inline-flex; align-items: baseline; gap: 0.3rem; background: var(--panel-2); border: 1px solid var(--line); border-radius: var(--r); padding: 0.2rem 0.5rem; font-size: 0.8rem; text-decoration: none; }
+    :global(.tunits .unit:hover) { border-color: var(--brass); }
+    :global(.tunits .uname) { color: var(--vellum); }
+    :global(.tunits .uwin) { color: var(--brass); font-family: var(--font-mono); font-size: 0.72rem; }
+    :global(.tunits .ureg) { color: var(--dim); font-family: var(--font-mono); font-size: 0.68rem; }
+    :global(.tunits .empty) { padding: 0.2rem 0.4rem; }
     .legend { font-size: 0.8rem; line-height: 1.55; margin-top: 1.4rem; max-width: 72ch; }
   </style>
 </Base>
