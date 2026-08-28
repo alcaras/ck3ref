@@ -3,6 +3,7 @@
 
 import { resolveBattle } from './battle';
 import { makeRng } from './rng';
+import { TERRAIN_WEIGHTS } from './constants';
 import type { BattleSetup, BattleResult, Side } from './types';
 
 export type McResult = {
@@ -25,6 +26,67 @@ function pct(sorted: number[], p: number): number {
 /** Deterministic expected-value battle (rolls taken at their mean). */
 export function expected(setup: BattleSetup): BattleResult {
   return resolveBattle(setup, { mode: 'ev' });
+}
+
+export type TerrainOutcome = {
+  terrainId: string;
+  weight: number; // province count
+  weightPct: number; // share of land provinces
+  attackerWinPct: number;
+  defenderWinPct: number;
+  drawPct: number;
+  attackerDeadMean: number;
+  defenderDeadMean: number;
+};
+
+export type MapWeightedResult = {
+  overall: {
+    attackerWinPct: number;
+    defenderWinPct: number;
+    drawPct: number;
+    attackerDeadMean: number;
+    defenderDeadMean: number;
+  };
+  perTerrain: TerrainOutcome[]; // sorted by weight desc
+  runsPerTerrain: number;
+  provinceTotal: number;
+};
+
+/**
+ * Run the matchup on every land terrain and weight the outcome by how common each
+ * terrain is on the CK3 map (land province counts from province_terrain). The overall
+ * numbers are the expected result for a battle fought at a random map location.
+ * setup.terrainId is ignored; each terrain is substituted in turn.
+ */
+export function mapWeighted(setup: BattleSetup, runsPerTerrain = 300): MapWeightedResult {
+  const counts = TERRAIN_WEIGHTS.counts;
+  const total = TERRAIN_WEIGHTS.total;
+  const perTerrain: TerrainOutcome[] = [];
+  let ow = 0, dw = 0, drw = 0, adead = 0, ddead = 0;
+  for (const [terrainId, weight] of Object.entries(counts)) {
+    const mc = monteCarlo({ ...setup, terrainId }, runsPerTerrain);
+    const w = weight / total;
+    ow += mc.winPct.attacker * w;
+    dw += mc.winPct.defender * w;
+    drw += mc.winPct.draw * w;
+    adead += mc.attacker.deadMean * w;
+    ddead += mc.defender.deadMean * w;
+    perTerrain.push({
+      terrainId, weight, weightPct: 100 * w,
+      attackerWinPct: mc.winPct.attacker,
+      defenderWinPct: mc.winPct.defender,
+      drawPct: mc.winPct.draw,
+      attackerDeadMean: mc.attacker.deadMean,
+      defenderDeadMean: mc.defender.deadMean,
+    });
+  }
+  perTerrain.sort((a, b) => b.weight - a.weight);
+  return {
+    overall: { attackerWinPct: ow, defenderWinPct: dw, drawPct: drw, attackerDeadMean: adead, defenderDeadMean: ddead },
+    perTerrain,
+    runsPerTerrain,
+    provinceTotal: total,
+  };
 }
 
 /** Monte Carlo over `runs` seeded battles. */

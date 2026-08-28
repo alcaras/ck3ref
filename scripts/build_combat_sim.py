@@ -17,6 +17,7 @@ Every emitted value carries no invented numbers — all sourced from the files b
 The `provenance` block records exactly where each dataset came from.
 """
 
+import re
 import sys
 from pathlib import Path
 
@@ -282,6 +283,30 @@ def build_era_upgrades():
     }
 
 
+def build_terrain_weights():
+    """Province counts per terrain — the CK3 map's terrain distribution.
+
+    Source: common/province_terrain/00_province_terrain.txt (`<province_id>=<terrain>`).
+    Only real numbered provinces are counted (the `default_*` fallbacks are skipped);
+    sea/coastal_sea don't appear among land provinces. Used to weight a battle's outcome
+    by how common each terrain actually is on the map.
+    """
+    path = ck3.COMMON / "province_terrain" / "00_province_terrain.txt"
+    counts = {}
+    # `<id>=<terrain>`, tolerating trailing whitespace or a `#comment` (309 lines have one)
+    line_re = re.compile(r"^\s*(\d+)\s*=\s*([a-z_]+)\s*(?:#.*)?$")
+    for line in path.read_text(encoding="utf-8-sig", errors="replace").splitlines():
+        m = line_re.match(line)
+        if not m:
+            continue
+        terrain = m.group(2)
+        if terrain in ("sea", "coastal_sea", "lakes"):
+            continue
+        counts[terrain] = counts.get(terrain, 0) + 1
+    total = sum(counts.values())
+    return {"counts": dict(sorted(counts.items(), key=lambda kv: -kv[1])), "total": total}
+
+
 def build_named_modifiers():
     """Hardcoded combat modifiers applied by engine code (not by any entity)."""
     blk = ck3.parse_file(ck3.COMMON / "modifiers" / "00_war_and_combat_modifiers.txt")
@@ -299,6 +324,7 @@ def main():
     data = {
         "defines": build_defines(),
         "eraUpgrades": build_era_upgrades(),
+        "terrainWeights": build_terrain_weights(),
         "commanderTraits": build_commander_traits(),
         "combatEffects": build_combat_effects(),
         "advantageDamageLadder": build_advantage_ladder(),
@@ -306,6 +332,7 @@ def main():
         "provenance": {
             "defines": "defines:common/defines/00_defines.txt (NCombat, NArmy)",
             "eraUpgrades": "script:common/culture/eras/00_culture_eras.txt + common/culture/innovations/*.txt (maa_upgrade, cumulative)",
+            "terrainWeights": "map:common/province_terrain/00_province_terrain.txt (land province counts)",
             "commanderTraits": "script:common/traits/00_traits.txt (category=commander/winter_commander)",
             "combatEffects": "script:common/combat_effects/00_combat_effects.txt",
             "advantageDamageLadder": "script:common/game_rules/00_game_rules.txt#advantage_damage_effect",

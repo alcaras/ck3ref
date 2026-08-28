@@ -78,6 +78,12 @@ export const NAMED_MODIFIERS = sim.namedModifiers as unknown as Record<
   Record<string, number>
 >;
 
+/** CK3 map terrain distribution: land province counts per terrain + total. */
+export const TERRAIN_WEIGHTS = sim.terrainWeights as unknown as {
+  counts: Record<string, number>;
+  total: number;
+};
+
 export type CommanderTrait = {
   id: string;
   name: string;

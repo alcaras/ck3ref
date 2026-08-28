@@ -59,6 +59,7 @@ const typeName = (t: string) => getEntity(`maa_type_${t}`)?.name ?? t.replace(/_
       </select>
     </label>
     <button id="fight" class="fight">⚔ Fight</button>
+    <button id="mapfight" class="fight ghost" title="run the matchup on every land terrain and weight by how common each is on the CK3 map">⚔ Across the map</button>
   </div>
 
   <div class="armies">
@@ -128,6 +129,26 @@ const typeName = (t: string) => getEntity(`maa_type_${t}`)?.name ?? t.replace(/_
     <p class="prov subtle" data-prov></p>
   </section>
 
+  <section id="mapresult" class="result" hidden>
+    <h3>Map-weighted expected value <span class="subtle" data-map-meta></span></h3>
+    <div class="odds">
+      <div class="oddsbar">
+        <span class="obar a" data-mobar-a></span>
+        <span class="obar d" data-mobar-d></span>
+      </div>
+      <div class="oddslabels">
+        <span class="ol a" data-mol-a></span>
+        <span class="ol draw" data-mol-draw></span>
+        <span class="ol d" data-mol-d></span>
+      </div>
+    </div>
+    <p class="subtle map-expl">Weighted by land-province counts across the CK3 map — the odds for a battle fought at a random location.</p>
+    <table class="ntbl mapbreak">
+      <thead><tr><th>Terrain</th><th class="num">Map %</th><th class="num">Attacker win</th><th class="num">Defender win</th><th class="num">Dead A / D</th></tr></thead>
+      <tbody data-mapbreak></tbody>
+    </table>
+  </section>
+
   <p class="prov subtle foot">
     Model: decompiled CK3 main-phase combat (fixed-point scale 100000). Damage
     <code>= Σ(dmg·men·counter) × 0.03 × (1+adv·5%) × min(width/total,1)</code>; casualties
@@ -141,7 +162,7 @@ const typeName = (t: string) => getEntity(`maa_type_${t}`)?.name ?? t.replace(/_
   </p>
 
   <script>
-    import { monteCarlo } from '../lib/combat/run';
+    import { monteCarlo, mapWeighted } from '../lib/combat/run';
     import type { ArmySpec, BattleSetup, Side } from '../lib/combat/types';
     import maaData from '../data/maa.json';
 
@@ -244,6 +265,54 @@ const typeName = (t: string) => getEntity(`maa_type_${t}`)?.name ?? t.replace(/_
       }
     }
 
+    function buildSetup(): BattleSetup | null {
+      const terrainSel = $('#terrain') as HTMLSelectElement;
+      const setup: BattleSetup = {
+        attacker: buildArmy('attacker'),
+        defender: buildArmy('defender'),
+        terrainId: terrainSel.value,
+        weather: ($('#weather') as HTMLSelectElement).value as BattleSetup['weather'],
+      };
+      const has = (a: ArmySpec) => a.regiments.length || a.levies || a.knights.length;
+      if (!has(setup.attacker) || !has(setup.defender)) return null;
+      return setup;
+    }
+
+    const terrName = (id: string) =>
+      ($('#terrain') as HTMLSelectElement).querySelector(`option[value="${id}"]`)?.textContent?.replace(/\s*\(.*\)$/, '') ?? id;
+
+    function mapFight() {
+      const setup = buildSetup();
+      if (!setup) return;
+      const btn = $('#mapfight') as HTMLButtonElement;
+      btn.disabled = true; btn.textContent = '… running';
+      // let the button repaint before the (synchronous) heavy compute
+      setTimeout(() => {
+        const mw = mapWeighted(setup, 250);
+        const res = $('#mapresult');
+        res.hidden = false;
+        const o = mw.overall;
+        ($('[data-mobar-a]') as HTMLElement).style.width = `${o.attackerWinPct}%`;
+        ($('[data-mobar-d]') as HTMLElement).style.width = `${o.defenderWinPct}%`;
+        $('[data-mol-a]').textContent = `Attacker ${o.attackerWinPct.toFixed(0)}%`;
+        $('[data-mol-draw]').textContent = o.drawPct >= 1 ? `· draw ${o.drawPct.toFixed(0)}% ·` : '';
+        $('[data-mol-d]').textContent = `Defender ${o.defenderWinPct.toFixed(0)}%`;
+        $('[data-map-meta]').textContent =
+          `— across ${mw.perTerrain.length} terrains, ${mw.provinceTotal.toLocaleString()} provinces, ${mw.runsPerTerrain} runs each · expected dead ${Math.round(o.attackerDeadMean)} / ${Math.round(o.defenderDeadMean)}`;
+        const tb = $('[data-mapbreak]');
+        tb.innerHTML = mw.perTerrain.map((t) => {
+          const win = t.attackerWinPct >= 50;
+          return `<tr><td>${terrName(t.terrainId)}</td>` +
+            `<td class="num subtle">${t.weightPct.toFixed(1)}%</td>` +
+            `<td class="num" style="color:${win ? 'var(--good)' : 'var(--dim)'}">${t.attackerWinPct.toFixed(0)}%</td>` +
+            `<td class="num" style="color:${!win ? 'var(--bad)' : 'var(--dim)'}">${t.defenderWinPct.toFixed(0)}%</td>` +
+            `<td class="num subtle">${Math.round(t.attackerDeadMean)} / ${Math.round(t.defenderDeadMean)}</td></tr>`;
+        }).join('');
+        btn.disabled = false; btn.textContent = '⚔ Across the map';
+        res.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }, 30);
+    }
+
     // wiring
     for (const sec of document.querySelectorAll('.army')) {
       const side = (sec as HTMLElement).dataset.side as Side;
@@ -269,6 +338,7 @@ const typeName = (t: string) => getEntity(`maa_type_${t}`)?.name ?? t.replace(/_
     }
     $('#terrain').addEventListener('input', terrainHint);
     $('#fight').addEventListener('click', fight);
+    $('#mapfight').addEventListener('click', mapFight);
     terrainHint();
   </script>
 
@@ -281,6 +351,11 @@ const typeName = (t: string) => getEntity(`maa_type_${t}`)?.name ?? t.replace(/_
     button:hover { border-color: var(--brass); color: var(--brass-bright); }
     .fight { padding: 0.5rem 1.4rem; font-size: 0.95rem; border-color: var(--rubric); color: var(--brass-bright); }
     .fight:hover { background: var(--rubric); color: var(--vellum); border-color: var(--rubric); }
+    .fight.ghost { border-color: var(--brass); color: var(--brass); }
+    .fight.ghost:hover { background: var(--brass); color: var(--ink); border-color: var(--brass); }
+    button:disabled { opacity: 0.55; cursor: progress; }
+    .map-expl { font-size: 0.78rem; margin: 0.5rem 0 0.8rem; }
+    .mapbreak td, .mapbreak th { padding: 0.28rem 0.6rem; }
 
     .armies { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; }
     @media (max-width: 900px) { .armies { grid-template-columns: 1fr; } }

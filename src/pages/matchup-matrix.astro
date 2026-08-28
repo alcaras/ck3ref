@@ -1,0 +1,145 @@
+---
+import Base from '../layouts/Base.astro';
+import maa from '../data/maa.json';
+import terrain from '../data/terrain.json';
+import sim from '../data/combat_sim.json';
+
+// One canonical men-at-arms per base archetype, plus a few iconic units, so the grid
+// reads as "how the troop types stack up" rather than an unreadable 100×100.
+const UNITS = [
+  'light_footmen', 'bowmen', 'longbowmen', 'crossbowmen', 'handgunners',
+  'pikemen_unit', 'armored_footmen', 'huscarl',
+  'light_horsemen', 'armored_horsemen', 'horse_archers', 'camel_rider', 'war_elephant',
+];
+const byId = Object.fromEntries((maa as any[]).map((m) => [m.id, m]));
+const units = UNITS.map((id) => ({ id, name: byId[id].name, type: byId[id].type }));
+
+const terrains = (terrain as any[])
+  .filter((t) => t.id !== 'sea' && t.id !== 'coastal_sea')
+  .map((t) => ({ id: t.id, name: t.name }))
+  .sort((a, b) => a.name.localeCompare(b.name));
+const eras = (sim.eraUpgrades as any).order.map((k: string) => ({
+  id: k,
+  name: k.replace('culture_era_', '').replace(/_/g, ' ').replace(/\b\w/g, (c: string) => c.toUpperCase()),
+}));
+---
+<Base
+  title="Matchup Matrix"
+  active="matchup-matrix"
+  lede="Every troop type against every other — 1,000 vs 1,000, resolved with the same decompiled combat math as the Battle Simulator. Each cell shows how many of the row's 1,000 soldiers survive after wiping (or being wiped by) the column's. Green means the row wins; red means it loses. Fought on open plains by default, where neither side gets a terrain edge."
+  stats={[
+    { value: units.length, label: 'troop types' },
+    { value: units.length * units.length, label: 'matchups' },
+    { value: '1,000', label: 'per side' },
+  ]}
+>
+  <div class="ctrls">
+    <label>Terrain
+      <select id="terrain">
+        {terrains.map((t) => <option value={t.id} selected={t.id === 'plains'}>{t.name}</option>)}
+      </select>
+    </label>
+    <label>Era
+      <select id="era">
+        {eras.map((e) => <option value={e.id} selected={e.id === 'culture_era_late_medieval'}>{e.name}</option>)}
+      </select>
+    </label>
+    <span class="hint" id="status">computing…</span>
+  </div>
+
+  <div class="matwrap">
+    <table class="matrix" id="matrix">
+      <thead>
+        <tr>
+          <th class="corner">row&nbsp;\&nbsp;col</th>
+          {units.map((u) => <th class="colh" title={u.name}><span>{u.name}</span></th>)}
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+
+  <p class="legend subtle">
+    Cell = the <strong>row unit's survivors</strong> out of 1,000 after the fight (expected value, no random
+    rolls). <span class="chip win">win</span> row beats column · <span class="chip lose">lose</span> row loses ·
+    <span class="chip draw">—</span> mirror match. Read a row left-to-right to see what a unit beats; a unit that
+    wins its whole row dominates the field. Elephants and heavy cavalry look unstoppable per-man, but cost many
+    times more per soldier and are capped by combat width in a real army — this is raw 1,000-vs-1,000 strength,
+    not gold-efficiency.
+  </p>
+
+  <script>
+    import { expected } from '../lib/combat/run';
+    import type { BattleSetup } from '../lib/combat/types';
+    import unitList from '../data/maa.json';
+
+    const IDS = [
+      'light_footmen', 'bowmen', 'longbowmen', 'crossbowmen', 'handgunners',
+      'pikemen_unit', 'armored_footmen', 'huscarl',
+      'light_horsemen', 'armored_horsemen', 'horse_archers', 'camel_rider', 'war_elephant',
+    ];
+    const NAME = new Map((unitList as { id: string; name: string }[]).map((m) => [m.id, m.name]));
+
+    const $ = (s: string) => document.querySelector(s) as HTMLElement;
+    const army = (typeId: string, era: string) => ({ regiments: [{ typeId, men: 1000 }], levies: 0, knights: [], era });
+
+    function compute() {
+      const terrainId = ($('#terrain') as HTMLSelectElement).value;
+      const era = ($('#era') as HTMLSelectElement).value;
+      const tbody = $('#matrix').querySelector('tbody')!;
+      tbody.innerHTML = '';
+      const t0 = performance.now();
+      for (const r of IDS) {
+        const tr = document.createElement('tr');
+        tr.innerHTML = `<th class="rowh" title="${NAME.get(r)}">${NAME.get(r)}</th>`;
+        for (const c of IDS) {
+          if (r === c) {
+            tr.insertAdjacentHTML('beforeend', `<td class="cell draw" title="mirror match">—</td>`);
+            continue;
+          }
+          const setup: BattleSetup = { attacker: army(r, era), defender: army(c, era), terrainId };
+          const res = expected(setup);
+          const surv = res.attacker.survivors;
+          const won = res.winner === 'attacker';
+          // colour intensity by survivors (win) or by how thoroughly wiped (loss)
+          const frac = surv / 1000;
+          const bg = won
+            ? `color-mix(in oklab, var(--good) ${Math.round(20 + frac * 55)}%, transparent)`
+            : `color-mix(in oklab, var(--bad) ${Math.round(30 + (1 - res.defender.survivors / 1000) * 40)}%, transparent)`;
+          tr.insertAdjacentHTML('beforeend',
+            `<td class="cell ${won ? 'win' : 'lose'}" style="background:${bg}" ` +
+            `title="${NAME.get(r)} vs ${NAME.get(c)} on ${terrainId}: ${won ? 'win' : 'loss'}, ${surv} survive">${surv}</td>`);
+        }
+        tbody.appendChild(tr);
+      }
+      $('#status').textContent = `${IDS.length}×${IDS.length} matchups · ${Math.round(performance.now() - t0)}ms`;
+    }
+
+    $('#terrain').addEventListener('input', compute);
+    $('#era').addEventListener('input', compute);
+    compute();
+  </script>
+
+  <style>
+    .ctrls { display: flex; gap: 1rem; align-items: end; flex-wrap: wrap; margin-bottom: 1rem; }
+    .ctrls label { color: var(--dim); font-size: 0.8rem; display: flex; flex-direction: column; gap: 0.3rem; }
+    select { background: var(--ink); color: var(--vellum); border: 1px solid var(--line); border-radius: var(--r); padding: 0.3rem 0.5rem; font: 0.85rem var(--font-ui); }
+    .hint { color: var(--dim); font-size: 0.78rem; font-family: var(--font-mono); }
+    .matwrap { overflow-x: auto; }
+    .matrix { border-collapse: collapse; font-size: 0.75rem; }
+    .matrix th, .matrix td { border: 1px solid var(--line-soft); text-align: center; }
+    .matrix .cell { padding: 0.3rem 0.4rem; font-family: var(--font-mono); min-width: 2.6rem; }
+    .matrix .rowh { text-align: right; padding: 0.3rem 0.6rem; color: var(--brass); white-space: nowrap; position: sticky; left: 0; background: var(--panel); z-index: 1; }
+    .matrix .colh { padding: 0.4rem 0.3rem; height: 6.5rem; vertical-align: bottom; }
+    .matrix .colh span { writing-mode: vertical-rl; transform: rotate(180deg); color: var(--brass); white-space: nowrap; }
+    .matrix .corner { position: sticky; left: 0; background: var(--panel); color: var(--dim); z-index: 2; }
+    .matrix .cell.win { color: var(--vellum); }
+    .matrix .cell.lose { color: color-mix(in oklab, var(--vellum) 70%, var(--bad)); }
+    .matrix .cell.draw { color: var(--dim); background: var(--panel-2); }
+    .legend { font-size: 0.8rem; line-height: 1.55; margin-top: 1rem; max-width: 65ch; }
+    .chip { display: inline-block; padding: 0 0.35rem; border-radius: 3px; font-size: 0.72rem; font-family: var(--font-mono); }
+    .chip.win { background: color-mix(in oklab, var(--good) 45%, transparent); }
+    .chip.lose { background: color-mix(in oklab, var(--bad) 50%, transparent); }
+    .chip.draw { background: var(--panel-2); color: var(--dim); }
+  </style>
+</Base>
