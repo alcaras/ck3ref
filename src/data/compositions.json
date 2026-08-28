@@ -1,0 +1,933 @@
+{
+  "meta": {
+    "era": "culture_era_late_medieval",
+    "recruitCap": 1000,
+    "maintCap": 15,
+    "equalRegiments": 10,
+    "candidates": [
+      "Varangian Guards",
+      "Handpicked Faithful",
+      "Burenjia Infantry",
+      "Gakgung Archers",
+      "Longbowmen",
+      "Mubarizun",
+      "Ayyar",
+      "Mountaineers",
+      "Picchieri",
+      "Paiks",
+      "War Elephants",
+      "Ballista Elephants",
+      "Pikemen",
+      "Light Footmen",
+      "Armored Horsemen",
+      "Bowmen"
+    ],
+    "metric": "mean win fraction vs all 78 single-type armies, average-terrain (province-weighted) + 50/50 attack/defend",
+    "provenance": "engine:src/lib/combat · stack/cost from maa.json · terrain weights from province_terrain"
+  },
+  "lists": {
+    "regiments": {
+      "bestSingle": {
+        "id": "varangian_guards",
+        "name": "Varangian Guards",
+        "winPct": 93
+      },
+      "topSingles": [
+        {
+          "id": "varangian_guards",
+          "name": "Varangian Guards",
+          "winPct": 93
+        },
+        {
+          "id": "praetorian",
+          "name": "Palatini",
+          "winPct": 92
+        },
+        {
+          "id": "samurai",
+          "name": "Samurai",
+          "winPct": 89
+        },
+        {
+          "id": "handpicked_faithful",
+          "name": "Handpicked Faithful",
+          "winPct": 87
+        },
+        {
+          "id": "mubarizun",
+          "name": "Mubarizun",
+          "winPct": 86
+        }
+      ],
+      "duos": [
+        {
+          "a": "Varangian Guards",
+          "b": "War Elephants",
+          "aId": "varangian_guards",
+          "bId": "war_elephant",
+          "split": "7:3",
+          "mix": "7× + 3×",
+          "ra": 7,
+          "rb": 3,
+          "winPct": 92
+        },
+        {
+          "a": "Varangian Guards",
+          "b": "Ballista Elephants",
+          "aId": "varangian_guards",
+          "bId": "ballista_elephant",
+          "split": "7:3",
+          "mix": "7× + 3×",
+          "ra": 7,
+          "rb": 3,
+          "winPct": 92
+        },
+        {
+          "a": "Handpicked Faithful",
+          "b": "War Elephants",
+          "aId": "handpicked_faithful",
+          "bId": "war_elephant",
+          "split": "7:3",
+          "mix": "7× + 3×",
+          "ra": 7,
+          "rb": 3,
+          "winPct": 88
+        },
+        {
+          "a": "Varangian Guards",
+          "b": "Mubarizun",
+          "aId": "varangian_guards",
+          "bId": "mubarizun",
+          "split": "7:3",
+          "mix": "7× + 3×",
+          "ra": 7,
+          "rb": 3,
+          "winPct": 88
+        },
+        {
+          "a": "Varangian Guards",
+          "b": "Armored Horsemen",
+          "aId": "varangian_guards",
+          "bId": "armored_horsemen",
+          "split": "7:3",
+          "mix": "7× + 3×",
+          "ra": 7,
+          "rb": 3,
+          "winPct": 87
+        },
+        {
+          "a": "Varangian Guards",
+          "b": "Handpicked Faithful",
+          "aId": "varangian_guards",
+          "bId": "handpicked_faithful",
+          "split": "7:3",
+          "mix": "7× + 3×",
+          "ra": 7,
+          "rb": 3,
+          "winPct": 87
+        },
+        {
+          "a": "Handpicked Faithful",
+          "b": "Ballista Elephants",
+          "aId": "handpicked_faithful",
+          "bId": "ballista_elephant",
+          "split": "7:3",
+          "mix": "7× + 3×",
+          "ra": 7,
+          "rb": 3,
+          "winPct": 87
+        },
+        {
+          "a": "Varangian Guards",
+          "b": "Mountaineers",
+          "aId": "varangian_guards",
+          "bId": "mountaineer",
+          "split": "7:3",
+          "mix": "7× + 3×",
+          "ra": 7,
+          "rb": 3,
+          "winPct": 87
+        },
+        {
+          "a": "Varangian Guards",
+          "b": "Burenjia Infantry",
+          "aId": "varangian_guards",
+          "bId": "burenjia",
+          "split": "7:3",
+          "mix": "7× + 3×",
+          "ra": 7,
+          "rb": 3,
+          "winPct": 86
+        },
+        {
+          "a": "Varangian Guards",
+          "b": "Ayyar",
+          "aId": "varangian_guards",
+          "bId": "ayyar",
+          "split": "7:3",
+          "mix": "7× + 3×",
+          "ra": 7,
+          "rb": 3,
+          "winPct": 85
+        },
+        {
+          "a": "Mubarizun",
+          "b": "War Elephants",
+          "aId": "mubarizun",
+          "bId": "war_elephant",
+          "split": "7:3",
+          "mix": "7× + 3×",
+          "ra": 7,
+          "rb": 3,
+          "winPct": 84
+        },
+        {
+          "a": "Varangian Guards",
+          "b": "Picchieri",
+          "aId": "varangian_guards",
+          "bId": "picchieri",
+          "split": "7:3",
+          "mix": "7× + 3×",
+          "ra": 7,
+          "rb": 3,
+          "winPct": 84
+        },
+        {
+          "a": "Varangian Guards",
+          "b": "Gakgung Archers",
+          "aId": "varangian_guards",
+          "bId": "gakgung_archers",
+          "split": "7:3",
+          "mix": "7× + 3×",
+          "ra": 7,
+          "rb": 3,
+          "winPct": 83
+        },
+        {
+          "a": "Mubarizun",
+          "b": "Ballista Elephants",
+          "aId": "mubarizun",
+          "bId": "ballista_elephant",
+          "split": "7:3",
+          "mix": "7× + 3×",
+          "ra": 7,
+          "rb": 3,
+          "winPct": 83
+        },
+        {
+          "a": "Varangian Guards",
+          "b": "Longbowmen",
+          "aId": "varangian_guards",
+          "bId": "longbowmen",
+          "split": "7:3",
+          "mix": "7× + 3×",
+          "ra": 7,
+          "rb": 3,
+          "winPct": 83
+        },
+        {
+          "a": "Handpicked Faithful",
+          "b": "Armored Horsemen",
+          "aId": "handpicked_faithful",
+          "bId": "armored_horsemen",
+          "split": "7:3",
+          "mix": "7× + 3×",
+          "ra": 7,
+          "rb": 3,
+          "winPct": 82
+        },
+        {
+          "a": "Varangian Guards",
+          "b": "Pikemen",
+          "aId": "varangian_guards",
+          "bId": "pikemen_unit",
+          "split": "7:3",
+          "mix": "7× + 3×",
+          "ra": 7,
+          "rb": 3,
+          "winPct": 82
+        },
+        {
+          "a": "Handpicked Faithful",
+          "b": "Mubarizun",
+          "aId": "handpicked_faithful",
+          "bId": "mubarizun",
+          "split": "7:3",
+          "mix": "7× + 3×",
+          "ra": 7,
+          "rb": 3,
+          "winPct": 81
+        },
+        {
+          "a": "Varangian Guards",
+          "b": "Paiks",
+          "aId": "varangian_guards",
+          "bId": "paiks",
+          "split": "7:3",
+          "mix": "7× + 3×",
+          "ra": 7,
+          "rb": 3,
+          "winPct": 81
+        },
+        {
+          "a": "Mubarizun",
+          "b": "Armored Horsemen",
+          "aId": "mubarizun",
+          "bId": "armored_horsemen",
+          "split": "7:3",
+          "mix": "7× + 3×",
+          "ra": 7,
+          "rb": 3,
+          "winPct": 80
+        },
+        {
+          "a": "Mountaineers",
+          "b": "War Elephants",
+          "aId": "mountaineer",
+          "bId": "war_elephant",
+          "split": "7:3",
+          "mix": "7× + 3×",
+          "ra": 7,
+          "rb": 3,
+          "winPct": 79
+        },
+        {
+          "a": "Varangian Guards",
+          "b": "Light Footmen",
+          "aId": "varangian_guards",
+          "bId": "light_footmen",
+          "split": "7:3",
+          "mix": "7× + 3×",
+          "ra": 7,
+          "rb": 3,
+          "winPct": 79
+        },
+        {
+          "a": "Mubarizun",
+          "b": "Picchieri",
+          "aId": "mubarizun",
+          "bId": "picchieri",
+          "split": "7:3",
+          "mix": "7× + 3×",
+          "ra": 7,
+          "rb": 3,
+          "winPct": 79
+        },
+        {
+          "a": "Mountaineers",
+          "b": "Ballista Elephants",
+          "aId": "mountaineer",
+          "bId": "ballista_elephant",
+          "split": "7:3",
+          "mix": "7× + 3×",
+          "ra": 7,
+          "rb": 3,
+          "winPct": 78
+        }
+      ],
+      "duosBeatingBest": 0
+    },
+    "recruit": {
+      "bestSingle": {
+        "id": "varangian_guards",
+        "name": "Varangian Guards",
+        "winPct": 93
+      },
+      "topSingles": [
+        {
+          "id": "varangian_guards",
+          "name": "Varangian Guards",
+          "winPct": 93
+        },
+        {
+          "id": "handpicked_faithful",
+          "name": "Handpicked Faithful",
+          "winPct": 92
+        },
+        {
+          "id": "gakgung_archers",
+          "name": "Gakgung Archers",
+          "winPct": 86
+        },
+        {
+          "id": "longbowmen",
+          "name": "Longbowmen",
+          "winPct": 86
+        },
+        {
+          "id": "burenjia",
+          "name": "Burenjia Infantry",
+          "winPct": 85
+        }
+      ],
+      "duos": [
+        {
+          "a": "Varangian Guards",
+          "b": "Longbowmen",
+          "aId": "varangian_guards",
+          "bId": "longbowmen",
+          "split": "60/40",
+          "mix": "8× + 6×",
+          "ra": 8,
+          "rb": 6,
+          "winPct": 92
+        },
+        {
+          "a": "Varangian Guards",
+          "b": "Gakgung Archers",
+          "aId": "varangian_guards",
+          "bId": "gakgung_archers",
+          "split": "60/40",
+          "mix": "8× + 6×",
+          "ra": 8,
+          "rb": 6,
+          "winPct": 92
+        },
+        {
+          "a": "Handpicked Faithful",
+          "b": "Gakgung Archers",
+          "aId": "handpicked_faithful",
+          "bId": "gakgung_archers",
+          "split": "70/30",
+          "mix": "10× + 4×",
+          "ra": 10,
+          "rb": 4,
+          "winPct": 90
+        },
+        {
+          "a": "Handpicked Faithful",
+          "b": "Longbowmen",
+          "aId": "handpicked_faithful",
+          "bId": "longbowmen",
+          "split": "70/30",
+          "mix": "10× + 4×",
+          "ra": 10,
+          "rb": 4,
+          "winPct": 90
+        },
+        {
+          "a": "Varangian Guards",
+          "b": "Paiks",
+          "aId": "varangian_guards",
+          "bId": "paiks",
+          "split": "60/40",
+          "mix": "8× + 6×",
+          "ra": 8,
+          "rb": 6,
+          "winPct": 88
+        },
+        {
+          "a": "Burenjia Infantry",
+          "b": "Longbowmen",
+          "aId": "burenjia",
+          "bId": "longbowmen",
+          "split": "60/40",
+          "mix": "8× + 6×",
+          "ra": 8,
+          "rb": 6,
+          "winPct": 87
+        },
+        {
+          "a": "Handpicked Faithful",
+          "b": "Paiks",
+          "aId": "handpicked_faithful",
+          "bId": "paiks",
+          "split": "70/30",
+          "mix": "10× + 4×",
+          "ra": 10,
+          "rb": 4,
+          "winPct": 87
+        },
+        {
+          "a": "Burenjia Infantry",
+          "b": "Gakgung Archers",
+          "aId": "burenjia",
+          "bId": "gakgung_archers",
+          "split": "60/40",
+          "mix": "8× + 6×",
+          "ra": 8,
+          "rb": 6,
+          "winPct": 87
+        },
+        {
+          "a": "Varangian Guards",
+          "b": "Picchieri",
+          "aId": "varangian_guards",
+          "bId": "picchieri",
+          "split": "70/30",
+          "mix": "9× + 3×",
+          "ra": 9,
+          "rb": 3,
+          "winPct": 87
+        },
+        {
+          "a": "Handpicked Faithful",
+          "b": "Picchieri",
+          "aId": "handpicked_faithful",
+          "bId": "picchieri",
+          "split": "70/30",
+          "mix": "10× + 3×",
+          "ra": 10,
+          "rb": 3,
+          "winPct": 86
+        },
+        {
+          "a": "Varangian Guards",
+          "b": "Handpicked Faithful",
+          "aId": "varangian_guards",
+          "bId": "handpicked_faithful",
+          "split": "30/70",
+          "mix": "4× + 10×",
+          "ra": 4,
+          "rb": 10,
+          "winPct": 86
+        },
+        {
+          "a": "Handpicked Faithful",
+          "b": "Burenjia Infantry",
+          "aId": "handpicked_faithful",
+          "bId": "burenjia",
+          "split": "70/30",
+          "mix": "10× + 4×",
+          "ra": 10,
+          "rb": 4,
+          "winPct": 85
+        },
+        {
+          "a": "Varangian Guards",
+          "b": "Pikemen",
+          "aId": "varangian_guards",
+          "bId": "pikemen_unit",
+          "split": "70/30",
+          "mix": "9× + 4×",
+          "ra": 9,
+          "rb": 4,
+          "winPct": 85
+        },
+        {
+          "a": "Varangian Guards",
+          "b": "Light Footmen",
+          "aId": "varangian_guards",
+          "bId": "light_footmen",
+          "split": "70/30",
+          "mix": "9× + 6×",
+          "ra": 9,
+          "rb": 6,
+          "winPct": 85
+        },
+        {
+          "a": "Handpicked Faithful",
+          "b": "Pikemen",
+          "aId": "handpicked_faithful",
+          "bId": "pikemen_unit",
+          "split": "70/30",
+          "mix": "10× + 4×",
+          "ra": 10,
+          "rb": 4,
+          "winPct": 85
+        },
+        {
+          "a": "Varangian Guards",
+          "b": "Bowmen",
+          "aId": "varangian_guards",
+          "bId": "bowmen",
+          "split": "70/30",
+          "mix": "9× + 5×",
+          "ra": 9,
+          "rb": 5,
+          "winPct": 85
+        },
+        {
+          "a": "Varangian Guards",
+          "b": "Burenjia Infantry",
+          "aId": "varangian_guards",
+          "bId": "burenjia",
+          "split": "70/30",
+          "mix": "9× + 4×",
+          "ra": 9,
+          "rb": 4,
+          "winPct": 85
+        },
+        {
+          "a": "Handpicked Faithful",
+          "b": "Light Footmen",
+          "aId": "handpicked_faithful",
+          "bId": "light_footmen",
+          "split": "70/30",
+          "mix": "10× + 6×",
+          "ra": 10,
+          "rb": 6,
+          "winPct": 85
+        },
+        {
+          "a": "Handpicked Faithful",
+          "b": "Bowmen",
+          "aId": "handpicked_faithful",
+          "bId": "bowmen",
+          "split": "70/30",
+          "mix": "10× + 5×",
+          "ra": 10,
+          "rb": 5,
+          "winPct": 84
+        },
+        {
+          "a": "Handpicked Faithful",
+          "b": "Ayyar",
+          "aId": "handpicked_faithful",
+          "bId": "ayyar",
+          "split": "70/30",
+          "mix": "10× + 4×",
+          "ra": 10,
+          "rb": 4,
+          "winPct": 84
+        },
+        {
+          "a": "Varangian Guards",
+          "b": "Ayyar",
+          "aId": "varangian_guards",
+          "bId": "ayyar",
+          "split": "70/30",
+          "mix": "9× + 4×",
+          "ra": 9,
+          "rb": 4,
+          "winPct": 84
+        },
+        {
+          "a": "Longbowmen",
+          "b": "Ayyar",
+          "aId": "longbowmen",
+          "bId": "ayyar",
+          "split": "40/60",
+          "mix": "6× + 8×",
+          "ra": 6,
+          "rb": 8,
+          "winPct": 84
+        },
+        {
+          "a": "Gakgung Archers",
+          "b": "Ayyar",
+          "aId": "gakgung_archers",
+          "bId": "ayyar",
+          "split": "40/60",
+          "mix": "6× + 8×",
+          "ra": 6,
+          "rb": 8,
+          "winPct": 84
+        },
+        {
+          "a": "Varangian Guards",
+          "b": "Mubarizun",
+          "aId": "varangian_guards",
+          "bId": "mubarizun",
+          "split": "70/30",
+          "mix": "9× + 2×",
+          "ra": 9,
+          "rb": 2,
+          "winPct": 83
+        }
+      ],
+      "duosBeatingBest": 0
+    },
+    "maintenance": {
+      "bestSingle": {
+        "id": "gakgung_archers",
+        "name": "Gakgung Archers",
+        "winPct": 89
+      },
+      "topSingles": [
+        {
+          "id": "gakgung_archers",
+          "name": "Gakgung Archers",
+          "winPct": 89
+        },
+        {
+          "id": "longbowmen",
+          "name": "Longbowmen",
+          "winPct": 89
+        },
+        {
+          "id": "varangian_guards",
+          "name": "Varangian Guards",
+          "winPct": 88
+        },
+        {
+          "id": "handpicked_faithful",
+          "name": "Handpicked Faithful",
+          "winPct": 86
+        },
+        {
+          "id": "burenjia",
+          "name": "Burenjia Infantry",
+          "winPct": 84
+        }
+      ],
+      "duos": [
+        {
+          "a": "Handpicked Faithful",
+          "b": "Longbowmen",
+          "aId": "handpicked_faithful",
+          "bId": "longbowmen",
+          "split": "30/70",
+          "mix": "5× + 14×",
+          "ra": 5,
+          "rb": 14,
+          "winPct": 89
+        },
+        {
+          "a": "Burenjia Infantry",
+          "b": "Gakgung Archers",
+          "aId": "burenjia",
+          "bId": "gakgung_archers",
+          "split": "30/70",
+          "mix": "5× + 14×",
+          "ra": 5,
+          "rb": 14,
+          "winPct": 89
+        },
+        {
+          "a": "Varangian Guards",
+          "b": "Gakgung Archers",
+          "aId": "varangian_guards",
+          "bId": "gakgung_archers",
+          "split": "40/60",
+          "mix": "6× + 12×",
+          "ra": 6,
+          "rb": 12,
+          "winPct": 89
+        },
+        {
+          "a": "Handpicked Faithful",
+          "b": "Gakgung Archers",
+          "aId": "handpicked_faithful",
+          "bId": "gakgung_archers",
+          "split": "30/70",
+          "mix": "5× + 14×",
+          "ra": 5,
+          "rb": 14,
+          "winPct": 89
+        },
+        {
+          "a": "Longbowmen",
+          "b": "Light Footmen",
+          "aId": "longbowmen",
+          "bId": "light_footmen",
+          "split": "70/30",
+          "mix": "14× + 10×",
+          "ra": 14,
+          "rb": 10,
+          "winPct": 89
+        },
+        {
+          "a": "Burenjia Infantry",
+          "b": "Longbowmen",
+          "aId": "burenjia",
+          "bId": "longbowmen",
+          "split": "30/70",
+          "mix": "5× + 14×",
+          "ra": 5,
+          "rb": 14,
+          "winPct": 89
+        },
+        {
+          "a": "Varangian Guards",
+          "b": "Longbowmen",
+          "aId": "varangian_guards",
+          "bId": "longbowmen",
+          "split": "40/60",
+          "mix": "6× + 12×",
+          "ra": 6,
+          "rb": 12,
+          "winPct": 88
+        },
+        {
+          "a": "Gakgung Archers",
+          "b": "Light Footmen",
+          "aId": "gakgung_archers",
+          "bId": "light_footmen",
+          "split": "70/30",
+          "mix": "14× + 10×",
+          "ra": 14,
+          "rb": 10,
+          "winPct": 88
+        },
+        {
+          "a": "Gakgung Archers",
+          "b": "Longbowmen",
+          "aId": "gakgung_archers",
+          "bId": "longbowmen",
+          "split": "70/30",
+          "mix": "14× + 6×",
+          "ra": 14,
+          "rb": 6,
+          "winPct": 86
+        },
+        {
+          "a": "Varangian Guards",
+          "b": "Paiks",
+          "aId": "varangian_guards",
+          "bId": "paiks",
+          "split": "60/40",
+          "mix": "9× + 9×",
+          "ra": 9,
+          "rb": 9,
+          "winPct": 86
+        },
+        {
+          "a": "Handpicked Faithful",
+          "b": "Paiks",
+          "aId": "handpicked_faithful",
+          "bId": "paiks",
+          "split": "60/40",
+          "mix": "10× + 9×",
+          "ra": 10,
+          "rb": 9,
+          "winPct": 85
+        },
+        {
+          "a": "Longbowmen",
+          "b": "Paiks",
+          "aId": "longbowmen",
+          "bId": "paiks",
+          "split": "60/40",
+          "mix": "12× + 9×",
+          "ra": 12,
+          "rb": 9,
+          "winPct": 84
+        },
+        {
+          "a": "Gakgung Archers",
+          "b": "Paiks",
+          "aId": "gakgung_archers",
+          "bId": "paiks",
+          "split": "60/40",
+          "mix": "12× + 9×",
+          "ra": 12,
+          "rb": 9,
+          "winPct": 84
+        },
+        {
+          "a": "Burenjia Infantry",
+          "b": "Paiks",
+          "aId": "burenjia",
+          "bId": "paiks",
+          "split": "60/40",
+          "mix": "10× + 9×",
+          "ra": 10,
+          "rb": 9,
+          "winPct": 84
+        },
+        {
+          "a": "Gakgung Archers",
+          "b": "Ayyar",
+          "aId": "gakgung_archers",
+          "bId": "ayyar",
+          "split": "70/30",
+          "mix": "14× + 4×",
+          "ra": 14,
+          "rb": 4,
+          "winPct": 84
+        },
+        {
+          "a": "Longbowmen",
+          "b": "Ayyar",
+          "aId": "longbowmen",
+          "bId": "ayyar",
+          "split": "70/30",
+          "mix": "14× + 4×",
+          "ra": 14,
+          "rb": 4,
+          "winPct": 84
+        },
+        {
+          "a": "Varangian Guards",
+          "b": "Light Footmen",
+          "aId": "varangian_guards",
+          "bId": "light_footmen",
+          "split": "70/30",
+          "mix": "10× + 10×",
+          "ra": 10,
+          "rb": 10,
+          "winPct": 83
+        },
+        {
+          "a": "Longbowmen",
+          "b": "Pikemen",
+          "aId": "longbowmen",
+          "bId": "pikemen_unit",
+          "split": "70/30",
+          "mix": "14× + 5×",
+          "ra": 14,
+          "rb": 5,
+          "winPct": 83
+        },
+        {
+          "a": "Gakgung Archers",
+          "b": "Mubarizun",
+          "aId": "gakgung_archers",
+          "bId": "mubarizun",
+          "split": "70/30",
+          "mix": "14× + 3×",
+          "ra": 14,
+          "rb": 3,
+          "winPct": 83
+        },
+        {
+          "a": "Gakgung Archers",
+          "b": "Pikemen",
+          "aId": "gakgung_archers",
+          "bId": "pikemen_unit",
+          "split": "70/30",
+          "mix": "14× + 5×",
+          "ra": 14,
+          "rb": 5,
+          "winPct": 82
+        },
+        {
+          "a": "Longbowmen",
+          "b": "Mubarizun",
+          "aId": "longbowmen",
+          "bId": "mubarizun",
+          "split": "70/30",
+          "mix": "14× + 3×",
+          "ra": 14,
+          "rb": 3,
+          "winPct": 82
+        },
+        {
+          "a": "Longbowmen",
+          "b": "Bowmen",
+          "aId": "longbowmen",
+          "bId": "bowmen",
+          "split": "70/30",
+          "mix": "14× + 7×",
+          "ra": 14,
+          "rb": 7,
+          "winPct": 82
+        },
+        {
+          "a": "Longbowmen",
+          "b": "Mountaineers",
+          "aId": "longbowmen",
+          "bId": "mountaineer",
+          "split": "70/30",
+          "mix": "14× + 3×",
+          "ra": 14,
+          "rb": 3,
+          "winPct": 81
+        },
+        {
+          "a": "Varangian Guards",
+          "b": "Bowmen",
+          "aId": "varangian_guards",
+          "bId": "bowmen",
+          "split": "60/40",
+          "mix": "9× + 10×",
+          "ra": 9,
+          "rb": 10,
+          "winPct": 81
+        }
+      ],
+      "duosBeatingBest": 0
+    }
+  }
+}

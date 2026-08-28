@@ -2,7 +2,7 @@
 # Data source: the ck3ref mirror; set CK3REF_DIR if it is not at the default
 # Dropbox location (see scripts/sync.sh).
 
-.PHONY: patch sync version data art audit changelog build check
+.PHONY: patch sync version data art audit changelog build check compositions
 
 patch: sync version data art audit changelog build check
 
@@ -69,6 +69,10 @@ data:
 
 art:
 	@python3 scripts/build_art.py
+
+# Heavy two-unit composition search (~4 min); run on demand, not part of `data`.
+compositions:
+	@mkdir -p .cache && npx --no-install esbuild scripts/build_compositions.ts --bundle --platform=node --format=esm --outfile=.cache/build_compositions.mjs --log-level=error && node .cache/build_compositions.mjs
 
 audit:
 	@python3 scripts/audit.py

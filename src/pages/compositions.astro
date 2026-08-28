@@ -1,0 +1,116 @@
+---
+import Base from '../layouts/Base.astro';
+import comps from '../data/compositions.json';
+
+const meta = comps.meta as any;
+const lists = comps.lists as Record<string, any>;
+const BASES = [
+  { key: 'regiments', label: 'Per regiment', blurb: `${meta.equalRegiments} regiment slots split between the two types.` },
+  { key: 'recruit', label: 'Per recruitment gold', blurb: `${meta.recruitCap} gold split between the two types.` },
+  { key: 'maintenance', label: 'Per upkeep gold', blurb: `${meta.maintCap} gold/month split between the two types.` },
+];
+---
+<Base
+  title="Two-Unit Armies"
+  active="compositions"
+  lede="Does mixing two men-at-arms types beat spamming one? We searched every pair from an archetype-diverse pool (top units plus the highest-damage, highest-toughness, and canonical counter units) at five split ratios, scoring each mix by its win rate against the whole single-type roster on the average map — the same measure as the Tier List. Short answer: no. The best mixes only tie the best single type; none beat it."
+  stats={[
+    { value: meta.candidates.length, label: 'pool units' },
+    { value: '0', label: 'mixes that win' },
+    { value: '3', label: 'budgets' },
+  ]}
+>
+  <div class="tabs" role="tablist">
+    {BASES.map((b, i) => (
+      <button class:list={['ttab', { active: i === 0 }]} data-list={b.key}>{b.label}</button>
+    ))}
+  </div>
+
+  {BASES.map((b, i) => {
+    const L = lists[b.key];
+    return (
+      <section class:list={['comp', { hidden: i !== 0 }]} data-list={b.key}>
+        <div class="verdict">
+          <div class="vcard best">
+            <div class="vlabel">Best single type</div>
+            <div class="vname">{L.bestSingle.name}</div>
+            <div class="vwin">{L.bestSingle.winPct}% <span class="subtle">of the field</span></div>
+          </div>
+          <div class="vs">vs</div>
+          <div class="vcard duo">
+            <div class="vlabel">Best two-unit mix</div>
+            <div class="vname">{L.duos[0].a} + {L.duos[0].b}</div>
+            <div class="vwin">{L.duos[0].winPct}% <span class="subtle">({L.duos[0].mix})</span></div>
+          </div>
+          <div class="vgap">
+            {L.duos[0].winPct - L.bestSingle.winPct >= 0
+              ? <span class="tie">mix {L.duos[0].winPct - L.bestSingle.winPct === 0 ? 'ties' : `+${L.duos[0].winPct - L.bestSingle.winPct}%`}</span>
+              : <span class="lose">mix {L.duos[0].winPct - L.bestSingle.winPct}%</span>}
+            <div class="subtle">{L.duosBeatingBest} of {24} shown beat the best single</div>
+          </div>
+        </div>
+        <p class="blurb subtle">{b.blurb} Each row is a pair at its best split; win % is against all 78 single-type armies, average map, both roles.</p>
+        <table class="ntbl duos">
+          <thead><tr><th class="num">#</th><th>Two-unit mix</th><th>Split</th><th class="num">Win %</th><th class="num">vs best single</th></tr></thead>
+          <tbody>
+            {L.duos.slice(0, 14).map((d: any, idx: number) => {
+              const delta = d.winPct - L.bestSingle.winPct;
+              return (
+                <tr>
+                  <td class="num subtle">{idx + 1}</td>
+                  <td>{d.a} <span class="plus">+</span> {d.b}</td>
+                  <td class="subtle">{d.mix}</td>
+                  <td class="num">{d.winPct}%</td>
+                  <td class="num" style={`color:${delta > 0 ? 'var(--good)' : delta === 0 ? 'var(--dim)' : 'var(--bad)'}`}>{delta > 0 ? `+${delta}` : delta}</td>
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
+      </section>
+    );
+  })}
+
+  <p class="legend subtle">
+    <strong>Why mixing doesn't win.</strong> CK3's top men-at-arms are strong generalists — the best ones
+    (elite heavy infantry, strong archers) hit hard <em>and</em> survive, so there's no weakness for a second
+    unit to patch, and diluting them only lowers the average. The engine reinforces this: each regiment takes
+    casualties divided by <em>its own</em> toughness, so a fragile unit mixed in is just a fragile unit — it
+    isn't shielded by the tanky one beside it. Combined-arms coverage (pikes for cavalry, archers for
+    skirmishers) helps against a specific counter, but across the whole field the single best type already wins
+    most matchups. The takeaway matches how CK3 is usually played: pick one elite men-at-arms and stack it.
+    Method: expected-value battles (no random rolls); a coin-flip resolves the same each time, so these
+    capture systematic strength, not variance.
+  </p>
+
+  <script>
+    const tabs = Array.from(document.querySelectorAll<HTMLElement>('.ttab'));
+    const secs = Array.from(document.querySelectorAll<HTMLElement>('.comp'));
+    for (const tab of tabs) tab.addEventListener('click', () => {
+      for (const t of tabs) t.classList.toggle('active', t === tab);
+      for (const s of secs) s.classList.toggle('hidden', s.dataset.list !== tab.dataset.list);
+    });
+  </script>
+
+  <style>
+    .tabs { display: flex; gap: 0.4rem; flex-wrap: wrap; margin-bottom: 1.1rem; border-bottom: 1px solid var(--line); padding-bottom: 0.6rem; }
+    .ttab { background: var(--panel); color: var(--dim); border: 1px solid var(--line); border-radius: var(--r); padding: 0.35rem 0.8rem; cursor: pointer; font: 0.85rem var(--font-ui); }
+    .ttab:hover { color: var(--brass-bright); border-color: var(--brass); }
+    .ttab.active { background: var(--rubric); color: var(--vellum); border-color: var(--rubric); }
+    .comp.hidden { display: none; }
+    .verdict { display: flex; gap: 1rem; align-items: stretch; flex-wrap: wrap; margin-bottom: 1rem; }
+    .vcard { flex: 1 1 12rem; background: var(--panel); border: 1px solid var(--line); border-radius: var(--r); padding: 0.7rem 0.9rem; }
+    .vcard.best { border-color: var(--brass); }
+    .vcard.duo { border-color: var(--line); }
+    .vlabel { color: var(--dim); font-size: 0.72rem; text-transform: none; }
+    .vname { color: var(--vellum); font-size: 1.05rem; margin: 0.2rem 0; }
+    .vwin { color: var(--brass-bright); font-family: var(--font-mono); font-size: 0.9rem; }
+    .vs { align-self: center; color: var(--dim); font-style: italic; }
+    .vgap { align-self: center; }
+    .vgap .tie { color: var(--dim); font-family: var(--font-mono); } .vgap .lose { color: var(--bad); font-family: var(--font-mono); }
+    .blurb { margin: 0 0 0.7rem; font-size: 0.82rem; }
+    .plus { color: var(--brass); }
+    .duos td, .duos th { padding: 0.3rem 0.7rem; }
+    .legend { font-size: 0.8rem; line-height: 1.6; margin-top: 1.4rem; max-width: 72ch; }
+  </style>
+</Base>

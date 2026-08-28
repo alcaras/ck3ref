@@ -97,4 +97,5 @@ export const TABS: Tab[] = [
   { slug: 'battle-simulator', label: 'Battle Simulator', section: 'Tools', status: 'built', summary: 'Sim battles between retinues + levies on any terrain — decompiled combat math.' },
   { slug: 'matchup-matrix', label: 'Matchup Matrix', section: 'Tools', status: 'built', summary: 'Every troop type vs every other, equal regiments — who beats whom.' },
   { slug: 'tier-list', label: 'Tier List', section: 'Tools', status: 'built', summary: 'Troop types ranked S–D by regiment, recruit cost, and upkeep.' },
+  { slug: 'compositions', label: 'Two-Unit Armies', section: 'Tools', status: 'built', summary: 'Do mixed armies beat single-type spam? (Short answer: no.)' },
 ];
