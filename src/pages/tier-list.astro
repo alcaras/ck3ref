@@ -1,109 +1,113 @@
 ---
 import Base from '../layouts/Base.astro';
 import tiers from '../data/tiers.json';
-import { getEntity } from '../lib/entities';
 
 const meta = tiers.meta as any;
-const lists = tiers.lists as Record<string, any[]>;
-
-const LISTS = [
+const eras = (meta.eras as string[]).map((k) => ({
+  id: k, name: k.replace('culture_era_', '').replace(/_/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase()),
+}));
+const BASES = [
   { key: 'overall', label: 'Overall', blurb: 'Average of the three bases below — good however you measure it.' },
   { key: 'regiments', label: 'Per regiment', blurb: `${meta.equalRegiments} regiments each — raw strength for one men-at-arms slot.` },
   { key: 'recruit', label: 'Per recruitment gold', blurb: `As many regiments as ${meta.recruitCap} gold buys — up-front cost efficiency.` },
   { key: 'maintenance', label: 'Per upkeep gold', blurb: `As many regiments as ${meta.maintCap} gold/month sustains — standing-army efficiency.` },
 ];
-const TIERS = ['S', 'A', 'B', 'C', 'D'] as const;
-const typeName = (t: string) => getEntity(`maa_type_${t}`)?.name ?? t.replace(/_/g, ' ');
-
-// group each list by tier, preserving score order
-const grouped: Record<string, Record<string, any[]>> = {};
-for (const { key } of LISTS) {
-  grouped[key] = Object.fromEntries(TIERS.map((t) => [t, [] as any[]]));
-  for (const u of lists[key]) grouped[key][u.tier].push(u);
-}
 ---
 <Base
   title="Men-at-Arms Tier List"
   active="tier-list"
-  lede="Every kingdom-recruitable troop type, ranked S to D by how it fares against the whole roster — mono-type armies fought on the average CK3 map (province-weighted terrain, 50/50 attacking and defending), late-medieval era. Four rankings, because the answer changes with how you count: one regiment slot, a recruitment budget, or a monthly upkeep budget. Expensive elites win per slot; cheap troops win per gold."
+  lede="Every normally-recruitable troop type, ranked S to D by how it fares against the whole roster — mono-type armies fought on the average CK3 map (province-weighted terrain, 50/50 attacking and defending). Pick an era: units appear only once their innovation/tradition unlocks them, and their stats scale with era (longbowmen go 20→50 damage). Four rankings — one regiment slot, a recruitment budget, or a monthly upkeep budget."
   stats={[
-    { value: meta.units, label: 'troop types' },
+    { value: eras.length, label: 'eras' },
     { value: '4', label: 'rankings' },
     { value: 'S–D', label: 'tiers' },
   ]}
 >
-  <div class="tabs" role="tablist">
-    {LISTS.map((l, i) => (
-      <button class:list={['ttab', { active: i === 0 }]} data-list={l.key}>{l.label}</button>
-    ))}
+  <div class="ctrls">
+    <label>Era
+      <select id="era">
+        {eras.map((e) => <option value={e.id} selected={e.id === 'culture_era_late_medieval'}>{e.name}</option>)}
+      </select>
+    </label>
+    <div class="tabs" role="tablist">
+      {BASES.map((b, i) => <button class:list={['ttab', { active: i === 0 }]} data-basis={b.key}>{b.label}</button>)}
+    </div>
   </div>
 
-  {LISTS.map((l, i) => (
-    <section class:list={['tierlist', { hidden: i !== 0 }]} data-list={l.key}>
-      <p class="blurb subtle">{l.blurb}</p>
-      <div class="tiers">
-        {TIERS.map((t) => (
-          <div class:list={['tierrow', `t-${t}`]}>
-            <div class="tlabel">{t}</div>
-            <div class="tunits">
-              {grouped[l.key][t].length === 0 && <span class="empty subtle">—</span>}
-              {grouped[l.key][t].map((u) => (
-                <span class="unit" title={`${u.name} — ${typeName(u.type)} · beats ${u.winPct}% of the field${u.regiments ? ` · ${u.regiments} regiments (${u.stack} men each)` : ''} · recruit ${u.buy}g, upkeep ${u.maint}g/mo`}>
-                  <span class="uname">{u.name}</span>
-                  <span class="uwin">{u.winPct}%</span>
-                  {u.regiments && <span class="ureg">×{u.regiments}</span>}
-                </span>
-              ))}
-            </div>
-          </div>
-        ))}
-      </div>
-    </section>
-  ))}
+  <p class="blurb subtle" id="blurb"></p>
+  <div class="tiers" id="tiers"></div>
 
   <p class="legend subtle">
-    Score = the share of the roster a unit beats, averaged over every terrain (weighted by how
-    common it is on the map) and over both roles (attacking and defending), using the same
-    decompiled combat engine as the <a href={`${import.meta.env.BASE_URL.replace(/\/$/, '')}/battle-simulator`}>Battle Simulator</a>.
-    Tiers are rank bands within each list, so S is always the top ~12%; the % on each chip is the
-    real win rate, and <strong>×N</strong> is how many regiments that unit fields under the budget.
-    Caps: <strong>{meta.recruitCap} gold</strong> to recruit, <strong>{meta.maintCap} gold/month</strong> upkeep —
-    picked from the roster's cost spread. Single-regiment accolade units and siege weapons are excluded.
-    This is troop-vs-troop efficiency, not whole-army tactics: a real army mixes types, and combat
-    width caps how many fight at once.
+    Score = the share of the era's roster a unit beats, averaged over every terrain (weighted by how common it
+    is on the map) and both roles (attacking and defending), using the same decompiled engine as the
+    <a href={`${import.meta.env.BASE_URL.replace(/\/$/, '')}/battle-simulator`}>Battle Simulator</a>. Tiers are
+    rank bands within each list, so S is always the top ~12%; the % on each chip is the real win rate,
+    <strong>×N</strong> is the regiments that budget fields, and each unit links to its detail page (how to
+    unlock it, stat progression, raw definition). Single-regiment accolade units, siege weapons, and units a
+    normal feudal kingdom can't field (holy-order, decision-, or domicile-locked) are excluded.
   </p>
 
   <script>
-    const tabs = Array.from(document.querySelectorAll<HTMLElement>('.ttab'));
-    const lists = Array.from(document.querySelectorAll<HTMLElement>('.tierlist'));
-    for (const tab of tabs) {
+    import data from '../data/tiers.json';
+    const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+    const byEra = (data as any).byEra;
+    const TIERS = ['S', 'A', 'B', 'C', 'D'];
+    const BLURB: Record<string, string> = {
+      overall: 'Average of the three bases — good however you measure it.',
+      regiments: `${(data as any).meta.equalRegiments} regiments each — raw strength for one men-at-arms slot.`,
+      recruit: `As many regiments as ${(data as any).meta.recruitCap} gold buys — up-front cost efficiency.`,
+      maintenance: `As many regiments as ${(data as any).meta.maintCap} gold/month sustains — standing-army efficiency.`,
+    };
+    const $ = (s: string) => document.querySelector(s) as HTMLElement;
+
+    function render() {
+      const era = ($('#era') as HTMLSelectElement).value;
+      const basis = (document.querySelector('.ttab.active') as HTMLElement).dataset.basis!;
+      $('#blurb').textContent = BLURB[basis];
+      const list = byEra[era][basis] as any[];
+      const groups: Record<string, any[]> = Object.fromEntries(TIERS.map((t) => [t, []]));
+      for (const u of list) groups[u.tier].push(u);
+      $('#tiers').innerHTML = TIERS.map((t) => {
+        const chips = groups[t].length
+          ? groups[t].map((u) =>
+              `<a class="unit" href="${base}/men-at-arms/${u.id}" title="${u.name} — beats ${u.winPct}% of the field${u.regiments ? ` · ${u.regiments} regiments` : ''}">` +
+              `<span class="uname">${u.name}</span><span class="uwin">${u.winPct}%</span>${u.regiments ? `<span class="ureg">×${u.regiments}</span>` : ''}</a>`).join('')
+          : '<span class="empty subtle">—</span>';
+        return `<div class="tierrow t-${t}"><div class="tlabel">${t}</div><div class="tunits">${chips}</div></div>`;
+      }).join('');
+    }
+
+    for (const tab of document.querySelectorAll<HTMLElement>('.ttab')) {
       tab.addEventListener('click', () => {
-        const key = tab.dataset.list;
-        for (const t of tabs) t.classList.toggle('active', t === tab);
-        for (const l of lists) l.classList.toggle('hidden', l.dataset.list !== key);
+        for (const t of document.querySelectorAll('.ttab')) t.classList.toggle('active', t === tab);
+        render();
       });
     }
+    $('#era').addEventListener('input', render);
+    render();
   </script>
 
   <style>
-    .tabs { display: flex; gap: 0.4rem; flex-wrap: wrap; margin-bottom: 1rem; border-bottom: 1px solid var(--line); padding-bottom: 0.6rem; }
+    .ctrls { display: flex; gap: 1.2rem; align-items: center; flex-wrap: wrap; margin-bottom: 1rem; border-bottom: 1px solid var(--line); padding-bottom: 0.7rem; }
+    .ctrls > label { color: var(--dim); font-size: 0.8rem; display: flex; gap: 0.4rem; align-items: center; }
+    select { background: var(--ink); color: var(--vellum); border: 1px solid var(--line); border-radius: var(--r); padding: 0.3rem 0.5rem; font: 0.85rem var(--font-ui); }
+    .tabs { display: flex; gap: 0.4rem; flex-wrap: wrap; }
     .ttab { background: var(--panel); color: var(--dim); border: 1px solid var(--line); border-radius: var(--r); padding: 0.35rem 0.8rem; cursor: pointer; font: 0.85rem var(--font-ui); }
     .ttab:hover { color: var(--brass-bright); border-color: var(--brass); }
     .ttab.active { background: var(--rubric); color: var(--vellum); border-color: var(--rubric); }
-    .tierlist.hidden { display: none; }
     .blurb { margin: 0 0 0.9rem; font-size: 0.85rem; }
     .tiers { display: flex; flex-direction: column; gap: 0.4rem; }
     .tierrow { display: flex; gap: 0.6rem; align-items: stretch; }
     .tlabel { flex: 0 0 2.6rem; display: flex; align-items: center; justify-content: center; font-family: var(--font-mono); font-weight: 700; font-size: 1.1rem; border-radius: var(--r); color: var(--ink); }
     .t-S .tlabel { background: #d3ac63; } .t-A .tlabel { background: #b6905a; }
-    .t-B .tlabel { background: #9aa06a; } .t-C .tlabel { background: #8a8172; }
-    .t-D .tlabel { background: #a06a5a; }
+    .t-B .tlabel { background: #9aa06a; } .t-C .tlabel { background: #8a8172; } .t-D .tlabel { background: #a06a5a; }
     .tunits { flex: 1; display: flex; flex-wrap: wrap; gap: 0.35rem; align-content: flex-start; padding: 0.3rem; background: var(--panel); border: 1px solid var(--line-soft); border-radius: var(--r); min-height: 2.2rem; }
-    .unit { display: inline-flex; align-items: baseline; gap: 0.3rem; background: var(--panel-2); border: 1px solid var(--line); border-radius: var(--r); padding: 0.2rem 0.5rem; font-size: 0.8rem; }
+    .unit { display: inline-flex; align-items: baseline; gap: 0.3rem; background: var(--panel-2); border: 1px solid var(--line); border-radius: var(--r); padding: 0.2rem 0.5rem; font-size: 0.8rem; border-bottom: 1px solid var(--line); }
+    .unit:hover { border-color: var(--brass); }
     .uname { color: var(--vellum); }
     .uwin { color: var(--brass); font-family: var(--font-mono); font-size: 0.72rem; }
     .ureg { color: var(--dim); font-family: var(--font-mono); font-size: 0.68rem; }
     .empty { padding: 0.2rem 0.4rem; }
-    .legend { font-size: 0.8rem; line-height: 1.55; margin-top: 1.4rem; max-width: 70ch; }
+    .legend { font-size: 0.8rem; line-height: 1.55; margin-top: 1.4rem; max-width: 72ch; }
   </style>
 </Base>

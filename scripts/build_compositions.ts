@@ -41,7 +41,7 @@ const twoUnitArmy = (a: U, ra: number, b: U, rb: number): ArmySpec =>
 
 // archetype-diverse candidate pool: top generalists + stat extremes + canonical counter units
 const CANON = ['pikemen_unit', 'light_footmen', 'armored_horsemen', 'bowmen'];
-const topOverall = (tiers as any).lists.overall.slice(0, 10).map((r: any) => r.id);
+const topOverall = (tiers as any).byEra[ERA].overall.slice(0, 10).map((r: any) => r.id);
 const maxDmg = units.reduce((x, y) => (y.dmg > x.dmg ? y : x)).id;
 const maxTough = units.reduce((x, y) => (y.tough > x.tough ? y : x)).id;
 const candidates = [...new Set([...topOverall, maxDmg, maxTough, ...CANON])].filter((id) => byId.has(id));

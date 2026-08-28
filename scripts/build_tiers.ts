@@ -15,21 +15,24 @@ import { writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { mapWeightedWinFraction } from '../src/lib/combat/run.ts';
 import maa from '../src/data/maa.json' with { type: 'json' };
+import details from '../src/data/unit_details.json' with { type: 'json' };
 import type { ArmySpec, BattleSetup } from '../src/lib/combat/types.ts';
 
-const ERA = 'culture_era_late_medieval';
+const ERAS = ['culture_era_tribal', 'culture_era_early_medieval', 'culture_era_high_medieval', 'culture_era_late_medieval'];
+const ERA_RANK = Object.fromEntries(ERAS.map((e, i) => [e, i]));
 const RECRUIT_CAP = 1000; // gold — fields 2–24 regiments across the roster
 const MAINT_CAP = 15; // gold/month — fields 4–37 regiments
 const EQUAL_REGIMENTS = 10;
 
-type Unit = { id: string; name: string; type: string; stack: number; buy: number; maint: number };
+type Unit = { id: string; name: string; type: string; stack: number; buy: number; maint: number; unlockEra: string };
 
-const units: Unit[] = (maa as any[])
+const allUnits: Unit[] = (maa as any[])
   .filter((m) => !m.specialRecruitOnly && !m.specialAccess && m.maxRegiments !== 1 && m.type !== 'siege_weapon')
   .map((m) => ({
     id: m.id, name: m.name, type: m.type, stack: m.stack ?? 100,
     buy: typeof m.buyCost?.gold === 'number' ? m.buyCost.gold : NaN,
     maint: typeof m.highMaintenance?.gold === 'number' ? m.highMaintenance.gold : NaN,
+    unlockEra: (details as any)[m.id]?.unlockEra ?? 'culture_era_tribal',
   }))
   .filter((u) => Number.isFinite(u.buy) && Number.isFinite(u.maint));
 
@@ -40,17 +43,17 @@ const BASES = {
 } as const;
 type BasisKey = keyof typeof BASES;
 
-const army = (u: Unit, regs: number): ArmySpec =>
-  ({ regiments: [{ typeId: u.id, men: regs * u.stack }], levies: 0, knights: [], era: ERA });
+const army = (u: Unit, regs: number, era: string): ArmySpec =>
+  ({ regiments: [{ typeId: u.id, men: regs * u.stack }], levies: 0, knights: [], era });
 
-function scoresFor(basis: BasisKey) {
+function scoresFor(units: Unit[], basis: BasisKey, era: string) {
   const regCount = new Map(units.map((u) => [u.id, BASES[basis](u)]));
   const score = new Map<string, number>();
   for (const a of units) {
     let sum = 0, n = 0;
     for (const b of units) {
       if (a.id === b.id) continue;
-      const setup: BattleSetup = { attacker: army(a, regCount.get(a.id)!), defender: army(b, regCount.get(b.id)!), terrainId: 'plains' };
+      const setup: BattleSetup = { attacker: army(a, regCount.get(a.id)!, era), defender: army(b, regCount.get(b.id)!, era), terrainId: 'plains' };
       sum += mapWeightedWinFraction(setup); // average-terrain, role-blended
       n++;
     }
@@ -71,21 +74,7 @@ function tierByRank(rank0: number, count: number): 'S' | 'A' | 'B' | 'C' | 'D' {
   return 'D';
 }
 
-const t0 = Date.now();
-const perBasis: Record<string, { score: Map<string, number>; regCount: Map<string, number> }> = {};
-for (const basis of Object.keys(BASES) as BasisKey[]) {
-  process.stderr.write(`  computing basis "${basis}"…\n`);
-  perBasis[basis] = scoresFor(basis);
-}
-
-// overall = mean of the three basis scores
-const overall = new Map<string, number>();
-for (const u of units) {
-  const s = (Object.keys(BASES) as BasisKey[]).map((k) => perBasis[k].score.get(u.id)!);
-  overall.set(u.id, s.reduce((x, y) => x + y, 0) / s.length);
-}
-
-function listFor(scoreMap: Map<string, number>, regCount?: Map<string, number>) {
+function listFor(units: Unit[], scoreMap: Map<string, number>, regCount?: Map<string, number>) {
   const sorted = units
     .map((u) => ({
       id: u.id, name: u.name, type: u.type, stack: u.stack, buy: u.buy, maint: u.maint,
@@ -97,28 +86,41 @@ function listFor(scoreMap: Map<string, number>, regCount?: Map<string, number>) 
   return sorted.map((u, i) => ({ ...u, tier: tierByRank(i, sorted.length) }));
 }
 
+const t0 = Date.now();
+// One tier list per era: only units available by that era, fought at that era's stats.
+const byEra: Record<string, any> = {};
+for (const era of ERAS) {
+  const units = allUnits.filter((u) => ERA_RANK[u.unlockEra] <= ERA_RANK[era]);
+  process.stderr.write(`era ${era} (${units.length} units)…\n`);
+  const perBasis: Record<string, { score: Map<string, number>; regCount: Map<string, number> }> = {};
+  for (const basis of Object.keys(BASES) as BasisKey[]) perBasis[basis] = scoresFor(units, basis, era);
+  const overall = new Map<string, number>();
+  for (const u of units) {
+    const s = (Object.keys(BASES) as BasisKey[]).map((k) => perBasis[k].score.get(u.id)!);
+    overall.set(u.id, s.reduce((x, y) => x + y, 0) / s.length);
+  }
+  byEra[era] = {
+    units: units.length,
+    overall: listFor(units, overall),
+    regiments: listFor(units, perBasis.regiments.score, perBasis.regiments.regCount),
+    recruit: listFor(units, perBasis.recruit.score, perBasis.recruit.regCount),
+    maintenance: listFor(units, perBasis.maintenance.score, perBasis.maintenance.regCount),
+  };
+}
+
 const data = {
   meta: {
-    era: ERA, recruitCap: RECRUIT_CAP, maintCap: MAINT_CAP, equalRegiments: EQUAL_REGIMENTS,
-    units: units.length,
-    metric: 'mean win fraction vs the whole roster, average-terrain (province-weighted) and 50/50 attack/defend',
-    provenance: 'engine:src/lib/combat (decompiled main phase) · stack/cost from maa.json · terrain weights from province_terrain',
+    eras: ERAS, recruitCap: RECRUIT_CAP, maintCap: MAINT_CAP, equalRegiments: EQUAL_REGIMENTS,
+    metric: 'mean win fraction vs the era\'s roster, average-terrain (province-weighted) and 50/50 attack/defend',
+    provenance: 'engine:src/lib/combat (decompiled main phase) · stack/cost/era from maa.json + combat_sim.json · unlock era from unit_details.json',
   },
-  lists: {
-    overall: listFor(overall),
-    regiments: listFor(perBasis.regiments.score, perBasis.regiments.regCount),
-    recruit: listFor(perBasis.recruit.score, perBasis.recruit.regCount),
-    maintenance: listFor(perBasis.maintenance.score, perBasis.maintenance.regCount),
-  },
+  byEra,
 };
 
 const outDir = join(process.cwd(), 'src', 'data');
 writeFileSync(join(outDir, 'tiers.json'), JSON.stringify(data, null, 2) + '\n');
-process.stderr.write(`✓ wrote src/data/tiers.json — ${units.length} units, 4 lists — ${((Date.now() - t0) / 1000).toFixed(1)}s\n`);
-
-// quick distribution to stderr for calibration
-for (const [k, l] of Object.entries(data.lists)) {
-  const counts: Record<string, number> = { S: 0, A: 0, B: 0, C: 0, D: 0 };
-  for (const u of l) counts[u.tier]++;
-  process.stderr.write(`  ${k.padEnd(12)} S${counts.S} A${counts.A} B${counts.B} C${counts.C} D${counts.D}  (top: ${l[0].name} ${l[0].winPct}%, bottom: ${l[l.length - 1].name} ${l[l.length - 1].winPct}%)\n`);
+process.stderr.write(`✓ wrote src/data/tiers.json — ${ERAS.length} eras — ${((Date.now() - t0) / 1000).toFixed(1)}s\n`);
+for (const era of ERAS) {
+  const l = byEra[era].overall;
+  process.stderr.write(`  ${era.replace('culture_era_', '').padEnd(14)} ${byEra[era].units}u · top: ${l[0].name} ${l[0].winPct}%\n`);
 }
