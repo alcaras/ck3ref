@@ -85,18 +85,24 @@ const totalMen = (regs: LiveRegiment[]) => regs.reduce((a, r) => a + r.men, 0);
 
 // --- counter multiplier per receiving archetype (U5) ----------------------------------------
 function counterMultipliers(attacker: LiveRegiment[], defender: LiveRegiment[]): Record<string, number> {
-  // counter_power against archetype A = Σ over attacker regiments (men * counter_value_vs_A)
+  // Countering is measured in CHUNKS (men / stack), not raw men — confirmed in the binary
+  // (FUN_1423d2b90 returns men/stack). This matters because stack varies by type (100 for
+  // most, 50 heavy cavalry, 25 elephants); using raw men over-counters low-stack units by
+  // 100/stack (2x heavy cav, 4x elephants). counter_power against archetype A =
+  // Σ over attacker regiments (chunks * counter_value_vs_A).
   const power: Record<string, number> = {};
   for (const a of attacker) {
+    const chunks = fxDiv(a.men, toFx(a.stack));
     for (const [arch, cv] of Object.entries(a.counters)) {
-      power[arch] = (power[arch] ?? 0) + fxMul(a.men, toFx(cv));
+      power[arch] = (power[arch] ?? 0) + fxMul(chunks, toFx(cv));
     }
   }
   const mult: Record<string, number> = {};
   for (const d of defender) {
     const cp = power[d.baseType];
     if (!cp || d.men <= 0) { mult[d.typeId] = FX; continue; }
-    const ratio = fxDiv(cp, d.men); // counter_power / own_men
+    const ownChunks = fxDiv(d.men, toFx(d.stack));
+    const ratio = fxDiv(cp, ownChunks); // counter_power(chunks) / own_strength(chunks)
     const norm = fxMin(fxDiv(ratio, toFx(D.RATIO_FOR_MAX_COUNTER)), FX); // min(ratio/2, 1)
     const penalty = fxMul(norm, toFx(D.MEN_AT_ARMS_MAX_COUNTER)); // * 0.9
     mult[d.typeId] = FX - penalty; // 1 - penalty
