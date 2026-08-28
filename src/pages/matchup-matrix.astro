@@ -3,16 +3,26 @@ import Base from '../layouts/Base.astro';
 import maa from '../data/maa.json';
 import terrain from '../data/terrain.json';
 import sim from '../data/combat_sim.json';
+import { getEntity } from '../lib/entities';
 
-// One canonical men-at-arms per base archetype, plus a few iconic units, so the grid
-// reads as "how the troop types stack up" rather than an unreadable 100×100.
-const UNITS = [
-  'light_footmen', 'bowmen', 'longbowmen', 'crossbowmen', 'handgunners',
-  'pikemen_unit', 'armored_footmen', 'huscarl',
-  'light_horsemen', 'armored_horsemen', 'horse_archers', 'camel_rider', 'war_elephant',
+// All men-at-arms a kingdom can actually field in numbers:
+//  - drop special_recruit_only (created only by script/effect, never recruited)
+//  - drop single-regiment-capped units (max_regiments = 1): the accolade "retinue"
+//    elites, which are a hard cap, not a scalable troop type
+//  - drop siege_weapon: fights_in_main_phase = no (0 field damage), so it can't win a
+//    battle and would only add dead rows. Noted in the lede.
+const TYPE_ORDER = [
+  'skirmishers', 'archers', 'pikemen', 'heavy_infantry',
+  'light_cavalry', 'archer_cavalry', 'camel_cavalry', 'heavy_cavalry', 'elephant_cavalry',
+  'gunpowder',
 ];
-const byId = Object.fromEntries((maa as any[]).map((m) => [m.id, m]));
-const units = UNITS.map((id) => ({ id, name: byId[id].name, type: byId[id].type }));
+const units = (maa as any[])
+  .filter((m) => !m.specialRecruitOnly && m.maxRegiments !== 1 && m.type !== 'siege_weapon')
+  .map((m) => ({ id: m.id, name: m.name, type: m.type, stack: m.stack ?? 100, damage: m.stats?.damage ?? 0 }))
+  .sort((a, b) => {
+    const t = TYPE_ORDER.indexOf(a.type) - TYPE_ORDER.indexOf(b.type);
+    return t !== 0 ? t : (a.damage - b.damage) || a.name.localeCompare(b.name);
+  });
 
 const terrains = (terrain as any[])
   .filter((t) => t.id !== 'sea' && t.id !== 'coastal_sea')
@@ -22,15 +32,16 @@ const eras = (sim.eraUpgrades as any).order.map((k: string) => ({
   id: k,
   name: k.replace('culture_era_', '').replace(/_/g, ' ').replace(/\b\w/g, (c: string) => c.toUpperCase()),
 }));
+const typeName = (t: string) => getEntity(`maa_type_${t}`)?.name ?? t.replace(/_/g, ' ');
 ---
 <Base
   title="Matchup Matrix"
   active="matchup-matrix"
-  lede="Every troop type against every other — 1,000 vs 1,000, resolved with the same decompiled combat math as the Battle Simulator. Each cell shows how many of the row's 1,000 soldiers survive after wiping (or being wiped by) the column's. Green means the row wins; red means it loses. Fought on open plains by default, where neither side gets a terrain edge."
+  lede="Every men-at-arms a kingdom can field against every other, an equal number of regiments each — because men-at-arms are capped by regiment slots, not men, and regiments come in different sizes: most hold 100 soldiers, heavy cavalry 50, war elephants 25 (the type's stack, from the game files). So the same slots buy a heavy-cavalry force half the men of an infantry one. Each cell is the row unit's survival rate after wiping — or being wiped by — the column's. Green = row wins, red = row loses. Sorted by unit class. Single-regiment accolade units and siege weapons are left out; fought on open plains."
   stats={[
-    { value: units.length, label: 'troop types' },
+    { value: units.length, label: 'battle units' },
     { value: units.length * units.length, label: 'matchups' },
-    { value: '1,000', label: 'per side' },
+    { value: 'per regiment', label: 'equal slots' },
   ]}
 >
   <div class="ctrls">
@@ -44,6 +55,13 @@ const eras = (sim.eraUpgrades as any).order.map((k: string) => ({
         {eras.map((e) => <option value={e.id} selected={e.id === 'culture_era_late_medieval'}>{e.name}</option>)}
       </select>
     </label>
+    <label>Regiments / side
+      <select id="regiments">
+        <option value="5">5</option>
+        <option value="10" selected>10</option>
+        <option value="20">20</option>
+      </select>
+    </label>
     <span class="hint" id="status">computing…</span>
   </div>
 
@@ -52,20 +70,30 @@ const eras = (sim.eraUpgrades as any).order.map((k: string) => ({
       <thead>
         <tr>
           <th class="corner">row&nbsp;\&nbsp;col</th>
-          {units.map((u) => <th class="colh" title={u.name}><span>{u.name}</span></th>)}
+          {units.map((u) => (
+            <th class="colh" data-uid={u.id} data-type={u.type} title={`${u.name} — ${typeName(u.type)}, regiment size ${u.stack}`}>
+              <span>{u.name}</span>
+            </th>
+          ))}
         </tr>
       </thead>
-      <tbody></tbody>
+      <tbody>
+        {units.map((u) => (
+          <tr data-uid={u.id} data-type={u.type}>
+            <th class="rowh" title={`${u.name} — ${typeName(u.type)}, regiment size ${u.stack}`}>{u.name}<span class="stk">·{u.stack}</span></th>
+          </tr>
+        ))}
+      </tbody>
     </table>
   </div>
 
   <p class="legend subtle">
-    Cell = the <strong>row unit's survivors</strong> out of 1,000 after the fight (expected value, no random
-    rolls). <span class="chip win">win</span> row beats column · <span class="chip lose">lose</span> row loses ·
-    <span class="chip draw">—</span> mirror match. Read a row left-to-right to see what a unit beats; a unit that
-    wins its whole row dominates the field. Elephants and heavy cavalry look unstoppable per-man, but cost many
-    times more per soldier and are capped by combat width in a real army — this is raw 1,000-vs-1,000 strength,
-    not gold-efficiency.
+    Cell = the <strong>row unit's survival rate</strong> (survivors ÷ its own starting men) after the fight
+    (expected value, no random rolls). <span class="chip win">win</span> row beats column ·
+    <span class="chip lose">lose</span> row loses · <span class="chip draw">—</span> mirror. Hover a cell for the
+    men counts. Read a row left-to-right to see what a unit beats. Because regiments differ in size, a heavy
+    unit that wins per-man can still lose here — it brings fewer bodies for the same slots. This is raw
+    regiment-for-regiment strength, not gold cost (a heavy-cavalry regiment costs far more than a levy-tier one).
   </p>
 
   <script>
@@ -73,50 +101,51 @@ const eras = (sim.eraUpgrades as any).order.map((k: string) => ({
     import type { BattleSetup } from '../lib/combat/types';
     import unitList from '../data/maa.json';
 
-    const IDS = [
-      'light_footmen', 'bowmen', 'longbowmen', 'crossbowmen', 'handgunners',
-      'pikemen_unit', 'armored_footmen', 'huscarl',
-      'light_horsemen', 'armored_horsemen', 'horse_archers', 'camel_rider', 'war_elephant',
-    ];
     const NAME = new Map((unitList as { id: string; name: string }[]).map((m) => [m.id, m.name]));
+    const STACK = new Map((unitList as { id: string; stack?: number }[]).map((m) => [m.id, m.stack ?? 100]));
 
     const $ = (s: string) => document.querySelector(s) as HTMLElement;
-    const army = (typeId: string, era: string) => ({ regiments: [{ typeId, men: 1000 }], levies: 0, knights: [], era });
+    // order comes from the server-rendered header cells (single source of truth)
+    const IDS = Array.from(document.querySelectorAll<HTMLElement>('#matrix .colh')).map((th) => th.dataset.uid!);
+    const ROWS = Array.from(document.querySelectorAll<HTMLElement>('#matrix tbody tr'));
+    const army = (typeId: string, era: string, regs: number) =>
+      ({ regiments: [{ typeId, men: regs * (STACK.get(typeId) ?? 100) }], levies: 0, knights: [], era });
 
     function compute() {
       const terrainId = ($('#terrain') as HTMLSelectElement).value;
       const era = ($('#era') as HTMLSelectElement).value;
-      const tbody = $('#matrix').querySelector('tbody')!;
-      tbody.innerHTML = '';
+      const regs = parseInt(($('#regiments') as HTMLSelectElement).value, 10);
       const t0 = performance.now();
-      for (const r of IDS) {
-        const tr = document.createElement('tr');
-        tr.innerHTML = `<th class="rowh" title="${NAME.get(r)}">${NAME.get(r)}</th>`;
+      for (const tr of ROWS) {
+        const r = tr.dataset.uid!;
+        const rStack = STACK.get(r) ?? 100;
+        const rMen = regs * rStack;
+        // clear any prior cells (keep the row header)
+        while (tr.children.length > 1) tr.removeChild(tr.lastChild!);
+        let html = '';
         for (const c of IDS) {
-          if (r === c) {
-            tr.insertAdjacentHTML('beforeend', `<td class="cell draw" title="mirror match">—</td>`);
-            continue;
-          }
-          const setup: BattleSetup = { attacker: army(r, era), defender: army(c, era), terrainId };
+          if (r === c) { html += `<td class="cell draw" title="mirror match">—</td>`; continue; }
+          const cMen = regs * (STACK.get(c) ?? 100);
+          const setup: BattleSetup = { attacker: army(r, era, regs), defender: army(c, era, regs), terrainId };
           const res = expected(setup);
           const surv = res.attacker.survivors;
           const won = res.winner === 'attacker';
-          // colour intensity by survivors (win) or by how thoroughly wiped (loss)
-          const frac = surv / 1000;
+          const rate = rMen ? surv / rMen : 0;
           const bg = won
-            ? `color-mix(in oklab, var(--good) ${Math.round(20 + frac * 55)}%, transparent)`
-            : `color-mix(in oklab, var(--bad) ${Math.round(30 + (1 - res.defender.survivors / 1000) * 40)}%, transparent)`;
-          tr.insertAdjacentHTML('beforeend',
-            `<td class="cell ${won ? 'win' : 'lose'}" style="background:${bg}" ` +
-            `title="${NAME.get(r)} vs ${NAME.get(c)} on ${terrainId}: ${won ? 'win' : 'loss'}, ${surv} survive">${surv}</td>`);
+            ? `color-mix(in oklab, var(--good) ${Math.round(18 + rate * 55)}%, transparent)`
+            : `color-mix(in oklab, var(--bad) ${Math.round(28 + (1 - res.defender.survivors / cMen) * 42)}%, transparent)`;
+          html += `<td class="cell ${won ? 'win' : 'lose'}" style="background:${bg}" ` +
+            `title="${regs}× ${NAME.get(r)} (${rMen}) vs ${regs}× ${NAME.get(c)} (${cMen}) on ${terrainId}: ` +
+            `${won ? 'win' : 'loss'}, ${surv}/${rMen} survive">${Math.round(rate * 100)}%</td>`;
         }
-        tbody.appendChild(tr);
+        tr.insertAdjacentHTML('beforeend', html);
       }
-      $('#status').textContent = `${IDS.length}×${IDS.length} matchups · ${Math.round(performance.now() - t0)}ms`;
+      $('#status').textContent = `${IDS.length}×${IDS.length} matchups · ${regs} regiments/side · ${Math.round(performance.now() - t0)}ms`;
     }
 
     $('#terrain').addEventListener('input', compute);
     $('#era').addEventListener('input', compute);
+    $('#regiments').addEventListener('input', compute);
     compute();
   </script>
 
@@ -125,18 +154,20 @@ const eras = (sim.eraUpgrades as any).order.map((k: string) => ({
     .ctrls label { color: var(--dim); font-size: 0.8rem; display: flex; flex-direction: column; gap: 0.3rem; }
     select { background: var(--ink); color: var(--vellum); border: 1px solid var(--line); border-radius: var(--r); padding: 0.3rem 0.5rem; font: 0.85rem var(--font-ui); }
     .hint { color: var(--dim); font-size: 0.78rem; font-family: var(--font-mono); }
-    .matwrap { overflow-x: auto; }
-    .matrix { border-collapse: collapse; font-size: 0.75rem; }
-    .matrix th, .matrix td { border: 1px solid var(--line-soft); text-align: center; }
-    .matrix .cell { padding: 0.3rem 0.4rem; font-family: var(--font-mono); min-width: 2.6rem; }
-    .matrix .rowh { text-align: right; padding: 0.3rem 0.6rem; color: var(--brass); white-space: nowrap; position: sticky; left: 0; background: var(--panel); z-index: 1; }
-    .matrix .colh { padding: 0.4rem 0.3rem; height: 6.5rem; vertical-align: bottom; }
+    .matwrap { overflow: auto; max-height: 80vh; border: 1px solid var(--line-soft); border-radius: var(--r); }
+    .matrix { border-collapse: separate; border-spacing: 0; font-size: 0.68rem; }
+    .matrix th, .matrix td { border-right: 1px solid var(--line-soft); border-bottom: 1px solid var(--line-soft); text-align: center; }
+    .matrix .cell { padding: 0.2rem 0.28rem; font-family: var(--font-mono); min-width: 2.3rem; }
+    .matrix .rowh { text-align: right; padding: 0.2rem 0.5rem; color: var(--brass); white-space: nowrap; position: sticky; left: 0; background: var(--panel); z-index: 1; }
+    .matrix .rowh .stk { color: var(--dim); font-family: var(--font-mono); font-size: 0.62rem; margin-left: 0.3rem; }
+    .matrix thead th { position: sticky; top: 0; background: var(--panel); z-index: 2; }
+    .matrix .colh { padding: 0.35rem 0.2rem; height: 8.5rem; vertical-align: bottom; }
     .matrix .colh span { writing-mode: vertical-rl; transform: rotate(180deg); color: var(--brass); white-space: nowrap; }
-    .matrix .corner { position: sticky; left: 0; background: var(--panel); color: var(--dim); z-index: 2; }
+    .matrix .corner { left: 0; z-index: 3; color: var(--dim); }
     .matrix .cell.win { color: var(--vellum); }
-    .matrix .cell.lose { color: color-mix(in oklab, var(--vellum) 70%, var(--bad)); }
+    .matrix .cell.lose { color: color-mix(in oklab, var(--vellum) 65%, var(--bad)); }
     .matrix .cell.draw { color: var(--dim); background: var(--panel-2); }
-    .legend { font-size: 0.8rem; line-height: 1.55; margin-top: 1rem; max-width: 65ch; }
+    .legend { font-size: 0.8rem; line-height: 1.55; margin-top: 1rem; max-width: 68ch; }
     .chip { display: inline-block; padding: 0 0.35rem; border-radius: 3px; font-size: 0.72rem; font-family: var(--font-mono); }
     .chip.win { background: color-mix(in oklab, var(--good) 45%, transparent); }
     .chip.lose { background: color-mix(in oklab, var(--bad) 50%, transparent); }

@@ -78,6 +78,7 @@ const typeName = (t: string) => getEntity(`maa_type_${t}`)?.name ?? t.replace(/_
           <thead><tr><th>Regiment</th><th class="num">Men</th><th></th></tr></thead>
           <tbody></tbody>
         </table>
+        <div class="cost subtle" data-cost></div>
 
         <div class="extra">
           <label>Era
@@ -142,9 +143,9 @@ const typeName = (t: string) => getEntity(`maa_type_${t}`)?.name ?? t.replace(/_
         <span class="ol d" data-mol-d></span>
       </div>
     </div>
-    <p class="subtle map-expl">Weighted by land-province counts across the CK3 map — the odds for a battle fought at a random location.</p>
+    <p class="subtle map-expl" data-map-roles></p>
     <table class="ntbl mapbreak">
-      <thead><tr><th>Terrain</th><th class="num">Map %</th><th class="num">Attacker win</th><th class="num">Defender win</th><th class="num">Dead A / D</th></tr></thead>
+      <thead><tr><th>Terrain</th><th class="num">Map %</th><th class="num" title="attacker wins on this terrain">You attack</th><th class="num" title="defender wins on this terrain (you get terrain advantage)">You defend</th><th class="num" title="50/50 of the two">Blended</th></tr></thead>
       <tbody data-mapbreak></tbody>
     </table>
   </section>
@@ -169,6 +170,16 @@ const typeName = (t: string) => getEntity(`maa_type_${t}`)?.name ?? t.replace(/_
     const NAME = new Map((maaData as { id: string; name: string }[]).map((m) => [m.id, m.name]));
     const unitLabel = (id: string) =>
       id === '__levy' ? 'Levies' : id === '__knights' ? 'Knights' : (NAME.get(id) ?? id);
+    // recruit gold + monthly maintenance per soldier (buyCost/maintenance are per `stack` men)
+    type CostRow = { gold: number; maint: number };
+    const COST = new Map<string, CostRow>(
+      (maaData as any[]).map((m) => {
+        const stack = m.stack ?? 100;
+        const gold = typeof m.buyCost?.gold === 'number' ? m.buyCost.gold / stack : 0;
+        const maint = typeof m.highMaintenance?.gold === 'number' ? m.highMaintenance.gold / stack : 0;
+        return [m.id, { gold, maint }];
+      }),
+    );
 
     const $ = (sel: string, root: Document | Element = document) => root.querySelector(sel) as HTMLElement;
     const num = (el: Element | null, d = 0) => {
@@ -185,12 +196,20 @@ const typeName = (t: string) => getEntity(`maa_type_${t}`)?.name ?? t.replace(/_
       tbody.innerHTML = '';
       const picker = sec.querySelector('.unitpick') as HTMLSelectElement;
       const nameOf = (id: string) => picker.querySelector(`option[value="${id}"]`)?.textContent ?? id;
+      let gold = 0, maint = 0;
       for (const [i, r] of state[side].regs.entries()) {
         const tr = document.createElement('tr');
         tr.innerHTML = `<td>${nameOf(r.id)}</td><td class="num">${r.men}</td>` +
           `<td><button class="minus" data-i="${i}">−</button></td>`;
         tbody.appendChild(tr);
+        const c = COST.get(r.id);
+        if (c) { gold += c.gold * r.men; maint += c.maint * r.men; }
       }
+      const men = state[side].regs.reduce((a, r) => a + r.men, 0);
+      const costEl = sec.querySelector('[data-cost]')!;
+      costEl.textContent = state[side].regs.length
+        ? `${men.toLocaleString()} men-at-arms · ${Math.round(gold).toLocaleString()} gold to recruit · ${maint.toFixed(1)} gold/mo raised`
+        : '';
     }
 
     function buildArmy(side: Side): ArmySpec {
@@ -292,21 +311,26 @@ const typeName = (t: string) => getEntity(`maa_type_${t}`)?.name ?? t.replace(/_
         const res = $('#mapresult');
         res.hidden = false;
         const o = mw.overall;
-        ($('[data-mobar-a]') as HTMLElement).style.width = `${o.attackerWinPct}%`;
-        ($('[data-mobar-d]') as HTMLElement).style.width = `${o.defenderWinPct}%`;
-        $('[data-mol-a]').textContent = `Attacker ${o.attackerWinPct.toFixed(0)}%`;
+        ($('[data-mobar-a]') as HTMLElement).style.width = `${o.aWinPct}%`;
+        ($('[data-mobar-d]') as HTMLElement).style.width = `${o.bWinPct}%`;
+        $('[data-mol-a]').textContent = `Your army ${o.aWinPct.toFixed(0)}%`;
         $('[data-mol-draw]').textContent = o.drawPct >= 1 ? `· draw ${o.drawPct.toFixed(0)}% ·` : '';
-        $('[data-mol-d]').textContent = `Defender ${o.defenderWinPct.toFixed(0)}%`;
+        $('[data-mol-d]').textContent = `Enemy ${o.bWinPct.toFixed(0)}%`;
         $('[data-map-meta]').textContent =
-          `— across ${mw.perTerrain.length} terrains, ${mw.provinceTotal.toLocaleString()} provinces, ${mw.runsPerTerrain} runs each · expected dead ${Math.round(o.attackerDeadMean)} / ${Math.round(o.defenderDeadMean)}`;
+          `— ${mw.perTerrain.length} terrains × both roles, ${mw.provinceTotal.toLocaleString()} provinces, ${mw.runsPerTerrain} runs each · expected dead ${Math.round(o.aDeadMean)} / ${Math.round(o.bDeadMean)}`;
+        const swing = o.aWinAllAttacker - o.aWinAllDefender;
+        $('[data-map-roles]').textContent =
+          `Blended 50/50 across attacking and defending, weighted by land-province counts. ` +
+          `If you always attacked you'd win ${o.aWinAllAttacker.toFixed(0)}% of the map; always defending, ${o.aWinAllDefender.toFixed(0)}% ` +
+          `— a ${Math.abs(swing).toFixed(0)}-point ${swing >= 0 ? 'edge to attacking' : 'edge to defending'}.`;
         const tb = $('[data-mapbreak]');
         tb.innerHTML = mw.perTerrain.map((t) => {
-          const win = t.attackerWinPct >= 50;
+          const col = (v: number) => v >= 50 ? 'var(--good)' : 'var(--dim)';
           return `<tr><td>${terrName(t.terrainId)}</td>` +
             `<td class="num subtle">${t.weightPct.toFixed(1)}%</td>` +
-            `<td class="num" style="color:${win ? 'var(--good)' : 'var(--dim)'}">${t.attackerWinPct.toFixed(0)}%</td>` +
-            `<td class="num" style="color:${!win ? 'var(--bad)' : 'var(--dim)'}">${t.defenderWinPct.toFixed(0)}%</td>` +
-            `<td class="num subtle">${Math.round(t.attackerDeadMean)} / ${Math.round(t.defenderDeadMean)}</td></tr>`;
+            `<td class="num" style="color:${col(t.aWinAsAttacker)}">${t.aWinAsAttacker.toFixed(0)}%</td>` +
+            `<td class="num" style="color:${col(t.aWinAsDefender)}">${t.aWinAsDefender.toFixed(0)}%</td>` +
+            `<td class="num" style="color:${col(t.aWinBlended)}">${t.aWinBlended.toFixed(0)}%</td></tr>`;
         }).join('');
         btn.disabled = false; btn.textContent = '⚔ Across the map';
         res.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
@@ -363,6 +387,7 @@ const typeName = (t: string) => getEntity(`maa_type_${t}`)?.name ?? t.replace(/_
     .addrow { display: flex; gap: 0.5rem; margin-bottom: 0.6rem; }
     .addrow .unitpick { flex: 1; min-width: 0; }
     .comp .minus { padding: 0 0.45rem; }
+    .cost { font-size: 0.76rem; margin-top: 0.4rem; }
     .extra { display: flex; gap: 1rem; flex-wrap: wrap; margin: 0.6rem 0; }
     .extra label { color: var(--dim); font-size: 0.78rem; display: flex; gap: 0.35rem; align-items: center; }
     .cmd summary { color: var(--brass); cursor: pointer; font-size: 0.85rem; }

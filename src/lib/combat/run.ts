@@ -32,20 +32,24 @@ export type TerrainOutcome = {
   terrainId: string;
   weight: number; // province count
   weightPct: number; // share of land provinces
-  attackerWinPct: number;
-  defenderWinPct: number;
-  drawPct: number;
-  attackerDeadMean: number;
-  defenderDeadMean: number;
+  // "A" = the setup's attacker (the left/your army). We run each terrain both ways so
+  // the terrain defender-advantage lands on each side in turn.
+  aWinAsAttacker: number; // A wins when A is the attacker (enemy defends, gets terrain)
+  aWinAsDefender: number; // A wins when A is the defender (A gets terrain), enemy attacks
+  aWinBlended: number; // 0.5 * (above two) — role-neutral
 };
 
 export type MapWeightedResult = {
   overall: {
-    attackerWinPct: number;
-    defenderWinPct: number;
+    // role-blended (50% attacking / 50% defending) and terrain-weighted
+    aWinPct: number;
+    bWinPct: number;
     drawPct: number;
-    attackerDeadMean: number;
-    defenderDeadMean: number;
+    // for reference: the two role-pure, terrain-weighted numbers for A
+    aWinAllAttacker: number;
+    aWinAllDefender: number;
+    aDeadMean: number;
+    bDeadMean: number;
   };
   perTerrain: TerrainOutcome[]; // sorted by weight desc
   runsPerTerrain: number;
@@ -53,39 +57,53 @@ export type MapWeightedResult = {
 };
 
 /**
- * Run the matchup on every land terrain and weight the outcome by how common each
- * terrain is on the CK3 map (land province counts from province_terrain). The overall
- * numbers are the expected result for a battle fought at a random map location.
- * setup.terrainId is ignored; each terrain is substituted in turn.
+ * Run the matchup on every land terrain, each terrain fought BOTH ways (your army
+ * attacking and defending), and weight by how common each terrain is on the CK3 map
+ * (land province counts from province_terrain). The overall numbers blend the two roles
+ * 50/50 — the expected result for a battle at a random location where you are equally
+ * likely to be the attacker or the defender. setup.terrainId is ignored.
  */
-export function mapWeighted(setup: BattleSetup, runsPerTerrain = 300): MapWeightedResult {
+export function mapWeighted(setup: BattleSetup, runsPerTerrain = 250): MapWeightedResult {
   const counts = TERRAIN_WEIGHTS.counts;
   const total = TERRAIN_WEIGHTS.total;
+  const A = setup.attacker, B = setup.defender;
+  const aCP = setup.attackerCultureParams, bCP = setup.defenderCultureParams;
   const perTerrain: TerrainOutcome[] = [];
-  let ow = 0, dw = 0, drw = 0, adead = 0, ddead = 0;
+  let aBlend = 0, bBlend = 0, drw = 0, aAtt = 0, aDef = 0, aDead = 0, bDead = 0;
   for (const [terrainId, weight] of Object.entries(counts)) {
-    const mc = monteCarlo({ ...setup, terrainId }, runsPerTerrain);
+    // A attacks (B is defender, gets terrain advantage)
+    const mcAtt = monteCarlo({ ...setup, terrainId }, runsPerTerrain);
+    // A defends (swap roles: A gets terrain advantage)
+    const mcDef = monteCarlo(
+      { ...setup, terrainId, attacker: B, defender: A, attackerCultureParams: bCP, defenderCultureParams: aCP },
+      runsPerTerrain,
+    );
+    const aWinAtt = mcAtt.winPct.attacker; // A is attacker here
+    const aWinDef = mcDef.winPct.defender; // A is defender here
+    const bWinAtt = mcAtt.winPct.defender;
+    const bWinDef = mcDef.winPct.attacker;
     const w = weight / total;
-    ow += mc.winPct.attacker * w;
-    dw += mc.winPct.defender * w;
-    drw += mc.winPct.draw * w;
-    adead += mc.attacker.deadMean * w;
-    ddead += mc.defender.deadMean * w;
+    const blended = 0.5 * (aWinAtt + aWinDef);
+    aBlend += blended * w;
+    bBlend += 0.5 * (bWinAtt + bWinDef) * w;
+    drw += 0.5 * (mcAtt.winPct.draw + mcDef.winPct.draw) * w;
+    aAtt += aWinAtt * w;
+    aDef += aWinDef * w;
+    aDead += 0.5 * (mcAtt.attacker.deadMean + mcDef.defender.deadMean) * w;
+    bDead += 0.5 * (mcAtt.defender.deadMean + mcDef.attacker.deadMean) * w;
     perTerrain.push({
       terrainId, weight, weightPct: 100 * w,
-      attackerWinPct: mc.winPct.attacker,
-      defenderWinPct: mc.winPct.defender,
-      drawPct: mc.winPct.draw,
-      attackerDeadMean: mc.attacker.deadMean,
-      defenderDeadMean: mc.defender.deadMean,
+      aWinAsAttacker: aWinAtt, aWinAsDefender: aWinDef, aWinBlended: blended,
     });
   }
   perTerrain.sort((a, b) => b.weight - a.weight);
   return {
-    overall: { attackerWinPct: ow, defenderWinPct: dw, drawPct: drw, attackerDeadMean: adead, defenderDeadMean: ddead },
-    perTerrain,
-    runsPerTerrain,
-    provinceTotal: total,
+    overall: {
+      aWinPct: aBlend, bWinPct: bBlend, drawPct: drw,
+      aWinAllAttacker: aAtt, aWinAllDefender: aDef,
+      aDeadMean: aDead, bDeadMean: bDead,
+    },
+    perTerrain, runsPerTerrain, provinceTotal: total,
   };
 }
 
