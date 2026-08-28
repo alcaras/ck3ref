@@ -37,17 +37,25 @@ const typeName = (t: string) => getEntity(`maa_type_${t}`)?.name ?? t.replace(/_
 <Base
   title="Matchup Matrix"
   active="matchup-matrix"
-  lede="Every men-at-arms a kingdom can field against every other, an equal number of regiments each — because men-at-arms are capped by regiment slots, not men, and regiments come in different sizes: most hold 100 soldiers, heavy cavalry 50, war elephants 25 (the type's stack, from the game files). So the same slots buy a heavy-cavalry force half the men of an infantry one. Each cell is the row unit's survival rate after wiping — or being wiped by — the column's. Green = row wins, red = row loses. Sorted by unit class. Single-regiment accolade units and siege weapons are left out; fought on open plains."
+  lede="Every men-at-arms a kingdom can field against every other. By default each cell is the row unit's win rate across the whole CK3 map — every terrain weighted by how common it is, fought both attacking and defending — so it reflects a real campaign, not one lucky battlefield. Compare on an equal number of regiments (regiment slots are the hard cap, and regiments differ in size: 100 soldiers for most, 50 heavy cavalry, 25 elephants), or on an equal recruitment or upkeep budget, where cheap units field more. Green = row wins, red = row loses. Sorted by unit class; single-regiment accolade units and siege weapons are left out."
   stats={[
     { value: units.length, label: 'battle units' },
     { value: units.length * units.length, label: 'matchups' },
-    { value: 'per regiment', label: 'equal slots' },
+    { value: 'map + roles', label: 'default' },
   ]}
 >
   <div class="ctrls">
+    <label>Compare by
+      <select id="basis">
+        <option value="regiments" selected>Equal regiments</option>
+        <option value="recruit">Recruitment gold (1000)</option>
+        <option value="maintenance">Upkeep gold (15/mo)</option>
+      </select>
+    </label>
     <label>Terrain
       <select id="terrain">
-        {terrains.map((t) => <option value={t.id} selected={t.id === 'plains'}>{t.name}</option>)}
+        <option value="__avg" selected>⌀ Average map (both roles)</option>
+        {terrains.map((t) => <option value={t.id}>{t.name}</option>)}
       </select>
     </label>
     <label>Era
@@ -55,7 +63,7 @@ const typeName = (t: string) => getEntity(`maa_type_${t}`)?.name ?? t.replace(/_
         {eras.map((e) => <option value={e.id} selected={e.id === 'culture_era_late_medieval'}>{e.name}</option>)}
       </select>
     </label>
-    <label>Regiments / side
+    <label id="reglabel">Regiments / side
       <select id="regiments">
         <option value="5">5</option>
         <option value="10" selected>10</option>
@@ -97,55 +105,88 @@ const typeName = (t: string) => getEntity(`maa_type_${t}`)?.name ?? t.replace(/_
   </p>
 
   <script>
-    import { expected } from '../lib/combat/run';
-    import type { BattleSetup } from '../lib/combat/types';
+    import { expected, mapWeightedWinFraction } from '../lib/combat/run';
+    import type { BattleSetup, ArmySpec } from '../lib/combat/types';
     import unitList from '../data/maa.json';
 
-    const NAME = new Map((unitList as { id: string; name: string }[]).map((m) => [m.id, m.name]));
-    const STACK = new Map((unitList as { id: string; stack?: number }[]).map((m) => [m.id, m.stack ?? 100]));
+    const RECRUIT_CAP = 1000, MAINT_CAP = 15; // match the Tier List
+    const M = new Map((unitList as any[]).map((m) => [m.id, {
+      name: m.name as string,
+      stack: (m.stack ?? 100) as number,
+      buy: typeof m.buyCost?.gold === 'number' ? m.buyCost.gold : NaN,
+      maint: typeof m.highMaintenance?.gold === 'number' ? m.highMaintenance.gold : NaN,
+    }]));
+    const NAME = (id: string) => M.get(id)!.name;
 
     const $ = (s: string) => document.querySelector(s) as HTMLElement;
     // order comes from the server-rendered header cells (single source of truth)
     const IDS = Array.from(document.querySelectorAll<HTMLElement>('#matrix .colh')).map((th) => th.dataset.uid!);
     const ROWS = Array.from(document.querySelectorAll<HTMLElement>('#matrix tbody tr'));
-    const army = (typeId: string, era: string, regs: number) =>
-      ({ regiments: [{ typeId, men: regs * (STACK.get(typeId) ?? 100) }], levies: 0, knights: [], era });
 
-    function compute() {
+    function regsFor(id: string, basis: string, regSel: number): number {
+      const u = M.get(id)!;
+      if (basis === 'recruit') return Number.isFinite(u.buy) ? Math.max(1, Math.floor(RECRUIT_CAP / u.buy)) : regSel;
+      if (basis === 'maintenance') return Number.isFinite(u.maint) ? Math.max(1, Math.floor(MAINT_CAP / u.maint)) : regSel;
+      return regSel;
+    }
+    const army = (id: string, era: string, regs: number): ArmySpec =>
+      ({ regiments: [{ typeId: id, men: regs * M.get(id)!.stack }], levies: 0, knights: [], era });
+
+    function run() {
+      const basis = ($('#basis') as HTMLSelectElement).value;
       const terrainId = ($('#terrain') as HTMLSelectElement).value;
       const era = ($('#era') as HTMLSelectElement).value;
-      const regs = parseInt(($('#regiments') as HTMLSelectElement).value, 10);
+      const regSel = parseInt(($('#regiments') as HTMLSelectElement).value, 10);
+      const avg = terrainId === '__avg';
+      $('#reglabel').style.display = basis === 'regiments' ? '' : 'none';
       const t0 = performance.now();
+
       for (const tr of ROWS) {
         const r = tr.dataset.uid!;
-        const rStack = STACK.get(r) ?? 100;
-        const rMen = regs * rStack;
-        // clear any prior cells (keep the row header)
+        const rRegs = regsFor(r, basis, regSel);
+        const rMen = rRegs * M.get(r)!.stack;
         while (tr.children.length > 1) tr.removeChild(tr.lastChild!);
         let html = '';
         for (const c of IDS) {
-          if (r === c) { html += `<td class="cell draw" title="mirror match">—</td>`; continue; }
-          const cMen = regs * (STACK.get(c) ?? 100);
-          const setup: BattleSetup = { attacker: army(r, era, regs), defender: army(c, era, regs), terrainId };
-          const res = expected(setup);
-          const surv = res.attacker.survivors;
-          const won = res.winner === 'attacker';
-          const rate = rMen ? surv / rMen : 0;
-          const bg = won
-            ? `color-mix(in oklab, var(--good) ${Math.round(18 + rate * 55)}%, transparent)`
-            : `color-mix(in oklab, var(--bad) ${Math.round(28 + (1 - res.defender.survivors / cMen) * 42)}%, transparent)`;
-          html += `<td class="cell ${won ? 'win' : 'lose'}" style="background:${bg}" ` +
-            `title="${regs}× ${NAME.get(r)} (${rMen}) vs ${regs}× ${NAME.get(c)} (${cMen}) on ${terrainId}: ` +
-            `${won ? 'win' : 'loss'}, ${surv}/${rMen} survive">${Math.round(rate * 100)}%</td>`;
+          if (r === c) { html += `<td class="cell draw" title="mirror match">&mdash;</td>`; continue; }
+          const cRegs = regsFor(c, basis, regSel);
+          const cMen = cRegs * M.get(c)!.stack;
+          const setup: BattleSetup = { attacker: army(r, era, rRegs), defender: army(c, era, cRegs), terrainId: avg ? 'plains' : terrainId };
+          const cnt = `${rRegs}x ${NAME(r)} (${rMen}) vs ${cRegs}x ${NAME(c)} (${cMen})`;
+          if (avg) {
+            const win = mapWeightedWinFraction(setup);
+            const won = win >= 0.5;
+            const bg = won
+              ? `color-mix(in oklab, var(--good) ${Math.round(15 + win * 60)}%, transparent)`
+              : `color-mix(in oklab, var(--bad) ${Math.round(15 + (1 - win) * 60)}%, transparent)`;
+            html += `<td class="cell ${won ? 'win' : 'lose'}" style="background:${bg}" ` +
+              `title="${cnt} across the map, both roles: wins ${Math.round(win * 100)}%">${Math.round(win * 100)}%</td>`;
+          } else {
+            const res = expected(setup);
+            const won = res.winner === 'attacker';
+            const rate = rMen ? res.attacker.survivors / rMen : 0;
+            const bg = won
+              ? `color-mix(in oklab, var(--good) ${Math.round(18 + rate * 55)}%, transparent)`
+              : `color-mix(in oklab, var(--bad) ${Math.round(28 + (1 - res.defender.survivors / cMen) * 42)}%, transparent)`;
+            html += `<td class="cell ${won ? 'win' : 'lose'}" style="background:${bg}" ` +
+              `title="${cnt} on ${terrainId}: ${won ? 'win' : 'loss'}, ${res.attacker.survivors}/${rMen} survive">${Math.round(rate * 100)}%</td>`;
+          }
         }
         tr.insertAdjacentHTML('beforeend', html);
       }
-      $('#status').textContent = `${IDS.length}×${IDS.length} matchups · ${regs} regiments/side · ${Math.round(performance.now() - t0)}ms`;
+      const basisLabel = basis === 'regiments' ? `${regSel} regiments/side` : basis === 'recruit' ? `${RECRUIT_CAP}g recruit` : `${MAINT_CAP}g/mo upkeep`;
+      const metric = avg ? 'win% across the map (both roles)' : `row survival % on ${terrainId}`;
+      $('#status').textContent = `${IDS.length}x${IDS.length} · ${basisLabel} · ${metric} · ${Math.round(performance.now() - t0)}ms`;
     }
 
-    $('#terrain').addEventListener('input', compute);
-    $('#era').addEventListener('input', compute);
-    $('#regiments').addEventListener('input', compute);
+    function compute() {
+      if (($('#terrain') as HTMLSelectElement).value === '__avg') {
+        $('#status').textContent = 'computing across the map…';
+        setTimeout(run, 20);
+      } else { run(); }
+    }
+
+    for (const id of ['#basis', '#terrain', '#era', '#regiments']) $(id).addEventListener('input', compute);
     compute();
   </script>
 

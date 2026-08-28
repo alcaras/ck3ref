@@ -107,6 +107,31 @@ export function mapWeighted(setup: BattleSetup, runsPerTerrain = 250): MapWeight
   };
 }
 
+/**
+ * A's blended win fraction [0,1] across the whole map: expected-value battle on every land
+ * terrain, fought both ways (A attacking and A defending), weighted by land-province counts
+ * and averaged 50/50 over the two roles. Deterministic and cheap (one EV battle per
+ * terrain-role), so it is fast enough to fill a large matchup grid. A draw counts as ½.
+ */
+export function mapWeightedWinFraction(setup: BattleSetup): number {
+  const counts = TERRAIN_WEIGHTS.counts;
+  const total = TERRAIN_WEIGHTS.total;
+  const A = setup.attacker, B = setup.defender;
+  const aCP = setup.attackerCultureParams, bCP = setup.defenderCultureParams;
+  let acc = 0;
+  for (const [terrainId, weight] of Object.entries(counts)) {
+    const att = resolveBattle({ ...setup, terrainId }, { mode: 'ev' });
+    const def = resolveBattle(
+      { ...setup, terrainId, attacker: B, defender: A, attackerCultureParams: bCP, defenderCultureParams: aCP },
+      { mode: 'ev' },
+    );
+    const score = (w: 'attacker' | 'defender' | 'draw', role: 'attacker' | 'defender') =>
+      w === role ? 1 : w === 'draw' ? 0.5 : 0;
+    acc += (weight / total) * 0.5 * (score(att.winner, 'attacker') + score(def.winner, 'defender'));
+  }
+  return acc;
+}
+
 /** Monte Carlo over `runs` seeded battles. */
 export function monteCarlo(setup: BattleSetup, runs = 500, seed0 = 1): McResult {
   const wins = { attacker: 0, defender: 0, draw: 0 } as Record<Side | 'draw', number>;

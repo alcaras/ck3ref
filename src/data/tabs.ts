@@ -95,5 +95,6 @@ export const TABS: Tab[] = [
   { slug: 'culture-builder', label: 'Culture Builder', section: 'Tools', status: 'built', summary: 'Plan a hybrid, divergence, or tradition reform from any starting culture.' },
   { slug: 'culture-calculator', label: 'Culture Calculator', section: 'Tools', status: 'built', summary: 'Hybrid and divergence costs.' },
   { slug: 'battle-simulator', label: 'Battle Simulator', section: 'Tools', status: 'built', summary: 'Sim battles between retinues + levies on any terrain — decompiled combat math.' },
-  { slug: 'matchup-matrix', label: 'Matchup Matrix', section: 'Tools', status: 'built', summary: 'Every troop type vs every other, 1000v1000 — who beats whom.' },
+  { slug: 'matchup-matrix', label: 'Matchup Matrix', section: 'Tools', status: 'built', summary: 'Every troop type vs every other, equal regiments — who beats whom.' },
+  { slug: 'tier-list', label: 'Tier List', section: 'Tools', status: 'built', summary: 'Troop types ranked S–D by regiment, recruit cost, and upkeep.' },
 ];
