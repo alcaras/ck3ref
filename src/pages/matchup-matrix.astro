@@ -17,7 +17,7 @@ const TYPE_ORDER = [
   'gunpowder',
 ];
 const units = (maa as any[])
-  .filter((m) => !m.specialRecruitOnly && m.maxRegiments !== 1 && m.type !== 'siege_weapon')
+  .filter((m) => !m.specialRecruitOnly && !m.specialAccess && m.maxRegiments !== 1 && m.type !== 'siege_weapon')
   .map((m) => ({ id: m.id, name: m.name, type: m.type, stack: m.stack ?? 100, damage: m.stats?.damage ?? 0 }))
   .sort((a, b) => {
     const t = TYPE_ORDER.indexOf(a.type) - TYPE_ORDER.indexOf(b.type);

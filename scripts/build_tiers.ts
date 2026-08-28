@@ -25,7 +25,7 @@ const EQUAL_REGIMENTS = 10;
 type Unit = { id: string; name: string; type: string; stack: number; buy: number; maint: number };
 
 const units: Unit[] = (maa as any[])
-  .filter((m) => !m.specialRecruitOnly && m.maxRegiments !== 1 && m.type !== 'siege_weapon')
+  .filter((m) => !m.specialRecruitOnly && !m.specialAccess && m.maxRegiments !== 1 && m.type !== 'siege_weapon')
   .map((m) => ({
     id: m.id, name: m.name, type: m.type, stack: m.stack ?? 100,
     buy: typeof m.buyCost?.gold === 'number' ? m.buyCost.gold : NaN,

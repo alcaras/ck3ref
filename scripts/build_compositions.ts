@@ -19,7 +19,7 @@ const RECRUIT_CAP = 1000, MAINT_CAP = 15, EQ_REG = 10;
 
 type U = { id: string; name: string; type: string; stack: number; buy: number; maint: number; dmg: number; tough: number };
 const units: U[] = (maa as any[])
-  .filter((m) => !m.specialRecruitOnly && m.maxRegiments !== 1 && m.type !== 'siege_weapon')
+  .filter((m) => !m.specialRecruitOnly && !m.specialAccess && m.maxRegiments !== 1 && m.type !== 'siege_weapon')
   .map((m) => ({
     id: m.id, name: m.name, type: m.type, stack: m.stack ?? 100,
     buy: m.buyCost?.gold ?? NaN, maint: m.highMaintenance?.gold ?? NaN,

@@ -26,7 +26,7 @@ const VAL = acc.armyWide.valiant_army_damage_mult, STA = acc.armyWide.stalwart_a
 
 type Unit = { id: string; name: string; type: string; stack: number; buy: number; maint: number };
 const units: Unit[] = (maa as any[])
-  .filter((m) => !m.specialRecruitOnly && m.maxRegiments !== 1 && m.type !== 'siege_weapon')
+  .filter((m) => !m.specialRecruitOnly && !m.specialAccess && m.maxRegiments !== 1 && m.type !== 'siege_weapon')
   .map((m) => ({ id: m.id, name: m.name, type: m.type, stack: m.stack ?? 100,
     buy: m.buyCost?.gold ?? NaN, maint: m.highMaintenance?.gold ?? NaN }))
   .filter((u) => Number.isFinite(u.maint));

@@ -123,6 +123,41 @@ def collect_requirements(trigger, reqs, negated=False):
             collect_requirements(v, reqs, negated or (k in NEGATORS))
 
 
+def _scan_special(trigger, negated=False):
+    """A can_recruit gate that makes a unit special-access: unlocked by a decision/event
+    variable (e.g. the Varangian Guard). Government requirements are NOT special — a normal
+    ruler can switch to e.g. nomadic government. Returns a short reason or None."""
+    if isinstance(trigger, Tagged):
+        trigger = trigger.block
+    if not isinstance(trigger, Block):
+        return None
+    for k, _op, v in trigger:
+        # Skip OR alternatives and trigger_if conditionals: a special condition inside one of
+        # these is not a hard requirement, so a normal recruit path may exist (war elephants
+        # via innovation OR a camp; heavy horse archers via nomadic government, with the
+        # domicile only checked conditionally). Only flag conditions on the mandatory path.
+        if k in ("OR", "trigger_if", "trigger_else", "trigger_else_if"):
+            continue
+        neg = negated or (k in NEGATORS)
+        if k == "has_variable" and not neg:
+            return "unlocked by a decision/event"
+        if k == "has_domicile_parameter" and not neg:
+            return "requires a domicile (adventurer camp / admin estate)"
+        if isinstance(v, (Block, Tagged)):
+            r = _scan_special(v, neg)
+            if r:
+                return r
+    return None
+
+
+def special_access(block, source_file):
+    """None for normally-recruitable units; a reason for special-access ones: holy-order-only
+    or decision/event-gated. (Government-locked units are kept — governments are switchable.)"""
+    if source_file == "00_holy_order_maa_types.txt":
+        return "holy order only"
+    return _scan_special(block.get("can_recruit"))
+
+
 def main():
     entries = ck3.parse_dir(ck3.COMMON / "men_at_arms_types")
     unhandled = Counter()
@@ -188,6 +223,7 @@ def main():
             "counters": counters,
             "requirements": reqs,
             "specialRecruitOnly": bool(blk.get("special_recruit_only", False)),
+            "specialAccess": special_access(blk, path.name),
             "icon": icon,
             "dlc": dlc,
             "features": features,
