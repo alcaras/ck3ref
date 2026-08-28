@@ -94,7 +94,7 @@ function costText(c: unknown): string {
                     <span class="unit">
                       <img src={`${base}/img/maa/${m.id}.webp`} alt="" width="34" height="34" loading="lazy" />
                       <span>
-                        <span class="u-name">{m.name}</span>
+                        <a class="u-name" href={`${base}/men-at-arms/${m.id}`}>{m.name}</a>
                         {m.specialRecruitOnly && <span class="u-sub"><br />event/effect only</span>}
                       </span>
                     </span>

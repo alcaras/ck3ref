@@ -14,6 +14,7 @@ version:
 
 data:
 	@python3 scripts/build_maa.py
+	@python3 scripts/build_unit_details.py
 	@python3 scripts/build_combat_sim.py
 	@mkdir -p .cache && npx --no-install esbuild scripts/build_tiers.ts --bundle --platform=node --format=esm --outfile=.cache/build_tiers.mjs --log-level=error && node .cache/build_tiers.mjs
 	@npx --no-install esbuild scripts/build_kingdom.ts --bundle --platform=node --format=esm --outfile=.cache/build_kingdom.mjs --log-level=error && node .cache/build_kingdom.mjs

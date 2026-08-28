@@ -1,0 +1,138 @@
+---
+import Base from '../../layouts/Base.astro';
+import maa from '../../data/maa.json';
+import details from '../../data/unit_details.json';
+import sim from '../../data/combat_sim.json';
+import { getEntity } from '../../lib/entities';
+
+export function getStaticPaths() {
+  return (maa as any[]).map((m) => ({ params: { id: m.id }, props: { m } }));
+}
+const { m } = Astro.props as { m: any };
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const det = (details as any)[m.id] ?? {};
+const typeName = (t: string) => getEntity(`maa_type_${t}`)?.name ?? (t ?? '').replace(/_/g, ' ');
+const terrainName = (t: string) => getEntity(`terrain_${t}`)?.name ?? t.replace(/_/g, ' ');
+
+// era stat progression (cumulative maa_upgrade deltas), from combat_sim
+const eu = (sim as any).eraUpgrades;
+const eraOrder: string[] = eu.order;
+function deltasAt(era: string) {
+  const d = { damage: 0, toughness: 0, pursuit: 0, screen: 0 };
+  const idx = eraOrder.indexOf(era);
+  for (let i = 0; i <= idx; i++) {
+    for (const u of eu.byEra[eraOrder[i]] ?? []) {
+      if (u.men_at_arms === m.id || (u.type && u.type === m.type)) {
+        d.damage += u.damage ?? 0; d.toughness += u.toughness ?? 0;
+        d.pursuit += u.pursuit ?? 0; d.screen += u.screen ?? 0;
+      }
+    }
+  }
+  return d;
+}
+const S = m.stats ?? {};
+const eraRows = eraOrder.map((era) => {
+  const d = deltasAt(era);
+  return {
+    era: era.replace('culture_era_', '').replace(/_/g, ' ').replace(/\b\w/g, (c: string) => c.toUpperCase()),
+    damage: (S.damage ?? 0) + d.damage, toughness: (S.toughness ?? 0) + d.toughness,
+    pursuit: (S.pursuit ?? 0) + d.pursuit, screen: (S.screen ?? 0) + d.screen,
+    changed: d.damage || d.toughness || d.pursuit || d.screen,
+  };
+});
+const scales = eraRows.some((r) => r.changed);
+const gold = (c: any) => (typeof c?.gold === 'number' ? c.gold : null);
+---
+<Base
+  title={m.name}
+  active="men-at-arms"
+  docTitle={`${m.name} — CK3 Men-at-Arms`}
+  lede={`${typeName(m.type)}${m.dlc ? ` · ${m.dlc}` : ''}${det.unlockEraName ? ` · available from the ${det.unlockEraName} era` : ''}`}
+>
+  <p class="crumb subtle"><a href={`${base}/men-at-arms`}>← All men-at-arms</a></p>
+
+  <section class="unlock">
+    <h2 class="group-h">How to unlock</h2>
+    <p class="usum">{det.unlockSummary ?? 'See the raw definition below.'}</p>
+    {det.unlockVia && det.unlockVia.length > 0 && (
+      <ul class="vias">
+        {det.unlockVia.map((v: any) => (
+          <li><span class={`vkind ${v.kind}`}>{v.kind}</span> {v.name}{v.era ? <span class="subtle"> · {v.era} era</span> : null}</li>
+        ))}
+      </ul>
+    )}
+    {m.requirements && m.requirements.filter((r: any) => r.negated).length > 0 && (
+      <p class="subtle small">Cannot be recruited if: {m.requirements.filter((r: any) => r.negated).map((r: any) => r.name).join(', ')}.</p>
+    )}
+  </section>
+
+  <section class="stats">
+    <h2 class="group-h">Stats{scales ? ' by era' : ''}</h2>
+    {scales ? (
+      <table class="ntbl">
+        <thead><tr><th>Era</th><th class="num">Damage</th><th class="num">Toughness</th><th class="num">Pursuit</th><th class="num">Screen</th></tr></thead>
+        <tbody>
+          {eraRows.map((r) => (
+            <tr class={r.era.includes(det.unlockEraName) ? 'here' : ''}>
+              <td>{r.era}</td><td class="num">{r.damage}</td><td class="num">{r.toughness}</td><td class="num">{r.pursuit}</td><td class="num">{r.screen}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    ) : (
+      <div class="statrow">
+        <span>Damage <b>{S.damage ?? 0}</b></span><span>Toughness <b>{S.toughness ?? 0}</b></span>
+        <span>Pursuit <b>{S.pursuit ?? 0}</b></span><span>Screen <b>{S.screen ?? 0}</b></span>
+      </div>
+    )}
+    <div class="meta subtle">
+      Regiment size (stack): <b>{m.stack ?? 100}</b> · Recruit: <b>{gold(m.buyCost) ?? '—'}</b> gold ·
+      Upkeep (raised): <b>{gold(m.highMaintenance) ?? '—'}</b> gold/mo · Provisions: {m.provisionCost ?? '—'}
+    </div>
+  </section>
+
+  {m.counters && Object.keys(m.counters).length > 0 && (
+    <section>
+      <h2 class="group-h">Counters</h2>
+      <div class="chips">{Object.entries(m.counters).map(([arch, n]) => (
+        <span class="chip">{typeName(arch)} ×{n}</span>
+      ))}</div>
+    </section>
+  )}
+
+  {m.terrainBonus && Object.keys(m.terrainBonus).length > 0 && (
+    <section>
+      <h2 class="group-h">Terrain bonuses</h2>
+      <div class="chips">{Object.entries(m.terrainBonus).map(([t, d]: any) => (
+        <span class="chip">{terrainName(t)}: {Object.entries(d).map(([k, v]) => `${v > 0 ? '+' : ''}${v} ${k}`).join(', ')}</span>
+      ))}</div>
+    </section>
+  )}
+
+  {det.raw && (
+    <section>
+      <h2 class="group-h">Game definition <span class="subtle small">{det.sourceFile}</span></h2>
+      <pre class="raw"><code>{det.raw}</code></pre>
+    </section>
+  )}
+
+  <style>
+    .crumb { margin-bottom: 1rem; }
+    .unlock { background: var(--panel); border: 1px solid var(--line); border-radius: var(--r); padding: 0.8rem 1rem; margin-bottom: 1.3rem; }
+    .usum { font-size: 0.95rem; margin: 0.2rem 0 0.5rem; }
+    .vias { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.3rem; }
+    .vias li { font-size: 0.88rem; }
+    .vkind { display: inline-block; font-size: 0.68rem; font-family: var(--font-mono); text-transform: uppercase; padding: 0 0.35rem; border-radius: 3px; margin-right: 0.4rem; }
+    .vkind.innovation { background: color-mix(in oklab, var(--brass) 35%, transparent); color: var(--brass-bright); }
+    .vkind.tradition { background: color-mix(in oklab, var(--good) 30%, transparent); color: var(--good); }
+    section { margin-bottom: 1.5rem; }
+    .statrow { display: flex; gap: 1.5rem; font-size: 0.95rem; flex-wrap: wrap; }
+    .statrow b, .meta b { color: var(--brass-bright); }
+    .meta { margin-top: 0.7rem; font-size: 0.82rem; }
+    .ntbl .here { background: color-mix(in oklab, var(--brass) 12%, transparent); }
+    .chips { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+    .chip { background: var(--panel-2); border: 1px solid var(--line); border-radius: var(--r); padding: 0.2rem 0.55rem; font-size: 0.82rem; }
+    .small { font-size: 0.74rem; }
+    .raw { background: var(--ink); border: 1px solid var(--line); border-radius: var(--r); padding: 0.9rem 1.1rem; overflow-x: auto; font: 0.78rem/1.5 var(--font-mono); color: var(--vellum); white-space: pre; }
+  </style>
+</Base>
