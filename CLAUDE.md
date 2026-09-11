@@ -232,11 +232,15 @@ Known gaps / next steps:
   build force-stamps the drawn pixel nearest their centroid — the *centroid
   itself* can land outside a crescent-shaped province — and then re-checks
   that stamping evicted nobody who had survived.
-- **An `[hidden]` overlay with a class-level `display: flex` still eats every
-  pointer event.** The regions map's loading note sits at `inset: 0` over the
-  canvas; `.rmap-status { display:flex }` outranks the UA's `[hidden]` rule, so
-  hover silently did nothing until `.rmap-status[hidden] { display:none }` was
-  added. Symptom: `el.hidden === true`, `elementFromPoint` still returns it.
+- **`el.hidden` loses to any class that sets `display`.** An author rule
+  (`.rrow { display:flex }`) outranks the UA's `[hidden] { display:none }`, so
+  the attribute gets set and nothing happens. Bit twice on the regions page:
+  the map's `inset:0` loading note kept eating every pointer event (hover did
+  nothing, `elementFromPoint` still returned it), and the region list's filter
+  hid no rows while the "N of 612" counter dutifully updated. Fixed once, for
+  the whole site, with `[hidden] { display: none !important }` in theme.css —
+  don't re-solve it per component. Symptom to recognise: `el.hidden === true`
+  and the element still laid out.
 - **Region membership is declared at mixed granularity** — duchies (365),
   sub-regions (140), counties (117), kingdoms (37), bare province ids (25).
   Ship the DECLARED form plus `geo-tree.json` and resolve in the browser:

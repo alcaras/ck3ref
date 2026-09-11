@@ -45,6 +45,13 @@
 
 * { box-sizing: border-box; }
 
+/* Any author rule that sets `display` on a class outranks the UA's
+   `[hidden] { display: none }`, so `el.hidden = true` sets the attribute and
+   changes nothing — filters "stop working" and invisible overlays keep eating
+   pointer events. Every page here toggles rows and panels with .hidden, so
+   the attribute wins site-wide. */
+[hidden] { display: none !important; }
+
 html { background: var(--ink); }
 
 body {
