@@ -73,6 +73,7 @@ export const TABS: Tab[] = [
   // World
   { slug: 'titles', label: 'Titles', section: 'World', status: 'built', summary: 'De jure trees for every empire, kingdom, duchy.' },
   { slug: 'start-dates', label: 'Start Dates', section: 'World', status: 'built', summary: 'Who holds what in 867 and 1066.' },
+  { slug: 'regions', label: 'Regions', section: 'World', status: 'built', summary: "The 612 geographical regions, on an interactive map: what each contains, and what uses it." },
   { slug: 'situations', label: 'Situations', section: 'World', status: 'built', summary: 'The Great Steppe seasons, Dynastic Cycle, Silk Road, natural disasters.' },
   { slug: 'struggles', label: 'Struggles', section: 'World', status: 'built', summary: 'Iberia and Persia: phases, effects, catalysts.' },
   { slug: 'legends', label: 'Legends', section: 'World', status: 'built', summary: 'Legend types, seeds, chronicles.' },

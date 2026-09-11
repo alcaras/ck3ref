@@ -1,0 +1,133 @@
+---
+// The shared canvas map. Every page that embeds it gets the same engine
+// (src/lib/regionmap.ts), so the 612 detail pages share one bundled chunk.
+// Without JS the canvas simply never appears and the note in its place says
+// so; the region list and the composition tables are server-rendered.
+interface Props {
+  /** Region ids to paint on load, comma-separated. */
+  preselect?: string;
+  /** Read and write ?r=…&base=… — only the /regions page should. */
+  urlState?: boolean;
+  height?: string;
+}
+const { preselect = '', urlState = false, height = '70vh' } = Astro.props;
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const BASE_LAYERS = [
+  ['plain', 'plain — land, sea, impassable'],
+  ['terrain', 'terrain — the game’s terrain colours'],
+  ['kingdom', 'de jure kingdoms'],
+];
+---
+<div
+  class="rmap"
+  data-region-map
+  data-base={base}
+  data-preselect={preselect}
+  data-url={urlState ? 'yes' : 'no'}
+  style={`--map-h:${height}`}
+>
+  <div class="rmap-bar">
+    <label class="rmap-lbl">
+      base
+      <select data-map-base>
+        {BASE_LAYERS.map(([v, label]) => <option value={v}>{label}</option>)}
+      </select>
+    </label>
+    <button type="button" data-map-action="world">fit world</button>
+    <button type="button" data-map-action="selection">fit selection</button>
+    <button type="button" data-map-action="clear">clear</button>
+    <span class="rmap-hint">drag to pan · wheel to zoom · click a province to pin it</span>
+  </div>
+  <div class="rmap-stage">
+    <canvas hidden></canvas>
+    <p class="rmap-status" data-map-status>
+      The interactive map needs JavaScript. The region list and every
+      composition table on this page are server-rendered and work without it.
+    </p>
+    <div class="rmap-tip" data-map-tip hidden></div>
+  </div>
+  <div class="rmap-legend" data-map-legend></div>
+</div>
+
+<script>
+  import { initRegionMap } from '../lib/regionmap';
+  for (const el of document.querySelectorAll<HTMLElement>('[data-region-map]')) {
+    initRegionMap(el);
+  }
+</script>
+
+<style>
+  .rmap { display: flex; flex-direction: column; min-width: 0; }
+  .rmap-bar {
+    display: flex; gap: 0.5rem; align-items: center; flex-wrap: wrap;
+    padding: 0.4rem 0.1rem 0.5rem;
+  }
+  .rmap-lbl { color: var(--dim); font-size: 0.78rem; display: flex; gap: 0.35rem; align-items: center; }
+  .rmap-bar select {
+    background: var(--ink); color: var(--vellum); border: 1px solid var(--line);
+    border-radius: var(--r); padding: 0.22rem 0.4rem; font: inherit; font-size: 0.78rem;
+  }
+  .rmap-bar button {
+    background: var(--panel); color: var(--vellum); border: 1px solid var(--line);
+    border-radius: var(--r); padding: 0.22rem 0.6rem; font: inherit; font-size: 0.78rem;
+    cursor: pointer;
+  }
+  .rmap-bar button:hover { border-color: var(--brass); color: var(--brass-bright); }
+  .rmap-hint { color: var(--faint); font-size: 0.72rem; margin-left: auto; }
+  .rmap-stage {
+    position: relative; height: var(--map-h); min-height: 320px;
+    background: var(--ink); border: 1px solid var(--line-soft); border-radius: var(--r);
+    overflow: hidden;
+  }
+  .rmap-stage canvas { width: 100%; height: 100%; display: block; cursor: crosshair; touch-action: none; }
+  .rmap-status {
+    position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
+    margin: 0; padding: 1rem; text-align: center; color: var(--dim); font-size: 0.85rem;
+  }
+  /* `display: flex` above outranks the UA's [hidden] rule, and an
+     inset-0 overlay that is merely invisible still eats every pointer
+     event meant for the canvas. */
+  .rmap-status[hidden] { display: none; }
+  .rmap-legend { display: flex; flex-wrap: wrap; gap: 0.4rem 0.8rem; padding: 0.5rem 0.1rem 0; min-height: 1.6rem; }
+</style>
+
+<style is:global>
+  /* Built at runtime via innerHTML — Astro's scoped CSS cannot reach it. */
+  .rmap-tip {
+    position: absolute; z-index: 5; max-width: 23rem; pointer-events: auto;
+    background: var(--panel); border: 1px solid var(--line);
+    border-radius: var(--r); padding: 0.5rem 0.6rem; font-size: 0.8rem;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.45);
+  }
+  .rmap-tip .tip-h { display: flex; gap: 0.5rem; align-items: baseline; }
+  .rmap-tip .tip-h b { font-size: 0.92rem; }
+  .rmap-tip .tip-id { color: var(--faint); font-family: var(--font-mono); font-size: 0.7rem; margin-left: auto; }
+  .rmap-tip .tip-sub { color: var(--dim); font-size: 0.74rem; margin-top: 0.1rem; }
+  .rmap-tip .tip-sub code { font-family: var(--font-mono); color: var(--faint); }
+  .rmap-tip .tip-dim { font-style: normal; color: var(--faint); }
+  .rmap-tip .tip-chain { margin: 0.35rem 0 0.1rem; font-size: 0.76rem; line-height: 1.5; }
+  .rmap-tip .tip-chain .sep { color: var(--faint); margin: 0 0.3rem; }
+  .rmap-tip .tip-rh {
+    color: var(--rubric); font-size: 0.72rem; margin-top: 0.45rem;
+    border-top: 1px solid var(--line-soft); padding-top: 0.35rem;
+  }
+  .rmap-tip .tip-chips { display: flex; flex-wrap: wrap; gap: 0.22rem; margin-top: 0.3rem; max-height: 11rem; overflow-y: auto; }
+  .rmap-tip .rchip {
+    background: none; color: var(--vellum); border: 1px solid var(--line);
+    border-radius: 999px; padding: 0.1rem 0.45rem; font: inherit; font-size: 0.72rem;
+    cursor: pointer; display: inline-flex; gap: 0.25rem; align-items: baseline;
+  }
+  .rmap-tip .rchip:hover { border-color: var(--brass); color: var(--brass-bright); }
+  .rmap-tip .rchip.is-on { border-color: var(--rubric); background: color-mix(in oklab, var(--rubric) 22%, transparent); }
+  .rmap-tip .rchip .rkey {
+    font-style: normal; font-family: var(--font-mono); font-size: 0.6rem;
+    color: var(--faint); border: 1px dotted var(--line); border-radius: 2px; padding: 0 0.15rem;
+  }
+  .rmap-legend .lg-item { display: inline-flex; gap: 0.35rem; align-items: center; font-size: 0.78rem; }
+  .rmap-legend .lg-sw { width: 11px; height: 11px; border-radius: 2px; background: var(--c); flex: none; }
+  .rmap-legend .lg-item b { font-family: var(--font-mono); font-size: 0.7rem; color: var(--brass); }
+  .rmap-legend .lg-x { background: none; border: none; color: var(--faint); cursor: pointer; font-size: 0.9rem; line-height: 1; padding: 0; }
+  .rmap-legend .lg-x:hover { color: var(--bad); }
+  .rmap-legend .lg-empty, .rmap-legend .lg-note { color: var(--faint); font-size: 0.75rem; }
+  .rmap-legend .lg-note { flex-basis: 100%; }
+</style>

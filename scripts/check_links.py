@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Post-build check: no broken internal hrefs, no unresolved-term markers."""
 
+import html
 import re
 import sys
 from pathlib import Path
@@ -22,9 +23,13 @@ def main():
               for p in pages}
     bad = []
     for p in DIST.rglob("*.html"):
-        html = p.read_text(encoding="utf-8", errors="replace")
-        for m in re.finditer(r'href="(/[^"#]*)', html):
-            href = m.group(1)
+        page = p.read_text(encoding="utf-8", errors="replace")
+        # Unescape before matching: three region routes contain a literal
+        # `&`, which the HTML carries as `&#38;`.
+        for m in re.finditer(r'href="([^"]*)"', page):
+            href = html.unescape(m.group(1)).split("#", 1)[0]
+            if not href.startswith("/"):
+                continue
             if BASE and href.startswith(BASE):
                 href = href[len(BASE):] or "/"
             href = href.rstrip("/") or "/"
@@ -32,7 +37,7 @@ def main():
                 continue
             if href not in routes:
                 bad.append(f"{p.relative_to(DIST)} → {m.group(1)}")
-        if "term--unknown" in html:
+        if "term--unknown" in page:
             bad.append(f"{p.relative_to(DIST)}: unresolved <Term>")
     if bad:
         for b in bad[:30]:

@@ -1,0 +1,276 @@
+---
+import Base from '../../layouts/Base.astro';
+import RegionMap from '../../components/RegionMap.astro';
+import data from '../../data/regions.json';
+import titleIndex from '../../data/title-index.json';
+
+export function getStaticPaths() {
+  return (data as any).regions.map((r: any) => ({ params: { id: r.slug }, props: { r } }));
+}
+
+const { r } = Astro.props as { r: any };
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const D = data as any;
+const byId = new Map<string, any>(D.regions.map((x: any) => [x.id, x]));
+const slugOf = (id: string) => byId.get(id)?.slug ?? id;
+const titles = titleIndex as Record<string, { name: string; tier: string; page?: string }>;
+
+const DECLARED = [
+  ['hegemonies', 'Hegemonies'],
+  ['empires', 'Empires'],
+  ['kingdoms', 'Kingdoms'],
+  ['duchies', 'Duchies'],
+  ['counties', 'Counties'],
+  ['provinces', 'Provinces'],
+  ['regions', 'Sub-regions'],
+] as const;
+
+const titleHref = (id: string) => {
+  const t = titles[id];
+  if (!t?.page) return null;
+  return `${base}/titles/${t.page}${t.page === id ? '' : `#${id}`}`;
+};
+const titleName = (id: string) => titles[id]?.name ?? id;
+
+const declaredRows = DECLARED
+  .filter(([k]) => (r.declared[k] ?? []).length > 0)
+  .map(([k, label]) => ({ key: k, label, items: r.declared[k] as (string | number)[] }));
+
+const usedByCats = Object.entries(r.usedBy as Record<string, string[]>)
+  .sort((a, b) => b[1].length - a[1].length);
+
+const catLabel = (c: string) => c.replace(/_/g, ' ');
+const shortPath = (p: string) => p.replace(/^common\//, '').replace(/^events\//, 'events/');
+
+const classLabel: Record<string, string> = {
+  land: 'land', sea: 'sea zones', lake: 'lakes', river: 'major rivers',
+  impassable: 'impassable', wasteland: 'wasteland', unused: 'unused',
+};
+const classes = Object.entries(r.resolved.byClass as Record<string, number>)
+  .sort((a, b) => b[1] - a[1]);
+---
+<Base
+  title={r.name}
+  active="regions"
+  docTitle={`${r.name} — CK3 Regions`}
+  lede={`${r.family} region${r.localized ? '' : ' · no localized name — this is its internal key'} · declared in ${r.file}`}
+  stats={[
+    { value: r.resolved.provinces.toLocaleString(), label: 'provinces' },
+    { value: r.resolved.counties.toLocaleString(), label: 'counties' },
+    { value: r.resolved.duchies.toLocaleString(), label: 'duchies' },
+    { value: r.usedByCount, label: 'script references' },
+  ]}
+>
+  <p class="crumb subtle">
+    <a href={`${base}/regions`}>← all regions</a>
+    <span class="key">{r.id}</span>
+  </p>
+
+  {!r.localized && (
+    <p class="warnbox">
+      The game gives this region no localized name. “{r.name}” is its key
+      <code>{r.id}</code> with the underscores removed — it is not a name the
+      game ever shows.
+    </p>
+  )}
+
+  <RegionMap preselect={r.id} height="52vh" />
+
+  <section>
+    <h2 class="group-h" id="declared">Declared membership</h2>
+    <p class="note">
+      Exactly as the game declares it in <code>{r.file}</code> — regions are
+      written at whatever granularity the designer chose, and collapsing that
+      to a province list would lose it.
+    </p>
+    {declaredRows.map(({ key, label, items }) => (
+      <div class="decl">
+        <h3 class="decl-h">{label}<span class="count">{items.length}</span></h3>
+        <div class="chips chips--wide">
+          {key === 'regions'
+            ? items.map((id) => (
+                <a class="chip chip--req" href={`${base}/regions/${slugOf(String(id))}`}>
+                  {byId.get(String(id))?.name ?? id}
+                  {byId.get(String(id)) && !byId.get(String(id)).localized && <i class="rkey">key</i>}
+                </a>
+              ))
+            : key === 'provinces'
+            ? items.map((pid) => <span class="chip chip--terrain" title="province id from definition.csv">#{pid}</span>)
+            : items.map((id) => {
+                const href = titleHref(String(id));
+                return href
+                  ? <a class="chip" href={href}>{titleName(String(id))}</a>
+                  : <span class="chip" title={String(id)}>{titleName(String(id))}</span>;
+              })}
+        </div>
+      </div>
+    ))}
+    {declaredRows.length === 0 && <p class="note">Nothing declared — this region is empty in the files.</p>}
+  </section>
+
+  <section>
+    <h2 class="group-h" id="resolved">What that resolves to</h2>
+    <div class="tbl-scroll">
+      <table class="ntbl">
+        <thead>
+          <tr><th>Measure</th><th class="num">Count</th><th>Notes</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="name">Provinces</td>
+            <td class="num">{r.resolved.provinces.toLocaleString()}</td>
+            <td class="subtle">
+              {classes.map(([c, n]) => `${n.toLocaleString()} ${classLabel[c] ?? c}`).join(' · ')}
+            </td>
+          </tr>
+          <tr>
+            <td class="name">Drawn on the map</td>
+            <td class="num">{r.resolved.drawn.toLocaleString()}</td>
+            <td class="subtle">
+              {r.resolved.drawn === r.resolved.provinces
+                ? 'every province in this region is painted in provinces.png'
+                : `${(r.resolved.provinces - r.resolved.drawn).toLocaleString()} defined but never painted`}
+            </td>
+          </tr>
+          <tr>
+            <td class="name">Counties</td>
+            <td class="num">{r.resolved.counties.toLocaleString()}</td>
+            <td class="subtle">derived from the provinces, not from what is declared</td>
+          </tr>
+          <tr>
+            <td class="name">Duchies</td>
+            <td class="num">{r.resolved.duchies.toLocaleString()}</td>
+            <td class="subtle">de jure duchies those counties sit in</td>
+          </tr>
+          <tr>
+            <td class="name">Kingdoms</td>
+            <td class="num">{r.resolved.kingdoms.toLocaleString()}</td>
+            <td class="subtle">de jure kingdoms the region reaches into</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  {(r.parents.length > 0 || r.modifiers || r.graphical || r.color || r.should_remember_counties_order) && (
+    <section>
+      <h2 class="group-h" id="flags">Flags and relationships</h2>
+      <div class="tbl-scroll">
+        <table class="ntbl">
+          <tbody>
+            {r.parents.length > 0 && (
+              <tr>
+                <td class="name">Included by</td>
+                <td>
+                  <span class="chips chips--wide">
+                    {r.parents.map((p: string) => (
+                      <a class="chip chip--req" href={`${base}/regions/${slugOf(p)}`}>
+                        {byId.get(p)?.name ?? p}
+                        {byId.get(p) && !byId.get(p).localized && <i class="rkey">key</i>}
+                      </a>
+                    ))}
+                  </span>
+                </td>
+              </tr>
+            )}
+            {r.modifiers && (
+              <tr>
+                <td class="name"><code>generate_modifiers</code></td>
+                <td>
+                  <p class="note">
+                    The engine generates one modifier per region from this flag.
+                    The magnitude belongs to whatever applies them, so only the
+                    keys and the game's own phrasing for the underlying modifier
+                    are shown.
+                  </p>
+                  <table class="sub">
+                    <tbody>
+                      {r.modifiers.map((m: any) => (
+                        <tr><td><code>{m.key}</code></td><td class="subtle">{m.name}</td></tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </td>
+              </tr>
+            )}
+            {r.graphical && (
+              <tr>
+                <td class="name"><code>graphical</code></td>
+                <td class="subtle">used for map graphics rather than for gameplay scope</td>
+              </tr>
+            )}
+            {r.should_remember_counties_order && (
+              <tr>
+                <td class="name"><code>should_remember_counties_order</code></td>
+                <td class="subtle">the engine keeps the declared county order for this region</td>
+              </tr>
+            )}
+            {r.color && (
+              <tr>
+                <td class="name"><code>color</code></td>
+                <td><span class="chip"><span class="dot" style={`--c:${r.color}`} />{r.color}</span></td>
+              </tr>
+            )}
+          </tbody>
+        </table>
+      </div>
+    </section>
+  )}
+
+  <section>
+    <h2 class="group-h" id="usedby">
+      Used by<span class="count">{r.usedByCount} file{r.usedByCount === 1 ? '' : 's'}</span>
+    </h2>
+    {usedByCats.length === 0 ? (
+      <p class="note">
+        Nothing under <code>common/</code> or <code>events/</code> names this
+        region.{' '}
+        {r.family === 'Island'
+          ? 'Island regions are consumed by the engine itself — island_region.txt says the AI needs them to optimise pathfinding — so an absence here is expected.'
+          : 'It is either read by the engine directly or left over from an earlier patch.'}
+      </p>
+    ) : (
+      <div class="tbl-scroll">
+        <table class="ntbl">
+          <thead>
+            <tr><th>Category</th><th class="num">Files</th><th>Where</th></tr>
+          </thead>
+          <tbody>
+            {usedByCats.map(([cat, files]) => (
+              <tr>
+                <td class="name">{catLabel(cat)}</td>
+                <td class="num">{files.length}</td>
+                <td class="subtle files">{files.map((f) => <code>{shortPath(f)}</code>)}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    )}
+  </section>
+
+  <style>
+    .crumb { display: flex; gap: 0.6rem; align-items: baseline; }
+    .crumb .key { font-family: var(--font-mono); font-size: 0.72rem; color: var(--faint); }
+    .warnbox {
+      border-left: 2px solid var(--rubric); background: var(--panel);
+      padding: 0.5rem 0.75rem; color: var(--dim); font-size: 0.84rem; max-width: 70ch;
+    }
+    .warnbox code, .note code { font-family: var(--font-mono); }
+    .note { color: var(--faint); font-size: 0.8rem; max-width: 78ch; margin: 0 0 0.6rem; }
+    .decl { margin: 0.7rem 0 1rem; }
+    .decl-h {
+      font-family: var(--font-display); font-size: 0.86rem; font-weight: 600;
+      margin: 0 0 0.3rem; display: flex; gap: 0.45rem; align-items: baseline;
+    }
+    .decl-h .count { color: var(--faint); font-family: var(--font-mono); font-size: 0.72rem; }
+    .chips--wide { max-width: none; }
+    .chip { text-decoration: none; }
+    a.chip:hover { border-color: var(--brass); color: var(--brass-bright); }
+    .sub { border-collapse: collapse; font-size: 0.8rem; }
+    .sub td { padding: 0.1rem 0.8rem 0.1rem 0; }
+    .sub code { font-family: var(--font-mono); font-size: 0.76rem; color: var(--brass); }
+    .files { display: flex; flex-wrap: wrap; gap: 0.15rem 0.5rem; }
+    .files code { font-family: var(--font-mono); font-size: 0.72rem; }
+  </style>
+</Base>

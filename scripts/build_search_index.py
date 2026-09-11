@@ -32,7 +32,7 @@ TYPE_LABELS = {
     "domicile": "Domicile", "accolade": "Accolade", "holding": "Holding",
     "great_project": "Great Project", "struggle": "Struggle",
     "situation": "Situation", "legend_type": "Legend", "legend_seed": "Legend",
-    "epidemic": "Epidemic", "scheme": "Scheme", "perk": "Perk",
+    "epidemic": "Epidemic", "region": "Region", "scheme": "Scheme", "perk": "Perk",
 }
 
 

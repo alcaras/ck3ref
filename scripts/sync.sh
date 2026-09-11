@@ -20,6 +20,7 @@ SUBTREES=(
   game/dlc_metadata
   game/history
   game/events
+  game/map_data
   jomini/common
 )
 

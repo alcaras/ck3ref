@@ -75,21 +75,23 @@ hover, ruling). Six skill colors (`--sk-*`) are the only other hues.
   `game/gfx/interface/icons/<category>/<key>.dds` → `public/img/<cat>/…webp`
   from the mirror (Pillow reads DDS directly).
 
-## Status (2026-08-26)
+## Status (2026-09-11)
 
 **Live: https://alcaras.github.io/ck3ref/** — repo `alcaras/ck3ref`, Pages via
 Actions (CI compiles Astro only; data and art are committed).
 
-57 catalog pages, no placeholders. **8,811 routes** — the bulk is one page per
-event (8,659). ~55 build scripts, ~7k registered entities, 10k+ backlinks,
-~4.2k converted icons plus 21 panoramic legacy banners and 97 decision scenes.
-Full build ≈ 15s.
+62 catalog pages, no placeholders. **9,538 routes** — the bulk is one page per
+event (8,659) and one per geographical region (612). ~57 build scripts, ~7.6k
+registered entities, 10k+ backlinks, ~4.2k converted icons plus 21 panoramic
+legacy banners and 97 decision scenes, and a 1.1 MB province-index map payload
+under `public/map/`. Full build ≈ 15s; `make data` ≈ 60s (the region
+cross-reference scan is ~14s of it).
 
 Tools (all client-side, all shareable by URL):
 `legacy-builder` (dynasty legacy path, purchase order matters),
 `culture-builder` (hybridize / diverge / reform), `province-planner`
 (what you can build in a holding), `genetics`, `faith-creator`,
-`culture-calculator`, `army-builder`.
+`culture-calculator`, `army-builder`, `regions` (the province map).
 
 Known gaps / next steps:
 
@@ -215,6 +217,46 @@ Known gaps / next steps:
   any buildability list.
 - **Dynasty legacy perk cost is GLOBAL, not per track**: `PERK_COST_BASE` +
   `PERK_COST_MULTIPLIER` x perks already unlocked (250 + 500N). See hard rule 6.
+- **The map is a raster of province indices, not a picture.**
+  `build_map.py` decodes `map_data/provinces.png` (9216x4608) against
+  `definition.csv`, downscales ÷3 with a MODE filter (averaging indices would
+  invent provinces) and writes `public/map/provinces-index.png` as
+  `R = idx & 255, G = idx >> 8, B = 0`. Write it with no gamma/ICC chunk and
+  set `imageSmoothingEnabled = false` before any `drawImage`, or a
+  colour-managed decode resamples indices into garbage. The build asserts both.
+- **`definition.csv` row 0 and province 12946 share RGB (0,0,0).** Black is the
+  null province; 12946 is undrawable. A naive colour→id dict gives every black
+  pixel on the map to 12946. 519 provinces are defined but never painted
+  (12,750 of 13,269) — expected, counted, not an error.
+- **÷3 swallows two provinces** (9666, 12828, 4-5 source pixels each). The
+  build force-stamps the drawn pixel nearest their centroid — the *centroid
+  itself* can land outside a crescent-shaped province — and then re-checks
+  that stamping evicted nobody who had survived.
+- **An `[hidden]` overlay with a class-level `display: flex` still eats every
+  pointer event.** The regions map's loading note sits at `inset: 0` over the
+  canvas; `.rmap-status { display:flex }` outranks the UA's `[hidden]` rule, so
+  hover silently did nothing until `.rmap-status[hidden] { display:none }` was
+  added. Symptom: `el.hidden === true`, `elementFromPoint` still returns it.
+- **Region membership is declared at mixed granularity** — duchies (365),
+  sub-regions (140), counties (117), kingdoms (37), bare province ids (25).
+  Ship the DECLARED form plus `geo-tree.json` and resolve in the browser:
+  resolved sets total 320k province ids. Counts of counties/duchies/kingdoms
+  are derived UPWARD from the resolved provinces, so a region declared as bare
+  ids still reports the counties it covers.
+- **365 of 612 regions have no localized name.** The "localized name is
+  mandatory" audit rule is explicitly waived for regions; they render as the
+  prettified key with a `key` mark, never title-cased into a fake name.
+- **Region families are ours, not the game's.** `build_regions.py` maps every
+  key by file / exact key / suffix / prefix and REFUSES to emit an unmapped
+  key — that tripwire is what caught `togskol_khanatede_jure_region`, whose
+  game-side key is missing an underscore.
+- **Three region keys contain a literal `&`** (`ghw_region_finland_&_estonia`
+  and two more), so routes use a `slug` with `&`→`and`. `check_links.py` used
+  to truncate hrefs at the `#` of `&#38;` — it now unescapes entities first.
+- **`/titles/` has a page per EMPIRE only**; kingdoms, duchies and counties are
+  anchors on it. `src/data/title-index.json` (from `build_map.py`) carries
+  `name`/`tier`/`page` so links resolve to `/titles/<empire>#<title>`. Titles
+  with no empire ancestor are all titular noble-family titles with no land.
 - **Hybridization is gated on cultural acceptance, not prestige**: base 40
   (`hybridization_threshold_flat_number_value`), x0.5 / x2 from the traditions
   carrying `easier_to_hybridize` / `harder_to_hybridize` (the target culture's

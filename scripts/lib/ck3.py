@@ -645,6 +645,23 @@ def unknown_feature_report():
 # Output helper
 # ---------------------------------------------------------------------------
 
+def write_public_json(relpath, data, compact=False):
+    """Same determinism contract as write_json, for files the browser fetches.
+
+    `compact` drops the indentation for payloads whose bulk is long numeric
+    arrays — sort_keys still makes the bytes reproducible, and indent=2 on a
+    13k-element array triples the download for nobody's benefit.
+    """
+    out = ROOT / "public" / relpath
+    out.parent.mkdir(parents=True, exist_ok=True)
+    kw = {"separators": (",", ":")} if compact else {"indent": 2}
+    out.write_text(json.dumps(data, sort_keys=True, ensure_ascii=False, **kw) + "\n",
+                   encoding="utf-8")
+    n = len(data) if isinstance(data, (list, dict)) else 1
+    kb = out.stat().st_size / 1024
+    print(f"\u2713 wrote public/{relpath} \u2014 {n} entries, {kb:.0f} KB")
+
+
 def write_json(relpath, data):
     out = ROOT / "src" / "data" / relpath
     out.parent.mkdir(parents=True, exist_ok=True)

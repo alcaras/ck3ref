@@ -1,0 +1,288 @@
+---
+import Base from '../layouts/Base.astro';
+import RegionMap from '../components/RegionMap.astro';
+import data from '../data/regions.json';
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const D = data as any;
+const regions = D.regions as any[];
+const families = D.families as string[];
+
+const byFamily = families.map((f) => ({
+  family: f,
+  rows: regions.filter((r) => r.family === f),
+}));
+
+const DECLARED_LABEL: Record<string, string> = {
+  hegemonies: 'hegemonies', empires: 'empires', kingdoms: 'kingdoms',
+  duchies: 'duchies', counties: 'counties', provinces: 'provinces',
+  regions: 'sub-regions',
+};
+const declaredSummary = (r: any) =>
+  Object.entries(r.declared as Record<string, unknown[]>)
+    .map(([k, v]) => `${v.length} ${DECLARED_LABEL[k] ?? k}`)
+    .join(', ');
+
+const totalProvinces = regions.reduce((n, r) => n + r.resolved.provinces, 0);
+const withModifiers = regions.filter((r) => r.modifiers).length;
+---
+<Base
+  title="Regions"
+  active="regions"
+  lede={`CK3's geographical regions are named province sets the game reads constantly and never shows you: ${D.counts.regions} of them, declared across four map_data files, gating traditions, casus belli, activities, situations, decisions, events, disasters, trade and hunting. Toggle any of them onto the map — they overlap, so overlapping provinces are dithered between their colours rather than painted over.`}
+  stats={[
+    { value: D.counts.regions, label: 'regions' },
+    { value: D.counts.localized, label: 'with an in-game name' },
+    { value: D.counts.referenced, label: 'referenced in script' },
+    { value: totalProvinces.toLocaleString(), label: 'memberships resolved' },
+  ]}
+>
+  <div class="bleed">
+    <div class="panes">
+      <RegionMap urlState={true} />
+
+      <aside class="listpane">
+        <div class="lp-bar">
+          <input type="search" data-region-search placeholder="Filter regions…" autocomplete="off" />
+          <select data-region-family>
+            <option value="">every family</option>
+            {families.map((f) => <option value={f}>{f}</option>)}
+          </select>
+          <span class="hint" data-region-count>{regions.length}</span>
+        </div>
+        <div class="lp-scroll" data-region-list>
+          {byFamily.map(({ family, rows }) => (
+            <section data-family-group={family}>
+              <h3 class="lp-h">{family}<span class="count">{rows.length}</span></h3>
+              {rows.map((r) => (
+                <label
+                  class="rrow"
+                  data-region-row={r.id}
+                  data-family={family}
+                  data-search={`${r.name} ${r.id}`.toLowerCase()}
+                >
+                  <input type="checkbox" data-region={r.id} />
+                  <span class="rrow-sw" />
+                  <span class="rrow-n">
+                    {r.name}
+                    {!r.localized && <i class="rkey" title={`no localized name — ${r.id} is the internal key`}>key</i>}
+                  </span>
+                  <span class="rrow-c">{r.resolved.provinces.toLocaleString()}</span>
+                  <a class="rrow-go" href={`${base}/regions/${r.slug}`} title="region page">›</a>
+                </label>
+              ))}
+            </section>
+          ))}
+        </div>
+      </aside>
+    </div>
+  </div>
+
+  <section class="intro">
+    <h2 class="group-h" id="how">How to read this</h2>
+    <div class="cols2">
+      <p>
+        Every province on the map belongs to some number of regions — usually
+        several. Hover a province for its name and id, its barony → county →
+        duchy → kingdom → empire chain, its terrain, and the full list of
+        regions containing it; click to pin that panel so the region chips can
+        be clicked. That reverse lookup is the thing the game files make hard:
+        a region file tells you what <code>world_europe_west</code> contains,
+        but nothing tells you which regions contain Paris.
+      </p>
+      <p>
+        Selection colours and the family grouping below are this site's, not
+        the game's — the files ship no palette and no taxonomy. Everything
+        else on this page is read from
+        <code>map_data/geographical_regions/</code>,
+        <code>map_data/island_region.txt</code>,
+        <code>common/landed_titles/</code> and
+        <code>map_data/definition.csv</code> at build time. The base map is
+        the game's own <code>provinces.png</code>, re-encoded as one province
+        index per pixel and scaled to a third of its size; two provinces too
+        small to survive that are stamped back in so every province stays
+        hoverable.
+      </p>
+    </div>
+    <p class="note">
+      {D.counts.localized} regions have a localized name; the other
+      {D.counts.regions - D.counts.localized} have none, and are shown as their
+      internal key with a <i class="rkey">key</i> mark rather than being
+      title-cased into a name the game never gives them.
+    </p>
+  </section>
+
+  <section>
+    <h2 class="group-h" id="families">Families<span class="count">{families.length}</span></h2>
+    <div class="tbl-scroll">
+      <table class="ntbl">
+        <thead>
+          <tr>
+            <th>Family</th>
+            <th class="num">Regions</th>
+            <th class="num">Named</th>
+            <th class="num">Referenced</th>
+            <th>What they are</th>
+          </tr>
+        </thead>
+        <tbody>
+          {byFamily.map(({ family, rows }) => (
+            <tr>
+              <td class="name"><a href={`#fam-${family.replace(/[^a-z]/gi, '')}`}>{family}</a></td>
+              <td class="num">{rows.length}</td>
+              <td class="num">{rows.filter((r) => r.localized).length}</td>
+              <td class="num">{rows.filter((r) => r.usedByCount > 0).length}</td>
+              <td class="subtle">
+                {[...new Set(rows.map((r) => r.file))].join(', ')}
+                {' · '}
+                {rows.reduce((n, r) => n + r.resolved.provinces, 0).toLocaleString()} memberships
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  {byFamily.map(({ family, rows }) => (
+    <section>
+      <h2 class="group-h" id={`fam-${family.replace(/[^a-z]/gi, '')}`}>
+        {family}<span class="count">{rows.length}</span>
+      </h2>
+      <div class="tbl-scroll">
+        <table class="ntbl">
+          <thead>
+            <tr>
+              <th>Region</th>
+              <th>Declared as</th>
+              <th class="num">Provinces</th>
+              <th class="num">Land</th>
+              <th class="num">Sea</th>
+              <th class="num">Other</th>
+              <th class="num">Counties</th>
+              <th class="num">Duchies</th>
+              <th class="num">Kingdoms</th>
+              <th class="num">Used by</th>
+              <th>Flags</th>
+            </tr>
+          </thead>
+          <tbody>
+            {rows.map((r) => (
+              <tr>
+                <td class="name">
+                  <a href={`${base}/regions/${r.slug}`}>{r.name}</a>
+                  {!r.localized && <i class="rkey">key</i>}
+                </td>
+                <td class="subtle">{declaredSummary(r)}</td>
+                <td class="num">{r.resolved.provinces.toLocaleString()}</td>
+                <td class="num">{r.resolved.land.toLocaleString()}</td>
+                <td class="num">{r.resolved.sea || <span class="subtle">—</span>}</td>
+                <td class="num">{r.resolved.other || <span class="subtle">—</span>}</td>
+                <td class="num">{r.resolved.counties.toLocaleString()}</td>
+                <td class="num">{r.resolved.duchies.toLocaleString()}</td>
+                <td class="num">{r.resolved.kingdoms || <span class="subtle">—</span>}</td>
+                <td class="num">{r.usedByCount || <span class="subtle">—</span>}</td>
+                <td>
+                  <span class="chips">
+                    {r.modifiers && <span class="chip chip--counter">modifiers</span>}
+                    {r.graphical && <span class="chip">graphical</span>}
+                    {r.should_remember_counties_order && <span class="chip">ordered</span>}
+                    {r.color && <span class="chip"><span class="dot" style={`--c:${r.color}`} />colour</span>}
+                  </span>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </section>
+  ))}
+
+  <section class="prov">
+    <h2 class="group-h" id="provenance">Where these numbers come from</h2>
+    <ul>
+      <li>
+        Regions: <code>map_data/geographical_regions/geographical_region.txt</code>
+        ({D.counts.files['geographical_region.txt']}),
+        <code>10_natural_disaster_regions.txt</code> ({D.counts.files['10_natural_disaster_regions.txt']}),
+        <code>tgp_chinesenaming_regions.txt</code> ({D.counts.files['tgp_chinesenaming_regions.txt']}),
+        <code>map_data/island_region.txt</code> ({D.counts.files['island_region.txt']}).
+      </li>
+      <li>
+        Membership is resolved through <code>common/landed_titles/</code> — a
+        barony's <code>province = N</code> is the only link between a title and
+        a pixel. Counts of counties, duchies and kingdoms are derived upward
+        from the provinces a region actually covers, so a region declared as
+        bare province ids still reports the counties it sits in.
+      </li>
+      <li>
+        {withModifiers} regions set <code>generate_modifiers</code>, which makes
+        the engine create <code>&lt;key&gt;_development_growth</code> and
+        <code>&lt;key&gt;_development_growth_factor</code>. Their magnitudes come
+        from whatever applies them, so the region pages name the modifiers
+        without putting a number on them.
+      </li>
+      <li>
+        “Used by” is a scan of every file under <code>common/</code> and
+        <code>events/</code> for the region key. {D.counts.unreferenced} regions
+        are named by nothing in script — the island regions among them are
+        consumed by the engine itself for pathfinding, as
+        <code>island_region.txt</code> says in its header.
+      </li>
+    </ul>
+  </section>
+
+  <style>
+    /* The map has to escape .wrap's 1280px — it is the page, not an inset. */
+    .bleed {
+      margin-left: calc(50% - 50vw);
+      margin-right: calc(50% - 50vw);
+      padding: 0 clamp(0.75rem, 2vw, 2rem) 1.25rem;
+    }
+    .panes { display: grid; grid-template-columns: minmax(0, 1fr) 23rem; gap: 1rem; align-items: start; }
+    @media (max-width: 900px) { .panes { grid-template-columns: 1fr; } }
+    .listpane {
+      border: 1px solid var(--line-soft); border-radius: var(--r);
+      background: var(--panel); display: flex; flex-direction: column; min-width: 0;
+      max-height: calc(70vh + 5.5rem);
+    }
+    .lp-bar { display: flex; gap: 0.4rem; align-items: center; padding: 0.5rem; border-bottom: 1px solid var(--line-soft); }
+    .lp-bar input, .lp-bar select {
+      background: var(--ink); color: var(--vellum); border: 1px solid var(--line);
+      border-radius: var(--r); padding: 0.25rem 0.4rem; font: inherit; font-size: 0.78rem; min-width: 0;
+    }
+    .lp-bar input { flex: 1; }
+    .lp-bar .hint { color: var(--faint); font-size: 0.7rem; font-family: var(--font-mono); white-space: nowrap; }
+    .lp-scroll { overflow-y: auto; padding: 0.25rem 0.35rem 0.6rem; }
+    .lp-h {
+      font-family: var(--font-display); font-size: 0.78rem; font-weight: 600;
+      color: var(--rubric); margin: 0.6rem 0 0.2rem; display: flex; gap: 0.4rem;
+      align-items: baseline; position: sticky; top: 0; background: var(--panel); padding: 0.2rem 0.15rem;
+    }
+    .lp-h .count { color: var(--faint); font-family: var(--font-mono); font-size: 0.68rem; margin-left: auto; }
+    .rrow {
+      display: flex; gap: 0.4rem; align-items: center; padding: 0.16rem 0.2rem;
+      font-size: 0.8rem; cursor: pointer; border-radius: 3px; --c: transparent;
+    }
+    .rrow:hover { background: var(--panel-2, var(--ink)); }
+    .rrow input { accent-color: var(--rubric); margin: 0; flex: none; }
+    .rrow-sw { width: 9px; height: 9px; border-radius: 2px; background: var(--c); border: 1px solid var(--line); flex: none; }
+    .rrow-n { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .rrow-c { color: var(--faint); font-family: var(--font-mono); font-size: 0.68rem; }
+    .rrow-go { color: var(--faint); text-decoration: none; padding: 0 0.15rem; border: 0; }
+    .rrow-go:hover { color: var(--brass-bright); }
+    .intro { margin-top: 0.5rem; }
+    .cols2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 0 1.5rem; }
+    .cols2 p { color: var(--dim); max-width: 62ch; }
+    .note { color: var(--faint); font-size: 0.8rem; max-width: 78ch; }
+    .prov ul { color: var(--faint); font-size: 0.8rem; max-width: 82ch; line-height: 1.6; }
+    .prov code, .note code, .cols2 code { font-family: var(--font-mono); font-size: 0.92em; }
+  </style>
+  <style is:global>
+    .rkey {
+      font-style: normal; font-family: var(--font-mono); font-size: 0.6rem;
+      color: var(--faint); border: 1px dotted var(--line); border-radius: 2px;
+      padding: 0 0.15rem; margin-left: 0.3rem; vertical-align: 1px;
+    }
+  </style>
+</Base>

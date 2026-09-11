@@ -4,7 +4,10 @@
 1. A game/common/ directory that is neither mapped to a build script nor in
    the conscious SKIP list — the patch tripwire for new content categories.
 2. A has_dlc_feature flag not covered by ck3.FEATURE_TO_DLC.
-3. Emitted entities without localized names.
+3. Emitted entities without localized names — EXCEPT geographical regions,
+   365 of which the game genuinely never names (see check_regions).
+4. Regions: every one resolves to at least one province; every title and
+   province id they reference exists; every key maps to a known family.
 
 Warnings (non-fatal): modifier keys emitted without a display format entry.
 """
@@ -78,6 +81,7 @@ MAPPED = {
     "game_concepts": "build_concepts.py + lib/ck3.py link targets",
     "culture": "build_traditions.py / build_innovations.py / build_pillars.py"
                " / build_cultures.py (subdirs eras/name_lists pending)",
+    "province_terrain": "build_map.py (terrain + the wasteland/impassable split)",
     "modifier_definition_formats": "lib/ck3.py (modifier formatter)",
     "script_values": "lib/ck3.py (value resolver)",
 }
@@ -103,10 +107,81 @@ SKIP = {
     "character_backgrounds", "character_memory_types", "deathreasons",
     "scripted_relations", "pool_character_selectors", "guest_system",
     "courtier_guest_management", "graphical_unit_types", "combat_effects",
-    "combat_phase_events", "ai_war_stances", "ai_goaltypes", "province_terrain",
+    "combat_phase_events", "ai_war_stances", "ai_goaltypes",
     "connection_arrows", "playable_difficulty_infos", "console_groups",
     "province_mapping",
 }
+
+# game/ subtrees the site reads outside common/: map_data is parsed by
+# build_map.py and build_regions.py.
+
+def check_regions(failures):
+    """Gates for src/data/regions.json and its inputs.
+
+    The "localized name is mandatory" rule deliberately does NOT apply here:
+    365 of the 612 regions have no loc entry at all, and the page marks those
+    as internal keys rather than inventing names.
+    """
+    path = ck3.ROOT / "src" / "data" / "regions.json"
+    if not path.exists():
+        failures.append("src/data/regions.json missing — run build_regions.py")
+        return
+    data = json.loads(path.read_text(encoding="utf-8"))
+    regions = data["regions"]
+    by_id = {r["id"] for r in regions}
+
+    empty = [r["id"] for r in regions if r["resolved"]["provinces"] < 1]
+    if empty:
+        failures.append(f"regions resolving to no province: {empty[:8]}")
+
+    # every declared title must exist in landed_titles, and every province id
+    # in definition.csv — build_regions reports dangling refs, this fails on it
+    titles = json.loads((ck3.ROOT / "src" / "data" / "title-index.json")
+                        .read_text(encoding="utf-8"))
+    provinces = set()
+    with (ck3.REF / "game" / "map_data" / "definition.csv").open(
+            encoding="utf-8-sig", errors="replace") as fh:
+        for line in fh:
+            head = line.split(";")[0].strip()
+            if head.isdigit():
+                provinces.add(int(head))
+
+    bad_titles, bad_provinces, bad_subs = [], [], []
+    for r in regions:
+        for field in ("kingdoms", "duchies", "counties", "empires"):
+            for ref in r["declared"].get(field, []):
+                if ref not in titles:
+                    bad_titles.append((r["id"], ref))
+        for pid in r["declared"].get("provinces", []):
+            if pid not in provinces:
+                bad_provinces.append((r["id"], pid))
+        for sub in r["declared"].get("regions", []):
+            if sub not in by_id:
+                bad_subs.append((r["id"], sub))
+    if bad_titles:
+        failures.append(f"region title references not in landed_titles: {bad_titles[:6]}")
+    if bad_provinces:
+        failures.append(f"region province ids not in definition.csv: {bad_provinces[:6]}")
+    if bad_subs:
+        failures.append(f"region sub-region references that do not exist: {bad_subs[:6]}")
+
+    # Family mapping. build_regions.py already refuses to emit an unmapped
+    # key; this re-checks the emitted file so a stale regions.json is caught.
+    known = set(data["families"])
+    unknown = sorted({r["family"] for r in regions} - known)
+    if unknown:
+        failures.append(f"regions with a family outside the declared list: {unknown}")
+    unfamilied = [r["id"] for r in regions if not r.get("family")]
+    if unfamilied:
+        failures.append(f"regions with no family: {unfamilied[:8]}")
+
+    if len(regions) != data["counts"]["regions"]:
+        failures.append("regions.json count disagrees with its own region list")
+
+    print(f"  regions: {len(regions)} checked, "
+          f"{sum(1 for r in regions if not r['localized'])} without a localized name "
+          f"(expected — rendered as internal keys)")
+
 
 def main():
     failures = []
@@ -126,6 +201,8 @@ def main():
     unnamed = [r["id"] for r in maa if not r.get("name")]
     if unnamed:
         failures.append(f"maa entries without localized names: {unnamed}")
+
+    check_regions(failures)
 
     missing_fmt = ck3.missing_modifier_report()
     if missing_fmt:

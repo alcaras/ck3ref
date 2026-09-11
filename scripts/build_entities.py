@@ -111,6 +111,14 @@ def main():
         add(r["id"], "epidemic", r["name"], "epidemics",
             f"img/epidemics/{r['id']}.webp", scan=True)
 
+    # Regions register with scan=False on purpose: their names are common
+    # words ("Europe", "Ireland", "Persia") and free-text scanning would
+    # link every mention of them on every page.
+    reg = load("regions.json") or {"regions": []}
+    for r in reg["regions"]:
+        add(f"region_{r['id']}", "region", r["name"], f"regions/{r['slug']}",
+            scan=False, slug=r["slug"])
+
     for r in load("task_contracts.json") or []:
         add(r["id"], "task_contract", r["name"], "task-contracts", scan=False)
     dom = load("domiciles.json") or {"types": []}
