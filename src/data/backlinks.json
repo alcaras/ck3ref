@@ -1261,6 +1261,86 @@
       "page": "traits"
     }
   ],
+  "archer_attribute": [
+    {
+      "anchor": "archers_of_the_nile",
+      "context": "units",
+      "label": "Nile Archers",
+      "page": "men-at-arms"
+    },
+    {
+      "anchor": "ballistrai",
+      "context": "units",
+      "label": "Ballistrai",
+      "page": "men-at-arms"
+    },
+    {
+      "anchor": "bowmen",
+      "context": "units",
+      "label": "Bowmen",
+      "page": "men-at-arms"
+    },
+    {
+      "anchor": "bush_hunter",
+      "context": "units",
+      "label": "Bush Hunters",
+      "page": "men-at-arms"
+    },
+    {
+      "anchor": "crossbowmen",
+      "context": "units",
+      "label": "Crossbowmen",
+      "page": "men-at-arms"
+    },
+    {
+      "anchor": "gakgung_archers",
+      "context": "units",
+      "label": "Gakgung Archers",
+      "page": "men-at-arms"
+    },
+    {
+      "anchor": "longbowmen",
+      "context": "units",
+      "label": "Longbowmen",
+      "page": "men-at-arms"
+    },
+    {
+      "anchor": "maturkan_warriors",
+      "context": "units",
+      "label": "Maturkan Warriors",
+      "page": "men-at-arms"
+    },
+    {
+      "anchor": "metsanvartija",
+      "context": "units",
+      "label": "Metsänvartija",
+      "page": "men-at-arms"
+    },
+    {
+      "anchor": "paiks",
+      "context": "units",
+      "label": "Paiks",
+      "page": "men-at-arms"
+    },
+    {
+      "anchor": "rocket_carts",
+      "context": "units",
+      "label": "Rocket Carts",
+      "page": "men-at-arms"
+    },
+    {
+      "anchor": "shenbigong",
+      "context": "units",
+      "label": "Shenbigong",
+      "page": "men-at-arms"
+    },
+    {
+      "anchor": "vigmen",
+      "context": "units",
+      "label": "Vigmen",
+      "page": "men-at-arms"
+    }
+  ],
   "archer_captain_camp_officer": [
     {
       "anchor": "horse_archer_captain_camp_officer",
@@ -1881,6 +1961,12 @@
       "page": "men-at-arms"
     },
     {
+      "anchor": "crossbowmen",
+      "context": "units",
+      "label": "Crossbowmen",
+      "page": "men-at-arms"
+    },
+    {
       "anchor": "longbowmen",
       "context": "maa",
       "label": "Longbowmen",
@@ -2256,6 +2342,14 @@
       "anchor": "accolade_maa_cameliers",
       "context": "maa",
       "label": "Retinue Camel Riders",
+      "page": "men-at-arms"
+    }
+  ],
+  "camelry_attribute": [
+    {
+      "anchor": "camel_rider",
+      "context": "units",
+      "label": "Camel Riders",
       "page": "men-at-arms"
     }
   ],
@@ -15745,6 +15839,12 @@
       "context": "concepts",
       "label": "Holy Site",
       "page": "legends"
+    },
+    {
+      "anchor": "teutonic_knights",
+      "context": "maa",
+      "label": "Order Knights",
+      "page": "men-at-arms"
     },
     {
       "anchor": "order_member",
@@ -48309,6 +48409,20 @@
       "page": "legends"
     }
   ],
+  "elephantry_attribute": [
+    {
+      "anchor": "ballista_elephant",
+      "context": "units",
+      "label": "Ballista Elephants",
+      "page": "men-at-arms"
+    },
+    {
+      "anchor": "war_elephant",
+      "context": "units",
+      "label": "War Elephants",
+      "page": "men-at-arms"
+    }
+  ],
   "elope": [
     {
       "anchor": "elope_interaction",
@@ -48318,6 +48432,12 @@
     }
   ],
   "emishi": [
+    {
+      "anchor": "emishi_horse_archers",
+      "context": "units",
+      "label": "Emishi Riders",
+      "page": "men-at-arms"
+    },
     {
       "anchor": "emishi_horse_archers",
       "context": "maa",
@@ -49379,6 +49499,20 @@
       "page": "traditions"
     }
   ],
+  "gunpowder_attribute": [
+    {
+      "anchor": "fire_lancers",
+      "context": "units",
+      "label": "Fire Lancers",
+      "page": "men-at-arms"
+    },
+    {
+      "anchor": "handgunners",
+      "context": "units",
+      "label": "Handgunners",
+      "page": "men-at-arms"
+    }
+  ],
   "handgunners": [
     {
       "anchor": "gunpowder_attribute",
@@ -50059,6 +50193,44 @@
       "page": "traditions"
     }
   ],
+  "horse_archer_attribute": [
+    {
+      "anchor": "asawira",
+      "context": "units",
+      "label": "Asawira",
+      "page": "men-at-arms"
+    },
+    {
+      "anchor": "emishi_horse_archers",
+      "context": "units",
+      "label": "Emishi Riders",
+      "page": "men-at-arms"
+    },
+    {
+      "anchor": "heavy_horse_archers",
+      "context": "units",
+      "label": "Heavy Horse Archers",
+      "page": "men-at-arms"
+    },
+    {
+      "anchor": "horse_archers",
+      "context": "units",
+      "label": "Horse Archers",
+      "page": "men-at-arms"
+    },
+    {
+      "anchor": "japanese_horse_archers",
+      "context": "units",
+      "label": "Mounted Samurai",
+      "page": "men-at-arms"
+    },
+    {
+      "anchor": "mangudai",
+      "context": "units",
+      "label": "Mangudai",
+      "page": "men-at-arms"
+    }
+  ],
   "horse_archers": [
     {
       "anchor": "horse_archer_attribute",
@@ -50076,6 +50248,12 @@
       "anchor": "emishi_horse_archers",
       "context": "maa",
       "label": "Emishi Riders",
+      "page": "men-at-arms"
+    },
+    {
+      "anchor": "heavy_horse_archers",
+      "context": "units",
+      "label": "Heavy Horse Archers",
       "page": "men-at-arms"
     },
     {
@@ -51289,6 +51467,18 @@
       "page": "court-positions"
     },
     {
+      "anchor": "ballista_elephant",
+      "context": "units",
+      "label": "Ballista Elephants",
+      "page": "men-at-arms"
+    },
+    {
+      "anchor": "war_elephant",
+      "context": "units",
+      "label": "War Elephants",
+      "page": "men-at-arms"
+    },
+    {
       "anchor": "tradition_lords_of_the_elephant",
       "context": "traditions",
       "label": "Lords of the Elephant",
@@ -51322,6 +51512,18 @@
       "anchor": "accolade_maa_handgunners",
       "context": "maa",
       "label": "Retinue Handgunners",
+      "page": "men-at-arms"
+    },
+    {
+      "anchor": "fire_lancers",
+      "context": "units",
+      "label": "Fire Lancers",
+      "page": "men-at-arms"
+    },
+    {
+      "anchor": "handgunners",
+      "context": "units",
+      "label": "Handgunners",
       "page": "men-at-arms"
     }
   ],
@@ -52981,6 +53183,68 @@
       "page": "legacies"
     }
   ],
+  "lancer_attribute": [
+    {
+      "anchor": "armored_horsemen",
+      "context": "units",
+      "label": "Armored Horsemen",
+      "page": "men-at-arms"
+    },
+    {
+      "anchor": "black_armor_cavalry",
+      "context": "units",
+      "label": "Black-Armored Cavalry",
+      "page": "men-at-arms"
+    },
+    {
+      "anchor": "cataphract",
+      "context": "units",
+      "label": "Kataphraktoi",
+      "page": "men-at-arms"
+    },
+    {
+      "anchor": "cataphract_archers",
+      "context": "units",
+      "label": "Cataphract Archers",
+      "page": "men-at-arms"
+    },
+    {
+      "anchor": "conrois",
+      "context": "units",
+      "label": "Conrois",
+      "page": "men-at-arms"
+    },
+    {
+      "anchor": "gendarme",
+      "context": "units",
+      "label": "Gendarmes",
+      "page": "men-at-arms"
+    },
+    {
+      "anchor": "monaspa",
+      "context": "units",
+      "label": "Monaspa",
+      "page": "men-at-arms"
+    },
+    {
+      "anchor": "nomad_lancers",
+      "context": "units",
+      "label": "Nomad Lancers",
+      "page": "men-at-arms"
+    },
+    {
+      "anchor": "tarkhan",
+      "context": "units",
+      "label": "Tarkhans",
+      "page": "men-at-arms"
+    },
+    {
+      "anchor": "tiefutu",
+      "context": "units",
+      "label": "Tiefutu",
+      "page": "men-at-arms"
+    }
+  ],
   "langobard": [
     {
       "anchor": "lombard",
@@ -54373,6 +54637,74 @@
       "page": "decisions"
     }
   ],
+  "outrider_attribute": [
+    {
+      "anchor": "ayrudzi",
+      "context": "units",
+      "label": "Ayrudzi",
+      "page": "men-at-arms"
+    },
+    {
+      "anchor": "caballero",
+      "context": "units",
+      "label": "Caballeros",
+      "page": "men-at-arms"
+    },
+    {
+      "anchor": "chasseur",
+      "context": "units",
+      "label": "Chasseurs",
+      "page": "men-at-arms"
+    },
+    {
+      "anchor": "hobelar",
+      "context": "units",
+      "label": "Hobelars",
+      "page": "men-at-arms"
+    },
+    {
+      "anchor": "hussar",
+      "context": "units",
+      "label": "Konni",
+      "page": "men-at-arms"
+    },
+    {
+      "anchor": "light_horsemen",
+      "context": "units",
+      "label": "Light Horsemen",
+      "page": "men-at-arms"
+    },
+    {
+      "anchor": "mulaththamun",
+      "context": "units",
+      "label": "Mulathamūn",
+      "page": "men-at-arms"
+    },
+    {
+      "anchor": "sahel_horsemen",
+      "context": "units",
+      "label": "Sahel Horsemen",
+      "page": "men-at-arms"
+    },
+    {
+      "anchor": "steppe_raiders",
+      "context": "units",
+      "label": "Steppe Raiders",
+      "page": "men-at-arms"
+    },
+    {
+      "anchor": "tawashi",
+      "context": "units",
+      "label": "Tawashi",
+      "page": "men-at-arms"
+    },
+    {
+      "anchor": "teulu",
+      "context": "units",
+      "label": "Teulu",
+      "page": "men-at-arms"
+    }
+  ],
   "overthrow_regent": [
     {
       "anchor": "overthrow_regent_scheme_interaction",
@@ -55077,6 +55409,50 @@
       "page": "cultures"
     }
   ],
+  "pike_attribute": [
+    {
+      "anchor": "bondi",
+      "context": "units",
+      "label": "Bondí",
+      "page": "men-at-arms"
+    },
+    {
+      "anchor": "landsknecht",
+      "context": "units",
+      "label": "Landsknechts",
+      "page": "men-at-arms"
+    },
+    {
+      "anchor": "picchieri",
+      "context": "units",
+      "label": "Picchieri",
+      "page": "men-at-arms"
+    },
+    {
+      "anchor": "pikemen_unit",
+      "context": "units",
+      "label": "Pikemen",
+      "page": "men-at-arms"
+    },
+    {
+      "anchor": "schiltron",
+      "context": "units",
+      "label": "Schiltron",
+      "page": "men-at-arms"
+    },
+    {
+      "anchor": "skoutatoi",
+      "context": "units",
+      "label": "Skoutatoi",
+      "page": "men-at-arms"
+    },
+    {
+      "anchor": "zupin_warrior",
+      "context": "units",
+      "label": "Zupin Spearmen",
+      "page": "men-at-arms"
+    }
+  ],
   "pikemen_unit": [
     {
       "anchor": "pike_attribute",
@@ -55714,6 +56090,12 @@
   "samurai": [
     {
       "anchor": "japanese_horse_archers",
+      "context": "units",
+      "label": "Mounted Samurai",
+      "page": "men-at-arms"
+    },
+    {
+      "anchor": "japanese_horse_archers",
       "context": "maa",
       "label": "Mounted Samurai",
       "page": "men-at-arms"
@@ -56149,6 +56531,62 @@
       "context": "decisions",
       "label": "Unite the Husamguk",
       "page": "decisions"
+    }
+  ],
+  "skirmisher_attribute": [
+    {
+      "anchor": "abudrar",
+      "context": "units",
+      "label": "Abudrar",
+      "page": "men-at-arms"
+    },
+    {
+      "anchor": "akritai",
+      "context": "units",
+      "label": "Akritai",
+      "page": "men-at-arms"
+    },
+    {
+      "anchor": "goedendag",
+      "context": "units",
+      "label": "Goedendag Militia",
+      "page": "men-at-arms"
+    },
+    {
+      "anchor": "guanch_vaulter",
+      "context": "units",
+      "label": "Vaulter Infantry",
+      "page": "men-at-arms"
+    },
+    {
+      "anchor": "guinea_warrior",
+      "context": "units",
+      "label": "Guinean Uplanders",
+      "page": "men-at-arms"
+    },
+    {
+      "anchor": "horn_warrior",
+      "context": "units",
+      "label": "Horn Warriors",
+      "page": "men-at-arms"
+    },
+    {
+      "anchor": "light_footmen",
+      "context": "units",
+      "label": "Light Footmen",
+      "page": "men-at-arms"
+    },
+    {
+      "anchor": "pesilat_warriors",
+      "context": "units",
+      "label": "Pesilat Warriors",
+      "page": "men-at-arms"
+    },
+    {
+      "anchor": "shomer",
+      "context": "units",
+      "label": "Shomer",
+      "page": "men-at-arms"
     }
   ],
   "skoutatoi": [
@@ -66171,6 +66609,98 @@
       "context": "cultures",
       "label": "Yughur",
       "page": "cultures"
+    }
+  ],
+  "vanguard_attribute": [
+    {
+      "anchor": "armored_footmen",
+      "context": "units",
+      "label": "Armored Footmen",
+      "page": "men-at-arms"
+    },
+    {
+      "anchor": "ayyar",
+      "context": "units",
+      "label": "Ayyar",
+      "page": "men-at-arms"
+    },
+    {
+      "anchor": "burenjia",
+      "context": "units",
+      "label": "Burenjia Infantry",
+      "page": "men-at-arms"
+    },
+    {
+      "anchor": "druzhina",
+      "context": "units",
+      "label": "Druzhina",
+      "page": "men-at-arms"
+    },
+    {
+      "anchor": "garudas",
+      "context": "units",
+      "label": "Lenkas",
+      "page": "men-at-arms"
+    },
+    {
+      "anchor": "huscarl",
+      "context": "units",
+      "label": "Huscarls",
+      "page": "men-at-arms"
+    },
+    {
+      "anchor": "khandayat",
+      "context": "units",
+      "label": "Khandayat",
+      "page": "men-at-arms"
+    },
+    {
+      "anchor": "mountaineer",
+      "context": "units",
+      "label": "Mountaineers",
+      "page": "men-at-arms"
+    },
+    {
+      "anchor": "mubarizun",
+      "context": "units",
+      "label": "Mubarizun",
+      "page": "men-at-arms"
+    },
+    {
+      "anchor": "palace_guards",
+      "context": "units",
+      "label": "Palace Guards",
+      "page": "men-at-arms"
+    },
+    {
+      "anchor": "praetorian",
+      "context": "units",
+      "label": "Palatini",
+      "page": "men-at-arms"
+    },
+    {
+      "anchor": "samurai",
+      "context": "units",
+      "label": "Samurai",
+      "page": "men-at-arms"
+    },
+    {
+      "anchor": "sarawit",
+      "context": "units",
+      "label": "Sarawit",
+      "page": "men-at-arms"
+    },
+    {
+      "anchor": "zbrojnosh",
+      "context": "units",
+      "label": "Zbrojnosh",
+      "page": "men-at-arms"
+    },
+    {
+      "anchor": "zhanmadao_infantry",
+      "context": "units",
+      "label": "Zhanmadao Infantry",
+      "page": "men-at-arms"
     }
   ],
   "varangian_guards": [
