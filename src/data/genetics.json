@@ -1,4 +1,110 @@
 {
+  "bloodLegacy": {
+    "perks": [
+      {
+        "effects": [
+          "+30% Chance of new good Congenital Traits",
+          "+30% Chance of inheriting good Congenital Traits"
+        ],
+        "id": "blood_legacy_1",
+        "mods": {
+          "positive_inactive_inheritance_chance": 0.3,
+          "positive_random_genetic_chance": 0.3
+        },
+        "name": "Noble Veins",
+        "order": 1
+      },
+      {
+        "effects": [
+          "+30% Chance of reinforcing Congenital Traits"
+        ],
+        "id": "blood_legacy_2",
+        "mods": {
+          "genetic_trait_strengthen_chance": 0.3
+        },
+        "name": "Convergent Blood",
+        "order": 2
+      },
+      {
+        "effects": [
+          "-30% Chance of new bad Congenital Traits",
+          "-30% Chance of inheriting bad Congenital Traits"
+        ],
+        "id": "blood_legacy_3",
+        "mods": {
+          "negative_inactive_inheritance_chance": -0.3,
+          "negative_random_genetic_chance": -0.3
+        },
+        "name": "Resilient Bloodline",
+        "order": 3
+      },
+      {
+        "effects": [],
+        "id": "blood_legacy_4",
+        "mods": {},
+        "name": "Architected Ancestry",
+        "order": 4,
+        "pick": {
+          "chance": 5,
+          "playerExtra": 5,
+          "traits": [
+            {
+              "good": true,
+              "id": "beauty_good_1",
+              "name": "Comely"
+            },
+            {
+              "good": true,
+              "id": "intellect_good_1",
+              "name": "Quick"
+            },
+            {
+              "good": true,
+              "id": "physique_good_1",
+              "name": "Hale"
+            },
+            {
+              "good": true,
+              "id": "fecund",
+              "name": "Fecund"
+            },
+            {
+              "good": false,
+              "id": "albino",
+              "name": "Albino"
+            },
+            {
+              "good": false,
+              "id": "giant",
+              "name": "Giant"
+            },
+            {
+              "good": false,
+              "id": "dwarf",
+              "name": "Dwarf"
+            },
+            {
+              "good": false,
+              "id": "scaly",
+              "name": "Scaly"
+            }
+          ]
+        }
+      },
+      {
+        "effects": [],
+        "id": "blood_legacy_5",
+        "mods": {},
+        "name": "Octogenarians",
+        "order": 5
+      }
+    ],
+    "track": "Blood"
+  },
+  "concepts": {
+    "congenital": "Certain Traits are Congenital and can be inherited by offspring. Through proper Breeding, it is even possible to reinforce some such Traits.\n\nFor example, if both parents are Quick, there is a chance that their children will get the even better Intelligent Trait.\n\nBase Skills are not congenital.",
+    "inbreeding": "The Children of two closely related Characters risk being born with a Congenital defect, the most serious of which is the Inbred Trait.\n\nThis is rare in the first generation, but successive Inbreeding increases the risk.\n\nGenerations of Inbreeding can, however, also result in the beneficial Pure-blooded Trait, which (if both parents share it) makes offspring immune to birth defects due to all flaws having been Bred out of the bloodline."
+  },
   "constants": {
     "ACTIVE_TRAIT_CHANCE_ACTIVE_ACTIVE": 80.0,
     "ACTIVE_TRAIT_CHANCE_ACTIVE_INACTIVE": 50.0,
@@ -10,7 +116,10 @@
     "INACTIVE_TRAIT_CHANCE_ACTIVE_NONE": 75.0,
     "INACTIVE_TRAIT_CHANCE_INACTIVE_INACTIVE": 50.0,
     "INACTIVE_TRAIT_CHANCE_INACTIVE_NONE": 25.0,
+    "INBRED_RELATEDNESS_MULT": 0.3,
+    "INBREEDING_ANCESTOR_GENERATIONS": 4.0,
     "MATCHED_TRAIT_DIFFERENCE_MULT": 0.2,
+    "PUREBLOODED_INBRED_RELATEDNESS_MULT": 0.03,
     "TIER_TRAIT_REDUCTION_MULT": 0.4,
     "TRAIT_REINFORCEMENT_CHANCE": 0.5
   },
@@ -289,6 +398,133 @@
         }
       ],
       "name": "Physique Good"
+    }
+  ],
+  "inherited": [
+    {
+      "birth": null,
+      "both": 75,
+      "category": "physical",
+      "categoryName": "Physical Trait",
+      "effects": [
+        "+10% Fertility",
+        "+0.25 Health",
+        "-50% Inbreeding Chance"
+      ],
+      "good": true,
+      "id": "pure_blooded",
+      "inherit": 15,
+      "level": null,
+      "name": "Pure-blooded",
+      "realFather": null,
+      "sex": null,
+      "tone": "good"
+    },
+    {
+      "birth": null,
+      "both": null,
+      "category": "physical",
+      "categoryName": "Physical Trait",
+      "effects": [
+        "-50% Fertility",
+        "-1.5 Health",
+        "-30 Attraction Opinion",
+        "-10 Vassal Opinion",
+        "-5 Diplomacy",
+        "-5 Intrigue",
+        "-5 Learning",
+        "-5 Martial",
+        "-2 Prowess",
+        "-5 Stewardship"
+      ],
+      "good": false,
+      "id": "inbred",
+      "inherit": 15,
+      "level": null,
+      "name": "Inbred",
+      "realFather": null,
+      "sex": null,
+      "tone": "bad"
+    },
+    {
+      "birth": null,
+      "both": null,
+      "category": "health",
+      "categoryName": "Health Trait",
+      "effects": [
+        "-1 Health",
+        "-20% Fertility",
+        "-20 Natural Dread",
+        "+100% Dread Loss",
+        "-1 Diplomacy",
+        "-1 Intrigue",
+        "-1 Learning",
+        "-1 Martial",
+        "-1 Stewardship"
+      ],
+      "good": false,
+      "id": "great_pox",
+      "inherit": 10,
+      "level": null,
+      "name": "Great Pox",
+      "realFather": null,
+      "sex": null,
+      "tone": "bad"
+    },
+    {
+      "birth": null,
+      "both": null,
+      "category": "health",
+      "categoryName": "Health Trait",
+      "effects": [
+        "-5 Natural Dread",
+        "-20 Attraction Opinion"
+      ],
+      "good": false,
+      "id": "lovers_pox",
+      "inherit": 10,
+      "level": null,
+      "name": "Lover's Pox",
+      "realFather": null,
+      "sex": null,
+      "tone": "bad"
+    },
+    {
+      "birth": null,
+      "both": null,
+      "category": "fame",
+      "categoryName": "Fame Trait",
+      "effects": [
+        "+200 Vassal Limit",
+        "+20% Herd Capacity",
+        "+20% Terrified Vassal Herd Contribution",
+        "+20% Terrified Vassal Levy Contribution"
+      ],
+      "good": false,
+      "id": "golden_lineage",
+      "inherit": 100,
+      "level": null,
+      "name": "Golden Lineage",
+      "realFather": false,
+      "sex": "male",
+      "tone": "neutral"
+    },
+    {
+      "birth": null,
+      "both": null,
+      "category": "fame",
+      "categoryName": "Fame Trait",
+      "effects": [
+        "+5 Muslim Opinion"
+      ],
+      "good": false,
+      "id": "sayyid",
+      "inherit": 100,
+      "level": null,
+      "name": "Sayyid",
+      "realFather": false,
+      "sex": "male",
+      "tone": "neutral"
     }
   ],
   "standalone": [

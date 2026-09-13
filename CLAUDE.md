@@ -190,6 +190,24 @@ Known gaps / next steps:
   Converted as-is they render black-on-black and look "missing".
   `build_art.py::_is_alpha_mask` detects this (every visible pixel black) and
   tints with `MASK_TINT`. If an icon set looks invisible, check this first.
+- **Congenital-inheritance modifiers are multiplicative, and only over the
+  recessive table.** `positive/negative_inactive_inheritance_chance`,
+  `*_random_genetic_chance` and `genetic_trait_strengthen_chance` (Blood
+  legacy, and the `strong_blood` event modifier) apply as
+  `chance x (1 + modifier)` — the game documents the form in
+  `common/modifiers/00_event_modifiers.txt`: `positive_random_genetic_chance =
+  4 # This will for instance cause a .2% chance to become 1%`. "Inactive"
+  means the INACTIVE_TRAIT_CHANCE_* (recessive) defines, per the
+  ACTIVE_ACTIVE = 150 comment about modifiers not letting you avoid a bad
+  trait; nothing modifies the outright-inheritance table.
+- **`inherit_chance` traits are a second, separate inheritance system.**
+  Pure-blooded, Inbred, the two poxes, Sayyid and Golden Lineage are NOT
+  `genetic = yes` — they carry a flat `inherit_chance` (and only Pure-blooded
+  a `both_parent_has_trait_inherit_chance`), which is why they never appeared
+  on the genetics page. The first Pure-blooded/Inbred in a line comes from an
+  engine-side relatedness roll (`INBREEDING_ANCESTOR_GENERATIONS`,
+  `INBRED_RELATEDNESS_MULT`, `PUREBLOODED_INBRED_RELATEDNESS_MULT`); the
+  formula is not in script, so don't put a number on it.
 - **Astro scoped CSS does not reach `innerHTML`-injected markup.** Anything a
   page builds at runtime (tooltips, builder panels, planner cards) must be
   styled in a `<style is:global>` block, ideally keyed on a container id.

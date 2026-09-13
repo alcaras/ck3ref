@@ -3,26 +3,52 @@ import Base from '../layouts/Base.astro';
 import data from '../data/genetics.json';
 
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
-const { constants, families, standalone } = data as any;
+const { constants, families, standalone, inherited, bloodLegacy, concepts } = data as any;
 const famOrder = ['intellect_good', 'beauty_good', 'physique_good',
   'intellect_bad', 'beauty_bad', 'physique_bad'];
 const fams = famOrder.map((k) => families.find((f: any) => f.key === k)).filter(Boolean);
+const perks = bloodLegacy.perks;
+const pick = perks.find((p: any) => p.pick)?.pick ?? null;
+const pureblooded = inherited.find((t: any) => t.id === 'pure_blooded');
+
+const pct = (n: number) => `${+n.toFixed(2)}%`;
+const birthList = (vals: (number | null)[]) =>
+  vals.every((v) => v == null) ? null : vals.map((v) => (v == null ? '—' : pct(v))).join(' / ');
+const cats = [...new Set(inherited.map((t: any) => t.categoryName))];
 ---
 <Base
   title="Genetics Calculator"
   active="genetics"
-  lede="Odds that a child inherits each congenital trait, from the game's own inheritance constants. Pick what each parent has — active, or a known recessive carrier."
+  lede="Odds that a child inherits each congenital trait, from the game's own inheritance constants. Pick what each parent has — active, or a known recessive carrier — and switch the Blood legacy on to see it bend the numbers."
   stats={[
     { value: fams.length, label: 'tiered lines' },
     { value: standalone.length, label: 'single traits' },
+    { value: inherited.length, label: 'inherited, not genetic' },
   ]}
 >
+  <div class="filterbar" id="legacybar">
+    <label>{bloodLegacy.track} legacy
+      <select id="legacy">
+        <option value="0">not taken</option>
+        {perks.map((p: any) => <option value={p.order}>{p.order}. {p.name}</option>)}
+      </select>
+    </label>
+    {pick && (
+      <label id="picklabel" hidden>Architected trait
+        <select id="pick">
+          {pick.traits.map((t: any) => <option value={t.id}>{t.name}</option>)}
+        </select>
+      </label>
+    )}
+    <span class="hint" id="legacyfx">Perks buy in order, so step 3 means you own 1–3.</span>
+  </div>
+
   <section>
     <h2 class="group-h">Tiered traits</h2>
     <div class="tbl-scroll">
       <table class="ntbl gcalc" id="tiered">
         <thead>
-          <tr><th>Line</th><th>Father</th><th>Mother</th><th>Child odds</th></tr>
+          <tr><th>Line</th><th>Father</th><th>Mother</th><th>Child odds</th><th>New at birth</th></tr>
         </thead>
         <tbody>
           {fams.map((f: any) => (
@@ -41,6 +67,12 @@ const fams = famOrder.map((k) => families.find((f: any) => f.key === k)).filter(
                 </td>
               ))}
               <td class="odds"><div class="obar"></div><div class="olabel subtle">—</div></td>
+              <td class="birth"
+                data-birth={f.levels.map((l: any) => l.birth ?? '').join(',')}
+                data-good={f.good ? '1' : '0'}
+                data-names={f.levels.map((l: any) => l.name).join(',')}
+                data-arch={f.levels[0].id}
+              >{birthList(f.levels.map((l: any) => l.birth)) ?? '—'}</td>
             </tr>
           ))}
         </tbody>
@@ -53,7 +85,7 @@ const fams = famOrder.map((k) => families.find((f: any) => f.key === k)).filter(
     <div class="tbl-scroll">
       <table class="ntbl gcalc" id="single">
         <thead>
-          <tr><th>Trait</th><th>Father</th><th>Mother</th><th>Child odds</th></tr>
+          <tr><th>Trait</th><th>Father</th><th>Mother</th><th>Child odds</th><th>New at birth</th></tr>
         </thead>
         <tbody>
           {standalone.map((t: any) => (
@@ -77,6 +109,12 @@ const fams = famOrder.map((k) => families.find((f: any) => f.key === k)).filter(
                 </td>
               ))}
               <td class="odds"><div class="obar"></div><div class="olabel subtle">—</div></td>
+              <td class="birth"
+                data-birth={t.birth ?? ''}
+                data-good={t.good ? '1' : '0'}
+                data-names={t.name}
+                data-arch={t.id}
+              >{t.birth == null ? '—' : pct(t.birth)}</td>
             </tr>
           ))}
         </tbody>
@@ -84,22 +122,133 @@ const fams = famOrder.map((k) => families.find((f: any) => f.key === k)).filter(
     </div>
   </section>
 
+  <section>
+    <h2 class="group-h">Inherited at birth, but not genetic</h2>
+    <p class="sec-note">
+      These skip the dominant/recessive system entirely. Each names its own flat
+      chance per birth — <code>inherit_chance</code>, and for Pure-blooded a separate
+      <code>both_parent_has_trait_inherit_chance</code> — which is why the calculator
+      above has no row for them. There is no carrier state, and the Blood legacy
+      modifiers do not reach them: those are written against congenital (genetic)
+      traits.
+    </p>
+    <div class="tbl-scroll">
+      <table class="ntbl gcalc" id="inherited">
+        <thead>
+          <tr><th>Trait</th><th>Father</th><th>Mother</th><th>Child odds</th></tr>
+        </thead>
+        <tbody>
+          {cats.map((cat) => (
+            <Fragment>
+              <tr class="grouprow"><td colspan="4">{cat}</td></tr>
+              {inherited.filter((t: any) => t.categoryName === cat).map((t: any) => (
+                <tr data-trait={t.id} data-inherit={t.inherit} data-both={t.both ?? ''}
+                  class:list={['tone-' + t.tone]}>
+                  <td class="name">
+                    <span class="unit">
+                      <img src={`${base}/img/traits/${t.id}.webp`} alt="" width="28" height="28" loading="lazy" />
+                      <span>
+                        <span class="u-name">{t.name}</span>
+                        <div class="u-sub">{t.effects.slice(0, 3).join(' · ')}</div>
+                        {t.sex === 'male' && (
+                          <div class="u-sub restrict">Father only, and the legal father —
+                            <code>parent_inheritance_sex = male</code>,
+                            <code>inherit_from_real_father = no</code>.</div>
+                        )}
+                      </span>
+                    </span>
+                  </td>
+                  {['f', 'm'].map((side) => (
+                    <td>
+                      <select data-side={side} disabled={t.sex === 'male' && side === 'm'}>
+                        <option value="">none</option>
+                        <option value="1">has trait</option>
+                      </select>
+                    </td>
+                  ))}
+                  <td class="odds"><div class="obar"></div><div class="olabel subtle">—</div></td>
+                </tr>
+              ))}
+            </Fragment>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="notes">
+    <h2 class="group-h">Where Pure-blooded comes from</h2>
+    <blockquote class="game-text">{concepts.inbreeding}</blockquote>
+    <ul>
+      <li>
+        The first Pure-blooded in a line is not inherited at all — the engine rolls it
+        from how closely the parents are related, checking
+        <b>{constants.INBREEDING_ANCESTOR_GENERATIONS}</b> generations of common
+        ancestors (<code>INBREEDING_ANCESTOR_GENERATIONS</code>). Relatedness feeds the
+        Inbred roll scaled by <code>INBRED_RELATEDNESS_MULT</code>
+        {' '}{constants.INBRED_RELATEDNESS_MULT}, and the Pure-blooded roll by
+        <code>PUREBLOODED_INBRED_RELATEDNESS_MULT</code>
+        {' '}{constants.PUREBLOODED_INBRED_RELATEDNESS_MULT} — the same input, scaled
+        ten times smaller. What turns the two into a percentage is engine code, not
+        script, and relatedness depends on the whole family tree, so this tool puts no
+        number on it.
+      </li>
+      <li>
+        Once a character has it, it passes on at the flat rates in the table above:
+        <b>{pureblooded?.inherit}%</b> from one parent, <b>{pureblooded?.both}%</b>
+        when both have it — the only trait in the game that sets a both-parent rate.
+      </li>
+      <li>
+        The trait itself carries −50% Inbreeding Chance. Two Pure-blooded parents
+        therefore contribute −100%, which lines up with the concept text's "immune to
+        birth defects" — <i>our reading of how the two facts fit. The game states the
+        immunity and the trait states the −50%; the arithmetic joining them is not
+        written down in the files.</i>
+      </li>
+    </ul>
+  </section>
+
   <p class="prov">
-    Constants read from <code>defines NChildbirth</code>: active inheritance
+    Constants read from <code>defines NChildbirth</code>: outright inheritance
     {constants.ACTIVE_TRAIT_CHANCE_ACTIVE_ACTIVE}% / {constants.ACTIVE_TRAIT_CHANCE_ACTIVE_INACTIVE}% /
     {constants.ACTIVE_TRAIT_CHANCE_ACTIVE_NONE}% / {constants.ACTIVE_TRAIT_CHANCE_INACTIVE_INACTIVE}% /
     {constants.ACTIVE_TRAIT_CHANCE_INACTIVE_NONE}% (both / active+carrier / one / two carriers / one carrier),
+    recessive inheritance {constants.INACTIVE_TRAIT_CHANCE_ACTIVE_ACTIVE}% / {constants.INACTIVE_TRAIT_CHANCE_ACTIVE_INACTIVE}% /
+    {constants.INACTIVE_TRAIT_CHANCE_ACTIVE_NONE}% / {constants.INACTIVE_TRAIT_CHANCE_INACTIVE_INACTIVE}% /
+    {constants.INACTIVE_TRAIT_CHANCE_INACTIVE_NONE}% over the same five cases,
     reinforcement {constants.TRAIT_REINFORCEMENT_CHANCE * 100}%. Single-trait odds
     are exact. Tiered lines follow the descent algorithm the defines comments
     spell out — start at the highest tier, and on each step down treat one more
     parent as carrying that tier. <code>TIER_TRAIT_REDUCTION_MULT</code> is the
     one define not modelled here: its comment ("when going down a tier, add this
     chance") does not say what the 0.4 is added to, so rather than guess a
-    number this tool leaves it out. Trait-inheritance modifiers from dynasty
-    legacies and lifestyles are also not applied.
+    number this tool leaves it out. "New at birth" is the trait's own
+    <code>birth</code> chance, which the game rolls when inheritance fails; it is
+    listed per tier rather than folded into the bar, because the order the engine
+    rolls the tiers in is not documented.
+  </p>
+  <p class="prov">
+    <b>Blood legacy.</b> The five congenital modifiers multiply those constants
+    rather than adding to them: the game documents the form on its
+    <code>strong_blood</code> event modifier, where
+    <code>positive_random_genetic_chance = 4</code> carries the comment "This will for
+    instance cause a .2% chance to become 1%" — chance × (1 + modifier). Noble Veins
+    and Resilient Bloodline carry <i>inactive</i> inheritance modifiers, so they move
+    the recessive table and the new-at-birth roll; the game ships no modifier for the
+    outright-inheritance table, so the top of each bar does not move. Recessive
+    chances still cap at 100% — that is what the deliberate 150% entry is for ("so
+    even if it is a bad trait, the modifiers to inheritance won't let you avoid it").
+    Convergent Blood scales the reinforcement chance. Architected Ancestry is not a
+    modifier at all: it is a separate roll in
+    <code>on_action/child_birth_on_actions.txt</code> — {pick?.chance}% per birth,
+    {pick ? pick.chance + pick.playerExtra : 0}% if a parent is player-controlled, for
+    children born into the dynasty, and only when the child has no trait in that line
+    either way — so it shows as its own chip rather than folded into the bar.
+    Octogenarians is life expectancy only. Outside the legacy, the one other source of
+    these modifiers in the game files is the <code>strong_blood</code> event modifier.
   </p>
 
-  <script define:vars={{ constants }}>
+  <script define:vars={{ constants, perks, pick }}>
     const C = constants;
     const A = {
       AA: C.ACTIVE_TRAIT_CHANCE_ACTIVE_ACTIVE, AI: C.ACTIVE_TRAIT_CHANCE_ACTIVE_INACTIVE,
@@ -117,6 +266,32 @@ const fams = famOrder.map((k) => families.find((f: any) => f.key === k)).filter(
     };
     const parse = (v) => v === '' ? { lvl: 0, carrier: 0 }
       : v.startsWith('c') ? { lvl: 0, carrier: +v.slice(1) } : { lvl: +v, carrier: 0 };
+    const pc = (n) => `${+n.toFixed(2)}%`;
+
+    // --- Blood legacy state -------------------------------------------------
+    // Perks buy in order, so "step N" means perks 1..N are owned. The modifier
+    // values are the raw ones from common/dynasty_perks; they multiply the
+    // defines (see the provenance note).
+    const legacySel = document.getElementById('legacy');
+    const pickSel = document.getElementById('pick');
+    const pickLabel = document.getElementById('picklabel');
+    const fxLine = document.getElementById('legacyfx');
+    const FX_DEFAULT = fxLine.textContent;
+    let owned = 0;
+
+    function mods() {
+      const m = {};
+      for (const p of perks.slice(0, owned))
+        for (const [k, v] of Object.entries(p.mods)) m[k] = (m[k] ?? 0) + v;
+      return m;
+    }
+    const mult = (m, key) => 1 + (m[key] ?? 0);
+    const recessiveMult = (m, good) =>
+      mult(m, good ? 'positive_inactive_inheritance_chance' : 'negative_inactive_inheritance_chance');
+    const birthMult = (m, good) =>
+      mult(m, good ? 'positive_random_genetic_chance' : 'negative_random_genetic_chance');
+    const reinforce = (m) => C.TRAIT_REINFORCEMENT_CHANCE * mult(m, 'genetic_trait_strengthen_chance');
+    const archTrait = () => (owned >= 4 && pickSel ? pickSel.value : null);
 
     // state of one parent relative to tier t → 'A' | 'I' | 'N', with a gap
     // penalty multiplier for active-at-lower-tier (MATCHED_TRAIT_DIFFERENCE_MULT
@@ -136,9 +311,10 @@ const fams = famOrder.map((k) => families.find((f: any) => f.key === k)).filter(
       return { s: 'N', mult: 1 };
     }
 
-    function tieredOdds(maxLevel, f, m) {
+    function tieredOdds(maxLevel, f, m, good) {
       const top = Math.max(f.lvl, m.lvl, f.carrier, m.carrier);
       if (top === 0) return null;
+      const mo = mods();
       const out = { active: {}, carrier: 0, none: 0 };
       let remaining = 100;
       let descents = 0;
@@ -159,7 +335,7 @@ const fams = famOrder.map((k) => families.find((f: any) => f.key === k)).filter(
         let p = remaining * (chance / 100);
         // reinforcement: both active at this tier can push one level up
         if (cf.s === 'A' && cm.s === 'A' && t < maxLevel) {
-          const up = p * C.TRAIT_REINFORCEMENT_CHANCE;
+          const up = p * reinforce(mo);
           out.active[t + 1] = (out.active[t + 1] ?? 0) + up;
           p -= up;
         }
@@ -168,7 +344,7 @@ const fams = famOrder.map((k) => families.find((f: any) => f.key === k)).filter(
         descents++;
       }
       const cf = classify(f, top), cm = classify(m, top);
-      const rc = Math.min(100, R[pair(cf.s, cm.s)] * cf.mult * cm.mult);
+      const rc = Math.min(100, R[pair(cf.s, cm.s)] * cf.mult * cm.mult * recessiveMult(mo, good));
       out.carrier = remaining * (rc / 100);
       out.none = remaining - out.carrier;
       return out;
@@ -197,36 +373,146 @@ const fams = famOrder.map((k) => families.find((f: any) => f.key === k)).filter(
       label.textContent = parts.join(' · ');
     }
 
+    // --- new-at-birth column ------------------------------------------------
+    const NO_BIRTH = 'No birth chance in the trait — it can only be inherited.';
+    const ARCH_TITLE = 'Architected Ancestry: a separate roll in on_action/'
+      + 'child_birth_on_actions.txt, for children born into the dynasty, and only '
+      + 'when the child has no trait in this line either way.';
+
+    function renderBirth() {
+      const mo = mods();
+      const arch = archTrait();
+      for (const td of document.querySelectorAll('td.birth')) {
+        const raw = (td.dataset.birth ?? '').split(',');
+        const names = (td.dataset.names ?? '').split(',');
+        const good = td.dataset.good === '1';
+        const k = birthMult(mo, good);
+        let html = raw.map((v, i) => v === ''
+          ? `<span class="subtle" title="${NO_BIRTH}">—</span>`
+          : `<span title="${names[i] ?? ''}">${pc(+v * k)}</span>`).join(' / ');
+        if (arch && arch === td.dataset.arch) {
+          html += ` <span class="chip chip--req" title="${ARCH_TITLE}">`
+            + `architected +${pick.chance}% / ${pick.chance + pick.playerExtra}%</span>`;
+        }
+        td.innerHTML = html;
+      }
+    }
+
+    // --- wiring -------------------------------------------------------------
+    const updaters = [];
+
     for (const row of document.querySelectorAll('#tiered tbody tr')) {
       const selects = row.querySelectorAll('select');
       const names = {};
       row.querySelectorAll('option[value="1"],option[value="2"],option[value="3"]')
         .forEach((o) => { names[+o.value] = o.textContent; });
       const maxLevel = Math.max(...Object.keys(names).map(Number));
-      const update = () => render(row, tieredOdds(maxLevel, parse(selects[0].value), parse(selects[1].value)), names);
+      const good = !row.classList.contains('bad');
+      const update = () => render(row,
+        tieredOdds(maxLevel, parse(selects[0].value), parse(selects[1].value), good), names);
       selects.forEach((s) => s.addEventListener('input', update));
+      updaters.push(update);
     }
+
     for (const row of document.querySelectorAll('#single tbody tr')) {
       const selects = row.querySelectorAll('select');
       const name = row.querySelector('.u-name').textContent;
+      const good = !row.classList.contains('bad');
       const update = () => {
         const f = parse(selects[0].value), m = parse(selects[1].value);
         if (!f.lvl && !f.carrier && !m.lvl && !m.carrier) return render(row, null, {});
-        render(row, tieredOdds(1, f, m), { 1: name });
+        render(row, tieredOdds(1, f, m, good), { 1: name });
       };
       selects.forEach((s) => s.addEventListener('input', update));
+      updaters.push(update);
     }
+
+    // Non-genetic inherited traits: a flat chance per birth, no carrier state.
+    for (const row of document.querySelectorAll('#inherited tbody tr[data-trait]')) {
+      const selects = row.querySelectorAll('select');
+      const one = +row.dataset.inherit;
+      const both = row.dataset.both === '' ? null : +row.dataset.both;
+      const bar = row.querySelector('.obar');
+      const label = row.querySelector('.olabel');
+      const update = () => {
+        const n = [...selects].filter((s) => s.value === '1').length;
+        if (n === 0) { bar.innerHTML = ''; label.textContent = '—'; return; }
+        if (n === 2 && both === null) {
+          bar.innerHTML = '';
+          label.innerHTML = '<span class="warn">not defined — the trait sets only '
+            + `<code>inherit_chance ${one}</code>, and what the engine rolls when both `
+            + 'parents have it is not in the files</span>';
+          return;
+        }
+        const p = n === 2 ? both : one;
+        bar.innerHTML = `<span class="seg seg-a" style="width:${Math.min(100, p)}%"></span>`;
+        label.textContent = `${p}% · none ${100 - p}%`;
+      };
+      selects.forEach((s) => s.addEventListener('input', update));
+      updaters.push(update);
+    }
+
+    function onLegacyChange() {
+      owned = +legacySel.value;
+      if (pickLabel) pickLabel.hidden = owned < 4;
+      const lines = [];
+      for (const p of perks.slice(0, owned)) {
+        if (p.effects.length) lines.push(`${p.name}: ${p.effects.join(', ')}`);
+        else if (p.pick) lines.push(`${p.name}: ${p.pick.chance}% per birth `
+          + `(${p.pick.chance + p.pick.playerExtra}% under a player) for the picked trait`);
+        else lines.push(`${p.name}: nothing that touches inheritance`);
+      }
+      fxLine.textContent = lines.length ? lines.join(' · ') : FX_DEFAULT;
+      renderBirth();
+      updaters.forEach((u) => u());
+    }
+    legacySel.addEventListener('input', onLegacyChange);
+    if (pickSel) pickSel.addEventListener('input', renderBirth);
+    renderBirth();
   </script>
 
   <style>
     .gcalc select { background: var(--ink); color: var(--vellum); border: 1px solid var(--line); border-radius: var(--r); padding: 0.2rem 0.4rem; font-size: 0.82rem; }
-    .gcalc .odds { min-width: 17rem; }
-    .obar { display: flex; height: 8px; border-radius: 2px; overflow: hidden; background: var(--line-soft); margin-bottom: 3px; }
-    .seg-a { background: var(--good); }
-    tr.bad .seg-a { background: var(--bad); }
-    .seg-c { background: var(--sk-intrigue); }
-    .olabel { font-size: 0.75rem; }
-    .prov { color: var(--faint); font-size: 0.78rem; max-width: 64ch; margin-top: 2rem; }
+    .gcalc select:disabled { opacity: 0.4; }
+    .gcalc .odds { min-width: 15rem; }
+    #tiered td.name { max-width: 24rem; }
+    #tiered .u-sub { white-space: normal; }
+    .filterbar label { color: var(--dim); font-size: 0.8rem; display: flex; gap: 0.35rem; align-items: center; }
+    .filterbar select { background: var(--ink); color: var(--vellum); border: 1px solid var(--line); border-radius: var(--r); padding: 0.25rem 0.45rem; }
+    .filterbar .hint { color: var(--faint); font-size: 0.78rem; }
+    .sec-note { color: var(--dim); font-size: 0.85rem; max-width: 72ch; margin: 0 0 0.8rem; }
+    .sec-note code { font-family: var(--font-mono); }
+    .game-text { border-left: 2px solid var(--rubric); margin: 0 0 0.9rem; padding: 0.1rem 0 0.1rem 0.8rem; color: var(--dim); font-size: 0.85rem; max-width: 72ch; white-space: pre-line; }
+    .notes ul { color: var(--dim); font-size: 0.85rem; max-width: 72ch; line-height: 1.55; padding-left: 1.1rem; }
+    .notes li { margin-bottom: 0.55rem; }
+    .notes code { font-family: var(--font-mono); }
+    .prov { color: var(--faint); font-size: 0.78rem; max-width: 72ch; margin-top: 1.4rem; }
     .prov code { font-family: var(--font-mono); }
+  </style>
+
+  <style is:global>
+    /* The odds bars and the birth column are injected by the script, so their
+       styles cannot be scoped (see CLAUDE.md). */
+    #tiered .obar, #single .obar, #inherited .obar {
+      display: flex; height: 8px; border-radius: 2px; overflow: hidden;
+      background: var(--line-soft); margin-bottom: 3px;
+    }
+    #tiered .olabel, #single .olabel, #inherited .olabel { font-size: 0.75rem; }
+    #tiered .seg-a, #single .seg-a { background: var(--good); }
+    #tiered tr.bad .seg-a, #single tr.bad .seg-a { background: var(--bad); }
+    #inherited tr.tone-good .seg-a { background: var(--good); }
+    #inherited tr.tone-bad .seg-a { background: var(--bad); }
+    #inherited tr.tone-neutral .seg-a { background: var(--brass); }
+    #tiered .seg-c, #single .seg-c { background: var(--sk-intrigue); }
+    #tiered .warn, #single .warn, #inherited .warn { color: var(--bad); }
+    #tiered td.birth, #single td.birth {
+      font-family: var(--font-mono); font-size: 0.78rem; white-space: nowrap;
+    }
+    #tiered td.birth .chip, #single td.birth .chip { margin-left: 0.3rem; }
+    #inherited .grouprow td {
+      color: var(--faint); font-size: 0.75rem; letter-spacing: 0.06em; text-transform: uppercase;
+    }
+    #inherited .u-sub.restrict { color: var(--faint); font-style: italic; }
+    #inherited .u-sub.restrict code { font-family: var(--font-mono); font-style: normal; }
   </style>
 </Base>

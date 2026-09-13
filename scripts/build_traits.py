@@ -145,6 +145,7 @@ def main():
         genetic = {}
         for f in ("genetic", "physical", "good", "birth", "random_creation",
                   "inherit_chance", "both_parent_has_trait_inherit_chance",
+                  "parent_inheritance_sex", "inherit_from_real_father",
                   "enables_inbred", "can_have_children", "incapacitating", "immortal"):
             v = blk.get(f)
             if v is not None and not isinstance(v, (Block, Tagged)):
