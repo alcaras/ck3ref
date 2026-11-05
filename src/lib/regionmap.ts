@@ -212,17 +212,21 @@ export async function initRegionMap(root: HTMLElement) {
     const pal = new Uint32Array(N + 1);
     pal[0] = BASE_COLORS.none;
     const terrCol = pmeta.terrainColors.map((c) => rgbaOf(c, BASE_COLORS.land));
-    const kingCol = keys.kingdom.map((k) => rgbaOf(tree.kingdom[k].c ?? '', BASE_COLORS.land));
+    // de jure tiers paint each title's own `color` from landed_titles
+    const dejure = kind === 'duchy' || kind === 'kingdom' || kind === 'empire'
+      ? keys[kind].map((k) => rgbaOf(tree[kind][k].c ?? '', BASE_COLORS.land))
+      : null;
     for (let d = 1; d <= N; d++) {
       const cname = meta.classNames[classOf[d]];
       const fallback = BASE_COLORS[cname] ?? BASE_COLORS.land;
       if (kind === 'terrain') {
         const t = pmeta.terrain[d - 1];
         pal[d] = t >= 0 ? terrCol[t] : fallback;
-      } else if (kind === 'kingdom') {
-        const du = duchyOfDense(d);
-        const ki = du < 0 ? -1 : parentOf.duchy[du];
-        pal[d] = ki >= 0 ? kingCol[ki] : fallback;
+      } else if (dejure) {
+        let ti = duchyOfDense(d);
+        if (kind !== 'duchy' && ti >= 0) ti = parentOf.duchy[ti];
+        if (kind === 'empire' && ti >= 0) ti = parentOf.kingdom[ti];
+        pal[d] = ti >= 0 ? dejure[ti] : fallback;
       } else {
         pal[d] = fallback;
       }
@@ -645,7 +649,7 @@ export async function initRegionMap(root: HTMLElement) {
   selected = [...new Set([...preselect, ...fromUrl])].filter((id) => regionOf.has(id));
   if (urlState) {
     const b = new URLSearchParams(location.search).get('base');
-    if (b && ['plain', 'terrain', 'kingdom'].includes(b)) {
+    if (b && ['plain', 'terrain', 'duchy', 'kingdom', 'empire'].includes(b)) {
       baseKind = b;
       for (const sel of root.querySelectorAll<HTMLSelectElement>('[data-map-base]')) sel.value = b;
     }
