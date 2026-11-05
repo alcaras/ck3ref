@@ -296,7 +296,7 @@
       {
         "desc": null,
         "effects": [
-          "-20% Faith Creation and Reformation Cost",
+          "-10% Rite Creation and Reformation Cost",
           "If No Head of Faith doctrine: +5% Domain Taxes (Same Faith)",
           "If Spiritual Head of Faith doctrine: +15 Head of Faith Opinion",
           "If Temporal Head of Faith doctrine: +5 Tolerance Advantage Mod",
@@ -451,6 +451,76 @@
     "sourceFile": "99_legacies.txt"
   },
   {
+    "desc": "What is a crown, to the hand that anoints it?",
+    "dlc": "By God Alone",
+    "features": [
+      "by_god_alone"
+    ],
+    "gate": null,
+    "icon": "pam_legacy_track",
+    "id": "pam_legacy_track",
+    "name": "Servants of God",
+    "perks": [
+      {
+        "desc": null,
+        "effects": [
+          "+10 Character Starting Spiritual Fulfillment Add",
+          "-10% Character Spiritual Fulfillment Loss Mult"
+        ],
+        "id": "pam_legacy_1",
+        "name": "Private Devotions",
+        "order": 1
+      },
+      {
+        "desc": null,
+        "effects": [
+          "-15% Temple Buildings Construction Cost",
+          "-15% Temple Holding Construction Cost",
+          "Head of Faith Petitions are looked upon more favorably",
+          "The Ecclesiastical Treasury is more willing to fund your Dynasty members' requests"
+        ],
+        "id": "pam_legacy_2",
+        "name": "Alms and Endowments",
+        "order": 2
+      },
+      {
+        "desc": null,
+        "effects": [
+          "+1 Personal Tenets",
+          "-20% Military Order Hire Cost",
+          "Dynasty Members gain +50% Tenet Popularity when Evangelizing their Personal Tenets"
+        ],
+        "id": "pam_legacy_3",
+        "name": "A Faithful Flock",
+        "order": 3
+      },
+      {
+        "desc": null,
+        "effects": [
+          "+10% Theocracy Vassal Tax Contribution",
+          "+10% Ecclesiastical Government Vassal Tax Contribution",
+          "Stronger Candidate Score for Christian clerical appointments",
+          "Increased likelihood of being made a Cardinal"
+        ],
+        "id": "pam_legacy_4",
+        "name": "Mitre and Crosier",
+        "order": 4
+      },
+      {
+        "desc": null,
+        "effects": [
+          "+25% …Level of Devotion Impact",
+          "Dynasty Members are stronger candidates for the Papal Throne",
+          "Dynasty Members can take the Guide the Christian Church Decision regardless of rank or clerical office, and the impact is doubled"
+        ],
+        "id": "pam_legacy_5",
+        "name": "Princes of the Church",
+        "order": 5
+      }
+    ],
+    "sourceFile": "81_pam_legacies.txt"
+  },
+  {
     "desc": "Embodying the essence of divine kingship",
     "dlc": "All Under Heaven",
     "features": [
@@ -548,7 +618,7 @@
           "+10% Monthly Domicile Prestige",
           "House Heads can employ a Court Poet even if Count tier",
           "Court Poet poems increases …",
-          "Unlocks the … Estate Building"
+          "Unlocks the … Manor Building"
         ],
         "id": "tgp_japan_legacy_2",
         "name": "Poetic Beauty",
@@ -571,7 +641,7 @@
           "+10% Monthly Domicile Influence",
           "+10% Domicile Income",
           "-10% Domicile Build Speed",
-          "Unlocks the … Estate Building"
+          "Unlocks the … Manor Building"
         ],
         "id": "tgp_japan_legacy_4",
         "name": "Family Estates",
@@ -627,7 +697,7 @@
         "desc": null,
         "effects": [
           "Governor Efficiency: +5%",
-          "Unlocks the … Estate Building"
+          "Unlocks the … Mansion Building"
         ],
         "id": "tgp_chinese_legacy_3",
         "name": "Propriety",
@@ -654,7 +724,7 @@
           "Celestial government: Department Aide Aptitude: …",
           "Celestial government: Department Aide is cheaper to employ",
           "Celestial government: Interaction to Influence Career Costs …",
-          "Unlocks the … Estate Building"
+          "Unlocks the … Mansion Building"
         ],
         "id": "tgp_chinese_legacy_5",
         "name": "Benevolence",
@@ -669,7 +739,7 @@
     "features": [
       "roads_to_power"
     ],
-    "gate": "Administrative government",
+    "gate": null,
     "icon": "ep3_administrative_legacy_track",
     "id": "ep3_administrative_legacy_track",
     "name": "Bureaucracy",
@@ -834,9 +904,9 @@
       {
         "desc": null,
         "effects": [
-          "Gains the Saint Trait upon completion of a Mythical Holy Legend",
+          "Gains the Herald Trait upon completion of a Mythical Holy Legend",
           "Legend creation discount: 15%",
-          "Selectable trait: Saint"
+          "Selectable trait: Herald"
         ],
         "id": "ce1_heroic_legacy_3",
         "name": "Golden Legend",

@@ -18,6 +18,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent / "lib"))
 import ck3
+import faith_cond
 from ck3 import Block, Tagged
 
 # Fields we deliberately do not render, with reasons.
@@ -48,6 +49,11 @@ MODIFIER_BLOCKS = {
     "province_faith_modifier": ("Holding", "faith"),
     "county_faith_modifier": ("County", "faith"),
     "character_faith_modifier": ("Owner", "faith"),
+    # _buildings.info: "applied to the province [county] only if province's
+    # county rite has this parameter"
+    "province_rite_modifier": ("Holding", "rite"),
+    "county_rite_modifier": ("County", "rite"),
+    "duchy_capital_county_rite_modifier": ("Duchy counties", "rite"),
     "province_terrain_modifier": ("Holding", "terrain"),
     "province_government_modifier": ("Holding", "government"),
     "character_government_modifier": ("Owner", "government"),
@@ -293,6 +299,13 @@ def condition_label(kind, mb):
     if kind == "faith":
         p = mb.get("parameter")
         return f"if faith: {str(p).replace('_', ' ')}"
+    if kind == "rite":
+        # gate is the rite of the holding's county, not the owner's
+        p = mb.get("parameter")
+        if not isinstance(p, str):
+            return "if county's rite has (unspecified parameter)"
+        label = faith_cond.rite_param_label(p)  # "Rite has A or B"
+        return f"if county's {label[0].lower()}{label[1:]}"
     if kind == "government":
         p = mb.get("parameter")
         return f"if {gov_flag_name(str(p)).lower()}"

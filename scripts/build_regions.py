@@ -73,6 +73,9 @@ FAMILY_BY_PREFIX = [  # longest first
     ("ghw_", "GHW"),
     ("dlc_", "DLC"),
     ("tgp_", "Chinese naming"),
+    # By God Alone: assigned to ecclesiastical titles via `clerical_region =`
+    # in history/titles; keyed et_<start year>_<see>_region
+    ("et_", "Clerical"),
 ]
 FAMILY_BY_SUFFIX = [
     ("_de_jure_region", "Special"),   # the Mongol khanate de jure claims
@@ -99,7 +102,7 @@ FAMILY_BY_KEY = {
     "cp4_music_area": "Other",
 }
 FAMILY_ORDER = ["World", "Custom", "GHW", "DLC", "Sea", "Material", "Hunt",
-                "Special", "Heritage", "Silk Road", "Nomad", "Seasonal",
+                "Special", "Clerical", "Heritage", "Silk Road", "Nomad", "Seasonal",
                 "Natural disaster", "Chinese naming", "Island", "Graphical",
                 "Other"]
 

@@ -2846,6 +2846,13 @@
         },
         {
           "conditional": true,
+          "id": "book_subject_religious_text",
+          "text": null,
+          "wealth": null,
+          "weight": 1
+        },
+        {
+          "conditional": true,
           "id": "book_subject_alchemy",
           "text": "alchemy",
           "wealth": null,
@@ -2881,6 +2888,13 @@
         {
           "conditional": true,
           "id": "book_topic_language_manual",
+          "text": null,
+          "wealth": null,
+          "weight": 1
+        },
+        {
+          "conditional": true,
+          "id": "book_topic_religious_text",
           "text": null,
           "wealth": null,
           "weight": 1
@@ -3511,6 +3525,13 @@
           "conditional": true,
           "id": "book_title_language_manual",
           "text": "Worn Language Manual",
+          "wealth": null,
+          "weight": 1
+        },
+        {
+          "conditional": true,
+          "id": "book_title_religious_text",
+          "text": null,
           "wealth": null,
           "weight": 1
         },
@@ -4765,6 +4786,7 @@
       "label": "Icon decoration"
     }
   ],
+  "holyRelicConcept": "A Holy Relic is an Artifact that holds religious significance for a Faith. A Holy Relic can be Enshrined in a Holy Site of that faith to gain benefits.\n\nSome artifacts are inherently holy for a faith, but artifacts can also be Sanctified to become a holy relic.",
   "named": [
     {
       "desc": "A detailed work of scholarship analyzing the Buddha's teachings. Part of the Pali Canon.",
@@ -4989,7 +5011,7 @@
     {
       "desc": "There is nary a ruler in Britain who doesn't claim to have the true Excalibur. Wars are paid for by selling Excaliburs, and you must hope your guests don't catch another displaying the sword.",
       "dlc": "The Royal Court",
-      "icon": "artefact_icons_unique_artifact_excalibur",
+      "icon": "artifact_icons_unique_artifact_excalibur",
       "id": "excalibur_name",
       "modifiers": [
         {
@@ -5406,7 +5428,7 @@
     {
       "desc": "This naturalistic bronze head captures the features of a long dead ruler in great detail, appearing more like a sculpture than something cast in metal. The head is adorned with a crown to show the status of the depicted monarch.",
       "dlc": "The Royal Court",
-      "icon": "artefact_icons_unique_artifact_head_st_edmund",
+      "icon": "artifact_icons_unique_artifact_head_st_edmund",
       "id": "artifact_bronze_head_name",
       "modifiers": [
         {
@@ -5621,7 +5643,7 @@
     {
       "desc": "This is the ancient crown of Emperor Justinian: golden and inlaid with precious stones, it still holds all the authority and learning of the glorious ruler.",
       "dlc": "The Royal Court",
-      "icon": "artefact_icons_unique_artifact_byzantine_imperial_crown",
+      "icon": "artifact_icons_unique_artifact_byzantine_imperial_crown",
       "id": "artifact_pedestal_crown_justinian_name",
       "modifiers": [
         {
@@ -5665,7 +5687,7 @@
     {
       "desc": "This is the crown of one of the finest tacticians the Imperial line has ever seen. Failure in wars west of the Empire, but conqueror toward the east.",
       "dlc": "The Royal Court",
-      "icon": "artefact_icons_unique_artifact_byzantine_imperial_crown",
+      "icon": "artifact_icons_unique_artifact_byzantine_imperial_crown",
       "id": "nikephoros_crown_name",
       "modifiers": [
         {
@@ -6272,7 +6294,7 @@
     {
       "desc": "Edmund demanded he would become a Saint from the moment of his birth. Legends tell he was a King of East Anglia who volunteered as a sacrifice to the Vikings rather than let his people be slaughtered by them.",
       "dlc": "The Royal Court",
-      "icon": "artefact_icons_unique_artifact_head_st_edmund",
+      "icon": "artifact_icons_unique_artifact_head_st_edmund",
       "id": "edmund_head_name",
       "modifiers": [
         {
@@ -6546,7 +6568,7 @@
     {
       "desc": "Some say this was a crown crafted for Otto III's coronation in Essen, others that it was intended to crown a statue of the Virgin. Either way it is very small, but you might be able to squeeze it onto your head if you try.",
       "dlc": "The Royal Court",
-      "icon": "artefact_icons_unique_artifact_reichskrone",
+      "icon": "artifact_icons_unique_artifact_reichskrone",
       "id": "essen_crown_name",
       "modifiers": [
         {
@@ -7221,7 +7243,7 @@
     {
       "desc": "The very pate of Charlemagne is held within this box. Perhaps his wisdom shall descend upon the owner.",
       "dlc": "The Royal Court",
-      "icon": "artefact_icons_unique_artifact_head_st_edmund",
+      "icon": "artifact_icons_unique_artifact_head_st_edmund",
       "id": "skull_cap_charlemagne_name",
       "modifiers": [
         {
@@ -8217,6 +8239,33 @@
       "unique": false
     },
     {
+      "desc": null,
+      "dlc": "The Royal Court",
+      "icon": "artifact_statue",
+      "id": "artifact_sculpture_religious_mary_name",
+      "modifiers": [
+        {
+          "key": "artifact_monthly_piety_3_modifier",
+          "lines": [
+            {
+              "key": "monthly_piety",
+              "polarity": "good",
+              "text": "+0.3 Piety /month"
+            }
+          ]
+        }
+      ],
+      "name": "Statue of Mary",
+      "permanent": false,
+      "rarity": [],
+      "sourceFile": "01_ep1_court_artifact_creation_effects.txt",
+      "template": "religious_statue_template",
+      "types": [
+        "sculpture"
+      ],
+      "unique": false
+    },
+    {
       "desc": "An ancient, slightly damaged, but still lovely statue of a Roman woman.",
       "dlc": "The Royal Court",
       "icon": "artifact_icon_statue_roman_woman",
@@ -8679,7 +8728,7 @@
             {
               "key": "holy_order_hire_cost_mult",
               "polarity": "good",
-              "text": "-25% Holy Order Hire Cost"
+              "text": "-25% Military Order Hire Cost"
             },
             {
               "key": "monthly_piety",
@@ -8903,9 +8952,156 @@
       "unique": true
     },
     {
+      "desc": "A pilgrim's badge shaped like a square cross, intricate and with delicate features, commemorating the pilgrimage undertaken to the holy city of Jerusalem.",
+      "dlc": null,
+      "icon": "pilgrim_jerusalem",
+      "id": "jerusalem_badge_name",
+      "modifiers": [
+        {
+          "key": "artifact_monthly_piety_gain_mult_2_modifier",
+          "lines": [
+            {
+              "key": "monthly_piety_gain_mult",
+              "polarity": "good",
+              "text": "+4% Monthly Piety"
+            }
+          ]
+        },
+        {
+          "key": "artifact_monthly_prestige_2_modifier",
+          "lines": [
+            {
+              "key": "monthly_prestige",
+              "polarity": "good",
+              "text": "+0.08 Prestige /month"
+            }
+          ]
+        },
+        {
+          "key": "artifact_epidemic_resistance_3_modifier",
+          "lines": [
+            {
+              "key": "epidemic_resistance",
+              "polarity": "good",
+              "text": "+6 Plague Resistance"
+            }
+          ]
+        }
+      ],
+      "name": "Jerusalem Cross",
+      "permanent": false,
+      "rarity": [
+        "masterwork"
+      ],
+      "sourceFile": "00_artifact_badge_scripted_effects.txt",
+      "template": "pilgrim_badge_template",
+      "types": [
+        "badge"
+      ],
+      "unique": false
+    },
+    {
+      "desc": "A pilgrim's badge shaped like a set of keys depicting the haloed Saint Peter and Saint Paul, commemorating the pilgrimage undertaken to the holy city of Rome.",
+      "dlc": null,
+      "icon": "pilgrim_rome",
+      "id": "rome_badge_name",
+      "modifiers": [
+        {
+          "key": "artifact_monthly_piety_gain_mult_2_modifier",
+          "lines": [
+            {
+              "key": "monthly_piety_gain_mult",
+              "polarity": "good",
+              "text": "+4% Monthly Piety"
+            }
+          ]
+        },
+        {
+          "key": "artifact_monthly_piety_from_buildings_mult_2_modifier",
+          "lines": [
+            {
+              "key": "monthly_piety_from_buildings_mult",
+              "polarity": "good",
+              "text": "+4% Monthly Piety from Buildings"
+            }
+          ]
+        },
+        {
+          "key": "artifact_zealot_tax_contribution_mult_3_modifier",
+          "lines": [
+            {
+              "key": "zealot_tax_contribution_mult",
+              "polarity": "good",
+              "text": "+3% Zealot Vassal Tax Contribution"
+            }
+          ]
+        }
+      ],
+      "name": "Keys of Saint Peter",
+      "permanent": false,
+      "rarity": [
+        "masterwork"
+      ],
+      "sourceFile": "00_artifact_badge_scripted_effects.txt",
+      "template": "pilgrim_badge_template",
+      "types": [
+        "badge"
+      ],
+      "unique": false
+    },
+    {
+      "desc": "A pilgrim's badge shaped like a scallop, commemorating the pilgrimage undertaking the Way of Saint James via Camino the Santiago to the holy site in Santiago de Compostela.",
+      "dlc": null,
+      "icon": "pilgrim_compostella",
+      "id": "santiago_badge_name",
+      "modifiers": [
+        {
+          "key": "artifact_monthly_piety_gain_mult_3_modifier",
+          "lines": [
+            {
+              "key": "monthly_piety_gain_mult",
+              "polarity": "good",
+              "text": "+6% Monthly Piety"
+            }
+          ]
+        },
+        {
+          "key": "artifact_zealot_vassal_opinion_3_modifier",
+          "lines": [
+            {
+              "key": "zealot_opinion",
+              "polarity": "good",
+              "text": "+5 Zealot Vassal Opinion"
+            }
+          ]
+        },
+        {
+          "key": "artifact_clergy_opinion_4_modifier",
+          "lines": [
+            {
+              "key": "clergy_opinion",
+              "polarity": "good",
+              "text": "+5 Clergy Opinion"
+            }
+          ]
+        }
+      ],
+      "name": "Shell of Saint James",
+      "permanent": false,
+      "rarity": [
+        "masterwork"
+      ],
+      "sourceFile": "00_artifact_badge_scripted_effects.txt",
+      "template": "pilgrim_badge_template",
+      "types": [
+        "badge"
+      ],
+      "unique": false
+    },
+    {
       "desc": "This is a crown comprised of golden paneled portraits depicting Constantine IX Monomachus, his wife Zoe, sister Theodora, and some allegorical dancing figures.",
       "dlc": "The Royal Court",
-      "icon": "artefact_icons_unique_artifact_byzantine_imperial_crown",
+      "icon": "artifact_icons_unique_artifact_byzantine_imperial_crown",
       "id": "monomachus_crown_name",
       "modifiers": [
         {
@@ -8935,7 +9131,7 @@
         "famed"
       ],
       "sourceFile": "01_exp1_historical_artifacts_creation_effect.txt",
-      "template": "crown_wearable_template",
+      "template": "unique_crown_wearable_template",
       "types": [
         "helmet"
       ],
@@ -8944,7 +9140,7 @@
     {
       "desc": "This is the jeweled mitre with a golden crown which symbolizes the Papal Office. But wouldn't it look most resplendent atop your head?",
       "dlc": "The Royal Court",
-      "icon": "artefact_icons_unique_artifact_papal_tiara",
+      "icon": "artifact_icons_unique_artifact_papal_tiara",
       "id": "papal_tiara_name",
       "modifiers": [
         {
@@ -8973,7 +9169,7 @@
     {
       "desc": "This is the Emblem of the office of Holy Roman Emperor. Guaranteed to catch the attention of every passing Duke.",
       "dlc": "The Royal Court",
-      "icon": "artefact_icons_unique_artifact_reichskrone",
+      "icon": "artifact_icons_unique_artifact_reichskrone",
       "id": "reichskrone_name",
       "modifiers": [
         {
@@ -9047,7 +9243,7 @@
         "illustrious"
       ],
       "sourceFile": "01_exp1_historical_artifacts_creation_effect.txt",
-      "template": "crown_wearable_template",
+      "template": "unique_crown_wearable_template",
       "types": [
         "helmet"
       ],
@@ -9098,7 +9294,7 @@
       "types": [
         "miscellaneous"
       ],
-      "unique": true
+      "unique": false
     },
     {
       "desc": null,
@@ -9339,7 +9535,7 @@
         "illustrious"
       ],
       "sourceFile": "01_exp1_historical_artifacts_creation_effect.txt",
-      "template": "regalia_template",
+      "template": "unique_regalia_template",
       "types": [
         "regalia"
       ],
@@ -9412,7 +9608,7 @@
         "masterwork"
       ],
       "sourceFile": "01_exp1_historical_artifacts_creation_effect.txt",
-      "template": "regalia_template",
+      "template": "unique_regalia_template",
       "types": [
         "regalia_simple"
       ],
@@ -9741,6 +9937,281 @@
       "unique": true
     }
   ],
+  "slots": [
+    {
+      "anyType": false,
+      "available": [],
+      "availableHolySite": [],
+      "category": "inventory",
+      "holySite": false,
+      "id": "crown",
+      "type": "helmet"
+    },
+    {
+      "anyType": false,
+      "available": [],
+      "availableHolySite": [],
+      "category": "inventory",
+      "holySite": false,
+      "id": "regalia",
+      "type": "regalia"
+    },
+    {
+      "anyType": false,
+      "available": [],
+      "availableHolySite": [],
+      "category": "inventory",
+      "holySite": false,
+      "id": "armor",
+      "type": "armor"
+    },
+    {
+      "anyType": false,
+      "available": [],
+      "availableHolySite": [],
+      "category": "inventory",
+      "holySite": false,
+      "id": "weapon",
+      "type": "primary_armament"
+    },
+    {
+      "anyType": false,
+      "available": [],
+      "availableHolySite": [],
+      "category": "inventory",
+      "holySite": false,
+      "id": "brooch",
+      "type": "brooch"
+    },
+    {
+      "anyType": false,
+      "available": [],
+      "availableHolySite": [],
+      "category": "inventory",
+      "holySite": false,
+      "id": "trinket_1",
+      "type": "miscellaneous"
+    },
+    {
+      "anyType": false,
+      "available": [],
+      "availableHolySite": [],
+      "category": "inventory",
+      "holySite": false,
+      "id": "trinket_2",
+      "type": "miscellaneous"
+    },
+    {
+      "anyType": false,
+      "available": [],
+      "availableHolySite": [],
+      "category": "inventory",
+      "holySite": false,
+      "id": "trinket_3",
+      "type": "miscellaneous"
+    },
+    {
+      "anyType": false,
+      "available": [],
+      "availableHolySite": [],
+      "category": "inventory",
+      "holySite": false,
+      "id": "journal",
+      "type": "journal"
+    },
+    {
+      "anyType": false,
+      "available": [
+        "Has royal court"
+      ],
+      "availableHolySite": [],
+      "category": "court",
+      "holySite": false,
+      "id": "wall_big_1",
+      "type": "wall_big"
+    },
+    {
+      "anyType": false,
+      "available": [
+        "Has royal court"
+      ],
+      "availableHolySite": [],
+      "category": "court",
+      "holySite": false,
+      "id": "wall_big_2",
+      "type": "wall_big"
+    },
+    {
+      "anyType": false,
+      "available": [
+        "Has royal court"
+      ],
+      "availableHolySite": [],
+      "category": "court",
+      "holySite": false,
+      "id": "wall_big_3",
+      "type": "wall_big"
+    },
+    {
+      "anyType": false,
+      "available": [
+        "Has royal court"
+      ],
+      "availableHolySite": [],
+      "category": "court",
+      "holySite": false,
+      "id": "wall_small_1",
+      "type": "wall_small"
+    },
+    {
+      "anyType": false,
+      "available": [
+        "Has royal court"
+      ],
+      "availableHolySite": [],
+      "category": "court",
+      "holySite": false,
+      "id": "wall_small_2",
+      "type": "wall_small"
+    },
+    {
+      "anyType": false,
+      "available": [
+        "Has royal court"
+      ],
+      "availableHolySite": [],
+      "category": "court",
+      "holySite": false,
+      "id": "wall_small_3",
+      "type": "wall_small"
+    },
+    {
+      "anyType": false,
+      "available": [
+        "Has royal court"
+      ],
+      "availableHolySite": [],
+      "category": "court",
+      "holySite": false,
+      "id": "throne",
+      "type": "throne"
+    },
+    {
+      "anyType": false,
+      "available": [
+        "Has royal court"
+      ],
+      "availableHolySite": [],
+      "category": "court",
+      "holySite": false,
+      "id": "sculpture_1",
+      "type": "sculpture"
+    },
+    {
+      "anyType": false,
+      "available": [
+        "Has royal court"
+      ],
+      "availableHolySite": [],
+      "category": "court",
+      "holySite": false,
+      "id": "sculpture_2",
+      "type": "sculpture"
+    },
+    {
+      "anyType": false,
+      "available": [
+        "Has royal court"
+      ],
+      "availableHolySite": [],
+      "category": "court",
+      "holySite": false,
+      "id": "lectern_1",
+      "type": "book"
+    },
+    {
+      "anyType": false,
+      "available": [
+        "Has royal court"
+      ],
+      "availableHolySite": [],
+      "category": "court",
+      "holySite": false,
+      "id": "lectern_2",
+      "type": "book"
+    },
+    {
+      "anyType": false,
+      "available": [
+        "Has royal court"
+      ],
+      "availableHolySite": [],
+      "category": "court",
+      "holySite": false,
+      "id": "pedestal_1",
+      "type": "pedestal"
+    },
+    {
+      "anyType": false,
+      "available": [
+        "Has royal court"
+      ],
+      "availableHolySite": [],
+      "category": "court",
+      "holySite": false,
+      "id": "pedestal_2",
+      "type": "pedestal"
+    },
+    {
+      "anyType": false,
+      "available": [
+        "Has royal court"
+      ],
+      "availableHolySite": [],
+      "category": "court",
+      "holySite": false,
+      "id": "pedestal_3",
+      "type": "pedestal"
+    },
+    {
+      "anyType": false,
+      "available": [
+        "Has royal court"
+      ],
+      "availableHolySite": [],
+      "category": "court",
+      "holySite": false,
+      "id": "pedestal_4",
+      "type": "pedestal"
+    },
+    {
+      "anyType": true,
+      "available": [],
+      "availableHolySite": [],
+      "category": "holy_site",
+      "holySite": true,
+      "id": "holy_relic_1",
+      "type": null
+    },
+    {
+      "anyType": true,
+      "available": [],
+      "availableHolySite": [],
+      "category": "holy_site",
+      "holySite": true,
+      "id": "holy_relic_2",
+      "type": null
+    },
+    {
+      "anyType": true,
+      "available": [],
+      "availableHolySite": [],
+      "category": "holy_site",
+      "holySite": true,
+      "id": "holy_relic_3",
+      "type": null
+    }
+  ],
   "templates": [
     {
       "artifacts": [],
@@ -9762,6 +10233,10 @@
           "text": "+0.2 Prestige /month"
         }
       ],
+      "holyRelic": [
+        "artifact has statue religion",
+        "Matches the artifact's statue religion"
+      ],
       "id": "6050_relic_template",
       "label": "6050 relic",
       "reforgeConditions": [],
@@ -9779,6 +10254,7 @@
         "Age > 18"
       ],
       "fallback": [],
+      "holyRelic": null,
       "id": "adults_only_template",
       "label": "Adults only",
       "reforgeConditions": [],
@@ -9807,6 +10283,10 @@
           "text": "+0.3 Prestige /month"
         }
       ],
+      "holyRelic": [
+        "Religion: Islam or Islamic Syncretism",
+        "Doctrine: Shia"
+      ],
       "id": "al_taj_template",
       "label": "Al taj",
       "reforgeConditions": [],
@@ -9830,6 +10310,7 @@
           "text": "+0.05 Prestige /month"
         }
       ],
+      "holyRelic": null,
       "id": "arabic_book_template",
       "label": "Arabic book",
       "reforgeConditions": [],
@@ -9842,7 +10323,7 @@
         "artifact_sculpture_ark_of_covenant_name"
       ],
       "benefit": [
-        "Judaism or syncretic with judaism or Christianity or syncretic with christianity or Islam or syncretic with islam"
+        "Jewish artifact access or Christian artifact access or Islamic artifact access"
       ],
       "canReforge": true,
       "canRepair": true,
@@ -9859,6 +10340,9 @@
           "polarity": "good",
           "text": "+5% Monthly Renown"
         }
+      ],
+      "holyRelic": [
+        "Religion: Judaism or Religion: Christianity or Religion: Islam or Jewish Syncretism or Christian Syncretism or Islamic Syncretism"
       ],
       "id": "ark_covenant_template",
       "label": "Ark covenant",
@@ -9890,6 +10374,7 @@
           "text": "+5 Natural Dread"
         }
       ],
+      "holyRelic": null,
       "id": "attila_template",
       "label": "Attila",
       "reforgeConditions": [],
@@ -9920,6 +10405,7 @@
           "text": "+5% Monthly Renown"
         }
       ],
+      "holyRelic": null,
       "id": "babr_template",
       "label": "Babr",
       "reforgeConditions": [],
@@ -9932,7 +10418,7 @@
         "artifact_wall_banner_thankfulness_name"
       ],
       "benefit": [
-        "Islam or syncretic with islam"
+        "Islamic artifact access"
       ],
       "canReforge": true,
       "canRepair": true,
@@ -9944,6 +10430,9 @@
           "polarity": "good",
           "text": "+6 Court Grandeur Baseline Add"
         }
+      ],
+      "holyRelic": [
+        "Religion: Islam or Islamic Syncretism"
       ],
       "id": "banner_thankfulness",
       "label": "Banner thankfulness",
@@ -9968,6 +10457,9 @@
           "text": "+3 Court Grandeur Baseline Add"
         }
       ],
+      "holyRelic": [
+        "Religion: Senegambia or Syncretic Folk Traditions"
+      ],
       "id": "branch_boog_template",
       "label": "Branch boog",
       "reforgeConditions": [],
@@ -9991,6 +10483,9 @@
           "text": "+3 Court Grandeur Baseline Add"
         }
       ],
+      "holyRelic": [
+        "Matches the artifact's relic religion"
+      ],
       "id": "branch_general_template",
       "label": "Branch general",
       "reforgeConditions": [],
@@ -10013,6 +10508,9 @@
           "polarity": "good",
           "text": "+3 Court Grandeur Baseline Add"
         }
+      ],
+      "holyRelic": [
+        "Religion: Norse or Syncretic Folk Traditions"
       ],
       "id": "branch_germanic_template",
       "label": "Branch germanic",
@@ -10042,6 +10540,9 @@
           "text": "+3 Court Grandeur Baseline Add"
         }
       ],
+      "holyRelic": [
+        "Religion: Hinduism or Dharmic Syncretism"
+      ],
       "id": "branch_hinduism_template",
       "label": "Branch hinduism",
       "reforgeConditions": [],
@@ -10064,6 +10565,9 @@
           "polarity": "good",
           "text": "+3 Court Grandeur Baseline Add"
         }
+      ],
+      "holyRelic": [
+        "Religion: Slavic or Syncretic Folk Traditions"
       ],
       "id": "branch_slavic_template",
       "label": "Branch slavic",
@@ -10089,6 +10593,9 @@
           "polarity": "good",
           "text": "+3 Court Grandeur Baseline Add"
         }
+      ],
+      "holyRelic": [
+        "Religion: Zoroastrianism or Dharmic Syncretism"
       ],
       "id": "branch_zoroastr_template",
       "label": "Branch zoroastr",
@@ -10117,6 +10624,9 @@
           "text": "+3 Court Grandeur Baseline Add"
         }
       ],
+      "holyRelic": [
+        "Religion: Buddhism or Dharmic Syncretism"
+      ],
       "id": "buddhism_artifact_template",
       "label": "Buddhism artifact",
       "reforgeConditions": [],
@@ -10141,6 +10651,9 @@
           "polarity": "good",
           "text": "+3 Court Grandeur Baseline Add"
         }
+      ],
+      "holyRelic": [
+        "Religion: Buddhism or Dharmic Syncretism"
       ],
       "id": "buddhism_relic_template",
       "label": "Buddhism relic",
@@ -10172,6 +10685,7 @@
           "text": "+0.3 Prestige /month"
         }
       ],
+      "holyRelic": null,
       "id": "byz_throne_template",
       "label": "Byz throne",
       "reforgeConditions": [],
@@ -10182,7 +10696,7 @@
     {
       "artifacts": [],
       "benefit": [
-        "Faith has doctrine parameter = mummification_funeral"
+        "Mummification"
       ],
       "canReforge": true,
       "canRepair": true,
@@ -10194,6 +10708,9 @@
           "polarity": "good",
           "text": "+0.2 Prestige /month"
         }
+      ],
+      "holyRelic": [
+        "Mummification"
       ],
       "id": "ce1_mummy_template",
       "label": "Ce1 mummy",
@@ -10212,6 +10729,7 @@
         "Must be a Child to equip as an Inventory Artifact (when not: artifact in a court slot)"
       ],
       "fallback": [],
+      "holyRelic": null,
       "id": "child_toy_template",
       "label": "Child toy",
       "reforgeConditions": [],
@@ -10222,7 +10740,7 @@
     {
       "artifacts": [],
       "benefit": [
-        "Christianity or syncretic with christianity"
+        "Christian artifact access"
       ],
       "canReforge": true,
       "canRepair": true,
@@ -10234,6 +10752,9 @@
           "polarity": "good",
           "text": "+3 Court Grandeur Baseline Add"
         }
+      ],
+      "holyRelic": [
+        "Religion: Christianity or Christian Syncretism"
       ],
       "id": "christian_artifact_template",
       "label": "Christian artifact",
@@ -10247,7 +10768,7 @@
         "edmund_head_name"
       ],
       "benefit": [
-        "Christianity or syncretic with christianity"
+        "Christian artifact access"
       ],
       "canReforge": true,
       "canRepair": true,
@@ -10260,6 +10781,9 @@
           "text": "+3 Court Grandeur Baseline Add"
         }
       ],
+      "holyRelic": [
+        "Religion: Christianity or Christian Syncretism"
+      ],
       "id": "christian_relic_template",
       "label": "Christian relic",
       "reforgeConditions": [],
@@ -10270,13 +10794,13 @@
     {
       "artifacts": [],
       "benefit": [
-        "Christianity or syncretic with christianity"
+        "Christian artifact access"
       ],
       "canReforge": true,
       "canRepair": true,
       "dlc": null,
       "equip": [
-        "Christianity or syncretic with christianity"
+        "Christian artifact access"
       ],
       "fallback": [
         {
@@ -10284,6 +10808,9 @@
           "polarity": "good",
           "text": "+0.2 Prestige /month"
         }
+      ],
+      "holyRelic": [
+        "Religion: Christianity or Christian Syncretism"
       ],
       "id": "cross_template",
       "label": "Cross",
@@ -10297,7 +10824,7 @@
         "fp2_votive_crowns"
       ],
       "benefit": [
-        "Christianity or syncretic with christianity"
+        "Christian artifact access"
       ],
       "canReforge": true,
       "canRepair": true,
@@ -10312,6 +10839,9 @@
           "text": "+0.5 Prestige /month"
         }
       ],
+      "holyRelic": [
+        "Religion: Christianity or Christian Syncretism"
+      ],
       "id": "crown_christian_relic_template",
       "label": "Crown christian relic",
       "reforgeConditions": [],
@@ -10324,7 +10854,7 @@
         "artifact_pedestal_crown_iron_name"
       ],
       "benefit": [
-        "Christianity or syncretic with christianity"
+        "Christian artifact access"
       ],
       "canReforge": true,
       "canRepair": true,
@@ -10349,6 +10879,9 @@
           "text": "+4% Monthly Prestige"
         }
       ],
+      "holyRelic": [
+        "Religion: Christianity or Christian Syncretism"
+      ],
       "id": "crown_iron_template",
       "label": "Crown iron",
       "reforgeConditions": [],
@@ -10357,10 +10890,7 @@
       "unique": true
     },
     {
-      "artifacts": [
-        "monomachus_crown_name",
-        "al_taj_crown_name"
-      ],
+      "artifacts": [],
       "benefit": [],
       "canReforge": true,
       "canRepair": true,
@@ -10369,12 +10899,13 @@
         "not: Realm law: Uncrowned (when Crowns of the World DLC; Coronation proper artifact crown; not: artifact in a court slot)"
       ],
       "fallback": [],
+      "holyRelic": null,
       "id": "crown_wearable_template",
       "label": "Crown wearable",
       "reforgeConditions": [],
       "repairConditions": [],
       "sourceFile": "00_type_templates.txt",
-      "unique": true
+      "unique": false
     },
     {
       "artifacts": [
@@ -10399,6 +10930,7 @@
           "text": "-10% Enemy Hostile Scheme Success Chance Add"
         }
       ],
+      "holyRelic": null,
       "id": "cup_jamshid_template",
       "label": "Cup jamshid",
       "reforgeConditions": [],
@@ -10411,7 +10943,7 @@
         "artifact_pedestal_david_harp_name"
       ],
       "benefit": [
-        "Judaism or syncretic with judaism or Christianity or syncretic with christianity or Islam or syncretic with islam"
+        "Jewish artifact access or Christian artifact access or Islamic artifact access"
       ],
       "canReforge": true,
       "canRepair": true,
@@ -10433,6 +10965,9 @@
           "polarity": "good",
           "text": "+10 Attraction Opinion"
         }
+      ],
+      "holyRelic": [
+        "Religion: Judaism or Religion: Christianity or Religion: Islam or Jewish Syncretism or Christian Syncretism or Islamic Syncretism"
       ],
       "id": "david_harp_template",
       "label": "David harp",
@@ -10457,6 +10992,7 @@
           "text": "+4 Court Grandeur Baseline Add"
         }
       ],
+      "holyRelic": null,
       "id": "dynasty_banner_template",
       "label": "Dynasty banner",
       "reforgeConditions": [],
@@ -10469,7 +11005,7 @@
         "artifact_wall_big_edessa_name"
       ],
       "benefit": [
-        "Christianity or syncretic with christianity"
+        "Christian artifact access"
       ],
       "canReforge": true,
       "canRepair": true,
@@ -10481,6 +11017,9 @@
           "polarity": "good",
           "text": "+3 Court Grandeur Baseline Add"
         }
+      ],
+      "holyRelic": [
+        "Religion: Christianity or Christian Syncretism"
       ],
       "id": "edessa_template",
       "label": "Edessa",
@@ -10494,7 +11033,7 @@
         "fp2_chalice_dona_urraca"
       ],
       "benefit": [
-        "Christianity or syncretic with christianity"
+        "Christian artifact access"
       ],
       "canReforge": true,
       "canRepair": true,
@@ -10506,6 +11045,9 @@
           "polarity": "good",
           "text": "+0.5 Prestige /month"
         }
+      ],
+      "holyRelic": [
+        "Religion: Christianity or Christian Syncretism"
       ],
       "id": "fp2_chalice_dona_urraca_template",
       "label": "Fp2 chalice dona urraca",
@@ -10519,7 +11061,7 @@
         "fp2_santiago_aquamanile"
       ],
       "benefit": [
-        "Islam or syncretic with islam",
+        "Islamic artifact access",
         "Any character struggle: Is struggle type = iberian_struggle (when Exists = struggle:iberian_struggle)"
       ],
       "canReforge": true,
@@ -10538,6 +11080,7 @@
           "text": "+0.25 Negate Health Penalty Add"
         }
       ],
+      "holyRelic": null,
       "id": "fp2_santiago_aquamanile_template",
       "label": "Fp2 santiago aquamanile",
       "reforgeConditions": [],
@@ -10550,7 +11093,7 @@
         "fp2_santiago_bells"
       ],
       "benefit": [
-        "Christianity or syncretic with christianity",
+        "Christian artifact access",
         "Involved in iberian struggle (when Exists = struggle:iberian_struggle)",
         "Culture: Iberian"
       ],
@@ -10564,6 +11107,9 @@
           "polarity": "good",
           "text": "+0.1 Prestige /month"
         }
+      ],
+      "holyRelic": [
+        "Religion: Christianity or Christian Syncretism"
       ],
       "id": "fp2_santiago_bells_template",
       "label": "Fp2 santiago bells",
@@ -10587,6 +11133,9 @@
           "polarity": "good",
           "text": "+0.2 Prestige /month"
         }
+      ],
+      "holyRelic": [
+        "Religion: Zoroastrianism or Dharmic Syncretism"
       ],
       "id": "fp3_zoroastrian_brazier_template",
       "label": "Fp3 zoroastrian brazier",
@@ -10649,6 +11198,7 @@
       "dlc": null,
       "equip": [],
       "fallback": [],
+      "holyRelic": null,
       "id": "general_unique_template",
       "label": "General unique",
       "reforgeConditions": [],
@@ -10671,6 +11221,9 @@
           "polarity": "good",
           "text": "+10% Monthly Learning Lifestyle Experience"
         }
+      ],
+      "holyRelic": [
+        "Matches the artifact's relic religion"
       ],
       "id": "holy_book_template",
       "label": "Holy book",
@@ -10695,6 +11248,7 @@
           "text": "+2 Court Grandeur Baseline Add"
         }
       ],
+      "holyRelic": null,
       "id": "house_banner_template",
       "label": "House banner",
       "reforgeConditions": [],
@@ -10707,7 +11261,7 @@
         "artifact_hydraulic_organ_name"
       ],
       "benefit": [
-        "Administrative government"
+        "Government has mechanic = administrative"
       ],
       "canReforge": true,
       "canRepair": true,
@@ -10735,6 +11289,7 @@
           "text": "+5 Court Grandeur Baseline Add"
         }
       ],
+      "holyRelic": null,
       "id": "hydraulic_organ_template",
       "label": "Hydraulic organ",
       "reforgeConditions": [],
@@ -10748,7 +11303,7 @@
         "artifact_mantle_of_the_prophet_islam_name"
       ],
       "benefit": [
-        "Islam or syncretic with islam"
+        "Islamic artifact access"
       ],
       "canReforge": true,
       "canRepair": true,
@@ -10760,6 +11315,9 @@
           "polarity": "good",
           "text": "+3 Court Grandeur Baseline Add"
         }
+      ],
+      "holyRelic": [
+        "Religion: Islam or Islamic Syncretism"
       ],
       "id": "islam_artifact_template",
       "label": "Islam artifact",
@@ -10771,7 +11329,7 @@
     {
       "artifacts": [],
       "benefit": [
-        "Islam or syncretic with islam"
+        "Islamic artifact access"
       ],
       "canReforge": true,
       "canRepair": true,
@@ -10783,6 +11341,9 @@
           "polarity": "good",
           "text": "+3 Court Grandeur Baseline Add"
         }
+      ],
+      "holyRelic": [
+        "Religion: Islam or Islamic Syncretism"
       ],
       "id": "islam_relic_template",
       "label": "Islam relic",
@@ -10809,6 +11370,9 @@
           "text": "+3 Court Grandeur Baseline Add"
         }
       ],
+      "holyRelic": [
+        "Religion: Jainism or Dharmic Syncretism"
+      ],
       "id": "jainism_artifact_template",
       "label": "Jainism artifact",
       "reforgeConditions": [],
@@ -10819,7 +11383,7 @@
     {
       "artifacts": [],
       "benefit": [
-        "Judaism or syncretic with judaism"
+        "Jewish artifact access"
       ],
       "canReforge": true,
       "canRepair": true,
@@ -10831,6 +11395,9 @@
           "polarity": "good",
           "text": "+3 Court Grandeur Baseline Add"
         }
+      ],
+      "holyRelic": [
+        "Religion: Judaism or Jewish Syncretism"
       ],
       "id": "judaism_relic_template",
       "label": "Judaism relic",
@@ -10865,6 +11432,7 @@
           "text": "+5% Monthly Renown"
         }
       ],
+      "holyRelic": null,
       "id": "justinian_template",
       "label": "Justinian",
       "reforgeConditions": [],
@@ -10900,6 +11468,7 @@
           "text": "+0.25 Prestige /month"
         }
       ],
+      "holyRelic": null,
       "id": "kaviani_template",
       "label": "Kaviani",
       "reforgeConditions": [],
@@ -10923,6 +11492,7 @@
           "text": "+20% Monthly Prestige"
         }
       ],
+      "holyRelic": null,
       "id": "marco_polo_book",
       "label": "Marco polo book",
       "reforgeConditions": [],
@@ -10947,6 +11517,7 @@
           "text": "+0.05 Prestige /month"
         }
       ],
+      "holyRelic": null,
       "id": "mpo_severed_head_template",
       "label": "Mpo severed head",
       "reforgeConditions": [],
@@ -10959,7 +11530,7 @@
         "artifact_wall_sword_muhammad_name"
       ],
       "benefit": [
-        "Islam or syncretic with islam"
+        "Islamic artifact access"
       ],
       "canReforge": true,
       "canRepair": true,
@@ -10981,6 +11552,9 @@
           "polarity": "good",
           "text": "+3 Court Grandeur Baseline Add"
         }
+      ],
+      "holyRelic": [
+        "Religion: Islam or Islamic Syncretism"
       ],
       "id": "muhammad_sword_template",
       "label": "Muhammad sword",
@@ -11005,6 +11579,7 @@
           "text": "+0.05 Prestige /month"
         }
       ],
+      "holyRelic": null,
       "id": "mysterious_puzzle_template",
       "label": "Mysterious puzzle",
       "reforgeConditions": [],
@@ -11029,12 +11604,63 @@
           "text": "+0.05 Prestige /month"
         }
       ],
+      "holyRelic": null,
       "id": "paiza_artifact_template",
       "label": "Paiza artifact",
       "reforgeConditions": [],
       "repairConditions": [],
       "sourceFile": "00_event_templates.txt",
       "unique": false
+    },
+    {
+      "artifacts": [],
+      "benefit": [
+        "Is christian"
+      ],
+      "canReforge": false,
+      "canRepair": false,
+      "dlc": "By God Alone",
+      "equip": [],
+      "fallback": [
+        {
+          "key": "monthly_prestige",
+          "polarity": "good",
+          "text": "+0.1 Prestige /month"
+        }
+      ],
+      "holyRelic": null,
+      "id": "pam_holy_myron_template",
+      "label": "Pam holy myron",
+      "reforgeConditions": [],
+      "repairConditions": [],
+      "sourceFile": "pam_saint_relic_templates.txt",
+      "unique": true
+    },
+    {
+      "artifacts": [],
+      "benefit": [
+        "Holder has the same Religion as …"
+      ],
+      "canReforge": true,
+      "canRepair": true,
+      "dlc": "By God Alone",
+      "equip": [],
+      "fallback": [
+        {
+          "key": "court_grandeur_baseline_add",
+          "polarity": "good",
+          "text": "+3 Court Grandeur Baseline Add"
+        }
+      ],
+      "holyRelic": [
+        "Holder has the same Religion as …"
+      ],
+      "id": "pam_saint_relic_template",
+      "label": "Pam saint relic",
+      "reforgeConditions": [],
+      "repairConditions": [],
+      "sourceFile": "pam_saint_relic_templates.txt",
+      "unique": true
     },
     {
       "artifacts": [
@@ -11061,6 +11687,7 @@
           "text": "+1 Prestige /month"
         }
       ],
+      "holyRelic": null,
       "id": "papal_tiara_template",
       "label": "Papal tiara",
       "reforgeConditions": [],
@@ -11091,6 +11718,7 @@
           "text": "+0.04 Renown /month"
         }
       ],
+      "holyRelic": null,
       "id": "pentapyrgion_template",
       "label": "Pentapyrgion",
       "reforgeConditions": [],
@@ -11100,9 +11728,29 @@
     },
     {
       "artifacts": [
-        "jira_stick",
-        "qadib_al_mulk_name",
-        "artifact_jewelled_danda_name"
+        "jerusalem_badge_name",
+        "rome_badge_name",
+        "santiago_badge_name"
+      ],
+      "benefit": [],
+      "canReforge": true,
+      "canRepair": true,
+      "dlc": null,
+      "equip": [
+        "Cannot equip as your Faith does not consider … a Holy Site (when artifact has pilgrim badge location)"
+      ],
+      "fallback": [],
+      "holyRelic": null,
+      "id": "pilgrim_badge_template",
+      "label": "Pilgrim badge",
+      "reforgeConditions": [],
+      "repairConditions": [],
+      "sourceFile": "00_badge_templates.txt",
+      "unique": false
+    },
+    {
+      "artifacts": [
+        "jira_stick"
       ],
       "benefit": [],
       "canReforge": true,
@@ -11112,12 +11760,13 @@
         "not: Realm law: Uncrowned (when Crowns of the World DLC; Coronation proper artifact regalia; not: artifact in a court slot)"
       ],
       "fallback": [],
+      "holyRelic": null,
       "id": "regalia_template",
       "label": "Regalia",
       "reforgeConditions": [],
       "repairConditions": [],
       "sourceFile": "00_type_templates.txt",
-      "unique": true
+      "unique": false
     },
     {
       "artifacts": [
@@ -11144,6 +11793,7 @@
           "text": "+5% Monthly Renown"
         }
       ],
+      "holyRelic": null,
       "id": "reichskrone_template",
       "label": "Reichskrone",
       "reforgeConditions": [],
@@ -11170,6 +11820,9 @@
           "text": "+3 Court Grandeur Baseline Add"
         }
       ],
+      "holyRelic": [
+        "Religion: Finno-Ugric or Syncretic Folk Traditions"
+      ],
       "id": "relic_finno_ugric_template",
       "label": "Relic finno ugric",
       "reforgeConditions": [],
@@ -11178,7 +11831,9 @@
       "unique": true
     },
     {
-      "artifacts": [],
+      "artifacts": [
+        "artifact_sculpture_religious_mary_name"
+      ],
       "benefit": [
         "artifact has statue religion",
         "Matches the artifact's statue religion"
@@ -11193,6 +11848,10 @@
           "polarity": "good",
           "text": "+3 Court Grandeur Baseline Add"
         }
+      ],
+      "holyRelic": [
+        "artifact has statue religion",
+        "Matches the artifact's statue religion"
       ],
       "id": "religious_statue_template",
       "label": "Religious statue",
@@ -11217,6 +11876,7 @@
           "text": "+0.05 Prestige /month"
         }
       ],
+      "holyRelic": null,
       "id": "ryukyu_crown_template",
       "label": "Ryukyu crown",
       "reforgeConditions": [],
@@ -11240,6 +11900,7 @@
           "text": "+0.05 Prestige /month"
         }
       ],
+      "holyRelic": null,
       "id": "ryukyu_shaku_template",
       "label": "Ryukyu shaku",
       "reforgeConditions": [],
@@ -11267,6 +11928,10 @@
           "text": "+0.1 Prestige /month"
         }
       ],
+      "holyRelic": [
+        "artifact has saint bone faith",
+        "Religion: Christianity or Christian Syncretism"
+      ],
       "id": "saintly_bones_template",
       "label": "Saintly bones",
       "reforgeConditions": [],
@@ -11290,6 +11955,9 @@
           "text": "+0.05 Prestige /month"
         }
       ],
+      "holyRelic": [
+        "Matches the artifact's relic religion"
+      ],
       "id": "small_religious_carving_template",
       "label": "Small religious carving",
       "reforgeConditions": [],
@@ -11302,7 +11970,7 @@
         "artifact_statue_constantine_name"
       ],
       "benefit": [
-        "Administrative government"
+        "Government has mechanic = administrative"
       ],
       "canReforge": true,
       "canRepair": true,
@@ -11320,6 +11988,7 @@
           "text": "+6 Court Grandeur Baseline Add"
         }
       ],
+      "holyRelic": null,
       "id": "statue_constantine_template",
       "label": "Statue constantine",
       "reforgeConditions": [],
@@ -11330,7 +11999,7 @@
     {
       "artifacts": [],
       "benefit": [
-        "Administrative government"
+        "Government has mechanic = administrative"
       ],
       "canReforge": true,
       "canRepair": true,
@@ -11348,6 +12017,7 @@
           "text": "+0.5 Renown /month"
         }
       ],
+      "holyRelic": null,
       "id": "statue_four_tetrarchs_template",
       "label": "Statue four tetrarchs",
       "reforgeConditions": [],
@@ -11360,7 +12030,7 @@
         "artifact_statue_roman_woman_name"
       ],
       "benefit": [
-        "Administrative government"
+        "Government has mechanic = administrative"
       ],
       "canReforge": true,
       "canRepair": true,
@@ -11388,6 +12058,7 @@
           "text": "+10% Owned Personal Scheme Success Chance Add"
         }
       ],
+      "holyRelic": null,
       "id": "statue_roman_woman_template",
       "label": "Statue roman woman",
       "reforgeConditions": [],
@@ -11418,6 +12089,7 @@
           "text": "+3 Court Grandeur Baseline Add"
         }
       ],
+      "holyRelic": null,
       "id": "sword_goujian_template",
       "label": "Sword goujian",
       "reforgeConditions": [],
@@ -11428,7 +12100,7 @@
     {
       "artifacts": [],
       "benefit": [
-        "Faith doctrine: Cranial Trophies"
+        "Tgp cranial trophies collection"
       ],
       "canReforge": false,
       "canRepair": false,
@@ -11440,6 +12112,10 @@
           "polarity": "good",
           "text": "+0.05 Prestige /month"
         }
+      ],
+      "holyRelic": [
+        "Doctrine: Cranial Trophies",
+        "artifact Rarity level >= masterwork"
       ],
       "id": "tgp_severed_head_template",
       "label": "Tgp severed head",
@@ -11453,7 +12129,7 @@
         "artifact_throne_charlemagne_name"
       ],
       "benefit": [
-        "Christianity or syncretic with christianity or Islam or syncretic with islam"
+        "Christian artifact access or Islamic artifact access"
       ],
       "canReforge": true,
       "canRepair": true,
@@ -11476,6 +12152,7 @@
           "text": "+0.3 Prestige /month"
         }
       ],
+      "holyRelic": null,
       "id": "throne_charlemagne_template",
       "label": "Throne charlemagne",
       "reforgeConditions": [],
@@ -11511,6 +12188,7 @@
           "text": "+0.1 Prestige /month"
         }
       ],
+      "holyRelic": null,
       "id": "throne_scone_template",
       "label": "Throne scone",
       "reforgeConditions": [],
@@ -11523,7 +12201,7 @@
         "artifact_throne_solomon_name"
       ],
       "benefit": [
-        "Judaism or syncretic with judaism or Christianity or syncretic with christianity or Islam or syncretic with islam"
+        "Jewish artifact access or Christian artifact access or Islamic artifact access"
       ],
       "canReforge": true,
       "canRepair": true,
@@ -11545,6 +12223,9 @@
           "polarity": "good",
           "text": "+0.15 Prestige /month"
         }
+      ],
+      "holyRelic": [
+        "Religion: Judaism or Religion: Christianity or Religion: Islam or Jewish Syncretism or Christian Syncretism or Islamic Syncretism"
       ],
       "id": "throne_solomon_template",
       "label": "Throne solomon",
@@ -11581,6 +12262,7 @@
           "text": "+2% Monthly Renown"
         }
       ],
+      "holyRelic": null,
       "id": "tizona_template",
       "label": "Tizona",
       "reforgeConditions": [],
@@ -11612,11 +12294,54 @@
           "text": "+5 Court Grandeur Baseline Add"
         }
       ],
+      "holyRelic": null,
       "id": "tree_automa_template",
       "label": "Tree automa",
       "reforgeConditions": [],
       "repairConditions": [],
       "sourceFile": "02_ep3_templates.txt",
+      "unique": true
+    },
+    {
+      "artifacts": [
+        "monomachus_crown_name",
+        "al_taj_crown_name"
+      ],
+      "benefit": [],
+      "canReforge": true,
+      "canRepair": true,
+      "dlc": null,
+      "equip": [
+        "not: Realm law: Uncrowned (when Crowns of the World DLC; Coronation proper artifact crown; not: artifact in a court slot)"
+      ],
+      "fallback": [],
+      "holyRelic": null,
+      "id": "unique_crown_wearable_template",
+      "label": "Unique crown wearable",
+      "reforgeConditions": [],
+      "repairConditions": [],
+      "sourceFile": "00_type_templates.txt",
+      "unique": true
+    },
+    {
+      "artifacts": [
+        "qadib_al_mulk_name",
+        "artifact_jewelled_danda_name"
+      ],
+      "benefit": [],
+      "canReforge": true,
+      "canRepair": true,
+      "dlc": null,
+      "equip": [
+        "not: Realm law: Uncrowned (when Crowns of the World DLC; Coronation proper artifact regalia; not: artifact in a court slot)"
+      ],
+      "fallback": [],
+      "holyRelic": null,
+      "id": "unique_regalia_template",
+      "label": "Unique regalia",
+      "reforgeConditions": [],
+      "repairConditions": [],
+      "sourceFile": "00_type_templates.txt",
       "unique": true
     },
     {
@@ -11637,6 +12362,7 @@
           "text": "-5% Monthly Piety"
         }
       ],
+      "holyRelic": null,
       "id": "witchy_artifact_template",
       "label": "Witchy artifact",
       "reforgeConditions": [],
@@ -11665,6 +12391,7 @@
           "text": "-5% Monthly Piety"
         }
       ],
+      "holyRelic": null,
       "id": "witchy_book_template",
       "label": "Witchy book",
       "reforgeConditions": [],
@@ -11698,6 +12425,7 @@
           "text": "-5% Monthly Piety"
         }
       ],
+      "holyRelic": null,
       "id": "witchy_shoes_template",
       "label": "Witchy shoes",
       "reforgeConditions": [],
@@ -12248,6 +12976,31 @@
     {
       "category": "inventory",
       "dlc": null,
+      "id": "badge",
+      "name": "Badge",
+      "optionalFeatures": [],
+      "requiredFeatures": [],
+      "slot": "brooch"
+    },
+    {
+      "category": "inventory",
+      "dlc": null,
+      "id": "brooch",
+      "name": "Brooch",
+      "optionalFeatures": [
+        "brooch_centerpiece",
+        "brooch_adornment",
+        "decoration_material_gem"
+      ],
+      "requiredFeatures": [
+        "brooch_decoration",
+        "decoration_material_wire"
+      ],
+      "slot": "brooch"
+    },
+    {
+      "category": "inventory",
+      "dlc": null,
       "id": "helmet",
       "name": "Headgear",
       "optionalFeatures": [
@@ -12306,22 +13059,6 @@
       "optionalFeatures": [],
       "requiredFeatures": [
         "bird_feather_type"
-      ],
-      "slot": "miscellaneous"
-    },
-    {
-      "category": "inventory",
-      "dlc": null,
-      "id": "brooch",
-      "name": "Brooch",
-      "optionalFeatures": [
-        "brooch_centerpiece",
-        "brooch_adornment",
-        "decoration_material_gem"
-      ],
-      "requiredFeatures": [
-        "brooch_decoration",
-        "decoration_material_wire"
       ],
       "slot": "miscellaneous"
     },

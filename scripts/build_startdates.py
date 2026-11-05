@@ -59,7 +59,8 @@ def load_title_history():
     return titles
 
 
-FIELDS = ("name", "dynasty", "dynasty_house", "religion", "culture", "female")
+# `rite` replaced `religion` in character history in 1.20; both are read
+FIELDS = ("name", "dynasty", "dynasty_house", "religion", "rite", "culture", "female")
 
 
 def load_characters(needed, date):
@@ -178,7 +179,8 @@ def main():
                 "female": ch.get("female") == "yes",
                 "dynasty": dyn.get(ch.get("dynasty_house") or ch.get("dynasty", ""), None),
                 "culture": ck3.render_text(ck3.loc(ch.get("culture", "")) or (ch.get("culture") or "").title()),
-                "faith": ck3.render_text(ck3.loc(ch.get("religion", "")) or (ch.get("religion") or "").title()),
+                "faith": (lambda f: ck3.render_text(ck3.loc(f) or f.replace("_", " ").title()))(
+                    ch.get("rite") or ch.get("religion") or ""),
                 "government": (gov or "").replace("_government", "") or None,
             })
         realms.sort(key=lambda r: -r["counties"])

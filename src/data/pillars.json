@@ -52,7 +52,7 @@
       {
         "hasLoc": true,
         "key": "can_adopt_administrative_government_as_kingdom_tier",
-        "text": "Rulers can adopt Administrative Government type as a King as well when they are Emperors",
+        "text": "Rulers can adopt Bureaucratic Government type as a King as well when they are Emperors",
         "value": true
       }
     ],
@@ -158,7 +158,8 @@
       "Characters": [
         "+15% Control Growth",
         "+10% Monthly Piety",
-        "-20% Faith Creation and Reformation Cost",
+        "+10% Character Spiritual Fulfillment Gain Mult",
+        "-5% Rite Creation and Reformation Cost",
         "-10 Minority Vassal Opinion (Different Culture)",
         "+5% Herd Capacity"
       ]
@@ -3083,7 +3084,7 @@
   },
   {
     "color": null,
-    "desc": "A Culture's Head Determination decides how the cultural head is decided.",
+    "desc": "A Culture's head determination decides how the cultural head is decided.",
     "dlc": null,
     "features": [],
     "headDeterminationType": "domain",
@@ -3099,7 +3100,7 @@
   },
   {
     "color": null,
-    "desc": "A Culture's Head Determination decides how the cultural head is decided.",
+    "desc": "A Culture's head determination decides how the cultural head is decided.",
     "dlc": null,
     "features": [],
     "headDeterminationType": "herd",

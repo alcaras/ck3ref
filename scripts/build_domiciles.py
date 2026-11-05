@@ -44,6 +44,8 @@ TYPE_SKIP_FIELDS = {
     "map_pin_lobby": "game-lobby map pin visibility",
     "domicile_asset": "window background art selection",
     "map_entity": "3D map model selection",
+    "construction_soundeffect": "UI sound played when clicking a slot under "
+                                "construction (audio plumbing)",
 }
 
 TYPE_HANDLED = {

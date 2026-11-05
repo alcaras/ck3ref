@@ -2672,7 +2672,7 @@
   },
   {
     "constructionTime": {
-      "rules": "base 1825; multiply 7; scope:great_project …; multiply (base 1; if top_participant_group:dynastic_cycle …: add -0.5)"
+      "rules": "base 1825; multiply 7; if OR …: multiply 0.75; scope:great_project …; multiply (base 1; if top_participant_group:dynastic_cycle …: add -0.5)"
     },
     "contributionThreshold": null,
     "contributions": [
@@ -2928,7 +2928,7 @@
   },
   {
     "constructionTime": {
-      "rules": "base 1825; multiply 7; scope:great_project …; multiply (base 1; if top_participant_group:dynastic_cycle …: add -0.5)"
+      "rules": "base 1825; multiply 7; if OR …: multiply 0.75; scope:great_project …; multiply (base 1; if top_participant_group:dynastic_cycle …: add -0.5)"
     },
     "contributionThreshold": null,
     "contributions": [
@@ -3053,7 +3053,7 @@
   },
   {
     "constructionTime": {
-      "rules": "base 3650; scope:great_project …; multiply (base 1; if top_participant_group:dynastic_cycle …: add -0.5)"
+      "rules": "base 3650; if OR …: multiply 0.75; multiply (base 1; if top_participant_group:dynastic_cycle …: add -0.5)"
     },
     "contributionThreshold": null,
     "contributions": [
@@ -3437,6 +3437,707 @@
     ],
     "showInList": true,
     "sourceFile": "00_ministry_projects.txt",
+    "targetTitleTier": null
+  },
+  {
+    "constructionTime": {
+      "rules": "base 1625; multiply (base 1; if scope:province.county …: add -0.05; if scope:founder …: add -0.05; if scope:founder …: add -0.05; if scope:founder …: add 0.05; if scope:founder …: add 0.05; if scope:founder …: add -0.05; if scope:founder …: add -0.05; if scope:founder …: add 0.05; if scope:founder …: add 0.05; if situation:the_christian_church …: add -0.15; if culture …: add -0.02; if culture …: add -0.03; if culture …: add -0.05); multiply (base 1; if top_participant_group:dynastic_cycle …: add -0.5)"
+    },
+    "contributionThreshold": null,
+    "contributions": [
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base (base (base 0; if has_treasury = True: add medium_treasury_value; else …; min 250); multiply 2; desc great_project_base_contribution_cost_desc); if any_held_title …: multiply …; else_if …; else_if …; else_if …; else_if …; else_if …; else_if …; else_if …"
+          }
+        },
+        "desc": null,
+        "id": "stone",
+        "name": "Vast Quantities of Stone",
+        "required": true
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base (base (base 0; if has_treasury = True: add medium_treasury_value; else …; min 250); desc great_project_base_contribution_cost_desc); if any_held_title …: multiply …; else_if …; else_if …; else_if …; else_if …; else_if …; else_if …; else_if …"
+          }
+        },
+        "desc": null,
+        "id": "master_mason",
+        "name": "A Master Mason",
+        "required": true
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base (base (base 0; if has_treasury = True: add medium_treasury_value; else …; min 250); desc great_project_base_contribution_cost_desc); if any_held_title …: multiply …; else_if …; else_if …; else_if …; else_if …; else_if …; else_if …; else_if …"
+          }
+        },
+        "desc": null,
+        "id": "bells",
+        "name": "Bronze Bells",
+        "required": true
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base (base 0; if has_treasury = True: add medium_treasury_value; else …; min 250); multiply 1.5; desc great_project_base_contribution_cost_desc"
+          }
+        },
+        "desc": null,
+        "id": "facade",
+        "name": "Ornate Facade & Portico",
+        "required": false
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base (base (base 0; if has_treasury = True: add medium_treasury_value; else …; min 250); multiply 0.33; desc great_project_base_contribution_cost_desc); if any_held_title …: multiply …; else_if …; else_if …; else_if …; else_if …; else_if …; else_if …; else_if …"
+          },
+          "piety": {
+            "rules": "base (base (base 0; if has_treasury = True: add medium_treasury_value; else …; min 250); multiply 1.33; desc great_project_base_contribution_cost_desc); if any_held_title …: multiply …; else_if …; else_if …; else_if …; else_if …; else_if …; else_if …; else_if …"
+          }
+        },
+        "desc": null,
+        "id": "frescoes",
+        "name": "Sacred Frescoes",
+        "required": false
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base (base (base 0; if has_treasury = True: add medium_treasury_value; else …; min 250); multiply 0.5; desc great_project_base_contribution_cost_desc); if any_held_title …: multiply …; else_if …; else_if …; else_if …; else_if …; else_if …; else_if …; else_if …"
+          },
+          "piety": {
+            "rules": "base (base (base 0; if has_treasury = True: add medium_treasury_value; else …; min 250); multiply 0.67; desc great_project_base_contribution_cost_desc); if any_held_title …: multiply …; else_if …; else_if …; else_if …; else_if …; else_if …; else_if …; else_if …"
+          }
+        },
+        "desc": null,
+        "id": "stained_glass",
+        "name": "Stained Glass",
+        "required": false
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base (base 0; if has_treasury = True: add medium_treasury_value; else …; min 250); multiply 0.5; desc great_project_base_contribution_cost_desc"
+          },
+          "influence": {
+            "rules": "base 0; if government_has_flag = government_has_influence: add 60"
+          },
+          "prestige": {
+            "rules": "base 0; if is_clergy = False, NOT …: add 150"
+          }
+        },
+        "desc": null,
+        "id": "north_chapel",
+        "name": "A Northern Chapel",
+        "required": false
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base (base 0; if has_treasury = True: add medium_treasury_value; else …; min 250); multiply 0.5; desc great_project_base_contribution_cost_desc"
+          },
+          "influence": {
+            "rules": "base 0; if government_has_flag = government_has_influence: add 60"
+          },
+          "prestige": {
+            "rules": "base 0; if is_clergy = False, NOT …: add 150"
+          }
+        },
+        "desc": null,
+        "id": "south_chapel",
+        "name": "A Southern Chapel",
+        "required": false
+      }
+    ],
+    "contributorCooldown": {
+      "n": 21
+    },
+    "contributors": [
+      "allies",
+      "clerical_region",
+      "councillor",
+      "duchy",
+      "founder",
+      "head_of_faith",
+      "liege",
+      "owner",
+      "puppeteer",
+      "top_liege",
+      "vassals"
+    ],
+    "cost": {
+      "gold": {
+        "fromTreasury": true,
+        "rules": "base (base 0; if has_treasury = True: add major_treasury_value; else …; min 500); divide 1.5; if culture …: multiply …"
+      }
+    },
+    "dlc": "By God Alone",
+    "grantsBuildings": [
+      {
+        "id": "great_project_cathedral_01",
+        "name": "Romanesque Grand Cathedral"
+      },
+      {
+        "id": "great_project_cathedral_under_construction",
+        "name": "Cathedral Under Construction"
+      }
+    ],
+    "group": "major",
+    "icon": "great_projects/grand_cathedral_gp",
+    "id": "pam_cathedral_01",
+    "isImportant": false,
+    "name": "Romanesque Grand Cathedral",
+    "owner": "province_clerical_region_or_theocracy_holder",
+    "plannable": true,
+    "provinceFilter": "clerical_region_theocracy_capitals",
+    "provinceFilterTarget": null,
+    "requirements": [
+      {
+        "building": null,
+        "key": "not_planning_great_project_type",
+        "kind": "condition",
+        "name": "Great Project of this type is not already being planned",
+        "negated": false
+      },
+      {
+        "building": null,
+        "key": "same_faith_holder_tt",
+        "kind": "condition",
+        "name": "The Holder belongs to your Faith",
+        "negated": false
+      }
+    ],
+    "showInList": true,
+    "sourceFile": "01_pam_projects.txt",
+    "targetTitleTier": null
+  },
+  {
+    "constructionTime": {
+      "rules": "base 7300; multiply (base 1; if scope:province.county …: add -0.05; if scope:founder …: add -0.05; if scope:founder …: add -0.05; if scope:founder …: add 0.05; if scope:founder …: add 0.05; if scope:founder …: add -0.05; if scope:founder …: add -0.05; if scope:founder …: add 0.05; if scope:founder …: add 0.05; if situation:the_christian_church …: add -0.15; if culture …: add -0.02; if culture …: add -0.03; if culture …: add -0.05); multiply (base 1; if top_participant_group:dynastic_cycle …: add -0.5)"
+    },
+    "contributionThreshold": null,
+    "contributions": [
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base (base (base 0; if has_treasury = True: add medium_treasury_value; else …; min 250); multiply 3; desc great_project_base_contribution_cost_desc); if any_held_title …: multiply …; else_if …; else_if …; else_if …; else_if …; else_if …; else_if …; else_if …"
+          }
+        },
+        "desc": null,
+        "id": "stone",
+        "name": "Vast Quantities of Stone",
+        "required": true
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base (base (base 0; if has_treasury = True: add medium_treasury_value; else …; min 250); desc great_project_base_contribution_cost_desc); if any_held_title …: multiply …; else_if …; else_if …; else_if …; else_if …; else_if …; else_if …; else_if …"
+          }
+        },
+        "desc": null,
+        "id": "master_mason",
+        "name": "A Master Mason",
+        "required": true
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base (base (base 0; if has_treasury = True: add medium_treasury_value; else …; min 250); desc great_project_base_contribution_cost_desc); if any_held_title …: multiply …; else_if …; else_if …; else_if …; else_if …; else_if …; else_if …; else_if …"
+          }
+        },
+        "desc": null,
+        "id": "bells",
+        "name": "Bronze Bells",
+        "required": true
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base (base 0; if has_treasury = True: add medium_treasury_value; else …; min 250); multiply 2.25; desc great_project_base_contribution_cost_desc"
+          }
+        },
+        "desc": null,
+        "id": "facade",
+        "name": "Ornate Facade & Portico",
+        "required": false
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base (base (base 0; if has_treasury = True: add medium_treasury_value; else …; min 250); multiply 0.75; desc great_project_base_contribution_cost_desc); if any_held_title …: multiply …; else_if …; else_if …; else_if …; else_if …; else_if …; else_if …; else_if …"
+          },
+          "piety": {
+            "rules": "base (base (base 0; if has_treasury = True: add medium_treasury_value; else …; min 250); multiply 2; desc great_project_base_contribution_cost_desc); if any_held_title …: multiply …; else_if …; else_if …; else_if …; else_if …; else_if …; else_if …; else_if …"
+          }
+        },
+        "desc": null,
+        "id": "frescoes",
+        "name": "Sacred Frescoes",
+        "required": false
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base (base (base 0; if has_treasury = True: add medium_treasury_value; else …; min 250); multiply 0.75; desc great_project_base_contribution_cost_desc); if any_held_title …: multiply …; else_if …; else_if …; else_if …; else_if …; else_if …; else_if …; else_if …"
+          },
+          "piety": {
+            "rules": "base (base (base 0; if has_treasury = True: add medium_treasury_value; else …; min 250); multiply 1; desc great_project_base_contribution_cost_desc); if any_held_title …: multiply …; else_if …; else_if …; else_if …; else_if …; else_if …; else_if …; else_if …"
+          }
+        },
+        "desc": null,
+        "id": "stained_glass",
+        "name": "Stained Glass",
+        "required": false
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base (base 0; if has_treasury = True: add medium_treasury_value; else …; min 250); multiply 0.75; desc great_project_base_contribution_cost_desc"
+          },
+          "influence": {
+            "rules": "base 0; if government_has_flag = government_has_influence: add 60"
+          },
+          "prestige": {
+            "rules": "base 0; if is_clergy = False, NOT …: add 150"
+          }
+        },
+        "desc": null,
+        "id": "north_chapel",
+        "name": "A Northern Chapel",
+        "required": false
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base (base 0; if has_treasury = True: add medium_treasury_value; else …; min 250); multiply 0.75; desc great_project_base_contribution_cost_desc"
+          },
+          "influence": {
+            "rules": "base 0; if government_has_flag = government_has_influence: add 60"
+          },
+          "prestige": {
+            "rules": "base 0; if is_clergy = False, NOT …: add 150"
+          }
+        },
+        "desc": null,
+        "id": "south_chapel",
+        "name": "A Southern Chapel",
+        "required": false
+      }
+    ],
+    "contributorCooldown": {
+      "n": 21
+    },
+    "contributors": [
+      "allies",
+      "clerical_region",
+      "councillor",
+      "duchy",
+      "founder",
+      "head_of_faith",
+      "liege",
+      "owner",
+      "puppeteer",
+      "top_liege",
+      "vassals"
+    ],
+    "cost": {
+      "gold": {
+        "fromTreasury": true,
+        "rules": "base (base 0; if has_treasury = True: add major_treasury_value; else …; min 500); if culture …: multiply …"
+      }
+    },
+    "dlc": "By God Alone",
+    "grantsBuildings": [
+      {
+        "id": "great_project_cathedral_02",
+        "name": "Gothic Grand Cathedral"
+      },
+      {
+        "id": "great_project_cathedral_under_construction",
+        "name": "Cathedral Under Construction"
+      }
+    ],
+    "group": "major",
+    "icon": "great_projects/grand_cathedral_gp",
+    "id": "pam_cathedral_02",
+    "isImportant": false,
+    "name": "Gothic Grand Cathedral",
+    "owner": "province_clerical_region_or_theocracy_holder",
+    "plannable": true,
+    "provinceFilter": "clerical_region_theocracy_capitals",
+    "provinceFilterTarget": null,
+    "requirements": [
+      {
+        "building": null,
+        "key": "not_planning_great_project_type",
+        "kind": "condition",
+        "name": "Great Project of this type is not already being planned",
+        "negated": false
+      },
+      {
+        "building": null,
+        "key": "innovation_manorialism",
+        "kind": "innovation",
+        "name": "Manorialism",
+        "negated": false
+      },
+      {
+        "building": null,
+        "key": "same_faith_holder_tt",
+        "kind": "condition",
+        "name": "The Holder belongs to your Faith",
+        "negated": false
+      }
+    ],
+    "showInList": true,
+    "sourceFile": "01_pam_projects.txt",
+    "targetTitleTier": null
+  },
+  {
+    "constructionTime": {
+      "rules": "base 10950; multiply (base 1; if scope:province.county …: add -0.05; if scope:founder …: add -0.05; if scope:founder …: add -0.05; if scope:founder …: add 0.05; if scope:founder …: add 0.05; if scope:founder …: add -0.05; if scope:founder …: add -0.05; if scope:founder …: add 0.05; if scope:founder …: add 0.05; if situation:the_christian_church …: add -0.15; if culture …: add -0.02; if culture …: add -0.03; if culture …: add -0.05); multiply (base 1; if top_participant_group:dynastic_cycle …: add -0.5)"
+    },
+    "contributionThreshold": null,
+    "contributions": [
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base (base (base 0; if has_treasury = True: add medium_treasury_value; else …; min 250); multiply 4.5; desc great_project_base_contribution_cost_desc); if any_held_title …: multiply …; else_if …; else_if …; else_if …; else_if …; else_if …; else_if …; else_if …"
+          }
+        },
+        "desc": null,
+        "id": "stone",
+        "name": "Vast Quantities of Stone",
+        "required": true
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base (base (base 0; if has_treasury = True: add medium_treasury_value; else …; min 250); desc great_project_base_contribution_cost_desc); if any_held_title …: multiply …; else_if …; else_if …; else_if …; else_if …; else_if …; else_if …; else_if …"
+          }
+        },
+        "desc": null,
+        "id": "master_mason",
+        "name": "A Master Mason",
+        "required": true
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base (base (base 0; if has_treasury = True: add medium_treasury_value; else …; min 250); desc great_project_base_contribution_cost_desc); if any_held_title …: multiply …; else_if …; else_if …; else_if …; else_if …; else_if …; else_if …; else_if …"
+          }
+        },
+        "desc": null,
+        "id": "bells",
+        "name": "Bronze Bells",
+        "required": true
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base (base 0; if has_treasury = True: add medium_treasury_value; else …; min 250); multiply 3.375; desc great_project_base_contribution_cost_desc"
+          }
+        },
+        "desc": null,
+        "id": "facade",
+        "name": "Ornate Facade & Portico",
+        "required": false
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base (base (base 0; if has_treasury = True: add medium_treasury_value; else …; min 250); multiply 1.125; desc great_project_base_contribution_cost_desc); if any_held_title …: multiply …; else_if …; else_if …; else_if …; else_if …; else_if …; else_if …; else_if …"
+          },
+          "piety": {
+            "rules": "base (base (base 0; if has_treasury = True: add medium_treasury_value; else …; min 250); multiply 3; desc great_project_base_contribution_cost_desc); if any_held_title …: multiply …; else_if …; else_if …; else_if …; else_if …; else_if …; else_if …; else_if …"
+          }
+        },
+        "desc": null,
+        "id": "frescoes",
+        "name": "Sacred Frescoes",
+        "required": false
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base (base (base 0; if has_treasury = True: add medium_treasury_value; else …; min 250); multiply 1.125; desc great_project_base_contribution_cost_desc); if any_held_title …: multiply …; else_if …; else_if …; else_if …; else_if …; else_if …; else_if …; else_if …"
+          },
+          "piety": {
+            "rules": "base (base (base 0; if has_treasury = True: add medium_treasury_value; else …; min 250); multiply 1; desc great_project_base_contribution_cost_desc); if any_held_title …: multiply …; else_if …; else_if …; else_if …; else_if …; else_if …; else_if …; else_if …"
+          }
+        },
+        "desc": null,
+        "id": "stained_glass",
+        "name": "Stained Glass",
+        "required": false
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base (base 0; if has_treasury = True: add medium_treasury_value; else …; min 250); multiply 1.125; desc great_project_base_contribution_cost_desc"
+          },
+          "influence": {
+            "rules": "base 0; if government_has_flag = government_has_influence: add 60"
+          },
+          "prestige": {
+            "rules": "base 0; if is_clergy = False, NOT …: add 150"
+          }
+        },
+        "desc": null,
+        "id": "north_chapel",
+        "name": "A Northern Chapel",
+        "required": false
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base (base 0; if has_treasury = True: add medium_treasury_value; else …; min 250); multiply 1.125; desc great_project_base_contribution_cost_desc"
+          },
+          "influence": {
+            "rules": "base 0; if government_has_flag = government_has_influence: add 60"
+          },
+          "prestige": {
+            "rules": "base 0; if is_clergy = False, NOT …: add 150"
+          }
+        },
+        "desc": null,
+        "id": "south_chapel",
+        "name": "A Southern Chapel",
+        "required": false
+      }
+    ],
+    "contributorCooldown": {
+      "n": 21
+    },
+    "contributors": [
+      "allies",
+      "clerical_region",
+      "councillor",
+      "duchy",
+      "founder",
+      "head_of_faith",
+      "liege",
+      "owner",
+      "puppeteer",
+      "top_liege",
+      "vassals"
+    ],
+    "cost": {
+      "gold": {
+        "fromTreasury": true,
+        "rules": "base (base (base 0; if has_treasury = True: add major_treasury_value; else …; min 500); multiply 1.5); if culture …: multiply …"
+      }
+    },
+    "dlc": "By God Alone",
+    "grantsBuildings": [
+      {
+        "id": "great_project_cathedral_03",
+        "name": "Flamboyant Grand Cathedral"
+      },
+      {
+        "id": "great_project_cathedral_under_construction",
+        "name": "Cathedral Under Construction"
+      }
+    ],
+    "group": "major",
+    "icon": "great_projects/grand_cathedral_gp",
+    "id": "pam_cathedral_03",
+    "isImportant": false,
+    "name": "Flamboyant Grand Cathedral",
+    "owner": "province_clerical_region_or_theocracy_holder",
+    "plannable": true,
+    "provinceFilter": "clerical_region_theocracy_capitals",
+    "provinceFilterTarget": null,
+    "requirements": [
+      {
+        "building": null,
+        "key": "not_planning_great_project_type",
+        "kind": "condition",
+        "name": "Great Project of this type is not already being planned",
+        "negated": false
+      },
+      {
+        "building": null,
+        "key": "innovation_manorialism",
+        "kind": "innovation",
+        "name": "Manorialism",
+        "negated": false
+      },
+      {
+        "building": null,
+        "key": "innovation_development_03",
+        "kind": "innovation",
+        "name": "Urbanization",
+        "negated": false
+      },
+      {
+        "building": null,
+        "key": "same_faith_holder_tt",
+        "kind": "condition",
+        "name": "The Holder belongs to your Faith",
+        "negated": false
+      }
+    ],
+    "showInList": true,
+    "sourceFile": "01_pam_projects.txt",
+    "targetTitleTier": null
+  },
+  {
+    "constructionTime": {
+      "rules": "base 1825; multiply 4; scope:great_project …"
+    },
+    "contributionThreshold": null,
+    "contributions": [
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "add (base 75; desc BASE); multiply (add 1; scope:province …; desc pam_mass_rite_send_missionaries_value_desc)"
+          }
+        },
+        "desc": null,
+        "id": "send_missionaries",
+        "name": "Send Missionaries",
+        "required": true
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base (add 200; desc BASE); multiply (add 1; scope:province …; desc pam_mass_rite_construct_new_shrines_value_desc)"
+          }
+        },
+        "desc": null,
+        "id": "construct_new_shrines",
+        "name": "Construct New Shrines",
+        "required": false
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base (add 100; desc BASE); multiply (add 1; scope:province …; desc pam_mass_rite_promote_faithful_relocation_value_desc)"
+          }
+        },
+        "desc": null,
+        "id": "promote_faithful_relocation",
+        "name": "Promote Faithful Relocation",
+        "required": false
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base (add 25; desc BASE); multiply (add 1; scope:province …; desc pam_mass_rite_integrate_existing_rituals_value_desc); if has_variable = pam_theocratic_ruler_events_0014_mass_conversion_discount: multiply …"
+          }
+        },
+        "desc": null,
+        "id": "integrate_existing_rituals",
+        "name": "Integrate Existing Rituals",
+        "required": false
+      }
+    ],
+    "contributorCooldown": {
+      "n": 21
+    },
+    "contributors": [
+      "owner",
+      "top_liege",
+      "vassals"
+    ],
+    "cost": {
+      "gold": {
+        "fromTreasury": true,
+        "rules": "base (base 0; if has_treasury = True: add major_treasury_value; else …; min 500); multiply 0.2; if is_councillor = True: multiply 0.5; if pam_mass_rite_conversion_conversion_phase_trigger = True: multiply 0.65; if has_variable = no_great_project_cost: multiply 0"
+      },
+      "piety": {
+        "rules": "base (base 0; if has_treasury = True: add major_treasury_value; else …; min 500); if pam_mass_rite_conversion_conversion_phase_trigger = True: multiply 0.65; if has_variable = no_great_project_cost: multiply 0"
+      }
+    },
+    "dlc": null,
+    "grantsBuildings": [],
+    "group": "major",
+    "icon": "faith/christian_faith",
+    "id": "pam_mass_rite_conversion",
+    "isImportant": false,
+    "name": "Mass Conversion",
+    "owner": "holder of the founder's top liege title",
+    "plannable": true,
+    "provinceFilter": "top_liege_border_outer",
+    "provinceFilterTarget": null,
+    "requirements": [
+      {
+        "building": null,
+        "key": "pam_mass_rite_conversion_founder_clergy_tt",
+        "kind": "condition",
+        "name": "Must hold a Clerical Title, have Ecclesiastical Government, be a member of the Clergy, or have an Archbishop or higher as your Puppet",
+        "negated": false
+      },
+      {
+        "building": null,
+        "key": "pam_mass_rite_conversion_already_targets_province",
+        "kind": "condition",
+        "name": "Another Mass Conversion already targets this County",
+        "negated": false
+      }
+    ],
+    "showInList": true,
+    "sourceFile": "01_pam_projects.txt",
     "targetTitleTier": null
   },
   {

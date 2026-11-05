@@ -77,7 +77,7 @@
         }
       ],
       "predictedCost": {
-        "gold": {
+        "treasury_or_gold": {
           "scales": true
         }
       },
@@ -247,7 +247,7 @@
       "specialGuests": [
         {
           "id": "camp_party_honorary_guest",
-          "name": "Camp Party Honorary Guest",
+          "name": "A Feast can have an Honorary Guest, in whose honor the celebration is held. The central part of the banquet, the toast, will grant them Prestige due to this prominent position. But beware — it can also be a trap... Murder Feast hosts have a tendency for killing their Honorary Guest.",
           "required": false
         }
       ],
@@ -435,13 +435,14 @@
         "Vassals",
         "Tributaries",
         "Fellow Vassals",
+        "Clergy",
         "Courtiers",
         "Court Guests",
         "All Lieges",
         "Neighboring Rulers",
         "Nearby Adventurers"
       ],
-      "maxGuests": 100,
+      "maxGuests": 200,
       "name": "Coronation",
       "numPickablePhases": null,
       "openInvite": false,
@@ -580,7 +581,7 @@
       "specialGuests": [
         {
           "id": "coronation_hof_guest",
-          "name": "Head of Faith",
+          "name": "Religious Authority",
           "required": true
         }
       ],
@@ -605,10 +606,6 @@
           "id": "coronation_type_anointment",
           "name": "Anointment",
           "requirements": [
-            {
-              "name": "Spiritual",
-              "negated": false
-            },
             {
               "name": "Empire tier+",
               "negated": false
@@ -760,6 +757,107 @@
     },
     {
       "cooldown": {
+        "unit": "years",
+        "value": 25
+      },
+      "desc": "Summon the great prelates and rulers of Christendom! Our goal shall be to unify belief and practice, all the better to glorify ….\n\nWill we gather as the Apostles did in Jerusalem, one in faith, or crack the Church beneath the weight of our pride?",
+      "dlc": "By God Alone",
+      "group": "grand",
+      "guestIntents": [
+        "spiritual_intent",
+        "fervor_intent",
+        "clerical_appointment_intent",
+        "alliance_intent",
+        "murder_attendee_intent",
+        "befriend_attendee_intent"
+      ],
+      "hostIntents": [
+        "spiritual_intent_host",
+        "fervor_intent",
+        "murder_attendee_intent",
+        "befriend_attendee_intent"
+      ],
+      "icon": "activity_ecumenical_council",
+      "id": "activity_ecumenical_council",
+      "inviteRules": [
+        "Heads of Faith and Rites",
+        "Cardinals",
+        "Archbishops",
+        "Clergy",
+        "Neighboring Rulers",
+        "All Lieges",
+        "Vassals",
+        "Fellow Vassals",
+        "Councillors",
+        "Courtiers",
+        "Court Guests"
+      ],
+      "maxGuests": 100,
+      "name": "Ecumenical Council",
+      "numPickablePhases": null,
+      "openInvite": true,
+      "optionCategories": [],
+      "phases": [
+        {
+          "cost": {},
+          "id": "ecumenical_council_phase_summons",
+          "name": "Summons",
+          "order": 1,
+          "predefined": true
+        },
+        {
+          "cost": {},
+          "id": "ecumenical_council_phase_first_debate",
+          "name": "First Debate",
+          "order": 2,
+          "predefined": true
+        },
+        {
+          "cost": {},
+          "id": "ecumenical_council_phase_second_debate",
+          "name": "Second Debate",
+          "order": 3,
+          "predefined": true
+        },
+        {
+          "cost": {},
+          "id": "ecumenical_council_phase_third_debate",
+          "name": "Third Debate",
+          "order": 4,
+          "predefined": true
+        }
+      ],
+      "predictedCost": {
+        "treasury_or_gold": {
+          "scales": true
+        }
+      },
+      "requirements": [
+        {
+          "name": "… is not already holding an Ecumenical Council",
+          "negated": false
+        },
+        {
+          "name": "At least one of these",
+          "negated": false
+        }
+      ],
+      "sortOrder": 0,
+      "sourceFile": "ecumenical_council.txt",
+      "specialGuests": [],
+      "specialOptions": [
+        {
+          "blockedPhases": [],
+          "cost": {},
+          "dlc": null,
+          "id": "ecumenical_council_type_doctrine",
+          "name": "Ecumenical Council",
+          "requirements": []
+        }
+      ]
+    },
+    {
+      "cooldown": {
         "base": 5,
         "scales": true,
         "unit": "years"
@@ -774,7 +872,9 @@
         "befriend_attendee_intent",
         "banquet_mischief_intent",
         "spread_legend_intent",
-        "legitimacy_intent"
+        "legitimacy_intent",
+        "spread_personal_tenet_intent",
+        "praise_the_gods_intent"
       ],
       "hostIntents": [
         "reduce_stress_intent",
@@ -782,7 +882,9 @@
         "woo_attendee_intent",
         "befriend_attendee_intent",
         "spread_legend_intent",
-        "legitimacy_intent"
+        "legitimacy_intent",
+        "spread_personal_tenet_intent",
+        "praise_the_gods_intent"
       ],
       "icon": "activity_feast",
       "id": "activity_feast",
@@ -803,6 +905,7 @@
         "Confederates",
         "Vassals",
         "Fellow Vassals",
+        "Clergy",
         "Courtiers",
         "Court Guests",
         "Spouses",
@@ -1217,14 +1320,16 @@
         "murder_attendee_intent",
         "woo_attendee_intent",
         "befriend_attendee_intent",
-        "legitimacy_intent"
+        "legitimacy_intent",
+        "spread_personal_tenet_intent"
       ],
       "hostIntents": [
         "mourn_intent",
         "murder_attendee_intent",
         "woo_attendee_intent",
         "befriend_attendee_intent",
-        "legitimacy_intent"
+        "legitimacy_intent",
+        "spread_personal_tenet_intent"
       ],
       "icon": "activity_funeral",
       "id": "activity_funeral",
@@ -1245,6 +1350,7 @@
         "Vassals",
         "Confederates",
         "Fellow Vassals",
+        "Clergy",
         "Courtiers",
         "Court Guests",
         "Spouses",
@@ -1338,7 +1444,7 @@
         "unit": "years"
       },
       "desc": "It is high time that all … comes together to make sacrifice to …. These rituals not only bind the faithful together, they confirm my place as … of all the land.",
-      "dlc": "Northern Lords",
+      "dlc": null,
       "group": "activities",
       "guestIntents": [
         "reduce_stress_intent"
@@ -1387,12 +1493,7 @@
               "dlc": null,
               "id": "gruesome_festival_size_medium",
               "name": "Medium Festival",
-              "requirements": [
-                {
-                  "name": "You don't own at least 2 County Rank Titles",
-                  "negated": false
-                }
-              ]
+              "requirements": []
             },
             {
               "blockedPhases": [],
@@ -1528,20 +1629,7 @@
           "scales": true
         }
       },
-      "requirements": [
-        {
-          "name": "Barony tier+",
-          "negated": false
-        },
-        {
-          "name": "Duchy tier+",
-          "negated": false
-        },
-        {
-          "name": "You don't control any County of a faith that would allow a Blót",
-          "negated": false
-        }
-      ],
+      "requirements": [],
       "sortOrder": 0,
       "sourceFile": "gruesome_festival.txt",
       "specialGuests": [],
@@ -1562,7 +1650,8 @@
         "woo_attendee_intent",
         "befriend_attendee_intent",
         "successful_nerge_intent",
-        "dreadful_nerge_intent"
+        "dreadful_nerge_intent",
+        "spread_personal_tenet_intent"
       ],
       "hostIntents": [
         "reduce_stress_intent",
@@ -1572,7 +1661,8 @@
         "befriend_attendee_intent",
         "successful_nerge_intent",
         "dreadful_nerge_intent",
-        "impose_obedience_intent"
+        "impose_obedience_intent",
+        "spread_personal_tenet_intent"
       ],
       "icon": "activity_hunt",
       "id": "activity_hunt",
@@ -1594,6 +1684,7 @@
         "Glory Hound Vassals",
         "Court Hunters",
         "Knights",
+        "Clergy",
         "Courtiers",
         "Fellow Vassals",
         "Nearby Adventurers"
@@ -2000,6 +2091,66 @@
       ]
     },
     {
+      "cooldown": null,
+      "desc": "A council convened at the close of the … to settle, once and for all, who shall invest the clergy: the Church or the crown.",
+      "dlc": "By God Alone",
+      "group": "activities",
+      "guestIntents": [
+        "spiritual_intent",
+        "clerical_appointment_intent"
+      ],
+      "hostIntents": [
+        "spiritual_intent"
+      ],
+      "icon": "activity_investiture_council",
+      "id": "activity_investiture_council",
+      "inviteRules": [
+        "Heads of Faith and Rites",
+        "Cardinals",
+        "Archbishops",
+        "Clergy",
+        "Neighboring Rulers",
+        "All Lieges",
+        "Vassals",
+        "Fellow Vassals",
+        "Councillors",
+        "Courtiers",
+        "Court Guests"
+      ],
+      "maxGuests": 100,
+      "name": "The Investiture Council",
+      "numPickablePhases": null,
+      "openInvite": true,
+      "optionCategories": [],
+      "phases": [
+        {
+          "cost": {},
+          "id": "investiture_council_phase_summons",
+          "name": "Summons",
+          "order": 1,
+          "predefined": true
+        },
+        {
+          "cost": {},
+          "id": "investiture_council_phase_debate",
+          "name": "The Debate",
+          "order": 2,
+          "predefined": true
+        }
+      ],
+      "predictedCost": {},
+      "requirements": [
+        {
+          "name": "At least one of these",
+          "negated": false
+        }
+      ],
+      "sortOrder": 0,
+      "sourceFile": "pam_investiture_council.txt",
+      "specialGuests": [],
+      "specialOptions": []
+    },
+    {
       "cooldown": {
         "unit": "years",
         "value": 3
@@ -2071,11 +2222,11 @@
       },
       "requirements": [
         {
-          "name": "County tier+",
+          "name": "Journey",
           "negated": false
         },
         {
-          "name": "Journey",
+          "name": "County tier+",
           "negated": false
         }
       ],
@@ -2551,10 +2702,6 @@
         {
           "name": "County tier+",
           "negated": false
-        },
-        {
-          "name": "Storyteller",
-          "negated": false
         }
       ],
       "sortOrder": 0,
@@ -2609,6 +2756,10 @@
                 "gold": {
                   "base": 20,
                   "scales": true
+                },
+                "piety": {
+                  "base": 20,
+                  "scales": true
                 }
               },
               "dlc": null,
@@ -2620,6 +2771,10 @@
               "blockedPhases": [],
               "cost": {
                 "gold": {
+                  "base": 40,
+                  "scales": true
+                },
+                "piety": {
                   "base": 40,
                   "scales": true
                 }
@@ -2662,10 +2817,6 @@
         },
         {
           "name": "Inspection",
-          "negated": false
-        },
-        {
-          "name": "Government allows administrative",
           "negated": false
         }
       ],
@@ -2954,7 +3105,8 @@
         "recruit_knights_intent",
         "murder_attendee_intent",
         "woo_attendee_intent",
-        "befriend_attendee_intent"
+        "befriend_attendee_intent",
+        "spread_personal_tenet_intent"
       ],
       "hostIntents": [
         "reduce_stress_intent",
@@ -2962,7 +3114,8 @@
         "recruit_knights_intent",
         "murder_attendee_intent",
         "woo_attendee_intent",
-        "befriend_attendee_intent"
+        "befriend_attendee_intent",
+        "spread_personal_tenet_intent"
       ],
       "icon": "activity_tournament",
       "id": "activity_tournament",
@@ -3237,7 +3390,8 @@
         "diplomatic_intent",
         "banquet_mischief_intent",
         "spread_legend_intent",
-        "legitimacy_intent"
+        "legitimacy_intent",
+        "spread_personal_tenet_intent"
       ],
       "hostIntents": [
         "reduce_stress_intent",
@@ -3246,7 +3400,8 @@
         "diplomatic_intent",
         "matchmaking_intent",
         "spread_legend_intent",
-        "legitimacy_intent"
+        "legitimacy_intent",
+        "spread_personal_tenet_intent"
       ],
       "icon": "activity_wedding",
       "id": "activity_wedding",
@@ -3264,6 +3419,7 @@
         "Vassals",
         "Confederates",
         "Fellow Vassals",
+        "Clergy",
         "Courtiers",
         "Court Guests",
         "All Lieges",
@@ -3719,7 +3875,12 @@
       "icon": "seize_advantages_intent",
       "id": "coronation_seize_advantages",
       "name": "Seize Advantages",
-      "requirements": [],
+      "requirements": [
+        {
+          "name": "County tier+",
+          "negated": false
+        }
+      ],
       "sourceFile": "coronation_intents.txt",
       "targeted": false
     },
@@ -3770,6 +3931,66 @@
       "name": "Increase Movement Power",
       "requirements": [],
       "sourceFile": "debate_intents.txt",
+      "targeted": false
+    },
+    {
+      "desc": "Bind a fellow Ruler to your cause at the council. You may gain an Alliance, at the cost of Piety if you invoke the Church's blessing.",
+      "dlc": null,
+      "family": "Ecumenical Council",
+      "icon": "alliance_intent",
+      "id": "alliance_intent",
+      "name": "Alliance",
+      "requirements": [],
+      "sourceFile": "ecumenical_council_intents.txt",
+      "targeted": true
+    },
+    {
+      "desc": "Impress the prelates gathered here, perhaps improving your Candidate Score for a Clerical Title.",
+      "dlc": null,
+      "family": "Ecumenical Council",
+      "icon": "clerical_appointment_intent",
+      "id": "clerical_appointment_intent",
+      "name": "Appointment Score",
+      "requirements": [
+        {
+          "name": "Ecclesiastical government",
+          "negated": false
+        }
+      ],
+      "sourceFile": "ecumenical_council_intents.txt",
+      "targeted": false
+    },
+    {
+      "desc": "Display righteous zeal before the assembled Church. You may raise your Faith's Fervor, or take the glory for yourself.",
+      "dlc": null,
+      "family": "Ecumenical Council",
+      "icon": "fervor_intent",
+      "id": "fervor_intent",
+      "name": "Kindle Fervor",
+      "requirements": [],
+      "sourceFile": "ecumenical_council_intents.txt",
+      "targeted": false
+    },
+    {
+      "desc": "Seek the host's blessing for Spiritual Fulfillment amid the debate, though others will jostle for the same favor.",
+      "dlc": null,
+      "family": "Ecumenical Council",
+      "icon": "spiritual_intent",
+      "id": "spiritual_intent",
+      "name": "Spiritual Contemplation",
+      "requirements": [],
+      "sourceFile": "ecumenical_council_intents.txt",
+      "targeted": false
+    },
+    {
+      "desc": "Grant your blessing to petitioners and deepen your own Spiritual Fulfillment through prayerful leadership of the council.",
+      "dlc": null,
+      "family": "Ecumenical Council",
+      "icon": "spiritual_intent",
+      "id": "spiritual_intent_host",
+      "name": "Lead in Prayer",
+      "requirements": [],
+      "sourceFile": "ecumenical_council_intents.txt",
       "targeted": false
     },
     {
@@ -4152,6 +4373,42 @@
       "targeted": true
     },
     {
+      "desc": "Turn communal celebration into worship, seeking religious knowledge, spiritual insight, and fellowship throughout the feast.",
+      "dlc": "Tours & Tournaments",
+      "family": "Spread Tenet",
+      "icon": "pious_intent",
+      "id": "praise_the_gods_intent",
+      "name": "Honor the Divine",
+      "requirements": [
+        {
+          "name": "You no longer personally follow the Ritual Celebrations Tenet",
+          "negated": false
+        }
+      ],
+      "sourceFile": "spread_tenet_intents.txt",
+      "targeted": false
+    },
+    {
+      "desc": "You want to preach your Personal Tenet to receptive guests, that they may adopt it as their own, increasing Tenet Popularity.",
+      "dlc": "By God Alone",
+      "family": "Spread Tenet",
+      "icon": "pious_intent",
+      "id": "spread_personal_tenet_intent",
+      "name": "Evangelize Tenet",
+      "requirements": [
+        {
+          "name": "Zealous Proselytizer",
+          "negated": false
+        },
+        {
+          "name": "You no longer hold a Personal Tenet",
+          "negated": false
+        }
+      ],
+      "sourceFile": "spread_tenet_intents.txt",
+      "targeted": false
+    },
+    {
       "desc": "See what learnings we can bring from the local bureaucracy back home to our capital.\n\nA chance to gain additional bonuses for the Capital",
       "dlc": "Tours & Tournaments",
       "family": "Survey",
@@ -4307,6 +4564,21 @@
       "visitText": null
     },
     {
+      "icon": "poi_buried_saint",
+      "id": "poi_buried_saint",
+      "name": "Buried Saint",
+      "rewards": [
+        "Pay your respects for modest …Piety, with an option to draw forth a holy Relic for less than it would cost from afar.",
+        "You pause at the tomb of … and pay your respects.",
+        "Pay your respects to … with an option to draw forth a holy Relic for less than it would cost from afar.",
+        "Pay your respects to …, the … resting here.",
+        "Visiting the tomb of …, you are filled with devotion.",
+        "Your faith does not venerate …, but there is much to learn at this tomb."
+      ],
+      "sourceFile": "pam_saint_point_of_interest_types.txt",
+      "visitText": "…"
+    },
+    {
       "icon": "poi_capitals",
       "id": "poi_capitals",
       "name": "Capitals",
@@ -4315,6 +4587,14 @@
       ],
       "sourceFile": "travel_point_of_interest_types.txt",
       "visitText": "Visited capital of the …"
+    },
+    {
+      "icon": "poi_grand_cathedral",
+      "id": "poi_grand_cathedral",
+      "name": "Grand Cathedral",
+      "rewards": [],
+      "sourceFile": "travel_point_of_interest_types.txt",
+      "visitText": null
     },
     {
       "icon": "poi_grand_city",
@@ -4429,6 +4709,14 @@
       "rewards": [],
       "sourceFile": "travel_point_of_interest_types.txt",
       "visitText": null
+    },
+    {
+      "icon": "poi_standalone_holy_site",
+      "id": "poi_standalone_holy_site",
+      "name": "Standalone Holy Site",
+      "rewards": [],
+      "sourceFile": "travel_point_of_interest_types.txt",
+      "visitText": "Visited … Holy Site: …"
     }
   ],
   "travelOptions": [
@@ -4962,7 +5250,11 @@
           "negated": false
         },
         {
-          "name": "Zealous Proselytizer",
+          "name": "Theocracy government",
+          "negated": false
+        },
+        {
+          "name": "You have the Zealous Proselytizer Perk, or Mendicant Preaching is your Personal Tenet",
           "negated": false
         }
       ],

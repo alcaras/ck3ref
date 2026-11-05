@@ -104,6 +104,7 @@ HANDLED_FIELDS = {
     "truce_days", "white_peace_possible", "allow_hostages",
     "is_great_holy_war", "is_holy_war", "defender_faith_can_join",
     "on_primary_attacker_death", "on_primary_defender_death",
+    "same_faith_defenders_allowed_parameter",
 }
 
 # Group keys have no loc; hand-labeled for the group headers.
@@ -367,8 +368,45 @@ def build_groups():
     return groups
 
 
+def government_flag_index():
+    """government flag -> [{key, name}] of government types carrying it.
+
+    same_faith_defenders_allowed_parameter lists government parameters
+    (flags); the player-facing fact is which governments those are.
+    """
+    idx = {}
+    for _path, gkey, gblk in ck3.parse_dir(ck3.COMMON / "governments"):
+        if not isinstance(gblk, Block):
+            continue
+        fb = gblk.get("flags")
+        if not isinstance(fb, Block):
+            continue
+        raw = ck3.loc(gkey)
+        gname = ck3.render_text(raw) if raw else gkey
+        for f in fb.values():
+            if isinstance(f, str):
+                idx.setdefault(f, []).append({"key": gkey, "name": gname})
+    return idx
+
+
+def same_faith_defenders(blk, gov_flags):
+    """Governments whose same-faith rulers are still called to defend."""
+    b = blk.get("same_faith_defenders_allowed_parameter")
+    if not isinstance(b, Block):
+        return None
+    params = [p for p in b.values() if isinstance(p, str)]
+    govs, seen = [], set()
+    for p in params:
+        for g in gov_flags.get(p, []):
+            if g["key"] not in seen:
+                seen.add(g["key"])
+                govs.append(g)
+    return {"parameters": params, "governments": govs}
+
+
 def main():
     groups = build_groups()
+    gov_flags = government_flag_index()
     entries = ck3.parse_dir(ck3.COMMON / "casus_belli_types")
     unhandled = Counter()
     out = []
@@ -422,6 +460,7 @@ def main():
             "isGreatHolyWar": bool(blk.get("is_great_holy_war", False)),
             "isHolyWar": bool(blk.get("is_holy_war", False)),
             "defenderFaithCanJoin": bool(blk.get("defender_faith_can_join", False)),
+            "sameFaithDefenders": same_faith_defenders(blk, gov_flags),
             "requirements": dedupe(reqs),
             "icon": icon,
             "dlc": dlc,

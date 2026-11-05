@@ -66,6 +66,7 @@ SKIP_FIELDS = {
     "activity_planner_widgets": "GUI plugin wiring",
     "map_entity": "3D map art selection",
     "background": "event background art selection",
+    "header_background": "activity window header texture selection (GUI art)",
     "locale_background": "locale background art selection",
     "window_characters": "portrait GUI wiring",
     "travel_entourage_selection": "entourage auto-pick weights",

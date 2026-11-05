@@ -53,6 +53,21 @@ const NEXT_LABEL: Record<string, string> = {
             <span class="pill">sub-regions <b>{s.subRegions.map((r) => r.name).join(' · ')}</b></span>
           </div>
 
+          {[['situationDecisions', 'Situation decisions'], ['endingDecisions', 'Ending decisions']].map(([k, label]) => (
+            ((s as any)[k] ?? []).length > 0 && (
+              <div class="sit-dec">
+                <span class="lbl">{label}</span>
+                <span class="chips">
+                  {(s as any)[k].map((d: { id: string; name: string; onPage: boolean }) => (
+                    d.onPage
+                      ? <a class="chip" href={`${base}/decisions#${d.id}`}>{d.name}</a>
+                      : <span class="chip">{d.name}</span>
+                  ))}
+                </span>
+              </div>
+            )
+          ))}
+
           {s.groups.length > 0 && (
             <div class="tbl-scroll groups-tbl">
               <table class="ntbl">
@@ -180,6 +195,8 @@ const NEXT_LABEL: Record<string, string> = {
     .desc { color: var(--dim); max-width: 72ch; margin: 0.2rem 0 0.7rem; white-space: pre-line; }
     .pills { margin-bottom: 0.7rem; }
     .groups-tbl { max-width: 56rem; margin-bottom: 0.6rem; }
+    .sit-dec { display: flex; gap: 0.6rem; align-items: baseline; flex-wrap: wrap; margin: 0 0 0.7rem; }
+    .sit-dec .lbl { color: var(--faint); font-size: 0.75rem; }
     .phase { margin: 1.4rem 0 2rem; padding-left: 0.9rem; border-left: 2px solid var(--line-soft); }
     .phase h3 { font-family: var(--font-display); font-size: 1rem; margin: 0 0 0.3rem; display: flex; gap: 0.55rem; align-items: baseline; flex-wrap: wrap; }
     .tag { font-family: var(--font-mono); font-size: 0.68rem; color: var(--dim); border: 1px solid var(--line); border-radius: 999px; padding: 0.05rem 0.5rem; }

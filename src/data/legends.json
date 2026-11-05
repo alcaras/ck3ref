@@ -247,7 +247,7 @@
       "desc": "There is nay a soul in … that does not know the name of … and … accomplishments.",
       "id": "great_deed_region",
       "impact": {},
-      "name": "… True Hero",
+      "name": "True Hero of …",
       "properties": [
         "founder",
         "legend_region"
@@ -1618,7 +1618,7 @@
         {
           "creationCost": {
             "gold": {
-              "rules": "base 200 ×base root.primary title.tier −1 ×0.5 min 1 (if root …: multiply 0.8) +base 200 ×base 0 (if exists = culture: culture …) −200 +(if dynasty …: multiply 0.75) (else …) (if has game rule = legend cost high: multiply 2) (else …) (else …) (else …)"
+              "rules": "base base 200 ×base root.primary title.tier −1 ×0.5 min 1 (if root …: multiply 0.8) +base 200 ×base 0 (if exists = culture: culture …) −200 (if has game rule = legend cost high: multiply 2) (else …) (else …) (else …) ×base 1 (if dynasty …: multiply 0.75) (else …)"
             }
           },
           "impact": {
@@ -1670,7 +1670,7 @@
           "removalDuration": "25–35 years",
           "upgradeCost": {
             "gold": {
-              "rules": "base base 200 ×base root.primary title.tier −1 ×0.5 min 1 (if root …: multiply 0.8) +base 200 ×base 0 (if exists = culture: culture …) −200 +(if dynasty …: multiply 0.75) (else …) (if has game rule = legend cost high: multiply 2) (else …) (else …) (else …) ×0.8 (if promoted legend …: subtract …)"
+              "rules": "base base 200 ×base root.primary title.tier −1 ×0.5 min 1 (if root …: multiply 0.8) +base 200 ×base 0 (if exists = culture: culture …) −200 (if has game rule = legend cost high: multiply 2) (else …) (else …) (else …) ×0.8 (if promoted legend …: subtract …)"
             },
             "prestige": {
               "rules": "base 200 ×base root.primary title.tier −1 ×0.5 min 1 (if root …: multiply 0.8) +base 200 ×base 0 (if exists = culture: culture …) −200 (if has game rule = legend cost high: multiply 2) (else …) (else …) (else …)"
@@ -1680,7 +1680,7 @@
         {
           "creationCost": {
             "gold": {
-              "rules": "base base 200 ×base root.primary title.tier −1 ×0.5 min 1 (if root …: multiply 0.8) +base 200 ×base 0 (if exists = culture: culture …) −200 +(if dynasty …: multiply 0.75) (else …) (if has game rule = legend cost high: multiply 2) (else …) (else …) (else …) ×1.5"
+              "rules": "base base base 200 ×base root.primary title.tier −1 ×0.5 min 1 (if root …: multiply 0.8) +base 200 ×base 0 (if exists = culture: culture …) −200 (if has game rule = legend cost high: multiply 2) (else …) (else …) (else …) ×base 1 (if dynasty …: multiply 0.75) (else …) ×1.5"
             }
           },
           "impact": {
@@ -1737,7 +1737,7 @@
           "removalDuration": "50–70 years",
           "upgradeCost": {
             "gold": {
-              "rules": "base base 200 ×base root.primary title.tier −1 ×0.5 min 1 (if root …: multiply 0.8) +base 200 ×base 0 (if exists = culture: culture …) −200 +(if dynasty …: multiply 0.75) (else …) (if has game rule = legend cost high: multiply 2) (else …) (else …) (else …) ×0.8 (if promoted legend …: subtract …)"
+              "rules": "base base 200 ×base root.primary title.tier −1 ×0.5 min 1 (if root …: multiply 0.8) +base 200 ×base 0 (if exists = culture: culture …) −200 (if has game rule = legend cost high: multiply 2) (else …) (else …) (else …) ×0.8 (if promoted legend …: subtract …)"
             },
             "prestige": {
               "rules": "base 200 ×base root.primary title.tier −1 ×0.5 min 1 (if root …: multiply 0.8) +base 200 ×base 0 (if exists = culture: culture …) −200 (if has game rule = legend cost high: multiply 2) (else …) (else …) (else …)"
@@ -1747,7 +1747,7 @@
         {
           "creationCost": {
             "gold": {
-              "rules": "base base 200 ×base root.primary title.tier −1 ×0.5 min 1 (if root …: multiply 0.8) +base 200 ×base 0 (if exists = culture: culture …) −200 +(if dynasty …: multiply 0.75) (else …) (if has game rule = legend cost high: multiply 2) (else …) (else …) (else …) ×2"
+              "rules": "base base base 200 ×base root.primary title.tier −1 ×0.5 min 1 (if root …: multiply 0.8) +base 200 ×base 0 (if exists = culture: culture …) −200 (if has game rule = legend cost high: multiply 2) (else …) (else …) (else …) ×base 1 (if dynasty …: multiply 0.75) (else …) ×2"
             }
           },
           "impact": {
@@ -1804,7 +1804,7 @@
           "removalDuration": "75–100 years",
           "upgradeCost": {
             "gold": {
-              "rules": "base base base 200 ×base root.primary title.tier −1 ×0.5 min 1 (if root …: multiply 0.8) +base 200 ×base 0 (if exists = culture: culture …) −200 +(if dynasty …: multiply 0.75) (else …) (if has game rule = legend cost high: multiply 2) (else …) (else …) (else …) ×0.8 (if promoted legend …: subtract …) ×2"
+              "rules": "base base base 200 ×base root.primary title.tier −1 ×0.5 min 1 (if root …: multiply 0.8) +base 200 ×base 0 (if exists = culture: culture …) −200 (if has game rule = legend cost high: multiply 2) (else …) (else …) (else …) ×0.8 (if promoted legend …: subtract …) ×2"
             },
             "prestige": {
               "rules": "base 200 ×base root.primary title.tier −1 ×0.5 min 1 (if root …: multiply 0.8) +base 200 ×base 0 (if exists = culture: culture …) −200 (if has game rule = legend cost high: multiply 2) (else …) (else …) (else …)"
@@ -1832,7 +1832,7 @@
         {
           "creationCost": {
             "gold": {
-              "rules": "base 200 ×base root.primary title.tier −1 ×0.5 min 1 (if root …: multiply 0.8) +base 200 ×base 0 (if exists = culture: culture …) −200 +(if dynasty …: multiply 0.75) (else …) (if has game rule = legend cost high: multiply 2) (else …) (else …) (else …)"
+              "rules": "base base 200 ×base root.primary title.tier −1 ×0.5 min 1 (if root …: multiply 0.8) +base 200 ×base 0 (if exists = culture: culture …) −200 (if has game rule = legend cost high: multiply 2) (else …) (else …) (else …) ×base 1 (if dynasty …: multiply 0.75) (else …)"
             }
           },
           "impact": {
@@ -1884,7 +1884,7 @@
           "removalDuration": "25–35 years",
           "upgradeCost": {
             "gold": {
-              "rules": "base base 200 ×base root.primary title.tier −1 ×0.5 min 1 (if root …: multiply 0.8) +base 200 ×base 0 (if exists = culture: culture …) −200 +(if dynasty …: multiply 0.75) (else …) (if has game rule = legend cost high: multiply 2) (else …) (else …) (else …) ×0.8 (if promoted legend …: subtract …)"
+              "rules": "base base 200 ×base root.primary title.tier −1 ×0.5 min 1 (if root …: multiply 0.8) +base 200 ×base 0 (if exists = culture: culture …) −200 (if has game rule = legend cost high: multiply 2) (else …) (else …) (else …) ×0.8 (if promoted legend …: subtract …)"
             },
             "prestige": {
               "rules": "base 200 ×base root.primary title.tier −1 ×0.5 min 1 (if root …: multiply 0.8) +base 200 ×base 0 (if exists = culture: culture …) −200 (if has game rule = legend cost high: multiply 2) (else …) (else …) (else …)"
@@ -1894,7 +1894,7 @@
         {
           "creationCost": {
             "gold": {
-              "rules": "base base 200 ×base root.primary title.tier −1 ×0.5 min 1 (if root …: multiply 0.8) +base 200 ×base 0 (if exists = culture: culture …) −200 +(if dynasty …: multiply 0.75) (else …) (if has game rule = legend cost high: multiply 2) (else …) (else …) (else …) ×1.5"
+              "rules": "base base base 200 ×base root.primary title.tier −1 ×0.5 min 1 (if root …: multiply 0.8) +base 200 ×base 0 (if exists = culture: culture …) −200 (if has game rule = legend cost high: multiply 2) (else …) (else …) (else …) ×base 1 (if dynasty …: multiply 0.75) (else …) ×1.5"
             }
           },
           "impact": {
@@ -1951,7 +1951,7 @@
           "removalDuration": "50–70 years",
           "upgradeCost": {
             "gold": {
-              "rules": "base base 200 ×base root.primary title.tier −1 ×0.5 min 1 (if root …: multiply 0.8) +base 200 ×base 0 (if exists = culture: culture …) −200 +(if dynasty …: multiply 0.75) (else …) (if has game rule = legend cost high: multiply 2) (else …) (else …) (else …) ×0.8 (if promoted legend …: subtract …)"
+              "rules": "base base 200 ×base root.primary title.tier −1 ×0.5 min 1 (if root …: multiply 0.8) +base 200 ×base 0 (if exists = culture: culture …) −200 (if has game rule = legend cost high: multiply 2) (else …) (else …) (else …) ×0.8 (if promoted legend …: subtract …)"
             },
             "prestige": {
               "rules": "base 200 ×base root.primary title.tier −1 ×0.5 min 1 (if root …: multiply 0.8) +base 200 ×base 0 (if exists = culture: culture …) −200 (if has game rule = legend cost high: multiply 2) (else …) (else …) (else …)"
@@ -1961,7 +1961,7 @@
         {
           "creationCost": {
             "gold": {
-              "rules": "base base 200 ×base root.primary title.tier −1 ×0.5 min 1 (if root …: multiply 0.8) +base 200 ×base 0 (if exists = culture: culture …) −200 +(if dynasty …: multiply 0.75) (else …) (if has game rule = legend cost high: multiply 2) (else …) (else …) (else …) ×2"
+              "rules": "base base base 200 ×base root.primary title.tier −1 ×0.5 min 1 (if root …: multiply 0.8) +base 200 ×base 0 (if exists = culture: culture …) −200 (if has game rule = legend cost high: multiply 2) (else …) (else …) (else …) ×base 1 (if dynasty …: multiply 0.75) (else …) ×2"
             }
           },
           "impact": {
@@ -2018,7 +2018,7 @@
           "removalDuration": "75–100 years",
           "upgradeCost": {
             "gold": {
-              "rules": "base base base 200 ×base root.primary title.tier −1 ×0.5 min 1 (if root …: multiply 0.8) +base 200 ×base 0 (if exists = culture: culture …) −200 +(if dynasty …: multiply 0.75) (else …) (if has game rule = legend cost high: multiply 2) (else …) (else …) (else …) ×0.8 (if promoted legend …: subtract …) ×2"
+              "rules": "base base base 200 ×base root.primary title.tier −1 ×0.5 min 1 (if root …: multiply 0.8) +base 200 ×base 0 (if exists = culture: culture …) −200 (if has game rule = legend cost high: multiply 2) (else …) (else …) (else …) ×0.8 (if promoted legend …: subtract …) ×2"
             },
             "prestige": {
               "rules": "base 200 ×base root.primary title.tier −1 ×0.5 min 1 (if root …: multiply 0.8) +base 200 ×base 0 (if exists = culture: culture …) −200 (if has game rule = legend cost high: multiply 2) (else …) (else …) (else …)"
@@ -2046,7 +2046,7 @@
         {
           "creationCost": {
             "gold": {
-              "rules": "base 200 ×base root.primary title.tier −1 ×0.5 min 1 (if root …: multiply 0.8) +base 200 ×base 0 (if exists = culture: culture …) −200 +(if dynasty …: multiply 0.75) (else …) (if has game rule = legend cost high: multiply 2) (else …) (else …) (else …)"
+              "rules": "base base 200 ×base root.primary title.tier −1 ×0.5 min 1 (if root …: multiply 0.8) +base 200 ×base 0 (if exists = culture: culture …) −200 (if has game rule = legend cost high: multiply 2) (else …) (else …) (else …) ×base 1 (if dynasty …: multiply 0.75) (else …)"
             },
             "prestige": {
               "value": 75
@@ -2111,7 +2111,7 @@
           "removalDuration": "25–35 years",
           "upgradeCost": {
             "gold": {
-              "rules": "base base 200 ×base root.primary title.tier −1 ×0.5 min 1 (if root …: multiply 0.8) +base 200 ×base 0 (if exists = culture: culture …) −200 +(if dynasty …: multiply 0.75) (else …) (if has game rule = legend cost high: multiply 2) (else …) (else …) (else …) ×0.8 (if promoted legend …: subtract …)"
+              "rules": "base base 200 ×base root.primary title.tier −1 ×0.5 min 1 (if root …: multiply 0.8) +base 200 ×base 0 (if exists = culture: culture …) −200 (if has game rule = legend cost high: multiply 2) (else …) (else …) (else …) ×0.8 (if promoted legend …: subtract …)"
             },
             "prestige": {
               "rules": "base 200 ×base root.primary title.tier −1 ×0.5 min 1 (if root …: multiply 0.8) +base 200 ×base 0 (if exists = culture: culture …) −200 (if has game rule = legend cost high: multiply 2) (else …) (else …) (else …)"
@@ -2121,7 +2121,7 @@
         {
           "creationCost": {
             "gold": {
-              "rules": "base base 200 ×base root.primary title.tier −1 ×0.5 min 1 (if root …: multiply 0.8) +base 200 ×base 0 (if exists = culture: culture …) −200 +(if dynasty …: multiply 0.75) (else …) (if has game rule = legend cost high: multiply 2) (else …) (else …) (else …) ×1.5"
+              "rules": "base base base 200 ×base root.primary title.tier −1 ×0.5 min 1 (if root …: multiply 0.8) +base 200 ×base 0 (if exists = culture: culture …) −200 (if has game rule = legend cost high: multiply 2) (else …) (else …) (else …) ×base 1 (if dynasty …: multiply 0.75) (else …) ×1.5"
             },
             "prestige": {
               "value": 150
@@ -2186,7 +2186,7 @@
           "removalDuration": "50–70 years",
           "upgradeCost": {
             "gold": {
-              "rules": "base base 200 ×base root.primary title.tier −1 ×0.5 min 1 (if root …: multiply 0.8) +base 200 ×base 0 (if exists = culture: culture …) −200 +(if dynasty …: multiply 0.75) (else …) (if has game rule = legend cost high: multiply 2) (else …) (else …) (else …) ×0.8 (if promoted legend …: subtract …)"
+              "rules": "base base 200 ×base root.primary title.tier −1 ×0.5 min 1 (if root …: multiply 0.8) +base 200 ×base 0 (if exists = culture: culture …) −200 (if has game rule = legend cost high: multiply 2) (else …) (else …) (else …) ×0.8 (if promoted legend …: subtract …)"
             },
             "prestige": {
               "rules": "base 200 ×base root.primary title.tier −1 ×0.5 min 1 (if root …: multiply 0.8) +base 200 ×base 0 (if exists = culture: culture …) −200 (if has game rule = legend cost high: multiply 2) (else …) (else …) (else …)"
@@ -2196,7 +2196,7 @@
         {
           "creationCost": {
             "gold": {
-              "rules": "base base 200 ×base root.primary title.tier −1 ×0.5 min 1 (if root …: multiply 0.8) +base 200 ×base 0 (if exists = culture: culture …) −200 +(if dynasty …: multiply 0.75) (else …) (if has game rule = legend cost high: multiply 2) (else …) (else …) (else …) ×2"
+              "rules": "base base base 200 ×base root.primary title.tier −1 ×0.5 min 1 (if root …: multiply 0.8) +base 200 ×base 0 (if exists = culture: culture …) −200 (if has game rule = legend cost high: multiply 2) (else …) (else …) (else …) ×base 1 (if dynasty …: multiply 0.75) (else …) ×2"
             },
             "prestige": {
               "rules": "base 150 ×1.5"
@@ -2266,7 +2266,7 @@
           "removalDuration": "75–100 years",
           "upgradeCost": {
             "gold": {
-              "rules": "base base base 200 ×base root.primary title.tier −1 ×0.5 min 1 (if root …: multiply 0.8) +base 200 ×base 0 (if exists = culture: culture …) −200 +(if dynasty …: multiply 0.75) (else …) (if has game rule = legend cost high: multiply 2) (else …) (else …) (else …) ×0.8 (if promoted legend …: subtract …) ×2"
+              "rules": "base base base 200 ×base root.primary title.tier −1 ×0.5 min 1 (if root …: multiply 0.8) +base 200 ×base 0 (if exists = culture: culture …) −200 (if has game rule = legend cost high: multiply 2) (else …) (else …) (else …) ×0.8 (if promoted legend …: subtract …) ×2"
             },
             "prestige": {
               "rules": "base 200 ×base root.primary title.tier −1 ×0.5 min 1 (if root …: multiply 0.8) +base 200 ×base 0 (if exists = culture: culture …) −200 (if has game rule = legend cost high: multiply 2) (else …) (else …) (else …)"

@@ -1,9 +1,21 @@
 #!/usr/bin/env python3
 """Build src/data/holy_sites.json from common/religion/holy_site_types/.
 
-One record per site: county/barony (with localized title names), rendered
-character modifiers, the extra effects loc line, and parameters. Which faiths
-use a site is a reverse map computed by the page from faiths.json.
+One record per site: county/barony (with localized title names), the extra
+effects loc line, parameters, and — since 1.20 (By God Alone) — four modifier
+tiers per _holy_site_types.info:
+
+  county_holder_character_modifier  county holder of the same faith
+                                    (regular or eminent site)
+  faith_character_modifier          every character of the faith, only when
+                                    the site is one of the faith's EMINENT sites
+  *_scaled                          multiplied by a script value, usually
+                                    holy_site_total_artifact_rarity (sum of
+                                    holy-relic rarities, 1 = Common … 4 =
+                                    Illustrious, per the schema doc)
+
+Dynamic sites (is_dynamic = yes) have no fixed location. Which faiths use a
+site is a reverse map computed by the page from faiths.json.
 
 Schema doc: _holy_site_types.info. Loc: holy_site_<key>_name,
 holy_site_<key>_effects, holy_site_parameter_<param>.
@@ -21,7 +33,32 @@ SKIP_FIELDS = {
     # (none yet)
 }
 
-HANDLED_FIELDS = {"county", "barony", "character_modifier", "parameters"}
+HANDLED_FIELDS = {"county", "barony", "parameters", "is_dynamic",
+                  "county_holder_character_modifier", "faith_character_modifier",
+                  "faith_character_modifier_scaled", "county_modifier_scaled"}
+
+
+# Built-in scale values have no loc; the wording is _holy_site_types.info's.
+SCALE_LABELS = {
+    "holy_site_total_artifact_rarity":
+        "per point of holy-relic rarity (sum over relics: 1 Common … 4 Illustrious)",
+}
+
+
+def scaled(blks):
+    """Repeatable `scale = <script value>` + modifiers blocks -> [{scale, lines}]."""
+    out = []
+    for b in blks:
+        if not isinstance(b, Block):
+            continue
+        sc = b.get("scale")
+        inner = Block([t for t in b if t[0] != "scale"])
+        lines, _ = modifier_lines(inner)
+        n, _r = ck3.resolve_value(sc) if not isinstance(sc, str) else (None, None)
+        out.append({"scale": sc if n is None else n,
+                    "scaleName": SCALE_LABELS.get(sc) if isinstance(sc, str) else None,
+                    "lines": lines})
+    return out
 
 
 def modifier_lines(blk):
@@ -57,7 +94,8 @@ def main():
 
         county = blk.get("county")
         barony = blk.get("barony")
-        mods, _label = modifier_lines(blk.get("character_modifier"))
+        holder_mods, _ = modifier_lines(blk.get("county_holder_character_modifier"))
+        faith_mods, _ = modifier_lines(blk.get("faith_character_modifier"))
 
         params = []
         pblk = blk.get("parameters")
@@ -70,7 +108,11 @@ def main():
                                "text": ck3.render_text(raw) if raw else None})
 
         effects = ck3.loc(f"holy_site_{key}_effects")
+        dynamic = blk.get("is_dynamic") is True
         name = ck3.loc(f"holy_site_{key}_name") or (ck3.loc(county) if county else None)
+        if not name and dynamic:
+            # "holy_site_<key>_dynamic_name" carries the barony as $TITLE$
+            name = ck3.loc(f"holy_site_{key}_dynamic_name")
         dlc, _features = ck3.dlc_tag(path, blk)
         out.append({
             "id": key,
@@ -79,7 +121,11 @@ def main():
             "countyName": ck3.render_text(ck3.loc(county)) if county and ck3.loc(county) else None,
             "barony": barony,
             "baronyName": ck3.render_text(ck3.loc(barony)) if barony and ck3.loc(barony) else None,
-            "modifiers": mods,
+            "dynamic": dynamic,
+            "holderModifiers": holder_mods,
+            "eminentModifiers": faith_mods,
+            "eminentModifiersScaled": scaled(blk.get_all("faith_character_modifier_scaled")),
+            "countyModifiersScaled": scaled(blk.get_all("county_modifier_scaled")),
             "effects": ck3.render_text(effects) if effects else None,
             "parameters": params,
             "dlc": dlc,

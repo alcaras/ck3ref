@@ -143,7 +143,7 @@
       "education": false,
       "effects": [
         "+10 Head of Faith Opinion",
-        "+2 Learning",
+        "+5% Piety Rewards",
         "+1 Piety /month"
       ],
       "id": "learning_theology_focus",
@@ -842,7 +842,7 @@
         {
           "dlc": null,
           "effects": [
-            "+10% Stress loss per Level of Fame",
+            "+10% Stress Loss per Level of Fame",
             "Invert Check (landless adventurer)",
             "+5% Legitimacy Gain (landless adventurer)",
             "+25% Legend Spread Chance (landless adventurer)",
@@ -1604,7 +1604,8 @@
         {
           "dlc": null,
           "effects": [
-            "2 Study Phase Length days faster per Scheme Phase (government has merit)"
+            "20 Study Phase Length days faster per Scheme Phase (government has merit)",
+            "20 Religious Study Phase Length days faster per Scheme Phase (theocracy)"
           ],
           "features": [],
           "icon": "node_learning",
@@ -1640,7 +1641,10 @@
         {
           "dlc": null,
           "effects": [
-            "+15 Different Culture Opinion",
+            "Invert Check (theocracy)",
+            "+15 Different Culture Opinion (theocracy)",
+            "-15% Different Faith County Opinion Mult (theocracy)",
+            "+10% Minority Vassal Tax Contribution (theocracy)",
             "Invert Check (landless adventurer)",
             "+15 Minority Vassal Opinion (landless adventurer)",
             "+20% Cultural Acceptance Gain (landless adventurer)",
@@ -1704,10 +1708,10 @@
         {
           "dlc": null,
           "effects": [
-            "+1 Learning per Level of Devotion",
+            "+1 Learning per Level of Fame",
             "-50% Enemy Defensive Advantage (landless adventurer)",
             "+0.5% Knight Effectiveness per Learning Skill (landless adventurer)",
-            "-1 Learning per Level of Devotion (landless adventurer)"
+            "-1 Learning per Level of Fame (landless adventurer)"
           ],
           "features": [],
           "icon": "node_learning",
@@ -1771,16 +1775,16 @@
           "dlc": null,
           "effects": [],
           "features": [],
-          "icon": "trait_scholar",
-          "id": "scholar_perk",
+          "icon": "trait_erudite",
+          "id": "erudite_perk",
           "lifestyle": "learning_lifestyle",
-          "name": "Scholar",
+          "name": "Erudite",
           "parents": [
             "sanctioned_loopholes_perk"
           ],
           "trait": {
-            "id": "scholar",
-            "name": "Scholar"
+            "id": "erudite",
+            "name": "Erudite"
           },
           "tree": "scholarship",
           "x": 1,
@@ -1796,11 +1800,10 @@
         {
           "dlc": null,
           "effects": [
-            "Doctrine: doctrine theocracy lay clergy",
-            "+10 Zealot Vassal Opinion",
-            "Doctrine: doctrine theocracy temporal",
-            "+10 Clergy Opinion",
+            "If faith has Lay Clergy: +10 Zealot Vassal Opinion",
+            "If faith has Theocratic Clergy: +5% Piety Rewards",
             "+0.5 Merit /month (government has merit)",
+            "+15% Character Spiritual Fulfillment Gain Mult (theocracy)",
             "Adventurer Steadfast Camp Temperament now also grants a scaling +1 Faith Hostility Advantage"
           ],
           "features": [],
@@ -1835,7 +1838,9 @@
         {
           "dlc": null,
           "effects": [
-            "Adventurer Nomad Pilgrimage Cost: Gold -50%"
+            "+20% Religious Scholar Trait Experience Gain (theocracy)",
+            "Adventurer Nomad Pilgrimage Cost: Gold -50%",
+            "Passively learn Tenets, Doctrines, and whole Rites from close relations (spouses, friends, etc.) and while Traveling twice as often"
           ],
           "features": [],
           "icon": "node_learning",
@@ -1853,7 +1858,7 @@
         {
           "dlc": null,
           "effects": [
-            "+10% Stress loss per Level of Devotion (mandala)",
+            "+10% Stress Loss per Level of Devotion (mandala)",
             "Adventurer You now gain Piety +0.4/month for every Follower of your Faith when Camp Temperament is Steadfast"
           ],
           "features": [],
@@ -1872,15 +1877,14 @@
         {
           "dlc": null,
           "effects": [
-            "Doctrine: doctrine theocracy lay clergy",
-            "+100% Monthly Piety from Buildings",
-            "Doctrine: doctrine theocracy temporal",
-            "+50 Realm Priest Opinion",
+            "If faith has Lay Clergy: +100% Monthly Piety from Buildings",
+            "If faith has Theocratic Clergy: +50 Realm Priest Opinion",
             "+50 Zealot Vassal Opinion (nomadic)",
             "+15 Same Faith Opinion (nomadic)",
             "+5% Monthly Domicile Piety (government uses domicile but not adventurer)",
-            "Adventurer Visiting a Temple Holding awards Piety 25",
-            "Adventurer Visiting a Religious Point of Interest awards Piety 250"
+            "+25 Liege Opinion (ecclesiastical)",
+            "Adventurer Visiting a Temple Holding awards Piety …",
+            "Adventurer Visiting a Religious Point of Interest awards Piety …"
           ],
           "features": [],
           "icon": "node_learning",
@@ -1899,10 +1903,9 @@
           "dlc": null,
           "effects": [
             "Invert Check (government has merit)",
-            "+2% Monthly Piety per Knight (government has merit)",
-            "-50% Faith Creation and Reformation Cost (government has merit)",
+            "+1% Monthly Piety per Knight (government has merit)",
             "+20% Monthly Merit (government has merit)",
-            "+10% Stress loss per Level of Devotion (government has merit)",
+            "+10% Stress Loss per Level of Devotion (government has merit)",
             "Adventurer Enables the Attempt to Convert Interaction with anyone whose Domain your Camp is located in",
             "Adventurer Gain Prestige Prestige when successfully using the Attempt to Convert Interaction"
           ],
@@ -1922,7 +1925,7 @@
         {
           "dlc": null,
           "effects": [
-            "+100% …Level of Devotion Impact",
+            "+1 Personal Tenets",
             "+1 Martial per Level of Devotion (landless adventurer)",
             "+1 Intrigue per Level of Devotion (landless adventurer)",
             "+1 Prowess per Level of Devotion (landless adventurer)"
@@ -1943,18 +1946,17 @@
         {
           "dlc": null,
           "effects": [
-            "Doctrine: doctrine pluralism fundamentalist",
-            "+10 Tolerance Advantage Mod",
-            "+2 Prowess per Level of Devotion",
-            "+20 Clergy Opinion",
-            "Doctrine: doctrine pluralism righteous",
-            "+20 Zealot Vassal Opinion",
-            "-25% Tyranny Gain",
-            "+35% Zealot Vassal Tax Contribution",
-            "+35% Zealot Vassal Levy Contribution",
-            "Doctrine: doctrine pluralism pluralistic",
-            "+1 Diplomacy per Level of Devotion",
-            "+20% Monthly Piety",
+            "If faith has Fundamentalist Attitude: +10 Tolerance Advantage Mod",
+            "If faith has Fundamentalist Attitude: +2 Prowess per Level of Devotion",
+            "If faith has Fundamentalist Attitude: +20 Clergy Opinion",
+            "If faith has Righteous Attitude: +20 Zealot Vassal Opinion",
+            "If faith has Righteous Attitude: -25% Tyranny Gain",
+            "If faith has Righteous Attitude: +35% Zealot Vassal Tax Contribution",
+            "If faith has Righteous Attitude: +35% Zealot Vassal Levy Contribution",
+            "If faith has Pluralist Attitude: +1 Diplomacy per Level of Devotion",
+            "If faith has Pluralist Attitude: +10% Monthly Piety",
+            "+20% Garrison Size (theocracy)",
+            "+1 Additional Fort Level (theocracy)",
             "Adventurer Removes the Acceptance Penalty from the target not being Cynical when using the Attempt to Convert Interaction",
             "Adventurer Doubles Acceptance from your Learning Learning when using the Attempt to Convert Interaction\n(presuming your Learning is higher)"
           ],
@@ -2317,7 +2319,9 @@
             "+25% Bow (Hastiluder) Trait Experience Gain (landless adventurer)",
             "Invert Check (administrative)",
             "+4 Number of Knight Knights (administrative)",
-            "+2 Number of Knight Knights (administrative)"
+            "+2 Number of Knight Knights (administrative)",
+            "-5% Enemy Hostile Scheme Success Chance Add (theocracy)",
+            "+10 Travel Safety (theocracy)"
           ],
           "features": [],
           "icon": "node_martial",
@@ -2609,6 +2613,7 @@
             "-5% Build Prestige Cost (landless adventurer)",
             "-5% Domicile Building Construction Cost (landless adventurer)",
             "-10% Domicile Building Construction Cost (nomadic)",
+            "-10% Temple Buildings Construction Cost (theocracy)",
             "Adventurer Refill Men-at-Arms Gold cost: Gold -25%"
           ],
           "features": [],
@@ -2651,6 +2656,7 @@
             "-30% Build Speed (landless adventurer)",
             "-30% Holding Build Speed (landless adventurer)",
             "-30% Domicile Build Speed (government uses domicile but not adventurer)",
+            "-10% Temple Buildings Construction Time (theocracy)",
             "Adventurer Significantly improves Characters recruited in the Tavern when using the Visit Settlement Decision"
           ],
           "features": [],
@@ -3067,7 +3073,8 @@
             "-20% Provisions Loss (landless adventurer)",
             "+10% Monthly Income from Herd (nomadic)",
             "+10% Administrative Vassal Tax Contribution (administrative)",
-            "+10% Governor Salary (government has treasury)"
+            "+10% Governor Salary (government has treasury)",
+            "+1 Domicile Income /month (ecclesiastical)"
           ],
           "features": [],
           "icon": "node_stewardship",
@@ -3107,6 +3114,7 @@
           "effects": [
             "Invert Check (landless adventurer)",
             "+10% Monthly Income per Stress Level (landless adventurer)",
+            "+1 Stewardship per Level of Devotion (theocracy)",
             "Adventurer When using the Gather Provisions Decision, Somewhat Effective Terrain now counts as Very Effective"
           ],
           "features": [],
@@ -3322,7 +3330,7 @@
             "+1 Maximum Domain Limit (nomadic)",
             "+1 Maximum Domain Limit (mandala)",
             "+1 Maximum Domain Limit (japan administrative)",
-            "+1 Maximum Domain Limit (japan administrative)",
+            "+1 Maximum Domain Limit (japan feudal)",
             "Holding an Inspection Activity will also apply the effects of a Local Arbitration in that County\nNo Stone Unturned Effects: +50%",
             "Unlock the Master Terrain Decision",
             "Effects for Master Terrain:\n•Danger: Danger -20\n•Provisions Use: Provisions -25%\n•Refill Men-at-Arms Cost: Gold Provisions -25%\n•Prestige and Fame from Battles: Prestige +50%\n•Command Modifier Advantage: +5\n•Command Modifier Maximum Battle Roll: +1\n•Command Modifier Minimum Battle Roll: +1\n•Command Modifier Negate Supply Limit Penalty: Yes\n•Command Modifier Attrition Taken: -50%",
@@ -3610,6 +3618,7 @@
         {
           "dlc": null,
           "effects": [
+            "+20% Pilgrim Trait Experience Gain (theocracy)",
             "Children have a chance to gain Prowess and …"
           ],
           "features": [],

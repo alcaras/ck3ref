@@ -2,8 +2,9 @@
   "counts": {
     "byFamily": {
       "Chinese naming": 77,
-      "Custom": 91,
-      "DLC": 84,
+      "Clerical": 106,
+      "Custom": 92,
+      "DLC": 85,
       "GHW": 68,
       "Graphical": 7,
       "Heritage": 5,
@@ -21,14 +22,14 @@
     },
     "files": {
       "10_natural_disaster_regions.txt": 43,
-      "geographical_region.txt": 473,
+      "geographical_region.txt": 581,
       "island_region.txt": 20,
       "tgp_chinesenaming_regions.txt": 76
     },
     "localized": 247,
-    "referenced": 523,
-    "regions": 612,
-    "unreferenced": 89
+    "referenced": 524,
+    "regions": 720,
+    "unreferenced": 196
   },
   "families": [
     "World",
@@ -39,6 +40,7 @@
     "Material",
     "Hunt",
     "Special",
+    "Clerical",
     "Heritage",
     "Silk Road",
     "Nomad",
@@ -144,11 +146,13 @@
           "events/dlc/ep3/ep3_laamp_decision_events.txt",
           "events/dlc/ep3/ep3_story_cycle_harrying_of_the_north_events.txt",
           "events/lifestyles/scholarship_lifestyle/learning_medicine_events.txt",
-          "events/religion_events/heresy_events.txt",
           "events/travel_events/travel_events_james.txt"
         ],
         "legends": [
           "common/legends/legend_seeds/00_legend_seeds.txt"
+        ],
+        "religion": [
+          "common/religion/rite_icons/00_rite_icons.txt"
         ],
         "script_values": [
           "common/script_values/00_culture_values.txt",
@@ -167,8 +171,8 @@
         "scripted_triggers": [
           "common/scripted_triggers/00_artifact_triggers.txt",
           "common/scripted_triggers/00_board_game_scripted_triggers.txt",
-          "common/scripted_triggers/00_religious_triggers.txt",
-          "common/scripted_triggers/01_fp1_scripted_triggers.txt"
+          "common/scripted_triggers/01_fp1_scripted_triggers.txt",
+          "common/scripted_triggers/pam_heresy_triggers.txt"
         ],
         "story_cycles": [
           "common/story_cycles/ep3_story_cycle_harrying_of_the_north.txt"
@@ -269,6 +273,9 @@
           "events/dlc/ep1/ep1_fund_inspiration_events.txt",
           "events/travel_events/travel_events_james.txt"
         ],
+        "holy_orders": [
+          "common/holy_orders/00_christian_holy_orders.txt"
+        ],
         "script_values": [
           "common/script_values/00_culture_values.txt",
           "common/script_values/00_war_values.txt"
@@ -280,10 +287,11 @@
         "scripted_triggers": [
           "common/scripted_triggers/00_artifact_triggers.txt",
           "common/scripted_triggers/07_frankokratia_triggers.txt",
-          "common/scripted_triggers/20_health_triggers.txt"
+          "common/scripted_triggers/20_health_triggers.txt",
+          "common/scripted_triggers/pam_heresy_triggers.txt"
         ]
       },
-      "usedByCount": 13
+      "usedByCount": 15
     },
     {
       "bbox": [
@@ -370,8 +378,10 @@
           "events/decisions_events/roman_restoration_events.txt",
           "events/dlc/ep1/ep1_fund_inspiration_events.txt",
           "events/dlc/fp2/fp2_struggle_events.txt",
-          "events/lifestyles/scholarship_lifestyle/learning_medicine_events.txt",
-          "events/religion_events/heresy_events.txt"
+          "events/lifestyles/scholarship_lifestyle/learning_medicine_events.txt"
+        ],
+        "holy_orders": [
+          "common/holy_orders/00_christian_holy_orders.txt"
         ],
         "legends": [
           "common/legends/legend_seeds/00_legend_seeds.txt"
@@ -382,10 +392,11 @@
         ],
         "scripted_triggers": [
           "common/scripted_triggers/00_artifact_triggers.txt",
-          "common/scripted_triggers/07_frankokratia_triggers.txt"
+          "common/scripted_triggers/07_frankokratia_triggers.txt",
+          "common/scripted_triggers/pam_heresy_triggers.txt"
         ]
       },
-      "usedByCount": 18
+      "usedByCount": 19
     },
     {
       "bbox": [
@@ -477,7 +488,6 @@
           "common/character_interactions/03_fp2_interactions.txt"
         ],
         "council_tasks": [
-          "common/council_tasks/00_court_chaplain_tasks.txt",
           "common/council_tasks/00_steward_tasks.txt"
         ],
         "culture": [
@@ -515,10 +525,13 @@
           "events/dlc/fp2/fp2_yearly_events.txt",
           "events/global_culture_events.txt",
           "events/lifestyles/scholarship_lifestyle/learning_medicine_events.txt",
-          "events/religion_events/heresy_events.txt",
           "events/scheme_events/governor_contract_events.txt",
           "events/test_events/debug.txt",
           "events/travel_events/travel_events_james.txt"
+        ],
+        "holy_orders": [
+          "common/holy_orders/00_christian_holy_orders.txt",
+          "common/holy_orders/00_muslim_holy_orders.txt"
         ],
         "on_action": [
           "common/on_action/game_start.txt",
@@ -526,7 +539,8 @@
         ],
         "script_values": [
           "common/script_values/00_culture_values.txt",
-          "common/script_values/03_dlc_fp2_script_values.txt"
+          "common/script_values/03_dlc_fp2_script_values.txt",
+          "common/script_values/99_court_chaplain_values.txt"
         ],
         "scripted_character_templates": [
           "common/scripted_character_templates/00_pool_repopulation_character_templates.txt"
@@ -539,17 +553,18 @@
           "common/scripted_triggers/00_artifact_triggers.txt",
           "common/scripted_triggers/00_building_requirement_triggers.txt",
           "common/scripted_triggers/00_clothing_triggers.txt",
+          "common/scripted_triggers/00_councillor_triggers.txt",
           "common/scripted_triggers/00_illustration_triggers.txt",
-          "common/scripted_triggers/00_religious_triggers.txt",
           "common/scripted_triggers/03_fp2_scripted_triggers.txt",
           "common/scripted_triggers/07_frankokratia_triggers.txt",
-          "common/scripted_triggers/music_triggers.txt"
+          "common/scripted_triggers/music_triggers.txt",
+          "common/scripted_triggers/pam_heresy_triggers.txt"
         ],
         "struggle": [
           "common/struggle/struggles/iberian_struggle_script.txt"
         ]
       },
-      "usedByCount": 57
+      "usedByCount": 59
     },
     {
       "bbox": [
@@ -631,6 +646,9 @@
           "events/dlc/fp1/fp1_yearly_events.txt",
           "events/lifestyles/warfare_lifestyle/warhorse_events.txt"
         ],
+        "holy_orders": [
+          "common/holy_orders/00_christian_holy_orders.txt"
+        ],
         "script_values": [
           "common/script_values/00_war_values.txt"
         ],
@@ -651,7 +669,7 @@
           "common/scripted_triggers/music_triggers.txt"
         ]
       },
-      "usedByCount": 37
+      "usedByCount": 38
     },
     {
       "bbox": [
@@ -876,7 +894,8 @@
           "common/accolade_names/00_accolade_names.txt"
         ],
         "activities": [
-          "common/activities/activity_types/coronation.txt"
+          "common/activities/activity_types/coronation.txt",
+          "common/activities/activity_types/ecumenical_council.txt"
         ],
         "casus_belli_types": [
           "common/casus_belli_types/01_fp1_wars.txt"
@@ -886,6 +905,7 @@
           "common/customizable_localization/00_appropriate_generic_words.txt",
           "common/customizable_localization/00_feast_custom_loc.txt",
           "common/customizable_localization/00_food_custom_loc.txt",
+          "common/customizable_localization/00_greeting_custom_loc.txt",
           "common/customizable_localization/00_regional_custom_localization.txt"
         ],
         "event_backgrounds": [
@@ -893,8 +913,10 @@
         ],
         "events": [
           "events/artifacts/historical_artifacts_events.txt",
-          "events/dlc/ep3/ep3_laamp_flavour_ewan_events.txt",
-          "events/religion_events/heresy_events.txt"
+          "events/dlc/ep3/ep3_laamp_flavour_ewan_events.txt"
+        ],
+        "holy_orders": [
+          "common/holy_orders/00_christian_holy_orders.txt"
         ],
         "script_values": [
           "common/script_values/00_culture_values.txt"
@@ -911,10 +933,10 @@
         ],
         "scripted_triggers": [
           "common/scripted_triggers/00_illustration_triggers.txt",
-          "common/scripted_triggers/00_religious_triggers.txt"
+          "common/scripted_triggers/pam_heresy_triggers.txt"
         ]
       },
-      "usedByCount": 21
+      "usedByCount": 23
     },
     {
       "bbox": [
@@ -984,6 +1006,7 @@
           "common/culture/innovations/00_late_medieval_innovations.txt"
         ],
         "customizable_localization": [
+          "common/customizable_localization/00_food_custom_loc.txt",
           "common/customizable_localization/00_regional_custom_localization.txt"
         ],
         "decisions": [
@@ -998,8 +1021,11 @@
           "events/decisions_events/roman_restoration_events.txt",
           "events/dlc/ep1/ep1_fund_inspiration_events.txt",
           "events/dlc/ep3/ep3_laamp_flavour_ewan_events.txt",
-          "events/dlc/fp2/fp2_struggle_events.txt",
-          "events/religion_events/heresy_events.txt"
+          "events/dlc/fp2/fp2_struggle_events.txt"
+        ],
+        "holy_orders": [
+          "common/holy_orders/00_christian_holy_orders.txt",
+          "common/holy_orders/00_muslim_holy_orders.txt"
         ],
         "script_values": [
           "common/script_values/00_culture_values.txt"
@@ -1010,10 +1036,11 @@
         "scripted_triggers": [
           "common/scripted_triggers/00_illustration_triggers.txt",
           "common/scripted_triggers/03_fp2_scripted_triggers.txt",
-          "common/scripted_triggers/07_frankokratia_triggers.txt"
+          "common/scripted_triggers/07_frankokratia_triggers.txt",
+          "common/scripted_triggers/pam_heresy_triggers.txt"
         ]
       },
-      "usedByCount": 17
+      "usedByCount": 20
     },
     {
       "bbox": [
@@ -1077,6 +1104,7 @@
           "common/customizable_localization/00_artifact_custom_loc.txt",
           "common/customizable_localization/00_food_custom_loc.txt",
           "common/customizable_localization/00_greeting_custom_loc.txt",
+          "common/customizable_localization/00_insult_custom_loc.txt",
           "common/customizable_localization/00_regional_custom_localization.txt",
           "common/customizable_localization/01_ep1_custom_loc.txt",
           "common/customizable_localization/04_ep2_hunt_custom_loc.txt"
@@ -1115,7 +1143,7 @@
           "common/scripted_triggers/music_triggers.txt"
         ]
       },
-      "usedByCount": 31
+      "usedByCount": 32
     },
     {
       "bbox": [
@@ -1234,6 +1262,7 @@
           "common/customizable_localization/00_artifact_custom_loc.txt",
           "common/customizable_localization/00_food_custom_loc.txt",
           "common/customizable_localization/00_greeting_custom_loc.txt",
+          "common/customizable_localization/00_insult_custom_loc.txt",
           "common/customizable_localization/00_regional_custom_localization.txt",
           "common/customizable_localization/01_ep1_custom_loc.txt"
         ],
@@ -1253,6 +1282,9 @@
           "events/game_rule_events.txt",
           "events/lifestyles/warfare_lifestyle/learn_commander_trait_events.txt"
         ],
+        "holy_orders": [
+          "common/holy_orders/00_christian_holy_orders.txt"
+        ],
         "script_values": [
           "common/script_values/00_war_values.txt"
         ],
@@ -1271,7 +1303,7 @@
           "common/scripted_triggers/00_hunt_triggers.txt"
         ]
       },
-      "usedByCount": 33
+      "usedByCount": 35
     },
     {
       "bbox": [
@@ -1357,6 +1389,7 @@
         ],
         "activities": [
           "common/activities/activity_types/coronation.txt",
+          "common/activities/activity_types/ecumenical_council.txt",
           "common/activities/activity_types/monument_expedition.txt"
         ],
         "artifacts": [
@@ -1373,6 +1406,7 @@
           "common/customizable_localization/00_feast_custom_loc.txt",
           "common/customizable_localization/00_food_custom_loc.txt",
           "common/customizable_localization/00_greeting_custom_loc.txt",
+          "common/customizable_localization/00_insult_custom_loc.txt",
           "common/customizable_localization/00_regional_custom_localization.txt",
           "common/customizable_localization/01_ep1_custom_loc.txt",
           "common/customizable_localization/04_ep2_hunt_custom_loc.txt",
@@ -1405,8 +1439,11 @@
           "events/dlc/fp1/fp1_yearly_events.txt",
           "events/lifestyles/scholarship_lifestyle/learning_medicine_events.txt",
           "events/lifestyles/warfare_lifestyle/warhorse_events.txt",
-          "events/religion_events/heresy_events.txt",
           "events/travel_events/travel_events_fp3.txt"
+        ],
+        "holy_orders": [
+          "common/holy_orders/00_christian_holy_orders.txt",
+          "common/holy_orders/00_muslim_holy_orders.txt"
         ],
         "on_action": [
           "common/on_action/game_start.txt",
@@ -1441,10 +1478,12 @@
           "common/scripted_triggers/00_illustration_triggers.txt",
           "common/scripted_triggers/00_religious_triggers.txt",
           "common/scripted_triggers/00_weather_triggers.txt",
-          "common/scripted_triggers/07_frankokratia_triggers.txt"
+          "common/scripted_triggers/06_ce1_legend_triggers.txt",
+          "common/scripted_triggers/07_frankokratia_triggers.txt",
+          "common/scripted_triggers/pam_heresy_triggers.txt"
         ]
       },
-      "usedByCount": 65
+      "usedByCount": 70
     },
     {
       "bbox": [
@@ -1509,6 +1548,7 @@
         "customizable_localization": [
           "common/customizable_localization/00_food_custom_loc.txt",
           "common/customizable_localization/00_greeting_custom_loc.txt",
+          "common/customizable_localization/00_insult_custom_loc.txt",
           "common/customizable_localization/00_regional_custom_localization.txt",
           "common/customizable_localization/01_ep1_custom_loc.txt",
           "common/customizable_localization/06_ce1_legends_custom_loc.txt",
@@ -1526,6 +1566,10 @@
           "events/dlc/fp1/fp1_yearly_events.txt",
           "events/lifestyles/scholarship_lifestyle/learning_medicine_events.txt",
           "events/lifestyles/warfare_lifestyle/warhorse_events.txt"
+        ],
+        "holy_orders": [
+          "common/holy_orders/00_christian_holy_orders.txt",
+          "common/holy_orders/00_muslim_holy_orders.txt"
         ],
         "legends": [
           "common/legends/chronicles/00_chronicles.txt",
@@ -1545,7 +1589,7 @@
           "common/scripted_triggers/07_frankokratia_triggers.txt"
         ]
       },
-      "usedByCount": 29
+      "usedByCount": 32
     },
     {
       "bbox": [
@@ -1740,9 +1784,11 @@
           "events/dlc/ep3/ep3_laamp_flavour_ewan_events.txt",
           "events/dlc/fp1/fp1_yearly_events.txt",
           "events/lifestyles/warfare_lifestyle/warhorse_events.txt",
-          "events/religion_events/heresy_events.txt",
           "events/travel_events/travel_events_fp3.txt",
           "events/yearly_events/court_yearly_events.txt"
+        ],
+        "holy_orders": [
+          "common/holy_orders/00_muslim_holy_orders.txt"
         ],
         "legends": [
           "common/legends/legend_seeds/00_legend_seeds.txt"
@@ -1759,7 +1805,6 @@
           "common/scripted_effects/00_ep1_inspiration_effects_sean.txt",
           "common/scripted_effects/00_hunt_effects.txt",
           "common/scripted_effects/00_murder_effects.txt",
-          "common/scripted_effects/00_personal_details_effects.txt",
           "common/scripted_effects/00_regional_scripted_effects.txt",
           "common/scripted_effects/06_dlc_ce1_legend_effects.txt"
         ],
@@ -1772,7 +1817,7 @@
           "common/scripted_triggers/06_fp3_scripted_triggers.txt"
         ]
       },
-      "usedByCount": 30
+      "usedByCount": 29
     },
     {
       "bbox": [
@@ -2172,6 +2217,9 @@
           "common/decisions/00_major_decisions_iberia_north_africa.txt",
           "common/decisions/dlc_decisions/03_fp2_decisions.txt"
         ],
+        "holy_orders": [
+          "common/holy_orders/00_christian_holy_orders.txt"
+        ],
         "scripted_effects": [
           "common/scripted_effects/00_scheme_scripted_effects.txt"
         ],
@@ -2179,7 +2227,7 @@
           "common/scripted_triggers/00_hunt_triggers.txt"
         ]
       },
-      "usedByCount": 6
+      "usedByCount": 7
     },
     {
       "bbox": [
@@ -2233,8 +2281,8 @@
         "customizable_localization": [
           "common/customizable_localization/00_regional_custom_localization.txt"
         ],
-        "events": [
-          "events/religion_events/heresy_events.txt"
+        "holy_orders": [
+          "common/holy_orders/00_christian_holy_orders.txt"
         ],
         "on_action": [
           "common/on_action/game_start.txt"
@@ -2310,6 +2358,7 @@
       "slug": "world_africa_sahara",
       "usedBy": {
         "customizable_localization": [
+          "common/customizable_localization/00_regional_custom_localization.txt",
           "common/customizable_localization/09_mpo_custom_loc.txt"
         ],
         "events": [
@@ -2319,7 +2368,7 @@
           "common/scripted_triggers/00_building_requirement_triggers.txt"
         ]
       },
-      "usedByCount": 3
+      "usedByCount": 4
     },
     {
       "bbox": [
@@ -2387,6 +2436,7 @@
           "common/customizable_localization/00_appropriate_generic_words.txt",
           "common/customizable_localization/00_food_custom_loc.txt",
           "common/customizable_localization/00_greeting_custom_loc.txt",
+          "common/customizable_localization/00_insult_custom_loc.txt",
           "common/customizable_localization/00_regional_custom_localization.txt",
           "common/customizable_localization/01_ep1_custom_loc.txt",
           "common/customizable_localization/06_ce1_legends_custom_loc.txt",
@@ -2405,6 +2455,9 @@
           "events/dlc/ep3/ep3_frankokratia_events.txt",
           "events/dlc/ep3/ep3_laamp_decision_events.txt",
           "events/lifestyles/scholarship_lifestyle/learning_medicine_events.txt"
+        ],
+        "holy_orders": [
+          "common/holy_orders/00_muslim_holy_orders.txt"
         ],
         "script_values": [
           "common/script_values/00_culture_values.txt"
@@ -2426,10 +2479,11 @@
         "scripted_triggers": [
           "common/scripted_triggers/00_weather_triggers.txt",
           "common/scripted_triggers/03_fp2_scripted_triggers.txt",
+          "common/scripted_triggers/06_ce1_legend_triggers.txt",
           "common/scripted_triggers/07_frankokratia_triggers.txt"
         ]
       },
-      "usedByCount": 36
+      "usedByCount": 39
     },
     {
       "bbox": [
@@ -2571,7 +2625,6 @@
           "common/scripted_effects/00_ep1_inspiration_effects.txt",
           "common/scripted_effects/00_ep1_inspiration_effects_sean.txt",
           "common/scripted_effects/00_hunt_effects.txt",
-          "common/scripted_effects/00_laamp_effects.txt",
           "common/scripted_effects/00_murder_effects.txt",
           "common/scripted_effects/00_regional_scripted_effects.txt"
         ],
@@ -2581,7 +2634,7 @@
           "common/scripted_triggers/00_weather_triggers.txt"
         ]
       },
-      "usedByCount": 27
+      "usedByCount": 26
     },
     {
       "bbox": [
@@ -2693,6 +2746,9 @@
           "events/dlc/ep3/ep3_laamp_decision_events.txt",
           "events/relations_events/adultery_events.txt"
         ],
+        "holy_orders": [
+          "common/holy_orders/00_christian_holy_orders.txt"
+        ],
         "on_action": [
           "common/on_action/culture_on_actions.txt"
         ],
@@ -2713,7 +2769,7 @@
           "common/scripted_triggers/00_weather_triggers.txt"
         ]
       },
-      "usedByCount": 29
+      "usedByCount": 30
     },
     {
       "bbox": [
@@ -2811,6 +2867,9 @@
         "on_action": [
           "common/on_action/game_start.txt"
         ],
+        "religion": [
+          "common/religion/rite_icons/00_rite_icons.txt"
+        ],
         "scripted_character_templates": [
           "common/scripted_character_templates/00_pool_repopulation_character_templates.txt"
         ],
@@ -2830,13 +2889,14 @@
           "common/scripted_triggers/00_food_scripted_triggers.txt",
           "common/scripted_triggers/00_hunt_triggers.txt",
           "common/scripted_triggers/00_illustration_triggers.txt",
-          "common/scripted_triggers/00_religious_triggers.txt"
+          "common/scripted_triggers/00_religious_triggers.txt",
+          "common/scripted_triggers/pam_scripted_triggers.txt"
         ],
         "traits": [
           "common/traits/00_traits.txt"
         ]
       },
-      "usedByCount": 54
+      "usedByCount": 56
     },
     {
       "bbox": [
@@ -2891,7 +2951,8 @@
           "common/accolade_names/00_accolade_names.txt"
         ],
         "activities": [
-          "common/activities/activity_types/coronation.txt"
+          "common/activities/activity_types/coronation.txt",
+          "common/activities/activity_types/ecumenical_council.txt"
         ],
         "culture": [
           "common/culture/traditions/03_fp3_traditions.txt"
@@ -2925,10 +2986,12 @@
         ],
         "scripted_triggers": [
           "common/scripted_triggers/00_food_scripted_triggers.txt",
-          "common/scripted_triggers/00_illustration_triggers.txt"
+          "common/scripted_triggers/00_illustration_triggers.txt",
+          "common/scripted_triggers/06_ce1_legend_triggers.txt",
+          "common/scripted_triggers/pam_scripted_triggers.txt"
         ]
       },
-      "usedByCount": 22
+      "usedByCount": 25
     },
     {
       "bbox": [
@@ -3012,6 +3075,9 @@
         "accolade_names": [
           "common/accolade_names/00_accolade_names.txt"
         ],
+        "activities": [
+          "common/activities/activity_types/ecumenical_council.txt"
+        ],
         "customizable_localization": [
           "common/customizable_localization/00_adventurer_names.txt",
           "common/customizable_localization/00_artifact_custom_loc.txt",
@@ -3064,7 +3130,7 @@
           "common/situation/situations/the_great_steppe.txt"
         ]
       },
-      "usedByCount": 30
+      "usedByCount": 31
     },
     {
       "bbox": [
@@ -3152,6 +3218,9 @@
       },
       "slug": "world_steppe_central",
       "usedBy": {
+        "activities": [
+          "common/activities/activity_types/ecumenical_council.txt"
+        ],
         "customizable_localization": [
           "common/customizable_localization/00_regional_custom_localization.txt",
           "common/customizable_localization/01_ep1_custom_loc.txt"
@@ -3166,19 +3235,23 @@
           "events/dlc/mpo/mpo_nomads_flavour_events.txt",
           "events/mpo_misc.txt"
         ],
+        "religion": [
+          "common/religion/rite_icons/00_rite_icons.txt"
+        ],
         "scripted_effects": [
           "common/scripted_effects/00_ep1_inspiration_effects.txt",
           "common/scripted_effects/09_mpo_greatest_of_khans_effects.txt"
         ],
         "scripted_triggers": [
-          "common/scripted_triggers/00_illustration_triggers.txt"
+          "common/scripted_triggers/00_illustration_triggers.txt",
+          "common/scripted_triggers/pam_scripted_triggers.txt"
         ],
         "situation": [
           "common/situation/situations/debug_situation.txt",
           "common/situation/situations/the_great_steppe.txt"
         ]
       },
-      "usedByCount": 13
+      "usedByCount": 16
     },
     {
       "bbox": [
@@ -3257,6 +3330,9 @@
         "accolade_names": [
           "common/accolade_names/00_accolade_names.txt"
         ],
+        "activities": [
+          "common/activities/activity_types/ecumenical_council.txt"
+        ],
         "artifacts": [
           "common/artifacts/features/00_features.txt"
         ],
@@ -3282,6 +3358,9 @@
         ],
         "great_projects": [
           "common/great_projects/types/00_ministry_projects.txt"
+        ],
+        "religion": [
+          "common/religion/rite_icons/00_rite_icons.txt"
         ],
         "script_values": [
           "common/script_values/00_culture_values.txt"
@@ -3309,7 +3388,7 @@
           "common/situation/situations/the_great_steppe.txt"
         ]
       },
-      "usedByCount": 30
+      "usedByCount": 32
     },
     {
       "bbox": [
@@ -3401,6 +3480,9 @@
         "on_action": [
           "common/on_action/game_start.txt"
         ],
+        "religion": [
+          "common/religion/rite_icons/00_rite_icons.txt"
+        ],
         "script_values": [
           "common/script_values/tgp_natural_disaster_values.txt"
         ],
@@ -3415,7 +3497,7 @@
           "common/scripted_triggers/music_triggers.txt"
         ]
       },
-      "usedByCount": 12
+      "usedByCount": 13
     },
     {
       "bbox": [
@@ -3509,7 +3591,8 @@
           "common/accolade_names/00_accolade_names.txt"
         ],
         "activities": [
-          "common/activities/activity_types/coronation.txt"
+          "common/activities/activity_types/coronation.txt",
+          "common/activities/activity_types/ecumenical_council.txt"
         ],
         "artifacts": [
           "common/artifacts/features/00_features.txt"
@@ -3539,7 +3622,6 @@
           "events/activities/coronation_activity/coronation_events_6.txt",
           "events/dlc/bp1/bp1_yearly.txt",
           "events/dlc/bp3/bp3_mapmaking.txt",
-          "events/dlc/ce1/legend_events.txt",
           "events/dlc/ep1/ep1_fund_inspiration_events.txt",
           "events/dlc/ep3/ep3_laamp_decision_events.txt",
           "events/dlc/ep3/ep3_laamp_events_8.txt",
@@ -3552,6 +3634,9 @@
         ],
         "on_action": [
           "common/on_action/game_start.txt"
+        ],
+        "religion": [
+          "common/religion/rite_icons/00_rite_icons.txt"
         ],
         "script_values": [
           "common/script_values/00_culture_values.txt"
@@ -3581,7 +3666,7 @@
           "common/scripted_triggers/10_tgp_triggers.txt"
         ]
       },
-      "usedByCount": 47
+      "usedByCount": 48
     },
     {
       "bbox": [
@@ -3700,26 +3785,18 @@
       "localized": true,
       "name": "Burma",
       "parents": [
-        "custom_ep3_restore_rome_eastern_empire",
         "dlc_ep1_southwest_silk_road_trade_region",
         "graphical_india",
-        "hunt_animal_antelope_region",
-        "hunt_animal_big_cat_region",
-        "hunt_animal_boar_region",
-        "hunt_animal_deer_region",
         "material_hsb_boar_tusk",
         "material_hsb_deer_antler",
-        "material_hsb_ivory_native",
-        "material_hsb_mother_of_pearl",
         "material_hsb_seashell",
-        "material_metal_wootz",
         "material_woods_bamboo",
         "material_woods_cherry",
         "material_woods_hickory",
         "material_woods_india_burma",
         "material_woods_padauk",
-        "seasonal_region_peninsular_southeast_asia",
-        "special_mongol_empire_red_horde_region"
+        "special_mongol_empire_red_horde_region",
+        "world_asia_southeast_mainland"
       ],
       "resolved": {
         "byClass": {
@@ -3740,8 +3817,6 @@
           "common/accolade_names/00_accolade_names.txt"
         ],
         "activities": [
-          "common/activities/activity_types/hunt.txt",
-          "common/activities/activity_types/tournament.txt",
           "common/activities/activity_types/university_visit.txt"
         ],
         "artifacts": [
@@ -3752,66 +3827,29 @@
           "common/customizable_localization/00_appropriate_generic_words.txt",
           "common/customizable_localization/00_insult_custom_loc.txt",
           "common/customizable_localization/00_regional_custom_localization.txt",
-          "common/customizable_localization/01_ep1_custom_loc.txt",
-          "common/customizable_localization/04_ep2_custom_loc.txt",
-          "common/customizable_localization/06_ce1_legends_custom_loc.txt",
-          "common/customizable_localization/09_mpo_custom_loc.txt"
+          "common/customizable_localization/04_ep2_custom_loc.txt"
         ],
         "decisions": [
-          "common/decisions/80_major_decisions_south_asia.txt",
-          "common/decisions/dlc_decisions/ep_3/06_ep3_laamp_decisions.txt"
-        ],
-        "event_backgrounds": [
-          "common/event_backgrounds/01_event_backgrounds.txt"
+          "common/decisions/80_major_decisions_south_asia.txt"
         ],
         "events": [
-          "events/activities/coronation_activity/coronation_events_6.txt",
-          "events/activities/pilgrimage_activity/pilgrimage_events_seasia.txt",
           "events/decisions_events/south_asia_events.txt",
-          "events/dlc/bp1/bp1_yearly.txt",
-          "events/dlc/bp3/bp3_mapmaking.txt",
-          "events/dlc/ce1/legend_events.txt",
-          "events/dlc/ep1/ep1_fund_inspiration_events.txt",
-          "events/dlc/ep3/ep3_laamp_decision_events.txt",
-          "events/dlc/ep3/ep3_laamp_events_8.txt",
-          "events/dlc/ep3/ep3_laamp_flavour_ewan_events.txt",
-          "events/travel_events/travel_events_filippa.txt",
-          "events/travel_events/travel_events_james.txt",
-          "events/yearly_events/court_yearly_events.txt"
-        ],
-        "script_values": [
-          "common/script_values/00_culture_values.txt"
+          "events/dlc/ep3/ep3_laamp_events_8.txt"
         ],
         "scripted_character_templates": [
           "common/scripted_character_templates/00_pool_repopulation_character_templates.txt"
         ],
         "scripted_effects": [
           "common/scripted_effects/00_ep1_artifact_creation_effects.txt",
-          "common/scripted_effects/00_ep1_inspiration_effects.txt",
-          "common/scripted_effects/00_ep1_inspiration_effects_sean.txt",
-          "common/scripted_effects/00_murder_effects.txt",
-          "common/scripted_effects/00_personal_details_effects.txt",
-          "common/scripted_effects/00_regional_scripted_effects.txt",
-          "common/scripted_effects/06_dlc_ce1_legend_effects.txt",
-          "common/scripted_effects/07_dlc_ep3_scripted_effects.txt"
+          "common/scripted_effects/00_ep1_inspiration_effects.txt"
         ],
         "scripted_triggers": [
-          "common/scripted_triggers/00_board_game_scripted_triggers.txt",
-          "common/scripted_triggers/00_building_requirement_triggers.txt",
           "common/scripted_triggers/00_cultural_triggers.txt",
-          "common/scripted_triggers/00_food_scripted_triggers.txt",
           "common/scripted_triggers/00_hunt_triggers.txt",
-          "common/scripted_triggers/00_illustration_triggers.txt",
-          "common/scripted_triggers/00_religious_triggers.txt",
-          "common/scripted_triggers/00_single_combat_scripted_triggers.txt",
-          "common/scripted_triggers/00_weather_triggers.txt",
-          "common/scripted_triggers/10_tgp_triggers.txt"
-        ],
-        "traits": [
-          "common/traits/00_traits.txt"
+          "common/scripted_triggers/00_illustration_triggers.txt"
         ]
       },
-      "usedByCount": 50
+      "usedByCount": 17
     },
     {
       "bbox": [
@@ -3841,15 +3879,15 @@
       ],
       "resolved": {
         "byClass": {
-          "land": 2589
+          "land": 2682
         },
-        "counties": 787,
-        "drawn": 2589,
-        "duchies": 201,
+        "counties": 815,
+        "drawn": 2682,
+        "duchies": 207,
         "kingdoms": 53,
-        "land": 2589,
+        "land": 2682,
         "other": 0,
-        "provinces": 2589,
+        "provinces": 2682,
         "sea": 0
       },
       "slug": "world_asia",
@@ -3865,6 +3903,9 @@
           "common/customizable_localization/00_regional_custom_localization.txt",
           "common/customizable_localization/00_visit_settlement_custom_loc.txt"
         ],
+        "decisions": [
+          "common/decisions/dlc_decisions/ep_3/06_ep3_laamp_decisions.txt"
+        ],
         "event_backgrounds": [
           "common/event_backgrounds/01_event_backgrounds.txt"
         ],
@@ -3873,11 +3914,15 @@
         ],
         "events": [
           "events/dlc/tgp/tgp_travel_danger_events.txt",
-          "events/lifestyles/scholarship_lifestyle/learning_medicine_events.txt"
+          "events/lifestyles/scholarship_lifestyle/learning_medicine_events.txt",
+          "events/travel_events/travel_events_filippa.txt"
         ],
         "great_projects": [
           "common/great_projects/types/00_ministry_projects.txt",
           "common/great_projects/types/00_natural_disasters.txt"
+        ],
+        "religion": [
+          "common/religion/rite_icons/00_rite_icons.txt"
         ],
         "scripted_triggers": [
           "common/scripted_triggers/00_illustration_triggers.txt",
@@ -3886,7 +3931,7 @@
           "common/scripted_triggers/10_tgp_triggers.txt"
         ]
       },
-      "usedByCount": 15
+      "usedByCount": 18
     },
     {
       "bbox": [
@@ -3934,18 +3979,23 @@
           "common/customizable_localization/00_adventurer_names.txt",
           "common/customizable_localization/00_food_custom_loc.txt",
           "common/customizable_localization/00_regional_custom_localization.txt",
-          "common/customizable_localization/01_ep1_custom_loc.txt"
+          "common/customizable_localization/01_ep1_custom_loc.txt",
+          "common/customizable_localization/09_mpo_custom_loc.txt"
+        ],
+        "decisions": [
+          "common/decisions/dlc_decisions/ep_3/06_ep3_laamp_decisions.txt"
         ],
         "events": [
           "events/dlc/bp2/bp2_yearly_1_events.txt",
           "events/dlc/ep1/ep1_fund_inspiration_events.txt",
+          "events/dlc/ep3/ep3_laamp_decision_events.txt",
           "events/dlc/tgp/tgp_japan_yearly_events.txt"
         ],
         "scripted_effects": [
           "common/scripted_effects/00_ep1_inspiration_effects.txt"
         ]
       },
-      "usedByCount": 9
+      "usedByCount": 12
     },
     {
       "bbox": [
@@ -4110,6 +4160,7 @@
       "slug": "world_asia_north_east",
       "usedBy": {
         "activities": [
+          "common/activities/activity_types/ecumenical_council.txt",
           "common/activities/activity_types/tournament.txt"
         ],
         "culture": [
@@ -4149,7 +4200,7 @@
           "common/scripted_triggers/music_triggers.txt"
         ]
       },
-      "usedByCount": 19
+      "usedByCount": 20
     },
     {
       "bbox": [
@@ -4172,7 +4223,7 @@
       "name": "Sakhalin-Hokkaidō",
       "parents": [
         "dlc_mpo_steppe_e_amur_expansion",
-        "dlc_mpo_steppe_east_andong_addon",
+        "dlc_mpo_steppe_north_east_asia_expansion",
         "graphical_east_asia",
         "hunt_animal_big_cat_region",
         "hunt_animal_elk_region",
@@ -4482,7 +4533,7 @@
     },
     {
       "bbox": [
-        1951,
+        1924,
         791,
         2832,
         1399
@@ -4506,15 +4557,15 @@
       ],
       "resolved": {
         "byClass": {
-          "land": 651
+          "land": 744
         },
-        "counties": 194,
-        "drawn": 651,
-        "duchies": 55,
+        "counties": 222,
+        "drawn": 744,
+        "duchies": 61,
         "kingdoms": 15,
-        "land": 651,
+        "land": 744,
         "other": 0,
-        "provinces": 651,
+        "provinces": 744,
         "sea": 0
       },
       "slug": "world_asia_southeast",
@@ -4539,10 +4590,14 @@
           "common/customizable_localization/06_ce1_legends_custom_loc.txt",
           "common/customizable_localization/09_mpo_custom_loc.txt"
         ],
+        "decisions": [
+          "common/decisions/dlc_decisions/ep_3/06_ep3_laamp_decisions.txt"
+        ],
         "event_backgrounds": [
           "common/event_backgrounds/01_event_backgrounds.txt"
         ],
         "events": [
+          "events/activities/pilgrimage_activity/pilgrimage_events_seasia.txt",
           "events/dlc/bp1/bp1_yearly.txt",
           "events/dlc/bp3/bp3_mapmaking.txt",
           "events/dlc/ep1/ep1_fund_inspiration_events.txt",
@@ -4559,7 +4614,6 @@
         "scripted_effects": [
           "common/scripted_effects/00_ep1_artifact_creation_effects.txt",
           "common/scripted_effects/00_ep1_inspiration_effects.txt",
-          "common/scripted_effects/00_ep1_inspiration_effects_sean.txt",
           "common/scripted_effects/00_murder_effects.txt",
           "common/scripted_effects/00_personal_details_effects.txt",
           "common/scripted_effects/00_regional_scripted_effects.txt",
@@ -4571,9 +4625,10 @@
         ],
         "scripted_triggers": [
           "common/scripted_triggers/00_board_game_scripted_triggers.txt",
-          "common/scripted_triggers/00_cultural_triggers.txt",
           "common/scripted_triggers/00_food_scripted_triggers.txt",
+          "common/scripted_triggers/00_hunt_triggers.txt",
           "common/scripted_triggers/00_illustration_triggers.txt",
+          "common/scripted_triggers/00_religious_triggers.txt",
           "common/scripted_triggers/00_single_combat_scripted_triggers.txt",
           "common/scripted_triggers/00_weather_triggers.txt",
           "common/scripted_triggers/10_tgp_triggers.txt"
@@ -4582,12 +4637,12 @@
           "common/traits/00_traits.txt"
         ]
       },
-      "usedByCount": 40
+      "usedByCount": 42
     },
     {
       "bbox": [
-        2003,
-        872,
+        1924,
+        837,
         2263,
         1234
       ],
@@ -4596,7 +4651,8 @@
           "world_asia_thailand",
           "world_asia_cambodia",
           "world_asia_vietnam",
-          "world_asia_malaysia"
+          "world_asia_malaysia",
+          "world_burma"
         ]
       },
       "family": "World",
@@ -4615,19 +4671,22 @@
       ],
       "resolved": {
         "byClass": {
-          "land": 262
+          "land": 355
         },
-        "counties": 77,
-        "drawn": 262,
-        "duchies": 23,
+        "counties": 105,
+        "drawn": 355,
+        "duchies": 29,
         "kingdoms": 7,
-        "land": 262,
+        "land": 355,
         "other": 0,
-        "provinces": 262,
+        "provinces": 355,
         "sea": 0
       },
       "slug": "world_asia_southeast_mainland",
       "usedBy": {
+        "activities": [
+          "common/activities/activity_types/hunt.txt"
+        ],
         "customizable_localization": [
           "common/customizable_localization/00_adventurer_names.txt",
           "common/customizable_localization/00_appropriate_generic_words.txt",
@@ -4639,7 +4698,9 @@
           "common/decisions/dlc_decisions/ep_3/06_ep3_laamp_decisions.txt"
         ],
         "events": [
+          "events/activities/coronation_activity/coronation_events_6.txt",
           "events/activities/pilgrimage_activity/pilgrimage_events_seasia.txt",
+          "events/dlc/ep1/ep1_fund_inspiration_events.txt",
           "events/dlc/ep3/ep3_laamp_decision_events.txt"
         ],
         "on_action": [
@@ -4649,15 +4710,18 @@
           "common/scripted_character_templates/00_pool_repopulation_character_templates.txt"
         ],
         "scripted_effects": [
-          "common/scripted_effects/00_ep1_inspiration_effects.txt"
+          "common/scripted_effects/00_ep1_inspiration_effects.txt",
+          "common/scripted_effects/00_ep1_inspiration_effects_sean.txt",
+          "common/scripted_effects/06_dlc_ce1_legend_effects.txt"
         ],
         "scripted_triggers": [
           "common/scripted_triggers/00_building_requirement_triggers.txt",
+          "common/scripted_triggers/00_cultural_triggers.txt",
           "common/scripted_triggers/00_food_scripted_triggers.txt",
           "common/scripted_triggers/00_hunt_triggers.txt"
         ]
       },
-      "usedByCount": 14
+      "usedByCount": 20
     },
     {
       "bbox": [
@@ -4700,8 +4764,12 @@
         "sea": 0
       },
       "slug": "world_asia_vietnam",
-      "usedBy": {},
-      "usedByCount": 0
+      "usedBy": {
+        "scripted_triggers": [
+          "common/scripted_triggers/00_board_game_scripted_triggers.txt"
+        ]
+      },
+      "usedByCount": 1
     },
     {
       "bbox": [
@@ -4905,6 +4973,7 @@
         ],
         "events": [
           "events/activities/pilgrimage_activity/pilgrimage_events_seasia.txt",
+          "events/dlc/ep1/ep1_fund_inspiration_events.txt",
           "events/dlc/ep3/ep3_laamp_decision_events.txt"
         ],
         "on_action": [
@@ -4918,14 +4987,14 @@
         ],
         "scripted_effects": [
           "common/scripted_effects/00_ep1_inspiration_effects.txt",
-          "common/scripted_effects/00_faction_effects.txt"
+          "common/scripted_effects/00_ep1_inspiration_effects_sean.txt",
+          "common/scripted_effects/00_government_effects.txt"
         ],
         "scripted_triggers": [
-          "common/scripted_triggers/00_food_scripted_triggers.txt",
-          "common/scripted_triggers/00_hunt_triggers.txt"
+          "common/scripted_triggers/00_food_scripted_triggers.txt"
         ]
       },
-      "usedByCount": 14
+      "usedByCount": 15
     },
     {
       "bbox": [
@@ -5242,6 +5311,7 @@
           "events/dlc/ep3/ep3_laamp_flavour_ewan_events.txt",
           "events/lifestyles/warfare_lifestyle/martial_authority_events.txt",
           "events/lifestyles/warfare_lifestyle/warhorse_events.txt",
+          "events/travel_events/travel_events_james.txt",
           "events/yearly_events/court_yearly_events.txt"
         ],
         "on_action": [
@@ -5277,7 +5347,7 @@
           "common/traits/00_traits.txt"
         ]
       },
-      "usedByCount": 40
+      "usedByCount": 41
     },
     {
       "bbox": [
@@ -5300,15 +5370,15 @@
       "parents": [],
       "resolved": {
         "byClass": {
-          "land": 3408
+          "land": 3501
         },
-        "counties": 1034,
-        "drawn": 3408,
-        "duchies": 268,
+        "counties": 1062,
+        "drawn": 3501,
+        "duchies": 274,
         "kingdoms": 73,
-        "land": 3408,
+        "land": 3501,
         "other": 0,
-        "provinces": 3408,
+        "provinces": 3501,
         "sea": 0
       },
       "slug": "world_asia_and_india",
@@ -5591,11 +5661,10 @@
       "slug": "custom_arakan_mountains",
       "usedBy": {
         "events": [
-          "events/decisions_events/south_asia_events.txt",
-          "events/dlc/ce1/legend_events.txt"
+          "events/decisions_events/south_asia_events.txt"
         ]
       },
-      "usedByCount": 2
+      "usedByCount": 1
     },
     {
       "bbox": [
@@ -5794,6 +5863,7 @@
         "activities": [
           "common/activities/activity_types/chariot_race.txt",
           "common/activities/activity_types/coronation.txt",
+          "common/activities/activity_types/ecumenical_council.txt",
           "common/activities/activity_types/feast.txt",
           "common/activities/activity_types/festival.txt",
           "common/activities/activity_types/funeral.txt",
@@ -5856,6 +5926,7 @@
           "events/dlc/ep3/ep3_emperor_yearly_8.txt",
           "events/dlc/ep3/ep3_laamp_decision_events.txt",
           "events/dlc/ep3/ep3_laamp_events_8.txt",
+          "events/dlc/pam/pam_secular_faith_events.txt",
           "events/lifestyles/governance_lifestyle/stewardship_domain_events.txt",
           "events/lifestyles/scholarship_lifestyle/learning_medicine_events.txt",
           "events/lifestyles/warfare_lifestyle/martial_strategy_events.txt",
@@ -5892,13 +5963,15 @@
           "common/scripted_triggers/00_illustration_triggers.txt",
           "common/scripted_triggers/00_religious_triggers.txt",
           "common/scripted_triggers/00_stress_triggers.txt",
-          "common/scripted_triggers/00_weather_triggers.txt"
+          "common/scripted_triggers/00_weather_triggers.txt",
+          "common/scripted_triggers/06_ce1_legend_triggers.txt",
+          "common/scripted_triggers/pam_scripted_triggers.txt"
         ],
         "traits": [
           "common/traits/00_traits.txt"
         ]
       },
-      "usedByCount": 83
+      "usedByCount": 87
     },
     {
       "bbox": [
@@ -5998,7 +6071,6 @@
           "events/dlc/ep3/ep3_laamp_events_8.txt",
           "events/dlc/ep3/ep3_laamp_flavour_ewan_events.txt",
           "events/mpo_misc.txt",
-          "events/religion_events/heresy_events.txt",
           "events/scheme_events/governor_contract_events.txt",
           "events/travel_events/travel_events_filippa.txt",
           "events/travel_events/travel_events_fp3.txt",
@@ -6006,6 +6078,9 @@
         ],
         "on_action": [
           "common/on_action/game_start.txt"
+        ],
+        "religion": [
+          "common/religion/rite_icons/00_rite_icons.txt"
         ],
         "script_values": [
           "common/script_values/00_culture_values.txt",
@@ -6033,10 +6108,13 @@
           "common/scripted_triggers/00_food_scripted_triggers.txt",
           "common/scripted_triggers/00_hunt_triggers.txt",
           "common/scripted_triggers/00_religious_triggers.txt",
-          "common/scripted_triggers/00_weather_triggers.txt"
+          "common/scripted_triggers/00_weather_triggers.txt",
+          "common/scripted_triggers/06_ce1_legend_triggers.txt",
+          "common/scripted_triggers/pam_heresy_triggers.txt",
+          "common/scripted_triggers/pam_scripted_triggers.txt"
         ]
       },
-      "usedByCount": 62
+      "usedByCount": 65
     },
     {
       "bbox": [
@@ -6153,13 +6231,15 @@
           "events/dlc/fp3/fp3_scholarship_events.txt",
           "events/lifestyles/warfare_lifestyle/martial_strategy_events.txt",
           "events/relations_events/adultery_events.txt",
-          "events/religion_events/heresy_events.txt",
           "events/scheme_events/governor_contract_events.txt",
           "events/travel_events/travel_events_james.txt",
           "events/yearly_events/court_yearly_events.txt"
         ],
         "on_action": [
           "common/on_action/game_start.txt"
+        ],
+        "religion": [
+          "common/religion/rite_icons/00_rite_icons.txt"
         ],
         "script_values": [
           "common/script_values/00_war_values.txt",
@@ -6192,13 +6272,15 @@
           "common/scripted_triggers/00_illustration_triggers.txt",
           "common/scripted_triggers/00_religious_triggers.txt",
           "common/scripted_triggers/00_single_combat_scripted_triggers.txt",
-          "common/scripted_triggers/20_health_triggers.txt"
+          "common/scripted_triggers/06_ce1_legend_triggers.txt",
+          "common/scripted_triggers/20_health_triggers.txt",
+          "common/scripted_triggers/pam_secular_faith_triggers.txt"
         ],
         "traits": [
           "common/traits/00_traits.txt"
         ]
       },
-      "usedByCount": 76
+      "usedByCount": 78
     },
     {
       "bbox": [
@@ -7209,7 +7291,7 @@
     },
     {
       "bbox": [
-        1951,
+        1924,
         791,
         2832,
         1399
@@ -7227,15 +7309,15 @@
       "parents": [],
       "resolved": {
         "byClass": {
-          "land": 651
+          "land": 744
         },
-        "counties": 194,
-        "drawn": 651,
-        "duchies": 55,
+        "counties": 222,
+        "drawn": 744,
+        "duchies": 61,
         "kingdoms": 15,
-        "land": 651,
+        "land": 744,
         "other": 0,
-        "provinces": 651,
+        "provinces": 744,
         "sea": 0
       },
       "slug": "material_woods_asia_southeast",
@@ -7311,15 +7393,15 @@
       "parents": [],
       "resolved": {
         "byClass": {
-          "land": 3098
+          "land": 3191
         },
-        "counties": 943,
-        "drawn": 3098,
-        "duchies": 250,
+        "counties": 971,
+        "drawn": 3191,
+        "duchies": 256,
         "kingdoms": 68,
-        "land": 3098,
+        "land": 3191,
         "other": 0,
-        "provinces": 3098,
+        "provinces": 3191,
         "sea": 0
       },
       "slug": "material_cloth_no_silk",
@@ -7407,15 +7489,15 @@
       "parents": [],
       "resolved": {
         "byClass": {
-          "land": 2331
+          "land": 2424
         },
-        "counties": 717,
-        "drawn": 2331,
-        "duchies": 186,
+        "counties": 745,
+        "drawn": 2424,
+        "duchies": 192,
         "kingdoms": 49,
-        "land": 2331,
+        "land": 2424,
         "other": 0,
-        "provinces": 2331,
+        "provinces": 2424,
         "sea": 0
       },
       "slug": "material_cloth_cotton",
@@ -7444,7 +7526,6 @@
           "world_india_deccan",
           "world_india_bengal",
           "world_india_rajastan",
-          "world_burma",
           "world_asia_china",
           "world_asia_southeast_mainland"
         ]
@@ -7828,7 +7909,6 @@
           "world_india_rajastan",
           "world_africa_west",
           "world_africa_east",
-          "world_burma",
           "world_asia_southeast_mainland",
           "world_asia_indonesia"
         ]
@@ -7878,7 +7958,6 @@
           "world_africa_north",
           "world_europe_south_italy",
           "world_india_deccan",
-          "world_burma",
           "world_middle_east_arabia",
           "world_africa_east",
           "world_europe_west_iberia",
@@ -8400,15 +8479,12 @@
         "decisions": [
           "common/decisions/80_major_decisions_middle_europe.txt"
         ],
-        "events": [
-          "events/religion_events/heresy_events.txt"
-        ],
         "scripted_effects": [
           "common/scripted_effects/00_ep1_artifact_creation_effects.txt",
           "common/scripted_effects/00_ep1_inspiration_effects.txt"
         ]
       },
-      "usedByCount": 4
+      "usedByCount": 3
     },
     {
       "bbox": [
@@ -8447,12 +8523,8 @@
         "sea": 0
       },
       "slug": "custom_germany",
-      "usedBy": {
-        "events": [
-          "events/religion_events/heresy_events.txt"
-        ]
-      },
-      "usedByCount": 1
+      "usedBy": {},
+      "usedByCount": 0
     },
     {
       "bbox": [
@@ -8595,12 +8667,9 @@
         ],
         "customizable_localization": [
           "common/customizable_localization/00_regional_custom_localization.txt"
-        ],
-        "events": [
-          "events/religion_events/heresy_events.txt"
         ]
       },
-      "usedByCount": 3
+      "usedByCount": 2
     },
     {
       "bbox": [
@@ -8651,12 +8720,15 @@
         "events": [
           "events/decisions_events/roman_restoration_events.txt"
         ],
+        "on_action": [
+          "common/on_action/province_on_actions.txt"
+        ],
         "scripted_effects": [
           "common/scripted_effects/00_decisions_effects.txt",
           "common/scripted_effects/00_personal_details_effects.txt"
         ]
       },
-      "usedByCount": 4
+      "usedByCount": 5
     },
     {
       "bbox": [
@@ -9022,9 +9094,12 @@
       "usedBy": {
         "events": [
           "events/global_culture_events.txt"
+        ],
+        "religion": [
+          "common/religion/rite_icons/00_rite_icons.txt"
         ]
       },
-      "usedByCount": 1
+      "usedByCount": 2
     },
     {
       "bbox": [
@@ -11301,12 +11376,9 @@
       "usedBy": {
         "achievements": [
           "common/achievements/standard_achievements.txt"
-        ],
-        "events": [
-          "events/religion_events/heresy_events.txt"
         ]
       },
-      "usedByCount": 2
+      "usedByCount": 1
     },
     {
       "bbox": [
@@ -12508,6 +12580,7 @@
           "common/buildings/00_legendary_buildings.txt",
           "common/buildings/00_temple_buildings.txt",
           "common/buildings/99_background_graphics_buildings.txt",
+          "common/buildings/pam_buildings.txt",
           "common/buildings/temple_citadel_buildings.txt"
         ],
         "events": [
@@ -12515,7 +12588,7 @@
           "events/war_events/combat_events.txt"
         ]
       },
-      "usedByCount": 8
+      "usedByCount": 9
     },
     {
       "bbox": [
@@ -12555,6 +12628,7 @@
       "usedBy": {
         "activities": [
           "common/activities/activity_types/coronation.txt",
+          "common/activities/activity_types/ecumenical_council.txt",
           "common/activities/activity_types/monument_expedition.txt",
           "common/activities/activity_types/tour.txt"
         ],
@@ -12563,6 +12637,7 @@
           "common/buildings/00_city_buildings.txt",
           "common/buildings/00_temple_buildings.txt",
           "common/buildings/99_background_graphics_buildings.txt",
+          "common/buildings/pam_buildings.txt",
           "common/buildings/temple_citadel_buildings.txt"
         ],
         "event_backgrounds": [
@@ -12577,7 +12652,7 @@
           "common/scripted_triggers/00_illustration_triggers.txt"
         ]
       },
-      "usedByCount": 13
+      "usedByCount": 15
     },
     {
       "bbox": [
@@ -12591,8 +12666,8 @@
         "regions": [
           "world_india",
           "world_tibet",
-          "world_burma",
           "world_asia_southeast_islands",
+          "world_burma",
           "world_asia_thailand",
           "world_asia_cambodia",
           "world_asia_malaysia"
@@ -12622,6 +12697,7 @@
       "usedBy": {
         "activities": [
           "common/activities/activity_types/coronation.txt",
+          "common/activities/activity_types/ecumenical_council.txt",
           "common/activities/activity_types/monument_expedition.txt",
           "common/activities/activity_types/tour.txt"
         ],
@@ -12631,6 +12707,7 @@
           "common/buildings/00_legendary_buildings.txt",
           "common/buildings/00_temple_buildings.txt",
           "common/buildings/99_background_graphics_buildings.txt",
+          "common/buildings/pam_buildings.txt",
           "common/buildings/temple_citadel_buildings.txt"
         ],
         "event_backgrounds": [
@@ -12645,7 +12722,7 @@
           "common/scripted_triggers/00_illustration_triggers.txt"
         ]
       },
-      "usedByCount": 14
+      "usedByCount": 16
     },
     {
       "bbox": [
@@ -12692,6 +12769,7 @@
           "common/buildings/00_legendary_buildings.txt",
           "common/buildings/00_temple_buildings.txt",
           "common/buildings/99_background_graphics_buildings.txt",
+          "common/buildings/pam_buildings.txt",
           "common/buildings/temple_citadel_buildings.txt"
         ],
         "events": [
@@ -12701,7 +12779,7 @@
           "common/scripted_triggers/00_illustration_triggers.txt"
         ]
       },
-      "usedByCount": 8
+      "usedByCount": 9
     },
     {
       "bbox": [
@@ -12745,13 +12823,14 @@
           "common/buildings/00_city_buildings.txt",
           "common/buildings/00_temple_buildings.txt",
           "common/buildings/99_background_graphics_buildings.txt",
+          "common/buildings/pam_buildings.txt",
           "common/buildings/temple_citadel_buildings.txt"
         ],
         "events": [
           "events/war_events/combat_events.txt"
         ]
       },
-      "usedByCount": 6
+      "usedByCount": 7
     },
     {
       "bbox": [
@@ -12793,10 +12872,11 @@
           "common/buildings/00_city_buildings.txt",
           "common/buildings/00_temple_buildings.txt",
           "common/buildings/99_background_graphics_buildings.txt",
+          "common/buildings/pam_buildings.txt",
           "common/buildings/temple_citadel_buildings.txt"
         ]
       },
-      "usedByCount": 5
+      "usedByCount": 6
     },
     {
       "bbox": [
@@ -12846,6 +12926,7 @@
           "common/buildings/00_city_buildings.txt",
           "common/buildings/00_temple_buildings.txt",
           "common/buildings/99_background_graphics_buildings.txt",
+          "common/buildings/pam_buildings.txt",
           "common/buildings/temple_citadel_buildings.txt"
         ],
         "scripted_triggers": [
@@ -12853,7 +12934,7 @@
           "common/scripted_triggers/00_illustration_triggers.txt"
         ]
       },
-      "usedByCount": 7
+      "usedByCount": 8
     },
     {
       "bbox": [
@@ -13605,9 +13686,12 @@
       "usedBy": {
         "events": [
           "events/dlc/fp3/fp3_heritage_events.txt"
+        ],
+        "holy_orders": [
+          "common/holy_orders/00_christian_holy_orders.txt"
         ]
       },
-      "usedByCount": 1
+      "usedByCount": 2
     },
     {
       "bbox": [
@@ -16149,6 +16233,9 @@
         "customizable_localization": [
           "common/customizable_localization/00_regional_custom_localization.txt"
         ],
+        "holy_orders": [
+          "common/holy_orders/00_muslim_holy_orders.txt"
+        ],
         "script_values": [
           "common/script_values/02_religion_values.txt"
         ],
@@ -16159,7 +16246,7 @@
           "common/traits/00_traits.txt"
         ]
       },
-      "usedByCount": 4
+      "usedByCount": 5
     },
     {
       "bbox": [
@@ -16764,6 +16851,9 @@
         "events": [
           "events/mpo_misc.txt"
         ],
+        "holy_orders": [
+          "common/holy_orders/00_christian_holy_orders.txt"
+        ],
         "script_values": [
           "common/script_values/02_religion_values.txt"
         ],
@@ -16771,7 +16861,7 @@
           "common/scripted_effects/09_dlc_mpo_scripted_effects.txt"
         ]
       },
-      "usedByCount": 5
+      "usedByCount": 6
     },
     {
       "bbox": [
@@ -19767,8 +19857,8 @@
       },
       "slug": "islamic_heartlands",
       "usedBy": {
-        "council_tasks": [
-          "common/council_tasks/00_court_chaplain_tasks.txt"
+        "scripted_triggers": [
+          "common/scripted_triggers/00_councillor_triggers.txt"
         ]
       },
       "usedByCount": 1
@@ -21056,9 +21146,12 @@
       "usedBy": {
         "decisions": [
           "common/decisions/00_major_decisions_iberia_north_africa.txt"
+        ],
+        "script_values": [
+          "common/script_values/03_dlc_fp2_script_values.txt"
         ]
       },
-      "usedByCount": 1
+      "usedByCount": 2
     },
     {
       "bbox": [
@@ -23048,9 +23141,9 @@
     {
       "bbox": [
         2250,
-        158,
-        2906,
-        553
+        270,
+        2530,
+        543
       ],
       "declared": {
         "duchies": [
@@ -23065,27 +23158,7 @@
           "d_SW_qingxingan",
           "d_SW_puyudao",
           "d_SW_ruzheguo",
-          "d_SW_sushenguo",
-          "d_BAL_moe_su",
-          "d_BAL_buyeo",
-          "d_BAL_cheolli",
-          "d_BAL_hoewon",
-          "d_BAL_dongpyeong",
-          "d_BAL_anwon",
-          "d_LIAO_dongjing",
-          "d_BAL_amnok_jangryeong",
-          "d_BAL_parhae",
-          "d_BAL_southern_balhae",
-          "d_BAL_yeojintang",
-          "d_eman_boli",
-          "d_eman_sikhotebei",
-          "d_eman_samagero",
-          "d_eman_nivkhia",
-          "d_eman_amar",
-          "d_eman_bureya"
-        ],
-        "regions": [
-          "world_asia_sakhalin_hokkaido"
+          "d_SW_sushenguo"
         ]
       },
       "family": "DLC",
@@ -23096,15 +23169,15 @@
       "parents": [],
       "resolved": {
         "byClass": {
-          "land": 424
+          "land": 180
         },
-        "counties": 130,
-        "drawn": 424,
-        "duchies": 32,
-        "kingdoms": 7,
-        "land": 424,
+        "counties": 54,
+        "drawn": 180,
+        "duchies": 12,
+        "kingdoms": 3,
+        "land": 180,
         "other": 0,
-        "provinces": 424,
+        "provinces": 180,
         "sea": 0
       },
       "slug": "dlc_mpo_steppe_east_andong_addon",
@@ -23390,8 +23463,8 @@
       "family": "DLC",
       "file": "geographical_region.txt",
       "id": "dlc_mpo_steppe_e_amur_expansion",
-      "localized": true,
-      "name": "Amur",
+      "localized": false,
+      "name": "dlc mpo steppe e amur expansion",
       "parents": [],
       "resolved": {
         "byClass": {
@@ -23572,6 +23645,70 @@
         ]
       },
       "usedByCount": 2
+    },
+    {
+      "bbox": [
+        2388,
+        158,
+        2906,
+        553
+      ],
+      "declared": {
+        "duchies": [
+          "d_BAL_moe_su",
+          "d_BAL_buyeo",
+          "d_BAL_cheolli",
+          "d_BAL_hoewon",
+          "d_BAL_dongpyeong",
+          "d_BAL_anwon",
+          "d_LIAO_dongjing",
+          "d_BAL_amnok_jangryeong",
+          "d_BAL_parhae",
+          "d_BAL_southern_balhae",
+          "d_BAL_yeojintang",
+          "d_eman_boli",
+          "d_eman_sikhotebei",
+          "d_eman_samagero",
+          "d_eman_nivkhia",
+          "d_eman_amar",
+          "d_eman_bureya"
+        ],
+        "regions": [
+          "world_asia_sakhalin_hokkaido"
+        ]
+      },
+      "family": "DLC",
+      "file": "geographical_region.txt",
+      "id": "dlc_mpo_steppe_north_east_asia_expansion",
+      "localized": true,
+      "name": "Northeastern Asia",
+      "parents": [],
+      "resolved": {
+        "byClass": {
+          "land": 244
+        },
+        "counties": 76,
+        "drawn": 244,
+        "duchies": 20,
+        "kingdoms": 4,
+        "land": 244,
+        "other": 0,
+        "provinces": 244,
+        "sea": 0
+      },
+      "slug": "dlc_mpo_steppe_north_east_asia_expansion",
+      "usedBy": {
+        "decisions": [
+          "common/decisions/dlc_decisions/mpo/mpo_decisions.txt"
+        ],
+        "on_action": [
+          "common/on_action/game_start.txt"
+        ],
+        "scripted_effects": [
+          "common/scripted_effects/09_dlc_mpo_scripted_effects.txt"
+        ]
+      },
+      "usedByCount": 3
     },
     {
       "bbox": [
@@ -24049,7 +24186,6 @@
         "provinces": 212,
         "sea": 0
       },
-      "should_remember_counties_order": true,
       "slug": "dlc_tgp_silk_road_route_china",
       "usedBy": {},
       "usedByCount": 0
@@ -24179,7 +24315,6 @@
         "provinces": 96,
         "sea": 0
       },
-      "should_remember_counties_order": true,
       "slug": "dlc_tgp_silk_road_route_tibet",
       "usedBy": {},
       "usedByCount": 0
@@ -24340,7 +24475,6 @@
         "provinces": 146,
         "sea": 0
       },
-      "should_remember_counties_order": true,
       "slug": "dlc_tgp_silk_road_route_india",
       "usedBy": {},
       "usedByCount": 0
@@ -24460,7 +24594,6 @@
         "provinces": 137,
         "sea": 0
       },
-      "should_remember_counties_order": true,
       "slug": "dlc_tgp_silk_road_route_central_asia",
       "usedBy": {},
       "usedByCount": 0
@@ -24591,7 +24724,6 @@
         "provinces": 108,
         "sea": 0
       },
-      "should_remember_counties_order": true,
       "slug": "dlc_tgp_silk_road_route_transcaspia",
       "usedBy": {},
       "usedByCount": 0
@@ -24744,7 +24876,6 @@
         "provinces": 211,
         "sea": 0
       },
-      "should_remember_counties_order": true,
       "slug": "dlc_tgp_silk_road_route_occident",
       "usedBy": {},
       "usedByCount": 0
@@ -26688,7 +26819,6 @@
           "world_siberia",
           "world_steppe_west",
           "world_india",
-          "world_burma",
           "world_asia"
         ]
       },
@@ -26737,8 +26867,7 @@
           "world_tibet",
           "world_india",
           "world_asia_china",
-          "world_asia_southeast_mainland",
-          "world_burma"
+          "world_asia_southeast_mainland"
         ]
       },
       "family": "Hunt",
@@ -26866,7 +26995,6 @@
           "world_middle_east_jerusalem",
           "world_middle_east_persia",
           "world_india",
-          "world_burma",
           "world_asia"
         ]
       },
@@ -26952,15 +27080,15 @@
       "parents": [],
       "resolved": {
         "byClass": {
-          "land": 8946
+          "land": 9039
         },
-        "counties": 2770,
-        "drawn": 8946,
-        "duchies": 714,
+        "counties": 2798,
+        "drawn": 9039,
+        "duchies": 720,
         "kingdoms": 172,
-        "land": 8946,
+        "land": 9039,
         "other": 0,
-        "provinces": 8946,
+        "provinces": 9039,
         "sea": 0
       },
       "slug": "hunt_animal_bear_region",
@@ -26990,7 +27118,6 @@
           "world_africa",
           "world_middle_east",
           "world_india",
-          "world_burma",
           "world_steppe_east",
           "world_tibet",
           "world_asia_korea",
@@ -27759,7 +27886,6 @@
           "world_india",
           "world_steppe",
           "world_tibet",
-          "world_burma",
           "world_europe_south_east",
           "world_europe_east",
           "world_asia",
@@ -28005,8 +28131,7 @@
       ],
       "declared": {
         "regions": [
-          "world_asia_southeast_mainland",
-          "world_burma"
+          "world_asia_southeast_mainland"
         ]
       },
       "family": "Seasonal",
@@ -28210,18 +28335,12 @@
       },
       "slug": "mpo_region_permafrost",
       "usedBy": {
-        "character_interactions": [
-          "common/character_interactions/00_tribal_interactions.txt"
-        ],
         "on_action": [
           "common/on_action/game_start.txt",
           "common/on_action/title_on_actions.txt"
-        ],
-        "scripted_effects": [
-          "common/scripted_effects/tgp_mandala_scripted_effects.txt"
         ]
       },
-      "usedByCount": 4
+      "usedByCount": 2
     },
     {
       "bbox": [
@@ -28318,23 +28437,19 @@
       "bbox": [
         529,
         8,
-        881,
-        250
+        846,
+        217
       ],
       "declared": {
         "duchies": [
           "d_norrland",
-          "d_karelia",
-          "d_pohjanmaa",
-          "d_savo",
           "d_aarjetje",
           "d_duortnoseatnu",
           "d_giemajohka",
           "d_guoldat",
           "d_vuovdisamieana",
           "d_halogaland",
-          "d_jamtland",
-          "d_biarmia"
+          "d_jamtland"
         ]
       },
       "family": "Nomad",
@@ -28345,15 +28460,15 @@
       "parents": [],
       "resolved": {
         "byClass": {
-          "land": 169
+          "land": 110
         },
-        "counties": 52,
-        "drawn": 169,
-        "duchies": 12,
-        "kingdoms": 5,
-        "land": 169,
+        "counties": 34,
+        "drawn": 110,
+        "duchies": 8,
+        "kingdoms": 3,
+        "land": 110,
         "other": 0,
-        "provinces": 169,
+        "provinces": 110,
         "sea": 0
       },
       "slug": "sami_nomad_area",
@@ -28785,7 +28900,6 @@
           "d_damot",
           "d_kaffa",
           "d_sharka",
-          "d_kordofan",
           "d_nobatia",
           "d_makuria",
           "d_shamir",
@@ -28804,15 +28918,15 @@
       "parents": [],
       "resolved": {
         "byClass": {
-          "land": 226
+          "land": 217
         },
-        "counties": 70,
-        "drawn": 226,
-        "duchies": 18,
-        "kingdoms": 5,
-        "land": 226,
+        "counties": 67,
+        "drawn": 217,
+        "duchies": 17,
+        "kingdoms": 4,
+        "land": 217,
         "other": 0,
-        "provinces": 226,
+        "provinces": 217,
         "sea": 0
       },
       "slug": "nubia_nomad_area",
@@ -29093,6 +29207,5750 @@
         "sea": 0
       },
       "slug": "paddy_fields_region",
+      "usedBy": {},
+      "usedByCount": 0
+    },
+    {
+      "bbox": [
+        176,
+        641,
+        311,
+        808
+      ],
+      "declared": {
+        "counties": [
+          "c_toledo",
+          "c_madrid",
+          "c_malagon",
+          "c_mora",
+          "c_asturias_de_oviedo",
+          "c_pravia",
+          "c_amaya",
+          "c_leon",
+          "c_benavente",
+          "c_zamora",
+          "c_avila",
+          "c_burgos",
+          "c_valladolid",
+          "c_olmedo",
+          "c_cuellar",
+          "c_soria",
+          "c_najera",
+          "c_cuenca",
+          "c_calatrava",
+          "c_alarcon",
+          "c_alcaraz",
+          "c_murcia",
+          "c_almeria",
+          "c_granada",
+          "c_cordoba",
+          "c_cabra",
+          "c_andujar",
+          "c_almader",
+          "c_medellin"
+        ]
+      },
+      "family": "Clerical",
+      "file": "geographical_region.txt",
+      "id": "et_867_toledo_region",
+      "localized": false,
+      "name": "et 867 toledo region",
+      "parents": [],
+      "resolved": {
+        "byClass": {
+          "land": 99
+        },
+        "counties": 29,
+        "drawn": 99,
+        "duchies": 10,
+        "kingdoms": 6,
+        "land": 99,
+        "other": 0,
+        "provinces": 99,
+        "sea": 0
+      },
+      "slug": "et_867_toledo_region",
+      "usedBy": {},
+      "usedByCount": 0
+    },
+    {
+      "bbox": [
+        176,
+        641,
+        311,
+        808
+      ],
+      "declared": {
+        "counties": [
+          "c_toledo",
+          "c_madrid",
+          "c_malagon",
+          "c_mora",
+          "c_asturias_de_oviedo",
+          "c_pravia",
+          "c_amaya",
+          "c_leon",
+          "c_benavente",
+          "c_zamora",
+          "c_burgos",
+          "c_valladolid",
+          "c_olmedo",
+          "c_cuellar",
+          "c_soria",
+          "c_najera",
+          "c_cuenca",
+          "c_calatrava",
+          "c_alarcon",
+          "c_alcaraz",
+          "c_murcia",
+          "c_almeria",
+          "c_granada",
+          "c_cordoba",
+          "c_cabra",
+          "c_andujar",
+          "c_almader",
+          "c_medellin"
+        ]
+      },
+      "family": "Clerical",
+      "file": "geographical_region.txt",
+      "id": "et_1178_toledo_region",
+      "localized": false,
+      "name": "et 1178 toledo region",
+      "parents": [],
+      "resolved": {
+        "byClass": {
+          "land": 95
+        },
+        "counties": 28,
+        "drawn": 95,
+        "duchies": 10,
+        "kingdoms": 6,
+        "land": 95,
+        "other": 0,
+        "provinces": 95,
+        "sea": 0
+      },
+      "slug": "et_1178_toledo_region",
+      "usedBy": {},
+      "usedByCount": 0
+    },
+    {
+      "bbox": [
+        143,
+        637,
+        223,
+        779
+      ],
+      "declared": {
+        "counties": [
+          "c_santiago",
+          "c_tui",
+          "c_coruna",
+          "c_astorga",
+          "c_monterrei",
+          "c_braganza",
+          "c_salamanca",
+          "c_avila",
+          "c_plasencia",
+          "c_merida",
+          "c_caceres",
+          "c_castelo_branco",
+          "c_lisboa",
+          "c_alcacer_do_sal",
+          "c_elvas",
+          "c_badajoz",
+          "c_beja"
+        ]
+      },
+      "family": "Clerical",
+      "file": "geographical_region.txt",
+      "id": "et_1178_santiago_region",
+      "localized": false,
+      "name": "et 1178 santiago region",
+      "parents": [],
+      "resolved": {
+        "byClass": {
+          "land": 56
+        },
+        "counties": 17,
+        "drawn": 56,
+        "duchies": 6,
+        "kingdoms": 4,
+        "land": 56,
+        "other": 0,
+        "provinces": 56,
+        "sea": 0
+      },
+      "slug": "et_1178_santiago_region",
+      "usedBy": {},
+      "usedByCount": 0
+    },
+    {
+      "bbox": [
+        219,
+        645,
+        402,
+        777
+      ],
+      "declared": {
+        "counties": [
+          "c_tarragona",
+          "c_asturias_de_santillana",
+          "c_viscaya",
+          "c_tudela",
+          "c_teruel",
+          "c_castellon",
+          "c_molina",
+          "c_calatayud",
+          "c_navarra",
+          "c_alto_aragon",
+          "c_sobrarbe",
+          "c_pallas",
+          "c_urgell",
+          "c_puigcerda",
+          "c_girona",
+          "c_barcelona",
+          "c_albarracin",
+          "c_alcaniz",
+          "c_lleida",
+          "c_zaragoza",
+          "c_huesca",
+          "c_fraga",
+          "c_ipuskoa",
+          "c_valencia",
+          "c_denia",
+          "c_alicante",
+          "c_mallorca",
+          "c_iviza",
+          "c_menorca"
+        ]
+      },
+      "family": "Clerical",
+      "file": "geographical_region.txt",
+      "id": "et_867_tarragona_region",
+      "localized": false,
+      "name": "et 867 tarragona region",
+      "parents": [],
+      "resolved": {
+        "byClass": {
+          "land": 80
+        },
+        "counties": 29,
+        "drawn": 80,
+        "duchies": 8,
+        "kingdoms": 5,
+        "land": 80,
+        "other": 0,
+        "provinces": 80,
+        "sea": 0
+      },
+      "slug": "et_867_tarragona_region",
+      "usedBy": {},
+      "usedByCount": 0
+    },
+    {
+      "bbox": [
+        152,
+        770,
+        267,
+        820
+      ],
+      "declared": {
+        "counties": [
+          "c_sevilla",
+          "c_algeciras",
+          "c_malaga",
+          "c_cadiz",
+          "c_niebla",
+          "c_moura",
+          "c_silves",
+          "c_faro"
+        ]
+      },
+      "family": "Clerical",
+      "file": "geographical_region.txt",
+      "id": "et_867_sevilla_region",
+      "localized": false,
+      "name": "et 867 sevilla region",
+      "parents": [],
+      "resolved": {
+        "byClass": {
+          "land": 24
+        },
+        "counties": 8,
+        "drawn": 24,
+        "duchies": 3,
+        "kingdoms": 2,
+        "land": 24,
+        "other": 0,
+        "provinces": 24,
+        "sea": 0
+      },
+      "slug": "et_867_sevilla_region",
+      "usedBy": {},
+      "usedByCount": 0
+    },
+    {
+      "bbox": [
+        144,
+        637,
+        209,
+        739
+      ],
+      "declared": {
+        "counties": [
+          "c_braganza",
+          "c_porto",
+          "c_monterrei",
+          "c_astorga",
+          "c_santiago",
+          "c_coruna",
+          "c_aveiro",
+          "c_salamanca",
+          "c_tui",
+          "c_coimbra",
+          "c_viseu"
+        ]
+      },
+      "family": "Clerical",
+      "file": "geographical_region.txt",
+      "id": "et_867_braga_region",
+      "localized": false,
+      "name": "et 867 braga region",
+      "parents": [],
+      "resolved": {
+        "byClass": {
+          "land": 37
+        },
+        "counties": 11,
+        "drawn": 37,
+        "duchies": 4,
+        "kingdoms": 3,
+        "land": 37,
+        "other": 0,
+        "provinces": 37,
+        "sea": 0
+      },
+      "slug": "et_867_braga_region",
+      "usedBy": {},
+      "usedByCount": 0
+    },
+    {
+      "bbox": [
+        148,
+        672,
+        188,
+        739
+      ],
+      "declared": {
+        "counties": [
+          "c_porto",
+          "c_aveiro",
+          "c_coimbra",
+          "c_viseu"
+        ]
+      },
+      "family": "Clerical",
+      "file": "geographical_region.txt",
+      "id": "et_1178_braga_region",
+      "localized": false,
+      "name": "et 1178 braga region",
+      "parents": [],
+      "resolved": {
+        "byClass": {
+          "land": 12
+        },
+        "counties": 4,
+        "drawn": 12,
+        "duchies": 2,
+        "kingdoms": 1,
+        "land": 12,
+        "other": 0,
+        "provinces": 12,
+        "sea": 0
+      },
+      "slug": "et_1178_braga_region",
+      "usedBy": {},
+      "usedByCount": 0
+    },
+    {
+      "bbox": [
+        143,
+        722,
+        222,
+        779
+      ],
+      "declared": {
+        "counties": [
+          "c_merida",
+          "c_plasencia",
+          "c_caceres",
+          "c_castelo_branco",
+          "c_lisboa",
+          "c_alcacer_do_sal",
+          "c_elvas",
+          "c_badajoz",
+          "c_beja"
+        ]
+      },
+      "family": "Clerical",
+      "file": "geographical_region.txt",
+      "id": "et_867_merida_region",
+      "localized": false,
+      "name": "et 867 merida region",
+      "parents": [],
+      "resolved": {
+        "byClass": {
+          "land": 27
+        },
+        "counties": 9,
+        "drawn": 27,
+        "duchies": 3,
+        "kingdoms": 2,
+        "land": 27,
+        "other": 0,
+        "provinces": 27,
+        "sea": 0
+      },
+      "slug": "et_867_merida_region",
+      "usedBy": {},
+      "usedByCount": 0
+    },
+    {
+      "bbox": [
+        191,
+        822,
+        273,
+        881
+      ],
+      "declared": {
+        "counties": [
+          "c_tangiers",
+          "c_melilla",
+          "c_ceuta",
+          "c_taza",
+          "c_fes",
+          "c_gharb",
+          "c_meknes"
+        ]
+      },
+      "family": "Clerical",
+      "file": "geographical_region.txt",
+      "id": "et_867_tingitana_region",
+      "localized": false,
+      "name": "et 867 tingitana region",
+      "parents": [],
+      "resolved": {
+        "byClass": {
+          "land": 26
+        },
+        "counties": 7,
+        "drawn": 26,
+        "duchies": 2,
+        "kingdoms": 1,
+        "land": 26,
+        "other": 0,
+        "provinces": 26,
+        "sea": 0
+      },
+      "slug": "et_867_tingitana_region",
+      "usedBy": {},
+      "usedByCount": 0
+    },
+    {
+      "bbox": [
+        197,
+        246,
+        326,
+        396
+      ],
+      "declared": {
+        "counties": [
+          "c_north_riding",
+          "c_west_riding",
+          "c_east_riding",
+          "c_nottinghamshire",
+          "c_westmorland",
+          "c_cumberland",
+          "c_dunbar",
+          "c_durham",
+          "c_northumberland",
+          "c_annandale",
+          "c_teviotdale",
+          "c_galloway",
+          "c_carrick",
+          "c_ayrshire",
+          "c_lanarkshire",
+          "c_lothian",
+          "c_linlithgowshire",
+          "c_lennox",
+          "c_fife",
+          "c_gowrie",
+          "c_angus",
+          "c_mearns",
+          "c_buchan",
+          "c_moray",
+          "c_strathearn",
+          "c_inner_hebrides",
+          "c_argyll",
+          "c_inverness",
+          "c_ross",
+          "c_sutherland",
+          "c_caithness",
+          "c_outer_hebrides",
+          "c_isle_of_man",
+          "c_atholl"
+        ]
+      },
+      "family": "Clerical",
+      "file": "geographical_region.txt",
+      "id": "et_867_york_region",
+      "localized": false,
+      "name": "et 867 york region",
+      "parents": [],
+      "resolved": {
+        "byClass": {
+          "land": 107
+        },
+        "counties": 34,
+        "drawn": 107,
+        "duchies": 10,
+        "kingdoms": 2,
+        "land": 107,
+        "other": 0,
+        "provinces": 107,
+        "sea": 0
+      },
+      "slug": "et_867_york_region",
+      "usedBy": {},
+      "usedByCount": 0
+    },
+    {
+      "bbox": [
+        220,
+        246,
+        326,
+        396
+      ],
+      "declared": {
+        "counties": [
+          "c_north_riding",
+          "c_west_riding",
+          "c_east_riding",
+          "c_nottinghamshire",
+          "c_westmorland",
+          "c_cumberland",
+          "c_dunbar",
+          "c_durham",
+          "c_northumberland",
+          "c_annandale",
+          "c_teviotdale",
+          "c_galloway",
+          "c_carrick",
+          "c_ayrshire",
+          "c_lanarkshire",
+          "c_lothian",
+          "c_linlithgowshire",
+          "c_lennox",
+          "c_fife",
+          "c_gowrie",
+          "c_angus",
+          "c_mearns",
+          "c_buchan",
+          "c_moray",
+          "c_strathearn",
+          "c_argyll",
+          "c_inverness",
+          "c_ross",
+          "c_sutherland",
+          "c_caithness",
+          "c_atholl"
+        ]
+      },
+      "family": "Clerical",
+      "file": "geographical_region.txt",
+      "id": "et_1178_york_region",
+      "localized": false,
+      "name": "et 1178 york region",
+      "parents": [],
+      "resolved": {
+        "byClass": {
+          "land": 99
+        },
+        "counties": 31,
+        "drawn": 99,
+        "duchies": 9,
+        "kingdoms": 2,
+        "land": 99,
+        "other": 0,
+        "provinces": 99,
+        "sea": 0
+      },
+      "slug": "et_1178_york_region",
+      "usedBy": {},
+      "usedByCount": 0
+    },
+    {
+      "bbox": [
+        144,
+        349,
+        182,
+        395
+      ],
+      "declared": {
+        "counties": [
+          "c_connacht",
+          "c_ennis",
+          "c_mayo"
+        ]
+      },
+      "family": "Clerical",
+      "file": "geographical_region.txt",
+      "id": "et_1178_tuam_region",
+      "localized": false,
+      "name": "et 1178 tuam region",
+      "parents": [],
+      "resolved": {
+        "byClass": {
+          "land": 10
+        },
+        "counties": 3,
+        "drawn": 10,
+        "duchies": 2,
+        "kingdoms": 1,
+        "land": 10,
+        "other": 0,
+        "provinces": 10,
+        "sea": 0
+      },
+      "slug": "et_1178_tuam_region",
+      "usedBy": {},
+      "usedByCount": 0
+    },
+    {
+      "bbox": [
+        181,
+        369,
+        213,
+        410
+      ],
+      "declared": {
+        "counties": [
+          "c_dublin",
+          "c_ossory",
+          "c_leinster"
+        ]
+      },
+      "family": "Clerical",
+      "file": "geographical_region.txt",
+      "id": "et_1178_dublin_region",
+      "localized": false,
+      "name": "et 1178 dublin region",
+      "parents": [],
+      "resolved": {
+        "byClass": {
+          "land": 13
+        },
+        "counties": 3,
+        "drawn": 13,
+        "duchies": 2,
+        "kingdoms": 1,
+        "land": 13,
+        "other": 0,
+        "provinces": 13,
+        "sea": 0
+      },
+      "slug": "et_1178_dublin_region",
+      "usedBy": {},
+      "usedByCount": 0
+    },
+    {
+      "bbox": [
+        136,
+        385,
+        194,
+        422
+      ],
+      "declared": {
+        "counties": [
+          "c_thomond",
+          "c_desmond",
+          "c_ormond"
+        ]
+      },
+      "family": "Clerical",
+      "file": "geographical_region.txt",
+      "id": "et_1178_cashel_region",
+      "localized": false,
+      "name": "et 1178 cashel region",
+      "parents": [],
+      "resolved": {
+        "byClass": {
+          "land": 11
+        },
+        "counties": 3,
+        "drawn": 11,
+        "duchies": 1,
+        "kingdoms": 1,
+        "land": 11,
+        "other": 0,
+        "provinces": 11,
+        "sea": 0
+      },
+      "slug": "et_1178_cashel_region",
+      "usedBy": {},
+      "usedByCount": 0
+    },
+    {
+      "bbox": [
+        171,
+        327,
+        226,
+        388
+      ],
+      "declared": {
+        "counties": [
+          "c_oriel",
+          "c_athlone",
+          "c_breifne",
+          "c_ailech",
+          "c_ulster"
+        ]
+      },
+      "family": "Clerical",
+      "file": "geographical_region.txt",
+      "id": "et_1178_armagh_region",
+      "localized": false,
+      "name": "et 1178 armagh region",
+      "parents": [],
+      "resolved": {
+        "byClass": {
+          "land": 21
+        },
+        "counties": 5,
+        "drawn": 21,
+        "duchies": 3,
+        "kingdoms": 1,
+        "land": 21,
+        "other": 0,
+        "provinces": 21,
+        "sea": 0
+      },
+      "slug": "et_1178_armagh_region",
+      "usedBy": {},
+      "usedByCount": 0
+    },
+    {
+      "bbox": [
+        199,
+        363,
+        353,
+        469
+      ],
+      "declared": {
+        "counties": [
+          "c_kent",
+          "c_sussex",
+          "c_isle_of_wight",
+          "c_hampton",
+          "c_dorset",
+          "c_devon",
+          "c_cornwall",
+          "c_somerset",
+          "c_wiltshire",
+          "c_berkshire",
+          "c_surrey",
+          "c_essex",
+          "c_middlesex",
+          "c_hertfordshire",
+          "c_buckinghamshire",
+          "c_oxfordshire",
+          "c_gloucestershire",
+          "c_suffolk",
+          "c_norfolk",
+          "c_cambridgeshire",
+          "c_bedford",
+          "c_lincolnshire",
+          "c_leicestershire",
+          "c_warwickshire",
+          "c_derby",
+          "c_staffordshire",
+          "c_cheshire",
+          "c_lancashire",
+          "c_worcestershire",
+          "c_hereford",
+          "c_monmouthshire",
+          "c_glamorgan",
+          "c_brecknockshire",
+          "c_sir_faesyfed",
+          "c_shropshire",
+          "c_carmarthenshire",
+          "c_pembrokeshire",
+          "c_cardiganshire",
+          "c_maldwyn",
+          "c_merioneth",
+          "c_denbighshire",
+          "c_caernarfonshire",
+          "c_anglesey",
+          "c_huntingdonshire",
+          "c_northamptonshire"
+        ]
+      },
+      "family": "Clerical",
+      "file": "geographical_region.txt",
+      "id": "et_867_canterbury_region",
+      "localized": false,
+      "name": "et 867 canterbury region",
+      "parents": [],
+      "resolved": {
+        "byClass": {
+          "land": 145
+        },
+        "counties": 45,
+        "drawn": 145,
+        "duchies": 12,
+        "kingdoms": 2,
+        "land": 145,
+        "other": 0,
+        "provinces": 145,
+        "sea": 0
+      },
+      "slug": "et_867_canterbury_region",
+      "usedBy": {},
+      "usedByCount": 0
+    },
+    {
+      "bbox": [
+        264,
+        476,
+        357,
+        513
+      ],
+      "declared": {
+        "counties": [
+          "c_rouen",
+          "c_eu",
+          "c_lisieux",
+          "c_bayeux",
+          "c_avranches",
+          "c_evreux",
+          "c_beaumont"
+        ]
+      },
+      "family": "Clerical",
+      "file": "geographical_region.txt",
+      "id": "et_867_rouen_region",
+      "localized": false,
+      "name": "et 867 rouen region",
+      "parents": [],
+      "resolved": {
+        "byClass": {
+          "land": 22
+        },
+        "counties": 7,
+        "drawn": 22,
+        "duchies": 2,
+        "kingdoms": 1,
+        "land": 22,
+        "other": 0,
+        "provinces": 22,
+        "sea": 0
+      },
+      "slug": "et_867_rouen_region",
+      "usedBy": {},
+      "usedByCount": 0
+    },
+    {
+      "bbox": [
+        341,
+        444,
+        416,
+        520
+      ],
+      "declared": {
+        "counties": [
+          "c_reims",
+          "c_valois",
+          "c_clermont",
+          "c_amiens",
+          "c_boulogne",
+          "c_guines",
+          "c_lille",
+          "c_chalons",
+          "c_yperen",
+          "c_cambray",
+          "c_hainaut",
+          "c_brabant",
+          "c_brugge",
+          "c_vermandois",
+          "c_rethel"
+        ]
+      },
+      "family": "Clerical",
+      "file": "geographical_region.txt",
+      "id": "et_867_reims_region",
+      "localized": false,
+      "name": "et 867 reims region",
+      "parents": [],
+      "resolved": {
+        "byClass": {
+          "land": 48
+        },
+        "counties": 15,
+        "drawn": 48,
+        "duchies": 4,
+        "kingdoms": 2,
+        "land": 48,
+        "other": 0,
+        "provinces": 48,
+        "sea": 0
+      },
+      "slug": "et_867_reims_region",
+      "usedBy": {},
+      "usedByCount": 0
+    },
+    {
+      "bbox": [
+        319,
+        501,
+        408,
+        574
+      ],
+      "declared": {
+        "counties": [
+          "c_sens",
+          "c_coulommiers",
+          "c_meaux",
+          "c_ile_de_france",
+          "c_brie_francaise",
+          "c_vendome",
+          "c_chartres",
+          "c_orleans",
+          "c_montargis",
+          "c_auxerre",
+          "c_nevers",
+          "c_troyes",
+          "c_blois"
+        ]
+      },
+      "family": "Clerical",
+      "file": "geographical_region.txt",
+      "id": "et_867_sens_region",
+      "localized": false,
+      "name": "et 867 sens region",
+      "parents": [],
+      "resolved": {
+        "byClass": {
+          "land": 45
+        },
+        "counties": 13,
+        "drawn": 45,
+        "duchies": 5,
+        "kingdoms": 1,
+        "land": 45,
+        "other": 0,
+        "provinces": 45,
+        "sea": 0
+      },
+      "slug": "et_867_sens_region",
+      "usedBy": {},
+      "usedByCount": 0
+    },
+    {
+      "bbox": [
+        217,
+        503,
+        338,
+        557
+      ],
+      "declared": {
+        "counties": [
+          "c_tourraine",
+          "c_anjou",
+          "c_maine",
+          "c_sable",
+          "c_alencon",
+          "c_rennes",
+          "c_penthievre",
+          "c_vannes",
+          "c_cornouaille",
+          "c_french_leon",
+          "c_nantes",
+          "c_saumur"
+        ]
+      },
+      "family": "Clerical",
+      "file": "geographical_region.txt",
+      "id": "et_867_tours_region",
+      "localized": false,
+      "name": "et 867 tours region",
+      "parents": [],
+      "resolved": {
+        "byClass": {
+          "land": 36
+        },
+        "counties": 12,
+        "drawn": 36,
+        "duchies": 4,
+        "kingdoms": 2,
+        "land": 36,
+        "other": 0,
+        "provinces": 36,
+        "sea": 0
+      },
+      "slug": "et_867_tours_region",
+      "usedBy": {},
+      "usedByCount": 0
+    },
+    {
+      "bbox": [
+        322,
+        537,
+        395,
+        660
+      ],
+      "declared": {
+        "counties": [
+          "c_issoudun",
+          "c_sancerre",
+          "c_bourbon",
+          "c_berry",
+          "c_la_marche",
+          "c_clermont_sur_allier",
+          "c_auvergne",
+          "c_limousin",
+          "c_thiers",
+          "c_gevaudan",
+          "c_rouergue",
+          "c_quercy",
+          "c_jaligny",
+          "c_velay",
+          "c_albi",
+          "c_millau",
+          "c_bellac"
+        ]
+      },
+      "family": "Clerical",
+      "file": "geographical_region.txt",
+      "id": "et_867_bourges_region",
+      "localized": false,
+      "name": "et 867 bourges region",
+      "parents": [],
+      "resolved": {
+        "byClass": {
+          "land": 51
+        },
+        "counties": 17,
+        "drawn": 51,
+        "duchies": 7,
+        "kingdoms": 2,
+        "land": 51,
+        "other": 0,
+        "provinces": 51,
+        "sea": 0
+      },
+      "slug": "et_867_bourges_region",
+      "usedBy": {},
+      "usedByCount": 0
+    },
+    {
+      "bbox": [
+        266,
+        552,
+        337,
+        635
+      ],
+      "declared": {
+        "counties": [
+          "c_bordeaux",
+          "c_poitiers",
+          "c_perigord",
+          "c_agenais",
+          "c_thouars",
+          "c_montaigu",
+          "c_aunis",
+          "c_lusignan",
+          "c_angouleme",
+          "c_saintonge"
+        ]
+      },
+      "family": "Clerical",
+      "file": "geographical_region.txt",
+      "id": "et_867_bordeaux_region",
+      "localized": false,
+      "name": "et 867 bordeaux region",
+      "parents": [],
+      "resolved": {
+        "byClass": {
+          "land": 33
+        },
+        "counties": 10,
+        "drawn": 33,
+        "duchies": 3,
+        "kingdoms": 1,
+        "land": 33,
+        "other": 0,
+        "provinces": 33,
+        "sea": 0
+      },
+      "slug": "et_867_bordeaux_region",
+      "usedBy": {},
+      "usedByCount": 0
+    },
+    {
+      "bbox": [
+        376,
+        527,
+        431,
+        605
+      ],
+      "declared": {
+        "counties": [
+          "c_lyon",
+          "c_forez",
+          "c_macon",
+          "c_chalon",
+          "c_avalois",
+          "c_tonnerrois",
+          "c_dijon",
+          "c_langres",
+          "c_bresse",
+          "c_dole"
+        ]
+      },
+      "family": "Clerical",
+      "file": "geographical_region.txt",
+      "id": "et_867_lyon_region",
+      "localized": false,
+      "name": "et 867 lyon region",
+      "parents": [],
+      "resolved": {
+        "byClass": {
+          "land": 29
+        },
+        "counties": 10,
+        "drawn": 29,
+        "duchies": 3,
+        "kingdoms": 2,
+        "land": 29,
+        "other": 0,
+        "provinces": 29,
+        "sea": 0
+      },
+      "slug": "et_867_lyon_region",
+      "usedBy": {},
+      "usedByCount": 0
+    },
+    {
+      "bbox": [
+        432,
+        558,
+        467,
+        598
+      ],
+      "declared": {
+        "counties": [
+          "c_aosta",
+          "c_bern",
+          "c_aargau"
+        ]
+      },
+      "family": "Clerical",
+      "file": "geographical_region.txt",
+      "id": "et_867_tarentaise_region",
+      "localized": false,
+      "name": "et 867 tarentaise region",
+      "parents": [],
+      "resolved": {
+        "byClass": {
+          "land": 7
+        },
+        "counties": 3,
+        "drawn": 7,
+        "duchies": 2,
+        "kingdoms": 1,
+        "land": 7,
+        "other": 0,
+        "provinces": 7,
+        "sea": 0
+      },
+      "slug": "et_867_tarentaise_region",
+      "usedBy": {},
+      "usedByCount": 0
+    },
+    {
+      "bbox": [
+        391,
+        577,
+        447,
+        637
+      ],
+      "declared": {
+        "counties": [
+          "c_viennois",
+          "c_viviers",
+          "c_valentinois",
+          "c_savoie",
+          "c_geneva"
+        ]
+      },
+      "family": "Clerical",
+      "file": "geographical_region.txt",
+      "id": "et_867_vienne_region",
+      "localized": false,
+      "name": "et 867 vienne region",
+      "parents": [],
+      "resolved": {
+        "byClass": {
+          "land": 17
+        },
+        "counties": 5,
+        "drawn": 17,
+        "duchies": 2,
+        "kingdoms": 1,
+        "land": 17,
+        "other": 0,
+        "provinces": 17,
+        "sea": 0
+      },
+      "slug": "et_867_vienne_region",
+      "usedBy": {},
+      "usedByCount": 0
+    },
+    {
+      "bbox": [
+        283,
+        610,
+        339,
+        666
+      ],
+      "declared": {
+        "counties": [
+          "c_armagnac",
+          "c_comminges",
+          "c_bigorre",
+          "c_bearn",
+          "c_labourd",
+          "c_marsan",
+          "c_albret"
+        ]
+      },
+      "family": "Clerical",
+      "file": "geographical_region.txt",
+      "id": "et_867_eauze_region",
+      "localized": false,
+      "name": "et 867 eauze region",
+      "parents": [],
+      "resolved": {
+        "byClass": {
+          "land": 23
+        },
+        "counties": 7,
+        "drawn": 23,
+        "duchies": 2,
+        "kingdoms": 1,
+        "land": 23,
+        "other": 0,
+        "provinces": 23,
+        "sea": 0
+      },
+      "slug": "et_867_eauze_region",
+      "usedBy": {},
+      "usedByCount": 0
+    },
+    {
+      "bbox": [
+        283,
+        610,
+        339,
+        666
+      ],
+      "declared": {
+        "counties": [
+          "c_armagnac",
+          "c_comminges",
+          "c_bigorre",
+          "c_bearn",
+          "c_labourd",
+          "c_marsan",
+          "c_albret"
+        ]
+      },
+      "family": "Clerical",
+      "file": "geographical_region.txt",
+      "id": "et_1066_auch_region",
+      "localized": false,
+      "name": "et 1066 auch region",
+      "parents": [],
+      "resolved": {
+        "byClass": {
+          "land": 23
+        },
+        "counties": 7,
+        "drawn": 23,
+        "duchies": 2,
+        "kingdoms": 1,
+        "land": 23,
+        "other": 0,
+        "provinces": 23,
+        "sea": 0
+      },
+      "slug": "et_1066_auch_region",
+      "usedBy": {},
+      "usedByCount": 0
+    },
+    {
+      "bbox": [
+        329,
+        619,
+        403,
+        684
+      ],
+      "declared": {
+        "counties": [
+          "c_toulouse",
+          "c_foix",
+          "c_carcassonne",
+          "c_rossello",
+          "c_beziers",
+          "c_montpellier",
+          "c_uses"
+        ]
+      },
+      "family": "Clerical",
+      "file": "geographical_region.txt",
+      "id": "et_867_narbonne_region",
+      "localized": false,
+      "name": "et 867 narbonne region",
+      "parents": [],
+      "resolved": {
+        "byClass": {
+          "land": 21
+        },
+        "counties": 7,
+        "drawn": 21,
+        "duchies": 3,
+        "kingdoms": 2,
+        "land": 21,
+        "other": 0,
+        "provinces": 21,
+        "sea": 0
+      },
+      "slug": "et_867_narbonne_region",
+      "usedBy": {},
+      "usedByCount": 0
+    },
+    {
+      "bbox": [
+        412,
+        518,
+        465,
+        571
+      ],
+      "declared": {
+        "counties": [
+          "c_besancon",
+          "c_sundgau",
+          "c_neuchatel",
+          "c_colmar",
+          "c_breisgau"
+        ]
+      },
+      "family": "Clerical",
+      "file": "geographical_region.txt",
+      "id": "et_867_besancon_region",
+      "localized": false,
+      "name": "et 867 besancon region",
+      "parents": [],
+      "resolved": {
+        "byClass": {
+          "land": 17
+        },
+        "counties": 5,
+        "drawn": 17,
+        "duchies": 3,
+        "kingdoms": 2,
+        "land": 17,
+        "other": 0,
+        "provinces": 17,
+        "sea": 0
+      },
+      "slug": "et_867_besancon_region",
+      "usedBy": {},
+      "usedByCount": 0
+    },
+    {
+      "bbox": [
+        401,
+        631,
+        422,
+        660
+      ],
+      "declared": {
+        "counties": [
+          "c_venaissin"
+        ]
+      },
+      "family": "Clerical",
+      "file": "geographical_region.txt",
+      "id": "et_867_arles_region",
+      "localized": false,
+      "name": "et 867 arles region",
+      "parents": [],
+      "resolved": {
+        "byClass": {
+          "land": 4
+        },
+        "counties": 1,
+        "drawn": 4,
+        "duchies": 1,
+        "kingdoms": 1,
+        "land": 4,
+        "other": 0,
+        "provinces": 4,
+        "sea": 0
+      },
+      "slug": "et_867_arles_region",
+      "usedBy": {},
+      "usedByCount": 0
+    },
+    {
+      "bbox": [
+        411,
+        642,
+        444,
+        670
+      ],
+      "declared": {
+        "counties": [
+          "c_provence"
+        ]
+      },
+      "family": "Clerical",
+      "file": "geographical_region.txt",
+      "id": "et_867_aix_region",
+      "localized": false,
+      "name": "et 867 aix region",
+      "parents": [],
+      "resolved": {
+        "byClass": {
+          "land": 5
+        },
+        "counties": 1,
+        "drawn": 5,
+        "duchies": 1,
+        "kingdoms": 1,
+        "land": 5,
+        "other": 0,
+        "provinces": 5,
+        "sea": 0
+      },
+      "slug": "et_867_aix_region",
+      "usedBy": {},
+      "usedByCount": 0
+    },
+    {
+      "bbox": [
+        415,
+        615,
+        460,
+        660
+      ],
+      "declared": {
+        "counties": [
+          "c_forcalquier",
+          "c_nice"
+        ]
+      },
+      "family": "Clerical",
+      "file": "geographical_region.txt",
+      "id": "et_867_embrun_region",
+      "localized": false,
+      "name": "et 867 embrun region",
+      "parents": [],
+      "resolved": {
+        "byClass": {
+          "land": 10
+        },
+        "counties": 2,
+        "drawn": 10,
+        "duchies": 1,
+        "kingdoms": 1,
+        "land": 10,
+        "other": 0,
+        "provinces": 10,
+        "sea": 0
+      },
+      "slug": "et_867_embrun_region",
+      "usedBy": {},
+      "usedByCount": 0
+    },
+    {
+      "bbox": [
+        443,
+        579,
+        515,
+        651
+      ],
+      "declared": {
+        "counties": [
+          "c_lombardia",
+          "c_brescia",
+          "c_como",
+          "c_novara",
+          "c_turin",
+          "c_monferrato",
+          "c_cuneo",
+          "c_genoa",
+          "c_luni",
+          "c_tortona",
+          "c_pavia",
+          "c_cremona",
+          "c_canavese"
+        ]
+      },
+      "family": "Clerical",
+      "file": "geographical_region.txt",
+      "id": "et_867_milano_region",
+      "localized": false,
+      "name": "et 867 milano region",
+      "parents": [],
+      "resolved": {
+        "byClass": {
+          "land": 38
+        },
+        "counties": 13,
+        "drawn": 38,
+        "duchies": 4,
+        "kingdoms": 2,
+        "land": 38,
+        "other": 0,
+        "provinces": 38,
+        "sea": 0
+      },
+      "slug": "et_867_milano_region",
+      "usedBy": {},
+      "usedByCount": 0
+    },
+    {
+      "bbox": [
+        443,
+        579,
+        515,
+        643
+      ],
+      "declared": {
+        "counties": [
+          "c_lombardia",
+          "c_brescia",
+          "c_como",
+          "c_novara",
+          "c_turin",
+          "c_monferrato",
+          "c_cuneo",
+          "c_tortona",
+          "c_pavia",
+          "c_cremona",
+          "c_canavese"
+        ]
+      },
+      "family": "Clerical",
+      "file": "geographical_region.txt",
+      "id": "et_1178_milano_region",
+      "localized": false,
+      "name": "et 1178 milano region",
+      "parents": [],
+      "resolved": {
+        "byClass": {
+          "land": 33
+        },
+        "counties": 11,
+        "drawn": 33,
+        "duchies": 3,
+        "kingdoms": 2,
+        "land": 33,
+        "other": 0,
+        "provinces": 33,
+        "sea": 0
+      },
+      "slug": "et_1178_milano_region",
+      "usedBy": {},
+      "usedByCount": 0
+    },
+    {
+      "bbox": [
+        457,
+        633,
+        511,
+        700
+      ],
+      "declared": {
+        "counties": [
+          "c_genoa",
+          "c_luni",
+          "c_bastia"
+        ]
+      },
+      "family": "Clerical",
+      "file": "geographical_region.txt",
+      "id": "et_1178_genoa_region",
+      "localized": false,
+      "name": "et 1178 genoa region",
+      "parents": [],
+      "resolved": {
+        "byClass": {
+          "land": 7
+        },
+        "counties": 3,
+        "drawn": 7,
+        "duchies": 2,
+        "kingdoms": 2,
+        "land": 7,
+        "other": 0,
+        "provinces": 7,
+        "sea": 0
+      },
+      "slug": "et_1178_genoa_region",
+      "usedBy": {},
+      "usedByCount": 0
+    },
+    {
+      "bbox": [
+        475,
+        721,
+        506,
+        777
+      ],
+      "declared": {
+        "counties": [
+          "c_cagliari",
+          "c_tortoli",
+          "c_arborea",
+          "c_logudoro"
+        ]
+      },
+      "family": "Clerical",
+      "file": "geographical_region.txt",
+      "id": "et_867_cagliari_region",
+      "localized": false,
+      "name": "et 867 cagliari region",
+      "parents": [],
+      "resolved": {
+        "byClass": {
+          "land": 11
+        },
+        "counties": 4,
+        "drawn": 11,
+        "duchies": 1,
+        "kingdoms": 1,
+        "land": 11,
+        "other": 0,
+        "provinces": 11,
+        "sea": 0
+      },
+      "slug": "et_867_cagliari_region",
+      "usedBy": {},
+      "usedByCount": 0
+    },
+    {
+      "bbox": [
+        475,
+        721,
+        506,
+        777
+      ],
+      "declared": {
+        "counties": [
+          "c_cagliari",
+          "c_tortoli",
+          "c_logudoro",
+          "c_arborea"
+        ]
+      },
+      "family": "Clerical",
+      "file": "geographical_region.txt",
+      "id": "et_1066_cagliari_region",
+      "localized": false,
+      "name": "et 1066 cagliari region",
+      "parents": [],
+      "resolved": {
+        "byClass": {
+          "land": 11
+        },
+        "counties": 4,
+        "drawn": 11,
+        "duchies": 1,
+        "kingdoms": 1,
+        "land": 11,
+        "other": 0,
+        "provinces": 11,
+        "sea": 0
+      },
+      "slug": "et_1066_cagliari_region",
+      "usedBy": {},
+      "usedByCount": 0
+    },
+    {
+      "bbox": [
+        480,
+        748,
+        506,
+        777
+      ],
+      "declared": {
+        "counties": [
+          "c_cagliari",
+          "c_tortoli"
+        ]
+      },
+      "family": "Clerical",
+      "file": "geographical_region.txt",
+      "id": "et_1178_cagliari_region",
+      "localized": false,
+      "name": "et 1178 cagliari region",
+      "parents": [],
+      "resolved": {
+        "byClass": {
+          "land": 5
+        },
+        "counties": 2,
+        "drawn": 5,
+        "duchies": 1,
+        "kingdoms": 1,
+        "land": 5,
+        "other": 0,
+        "provinces": 5,
+        "sea": 0
+      },
+      "slug": "et_1178_cagliari_region",
+      "usedBy": {},
+      "usedByCount": 0
+    },
+    {
+      "bbox": [
+        475,
+        721,
+        499,
+        749
+      ],
+      "declared": {
+        "counties": [
+          "c_logudoro"
+        ]
+      },
+      "family": "Clerical",
+      "file": "geographical_region.txt",
+      "id": "et_1178_torres_region",
+      "localized": false,
+      "name": "et 1178 torres region",
+      "parents": [],
+      "resolved": {
+        "byClass": {
+          "land": 4
+        },
+        "counties": 1,
+        "drawn": 4,
+        "duchies": 1,
+        "kingdoms": 1,
+        "land": 4,
+        "other": 0,
+        "provinces": 4,
+        "sea": 0
+      },
+      "slug": "et_1178_torres_region",
+      "usedBy": {},
+      "usedByCount": 0
+    },
+    {
+      "bbox": [
+        481,
+        742,
+        497,
+        763
+      ],
+      "declared": {
+        "counties": [
+          "c_arborea"
+        ]
+      },
+      "family": "Clerical",
+      "file": "geographical_region.txt",
+      "id": "et_1066_sinis_tharros_region",
+      "localized": false,
+      "name": "et 1066 sinis tharros region",
+      "parents": [],
+      "resolved": {
+        "byClass": {
+          "land": 2
+        },
+        "counties": 1,
+        "drawn": 2,
+        "duchies": 1,
+        "kingdoms": 1,
+        "land": 2,
+        "other": 0,
+        "provinces": 2,
+        "sea": 0
+      },
+      "slug": "et_1066_sinis_tharros_region",
+      "usedBy": {},
+      "usedByCount": 0
+    },
+    {
+      "bbox": [
+        481,
+        742,
+        497,
+        763
+      ],
+      "declared": {
+        "counties": [
+          "c_arborea"
+        ]
+      },
+      "family": "Clerical",
+      "file": "geographical_region.txt",
+      "id": "et_1178_oristano_region",
+      "localized": false,
+      "name": "et 1178 oristano region",
+      "parents": [],
+      "resolved": {
+        "byClass": {
+          "land": 2
+        },
+        "counties": 1,
+        "drawn": 2,
+        "duchies": 1,
+        "kingdoms": 1,
+        "land": 2,
+        "other": 0,
+        "provinces": 2,
+        "sea": 0
+      },
+      "slug": "et_1178_oristano_region",
+      "usedBy": {},
+      "usedByCount": 0
+    },
+    {
+      "bbox": [
+        559,
+        746,
+        649,
+        830
+      ],
+      "declared": {
+        "counties": [
+          "c_reggio_calabria",
+          "c_rossano",
+          "c_cosenza",
+          "c_messina",
+          "c_siracusa",
+          "c_agrigento",
+          "c_palermo"
+        ]
+      },
+      "family": "Clerical",
+      "file": "geographical_region.txt",
+      "id": "et_867_reggio_calabria_region",
+      "localized": false,
+      "name": "et 867 reggio calabria region",
+      "parents": [],
+      "resolved": {
+        "byClass": {
+          "land": 22
+        },
+        "counties": 7,
+        "drawn": 22,
+        "duchies": 2,
+        "kingdoms": 1,
+        "land": 22,
+        "other": 0,
+        "provinces": 22,
+        "sea": 0
+      },
+      "slug": "et_867_reggio_calabria_region",
+      "usedBy": {},
+      "usedByCount": 0
+    },
+    {
+      "bbox": [
+        587,
+        746,
+        638,
+        830
+      ],
+      "declared": {
+        "counties": [
+          "c_reggio_calabria",
+          "c_cosenza",
+          "c_messina",
+          "c_siracusa"
+        ]
+      },
+      "family": "Clerical",
+      "file": "geographical_region.txt",
+      "id": "et_1066_reggio_calabria_region",
+      "localized": false,
+      "name": "et 1066 reggio calabria region",
+      "parents": [],
+      "resolved": {
+        "byClass": {
+          "land": 12
+        },
+        "counties": 4,
+        "drawn": 12,
+        "duchies": 2,
+        "kingdoms": 1,
+        "land": 12,
+        "other": 0,
+        "provinces": 12,
+        "sea": 0
+      },
+      "slug": "et_1066_reggio_calabria_region",
+      "usedBy": {},
+      "usedByCount": 0
+    },
+    {
+      "bbox": [
+        591,
+        773,
+        638,
+        830
+      ],
+      "declared": {
+        "counties": [
+          "c_reggio_calabria",
+          "c_siracusa"
+        ]
+      },
+      "family": "Clerical",
+      "file": "geographical_region.txt",
+      "id": "et_1178_reggio_calabria_region",
+      "localized": false,
+      "name": "et 1178 reggio calabria region",
+      "parents": [],
+      "resolved": {
+        "byClass": {
+          "land": 6
+        },
+        "counties": 2,
+        "drawn": 6,
+        "duchies": 2,
+        "kingdoms": 1,
+        "land": 6,
+        "other": 0,
+        "provinces": 6,
+        "sea": 0
+      },
+      "slug": "et_1178_reggio_calabria_region",
+      "usedBy": {},
+      "usedByCount": 0
+    },
+    {
+      "bbox": [
+        622,
+        746,
+        637,
+        773
+      ],
+      "declared": {
+        "counties": [
+          "c_cosenza"
+        ]
+      },
+      "family": "Clerical",
+      "file": "geographical_region.txt",
+      "id": "et_1178_cosenza_region",
+      "localized": false,
+      "name": "et 1178 cosenza region",
+      "parents": [],
+      "resolved": {
+        "byClass": {
+          "land": 3
+        },
+        "counties": 1,
+        "drawn": 3,
+        "duchies": 1,
+        "kingdoms": 1,
+        "land": 3,
+        "other": 0,
+        "provinces": 3,
+        "sea": 0
+      },
+      "slug": "et_1178_cosenza_region",
+      "usedBy": {},
+      "usedByCount": 0
+    },
+    {
+      "bbox": [
+        587,
+        779,
+        620,
+        811
+      ],
+      "declared": {
+        "counties": [
+          "c_messina"
+        ]
+      },
+      "family": "Clerical",
+      "file": "geographical_region.txt",
+      "id": "et_1178_messina_region",
+      "localized": false,
+      "name": "et 1178 messina region",
+      "parents": [],
+      "resolved": {
+        "byClass": {
+          "land": 3
+        },
+        "counties": 1,
+        "drawn": 3,
+        "duchies": 1,
+        "kingdoms": 1,
+        "land": 3,
+        "other": 0,
+        "provinces": 3,
+        "sea": 0
+      },
+      "slug": "et_1178_messina_region",
+      "usedBy": {},
+      "usedByCount": 0
+    },
+    {
+      "bbox": [
+        559,
+        795,
+        602,
+        820
+      ],
+      "declared": {
+        "counties": [
+          "c_palermo",
+          "c_agrigento"
+        ]
+      },
+      "family": "Clerical",
+      "file": "geographical_region.txt",
+      "id": "et_1066_palermo_region",
+      "localized": false,
+      "name": "et 1066 palermo region",
+      "parents": [],
+      "resolved": {
+        "byClass": {
+          "land": 7
+        },
+        "counties": 2,
+        "drawn": 7,
+        "duchies": 1,
+        "kingdoms": 1,
+        "land": 7,
+        "other": 0,
+        "provinces": 7,
+        "sea": 0
+      },
+      "slug": "et_1066_palermo_region",
+      "usedBy": {},
+      "usedByCount": 0
+    },
+    {
+      "bbox": [
+        559,
+        795,
+        605,
+        850
+      ],
+      "declared": {
+        "counties": [
+          "c_palermo",
+          "c_agrigento",
+          "c_malta"
+        ]
+      },
+      "family": "Clerical",
+      "file": "geographical_region.txt",
+      "id": "et_1178_palermo_region",
+      "localized": false,
+      "name": "et 1178 palermo region",
+      "parents": [],
+      "resolved": {
+        "byClass": {
+          "land": 8
+        },
+        "counties": 3,
+        "drawn": 8,
+        "duchies": 1,
+        "kingdoms": 1,
+        "land": 8,
+        "other": 0,
+        "provinces": 8,
+        "sea": 0
+      },
+      "slug": "et_1178_palermo_region",
+      "usedBy": {},
+      "usedByCount": 0
+    },
+    {
+      "bbox": [
+        632,
+        755,
+        649,
+        778
+      ],
+      "declared": {
+        "counties": [
+          "c_rossano"
+        ]
+      },
+      "family": "Clerical",
+      "file": "geographical_region.txt",
+      "id": "et_1066_santa_severina_region",
+      "localized": false,
+      "name": "et 1066 santa severina region",
+      "parents": [],
+      "resolved": {
+        "byClass": {
+          "land": 3
+        },
+        "counties": 1,
+        "drawn": 3,
+        "duchies": 1,
+        "kingdoms": 1,
+        "land": 3,
+        "other": 0,
+        "provinces": 3,
+        "sea": 0
+      },
+      "slug": "et_1066_santa_severina_region",
+      "usedBy": {},
+      "usedByCount": 0
+    },
+    {
+      "bbox": [
+        490,
+        607,
+        561,
+        651
+      ],
+      "declared": {
+        "counties": [
+          "c_ravenna",
+          "c_ferrara",
+          "c_polesine",
+          "c_veneto",
+          "c_venezia",
+          "c_bologna",
+          "c_modena",
+          "c_parma"
+        ]
+      },
+      "family": "Clerical",
+      "file": "geographical_region.txt",
+      "id": "et_867_ravenna_region",
+      "localized": false,
+      "name": "et 867 ravenna region",
+      "parents": [],
+      "resolved": {
+        "byClass": {
+          "land": 23
+        },
+        "counties": 8,
+        "drawn": 23,
+        "duchies": 5,
+        "kingdoms": 3,
+        "land": 23,
+        "other": 0,
+        "provinces": 23,
+        "sea": 0
+      },
+      "slug": "et_867_ravenna_region",
+      "usedBy": {},
+      "usedByCount": 0
+    },
+    {
+      "bbox": [
+        480,
+        642,
+        640,
+        754
+      ],
+      "declared": {
+        "counties": [
+          "c_roma",
+          "c_viterbo",
+          "c_orbetello",
+          "c_pisa",
+          "c_lucca",
+          "c_firenze",
+          "c_siena",
+          "c_orvieto",
+          "c_arezzo",
+          "c_casentino",
+          "c_urbino",
+          "c_ancona",
+          "c_spoleto",
+          "c_fermo",
+          "c_teramo",
+          "c_abruzzi",
+          "c_tivoli",
+          "c_capua",
+          "c_lanciano",
+          "c_foggia",
+          "c_benevento",
+          "c_napoli",
+          "c_salerno",
+          "c_camarda",
+          "c_bastia",
+          "c_ajaccio",
+          "c_vecchio",
+          "c_gallura"
+        ]
+      },
+      "family": "Clerical",
+      "file": "geographical_region.txt",
+      "id": "et_867_roma_region",
+      "localized": false,
+      "name": "et 867 roma region",
+      "parents": [],
+      "resolved": {
+        "byClass": {
+          "land": 86
+        },
+        "counties": 28,
+        "drawn": 86,
+        "duchies": 11,
+        "kingdoms": 4,
+        "land": 86,
+        "other": 0,
+        "provinces": 86,
+        "sea": 0
+      },
+      "slug": "et_867_roma_region",
+      "usedBy": {},
+      "usedByCount": 0
+    },
+    {
+      "bbox": [
+        480,
+        642,
+        640,
+        751
+      ],
+      "declared": {
+        "counties": [
+          "c_roma",
+          "c_viterbo",
+          "c_orbetello",
+          "c_pisa",
+          "c_lucca",
+          "c_firenze",
+          "c_siena",
+          "c_orvieto",
+          "c_arezzo",
+          "c_casentino",
+          "c_urbino",
+          "c_ancona",
+          "c_spoleto",
+          "c_fermo",
+          "c_teramo",
+          "c_abruzzi",
+          "c_tivoli",
+          "c_lanciano",
+          "c_foggia",
+          "c_camarda",
+          "c_bastia",
+          "c_ajaccio",
+          "c_vecchio",
+          "c_gallura"
+        ]
+      },
+      "family": "Clerical",
+      "file": "geographical_region.txt",
+      "id": "et_1066_roma_region",
+      "localized": false,
+      "name": "et 1066 roma region",
+      "parents": [],
+      "resolved": {
+        "byClass": {
+          "land": 71
+        },
+        "counties": 24,
+        "drawn": 71,
+        "duchies": 10,
+        "kingdoms": 4,
+        "land": 71,
+        "other": 0,
+        "provinces": 71,
+        "sea": 0
+      },
+      "slug": "et_1066_roma_region",
+      "usedBy": {},
+      "usedByCount": 0
+    },
+    {
+      "bbox": [
+        511,
+        642,
+        640,
+        751
+      ],
+      "declared": {
+        "counties": [
+          "c_roma",
+          "c_viterbo",
+          "c_orbetello",
+          "c_lucca",
+          "c_firenze",
+          "c_siena",
+          "c_orvieto",
+          "c_arezzo",
+          "c_casentino",
+          "c_urbino",
+          "c_ancona",
+          "c_spoleto",
+          "c_fermo",
+          "c_teramo",
+          "c_abruzzi",
+          "c_tivoli",
+          "c_lanciano",
+          "c_foggia",
+          "c_camarda"
+        ]
+      },
+      "family": "Clerical",
+      "file": "geographical_region.txt",
+      "id": "et_1178_roma_region",
+      "localized": false,
+      "name": "et 1178 roma region",
+      "parents": [],
+      "resolved": {
+        "byClass": {
+          "land": 60
+        },
+        "counties": 19,
+        "drawn": 60,
+        "duchies": 7,
+        "kingdoms": 3,
+        "land": 60,
+        "other": 0,
+        "provinces": 60,
+        "sea": 0
+      },
+      "slug": "et_1178_roma_region",
+      "usedBy": {},
+      "usedByCount": 0
+    },
+    {
+      "bbox": [
+        480,
+        648,
+        523,
+        747
+      ],
+      "declared": {
+        "counties": [
+          "c_pisa",
+          "c_gallura",
+          "c_ajaccio",
+          "c_vecchio"
+        ]
+      },
+      "family": "Clerical",
+      "file": "geographical_region.txt",
+      "id": "et_1178_pisa_region",
+      "localized": false,
+      "name": "et 1178 pisa region",
+      "parents": [],
+      "resolved": {
+        "byClass": {
+          "land": 9
+        },
+        "counties": 4,
+        "drawn": 9,
+        "duchies": 3,
+        "kingdoms": 2,
+        "land": 9,
+        "other": 0,
+        "provinces": 9,
+        "sea": 0
+      },
+      "slug": "et_1178_pisa_region",
+      "usedBy": {},
+      "usedByCount": 0
+    },
+    {
+      "bbox": [
+        576,
+        705,
+        592,
+        727
+      ],
+      "declared": {
+        "counties": [
+          "c_capua"
+        ]
+      },
+      "family": "Clerical",
+      "file": "geographical_region.txt",
+      "id": "et_1066_capua_region",
+      "localized": false,
+      "name": "et 1066 capua region",
+      "parents": [],
+      "resolved": {
+        "byClass": {
+          "land": 3
+        },
+        "counties": 1,
+        "drawn": 3,
+        "duchies": 1,
+        "kingdoms": 1,
+        "land": 3,
+        "other": 0,
+        "provinces": 3,
+        "sea": 0
+      },
+      "slug": "et_1066_capua_region",
+      "usedBy": {},
+      "usedByCount": 0
+    },
+    {
+      "bbox": [
+        584,
+        720,
+        606,
+        741
+      ],
+      "declared": {
+        "counties": [
+          "c_napoli"
+        ]
+      },
+      "family": "Clerical",
+      "file": "geographical_region.txt",
+      "id": "et_1066_napoli_region",
+      "localized": false,
+      "name": "et 1066 napoli region",
+      "parents": [],
+      "resolved": {
+        "byClass": {
+          "land": 3
+        },
+        "counties": 1,
+        "drawn": 3,
+        "duchies": 1,
+        "kingdoms": 1,
+        "land": 3,
+        "other": 0,
+        "provinces": 3,
+        "sea": 0
+      },
+      "slug": "et_1066_napoli_region",
+      "usedBy": {},
+      "usedByCount": 0
+    },
+    {
+      "bbox": [
+        604,
+        729,
+        630,
+        754
+      ],
+      "declared": {
+        "counties": [
+          "c_salerno"
+        ]
+      },
+      "family": "Clerical",
+      "file": "geographical_region.txt",
+      "id": "et_1066_salerno_region",
+      "localized": false,
+      "name": "et 1066 salerno region",
+      "parents": [],
+      "resolved": {
+        "byClass": {
+          "land": 4
+        },
+        "counties": 1,
+        "drawn": 4,
+        "duchies": 1,
+        "kingdoms": 1,
+        "land": 4,
+        "other": 0,
+        "provinces": 4,
+        "sea": 0
+      },
+      "slug": "et_1066_salerno_region",
+      "usedBy": {},
+      "usedByCount": 0
+    },
+    {
+      "bbox": [
+        590,
+        705,
+        619,
+        731
+      ],
+      "declared": {
+        "counties": [
+          "c_benevento"
+        ]
+      },
+      "family": "Clerical",
+      "file": "geographical_region.txt",
+      "id": "et_1066_benevento_region",
+      "localized": false,
+      "name": "et 1066 benevento region",
+      "parents": [],
+      "resolved": {
+        "byClass": {
+          "land": 5
+        },
+        "counties": 1,
+        "drawn": 5,
+        "duchies": 1,
+        "kingdoms": 1,
+        "land": 5,
+        "other": 0,
+        "provinces": 5,
+        "sea": 0
+      },
+      "slug": "et_1066_benevento_region",
+      "usedBy": {},
+      "usedByCount": 0
+    },
+    {
+      "bbox": [
+        612,
+        709,
+        672,
+        752
+      ],
+      "declared": {
+        "counties": [
+          "c_bari",
+          "c_lecce",
+          "c_apulia"
+        ]
+      },
+      "family": "Clerical",
+      "file": "geographical_region.txt",
+      "id": "et_867_bari_region",
+      "localized": false,
+      "name": "et 867 bari region",
+      "parents": [],
+      "resolved": {
+        "byClass": {
+          "land": 10
+        },
+        "counties": 3,
+        "drawn": 10,
+        "duchies": 1,
+        "kingdoms": 1,
+        "land": 10,
+        "other": 0,
+        "provinces": 10,
+        "sea": 0
+      },
+      "slug": "et_867_bari_region",
+      "usedBy": {},
+      "usedByCount": 0
+    },
+    {
+      "bbox": [
+        632,
+        721,
+        656,
+        741
+      ],
+      "declared": {
+        "counties": [
+          "c_bari"
+        ]
+      },
+      "family": "Clerical",
+      "file": "geographical_region.txt",
+      "id": "et_1066_bari_region",
+      "localized": false,
+      "name": "et 1066 bari region",
+      "parents": [],
+      "resolved": {
+        "byClass": {
+          "land": 3
+        },
+        "counties": 1,
+        "drawn": 3,
+        "duchies": 1,
+        "kingdoms": 1,
+        "land": 3,
+        "other": 0,
+        "provinces": 3,
+        "sea": 0
+      },
+      "slug": "et_1066_bari_region",
+      "usedBy": {},
+      "usedByCount": 0
+    },
+    {
+      "bbox": [
+        612,
+        709,
+        640,
+        734
+      ],
+      "declared": {
+        "counties": [
+          "c_apulia"
+        ]
+      },
+      "family": "Clerical",
+      "file": "geographical_region.txt",
+      "id": "et_1066_trani_region",
+      "localized": false,
+      "name": "et 1066 trani region",
+      "parents": [],
+      "resolved": {
+        "byClass": {
+          "land": 4
+        },
+        "counties": 1,
+        "drawn": 4,
+        "duchies": 1,
+        "kingdoms": 1,
+        "land": 4,
+        "other": 0,
+        "provinces": 4,
+        "sea": 0
+      },
+      "slug": "et_1066_trani_region",
+      "usedBy": {},
+      "usedByCount": 0
+    },
+    {
+      "bbox": [
+        652,
+        728,
+        672,
+        752
+      ],
+      "declared": {
+        "counties": [
+          "c_lecce"
+        ]
+      },
+      "family": "Clerical",
+      "file": "geographical_region.txt",
+      "id": "et_1066_brindisi_region",
+      "localized": false,
+      "name": "et 1066 brindisi region",
+      "parents": [],
+      "resolved": {
+        "byClass": {
+          "land": 3
+        },
+        "counties": 1,
+        "drawn": 3,
+        "duchies": 1,
+        "kingdoms": 1,
+        "land": 3,
+        "other": 0,
+        "provinces": 3,
+        "sea": 0
+      },
+      "slug": "et_1066_brindisi_region",
+      "usedBy": {},
+      "usedByCount": 0
+    },
+    {
+      "bbox": [
+        505,
+        579,
+        609,
+        632
+      ],
+      "declared": {
+        "counties": [
+          "c_aquileia",
+          "c_gorz",
+          "c_pula",
+          "c_ljubljana",
+          "c_kranj",
+          "c_friuli",
+          "c_treviso",
+          "c_padua",
+          "c_verona",
+          "c_trent",
+          "c_mantua"
+        ]
+      },
+      "family": "Clerical",
+      "file": "geographical_region.txt",
+      "id": "et_867_aquileia_region",
+      "localized": false,
+      "name": "et 867 aquileia region",
+      "parents": [],
+      "resolved": {
+        "byClass": {
+          "land": 37
+        },
+        "counties": 11,
+        "drawn": 37,
+        "duchies": 6,
+        "kingdoms": 2,
+        "land": 37,
+        "other": 0,
+        "provinces": 37,
+        "sea": 0
+      },
+      "slug": "et_867_aquileia_region",
+      "usedBy": {},
+      "usedByCount": 0
+    },
+    {
+      "bbox": [
+        614,
+        503,
+        804,
+        628
+      ],
+      "declared": {
+        "counties": [
+          "c_esztergom",
+          "c_trenscen",
+          "c_orava",
+          "c_lipto",
+          "c_gemer",
+          "c_hont",
+          "c_komarom",
+          "c_poszony",
+          "c_vas",
+          "c_kolon",
+          "c_sopron",
+          "c_nyitra",
+          "c_bars",
+          "c_zolyom",
+          "c_gyor",
+          "c_abauj",
+          "c_veszprem",
+          "c_somogy",
+          "c_tolna",
+          "c_vukovar",
+          "c_pozega",
+          "c_szekesfehervar",
+          "c_baranya",
+          "c_bodrog",
+          "c_bacs",
+          "c_keve",
+          "c_krasso",
+          "c_temes",
+          "c_hunyad",
+          "c_feher",
+          "c_fogaras",
+          "c_barcasag",
+          "c_szekelyfold",
+          "c_beszterce",
+          "c_marmaros",
+          "c_bereg",
+          "c_ungvar",
+          "c_zemplen",
+          "c_borsod",
+          "c_hewes",
+          "c_visegrad",
+          "c_csongrad",
+          "c_csanad",
+          "c_arad",
+          "c_zarand",
+          "c_torda",
+          "c_szatmar",
+          "c_szabolcs",
+          "c_bihar",
+          "c_bekes"
+        ]
+      },
+      "family": "Clerical",
+      "file": "geographical_region.txt",
+      "id": "et_1066_esztergom_region",
+      "localized": false,
+      "name": "et 1066 esztergom region",
+      "parents": [],
+      "resolved": {
+        "byClass": {
+          "land": 169
+        },
+        "counties": 50,
+        "drawn": 169,
+        "duchies": 11,
+        "kingdoms": 2,
+        "land": 169,
+        "other": 0,
+        "provinces": 169,
+        "sea": 0
+      },
+      "slug": "et_1066_esztergom_region",
+      "usedBy": {},
+      "usedByCount": 0
+    },
+    {
+      "bbox": [
+        614,
+        485,
+        713,
+        624
+      ],
+      "declared": {
+        "counties": [
+          "c_esztergom",
+          "c_trenscen",
+          "c_orava",
+          "c_lipto",
+          "c_gemer",
+          "c_hont",
+          "c_komarom",
+          "c_poszony",
+          "c_vas",
+          "c_kolon",
+          "c_sopron",
+          "c_nyitra",
+          "c_bars",
+          "c_zolyom",
+          "c_gyor",
+          "c_abauj",
+          "c_veszprem",
+          "c_somogy",
+          "c_tolna",
+          "c_vukovar",
+          "c_pozega",
+          "c_baranya",
+          "c_saris",
+          "c_spis",
+          "c_sacz",
+          "c_cieszyn",
+          "c_visegrad"
+        ]
+      },
+      "family": "Clerical",
+      "file": "geographical_region.txt",
+      "id": "et_1178_esztergom_region",
+      "localized": false,
+      "name": "et 1178 esztergom region",
+      "parents": [],
+      "resolved": {
+        "byClass": {
+          "land": 81
+        },
+        "counties": 27,
+        "drawn": 81,
+        "duchies": 8,
+        "kingdoms": 3,
+        "land": 81,
+        "other": 0,
+        "provinces": 81,
+        "sea": 0
+      },
+      "slug": "et_1178_esztergom_region",
+      "usedBy": {},
+      "usedByCount": 0
+    },
+    {
+      "bbox": [
+        650,
+        508,
+        804,
+        628
+      ],
+      "declared": {
+        "counties": [
+          "c_szekesfehervar",
+          "c_csongrad",
+          "c_bodrog",
+          "c_bacs",
+          "c_hewes",
+          "c_borsod",
+          "c_zemplen",
+          "c_ungvar",
+          "c_bereg",
+          "c_marmaros",
+          "c_beszterce",
+          "c_torda",
+          "c_szekelyfold",
+          "c_barcasag",
+          "c_fogaras",
+          "c_feher",
+          "c_hunyad",
+          "c_temes",
+          "c_krasso",
+          "c_keve",
+          "c_csanad",
+          "c_arad",
+          "c_zarand",
+          "c_bekes",
+          "c_bihar",
+          "c_szabolcs",
+          "c_szatmar"
+        ]
+      },
+      "family": "Clerical",
+      "file": "geographical_region.txt",
+      "id": "et_1178_kalocsa_region",
+      "localized": false,
+      "name": "et 1178 kalocsa region",
+      "parents": [],
+      "resolved": {
+        "byClass": {
+          "land": 99
+        },
+        "counties": 27,
+        "drawn": 99,
+        "duchies": 7,
+        "kingdoms": 1,
+        "land": 99,
+        "other": 0,
+        "provinces": 99,
+        "sea": 0
+      },
+      "slug": "et_1178_kalocsa_region",
+      "usedBy": {},
+      "usedByCount": 0
+    },
+    {
+      "bbox": [
+        583,
+        583,
+        705,
+        703
+      ],
+      "declared": {
+        "counties": [
+          "c_cetina",
+          "c_knin",
+          "c_zadar",
+          "c_cherso",
+          "c_gacka",
+          "c_modrus",
+          "c_pset",
+          "c_donjikraji",
+          "c_zagorje",
+          "c_zagreb",
+          "c_zavrsje",
+          "c_pagania",
+          "c_ragusa",
+          "c_travunia",
+          "c_pomorje",
+          "c_zachlumia",
+          "c_zelengora",
+          "c_duklja",
+          "c_lika",
+          "c_vodica",
+          "c_vrbas"
+        ]
+      },
+      "family": "Clerical",
+      "file": "geographical_region.txt",
+      "id": "et_867_split_region",
+      "localized": false,
+      "name": "et 867 split region",
+      "parents": [],
+      "resolved": {
+        "byClass": {
+          "land": 74
+        },
+        "counties": 21,
+        "drawn": 74,
+        "duchies": 8,
+        "kingdoms": 2,
+        "land": 74,
+        "other": 0,
+        "provinces": 74,
+        "sea": 0
+      },
+      "slug": "et_867_split_region",
+      "usedBy": {},
+      "usedByCount": 0
+    },
+    {
+      "bbox": [
+        643,
+        560,
+        869,
+        770
+      ],
+      "declared": {
+        "counties": [
+          "c_ohrid",
+          "c_buthrotum",
+          "c_epeiros",
+          "c_metzovo",
+          "c_thessaliotis",
+          "c_skopje",
+          "c_strumica",
+          "c_antipatreia",
+          "c_avlonas",
+          "c_debar",
+          "c_velbazhd",
+          "c_sredets",
+          "c_nikopolis",
+          "c_turnovo",
+          "c_dorostorum",
+          "c_mesembria",
+          "c_constanta",
+          "c_hvosno",
+          "c_pomoravlje",
+          "c_naissus",
+          "c_sumadija",
+          "c_beograd",
+          "c_macva",
+          "c_szerem",
+          "c_branicevo",
+          "c_vidin",
+          "c_severin",
+          "c_vratsa",
+          "c_calafat",
+          "c_targu_jiu",
+          "c_craiova",
+          "c_polovragi",
+          "c_campulung",
+          "c_giurgiu",
+          "c_bucuresti",
+          "c_tabla_butii",
+          "c_buzau",
+          "c_calarasi",
+          "c_braila",
+          "c_cetatea_alba",
+          "c_chilia",
+          "c_tigheci",
+          "c_galati",
+          "c_barlad",
+          "c_stoenesti",
+          "c_neamnt",
+          "c_rashka",
+          "c_podrinje",
+          "c_rama",
+          "c_vhrbosna",
+          "c_soli",
+          "c_usora",
+          "c_zlatibor",
+          "c_arbanon",
+          "c_dyrrachion"
+        ]
+      },
+      "family": "Clerical",
+      "file": "geographical_region.txt",
+      "id": "et_1066_ohrid_region",
+      "localized": false,
+      "name": "et 1066 ohrid region",
+      "parents": [],
+      "resolved": {
+        "byClass": {
+          "land": 200
+        },
+        "counties": 55,
+        "drawn": 200,
+        "duchies": 19,
+        "kingdoms": 8,
+        "land": 200,
+        "other": 0,
+        "provinces": 200,
+        "sea": 0
+      },
+      "slug": "et_1066_ohrid_region",
+      "usedBy": {},
+      "usedByCount": 0
+    },
+    {
+      "bbox": [
+        583,
+        583,
+        705,
+        703
+      ],
+      "declared": {
+        "counties": [
+          "c_cetina",
+          "c_knin",
+          "c_zadar",
+          "c_cherso",
+          "c_gacka",
+          "c_modrus",
+          "c_pset",
+          "c_donjikraji",
+          "c_zagorje",
+          "c_zagreb",
+          "c_zavrsje",
+          "c_pagania",
+          "c_pomorje",
+          "c_duklja",
+          "c_lika",
+          "c_vodica",
+          "c_vrbas"
+        ]
+      },
+      "family": "Clerical",
+      "file": "geographical_region.txt",
+      "id": "et_1178_split_region",
+      "localized": false,
+      "name": "et 1178 split region",
+      "parents": [],
+      "resolved": {
+        "byClass": {
+          "land": 61
+        },
+        "counties": 17,
+        "drawn": 61,
+        "duchies": 7,
+        "kingdoms": 2,
+        "land": 61,
+        "other": 0,
+        "provinces": 61,
+        "sea": 0
+      },
+      "slug": "et_1178_split_region",
+      "usedBy": {},
+      "usedByCount": 0
+    },
+    {
+      "bbox": [
+        640,
+        652,
+        683,
+        686
+      ],
+      "declared": {
+        "counties": [
+          "c_ragusa",
+          "c_zachlumia",
+          "c_zelengora",
+          "c_travunia"
+        ]
+      },
+      "family": "Clerical",
+      "file": "geographical_region.txt",
+      "id": "et_1178_ragusa_region",
+      "localized": false,
+      "name": "et 1178 ragusa region",
+      "parents": [],
+      "resolved": {
+        "byClass": {
+          "land": 13
+        },
+        "counties": 4,
+        "drawn": 13,
+        "duchies": 3,
+        "kingdoms": 2,
+        "land": 13,
+        "other": 0,
+        "provinces": 13,
+        "sea": 0
+      },
+      "slug": "et_1178_ragusa_region",
+      "usedBy": {},
+      "usedByCount": 0
+    },
+    {
+      "bbox": [
+        517,
+        485,
+        631,
+        590
+      ],
+      "declared": {
+        "counties": [
+          "c_salzburg",
+          "c_frontenhausen",
+          "c_falkenstein",
+          "c_berchtesgaden",
+          "c_brixen",
+          "c_lienz",
+          "c_kammersberg",
+          "c_geisenhausen",
+          "c_rothenburg",
+          "c_ingolstadt",
+          "c_parsberg",
+          "c_leuchtenburg",
+          "c_villach",
+          "c_karnten",
+          "c_knittelfeld",
+          "c_hallstatt",
+          "c_schaumberg",
+          "c_passau",
+          "c_hohenburg",
+          "c_regensburg",
+          "c_linz",
+          "c_freistadt",
+          "c_amstetten",
+          "c_sankt_polten",
+          "c_krems",
+          "c_hohenau",
+          "c_vienna",
+          "c_pitten",
+          "c_murzzuschlag",
+          "c_graz",
+          "c_liebnitz"
+        ]
+      },
+      "family": "Clerical",
+      "file": "geographical_region.txt",
+      "id": "et_867_salzburg_region",
+      "localized": false,
+      "name": "et 867 salzburg region",
+      "parents": [],
+      "resolved": {
+        "byClass": {
+          "land": 100
+        },
+        "counties": 31,
+        "drawn": 100,
+        "duchies": 7,
+        "kingdoms": 1,
+        "land": 100,
+        "other": 0,
+        "provinces": 100,
+        "sea": 0
+      },
+      "slug": "et_867_salzburg_region",
+      "usedBy": {},
+      "usedByCount": 0
+    },
+    {
+      "bbox": [
+        407,
+        460,
+        464,
+        544
+      ],
+      "declared": {
+        "counties": [
+          "c_trier",
+          "c_sayn",
+          "c_koblenz",
+          "c_saarbrucken",
+          "c_metz",
+          "c_briey",
+          "c_nancy",
+          "c_neufchateau",
+          "c_vaucouleurs",
+          "c_puttlingen"
+        ]
+      },
+      "family": "Clerical",
+      "file": "geographical_region.txt",
+      "id": "et_867_trier_region",
+      "localized": false,
+      "name": "et 867 trier region",
+      "parents": [],
+      "resolved": {
+        "byClass": {
+          "land": 31
+        },
+        "counties": 10,
+        "drawn": 31,
+        "duchies": 3,
+        "kingdoms": 1,
+        "land": 31,
+        "other": 0,
+        "provinces": 31,
+        "sea": 0
+      },
+      "slug": "et_867_trier_region",
+      "usedBy": {},
+      "usedByCount": 0
+    },
+    {
+      "bbox": [
+        573,
+        395,
+        727,
+        522
+      ],
+      "declared": {
+        "counties": [
+          "c_gnieznienska",
+          "c_kaliska",
+          "c_lubusz",
+          "c_grunberg",
+          "c_sprottau",
+          "c_przemkow",
+          "c_breslau",
+          "c_brzeg",
+          "c_nysa",
+          "c_ratibor",
+          "c_cieszyn",
+          "c_sacz",
+          "c_spis",
+          "c_saris",
+          "c_tarnowska",
+          "c_lubelska",
+          "c_stezycka",
+          "c_czerska",
+          "c_zakroczymska",
+          "c_lomzynska",
+          "c_plocka",
+          "c_dobrzynska",
+          "c_kujawy",
+          "c_krajna",
+          "c_poznanska",
+          "c_schweibus",
+          "c_legnica",
+          "c_wschowska",
+          "c_miliez",
+          "c_wielunska",
+          "c_opole",
+          "c_sieradzka",
+          "c_bethen",
+          "c_krakowska",
+          "c_sandomierska",
+          "c_radomska",
+          "c_gostyninska",
+          "c_leczycka"
+        ]
+      },
+      "family": "Clerical",
+      "file": "geographical_region.txt",
+      "id": "et_1066_gniezno_region",
+      "localized": false,
+      "name": "et 1066 gniezno region",
+      "parents": [],
+      "resolved": {
+        "byClass": {
+          "land": 125
+        },
+        "counties": 38,
+        "drawn": 125,
+        "duchies": 7,
+        "kingdoms": 2,
+        "land": 125,
+        "other": 0,
+        "provinces": 125,
+        "sea": 0
+      },
+      "slug": "et_1066_gniezno_region",
+      "usedBy": {},
+      "usedByCount": 0
+    },
+    {
+      "bbox": [
+        551,
+        366,
+        727,
+        492
+      ],
+      "declared": {
+        "counties": [
+          "c_gnieznienska",
+          "c_kaliska",
+          "c_lubusz",
+          "c_grunberg",
+          "c_sprottau",
+          "c_przemkow",
+          "c_breslau",
+          "c_brzeg",
+          "c_tarnowska",
+          "c_lubelska",
+          "c_stezycka",
+          "c_czerska",
+          "c_zakroczymska",
+          "c_lomzynska",
+          "c_plocka",
+          "c_dobrzynska",
+          "c_kujawy",
+          "c_krajna",
+          "c_poznanska",
+          "c_schweibus",
+          "c_legnica",
+          "c_wschowska",
+          "c_miliez",
+          "c_wielunska",
+          "c_opole",
+          "c_sieradzka",
+          "c_bethen",
+          "c_krakowska",
+          "c_sandomierska",
+          "c_radomska",
+          "c_gostyninska",
+          "c_leczycka",
+          "c_prenzlau",
+          "c_wolgast",
+          "c_stettin",
+          "c_soldin",
+          "c_landsberg",
+          "c_kolobrzeg",
+          "c_cammin",
+          "c_pila",
+          "c_miastko",
+          "c_slupsk",
+          "c_danzig",
+          "c_berent",
+          "c_nysa",
+          "c_ratibor"
+        ]
+      },
+      "family": "Clerical",
+      "file": "geographical_region.txt",
+      "id": "et_1178_gniezno_region",
+      "localized": false,
+      "name": "et 1178 gniezno region",
+      "parents": [],
+      "resolved": {
+        "byClass": {
+          "land": 153
+        },
+        "counties": 46,
+        "drawn": 153,
+        "duchies": 10,
+        "kingdoms": 2,
+        "land": 153,
+        "other": 0,
+        "provinces": 153,
+        "sea": 0
+      },
+      "slug": "et_1178_gniezno_region",
+      "usedBy": {},
+      "usedByCount": 0
+    },
+    {
+      "bbox": [
+        446,
+        397,
+        545,
+        582
+      ],
+      "declared": {
+        "counties": [
+          "c_mainz",
+          "c_nassau",
+          "c_arnsberg",
+          "c_waldeck",
+          "c_paderborn",
+          "c_lippe",
+          "c_minden",
+          "c_wolpe",
+          "c_luneburg",
+          "c_dannenberg",
+          "c_stendal",
+          "c_magdeburg",
+          "c_halberstadt",
+          "c_mansfeld",
+          "c_schmalkalden",
+          "c_orlamunde",
+          "c_lobdaburg",
+          "c_bamberg",
+          "c_brunswick",
+          "c_hannover",
+          "c_hildesheim",
+          "c_gottingen",
+          "c_blankenburg",
+          "c_gleichenstein",
+          "c_kassel",
+          "c_fulda",
+          "c_wiltberg",
+          "c_coburg",
+          "c_klingenberg",
+          "c_frankfurt",
+          "c_marburg",
+          "c_wurzburg",
+          "c_mersenburg",
+          "c_nurnberg",
+          "c_eichstadt",
+          "c_burgau",
+          "c_augsburg",
+          "c_munchen",
+          "c_eschenlohe",
+          "c_innsbruck",
+          "c_alpsee",
+          "c_kempten",
+          "c_grunningen",
+          "c_ulm",
+          "c_strassburg",
+          "c_speyer",
+          "c_kaiserslautern",
+          "c_erbach",
+          "c_worms",
+          "c_durne",
+          "c_hohenlohe",
+          "c_ansbach",
+          "c_nordlingen",
+          "c_vaihingen",
+          "c_baden",
+          "c_zollern",
+          "c_furstenberg",
+          "c_sankt_gallen",
+          "c_ravensburg",
+          "c_grisons",
+          "c_wurttemberg",
+          "c_hohenberg",
+          "c_zurich"
+        ]
+      },
+      "family": "Clerical",
+      "file": "geographical_region.txt",
+      "id": "et_867_mainz_region",
+      "localized": false,
+      "name": "et 867 mainz region",
+      "parents": [],
+      "resolved": {
+        "byClass": {
+          "land": 196
+        },
+        "counties": 63,
+        "drawn": 196,
+        "duchies": 16,
+        "kingdoms": 4,
+        "land": 196,
+        "other": 0,
+        "provinces": 196,
+        "sea": 0
+      },
+      "slug": "et_867_mainz_region",
+      "usedBy": {},
+      "usedByCount": 0
+    },
+    {
+      "bbox": [
+        446,
+        397,
+        652,
+        582
+      ],
+      "declared": {
+        "counties": [
+          "c_mainz",
+          "c_nassau",
+          "c_arnsberg",
+          "c_waldeck",
+          "c_paderborn",
+          "c_lippe",
+          "c_minden",
+          "c_wolpe",
+          "c_luneburg",
+          "c_dannenberg",
+          "c_stendal",
+          "c_halberstadt",
+          "c_mansfeld",
+          "c_schmalkalden",
+          "c_orlamunde",
+          "c_lobdaburg",
+          "c_bamberg",
+          "c_brunswick",
+          "c_hannover",
+          "c_hildesheim",
+          "c_gottingen",
+          "c_blankenburg",
+          "c_gleichenstein",
+          "c_kassel",
+          "c_fulda",
+          "c_wiltberg",
+          "c_coburg",
+          "c_klingenberg",
+          "c_frankfurt",
+          "c_marburg",
+          "c_wurzburg",
+          "c_nurnberg",
+          "c_eichstadt",
+          "c_burgau",
+          "c_augsburg",
+          "c_munchen",
+          "c_eschenlohe",
+          "c_innsbruck",
+          "c_alpsee",
+          "c_kempten",
+          "c_grunningen",
+          "c_ulm",
+          "c_strassburg",
+          "c_speyer",
+          "c_kaiserslautern",
+          "c_erbach",
+          "c_worms",
+          "c_durne",
+          "c_hohenlohe",
+          "c_ansbach",
+          "c_nordlingen",
+          "c_vaihingen",
+          "c_baden",
+          "c_zollern",
+          "c_furstenberg",
+          "c_sankt_gallen",
+          "c_ravensburg",
+          "c_grisons",
+          "c_wurttemberg",
+          "c_hohenberg",
+          "c_praha",
+          "c_zatec",
+          "c_plzen",
+          "c_doudleby",
+          "c_caslav",
+          "c_hradec",
+          "c_boleslav",
+          "c_jihlava",
+          "c_brno",
+          "c_olomouc",
+          "c_opava",
+          "c_prerov",
+          "c_znojmo",
+          "c_vogtland",
+          "c_naumburg",
+          "c_zurich"
+        ]
+      },
+      "family": "Clerical",
+      "file": "geographical_region.txt",
+      "id": "et_1066_mainz_region",
+      "localized": false,
+      "name": "et 1066 mainz region",
+      "parents": [],
+      "resolved": {
+        "byClass": {
+          "land": 246
+        },
+        "counties": 76,
+        "drawn": 246,
+        "duchies": 19,
+        "kingdoms": 6,
+        "land": 246,
+        "other": 0,
+        "provinces": 246,
+        "sea": 0
+      },
+      "slug": "et_1066_mainz_region",
+      "usedBy": {},
+      "usedByCount": 0
+    },
+    {
+      "bbox": [
+        446,
+        397,
+        652,
+        582
+      ],
+      "declared": {
+        "counties": [
+          "c_mainz",
+          "c_nassau",
+          "c_arnsberg",
+          "c_waldeck",
+          "c_paderborn",
+          "c_lippe",
+          "c_minden",
+          "c_wolpe",
+          "c_luneburg",
+          "c_dannenberg",
+          "c_stendal",
+          "c_halberstadt",
+          "c_mansfeld",
+          "c_schmalkalden",
+          "c_orlamunde",
+          "c_lobdaburg",
+          "c_bamberg",
+          "c_brunswick",
+          "c_hannover",
+          "c_hildesheim",
+          "c_gottingen",
+          "c_blankenburg",
+          "c_gleichenstein",
+          "c_kassel",
+          "c_fulda",
+          "c_wiltberg",
+          "c_coburg",
+          "c_klingenberg",
+          "c_frankfurt",
+          "c_marburg",
+          "c_wurzburg",
+          "c_nurnberg",
+          "c_eichstadt",
+          "c_burgau",
+          "c_augsburg",
+          "c_munchen",
+          "c_eschenlohe",
+          "c_innsbruck",
+          "c_alpsee",
+          "c_kempten",
+          "c_grunningen",
+          "c_ulm",
+          "c_strassburg",
+          "c_speyer",
+          "c_kaiserslautern",
+          "c_erbach",
+          "c_worms",
+          "c_durne",
+          "c_hohenlohe",
+          "c_ansbach",
+          "c_nordlingen",
+          "c_vaihingen",
+          "c_baden",
+          "c_zollern",
+          "c_furstenberg",
+          "c_sankt_gallen",
+          "c_ravensburg",
+          "c_grisons",
+          "c_wurttemberg",
+          "c_hohenberg",
+          "c_praha",
+          "c_zatec",
+          "c_plzen",
+          "c_doudleby",
+          "c_caslav",
+          "c_hradec",
+          "c_boleslav",
+          "c_vogtland",
+          "c_naumburg",
+          "c_zurich",
+          "c_jihlava",
+          "c_brno",
+          "c_prerov",
+          "c_olomouc",
+          "c_opava",
+          "c_znojmo"
+        ]
+      },
+      "family": "Clerical",
+      "file": "geographical_region.txt",
+      "id": "et_1178_mainz_region",
+      "localized": false,
+      "name": "et 1178 mainz region",
+      "parents": [],
+      "resolved": {
+        "byClass": {
+          "land": 246
+        },
+        "counties": 76,
+        "drawn": 246,
+        "duchies": 19,
+        "kingdoms": 6,
+        "land": 246,
+        "other": 0,
+        "provinces": 246,
+        "sea": 0
+      },
+      "slug": "et_1178_mainz_region",
+      "usedBy": {},
+      "usedByCount": 0
+    },
+    {
+      "bbox": [
+        525,
+        423,
+        596,
+        478
+      ],
+      "declared": {
+        "counties": [
+          "c_magdeburg",
+          "c_mersenburg",
+          "c_dessau",
+          "c_wittenberg",
+          "c_osterland",
+          "c_wolkenstein",
+          "c_dresden",
+          "c_litomerice",
+          "c_gorlitz",
+          "c_naumberg",
+          "c_spreewald",
+          "c_juterbog",
+          "c_brene",
+          "c_cottbus",
+          "c_meissen"
+        ]
+      },
+      "family": "Clerical",
+      "file": "geographical_region.txt",
+      "id": "et_1066_magdeburg_region",
+      "localized": false,
+      "name": "et 1066 magdeburg region",
+      "parents": [],
+      "resolved": {
+        "byClass": {
+          "land": 41
+        },
+        "counties": 15,
+        "drawn": 41,
+        "duchies": 4,
+        "kingdoms": 3,
+        "land": 41,
+        "other": 0,
+        "provinces": 41,
+        "sea": 0
+      },
+      "slug": "et_1066_magdeburg_region",
+      "usedBy": {},
+      "usedByCount": 0
+    },
+    {
+      "bbox": [
+        524,
+        396,
+        596,
+        478
+      ],
+      "declared": {
+        "counties": [
+          "c_magdeburg",
+          "c_mersenburg",
+          "c_dessau",
+          "c_wittenberg",
+          "c_osterland",
+          "c_wolkenstein",
+          "c_dresden",
+          "c_litomerice",
+          "c_gorlitz",
+          "c_naumberg",
+          "c_spreewald",
+          "c_juterbog",
+          "c_brene",
+          "c_cottbus",
+          "c_meissen",
+          "c_brandenburg",
+          "c_ruppin",
+          "c_havelberg",
+          "c_berlin"
+        ]
+      },
+      "family": "Clerical",
+      "file": "geographical_region.txt",
+      "id": "et_1178_magdeburg_region",
+      "localized": false,
+      "name": "et 1178 magdeburg region",
+      "parents": [],
+      "resolved": {
+        "byClass": {
+          "land": 53
+        },
+        "counties": 19,
+        "drawn": 53,
+        "duchies": 5,
+        "kingdoms": 4,
+        "land": 53,
+        "other": 0,
+        "provinces": 53,
+        "sea": 0
+      },
+      "slug": "et_1178_magdeburg_region",
+      "usedBy": {},
+      "usedByCount": 0
+    },
+    {
+      "bbox": [
+        383,
+        385,
+        480,
+        519
+      ],
+      "declared": {
+        "counties": [
+          "c_cologne",
+          "c_bar",
+          "c_luxembourg",
+          "c_aachen",
+          "c_holland",
+          "c_maastricht",
+          "c_antwerpen",
+          "c_zeeland",
+          "c_nedersticht",
+          "c_guelders",
+          "c_bouillon",
+          "c_namur",
+          "c_liege",
+          "c_cleves",
+          "c_oversticht",
+          "c_groningen",
+          "c_frisia",
+          "c_dokkum",
+          "c_westfriesland",
+          "c_ostfriesland",
+          "c_oldenburg",
+          "c_tecklenburg",
+          "c_osnabruck",
+          "c_arnhem",
+          "c_zutphen",
+          "c_bergh",
+          "c_mark",
+          "c_dortmund",
+          "c_munster"
+        ]
+      },
+      "family": "Clerical",
+      "file": "geographical_region.txt",
+      "id": "et_867_cologne_region",
+      "localized": false,
+      "name": "et 867 cologne region",
+      "parents": [],
+      "resolved": {
+        "byClass": {
+          "land": 101
+        },
+        "counties": 29,
+        "drawn": 101,
+        "duchies": 11,
+        "kingdoms": 3,
+        "land": 101,
+        "other": 0,
+        "provinces": 101,
+        "sea": 0
+      },
+      "slug": "et_867_cologne_region",
+      "usedBy": {},
+      "usedByCount": 0
+    },
+    {
+      "bbox": [
+        478,
+        372,
+        517,
+        410
+      ],
+      "declared": {
+        "counties": [
+          "c_bremen",
+          "c_stade",
+          "c_ditmarschen",
+          "c_hamburg"
+        ]
+      },
+      "family": "Clerical",
+      "file": "geographical_region.txt",
+      "id": "et_867_hamburg_region",
+      "localized": false,
+      "name": "et 867 hamburg region",
+      "parents": [],
+      "resolved": {
+        "byClass": {
+          "land": 12
+        },
+        "counties": 4,
+        "drawn": 12,
+        "duchies": 3,
+        "kingdoms": 1,
+        "land": 12,
+        "other": 0,
+        "provinces": 12,
+        "sea": 0
+      },
+      "slug": "et_867_hamburg_region",
+      "usedBy": {},
+      "usedByCount": 0
+    },
+    {
+      "bbox": [
+        66,
+        29,
+        650,
+        410
+      ],
+      "declared": {
+        "counties": [
+          "c_bremen",
+          "c_stade",
+          "c_ditmarschen",
+          "c_hamburg",
+          "c_slesvig",
+          "c_ribe",
+          "c_vorbasse",
+          "c_ringkobing",
+          "c_aarhus",
+          "c_viborg",
+          "c_aalborg",
+          "c_fyn",
+          "c_sjaelland",
+          "c_lolland_falster",
+          "c_skane",
+          "c_halland",
+          "c_finnveden",
+          "c_varend",
+          "c_more",
+          "c_oland",
+          "c_gutland",
+          "c_sevede",
+          "c_njudung",
+          "c_vastergotland",
+          "c_kinda",
+          "c_skara",
+          "c_ostergotland",
+          "c_sodermannaland",
+          "c_narke",
+          "c_varmland",
+          "c_nordmark",
+          "c_dal",
+          "c_blekinge",
+          "c_bornholm",
+          "c_lubeck",
+          "c_raniriki",
+          "c_vingulmork",
+          "c_vestfold",
+          "c_telemark",
+          "c_nedenes",
+          "c_agdeside",
+          "c_rogalandi",
+          "c_hordalandi",
+          "c_sogn",
+          "c_firdafylki",
+          "c_norwegian_more",
+          "c_trandheim",
+          "c_jamtfir",
+          "c_helgum",
+          "c_morarna",
+          "c_harjadalen",
+          "c_eystridalir",
+          "c_gauldala",
+          "c_gudbrandsdalir",
+          "c_hedmork",
+          "c_dalabergslagen",
+          "c_dalarna",
+          "c_halsingland",
+          "c_gastrikland",
+          "c_vastmanland",
+          "c_upland",
+          "c_medelpad",
+          "c_namdalfylki",
+          "c_bothin",
+          "c_vastvag",
+          "c_orkney",
+          "c_shetland",
+          "c_faereyar",
+          "c_austisland",
+          "c_nordrland",
+          "c_vestisland",
+          "c_sudurland"
+        ]
+      },
+      "family": "Clerical",
+      "file": "geographical_region.txt",
+      "id": "et_1066_hamburg_region",
+      "localized": false,
+      "name": "et 1066 hamburg region",
+      "parents": [],
+      "resolved": {
+        "byClass": {
+          "land": 233
+        },
+        "counties": 72,
+        "drawn": 233,
+        "duchies": 23,
+        "kingdoms": 4,
+        "land": 233,
+        "other": 0,
+        "provinces": 233,
+        "sea": 0
+      },
+      "slug": "et_1066_hamburg_region",
+      "usedBy": {},
+      "usedByCount": 0
+    },
+    {
+      "bbox": [
+        478,
+        367,
+        566,
+        410
+      ],
+      "declared": {
+        "counties": [
+          "c_bremen",
+          "c_stade",
+          "c_ditmarschen",
+          "c_hamburg",
+          "c_lubeck",
+          "c_mecklenburg",
+          "c_rostock",
+          "c_werle",
+          "c_rugen"
+        ]
+      },
+      "family": "Clerical",
+      "file": "geographical_region.txt",
+      "id": "et_1178_hamburg_bremen_region",
+      "localized": false,
+      "name": "et 1178 hamburg bremen region",
+      "parents": [],
+      "resolved": {
+        "byClass": {
+          "land": 26
+        },
+        "counties": 9,
+        "drawn": 26,
+        "duchies": 4,
+        "kingdoms": 2,
+        "land": 26,
+        "other": 0,
+        "provinces": 26,
+        "sea": 0
+      },
+      "slug": "et_1178_hamburg_bremen_region",
+      "usedBy": {},
+      "usedByCount": 0
+    },
+    {
+      "bbox": [
+        475,
+        219,
+        650,
+        376
+      ],
+      "declared": {
+        "counties": [
+          "c_skane",
+          "c_more",
+          "c_oland",
+          "c_gutland",
+          "c_sevede",
+          "c_njudung",
+          "c_vastergotland",
+          "c_kinda",
+          "c_skara",
+          "c_ostergotland",
+          "c_sodermannaland",
+          "c_narke",
+          "c_varmland",
+          "c_nordmark",
+          "c_dal",
+          "c_blekinge",
+          "c_bornholm",
+          "c_finnveden",
+          "c_halland",
+          "c_sjaelland",
+          "c_lolland_falster",
+          "c_fyn",
+          "c_aalborg",
+          "c_aarhus",
+          "c_viborg",
+          "c_ringkobing",
+          "c_vorbasse",
+          "c_ribe",
+          "c_slesvig",
+          "c_varend"
+        ]
+      },
+      "family": "Clerical",
+      "file": "geographical_region.txt",
+      "id": "et_1178_lund_region",
+      "localized": false,
+      "name": "et 1178 lund region",
+      "parents": [],
+      "resolved": {
+        "byClass": {
+          "land": 99
+        },
+        "counties": 30,
+        "drawn": 99,
+        "duchies": 10,
+        "kingdoms": 2,
+        "land": 99,
+        "other": 0,
+        "provinces": 99,
+        "sea": 0
+      },
+      "slug": "et_1178_lund_region",
+      "usedBy": {},
+      "usedByCount": 0
+    },
+    {
+      "bbox": [
+        543,
+        72,
+        668,
+        259
+      ],
+      "declared": {
+        "counties": [
+          "c_upland",
+          "c_vastmanland",
+          "c_dalabergslagen",
+          "c_dalarna",
+          "c_gastrikland",
+          "c_halsingland",
+          "c_medelpad",
+          "c_harjadalen",
+          "c_jamtfir",
+          "c_morarna",
+          "c_helgum",
+          "c_sjeltie",
+          "c_angermanland",
+          "c_biton",
+          "c_ubmejeiednuo",
+          "c_pite",
+          "c_jahkamakke"
+        ]
+      },
+      "family": "Clerical",
+      "file": "geographical_region.txt",
+      "id": "et_1178_uppsala_region",
+      "localized": false,
+      "name": "et 1178 uppsala region",
+      "parents": [],
+      "resolved": {
+        "byClass": {
+          "land": 61
+        },
+        "counties": 17,
+        "drawn": 61,
+        "duchies": 6,
+        "kingdoms": 3,
+        "land": 61,
+        "other": 0,
+        "provinces": 61,
+        "sea": 0
+      },
+      "slug": "et_1178_uppsala_region",
+      "usedBy": {},
+      "usedByCount": 0
+    },
+    {
+      "bbox": [
+        66,
+        29,
+        618,
+        362
+      ],
+      "declared": {
+        "counties": [
+          "c_trandheim",
+          "c_namdalfylki",
+          "c_bothin",
+          "c_vastvag",
+          "c_orkney",
+          "c_shetland",
+          "c_faereyar",
+          "c_austisland",
+          "c_nordrland",
+          "c_vestisland",
+          "c_sudurland",
+          "c_norwegian_more",
+          "c_gudbrandsdalir",
+          "c_gauldala",
+          "c_eystridalir",
+          "c_hedmork",
+          "c_vingulmork",
+          "c_raniriki",
+          "c_vestfold",
+          "c_telemark",
+          "c_nedenes",
+          "c_agdeside",
+          "c_rogalandi",
+          "c_hordalandi",
+          "c_sogn",
+          "c_firdafylki",
+          "c_inner_hebrides",
+          "c_outer_hebrides",
+          "c_isle_of_man"
+        ]
+      },
+      "family": "Clerical",
+      "file": "geographical_region.txt",
+      "id": "et_1178_nidaros_region",
+      "localized": false,
+      "name": "et 1178 nidaros region",
+      "parents": [],
+      "resolved": {
+        "byClass": {
+          "land": 85
+        },
+        "counties": 29,
+        "drawn": 85,
+        "duchies": 10,
+        "kingdoms": 2,
+        "land": 85,
+        "other": 0,
+        "provinces": 85,
+        "sea": 0
+      },
+      "slug": "et_1178_nidaros_region",
+      "usedBy": {},
+      "usedByCount": 0
+    },
+    {
+      "bbox": [
+        704,
+        224,
+        957,
+        578
+      ],
+      "declared": {
+        "counties": [
+          "c_kiev",
+          "c_lapusna",
+          "c_iasi",
+          "c_dorohoi",
+          "c_suceava",
+          "c_soroca",
+          "c_hotin",
+          "c_halych",
+          "c_peremyshl",
+          "c_cherven",
+          "c_dorohychyn",
+          "c_berestye",
+          "c_volkovysk",
+          "c_novogrudok",
+          "c_kletsk",
+          "c_minsk",
+          "c_lukoml",
+          "c_polotsk",
+          "c_sebezh",
+          "c_pskov",
+          "c_novgorod",
+          "c_vodi",
+          "c_vyangi",
+          "c_beloozero",
+          "c_yaroslavl",
+          "c_suzdal",
+          "c_vladimir",
+          "c_moskva",
+          "c_odoyev",
+          "c_novosil",
+          "c_kursk",
+          "c_romen",
+          "c_hradyzk",
+          "c_voin",
+          "c_pereyaslavl",
+          "c_korsun",
+          "c_ushytsia",
+          "c_orhei",
+          "c_tikhvin",
+          "c_bezichi",
+          "c_valdai",
+          "c_luki",
+          "c_rusa",
+          "c_toropets",
+          "c_mozhaysk",
+          "c_tver",
+          "c_smolensk",
+          "c_kozelsk",
+          "c_orsha",
+          "c_roslavl",
+          "c_karachev",
+          "c_starodub",
+          "c_gnezdovo",
+          "c_sevsk",
+          "c_putyvl",
+          "c_novgorod_seversky",
+          "c_chernigov",
+          "c_babruysk",
+          "c_slutsk",
+          "c_pinsk",
+          "c_vitebsk",
+          "c_volodymyr",
+          "c_dubrovytsia",
+          "c_turov",
+          "c_korosten",
+          "c_chornobyl",
+          "c_zvyahel",
+          "c_zhytomyr",
+          "c_peresopnytsia",
+          "c_belz",
+          "c_zaslavl",
+          "c_lviv",
+          "c_terebovl"
+        ]
+      },
+      "family": "Clerical",
+      "file": "geographical_region.txt",
+      "id": "et_1066_kyiv_region",
+      "localized": false,
+      "name": "et 1066 kyiv region",
+      "parents": [],
+      "resolved": {
+        "byClass": {
+          "land": 250
+        },
+        "counties": 73,
+        "drawn": 250,
+        "duchies": 21,
+        "kingdoms": 6,
+        "land": 250,
+        "other": 0,
+        "provinces": 250,
+        "sea": 0
+      },
+      "slug": "et_1066_kyiv_region",
+      "usedBy": {},
+      "usedByCount": 0
+    },
+    {
+      "bbox": [
+        704,
+        113,
+        994,
+        578
+      ],
+      "declared": {
+        "counties": [
+          "c_kiev",
+          "c_lapusna",
+          "c_iasi",
+          "c_dorohoi",
+          "c_suceava",
+          "c_soroca",
+          "c_hotin",
+          "c_halych",
+          "c_peremyshl",
+          "c_cherven",
+          "c_dorohychyn",
+          "c_berestye",
+          "c_volkovysk",
+          "c_novogrudok",
+          "c_kletsk",
+          "c_minsk",
+          "c_lukoml",
+          "c_polotsk",
+          "c_sebezh",
+          "c_pskov",
+          "c_novgorod",
+          "c_vodi",
+          "c_vyangi",
+          "c_beloozero",
+          "c_yaroslavl",
+          "c_suzdal",
+          "c_vladimir",
+          "c_moskva",
+          "c_odoyev",
+          "c_novosil",
+          "c_kursk",
+          "c_romen",
+          "c_hradyzk",
+          "c_voin",
+          "c_pereyaslavl",
+          "c_korsun",
+          "c_ushytsia",
+          "c_orhei",
+          "c_tikhvin",
+          "c_bezichi",
+          "c_valdai",
+          "c_luki",
+          "c_rusa",
+          "c_toropets",
+          "c_mozhaysk",
+          "c_tver",
+          "c_smolensk",
+          "c_kozelsk",
+          "c_orsha",
+          "c_roslavl",
+          "c_karachev",
+          "c_starodub",
+          "c_gnezdovo",
+          "c_sevsk",
+          "c_putyvl",
+          "c_novgorod_seversky",
+          "c_chernigov",
+          "c_babruysk",
+          "c_slutsk",
+          "c_pinsk",
+          "c_vitebsk",
+          "c_volodymyr",
+          "c_dubrovytsia",
+          "c_turov",
+          "c_korosten",
+          "c_chornobyl",
+          "c_zvyahel",
+          "c_zhytomyr",
+          "c_peresopnytsia",
+          "c_belz",
+          "c_zaslavl",
+          "c_lviv",
+          "c_terebovl",
+          "c_onega",
+          "c_salinis",
+          "c_kontupohja",
+          "c_viena",
+          "c_murom",
+          "c_ryazan"
+        ]
+      },
+      "family": "Clerical",
+      "file": "geographical_region.txt",
+      "id": "et_1178_kyiv_region",
+      "localized": false,
+      "name": "et 1178 kyiv region",
+      "parents": [],
+      "resolved": {
+        "byClass": {
+          "land": 272
+        },
+        "counties": 79,
+        "drawn": 272,
+        "duchies": 23,
+        "kingdoms": 7,
+        "land": 272,
+        "other": 0,
+        "provinces": 272,
+        "sea": 0
+      },
+      "slug": "et_1178_kyiv_region",
+      "usedBy": {},
+      "usedByCount": 0
+    },
+    {
+      "bbox": [
+        598,
+        560,
+        1077,
+        863
+      ],
+      "declared": {
+        "counties": [
+          "c_byzantion",
+          "c_brysis",
+          "c_kalliopolis",
+          "c_mosynopolis",
+          "c_rhodopes",
+          "c_sredets",
+          "c_vratsa",
+          "c_calafat",
+          "c_severin",
+          "c_targu_jiu",
+          "c_polovragi",
+          "c_campulung",
+          "c_tabla_butii",
+          "c_galati",
+          "c_stoenesti",
+          "c_neamnt",
+          "c_barlad",
+          "c_tigheci",
+          "c_chilia",
+          "c_cetatea_alba",
+          "c_constanta",
+          "c_mesembria",
+          "c_aytos",
+          "c_burgas",
+          "c_braila",
+          "c_buzau",
+          "c_calarasi",
+          "c_bucuresti",
+          "c_giurgiu",
+          "c_craiova",
+          "c_dorostorum",
+          "c_turnovo",
+          "c_nikopolis",
+          "c_kran",
+          "c_philippopolis",
+          "c_beroe",
+          "c_zherkovo",
+          "c_adrianopolis",
+          "c_vidin",
+          "c_branicevo",
+          "c_beograd",
+          "c_szerem",
+          "c_soli",
+          "c_usora",
+          "c_rama",
+          "c_vhrbosna",
+          "c_podrinje",
+          "c_rashka",
+          "c_hvosno",
+          "c_pomoravlje",
+          "c_velbazhd",
+          "c_pirin",
+          "c_skopje",
+          "c_debar",
+          "c_macva",
+          "c_zlatibor",
+          "c_sumadija",
+          "c_naissus",
+          "c_serres",
+          "c_thessalonika",
+          "c_strumica",
+          "c_ohrid",
+          "c_arbanon",
+          "c_dyrrachion",
+          "c_avlonas",
+          "c_buthrotum",
+          "c_epeiros",
+          "c_nicopolis",
+          "c_cephalonia",
+          "c_achaia",
+          "c_messenia",
+          "c_laconia",
+          "c_chania",
+          "c_chandax",
+          "c_korinthos",
+          "c_attica",
+          "c_euboea",
+          "c_demetrias",
+          "c_thessalia",
+          "c_veria",
+          "c_chalkidike",
+          "c_lesbos",
+          "c_antipatreia",
+          "c_metzovo",
+          "c_thessaliotis",
+          "c_aetolia",
+          "c_neopatras",
+          "c_boeotia",
+          "c_ionia",
+          "c_abydos",
+          "c_aeolis",
+          "c_chios",
+          "c_rhodos",
+          "c_caria",
+          "c_lycia",
+          "c_pamphylia",
+          "c_isauria",
+          "c_lycaonia",
+          "c_philomelium",
+          "c_pacatiana",
+          "c_phrygia",
+          "c_prusa",
+          "c_mysia",
+          "c_thyatira",
+          "c_hadrianeia",
+          "c_lydia",
+          "c_chonae",
+          "c_pisidia",
+          "c_selge",
+          "c_bithynia",
+          "c_tarsos",
+          "c_honorias",
+          "c_paphlagonia",
+          "c_sinope",
+          "c_helenopontus",
+          "c_cerasus",
+          "c_trebizond",
+          "c_acampse",
+          "c_theodosiopolis",
+          "c_bakriya",
+          "c_melitene",
+          "c_ablastha",
+          "c_lycandus",
+          "c_kaisereia",
+          "c_kyzistra",
+          "c_cappadocia",
+          "c_lower_galatia",
+          "c_galatia_salutaris",
+          "c_galatia",
+          "c_hadrianopolis",
+          "c_nikaea",
+          "c_pompeiopolis",
+          "c_euchaita",
+          "c_charsianon",
+          "c_zela",
+          "c_sebasteia",
+          "c_colonea",
+          "c_satala",
+          "c_azysia",
+          "c_mesopotamia",
+          "c_naxos",
+          "c_malta"
+        ]
+      },
+      "family": "Clerical",
+      "file": "geographical_region.txt",
+      "id": "et_867_constantinople_region",
+      "localized": false,
+      "name": "et 867 constantinople region",
+      "parents": [],
+      "resolved": {
+        "byClass": {
+          "land": 539
+        },
+        "counties": 142,
+        "drawn": 539,
+        "duchies": 45,
+        "kingdoms": 17,
+        "land": 539,
+        "other": 0,
+        "provinces": 539,
+        "sea": 0
+      },
+      "slug": "et_867_constantinople_region",
+      "usedBy": {},
+      "usedByCount": 0
+    },
+    {
+      "bbox": [
+        598,
+        654,
+        1077,
+        863
+      ],
+      "declared": {
+        "counties": [
+          "c_byzantion",
+          "c_brysis",
+          "c_kalliopolis",
+          "c_mosynopolis",
+          "c_rhodopes",
+          "c_aytos",
+          "c_burgas",
+          "c_philippopolis",
+          "c_beroe",
+          "c_zherkovo",
+          "c_adrianopolis",
+          "c_serres",
+          "c_thessalonika",
+          "c_achaia",
+          "c_messenia",
+          "c_laconia",
+          "c_chania",
+          "c_chandax",
+          "c_korinthos",
+          "c_attica",
+          "c_euboea",
+          "c_demetrias",
+          "c_thessalia",
+          "c_veria",
+          "c_chalkidike",
+          "c_lesbos",
+          "c_aetolia",
+          "c_neopatras",
+          "c_boeotia",
+          "c_ionia",
+          "c_abydos",
+          "c_aeolis",
+          "c_chios",
+          "c_rhodos",
+          "c_caria",
+          "c_lycia",
+          "c_pamphylia",
+          "c_isauria",
+          "c_lycaonia",
+          "c_philomelium",
+          "c_pacatiana",
+          "c_phrygia",
+          "c_prusa",
+          "c_mysia",
+          "c_thyatira",
+          "c_hadrianeia",
+          "c_lydia",
+          "c_chonae",
+          "c_pisidia",
+          "c_selge",
+          "c_bithynia",
+          "c_tarsos",
+          "c_honorias",
+          "c_paphlagonia",
+          "c_sinope",
+          "c_helenopontus",
+          "c_cerasus",
+          "c_trebizond",
+          "c_acampse",
+          "c_theodosiopolis",
+          "c_bakriya",
+          "c_melitene",
+          "c_ablastha",
+          "c_lycandus",
+          "c_kaisereia",
+          "c_kyzistra",
+          "c_cappadocia",
+          "c_lower_galatia",
+          "c_galatia_salutaris",
+          "c_galatia",
+          "c_hadrianopolis",
+          "c_nikaea",
+          "c_pompeiopolis",
+          "c_euchaita",
+          "c_charsianon",
+          "c_zela",
+          "c_sebasteia",
+          "c_colonea",
+          "c_satala",
+          "c_azysia",
+          "c_mesopotamia",
+          "c_naxos",
+          "c_nicopolis",
+          "c_cephalonia",
+          "c_kran",
+          "c_pirin",
+          "c_malta"
+        ]
+      },
+      "family": "Clerical",
+      "file": "geographical_region.txt",
+      "id": "et_1066_constantinople_region",
+      "localized": false,
+      "name": "et 1066 constantinople region",
+      "parents": [],
+      "resolved": {
+        "byClass": {
+          "land": 339
+        },
+        "counties": 87,
+        "drawn": 339,
+        "duchies": 31,
+        "kingdoms": 12,
+        "land": 339,
+        "other": 0,
+        "provinces": 339,
+        "sea": 0
+      },
+      "slug": "et_1066_constantinople_region",
+      "usedBy": {},
+      "usedByCount": 0
+    },
+    {
+      "bbox": [
+        710,
+        654,
+        1077,
+        863
+      ],
+      "declared": {
+        "counties": [
+          "c_byzantion",
+          "c_brysis",
+          "c_kalliopolis",
+          "c_mosynopolis",
+          "c_rhodopes",
+          "c_aytos",
+          "c_burgas",
+          "c_philippopolis",
+          "c_beroe",
+          "c_zherkovo",
+          "c_adrianopolis",
+          "c_serres",
+          "c_thessalonika",
+          "c_achaia",
+          "c_messenia",
+          "c_laconia",
+          "c_chania",
+          "c_chandax",
+          "c_korinthos",
+          "c_attica",
+          "c_euboea",
+          "c_demetrias",
+          "c_thessalia",
+          "c_veria",
+          "c_chalkidike",
+          "c_lesbos",
+          "c_aetolia",
+          "c_neopatras",
+          "c_boeotia",
+          "c_ionia",
+          "c_abydos",
+          "c_aeolis",
+          "c_chios",
+          "c_rhodos",
+          "c_caria",
+          "c_lycia",
+          "c_pamphylia",
+          "c_isauria",
+          "c_lycaonia",
+          "c_philomelium",
+          "c_pacatiana",
+          "c_phrygia",
+          "c_prusa",
+          "c_mysia",
+          "c_thyatira",
+          "c_hadrianeia",
+          "c_lydia",
+          "c_chonae",
+          "c_pisidia",
+          "c_selge",
+          "c_bithynia",
+          "c_tarsos",
+          "c_honorias",
+          "c_paphlagonia",
+          "c_sinope",
+          "c_helenopontus",
+          "c_cerasus",
+          "c_trebizond",
+          "c_acampse",
+          "c_theodosiopolis",
+          "c_bakriya",
+          "c_melitene",
+          "c_ablastha",
+          "c_lycandus",
+          "c_kaisereia",
+          "c_kyzistra",
+          "c_cappadocia",
+          "c_lower_galatia",
+          "c_galatia_salutaris",
+          "c_galatia",
+          "c_hadrianopolis",
+          "c_nikaea",
+          "c_pompeiopolis",
+          "c_euchaita",
+          "c_charsianon",
+          "c_zela",
+          "c_sebasteia",
+          "c_colonea",
+          "c_satala",
+          "c_azysia",
+          "c_mesopotamia",
+          "c_naxos",
+          "c_nicopolis",
+          "c_cephalonia",
+          "c_kran",
+          "c_pirin"
+        ]
+      },
+      "family": "Clerical",
+      "file": "geographical_region.txt",
+      "id": "et_1178_constantinople_region",
+      "localized": false,
+      "name": "et 1178 constantinople region",
+      "parents": [],
+      "resolved": {
+        "byClass": {
+          "land": 338
+        },
+        "counties": 86,
+        "drawn": 338,
+        "duchies": 30,
+        "kingdoms": 11,
+        "land": 338,
+        "other": 0,
+        "provinces": 338,
+        "sea": 0
+      },
+      "slug": "et_1178_constantinople_region",
+      "usedBy": {},
+      "usedByCount": 0
+    },
+    {
+      "bbox": [
+        937,
+        766,
+        1042,
+        974
+      ],
+      "declared": {
+        "counties": [
+          "c_antiocheia",
+          "c_seleucia",
+          "c_cilicia",
+          "c_tall_hamid",
+          "c_alexandretta",
+          "c_tripoli",
+          "c_beirut",
+          "c_al_aqabah",
+          "c_maan",
+          "c_jilat",
+          "c_balqa",
+          "c_hauran",
+          "c_damascus",
+          "c_juwair",
+          "c_qaryatan",
+          "c_palmyra",
+          "c_samosata",
+          "c_marash",
+          "c_aintab",
+          "c_edessa",
+          "c_aleppo",
+          "c_syrrusafa",
+          "c_suriya",
+          "c_hama",
+          "c_shayzar",
+          "c_homs",
+          "c_baalbek",
+          "c_kerak",
+          "c_maab",
+          "c_qinnasrin",
+          "c_dausar"
+        ]
+      },
+      "family": "Clerical",
+      "file": "geographical_region.txt",
+      "id": "et_867_antioch_region",
+      "localized": false,
+      "name": "et 867 antioch region",
+      "parents": [],
+      "resolved": {
+        "byClass": {
+          "land": 94
+        },
+        "counties": 31,
+        "drawn": 94,
+        "duchies": 12,
+        "kingdoms": 5,
+        "land": 94,
+        "other": 0,
+        "provinces": 94,
+        "sea": 0
+      },
+      "slug": "et_867_antioch_region",
+      "usedBy": {},
+      "usedByCount": 0
+    },
+    {
+      "bbox": [
+        937,
+        766,
+        1042,
+        974
+      ],
+      "declared": {
+        "counties": [
+          "c_antiocheia",
+          "c_seleucia",
+          "c_cilicia",
+          "c_tall_hamid",
+          "c_alexandretta",
+          "c_al_aqabah",
+          "c_maan",
+          "c_jilat",
+          "c_balqa",
+          "c_hauran",
+          "c_damascus",
+          "c_juwair",
+          "c_qaryatan",
+          "c_palmyra",
+          "c_samosata",
+          "c_marash",
+          "c_aintab",
+          "c_edessa",
+          "c_aleppo",
+          "c_syrrusafa",
+          "c_suriya",
+          "c_hama",
+          "c_shayzar",
+          "c_homs",
+          "c_baalbek",
+          "c_qinnasrin",
+          "c_dausar"
+        ]
+      },
+      "family": "Clerical",
+      "file": "geographical_region.txt",
+      "id": "et_1178_antioch_region",
+      "localized": false,
+      "name": "et 1178 antioch region",
+      "parents": [],
+      "resolved": {
+        "byClass": {
+          "land": 84
+        },
+        "counties": 27,
+        "drawn": 84,
+        "duchies": 10,
+        "kingdoms": 4,
+        "land": 84,
+        "other": 0,
+        "provinces": 84,
+        "sea": 0
+      },
+      "slug": "et_1178_antioch_region",
+      "usedBy": {},
+      "usedByCount": 0
+    },
+    {
+      "bbox": [
+        932,
+        825,
+        971,
+        852
+      ],
+      "declared": {
+        "counties": [
+          "c_nicosia",
+          "c_famagusta"
+        ]
+      },
+      "family": "Clerical",
+      "file": "geographical_region.txt",
+      "id": "et_867_cyprus_region",
+      "localized": false,
+      "name": "et 867 cyprus region",
+      "parents": [],
+      "resolved": {
+        "byClass": {
+          "land": 6
+        },
+        "counties": 2,
+        "drawn": 6,
+        "duchies": 1,
+        "kingdoms": 1,
+        "land": 6,
+        "other": 0,
+        "provinces": 6,
+        "sea": 0
+      },
+      "slug": "et_867_cyprus_region",
+      "usedBy": {},
+      "usedByCount": 0
+    },
+    {
+      "bbox": [
+        1067,
+        674,
+        1167,
+        760
+      ],
+      "declared": {
+        "counties": [
+          "c_hayk",
+          "c_apahunik",
+          "c_turuberan",
+          "c_khachen",
+          "c_suenik",
+          "c_dvin",
+          "c_vaspurakan",
+          "c_bagrewand",
+          "c_vanand",
+          "c_lori",
+          "c_tbilisi"
+        ]
+      },
+      "family": "Clerical",
+      "file": "geographical_region.txt",
+      "id": "et_867_armenia_region",
+      "localized": false,
+      "name": "et 867 armenia region",
+      "parents": [],
+      "resolved": {
+        "byClass": {
+          "land": 43
+        },
+        "counties": 11,
+        "drawn": 43,
+        "duchies": 3,
+        "kingdoms": 2,
+        "land": 43,
+        "other": 0,
+        "provinces": 43,
+        "sea": 0
+      },
+      "slug": "et_867_armenia_region",
+      "usedBy": {},
+      "usedByCount": 0
+    },
+    {
+      "bbox": [
+        1067,
+        686,
+        1167,
+        760
+      ],
+      "declared": {
+        "counties": [
+          "c_hayk",
+          "c_apahunik",
+          "c_turuberan",
+          "c_khachen",
+          "c_suenik",
+          "c_dvin",
+          "c_vaspurakan",
+          "c_bagrewand",
+          "c_vanand"
+        ]
+      },
+      "family": "Clerical",
+      "file": "geographical_region.txt",
+      "id": "et_1066_armenia_region",
+      "localized": false,
+      "name": "et 1066 armenia region",
+      "parents": [],
+      "resolved": {
+        "byClass": {
+          "land": 37
+        },
+        "counties": 9,
+        "drawn": 37,
+        "duchies": 2,
+        "kingdoms": 1,
+        "land": 37,
+        "other": 0,
+        "provinces": 37,
+        "sea": 0
+      },
+      "slug": "et_1066_armenia_region",
+      "usedBy": {},
+      "usedByCount": 0
+    },
+    {
+      "bbox": [
+        1027,
+        628,
+        1162,
+        717
+      ],
+      "declared": {
+        "counties": [
+          "c_tbilisi",
+          "c_tao",
+          "c_klarjeti",
+          "c_guria",
+          "c_lori",
+          "c_kakheti",
+          "c_hereti",
+          "c_kartli",
+          "c_svaneti",
+          "c_odishi",
+          "c_abkhazia"
+        ]
+      },
+      "family": "Clerical",
+      "file": "geographical_region.txt",
+      "id": "et_1066_georgia_region",
+      "localized": false,
+      "name": "et 1066 georgia region",
+      "parents": [],
+      "resolved": {
+        "byClass": {
+          "land": 42
+        },
+        "counties": 11,
+        "drawn": 42,
+        "duchies": 3,
+        "kingdoms": 1,
+        "land": 42,
+        "other": 0,
+        "provinces": 42,
+        "sea": 0
+      },
+      "slug": "et_1066_georgia_region",
+      "usedBy": {},
+      "usedByCount": 0
+    },
+    {
+      "bbox": [
+        1027,
+        628,
+        1169,
+        717
+      ],
+      "declared": {
+        "counties": [
+          "c_kartli",
+          "c_tao",
+          "c_klarjeti",
+          "c_guria",
+          "c_kakheti",
+          "c_hereti",
+          "c_svaneti",
+          "c_odishi",
+          "c_abkhazia",
+          "c_aran"
+        ]
+      },
+      "family": "Clerical",
+      "file": "geographical_region.txt",
+      "id": "et_867_kartli_region",
+      "localized": false,
+      "name": "et 867 kartli region",
+      "parents": [],
+      "resolved": {
+        "byClass": {
+          "land": 39
+        },
+        "counties": 10,
+        "drawn": 39,
+        "duchies": 4,
+        "kingdoms": 2,
+        "land": 39,
+        "other": 0,
+        "provinces": 39,
+        "sea": 0
+      },
+      "slug": "et_867_kartli_region",
+      "usedBy": {},
+      "usedByCount": 0
+    },
+    {
+      "bbox": [
+        937,
+        870,
+        1001,
+        970
+      ],
+      "declared": {
+        "counties": [
+          "c_jerusalem",
+          "c_acre",
+          "c_tiberias",
+          "c_jaffa",
+          "c_ghazza",
+          "c_irbid",
+          "c_negev",
+          "c_sinai",
+          "c_firaun"
+        ]
+      },
+      "family": "Clerical",
+      "file": "geographical_region.txt",
+      "id": "et_867_jerusalem_region",
+      "localized": false,
+      "name": "et 867 jerusalem region",
+      "parents": [],
+      "resolved": {
+        "byClass": {
+          "land": 25
+        },
+        "counties": 9,
+        "drawn": 25,
+        "duchies": 4,
+        "kingdoms": 2,
+        "land": 25,
+        "other": 0,
+        "provinces": 25,
+        "sea": 0
+      },
+      "slug": "et_867_jerusalem_region",
+      "usedBy": {},
+      "usedByCount": 0
+    },
+    {
+      "bbox": [
+        937,
+        870,
+        1003,
+        970
+      ],
+      "declared": {
+        "counties": [
+          "c_jerusalem",
+          "c_tiberias",
+          "c_jaffa",
+          "c_ghazza",
+          "c_irbid",
+          "c_negev",
+          "c_kerak",
+          "c_maab",
+          "c_sinai",
+          "c_firaun"
+        ]
+      },
+      "family": "Clerical",
+      "file": "geographical_region.txt",
+      "id": "et_1178_jerusalem_region",
+      "localized": false,
+      "name": "et 1178 jerusalem region",
+      "parents": [],
+      "resolved": {
+        "byClass": {
+          "land": 29
+        },
+        "counties": 10,
+        "drawn": 29,
+        "duchies": 5,
+        "kingdoms": 3,
+        "land": 29,
+        "other": 0,
+        "provinces": 29,
+        "sea": 0
+      },
+      "slug": "et_1178_jerusalem_region",
+      "usedBy": {},
+      "usedByCount": 0
+    },
+    {
+      "bbox": [
+        710,
+        906,
+        1003,
+        1243
+      ],
+      "declared": {
+        "counties": [
+          "c_alexandria",
+          "c_al-buhaira",
+          "c_al-gharbiya",
+          "c_damietta",
+          "c_sharkiya",
+          "c_farama",
+          "c_cairo",
+          "c_giza",
+          "c_fayyum",
+          "c_bahnasa",
+          "c_ushmun",
+          "c_bahriya",
+          "c_sullum",
+          "c_siwa",
+          "c_tobruk",
+          "c_derna",
+          "c_barqa",
+          "c_awjila",
+          "c_farafra",
+          "c_dakhla",
+          "c_kharga",
+          "c_asyut",
+          "c_qus",
+          "c_aswan",
+          "c_kalabsha",
+          "c_qurta",
+          "c_qasr_ibrim",
+          "c_faras",
+          "c_batn_al-hajar",
+          "c_sai",
+          "c_dongola",
+          "c_meroe",
+          "c_shamir",
+          "c_abu_hammad",
+          "c_kurgus",
+          "c_atbara",
+          "c_naga",
+          "c_eleila",
+          "c_gezira",
+          "c_ushara",
+          "c_alodia",
+          "c_abwab",
+          "c_kordofan",
+          "c_tagali",
+          "c_sennar",
+          "c_gumuz",
+          "c_fazughli"
+        ]
+      },
+      "family": "Clerical",
+      "file": "geographical_region.txt",
+      "id": "et_867_alexandria_region",
+      "localized": false,
+      "name": "et 867 alexandria region",
+      "parents": [],
+      "resolved": {
+        "byClass": {
+          "land": 152
+        },
+        "counties": 47,
+        "drawn": 152,
+        "duchies": 13,
+        "kingdoms": 3,
+        "land": 152,
+        "other": 0,
+        "provinces": 152,
+        "sea": 0
+      },
+      "slug": "et_867_alexandria_region",
+      "usedBy": {},
+      "usedByCount": 0
+    },
+    {
+      "bbox": [
+        710,
+        906,
+        1045,
+        1243
+      ],
+      "declared": {
+        "counties": [
+          "c_alexandria",
+          "c_al-buhaira",
+          "c_al-gharbiya",
+          "c_damietta",
+          "c_sharkiya",
+          "c_farama",
+          "c_cairo",
+          "c_giza",
+          "c_fayyum",
+          "c_bahnasa",
+          "c_ushmun",
+          "c_bahriya",
+          "c_sullum",
+          "c_siwa",
+          "c_tobruk",
+          "c_derna",
+          "c_barqa",
+          "c_awjila",
+          "c_farafra",
+          "c_dakhla",
+          "c_kharga",
+          "c_asyut",
+          "c_qus",
+          "c_aswan",
+          "c_kalabsha",
+          "c_qurta",
+          "c_qasr_ibrim",
+          "c_faras",
+          "c_batn_al-hajar",
+          "c_sai",
+          "c_dongola",
+          "c_meroe",
+          "c_shamir",
+          "c_abu_hammad",
+          "c_kurgus",
+          "c_atbara",
+          "c_naga",
+          "c_eleila",
+          "c_gezira",
+          "c_ushara",
+          "c_alodia",
+          "c_abwab",
+          "c_kordofan",
+          "c_tagali",
+          "c_sennar",
+          "c_gumuz",
+          "c_fazughli",
+          "c_kassala",
+          "c_qataa",
+          "c_showak",
+          "c_wolqayt"
+        ]
+      },
+      "family": "Clerical",
+      "file": "geographical_region.txt",
+      "id": "et_1178_alexandria_region",
+      "localized": false,
+      "name": "et 1178 alexandria region",
+      "parents": [],
+      "resolved": {
+        "byClass": {
+          "land": 163
+        },
+        "counties": 51,
+        "drawn": 163,
+        "duchies": 14,
+        "kingdoms": 4,
+        "land": 163,
+        "other": 0,
+        "provinces": 163,
+        "sea": 0
+      },
+      "slug": "et_1178_alexandria_region",
+      "usedBy": {},
+      "usedByCount": 0
+    },
+    {
+      "bbox": [
+        996,
+        1144,
+        1077,
+        1255
+      ],
+      "declared": {
+        "counties": [
+          "c_tigre",
+          "c_serae",
+          "c_intarta",
+          "c_lasta",
+          "c_begemder",
+          "c_dembiya",
+          "c_agaw_meder",
+          "c_gojjam",
+          "c_gafat",
+          "c_angot",
+          "c_amhara",
+          "c_semien",
+          "c_showa"
+        ]
+      },
+      "family": "Clerical",
+      "file": "geographical_region.txt",
+      "id": "et_867_axum_region",
+      "localized": false,
+      "name": "et 867 axum region",
+      "parents": [],
+      "resolved": {
+        "byClass": {
+          "land": 51
+        },
+        "counties": 13,
+        "drawn": 51,
+        "duchies": 5,
+        "kingdoms": 1,
+        "land": 51,
+        "other": 0,
+        "provinces": 51,
+        "sea": 0
+      },
+      "slug": "et_867_axum_region",
+      "usedBy": {},
+      "usedByCount": 0
+    },
+    {
+      "bbox": [
+        261,
+        815,
+        723,
+        983
+      ],
+      "declared": {
+        "counties": [
+          "c_syrte",
+          "c_waddan",
+          "c_labda",
+          "c_tripolitana",
+          "c_jafara",
+          "c_djerba",
+          "c_bir_amir",
+          "c_souf",
+          "c_gabes",
+          "c_sfax",
+          "c_mahdiya",
+          "c_tunis",
+          "c_satfura",
+          "c_annaba",
+          "c_bejaia",
+          "c_algier",
+          "c_tanas",
+          "c_orania",
+          "c_hunyan",
+          "c_wajda",
+          "c_tlemcen",
+          "c_tahert",
+          "c_ashir",
+          "c_hodna",
+          "c_biskra",
+          "c_bilizma",
+          "c_satif",
+          "c_constantine",
+          "c_medjerda",
+          "c_kairwan",
+          "c_west_qamuda",
+          "c_qashtiliya",
+          "c_tabassa",
+          "c_yalala"
+        ]
+      },
+      "family": "Clerical",
+      "file": "geographical_region.txt",
+      "id": "et_867_africa_region",
+      "localized": false,
+      "name": "et 867 africa region",
+      "parents": [],
+      "resolved": {
+        "byClass": {
+          "land": 118
+        },
+        "counties": 34,
+        "drawn": 118,
+        "duchies": 12,
+        "kingdoms": 2,
+        "land": 118,
+        "other": 0,
+        "provinces": 118,
+        "sea": 0
+      },
+      "slug": "et_867_africa_region",
+      "usedBy": {},
+      "usedByCount": 0
+    },
+    {
+      "bbox": [
+        1029,
+        731,
+        1175,
+        891
+      ],
+      "declared": {
+        "counties": [
+          "c_baghdad",
+          "c_iskaf",
+          "c_wasit",
+          "c_safata",
+          "c_kufa",
+          "c_karbala",
+          "c_badaraya",
+          "c_hulwan",
+          "c_anbar",
+          "c_samarra",
+          "c_takrit",
+          "c_nasibin",
+          "c_upper_khabur",
+          "c_raqqa",
+          "c_harran",
+          "c_amida",
+          "c_mayyafariqin",
+          "c_hakkari",
+          "c_mosul",
+          "c_sinjar",
+          "c_khabur",
+          "c_hadithat-ana",
+          "c_rahba",
+          "c_al-haditha",
+          "c_ninive",
+          "c_kurdistan",
+          "c_urmiya",
+          "c_tall_basma",
+          "c_sukhna",
+          "c_irbil",
+          "c_kirkuk"
+        ]
+      },
+      "family": "Clerical",
+      "file": "geographical_region.txt",
+      "id": "et_867_seleucia_ctesiphon_region",
+      "localized": false,
+      "name": "et 867 seleucia ctesiphon region",
+      "parents": [],
+      "resolved": {
+        "byClass": {
+          "land": 108
+        },
+        "counties": 31,
+        "drawn": 108,
+        "duchies": 11,
+        "kingdoms": 4,
+        "land": 108,
+        "other": 0,
+        "provinces": 108,
+        "sea": 0
+      },
+      "slug": "et_867_seleucia_ctesiphon_region",
+      "usedBy": {},
+      "usedByCount": 0
+    },
+    {
+      "bbox": [
+        980,
+        836,
+        999,
+        888
+      ],
+      "declared": {
+        "counties": [
+          "c_acre",
+          "c_beirut",
+          "c_tripoli"
+        ]
+      },
+      "family": "Clerical",
+      "file": "geographical_region.txt",
+      "id": "et_1178_tyre_region",
+      "localized": false,
+      "name": "et 1178 tyre region",
+      "parents": [],
+      "resolved": {
+        "byClass": {
+          "land": 6
+        },
+        "counties": 3,
+        "drawn": 6,
+        "duchies": 2,
+        "kingdoms": 2,
+        "land": 6,
+        "other": 0,
+        "provinces": 6,
+        "sea": 0
+      },
+      "slug": "et_1178_tyre_region",
+      "usedBy": {},
+      "usedByCount": 0
+    },
+    {
+      "bbox": [
+        617,
+        462,
+        711,
+        552
+      ],
+      "declared": {
+        "counties": [
+          "c_poszony",
+          "c_hont",
+          "c_gemer",
+          "c_abauj",
+          "c_spis",
+          "c_lipto",
+          "c_nyitra",
+          "c_trenscen",
+          "c_bars",
+          "c_zolyom",
+          "c_prerov",
+          "c_olomouc",
+          "c_opava",
+          "c_borsod",
+          "c_cieszyn",
+          "c_ratibor",
+          "c_bethen",
+          "c_opole",
+          "c_brzeg",
+          "c_nysa",
+          "c_saris",
+          "c_orava"
+        ]
+      },
+      "family": "Custom",
+      "file": "geographical_region.txt",
+      "id": "custom_slavic_rite_mission_region",
+      "localized": false,
+      "name": "custom slavic rite mission region",
+      "parents": [],
+      "resolved": {
+        "byClass": {
+          "land": 62
+        },
+        "counties": 22,
+        "drawn": 62,
+        "duchies": 4,
+        "kingdoms": 3,
+        "land": 62,
+        "other": 0,
+        "provinces": 62,
+        "sea": 0
+      },
+      "slug": "custom_slavic_rite_mission_region",
       "usedBy": {},
       "usedByCount": 0
     },

@@ -5,14 +5,26 @@ import data from '../data/doctrines.json';
 
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 
-const { groups, doctrines } = data;
+const { groups, doctrines, categories } = data as any as {
+  groups: any[]; doctrines: any[]; categories: { id: string; name: string; sortOrder: number | null }[];
+};
 const byId = new Map(doctrines.map((d) => [d.id, d]));
 const groupById = new Map(groups.map((g) => [g.id, g]));
 
 const tenets = doctrines.filter((d) => d.isTenet);
 const tenetGroup = groupById.get('doctrine_core_tenets');
 
-const CATEGORY_ORDER = ['main_group', 'marriage', 'crimes', 'clergy', 'special', 'not_creatable'];
+// categories arrive in the game's own sort_order (higher first)
+const CATEGORY_ORDER = categories.map((c) => c.id);
+const LOCK_TEXT: Record<string, string> = {
+  rite: 'lost when a new Rite is created',
+  faith: 'lost when the Rite diverges into a new Faith',
+  religion: 'lost when the Rite moves to another Religion',
+};
+const DIVERGENCE_TEXT: Record<string, string> = {
+  sequence: 'a spectrum: divergence is the distance between the two positions',
+  category: 'separate customs: divergence is the sum of both doctrines',
+};
 const otherGroups = groups
   .filter((g) => g.id !== 'doctrine_core_tenets')
   .sort(
@@ -44,7 +56,9 @@ function costParts(c: Cost): { main: string; sub: string[]; title: string } {
 const dName = (k: string) => byId.get(k)?.name ?? k;
 
 function searchText(d: (typeof doctrines)[number]): string {
-  return [d.name, ...d.nameVariants, ...d.shownForReligions, ...(d.parameters.map((p) => p.text ?? p.key)), ...d.characterModifier]
+  return [d.name, d.descriptiveName ?? '', ...d.nameVariants, ...d.shownForReligions,
+    ...(d.parameters.map((p: any) => p.text ?? p.key)), ...d.characterModifier,
+    ...d.specialParameters.map((p: any) => p.text), ...d.countyModifier]
     .join(' ')
     .toLowerCase();
 }
@@ -52,7 +66,7 @@ function searchText(d: (typeof doctrines)[number]): string {
 <Base
   title="Doctrines & Tenets"
   active="doctrines"
-  lede="Every faith doctrine and core tenet: piety costs (with the rules behind conditional prices), mechanical parameters, character modifiers, added virtues and sins, and which faiths can see or pick each one."
+  lede="Every doctrine and tenet: piety costs (with the rules behind conditional prices), divergence, mechanical parameters, character, clergy and county modifiers, personal-tenet effects, added virtues and sins, and which faiths can see or pick each one."
   stats={[
     { value: tenets.length, label: 'tenets' },
     { value: doctrines.length - tenets.length, label: 'doctrines' },
@@ -78,7 +92,7 @@ function searchText(d: (typeof doctrines)[number]): string {
     <h2 class="group-h" id="doctrine_core_tenets">
       Tenets
       <span class="count">{tenets.length}</span>
-      <span class="picks">every faith picks {tenetGroup?.picks}</span>
+      <span class="picks" title="define FAITH_CORE_TENETS_CAP">up to {tenetGroup?.picks} core tenets</span>
     </h2>
     <div class="tbl-scroll">
       <table class="ntbl">
@@ -101,6 +115,7 @@ function searchText(d: (typeof doctrines)[number]): string {
                   <img class="row-icon" src={`${base}/img/faith_doctrines/${d.id}.webp`} alt="" width="26" height="26" loading="lazy" onerror="this.hidden=true" />
                   <span class="u-name">{d.name}</span>
                   {d.nameVariants.length > 0 && <span class="u-sub"><br />also: {d.nameVariants.join(', ')}</span>}
+                  {d.divergenceMultiplier != null && <span class="u-sub"><br />divergence ×{d.divergenceMultiplier}</span>}
                   {d.desc && <div class="desc">{d.desc}</div>}
                 </td>
                 <td class="num cost">
@@ -108,12 +123,22 @@ function searchText(d: (typeof doctrines)[number]): string {
                   {cost.sub.map((s) => <span class="subtle"><br />{s}</span>)}
                 </td>
                 <td class="fx">
-                  {d.characterModifier.map((m) => <div>{m}</div>)}
-                  {d.clergyModifier.map((m) => <div>clergy: {m}</div>)}
+                  {d.characterModifier.map((m: string) => <div>{m}</div>)}
+                  {d.clergyModifier.map((m: string) => <div>clergy: {m}</div>)}
+                  {d.countyModifier.map((m: string) => <div>county: {m}</div>)}
                   {d.virtues.length > 0 && <div class="virtue">Virtue: {d.virtues.join(', ')}</div>}
                   {d.sins.length > 0 && <div class="sin">Sin: {d.sins.join(', ')}</div>}
-                  {d.parameters.filter((p) => p.text).map((p) => <div class="subtle">{p.text}</div>)}
-                  {d.parameters.filter((p) => !p.text).map((p) => <div class="subtle mono">{p.key}: {String(p.value)}</div>)}
+                  {d.specialParameters.map((p: any) => <div class="subtle">{p.text}</div>)}
+                  {d.parameters.filter((p: any) => p.text).map((p: any) => <div class="subtle">{p.text}</div>)}
+                  {d.parameters.filter((p: any) => !p.text).map((p: any) => <div class="subtle mono">{p.key}: {String(p.value)}</div>)}
+                  {d.personal && (
+                    <div class="personal">
+                      <span class="ptag">as a personal tenet</span>
+                      {d.personal.modifier.map((m: string) => <div>{m}</div>)}
+                      {d.personal.parameters.map((p: any) => <div class={p.text ? 'subtle' : 'subtle mono'}>{p.text ?? p.key}</div>)}
+                      {d.personal.conditions && <div class="subtle">only if: {d.personal.conditions.join(', ')}</div>}
+                    </div>
+                  )}
                 </td>
                 <td>
                   <span class="chips">
@@ -152,6 +177,9 @@ function searchText(d: (typeof doctrines)[number]): string {
           <span class="count">{list.length}</span>
           {g.picks > 1 && <span class="picks">pick {g.picks}</span>}
           <span class="cat">{g.categoryName}</span>
+          {g.divergence && <span class="cat" title={DIVERGENCE_TEXT[g.divergence] ?? g.divergence}>· {g.divergence} divergence</span>}
+          {g.lock && <span class="cat" title={LOCK_TEXT[g.lock] ?? g.lock}>· {g.lock}-locked</span>}
+          {g.mainRiteOnly && <span class="cat">· main Rite only</span>}
           {g.availability && <span class="cat">· {g.availability.join(', ')}</span>}
           {g.dlc && <span class="badge-dlc">{g.dlc}</span>}
         </h2>
@@ -173,8 +201,11 @@ function searchText(d: (typeof doctrines)[number]): string {
                 return (
                   <tr id={d.id} data-kind="doctrine" data-dlc={d.dlc ?? 'base'} data-name={searchText(d)}>
                     <td class="name">
+                      <img class="row-icon" src={`${base}/img/faith_doctrines/${d.id}.webp`} alt="" width="26" height="26" loading="lazy" onerror="this.hidden=true" />
                       <span class="u-name">{d.name}</span>
+                      {d.descriptiveName && <span class="u-sub"> · {d.descriptiveName}</span>}
                       {!d.visible && <span class="u-sub"> (hidden)</span>}
+                      {d.divergence != null && d.divergence !== 0 && <span class="u-sub"><br />divergence {d.divergence}</span>}
                       {d.nameVariants.length > 0 && <span class="u-sub"><br />also: {d.nameVariants.join(', ')}</span>}
                     </td>
                     <td class="num cost">
@@ -182,12 +213,22 @@ function searchText(d: (typeof doctrines)[number]): string {
                       {cost.sub.map((s) => <span class="subtle"><br />{s}</span>)}
                     </td>
                     <td class="fx">
-                      {d.characterModifier.map((m) => <div>{m}</div>)}
-                      {d.clergyModifier.map((m) => <div>clergy: {m}</div>)}
+                      {d.characterModifier.map((m: string) => <div>{m}</div>)}
+                      {d.clergyModifier.map((m: string) => <div>clergy: {m}</div>)}
+                      {d.countyModifier.map((m: string) => <div>county: {m}</div>)}
                       {d.virtues.length > 0 && <div class="virtue">Virtue: {d.virtues.join(', ')}</div>}
                       {d.sins.length > 0 && <div class="sin">Sin: {d.sins.join(', ')}</div>}
-                      {d.parameters.filter((p) => p.text).map((p) => <div class="subtle">{p.text}</div>)}
-                      {d.parameters.filter((p) => !p.text).map((p) => <div class="subtle mono">{p.key}: {String(p.value)}</div>)}
+                      {d.specialParameters.map((p: any) => <div class="subtle">{p.text}</div>)}
+                      {d.parameters.filter((p: any) => p.text).map((p: any) => <div class="subtle">{p.text}</div>)}
+                      {d.parameters.filter((p: any) => !p.text).map((p: any) => <div class="subtle mono">{p.key}: {String(p.value)}</div>)}
+                      {d.personal && (
+                        <div class="personal">
+                          <span class="ptag">as a personal tenet</span>
+                          {d.personal.modifier.map((m: string) => <div>{m}</div>)}
+                          {d.personal.parameters.map((p: any) => <div class={p.text ? 'subtle' : 'subtle mono'}>{p.text ?? p.key}</div>)}
+                          {d.personal.conditions && <div class="subtle">only if: {d.personal.conditions.join(', ')}</div>}
+                        </div>
+                      )}
                     </td>
                     <td>
                       <span class="chips">
@@ -278,6 +319,8 @@ function searchText(d: (typeof doctrines)[number]): string {
     .fx .virtue { color: var(--good); }
     .fx .sin { color: var(--bad); }
     .fx .mono { font-family: var(--font-mono); font-size: 0.72rem; }
+    .fx .personal { margin-top: 0.3rem; padding-left: 0.5rem; border-left: 2px solid var(--line); }
+    .fx .ptag { color: var(--brass); font-size: 0.7rem; }
     tr:target { background: color-mix(in oklab, var(--brass) 12%, transparent); }
   </style>
 

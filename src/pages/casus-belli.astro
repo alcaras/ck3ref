@@ -112,6 +112,11 @@ function costLine(res: string, c: any): { text: string; varies: boolean } {
                     {c.warName && c.warName !== c.name && <span class="u-sub">{c.warName}</span>}
                     <span class="cb-flags">
                       {c.defenderFaithCanJoin && <span class="flag" title="Rulers of the defender's faith can join the defence">faith may join defence</span>}
+                      {c.sameFaithDefenders && c.sameFaithDefenders.governments.length > 0 && (
+                        <span class="flag" title={`Defender-faith rulers normally stay out when the attacker shares their faith; rulers with these governments (parameters: ${c.sameFaithDefenders.parameters.join(', ')}) are called anyway`}>
+                          same-faith {c.sameFaithDefenders.governments.map((g) => g.name).join(' / ')} still defend
+                        </span>
+                      )}
                       {c.onAttackerDeath === 'invalidate' && <span class="flag" title="The war ends inconclusively if the attacker dies">invalidates on attacker death</span>}
                     </span>
                   </td>

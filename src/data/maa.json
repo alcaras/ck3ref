@@ -910,16 +910,9 @@
     "requirements": [
       {
         "detail": null,
-        "key": "government_is_nomadic",
+        "key": "government_is_in_steppe",
         "kind": "government_flag",
-        "name": "Nomadic",
-        "negated": true
-      },
-      {
-        "detail": null,
-        "key": "government_is_herder",
-        "kind": "government_flag",
-        "name": "Herder",
+        "name": "In Steppe",
         "negated": true
       }
     ],
@@ -1054,16 +1047,9 @@
       },
       {
         "detail": null,
-        "key": "government_is_nomadic",
+        "key": "government_is_in_steppe",
         "kind": "government_flag",
-        "name": "Nomadic",
-        "negated": true
-      },
-      {
-        "detail": null,
-        "key": "government_is_herder",
-        "kind": "government_flag",
-        "name": "Herder",
+        "name": "In Steppe",
         "negated": true
       }
     ],
@@ -1881,7 +1867,15 @@
     "maxSubRegiments": null,
     "name": "Retinue War Elephants",
     "provisionCost": 30,
-    "requirements": [],
+    "requirements": [
+      {
+        "detail": "Heavy Infantry, Heavy Cavalry and Elephant Cavalry Men-at-Arms cannot be recruited by Rulers of this Culture",
+        "key": "strength_in_numbers_heavy_maa_ban",
+        "kind": "cultural_parameter",
+        "name": "Strength In Numbers ban",
+        "negated": true
+      }
+    ],
     "siegeTier": null,
     "siegeValue": 0.2,
     "sourceFile": "01_accolade_maa_types.txt",
@@ -1965,6 +1959,13 @@
         "kind": "innovation",
         "name": "Advanced Bowmaking",
         "negated": false
+      },
+      {
+        "detail": "Heavy Infantry, Heavy Cavalry and Elephant Cavalry Men-at-Arms cannot be recruited by Rulers of this Culture",
+        "key": "strength_in_numbers_heavy_maa_ban",
+        "kind": "cultural_parameter",
+        "name": "Strength In Numbers ban",
+        "negated": true
       }
     ],
     "siegeTier": null,
@@ -2046,6 +2047,13 @@
         "key": "landless_adventurer_government",
         "kind": "government",
         "name": "Adventurer",
+        "negated": true
+      },
+      {
+        "detail": "Heavy Infantry, Heavy Cavalry and Elephant Cavalry Men-at-Arms cannot be recruited by Rulers of this Culture",
+        "key": "strength_in_numbers_heavy_maa_ban",
+        "kind": "cultural_parameter",
+        "name": "Strength In Numbers ban",
         "negated": true
       }
     ],
@@ -2285,7 +2293,15 @@
     "maxSubRegiments": null,
     "name": "Retinue Lancers",
     "provisionCost": 21,
-    "requirements": [],
+    "requirements": [
+      {
+        "detail": "Heavy Infantry, Heavy Cavalry and Elephant Cavalry Men-at-Arms cannot be recruited by Rulers of this Culture",
+        "key": "strength_in_numbers_heavy_maa_ban",
+        "kind": "cultural_parameter",
+        "name": "Strength In Numbers ban",
+        "negated": true
+      }
+    ],
     "siegeTier": null,
     "siegeValue": null,
     "sourceFile": "01_accolade_maa_types.txt",
@@ -2369,16 +2385,9 @@
       },
       {
         "detail": null,
-        "key": "government_is_nomadic",
+        "key": "government_is_in_steppe",
         "kind": "government_flag",
-        "name": "Nomadic",
-        "negated": true
-      },
-      {
-        "detail": null,
-        "key": "government_is_herder",
-        "kind": "government_flag",
-        "name": "Herder",
+        "name": "In Steppe",
         "negated": true
       },
       {
@@ -3070,6 +3079,95 @@
   },
   {
     "buyCost": {
+      "gold": 200
+    },
+    "counters": {
+      "archers": 1,
+      "gunpowder": 1
+    },
+    "dlc": null,
+    "features": [],
+    "flavor": "These sworn knights are renowned for their reckless fanaticism, their thundering charges against the heathen foe.",
+    "highMaintenance": {
+      "gold": 2.1
+    },
+    "holdingBonus": {},
+    "icon": "order_knights",
+    "id": "order_knights",
+    "lowMaintenance": {
+      "gold": 0.7
+    },
+    "mainPhase": true,
+    "maxRegiments": null,
+    "maxSizeBonus": null,
+    "maxSubRegiments": null,
+    "name": "Order Knights",
+    "provisionCost": 21,
+    "requirements": [
+      {
+        "detail": null,
+        "key": "innovation_arched_saddle",
+        "kind": "innovation",
+        "name": "Arched Saddle",
+        "negated": false
+      },
+      {
+        "detail": "Heavy Infantry, Heavy Cavalry and Elephant Cavalry Men-at-Arms cannot be recruited by Rulers of this Culture",
+        "key": "strength_in_numbers_heavy_maa_ban",
+        "kind": "cultural_parameter",
+        "name": "Strength In Numbers ban",
+        "negated": true
+      }
+    ],
+    "siegeTier": null,
+    "siegeValue": null,
+    "sourceFile": "00_holy_order_maa_types.txt",
+    "specialAccess": "holy order only",
+    "specialRecruitOnly": true,
+    "stack": 50,
+    "stats": {
+      "damage": 112,
+      "pursuit": 20,
+      "screen": 0,
+      "toughness": 36
+    },
+    "terrainBonus": {
+      "desert_mountains": {
+        "damage": -75
+      },
+      "drylands": {
+        "damage": 30
+      },
+      "hills": {
+        "damage": -20
+      },
+      "mountains": {
+        "damage": -75
+      },
+      "plains": {
+        "damage": 30
+      },
+      "wetlands": {
+        "damage": -75,
+        "pursuit": -10,
+        "toughness": -10
+      }
+    },
+    "type": "heavy_cavalry",
+    "typeName": "Heavy Cavalry",
+    "winterBonus": {
+      "harsh_winter": {
+        "damage": -20,
+        "toughness": -10
+      },
+      "normal_winter": {
+        "damage": -10,
+        "toughness": -5
+      }
+    }
+  },
+  {
+    "buyCost": {
       "gold": 260.0
     },
     "counters": {
@@ -3349,16 +3447,9 @@
       },
       {
         "detail": null,
-        "key": "government_is_nomadic",
+        "key": "government_is_in_steppe",
         "kind": "government_flag",
-        "name": "Nomadic",
-        "negated": true
-      },
-      {
-        "detail": null,
-        "key": "government_is_herder",
-        "kind": "government_flag",
-        "name": "Herder",
+        "name": "In Steppe",
         "negated": true
       }
     ],
@@ -4045,6 +4136,65 @@
   },
   {
     "buyCost": {
+      "gold": 90
+    },
+    "counters": {
+      "peasant_militia": 2,
+      "pikemen": 1
+    },
+    "dlc": null,
+    "features": [],
+    "flavor": "These brothers of the Order erect a formidable, crucifix-emblazoned wall when they plant their shields side-by-side.",
+    "highMaintenance": {
+      "gold": 1.2
+    },
+    "holdingBonus": {},
+    "icon": "order_serjeants",
+    "id": "order_serjeants",
+    "lowMaintenance": {
+      "gold": 0.4
+    },
+    "mainPhase": true,
+    "maxRegiments": null,
+    "maxSizeBonus": null,
+    "maxSubRegiments": null,
+    "name": "Order Foot Knights",
+    "provisionCost": 12,
+    "requirements": [
+      {
+        "detail": null,
+        "key": "innovation_quilted_armor",
+        "kind": "innovation",
+        "name": "Quilted Armor",
+        "negated": false
+      },
+      {
+        "detail": "Heavy Infantry, Heavy Cavalry and Elephant Cavalry Men-at-Arms cannot be recruited by Rulers of this Culture",
+        "key": "strength_in_numbers_heavy_maa_ban",
+        "kind": "cultural_parameter",
+        "name": "Strength In Numbers ban",
+        "negated": true
+      }
+    ],
+    "siegeTier": null,
+    "siegeValue": null,
+    "sourceFile": "00_holy_order_maa_types.txt",
+    "specialAccess": "holy order only",
+    "specialRecruitOnly": true,
+    "stack": 100,
+    "stats": {
+      "damage": 36,
+      "pursuit": 0,
+      "screen": 0,
+      "toughness": 24
+    },
+    "terrainBonus": {},
+    "type": "heavy_infantry",
+    "typeName": "Heavy Infantry",
+    "winterBonus": {}
+  },
+  {
+    "buyCost": {
       "gold": 108.0
     },
     "counters": {
@@ -4297,50 +4447,6 @@
   },
   {
     "buyCost": {
-      "gold": 90
-    },
-    "counters": {
-      "peasant_militia": 2,
-      "pikemen": 1
-    },
-    "dlc": null,
-    "features": [],
-    "flavor": "Heavily armored and zealous knights, specializing in massed infantry battles in addition to their heavy cavalry charges.",
-    "highMaintenance": {
-      "gold": 1.2
-    },
-    "holdingBonus": {},
-    "icon": "heavy_infantry",
-    "id": "teutonic_knights",
-    "lowMaintenance": {
-      "gold": 0.4
-    },
-    "mainPhase": true,
-    "maxRegiments": null,
-    "maxSizeBonus": null,
-    "maxSubRegiments": null,
-    "name": "Order Knights",
-    "provisionCost": 12,
-    "requirements": [],
-    "siegeTier": null,
-    "siegeValue": null,
-    "sourceFile": "00_holy_order_maa_types.txt",
-    "specialAccess": "holy order only",
-    "specialRecruitOnly": true,
-    "stack": 100,
-    "stats": {
-      "damage": 36,
-      "pursuit": 0,
-      "screen": 0,
-      "toughness": 26
-    },
-    "terrainBonus": {},
-    "type": "heavy_infantry",
-    "typeName": "Heavy Infantry",
-    "winterBonus": {}
-  },
-  {
-    "buyCost": {
       "gold": 72.0
     },
     "counters": {
@@ -4443,7 +4549,7 @@
     "provisionCost": 3,
     "requirements": [
       {
-        "detail": "Can recruit Varangian Veterans as Men-at-Arms",
+        "detail": "Can recruit one regiment of Varangian Veterans as Men-at-Arms",
         "key": "unlock_maa_varangian_veterans",
         "kind": "cultural_parameter",
         "name": "Cultural tradition",
@@ -5128,16 +5234,9 @@
     "requirements": [
       {
         "detail": null,
-        "key": "government_is_nomadic",
+        "key": "government_is_in_steppe",
         "kind": "government_flag",
-        "name": "Nomadic",
-        "negated": true
-      },
-      {
-        "detail": null,
-        "key": "government_is_herder",
-        "kind": "government_flag",
-        "name": "Herder",
+        "name": "In Steppe",
         "negated": true
       }
     ],
@@ -5600,7 +5699,7 @@
     },
     "dlc": null,
     "features": [],
-    "flavor": "Sworn by ancient oaths, these Brythonic horsemen ride as their lord’s loyal spear and shield.",
+    "flavor": "Sworn by ancient oaths, these Brythonic horsemen ride as their lord's loyal spear and shield.",
     "highMaintenance": {
       "gold": 1.26
     },
@@ -6124,16 +6223,9 @@
     "requirements": [
       {
         "detail": null,
-        "key": "government_is_nomadic",
+        "key": "government_is_in_steppe",
         "kind": "government_flag",
-        "name": "Nomadic",
-        "negated": true
-      },
-      {
-        "detail": null,
-        "key": "government_is_herder",
-        "kind": "government_flag",
-        "name": "Herder",
+        "name": "In Steppe",
         "negated": true
       }
     ],
@@ -6477,37 +6569,9 @@
       },
       {
         "detail": null,
-        "key": "heritage_chinese",
-        "kind": "cultural_pillar",
-        "name": "Heritage Chinese",
-        "negated": false
-      },
-      {
-        "detail": null,
-        "key": "heritage_korean",
-        "kind": "cultural_pillar",
-        "name": "Heritage Korean",
-        "negated": false
-      },
-      {
-        "detail": null,
-        "key": "heritage_japonic",
-        "kind": "cultural_pillar",
-        "name": "Heritage Japonic",
-        "negated": false
-      },
-      {
-        "detail": null,
-        "key": "government_is_nomadic",
+        "key": "government_is_in_steppe",
         "kind": "government_flag",
-        "name": "Nomadic",
-        "negated": true
-      },
-      {
-        "detail": null,
-        "key": "government_is_herder",
-        "kind": "government_flag",
-        "name": "Herder",
+        "name": "In Steppe",
         "negated": true
       }
     ],
@@ -6561,37 +6625,9 @@
       },
       {
         "detail": null,
-        "key": "heritage_chinese",
-        "kind": "cultural_pillar",
-        "name": "Heritage Chinese",
-        "negated": true
-      },
-      {
-        "detail": null,
-        "key": "heritage_korean",
-        "kind": "cultural_pillar",
-        "name": "Heritage Korean",
-        "negated": true
-      },
-      {
-        "detail": null,
-        "key": "heritage_japonic",
-        "kind": "cultural_pillar",
-        "name": "Heritage Japonic",
-        "negated": true
-      },
-      {
-        "detail": null,
-        "key": "government_is_nomadic",
+        "key": "government_is_in_steppe",
         "kind": "government_flag",
-        "name": "Nomadic",
-        "negated": true
-      },
-      {
-        "detail": null,
-        "key": "government_is_herder",
-        "kind": "government_flag",
-        "name": "Herder",
+        "name": "In Steppe",
         "negated": true
       }
     ],
@@ -6645,37 +6681,9 @@
       },
       {
         "detail": null,
-        "key": "heritage_chinese",
-        "kind": "cultural_pillar",
-        "name": "Heritage Chinese",
-        "negated": false
-      },
-      {
-        "detail": null,
-        "key": "heritage_korean",
-        "kind": "cultural_pillar",
-        "name": "Heritage Korean",
-        "negated": false
-      },
-      {
-        "detail": null,
-        "key": "heritage_japonic",
-        "kind": "cultural_pillar",
-        "name": "Heritage Japonic",
-        "negated": false
-      },
-      {
-        "detail": null,
-        "key": "government_is_nomadic",
+        "key": "government_is_in_steppe",
         "kind": "government_flag",
-        "name": "Nomadic",
-        "negated": true
-      },
-      {
-        "detail": null,
-        "key": "government_is_herder",
-        "kind": "government_flag",
-        "name": "Herder",
+        "name": "In Steppe",
         "negated": true
       }
     ],
@@ -6729,37 +6737,9 @@
       },
       {
         "detail": null,
-        "key": "heritage_chinese",
-        "kind": "cultural_pillar",
-        "name": "Heritage Chinese",
-        "negated": false
-      },
-      {
-        "detail": null,
-        "key": "heritage_korean",
-        "kind": "cultural_pillar",
-        "name": "Heritage Korean",
-        "negated": false
-      },
-      {
-        "detail": null,
-        "key": "heritage_japonic",
-        "kind": "cultural_pillar",
-        "name": "Heritage Japonic",
-        "negated": false
-      },
-      {
-        "detail": null,
-        "key": "government_is_nomadic",
+        "key": "government_is_in_steppe",
         "kind": "government_flag",
-        "name": "Nomadic",
-        "negated": true
-      },
-      {
-        "detail": null,
-        "key": "government_is_herder",
-        "kind": "government_flag",
-        "name": "Herder",
+        "name": "In Steppe",
         "negated": true
       }
     ],
@@ -6813,37 +6793,9 @@
       },
       {
         "detail": null,
-        "key": "heritage_chinese",
-        "kind": "cultural_pillar",
-        "name": "Heritage Chinese",
-        "negated": true
-      },
-      {
-        "detail": null,
-        "key": "heritage_korean",
-        "kind": "cultural_pillar",
-        "name": "Heritage Korean",
-        "negated": true
-      },
-      {
-        "detail": null,
-        "key": "heritage_japonic",
-        "kind": "cultural_pillar",
-        "name": "Heritage Japonic",
-        "negated": true
-      },
-      {
-        "detail": null,
-        "key": "government_is_nomadic",
+        "key": "government_is_in_steppe",
         "kind": "government_flag",
-        "name": "Nomadic",
-        "negated": true
-      },
-      {
-        "detail": null,
-        "key": "government_is_herder",
-        "kind": "government_flag",
-        "name": "Herder",
+        "name": "In Steppe",
         "negated": true
       }
     ],
@@ -6897,37 +6849,9 @@
       },
       {
         "detail": null,
-        "key": "heritage_chinese",
-        "kind": "cultural_pillar",
-        "name": "Heritage Chinese",
-        "negated": true
-      },
-      {
-        "detail": null,
-        "key": "heritage_korean",
-        "kind": "cultural_pillar",
-        "name": "Heritage Korean",
-        "negated": true
-      },
-      {
-        "detail": null,
-        "key": "heritage_japonic",
-        "kind": "cultural_pillar",
-        "name": "Heritage Japonic",
-        "negated": true
-      },
-      {
-        "detail": null,
-        "key": "government_is_nomadic",
+        "key": "government_is_in_steppe",
         "kind": "government_flag",
-        "name": "Nomadic",
-        "negated": true
-      },
-      {
-        "detail": null,
-        "key": "government_is_herder",
-        "kind": "government_flag",
-        "name": "Herder",
+        "name": "In Steppe",
         "negated": true
       }
     ],
@@ -6981,37 +6905,9 @@
       },
       {
         "detail": null,
-        "key": "heritage_chinese",
-        "kind": "cultural_pillar",
-        "name": "Heritage Chinese",
-        "negated": false
-      },
-      {
-        "detail": null,
-        "key": "heritage_korean",
-        "kind": "cultural_pillar",
-        "name": "Heritage Korean",
-        "negated": false
-      },
-      {
-        "detail": null,
-        "key": "heritage_japonic",
-        "kind": "cultural_pillar",
-        "name": "Heritage Japonic",
-        "negated": false
-      },
-      {
-        "detail": null,
-        "key": "government_is_nomadic",
+        "key": "government_is_in_steppe",
         "kind": "government_flag",
-        "name": "Nomadic",
-        "negated": true
-      },
-      {
-        "detail": null,
-        "key": "government_is_herder",
-        "kind": "government_flag",
-        "name": "Herder",
+        "name": "In Steppe",
         "negated": true
       }
     ],
@@ -7121,37 +7017,9 @@
       },
       {
         "detail": null,
-        "key": "heritage_chinese",
-        "kind": "cultural_pillar",
-        "name": "Heritage Chinese",
-        "negated": true
-      },
-      {
-        "detail": null,
-        "key": "heritage_korean",
-        "kind": "cultural_pillar",
-        "name": "Heritage Korean",
-        "negated": true
-      },
-      {
-        "detail": null,
-        "key": "heritage_japonic",
-        "kind": "cultural_pillar",
-        "name": "Heritage Japonic",
-        "negated": true
-      },
-      {
-        "detail": null,
-        "key": "government_is_nomadic",
+        "key": "government_is_in_steppe",
         "kind": "government_flag",
-        "name": "Nomadic",
-        "negated": true
-      },
-      {
-        "detail": null,
-        "key": "government_is_herder",
-        "kind": "government_flag",
-        "name": "Herder",
+        "name": "In Steppe",
         "negated": true
       }
     ],
@@ -7680,16 +7548,9 @@
     "requirements": [
       {
         "detail": null,
-        "key": "government_is_nomadic",
+        "key": "government_is_in_steppe",
         "kind": "government_flag",
-        "name": "Nomadic",
-        "negated": true
-      },
-      {
-        "detail": null,
-        "key": "government_is_herder",
-        "kind": "government_flag",
-        "name": "Herder",
+        "name": "In Steppe",
         "negated": true
       }
     ],

@@ -54,11 +54,13 @@ SKIP_FIELDS = {
 HANDLED_FIELDS = {
     "situation_group_type", "is_unique", "migration", "sub_regions",
     "participant_groups", "start_phase", "phases",
+    "situation_decisions", "ending_decisions",
 }
 
 PHASE_SKIP = {
     "illustration": "event-window art",
     "icon": "phase icon path (seasons/… art)",
+    "texture": "extra phase texture for GUI ([SituationPhaseType.GetTexture])",
     "on_start": "event scripting",
     "on_end": "event scripting",
     "map_province_effect": "map shader effect",
@@ -69,6 +71,7 @@ PHASE_HANDLED = {"max_duration", "max_duration_next_phase", "future_phases",
 
 GROUP_SKIP = {
     "icon": "GUI group icon",
+    "gui_tags": "GUI view tags (sizing etc. in situation windows)",
     "map_color": "map-mode color",
     "on_join": "event scripting",
     "on_leave": "event scripting",
@@ -143,7 +146,34 @@ def params_out(blk, unloc, drop_unloc=False):
     return out
 
 
+def decision_index():
+    """decision key -> rendered name, from decisions.json (built earlier in
+    `make data`) with a plain loc fallback, so situation decision lists link
+    to /decisions#<id> under the same name the decisions page shows."""
+    import json
+    p = ck3.ROOT / "src" / "data" / "decisions.json"
+    try:
+        return {d["id"]: d["name"] for d in
+                json.loads(p.read_text(encoding="utf-8"))["decisions"]}
+    except (OSError, ValueError, KeyError):
+        return {}
+
+
+def decisions_out(blk, field, known):
+    out = []
+    b = blk.get(field)
+    if isinstance(b, Block):
+        for d in b.values():
+            if not isinstance(d, str):
+                continue
+            name = known.get(d) or ck3.render_text(ck3.loc(d) or "") or None
+            out.append({"id": d, "name": name or d.replace("_", " ").capitalize(),
+                        "onPage": d in known})
+    return out
+
+
 def main():
+    known_decisions = decision_index()
     catalyst_keys = {k for _p, k, _b in
                      ck3.parse_dir(ck3.COMMON / "situation" / "catalysts")}
     group_types = {}
@@ -316,6 +346,8 @@ def main():
             "groups": groups,
             "startPhase": blk.get("start_phase"),
             "phases": phases,
+            "situationDecisions": decisions_out(blk, "situation_decisions", known_decisions),
+            "endingDecisions": decisions_out(blk, "ending_decisions", known_decisions),
             "dlc": SITUATION_DLC.get(key) or ck3.dlc_tag(path, blk)[0],
             "icon": key,
             "sourceFile": path.name,

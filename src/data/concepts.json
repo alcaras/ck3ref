@@ -21,6 +21,15 @@
   },
   {
     "aliases": [],
+    "desc": "An Abbot is the Ruler of a Monastic Order and the Head of Rite of the Rite their order champions, guiding its members in study, contemplation, and the spread of its Tenets.\n\nAn order may be supported by a Monastic Order Patron, whose Patronage grants it wealth and influence.\n\nUpon an Abbot's death, their Titles pass to a successor, usually their Courtier with the highest Learning.",
+    "dlc": "By God Alone",
+    "features": [],
+    "id": "archabbot",
+    "name": "Abbot",
+    "parent": "faith"
+  },
+  {
+    "aliases": [],
     "desc": "Absolute is the second-highest level of Dominance. At this level Migration can target De Jure Empire Titles within the The Great Steppe.\n\nIndependent Rulers may settle outside of the steppe using the Settle the Steppe Decision",
     "dlc": "Khans of the Steppe",
     "features": [],
@@ -265,6 +274,15 @@
     "parent": "health"
   },
   {
+    "aliases": [],
+    "desc": "An Advanced Succession replaces ordinary inheritance with a special way of selecting the next Holder, such as the designation of a single Heir, acclamation, or appointment.",
+    "dlc": null,
+    "features": [],
+    "id": "advanced_succession",
+    "name": "Advanced Succession",
+    "parent": null
+  },
+  {
     "aliases": [
       "Adventurers",
       "Adventurer's",
@@ -362,7 +380,7 @@
     "aliases": [
       "Anointments"
     ],
-    "desc": "Anointment is one type of a Coronation, where the Ruler will seek out the Head of Faith to bless their ascension to the throne. In certain faiths this is necessary to truly be considered a Legitimate ruler of their lands.\n\nTo ensure the support of their Head of Faith, the Host can use the Request Anointment Interaction.",
+    "desc": "Anointment is one type of a Coronation, where the Ruler will seek out their Head of Faith, or clergy Head of Rite when there is none, to bless their ascension to the throne. In certain faiths this is necessary to truly be considered a Legitimate ruler of their lands.\n\nTo secure that authority's support, the Host can use the Request Anointment Interaction.",
     "dlc": null,
     "features": [],
     "id": "coronation_anointment",
@@ -387,7 +405,7 @@
       "Appointment",
       "Appointments"
     ],
-    "desc": "Under Appointment Succession Law, the Title and its associated Holdings will be inherited by the Candidate with the highest Candidate Score.\n\nThe types are:\n•Appointment Succession\n•Acclamation Succession\n•Celestial Appointment Succession\n•Celestial Commander Succession\n•Minister Appointment\n•Grand Marshal Appointment\n•Meritocratic Appointment Succession\n•Meritocratic Commander Succession\n•Ritsuryō Appointment Succession",
+    "desc": "Under Appointment Succession Law, the Title and its associated Holdings will be inherited by the Candidate with the highest Candidate Score.\n\nThe types are:\n•Appointment Succession\n•Acclamation Succession\n•Celestial Appointment Succession\n•Celestial Commander Succession\n•Minister Appointment\n•Grand Marshal Appointment\n•Meritocratic Appointment Succession\n•Meritocratic Commander Succession\n•Ritsuryō Appointment Succession\n•Clerical Appointment",
     "dlc": "Roads to Power",
     "features": [],
     "id": "appointment_succession_law",
@@ -404,6 +422,30 @@
     "id": "aptitude",
     "name": "Aptitude",
     "parent": null
+  },
+  {
+    "aliases": [
+      "Archbishops",
+      "Archbishop's",
+      "Archbishops'"
+    ],
+    "desc": "An Archbishop is the Christian holder of an Archdiocese, a duchy-tier Clerical Title whose Clerical Region may span several Realms.\n\nAs the Religious Superior of the Bishops and lesser Clergy within that region, an Archbishop ranks above an ordinary Bishop and answers in turn to the Head of Faith.",
+    "dlc": "By God Alone",
+    "features": [],
+    "id": "archbishop",
+    "name": "Archbishop",
+    "parent": "faith"
+  },
+  {
+    "aliases": [
+      "Archdioceses"
+    ],
+    "desc": "An Archdiocese is the Christian form of a Clerical Region, an ecclesiastical domain held by an Archbishop through its Clerical Title and seated in a capital County, where a Grand Cathedral may be raised.\n\nA Christian Ruler answers in spiritual matters to the Archbishop of the Archdiocese that contains their Capital County, and the territory subject to Archdioceses collectively constitutes The Christian Church Situation.",
+    "dlc": "By God Alone",
+    "features": [],
+    "id": "archdiocese",
+    "name": "Archdiocese",
+    "parent": "faith"
   },
   {
     "aliases": [],
@@ -486,14 +528,18 @@
   },
   {
     "aliases": [
-      "Rarity"
+      "Rarity",
+      "Common",
+      "Masterwork",
+      "Famed",
+      "Illustrious"
     ],
     "desc": "Some Artifacts are rarer than others, which is reflected in their Rarity.\n\nThe levels are, from lowest to highest:\n•Common (never shown since it is the default)\n•Masterwork\n•Famed\n•Illustrious",
     "dlc": null,
     "features": [],
     "id": "artifact_rarity",
     "name": "Artifact Rarity",
-    "parent": null
+    "parent": "artifact"
   },
   {
     "aliases": [],
@@ -563,7 +609,7 @@
   },
   {
     "aliases": [],
-    "desc": "This Faith differs in a way that is not particularly significant.\nIntermarriage may still happen.\n\nEffects:\n…",
+    "desc": "This Rite differs in a way that is not particularly significant.\nIntermarriage may still happen.\n\nEffects:\n…",
     "dlc": null,
     "features": [],
     "id": "faith_astray",
@@ -574,7 +620,7 @@
     "aliases": [
       "At Peace"
     ],
-    "desc": "Characters who have the Warmonger Tenet as part of their Faith will have the 'At Peace Opinion' instead of the Offensive War Opinion penalty.\n\nIf you are at peace for too long, your Vassals will think less of you (if they share your Faith).",
+    "desc": "Characters who have the Warmongering Tenet as part of their Faith will have the 'At Peace Opinion' instead of the Offensive War Opinion penalty.\n\nIf you are at peace for too long, your Vassals will think less of you (if they share your Faith).",
     "dlc": null,
     "features": [],
     "id": "at_peace_opinion",
@@ -820,6 +866,15 @@
     "parent": null
   },
   {
+    "aliases": [],
+    "desc": "An Interaction which provides a Claim to a Title belonging to another Ruler. Requires the acceptance of a relevant Ecclesiastical or Theocratic Character.",
+    "dlc": "By God Alone",
+    "features": [],
+    "id": "ecclesiastic_grant_claim_interaction",
+    "name": "Beseech Claim",
+    "parent": null
+  },
+  {
     "aliases": [
       "Best Friends",
       "Best Friend's",
@@ -861,6 +916,19 @@
     "id": "bisexual",
     "name": "Bisexual",
     "parent": "sexuality"
+  },
+  {
+    "aliases": [
+      "Bishops",
+      "Bishop's",
+      "Bishops'"
+    ],
+    "desc": "A Bishop belongs to the Clergy of a Christian Faith, and holds or leases Temple Holdings.\n\nA Bishop resides within an Archdiocese and answers to the Archbishop there as Religious Superior. An unlanded Bishop with Leased titles serves under a secular Liege; a Bishop with unleased Landed Titles may rule as an Ecclesiastical Ruler.",
+    "dlc": "By God Alone",
+    "features": [],
+    "id": "bishop",
+    "name": "Bishop",
+    "parent": "faith"
   },
   {
     "aliases": [
@@ -945,6 +1013,7 @@
   {
     "aliases": [
       "Blood Brothers",
+      "Blood Brotherhood",
       "Best Friend's",
       "Best Friends'"
     ],
@@ -1017,9 +1086,7 @@
     ],
     "desc": "The amount a standard recipient of a Budget Category receives. Recipients may receive more or less than the base rate depending on their Rank, Merit Rank, or other modifiers.",
     "dlc": "All Under Heaven",
-    "features": [
-      "all_under_heaven"
-    ],
+    "features": [],
     "id": "treasury_budget_base_rate",
     "name": "Budget Base Rate",
     "parent": "treasury_budgeting"
@@ -1028,9 +1095,7 @@
     "aliases": [],
     "desc": "The monthly amount of Treasury available for Treasury Budgeting. Consists of the treasury income minus any regular expenses that are not managed by budgeting, such as Vassal Development and Court Amenities.",
     "dlc": "All Under Heaven",
-    "features": [
-      "all_under_heaven"
-    ],
+    "features": [],
     "id": "treasury_budget_capacity",
     "name": "Budget Capacity",
     "parent": "treasury_budgeting"
@@ -1039,9 +1104,7 @@
     "aliases": [],
     "desc": "One distinct part of Treasury Budgeting that can receive budget allocation. Each budget category can have different recipients, and might pay out in Gold instead of Treasury.",
     "dlc": "All Under Heaven",
-    "features": [
-      "all_under_heaven"
-    ],
+    "features": [],
     "id": "treasury_budget_category",
     "name": "Budget Category",
     "parent": "treasury_budgeting"
@@ -1052,9 +1115,7 @@
     ],
     "desc": "The difference in Treasury that a Budget Category will receive compared to the previous budget enactment.",
     "dlc": "All Under Heaven",
-    "features": [
-      "all_under_heaven"
-    ],
+    "features": [],
     "id": "treasury_budget_category_trend",
     "name": "Budget Category Trend",
     "parent": "treasury_budgeting"
@@ -1109,7 +1170,7 @@
     "aliases": [
       "Bureaucratic Government"
     ],
-    "desc": "Some Governments are Bureaucratic. Which are highly centralized Governments that typically rely on Governors, Appointment, and landless Noble Families to manage Provinces within the Realm.\n\nOther common features include Domiciles, Influence, and Title Men-at-Arms.\n\nThere are several Bureaucratic Governments:\n•\n•\n•\n•\n•",
+    "desc": "Some Governments are Bureaucratic, which means they are highly centralized and typically rely on Governors, Appointment, and landless Noble Families to manage Provinces within the Realm.\n\nOther common features include Domiciles, Influence, and Title Men-at-Arms.\n\nThere are several Bureaucratic Governments:\n•\n•\n•\n•\n•",
     "dlc": "All Under Heaven",
     "features": [],
     "id": "government_bureaucratic_type",
@@ -1223,12 +1284,24 @@
     "aliases": [
       "Candidate Scores"
     ],
-    "desc": "Characters in the Line of Succession for a Title with Administrative Government have a Candidate Score.\n\nThis score dictates who will receive the title(s) upon Succession and can be changed through various means from Scheming to spending Influence.",
+    "desc": "Characters in the Line of Succession for a Title with Theocracy or Bureaucratic Government have a Candidate Score.\n\nThis score dictates who will receive the title(s) upon Succession and can be changed through various means from Scheming to spending Influence.",
     "dlc": "Roads to Power",
     "features": [],
     "id": "candidate_score",
     "name": "Candidate Score",
     "parent": "administrative"
+  },
+  {
+    "aliases": [
+      "Canonization",
+      "Sainthood"
+    ],
+    "desc": "A Character who has, after death, been declared a saint or another faith's equivalent, such as a Wali or a venerated ancestor, gaining the Saint Trait.\n\nA virtuous life may end in Canonization: it is petitioned through a Decision, may require the blessing of the Head of Faith, and is sealed by consecrating the saint's burial site. Their resting place thereafter draws pious travelers, and their remains may yield Holy Relics.",
+    "dlc": "By God Alone",
+    "features": [],
+    "id": "canonized",
+    "name": "Canonized",
+    "parent": null
   },
   {
     "aliases": [],
@@ -1238,6 +1311,33 @@
     "id": "capital_duchy",
     "name": "Capital Duchy",
     "parent": null
+  },
+  {
+    "aliases": [
+      "Cardinals",
+      "Cardinal's",
+      "Cardinals'",
+      "Cardinalate",
+      "Cardinalates"
+    ],
+    "desc": "A Clergy member selected by the Pope to help further exert the will of The Christian Church. All members of the College of Cardinals are both candidates and electors for the Papacy and have a Papabile Score.",
+    "dlc": "By God Alone",
+    "features": [],
+    "id": "cardinal",
+    "name": "Cardinal",
+    "parent": "title_rank"
+  },
+  {
+    "aliases": [
+      "Cardinal",
+      "Cardinal Benefices"
+    ],
+    "desc": "Treasury allocated to Cardinals from the central church treasury, representing direct and indirect … assigned to them.",
+    "dlc": "By God Alone",
+    "features": [],
+    "id": "treasury_cardinal_budget",
+    "name": "Cardinal Budget",
+    "parent": "treasury_budget_category"
   },
   {
     "aliases": [
@@ -1303,7 +1403,7 @@
     ],
     "id": "celestial_bureaucracy",
     "name": "Celestial Bureaucracy",
-    "parent": "law"
+    "parent": "government_authority"
   },
   {
     "aliases": [
@@ -1311,7 +1411,7 @@
       "Celestials",
       ""
     ],
-    "desc": "Celestial is a Bureaucratic Government Form in which the Liege appoints characters as Governors, of which there are two types, Civilian and Military.\n\nCharacters have access to Influence, Noble Families, Family Estates, and Treasury.\n\nIndependent Rulers have Legitimacy, while Vassals focus on obtaining Merit.",
+    "desc": "Celestial is a Bureaucratic Government Form in which the Liege appoints characters as Governors, of which there are two types, Civilian and Military.\n\nCharacters have access to Influence, Noble Families, Family Mansions, and Treasury.\n\nIndependent Rulers have Legitimacy, while Vassals focus on obtaining Merit.",
     "dlc": "All Under Heaven",
     "features": [
       "all_under_heaven"
@@ -1368,6 +1468,26 @@
   },
   {
     "aliases": [],
+    "desc": "A Casus Belli used by a Challenger Head of Faith or their sponsor against the legitimate Head of Faith of their Faith. Victory installs the Challenger Head of Faith as Head of Faith and makes their Rite the Mainline Rite. A sponsor who wins the war and outranks their Challenger Head of Faith also takes them as a Vassal.",
+    "dlc": "By God Alone",
+    "features": [],
+    "id": "pam_challenge_hof_cb",
+    "name": "Challenge Head of Faith",
+    "parent": "casus_belli"
+  },
+  {
+    "aliases": [
+      "Antipope"
+    ],
+    "desc": "A Challenger Head of Faith is a rival Head of Faith raised against the Mainline Rite Head of Faith.\n\nA Ruler may sponsor a member of their Clergy as Challenger Head of Faith. A Clergy Ruler or a ruler from a Faith with a Temporal Head of Faith may declare themselves as a Challenger instead.\n\nA sponsored Challenger Head of Faith takes up their sponsor's Rite, becomes that sponsor's Clerical Ruler Puppet and owes them a Weak Hook.\n\nThe Mainline Rite Head of Faith cannot Excommunicate anyone who follows a Challenger Head of Faith: the sponsor and their Vassals.\n\nEveryone following a Challenger Head of Faith brings their clerical requests to them instead of to the Mainline Rite Head of Faith, among them these Interactions:\n•Seek Antipope's Indulgence\n•Petition Antipope for Gold\n\nA Challenger Head of Faith or their sponsor may use the Challenge Head of Faith Casus Belli against the legitimate Head of Faith.\n\nRival Kings or above of the same Faith may instead use the Depose Antipope against a sponsor, deposing the rival claimant.",
+    "dlc": "By God Alone",
+    "features": [],
+    "id": "challenger_hof",
+    "name": "Challenger Head of Faith",
+    "parent": "head_of_faith"
+  },
+  {
+    "aliases": [],
     "desc": "Your Chance of Infection determines how likely you are to contract Diseases from an ongoing Plague.",
     "dlc": "Community Pack 1 (free)",
     "features": [],
@@ -1396,6 +1516,19 @@
     "id": "dynastic_cycle_era_type_chaotic",
     "name": "Chaotic Era",
     "parent": "dynastic_cycle"
+  },
+  {
+    "aliases": [
+      "Chapter Types"
+    ],
+    "desc": "There are four Chapter Types in The Christian Church, they categorize The Christian Church Chapters.\n\nChapter Types: Instability, Crisis, Zeal, and Stability",
+    "dlc": "By God Alone",
+    "features": [
+      "by_god_alone"
+    ],
+    "id": "the_christian_church_chapter_type",
+    "name": "Chapter Type",
+    "parent": "the_christian_church"
   },
   {
     "aliases": [
@@ -1489,6 +1622,55 @@
     "parent": null
   },
   {
+    "aliases": [],
+    "desc": "Christendom encompasses the Realms of all Independent Christian Rulers who are members of The Christian Church Situation.",
+    "dlc": "By God Alone",
+    "features": [
+      "by_god_alone"
+    ],
+    "id": "christendom",
+    "name": "Christendom",
+    "parent": null
+  },
+  {
+    "aliases": [
+      "Christians",
+      "Christian's"
+    ],
+    "desc": "An adherent of the Christian Religion.",
+    "dlc": "By God Alone",
+    "features": [
+      "by_god_alone"
+    ],
+    "id": "christian",
+    "name": "Christian",
+    "parent": null
+  },
+  {
+    "aliases": [],
+    "desc": "Church Authority represents the power that a Theocratic Ruler wields over their Clergy and Vassals.\n\nThere are four levels of Church Authority; Autonomous Clergy, Limited Church Authority, High Church Authority, and Absolute Church Authority. Increasing Church Authority costs an amount of Piety and Prestige depending on the level and the ruler's Learning Skill.\n\nVassals dislike higher levels of Church Authority, and lowering it is the primary goal of Liberty Factions.",
+    "dlc": null,
+    "features": [],
+    "id": "church_authority",
+    "name": "Church Authority",
+    "parent": "law"
+  },
+  {
+    "aliases": [
+      "Minimal Centralization",
+      "Mild Centralization",
+      "Strong Centralization"
+    ],
+    "desc": "Church Centralization represents to what degree the Church has adopted centralized authority and financial structures. Stronger centralization means more income flows upward in the clerical hierarchy.\n\nThe types are:\n•Minimal Centralization: Subordinates pay 5% of their Church Holding income to their Religious Superior\n•Mild Centralization: Subordinates pay 10% of their Church Holding income to their Religious Superior\n•Strong Centralization: Subordinates pay 20% of their Church Holding income to their Religious Superior, and 1% directly to their Head of Faith",
+    "dlc": "By God Alone",
+    "features": [
+      "by_god_alone"
+    ],
+    "id": "church_centralization",
+    "name": "Church Centralization",
+    "parent": "church_obligations"
+  },
+  {
     "aliases": [
       "Church Holding"
     ],
@@ -1497,6 +1679,15 @@
     "features": [],
     "id": "church_property",
     "name": "Church Holdings",
+    "parent": null
+  },
+  {
+    "aliases": [],
+    "desc": "Church Obligations represent the combined obligations on Church Holding income. These obligations are paid to the Superior, Head of Faith, and/or the local secular Ruler. Example Church Centralization and Secular Obligations.",
+    "dlc": "By God Alone",
+    "features": [],
+    "id": "church_obligations",
+    "name": "Church Obligations",
     "parent": null
   },
   {
@@ -1518,7 +1709,7 @@
       "Examination",
       "Examinations"
     ],
-    "desc": "The Civil Service Examinations hold a key role in the Administrative functions of Celestial and Meritocratic Governments. \n\nThrough the examination system, bureaucrats are appointed by Merit over lineage, ensuring that the brightest scholars, regardless of heritage, may gain Governorship appointments. \n\nThe examination levels are: \n•Children's: Parents can have their children take the examination from the age of … through the Send to Children's Examination Interaction. \n•Provincial: Characters who are not Landed may attempt the second level of Examinations through the Local Examination Activity. \n•Metropolitan: Held by the Celestial Government through the Capital Examination activity. \n•Palace: The final … entrants at the Capital Examination are invited to a feast at the royal palace, to meet and show their worth to the Son of Heaven.",
+    "desc": "The Civil Service Examinations hold a key role in the Bureaucratic functions of Celestial and Meritocratic Governments. \n\nThrough the examination system, bureaucrats are appointed by Merit over lineage, ensuring that the brightest scholars, regardless of heritage, may gain Governorship appointments. \n\nThe examination levels are: \n•Children's: Parents can have their children take the examination from the age of … through the Send to Children's Examination Interaction. \n•Provincial: Characters who are not Landed may attempt the second level of Examinations through the Local Examination Activity. \n•Metropolitan: Held by the Celestial Government through the Capital Examination activity. \n•Palace: The final … entrants at the Capital Examination are invited to a feast at the royal palace, to meet and show their worth to the Son of Heaven.",
     "dlc": "All Under Heaven",
     "features": [
       "all_under_heaven"
@@ -1560,7 +1751,7 @@
       "Civilian Governors",
       "Civilian"
     ],
-    "desc": "A Civilian Governor is a Governor with civilian Vassal Obligations. Unlike Military Governors, they are unable to field Title Men-at-Arms and focus solely on administrative tasks and to develop the land they govern.\n\nCharacters who pursue a Civilian Career Path can become Civilian Governors.",
+    "desc": "A Civilian Governor is a Governor with civilian Subject Obligations. Unlike Military Governors, they are unable to field Title Men-at-Arms and focus solely on administrative tasks and to develop the land they govern.\n\nCharacters who pursue a Civilian Career Path can become Civilian Governors.",
     "dlc": "All Under Heaven",
     "features": [
       "all_under_heaven"
@@ -1627,13 +1818,65 @@
     "parent": "faith"
   },
   {
-    "aliases": [],
+    "aliases": [
+      "Clerical"
+    ],
     "desc": "This type of Opinion only affects Clergy of your own Faith.",
     "dlc": null,
     "features": [],
     "id": "clergy_opinion",
     "name": "Clergy Opinion",
     "parent": "opinion"
+  },
+  {
+    "aliases": [
+      "Clerical Regions",
+      "Clerical Region's",
+      "Clerical Regions'"
+    ],
+    "desc": "A Clerical Region is a geographical region that falls under the jurisdiction of a Clerical Title. Any member of the clergy within the region will be a Subordinate to the holder of the Title associated with the region.\n\nA Ruler belongs to the Clerical Region that contains their Capital County, and a new region is founded upon the Capital of its founder's Primary Title. The region may cover multiple Realms and have subordinates that are in different realms.\n\nA Ruler may only hold one Clerical Region at a time. If granted a new Region, the Ruler forfeits all their held land within the previous one.",
+    "dlc": "By God Alone",
+    "features": [],
+    "id": "clerical_region",
+    "name": "Clerical Region",
+    "parent": null
+  },
+  {
+    "aliases": [
+      "Clerical Region Capitals"
+    ],
+    "desc": "The Clerical Region Capital is the County a Clerical Region was founded upon with an Ecclesiastical Estate, serving as the seat of the Clerical Title that governs the region. Unlike a De Jure Capital, it is fixed to the region and cannot be relocated.",
+    "dlc": "By God Alone",
+    "features": [],
+    "id": "clerical_region_capital",
+    "name": "Clerical Region Capital",
+    "parent": "clerical_region"
+  },
+  {
+    "aliases": [
+      "Clerical Ruler Puppets"
+    ],
+    "desc": "A powerful member of the Clergy — an Archbishop or even the Head of Faith — that has become the Puppet of another Ruler.\n\nThe mightier the cleric, the greater the reach: a puppeted Head of Faith can Excommunicate your enemies, appoint Cardinals, grant a Pressed Claim, or incite a Holy War on your behalf.",
+    "dlc": "By God Alone",
+    "features": [
+      "by_god_alone"
+    ],
+    "id": "external_clerical_puppet",
+    "name": "Clerical Ruler Puppet",
+    "parent": "puppet"
+  },
+  {
+    "aliases": [
+      "Clerical Titles"
+    ],
+    "desc": "A Clerical Title is an Ecclesiastical Title of the Clergy governing a Clerical Region within a Faith. Among the Christian faiths this is an Archdiocese.\n\nThe holder is the Religious Superior of the Clergy in that region, and is usually appointed by the Head of Faith.",
+    "dlc": "By God Alone",
+    "features": [
+      "by_god_alone"
+    ],
+    "id": "clerical_title",
+    "name": "Clerical Title",
+    "parent": null
   },
   {
     "aliases": [
@@ -1696,6 +1939,15 @@
     "id": "collect_taxes",
     "name": "Collect Taxes",
     "parent": "councillor_task"
+  },
+  {
+    "aliases": [],
+    "desc": "The College of Cardinals is the body of Cardinals who advise the Pope and elect the next Head of Faith of The Christian Church.\n\nEvery Cardinal is both a candidate and an elector for the Papacy.",
+    "dlc": "By God Alone",
+    "features": [],
+    "id": "college_of_cardinals",
+    "name": "College of Cardinals",
+    "parent": "cardinal"
   },
   {
     "aliases": [],
@@ -1889,6 +2141,17 @@
   },
   {
     "aliases": [
+      "Conservatives"
+    ],
+    "desc": "Conservatives are Guests at the Ecumenical Council Activity voting against the Host in their suggestions to change status of a Tenet or a Doctrine.\n\nThey are directly opposed to the Innovators, guests who are attempting to enact the changes.Characters that are allowed to vote are: Clergy, Rulers with Realm Priest Puppet and the Activity Host",
+    "dlc": "By God Alone",
+    "features": [],
+    "id": "ecumenical_council_conservative",
+    "name": "Conservative",
+    "parent": "activity"
+  },
+  {
+    "aliases": [
       "Contests"
     ],
     "desc": "A Grand Tournament is comprised of a series of Contests, selected by the Activity Host, where Qualifying Contestants can compete to win Prizes and other rewards.\n\nEach Contest uses one of four different ways to determine a winner: Knock-Out, Turns, Teams, and Race.\n\nYour chance of winning a Contest is determined by your Skills, Traits, preparation, and other factors. Eligibility to enter physical Contests is determined by health and sex, based on the Culture and Faith of the Activity Host.",
@@ -2034,7 +2297,7 @@
       "Converted",
       "Converting"
     ],
-    "desc": "A Councillor Task performed by the Court Chaplain which targets a County of a different faith than the Liege.\nProgress increases each month, and at 100%, the majority of the Target County has changed from their previous Faith to the Liege's Faith.\n\nConversion speed is affected by many factors, including the Councillor's Learning Skill and the Fervor of the two Faiths.",
+    "desc": "A Councillor Task performed by the Court Chaplain which targets a County of a different Faith — or one of the same Faith but a different Rite — than the Liege.\nProgress increases each month, and at 100% the majority of the Target County adopts the Court Chaplain's Faith. The new Rite follows the Liege whenever the resulting Faith matches the Liege's — otherwise it is the Chaplain's own Rite.\n\nConversion speed is affected by many factors, including the Councillor's Learning Skill and the Fervor of the involved Faiths. A Chaplain whose Rite differs from the Liege's converts more slowly.\nOn a Rite-only shift, Fervor favours the mainline Rite above 50% and non-mainline (including heretical) Rites below it.",
     "dlc": null,
     "features": [],
     "id": "convert_county",
@@ -2049,6 +2312,15 @@
     "id": "convince_dejure",
     "name": "Convince De Jure Territory",
     "parent": "councillor_task"
+  },
+  {
+    "aliases": [],
+    "desc": "A Core Tenet Status means the Rite is actively promoting this Tenet or Doctrine as one of its defining practices. All adherents of the Rite are subject to its effects.",
+    "dlc": "By God Alone",
+    "features": [],
+    "id": "core_tenet_status",
+    "name": "Core",
+    "parent": "tenet_status"
   },
   {
     "aliases": [
@@ -2224,7 +2496,9 @@
   },
   {
     "aliases": [
-      "Court Chaplains"
+      "Court Chaplains",
+      "Court Chaplain's",
+      "Court Chaplains'"
     ],
     "desc": "The Court Chaplain is the Councillor in charge of religious and spiritual affairs in Faiths with the Lay Clergy Doctrine.\n\nFaiths with the Theocratic Doctrine have the far more powerful (and troublesome) Realm Priest instead of a Court Chaplain.",
     "dlc": null,
@@ -2426,6 +2700,19 @@
   },
   {
     "aliases": [
+      "Crisis"
+    ],
+    "desc": "A Crisis Chapter is The Christian Church at its most scorched:\n\nIndulgences may be cheaper, Ecumenical Councils more frequent, Rulers may appoint their own Court Chaplain, Clergy may marry, the Head of Faith may refuse to host an Anointment and Taxes may suffer.\n\nSaeculum Obscurum and Investiture Controversy are Crisis Chapters.",
+    "dlc": "By God Alone",
+    "features": [
+      "by_god_alone"
+    ],
+    "id": "the_christian_church_crisis",
+    "name": "Crisis Chapter",
+    "parent": "the_christian_church_chapter_type"
+  },
+  {
+    "aliases": [
       "Critically Fail"
     ],
     "desc": "Some Schemes have the possibility of Critical Failure during execution.\n\nExact outcomes vary, but include the Scheme backfiring on the Owner, or preventing them from attempting the same Scheme against the same Target for some time.",
@@ -2442,7 +2729,7 @@
     "features": [],
     "id": "crown_authority",
     "name": "Crown Authority",
-    "parent": "law"
+    "parent": "government_authority"
   },
   {
     "aliases": [
@@ -2665,6 +2952,15 @@
     "parent": "peace"
   },
   {
+    "aliases": [],
+    "desc": "An Interaction which demands another Character assumes vows of chastity and takes on a long-term Fertility penalty.",
+    "dlc": "By God Alone",
+    "features": [],
+    "id": "request_clerical_chastity_interaction",
+    "name": "Demand Chastity",
+    "parent": null
+  },
+  {
     "aliases": [
       "Demanding Conversion"
     ],
@@ -2716,6 +3012,15 @@
     "id": "depose",
     "name": "Depose",
     "parent": null
+  },
+  {
+    "aliases": [],
+    "desc": "A Casus Belli available to Christian Kings and above who neither sponsor nor serve as a Challenger Head of Faith. Waged against an Independent sponsor of their own Faith to depose their Challenger Head of Faith and earn the gratitude of the legitimate Head of Faith.",
+    "dlc": "By God Alone",
+    "features": [],
+    "id": "pam_antiking_cb",
+    "name": "Depose Antipope",
+    "parent": "casus_belli"
   },
   {
     "aliases": [
@@ -3037,6 +3342,27 @@
     "parent": "faction"
   },
   {
+    "aliases": [],
+    "desc": "A Casus Belli that allows a Ruler of the same Faith to declare War on an Excommunicated Emperor and destroy that Empire Title upon victory.",
+    "dlc": null,
+    "features": [],
+    "id": "dissolve_empire_casus_belli",
+    "name": "Dissolve Empire",
+    "parent": "casus_belli"
+  },
+  {
+    "aliases": [
+      "Divergent",
+      ""
+    ],
+    "desc": "Divergence measures how far a Rite's Tenets and Doctrines have drifted from the parent Faith. A Rite that adopts Prohibited Tenets as Core is more Divergent.\n\nHigh Divergence weakens the parent faith's Fervor making outbreaks of Heresy more common. A Rite that reaches 100 Divergence will be automatically declared a heresy and become a new Faith.",
+    "dlc": "By God Alone",
+    "features": [],
+    "id": "rite_divergence",
+    "name": "Divergence",
+    "parent": "rite"
+  },
+  {
     "aliases": [
       "Divergent Bloc Member Houses",
       "Divergent Bloc House",
@@ -3151,7 +3477,7 @@
     "aliases": [
       "Domiciles"
     ],
-    "desc": "A Domicile is the private property of certain Characters who have a particular Government Form, such as Administrative and Adventurer.\n\nThe Domicile acts as the owner's primary powerbase instead of Holdings, and can be improved with Domicile Buildings.\n\nEvery Domicile is located within a designated Barony, and may be moved to a new location. Restrictions may apply depending on the Domicile Type.\n\nEach Domicile has a special landless Title and follows its Succession.",
+    "desc": "A Domicile is the private or assigned property of certain Characters who have a particular Government Form, such as Administrative, Adventurer or Ecclesiastical.\n\nThe Domicile acts as the owner's primary powerbase instead of Holdings, and can be improved with Domicile Buildings.\n\nEvery Domicile is located within a designated Barony, and some may be moved to a new location. Restrictions may apply depending on the Domicile Type.\n\nSome Domiciles have a special landless Title and follow its Succession.",
     "dlc": "Roads to Power",
     "features": [],
     "id": "domicile",
@@ -3189,7 +3515,7 @@
     "features": [],
     "id": "nomadic_authority",
     "name": "Dominance",
-    "parent": "law"
+    "parent": "government_authority"
   },
   {
     "aliases": [
@@ -3383,7 +3709,7 @@
   },
   {
     "aliases": [],
-    "desc": "A Dynasty Head is the House Head that heads the entire Dynasty and all of its Houses.\n\nThe Dynasty Head wields certain unique powers over the members of the Dynasty, known as Dynasty Head Interactions. The Dynasty Head also picks Dynasty Legacies for the Dynasty.\n\nNormally, the Dynasty Head is the House Head that can have the most Soldiers. If all House Heads have the Administrative Government, the Dynasty Head is instead whoever has the highest Powerful Family Rating.",
+    "desc": "A Dynasty Head is the House Head that heads the entire Dynasty and all of its Houses.\n\nThe Dynasty Head wields certain unique powers over the members of the Dynasty, known as Dynasty Head Interactions. The Dynasty Head also picks Dynasty Legacies for the Dynasty.\n\nNormally, the Dynasty Head is the House Head that can have the most Soldiers. If all House Heads have the Bureaucratic Government, the Dynasty Head is instead whoever has the highest Powerful Family Rating.",
     "dlc": null,
     "features": [],
     "id": "dynast",
@@ -3424,6 +3750,36 @@
     "parent": "disaster"
   },
   {
+    "aliases": [
+      "East Asian Mansions",
+      "Mansion",
+      "Mansions",
+      "Family Mansion",
+      "Family Mansions"
+    ],
+    "desc": "A Mansion is a type of Domicile held by the House Head of notable Noble Families within Ritsuryō and Sōryō Realms. They represent private landholdings untied to any particular Landed Title.\n\nEast Asian Mansion may be constructed here to expand the family's wealth and Influence, and the Mansion will be inherited by future generations.",
+    "dlc": "All Under Heaven",
+    "features": [
+      "all_under_heaven"
+    ],
+    "id": "east_asian_estate",
+    "name": "East Asian Mansion",
+    "parent": "domicile"
+  },
+  {
+    "aliases": [
+      "East Asian Mansion Buildings"
+    ],
+    "desc": "East Asian Mansion Buildings are unique and persistent improvements to a East Asian Mansion.\n\nA large variety of structures are available for construction and may be built by the Mansion's owner to generate private income, expand the family's Influence, and gain access to a number of Decisions, Interactions, and more.",
+    "dlc": "All Under Heaven",
+    "features": [
+      "all_under_heaven"
+    ],
+    "id": "east_asian_estate_building",
+    "name": "East Asian Mansion Building",
+    "parent": "domicile_building"
+  },
+  {
     "aliases": [],
     "desc": "An Empire Title that can be created by the holder of the Roman Empire.\n\nThe title is created by taking the Cleave the Empire Decision.",
     "dlc": "Roads to Power",
@@ -3431,6 +3787,44 @@
     "id": "eastern_roman_empire",
     "name": "Eastern Roman Empire",
     "parent": null
+  },
+  {
+    "aliases": [
+      "Ecclesiastical Government",
+      ""
+    ],
+    "desc": "Ecclesiastical is a Theocratic Government Form held by Christian Clergy Rulers, such as Bishops and Archbishops.\n\nMost Ecclesiastical rulers are theocratic Vassals who Lease their Temple Holdings from a secular Liege and answer to the Head of Faith, although a Bishop who possesses Landed Titles that are not Leased may rule as an Independent Ecclesiastical Ruler in their own right. The power such a ruler holds over their own Vassals is determined by their Church Authority.",
+    "dlc": "By God Alone",
+    "features": [],
+    "id": "ecclesiastical",
+    "name": "Ecclesiastical",
+    "parent": "government"
+  },
+  {
+    "aliases": [
+      "Ecclesiastical Estates",
+      "Cathedral Complex",
+      "Cathedral Complexes"
+    ],
+    "desc": "An Ecclesiastical Estate — or Cathedral Complex — is a type of Domicile attached to a Clerical Title, representing the intimate landholdings of an Archbishop and their see. Lesser Clergy in an Ecclesiastical must rise to such a Title before they are granted one.\n\nEcclesiastical Estate Buildings may be constructed here to expand the holder's wealth, Piety, and Spiritual Fulfillment. The Ecclesiastical Estate does not change location and will be inherited by the next title Holder.",
+    "dlc": "By God Alone",
+    "features": [],
+    "id": "ecclesiastical_domicile",
+    "name": "Ecclesiastical Estate",
+    "parent": "faith"
+  },
+  {
+    "aliases": [
+      "Ecclesiastical Estate Buildings",
+      "Cathedral Complex Building",
+      "Cathedral Complex Buildings"
+    ],
+    "desc": "Ecclesiastical Estate Buildings are unique and persistent improvements to a Ecclesiastical Estate.\n\nA large variety of structures are available for construction and may be built by the holder to generate private income, Piety, Spiritual Fulfillment, and gain access to a number of Decisions, Interactions, and more.",
+    "dlc": "By God Alone",
+    "features": [],
+    "id": "ecclesiastical_domicile_building",
+    "name": "Ecclesiastical Estate Building",
+    "parent": "domicile_building"
   },
   {
     "aliases": [],
@@ -3451,6 +3845,19 @@
     "id": "economic_building",
     "name": "Economic Building",
     "parent": "building"
+  },
+  {
+    "aliases": [
+      "Ecumenical Councils"
+    ],
+    "desc": "An Ecumenical Council is an Activity in which the top Clergy in all of Christendom gather to settle the future of the Church.\n\nOver successive debates, the assembled prelates rule on the Tenet Status of contested Tenets — declaring them Permitted or Prohibited, or elevating them to Core — and settle the Doctrines of the Faith.",
+    "dlc": "By God Alone",
+    "features": [
+      "by_god_alone"
+    ],
+    "id": "ecumenical_council",
+    "name": "Ecumenical Council",
+    "parent": null
   },
   {
     "aliases": [
@@ -3512,8 +3919,20 @@
     "parent": "health"
   },
   {
+    "aliases": [],
+    "desc": "Under an Elective Succession, Electors vote to choose the Title's next Holder instead of the title passing by ordinary inheritance.",
+    "dlc": null,
+    "features": [],
+    "id": "elective_succession",
+    "name": "Elective Succession",
+    "parent": null
+  },
+  {
     "aliases": [
-      "Electors"
+      "Electors",
+      "",
+      "Election",
+      "Elections"
     ],
     "desc": "Electors are the characters who get to vote on their preferred Title Heir under Elective Succession Laws. The specific Law determines who is considered an Elector.",
     "dlc": null,
@@ -3580,6 +3999,18 @@
   },
   {
     "aliases": [
+      "Eminent Holy Sites",
+      "Eminent"
+    ],
+    "desc": "An Eminent Holy Site is a Holy Site of high importance to a Faith. Each Faith may designate only a few of its Holy Sites as Eminent.\n\nOnly Eminent Holy Sites contribute modifiers that affect all followers of a Faith.",
+    "dlc": "By God Alone",
+    "features": [],
+    "id": "eminent_holy_site",
+    "name": "Eminent Holy Site",
+    "parent": "holy_site"
+  },
+  {
+    "aliases": [
       "Emperors"
     ],
     "desc": "An Emperor is a Ruler whose Primary Title is an Empire.\n\nTheir Rank is directly above Kings and directly below Hegemons, and as such they can have Kings and below as Vassals, and only a Hegemon as their Liege.",
@@ -3641,6 +4072,17 @@
     "id": "enforce_truce",
     "name": "Enforce Truce",
     "parent": null
+  },
+  {
+    "aliases": [
+      "Enshrine"
+    ],
+    "desc": "An enshrined Holy Relic at a Holy Site activates holy site bonuses and improves the bonuses it grants, scaled by the total Rarity levels of all enshrined artifacts.\n\nAn enshrined artifact is no longer owned by a character, but may be interacted with by the Holder, Top Liege, or Clerical Region holder of the holy site. The artifact will no longer decay. You can enshrine only holy relics for your own Faith; enshrined holy relics of other faiths will provide no benefits.\n\nThere may be rewards or costs associated with enshrining or removing an enshrined artifact.",
+    "dlc": "By God Alone",
+    "features": [],
+    "id": "enshrined",
+    "name": "Enshrined",
+    "parent": "holy_site"
   },
   {
     "aliases": [],
@@ -3737,7 +4179,7 @@
   },
   {
     "aliases": [],
-    "desc": "This Faith is considered anathema.\nIntermarriage rarely happens, Holy Wars can be waged.\n\nEffects:\n…",
+    "desc": "This Rite is considered anathema.\nIntermarriage rarely happens, Holy Wars can be waged.\n\nEffects:\n…",
     "dlc": null,
     "features": [],
     "id": "faith_evil",
@@ -3813,7 +4255,7 @@
       "Excommunicate",
       "Excommunicated"
     ],
-    "desc": "Characters who are Excommunicated by their Head of Faith are seen as Criminals by other characters of their Faith.\n\nIndependent Rulers who have been Excommunicated may have an Excommunication War declared on them.\n\nExcommunication can be removed either by asking the Head of Faith for forgiveness or by switching to a different Faith.",
+    "desc": "Characters who are Excommunicated by their Head of Faith are seen as Criminals by other characters of their Faith.\n\nIndependent Rulers who have been Excommunicated may have an Excommunication War declared on them. If they lose, they are forced to abdicate to their Heir.\n\nExcommunication can be lifted through repentance, petitioning the Head of Faith, winning an Excommunication War, converting to another Faith, or participating a Great Holy War. For restrictions, timing, and step-by-step recovery, see Recover from Excommunication.",
     "dlc": null,
     "features": [],
     "id": "excommunication",
@@ -3981,7 +4423,7 @@
     "aliases": [
       "Factions"
     ],
-    "desc": "A Faction is a group of Vassals with common political interests. The local population of Counties can also join certain types of Factions, such as the Peasant Faction.\n\nFactions become dangerous once their Discontent reaches a certain point, at which time they will issue an ultimatum.\n\nIf the Liege does not comply, the Faction will rise up in revolt, sparking a Civil War. If the Faction dissolves, the Liege must have at least … War Score to win the War.",
+    "desc": "A Faction is a group of Vassals with common political interests. The local population of Counties can also join certain types of Factions, such as the Peasant Faction.\n\nFactions become dangerous once their Discontent reaches a certain point, at which time they will issue an ultimatum.\n\nIf the Liege does not comply, the Faction will rise up in revolt, sparking a Civil War. If the Faction dissolves before the War is over, the Liege must have at least … War Score to win the War.",
     "dlc": null,
     "features": [],
     "id": "faction",
@@ -4013,7 +4455,7 @@
       "Faiths",
       "Faith's"
     ],
-    "desc": "A Faith is a specific denomination of a larger Religion. All characters and Counties have a Faith just as they have a Culture.\n\nEach Faith is defined by a set of Doctrines with far-reaching consequences for its adherents.\n\nEach Faith also has a Fervor value which controls how vulnerable it is to Heresy (Rulers and Counties converting to other Faiths within the same Religion).",
+    "desc": "A Faith is a specific denomination of a larger Religion. All characters and Counties have a Faith just as they have a Culture, and follow one of its Rites.\n\nA Faith is defined by its Mainline Rite, whose Tenets and Doctrines represent the beliefs of the Faith as a whole. Other Rites may champion different beliefs, and the further they drift from it the more Divergent they become.\n\nEach Faith also has a Fervor value which controls how vulnerable it is to Heresy, as Divergent Rites break away into Faiths of their own.",
     "dlc": null,
     "features": [],
     "id": "faith",
@@ -4026,11 +4468,29 @@
       "Tolerate",
       "Tolerates"
     ],
-    "desc": "All Faiths have a relation towards each other Faith that is determined by how closely related they are.\n\nCloseness is decided by several factors, such as if they share Religion, Religious Family, or if the Faith has special Doctrines.\n\nIf two Faiths are far apart, they are often able to Holy War each other.\n\nThe following relations exist: …, …, …, and ….",
+    "desc": "All Faiths and Rites have a relation towards each other that is determined by how closely related they are.\n\nCloseness is decided by several factors, such as if they share Religion, Religious Family, or if the Faith has special Doctrines.\n\nIf two Faiths are far apart, they are often able to Holy War each other.\n\nThe following relations exist: …, …, …, and ….",
     "dlc": null,
     "features": [],
     "id": "faith_hostility",
     "name": "Faith Hostility",
+    "parent": null
+  },
+  {
+    "aliases": [],
+    "desc": "The Fallback Heir becomes the Realm Heir for the targeted Title when the regular line of Succession is empty.",
+    "dlc": null,
+    "features": [],
+    "id": "fallback_heir",
+    "name": "Fallback Heir",
+    "parent": null
+  },
+  {
+    "aliases": [],
+    "desc": "The Holder of the Fallback Heir Title becomes the Realm Heir for the targeted Title when the regular line of Succession is empty.",
+    "dlc": null,
+    "features": [],
+    "id": "fallback_heir_title",
+    "name": "Fallback Heir Title",
     "parent": null
   },
   {
@@ -4143,6 +4603,15 @@
   },
   {
     "aliases": [],
+    "desc": "An Activity where rulers and courtiers in a realm gather to celebrate... one thing or another.\n\nParticipants will lose Stress and increase their Opinion of the host. There may also be any number of other consequences from bringing that many people together.\n\nA Ruler will invite their Liege and their Vassals (along with various Courtiers) to a Feast.",
+    "dlc": null,
+    "features": [],
+    "id": "feast",
+    "name": "Feast",
+    "parent": "activity"
+  },
+  {
+    "aliases": [],
     "desc": "Fertility measures how able a Character is to produce children.",
     "dlc": null,
     "features": [],
@@ -4162,8 +4631,10 @@
     "parent": "county_fertility"
   },
   {
-    "aliases": [],
-    "desc": "The Fervor of a Faith ranges from 0 to 100%. Low Fervor makes it easier for Rulers to create new faiths of their own and increases the likelihood of Counties and characters converting to other faiths, including Heresies. High Fervor increases County conversion speed.\n\nFervor changes naturally with time. Smaller Faiths tend to have higher Fervor. Larger Faiths tend to have low Fervor.\n\nWaging Great Holy Wars and successful Holy Wars will decrease Fervor. Being the target will increase Fervor. Outbreaks of Heresy will increase Fervor significantly.",
+    "aliases": [
+      ""
+    ],
+    "desc": "The Fervor of a Faith ranges from 0 to 100%. It measures the spiritual unity of the faith.\n\nFervor increases through aggressive expansion: County Conversion, winning Holy Wars, and resisting incoming holy wars.\n\nFervor decreases when the faith fragments: highly Divergent Rites sap fervor, and an unchecked heretical Rite depletes it further. Low Fervor makes it easier for rulers to create new Rites of their own.\n\nFervor also shapes how Rites spread within the faith: above 50%, the mainline Rite converts other Rites more easily; below 50%, non-mainline and heretical Rites gain the upper hand instead.\n\nWhen Fervor drops to 40 or below, the faith becomes vulnerable to a Heresy outbreak.",
     "dlc": null,
     "features": [],
     "id": "fervor",
@@ -4502,6 +4973,15 @@
     "parent": null
   },
   {
+    "aliases": [],
+    "desc": "Government Authority represents the general power that a Ruler wields over their Vassals.\n\nDifferent Governments have different form of Government Authority. For example, Feudal Realms use Crown Authority, Clans use Tribal Authority, and Administrative use Imperial Bureaucracy. Increasing Government Authority costs an amount of Prestige depending on the level and the ruler's Learning Skill.\n\nVassals dislike higher levels of Government Authority, and lowering it is the primary goal of Liberty Factions.\n\nNot all Governments have Government Authority.",
+    "dlc": null,
+    "features": [],
+    "id": "government_authority",
+    "name": "Government Authority",
+    "parent": "law"
+  },
+  {
     "aliases": [
       "Governors",
       "Strategos",
@@ -4574,6 +5054,17 @@
   },
   {
     "aliases": [
+      "Grand Cathedrals"
+    ],
+    "desc": "A Grand Cathedral is a Great Building raised through a Great Project in the capital of an Archdiocese, the seat of its Archbishop.\n\nRaising the first Cathedral is a monumental act of devotion: its founder gains lasting Piety, Legitimacy and Spiritual Fulfillment, an additional Personal Tenet slot, and a standing bonus to their same-Faith Opinion. Once raised, it draws Christian pilgrims from across Christendom, expands the holder's Cathedral Complex, and may later be enlarged into a Gothic Grand Cathedral or Flamboyant Grand Cathedral.",
+    "dlc": "By God Alone",
+    "features": [],
+    "id": "grand_cathedral",
+    "name": "Grand Cathedral",
+    "parent": "faith"
+  },
+  {
+    "aliases": [
       "Grand Chancellor's"
     ],
     "desc": "The Grand Chancellor is the highest ranking Minister and is in charge of diplomatic matters. They are typically assigned the position of Secretary Director.\n\nThe Chancellor can be the designated Secretary Director, depending on the Grand Secretariat Control Law.\n\nThe minister can, for example:\nEFFECT_LIST_BULLETUse the Shape the Dynastic Cycle Decision\nEFFECT_LIST_BULLETInvite any type of Courtier with the Summon Courtiers for the Celestial Bureau Decision\nEFFECT_LIST_BULLETAccess special Influence Career Interaction options, and at a reduced cost\nEFFECT_LIST_BULLETStart the Compel Religious Uniformity Great Project",
@@ -4627,7 +5118,7 @@
     "aliases": [
       "Great Holy Wars"
     ],
-    "desc": "A Great Holy War is a special type of War that only the Head of Faith of certain Faiths can declare, with the goal of bringing an entire Kingdom under the rule of their Faith.\n\nGreat Holy Wars target all Rulers of another Religion within a chosen Kingdom, forcing them to defend together. If victorious, all Titles within the targeted Kingdom will be seized and divided between the attackers.\n\nDepending on its Doctrines, a Faith might have access to Directed Great Holy Wars, Undirected Great Holy Wars or no Great Holy Wars at all:\n•The Armed Pilgrimages, Struggle and Submission, or Warmonger Tenets are required to access to Great Holy Wars in general\n•Faiths with a Temporal Head only have access to Directed Great Holy Wars\n•Faiths with a Spiritual Head only have access to Undirected Great Holy Wars\n•Faiths without a Head of Faith cannot declare any Great Holy Wars, even if they would normally be eligible\n\nSome Faiths have special names for their Great Holy Wars such as 'Crusade' or 'Jihad'. These Great Holy Wars differ in name only, and function as any other Great Holy War.",
+    "desc": "A Great Holy War is a special type of War that only the Head of Faith of certain Faiths can declare, with the goal of bringing an entire Kingdom under the rule of their Faith.\n\nGreat Holy Wars target all Rulers of another Religion within a chosen Kingdom, forcing them to defend together. If victorious, all Titles within the targeted Kingdom will be seized and divided between the attackers.\n\nDepending on its Doctrines, a Faith might have access to Directed Great Holy Wars, Undirected Great Holy Wars or no Great Holy Wars at all:\n•The Armed Pilgrimages, Struggle and Submission, or Warmongering Tenets are required to access to Great Holy Wars in general\n•Faiths with a Temporal Head only have access to Directed Great Holy Wars\n•Faiths with a Spiritual Head only have access to Undirected Great Holy Wars\n•Faiths without a Head of Faith cannot declare any Great Holy Wars, even if they would normally be eligible\n\nSome Faiths have special names for their Great Holy Wars such as 'Crusade' or 'Jihad'. These Great Holy Wars differ in name only, and function as any other Great Holy War.",
     "dlc": null,
     "features": [],
     "id": "great_holy_war",
@@ -4673,6 +5164,17 @@
     "id": "guardian",
     "name": "Guardian",
     "parent": "relation"
+  },
+  {
+    "aliases": [],
+    "desc": "A Decision available to prelates and mighty rulers, pushing The Christian Church towards the chapter of their choosing.",
+    "dlc": "By God Alone",
+    "features": [
+      "by_god_alone"
+    ],
+    "id": "pam_shape_the_christian_church_decision",
+    "name": "Guide the Christian Church",
+    "parent": "decision"
   },
   {
     "aliases": [],
@@ -4736,7 +5238,8 @@
   },
   {
     "aliases": [
-      "Heads of Faith"
+      "Heads of Faith",
+      "Head of Faith's"
     ],
     "desc": "A Head of Faith is the formal leader of a Faith. The powers and nature of the Head of Faith depends on the Doctrines of the Faith.\n\nSome Faiths have a Spiritual Head of Faith (e.g. the Pope), some a Temporal Head of Faith (e.g. a Caliph), and some do not have a Head of Faith at all.",
     "dlc": null,
@@ -4756,6 +5259,15 @@
     "id": "religious_head_succession_law",
     "name": "Head of Faith Succession Law",
     "parent": "law"
+  },
+  {
+    "aliases": [],
+    "desc": "The leading Character of a Rite: the Head of Faith if they follow it; otherwise the holder of the Clerical Region where the rite has its strongest following, and failing that, the Ruler who governs the most of the Rite's Counties.\n\nOnly the Head of Rite may edit their Rite's Tenets and Doctrines, and it is they who speak for their flock when the church drifts toward Schism.",
+    "dlc": "By God Alone",
+    "features": [],
+    "id": "head_of_rite",
+    "name": "Head of Rite",
+    "parent": "rite"
   },
   {
     "aliases": [
@@ -4863,9 +5375,10 @@
   },
   {
     "aliases": [
-      "Heresies"
+      "Heresies",
+      "Heretical"
     ],
-    "desc": "When the Fervor of a Faith is low, an outbreak of Heresy might occur. When that happens, a Ruler of the low-Fervor Faith will convert to another Faith, becoming a Heresiarch. They will then spread their new Faith to their Counties and Vassals.\n\nIf an outbreak is minor, it will stop there. If it is a major outbreak, more rulers in the same area will convert. If you're in that area, you also get the choice to convert, should you so desire.",
+    "desc": "When the Fervor of a Faith falls critically low, a Heresy outbreak may erupt. Outbreaks come in three increasingly severe forms:\n•An existing Rite becomes more Divergent and spreads further afield.\n•A significantly Divergent new Rite appears and sweeps across the lands.\n•For Christian Faiths, a historical heresy such as Bogomilism or Catharism appears.\n\nA Faith stands at true risk of Heresy only once its Mainline Rite is in at least 100 Counties. Below that the two more severe forms cannot erupt at all, and even the mildest is far rarer.\n\nEvery outbreak ends in a unifying surge of Fervor.",
     "dlc": null,
     "features": [],
     "id": "heresy",
@@ -4981,7 +5494,8 @@
       "Holders",
       "Holder's",
       "Holders'",
-      "Hold"
+      "Hold",
+      "Held"
     ],
     "desc": "A Title's Holder is the character who owns the title. Barony and County titles will always have Holders once settled, whereas Duchy, Kingdom and Empire titles might not have been created yet. As a further caveat, the Holder of a high-level Title might not actually control any territory within the Title's De Jure area.\n\nHolding higher-tier Titles allows you to have higher-tier Vassals. For example, Dukes can have Counts as Vassals, and Kings can have Dukes.",
     "dlc": null,
@@ -5015,9 +5529,11 @@
   {
     "aliases": [
       "Holy Orders",
-      ""
+      "",
+      "Holy Order's",
+      "Holy Orders'"
     ],
-    "desc": "Holy Orders are independent military organizations that work to defend and expand the influence of their Faith.\n\nRulers of their Faith may hire them if they are at War with a … or … Faith, at a cost of Piety. Once this War ends, they no longer fight for that Ruler.\n\nA Holy Order may have a Holy Order Patron, who does not need to pay to engage their services.",
+    "desc": "A Holy Order is an organization of religious devotees which exists to serve the Faith.\n\nAn Order will lease Holdings from other Rulers. They may have a Holy Order Patron who controls their Capital, and to whom they provide benefices.\n\nThere are two types of Holy Orders. Monastic Orders serve to increase Development, spread Tenets, and provide Spiritual Fulfillment. Military Orders may be hired into Holy Wars against a … or ….",
     "dlc": null,
     "features": [],
     "id": "holy_order",
@@ -5025,8 +5541,11 @@
     "parent": null
   },
   {
-    "aliases": [],
-    "desc": "A Holy Order's Holy Order Patron is a King or Emperor who shares their Faith and whose Realm contains their Capital.\n\nThe Holy Order Patron may call upon the support of the Holy Order against religious enemies for free, instead of paying Piety.\n\nNot all Holy Orders have a Holy Order Patron.",
+    "aliases": [
+      "Patronize",
+      "Holy Order Patronage"
+    ],
+    "desc": "A Holy Order's Holy Order Patron is a Ruler of Duke-Tier or higher who shares their Faith and whose Realm contains their Capital. A Patron must take care not to lose the County that contain this Capital, as patronage can be lost to Vassals of Duke-Tier or higher.\n\nPatrons may either be a Monastic Order Patron (of a Monastic Order) or a Military Order Patron (of a Military Order).\n\nNot all Holy Orders have a Holy Order Patron, and they are not strictly required to.",
     "dlc": null,
     "features": [],
     "id": "holy_order_patron",
@@ -5035,9 +5554,20 @@
   },
   {
     "aliases": [
+      "Holy Relics"
+    ],
+    "desc": "A Holy Relic is an Artifact that holds religious significance for a Faith. A Holy Relic can be Enshrined in a Holy Site of that faith to gain benefits.\n\nSome artifacts are inherently holy for a faith, but artifacts can also be Sanctified to become a holy relic.",
+    "dlc": "By God Alone",
+    "features": [],
+    "id": "holy_relic",
+    "name": "Holy Relic",
+    "parent": "holy_site"
+  },
+  {
+    "aliases": [
       "Holy Sites"
     ],
-    "desc": "A Holy Site is a County which contains a place of religious significance to a Faith. Holy Sites held by a Character of the correct Faith will provide an effect to everyone of that Faith, and can also allow the creation of Special Buildings or Holy Orders. Each Faith has a different set of Holy Sites.",
+    "desc": "A Holy Site is a County which contains a place of religious significance to a Faith. Holy Sites held by a Character of the correct Faith will provide an effect to everyone of that Faith, and can also allow the creation of Special Buildings or Holy Orders. Each Faith has a different set of Holy Sites.\n\nAn ordinary Holy Site gives no global faith benefits, only local ones. A Faith's most revered sites are instead designated as Eminent Holy Sites. A Faith can only have a limited number of each.",
     "dlc": null,
     "features": [],
     "id": "holy_site",
@@ -5138,7 +5668,7 @@
   },
   {
     "aliases": [],
-    "desc": "This Faith deviates significantly.\nIntermarriage may still happen, Holy Wars can be waged.\n\nEffects:\n…",
+    "desc": "This Rite deviates significantly.\nIntermarriage may still happen, Holy Wars can be waged.\n\nEffects:\n…",
     "dlc": null,
     "features": [],
     "id": "faith_hostile",
@@ -5438,7 +5968,7 @@
     "features": [],
     "id": "imperial_bureaucracy",
     "name": "Imperial Bureaucracy",
-    "parent": "law"
+    "parent": "government_authority"
   },
   {
     "aliases": [
@@ -5469,7 +5999,7 @@
       "Imperial Families",
       "Imperial"
     ],
-    "desc": "The Imperial Family is the top House in an Administrative Realm.",
+    "desc": "The Imperial Family is the top House in a Bureaucratic Realm.",
     "dlc": "Roads to Power",
     "features": [],
     "id": "imperial_family",
@@ -5550,11 +6080,29 @@
     "aliases": [
       "Incestuous"
     ],
-    "desc": "Incest refers to sexual activity between close relatives.\nWhat relations are incestuous is determined by the Consanguinity Doctrine of a character's Faith.",
+    "desc": "Incest refers to sexual activity between close relatives.\nWhat relations are incestuous is determined by the Consanguinity Doctrine of a character's Rite.",
     "dlc": null,
     "features": [],
     "id": "incest",
     "name": "Incest",
+    "parent": null
+  },
+  {
+    "aliases": [],
+    "desc": "An Interaction through which Ecclesiastical Rulers can make same-Faith secular rulers declare War to press a Claim on a secular Ruler.",
+    "dlc": "By God Alone",
+    "features": [],
+    "id": "ecclesiastic_incite_claim_war_interaction",
+    "name": "Incite Claim War",
+    "parent": null
+  },
+  {
+    "aliases": [],
+    "desc": "An Interaction through which Ecclesiastical Rulers can make same-Faith secular rulers declare Holy War on rulers of hostile faith.",
+    "dlc": "By God Alone",
+    "features": [],
+    "id": "ecclesiastic_incite_holy_war_interaction",
+    "name": "Incite Holy War",
     "parent": null
   },
   {
@@ -5662,6 +6210,17 @@
   },
   {
     "aliases": [
+      "Innovators"
+    ],
+    "desc": "Innovators are Guests at the Ecumenical Council Activity voting with the Host in their suggestions to change status of a Tenet or a Doctrine.\n\nThey are directly opposed to the Conservatives, guests who are voting against any changes, wanting to preserve the status quo.Characters that are allowed to vote are: Clergy, Rulers with Realm Priest Puppet and the Activity Host",
+    "dlc": "By God Alone",
+    "features": [],
+    "id": "ecumenical_council_innovator",
+    "name": "Innovator",
+    "parent": "activity"
+  },
+  {
+    "aliases": [
       "Inspections",
       ""
     ],
@@ -5694,6 +6253,19 @@
     "id": "inspiration",
     "name": "Inspiration",
     "parent": null
+  },
+  {
+    "aliases": [
+      "Instability"
+    ],
+    "desc": "An Instability Chapter of The Christian Church is one where obedience runs thin:\n\nRulers may be more easily swayed to a different Rite, excommunications may happen more frequently, and Gold may be spent for one's own benefit.\n\nFragile Unity and Reform are Instability Chapters.",
+    "dlc": "By God Alone",
+    "features": [
+      "by_god_alone"
+    ],
+    "id": "the_christian_church_unstable",
+    "name": "Instability Chapter",
+    "parent": "the_christian_church_chapter_type"
   },
   {
     "aliases": [],
@@ -5830,7 +6402,7 @@
   },
   {
     "aliases": [],
-    "desc": "This is the maximum a character may invest in their own or anyone else's Candidate Score for a Governorship.\n\nAge, Family Rating, Level of Influence, and Estate Buildings are the main factors that determine this limit. Children have a small scaling malus to this limit, while adult's limits rise as they age.",
+    "desc": "This is the maximum a character may invest in their own or anyone else's Candidate Score for a Title.\n\nFor Governorships, age, Family Rating, Level of Influence, and Estate Buildings are the main factors that determine this limit.\nFor Clerical Appointment, age and Level of Devotion are the main factors that determine this limit.\n Children have a small scaling malus to this limit, while adult's limits rise as they age.",
     "dlc": "Roads to Power",
     "features": [],
     "id": "investment_cap",
@@ -5888,7 +6460,7 @@
     ],
     "id": "japanese_bureaucracy",
     "name": "Japanese Bureaucracy",
-    "parent": "law"
+    "parent": "government_authority"
   },
   {
     "aliases": [
@@ -6054,6 +6626,15 @@
     "parent": "grand_activity"
   },
   {
+    "aliases": [],
+    "desc": "A Known Tenet Status means the Rite is aware of this Tenet or Doctrine, but neither endorses nor permits its practice. It can be considered when authoring or diverging the Rite, and may be raised to a higher Tenet Status.",
+    "dlc": "By God Alone",
+    "features": [],
+    "id": "known_tenet_status",
+    "name": "Known",
+    "parent": "tenet_status"
+  },
+  {
     "aliases": [
       "Kurultais",
       "Kurultai Member",
@@ -6093,7 +6674,7 @@
       "Laws",
       ""
     ],
-    "desc": "A Realm's Laws are what determine how that Realm is structured.\n\nThe most fundamental of these is the Realm's Crown Authority (or Tribal Authority for Tribes, Imperial Bureaucracy for Administrative and Dominance for Nomads), as those Laws determine how Lieges and Vassals interact on a regular basis.\n\nThough less impactful on the day-to-day life of Rulers in a Realm, Succession Laws and Title Laws are still very important to consider for Succession.",
+    "desc": "A Realm's Laws are what determine how that Realm is structured.\n\nThe most fundamental of these is the Realm's Government Authority, as those Laws determine how Lieges and Vassals interact on a regular basis.\n\nThough less impactful on the day-to-day life of Rulers in a Realm, Succession Laws and Title Laws are still very important to consider for Succession.",
     "dlc": null,
     "features": [],
     "id": "law",
@@ -6154,13 +6735,22 @@
     "parent": "skills"
   },
   {
+    "aliases": [],
+    "desc": "The legal conditions under which a character is Leasing a title. It also determines who their Religious Superior is.",
+    "dlc": "By God Alone",
+    "features": [],
+    "id": "lease_contract",
+    "name": "Lease Contract",
+    "parent": "leasing"
+  },
+  {
     "aliases": [
       "Lease",
       "Leases",
       "Leased",
       "Lessee"
     ],
-    "desc": "Minor Baronies can be Leased out to Holy Orders or Clergy. Leased baronies provide Taxes and Levies to the Lessee rather than the Holder.\n\nA holy order can lease Castle Holdings, while clergy can lease Temple Holdings.\n\nLeased Holdings are still considered part of the holder's Realm. County Capitals cannot be leased.",
+    "desc": "Minor Baronies can be leased out to Holy Orders, Monastic Orders, or Clergy. Leased baronies provide Taxes and Levies to the Lessee rather than the Holder.\n\nMilitary Orders can lease Castle Holdings and City Holdings, while Monastic Orders and clergy can lease Temple Holdings. A lease may have a Lease Contract.\n\nLeased Holdings are still considered part of the holder's Realm. County Capitals cannot be leased.",
     "dlc": null,
     "features": [],
     "id": "leasing",
@@ -6387,7 +6977,7 @@
       "Liberty",
       "Liberty Factions"
     ],
-    "desc": "The Liberty Faction seeks to lower the Crown Authority and, if applicable, their own Vassal Contracts. If successful, their Liege will be unable to change the Crown Authority of the Realm for some time.",
+    "desc": "The Liberty Faction seeks to lower the Government Authority and, if applicable, their own Vassal Contracts. If successful, their Liege will be unable to change the Government Authority of the Realm for some time.",
     "dlc": null,
     "features": [],
     "id": "liberty_faction",
@@ -6417,7 +7007,7 @@
   },
   {
     "aliases": [],
-    "desc": "Life Expectancy is the number of years a character is expected to live before dying of natural causes.\n\nA high Life Expectancy will make characters visibly age slower and be able to produce Children for longer.",
+    "desc": "Life Expectancy is the number of years a character is expected to live before dying of natural causes.\n\nA high Life Expectancy will make characters visibly age slower.",
     "dlc": null,
     "features": [],
     "id": "life_expectancy",
@@ -6621,6 +7211,18 @@
     "id": "main_phase",
     "name": "Main Phase",
     "parent": null
+  },
+  {
+    "aliases": [
+      "Mainline Rites",
+      "Mainline"
+    ],
+    "desc": "The Mainline Rite represents the most prominent set of beliefs of a Faith. A non-Mainline Rite is considered to be Divergent from this Rite.\n\nWhich Rite is Mainline depends on whether the Faith has a Head of Faith.\n\nIf the Faith has a Head of Faith, the Mainline Rite is whichever one they follow. This means it can change when a successor of a different Rite takes their place, including a potential Challenger Head of Faith.\n\nWithout a Head of Faith, any Rite followed by more Counties than the Mainline supplants it, provided it holds at least as many Holy Sites as the Rite it seeks to replace.",
+    "dlc": "By God Alone",
+    "features": [],
+    "id": "mainline_rite",
+    "name": "Mainline Rite",
+    "parent": "rite"
   },
   {
     "aliases": [],
@@ -7034,7 +7636,7 @@
     "aliases": [
       ""
     ],
-    "desc": "Meritocratic is a Bureaucratic Government Form similar to Celestial, in which the Liege appoints characters as Governors, of which there are two types, Civil and Military.\n\nCharacters have access to Influence, Noble Families, and Family Estates.\n\nIndependent Rulers have Legitimacy, while Vassals focus on obtaining Merit.",
+    "desc": "Meritocratic is a Bureaucratic Government Form similar to Celestial, in which the Liege appoints characters as Governors, of which there are two types, Civil and Military.\n\nCharacters have access to Influence, Noble Families, and Family Mansions.\n\nIndependent Rulers have Legitimacy, while Vassals focus on obtaining Merit.",
     "dlc": "All Under Heaven",
     "features": [
       "all_under_heaven"
@@ -7052,13 +7654,13 @@
     ],
     "id": "meritocratic_bureaucracy",
     "name": "Meritocratic Bureaucracy",
-    "parent": "law"
+    "parent": "government_authority"
   },
   {
     "aliases": [
       ""
     ],
-    "desc": "Meritocratic Khanate is a Bureaucratic Government Form similar to the Celestial and Meritocratic, but originating from a Nomadic Government Form. The Liege appoints characters as Governors, of which there are two types, Civil and Military. They still maintain Tributaries, enforce Obedience, and have a higher maximum Dread.\n\nCharacters have access to Influence, Noble Families, and Family Estates.\n\nIndependent Rulers have Legitimacy, while Vassals focus on obtaining Merit.",
+    "desc": "Meritocratic Khanate is a Bureaucratic Government Form similar to the Celestial and Meritocratic, but originating from a Nomadic Government Form. The Liege appoints characters as Governors, of which there are two types, Civil and Military. They still maintain Tributaries, enforce Obedience, and have a higher maximum Dread.\n\nCharacters have access to Influence, Noble Families, and Family Mansions.\n\nIndependent Rulers have Legitimacy, while Vassals focus on obtaining Merit.",
     "dlc": "All Under Heaven",
     "features": [
       "all_under_heaven"
@@ -7133,9 +7735,7 @@
     ],
     "desc": "Treasury sent to military Province Vassals from the central government, for the purposes of funding additional military activities. It is based on the periodically calculated allocation of the Treasury income of the Top Liege.",
     "dlc": "All Under Heaven",
-    "features": [
-      "all_under_heaven"
-    ],
+    "features": [],
     "id": "treasury_military_budget",
     "name": "Military Budget",
     "parent": "treasury_budget_category"
@@ -7170,7 +7770,7 @@
       "Military Governors",
       "Military"
     ],
-    "desc": "A Military Governor is a Governor with military Vassal Obligations. They are able to field Title Men-at-Arms, unlike Civilian Governors, and will use them to protect the Realm from foreign incursions and support other Governors in need of military aid.\n\nCharacters who pursue a Military Career Path can become Military Governors.",
+    "desc": "A Military Governor is a Governor with military Subject Obligations. They are able to field Title Men-at-Arms, unlike Civilian Governors, and will use them to protect the Realm from foreign incursions and support other Governors in need of military aid.\n\nCharacters who pursue a Military Career Path can become Military Governors.",
     "dlc": "All Under Heaven",
     "features": [
       "all_under_heaven"
@@ -7178,6 +7778,31 @@
     "id": "military_governor",
     "name": "Military Governor",
     "parent": "governor"
+  },
+  {
+    "aliases": [
+      "Military Orders",
+      "Military Order's",
+      "Military Orders'",
+      "Military Order Patronage"
+    ],
+    "desc": "A Military Order is a type of Holy Order populated by warriors sworn to defend and expand the lands of their Faith.\n\nSame-Faith Rulers may hire the Order if they are at War with a … or … Faith, at the cost of Piety. Once this War ends, the Order no longer fights for that Ruler.\n\nA Holy Order may have a Military Order Patron, who does not need to pay to engage their services.",
+    "dlc": "By God Alone",
+    "features": [],
+    "id": "military_holy_order",
+    "name": "Military Order",
+    "parent": null
+  },
+  {
+    "aliases": [
+      "Patronize"
+    ],
+    "desc": "A Military Order's Holy Order Patron is a Ruler of Duke-Tier or higher who shares their Faith and whose Realm contains their Capital.\n\nThe Holy Order Patron may call upon the support of the Holy Order against religious enemies for free, instead of paying Piety.\n\nPatronage can be lost to Vassals of Duke-Tier or higher, if control of the Order's Capital is ceded.",
+    "dlc": "By God Alone",
+    "features": [],
+    "id": "military_holy_order_patron",
+    "name": "Military Order Patron",
+    "parent": null
   },
   {
     "aliases": [
@@ -7304,7 +7929,7 @@
     "aliases": [
       "Ministry Obligation"
     ],
-    "desc": "Ministry Obligations is a unique set of Vassal Obligations only available for Ministers.\n\nAll civil ministers have a specific option set as their default, while the Grand Marshal has a unique option that provides the Marshal with Title Men-at-Arms.\n\nThese obligations cannot be changed.",
+    "desc": "Ministry Obligations is a unique set of Subject Obligations only available for Ministers.\n\nAll civil ministers have a specific option set as their default, while the Grand Marshal has a unique option that provides the Marshal with Title Men-at-Arms.\n\nThese obligations cannot be changed.",
     "dlc": "All Under Heaven",
     "features": [
       "all_under_heaven"
@@ -7359,6 +7984,35 @@
     "id": "modifier",
     "name": "Modifier",
     "parent": null
+  },
+  {
+    "aliases": [
+      "Monastic Orders",
+      "Monastic",
+      "Monastic Order's",
+      "Monastic Orders'",
+      ""
+    ],
+    "desc": "A Monastic Order is a type of Holy Order devoted to prayer, learning, and the spread of a single Tenet. It belongs to the Rite of its founder and champions one of that Rite's Tenets, spreading the practice among the faithful.\n\nLed by an Abbot, a Monastic Order is sustained by the Temple Holdings and Gold granted by its Monastic Order Patrons. The Order then provides Spiritual Fulfillment and Piety in return.\n\nAny Ruler whose Faith permits monasticism can establish one with the Found Monastic Order Decision.",
+    "dlc": "By God Alone",
+    "features": [],
+    "id": "monastic_holy_order",
+    "name": "Monastic Order",
+    "parent": null
+  },
+  {
+    "aliases": [
+      "Monastic Order Patrons",
+      "Patronize",
+      "Patronized",
+      "Patronage"
+    ],
+    "desc": "A Monastic Order Patron is an Ecclesiastical or secular Ruler of Duchy Tier or higher who sustains a Monastic Order, most often the ruler who founded it. A patron endows the order with worldly wealth, leasing it Temple Holdings and donating Gold to its coffers.\n\nIn return for this generosity, the patron earns Piety and Spiritual Fulfillment. They may also take control of the Order's leader, and have them execute Clerical interactions as a Puppet.",
+    "dlc": "By God Alone",
+    "features": [],
+    "id": "monastic_order_patron",
+    "name": "Monastic Order Patron",
+    "parent": "monastic_holy_order"
   },
   {
     "aliases": [],
@@ -7476,6 +8130,15 @@
   },
   {
     "aliases": [],
+    "desc": "An Interaction which facilitates the peaceful transfer of a Title or Vassal between two Rulers, relying on the acceptance of the target Ruler and a secondary intercessor.\n\nRefusal will usually cost the recipient Piety and Legitimacy, as well as an additional cost selected by the actor as a method of compelling acceptance.\n\nThe intercessor, a relevant Ecclesiastical or Theocratic ruler, may both forbid this interaction from even taking place and, with the Absolute Church Authority Law, may force through its acceptance.",
+    "dlc": "By God Alone",
+    "features": [],
+    "id": "ecclesiastic_transfer_land_interaction",
+    "name": "Negotiate For Land",
+    "parent": null
+  },
+  {
+    "aliases": [],
     "desc": "An Interaction which allows a Ruler to grant settle an unruly Adventurer in their Realm",
     "dlc": "Roads to Power",
     "features": [],
@@ -7543,7 +8206,7 @@
       "Noble Families",
       "Noble Family's"
     ],
-    "desc": "Noble Families are powerful Houses in an Administrative Realm. They own an Estate, controlled and managed by the House Head, and remain an integral part of the Realm at all times, as they will attempt to gather Influence and secure Provinces for themselves.\n\nAn influential Noble Family may become a Powerful Family or a Dominant Family.",
+    "desc": "Noble Families are powerful Houses in a Bureaucratic Realm. They own an Estate, controlled and managed by the House Head, and remain an integral part of the Realm at all times, as they will attempt to gather Influence and secure Provinces for themselves.\n\nAn influential Noble Family may become a Powerful Family or a Dominant Family.",
     "dlc": "Roads to Power",
     "features": [],
     "id": "noble_family",
@@ -7696,6 +8359,15 @@
     "parent": null
   },
   {
+    "aliases": [],
+    "desc": "An Interaction in which a Clerical authority trades the comfort of Spiritual Fulfillment for a Hook",
+    "dlc": "By God Alone",
+    "features": [],
+    "id": "spiritual_counsel_interaction",
+    "name": "Offer Spiritual Counsel",
+    "parent": null
+  },
+  {
     "aliases": [
       "Offer Vassalization Interaction"
     ],
@@ -7739,6 +8411,15 @@
     "id": "struggle_phase_iberia_opportunity",
     "name": "Opportunity Phase",
     "parent": "iberian_struggle"
+  },
+  {
+    "aliases": [],
+    "desc": "The minimum range at which a Monastic Order or Military Order is accessible to a Ruler.\n\nTo satisfy Holy Order Vicinity, the Order must have a Leased Holding that is within your sub-Realm or a neighboring County.\n\nMilitary Orders must be within Holy Order Vicinity to be hired for Wars. Similarly, most Monastic Order Interactions are not available while the Monastic Order is too far distant.",
+    "dlc": "By God Alone",
+    "features": [],
+    "id": "holy_order_vicinity",
+    "name": "Order Vicinity",
+    "parent": "monastic_holy_order"
   },
   {
     "aliases": [],
@@ -7828,6 +8509,30 @@
     "id": "palace_examination",
     "name": "Palace Examination",
     "parent": null
+  },
+  {
+    "aliases": [
+      "Papabile Scores"
+    ],
+    "desc": "All members of the College of Cardinals have a Papabile Score that takes into account their Traits, Level of Devotion, Rite and the Opinion of other cardinals.\n\nCardinals with the highest Papabile Score are likely to receive more votes during a papal election.\n\nThe Papabile Score can be increased via the Increase Papabile Score Character Interaction and the Promulgate Word of Pious Deeds Decision.",
+    "dlc": "By God Alone",
+    "features": [],
+    "id": "papabile_score",
+    "name": "Papabile Score",
+    "parent": "ecclesiastical"
+  },
+  {
+    "aliases": [
+      "Papal Bulls",
+      "Bull",
+      "Bulls"
+    ],
+    "desc": "A Papal Bull is a solemn decree of the Head of Faith of a Christian Faith, backed by the authority of The Christian Church.\n\nA Christian Head of Faith with sufficient Church Authority may proclaim a Bull through the Enact a Bull Decision, spending Piety to:\n\n•Summon a Great Holy War\n•Denounce a Rite as a Heresy\n•Declare a Tenet Permitted or Prohibited",
+    "dlc": "By God Alone",
+    "features": [],
+    "id": "papal_bull",
+    "name": "Papal Bull",
+    "parent": "the_christian_church"
   },
   {
     "aliases": [],
@@ -7930,6 +8635,17 @@
   },
   {
     "aliases": [
+      "Permit"
+    ],
+    "desc": "A Permitted Tenet Status means the Rite approves of this Tenet or Doctrine without actively promoting it. A Character of the Rite may adopt the Tenet as a Personal Tenet without spiritual penalty.",
+    "dlc": "By God Alone",
+    "features": [],
+    "id": "permitted_tenet_status",
+    "name": "Permitted",
+    "parent": "tenet_status"
+  },
+  {
+    "aliases": [
       "Perpetual Hooks"
     ],
     "desc": "A Perpetual Hook is a Hook that you might have on a character who owes you a favor, or that you have manipulated to do your will.\n\nThey cannot be used to force someone to become your Agent in a Murder and do not provide a passive benefit (for that, a Strong Hook is necessary.)\n\nPerpetual Hooks are not spent when used, but instead go on a cooldown before they can be used again.",
@@ -7977,11 +8693,25 @@
   },
   {
     "aliases": [
+      "Personal Tenets"
+    ],
+    "desc": "A Personal Tenet is a Tenet that a Ruler adopts as a core part of their spirituality.\n\nAdopting a Personal Tenet that is Core or has been Permitted by the Faith yields Spiritual Fulfillment, while taking on a Prohibited one will result in a Secret. Personal Tenets also provide additional effects and unlock special mechanics.\n\nThe number of Personal Tenets that a character can subscribe to is affected by their Level of Devotion and the Radiant Perk.",
+    "dlc": "By God Alone",
+    "features": [
+      "by_god_alone"
+    ],
+    "id": "personal_tenet",
+    "name": "Personal Tenet",
+    "parent": null
+  },
+  {
+    "aliases": [
+      "Behave",
       "Character Personality",
       "Personalities",
       ""
     ],
-    "desc": "Characters will act towards you and others according to their Personality, which is primarily determined by their Personality Traits.",
+    "desc": "Characters will act towards you and others according to their Personality, which is primarily determined by their Personality Traits.\n\nThe behavior of Rulers may be affected by other factors, such as some Modifiers and special Traits like Conqueror.",
     "dlc": null,
     "features": [],
     "id": "personality",
@@ -8009,6 +8739,15 @@
     "id": "petition_liege",
     "name": "Petition",
     "parent": "royal_court"
+  },
+  {
+    "aliases": [],
+    "desc": "An Interaction available to anyone following a Challenger Head of Faith. Request Gold from your Antipope. Their sponsor is accepted automatically.",
+    "dlc": "By God Alone",
+    "features": [],
+    "id": "petition_antipope_gold_interaction",
+    "name": "Petition Antipope for Gold",
+    "parent": null
   },
   {
     "aliases": [
@@ -8105,7 +8844,7 @@
   },
   {
     "aliases": [],
-    "desc": "The Player Heir is the Heir that a player will keep playing as on Succession.\n\nThe Player Heir is usually the same as the Primary Heir, but if the Succession Law of your Primary Title dictates that it should go to a character outside of your Dynasty, you will instead keep playing as the dynastic heir to your second highest-tier title (or third, fourth, etc.).\n\nThis situation is common when your Player Heir is voted out under an Elective Succession Law. If you are House Head of a Noble Family in an Administrative Realm you may lose your Realm to Primary Heirs outside of your House but retain your Noble Family Title.",
+    "desc": "The Player Heir is the Heir that a player will keep playing as on Succession.\n\nThe Player Heir is usually the same as the Primary Heir, but if the Succession Law of your Primary Title dictates that it should go to a character outside of your Dynasty, you will instead keep playing as the dynastic heir to your second highest-tier title (or third, fourth, etc.).\n\nThis situation is common when your Player Heir is voted out under an Elective Succession Law. If you are House Head of a Noble Family in an Administrative Realm you may lose your Realm to Primary Heirs outside of your House but retain your Noble Family Title.\n\nIf you are Ecclesiastical, your Player Heir is the character who is set to inherit your Primary Title, usually an Archdiocese.",
     "dlc": null,
     "features": [],
     "id": "player_heir",
@@ -8190,7 +8929,7 @@
       "Powerful Families",
       "Powerful"
     ],
-    "desc": "A Powerful Family represents one of the most influential Houses and Noble Families in an Administrative Realm.\n\nA member of a Powerful Family is better at Political Schemes and is more likely to get what they want when Interacting with other Characters.\n\nThere can only be a limited number of Powerful Families at any given time, and it is the top rated Noble Families that are considered powerful based on their Rating. The House of the Top Liege is an exception, which is always considered Powerful.\n\nA Family controlling a significant part of a Realm's land can become a Dominant Family.",
+    "desc": "A Powerful Family represents one of the most influential Houses and Noble Families in a Bureaucratic Realm.\n\nA member of a Powerful Family is better at Political Schemes and is more likely to get what they want when Interacting with other Characters.\n\nThere can only be a limited number of Powerful Families at any given time, and it is the top rated Noble Families that are considered powerful based on their Rating. The House of the Top Liege is an exception, which is always considered Powerful.\n\nA Family controlling a significant part of a Realm's land can become a Dominant Family.",
     "dlc": "Roads to Power",
     "features": [],
     "id": "powerful_family",
@@ -8201,7 +8940,7 @@
     "aliases": [
       "Family Attribute"
     ],
-    "desc": "A Powerful Family Attribute is a set of bonuses associated with a House inside an Administrative Realm. The Attribute benefits the members of the House, as well as the Liege.\n\nAttributes are only active as long as the House is considered a Powerful Family, and the Family Attribute of a Dominant Family does not benefit their Liege.\n\nThe House Head can freely replace the Attribute at any given time.",
+    "desc": "A Powerful Family Attribute is a set of bonuses associated with a House inside a Bureaucratic Realm. The Attribute benefits the members of the House, as well as the Liege.\n\nAttributes are only active as long as the House is considered a Powerful Family, and the Family Attribute of a Dominant Family does not benefit their Liege.\n\nThe House Head can freely replace the Attribute at any given time.",
     "dlc": "Roads to Power",
     "features": [],
     "id": "powerful_family_attribute",
@@ -8323,6 +9062,17 @@
   },
   {
     "aliases": [
+      "Prince-Electors"
+    ],
+    "desc": "Prince-Electors are the 7 Electors who select a Title Heir along with the Emperor under the Princely Elective Succession Law used by ….\n\nHolders of 7 preferred Titles are prioritized as Prince-Electors. These Titles are selected when the Empire is created.\n\nIf a Prince-Elector Title is destroyed, not held by a De Jure Imperial Vassal, held by another Prince-Elector, or the Holder's Religion differs from the Emperor's, another De Jure Title held by a direct Imperial Vassal or Independent Ruler will be selected based on these criteria:\n•Rulers of Emperor's Faith and Culture are favored\n•Theocratic and Feudal Rulers are favored\n\nPreferred Titles are listed in the Election view",
+    "dlc": null,
+    "features": [],
+    "id": "prince_elector",
+    "name": "Prince-Elector",
+    "parent": "elector"
+  },
+  {
+    "aliases": [
       "Imprisons",
       "Imprison",
       "Imprisoned",
@@ -8385,6 +9135,17 @@
     "parent": "grand_activity"
   },
   {
+    "aliases": [
+      "Prohibit"
+    ],
+    "desc": "A Prohibited Tenet Status means the Rite explicitly forbids this Tenet or Doctrine. A Character of the Rite adopting the Tenet as a Personal Tenet keeps it as a Secret, and a Rite adopting Prohibited Tenets as Core becomes much more Divergent from its Faith.",
+    "dlc": "By God Alone",
+    "features": [],
+    "id": "prohibited_tenet_status",
+    "name": "Prohibited",
+    "parent": "tenet_status"
+  },
+  {
     "aliases": [],
     "desc": "A project is something an Inspired Character undertakes with the help of a Sponsor to realize their vision, normally in the form of creating an Artifact.",
     "dlc": null,
@@ -8428,7 +9189,7 @@
     "aliases": [
       "Promoting"
     ],
-    "desc": "An Promoted Legend is a Legend owned by a different Ruler that is being supported by Legend Promoters, who pay a monthly contribution to also get part of its bonuses.",
+    "desc": "A Promoted Legend is a Legend owned by a different Ruler that is being supported by Legend Promoters, who pay a monthly contribution to also get part of its bonuses.",
     "dlc": "Community Pack 1 (free)",
     "features": [],
     "id": "promoted_legend",
@@ -8458,7 +9219,7 @@
       "Circuit",
       "Circuits"
     ],
-    "desc": "A Province is a Title held by a Governor inside a Realm with the Administrative Government.\n\nA Province has an associated Province Administration that greatly impacts the benefits the Province provides.",
+    "desc": "A Province is a Title held by a Governor inside a Bureaucratic Realm.\n\nA Province has an associated Province Administration that greatly impacts the benefits the Province provides.",
     "dlc": "Roads to Power",
     "features": [],
     "id": "province",
@@ -8473,7 +9234,7 @@
       "Theme Administrations",
       "Circuit Administration"
     ],
-    "desc": "Each Province of an Administrative Realm has a Province Administration, which may be set by the Liege and Governor to specialize the Province.\n\nOnly one Province Administration may be active per Province.",
+    "desc": "Each Province of a Bureaucratic Realm has a Province Administration, which may be set by the Liege and Governor to specialize the Province.\n\nOnly one Province Administration may be active per Province.",
     "dlc": "Roads to Power",
     "features": [],
     "id": "province_administration",
@@ -8486,7 +9247,7 @@
       "Thematic Army",
       "Thematic Armies"
     ],
-    "desc": "A Provincial Army is an army recruited and maintained by a Governor in a Realm with the Administrative Government.\n\nThey are exclusively made up of Title Men-at-Arms. The effectiveness of Men-at-Arms are affected by a …'s Governor Efficiency.\n\nThe Liege can spend Influence to gain control of Armies.\n\n… may borrow troops from their peers under certain circumstances, such as being Allies or using a Hook.\n\nA borrowed Army is returned if the … who borrowed them dies or when they end all of their ongoing Wars. Armies can also be returned manually.",
+    "desc": "A Provincial Army is an army recruited and maintained by a Governor in a Realm with the Bureaucratic Government.\n\nThey are exclusively made up of Title Men-at-Arms. The effectiveness of Men-at-Arms are affected by a …'s Governor Efficiency.\n\nThe Liege can spend Influence to gain control of Armies.\n\n… may borrow troops from their peers under certain circumstances, such as being Allies or using a Hook.\n\nA borrowed Army is returned if the … who borrowed them dies or when they end all of their ongoing Wars. Armies can also be returned manually.",
     "dlc": "Roads to Power",
     "features": [],
     "id": "provincial_army",
@@ -8539,6 +9300,49 @@
     "id": "force_duel_criminals_interaction",
     "name": "Punish Criminal Interaction",
     "parent": "interaction"
+  },
+  {
+    "aliases": [
+      "Puppets",
+      "Puppeting",
+      "Puppeted"
+    ],
+    "desc": "A Puppet is a Character under the control of a Puppeteer, who may take special Puppet actions through them.\n\nActing through a Puppet opens doors that would otherwise stay closed: a Realm Priest Puppet can petition for Clerical Titles or an Excommunication on your behalf, while a Secular Ruler Puppet can be made to release Tributaries, grant independence, or divorce their Spouse.\n\nThe actions available are determined by the Puppet Type.",
+    "dlc": "By God Alone",
+    "features": [
+      "by_god_alone"
+    ],
+    "id": "puppet",
+    "name": "Puppet",
+    "parent": null
+  },
+  {
+    "aliases": [
+      "Puppet Types"
+    ],
+    "desc": "A Puppet always has a type which determines the actions they may take on your behalf.\n\nWhile most of their special actions are shared, each Puppet Type comes with unique actions only available to that type.\n\nFor instance, a Realm Priest Puppet may Excommunicate someone on your behalf, while a Secular Ruler Puppet may be compelled to release a Tributary or divorce their Spouse.\n\nYou can only have one Puppet per type.",
+    "dlc": "By God Alone",
+    "features": [
+      "by_god_alone"
+    ],
+    "id": "puppet_type",
+    "name": "Puppet Type",
+    "parent": "puppet"
+  },
+  {
+    "aliases": [
+      "Puppeteers",
+      "Puppeteer's",
+      "Puppeteers'"
+    ],
+    "desc": "A Puppeteer is a Character in control of one or more Puppets.\n\nActing through their Puppets, a Puppeteer wields powers beyond their station, such as the influence of the Clergy or the authority of a foreign Realm.",
+    "dlc": "By God Alone",
+    "features": [
+      "by_god_alone"
+    ],
+    "id": "puppeteer",
+    "name": "Puppeteer",
+    "parent": "puppet"
   },
   {
     "aliases": [],
@@ -8716,6 +9520,19 @@
     "parent": "councillor"
   },
   {
+    "aliases": [
+      "Realm Priest Puppets"
+    ],
+    "desc": "A Realm Priest that is a Puppet of their Liege.\n\nThrough them, their Puppeteer can reach into the affairs of the Faith: petitioning the Head of Faith for Clerical Titles or an Excommunication, managing Holy Sites, founding a new Rite, or hosting an Ecumenical Council.",
+    "dlc": "By God Alone",
+    "features": [
+      "by_god_alone"
+    ],
+    "id": "clerical_puppet",
+    "name": "Realm Priest Puppet",
+    "parent": "puppet"
+  },
+  {
     "aliases": [],
     "desc": "A character's Realm Size is the number of Counties owned by them and their Vassals.",
     "dlc": null,
@@ -8755,6 +9572,15 @@
     "id": "recently_disembarked",
     "name": "Recently Disembarked",
     "parent": null
+  },
+  {
+    "aliases": [],
+    "desc": "When a Character is Excommunicated, they suffer immediate harm and ongoing restrictions until absolution.\n\nUpon excommunication, they immediately suffer:\n•Major Legitimacy loss\n•One Level of Devotion lost\n•-50% Piety gain while the Trait remains\n…\n\nWhile Excommunicated, they are restricted from:\n•Holding or attending a Coronation\n•Using the Seek Indulgences Interaction\n•Divorce through the Church\n•Hiring Holy Orders\n\nThey may also face:\n•The Recent Excommunication Modifier, which blocks absolution for one year\n•An Excommunication War from neighboring Rulers of the same Faith, if they are an Independent Ruler\n\nAbsolution can be sought by:\n……",
+    "dlc": null,
+    "features": [],
+    "id": "excommunicated_recovery",
+    "name": "Recover from Excommunication",
+    "parent": "excommunication"
   },
   {
     "aliases": [
@@ -8899,6 +9725,18 @@
     "parent": null
   },
   {
+    "aliases": [
+      "Doctrine Knowledge",
+      "Knowledge"
+    ],
+    "desc": "Characters do not know the full details of every religious practice.\n\nKnown tenets and doctrines can be used when creating a Divergent Rite, and may be adopted as Personal Tenets. Knowing all Tenets and Doctrines of a Rite makes conversion easier.\n\nAll Tenets and Doctrines within your Faith are known to you. New knowledge can be gained from relations like Spouses or Friends, Traveling, Activities, or the Study Rite Scheme.",
+    "dlc": "By God Alone",
+    "features": [],
+    "id": "tenet_knowledge",
+    "name": "Religious Knowledge",
+    "parent": "rite"
+  },
+  {
     "aliases": [],
     "desc": "A Councillor Task performed by the Court Chaplain.\nIncreases same-Faith Theocratic rulers' opinion of the character, and increases monthly Piety gain.",
     "dlc": null,
@@ -8906,6 +9744,31 @@
     "id": "religious_relations",
     "name": "Religious Relations",
     "parent": "councillor_task"
+  },
+  {
+    "aliases": [
+      "Religious Subordinates",
+      "Subordinate",
+      "Subordinates"
+    ],
+    "desc": "A Religious Subordinate is a Character who has a Religious Superior within a hierarchical religious structure.",
+    "dlc": "By God Alone",
+    "features": [],
+    "id": "religious_subordinate",
+    "name": "Religious Subordinate",
+    "parent": "religion"
+  },
+  {
+    "aliases": [
+      "Religious Superiors",
+      "Superior"
+    ],
+    "desc": "A religious Superior is a Character who holds religious jurisdiction over one or more Subordinate religious clergy in a hierarchical religious structure.",
+    "dlc": "By God Alone",
+    "features": [],
+    "id": "religious_superior",
+    "name": "Religious Superior",
+    "parent": "religion"
   },
   {
     "aliases": [
@@ -8956,12 +9819,30 @@
   },
   {
     "aliases": [],
-    "desc": "The Request Anointment Character Interaction is a special interaction that can be used by a Ruler on their Head of Faith to secure their support in an Anointment.",
+    "desc": "The Request Anointment Character Interaction is a special interaction that can be used by a Ruler of Empire Tier or higher on their Head of Faith, or clergy Head of Rite when there is none, to secure their support in an Anointment.",
     "dlc": null,
     "features": [],
     "id": "anointment_request",
     "name": "Request Anointment",
     "parent": "coronation_anointment"
+  },
+  {
+    "aliases": [],
+    "desc": "An Interaction which strengthens an Unpressed Claim into a Pressed Claim through the endorsement of a relevant Ecclesiastical or Theocratic Ruler.",
+    "dlc": "By God Alone",
+    "features": [],
+    "id": "strengthen_claim_interaction",
+    "name": "Request Claim Endorsement",
+    "parent": null
+  },
+  {
+    "aliases": [],
+    "desc": "An Interaction used by Ecclesiastical Rulers to expand their Clerical Region into the De Jure Counties of an adjacent Duchy.\n\nThis is only possible with the approval of the Head of Faith.",
+    "dlc": "By God Alone",
+    "features": [],
+    "id": "request_ecclesiastical_title_expansion_interaction",
+    "name": "Request Clerical Title Expansion",
+    "parent": null
   },
   {
     "aliases": [],
@@ -9108,7 +9989,7 @@
   },
   {
     "aliases": [],
-    "desc": "This Faith is considered legitimate.\nIntermarriage is common.\n\nEffects:\n…",
+    "desc": "This Rite is considered legitimate.\nIntermarriage is common.\n\nEffects:\n…",
     "dlc": null,
     "features": [],
     "id": "faith_righteous",
@@ -9138,10 +10019,23 @@
   },
   {
     "aliases": [
+      "Rites",
+      "Rite's",
+      "Rites'"
+    ],
+    "desc": "A Rite is a branch of a Faith: a local variation of its religious practices, led by a Head of Rite and followed by its own Counties and Characters. Every faith has a Mainline Rite, and may grow several more.\n\nA Rite defines itself by the Tenets and Doctrines it champions. Whether a Tenet is Permitted or Prohibited is judged by the Faith through its Mainline Rite, and the more a Rite's choices defy those judgements, the higher its Divergence: divergent Rites sap the Faith's Fervor, come to be seen as Heresy, and at 100 Divergence break away as a Faith of their own.\n\nNew Rites may be founded by the pious, Rulers can be swayed from one Rite to another, only the Head of Rite may edit one.",
+    "dlc": "By God Alone",
+    "features": [],
+    "id": "rite",
+    "name": "Rite",
+    "parent": "faith"
+  },
+  {
+    "aliases": [
       "Ritsuryō",
       ""
     ],
-    "desc": "Ritsuryō is a type of Administrative Government unique to Japan.\n\nIt is a centralized Bureaucratic Government Form where Characters are appointed as Governors on behalf of their Liege, have access to Influence, and Noble Family Heads have a Family Manor and House Aspiration.\n\nA Kampaku governs the Realm on behalf of the Japanese Emperor, and may be elected from among Noble Family Heads, or imposed by Faction demand.\n\nRitsuryō Vassals generally govern only a single County, but may reject the centralized system and become local Sōryō lords to build their own power, though this is usually considered a Criminal act.\n\nRitsuryō House Heads may create and join House Blocs within the Realm, which will support the Leading House in becoming Kampaku.\n\nJapanese Governments have a lower Domain Limit than others, which may be increased by upgrading the Family Manor.\n\nThe Ritsuryō system refers to the centralized administrative government of Japan, inspired by the Chinese Confucian bureaucracy.",
+    "desc": "Ritsuryō is a type of Bureaucratic Government unique to Japan.\n\nIt is a centralized Bureaucratic Government Form where Characters are appointed as Governors on behalf of their Liege, have access to Influence, and Noble Family Heads have a Family Manor and House Aspiration.\n\nA Kampaku governs the Realm on behalf of the Japanese Emperor, and may be elected from among Noble Family Heads, or imposed by Faction demand.\n\nRitsuryō Vassals generally govern only a single County, but may reject the centralized system and become local Sōryō lords to build their own power, though this is usually considered a Criminal act.\n\nRitsuryō House Heads may create and join House Blocs within the Realm, which will support the Leading House in becoming Kampaku.\n\nJapanese Governments have a lower Domain Limit than others, which may be increased by upgrading the Family Manor.\n\nThe Ritsuryō system refers to the centralized administrative government of Japan, inspired by the Chinese Confucian bureaucracy.",
     "dlc": "All Under Heaven",
     "features": [
       "all_under_heaven"
@@ -9260,12 +10154,22 @@
     ],
     "desc": "Treasury sent to Vassals from the central government, which they receive as Gold to be used as their personal salary. It is based on the periodically calculated allocation of the Treasury income of the Top Liege.",
     "dlc": "All Under Heaven",
-    "features": [
-      "all_under_heaven"
-    ],
+    "features": [],
     "id": "treasury_salary_budget",
     "name": "Salary Budget",
     "parent": "treasury_budget_category"
+  },
+  {
+    "aliases": [
+      "Sanctify",
+      "Sanctifying"
+    ],
+    "desc": "Sanctifying an Artifact makes it a Holy Relic for a Faith. An artifact can be sanctified for multiple faiths.",
+    "dlc": "By God Alone",
+    "features": [],
+    "id": "sanctified",
+    "name": "Sanctified",
+    "parent": "holy_site"
   },
   {
     "aliases": [
@@ -9426,6 +10330,19 @@
     "parent": "scheme"
   },
   {
+    "aliases": [
+      "Schisms"
+    ],
+    "desc": "The Great Schism is the moment the unified Chalcedonianism Faith breaks apart along its Roman and Greek Rites, splitting into Catholicism and Orthodoxy.\n\nIt threatens when The Christian Church Situation enters certain Chapters, and rulers across Christendom must pick a side. Unless the divisions are mended — or forced apart — through Decisions, the split becomes permanent when the chapter ends.",
+    "dlc": "By God Alone",
+    "features": [
+      "by_god_alone"
+    ],
+    "id": "schism",
+    "name": "Schism",
+    "parent": null
+  },
+  {
     "aliases": [],
     "desc": "A defeated Army reduces the amount of Casualties they take in the Aftermath of a Battle by their Army's combined Screen value.",
     "dlc": null,
@@ -9491,7 +10408,8 @@
   {
     "aliases": [
       "Grand Secretariat",
-      "Grand Secretariat's"
+      "Grand Secretariat's",
+      "Grand Secretariat System"
     ],
     "desc": "The Secretary Director is a type of Diarch for Son of Heaven, helping the divine ruler to manage the Realm.\n\nWho the Director is depends on the active Grand Secretariat Control Law. The position can be held by either the Grand Chancellor, the Grand Marshal, or the Imperial Censor.\n\nThe Director is able to start most Great Projects available to certain Ministers and Son of Heaven.",
     "dlc": "All Under Heaven",
@@ -9503,6 +10421,20 @@
     "parent": "diarch"
   },
   {
+    "aliases": [
+      "Personal Obligations",
+      "Fixed Obligations"
+    ],
+    "desc": "Secular Obligations represent how it is determined what amount of income from Church Holdings belongs to the local Secular Ruler.\n\nThe types are:\n•Personal Obligations: Secular rulers get up to 25% of Church Holding income, depending on Realm Priest opinion and/or Hooks\n•Fixed Obligations: Secular rulers get 15% of Church Holding income, regardless of Realm Priest opinion or Hooks\n\nIn some chapters secular rulers additionally hold local power over the Church:\n•Local Power: Secular rulers get an additional 10% of Church Holding income (up to the maximum of 25%)",
+    "dlc": "By God Alone",
+    "features": [
+      "by_god_alone"
+    ],
+    "id": "secular_obligations",
+    "name": "Secular Obligations",
+    "parent": "church_obligations"
+  },
+  {
     "aliases": [],
     "desc": "This type of Opinion affects all characters that are not Clergy.",
     "dlc": null,
@@ -9510,6 +10442,40 @@
     "id": "secular_opinion",
     "name": "Secular Opinion",
     "parent": "opinion"
+  },
+  {
+    "aliases": [
+      "Secular Rulers",
+      "Secular"
+    ],
+    "desc": "A Secular Ruler is a Ruler that is not part of a religious Government Form.",
+    "dlc": null,
+    "features": [],
+    "id": "secular_ruler",
+    "name": "Secular Ruler",
+    "parent": "ruler"
+  },
+  {
+    "aliases": [
+      "Secular Ruler Puppets"
+    ],
+    "desc": "A non-Clergy Ruler that has become Puppet to another Character. Through this puppet, you can meddle in the affairs of other Realms, for example by using Schemes or Imprisonment.\n\nAcquiring a puppet of this type requires at least one of these to be true:\n\n•You are a Clergy Vassal of the target\n•You are a Seducer and the target is your Lover, or your Soulmate if the target is of King rank or higher\n•You are a torturer and hold the target in your Dungeon\n•You are Family First and the target is your Close Family\n•You are a Diplomat and the target is an Independent Ruler\n•You are a Schemer and have a Hook on the target, or a Strong Hook if the target is of King rank or higher\n•You are a Gallant and the target is your Spouse\n•You are a Diarch of the target in an Entrenched Regency\n•You are the target's Head of Faith, Challenger Head of Faith, or Head of Rite",
+    "dlc": "By God Alone",
+    "features": [
+      "by_god_alone"
+    ],
+    "id": "external_ruler_puppet",
+    "name": "Secular Ruler Puppet",
+    "parent": "puppet"
+  },
+  {
+    "aliases": [],
+    "desc": "An Interaction available to anyone following a Challenger Head of Faith. Pay Gold to your Antipope for forgiveness and Piety, bypassing the Mainline Rite Head of Faith. Their sponsor is accepted automatically.",
+    "dlc": "By God Alone",
+    "features": [],
+    "id": "petition_antipope_indulgences_interaction",
+    "name": "Seek Antipope's Indulgence",
+    "parent": null
   },
   {
     "aliases": [],
@@ -9569,7 +10535,7 @@
   },
   {
     "aliases": [],
-    "desc": "Many Faiths have Doctrines which designate certain behaviors as Shunned. Depending on the specific Doctrine, these behaviors may also be considered Criminal.\n\nCharacters who are caught practicing behaviors that are Shunned by their Faith lose a Level of Devotion and gain a corresponding Fame Trait; this Trait will be disliked by everyone whose Faith considers that behavior to be either Shunned or Criminal.\n\nExamples of Shunned behaviors include:\n•Fornicator\n•Adulterer\n•Deviant\n•Sodomite\n•Kinslayer\n•witch",
+    "desc": "Many Rites have Doctrines which designate certain behaviors as Shunned. Depending on the specific Doctrine, these behaviors may also be considered Criminal.\n\nCharacters who are caught practicing behaviors that are Shunned by their Rite lose a Level of Devotion and gain a corresponding Fame Trait; this Trait will be disliked by everyone whose Rite considers that behavior to be either Shunned or Criminal.\n\nExamples of Shunned behaviors include:\n•Fornicator\n•Adulterer\n•Deviant\n•Sodomite\n•Kinslayer\n•witch",
     "dlc": null,
     "features": [],
     "id": "shunned",
@@ -9663,12 +10629,21 @@
       "Sins",
       "Sinful"
     ],
-    "desc": "Every Faith considers certain Traits to be Sinful. Characters with these Traits incur Opinion penalties from all characters who consider those traits Sinful, even if they do not share the same Faith. In addition, Characters who have Traits that their own Faith considers Sinful will lose Piety every month.\n\nExactly what traits are considered to be Sins varies from Faith to Faith, but is typically determined by a combination of that Faith's Tenets and the Religion the Faith belongs to.",
+    "desc": "Every Rite considers certain Traits to be Sinful. Characters with these Traits incur Opinion penalties from all characters who consider those traits Sinful, even if they do not share the same Rite. In addition, Characters who have Traits that their own Rite considers Sinful will lose Piety every month.\n\nExactly what traits are considered to be Sins varies from Rite to Rite, but is typically determined by a combination of that Rite's Tenets and the Religion the Rite belongs to.",
     "dlc": null,
     "features": [],
     "id": "sin",
     "name": "Sin",
     "parent": null
+  },
+  {
+    "aliases": [],
+    "desc": "Traits can have an associated Sin or Virtue Weight, determined by the Tenets and Doctrines of a Rite, and the Religion it belongs to.\n\nThe traits with the highest Sin or Virtue Weight within a Rite become that Rite's Sins and Virtues.",
+    "dlc": null,
+    "features": [],
+    "id": "sin_weight",
+    "name": "Sin Weight",
+    "parent": "sin"
   },
   {
     "aliases": [
@@ -9878,6 +10853,29 @@
   },
   {
     "aliases": [
+      "Fulfillment",
+      ""
+    ],
+    "desc": "Spiritual Fulfillment is the measurement of how at peace a Character feels in respect to their Faith.\n\nThe baseline is calculated based on the Traits they have, and whether they are considered Sinful or Virtuous.\n\nSpiritual Fulfillment can be gained or lost by acting in ways that the Faith considers appropriate, and Personal Tenets can be adopted to offset harmful traits.",
+    "dlc": "By God Alone",
+    "features": [],
+    "id": "spiritual_fulfillment",
+    "name": "Spiritual Fulfillment",
+    "parent": null
+  },
+  {
+    "aliases": [
+      "Spiritual Fulfillment Levels"
+    ],
+    "desc": "A Character's Spiritual Fulfillment is divided into Spiritual Fulfillment Levels by thresholds, each applying its own effects.\n\nLow levels make life harder and sinful deeds cheaper. High levels make devotion easier and open new religious options.",
+    "dlc": "By God Alone",
+    "features": [],
+    "id": "spiritual_fulfillment_level",
+    "name": "Spiritual Fulfillment Level",
+    "parent": "spiritual_fulfillment"
+  },
+  {
+    "aliases": [
       "Spiritual"
     ],
     "desc": "A Spiritual Head of Faith is Theocratic and does not have to be Landed (although they can be).\n\nSpiritual Heads of Faith usually have access to interactions such as being able to grant Claims or Gold.\n\nShould the Doctrines of the Faith allow for Great Holy Wars then they will be Undirected (e.g. Crusades).",
@@ -9944,6 +10942,19 @@
     "parent": "accolade"
   },
   {
+    "aliases": [
+      "Stability"
+    ],
+    "desc": "A Stability Chapter is rare daylight for The Christian Church:\n\nBuilding in a Temple Holding is cheaper, Grand Cathedrals progress faster, Characters are more likely to become a Devoted, and the Great Schism may get mended.\n\nConcord is the only Stability Chapter.",
+    "dlc": "By God Alone",
+    "features": [
+      "by_god_alone"
+    ],
+    "id": "the_christian_church_stability",
+    "name": "Stability Chapter",
+    "parent": "the_christian_church_chapter_type"
+  },
+  {
     "aliases": [],
     "desc": "Despite the brewing troubles, the caliph still commands respect. Rebellions and factionalism are on the back foot, but the lords of Persia will not be brought easily to heel.\n\nThe tension might spiral into Unrest, which would mean more chaos to come.",
     "dlc": "Legacy of Persia",
@@ -9967,12 +10978,12 @@
   },
   {
     "aliases": [],
-    "desc": "State Faith is the Faith supported and condoned by an Administrative Government. This faith is attached to the Title and not to any one specific Character. It is easier to convert characters in the Realm to the state faith and very difficult to convert them away from it.\n\nOnly the Ruler of an Administrative Realm may change the State Faith, but Governors may freely convert to it.",
+    "desc": "State Rite is the Rite supported and condoned by an Administrative Government. This rite is attached to the Title and not to any one specific Character. It is easier to convert characters in the Realm to the state rite and very difficult to convert them away from it.\n\nOnly the Ruler of an Administrative Realm may change the State Rite, but Governors may freely convert to it.",
     "dlc": null,
     "features": [],
-    "id": "state_faith",
-    "name": "State Faith",
-    "parent": "faith"
+    "id": "state_rite",
+    "name": "State Rite",
+    "parent": "rite"
   },
   {
     "aliases": [
@@ -10240,6 +11251,18 @@
     "parent": "ruler"
   },
   {
+    "aliases": [
+      "Obligations",
+      "Obligation"
+    ],
+    "desc": "Subject Obligations define how much Tax and how many Levies a Subject provides to their Suzerain. A Subject's Government Form determines how their Obligations are modified.\n\nFor example, Feudal and Clan Vassals Obligations depend on their Vassal Contract, Administrative Vassal's depend on their Province Administration, while Tributary's depend on their Tributary Contract.",
+    "dlc": null,
+    "features": [],
+    "id": "vassal_obligations",
+    "name": "Subject Obligations",
+    "parent": null
+  },
+  {
     "aliases": [],
     "desc": "Subject Standing represents the status bestowed onto a Tributary or Vassal by their Suzerain or Liege.",
     "dlc": "All Under Heaven",
@@ -10484,14 +11507,33 @@
   },
   {
     "aliases": [
-      "Tenets"
+      "Tenets",
+      "Core"
     ],
-    "desc": "While Doctrines represent issues a Faith must take a stance on, Tenets represent the Faith's unique quirks and rites.",
+    "desc": "While Doctrines represent issues a Rite must take a stance on, Tenets represent the Rite's unique quirks and practices.",
     "dlc": null,
     "features": [],
-    "id": "core_tenet",
+    "id": "tenet",
     "name": "Tenet",
     "parent": null
+  },
+  {
+    "aliases": [],
+    "desc": "As Personal Tenets spread within a Faith their practice becomes more common. Tenet Popularity tracks how widespread a Tenet is and affects how likely it is to be picked as debate topic in an Ecumenical Council or as a target of a Papal Bull.\n\nThe higher the Tenet Popularity, the more the Clergy will side with a tenet when it is debated in an Ecumenical Council. Once a tenet reaches … Tenet Popularity, the Head of Faith will most likely declare it Permitted no matter their own convictions.",
+    "dlc": "By God Alone",
+    "features": [],
+    "id": "tenet_popularity",
+    "name": "Tenet Popularity",
+    "parent": "tenet_status"
+  },
+  {
+    "aliases": [],
+    "desc": "Tenet Status is a Rite's stance on a Tenet or Doctrine. There are five possible stances:\n\n•Unknown — the Rite has never heard of this Tenet or Doctrine.\n\n•Known — the Rite is aware of it and has not ruled on its practice.\n\n•Permitted — the Rite approves of the practice.\n\n•Prohibited — the Rite forbids the practice.\n\n•Core — the Rite both permits and actively promotes the Tenet.\n\nA Rite's stance governs whether a Tenet or Doctrine can be picked when authoring or diverging a Rite, and which practices cost adherents spiritual penalties.\n\nTenet Status is distinct from a Character's Religious Knowledge, which is personal awareness, not the overall Rite's stance.",
+    "dlc": "By God Alone",
+    "features": [],
+    "id": "tenet_status",
+    "name": "Tenet Status",
+    "parent": "rite"
   },
   {
     "aliases": [
@@ -10526,6 +11568,32 @@
   },
   {
     "aliases": [],
+    "desc": "The Christian Church is the ecclesiastical body that oversees and guides the followers of Jesus Christ, represented as a Situation that advances through a sequence of Chapters.\n\nIts boundaries encompass every Archdiocese in the world; every Christian Ruler of County rank or higher with any part of their Realm inside an Archdiocese is a member, be they clergy or secular.",
+    "dlc": "By God Alone",
+    "features": [
+      "by_god_alone"
+    ],
+    "id": "the_christian_church",
+    "name": "The Christian Church",
+    "parent": null
+  },
+  {
+    "aliases": [
+      "The Christian Church Chapters",
+      "Chapter",
+      "Chapters"
+    ],
+    "desc": "Chapters are the Situation Phases of The Christian Church. There are seven total chapters, organised in four Chapter Types.",
+    "dlc": "By God Alone",
+    "features": [
+      "by_god_alone"
+    ],
+    "id": "situation_the_christian_church_phase",
+    "name": "The Christian Church Chapter",
+    "parent": "the_christian_church"
+  },
+  {
+    "aliases": [],
     "desc": "The Great Steppe represents the endless sea of grass of the Eurasian Steppe, and the climate conditions that shape it, and is divided into three regions: Western, Central and Eastern.\n\nThe different Steppe Seasons depict these both positive and adverse events, offering opportunities for special actions only available during that time, and modifying the County Fertility of each region.\n\nOnly Nomadic and Herder Rulers take part in this Situation and the Gurkhan represents the most powerful ruler in the entire region.",
     "dlc": "Khans of the Steppe",
     "features": [],
@@ -10540,7 +11608,7 @@
       "Theocratic Government",
       ""
     ],
-    "desc": "Theocracy is an unplayable Government Form available for some Faiths depending on Doctrines. They are usually lead by a Head of Faith or a Landed Realm Priest. A Bishop might also become an Independent Theocratic ruler in their own right.",
+    "desc": "Theocracy is a Government Form available for some Faiths depending on Doctrines. They are usually lead by a Head of Faith or a Landed Realm Priest. A Bishop might also become an Independent Theocratic ruler in their own right.",
     "dlc": null,
     "features": [],
     "id": "theocracy",
@@ -10801,7 +11869,7 @@
     "aliases": [
       "Traits"
     ],
-    "desc": "A Character's Traits describe their personality, quirks, deeds and state of being.\n\nTraits can have many effects, but many affect the Skills of a Character.\n\nPersonality traits also greatly affect how characters can be expected to behave. Acting against your own Personality causes Stress.\n\nSome Traits are Congenital and can be inherited by offspring.",
+    "desc": "A Character's Traits describe their personality, quirks, deeds and state of being.\n\nTraits can have many effects, but many affect the Skills of a Character.\n\nPersonality Traits also greatly affect how characters can be expected to behave. Acting against your own Personality causes Stress.\n\nSome Traits are Congenital and can be inherited by offspring.",
     "dlc": null,
     "features": [],
     "id": "trait",
@@ -10893,11 +11961,9 @@
       "",
       "Imperial Treasury"
     ],
-    "desc": "In certain Administrative Governments, Treasury represents assets that may only be used for governmental purposes, in contrast with your personal Gold.\n\nEFFECT_LIST_BULLETAs a Vassal, you will receive Treasury from your Liege, based on your Tax contributions and other obligations\nEFFECT_LIST_BULLETTreasury is created by the Top Liege, who converts a percentage of Taxation income into Treasury\nEFFECT_LIST_BULLETYou can transfer Gold to the Treasury at will\nEFFECT_LIST_BULLETThe Treasury stays with the Title if it gets a new Holder",
+    "desc": "In certain Governments, Treasury represents assets that may only be used for governmental purposes, in contrast with your personal Gold.\n\nEFFECT_LIST_BULLETTreasury is created by either your Top Liege (centralized), or locally (decentralized).\nEFFECT_LIST_BULLETA percentage of Taxation income is converted into Treasury\nEFFECT_LIST_BULLETAs a Vassal, you may receive Treasury from your Liege, based on your Tax contributions and other obligations\nEFFECT_LIST_BULLETYou can transfer Gold to the Treasury at will\nEFFECT_LIST_BULLETThe Treasury stays with the Title if it gets a new Holder",
     "dlc": "All Under Heaven",
-    "features": [
-      "all_under_heaven"
-    ],
+    "features": [],
     "id": "treasury",
     "name": "Treasury",
     "parent": null
@@ -10908,9 +11974,7 @@
     ],
     "desc": "When spending more than the Budget Capacity, an amount will be subtracted from the monthly Treasury income.",
     "dlc": "All Under Heaven",
-    "features": [
-      "all_under_heaven"
-    ],
+    "features": [],
     "id": "treasury_budget_deficit",
     "name": "Treasury Budget Deficit",
     "parent": "treasury_budgeting"
@@ -10921,9 +11985,7 @@
     ],
     "desc": "A system responsible for distributing central funds to specific Vassals and sub-vassals at specific allocation rates.\n\nWhen a budget is enacted, a per-vassal Budget Base Rate is calculated for each Budget Category based on the available Budget Capacity.\n\n The calculated base rate will not be changed until a new budget is enacted in the future! So if you get more recipients, your budget costs will rise.",
     "dlc": "All Under Heaven",
-    "features": [
-      "all_under_heaven"
-    ],
+    "features": [],
     "id": "treasury_budgeting",
     "name": "Treasury Budgeting",
     "parent": null
@@ -10932,9 +11994,7 @@
     "aliases": [],
     "desc": "Treasury Debt is the state of having a negative amount of Treasury Treasury. This typically happens when a Governor at war hires Mercenaries without having enough Treasury to cover the full cost, when they are at war for too long, or if they pay too much in Salaries for what they collect from their Vassals.\n\n While in Debt you cannot declare new Wars, your Men-at-Arms that depend on Treasury do not reinforce, and your enemies will have an Advantage over you in battle. The deeper into debt you fall, the more penalties you will get — fewer Levies, reduced Popular Opinion, and your Vassals will like you less.\n\nIn addition to this, various other minor destabilizing events may occur, such as gaining County Corruption in your Domain Counties. \n\nIt is generally a good idea to strike your enemies while they are in Debt, as they will fight with reduced Advantage!",
     "dlc": "All Under Heaven",
-    "features": [
-      "all_under_heaven"
-    ],
+    "features": [],
     "id": "treasury_debt",
     "name": "Treasury Debt",
     "parent": "treasury"
@@ -10973,7 +12033,7 @@
     "features": [],
     "id": "tribal_authority",
     "name": "Tribal Authority",
-    "parent": "law"
+    "parent": "government_authority"
   },
   {
     "aliases": [
@@ -11086,9 +12146,7 @@
     ],
     "desc": "Any unallocated treasury budget will contribute to general … income.",
     "dlc": "All Under Heaven",
-    "features": [
-      "all_under_heaven"
-    ],
+    "features": [],
     "id": "treasury_budget_unallocated",
     "name": "Unallocated Treasury Budget",
     "parent": "treasury_budgeting"
@@ -11118,7 +12176,7 @@
   },
   {
     "aliases": [],
-    "desc": "Unifying Actions towards your House members will increase your House Unity.\n\nHouse Heads can use the Steer House Unity Decision and the Extol Virtuousness Interaction to greatly increase Unity.\n\nSome examples of unifying actions are:EFFECT_LIST_BULLET Negotiate Alliance\nEFFECT_LIST_BULLET Offer to Join War\nEFFECT_LIST_BULLET Gift Artifact\nEFFECT_LIST_BULLET Pay Ransom\nEFFECT_LIST_BULLET Offer Guardianship\nEFFECT_LIST_BULLET Ask to Join Holy Order\nEFFECT_LIST_BULLET Restore Inheritance\nEFFECT_LIST_BULLET Abandon Hook\nEFFECT_LIST_BULLET Stop Vassal War\nEFFECT_LIST_BULLET Sponsor Inspiration\nEFFECT_LIST_BULLET Swear Oath of True Friendship",
+    "desc": "Unifying Actions towards your House members will increase your House Unity.\n\nHouse Heads can use the Steer House Unity Decision and the Extol Virtuousness Interaction to greatly increase Unity.\n\nSome examples of unifying actions are:EFFECT_LIST_BULLET Negotiate Alliance\nEFFECT_LIST_BULLET Offer to Join War\nEFFECT_LIST_BULLET Gift Artifact\nEFFECT_LIST_BULLET Pay Ransom\nEFFECT_LIST_BULLET Offer Guardianship\nEFFECT_LIST_BULLET Ask to Join Military Order\nEFFECT_LIST_BULLET Restore Inheritance\nEFFECT_LIST_BULLET Abandon Hook\nEFFECT_LIST_BULLET Stop Vassal War\nEFFECT_LIST_BULLET Sponsor Inspiration\nEFFECT_LIST_BULLET Swear Oath of True Friendship",
     "dlc": "Legacy of Persia",
     "features": [],
     "id": "house_unity_unifying_actions",
@@ -11144,6 +12202,15 @@
     "id": "game_rule_unique",
     "name": "Unique Game Rule",
     "parent": null
+  },
+  {
+    "aliases": [],
+    "desc": "An Unknown Tenet Status means the Rite has no awareness of this Tenet or Doctrine at all. Adherents of the Rite do not implicitly know it, and cannot pick it when creating a new Rite or as a Personal Tenet.",
+    "dlc": "By God Alone",
+    "features": [],
+    "id": "unknown_tenet_status",
+    "name": "Unknown",
+    "parent": "tenet_status"
   },
   {
     "aliases": [],
@@ -11362,18 +12429,6 @@
   },
   {
     "aliases": [
-      "Obligations",
-      "Obligation"
-    ],
-    "desc": "Vassal Obligations define how much Tax and how many Levies a Vassal provides to their Liege. A Vassal's Government Form determines how their Obligations are modified.\n\nFor example, Feudal and Clan Vassals Obligations depend on their Vassal Contract, while Administrative Vassal's depend on their Province Administration.",
-    "dlc": null,
-    "features": [],
-    "id": "vassal_obligations",
-    "name": "Vassal Obligations",
-    "parent": null
-  },
-  {
-    "aliases": [
       "Vassal Stances",
       "Preferred Heir",
       "Unpreferred Heir",
@@ -11427,12 +12482,21 @@
       "Virtues",
       "Virtuous"
     ],
-    "desc": "Every Faith considers certain Traits to be Virtuous. Characters with these Traits gain Opinion bonuses from all characters who consider those traits Virtuous, even if they do not share the same Faith. In addition, Characters who have Traits that their own Faith considers Virtuous will gain bonus Piety every month.\n\nExactly what traits are considered to be Virtues varies from Faith to Faith, but is typically determined by a combination of that Faith's Tenets and the Religion the Faith belongs to.",
+    "desc": "Every Rite considers certain Traits to be Virtuous. Characters with these Traits gain Opinion bonuses from all characters who consider those traits Virtuous, even if they do not share the same Rite. In addition, Characters who have Traits that their own Rite considers Virtuous will gain bonus Piety every month.\n\nExactly what traits are considered to be Virtues varies from Rite to Rite, but is typically determined by a combination of that Rite's Tenets and the Religion the Rite belongs to.",
     "dlc": null,
     "features": [],
     "id": "virtue",
     "name": "Virtue",
     "parent": null
+  },
+  {
+    "aliases": [],
+    "desc": "Traits can have an associated Sin or Virtue Weight, determined by the Tenets and Doctrines of a Rite, and the Religion it belongs to.\n\nThe traits with the highest Sin or Virtue Weight within a Rite become that Rite's Sins and Virtues.",
+    "dlc": null,
+    "features": [],
+    "id": "virtue_weight",
+    "name": "Virtue Weight",
+    "parent": "virtue"
   },
   {
     "aliases": [
@@ -11676,5 +12740,18 @@
     "id": "yurt_buildings",
     "name": "Yurt Buildings",
     "parent": "yurt"
+  },
+  {
+    "aliases": [
+      "Zeal"
+    ],
+    "desc": "A Zeal Chapter stirs outward fire:\n\nMass conversions may take place, Great Holy Wars may become more common, Papal Bulls may be more frequent, and Faith conversion may be easier.\n\nConversion and Crusade are Zeal Chapters.",
+    "dlc": "By God Alone",
+    "features": [
+      "by_god_alone"
+    ],
+    "id": "the_christian_church_zeal",
+    "name": "Zeal Chapter",
+    "parent": "the_christian_church_chapter_type"
   }
 ]

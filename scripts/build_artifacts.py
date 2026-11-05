@@ -43,14 +43,15 @@ TYPE_SKIP = {
 }
 
 TEMPLATE_HANDLED = {"can_equip", "can_benefit", "can_reforge", "can_repair",
-                    "fallback", "unique"}
+                    "fallback", "unique", "is_holy_relic"}
 TEMPLATE_SKIP = {
     "ai_score": "AI equipping weight, not player-facing",
 }
 
 FEATURE_HANDLED = {"group", "trigger", "weight"}
 
-SLOT_HANDLED = {"type", "category"}
+SLOT_HANDLED = {"type", "category", "available", "holy_site",
+                "allow_any_type_or_category", "available_holy_site"}
 SLOT_SKIP = {
     "icon": "GUI slot-icon override (trinket/journal slots), not reference data",
 }
@@ -95,6 +96,44 @@ def _entity_name(ref):
     key = ref.split(":", 1)[1]
     raw = ck3.loc(key) or ck3.loc(f"{key}_name")
     return ck3.render_text(raw) if raw else pretty(key)
+
+
+_param_carriers: dict | None = None
+
+
+def param_carriers(param):
+    """doctrine/tenet parameter -> localized names of the doctrines and
+    tenets that grant it (common/religion/{doctrine,tenet}_types)."""
+    global _param_carriers
+    if _param_carriers is None:
+        _param_carriers = {}
+
+        def scan(key, blk):
+            pb = blk.get("parameters")
+            if isinstance(pb, Block):
+                raw = ck3.loc(f"{key}_name") or ck3.loc(key)
+                name = ck3.render_text(raw) if raw else pretty(key)
+                for pk, _o, pv in pb:
+                    p = pv if pk is None else pk
+                    if isinstance(p, str) and (pk is None or pv is True or isinstance(pv, (int, float))):
+                        _param_carriers.setdefault(p, [])
+                        if name not in _param_carriers[p]:
+                            _param_carriers[p].append(name)
+            for ck, _o, cv in blk:
+                if isinstance(ck, str) and isinstance(cv, Block) and ck not in ("parameters", "special_parameters"):
+                    scan(ck, cv)
+
+        rel = ck3.COMMON / "religion"
+        for sub in ("doctrine_types", "tenet_types"):
+            for _p, key, blk in ck3.parse_dir(rel / sub):
+                if isinstance(blk, Block):
+                    scan(key, blk)
+    return _param_carriers.get(param, [])
+
+
+def _param_text(p):
+    carriers = param_carriers(p)
+    return " or ".join(carriers) if carriers else pretty(p)
 
 
 def describe_trigger(blk, depth=0):
@@ -169,9 +208,13 @@ def describe_trigger(blk, depth=0):
         elif k == "knows_language" and isinstance(v, str):
             raw = ck3.loc(v)
             out.append(f"Speaks {ck3.render_text(raw) if raw else pretty(v.removeprefix('language_'))}")
-        elif k == "has_doctrine" and isinstance(v, str):
-            raw = ck3.loc(v) or ck3.loc(f"{v}_name")
+        elif k in ("rite_has_parameter", "has_doctrine_parameter") and isinstance(v, str):
+            out.append(_param_text(v))
+        elif k in ("rite_has_tenet", "rite_has_doctrine", "has_doctrine") and isinstance(v, str):
+            raw = ck3.loc(f"{v}_name") or ck3.loc(v)
             out.append(f"Doctrine: {ck3.render_text(raw) if raw else pretty(v)}")
+        elif k in ("main_rite", "rite") and isinstance(v, Block):
+            out.extend(describe_trigger(v, depth + 1))
         elif k == "faith" and isinstance(v, Block):
             out.extend(f"Faith {p[0].lower() + p[1:]}" for p in describe_trigger(v, depth + 1))
         elif k.startswith("scope:artifact") and isinstance(v, Block):
@@ -274,8 +317,23 @@ def main():
 
     # -- slot instances: slot type -> category (inventory | court) ----------
     slot_category = {}
+    slots = []
     for _p, key, blk in ck3.parse_dir(ART / "slots"):
-        slot_category[blk.get("type")] = blk.get("category")
+        if blk.get("type") is not None:
+            slot_category[blk.get("type")] = blk.get("category")
+        holy = bool(blk.get("holy_site", False))
+        _a, avail = trigger_field(blk.get("available")) if blk.has("available") else (True, [])
+        _h, avail_hs = (trigger_field(blk.get("available_holy_site"))
+                        if blk.has("available_holy_site") else (True, []))
+        slots.append({
+            "id": key,
+            "type": blk.get("type"),
+            "category": "holy_site" if holy else blk.get("category"),
+            "holySite": holy,
+            "anyType": bool(blk.get("allow_any_type_or_category", False)),
+            "available": avail,
+            "availableHolySite": avail_hs,
+        })
         for k in blk.keys():
             if k not in SLOT_HANDLED and k not in SLOT_SKIP:
                 unhandled[f"slots:{k}"] += 1
@@ -321,6 +379,10 @@ def main():
             "fallback": render_mod_block(blk.get("fallback"), unhandled),
             "canReforge": can_reforge, "reforgeConditions": reforge_conds,
             "canRepair": can_repair, "repairConditions": repair_conds,
+            # is_holy_relic: root = the faith to enshrine for (default always=no)
+            "holyRelic": (trigger_field(blk.get("is_holy_relic"))[1] or ["any faith"])
+                         if blk.has("is_holy_relic") and trigger_field(blk.get("is_holy_relic"))[0]
+                         else None,
             "dlc": dlc,
             "artifacts": [],  # filled from the named scan below
             "sourceFile": path.name,
@@ -486,6 +548,8 @@ def main():
         "templates": templates,
         "named": named_list,
         "featureGroups": feature_groups,
+        "slots": slots,
+        "holyRelicConcept": ck3.render_text(ck3.loc("game_concept_holy_relic_desc") or "") or None,
     }
     ck3.write_json("artifacts.json", data)
     print(f"  types {len(types)} · templates {len(templates)} · named {len(named_list)}"

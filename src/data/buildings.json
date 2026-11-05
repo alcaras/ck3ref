@@ -714,6 +714,13 @@
         "scope": "Owner"
       },
       {
+        "cond": "if county's rite has Simony",
+        "lines": [
+          "+0.1 Tax per Level of Devotion /month"
+        ],
+        "scope": "Holding"
+      },
+      {
         "cond": "if coastal, culture: Bonus to construction speed of coastal Holdings",
         "lines": [
           "-10% Build Speed"
@@ -866,6 +873,13 @@
         "scope": "Owner"
       },
       {
+        "cond": "if county's rite has Simony",
+        "lines": [
+          "+0.1 Tax per Level of Devotion /month"
+        ],
+        "scope": "Holding"
+      },
+      {
         "cond": "if coastal, culture: Bonus to construction speed of coastal Holdings",
         "lines": [
           "-10% Build Speed"
@@ -969,6 +983,13 @@
         "scope": "Owner"
       },
       {
+        "cond": "if county's rite has Simony",
+        "lines": [
+          "+0.1 Tax per Level of Devotion /month"
+        ],
+        "scope": "Holding"
+      },
+      {
         "cond": "if coastal, culture: Bonus to construction speed of coastal Holdings",
         "lines": [
           "-10% Build Speed"
@@ -1070,6 +1091,13 @@
           "+0.04 Renown /month"
         ],
         "scope": "Owner"
+      },
+      {
+        "cond": "if county's rite has Simony",
+        "lines": [
+          "+0.1 Tax per Level of Devotion /month"
+        ],
+        "scope": "Holding"
       },
       {
         "cond": "if coastal, culture: Bonus to construction speed of coastal Holdings",
@@ -2349,6 +2377,20 @@
         "scope": "Owner"
       },
       {
+        "cond": "if county's rite has Love Thy Neighbour",
+        "lines": [
+          "+2 Plague Resistance"
+        ],
+        "scope": "Holding"
+      },
+      {
+        "cond": "if county's rite has Love Thy Neighbour",
+        "lines": [
+          "-3 Danger"
+        ],
+        "scope": "County"
+      },
+      {
         "cond": "if mandala government",
         "lines": [
           "+0.01 Piety /month"
@@ -2410,6 +2452,20 @@
           "+0.2 Piety /month"
         ],
         "scope": "Owner"
+      },
+      {
+        "cond": "if county's rite has Love Thy Neighbour",
+        "lines": [
+          "+3 Plague Resistance"
+        ],
+        "scope": "Holding"
+      },
+      {
+        "cond": "if county's rite has Love Thy Neighbour",
+        "lines": [
+          "-4 Danger"
+        ],
+        "scope": "County"
       },
       {
         "cond": "if mandala government",
@@ -2483,6 +2539,20 @@
         "scope": "Owner"
       },
       {
+        "cond": "if county's rite has Love Thy Neighbour",
+        "lines": [
+          "+4 Plague Resistance"
+        ],
+        "scope": "Holding"
+      },
+      {
+        "cond": "if county's rite has Love Thy Neighbour",
+        "lines": [
+          "-5 Danger"
+        ],
+        "scope": "County"
+      },
+      {
         "cond": "if mandala government",
         "lines": [
           "+0.02 Piety /month"
@@ -2552,6 +2622,20 @@
           "+0.4 Piety /month"
         ],
         "scope": "Owner"
+      },
+      {
+        "cond": "if county's rite has Love Thy Neighbour",
+        "lines": [
+          "+5 Plague Resistance"
+        ],
+        "scope": "Holding"
+      },
+      {
+        "cond": "if county's rite has Love Thy Neighbour",
+        "lines": [
+          "-6 Danger"
+        ],
+        "scope": "County"
       },
       {
         "cond": "if mandala government",
@@ -2626,6 +2710,20 @@
         "scope": "Owner"
       },
       {
+        "cond": "if county's rite has Love Thy Neighbour",
+        "lines": [
+          "+6 Plague Resistance"
+        ],
+        "scope": "Holding"
+      },
+      {
+        "cond": "if county's rite has Love Thy Neighbour",
+        "lines": [
+          "-7 Danger"
+        ],
+        "scope": "County"
+      },
+      {
         "cond": "if mandala government",
         "lines": [
           "+0.03 Piety /month"
@@ -2696,6 +2794,20 @@
           "+2% Legitimacy Gain"
         ],
         "scope": "Owner"
+      },
+      {
+        "cond": "if county's rite has Love Thy Neighbour",
+        "lines": [
+          "+7 Plague Resistance"
+        ],
+        "scope": "Holding"
+      },
+      {
+        "cond": "if county's rite has Love Thy Neighbour",
+        "lines": [
+          "-8 Danger"
+        ],
+        "scope": "County"
       },
       {
         "cond": "if mandala government",
@@ -2770,6 +2882,20 @@
         "scope": "Owner"
       },
       {
+        "cond": "if county's rite has Love Thy Neighbour",
+        "lines": [
+          "+8 Plague Resistance"
+        ],
+        "scope": "Holding"
+      },
+      {
+        "cond": "if county's rite has Love Thy Neighbour",
+        "lines": [
+          "-9 Danger"
+        ],
+        "scope": "County"
+      },
+      {
         "cond": "if mandala government",
         "lines": [
           "+0.04 Piety /month"
@@ -2840,6 +2966,20 @@
           "+4% Legitimacy Gain"
         ],
         "scope": "Owner"
+      },
+      {
+        "cond": "if county's rite has Love Thy Neighbour",
+        "lines": [
+          "+10 Plague Resistance"
+        ],
+        "scope": "Holding"
+      },
+      {
+        "cond": "if county's rite has Love Thy Neighbour",
+        "lines": [
+          "-10 Danger"
+        ],
+        "scope": "County"
       },
       {
         "cond": "if mandala government",
@@ -3675,13 +3815,6 @@
         "kind": "government",
         "name": "Tribal, nomadic or wanua government",
         "negated": true
-      },
-      {
-        "detail": null,
-        "key": "sky_burials_active",
-        "kind": "doctrine_parameter",
-        "name": "Sky burials active",
-        "negated": false
       }
     ],
     "sourceFile": "00_duchy_capital_buildings.txt",
@@ -3749,13 +3882,6 @@
         "kind": "government",
         "name": "Tribal, nomadic or wanua government",
         "negated": true
-      },
-      {
-        "detail": null,
-        "key": "sky_burials_active",
-        "kind": "doctrine_parameter",
-        "name": "Sky burials active",
-        "negated": false
       }
     ],
     "sourceFile": "00_duchy_capital_buildings.txt",
@@ -3823,13 +3949,6 @@
         "kind": "government",
         "name": "Tribal, nomadic or wanua government",
         "negated": true
-      },
-      {
-        "detail": null,
-        "key": "sky_burials_active",
-        "kind": "doctrine_parameter",
-        "name": "Sky burials active",
-        "negated": false
       }
     ],
     "sourceFile": "00_duchy_capital_buildings.txt",
@@ -4325,13 +4444,6 @@
         "key": "building_requirement_castle_city_church",
         "kind": "holding_level",
         "name": "Holding level 1",
-        "negated": false
-      },
-      {
-        "detail": null,
-        "key": "can_build_megaliths",
-        "kind": "doctrine_parameter",
-        "name": "Can build megaliths",
         "negated": false
       }
     ],
@@ -6346,20 +6458,6 @@
         "kind": "holding_level",
         "name": "Holding level 1",
         "negated": false
-      },
-      {
-        "detail": null,
-        "key": "can_build_towers_of_silence_active",
-        "kind": "doctrine_parameter",
-        "name": "Can build towers of silence active",
-        "negated": false
-      },
-      {
-        "detail": null,
-        "key": "can_build_towers_of_silence_active",
-        "kind": "doctrine_parameter",
-        "name": "Can build towers of silence active",
-        "negated": true
       }
     ],
     "sourceFile": "00_duchy_capital_buildings.txt",
@@ -39514,7 +39612,7 @@
           "+25% Monthly Piety",
           "+5 Same Faith Opinion",
           "+5 Popular Opinion",
-          "-15% Faith Creation and Reformation Cost"
+          "-10% Rite Creation and Reformation Cost"
         ],
         "scope": "Owner"
       }
@@ -39890,7 +39988,7 @@
           "+5 Religious Vassal Opinion",
           "+5 Zealot Vassal Opinion",
           "+5 Clergy Opinion",
-          "-15% Holy Order Hire Cost"
+          "-15% Military Order Hire Cost"
         ],
         "scope": "Owner"
       }
@@ -40680,7 +40778,7 @@
         "lines": [
           "+1 Learning",
           "+10% Monthly Piety",
-          "-15% Faith Creation and Reformation Cost"
+          "-5% Rite Creation and Reformation Cost"
         ],
         "scope": "County holder"
       }
@@ -40761,7 +40859,7 @@
         "lines": [
           "+1 Learning per Level of Devotion",
           "+20% Monthly Piety",
-          "-25% Faith Creation and Reformation Cost"
+          "-10% Rite Creation and Reformation Cost"
         ],
         "scope": "County holder"
       }
@@ -41297,7 +41395,7 @@
       {
         "cond": null,
         "lines": [
-          "+10% Stress loss per Level of Devotion",
+          "+10% Stress Loss per Level of Devotion",
           "+15% Dread Gain",
           "+1 Intrigue",
           "+5% Monthly Piety per Dread",
@@ -42143,7 +42241,7 @@
         "lines": [
           "+0.25 Piety /month",
           "+5% Monthly Renown",
-          "-10% Faith Creation and Reformation Cost"
+          "-10% Rite Creation and Reformation Cost"
         ],
         "scope": "Owner"
       }
@@ -42205,15 +42303,7 @@
     ],
     "name": "Cathedral of Vagarshapat",
     "rebuildCost": null,
-    "requirements": [
-      {
-        "detail": null,
-        "key": "armenian_apostolic",
-        "kind": "faith",
-        "name": "Apostolic",
-        "negated": false
-      }
-    ],
+    "requirements": [],
     "sourceFile": "00_special_buildings.txt",
     "tier": 1,
     "type": "special"
@@ -43868,7 +43958,7 @@
         "lines": [
           "+0.25 Piety /month",
           "+5% Monthly Renown",
-          "-15% Holy Order Hire Cost",
+          "-15% Military Order Hire Cost",
           "+5 Clergy Opinion",
           "20 Learn Language Phase Length days faster per Scheme Phase"
         ],
@@ -44245,7 +44335,7 @@
     "cost": {
       "gold": 1000
     },
-    "desc": "The Holy Site in this area attracts Christian pilgrims from all around the known world. The grand cathedral is not just a marvel of engineering and beauty, but also a safe haven for travelers and a prestigious monument to its sponsor.",
+    "desc": "The Holy Site in this area attracts Christian pilgrims from all around the known world. The grand basilica is not just a marvel of engineering and beauty, but also a safe haven for travelers and a prestigious monument to its sponsor.",
     "dlc": "Legends of the Dead",
     "effects": "Unlocks:Increases Legitimacy gain and Piety gain for Funeral Activities Hosted in this Holding",
     "features": [
@@ -44279,14 +44369,14 @@
         "lines": [
           "+0.25 Piety /month",
           "+5% Monthly Renown",
-          "-15% Holy Order Hire Cost",
+          "-15% Military Order Hire Cost",
           "+5 Clergy Opinion",
           "+5% Control Growth"
         ],
         "scope": "Owner"
       }
     ],
-    "name": "Grand Cathedral",
+    "name": "Grand Basilica",
     "rebuildCost": null,
     "requirements": [
       {
@@ -45414,7 +45504,7 @@
         "lines": [
           "+0.5 Piety /month",
           "+5 Popular Opinion",
-          "-15% Holy Order Hire Cost",
+          "-15% Military Order Hire Cost",
           "+20% Knight Effectiveness",
           "+5% Monthly Renown"
         ],
@@ -45569,9 +45659,7 @@
         "cond": null,
         "lines": [
           "+20% Monthly Piety",
-          "+5 Same Faith Opinion",
-          "+10 Clergy Opinion",
-          "+1 Learning per Level of Devotion"
+          "-15% Military Order Hire Cost"
         ],
         "scope": "County holder"
       }
@@ -45953,7 +46041,7 @@
           "+15% Monthly Lifestyle Experience",
           "+10 Different Culture Opinion",
           "+10% Cultural Head Fascination Mult",
-          "-20% Faith Creation and Reformation Cost",
+          "-10% Rite Creation and Reformation Cost",
           "+5% Monthly Renown"
         ],
         "scope": "Owner"
@@ -46064,7 +46152,7 @@
         "lines": [
           "+0.2 Piety /month",
           "+1 Learning per Level of Devotion",
-          "+10 Imamism Opinion",
+          "+10 Shi'ite Opinion",
           "+5 Advantage Against Coreligionists",
           "+5% Monthly Renown"
         ],
@@ -46606,7 +46694,7 @@
         "cond": null,
         "lines": [
           "+0.2 Piety /month",
-          "-5% Faith Creation and Reformation Cost"
+          "-5% Rite Creation and Reformation Cost"
         ],
         "scope": "Owner"
       }
@@ -47183,7 +47271,7 @@
         "lines": [
           "+0.25 Piety /month",
           "+5% Monthly Renown",
-          "-10% Faith Creation and Reformation Cost"
+          "-10% Rite Creation and Reformation Cost"
         ],
         "scope": "Owner"
       }
@@ -47498,7 +47586,7 @@
         "cond": null,
         "lines": [
           "+10% Monthly Piety",
-          "+5% Stress loss per Level of Devotion"
+          "+5% Stress Loss per Level of Devotion"
         ],
         "scope": "Owner"
       }
@@ -47819,7 +47907,7 @@
     "cost": {
       "gold": 1000
     },
-    "desc": "Enlarged There have been bridges over the River Thames since time immemorial, but this one — made of mighty stone — stands grander than all prior. The churning currents below have led to the common acceptance that the bridge is for wise men to pass over, and for fools to pass under.",
+    "desc": "There have been bridges over the River Thames since time immemorial, but this one — made of mighty stone — stands grander than all prior. The churning currents below have led to the common acceptance that the bridge is for wise men to pass over, and for fools to pass under.",
     "dlc": null,
     "effects": null,
     "features": [],
@@ -47857,7 +47945,7 @@
         "scope": "Owner"
       }
     ],
-    "name": "London Bridge",
+    "name": "Enlarged London Bridge",
     "rebuildCost": null,
     "requirements": [
       {
@@ -48176,7 +48264,7 @@
         "lines": [
           "+0.25 Piety /month",
           "+5% Monthly Renown",
-          "-10% Faith Creation and Reformation Cost"
+          "-10% Rite Creation and Reformation Cost"
         ],
         "scope": "Owner"
       }
@@ -48233,15 +48321,7 @@
     ],
     "name": "Meteora",
     "rebuildCost": null,
-    "requirements": [
-      {
-        "detail": null,
-        "key": "orthodox",
-        "kind": "faith",
-        "name": "Orthodoxy",
-        "negated": false
-      }
-    ],
+    "requirements": [],
     "sourceFile": "00_special_buildings.txt",
     "tier": 1,
     "type": "special"
@@ -48303,13 +48383,6 @@
         "key": "innovation_cranes",
         "kind": "innovation",
         "name": "Cranes",
-        "negated": false
-      },
-      {
-        "detail": null,
-        "key": "orthodox",
-        "kind": "faith",
-        "name": "Orthodoxy",
         "negated": false
       }
     ],
@@ -48733,7 +48806,7 @@
         "cond": null,
         "lines": [
           "+25% …Level of Devotion Impact",
-          "-15% Faith Creation and Reformation Cost",
+          "-10% Rite Creation and Reformation Cost",
           "+5% Stress Loss",
           "+10 Realm Priest Opinion"
         ],
@@ -48791,15 +48864,7 @@
     ],
     "name": "Mount Athos",
     "rebuildCost": null,
-    "requirements": [
-      {
-        "detail": null,
-        "key": "orthodox",
-        "kind": "faith",
-        "name": "Orthodoxy",
-        "negated": false
-      }
-    ],
+    "requirements": [],
     "sourceFile": "00_special_buildings.txt",
     "tier": 1,
     "type": "special"
@@ -48852,15 +48917,7 @@
     ],
     "name": "Mount Athos",
     "rebuildCost": null,
-    "requirements": [
-      {
-        "detail": null,
-        "key": "orthodox",
-        "kind": "faith",
-        "name": "Orthodoxy",
-        "negated": false
-      }
-    ],
+    "requirements": [],
     "sourceFile": "00_special_buildings.txt",
     "tier": 2,
     "type": "special"
@@ -48905,7 +48962,7 @@
         "lines": [
           "+0.4 Piety /month",
           "+10% Cultural Head Fascination Mult",
-          "-20% Faith Creation and Reformation Cost",
+          "-10% Rite Creation and Reformation Cost",
           "+10 Religious Vassal Opinion",
           "+10 Zealot Vassal Opinion",
           "+10 Clergy Opinion"
@@ -48921,13 +48978,6 @@
         "key": "innovation_cranes",
         "kind": "innovation",
         "name": "Cranes",
-        "negated": false
-      },
-      {
-        "detail": null,
-        "key": "orthodox",
-        "kind": "faith",
-        "name": "Orthodoxy",
         "negated": false
       }
     ],
@@ -49333,7 +49383,7 @@
           "+0.5 Piety /month",
           "+10% Stress Loss",
           "+10% Cultural Head Fascination Mult",
-          "-15% Holy Order Hire Cost",
+          "-15% Military Order Hire Cost",
           "+10% …Level of Devotion Impact"
         ],
         "scope": "County holder"
@@ -49458,7 +49508,7 @@
         "cond": null,
         "lines": [
           "+0.2 Piety /month",
-          "-5% Faith Creation and Reformation Cost"
+          "-5% Rite Creation and Reformation Cost"
         ],
         "scope": "Owner"
       }
@@ -49815,7 +49865,7 @@
       },
       {
         "detail": null,
-        "key": "manichean",
+        "key": "manichaean_faith",
         "kind": "faith",
         "name": "Manichaeism",
         "negated": false
@@ -49990,7 +50040,7 @@
       {
         "cond": null,
         "lines": [
-          "+10% Stress loss per Level of Devotion",
+          "+10% Stress Loss per Level of Devotion",
           "+20% Diplomatic Range",
           "+1 Intrigue per Level of Devotion",
           "+10% Levy Reinforcement Rate (Same Faith)"
@@ -53047,7 +53097,7 @@
         "cond": null,
         "lines": [
           "+0.2 Piety /month",
-          "-5% Faith Creation and Reformation Cost"
+          "-5% Rite Creation and Reformation Cost"
         ],
         "scope": "Owner"
       }
@@ -53922,7 +53972,7 @@
       {
         "cond": null,
         "lines": [
-          "-20% Faith Creation and Reformation Cost",
+          "-10% Rite Creation and Reformation Cost",
           "+5% Monthly Renown",
           "+5 Tributary Opinion"
         ],
@@ -58541,7 +58591,7 @@
       {
         "cond": null,
         "lines": [
-          "+2% Stress loss per Level of Fame"
+          "+2% Stress Loss per Level of Fame"
         ],
         "scope": "Owner"
       },
@@ -58618,7 +58668,7 @@
       {
         "cond": null,
         "lines": [
-          "+3% Stress loss per Level of Fame"
+          "+3% Stress Loss per Level of Fame"
         ],
         "scope": "Owner"
       },
@@ -58695,7 +58745,7 @@
       {
         "cond": null,
         "lines": [
-          "+4% Stress loss per Level of Fame"
+          "+4% Stress Loss per Level of Fame"
         ],
         "scope": "Owner"
       },
@@ -58772,7 +58822,7 @@
       {
         "cond": null,
         "lines": [
-          "+5% Stress loss per Level of Fame"
+          "+5% Stress Loss per Level of Fame"
         ],
         "scope": "Owner"
       },
@@ -72623,9 +72673,9 @@
       },
       {
         "detail": null,
-        "key": "can_build_megaliths",
-        "kind": "doctrine_parameter",
-        "name": "Can build megaliths",
+        "key": "temple_citadel_01",
+        "kind": "building",
+        "name": "Temple Keep",
         "negated": false
       }
     ],
@@ -72686,9 +72736,9 @@
       },
       {
         "detail": null,
-        "key": "can_build_megaliths",
-        "kind": "doctrine_parameter",
-        "name": "Can build megaliths",
+        "key": "temple_citadel_01",
+        "kind": "building",
+        "name": "Temple Keep",
         "negated": false
       }
     ],
@@ -72749,9 +72799,9 @@
       },
       {
         "detail": null,
-        "key": "can_build_megaliths",
-        "kind": "doctrine_parameter",
-        "name": "Can build megaliths",
+        "key": "temple_citadel_01",
+        "kind": "building",
+        "name": "Temple Keep",
         "negated": false
       },
       {
@@ -72827,9 +72877,9 @@
       },
       {
         "detail": null,
-        "key": "can_build_megaliths",
-        "kind": "doctrine_parameter",
-        "name": "Can build megaliths",
+        "key": "temple_citadel_02",
+        "kind": "building",
+        "name": "Walled Monastery",
         "negated": false
       },
       {
@@ -72906,9 +72956,9 @@
       },
       {
         "detail": null,
-        "key": "can_build_megaliths",
-        "kind": "doctrine_parameter",
-        "name": "Can build megaliths",
+        "key": "temple_citadel_02",
+        "kind": "building",
+        "name": "Walled Monastery",
         "negated": false
       },
       {
@@ -72985,9 +73035,9 @@
       },
       {
         "detail": null,
-        "key": "can_build_megaliths",
-        "kind": "doctrine_parameter",
-        "name": "Can build megaliths",
+        "key": "temple_citadel_02",
+        "kind": "building",
+        "name": "Walled Monastery",
         "negated": false
       },
       {
@@ -73064,9 +73114,9 @@
       },
       {
         "detail": null,
-        "key": "can_build_megaliths",
-        "kind": "doctrine_parameter",
-        "name": "Can build megaliths",
+        "key": "temple_citadel_02",
+        "kind": "building",
+        "name": "Walled Monastery",
         "negated": false
       },
       {
@@ -73143,9 +73193,9 @@
       },
       {
         "detail": null,
-        "key": "can_build_megaliths",
-        "kind": "doctrine_parameter",
-        "name": "Can build megaliths",
+        "key": "temple_citadel_02",
+        "kind": "building",
+        "name": "Walled Monastery",
         "negated": false
       },
       {
@@ -73234,16 +73284,16 @@
     "requirements": [
       {
         "detail": null,
-        "key": "monastic_schools_allowed_in_every_holding_type",
-        "kind": "doctrine_parameter",
-        "name": "Monastic schools allowed in every holding type",
-        "negated": true
-      },
-      {
-        "detail": null,
         "key": "church_holding",
         "kind": "holding",
         "name": "Temple",
+        "negated": false
+      },
+      {
+        "detail": null,
+        "key": "temple_citadel_holding",
+        "kind": "holding",
+        "name": "Temple Citadel",
         "negated": false
       },
       {
@@ -73327,16 +73377,16 @@
     "requirements": [
       {
         "detail": null,
-        "key": "monastic_schools_allowed_in_every_holding_type",
-        "kind": "doctrine_parameter",
-        "name": "Monastic schools allowed in every holding type",
-        "negated": true
-      },
-      {
-        "detail": null,
         "key": "church_holding",
         "kind": "holding",
         "name": "Temple",
+        "negated": false
+      },
+      {
+        "detail": null,
+        "key": "temple_citadel_holding",
+        "kind": "holding",
+        "name": "Temple Citadel",
         "negated": false
       },
       {
@@ -73434,16 +73484,16 @@
     "requirements": [
       {
         "detail": null,
-        "key": "monastic_schools_allowed_in_every_holding_type",
-        "kind": "doctrine_parameter",
-        "name": "Monastic schools allowed in every holding type",
-        "negated": true
-      },
-      {
-        "detail": null,
         "key": "church_holding",
         "kind": "holding",
         "name": "Temple",
+        "negated": false
+      },
+      {
+        "detail": null,
+        "key": "temple_citadel_holding",
+        "kind": "holding",
+        "name": "Temple Citadel",
         "negated": false
       },
       {
@@ -73555,16 +73605,16 @@
     "requirements": [
       {
         "detail": null,
-        "key": "monastic_schools_allowed_in_every_holding_type",
-        "kind": "doctrine_parameter",
-        "name": "Monastic schools allowed in every holding type",
-        "negated": true
-      },
-      {
-        "detail": null,
         "key": "church_holding",
         "kind": "holding",
         "name": "Temple",
+        "negated": false
+      },
+      {
+        "detail": null,
+        "key": "temple_citadel_holding",
+        "kind": "holding",
+        "name": "Temple Citadel",
         "negated": false
       },
       {
@@ -73676,16 +73726,16 @@
     "requirements": [
       {
         "detail": null,
-        "key": "monastic_schools_allowed_in_every_holding_type",
-        "kind": "doctrine_parameter",
-        "name": "Monastic schools allowed in every holding type",
-        "negated": true
-      },
-      {
-        "detail": null,
         "key": "church_holding",
         "kind": "holding",
         "name": "Temple",
+        "negated": false
+      },
+      {
+        "detail": null,
+        "key": "temple_citadel_holding",
+        "kind": "holding",
+        "name": "Temple Citadel",
         "negated": false
       },
       {
@@ -73797,16 +73847,16 @@
     "requirements": [
       {
         "detail": null,
-        "key": "monastic_schools_allowed_in_every_holding_type",
-        "kind": "doctrine_parameter",
-        "name": "Monastic schools allowed in every holding type",
-        "negated": true
-      },
-      {
-        "detail": null,
         "key": "church_holding",
         "kind": "holding",
         "name": "Temple",
+        "negated": false
+      },
+      {
+        "detail": null,
+        "key": "temple_citadel_holding",
+        "kind": "holding",
+        "name": "Temple Citadel",
         "negated": false
       },
       {
@@ -73918,16 +73968,16 @@
     "requirements": [
       {
         "detail": null,
-        "key": "monastic_schools_allowed_in_every_holding_type",
-        "kind": "doctrine_parameter",
-        "name": "Monastic schools allowed in every holding type",
-        "negated": true
-      },
-      {
-        "detail": null,
         "key": "church_holding",
         "kind": "holding",
         "name": "Temple",
+        "negated": false
+      },
+      {
+        "detail": null,
+        "key": "temple_citadel_holding",
+        "kind": "holding",
+        "name": "Temple Citadel",
         "negated": false
       },
       {
@@ -74039,16 +74089,16 @@
     "requirements": [
       {
         "detail": null,
-        "key": "monastic_schools_allowed_in_every_holding_type",
-        "kind": "doctrine_parameter",
-        "name": "Monastic schools allowed in every holding type",
-        "negated": true
-      },
-      {
-        "detail": null,
         "key": "church_holding",
         "kind": "holding",
         "name": "Temple",
+        "negated": false
+      },
+      {
+        "detail": null,
+        "key": "temple_citadel_holding",
+        "kind": "holding",
+        "name": "Temple Citadel",
         "negated": false
       },
       {
@@ -74161,6 +74211,13 @@
       },
       {
         "detail": null,
+        "key": "temple_citadel_01",
+        "kind": "building",
+        "name": "Temple Keep",
+        "negated": false
+      },
+      {
+        "detail": null,
         "key": "building_requirement_tribal",
         "kind": "government",
         "name": "Tribal, nomadic or wanua government",
@@ -74237,6 +74294,13 @@
         "key": "temple_01",
         "kind": "building",
         "name": "Shrine",
+        "negated": false
+      },
+      {
+        "detail": null,
+        "key": "temple_citadel_01",
+        "kind": "building",
+        "name": "Temple Keep",
         "negated": false
       },
       {
@@ -74328,6 +74392,13 @@
       },
       {
         "detail": null,
+        "key": "temple_citadel_02",
+        "kind": "building",
+        "name": "Walled Monastery",
+        "negated": false
+      },
+      {
+        "detail": null,
         "key": "innovation_manorialism",
         "kind": "innovation",
         "name": "Manorialism",
@@ -74411,6 +74482,13 @@
         "key": "temple_02",
         "kind": "building",
         "name": "Temple Grounds",
+        "negated": false
+      },
+      {
+        "detail": null,
+        "key": "temple_citadel_02",
+        "kind": "building",
+        "name": "Walled Monastery",
         "negated": false
       },
       {
@@ -74502,6 +74580,13 @@
       },
       {
         "detail": null,
+        "key": "temple_citadel_03",
+        "kind": "building",
+        "name": "Temple Compound",
+        "negated": false
+      },
+      {
+        "detail": null,
         "key": "innovation_windmills",
         "kind": "innovation",
         "name": "Windmills",
@@ -74585,6 +74670,13 @@
         "key": "temple_03",
         "kind": "building",
         "name": "House of Worship",
+        "negated": false
+      },
+      {
+        "detail": null,
+        "key": "temple_citadel_03",
+        "kind": "building",
+        "name": "Temple Compound",
         "negated": false
       },
       {
@@ -74676,6 +74768,13 @@
       },
       {
         "detail": null,
+        "key": "temple_citadel_04",
+        "kind": "building",
+        "name": "Fortress of Sanctuary",
+        "negated": false
+      },
+      {
+        "detail": null,
         "key": "innovation_cranes",
         "kind": "innovation",
         "name": "Cranes",
@@ -74756,9 +74855,16 @@
     "requirements": [
       {
         "detail": null,
-        "key": "temple_03",
+        "key": "temple_04",
         "kind": "building",
-        "name": "House of Worship",
+        "name": "Grand Temple",
+        "negated": false
+      },
+      {
+        "detail": null,
+        "key": "temple_citadel_04",
+        "kind": "building",
+        "name": "Fortress of Sanctuary",
         "negated": false
       },
       {
@@ -74808,6 +74914,13 @@
           "+10% Stationed Men-at-Arms Toughness",
           "+5% Stationed Siege Weapon Effectiveness",
           "-10 Danger"
+        ],
+        "scope": "Holding"
+      },
+      {
+        "cond": "if county's rite has Simony",
+        "lines": [
+          "+0.1 Tax per Level of Devotion /month"
         ],
         "scope": "Holding"
       },
@@ -74962,6 +75075,13 @@
         "scope": "Holding"
       },
       {
+        "cond": "if county's rite has Simony",
+        "lines": [
+          "+0.1 Tax per Level of Devotion /month"
+        ],
+        "scope": "Holding"
+      },
+      {
         "cond": "if coastal, culture: Bonus to construction speed of coastal Holdings",
         "lines": [
           "-10% Build Speed"
@@ -75070,6 +75190,13 @@
         "scope": "Holding"
       },
       {
+        "cond": "if county's rite has Simony",
+        "lines": [
+          "+0.1 Tax per Level of Devotion /month"
+        ],
+        "scope": "Holding"
+      },
+      {
         "cond": "if coastal, culture: Bonus to construction speed of coastal Holdings",
         "lines": [
           "-10% Build Speed"
@@ -75174,6 +75301,13 @@
           "+17.5% Stationed Men-at-Arms Toughness",
           "+12.5% Stationed Siege Weapon Effectiveness",
           "-16 Danger"
+        ],
+        "scope": "Holding"
+      },
+      {
+        "cond": "if county's rite has Simony",
+        "lines": [
+          "+0.1 Tax per Level of Devotion /month"
         ],
         "scope": "Holding"
       },
@@ -77615,5 +77749,481 @@
     "sourceFile": "00_tribal_buildings.txt",
     "tier": 4,
     "type": "regular"
+  },
+  {
+    "category": "pam_buildings",
+    "chain": "great_project_cathedral_01",
+    "constructionTime": null,
+    "cost": null,
+    "desc": "An early standing cathedral, seat of a bishop and a beacon for Christian pilgrims. Beneath heavy rounded arches and stately vaults, sacred relics and altars await the faithful.\n\nBuilding Effects: … in Cathedral Complex",
+    "dlc": "By God Alone",
+    "effects": "The owner of the Cathedral Complex in the selected Barony gains a … Domicile Building",
+    "features": [],
+    "garrisonReinforcement": null,
+    "icon": "icon_structure_cathedral",
+    "id": "great_project_cathedral_01",
+    "levy": null,
+    "mandalaCapital": false,
+    "maxGarrison": null,
+    "modifiers": [
+      {
+        "cond": null,
+        "lines": [
+          "+10% Development Growth",
+          "+5% Control Growth",
+          "+10% Holding Taxes"
+        ],
+        "scope": "County"
+      },
+      {
+        "cond": null,
+        "lines": [
+          "+0.25 Piety /month",
+          "+10 Zealot Vassal Opinion"
+        ],
+        "scope": "Owner"
+      }
+    ],
+    "name": "Romanesque Grand Cathedral",
+    "rebuildCost": null,
+    "requirements": [
+      {
+        "detail": null,
+        "key": "government_is_ecclesiastical",
+        "kind": "government",
+        "name": "Ecclesiastical government",
+        "negated": false
+      }
+    ],
+    "sourceFile": "pam_buildings.txt",
+    "tier": 1,
+    "type": "great_building"
+  },
+  {
+    "category": "pam_buildings",
+    "chain": "great_project_cathedral_02",
+    "constructionTime": null,
+    "cost": null,
+    "desc": "Built on the legacy of the already imposing Romanesque Grand Cathedral, soaring vaults and traceried windows lift the eye to the highs of heaven. Stone lacework and pointed arches crown a roof reborn in the sensibilities of a new age.\n\nBuilding Effects: … in Cathedral Complex",
+    "dlc": "By God Alone",
+    "effects": "The owner of the Cathedral Complex in the selected Barony gains a … Domicile Building",
+    "features": [],
+    "garrisonReinforcement": null,
+    "icon": "icon_structure_cathedral",
+    "id": "great_project_cathedral_02",
+    "levy": null,
+    "mandalaCapital": false,
+    "maxGarrison": null,
+    "modifiers": [
+      {
+        "cond": null,
+        "lines": [
+          "+20% Development Growth",
+          "+10% Control Growth",
+          "+15% Holding Taxes"
+        ],
+        "scope": "County"
+      },
+      {
+        "cond": null,
+        "lines": [
+          "+0.5 Piety /month",
+          "+15 Zealot Vassal Opinion"
+        ],
+        "scope": "Owner"
+      }
+    ],
+    "name": "Gothic Grand Cathedral",
+    "rebuildCost": null,
+    "requirements": [
+      {
+        "detail": null,
+        "key": "government_is_ecclesiastical",
+        "kind": "government",
+        "name": "Ecclesiastical government",
+        "negated": false
+      }
+    ],
+    "sourceFile": "pam_buildings.txt",
+    "tier": 1,
+    "type": "great_building"
+  },
+  {
+    "category": "pam_buildings",
+    "chain": "great_project_cathedral_03",
+    "constructionTime": null,
+    "cost": null,
+    "desc": "Built upon the already resplendent Gothic Grand Cathedral, flame-like tracery and curling stone crown this cathedral as a great church of Christendom.\n\nBuilding Effects: … in Cathedral Complex",
+    "dlc": "By God Alone",
+    "effects": "The owner of the Cathedral Complex in the selected Barony gains a … Domicile Building",
+    "features": [],
+    "garrisonReinforcement": null,
+    "icon": "icon_structure_cathedral",
+    "id": "great_project_cathedral_03",
+    "levy": null,
+    "mandalaCapital": false,
+    "maxGarrison": null,
+    "modifiers": [
+      {
+        "cond": null,
+        "lines": [
+          "+30% Development Growth",
+          "+15% Control Growth",
+          "+20% Holding Taxes"
+        ],
+        "scope": "County"
+      },
+      {
+        "cond": null,
+        "lines": [
+          "+0.75 Piety /month",
+          "+20 Zealot Vassal Opinion"
+        ],
+        "scope": "Owner"
+      }
+    ],
+    "name": "Flamboyant Grand Cathedral",
+    "rebuildCost": null,
+    "requirements": [
+      {
+        "detail": null,
+        "key": "government_is_ecclesiastical",
+        "kind": "government",
+        "name": "Ecclesiastical government",
+        "negated": false
+      }
+    ],
+    "sourceFile": "pam_buildings.txt",
+    "tier": 1,
+    "type": "great_building"
+  },
+  {
+    "category": "pam_buildings",
+    "chain": "great_project_cathedral_under_construction",
+    "constructionTime": null,
+    "cost": null,
+    "desc": "Rising up within treadwheel cranes and countless scaffolds, this incomplete edifice of rough stone prepares to one day host a holy seat.",
+    "dlc": "By God Alone",
+    "effects": null,
+    "features": [],
+    "garrisonReinforcement": null,
+    "icon": "icon_structure_cathedral",
+    "id": "great_project_cathedral_under_construction",
+    "levy": null,
+    "mandalaCapital": false,
+    "maxGarrison": null,
+    "modifiers": [
+      {
+        "cond": null,
+        "lines": [
+          "+3% Development Growth",
+          "+0.03 Development Growth /month"
+        ],
+        "scope": "County"
+      },
+      {
+        "cond": null,
+        "lines": [
+          "+0.05 Piety /month",
+          "+10 Same Faith Opinion",
+          "+10 Zealot Vassal Opinion"
+        ],
+        "scope": "Owner"
+      }
+    ],
+    "name": "Cathedral Under Construction",
+    "rebuildCost": null,
+    "requirements": [],
+    "sourceFile": "pam_buildings.txt",
+    "tier": 1,
+    "type": "great_building"
+  },
+  {
+    "category": "pam_buildings",
+    "chain": "pam_abbey_of_st_gall_01",
+    "constructionTime": 2190,
+    "cost": {
+      "gold": 700
+    },
+    "desc": "Raised around the hermitage of Saint Gall, this abbey is famed for its school, scriptorium, and library. Under in its walls, monks copy sacred texts and train clerics whose learning carries far beyond the shores of Lake Constance.",
+    "dlc": "By God Alone",
+    "effects": null,
+    "features": [],
+    "garrisonReinforcement": null,
+    "icon": "icon_structure_cluny_abbey",
+    "id": "pam_abbey_of_st_gall_01",
+    "levy": null,
+    "mandalaCapital": false,
+    "maxGarrison": null,
+    "modifiers": [
+      {
+        "cond": null,
+        "lines": [
+          "+0.5 Tax /month"
+        ],
+        "scope": "Holding"
+      },
+      {
+        "cond": null,
+        "lines": [
+          "+0.1 Development Growth /month",
+          "+15% Development Growth",
+          "+5% Control Growth"
+        ],
+        "scope": "County"
+      },
+      {
+        "cond": null,
+        "lines": [
+          "+0.25 Piety /month",
+          "+5% Monthly Lifestyle Experience",
+          "-10% Rite Creation and Reformation Cost"
+        ],
+        "scope": "County holder"
+      }
+    ],
+    "name": "Abbey of St Gall",
+    "rebuildCost": null,
+    "requirements": [
+      {
+        "detail": null,
+        "key": "building_requirement_tribal",
+        "kind": "government",
+        "name": "Tribal, nomadic or wanua government",
+        "negated": true
+      },
+      {
+        "detail": null,
+        "key": "christianity_or_syncretic_with_christianity_trigger",
+        "kind": "religion",
+        "name": "Christianity (or syncretic)",
+        "negated": false
+      }
+    ],
+    "sourceFile": "pam_buildings.txt",
+    "tier": 1,
+    "type": "special"
+  },
+  {
+    "category": "pam_buildings",
+    "chain": "pam_lateran_basilica_01",
+    "constructionTime": 2190,
+    "cost": {
+      "gold": 1000
+    },
+    "desc": "The cathedral church of Rome is mother and head of the churches of the city and the world. In its basilica and adjoining halls councils gather, doctrine is fixed, and the authority of the Roman pontiff is displayed to all.",
+    "dlc": "By God Alone",
+    "effects": null,
+    "features": [],
+    "garrisonReinforcement": null,
+    "icon": "icon_structure_grand_basilica",
+    "id": "pam_lateran_basilica_01",
+    "levy": null,
+    "mandalaCapital": false,
+    "maxGarrison": null,
+    "modifiers": [
+      {
+        "cond": null,
+        "lines": [
+          "+0.8 Tax /month"
+        ],
+        "scope": "Holding"
+      },
+      {
+        "cond": null,
+        "lines": [
+          "+0.1 Development Growth /month",
+          "+15% Development Growth",
+          "+10% Control Growth",
+          "+10% Holding Taxes"
+        ],
+        "scope": "County"
+      },
+      {
+        "cond": null,
+        "lines": [
+          "+0.35 Piety /month",
+          "+5% Monthly Renown",
+          "+5% Monthly Lifestyle Experience"
+        ],
+        "scope": "County holder"
+      }
+    ],
+    "name": "Archbasilica of Saint John Lateran",
+    "rebuildCost": null,
+    "requirements": [
+      {
+        "detail": null,
+        "key": "building_requirement_tribal",
+        "kind": "government",
+        "name": "Tribal, nomadic or wanua government",
+        "negated": true
+      },
+      {
+        "detail": null,
+        "key": "innovation_crop_rotation",
+        "kind": "innovation",
+        "name": "Crop Rotation",
+        "negated": false
+      },
+      {
+        "detail": null,
+        "key": "christianity_or_syncretic_with_christianity_trigger",
+        "kind": "religion",
+        "name": "Christianity (or syncretic)",
+        "negated": false
+      }
+    ],
+    "sourceFile": "pam_buildings.txt",
+    "tier": 1,
+    "type": "special"
+  },
+  {
+    "category": "pam_buildings",
+    "chain": "pam_palais_de_papes_01",
+    "constructionTime": 2190,
+    "cost": {
+      "gold": 1000
+    },
+    "desc": "Raised above Avignon as both fortress and residence, this palace shelters the papal court behind massive stone walls. Chapels, audience halls, and administrative chambers turn the city into a center of ecclesiastical power.",
+    "dlc": "By God Alone",
+    "effects": null,
+    "features": [],
+    "garrisonReinforcement": null,
+    "icon": "icon_structure_despot_palace",
+    "id": "pam_palais_de_papes_01",
+    "levy": null,
+    "mandalaCapital": false,
+    "maxGarrison": null,
+    "modifiers": [
+      {
+        "cond": null,
+        "lines": [
+          "+3 Tax /month"
+        ],
+        "scope": "Holding"
+      },
+      {
+        "cond": null,
+        "lines": [
+          "+0.1 Development Growth /month",
+          "+15% Development Growth",
+          "+5% Control Growth",
+          "+10% Holding Taxes"
+        ],
+        "scope": "County"
+      },
+      {
+        "cond": null,
+        "lines": [
+          "+1 Intrigue",
+          "+0.2 Piety /month",
+          "-10% Rite Creation and Reformation Cost"
+        ],
+        "scope": "County holder"
+      }
+    ],
+    "name": "Palais des Papes",
+    "rebuildCost": null,
+    "requirements": [
+      {
+        "detail": null,
+        "key": "building_requirement_tribal",
+        "kind": "government",
+        "name": "Tribal, nomadic or wanua government",
+        "negated": true
+      },
+      {
+        "detail": null,
+        "key": "innovation_manorialism",
+        "kind": "innovation",
+        "name": "Manorialism",
+        "negated": false
+      },
+      {
+        "detail": null,
+        "key": "christianity_or_syncretic_with_christianity_trigger",
+        "kind": "religion",
+        "name": "Christianity (or syncretic)",
+        "negated": false
+      }
+    ],
+    "sourceFile": "pam_buildings.txt",
+    "tier": 1,
+    "type": "special"
+  },
+  {
+    "category": "pam_buildings",
+    "chain": "pam_reims_cathedral_01",
+    "constructionTime": 2190,
+    "cost": {
+      "gold": 1000
+    },
+    "desc": "At Reims, the cathedral stands as the sacred site of Clovis' baptism and the crowning of kings. Here, the blessing of the clergy can transform a ruler's claims into divine authority, forging a bond between faith and royal power.",
+    "dlc": "By God Alone",
+    "effects": null,
+    "features": [],
+    "garrisonReinforcement": null,
+    "icon": "icon_structure_cologne_cathedral",
+    "id": "pam_reims_cathedral_01",
+    "levy": null,
+    "mandalaCapital": false,
+    "maxGarrison": null,
+    "modifiers": [
+      {
+        "cond": null,
+        "lines": [
+          "+0.8 Tax /month"
+        ],
+        "scope": "Holding"
+      },
+      {
+        "cond": null,
+        "lines": [
+          "+0.1 Development Growth /month",
+          "+15% Development Growth",
+          "+10% Control Growth",
+          "+20% Holding Taxes"
+        ],
+        "scope": "County"
+      },
+      {
+        "cond": null,
+        "lines": [
+          "+0.25 Piety /month",
+          "+5% Monthly Prestige",
+          "+5 Clergy Opinion"
+        ],
+        "scope": "Owner"
+      }
+    ],
+    "name": "Reims Cathedral",
+    "rebuildCost": null,
+    "requirements": [
+      {
+        "detail": null,
+        "key": "building_requirement_tribal",
+        "kind": "government",
+        "name": "Tribal, nomadic or wanua government",
+        "negated": true
+      },
+      {
+        "detail": null,
+        "key": "innovation_manorialism",
+        "kind": "innovation",
+        "name": "Manorialism",
+        "negated": false
+      },
+      {
+        "detail": null,
+        "key": "christianity_or_syncretic_with_christianity_trigger",
+        "kind": "religion",
+        "name": "Christianity (or syncretic)",
+        "negated": false
+      }
+    ],
+    "sourceFile": "pam_buildings.txt",
+    "tier": 1,
+    "type": "special"
   }
 ]

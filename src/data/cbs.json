@@ -34,6 +34,7 @@
           "negated": true
         }
       ],
+      "sameFaithDefenders": null,
       "sourceFile": "01_ep1_wars.txt",
       "targetTier": null,
       "targetTitles": null,
@@ -58,13 +59,13 @@
       "id": "reclaim_relic_artifact_war",
       "isGreatHolyWar": false,
       "isHolyWar": false,
-      "name": "Relic Artifact Reclamation",
+      "name": "Holy Relic Reclamation",
       "onAttackerDeath": "inherit",
       "onDefenderDeath": "inherit",
       "outcomes": {
         "defeat": "No Artifacts change hands.",
-        "invalidated": "Reclaim Relics War invalidated!",
-        "victory": "You take ownership of all the attacker's Artifacts that are held by the defender and their non-the attacker's Vassals.",
+        "invalidated": "Reclaim Holy Relics War invalidated!",
+        "victory": "You take ownership of all Holy Relics for the attacker that are held by the defender and their non-the attacker's Vassals.",
         "whitePeace": "No Artifacts change hands."
       },
       "requirements": [
@@ -81,11 +82,12 @@
           "negated": true
         }
       ],
+      "sameFaithDefenders": null,
       "sourceFile": "01_ep1_wars.txt",
       "targetTier": null,
       "targetTitles": null,
       "truceDays": null,
-      "warName": "Reclaim Relics War",
+      "warName": "Reclaim Holy Relics War",
       "whitePeacePossible": true
     },
     {
@@ -128,6 +130,7 @@
           "negated": false
         }
       ],
+      "sameFaithDefenders": null,
       "sourceFile": "10_tgp_china_wars.txt",
       "targetTier": "county",
       "targetTitles": "all",
@@ -175,6 +178,7 @@
           "negated": false
         }
       ],
+      "sameFaithDefenders": null,
       "sourceFile": "10_tgp_china_wars.txt",
       "targetTier": "duchy",
       "targetTitles": "all",
@@ -228,6 +232,7 @@
           "negated": true
         }
       ],
+      "sameFaithDefenders": null,
       "sourceFile": "10_tgp_china_wars.txt",
       "targetTier": "county",
       "targetTitles": "neighbor_land",
@@ -281,6 +286,7 @@
           "negated": true
         }
       ],
+      "sameFaithDefenders": null,
       "sourceFile": "10_tgp_china_wars.txt",
       "targetTier": "duchy",
       "targetTitles": "neighbor_land",
@@ -336,6 +342,7 @@
           "negated": false
         }
       ],
+      "sameFaithDefenders": null,
       "sourceFile": "10_tgp_china_wars.txt",
       "targetTier": null,
       "targetTitles": "neighbor_land_or_water",
@@ -362,7 +369,7 @@
       "id": "chinese_reunification_cb",
       "isGreatHolyWar": false,
       "isHolyWar": false,
-      "name": "Consolidate Land Under Heaven (Dynastic Cycle)",
+      "name": "Chinese Consolidation War",
       "onAttackerDeath": "inherit",
       "onDefenderDeath": "inherit",
       "outcomes": {
@@ -372,6 +379,7 @@
         "whitePeace": "The defender keeps the contested titles."
       },
       "requirements": [],
+      "sameFaithDefenders": null,
       "sourceFile": "10_tgp_china_wars.txt",
       "targetTier": "kingdom",
       "targetTitles": "neighbor_land_or_water",
@@ -422,6 +430,7 @@
           "negated": false
         }
       ],
+      "sameFaithDefenders": null,
       "sourceFile": "10_tgp_china_wars.txt",
       "targetTier": null,
       "targetTitles": "none",
@@ -463,6 +472,7 @@
           "negated": false
         }
       ],
+      "sameFaithDefenders": null,
       "sourceFile": "10_tgp_china_wars.txt",
       "targetTier": null,
       "targetTitles": "all",
@@ -499,6 +509,7 @@
           "negated": false
         }
       ],
+      "sameFaithDefenders": null,
       "sourceFile": "10_tgp_faction_wars.txt",
       "targetTier": null,
       "targetTitles": "claim",
@@ -535,6 +546,7 @@
           "negated": false
         }
       ],
+      "sameFaithDefenders": null,
       "sourceFile": "00_civil_war.txt",
       "targetTier": null,
       "targetTitles": "claim",
@@ -556,7 +568,7 @@
       "isHolyWar": false,
       "name": "Depose",
       "onAttackerDeath": "inherit_faction",
-      "onDefenderDeath": "inherit",
+      "onDefenderDeath": "invalidate",
       "outcomes": {
         "defeat": "The defender keeps their Titles and imprison all rebelling Vassals.",
         "invalidated": null,
@@ -564,6 +576,7 @@
         "whitePeace": "The defender keeps their Titles. A Title Revocation Reason is given on every rebelling Vassal."
       },
       "requirements": [],
+      "sameFaithDefenders": null,
       "sourceFile": "00_civil_war.txt",
       "targetTier": null,
       "targetTitles": "none",
@@ -600,6 +613,7 @@
           "negated": false
         }
       ],
+      "sameFaithDefenders": null,
       "sourceFile": "10_tgp_faction_wars.txt",
       "targetTier": null,
       "targetTitles": null,
@@ -642,6 +656,7 @@
           "negated": true
         }
       ],
+      "sameFaithDefenders": null,
       "sourceFile": "00_civil_war.txt",
       "targetTier": null,
       "targetTitles": "independence_domain",
@@ -678,6 +693,7 @@
           "negated": true
         }
       ],
+      "sameFaithDefenders": null,
       "sourceFile": "10_tgp_japan_wars.txt",
       "targetTier": null,
       "targetTitles": null,
@@ -703,7 +719,7 @@
       "outcomes": {
         "defeat": "The Liberty Faction is disbanded, its members cannot join factions for … years.",
         "invalidated": null,
-        "victory": "The Crown Authority of the defender is reduced one step, and the defender will owe every Liberty Faction member a Favor.",
+        "victory": "The defender of the defender is reduced one step, and the defender will owe every Liberty Faction member a Favor.",
         "whitePeace": "The Liberty Faction is disbanded, its members cannot join factions for … years."
       },
       "requirements": [
@@ -714,6 +730,7 @@
           "negated": false
         }
       ],
+      "sameFaithDefenders": null,
       "sourceFile": "00_civil_war.txt",
       "targetTier": null,
       "targetTitles": null,
@@ -743,6 +760,7 @@
         "whitePeace": "The attacker remain a Vassal of the defender."
       },
       "requirements": [],
+      "sameFaithDefenders": null,
       "sourceFile": "00_civil_war.txt",
       "targetTier": null,
       "targetTitles": null,
@@ -779,6 +797,7 @@
           "negated": false
         }
       ],
+      "sameFaithDefenders": null,
       "sourceFile": "00_civil_war.txt",
       "targetTier": null,
       "targetTitles": "all",
@@ -821,6 +840,7 @@
           "negated": true
         }
       ],
+      "sameFaithDefenders": null,
       "sourceFile": "00_peasant_war_new.txt",
       "targetTier": null,
       "targetTitles": "none",
@@ -863,6 +883,7 @@
           "negated": false
         }
       ],
+      "sameFaithDefenders": null,
       "sourceFile": "00_civil_war.txt",
       "targetTier": null,
       "targetTitles": "claim",
@@ -883,8 +904,8 @@
       "isGreatHolyWar": false,
       "isHolyWar": false,
       "name": "Rebellion",
-      "onAttackerDeath": "invalidate",
-      "onDefenderDeath": "inherit",
+      "onAttackerDeath": null,
+      "onDefenderDeath": null,
       "outcomes": {
         "defeat": "The defender Imprisons the attacker.",
         "invalidated": null,
@@ -899,6 +920,7 @@
           "negated": false
         }
       ],
+      "sameFaithDefenders": null,
       "sourceFile": "00_civil_war.txt",
       "targetTier": null,
       "targetTitles": null,
@@ -935,6 +957,7 @@
           "negated": false
         }
       ],
+      "sameFaithDefenders": null,
       "sourceFile": "10_tgp_faction_wars.txt",
       "targetTier": null,
       "targetTitles": null,
@@ -971,6 +994,7 @@
           "negated": false
         }
       ],
+      "sameFaithDefenders": null,
       "sourceFile": "10_tgp_faction_wars.txt",
       "targetTier": null,
       "targetTitles": null,
@@ -1014,6 +1038,7 @@
           "negated": false
         }
       ],
+      "sameFaithDefenders": null,
       "sourceFile": "00_claim.txt",
       "targetTier": null,
       "targetTitles": "claim",
@@ -1072,6 +1097,7 @@
           "negated": true
         }
       ],
+      "sameFaithDefenders": null,
       "sourceFile": "05_fp3_wars.txt",
       "targetTier": null,
       "targetTitles": null,
@@ -1098,7 +1124,7 @@
       "id": "mythical_ancestor_war",
       "isGreatHolyWar": false,
       "isHolyWar": false,
-      "name": "Ancestral Claim",
+      "name": "…… Ancestral Claim on …",
       "onAttackerDeath": "inherit",
       "onDefenderDeath": "inherit",
       "outcomes": {
@@ -1115,6 +1141,7 @@
           "negated": true
         }
       ],
+      "sameFaithDefenders": null,
       "sourceFile": "06_ce1_wars.txt",
       "targetTier": "all",
       "targetTitles": "all",
@@ -1164,6 +1191,7 @@
           "negated": false
         }
       ],
+      "sameFaithDefenders": null,
       "sourceFile": "07_ep3_wars.txt",
       "targetTier": "duchy",
       "targetTitles": "neighbor_land_or_water",
@@ -1207,6 +1235,7 @@
           "negated": true
         }
       ],
+      "sameFaithDefenders": null,
       "sourceFile": "00_conquest.txt",
       "targetTier": "county",
       "targetTitles": "all",
@@ -1262,6 +1291,7 @@
           "negated": true
         }
       ],
+      "sameFaithDefenders": null,
       "sourceFile": "00_conquest.txt",
       "targetTier": "all",
       "targetTitles": "neighbor_land",
@@ -1311,6 +1341,7 @@
           "negated": false
         }
       ],
+      "sameFaithDefenders": null,
       "sourceFile": "00_conquest.txt",
       "targetTier": "duchy",
       "targetTitles": "all",
@@ -1350,12 +1381,6 @@
       },
       "requirements": [
         {
-          "key": "administrative",
-          "kind": "government_type",
-          "name": "Administrative",
-          "negated": false
-        },
-        {
           "key": "government_is_landless_adventurer",
           "kind": "government_flag",
           "name": "Landless adventurer",
@@ -1368,6 +1393,7 @@
           "negated": false
         }
       ],
+      "sameFaithDefenders": null,
       "sourceFile": "07_ep3_admin_cbs.txt",
       "targetTier": "duchy",
       "targetTitles": "neighbor_land",
@@ -1406,6 +1432,7 @@
           "negated": true
         }
       ],
+      "sameFaithDefenders": null,
       "sourceFile": "07_ep3_wars.txt",
       "targetTier": "county",
       "targetTitles": "neighbor_land",
@@ -1445,12 +1472,6 @@
       },
       "requirements": [
         {
-          "key": "administrative",
-          "kind": "government_type",
-          "name": "Administrative",
-          "negated": false
-        },
-        {
           "key": "government_is_landless_adventurer",
           "kind": "government_flag",
           "name": "Landless adventurer",
@@ -1463,6 +1484,7 @@
           "negated": true
         }
       ],
+      "sameFaithDefenders": null,
       "sourceFile": "07_ep3_admin_cbs.txt",
       "targetTier": "county",
       "targetTitles": "neighbor_land",
@@ -1561,6 +1583,7 @@
           "negated": false
         }
       ],
+      "sameFaithDefenders": null,
       "sourceFile": "01_fp1_wars.txt",
       "targetTier": "duchy",
       "targetTitles": "all",
@@ -1604,6 +1627,7 @@
           "negated": true
         }
       ],
+      "sameFaithDefenders": null,
       "sourceFile": "03_fp2_wars.txt",
       "targetTier": "duchy",
       "targetTitles": "neighbor_land_or_water",
@@ -1668,6 +1692,7 @@
           "negated": true
         }
       ],
+      "sameFaithDefenders": null,
       "sourceFile": "03_fp2_wars.txt",
       "targetTier": "county",
       "targetTitles": "all",
@@ -1704,6 +1729,7 @@
         "whitePeace": "The defender keeps the contested Title."
       },
       "requirements": [],
+      "sameFaithDefenders": null,
       "sourceFile": "07_ep3_wars.txt",
       "targetTier": "duchy",
       "targetTitles": "neighbor_land_or_water",
@@ -1747,6 +1773,7 @@
           "negated": true
         }
       ],
+      "sameFaithDefenders": null,
       "sourceFile": "07_ep3_wars.txt",
       "targetTier": "duchy",
       "targetTitles": "all",
@@ -1783,6 +1810,7 @@
         "whitePeace": "The defender keeps all contested titles."
       },
       "requirements": [],
+      "sameFaithDefenders": null,
       "sourceFile": "00_conquest.txt",
       "targetTier": "all",
       "targetTitles": "all",
@@ -1824,6 +1852,7 @@
           "negated": false
         }
       ],
+      "sameFaithDefenders": null,
       "sourceFile": "10_tgp_japan_wars.txt",
       "targetTier": "county",
       "targetTitles": "all",
@@ -1865,6 +1894,7 @@
           "negated": false
         }
       ],
+      "sameFaithDefenders": null,
       "sourceFile": "10_tgp_japan_wars.txt",
       "targetTier": "county",
       "targetTitles": "neighbor_land_or_water",
@@ -1906,6 +1936,7 @@
           "negated": true
         }
       ],
+      "sameFaithDefenders": null,
       "sourceFile": "10_tgp_japan_wars.txt",
       "targetTier": "county",
       "targetTitles": "all",
@@ -1949,6 +1980,7 @@
           "negated": true
         }
       ],
+      "sameFaithDefenders": null,
       "sourceFile": "06_ce1_wars.txt",
       "targetTier": null,
       "targetTitles": "none",
@@ -1999,6 +2031,7 @@
           "negated": true
         }
       ],
+      "sameFaithDefenders": null,
       "sourceFile": "06_ce1_wars.txt",
       "targetTier": "kingdom",
       "targetTitles": "all",
@@ -2038,12 +2071,6 @@
       },
       "requirements": [
         {
-          "key": "administrative",
-          "kind": "government_type",
-          "name": "Administrative",
-          "negated": false
-        },
-        {
           "key": "government_is_landless_adventurer",
           "kind": "government_flag",
           "name": "Landless adventurer",
@@ -2062,6 +2089,7 @@
           "negated": false
         }
       ],
+      "sameFaithDefenders": null,
       "sourceFile": "07_ep3_admin_cbs.txt",
       "targetTier": "duchy",
       "targetTitles": "neighbor_land_or_water",
@@ -2101,12 +2129,6 @@
       },
       "requirements": [
         {
-          "key": "administrative",
-          "kind": "government_type",
-          "name": "Administrative",
-          "negated": false
-        },
-        {
           "key": "government_is_landless_adventurer",
           "kind": "government_flag",
           "name": "Landless adventurer",
@@ -2119,6 +2141,7 @@
           "negated": true
         }
       ],
+      "sameFaithDefenders": null,
       "sourceFile": "07_ep3_admin_cbs.txt",
       "targetTier": "county",
       "targetTitles": "neighbor_land_or_water",
@@ -2159,6 +2182,7 @@
           "negated": false
         }
       ],
+      "sameFaithDefenders": null,
       "sourceFile": "00_nomadic_conquest.txt",
       "targetTier": "county",
       "targetTitles": "neighbor_land",
@@ -2199,6 +2223,7 @@
           "negated": false
         }
       ],
+      "sameFaithDefenders": null,
       "sourceFile": "00_nomadic_conquest.txt",
       "targetTier": "duchy",
       "targetTitles": "neighbor_land",
@@ -2254,6 +2279,7 @@
           "negated": true
         }
       ],
+      "sameFaithDefenders": null,
       "sourceFile": "00_dejure_war.txt",
       "targetTier": null,
       "targetTitles": "de_jure",
@@ -2306,6 +2332,7 @@
           "negated": false
         }
       ],
+      "sameFaithDefenders": null,
       "sourceFile": "09_mpo_wars.txt",
       "targetTier": "all",
       "targetTitles": "neighbor_land",
@@ -2335,6 +2362,7 @@
         "whitePeace": "There can be no white peace"
       },
       "requirements": [],
+      "sameFaithDefenders": null,
       "sourceFile": "00_dejure_war.txt",
       "targetTier": "all",
       "targetTitles": "all",
@@ -2364,6 +2392,7 @@
         "whitePeace": "There can be no white peace"
       },
       "requirements": [],
+      "sameFaithDefenders": null,
       "sourceFile": "00_dejure_war.txt",
       "targetTier": "all",
       "targetTitles": "all",
@@ -2417,6 +2446,7 @@
           "negated": true
         }
       ],
+      "sameFaithDefenders": null,
       "sourceFile": "05_fp3_wars.txt",
       "targetTier": null,
       "targetTitles": null,
@@ -2446,6 +2476,7 @@
         "whitePeace": "The defender keeps the contested titles."
       },
       "requirements": [],
+      "sameFaithDefenders": null,
       "sourceFile": "00_dejure_war.txt",
       "targetTier": "all",
       "targetTitles": "all",
@@ -2495,6 +2526,7 @@
           "negated": true
         }
       ],
+      "sameFaithDefenders": null,
       "sourceFile": "00_dejure_war.txt",
       "targetTier": "all",
       "targetTitles": "all",
@@ -2544,6 +2576,7 @@
           "negated": true
         }
       ],
+      "sameFaithDefenders": null,
       "sourceFile": "00_dejure_war.txt",
       "targetTier": "all",
       "targetTitles": "all",
@@ -2584,6 +2617,7 @@
           "negated": false
         }
       ],
+      "sameFaithDefenders": null,
       "sourceFile": "10_tgp_japan_wars.txt",
       "targetTier": "all",
       "targetTitles": "all",
@@ -2613,6 +2647,7 @@
         "whitePeace": "Attacker takes nothing."
       },
       "requirements": [],
+      "sameFaithDefenders": null,
       "sourceFile": "00_casus_belli_types.txt",
       "targetTier": null,
       "targetTitles": null,
@@ -2642,6 +2677,7 @@
         "whitePeace": "Defender keeps the target titles."
       },
       "requirements": [],
+      "sameFaithDefenders": null,
       "sourceFile": "00_casus_belli_types.txt",
       "targetTier": "all",
       "targetTitles": "all",
@@ -2671,6 +2707,7 @@
         "whitePeace": "The defender keeps their titles."
       },
       "requirements": [],
+      "sameFaithDefenders": null,
       "sourceFile": "00_event_war.txt",
       "targetTier": "kingdom",
       "targetTitles": "all",
@@ -2700,6 +2737,7 @@
         "whitePeace": "The defender loses nothing to the attacker."
       },
       "requirements": [],
+      "sameFaithDefenders": null,
       "sourceFile": "00_event_war.txt",
       "targetTier": null,
       "targetTitles": "de_jure",
@@ -2733,6 +2771,7 @@
         "whitePeace": "You keep the contested Title."
       },
       "requirements": [],
+      "sameFaithDefenders": null,
       "sourceFile": "09_mpo_wars.txt",
       "targetTier": null,
       "targetTitles": "all",
@@ -2762,6 +2801,7 @@
         "whitePeace": "The attacker remain a Vassal of the defender."
       },
       "requirements": [],
+      "sameFaithDefenders": null,
       "sourceFile": "07_ep3_wars.txt",
       "targetTier": null,
       "targetTitles": null,
@@ -2785,12 +2825,13 @@
       "onAttackerDeath": "inherit",
       "onDefenderDeath": "inherit",
       "outcomes": {
-        "defeat": "The defender will imprison the attacker, seizing all possessions, and disbanding the Camp",
+        "defeat": "The defender will imprison the attacker and seize all possessions",
         "invalidated": "The war has ended: it was no longer valid to continue.",
         "victory": "The attacker will depose the defender",
         "whitePeace": "The attacker will gain a Truce with the defender"
       },
       "requirements": [],
+      "sameFaithDefenders": null,
       "sourceFile": "07_ep3_wars.txt",
       "targetTier": null,
       "targetTitles": null,
@@ -2820,6 +2861,7 @@
         "whitePeace": "The defender keeps the contested Title."
       },
       "requirements": [],
+      "sameFaithDefenders": null,
       "sourceFile": "00_event_war.txt",
       "targetTier": "duchy",
       "targetTitles": "all",
@@ -2849,6 +2891,7 @@
         "whitePeace": "The Seljuk Nomads are granted lands in recognition of their prowess."
       },
       "requirements": [],
+      "sameFaithDefenders": null,
       "sourceFile": "05_fp3_wars.txt",
       "targetTier": null,
       "targetTitles": null,
@@ -2878,6 +2921,7 @@
         "whitePeace": "The defender keeps the contested Title."
       },
       "requirements": [],
+      "sameFaithDefenders": null,
       "sourceFile": "05_fp3_wars.txt",
       "targetTier": "duchy",
       "targetTitles": null,
@@ -2907,6 +2951,7 @@
         "whitePeace": "The defender keeps the contested Title."
       },
       "requirements": [],
+      "sameFaithDefenders": null,
       "sourceFile": "05_fp3_wars.txt",
       "targetTier": "duchy",
       "targetTitles": "all",
@@ -2937,18 +2982,13 @@
       },
       "requirements": [
         {
-          "key": "administrative",
-          "kind": "government_type",
-          "name": "Administrative",
-          "negated": false
-        },
-        {
           "key": "government_is_landless_adventurer",
           "kind": "government_flag",
           "name": "Landless adventurer",
           "negated": true
         }
       ],
+      "sameFaithDefenders": null,
       "sourceFile": "07_ep3_admin_cbs.txt",
       "targetTier": null,
       "targetTitles": null,
@@ -2980,6 +3020,7 @@
         "whitePeace": null
       },
       "requirements": [],
+      "sameFaithDefenders": null,
       "sourceFile": "09_mpo_wars.txt",
       "targetTier": "all",
       "targetTitles": "claim",
@@ -3009,6 +3050,7 @@
         "whitePeace": "The defender keeps the Kingdom of England. the attacker's Claims become Pressed."
       },
       "requirements": [],
+      "sameFaithDefenders": null,
       "sourceFile": "00_event_war.txt",
       "targetTier": null,
       "targetTitles": "claim",
@@ -3038,6 +3080,7 @@
         "whitePeace": "The defender keeps the Kingdom of England. the attacker's Claims become Pressed."
       },
       "requirements": [],
+      "sameFaithDefenders": null,
       "sourceFile": "00_event_war.txt",
       "targetTier": null,
       "targetTitles": "claim",
@@ -3067,6 +3110,7 @@
         "whitePeace": "The defender keeps the contested Title."
       },
       "requirements": [],
+      "sameFaithDefenders": null,
       "sourceFile": "00_event_war.txt",
       "targetTier": "all",
       "targetTitles": "claim",
@@ -3096,6 +3140,7 @@
         "whitePeace": "The defender keeps their titles."
       },
       "requirements": [],
+      "sameFaithDefenders": null,
       "sourceFile": "00_event_war.txt",
       "targetTier": "all",
       "targetTitles": "all",
@@ -3125,6 +3170,7 @@
         "whitePeace": "The defender stays as Regent"
       },
       "requirements": [],
+      "sameFaithDefenders": null,
       "sourceFile": "00_event_war.txt",
       "targetTier": null,
       "targetTitles": null,
@@ -3154,6 +3200,7 @@
         "whitePeace": "The defender keeps their titles. the attacker loses Prestige."
       },
       "requirements": [],
+      "sameFaithDefenders": null,
       "sourceFile": "00_event_war.txt",
       "targetTier": "all",
       "targetTitles": "none",
@@ -3201,6 +3248,7 @@
           "negated": false
         }
       ],
+      "sameFaithDefenders": null,
       "sourceFile": "09_mpo_wars.txt",
       "targetTier": null,
       "targetTitles": null,
@@ -3248,6 +3296,7 @@
           "negated": false
         }
       ],
+      "sameFaithDefenders": null,
       "sourceFile": "09_mpo_wars.txt",
       "targetTier": null,
       "targetTitles": null,
@@ -3284,14 +3333,8 @@
         "victory": "The attacker gain independence from the defender.",
         "whitePeace": "The attacker remain a vassal of the defender."
       },
-      "requirements": [
-        {
-          "key": "administrative",
-          "kind": "government_type",
-          "name": "Administrative",
-          "negated": true
-        }
-      ],
+      "requirements": [],
+      "sameFaithDefenders": null,
       "sourceFile": "00_civil_war.txt",
       "targetTier": null,
       "targetTitles": null,
@@ -3326,6 +3369,7 @@
         "whitePeace": "The attacker remains a Tributary of the defender."
       },
       "requirements": [],
+      "sameFaithDefenders": null,
       "sourceFile": "00_tributarize.txt",
       "targetTier": null,
       "targetTitles": null,
@@ -3376,6 +3420,7 @@
           "negated": false
         }
       ],
+      "sameFaithDefenders": null,
       "sourceFile": "00_invasion_war.txt",
       "targetTier": "all",
       "targetTitles": "all",
@@ -3419,6 +3464,7 @@
           "negated": false
         }
       ],
+      "sameFaithDefenders": null,
       "sourceFile": "07_ep3_wars.txt",
       "targetTier": "county",
       "targetTitles": "all",
@@ -3462,6 +3508,7 @@
           "negated": false
         }
       ],
+      "sameFaithDefenders": null,
       "sourceFile": "07_ep3_wars.txt",
       "targetTier": "duchy",
       "targetTitles": "all",
@@ -3505,6 +3552,7 @@
           "negated": false
         }
       ],
+      "sameFaithDefenders": null,
       "sourceFile": "07_ep3_wars.txt",
       "targetTier": "empire",
       "targetTitles": "all",
@@ -3548,6 +3596,7 @@
           "negated": false
         }
       ],
+      "sameFaithDefenders": null,
       "sourceFile": "07_ep3_wars.txt",
       "targetTier": "kingdom",
       "targetTitles": "all",
@@ -3584,6 +3633,7 @@
           "negated": false
         }
       ],
+      "sameFaithDefenders": null,
       "sourceFile": "07_ep3_wars.txt",
       "targetTier": null,
       "targetTitles": null,
@@ -3613,6 +3663,7 @@
         "whitePeace": "No additional gains for neither side"
       },
       "requirements": [],
+      "sameFaithDefenders": null,
       "sourceFile": "07_ep3_wars.txt",
       "targetTier": null,
       "targetTitles": null,
@@ -3644,6 +3695,7 @@
         "whitePeace": "The attacker fails to complete their raid."
       },
       "requirements": [],
+      "sameFaithDefenders": null,
       "sourceFile": "07_ep3_wars.txt",
       "targetTier": "county",
       "targetTitles": "neighbor_land",
@@ -3680,6 +3732,7 @@
           "negated": false
         }
       ],
+      "sameFaithDefenders": null,
       "sourceFile": "00_event_war.txt",
       "targetTier": "kingdom",
       "targetTitles": "all",
@@ -3729,12 +3782,6 @@
           "negated": false
         },
         {
-          "key": "invasion_cb_enabled",
-          "kind": "doctrine_parameter",
-          "name": "Invasion cb enabled",
-          "negated": false
-        },
-        {
           "key": "government_is_landless_adventurer",
           "kind": "government_flag",
           "name": "Landless adventurer",
@@ -3747,6 +3794,7 @@
           "negated": false
         }
       ],
+      "sameFaithDefenders": null,
       "sourceFile": "00_invasion_war.txt",
       "targetTier": "kingdom",
       "targetTitles": "all",
@@ -3791,6 +3839,7 @@
           "negated": false
         }
       ],
+      "sameFaithDefenders": null,
       "sourceFile": "00_invasion_war.txt",
       "targetTier": "all",
       "targetTitles": "neighbor_land_or_water",
@@ -3835,6 +3884,7 @@
           "negated": false
         }
       ],
+      "sameFaithDefenders": null,
       "sourceFile": "00_invasion_war.txt",
       "targetTier": "all",
       "targetTitles": "neighbor_land_or_water",
@@ -3879,6 +3929,7 @@
           "negated": false
         }
       ],
+      "sameFaithDefenders": null,
       "sourceFile": "09_mpo_wars.txt",
       "targetTier": null,
       "targetTitles": null,
@@ -3953,6 +4004,7 @@
           "negated": true
         }
       ],
+      "sameFaithDefenders": null,
       "sourceFile": "09_mpo_wars.txt",
       "targetTier": "duchy",
       "targetTitles": "all",
@@ -4027,6 +4079,7 @@
           "negated": false
         }
       ],
+      "sameFaithDefenders": null,
       "sourceFile": "09_mpo_wars.txt",
       "targetTier": "kingdom",
       "targetTitles": "all",
@@ -4077,6 +4130,7 @@
           "negated": false
         }
       ],
+      "sameFaithDefenders": null,
       "sourceFile": "00_invasion_war.txt",
       "targetTier": "all",
       "targetTitles": "neighbor_land_or_water",
@@ -4118,6 +4172,7 @@
           "negated": false
         }
       ],
+      "sameFaithDefenders": null,
       "sourceFile": "tgp_eastasia_wars.txt",
       "targetTier": null,
       "targetTitles": null,
@@ -4159,6 +4214,7 @@
           "negated": false
         }
       ],
+      "sameFaithDefenders": null,
       "sourceFile": "tgp_eastasia_wars.txt",
       "targetTier": null,
       "targetTitles": null,
@@ -4195,6 +4251,7 @@
           "negated": false
         }
       ],
+      "sameFaithDefenders": null,
       "sourceFile": "09_mpo_wars.txt",
       "targetTier": null,
       "targetTitles": null,
@@ -4224,12 +4281,55 @@
         "whitePeace": "There can be no white peace"
       },
       "requirements": [],
+      "sameFaithDefenders": null,
       "sourceFile": "00_religious_war.txt",
       "targetTier": "all",
       "targetTitles": "all",
       "truceDays": null,
       "warName": "The attacker for the target title",
       "whitePeacePossible": false
+    },
+    {
+      "allowHostages": false,
+      "costs": {
+        "piety": {
+          "base": 200,
+          "varies": true
+        }
+      },
+      "deJureRegionsAbove": true,
+      "defenderFaithCanJoin": false,
+      "dlc": null,
+      "features": [],
+      "group": "religious",
+      "icon": "excommunication",
+      "id": "dissolve_empire_war",
+      "isGreatHolyWar": false,
+      "isHolyWar": false,
+      "name": "Dissolve Empire",
+      "onAttackerDeath": null,
+      "onDefenderDeath": null,
+      "outcomes": {
+        "defeat": "The attempt to dissolve the Empire has failed.",
+        "invalidated": "The war has ended: it was no longer valid to continue.",
+        "victory": "The Excommunicated Emperor is stripped of their Empire Title, which is destroyed.",
+        "whitePeace": "The war ends inconclusively. Neither side gains an advantage."
+      },
+      "requirements": [
+        {
+          "key": "excommunicated",
+          "kind": "trait",
+          "name": "Excommunicated",
+          "negated": true
+        }
+      ],
+      "sameFaithDefenders": null,
+      "sourceFile": "00_dissolve_empire_cb.txt",
+      "targetTier": null,
+      "targetTitles": null,
+      "truceDays": null,
+      "warName": "Dissolve Empire of the defender",
+      "whitePeacePossible": true
     },
     {
       "allowHostages": false,
@@ -4253,6 +4353,7 @@
         "whitePeace": "The defender keeps their titles."
       },
       "requirements": [],
+      "sameFaithDefenders": null,
       "sourceFile": "00_religious_war.txt",
       "targetTier": null,
       "targetTitles": null,
@@ -4312,6 +4413,30 @@
           "negated": false
         }
       ],
+      "sameFaithDefenders": {
+        "governments": [
+          {
+            "key": "theocracy_government",
+            "name": "Theocracy"
+          },
+          {
+            "key": "ecclesiastical_government",
+            "name": "Ecclesiastical"
+          },
+          {
+            "key": "holy_order_government",
+            "name": "Military Order"
+          },
+          {
+            "key": "monastic_holy_order_government",
+            "name": "Monastic Order"
+          }
+        ],
+        "parameters": [
+          "government_is_theocracy",
+          "government_is_holy_order"
+        ]
+      },
       "sourceFile": "00_religious_war.txt",
       "targetTier": "all",
       "targetTitles": "neighbor_land_or_water",
@@ -4383,11 +4508,252 @@
           "negated": false
         }
       ],
+      "sameFaithDefenders": {
+        "governments": [
+          {
+            "key": "theocracy_government",
+            "name": "Theocracy"
+          },
+          {
+            "key": "ecclesiastical_government",
+            "name": "Ecclesiastical"
+          },
+          {
+            "key": "holy_order_government",
+            "name": "Military Order"
+          },
+          {
+            "key": "monastic_holy_order_government",
+            "name": "Monastic Order"
+          }
+        ],
+        "parameters": [
+          "government_is_theocracy",
+          "government_is_holy_order"
+        ]
+      },
       "sourceFile": "00_religious_war.txt",
       "targetTier": "all",
       "targetTitles": "neighbor_land_or_water",
       "truceDays": null,
       "warName": "Holy War for the target title",
+      "whitePeacePossible": true
+    },
+    {
+      "allowHostages": false,
+      "costs": {
+        "piety": 100
+      },
+      "deJureRegionsAbove": false,
+      "defenderFaithCanJoin": false,
+      "dlc": "By God Alone",
+      "features": [],
+      "group": "religious",
+      "icon": "pam_antiking_cb",
+      "id": "pam_antiking_cb",
+      "isGreatHolyWar": false,
+      "isHolyWar": true,
+      "name": "Depose Challenger Head of Faith",
+      "onAttackerDeath": "inherit",
+      "onDefenderDeath": "inherit",
+      "outcomes": {
+        "defeat": "The Challenger Head of Faith survives.",
+        "invalidated": null,
+        "victory": "The Challenger Head of Faith is deposed.",
+        "whitePeace": "The Challenger Head of Faith remains."
+      },
+      "requirements": [
+        {
+          "key": "is_landed",
+          "kind": "status",
+          "name": "Landed",
+          "negated": false
+        },
+        {
+          "key": "highest_held_title_tier >= tier_kingdom",
+          "kind": "tier",
+          "name": "Highest title >= kingdom",
+          "negated": false
+        }
+      ],
+      "sameFaithDefenders": null,
+      "sourceFile": "pam_wars.txt",
+      "targetTier": null,
+      "targetTitles": null,
+      "truceDays": null,
+      "warName": "Depose Challenger Head of Faith",
+      "whitePeacePossible": true
+    },
+    {
+      "allowHostages": false,
+      "costs": {
+        "piety": 250
+      },
+      "deJureRegionsAbove": false,
+      "defenderFaithCanJoin": false,
+      "dlc": "By God Alone",
+      "features": [],
+      "group": "religious",
+      "icon": "pam_challenge_hof_cb",
+      "id": "pam_challenge_hof_cb",
+      "isGreatHolyWar": false,
+      "isHolyWar": true,
+      "name": "Challenge Head of Faith",
+      "onAttackerDeath": "inherit",
+      "onDefenderDeath": "inherit",
+      "outcomes": {
+        "defeat": "Your challenge against the Head of Faith fails.",
+        "invalidated": "The war ended: the defender is no longer Head of Faith.",
+        "victory": "The Challenger Head of Faith becomes Head of Faith.",
+        "whitePeace": "The defender stays the Head of Faith."
+      },
+      "requirements": [
+        {
+          "key": "is_landed",
+          "kind": "status",
+          "name": "Landed",
+          "negated": false
+        }
+      ],
+      "sameFaithDefenders": {
+        "governments": [
+          {
+            "key": "theocracy_government",
+            "name": "Theocracy"
+          },
+          {
+            "key": "ecclesiastical_government",
+            "name": "Ecclesiastical"
+          },
+          {
+            "key": "holy_order_government",
+            "name": "Military Order"
+          },
+          {
+            "key": "monastic_holy_order_government",
+            "name": "Monastic Order"
+          }
+        ],
+        "parameters": [
+          "government_is_theocracy",
+          "government_is_holy_order"
+        ]
+      },
+      "sourceFile": "pam_wars.txt",
+      "targetTier": null,
+      "targetTitles": null,
+      "truceDays": null,
+      "warName": "Challenge Head of Faith",
+      "whitePeacePossible": true
+    },
+    {
+      "allowHostages": false,
+      "costs": {
+        "piety": {
+          "base": 250,
+          "varies": true
+        }
+      },
+      "deJureRegionsAbove": false,
+      "defenderFaithCanJoin": true,
+      "dlc": "By God Alone",
+      "features": [],
+      "group": "religious",
+      "icon": "humiliation_cb",
+      "id": "pam_humiliation_cb",
+      "isGreatHolyWar": false,
+      "isHolyWar": true,
+      "name": "Humiliation War",
+      "onAttackerDeath": "inherit",
+      "onDefenderDeath": "inherit",
+      "outcomes": {
+        "defeat": "… has not been humiliated.",
+        "invalidated": null,
+        "victory": "The attacker humiliates the defender.",
+        "whitePeace": "The defender has not been humiliated."
+      },
+      "requirements": [
+        {
+          "key": "is_landed",
+          "kind": "status",
+          "name": "Landed",
+          "negated": false
+        },
+        {
+          "key": "zealous",
+          "kind": "trait",
+          "name": "Zealous",
+          "negated": true
+        }
+      ],
+      "sameFaithDefenders": {
+        "governments": [
+          {
+            "key": "theocracy_government",
+            "name": "Theocracy"
+          },
+          {
+            "key": "ecclesiastical_government",
+            "name": "Ecclesiastical"
+          },
+          {
+            "key": "holy_order_government",
+            "name": "Military Order"
+          },
+          {
+            "key": "monastic_holy_order_government",
+            "name": "Monastic Order"
+          }
+        ],
+        "parameters": [
+          "government_is_theocracy",
+          "government_is_holy_order"
+        ]
+      },
+      "sourceFile": "pam_wars.txt",
+      "targetTier": null,
+      "targetTitles": null,
+      "truceDays": null,
+      "warName": "Humiliation War",
+      "whitePeacePossible": true
+    },
+    {
+      "allowHostages": false,
+      "costs": {
+        "piety": 100
+      },
+      "deJureRegionsAbove": false,
+      "defenderFaithCanJoin": false,
+      "dlc": "By God Alone",
+      "features": [],
+      "group": "religious",
+      "icon": "pam_investiture_conflict_cb",
+      "id": "pam_investiture_conflict_cb",
+      "isGreatHolyWar": false,
+      "isHolyWar": false,
+      "name": "Investiture Conflict",
+      "onAttackerDeath": "inherit",
+      "onDefenderDeath": "inherit",
+      "outcomes": {
+        "defeat": "The defender prevails, forcing the attacker and their side to accept the defender's stance on the appointment of the clergy.",
+        "invalidated": null,
+        "victory": "The attacker prevails, forcing the defender and their side to accept the attacker's stance on the appointment of the clergy.",
+        "whitePeace": "The quarrel over the appointment of the clergy stays unresolved, and each side refuses to yield."
+      },
+      "requirements": [
+        {
+          "key": "is_landed",
+          "kind": "status",
+          "name": "Landed",
+          "negated": false
+        }
+      ],
+      "sameFaithDefenders": null,
+      "sourceFile": "pam_wars.txt",
+      "targetTier": null,
+      "targetTitles": null,
+      "truceDays": null,
+      "warName": "Investiture Conflict",
       "whitePeacePossible": true
     },
     {
@@ -4448,6 +4814,30 @@
           "negated": false
         }
       ],
+      "sameFaithDefenders": {
+        "governments": [
+          {
+            "key": "theocracy_government",
+            "name": "Theocracy"
+          },
+          {
+            "key": "ecclesiastical_government",
+            "name": "Ecclesiastical"
+          },
+          {
+            "key": "holy_order_government",
+            "name": "Military Order"
+          },
+          {
+            "key": "monastic_holy_order_government",
+            "name": "Monastic Order"
+          }
+        ],
+        "parameters": [
+          "government_is_theocracy",
+          "government_is_holy_order"
+        ]
+      },
       "sourceFile": "00_religious_war.txt",
       "targetTier": "all",
       "targetTitles": "neighbor_land_or_water",
@@ -4489,6 +4879,7 @@
           "negated": false
         }
       ],
+      "sameFaithDefenders": null,
       "sourceFile": "00_religious_war.txt",
       "targetTier": null,
       "targetTitles": null,
@@ -4518,6 +4909,7 @@
         "whitePeace": "The defender keeps the contested Title."
       },
       "requirements": [],
+      "sameFaithDefenders": null,
       "sourceFile": "07_ep3_wars.txt",
       "targetTier": "all",
       "targetTitles": "claim",
@@ -4547,6 +4939,7 @@
         "whitePeace": "There can be no white peace"
       },
       "requirements": [],
+      "sameFaithDefenders": null,
       "sourceFile": "00_religious_war.txt",
       "targetTier": "all",
       "targetTitles": "all",
@@ -4590,6 +4983,7 @@
           "negated": true
         }
       ],
+      "sameFaithDefenders": null,
       "sourceFile": "00_struggle_war.txt",
       "targetTier": "county",
       "targetTitles": "all",
@@ -4633,6 +5027,7 @@
           "negated": true
         }
       ],
+      "sameFaithDefenders": null,
       "sourceFile": "03_fp2_wars.txt",
       "targetTier": "county",
       "targetTitles": "neighbor_land",
@@ -4680,6 +5075,7 @@
           "negated": true
         }
       ],
+      "sameFaithDefenders": null,
       "sourceFile": "05_fp3_wars.txt",
       "targetTier": null,
       "targetTitles": null,
@@ -4714,6 +5110,7 @@
         "whitePeace": "The defender will preserve their honor."
       },
       "requirements": [],
+      "sameFaithDefenders": null,
       "sourceFile": "10_tgp_japan_wars.txt",
       "targetTier": null,
       "targetTitles": null,
@@ -4748,6 +5145,7 @@
         "whitePeace": "The defender will preserve the honor of the defender."
       },
       "requirements": [],
+      "sameFaithDefenders": null,
       "sourceFile": "10_tgp_japan_wars.txt",
       "targetTier": null,
       "targetTitles": null,
@@ -4789,6 +5187,7 @@
           "negated": false
         }
       ],
+      "sameFaithDefenders": null,
       "sourceFile": "10_tgp_japan_wars.txt",
       "targetTier": null,
       "targetTitles": null,
@@ -4818,6 +5217,7 @@
         "whitePeace": "The defender will remain Ritsuryō."
       },
       "requirements": [],
+      "sameFaithDefenders": null,
       "sourceFile": "10_tgp_japan_wars.txt",
       "targetTier": null,
       "targetTitles": null,
@@ -4865,6 +5265,7 @@
           "negated": false
         }
       ],
+      "sameFaithDefenders": null,
       "sourceFile": "10_tgp_japan_wars.txt",
       "targetTier": "county",
       "targetTitles": "all",
@@ -4908,6 +5309,7 @@
           "negated": false
         }
       ],
+      "sameFaithDefenders": null,
       "sourceFile": "00_tributarize.txt",
       "targetTier": null,
       "targetTitles": null,
@@ -4960,6 +5362,7 @@
           "negated": false
         }
       ],
+      "sameFaithDefenders": null,
       "sourceFile": "09_mpo_wars.txt",
       "targetTier": null,
       "targetTitles": "none",
@@ -5019,14 +5422,9 @@
           "kind": "government_flag",
           "name": "Landless adventurer",
           "negated": true
-        },
-        {
-          "key": "administrative",
-          "kind": "government_type",
-          "name": "Administrative",
-          "negated": true
         }
       ],
+      "sameFaithDefenders": null,
       "sourceFile": "00_subjugation.txt",
       "targetTier": null,
       "targetTitles": null,
@@ -5063,6 +5461,7 @@
         "whitePeace": "The defender remains independent."
       },
       "requirements": [],
+      "sameFaithDefenders": null,
       "sourceFile": "10_tgp_china_wars.txt",
       "targetTier": null,
       "targetTitles": null,
@@ -5136,6 +5535,7 @@
           "negated": true
         }
       ],
+      "sameFaithDefenders": null,
       "sourceFile": "00_vassalization.txt",
       "targetTier": null,
       "targetTitles": null,
@@ -5154,7 +5554,14 @@
     "celestial": {
       "debug": false,
       "label": "Celestial",
-      "requirements": [],
+      "requirements": [
+        {
+          "key": "government_is_theocracy",
+          "kind": "government_flag",
+          "name": "Theocracy",
+          "negated": true
+        }
+      ],
       "scriptOnly": false
     },
     "civil_war": {
@@ -5166,25 +5573,53 @@
     "claim": {
       "debug": false,
       "label": "Claim",
-      "requirements": [],
+      "requirements": [
+        {
+          "key": "government_is_theocracy",
+          "kind": "government_flag",
+          "name": "Theocracy",
+          "negated": true
+        }
+      ],
       "scriptOnly": false
     },
     "conquest": {
       "debug": false,
       "label": "Conquest",
-      "requirements": [],
+      "requirements": [
+        {
+          "key": "government_is_theocracy",
+          "kind": "government_flag",
+          "name": "Theocracy",
+          "negated": true
+        }
+      ],
       "scriptOnly": false
     },
     "de_jure": {
       "debug": false,
       "label": "De Jure",
-      "requirements": [],
+      "requirements": [
+        {
+          "key": "government_is_theocracy",
+          "kind": "government_flag",
+          "name": "Theocracy",
+          "negated": true
+        }
+      ],
       "scriptOnly": false
     },
     "debug": {
       "debug": true,
       "label": "Debug",
-      "requirements": [],
+      "requirements": [
+        {
+          "key": "government_is_theocracy",
+          "kind": "government_flag",
+          "name": "Theocracy",
+          "negated": true
+        }
+      ],
       "scriptOnly": false
     },
     "event": {
@@ -5196,7 +5631,14 @@
     "humiliation": {
       "debug": false,
       "label": "Humiliation",
-      "requirements": [],
+      "requirements": [
+        {
+          "key": "government_is_theocracy",
+          "kind": "government_flag",
+          "name": "Theocracy",
+          "negated": true
+        }
+      ],
       "scriptOnly": false
     },
     "independence": {
@@ -5208,13 +5650,27 @@
     "invasion": {
       "debug": false,
       "label": "Invasion",
-      "requirements": [],
+      "requirements": [
+        {
+          "key": "government_is_theocracy",
+          "kind": "government_flag",
+          "name": "Theocracy",
+          "negated": true
+        }
+      ],
       "scriptOnly": false
     },
     "mandala": {
       "debug": false,
       "label": "Mandala",
-      "requirements": [],
+      "requirements": [
+        {
+          "key": "government_is_theocracy",
+          "kind": "government_flag",
+          "name": "Theocracy",
+          "negated": true
+        }
+      ],
       "scriptOnly": false
     },
     "migration": {
@@ -5264,19 +5720,46 @@
     "struggle": {
       "debug": false,
       "label": "Struggle",
-      "requirements": [],
+      "requirements": [
+        {
+          "key": "government_is_theocracy",
+          "kind": "government_flag",
+          "name": "Theocracy",
+          "negated": true
+        }
+      ],
       "scriptOnly": false
     },
     "subjugation": {
       "debug": false,
       "label": "Subjugation",
-      "requirements": [],
+      "requirements": [
+        {
+          "key": "government_is_theocracy",
+          "kind": "government_flag",
+          "name": "Theocracy",
+          "negated": true
+        },
+        {
+          "key": "government_is_theocracy",
+          "kind": "government_flag",
+          "name": "Theocracy",
+          "negated": false
+        }
+      ],
       "scriptOnly": false
     },
     "vassalization": {
       "debug": false,
       "label": "Vassalization",
-      "requirements": [],
+      "requirements": [
+        {
+          "key": "government_is_theocracy",
+          "kind": "government_flag",
+          "name": "Theocracy",
+          "negated": true
+        }
+      ],
       "scriptOnly": false
     }
   },

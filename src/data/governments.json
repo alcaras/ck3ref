@@ -96,7 +96,7 @@
     "flags": [
       {
         "key": "government_is_administrative",
-        "name": "Has access to an Estate"
+        "name": "Is Administrative"
       },
       {
         "key": "government_has_influence",
@@ -107,12 +107,20 @@
         "name": "Uses Treasury"
       },
       {
-        "key": "government_has_title_men_at_arms",
-        "name": "Allows recruitment of Title Men-at-Arms"
-      },
-      {
         "key": "government_has_powerful_families",
         "name": "Enables Noble Families"
+      },
+      {
+        "key": "government_uses_administrative_house_aspirations",
+        "name": "Uses Administrative House Aspirations"
+      },
+      {
+        "key": "government_has_estate",
+        "name": "Has access to an Estate"
+      },
+      {
+        "key": "government_has_title_men_at_arms",
+        "name": "Allows recruitment of Title Men-at-Arms"
       },
       {
         "key": "government_is_settled",
@@ -129,6 +137,28 @@
       {
         "key": "government_uses_admin_province_obligations",
         "name": null
+      },
+      {
+        "key": "government_uses_imperial_bureaucracy",
+        "name": "Use Imperial Bureaucracy as Government Authority"
+      },
+      {
+        "key": "government_uses_salary_budget",
+        "name": null
+      },
+      {
+        "key": "government_uses_military_budget",
+        "name": null
+      }
+    ],
+    "grantVassalGovernments": [
+      {
+        "key": "theocracy_government",
+        "name": "Theocracy"
+      },
+      {
+        "key": "ecclesiastical_government",
+        "name": "Ecclesiastical"
       }
     ],
     "icon": "administrative_government",
@@ -161,7 +191,6 @@
     "royalCourt": "any",
     "rules": {
       "admin_allows_holding_multiple_primary_tier_titles": true,
-      "administrative": true,
       "allow_accolades": true,
       "allow_as_base_for_baronies": false,
       "create_cadet_branches": true,
@@ -176,6 +205,7 @@
       "state_faith": true,
       "sticky_government": true,
       "treasury": true,
+      "treasury_vassal_development": true,
       "use_as_base_on_landed": true,
       "use_as_base_on_rank_up": true
     },
@@ -285,6 +315,10 @@
       },
       {
         "key": "government_is_landless_adventurer",
+        "name": "Is Adventurer"
+      },
+      {
+        "key": "government_has_camp",
         "name": "Has access to a Camp"
       },
       {
@@ -292,6 +326,7 @@
         "name": null
       }
     ],
+    "grantVassalGovernments": [],
     "icon": "landless_adventurer_government",
     "id": "landless_adventurer_government",
     "isMechanicDefault": true,
@@ -362,6 +397,10 @@
     "flags": [
       {
         "key": "government_is_clan",
+        "name": "Is Clan"
+      },
+      {
+        "key": "government_has_tax_slot",
         "name": "Uses Tax Jurisdictions"
       },
       {
@@ -374,11 +413,17 @@
       },
       {
         "key": "government_uses_crown_authority",
-        "name": null
+        "name": "Use Crown Authority as Government Authority"
       },
       {
         "key": "government_uses_domain_limit",
         "name": null
+      }
+    ],
+    "grantVassalGovernments": [
+      {
+        "key": "theocracy_government",
+        "name": "Theocracy"
       }
     ],
     "icon": "clan_government",
@@ -454,7 +499,7 @@
     "flags": [
       {
         "key": "government_is_feudal",
-        "name": "Uses Vassal Contracts"
+        "name": "Is Feudal"
       },
       {
         "key": "government_is_settled",
@@ -466,11 +511,21 @@
       },
       {
         "key": "government_uses_crown_authority",
-        "name": null
+        "name": "Use Crown Authority as Government Authority"
       },
       {
         "key": "government_uses_domain_limit",
         "name": null
+      }
+    ],
+    "grantVassalGovernments": [
+      {
+        "key": "theocracy_government",
+        "name": "Theocracy"
+      },
+      {
+        "key": "ecclesiastical_government",
+        "name": "Ecclesiastical"
       }
     ],
     "icon": "feudal_government",
@@ -559,11 +614,29 @@
       },
       {
         "key": "government_has_herd",
+        "name": "Uses Herd"
+      },
+      {
+        "key": "government_is_in_steppe",
         "name": null
       },
       {
         "key": "ignores_faith_marriage_penalties",
         "name": "Ignores Faith when arranging Marriages with Nomadic or Herder Rulers or their Tributaries"
+      }
+    ],
+    "grantVassalGovernments": [
+      {
+        "key": "feudal_government",
+        "name": "Feudal"
+      },
+      {
+        "key": "clan_government",
+        "name": "Clan"
+      },
+      {
+        "key": "tribal_government",
+        "name": "Tribal"
       }
     ],
     "icon": "herder_government",
@@ -620,71 +693,6 @@
       "key": "herder_vassal",
       "name": "Herder"
     }
-  },
-  {
-    "adminTiers": null,
-    "blockedSubjectCourts": [],
-    "characterModifiers": [],
-    "color": "#a8a8a8",
-    "compatibleSuccession": [],
-    "courtGenerateCommanders": 5,
-    "currencyLevelCaps": {},
-    "desc": "The holy warriors of the orders have dedicated their life to fighting infidels and serving their faith. They may hold castles given to them by pious landholders. The order leader is chosen within the order ranks.",
-    "dlc": null,
-    "domicileType": null,
-    "fallback": null,
-    "features": [],
-    "flags": [
-      {
-        "key": "government_uses_crown_authority",
-        "name": null
-      },
-      {
-        "key": "cannot_be_vassal_or_liege",
-        "name": null
-      },
-      {
-        "key": "government_is_holy_order",
-        "name": "Is unplayable"
-      }
-    ],
-    "icon": "holy_order_government",
-    "id": "holy_order_government",
-    "isMechanicDefault": true,
-    "maxDread": null,
-    "mechanicType": "holy_order",
-    "name": "Holy Order",
-    "preferredReligions": [],
-    "prestigeOpinionOverride": null,
-    "primaryHeritages": [],
-    "primaryHolding": null,
-    "requiredCountyHoldings": [],
-    "royalCourt": null,
-    "rules": {
-      "allow_accolades": false,
-      "council": false,
-      "court_generate_spouses": false,
-      "inherit_from_dynastic_government": false
-    },
-    "sourceFile": "00_government_types.txt",
-    "supplyLimitMultForOthers": null,
-    "titleMaaSetup": null,
-    "topLiegeModifiers": [],
-    "validHoldings": [
-      {
-        "key": "castle_holding",
-        "name": "Castle"
-      },
-      {
-        "key": "city_holding",
-        "name": "City"
-      },
-      {
-        "key": "temple_citadel_holding",
-        "name": "Temple Citadel"
-      }
-    ],
-    "vassalContractGroup": null
   },
   {
     "adminTiers": null,
@@ -783,6 +791,12 @@
         "name": null
       }
     ],
+    "grantVassalGovernments": [
+      {
+        "key": "theocracy_government",
+        "name": "Theocracy"
+      }
+    ],
     "icon": "mandala_government",
     "id": "mandala_government",
     "isMechanicDefault": true,
@@ -857,7 +871,7 @@
     "flags": [
       {
         "key": "government_uses_crown_authority",
-        "name": null
+        "name": "Use Crown Authority as Government Authority"
       },
       {
         "key": "cannot_be_vassal_or_liege",
@@ -868,6 +882,7 @@
         "name": "Is unplayable"
       }
     ],
+    "grantVassalGovernments": [],
     "icon": "mercenary_government",
     "id": "mercenary_government",
     "isMechanicDefault": true,
@@ -891,6 +906,76 @@
     "titleMaaSetup": null,
     "topLiegeModifiers": [],
     "validHoldings": [],
+    "vassalContractGroup": null
+  },
+  {
+    "adminTiers": null,
+    "blockedSubjectCourts": [],
+    "characterModifiers": [],
+    "color": "#a8a8a8",
+    "compatibleSuccession": [],
+    "courtGenerateCommanders": 5,
+    "currencyLevelCaps": {},
+    "desc": "The holy warriors of the orders have dedicated their life to fighting infidels and serving their faith. They may hold castles given to them by pious landholders. The order leader is chosen within the order ranks.",
+    "dlc": null,
+    "domicileType": null,
+    "fallback": null,
+    "features": [],
+    "flags": [
+      {
+        "key": "government_uses_crown_authority",
+        "name": "Use Crown Authority as Government Authority"
+      },
+      {
+        "key": "cannot_be_vassal_or_liege",
+        "name": null
+      },
+      {
+        "key": "government_is_holy_order",
+        "name": "Is unplayable"
+      },
+      {
+        "key": "government_is_military_holy_order",
+        "name": null
+      }
+    ],
+    "grantVassalGovernments": [],
+    "icon": "holy_order_government",
+    "id": "holy_order_government",
+    "isMechanicDefault": true,
+    "maxDread": null,
+    "mechanicType": "holy_order",
+    "name": "Military Order",
+    "preferredReligions": [],
+    "prestigeOpinionOverride": null,
+    "primaryHeritages": [],
+    "primaryHolding": null,
+    "requiredCountyHoldings": [],
+    "royalCourt": null,
+    "rules": {
+      "allow_accolades": false,
+      "council": false,
+      "court_generate_spouses": false,
+      "inherit_from_dynastic_government": false
+    },
+    "sourceFile": "00_government_types.txt",
+    "supplyLimitMultForOthers": null,
+    "titleMaaSetup": null,
+    "topLiegeModifiers": [],
+    "validHoldings": [
+      {
+        "key": "castle_holding",
+        "name": "Castle"
+      },
+      {
+        "key": "city_holding",
+        "name": "City"
+      },
+      {
+        "key": "temple_citadel_holding",
+        "name": "Temple Citadel"
+      }
+    ],
     "vassalContractGroup": null
   },
   {
@@ -1020,11 +1105,23 @@
     "flags": [
       {
         "key": "government_is_nomadic",
-        "name": "Has Herd"
+        "name": "Is Nomadic"
       },
       {
         "key": "government_has_herd",
+        "name": "Uses Herd"
+      },
+      {
+        "key": "government_is_in_steppe",
         "name": null
+      },
+      {
+        "key": "government_has_obedience",
+        "name": "Uses Obedience"
+      },
+      {
+        "key": "government_has_yurt",
+        "name": "Has access to a Nomadic Capital"
       },
       {
         "key": "government_can_raid_rule",
@@ -1032,7 +1129,7 @@
       },
       {
         "key": "government_can_use_tributary_men_at_arms",
-        "name": "Can recruit Men-at-Arms from Tributaries"
+        "name": "Can recruit Men-at-Arms from Subjects"
       },
       {
         "key": "can_start_war_with_raised_troops",
@@ -1061,6 +1158,24 @@
       {
         "key": "government_uses_domicile_but_not_adventurer",
         "name": null
+      },
+      {
+        "key": "government_uses_nomadic_authority",
+        "name": "Use Dominance as Government Authority"
+      }
+    ],
+    "grantVassalGovernments": [
+      {
+        "key": "feudal_government",
+        "name": "Feudal"
+      },
+      {
+        "key": "clan_government",
+        "name": "Clan"
+      },
+      {
+        "key": "tribal_government",
+        "name": "Tribal"
       }
     ],
     "icon": "nomad_government",
@@ -1126,14 +1241,16 @@
     }
   },
   {
-    "adminTiers": null,
+    "adminTiers": {
+      "appointment": "county"
+    },
     "blockedSubjectCourts": [],
     "characterModifiers": [],
     "color": "#c7c7c7",
     "compatibleSuccession": [],
     "courtGenerateCommanders": null,
     "currencyLevelCaps": {},
-    "desc": "Theocracy is an unplayable Government Form available for some Faiths depending on Doctrines. They are usually lead by a Head of Faith or a Landed Realm Priest. A Bishop might also become an Independent Theocratic ruler in their own right.\n\nIn a theocratic government, all authority belongs to a religious institution. It is ruled by a priest or priestess who carries out the will of the divine on Earth.",
+    "desc": "Theocracy is a Government Form available for some Faiths depending on Doctrines. They are usually lead by a Head of Faith or a Landed Realm Priest. A Bishop might also become an Independent Theocratic ruler in their own right.\n\nCannot declare Claim, De Jure, conquest, invasion, Vassalization or subjugation Wars. Only Holy Wars, independence wars, and wars started by events are available.\n\nIn a theocratic government, all authority belongs to a religious institution. It is ruled by a priest or priestess who carries out the will of the divine on Earth.",
     "dlc": null,
     "domicileType": null,
     "fallback": null,
@@ -1141,15 +1258,33 @@
     "flags": [
       {
         "key": "government_is_theocracy",
-        "name": "Is unplayable"
+        "name": "Is a Theocratic-type Government"
       },
       {
         "key": "government_is_settled",
         "name": null
       },
       {
+        "key": "government_uses_church_authority",
+        "name": null
+      },
+      {
         "key": "government_uses_domain_limit",
         "name": null
+      }
+    ],
+    "grantVassalGovernments": [
+      {
+        "key": "feudal_government",
+        "name": "Feudal"
+      },
+      {
+        "key": "clan_government",
+        "name": "Clan"
+      },
+      {
+        "key": "tribal_government",
+        "name": "Tribal"
       }
     ],
     "icon": "theocracy_government",
@@ -1179,12 +1314,13 @@
         "name": "City"
       }
     ],
-    "royalCourt": null,
+    "royalCourt": "landed",
     "rules": {
+      "disable_regnal_numbers": true,
       "inherit_from_dynastic_government": false,
-      "religious": true
+      "sticky_government": true
     },
-    "sourceFile": "00_government_types.txt",
+    "sourceFile": "02_theocratic_government_types.txt",
     "supplyLimitMultForOthers": null,
     "titleMaaSetup": null,
     "topLiegeModifiers": [],
@@ -1296,7 +1432,7 @@
     "currencyLevelCaps": {
       "merit": 9
     },
-    "desc": "Celestial is a Bureaucratic Government Form in which the Liege appoints characters as Governors, of which there are two types, Civilian and Military.\n\nCharacters have access to Influence, Noble Families, Family Estates, and Treasury.\n\nIndependent Rulers have Legitimacy, while Vassals focus on obtaining Merit.\n\nThe Celestial system refers to the centralized Administrative government of China, overseen by the Son of Heaven.",
+    "desc": "Celestial is a Bureaucratic Government Form in which the Liege appoints characters as Governors, of which there are two types, Civilian and Military.\n\nCharacters have access to Influence, Noble Families, Family Mansions, and Treasury.\n\nIndependent Rulers have Legitimacy, while Vassals focus on obtaining Merit.\n\nThe Celestial system refers to the centralized Administrative government of China, overseen by the Son of Heaven.",
     "dlc": "Roads to Power",
     "domicileType": "east_asian_estate",
     "fallback": 3,
@@ -1304,7 +1440,7 @@
     "flags": [
       {
         "key": "government_is_celestial",
-        "name": "Has access to an Estate and Top Liege has Mandate of Heaven"
+        "name": "Is Celestial"
       },
       {
         "key": "government_has_merit",
@@ -1317,6 +1453,10 @@
       {
         "key": "government_has_treasury",
         "name": "Uses Treasury"
+      },
+      {
+        "key": "government_has_east_asian_estate",
+        "name": "Has access to an Mansion"
       },
       {
         "key": "government_has_title_men_at_arms",
@@ -1348,18 +1488,44 @@
       },
       {
         "key": "government_uses_merit_family_aspirations",
-        "name": null
+        "name": "Uses Merit House Aspirations"
       },
       {
         "key": "has_special_house_aspirations",
         "name": null
+      },
+      {
+        "key": "government_uses_celestial_bureaucracy",
+        "name": "Use Celestial Bureaucracy as Government Authority"
+      },
+      {
+        "key": "government_uses_salary_budget",
+        "name": null
+      },
+      {
+        "key": "government_uses_military_budget",
+        "name": null
+      },
+      {
+        "key": "government_uses_ministry_budget",
+        "name": null
+      }
+    ],
+    "grantVassalGovernments": [
+      {
+        "key": "theocracy_government",
+        "name": "Theocracy"
+      },
+      {
+        "key": "ecclesiastical_government",
+        "name": "Ecclesiastical"
       }
     ],
     "icon": "celestial_government",
     "id": "celestial_government",
     "isMechanicDefault": false,
     "maxDread": null,
-    "mechanicType": null,
+    "mechanicType": "administrative",
     "name": "Celestial",
     "preferredReligions": [],
     "prestigeOpinionOverride": null,
@@ -1385,7 +1551,6 @@
     "royalCourt": "any",
     "rules": {
       "admin_allows_holding_multiple_primary_tier_titles": false,
-      "administrative": true,
       "allow_accolades": true,
       "allow_as_base_for_baronies": false,
       "block_alliance_child_marriage": true,
@@ -1403,6 +1568,7 @@
       "rulers_should_have_dynasty": true,
       "sticky_government": true,
       "treasury": true,
+      "treasury_vassal_development": true,
       "use_as_base_on_landed": true,
       "use_as_base_on_rank_up": true
     },
@@ -1433,6 +1599,180 @@
     "vassalContractGroup": {
       "key": "celestial_vassal",
       "name": "Celestial"
+    }
+  },
+  {
+    "adminTiers": {
+      "appointment": "county"
+    },
+    "blockedSubjectCourts": [],
+    "characterModifiers": [
+      {
+        "key": "monthly_treasury_from_vassals",
+        "polarity": "good",
+        "text": "+85% Treasury from Vassals"
+      },
+      {
+        "key": "monthly_treasury_from_non_vassals",
+        "polarity": "good",
+        "text": "+85% Treasury excluding Vassals"
+      },
+      {
+        "key": "monthly_piety",
+        "polarity": "good",
+        "text": "+0.25 Piety /month"
+      },
+      {
+        "key": "accolades",
+        "polarity": "bad",
+        "text": "-1 Accolades"
+      },
+      {
+        "key": "knight_limit",
+        "polarity": "bad",
+        "text": "-3 Number of Knight Knights"
+      },
+      {
+        "key": "men_at_arms_cap",
+        "polarity": "bad",
+        "text": "-3 Max Men-at-Arms Regiments"
+      },
+      {
+        "key": "men_at_arms_limit",
+        "polarity": "bad",
+        "text": "-3 Size of Men-at-Arms Regiments"
+      },
+      {
+        "key": "mercenary_hire_cost_mult",
+        "polarity": "bad",
+        "text": "+200% Mercenary Hire Cost"
+      }
+    ],
+    "color": "#616161",
+    "compatibleSuccession": [],
+    "courtGenerateCommanders": null,
+    "currencyLevelCaps": {},
+    "desc": "Ecclesiastical is a Theocratic Government Form held by Christian Clergy Rulers, such as Bishops and Archbishops.\n\nMost Ecclesiastical rulers are theocratic Vassals who Lease their Temple Holdings from a secular Liege and answer to the Head of Faith, although a Bishop who possesses Landed Titles that are not Leased may rule as an Independent Ecclesiastical Ruler in their own right. The power such a ruler holds over their own Vassals is determined by their Church Authority.\n\nCannot declare Claim, De Jure, conquest, invasion, Vassalization or subjugation Wars. Only Holy Wars, independence wars, and wars started by events are available.\n\nIn an ecclesiastical government, all authority belongs to a Christian religious institution. It is ruled by a priest or priestess who carries out the will of the divine on Earth.",
+    "dlc": "Roads to Power",
+    "domicileType": "ecclesiastical_domicile",
+    "fallback": null,
+    "features": [],
+    "flags": [
+      {
+        "key": "government_is_ecclesiastical",
+        "name": "Is Ecclesiastical"
+      },
+      {
+        "key": "government_is_theocracy",
+        "name": "Is a Theocratic-type Government"
+      },
+      {
+        "key": "government_is_settled",
+        "name": null
+      },
+      {
+        "key": "government_uses_domicile_but_not_adventurer",
+        "name": null
+      },
+      {
+        "key": "government_uses_church_authority",
+        "name": null
+      },
+      {
+        "key": "government_uses_domain_limit",
+        "name": null
+      },
+      {
+        "key": "government_has_treasury",
+        "name": "Uses Treasury"
+      },
+      {
+        "key": "government_uses_cardinal_budget",
+        "name": null
+      }
+    ],
+    "grantVassalGovernments": [
+      {
+        "key": "feudal_government",
+        "name": "Feudal"
+      },
+      {
+        "key": "clan_government",
+        "name": "Clan"
+      },
+      {
+        "key": "tribal_government",
+        "name": "Tribal"
+      }
+    ],
+    "icon": "ecclesiastical_government",
+    "id": "ecclesiastical_government",
+    "isMechanicDefault": false,
+    "maxDread": null,
+    "mechanicType": "theocracy",
+    "name": "Ecclesiastical",
+    "preferredReligions": [],
+    "prestigeOpinionOverride": null,
+    "primaryHeritages": [],
+    "primaryHolding": {
+      "key": "church_holding",
+      "name": "Temple"
+    },
+    "requiredCountyHoldings": [
+      {
+        "key": "church_holding",
+        "name": "Temple"
+      },
+      {
+        "key": "castle_holding",
+        "name": "Castle"
+      },
+      {
+        "key": "city_holding",
+        "name": "City"
+      }
+    ],
+    "royalCourt": "landed",
+    "rules": {
+      "add_religious_subordinates_for_treasury": true,
+      "allow_accolades": true,
+      "disable_regnal_numbers": true,
+      "inherit_from_dynastic_government": false,
+      "landless_playable": true,
+      "replace_gold_cost_by_treasury": true,
+      "sticky_government": true,
+      "treasury": true,
+      "use_as_base_on_landed": true
+    },
+    "sourceFile": "02_theocratic_government_types.txt",
+    "supplyLimitMultForOthers": null,
+    "titleMaaSetup": null,
+    "topLiegeModifiers": [],
+    "validHoldings": [
+      {
+        "key": "castle_holding",
+        "name": "Castle"
+      },
+      {
+        "key": "tribal_holding",
+        "name": "Tribe"
+      },
+      {
+        "key": "nomad_holding",
+        "name": "Nomadic Settlement"
+      },
+      {
+        "key": "herder_holding",
+        "name": "Herder Camp"
+      },
+      {
+        "key": "temple_citadel_holding",
+        "name": "Temple Citadel"
+      }
+    ],
+    "vassalContractGroup": {
+      "key": "theocracy_vassal",
+      "name": "Theocracy"
     }
   },
   {
@@ -1526,7 +1866,7 @@
     "currencyLevelCaps": {
       "merit": 5
     },
-    "desc": "Meritocratic is a Bureaucratic Government Form similar to Celestial, in which the Liege appoints characters as Governors, of which there are two types, Civil and Military.\n\nCharacters have access to Influence, Noble Families, and Family Estates.\n\nIndependent Rulers have Legitimacy, while Vassals focus on obtaining Merit.\n\nThe Meritocratic system refers to the centralized Administrative government of China's neighbors, inspired by the Confucian bureaucracy.",
+    "desc": "Meritocratic is a Bureaucratic Government Form similar to Celestial, in which the Liege appoints characters as Governors, of which there are two types, Civil and Military.\n\nCharacters have access to Influence, Noble Families, and Family Mansions.\n\nIndependent Rulers have Legitimacy, while Vassals focus on obtaining Merit.\n\nThe Meritocratic system refers to the centralized Administrative government of China's neighbors, inspired by the Confucian bureaucracy.",
     "dlc": "All Under Heaven",
     "domicileType": "east_asian_estate",
     "fallback": null,
@@ -1534,7 +1874,7 @@
     "flags": [
       {
         "key": "government_is_meritocratic",
-        "name": "Has access to an Estate"
+        "name": "Is Meritocratic"
       },
       {
         "key": "government_has_merit",
@@ -1561,6 +1901,10 @@
         "name": null
       },
       {
+        "key": "government_has_east_asian_estate",
+        "name": "Has access to an Mansion"
+      },
+      {
         "key": "government_is_settled",
         "name": null
       },
@@ -1578,18 +1922,40 @@
       },
       {
         "key": "government_uses_merit_family_aspirations",
-        "name": null
+        "name": "Uses Merit House Aspirations"
       },
       {
         "key": "has_special_house_aspirations",
         "name": null
+      },
+      {
+        "key": "government_uses_meritocratic_bureaucracy",
+        "name": "Use Meritocratic Bureaucracy as Government Authority"
+      },
+      {
+        "key": "government_uses_salary_budget",
+        "name": null
+      },
+      {
+        "key": "government_uses_military_budget",
+        "name": null
+      }
+    ],
+    "grantVassalGovernments": [
+      {
+        "key": "theocracy_government",
+        "name": "Theocracy"
+      },
+      {
+        "key": "ecclesiastical_government",
+        "name": "Ecclesiastical"
       }
     ],
     "icon": "meritocratic_government",
     "id": "meritocratic_government",
     "isMechanicDefault": false,
     "maxDread": null,
-    "mechanicType": null,
+    "mechanicType": "administrative",
     "name": "Meritocratic",
     "preferredReligions": [],
     "prestigeOpinionOverride": null,
@@ -1614,7 +1980,6 @@
     ],
     "royalCourt": "any",
     "rules": {
-      "administrative": true,
       "allow_accolades": true,
       "allow_as_base_for_baronies": false,
       "create_cadet_branches": true,
@@ -1631,6 +1996,7 @@
       "rulers_should_have_dynasty": true,
       "sticky_government": true,
       "treasury": true,
+      "treasury_vassal_development": true,
       "use_as_base_on_landed": true,
       "use_as_base_on_rank_up": true
     },
@@ -1779,7 +2145,7 @@
     "currencyLevelCaps": {
       "merit": 5
     },
-    "desc": "Meritocratic Khanate is a Bureaucratic Government Form similar to the Celestial and Meritocratic, but originating from a Nomadic Government Form. The Liege appoints characters as Governors, of which there are two types, Civil and Military. They still maintain Tributaries, enforce Obedience, and have a higher maximum Dread.\n\nCharacters have access to Influence, Noble Families, and Family Estates.\n\nIndependent Rulers have Legitimacy, while Vassals focus on obtaining Merit.\n\nThe Meritocratic Khanate system refers to a fusion of the nomadic way of life with the Confucian bureaucracy of the centralized Chinese Administrative government.",
+    "desc": "Meritocratic Khanate is a Bureaucratic Government Form similar to the Celestial and Meritocratic, but originating from a Nomadic Government Form. The Liege appoints characters as Governors, of which there are two types, Civil and Military. They still maintain Tributaries, enforce Obedience, and have a higher maximum Dread.\n\nCharacters have access to Influence, Noble Families, and Family Mansions.\n\nIndependent Rulers have Legitimacy, while Vassals focus on obtaining Merit.\n\nThe Meritocratic Khanate system refers to a fusion of the nomadic way of life with the Confucian bureaucracy of the centralized Chinese Administrative government.",
     "dlc": "All Under Heaven",
     "domicileType": "east_asian_estate",
     "fallback": null,
@@ -1787,7 +2153,7 @@
     "flags": [
       {
         "key": "government_is_steppe_admin",
-        "name": "Has access to an Estate and uses Obedience"
+        "name": "Is Meritocratic Khanate"
       },
       {
         "key": "government_can_raid_rule",
@@ -1795,7 +2161,7 @@
       },
       {
         "key": "government_can_use_tributary_men_at_arms",
-        "name": "Can recruit Men-at-Arms from Tributaries"
+        "name": "Can recruit Men-at-Arms from Subjects"
       },
       {
         "key": "government_has_merit",
@@ -1820,6 +2186,14 @@
       {
         "key": "government_has_county_tier_noble_families",
         "name": null
+      },
+      {
+        "key": "government_has_obedience",
+        "name": "Uses Obedience"
+      },
+      {
+        "key": "government_has_east_asian_estate",
+        "name": "Has access to an Mansion"
       },
       {
         "key": "ignores_faith_marriage_penalties",
@@ -1851,18 +2225,40 @@
       },
       {
         "key": "government_uses_merit_family_aspirations",
-        "name": null
+        "name": "Uses Merit House Aspirations"
       },
       {
         "key": "has_special_house_aspirations",
         "name": null
+      },
+      {
+        "key": "government_uses_meritocratic_bureaucracy",
+        "name": "Use Meritocratic Bureaucracy as Government Authority"
+      },
+      {
+        "key": "government_uses_salary_budget",
+        "name": null
+      },
+      {
+        "key": "government_uses_military_budget",
+        "name": null
+      }
+    ],
+    "grantVassalGovernments": [
+      {
+        "key": "theocracy_government",
+        "name": "Theocracy"
+      },
+      {
+        "key": "ecclesiastical_government",
+        "name": "Ecclesiastical"
       }
     ],
     "icon": "steppe_admin_government",
     "id": "steppe_admin_government",
     "isMechanicDefault": false,
     "maxDread": 150,
-    "mechanicType": null,
+    "mechanicType": "administrative",
     "name": "Meritocratic Khanate",
     "preferredReligions": [],
     "prestigeOpinionOverride": null,
@@ -1887,7 +2283,6 @@
     ],
     "royalCourt": "any",
     "rules": {
-      "administrative": true,
       "allow_accolades": true,
       "allow_as_base_for_baronies": false,
       "create_cadet_branches": true,
@@ -1907,6 +2302,7 @@
       "sticky_government": true,
       "subject_men_at_arms": true,
       "treasury": true,
+      "treasury_vassal_development": true,
       "use_as_base_on_landed": true,
       "use_as_base_on_rank_up": true
     },
@@ -1942,6 +2338,89 @@
   {
     "adminTiers": null,
     "blockedSubjectCourts": [],
+    "characterModifiers": [
+      {
+        "key": "monthly_learning_lifestyle_xp_gain_add",
+        "polarity": "good",
+        "text": "+25 Monthly Learning Lifestyle Experience"
+      },
+      {
+        "key": "knight_limit",
+        "polarity": "bad",
+        "text": "-100 Number of Knight Knights"
+      },
+      {
+        "key": "men_at_arms_cap",
+        "polarity": "bad",
+        "text": "-100 Max Men-at-Arms Regiments"
+      },
+      {
+        "key": "men_at_arms_limit",
+        "polarity": "bad",
+        "text": "-100 Size of Men-at-Arms Regiments"
+      }
+    ],
+    "color": "#a8a8a8",
+    "compatibleSuccession": [],
+    "courtGenerateCommanders": 0,
+    "currencyLevelCaps": {},
+    "desc": "The monks and nuns of the monastic orders dedicate their lives to prayer, learning, and the spread of their rite. They may hold temples granted to them by pious landholders. Upon the leader's death, the order passes to the member most learned in the faith.",
+    "dlc": null,
+    "domicileType": null,
+    "fallback": null,
+    "features": [],
+    "flags": [
+      {
+        "key": "government_uses_crown_authority",
+        "name": "Use Crown Authority as Government Authority"
+      },
+      {
+        "key": "cannot_be_vassal_or_liege",
+        "name": null
+      },
+      {
+        "key": "government_is_holy_order",
+        "name": "Is unplayable"
+      },
+      {
+        "key": "government_is_monastic_holy_order",
+        "name": null
+      }
+    ],
+    "grantVassalGovernments": [],
+    "icon": "monastic_holy_order_government",
+    "id": "monastic_holy_order_government",
+    "isMechanicDefault": false,
+    "maxDread": null,
+    "mechanicType": "holy_order",
+    "name": "Monastic Order",
+    "preferredReligions": [],
+    "prestigeOpinionOverride": null,
+    "primaryHeritages": [],
+    "primaryHolding": null,
+    "requiredCountyHoldings": [],
+    "royalCourt": null,
+    "rules": {
+      "allow_accolades": false,
+      "council": false,
+      "court_generate_spouses": false,
+      "inherit_from_dynastic_government": false
+    },
+    "sourceFile": "00_government_types.txt",
+    "supplyLimitMultForOthers": null,
+    "titleMaaSetup": null,
+    "topLiegeModifiers": [],
+    "validHoldings": [
+      {
+        "key": "church_holding",
+        "name": "Temple"
+      }
+    ],
+    "vassalContractGroup": null
+  },
+  {
+    "adminTiers": null,
+    "blockedSubjectCourts": [],
     "characterModifiers": [],
     "color": "#fa0000",
     "compatibleSuccession": [],
@@ -1966,6 +2445,7 @@
         "name": null
       }
     ],
+    "grantVassalGovernments": [],
     "icon": "republic_government",
     "id": "republic_government",
     "isMechanicDefault": false,
@@ -2078,7 +2558,7 @@
     ],
     "courtGenerateCommanders": null,
     "currencyLevelCaps": {},
-    "desc": "Ritsuryō is a type of Administrative Government unique to Japan.\n\nIt is a centralized Bureaucratic Government Form where Characters are appointed as Governors on behalf of their Liege, have access to Influence, and Noble Family Heads have a Family Manor and House Aspiration.\n\nA Kampaku governs the Realm on behalf of the Japanese Emperor, and may be elected from among Noble Family Heads, or imposed by Faction demand.\n\nRitsuryō Vassals generally govern only a single County, but may reject the centralized system and become local Sōryō lords to build their own power, though this is usually considered a Criminal act.\n\nRitsuryō House Heads may create and join House Blocs within the Realm, which will support the Leading House in becoming Kampaku.\n\nJapanese Governments have a lower Domain Limit than others, which may be increased by upgrading the Family Manor.\n\nThe Ritsuryō system refers to the centralized administrative government of Japan, inspired by the Chinese Confucian bureaucracy.",
+    "desc": "Ritsuryō is a type of Bureaucratic Government unique to Japan.\n\nIt is a centralized Bureaucratic Government Form where Characters are appointed as Governors on behalf of their Liege, have access to Influence, and Noble Family Heads have a Family Manor and House Aspiration.\n\nA Kampaku governs the Realm on behalf of the Japanese Emperor, and may be elected from among Noble Family Heads, or imposed by Faction demand.\n\nRitsuryō Vassals generally govern only a single County, but may reject the centralized system and become local Sōryō lords to build their own power, though this is usually considered a Criminal act.\n\nRitsuryō House Heads may create and join House Blocs within the Realm, which will support the Leading House in becoming Kampaku.\n\nJapanese Governments have a lower Domain Limit than others, which may be increased by upgrading the Family Manor.\n\nThe Ritsuryō system refers to the centralized administrative government of Japan, inspired by the Chinese Confucian bureaucracy.",
     "dlc": "All Under Heaven",
     "domicileType": "japanese_manor",
     "fallback": null,
@@ -2086,7 +2566,7 @@
     "flags": [
       {
         "key": "government_is_japan_administrative",
-        "name": "Has access to Manor, Blocs, and House Aspirations"
+        "name": "Is Ritsuryō"
       },
       {
         "key": "government_has_influence",
@@ -2125,15 +2605,33 @@
         "name": null
       },
       {
+        "key": "government_uses_japanese_family_aspirations",
+        "name": "Uses Japanese House Aspirations"
+      },
+      {
         "key": "government_has_house_blocs",
-        "name": null
+        "name": "Uses Blocs"
+      },
+      {
+        "key": "government_uses_japanese_bureaucracy",
+        "name": "Use Japanese Bureaucracy as Government Authority"
+      }
+    ],
+    "grantVassalGovernments": [
+      {
+        "key": "theocracy_government",
+        "name": "Theocracy"
+      },
+      {
+        "key": "ecclesiastical_government",
+        "name": "Ecclesiastical"
       }
     ],
     "icon": "japan_administrative_government",
     "id": "japan_administrative_government",
     "isMechanicDefault": false,
     "maxDread": null,
-    "mechanicType": null,
+    "mechanicType": "administrative",
     "name": "Ritsuryō",
     "preferredReligions": [],
     "prestigeOpinionOverride": null,
@@ -2160,7 +2658,6 @@
     ],
     "royalCourt": "any",
     "rules": {
-      "administrative": true,
       "allow_accolades": true,
       "create_cadet_branches": true,
       "deny_powerful_vassal": true,
@@ -2256,7 +2753,7 @@
     "courtGenerateCommanders": null,
     "currencyLevelCaps": {},
     "desc": "Sōryō is a type of Feudal Government unique to Japan.\n\nSōryō represents local lords who have discarded or supplanted the reach of the central Ritsuryō government and rule provinces as their own fiefs.\n\nSōryō Characters do not use Influence, but Noble Family Heads retain their Family Manor and House Aspiration.\n\nThough they cannot be elected Ruling Regent, Sōryō Rulers may take power via the Install Ruling Regent Faction, and use the Formalize Shōgunate Decision.\n\nSōryō Ruling Regents govern the Realm on behalf of the Japanese Emperor, inherit by Primogeniture Succession, and may be overthrown by Faction demand.\n\nSōryō House Heads may create and join House Blocs within the Realm.\n\nJapanese Governments have a lower Domain Limit than others, which may be increased by upgrading the Family Manor.\n\nSōryō refers to the early stages of Japanese feudalization beginning in the Heian-period, increasingly formalized under the Kamakura-period's first Shōgunate.",
-    "dlc": "All Under Heaven",
+    "dlc": "Roads to Power",
     "domicileType": "japanese_manor",
     "fallback": null,
     "features": [],
@@ -2267,7 +2764,7 @@
       },
       {
         "key": "government_is_japan_feudal",
-        "name": "Has access to Manor, Blocs, and House Aspirations"
+        "name": "Is Sōryō"
       },
       {
         "key": "government_has_county_tier_noble_families",
@@ -2290,8 +2787,26 @@
         "name": null
       },
       {
+        "key": "government_uses_japanese_family_aspirations",
+        "name": "Uses Japanese House Aspirations"
+      },
+      {
         "key": "government_has_house_blocs",
-        "name": null
+        "name": "Uses Blocs"
+      },
+      {
+        "key": "government_uses_japanese_bureaucracy",
+        "name": "Use Japanese Bureaucracy as Government Authority"
+      }
+    ],
+    "grantVassalGovernments": [
+      {
+        "key": "theocracy_government",
+        "name": "Theocracy"
+      },
+      {
+        "key": "ecclesiastical_government",
+        "name": "Ecclesiastical"
       }
     ],
     "icon": "japan_feudal_government",
@@ -2417,7 +2932,7 @@
       },
       {
         "key": "government_is_tribal_excluding_wanua",
-        "name": null
+        "name": "Is Tribal"
       },
       {
         "key": "use_prestige_to_buy_maa",
@@ -2438,8 +2953,13 @@
       {
         "key": "government_uses_domain_limit",
         "name": null
+      },
+      {
+        "key": "government_uses_tribal_authority",
+        "name": "Use Tribal Authority as Government Authority"
       }
     ],
+    "grantVassalGovernments": [],
     "icon": "tribal_government",
     "id": "tribal_government",
     "isMechanicDefault": false,
@@ -2550,7 +3070,7 @@
       },
       {
         "key": "government_is_wanua",
-        "name": "Enables Barter Goods Bartering"
+        "name": "Is Wanua"
       },
       {
         "key": "government_is_settled",
@@ -2559,6 +3079,10 @@
       {
         "key": "government_can_raid_rule",
         "name": "Government allows the Raiding of foreign Counties for Loot"
+      },
+      {
+        "key": "government_use_barter_goods",
+        "name": "Enables Barter Goods Bartering"
       },
       {
         "key": "government_enables_naval_raiding",
@@ -2571,8 +3095,13 @@
       {
         "key": "may_elevate_co_monarch",
         "name": "Allows Rulers of at least Kingdom-Tier to elevate a Co-Monarch from amongst their adult Children"
+      },
+      {
+        "key": "government_uses_tribal_authority",
+        "name": "Use Tribal Authority as Government Authority"
       }
     ],
+    "grantVassalGovernments": [],
     "icon": "wanua_government",
     "id": "wanua_government",
     "isMechanicDefault": false,

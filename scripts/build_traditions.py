@@ -21,6 +21,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent / "lib"))
 import ck3
 import culture_text
+import faith_cond
 from ck3 import Block, Tagged
 
 
@@ -38,6 +39,11 @@ HANDLED_FIELDS = {
     "category", "layers", "cost", "parameters", "character_modifier",
     "province_modifier", "county_modifier", "culture_modifier",
     "doctrine_character_modifier", "can_pick", "is_shown",
+    # _cultural_traits.info: "Applied to characters of cultures with the perk if
+    # they have the given doctrine" (1.20 rename of doctrine_character_modifier)
+    "faith_character_modifier",
+    # _cultural_traits.info: "special container for number of partners"
+    "partners",
     # per _cultural_traits.info these can appear; none do today but honor them
     "name", "desc", "icon",
 }
@@ -238,6 +244,31 @@ def modifier_lines(blk):
     return lines
 
 
+def partner_lines(pb):
+    """`partners = { … }` per _cultural_traits.info: max spouses / concubines
+    for characters with the trait, overriding the faith's numbers; -1 (the
+    default) is ignored. Concubine lines use the game's own parameter loc;
+    the spouse line has no loc key, so it carries the .info field wording."""
+    lines = []
+    if not isinstance(pb, Block):
+        return lines
+    for k, _op, v in pb:
+        if k == "number_of_spouses" and isinstance(v, int) and v >= 0:
+            lines.append(f"Max number of spouses: {v}")
+        elif k == "number_of_consorts" and isinstance(v, int) and v >= 0:
+            lines.append(culture_text.render("doctrine_parameter_number_of_consorts", v)
+                         or f"Max number of concubines: {v}")
+        elif k == "number_of_consorts_by_tier" and isinstance(v, Block):
+            for tier, _o, n in v:
+                if tier is None or not isinstance(n, int) or n < 0:
+                    continue
+                lines.append(culture_text.render(f"culture_parameter_number_of_consorts_{tier}", n)
+                             or f"Max number of concubines at {tier} tier: {n}")
+        elif k is not None:
+            lines.append(f"{k.replace('_', ' ')}: {v}")  # unknown key: shown raw, not dropped
+    return lines
+
+
 def main():
     entries = ck3.parse_dir(ck3.COMMON / "culture" / "traditions")
     unhandled = Counter()
@@ -287,6 +318,15 @@ def main():
                          if k not in (None, "doctrine")]
                 if lines:
                     mods[f"Characters ({dname} faiths)"] = lines
+        for fcm in blk.get_all("faith_character_modifier"):
+            if isinstance(fcm, Block):
+                doctrine = fcm.get("doctrine")
+                dname = (faith_cond.doctrine_cond_name(doctrine)
+                         if isinstance(doctrine, str) else "doctrine")
+                lines = [culture_text.render_modifier(k, v) for k, _o, v in fcm
+                         if k not in (None, "doctrine", "name") and not k.startswith("ai_")]
+                if lines:
+                    mods.setdefault(f"Characters whose faith has {dname}", []).extend(lines)
 
         reqs = []
         collect_reqs(blk.get("can_pick"), reqs)
@@ -315,6 +355,7 @@ def main():
             "cost": extract_cost(blk.get("cost")),
             "parameters": params,
             "modifiers": mods,
+            "partners": partner_lines(blk.get("partners")),
             "requirements": dedupe(reqs),
             "shownWhen": dedupe(shown),
             "layers": layers,

@@ -5,12 +5,15 @@ import faithData from '../data/faiths.json';
 
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 
-// reverse map: holy site -> faiths that list it
-const usedBy = new Map<string, { id: string; name: string | null; color: string | null }[]>();
-for (const f of faithData.faiths) {
-  for (const h of f.holySites) {
-    if (!usedBy.has(h.key)) usedBy.set(h.key, []);
-    usedBy.get(h.key)!.push({ id: f.id, name: f.name, color: f.color });
+// reverse map: holy site -> faiths that list it (eminent or regular)
+type User = { id: string; name: string | null; color: string | null; eminent: boolean };
+const usedBy = new Map<string, User[]>();
+for (const f of faithData.faiths as any[]) {
+  for (const [list, eminent] of [[f.eminentHolySites, true], [f.holySites, false]] as const) {
+    for (const h of list) {
+      if (!usedBy.has(h.key)) usedBy.set(h.key, []);
+      usedBy.get(h.key)!.push({ id: f.id, name: f.name, color: f.color, eminent });
+    }
   }
 }
 const usedCount = [...usedBy.keys()].filter((k) => sites.some((s) => s.id === k)).length;
@@ -24,7 +27,7 @@ const religions = [...new Set(faithData.faiths.map((f) => f.religion))].sort((a,
 <Base
   title="Holy Sites"
   active="holy-sites"
-  lede="Every holy site defined in the game, where it sits on the map, the bonuses its controller grants to all rulers of a faith that venerates it, and which faiths those are."
+  lede="Every holy site defined in the game, where it sits on the map, and its bonuses: for the county holder of the same faith, for every character of a faith that holds it as an Eminent site, and the extra that scales with the rarity of its holy relics. Dynamic sites have no fixed location."
   stats={[
     { value: sites.length, label: 'holy sites' },
     { value: usedCount, label: 'used by a faith at start' },
@@ -47,7 +50,8 @@ const religions = [...new Set(faithData.faiths.map((f) => f.religion))].sort((a,
         <tr>
           <th>Holy site</th>
           <th>County</th>
-          <th>Bonuses for controlling faith</th>
+          <th>County holder</th>
+          <th title="Applies to every character of the faith, only when the site is one of the faith's Eminent holy sites">Faith-wide (Eminent)</th>
           <th>Faiths</th>
         </tr>
       </thead>
@@ -61,21 +65,40 @@ const religions = [...new Set(faithData.faiths.map((f) => f.religion))].sort((a,
               data-religions={users.map((u) => religionOf.get(u.id)).join(' ')}
               data-used={users.length > 0 ? '1' : ''}
             >
-              <td class="name"><span class="u-name">{s.name}</span></td>
+              <td class="name">
+                <span class="u-name">{s.name}</span>
+                {s.dlc && <span class="badge-dlc">{s.dlc}</span>}
+              </td>
               <td>
-                {s.countyName ?? <span class="subtle">—</span>}
+                {s.dynamic ? <span class="subtle" title="is_dynamic: a general site type without a fixed location">dynamic</span> : (s.countyName ?? <span class="subtle">—</span>)}
                 {s.baronyName && <span class="u-sub"><br />{s.baronyName}</span>}
               </td>
               <td class="fx">
-                {s.modifiers.map((m) => <div>{m}</div>)}
+                {s.holderModifiers.map((m: string) => <div>{m}</div>)}
+                {s.countyModifiersScaled.map((sc: any) => (
+                  <div class="scaled" title={sc.scaleName ?? String(sc.scale)}>
+                    <span class="subtle">county, per relic rarity:</span>
+                    {sc.lines.map((m: string) => <div>{m}</div>)}
+                  </div>
+                ))}
                 {s.effects && <div>{s.effects}</div>}
-                {s.parameters.map((p) => <div class="subtle">{p.text ?? p.key.replace(/_/g, ' ')}</div>)}
-                {s.modifiers.length + s.parameters.length === 0 && !s.effects && <span class="subtle">—</span>}
+                {s.parameters.map((p: any) => <div class="subtle">{p.text ?? p.key.replace(/_/g, ' ')}</div>)}
+                {s.holderModifiers.length + s.parameters.length + s.countyModifiersScaled.length === 0 && !s.effects && <span class="subtle">—</span>}
+              </td>
+              <td class="fx">
+                {s.eminentModifiers.map((m: string) => <div>{m}</div>)}
+                {s.eminentModifiersScaled.map((sc: any) => (
+                  <div class="scaled" title={sc.scaleName ?? String(sc.scale)}>
+                    <span class="subtle">per relic rarity:</span>
+                    {sc.lines.map((m: string) => <div>{m}</div>)}
+                  </div>
+                ))}
+                {s.eminentModifiers.length + s.eminentModifiersScaled.length === 0 && <span class="subtle">—</span>}
               </td>
               <td>
                 <span class="chips">
                   {users.map((u) => (
-                    <a class="chip" href={`${base}/faiths#${u.id}`}>
+                    <a class:list={['chip', { 'chip--eminent': u.eminent }]} href={`${base}/faiths#${u.id}`} title={u.eminent ? 'Eminent holy site of this faith' : undefined}>
                       <span class="dot" style={`--c:${u.color ?? 'var(--faint)'}`} />
                       {u.name}
                     </a>
@@ -89,6 +112,13 @@ const religions = [...new Set(faithData.faiths.map((f) => f.religion))].sort((a,
       </tbody>
     </table>
   </div>
+
+  <p class="prov">
+    "Per relic rarity" bonuses multiply by the site's
+    <code>holy_site_total_artifact_rarity</code>: the sum of the rarities of its
+    holy relics (1 Common, 2 Masterwork, 3 Famed, 4 Illustrious), per the game's
+    own schema doc. Eminent chips mark the faiths whose Eminent sites include it.
+  </p>
 
   <script>
     const q = document.getElementById('q') as HTMLInputElement;
@@ -118,6 +148,10 @@ const religions = [...new Set(faithData.faiths.map((f) => f.religion))].sort((a,
   <style>
     .fx { font-size: 0.8rem; max-width: 26rem; }
     .chips { max-width: 26rem; }
+    .fx .scaled { margin-top: 0.25rem; padding-left: 0.5rem; border-left: 2px solid var(--line); }
+    .chip--eminent { border-color: color-mix(in oklab, var(--brass) 60%, var(--line)); font-weight: 600; }
+    .prov { color: var(--faint); font-size: 0.78rem; max-width: 70ch; margin-top: 1.5rem; }
+    .prov code { font-family: var(--font-mono); }
     tr:target { background: color-mix(in oklab, var(--brass) 12%, transparent); }
     .filterbar label.hint { display: inline-flex; align-items: center; gap: 0.3rem; margin-left: 0; }
   </style>

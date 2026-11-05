@@ -4591,7 +4591,7 @@
         },
         {
           "polarity": "good",
-          "text": "+10% Monthly Piety"
+          "text": "+5% Monthly Piety"
         },
         {
           "polarity": "good",
@@ -4602,14 +4602,10 @@
       "icon": "high_almoner_court_position",
       "id": "high_almoner_court_position",
       "maxPositions": 1,
-      "minimumRank": "kingdom",
+      "minimumRank": "county",
       "name": "High Almoner",
       "opinion": 10,
       "requirements": [
-        {
-          "name": "Kingdom tier+",
-          "negated": false
-        },
         {
           "name": "Nomadic government",
           "negated": true
@@ -6547,7 +6543,7 @@
         },
         {
           "polarity": "good",
-          "text": "+25% Blademaster Trait Experience gain"
+          "text": "+25% Blademaster Trait Experience Gain"
         }
       ],
       "features": [],
@@ -7295,19 +7291,10 @@
       "icon": "court_scholar_court_position",
       "id": "court_scholar_court_position",
       "maxPositions": 1,
-      "minimumRank": "kingdom",
+      "minimumRank": "duchy",
       "name": "Court Scholar",
       "opinion": 10,
-      "requirements": [
-        {
-          "name": "Kingdom tier+",
-          "negated": false
-        },
-        {
-          "name": "Beacon of Learning",
-          "negated": false
-        }
-      ],
+      "requirements": [],
       "salary": {
         "gold": {
           "base": 0.25,
@@ -7363,7 +7350,7 @@
           }
         ]
       },
-      "skill": null,
+      "skill": "learning",
       "sourceFile": "00_court_positions.txt"
     },
     {
@@ -7741,10 +7728,6 @@
         {
           "name": "Nomadic government",
           "negated": false
-        },
-        {
-          "name": "Fedayeen",
-          "negated": false
         }
       ],
       "salary": {
@@ -7810,7 +7793,7 @@
           }
         ]
       },
-      "skill": null,
+      "skill": "intrigue",
       "sourceFile": "00_court_positions.txt"
     },
     {
@@ -7981,6 +7964,10 @@
         {
           "name": "Nomadic government",
           "negated": false
+        },
+        {
+          "name": "Cannot use the Hunt Activity",
+          "negated": true
         }
       ],
       "salary": {
@@ -8175,7 +8162,7 @@
       "customEmployeeDesc": null,
       "customEmployerDesc": "Influence Ward's Personality Acceptance: +10\nReduces chance for Children to contract Illnesses\nPossibility for Child development events",
       "desc": "A Wet Nurse is a caretaker of your Children and child Hostages.",
-      "dlc": "Wards & Wardens",
+      "dlc": null,
       "employeeMods": [
         {
           "polarity": "good",
@@ -9898,7 +9885,7 @@
       "employeeMods": [
         {
           "polarity": "good",
-          "text": "+25% Physician Trait Experience gain"
+          "text": "+25% Physician Trait Experience Gain"
         }
       ],
       "id": "physician_improve_self",

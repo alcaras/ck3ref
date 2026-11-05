@@ -2,6 +2,60 @@
   {
     "categories": [
       "ai",
+      "faith"
+    ],
+    "default": "default_branched_rite_frequency",
+    "desc": null,
+    "id": "branched_rite_frequency",
+    "name": "Branched Rite Frequency",
+    "options": [
+      {
+        "blocksAchievements": false,
+        "desc": "After founding a Rite, a Faith waits 3 to 18 years before founding another.",
+        "id": "default_branched_rite_frequency",
+        "isDefault": true,
+        "name": "Default"
+      },
+      {
+        "blocksAchievements": false,
+        "desc": "The wait rises to 5 to 27 years.",
+        "id": "less_branched_rite_frequency",
+        "isDefault": false,
+        "name": "Less Often"
+      },
+      {
+        "blocksAchievements": false,
+        "desc": "The wait rises to 8 to 45 years.",
+        "id": "much_less_branched_rite_frequency",
+        "isDefault": false,
+        "name": "Much Less Often"
+      },
+      {
+        "blocksAchievements": false,
+        "desc": "Faiths no longer found new Rites as they grow, though heresy outbreaks still can.",
+        "id": "none_branched_rite_frequency",
+        "isDefault": false,
+        "name": "None"
+      },
+      {
+        "blocksAchievements": false,
+        "desc": "The wait falls to 1 to 8 years.",
+        "id": "much_more_branched_rite_frequency",
+        "isDefault": false,
+        "name": "Much More Often"
+      },
+      {
+        "blocksAchievements": false,
+        "desc": "The wait falls to 2 to 12 years.",
+        "id": "more_branched_rite_frequency",
+        "isDefault": false,
+        "name": "More Often"
+      }
+    ]
+  },
+  {
+    "categories": [
+      "ai",
       "culture"
     ],
     "default": "default_divergent_culture_ai_frequency",
@@ -36,6 +90,53 @@
         "id": "relaxed_divergent_culture_ai_frequency",
         "isDefault": false,
         "name": "Relaxed"
+      }
+    ]
+  },
+  {
+    "categories": [
+      "ai",
+      "faith"
+    ],
+    "default": "default_heresy_outbreak_frequency",
+    "desc": null,
+    "id": "heresy_outbreak_frequency",
+    "name": "Heresy Outbreak Frequency",
+    "options": [
+      {
+        "blocksAchievements": false,
+        "desc": "Heresies break out in Faiths whose Fervor has fallen below 40, and the further it sinks the readier they are.",
+        "id": "default_heresy_outbreak_frequency",
+        "isDefault": true,
+        "name": "Default"
+      },
+      {
+        "blocksAchievements": false,
+        "desc": "Outbreaks are roughly half as likely.",
+        "id": "less_heresy_outbreak_frequency",
+        "isDefault": false,
+        "name": "Less Often"
+      },
+      {
+        "blocksAchievements": false,
+        "desc": "Outbreaks are roughly a quarter as likely.",
+        "id": "much_less_heresy_outbreak_frequency",
+        "isDefault": false,
+        "name": "Much Less Often"
+      },
+      {
+        "blocksAchievements": false,
+        "desc": "Outbreaks are roughly four times as likely.",
+        "id": "much_more_heresy_outbreak_frequency",
+        "isDefault": false,
+        "name": "Much More Often"
+      },
+      {
+        "blocksAchievements": false,
+        "desc": "Outbreaks are roughly twice as likely.",
+        "id": "more_heresy_outbreak_frequency",
+        "isDefault": false,
+        "name": "More Often"
       }
     ]
   },
@@ -1216,18 +1317,18 @@
     "default": "randomized_faiths_off",
     "desc": null,
     "id": "randomized_faiths",
-    "name": "Randomized Faiths",
+    "name": "Randomized Faiths & Rites",
     "options": [
       {
         "blocksAchievements": false,
-        "desc": "Characters and Counties have historical Faiths.",
+        "desc": "Characters and Counties have historical Faiths and Rites.",
         "id": "randomized_faiths_off",
         "isDefault": true,
         "name": "Off"
       },
       {
         "blocksAchievements": true,
-        "desc": "Characters and Counties are assigned random Faiths. All Faiths in the game are available.",
+        "desc": "Characters and Counties are assigned random Faiths, and a random Rite within that Faith. All Faiths in the game are available.",
         "id": "randomized_faiths_on",
         "isDefault": false,
         "name": "On"
@@ -1484,6 +1585,31 @@
         "id": "no_easteregg_characters",
         "isDefault": false,
         "name": "None"
+      }
+    ]
+  },
+  {
+    "categories": [
+      "historicity"
+    ],
+    "default": "northeast_asia_nomad_region_off",
+    "desc": null,
+    "id": "northeast_asia_nomad_region",
+    "name": "Expand Nomadic Region: Northeastern Asia",
+    "options": [
+      {
+        "blocksAchievements": false,
+        "desc": "The Northeastern Asia region is unchanged.",
+        "id": "northeast_asia_nomad_region_off",
+        "isDefault": true,
+        "name": "Default"
+      },
+      {
+        "blocksAchievements": false,
+        "desc": "The Northeastern Asia region uses Nomadic mechanics of The Great Steppe Situation. This rule will not have any effect unless you own the Khans of the Steppe Expansion.",
+        "id": "northeast_asia_nomad_region_on",
+        "isDefault": false,
+        "name": "Nomadic#"
       }
     ]
   },
@@ -2268,21 +2394,21 @@
     "options": [
       {
         "blocksAchievements": false,
-        "desc": "Heresy outbreaks in certain regions are more likely to be historical heresies, such as Lollardy in England.",
+        "desc": "Historical heresy outbreaks prefer the regions where they historically arose, such as Lollardy in England or Catharism in Languedoc. Other heresy outbreaks are unaffected.",
         "id": "default_regional_heresy",
         "isDefault": true,
         "name": "Default"
       },
       {
         "blocksAchievements": false,
-        "desc": "Heresy outbreaks in certain regions will almost always be historical heresies.",
+        "desc": "Historical heresy outbreaks anchor on their exact historical seats where possible, and only fire within their historical windows.",
         "id": "strict_regional_heresy",
         "isDefault": false,
         "name": "Strict"
       },
       {
         "blocksAchievements": false,
-        "desc": "Heresy outbreaks do not have regional weighting, encouraging the appearance of more diverse heresies.",
+        "desc": "Historical heresy outbreaks have no regional or temporal preference - any eligible ruler anywhere may spark one.",
         "id": "relaxed_regional_heresy",
         "isDefault": false,
         "name": "Relaxed"
@@ -2462,6 +2588,39 @@
       "titles",
       "tweaks"
     ],
+    "default": "empire_faith_gate_off",
+    "desc": null,
+    "id": "empire_faith_gate",
+    "name": "Empire Titles Restricted By Organized Faith",
+    "options": [
+      {
+        "blocksAchievements": false,
+        "desc": "Requires an Organized Faith and Head of Faith's approval to create Empire Titles. Affects Feudal, Clan, and Tribal Rulers.",
+        "id": "empire_faith_gate_on",
+        "isDefault": false,
+        "name": "Enabled"
+      },
+      {
+        "blocksAchievements": false,
+        "desc": "Requires an Organized Faith and Head of Faith's approval to create Empire Titles, but Faiths without a Head of Faith are exempt from the approval requirement. Affects Feudal, Clan, and Tribal Rulers.",
+        "id": "empire_faith_gate_no_hof_exempt",
+        "isDefault": false,
+        "name": "Enabled, Headless Exempt"
+      },
+      {
+        "blocksAchievements": false,
+        "desc": "Anyone can create Empire Titles with regular requirements.",
+        "id": "empire_faith_gate_off",
+        "isDefault": true,
+        "name": "Disabled"
+      }
+    ]
+  },
+  {
+    "categories": [
+      "titles",
+      "tweaks"
+    ],
     "default": "ai_significant_exclave_independence",
     "desc": null,
     "id": "exclave_independence",
@@ -2598,7 +2757,7 @@
       },
       {
         "blocksAchievements": false,
-        "desc": "Extra restrictions on the creation of Empire-Tier Titles will apply only to players only",
+        "desc": "Extra restrictions on the creation of Empire-Tier Titles will apply only to players",
         "id": "title_creation_imperial_power_projection_targeting_player_only",
         "isDefault": false,
         "name": "Player Only"
@@ -2648,6 +2807,53 @@
         "id": "ai_laamp_numbers_25",
         "isDefault": false,
         "name": "25"
+      }
+    ]
+  },
+  {
+    "categories": [
+      "tweaks",
+      "faith"
+    ],
+    "default": "default_branched_rite_amount",
+    "desc": null,
+    "id": "branched_rite_amount",
+    "name": "Branched Rite Amount",
+    "options": [
+      {
+        "blocksAchievements": false,
+        "desc": "A Faith supports one extra Rite per 70 Counties, founding its first at 140.",
+        "id": "default_branched_rite_amount",
+        "isDefault": true,
+        "name": "Default"
+      },
+      {
+        "blocksAchievements": false,
+        "desc": "One per 100 Counties, the first at 200.",
+        "id": "fewer_branched_rite_amount",
+        "isDefault": false,
+        "name": "Fewer"
+      },
+      {
+        "blocksAchievements": false,
+        "desc": "One per 140 Counties, the first at 280.",
+        "id": "much_fewer_branched_rite_amount",
+        "isDefault": false,
+        "name": "Far Fewer"
+      },
+      {
+        "blocksAchievements": false,
+        "desc": "One per 35 Counties, the first at 70.",
+        "id": "much_more_branched_rite_amount",
+        "isDefault": false,
+        "name": "Many More"
+      },
+      {
+        "blocksAchievements": false,
+        "desc": "One per 50 Counties, the first at 100.",
+        "id": "more_branched_rite_amount",
+        "isDefault": false,
+        "name": "More"
       }
     ]
   },

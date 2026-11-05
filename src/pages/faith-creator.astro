@@ -6,61 +6,83 @@ import faithsData from '../data/faiths.json';
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 // which icons actually exist, resolved at build time from public/img
 const artFiles = new Set(
-  Object.keys(import.meta.glob('/public/img/{faith,faith_doctrines}/*.webp'))
+  Object.keys(import.meta.glob('/public/img/{faith,rite,faith_doctrines}/*.webp'))
     .map((p) => p.split('/').slice(-2).join('/').replace('.webp', ''))
 );
 const hasArt = (dir: string, id: string) => artFiles.has(dir + '/' + id);
 
-const { doctrines, groups } = doctrinesData as any;
-const faiths = (faithsData as any).faiths;
+const { doctrines, groups, categories } = doctrinesData as any;
+const { faiths, rites, religions } = faithsData as any;
 
 // client payload: only what the math needs
 const docMap = Object.fromEntries(doctrines.map((d: any) => [d.id, {
   n: d.name, cost: d.pietyCost, tenet: d.isTenet,
   art: hasArt('faith_doctrines', d.id) ? d.id : null,
 }]));
-const creatableGroups = groups.filter((g: any) =>
-  g.category !== 'not_creatable' && g.doctrines.some((id: string) => docMap[id]));
-const tenetIds = doctrines.filter((d: any) => d.isTenet).map((d: any) => d.id);
-const faithMap = Object.fromEntries(faiths.map((f: any) => [f.id, {
-  n: f.name, d: f.doctrines, art: hasArt('faith', f.id) ? f.id : null,
-  t: f.tenets.map((t: any) => (typeof t === 'string' ? t : t.key)),
+const catOrder = categories.map((c: any) => c.id);
+const creatableGroups = groups
+  .filter((g: any) => g.category !== 'not_creatable' && g.id !== 'doctrine_core_tenets' &&
+    g.doctrines.some((id: string) => docMap[id]))
+  .sort((a: any, b: any) => catOrder.indexOf(a.category) - catOrder.indexOf(b.category));
+const tenetGroup = groups.find((g: any) => g.id === 'doctrine_core_tenets');
+const tenetSlots: number = tenetGroup?.picks ?? 0;
+const tenetIds = doctrines.filter((d: any) => d.isTenet && d.visible).map((d: any) => d.id);
+
+const religionFamily = Object.fromEntries(religions.map((r: any) => [r.id, r.family]));
+// the starting point is a Rite: in 1.20 new Rites branch off an existing one
+const riteMap = Object.fromEntries(rites.map((r: any) => [r.id, {
+  n: r.name, faith: r.faith, religion: r.religion, family: religionFamily[r.religion],
+  d: r.doctrines, t: r.tenets.map((t: any) => t.key),
+  art: hasArt('rite', r.id) ? r.id : null,
 }]));
-const contexts = ['Christianity or Islam', 'Judaism or Buddhism or Jainism', 'otherwise'];
+const faithGroups = faiths
+  .filter((f: any) => rites.some((r: any) => r.faith === f.id))
+  .map((f: any) => ({ id: f.id, name: f.name, rites: rites.filter((r: any) => r.faith === f.id) }));
+
+// cost ranges for the provenance note, from the data rather than prose
+const valuesOf = (tenet: boolean) => doctrines
+  .filter((d: any) => d.isTenet === tenet && d.pietyCost)
+  .flatMap((d: any) => [d.pietyCost.base, ...d.pietyCost.values.map((v: any) => v.value)])
+  .filter((v: any) => typeof v === 'number' && v > 0);
+const range = (xs: number[]) => xs.length ? `${Math.min(...xs).toLocaleString()}–${Math.max(...xs).toLocaleString()}` : '—';
+const keepFactors = [...new Set(doctrines.flatMap((d: any) =>
+  (d.pietyCost?.mults ?? []).filter((m: any) => m.keep).map((m: any) => m.factor)))];
 ---
 <Base
-  title="Faith Cost Calculator"
+  title="Rite Cost Calculator"
   active="faith-creator"
-  lede="Pick a starting faith, change doctrines and tenets, and see the piety bill — keeping a doctrine costs half, per the game's own cost chains."
+  lede="Pick the Rite you start from, change its tenets and doctrines, and see the piety bill. Every price is evaluated from the game's own cost chains against your starting Rite: its religion, family and faith, and what it already holds (keeping a pick is cheaper; jumping several steps along a spectrum costs more)."
   stats={[
+    { value: rites.length, label: 'rites to start from' },
     { value: creatableGroups.length, label: 'doctrine groups' },
     { value: tenetIds.length, label: 'tenets' },
   ]}
 >
   <div class="filterbar">
-    <label>Starting faith
-      <img id="faithart" class="pick-art lg" src="" alt="" width="34" height="34" hidden />
-      <select id="basefaith">
-        {faiths.map((f: any) => <option value={f.id}>{f.name}</option>)}
-      </select>
-    </label>
-    <label>Cost context
-      <select id="ctx">
-        {contexts.map((c) => <option value={c}>{c}</option>)}
+    <label>Starting Rite
+      <img id="riteart" class="pick-art lg" src="" alt="" width="34" height="34" hidden />
+      <select id="baserite">
+        {faithGroups.map((f: any) => (
+          <optgroup label={f.name}>
+            {f.rites.map((r: any) => <option value={r.id}>{r.name}{r.isMain ? ' (main)' : ''}</option>)}
+          </optgroup>
+        ))}
       </select>
     </label>
     <span class="hint total">Total: <b id="total">0</b> piety</span>
+    <span class="hint" id="unmodelled" hidden></span>
   </div>
 
   <section>
-    <h2 class="group-h">Tenets <span class="count">3 picks</span></h2>
+    <h2 class="group-h">Tenets <span class="count">up to {tenetSlots}</span></h2>
     <div class="pickgrid" id="tenets">
-      {[0, 1, 2].map((i) => (
+      {Array.from({ length: tenetSlots }, (_, i) => (
         <label class="pick">
           <span class="subtle">tenet {i + 1}</span>
           <span class="pick-row">
             <img class="pick-art" src="" alt="" width="28" height="28" hidden />
             <select data-tenet={i}>
+              <option value="">— none —</option>
               {tenetIds.map((id: string) => <option value={id}>{docMap[id].n}</option>)}
             </select>
           </span>
@@ -79,6 +101,7 @@ const contexts = ['Christianity or Islam', 'Judaism or Buddhism or Jainism', 'ot
           <span class="pick-row">
             <img class="pick-art" src="" alt="" width="28" height="28" hidden />
             <select data-group={g.id}>
+              <option value="">— none —</option>
               {g.doctrines.filter((id: string) => docMap[id]).map((id: string) => (
                 <option value={id}>{docMap[id].n}</option>
               ))}
@@ -91,56 +114,88 @@ const contexts = ['Christianity or Islam', 'Judaism or Buddhism or Jainism', 'ot
   </section>
 
   <p class="prov">
-    Costs come from each doctrine's own <code>piety_cost</code> chain (tenets
-    500–1,500 by religion, doctrines 200–600), with the game's universal ×0.5
-    keep-same multiplier applied to unchanged picks. Situational surcharges
-    (two-step switches, conversion catalysts) and the fixed reformation cost
-    of unreformed faiths are not included.
+    Costs come from each tenet's and doctrine's own <code>piety_cost</code> chain
+    (tenets {range(valuesOf(true))}, doctrines {range(valuesOf(false))} piety
+    before multipliers), evaluated against the starting Rite: its religion,
+    family, faith, and the doctrines and tenets it already has. That covers the
+    keep-same multiplier (×{keepFactors.join(' / ')}) and the step-distance
+    surcharges for moving along a spectrum. Branches the game decides on
+    something we cannot know here (a Rite parameter, a variable, an AND/NOT
+    chain) are flagged as not modelled, and the price shown falls through to the
+    next branch. Not included: the Rite-creation base cost
+    (<code>RITE_CREATION_PIETY_COST</code>), fervor discounts, whether the result
+    diverges into a new Faith, and DLC-gated tenets you may not own.
   </p>
 
-  <script define:vars={{ docMap, faithMap, contexts, base }}>
-    const baseSel = document.getElementById('basefaith');
-    const ctxSel = document.getElementById('ctx');
+  <script define:vars={{ docMap, riteMap, base }}>
+    const baseSel = document.getElementById('baserite');
     const totalEl = document.getElementById('total');
+    const unEl = document.getElementById('unmodelled');
 
-    function costOf(id, unchanged) {
+    // does a cost-branch condition hold for the starting Rite?
+    function holds(match, ctx) {
+      if (!match) return null; // not modelled
+      return match.religions.includes(ctx.religion) ||
+        match.families.includes(ctx.family) ||
+        match.faiths.includes(ctx.faith) ||
+        match.rites.includes(ctx.rite) ||
+        match.doctrines.some((d) => ctx.has.has(d));
+    }
+
+    function costOf(id, ctx) {
       const d = docMap[id];
-      if (!d || !d.cost) return 0;
+      if (!d || !d.cost) return { v: 0, unknown: false, notes: [] };
+      let unknown = false;
+      const notes = [];
       let v = d.cost.base;
-      if (v == null && d.cost.values) {
-        const ctx = ctxSel.value;
-        const hit = d.cost.values.find((x) => x.when === ctx) ??
-          d.cost.values.find((x) => x.when === 'otherwise') ?? d.cost.values[0];
-        v = hit ? hit.value : 0;
+      if (d.cost.values.length) {
+        let hit = null;
+        for (const e of d.cost.values) {
+          if (e.else) { hit = e; break; }
+          const h = holds(e.match, ctx);
+          if (h === null) { unknown = true; continue; }
+          if (h) { hit = e; break; }
+        }
+        if (hit) v = hit.value;
       }
-      if (typeof v !== 'number') v = 0;
-      if (unchanged) {
-        const keep = (d.cost.mults ?? []).find((m) => (m.when ?? '').includes('keeping'));
-        v *= keep ? keep.factor : 0.5;
+      if (typeof v !== 'number') { v = 0; unknown = true; }
+      for (const m of d.cost.mults) {
+        if (typeof m.factor !== 'number') { unknown = true; continue; }
+        const h = m.else ? null : holds(m.match, ctx);
+        if (h === null) { unknown = true; continue; }
+        if (h) {
+          v *= m.factor;
+          notes.push(m.keep ? `kept ×${m.factor}` : `×${m.factor}`);
+        }
       }
-      return v;
+      return { v, unknown, notes };
     }
 
-    function currentPicks() {
-      return faithMap[baseSel.value] ?? { d: [], t: [] };
+    function ctxOf(riteId) {
+      const r = riteMap[riteId] ?? { d: [], t: [] };
+      return {
+        rite: riteId, faith: r.faith, religion: r.religion, family: r.family,
+        has: new Set([...(r.d ?? []), ...(r.t ?? [])]),
+      };
     }
 
-    function initFromFaith() {
-      const f = currentPicks();
+    function initFromRite() {
+      const r = riteMap[baseSel.value] ?? { d: [], t: [] };
       document.querySelectorAll('[data-tenet]').forEach((sel, i) => {
-        if (f.t[i] && [...sel.options].some((o) => o.value === f.t[i])) sel.value = f.t[i];
+        const t = r.t[i];
+        sel.value = t && [...sel.options].some((o) => o.value === t) ? t : '';
       });
       document.querySelectorAll('[data-group]').forEach((sel) => {
-        const cur = f.d.find((id) => [...sel.options].some((o) => o.value === id));
-        if (cur) sel.value = cur;
+        const cur = r.d.find((id) => [...sel.options].some((o) => o.value === id));
+        sel.value = cur ?? '';
       });
     }
 
     function syncArt() {
-      const f = faithMap[baseSel.value];
-      const fa = document.getElementById('faithart');
-      if (f?.art) { fa.src = `${base}/img/faith/${f.art}.webp`; fa.hidden = false; }
-      else fa.hidden = true;
+      const r = riteMap[baseSel.value];
+      const ra = document.getElementById('riteart');
+      if (r?.art) { ra.src = `${base}/img/rite/${r.art}.webp`; ra.hidden = false; }
+      else ra.hidden = true;
       document.querySelectorAll('.pick').forEach((p) => {
         const img = p.querySelector('.pick-art');
         if (!img) return;
@@ -152,30 +207,34 @@ const contexts = ['Christianity or Islam', 'Judaism or Buddhism or Jainism', 'ot
 
     function update() {
       syncArt();
-      const f = currentPicks();
+      const ctx = ctxOf(baseSel.value);
       let total = 0;
+      let unknown = 0;
       document.querySelectorAll('.pick').forEach((p) => {
-        const sel = p.querySelector('select');
-        const id = sel.value;
-        const unchanged = f.d.includes(id) || f.t.includes(id);
-        const c = costOf(id, unchanged);
-        total += c;
-        p.querySelector('.pcost').textContent =
-          c ? `${Math.round(c)} piety${unchanged ? ' (kept ×0.5)' : ''}` : 'free';
+        const id = p.querySelector('select').value;
+        const out = p.querySelector('.pcost');
+        if (!id) { out.textContent = ''; return; }
+        const c = costOf(id, ctx);
+        total += c.v;
+        if (c.unknown) unknown++;
+        out.textContent = (c.v ? `${Math.round(c.v)} piety` : 'free') +
+          (c.notes.length ? ` (${c.notes.join(', ')})` : '') +
+          (c.unknown ? ' · a branch not modelled' : '');
       });
       totalEl.textContent = Math.round(total).toLocaleString();
+      unEl.hidden = unknown === 0;
+      unEl.textContent = `${unknown} pick${unknown === 1 ? '' : 's'} with a cost branch not modelled`;
     }
 
-    baseSel.addEventListener('input', () => { initFromFaith(); update(); });
-    ctxSel.addEventListener('input', update);
+    baseSel.addEventListener('input', () => { initFromRite(); update(); });
     document.querySelectorAll('.pick select').forEach((s) => s.addEventListener('input', update));
-    initFromFaith();
+    initFromRite();
     update();
   </script>
 
   <style>
     .filterbar label { color: var(--dim); font-size: 0.8rem; display: flex; gap: 0.4rem; align-items: center; }
-    .filterbar select { max-width: 15rem; }
+    .filterbar select { max-width: 18rem; }
     .total { font-size: 0.95rem; color: var(--vellum); }
     .total b { color: var(--rubric); font-family: var(--font-mono); font-size: 1.1rem; }
     .pickgrid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 0.6rem; }

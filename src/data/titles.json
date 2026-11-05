@@ -2,10 +2,10 @@
   "counts": {
     "barony": 11297,
     "county": 4705,
-    "duchy": 1096,
+    "duchy": 1317,
     "empire": 89,
-    "hegemony": 5,
-    "kingdom": 269
+    "hegemony": 6,
+    "kingdom": 270
   },
   "roots": [
     {
@@ -50,6 +50,51 @@
       ],
       "id": "k_papal_state",
       "name": "Papacy",
+      "regnalNames": {
+        "holdingFemale": [
+          "Alexandra",
+          "Anastasia",
+          "Benedicta",
+          "Caelestina",
+          "Clementia",
+          "Eugenia",
+          "Gregoria",
+          "Honoria",
+          "Innocentia",
+          "Ioanna",
+          "Lucia",
+          "Stephania",
+          "Theodora",
+          "Urbana",
+          "Veronica",
+          "Victoria"
+        ],
+        "holdingMale": [
+          "Alexander",
+          "Anastasius",
+          "Benedictus",
+          "Bonifatius",
+          "Caelestinus",
+          "Callistus",
+          "Clemens",
+          "Eugenius",
+          "Leo",
+          "Gregorius",
+          "Hadrianus",
+          "Honorius",
+          "Innocentius",
+          "Ioannes",
+          "Lucius",
+          "Marinus",
+          "Martinus",
+          "Nicolaus",
+          "Sergius",
+          "Silvester",
+          "Stephanus",
+          "Urbanus",
+          "Victor"
+        ]
+      },
       "tier": "kingdom"
     },
     {
@@ -89,7 +134,7 @@
       "tier": "duchy"
     },
     {
-      "capital": "c_antiocheia",
+      "capital": "c_baghdad",
       "color": "#b48961",
       "flags": [
         "landless",
@@ -618,6 +663,10 @@
     {
       "capital": "c_jerusalem",
       "color": "#e6e6e6",
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
       "id": "d_knights_templar",
       "name": "Knights Templar",
       "tier": "duchy"
@@ -625,6 +674,10 @@
     {
       "capital": "c_malbork",
       "color": "#323232",
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
       "id": "d_teutonic_order",
       "name": "Teutonic Order",
       "tier": "duchy"
@@ -632,13 +685,65 @@
     {
       "capital": "c_jerusalem",
       "color": "#b4b4b4",
-      "id": "d_knights_hospitaler",
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
+      "id": "d_knights_hospitaller",
       "name": "Knights Hospitaller",
+      "tier": "duchy"
+    },
+    {
+      "capital": "c_jerusalem",
+      "color": "#287d15",
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
+      "id": "d_knights_of_st_lazarus",
+      "name": "Knights of St. Lazarus",
+      "tier": "duchy"
+    },
+    {
+      "capital": "c_livs",
+      "color": "#871036",
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
+      "id": "d_sword_brethren",
+      "name": "Sword Brethren",
+      "tier": "duchy"
+    },
+    {
+      "capital": "c_lucca",
+      "color": "#424242",
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
+      "id": "d_knights_of_the_tau",
+      "name": "Knights of the Tau",
+      "tier": "duchy"
+    },
+    {
+      "capital": "c_jerusalem",
+      "color": "#c22f25",
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
+      "id": "d_knights_of_the_holy_sepulchre",
+      "name": "Knights of the Holy Sepulchre",
       "tier": "duchy"
     },
     {
       "capital": "c_shayzar",
       "color": "#646400",
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
       "id": "d_hashshashin",
       "name": "Hashshashin",
       "tier": "duchy"
@@ -646,6 +751,10 @@
     {
       "capital": "c_kufa",
       "color": "#5a9600",
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
       "id": "d_bektashi",
       "name": "Bektashi Order",
       "tier": "duchy"
@@ -653,6 +762,10 @@
     {
       "capital": "c_kufa",
       "color": "#96c850",
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
       "id": "d_haruriyyah",
       "name": "Haruriyyah",
       "tier": "duchy"
@@ -660,6 +773,10 @@
     {
       "capital": "c_kolobrzeg",
       "color": "#323232",
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
       "id": "d_jomsvikings",
       "name": "Jomsvikings",
       "tier": "duchy"
@@ -667,6 +784,10 @@
     {
       "capital": "c_kufa",
       "color": "#b4cd14",
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
       "id": "d_immortals",
       "name": "Immortals",
       "tier": "duchy"
@@ -674,6 +795,10 @@
     {
       "capital": "c_jerusalem",
       "color": "#1464ff",
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
       "id": "d_zealots",
       "name": "Zealots",
       "tier": "duchy"
@@ -681,27 +806,76 @@
     {
       "capital": "c_jerusalem",
       "color": "#780091",
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
       "id": "d_holy_sepulchre",
       "name": "Brotherhood of the Holy Sepulchre",
       "tier": "duchy"
     },
     {
+      "capital": "c_antiocheia",
+      "color": "#fcce23",
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
+      "id": "d_knights_of_the_first_patriarchate",
+      "name": "Soldiers of the Patriarchate",
+      "tier": "duchy"
+    },
+    {
+      "capital": "c_antiocheia",
+      "color": "#fcce23",
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
+      "id": "d_order_of_the_holy_virgin",
+      "name": "Order of the Holy Virgin",
+      "tier": "duchy"
+    },
+    {
       "capital": "c_tigre",
-      "color": "#b4a546",
+      "color": "#17477a",
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
       "id": "d_saint_anthony",
-      "name": "Order of Saint Anthony",
+      "name": "Order of Saint Antoni",
       "tier": "duchy"
     },
     {
       "capital": "c_edessa",
       "color": "#b4508c",
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
       "id": "d_saint_addai",
       "name": "Order of Saint Addai",
       "tier": "duchy"
     },
     {
+      "capital": "c_oriel",
+      "color": "#1d8a31",
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
+      "id": "d_saint_patrick",
+      "name": "Order of Saint Patrick",
+      "tier": "duchy"
+    },
+    {
       "capital": "c_karakorum",
       "color": "#dcc88c",
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
       "id": "d_sky_lords",
       "name": "Lords of the Sky",
       "tier": "duchy"
@@ -709,6 +883,10 @@
     {
       "capital": "c_jenne",
       "color": "#787837",
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
       "id": "d_spirit_guardians",
       "name": "Spirit Guardians",
       "tier": "duchy"
@@ -716,6 +894,10 @@
     {
       "capital": "c_kiev",
       "color": "#648c64",
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
       "id": "d_warriors_perun",
       "name": "Warriors of Perun",
       "tier": "duchy"
@@ -723,6 +905,10 @@
     {
       "capital": "c_zemigalians",
       "color": "#c82d2d",
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
       "id": "d_chosen_perkunas",
       "name": "Chosen of Perkunas",
       "tier": "duchy"
@@ -730,6 +916,10 @@
     {
       "capital": "c_kakisalmi",
       "color": "#8c8269",
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
       "id": "d_sons_kaleva",
       "name": "Sons of Kaleva",
       "tier": "duchy"
@@ -737,27 +927,87 @@
     {
       "capital": "c_roma",
       "color": "#ffc800",
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
       "id": "d_huitzilopochtli",
       "name": "Cult of Huitzilopochtli",
       "tier": "duchy"
     },
     {
-      "capital": "c_santiago",
+      "capital": "c_merida",
       "color": "#ff8200",
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
       "id": "d_knights_santiago",
       "name": "Knights of Santiago",
       "tier": "duchy"
     },
     {
+      "capital": "c_caceres",
+      "color": "#42c251",
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
+      "id": "d_knights_alcantara",
+      "name": "Knights of Alcántara",
+      "tier": "duchy"
+    },
+    {
       "capital": "c_calatrava",
       "color": "#e66400",
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
       "id": "d_knights_calatrava",
       "name": "Knights of Calatrava",
       "tier": "duchy"
     },
     {
+      "capital": "c_alcacer_do_sal",
+      "color": "#279c3c",
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
+      "id": "d_knights_aviz",
+      "name": "Knights of Avis",
+      "tier": "duchy"
+    },
+    {
+      "capital": "c_acre",
+      "color": "#db5e5a",
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
+      "id": "d_knights_of_st_thomas",
+      "name": "Knights of St. Thomas",
+      "tier": "duchy"
+    },
+    {
+      "capital": "c_praha",
+      "color": "#87201c",
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
+      "id": "d_knights_of_the_red_star",
+      "name": "Order of the Red Star",
+      "tier": "duchy"
+    },
+    {
       "capital": "c_varanasi",
       "color": "#ff0000",
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
       "id": "d_followers_arjuna",
       "name": "Followers of Arjuna",
       "tier": "duchy"
@@ -765,6 +1015,10 @@
     {
       "capital": "c_magadha",
       "color": "#cd6400",
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
       "id": "d_ashokas_chosen",
       "name": "Chosen of Ashoka",
       "tier": "duchy"
@@ -772,6 +1026,10 @@
     {
       "capital": "c_kongu",
       "color": "#ff6400",
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
       "id": "d_bulls_rishabha",
       "name": "Bulls of Rishabha",
       "tier": "duchy"
@@ -779,8 +1037,859 @@
     {
       "capital": "c_kabul",
       "color": "#e6ff00",
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
       "id": "d_zun_warriors",
       "name": "Knights of the Sun",
+      "tier": "duchy"
+    },
+    {
+      "capital": "c_gilan",
+      "color": "#79e8f2",
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
+      "id": "d_safavid_order",
+      "name": "Safavid Order",
+      "tier": "duchy"
+    },
+    {
+      "capital": "c_capua",
+      "color": "#144ade",
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
+      "id": "d_benedictine_order",
+      "name": "Old Benedictines",
+      "tier": "duchy"
+    },
+    {
+      "capital": "c_macon",
+      "color": "#f5e725",
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
+      "id": "d_cluniacs",
+      "name": "Cluniacs",
+      "tier": "duchy"
+    },
+    {
+      "capital": "c_casentino",
+      "color": "#4c66c7",
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
+      "id": "d_camaldolese",
+      "name": "Camaldolese Hermits",
+      "tier": "duchy"
+    },
+    {
+      "capital": "c_chalon",
+      "color": "#0a48c4",
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
+      "id": "d_cistercians",
+      "name": "Order of Cistercians",
+      "tier": "duchy"
+    },
+    {
+      "capital": "c_sankt_gallen",
+      "color": "#ffe7a3",
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
+      "id": "d_columban_benedictines",
+      "name": "Columban Benedictines",
+      "tier": "duchy"
+    },
+    {
+      "capital": "c_hertfordshire",
+      "color": "#b5aa84",
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
+      "id": "d_pastoral_benedictines",
+      "name": "Pastoral Benedictines",
+      "tier": "duchy"
+    },
+    {
+      "capital": "c_burgos",
+      "color": "#faf55c",
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
+      "id": "d_eremetic_benedictines",
+      "name": "Eremetic Benedictines",
+      "tier": "duchy"
+    },
+    {
+      "capital": "c_beziers",
+      "color": "#d2aded",
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
+      "id": "d_anianian_benedictines",
+      "name": "Anianian Benedictines",
+      "tier": "duchy"
+    },
+    {
+      "capital": "c_ile_de_france",
+      "color": "#2e66ff",
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
+      "id": "d_st_denis_benedictines",
+      "name": "Saint-Denis Benedictines",
+      "tier": "duchy"
+    },
+    {
+      "capital": "c_baden",
+      "color": "#05752e",
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
+      "id": "d_maurian_benedictines",
+      "name": "Maurian Benedictines",
+      "tier": "duchy"
+    },
+    {
+      "capital": "c_roma",
+      "color": "#87004f",
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
+      "id": "d_gallic_benedictines",
+      "name": "Gallic Benedictines",
+      "tier": "duchy"
+    },
+    {
+      "capital": "c_modena",
+      "color": "#919091",
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
+      "id": "d_latin_benedictines",
+      "name": "Latin Benedictines",
+      "tier": "duchy"
+    },
+    {
+      "capital": "c_amiens",
+      "color": "#a6ded8",
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
+      "id": "d_corbine_benedictines",
+      "name": "Corbine Benedictines",
+      "tier": "duchy"
+    },
+    {
+      "capital": "c_oriel",
+      "color": "#81d4ac",
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
+      "id": "d_ulaid_monasteries",
+      "name": "Ulaid Monasteries",
+      "tier": "duchy"
+    },
+    {
+      "capital": "c_ulster",
+      "color": "#4ac296",
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
+      "id": "d_gaelic_columbans",
+      "name": "Columban Abbeys",
+      "tier": "duchy"
+    },
+    {
+      "capital": "c_pembrokeshire",
+      "color": "#b1e667",
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
+      "id": "d_brythonic_abbeys",
+      "name": "Brythonic Abbeys",
+      "tier": "duchy"
+    },
+    {
+      "capital": "c_lycandus",
+      "color": "#a06da8",
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
+      "id": "d_akritai_of_the_passes",
+      "name": "Akritai of the Stomia",
+      "tier": "duchy"
+    },
+    {
+      "capital": "c_orleans",
+      "color": "#83cca4",
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
+      "id": "d_fleurians",
+      "name": "Fleurians",
+      "tier": "duchy"
+    },
+    {
+      "capital": "c_frankfurt",
+      "color": "#969695",
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
+      "id": "d_imperial_canonesses",
+      "name": "Imperial Canonesses",
+      "tier": "duchy"
+    },
+    {
+      "capital": "c_arezzo",
+      "color": "#f02b59",
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
+      "id": "d_vallombrosans",
+      "name": "Vallombrosans",
+      "tier": "duchy"
+    },
+    {
+      "capital": "c_vermandois",
+      "color": "#fffd73",
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
+      "id": "d_premonstratensians",
+      "name": "Premonstratensians",
+      "tier": "duchy"
+    },
+    {
+      "capital": "c_viennois",
+      "color": "#cfa5cf",
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
+      "id": "d_carthusians",
+      "name": "Order of Carthusians",
+      "tier": "duchy"
+    },
+    {
+      "capital": "c_angus",
+      "color": "#32573c",
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
+      "id": "d_tironensians",
+      "name": "Order of Tiron",
+      "tier": "duchy"
+    },
+    {
+      "capital": "c_poitiers",
+      "color": "#a4dfe0",
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
+      "id": "d_fontevraud_order",
+      "name": "Fontevraud Order",
+      "tier": "duchy"
+    },
+    {
+      "capital": "c_somerset",
+      "color": "#f9fadc",
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
+      "id": "d_augustinian_canons",
+      "name": "Augustinian Canons",
+      "tier": "duchy"
+    },
+    {
+      "capital": "c_sankt_gallen",
+      "color": "#d7cceb",
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
+      "id": "d_sankt_gallen_benedictines",
+      "name": "Sankt Gallen Benedictines",
+      "tier": "duchy"
+    },
+    {
+      "capital": "c_worms",
+      "color": "#ed7b42",
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
+      "id": "d_ottonian_benedictines",
+      "name": "Ottonian Benedictines",
+      "tier": "duchy"
+    },
+    {
+      "capital": "c_passau",
+      "color": "#dbca7b",
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
+      "id": "d_guntherian_benedictines",
+      "name": "Güntherian Benedictines",
+      "tier": "duchy"
+    },
+    {
+      "capital": "c_baden",
+      "color": "#d4b6bc",
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
+      "id": "d_hirsau_benedictines",
+      "name": "Hirsau Benedictines",
+      "tier": "duchy"
+    },
+    {
+      "capital": "c_hildesheim",
+      "color": "#a8a8a8",
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
+      "id": "d_princely_benedictines",
+      "name": "Princely Benedictines",
+      "tier": "duchy"
+    },
+    {
+      "capital": "c_barcelona",
+      "color": "#eaf786",
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
+      "id": "d_ripollese_benedictines",
+      "name": "Ripollese Benedictines",
+      "tier": "duchy"
+    },
+    {
+      "capital": "c_burgos",
+      "color": "#f2b04e",
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
+      "id": "d_iberian_cluniacs",
+      "name": "Silosian Benedictines",
+      "tier": "duchy"
+    },
+    {
+      "capital": "c_cornouaille",
+      "color": "#1f5abf",
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
+      "id": "d_gurloesian_benedictines",
+      "name": "Gurloesian Benedictines",
+      "tier": "duchy"
+    },
+    {
+      "capital": "c_roma",
+      "color": "#a344bd",
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
+      "id": "d_ugo_benedictines",
+      "name": "Ugo Benedictines",
+      "tier": "duchy"
+    },
+    {
+      "capital": "c_cetina",
+      "color": "#52b38c",
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
+      "id": "d_glagolitic_benedictines",
+      "name": "Glagolitic Benedictines",
+      "tier": "duchy"
+    },
+    {
+      "capital": "c_veszprem",
+      "color": "#cf788d",
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
+      "id": "d_martinian_benedictines",
+      "name": "Martinian Benedictines",
+      "tier": "duchy"
+    },
+    {
+      "capital": "c_cieszyn",
+      "color": "#cfa278",
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
+      "id": "d_eastern_cluniacs",
+      "name": "Eastern Cluniacs",
+      "tier": "duchy"
+    },
+    {
+      "capital": "c_somerset",
+      "color": "#d6b25c",
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
+      "id": "d_edgaric_benedictines",
+      "name": "Edgaric Benedictines",
+      "tier": "duchy"
+    },
+    {
+      "capital": "c_hertfordshire",
+      "color": "#fa3205",
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
+      "id": "d_norman_benedictines",
+      "name": "Norman Benedictines",
+      "tier": "duchy"
+    },
+    {
+      "capital": "c_west_riding",
+      "color": "#516ff5",
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
+      "id": "d_norman_cistercians",
+      "name": "Norman Cistercians",
+      "tier": "duchy"
+    },
+    {
+      "capital": "c_narke",
+      "color": "#231f8c",
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
+      "id": "d_baltic_cistercians",
+      "name": "Baltic Cistercians",
+      "tier": "duchy"
+    },
+    {
+      "capital": "c_coimbra",
+      "color": "#a2d6eb",
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
+      "id": "d_iberian_cistercians",
+      "name": "Iberian Cistercians",
+      "tier": "duchy"
+    },
+    {
+      "capital": "c_vogtland",
+      "color": "#3072c2",
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
+      "id": "d_eastern_cistercians",
+      "name": "Eastern Cistercians",
+      "tier": "duchy"
+    },
+    {
+      "capital": "c_athlone",
+      "color": "#6bb85a",
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
+      "id": "d_midlands_monasteries",
+      "name": "Midlands Monasteries",
+      "tier": "duchy"
+    },
+    {
+      "capital": "c_inner_hebrides",
+      "color": "#11bdba",
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
+      "id": "d_gaelic_abbeys",
+      "name": "Gaelic Abbeys",
+      "tier": "duchy"
+    },
+    {
+      "capital": "c_tiberias",
+      "color": "#11bdba",
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
+      "id": "d_carmelites",
+      "name": "Order of the Carmelites",
+      "tier": "duchy"
+    },
+    {
+      "capital": "c_spoleto",
+      "color": "#7a6411",
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
+      "id": "d_franciscans",
+      "name": "Order of the Friars Minor",
+      "tier": "duchy"
+    },
+    {
+      "capital": "c_toulouse",
+      "color": "#cc0000",
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
+      "id": "d_dominicans",
+      "name": "Order of Preachers",
+      "tier": "duchy"
+    },
+    {
+      "capital": "c_spoleto",
+      "color": "#7a6411",
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
+      "id": "d_poor_clares",
+      "name": "holy_order_poor_clares",
+      "tier": "duchy"
+    },
+    {
+      "capital": "c_brysis",
+      "color": "#942092",
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
+      "id": "d_studites",
+      "name": "Studites",
+      "tier": "duchy"
+    },
+    {
+      "capital": "c_chalkidike",
+      "color": "#5e4424",
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
+      "id": "d_athonite_hermits",
+      "name": "Athonite Hermits",
+      "tier": "duchy"
+    },
+    {
+      "capital": "c_prusa",
+      "color": "#429657",
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
+      "id": "d_bithynians",
+      "name": "Bithynians",
+      "tier": "duchy"
+    },
+    {
+      "capital": "c_ionia",
+      "color": "#8568ad",
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
+      "id": "d_latros_hesychasts",
+      "name": "Latros Hesychasts",
+      "tier": "duchy"
+    },
+    {
+      "capital": "c_trebizond",
+      "color": "#d1b23e",
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
+      "id": "d_sumelan_monks",
+      "name": "Sumelan Acolytes",
+      "tier": "duchy"
+    },
+    {
+      "capital": "c_kakheti",
+      "color": "#af2a2a",
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
+      "id": "d_georgian_monasteries",
+      "name": "Georgian Monasteries",
+      "tier": "duchy"
+    },
+    {
+      "capital": "c_brysis",
+      "color": "#4169aa",
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
+      "id": "d_evergetine_cenobites",
+      "name": "Evergetine Cenobites",
+      "tier": "duchy"
+    },
+    {
+      "capital": "c_ohrid",
+      "color": "#74ad6a",
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
+      "id": "d_klimentine_monasteries",
+      "name": "Klimentine Monks",
+      "tier": "duchy"
+    },
+    {
+      "capital": "c_kiev",
+      "color": "#b68e3c",
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
+      "id": "d_kyivan_studites",
+      "name": "Chernoriztsy",
+      "tier": "duchy"
+    },
+    {
+      "capital": "c_novgorod",
+      "color": "#5482b2",
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
+      "id": "d_yurievs",
+      "name": "Yurievs",
+      "tier": "duchy"
+    },
+    {
+      "capital": "c_boeotia",
+      "color": "#be5476",
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
+      "id": "d_boeotians",
+      "name": "Boeotians",
+      "tier": "duchy"
+    },
+    {
+      "capital": "c_polotsk",
+      "color": "#9ec2e0",
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
+      "id": "d_euphrosynians",
+      "name": "Euphrosynians",
+      "tier": "duchy"
+    },
+    {
+      "capital": "c_vladimir",
+      "color": "#cd9bb4",
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
+      "id": "d_sisters_of_the_nativity",
+      "name": "Sisters of the Nativity",
+      "tier": "duchy"
+    },
+    {
+      "capital": "c_serae",
+      "color": "#e2b842",
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
+      "id": "d_bahitawi",
+      "name": "Bahitawi",
+      "tier": "duchy"
+    },
+    {
+      "capital": "c_alexandria",
+      "color": "#c29a6c",
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
+      "id": "d_desert_fathers",
+      "name": "Desert Fathers",
+      "tier": "duchy"
+    },
+    {
+      "capital": "c_hayk",
+      "color": "#922c38",
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
+      "id": "d_monks_of_hayk",
+      "name": "Monks of Hayk'",
+      "tier": "duchy"
+    },
+    {
+      "capital": "c_hayk",
+      "color": "#60407c",
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
+      "id": "d_eastern_vardapets",
+      "name": "Eastern Vardapets",
+      "tier": "duchy"
+    },
+    {
+      "capital": "c_ninive",
+      "color": "#4c7e66",
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
+      "id": "d_sons_of_the_covenant",
+      "name": "Sons of the Covenant",
+      "tier": "duchy"
+    },
+    {
+      "capital": "c_nasibin",
+      "color": "#764684",
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
+      "id": "d_rightful_dayroye",
+      "name": "Rightful Dayroye",
+      "tier": "duchy"
+    },
+    {
+      "capital": "c_sinai",
+      "color": "#7e5c3a",
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
+      "id": "d_community_of_st_catherine",
+      "name": "Community of St Catherine",
+      "tier": "duchy"
+    },
+    {
+      "capital": "c_cilicia",
+      "color": "#d4d6d9",
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
+      "id": "d_ghazis_of_al_thugur",
+      "name": "Ghazis of al-Thugūr",
+      "tier": "duchy"
+    },
+    {
+      "capital": "c_melitene",
+      "color": "#d4d6d9",
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
+      "id": "d_ghazis_of_dar_al_harb",
+      "name": "Ghazis of Dar al-Harb",
+      "tier": "duchy"
+    },
+    {
+      "capital": "c_sevilla",
+      "color": "#f2e17e",
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
+      "id": "d_ghazis_of_al_andalus",
+      "name": "Ghazis of al-Andalus",
+      "tier": "duchy"
+    },
+    {
+      "capital": "c_valencia",
+      "color": "#89d47f",
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
+      "id": "d_ghazis_of_sharq_al_andalus",
+      "name": "Ghazis of Sharq al-Andalus",
+      "tier": "duchy"
+    },
+    {
+      "capital": "c_badajoz",
+      "color": "#db9856",
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
+      "id": "d_ghazis_of_gharb_al_andalus",
+      "name": "Ghazis of Gharb al-Andalus",
+      "tier": "duchy"
+    },
+    {
+      "capital": "c_maragha",
+      "color": "#52e3cb",
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
+      "id": "d_turkic_ghazis",
+      "name": "Turkic Ghazis",
+      "tier": "duchy"
+    },
+    {
+      "capital": "c_tunis",
+      "color": "#896fde",
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
+      "id": "d_bahr_al_maghrib_raiders",
+      "name": "Baḥr al-Maghrib Raiders",
       "tier": "duchy"
     },
     {
@@ -2367,7 +3476,7 @@
                   "baronies": [
                     "Hildesheim",
                     "Homburg",
-                    "Dassel"
+                    "Corvey"
                   ],
                   "color": "#eb5f55",
                   "id": "c_hildesheim",
@@ -3733,7 +4842,7 @@
                 {
                   "baronies": [
                     "Worms",
-                    "Besensheim"
+                    "Lorsch"
                   ],
                   "color": "#969696",
                   "id": "c_worms",
@@ -3963,12 +5072,12 @@
                 },
                 {
                   "baronies": [
-                    "Sankt Gallen",
-                    "Konstanz"
+                    "Konstanz",
+                    "Sankt Gallen"
                   ],
                   "color": "#e6cdcd",
                   "id": "c_sankt_gallen",
-                  "name": "Sankt Gallen",
+                  "name": "Konstanz",
                   "tier": "county"
                 },
                 {
@@ -4115,14 +5224,14 @@
                 },
                 {
                   "baronies": [
+                    "Nellenburg",
                     "Fürstenberg",
                     "Lupfen",
-                    "Clettgau",
-                    "Nellenburg"
+                    "Clettgau"
                   ],
                   "color": "#d0c6c6",
                   "id": "c_furstenberg",
-                  "name": "Furstenberg",
+                  "name": "Nellenburg",
                   "tier": "county"
                 }
               ],
@@ -4148,7 +5257,7 @@
                   "baronies": [
                     "Halberstadt",
                     "Wernigerode",
-                    "Arnstein"
+                    "Quedlinburg"
                   ],
                   "color": "#aa6e50",
                   "id": "c_halberstadt",
@@ -4252,12 +5361,12 @@
                 },
                 {
                   "baronies": [
-                    "Lobdaburg",
+                    "Lobdeburg",
                     "Hof"
                   ],
                   "color": "#c8919b",
                   "id": "c_lobdaburg",
-                  "name": "Lobdaburg",
+                  "name": "Lobdeburg",
                   "tier": "county"
                 }
               ],
@@ -5469,6 +6578,13 @@
           "color": "#107d4a",
           "id": "k_bosnia",
           "name": "Bosnia",
+          "tier": "kingdom"
+        },
+        {
+          "capital": "c_dyrrachion",
+          "color": "#6e0000",
+          "id": "k_albania",
+          "name": "Albania",
           "tier": "kingdom"
         },
         {
@@ -7501,7 +8617,7 @@
                 {
                   "baronies": [
                     "Parma",
-                    "Florentiola",
+                    "Bobbio",
                     "Piacenza"
                   ],
                   "color": "#ffa0c3",
@@ -7563,7 +8679,7 @@
                     "Modena",
                     "Canossa",
                     "Reggio Emilia",
-                    "Cento"
+                    "Nonantola"
                   ],
                   "color": "#e6b9b9",
                   "id": "c_modena",
@@ -22434,7 +23550,7 @@
                 {
                   "baronies": [
                     "Veszprém",
-                    "Zirc",
+                    "Pannonhalma",
                     "Vásárhely"
                   ],
                   "color": "#f09682",
@@ -23427,7 +24543,7 @@
                     "Poitiers",
                     "Ruffec",
                     "Châtellerault",
-                    "Loudun"
+                    "Fontevraud"
                   ],
                   "color": "#323282",
                   "id": "c_poitiers",
@@ -43536,6 +44652,234 @@
       ],
       "id": "k_chrysanthemum_throne",
       "name": "Chrysanthemum Throne",
+      "regnalNames": {
+        "posthumousFemale": [
+          "Gen'an",
+          "Genchi",
+          "Genken",
+          "Genkō",
+          "Genmei",
+          "Gennei",
+          "Gennin",
+          "Genshō",
+          "Gentō",
+          "Gentoku",
+          "Genzei",
+          "Jitō",
+          "Kōken",
+          "Kōgyoku",
+          "Meishō",
+          "Saimei",
+          "Suiko",
+          "Anegakōji",
+          "Atago",
+          "Ayanokōji",
+          "Bunchō",
+          "Bunryū",
+          "Bunshō",
+          "Bōjō",
+          "Eian",
+          "Enso",
+          "Genka",
+          "Gojō",
+          "Hachijō",
+          "Imadegawa",
+          "Iwakura",
+          "Junmei",
+          "Kaen",
+          "Kan'an",
+          "Karasuma",
+          "Kasuga",
+          "Katoku",
+          "Keimei",
+          "Kenshō",
+          "Kentoku",
+          "Kinugasa",
+          "Kitano",
+          "Kitashirakawa",
+          "Kitayama",
+          "Kiyomizu",
+          "Kiyotaki",
+          "Koga",
+          "Kujō",
+          "Kurama",
+          "Kyōgoku",
+          "Kōbun",
+          "Kōka",
+          "Mantoku",
+          "Matsunoo",
+          "Meiho",
+          "Meitei",
+          "Mibu",
+          "Murasakino",
+          "Muromachi",
+          "Narutaki",
+          "Okazaki",
+          "Omuro",
+          "Oshinokōji",
+          "Reitoku",
+          "Sakuragi",
+          "Shichijō",
+          "Shōka",
+          "Shūbun",
+          "Taireki",
+          "Taiō",
+          "Takao",
+          "Takatsukasa",
+          "Tenkyū",
+          "Tenkō",
+          "Tensei",
+          "Tōin",
+          "Umezu",
+          "Yamashina",
+          "Yase",
+          "Ōhara",
+          "Ōinomikado",
+          "Ōmiya"
+        ],
+        "posthumousMale": [
+          "Ankan",
+          "Antoku",
+          "Daigo",
+          "En'yū",
+          "Heizei",
+          "Higashiyama",
+          "Horikawa",
+          "Ichijō",
+          "Jun'an",
+          "Junna",
+          "Junnin",
+          "Junchi",
+          "Junmu",
+          "Kameyama",
+          "Kanmu",
+          "Kashiwabara",
+          "Kazan",
+          "Keitai",
+          "Kinmei",
+          "Kōbun",
+          "Kōchi",
+          "Kōkaku",
+          "Kōkō",
+          "Komatsu",
+          "Kōmei",
+          "Kōmu",
+          "Kōmyō",
+          "Kōnin",
+          "Konoe",
+          "Kotoku",
+          "Kōzei",
+          "Momozono",
+          "Monmu",
+          "Montoku",
+          "Murakami",
+          "Nakamikado",
+          "Nara",
+          "Nijō",
+          "Nin'an",
+          "Ninchi",
+          "Ninkō",
+          "Ninmu",
+          "Ninmyō",
+          "Ninshō",
+          "Ōgimachi",
+          "Reichi",
+          "Reigen",
+          "Reimei",
+          "Reishō",
+          "Reizei",
+          "Rokujō",
+          "Saga",
+          "Sakuramachi",
+          "Sanjō",
+          "Seiwa",
+          "Senka",
+          "Shijō",
+          "Shirakawa",
+          "Shōkō",
+          "Shōmu",
+          "Shōtoku",
+          "Sukō",
+          "Sushun",
+          "Sutoku",
+          "Suzaku",
+          "Takakura",
+          "Tenji",
+          "Tenmu",
+          "Toba",
+          "Tsuchimikado",
+          "Uda",
+          "Yōmei",
+          "Yōzei",
+          "Anegakōji",
+          "Atago",
+          "Ayanokōji",
+          "Bunchō",
+          "Bunryū",
+          "Bunshō",
+          "Bōjō",
+          "Eian",
+          "Enso",
+          "Genka",
+          "Gojō",
+          "Hachijō",
+          "Higashiyama",
+          "Imadegawa",
+          "Iwakura",
+          "Junmei",
+          "Junmei",
+          "Kaen",
+          "Kan'an",
+          "Karasuma",
+          "Kasuga",
+          "Katoku",
+          "Keimei",
+          "Kenshō",
+          "Kentoku",
+          "Kinugasa",
+          "Kitano",
+          "Kitashirakawa",
+          "Kitayama",
+          "Kiyomizu",
+          "Kiyotaki",
+          "Koga",
+          "Kujō",
+          "Kurama",
+          "Kyōgoku",
+          "Kōbun",
+          "Kōka",
+          "Mantoku",
+          "Matsunoo",
+          "Meiho",
+          "Meitei",
+          "Mibu",
+          "Murasakino",
+          "Muromachi",
+          "Narutaki",
+          "Okazaki",
+          "Omuro",
+          "Oshinokōji",
+          "Reitoku",
+          "Sakuragi",
+          "Shichijō",
+          "Shōka",
+          "Shūbun",
+          "Taireki",
+          "Taiō",
+          "Takao",
+          "Takatsukasa",
+          "Tenkyū",
+          "Tenkō",
+          "Tensei",
+          "Tōin",
+          "Umezu",
+          "Yamashina",
+          "Yase",
+          "Ōhara",
+          "Ōinomikado",
+          "Ōmiya"
+        ]
+      },
       "tier": "kingdom"
     },
     {
@@ -46608,7 +47952,7 @@
         "noble_family"
       ],
       "id": "c_nf_tak",
-      "name": "Gwangsan Tak Tak Family",
+      "name": "Gwangsan Tak Family",
       "tier": "county"
     },
     {
@@ -46686,7 +48030,7 @@
         "noble_family"
       ],
       "id": "c_nf_wi_balhae",
-      "name": "dynn_Wi_Jangjeong Family",
+      "name": "Jangjeong Wi Family",
       "tier": "county"
     },
     {
@@ -46712,7 +48056,7 @@
         "noble_family"
       ],
       "id": "c_nf_o_balhae",
-      "name": "dynn_O_Buyeo Family",
+      "name": "Buyeo Oh Family",
       "tier": "county"
     },
     {
@@ -52609,8 +53953,8 @@
                       "baronies": [
                         "Shangrao",
                         "Yushan",
-                        "Yiyang",
                         "Guixi",
+                        "Yiyang",
                         "Yanshan"
                       ],
                       "color": "#c88dad",
@@ -68512,6 +69856,1480 @@
       "id": "e_nusantara",
       "name": "Nusantara",
       "tier": "empire"
+    },
+    {
+      "capital": "c_roma",
+      "color": null,
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
+      "id": "d_cd_ostia",
+      "name": "Ostia",
+      "tier": "duchy"
+    },
+    {
+      "capital": "c_roma",
+      "color": null,
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
+      "id": "d_cd_porto",
+      "name": "Porto",
+      "tier": "duchy"
+    },
+    {
+      "capital": "c_roma",
+      "color": null,
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
+      "id": "d_cd_velletri",
+      "name": "Velletri",
+      "tier": "duchy"
+    },
+    {
+      "capital": "c_roma",
+      "color": null,
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
+      "id": "d_cd_frascati",
+      "name": "Frascati",
+      "tier": "duchy"
+    },
+    {
+      "capital": "c_roma",
+      "color": null,
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
+      "id": "d_cd_albano",
+      "name": "Albano",
+      "tier": "duchy"
+    },
+    {
+      "capital": "c_roma",
+      "color": null,
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
+      "id": "d_cd_palestrina",
+      "name": "Palestrina",
+      "tier": "duchy"
+    },
+    {
+      "capital": "c_roma",
+      "color": null,
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
+      "id": "d_cd_sabina",
+      "name": "Sabina",
+      "tier": "duchy"
+    },
+    {
+      "capital": "c_roma",
+      "color": null,
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
+      "id": "d_cd_san_ciriaco",
+      "name": "San Ciriaco",
+      "tier": "duchy"
+    },
+    {
+      "capital": "c_roma",
+      "color": null,
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
+      "id": "d_cd_san_lorenzo",
+      "name": "San Lorenzo in Lucina",
+      "tier": "duchy"
+    },
+    {
+      "capital": "c_roma",
+      "color": null,
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
+      "id": "d_cd_santa_cecilia",
+      "name": "Santa Cecilia",
+      "tier": "duchy"
+    },
+    {
+      "capital": "c_roma",
+      "color": null,
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
+      "id": "d_cd_santa_balbina",
+      "name": "Santa Balbina",
+      "tier": "duchy"
+    },
+    {
+      "capital": "c_ravenna",
+      "color": null,
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
+      "id": "d_cd_san_pietro",
+      "name": "San Pietro",
+      "tier": "duchy"
+    },
+    {
+      "capital": "c_roma",
+      "color": null,
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
+      "id": "d_cd_santa_anastasia",
+      "name": "Sant'Anastasia",
+      "tier": "duchy"
+    },
+    {
+      "capital": "c_roma",
+      "color": null,
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
+      "id": "d_cd_damaso",
+      "name": "San Lorenzo in Damaso",
+      "tier": "duchy"
+    },
+    {
+      "capital": "c_roma",
+      "color": null,
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
+      "id": "d_cd_santa_rufina",
+      "name": "Santa Rufina",
+      "tier": "duchy"
+    },
+    {
+      "capital": "c_roma",
+      "color": null,
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
+      "id": "d_cd_santa_sabina",
+      "name": "Santa Sabina",
+      "tier": "duchy"
+    },
+    {
+      "capital": "c_roma",
+      "color": null,
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
+      "id": "d_cd_santa_maria",
+      "name": "Santa Maria in Domnica",
+      "tier": "duchy"
+    },
+    {
+      "capital": "c_roma",
+      "color": null,
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
+      "id": "d_cd_santa_prassede",
+      "name": "Santa Prassede",
+      "tier": "duchy"
+    },
+    {
+      "capital": "c_roma",
+      "color": null,
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
+      "id": "d_cd_santi_cosma_e_damiano",
+      "name": "Santi Cosma e Damiano",
+      "tier": "duchy"
+    },
+    {
+      "capital": "c_roma",
+      "color": null,
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
+      "id": "d_cd_san_stefano",
+      "name": "Santo Stefano",
+      "tier": "duchy"
+    },
+    {
+      "capital": "c_roma",
+      "color": null,
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
+      "id": "d_cd_san_clemente",
+      "name": "San Clemente",
+      "tier": "duchy"
+    },
+    {
+      "capital": "c_roma",
+      "color": null,
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
+      "id": "d_cd_trastevere",
+      "name": "Santa Maria in Trastevere",
+      "tier": "duchy"
+    },
+    {
+      "capital": "c_roma",
+      "color": null,
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
+      "id": "d_cd_santi_silvestro_e_martino",
+      "name": "Santi Silvestro e Martino",
+      "tier": "duchy"
+    },
+    {
+      "capital": "c_roma",
+      "color": null,
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
+      "id": "d_cd_santi_nereo_ed_achilleo",
+      "name": "Santi Nereo ed Achilleo",
+      "tier": "duchy"
+    },
+    {
+      "capital": "c_ancona",
+      "color": null,
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
+      "id": "d_cd_san_eustachio",
+      "name": "Sant'Eustachio",
+      "tier": "duchy"
+    },
+    {
+      "capital": "c_roma",
+      "color": null,
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
+      "id": "d_cd_santa_maria_nuova",
+      "name": "Santa Maria Nuova",
+      "tier": "duchy"
+    },
+    {
+      "capital": "c_roma",
+      "color": null,
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
+      "id": "d_cd_san_teodoro",
+      "name": "San Teodoro",
+      "tier": "duchy"
+    },
+    {
+      "capital": "c_ancona",
+      "color": null,
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
+      "id": "d_cd_san_adriano",
+      "name": "Sant'Adriano",
+      "tier": "duchy"
+    },
+    {
+      "capital": "c_roma",
+      "color": null,
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
+      "id": "d_cd_san_marcello",
+      "name": "San Marcello",
+      "tier": "duchy"
+    },
+    {
+      "capital": "c_roma",
+      "color": null,
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
+      "id": "d_cd_san_vitale",
+      "name": "San Vitale",
+      "tier": "duchy"
+    },
+    {
+      "capital": "c_roma",
+      "color": null,
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
+      "id": "d_cd_san_angelo",
+      "name": "Sant'Angelo",
+      "tier": "duchy"
+    },
+    {
+      "capital": "c_roma",
+      "color": null,
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
+      "id": "d_cd_santa_croce",
+      "name": "Santa Croce",
+      "tier": "duchy"
+    },
+    {
+      "capital": "c_roma",
+      "color": null,
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
+      "id": "d_cd_portico_octaviae",
+      "name": "Santa Maria in Portico",
+      "tier": "duchy"
+    },
+    {
+      "capital": "c_roma",
+      "color": null,
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
+      "id": "d_cd_san_crisogono",
+      "name": "San Crisogono",
+      "tier": "duchy"
+    },
+    {
+      "capital": "c_roma",
+      "color": null,
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
+      "id": "d_cd_san_giorgio",
+      "name": "San Giorgio",
+      "tier": "duchy"
+    },
+    {
+      "capital": "c_roma",
+      "color": null,
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
+      "id": "d_cd_cosmedin",
+      "name": "Santa Maria in Cosmedin",
+      "tier": "duchy"
+    },
+    {
+      "capital": "c_roma",
+      "color": null,
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
+      "id": "d_cd_san_stefano",
+      "name": "Santo Stefano",
+      "tier": "duchy"
+    },
+    {
+      "capital": "c_roma",
+      "color": null,
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
+      "id": "d_cd_san_marco",
+      "name": "San Marco",
+      "tier": "duchy"
+    },
+    {
+      "capital": "c_roma",
+      "color": null,
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
+      "id": "d_cd_santi_apostoli",
+      "name": "Santi Dodici Apostoli",
+      "tier": "duchy"
+    },
+    {
+      "capital": "c_roma",
+      "color": null,
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
+      "id": "d_cd_santa_pudenziana",
+      "name": "Santa Pudenziana",
+      "tier": "duchy"
+    },
+    {
+      "capital": "c_roma",
+      "color": null,
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
+      "id": "d_cd_san_eusebio",
+      "name": "Sant'Eusebio",
+      "tier": "duchy"
+    },
+    {
+      "capital": "c_roma",
+      "color": null,
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
+      "id": "d_cd_santi_sergio_e_bacco",
+      "name": "Santi Sergio e Bacco",
+      "tier": "duchy"
+    },
+    {
+      "capital": "c_roma",
+      "color": null,
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
+      "id": "d_cd_san_nicola",
+      "name": "San Nicola",
+      "tier": "duchy"
+    },
+    {
+      "capital": "c_roma",
+      "color": null,
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
+      "id": "d_cd_santa_prisca",
+      "name": "Santa Prisca",
+      "tier": "duchy"
+    },
+    {
+      "capital": "c_roma",
+      "color": null,
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
+      "id": "d_cd_santi_giovanni_e_paolo",
+      "name": "Santi Giovanni e Paolo",
+      "tier": "duchy"
+    },
+    {
+      "capital": "c_roma",
+      "color": null,
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
+      "id": "d_cd_quattro_coronati",
+      "name": "Santi Quattro Coronati",
+      "tier": "duchy"
+    },
+    {
+      "capital": "c_roma",
+      "color": null,
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
+      "id": "d_cd_santa_agata",
+      "name": "Sant'Agata",
+      "tier": "duchy"
+    },
+    {
+      "capital": "c_roma",
+      "color": null,
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
+      "id": "d_cd_san_sisto",
+      "name": "San Sisto Vecchio",
+      "tier": "duchy"
+    },
+    {
+      "capital": "c_roma",
+      "color": null,
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
+      "id": "d_cd_santa_susanna",
+      "name": "Santa Susanna",
+      "tier": "duchy"
+    },
+    {
+      "capital": "c_roma",
+      "color": null,
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
+      "id": "d_cd_santa_lucia",
+      "name": "Santa Lucia",
+      "tier": "duchy"
+    },
+    {
+      "capital": "c_roma",
+      "color": null,
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
+      "id": "d_cd_via",
+      "name": "Santa Maria in Via",
+      "tier": "duchy"
+    },
+    {
+      "capital": "c_roma",
+      "color": null,
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
+      "id": "d_cd_san_apollinare",
+      "name": "Sant'Apollinare",
+      "tier": "duchy"
+    },
+    {
+      "capital": "c_roma",
+      "color": null,
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
+      "id": "d_cd_san_callisto",
+      "name": "San Callisto",
+      "tier": "duchy"
+    },
+    {
+      "capital": "c_roma",
+      "color": null,
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
+      "id": "d_cd_santa_agnese",
+      "name": "Sant'Agnese",
+      "tier": "duchy"
+    },
+    {
+      "capital": "c_roma",
+      "color": null,
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
+      "id": "d_cd_san_bartolomeo",
+      "name": "San Bartolomeo",
+      "tier": "duchy"
+    },
+    {
+      "capital": "c_toledo",
+      "color": "#f77047",
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
+      "id": "d_et_toledo",
+      "name": "Toledo",
+      "tier": "duchy"
+    },
+    {
+      "capital": "c_santiago",
+      "color": "#cc9580",
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
+      "id": "d_et_santiago",
+      "name": "Santiago",
+      "tier": "duchy"
+    },
+    {
+      "capital": "c_tarragona",
+      "color": "#5f9014",
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
+      "id": "d_et_tarragona",
+      "name": "Tarragona",
+      "tier": "duchy"
+    },
+    {
+      "capital": "c_sevilla",
+      "color": "#c3bb4b",
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
+      "id": "d_et_sevilla",
+      "name": "Sevilla",
+      "tier": "duchy"
+    },
+    {
+      "capital": "c_porto",
+      "color": "#d2372f",
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
+      "id": "d_et_braga",
+      "name": "Braga",
+      "tier": "duchy"
+    },
+    {
+      "capital": "c_merida",
+      "color": "#968c0a",
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
+      "id": "d_et_merida",
+      "name": "Merida",
+      "tier": "duchy"
+    },
+    {
+      "capital": "c_tangiers",
+      "color": "#a2205d",
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
+      "id": "d_et_tingitana",
+      "name": "Tingitana",
+      "tier": "duchy"
+    },
+    {
+      "capital": "c_north_riding",
+      "color": "#bb934d",
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
+      "id": "d_et_york",
+      "name": "York",
+      "tier": "duchy"
+    },
+    {
+      "capital": "c_connacht",
+      "color": "#69af68",
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
+      "id": "d_et_tuam",
+      "name": "Tuam",
+      "tier": "duchy"
+    },
+    {
+      "capital": "c_dublin",
+      "color": "#17c68e",
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
+      "id": "d_et_dublin",
+      "name": "Dublin",
+      "tier": "duchy"
+    },
+    {
+      "capital": "c_thomond",
+      "color": "#304d37",
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
+      "id": "d_et_cashel",
+      "name": "Cashel",
+      "tier": "duchy"
+    },
+    {
+      "capital": "c_oriel",
+      "color": "#3f8c51",
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
+      "id": "d_et_armagh",
+      "name": "Armagh",
+      "tier": "duchy"
+    },
+    {
+      "capital": "c_kent",
+      "color": "#ff4b28",
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
+      "id": "d_et_canterbury",
+      "name": "Canterbury",
+      "tier": "duchy"
+    },
+    {
+      "capital": "c_rouen",
+      "color": "#191991",
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
+      "id": "d_et_rouen",
+      "name": "Rouen",
+      "tier": "duchy"
+    },
+    {
+      "capital": "c_reims",
+      "color": "#2d7669",
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
+      "id": "d_et_reims",
+      "name": "Reims",
+      "tier": "duchy"
+    },
+    {
+      "capital": "c_ile_de_france",
+      "color": "#491fb0",
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
+      "id": "d_et_sens",
+      "name": "Sens",
+      "tier": "duchy"
+    },
+    {
+      "capital": "c_tourraine",
+      "color": "#537caf",
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
+      "id": "d_et_tours",
+      "name": "Tours",
+      "tier": "duchy"
+    },
+    {
+      "capital": "c_issoudun",
+      "color": "#5350da",
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
+      "id": "d_et_bourges",
+      "name": "Bourges",
+      "tier": "duchy"
+    },
+    {
+      "capital": "c_bordeaux",
+      "color": "#a00fdf",
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
+      "id": "d_et_bordeaux",
+      "name": "Bordeaux",
+      "tier": "duchy"
+    },
+    {
+      "capital": "c_lyon",
+      "color": "#5f145a",
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
+      "id": "d_et_lyon",
+      "name": "Lyon",
+      "tier": "duchy"
+    },
+    {
+      "capital": "c_aosta",
+      "color": "#203b4b",
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
+      "id": "d_et_tarentaise",
+      "name": "Tarentaise",
+      "tier": "duchy"
+    },
+    {
+      "capital": "c_viennois",
+      "color": "#54371a",
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
+      "id": "d_et_vienne",
+      "name": "Vienne",
+      "tier": "duchy"
+    },
+    {
+      "capital": "c_armagnac",
+      "color": "#b552d7",
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
+      "id": "d_et_eauze",
+      "name": "Eauze",
+      "tier": "duchy"
+    },
+    {
+      "capital": "c_armagnac",
+      "color": "#b552d7",
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
+      "id": "d_et_auch",
+      "name": "Auch",
+      "tier": "duchy"
+    },
+    {
+      "capital": "c_carcassonne",
+      "color": "#2754b4",
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
+      "id": "d_et_narbonne",
+      "name": "Narbonne",
+      "tier": "duchy"
+    },
+    {
+      "capital": "c_besancon",
+      "color": "#6a4653",
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
+      "id": "d_et_besancon",
+      "name": "Besançon",
+      "tier": "duchy"
+    },
+    {
+      "capital": "c_venaissin",
+      "color": "#ea4f16",
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
+      "id": "d_et_arles",
+      "name": "Arles",
+      "tier": "duchy"
+    },
+    {
+      "capital": "c_provence",
+      "color": "#ce0b93",
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
+      "id": "d_et_aix",
+      "name": "Aix",
+      "tier": "duchy"
+    },
+    {
+      "capital": "c_forcalquier",
+      "color": "#e13a7a",
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
+      "id": "d_et_embrun",
+      "name": "Embrun",
+      "tier": "duchy"
+    },
+    {
+      "capital": "c_lombardia",
+      "color": "#985396",
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
+      "id": "d_et_milano",
+      "name": "Milano",
+      "tier": "duchy"
+    },
+    {
+      "capital": "c_genoa",
+      "color": "#8daef5",
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
+      "id": "d_et_genoa",
+      "name": "Genoa",
+      "tier": "duchy"
+    },
+    {
+      "capital": "c_cagliari",
+      "color": "#fa7bbe",
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
+      "id": "d_et_cagliari",
+      "name": "Cagliari",
+      "tier": "duchy"
+    },
+    {
+      "capital": "c_logudoro",
+      "color": "#84f2b3",
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
+      "id": "d_et_torres",
+      "name": "Torres",
+      "tier": "duchy"
+    },
+    {
+      "capital": "c_arborea",
+      "color": "#a287cb",
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
+      "id": "d_et_oristano",
+      "name": "Oristano",
+      "tier": "duchy"
+    },
+    {
+      "capital": "c_reggio_calabria",
+      "color": "#c9b076",
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
+      "id": "d_et_reggio_calabria",
+      "name": "Reggio Calabria",
+      "tier": "duchy"
+    },
+    {
+      "capital": "c_cosenza",
+      "color": "#db4e87",
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
+      "id": "d_et_cosenza",
+      "name": "Cosenza",
+      "tier": "duchy"
+    },
+    {
+      "capital": "c_messina",
+      "color": "#79a29e",
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
+      "id": "d_et_messina",
+      "name": "Messina",
+      "tier": "duchy"
+    },
+    {
+      "capital": "c_palermo",
+      "color": "#62d387",
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
+      "id": "d_et_palermo",
+      "name": "Palermo",
+      "tier": "duchy"
+    },
+    {
+      "capital": "c_rossano",
+      "color": "#966450",
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
+      "id": "d_et_santa_severina",
+      "name": "Santa Severina",
+      "tier": "duchy"
+    },
+    {
+      "capital": "c_ravenna",
+      "color": "#bc734c",
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
+      "id": "d_et_ravenna",
+      "name": "Ravenna",
+      "tier": "duchy"
+    },
+    {
+      "capital": "c_roma",
+      "color": "#b7c5d8",
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
+      "id": "d_et_roma",
+      "name": "Roma",
+      "tier": "duchy"
+    },
+    {
+      "capital": "c_pisa",
+      "color": "#7d8942",
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
+      "id": "d_et_pisa",
+      "name": "Pisa",
+      "tier": "duchy"
+    },
+    {
+      "capital": "c_capua",
+      "color": "#b9f484",
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
+      "id": "d_et_capua",
+      "name": "Capua",
+      "tier": "duchy"
+    },
+    {
+      "capital": "c_napoli",
+      "color": "#b9c22f",
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
+      "id": "d_et_napoli",
+      "name": "Napoli",
+      "tier": "duchy"
+    },
+    {
+      "capital": "c_salerno",
+      "color": "#c4f4f9",
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
+      "id": "d_et_salerno",
+      "name": "Salerno",
+      "tier": "duchy"
+    },
+    {
+      "capital": "c_benevento",
+      "color": "#f86810",
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
+      "id": "d_et_benevento",
+      "name": "Benevento",
+      "tier": "duchy"
+    },
+    {
+      "capital": "c_bari",
+      "color": "#82d51c",
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
+      "id": "d_et_bari",
+      "name": "Bari",
+      "tier": "duchy"
+    },
+    {
+      "capital": "c_apulia",
+      "color": "#607d0e",
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
+      "id": "d_et_trani",
+      "name": "Trani",
+      "tier": "duchy"
+    },
+    {
+      "capital": "c_lecce",
+      "color": "#f7de23",
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
+      "id": "d_et_brindisi",
+      "name": "Brindisi",
+      "tier": "duchy"
+    },
+    {
+      "capital": "c_aquileia",
+      "color": "#71c88b",
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
+      "id": "d_et_aquileia",
+      "name": "Aquileia",
+      "tier": "duchy"
+    },
+    {
+      "capital": "c_esztergom",
+      "color": "#d20f2f",
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
+      "id": "d_et_esztergom",
+      "name": "Esztergom",
+      "tier": "duchy"
+    },
+    {
+      "capital": "c_szekesfehervar",
+      "color": "#c4a369",
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
+      "id": "d_et_kalocsa",
+      "name": "Kalocsa",
+      "tier": "duchy"
+    },
+    {
+      "capital": "c_cetina",
+      "color": "#ad404a",
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
+      "id": "d_et_split",
+      "name": "Split",
+      "tier": "duchy"
+    },
+    {
+      "capital": "c_ohrid",
+      "color": "#5e30a9",
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
+      "id": "d_et_ohrid",
+      "name": "Ohrid",
+      "tier": "duchy"
+    },
+    {
+      "capital": "c_ragusa",
+      "color": "#cc2c42",
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
+      "id": "d_et_ragusa",
+      "name": "Ragusa",
+      "tier": "duchy"
+    },
+    {
+      "capital": "c_salzburg",
+      "color": "#6c7098",
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
+      "id": "d_et_salzburg",
+      "name": "Salzburg",
+      "tier": "duchy"
+    },
+    {
+      "capital": "c_trier",
+      "color": "#178ba1",
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
+      "id": "d_et_trier",
+      "name": "Trier",
+      "tier": "duchy"
+    },
+    {
+      "capital": "c_gnieznienska",
+      "color": "#5b4129",
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
+      "id": "d_et_gniezno",
+      "name": "Gniezno",
+      "tier": "duchy"
+    },
+    {
+      "capital": "c_mainz",
+      "color": "#e0a1ee",
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
+      "id": "d_et_mainz",
+      "name": "Mainz",
+      "tier": "duchy"
+    },
+    {
+      "capital": "c_magdeburg",
+      "color": "#82447f",
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
+      "id": "d_et_magdeburg",
+      "name": "Magdeburg",
+      "tier": "duchy"
+    },
+    {
+      "capital": "c_cologne",
+      "color": "#73a0b4",
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
+      "id": "d_et_cologne",
+      "name": "Cologne",
+      "tier": "duchy"
+    },
+    {
+      "capital": "c_hamburg",
+      "color": "#acdb5a",
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
+      "id": "d_et_hamburg",
+      "name": "Hamburg",
+      "tier": "duchy"
+    },
+    {
+      "capital": "c_skane",
+      "color": "#f6232b",
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
+      "id": "d_et_lund",
+      "name": "Lund",
+      "tier": "duchy"
+    },
+    {
+      "capital": "c_upland",
+      "color": "#4f96a2",
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
+      "id": "d_et_uppsala",
+      "name": "Uppsala",
+      "tier": "duchy"
+    },
+    {
+      "capital": "c_trandheim",
+      "color": "#ad4e80",
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
+      "id": "d_et_nidaros",
+      "name": "Nidaros",
+      "tier": "duchy"
+    },
+    {
+      "capital": "c_kiev",
+      "color": "#0b407b",
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
+      "id": "d_et_kyiv",
+      "name": "Kyiv",
+      "tier": "duchy"
+    },
+    {
+      "capital": "c_byzantion",
+      "color": "#ef5f95",
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
+      "id": "d_et_constantinople",
+      "name": "Constantinople",
+      "tier": "duchy"
+    },
+    {
+      "capital": "c_jerusalem",
+      "color": "#40c3df",
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
+      "id": "d_et_jerusalem",
+      "name": "Jerusalem",
+      "tier": "duchy"
+    },
+    {
+      "capital": "c_antiocheia",
+      "color": "#98450d",
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
+      "id": "d_et_antioch",
+      "name": "Antioch",
+      "tier": "duchy"
+    },
+    {
+      "capital": "c_nicosia",
+      "color": "#f9a939",
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
+      "id": "d_et_cyprus",
+      "name": "Church of Cyprus",
+      "tier": "duchy"
+    },
+    {
+      "capital": "c_tbilisi",
+      "color": "#724dad",
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
+      "id": "d_et_georgia",
+      "name": "Georgia",
+      "tier": "duchy"
+    },
+    {
+      "capital": "c_kartli",
+      "color": "#4896ae",
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
+      "id": "d_et_kartli",
+      "name": "Kartli",
+      "tier": "duchy"
+    },
+    {
+      "capital": "c_hayk",
+      "color": "#93198b",
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
+      "id": "d_et_armenia",
+      "name": "Armenia",
+      "tier": "duchy"
+    },
+    {
+      "capital": "c_baghdad",
+      "color": "#46c364",
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
+      "id": "d_et_seleucia_ctesiphon",
+      "name": "Seleucia-Ctesiphon",
+      "tier": "duchy"
+    },
+    {
+      "capital": "c_acre",
+      "color": "#d2d2d2",
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
+      "id": "d_et_tyre",
+      "name": "Tyre",
+      "tier": "duchy"
+    },
+    {
+      "capital": "c_alexandria",
+      "color": "#39b672",
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
+      "id": "d_et_alexandria",
+      "name": "Alexandria",
+      "tier": "duchy"
+    },
+    {
+      "capital": "c_tigre",
+      "color": "#9cc36e",
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
+      "id": "d_et_axum",
+      "name": "Axum",
+      "tier": "duchy"
+    },
+    {
+      "capital": "c_tunis",
+      "color": "#2b2d73",
+      "flags": [
+        "landless",
+        "no_automatic_claims"
+      ],
+      "id": "d_et_africa",
+      "name": "Carthage",
+      "tier": "duchy"
+    },
+    {
+      "capital": "c_jerusalem",
+      "color": "#d4af37",
+      "flags": [
+        "no_automatic_claims",
+        "destroy_if_invalid_heir"
+      ],
+      "id": "h_kingdom_of_heaven",
+      "name": "Kingdom of Heaven",
+      "tier": "hegemony"
     }
   ]
 }

@@ -107,8 +107,9 @@ const pct = (v: number) => `${Math.round(v * 100)}%`;
                 <td class="fx">
                   {t.modifiers.map((m) => <div class:list={[{ neg: m.p === 'bad' }]}>{m.t}</div>)}
                   {t.conditional.map((c) => (
-                    <div class="cond" title={c.condition}>{c.lines.map((l) => l.t).join(' · ')} <span class="cond-tag">conditional</span></div>
+                    <div class="cond" title={c.condition}>{c.lines.map((l) => l.t).join(' · ')} <span class="cond-tag">{(c as any).tag ?? 'conditional'}</span></div>
                   ))}
+                  {t.clergy && <div><a href={`${base}/concepts#clergy`} title={t.clergy}>Counts as Clergy</a></div>}
                   {Object.entries(t.tracks).map(([tn, levels]) => (
                     <details class="track">
                       <summary>experience track{tn !== 'default' ? `: ${tn.replace(/_/g, ' ')}` : ''}</summary>

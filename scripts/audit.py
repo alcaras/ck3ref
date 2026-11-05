@@ -35,6 +35,7 @@ MAPPED = {
     "landed_titles": "build_titles.py + build_startworld.py",
     "governments": "build_governments.py",
     "laws": "build_laws.py",
+    "law_groups": "build_laws.py",
     "subject_contracts": "build_contracts.py",
     "court_positions": "build_court.py",
     "council_positions": "build_council.py",
@@ -93,6 +94,10 @@ SKIP = {
         "accolade_icons", "dynasty_houses", "dynasties",
     "dynasty_house_mottos", "dynasty_house_motto_inserts", "story_cycles", "bookmarks", "flavorization",
     "raids",
+    # By God Alone (1.20) — player-facing, candidates for their own pages:
+    # spiritual fulfillment levels per religion, holy order types, and the
+    # clerical "puppet" agents with their actions
+    "spiritual_fulfillment", "holy_orders", "puppets",
     # engine/plumbing — no reference value planned
     "on_action", "scripted_effects", "scripted_triggers", "scripted_modifiers",
     "scripted_lists", "scripted_costs", "scripted_rules", "scripted_guis",
@@ -110,6 +115,8 @@ SKIP = {
     "combat_phase_events", "ai_war_stances", "ai_goaltypes",
     "connection_arrows", "playable_difficulty_infos", "console_groups",
     "province_mapping",
+    "menu_scenes",            # main-menu portraits and animations (frontend GUI)
+    "morpheme_strip_rules",   # name-generation string rules
 }
 
 # game/ subtrees the site reads outside common/: map_data is parsed by

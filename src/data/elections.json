@@ -3,6 +3,7 @@
     {
       "allowChildren": true,
       "candidateScore": [
+        "add Appointment score base",
         "base 100 — when conditional",
         "base 50 — when conditional",
         "base 20 — when conditional",
@@ -11,8 +12,7 @@
         "add Learning",
         "add Martial",
         "add Intrigue",
-        "add Stewardship",
-        "multiply 2"
+        "add Stewardship"
       ],
       "dlc": null,
       "id": "admin_emperor",
@@ -29,10 +29,10 @@
         "add Intrigue",
         "add Learning",
         "multiply 1",
-        "base 50 — when Blind, Incapable, Infirm",
-        "base 200 — when Disinherited",
-        "base 200 — when Gallivanter",
-        "base -30 — when Deviant"
+        "add Appointment score base",
+        "add Appointment score non military",
+        "add Appointment score non merit",
+        "add Appointment score governor"
       ],
       "dlc": null,
       "id": "admin_governor",
@@ -43,62 +43,77 @@
     {
       "allowChildren": false,
       "candidateScore": [
-        "base 10; multiply Prestige level — when Family",
+        "add Appointment score base",
+        "add Appointment score civic",
+        "add Appointment score celestial",
+        "add Appointment score governor",
+        "add Appointment score non military",
         "base 15 — when conditional",
         "base -10 — when conditional",
         "base Learning",
         "multiply 0.5",
-        "base Diplomacy",
-        "multiply 0.25",
-        "base Stewardship",
-        "multiply 0.25",
-        "base 10 — when Virtuoso Arbitrator, Golden Sovereign, Erudite Oracle"
+        "base Diplomacy"
       ],
       "dlc": null,
       "id": "celestial_civic_governor",
       "level": "merit",
       "name": "Celestial civic governor",
-      "sameTier": true
+      "sameTier": false
     },
     {
       "allowChildren": false,
       "candidateScore": [
-        "base 10; multiply Prestige level — when Family",
-        "base Martial",
-        "multiply 2",
-        "base Learning; multiply 0.5 — when conditional",
-        "base Number of commander traits",
-        "multiply 20",
-        "base Prowess",
-        "base Var:merit military career score bonus — when conditional",
-        "base 10 — when conditional",
-        "base 20 — when conditional"
+        "add Appointment score base",
+        "add Appointment score military",
+        "add Appointment score celestial",
+        "add Appointment score governor",
+        "add Appointment score final factors"
       ],
       "dlc": null,
       "id": "celestial_military_governor",
       "level": "merit",
       "name": "Celestial military governor",
-      "sameTier": true
+      "sameTier": false
     },
     {
       "allowChildren": false,
       "candidateScore": [
         "base 10 — when conditional",
         "base -5 — when conditional",
-        "base 10 — when conditional",
         "base Var:merit civilian career score bonus — when conditional",
         "base 10 — when conditional",
         "base 20 — when conditional",
         "base 40 — when conditional",
         "base 80 — when conditional",
-        "base Trait xp(lifestyle poet); multiply 0.25 — when conditional",
-        "base Trait xp(lifestyle poet); multiply 0.5 — when conditional"
+        "base 100 — when conditional",
+        "base 100 — when Any movement leader",
+        "base 25 — when conditional"
       ],
       "dlc": null,
       "id": "celestial_minister",
       "level": "merit",
       "name": "Celestial minister",
-      "sameTier": true
+      "sameTier": false
+    },
+    {
+      "allowChildren": false,
+      "candidateScore": [
+        "base Learning",
+        "base Diplomacy; multiply 0.8 — when conditional",
+        "base Stewardship; multiply 0.8 — when conditional",
+        "base Intrigue; multiply 0.8 — when conditional",
+        "base Martial; multiply 0.8 — when Pam rite values martial clergy",
+        "base Clerical appointment education rank value; multiply 6 — when Students of Knowledge",
+        "base Clerical appointment education rank value; multiply 5 — when Students of Diplomacy",
+        "base Clerical appointment education rank value; multiply 5 — when Students of Stewardship",
+        "base Clerical appointment education rank value; multiply 5 — when Students of Intrigue",
+        "base Clerical appointment education rank value; multiply 5 — when Students of Warfare, Pam rite values martial clergy"
+      ],
+      "dlc": null,
+      "id": "clerical_christian",
+      "level": null,
+      "name": "Clerical christian",
+      "sameTier": false
     },
     {
       "allowChildren": false,
@@ -109,10 +124,10 @@
         "add Intrigue",
         "add Learning",
         "multiply 1",
-        "base 5 — when Governor",
-        "base 50 — when Blind, Incapable, Infirm",
-        "base 200 — when Disinherited",
-        "base 200 — when Gallivanter"
+        "add Appointment score base",
+        "add Appointment score non military",
+        "add Appointment score non merit",
+        "add Appointment score governor"
       ],
       "dlc": null,
       "id": "japanese_governor",
@@ -123,16 +138,14 @@
     {
       "allowChildren": false,
       "candidateScore": [
-        "base Martial",
-        "multiply 2",
-        "base Number of commander traits",
-        "multiply 20",
-        "base Prowess",
-        "base 10",
-        "multiply Dynasty.warfare legacy track perks",
+        "add Appointment score base",
+        "add Appointment score military",
+        "add Appointment score non merit",
+        "add Appointment score governor",
         "base 10 — when conditional",
-        "base 5 — when Governor",
-        "base 200 — when Disinherited"
+        "base 1.15 — when conditional",
+        "base 0.5 — when Governor",
+        "add Appointment score final factors"
       ],
       "dlc": null,
       "id": "japanese_military_governor",
@@ -149,10 +162,10 @@
         "add Intrigue",
         "add Learning",
         "multiply 1",
-        "base 5 — when Governor",
-        "base 50 — when Blind, Incapable, Infirm",
-        "base 200 — when Disinherited",
-        "base 200 — when Gallivanter"
+        "add Appointment score base",
+        "add Appointment score non military",
+        "add Appointment score non merit",
+        "add Appointment score regent"
       ],
       "dlc": null,
       "id": "japanese_regent",
@@ -163,42 +176,38 @@
     {
       "allowChildren": false,
       "candidateScore": [
+        "add Appointment score base",
+        "add Appointment score civic",
+        "add Appointment score governor",
+        "add Appointment score non military",
         "base 50 — when conditional",
         "base 25 — when Domicile",
-        "base Var:merit civilian career score bonus — when conditional",
-        "base 10 — when conditional",
-        "base 20 — when conditional",
-        "base 40 — when conditional",
-        "base 80 — when conditional",
         "base Age",
         "divide 2",
-        "base Retirement age current value; subtract Age; multiply 3 — when conditional"
+        "base Retirement age current value; subtract Age; multiply 3 — when conditional",
+        "add Appointment score final factors"
       ],
       "dlc": null,
       "id": "meritocratic_civic_governor",
       "level": "merit",
       "name": "Meritocratic civic governor",
-      "sameTier": true
+      "sameTier": false
     },
     {
       "allowChildren": false,
       "candidateScore": [
-        "base Martial",
-        "multiply 2",
-        "base Learning; multiply 0.5 — when conditional",
-        "base Number of commander traits",
-        "multiply 20",
-        "base Prowess",
-        "base Var:merit military career score bonus — when conditional",
-        "base 10 — when conditional",
-        "base 20 — when conditional",
-        "base 40 — when conditional"
+        "add Appointment score base",
+        "add Appointment score military",
+        "add Appointment score governor",
+        "base 50 — when conditional",
+        "base 25 — when Domicile",
+        "add Appointment score final factors"
       ],
       "dlc": null,
       "id": "meritocratic_military_governor",
       "level": "merit",
       "name": "Meritocratic military governor",
-      "sameTier": true
+      "sameTier": false
     },
     {
       "allowChildren": false,
@@ -209,16 +218,16 @@
         "add Intrigue",
         "add Learning",
         "multiply 1",
-        "base 5 — when Governor",
-        "base 50 — when Blind, Incapable, Infirm",
-        "base 200 — when Disinherited",
-        "base 200 — when Gallivanter"
+        "add Appointment score base",
+        "add Appointment score non military",
+        "add Appointment score regent",
+        "add Appointment score final factors"
       ],
       "dlc": null,
       "id": "meritocratic_regent",
       "level": null,
       "name": "Meritocratic regent",
-      "sameTier": true
+      "sameTier": false
     }
   ],
   "confederations": [
@@ -325,9 +334,7 @@
       ],
       "candidates": [],
       "dlc": null,
-      "electors": [
-        "add Holder"
-      ],
+      "electors": [],
       "id": "confederation_elective",
       "name": "Confederation elective",
       "voteStrength": [
@@ -346,19 +353,17 @@
       ],
       "candidates": [],
       "dlc": null,
-      "electors": [
-        "add Holder"
-      ],
+      "electors": [],
       "id": "feudal_elective",
       "name": "Feudal elective",
       "voteStrength": [
         "base 1",
-        "add 1 — when Landed or landless administrative",
+        "add 1 — when Landed or landless administrative or theocratic",
         "add 3 — when conditional",
         "add 2 — when conditional",
         "add 1 — when conditional",
         "base 1; add 1 — when conditional — when Powerful vassal",
-        "add 1 — when Is unplayable, Doctrine theocracy lay clergy",
+        "add 1 — when Is a Theocratic-type Government",
         "add 1 — when conditional"
       ]
     },
@@ -368,9 +373,7 @@
       ],
       "candidates": [],
       "dlc": null,
-      "electors": [
-        "add Holder"
-      ],
+      "electors": [],
       "id": "gaelic_elective",
       "name": "Gaelic elective",
       "voteStrength": [
@@ -389,11 +392,10 @@
       "candidates": [],
       "dlc": null,
       "electors": [
-        "add Holder",
         "base 1",
         "add 200 — when conditional",
         "add 75 — when conditional",
-        "base 10 — when Is unplayable"
+        "base 10 — when Is a Theocratic-type Government, Is unplayable"
       ],
       "id": "princely_elective",
       "name": "Princely elective",
@@ -402,7 +404,7 @@
         "add 2 — when conditional",
         "add 1 — when conditional",
         "base 1; add 2 — when conditional — when Powerful vassal",
-        "add 2 — when Is unplayable, Doctrine theocracy lay clergy",
+        "add 2 — when Is a Theocratic-type Government",
         "add 4 — when conditional",
         "add 1 — when conditional"
       ]
@@ -413,9 +415,7 @@
       ],
       "candidates": [],
       "dlc": null,
-      "electors": [
-        "add Holder"
-      ],
+      "electors": [],
       "id": "saxon_elective",
       "name": "Saxon elective",
       "voteStrength": [
@@ -433,14 +433,29 @@
       ],
       "candidates": [],
       "dlc": null,
-      "electors": [
-        "add Holder"
-      ],
+      "electors": [],
       "id": "scandinavian_elective",
       "name": "Scandinavian elective",
       "voteStrength": [
         "base 0",
-        "base Capital county.county opinion; multiply 0.2 — when Landed or landless administrative"
+        "base Capital county.county opinion; multiply 0.2 — when Landed or landless administrative or theocratic"
+      ]
+    },
+    {
+      "candidateScore": [
+        "base 0"
+      ],
+      "candidates": [
+        "base Pam papal pious priority value",
+        "base Pam papal populist priority value",
+        "base Pam papal powerful priority value"
+      ],
+      "dlc": "By God Alone",
+      "electors": [],
+      "id": "theocratic_elective",
+      "name": "Theocratic elective",
+      "voteStrength": [
+        "base 1"
       ]
     },
     {
@@ -449,14 +464,12 @@
       ],
       "candidates": [],
       "dlc": null,
-      "electors": [
-        "add Holder"
-      ],
+      "electors": [],
       "id": "tribal_elective",
       "name": "Tribal elective",
       "voteStrength": [
         "base 0",
-        "base Capital county.county opinion; multiply 0.2 — when Landed or landless administrative"
+        "base Capital county.county opinion; multiply 0.2 — when Landed or landless administrative or theocratic"
       ]
     }
   ],
@@ -543,7 +556,7 @@
       "name": "Parochial"
     },
     {
-      "desc": "Zealot Vassals are focused on matters of the faith, and are swayed by pious actions. Zealous or vengeful Vassals often adopt this Vassal Stance, as do Clergy.\n\nZealot Vassals like when their Liege:\nEFFECT_LIST_BULLETConstructs or upgrades Temple Holdings\nEFFECT_LIST_BULLETSucceeds with the Learn Language Scheme\nEFFECT_LIST_BULLETHas Virtuous Traits\nEFFECT_LIST_BULLETGoes on Pilgrimage Activities\n\nZealot Vassals dislike when their Liege:\nEFFECT_LIST_BULLETAsks the Head of Faith for Gold Gold\nEFFECT_LIST_BULLETHas Sinful Traits\n\nThey prefer zealous and virtuous Heirs with a high Learning Learning skill.",
+      "desc": "Zealot Vassals are focused on matters of the faith, and are swayed by pious actions. Zealous or vengeful Vassals often adopt this Vassal Stance, as do Clergy.\n\nZealot Vassals like when their Liege:\nEFFECT_LIST_BULLETConstructs or upgrades Temple Holdings\nEFFECT_LIST_BULLETSucceeds with the Learn Language Scheme\nEFFECT_LIST_BULLETHas Virtuous Traits\nEFFECT_LIST_BULLETGoes on Pilgrimage Activities\n\nZealot Vassals dislike when their Liege:\nEFFECT_LIST_BULLETAsks the Head of Faith for Gold Gold\nEFFECT_LIST_BULLETHas Sinful Traits\nEFFECT_LIST_BULLETSucceeds with the Study Rite Scheme\n\nThey prefer zealous and virtuous Heirs with a high Learning Learning skill.",
       "dlc": null,
       "factors": [
         "base Ai zeal",

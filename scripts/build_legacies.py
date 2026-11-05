@@ -32,6 +32,9 @@ PERK_SKIP_FIELDS = {
 }
 PERK_HANDLED_FIELDS = {
     "legacy", "character_modifier", "doctrine_character_modifier", "effect", "traits",
+    # 1.20 rename of doctrine_character_modifier; _dynasty_perks.info: "Applied
+    # to characters in dynasties with the perk if they have the given doctrine"
+    "faith_character_modifier",
 }
 
 # Modifier-block keys that are not display modifiers.
@@ -307,7 +310,8 @@ def main():
         effects = []
         for mod in blk.get_all("character_modifier"):
             effects.extend(modifier_lines(mod, skipped_inner))
-        for mod in blk.get_all("doctrine_character_modifier"):
+        for mod in (blk.get_all("faith_character_modifier")
+                    + blk.get_all("doctrine_character_modifier")):
             if not isinstance(mod, Block):
                 continue
             label = doctrine_label(str(mod.get("doctrine")))

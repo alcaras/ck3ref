@@ -12,6 +12,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent / "lib"))
 import ck3
+import faith_cond
 from ck3 import Block, Tagged
 
 SKIP_FIELDS = {
@@ -21,6 +22,7 @@ HANDLED = {
     "lifestyle", "tree", "position", "icon", "parent", "character_modifier",
     "government_character_modifier", "doctrine_character_modifier",
     "culture_character_modifier", "effect", "can_be_picked", "trait", "name",
+    "faith_character_modifier",  # 1.20 rename of doctrine_character_modifier
 }
 
 
@@ -74,6 +76,20 @@ def mod_lines(block):
     return lines
 
 
+def faith_mod_lines(block):
+    """`faith_character_modifier = { doctrine = d … }` — per
+    _lifestyle_perks.info: "Additional modifier applied to characters with the
+    perk and their faith having the specified doctrine". `name` is the
+    modifier's internal identity (no display value)."""
+    if not isinstance(block, Block):
+        return []
+    doc = block.get("doctrine")
+    label = faith_cond.doctrine_cond_name(doc) if isinstance(doc, str) else "doctrine"
+    return [f"If faith has {label}: {ck3.render_modifier(k, v)}"
+            for k, _op, v in block
+            if k not in (None, "doctrine", "name") and not isinstance(v, (Block, Tagged))]
+
+
 def effect_text(block, out):
     """Pull loc text refs out of scripted effect blocks."""
     if isinstance(block, Tagged):
@@ -100,10 +116,12 @@ def main():
         xy = [v for v in pos.values()] if isinstance(pos, Block) else [0, 0]
 
         effects = []
-        for ch in ("character_modifier", "doctrine_character_modifier",
-                   "culture_character_modifier"):
+        for ch in ("character_modifier", "culture_character_modifier"):
             for m in blk.get_all(ch):
                 effects.extend(mod_lines(m))
+        for ch in ("faith_character_modifier", "doctrine_character_modifier"):
+            for m in blk.get_all(ch):
+                effects.extend(faith_mod_lines(m))
         gov = []
         for m in blk.get_all("government_character_modifier"):
             gov.extend(mod_lines(m))

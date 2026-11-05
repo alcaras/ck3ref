@@ -1,6 +1,7 @@
 [
   {
     "category": "childhood",
+    "clergy": null,
     "conditional": [],
     "desc": "This child can often be seen ordering other children around. While they are concerned with getting things done the right way, getting things done their way is equally important.",
     "dlc": null,
@@ -23,6 +24,7 @@
   },
   {
     "category": "childhood",
+    "clergy": null,
     "conditional": [],
     "desc": "This child certainly knows how to wrap people around their little finger. They are sweet and amiable, which allows them to get away with almost anything.",
     "dlc": null,
@@ -50,6 +52,7 @@
   },
   {
     "category": "childhood",
+    "clergy": null,
     "conditional": [],
     "desc": "There is rarely a silent moment with this child. Constantly asking questions, they are curious about everything and everyone.",
     "dlc": null,
@@ -77,6 +80,7 @@
   },
   {
     "category": "childhood",
+    "clergy": null,
     "conditional": [],
     "desc": "This child is often lost in thought, trying understand the world around them. They often rely on books and systems to make sense of things.",
     "dlc": null,
@@ -104,6 +108,7 @@
   },
   {
     "category": "childhood",
+    "clergy": null,
     "conditional": [],
     "desc": "This child is always on the move, full of energy and mischief. When they are up to something, it is not uncommon for others to get hurt.",
     "dlc": null,
@@ -126,6 +131,7 @@
   },
   {
     "category": "commander",
+    "clergy": null,
     "conditional": [
       {
         "condition": "Some Commander Traits and Personality Traits have extra Winter bonuses",
@@ -205,20 +211,42 @@
         "100": [
           "+1 Martial",
           "+2 Advantage",
-          "+10% Enemy Fatal Casualties"
+          "+10% Enemy Fatal Casualties",
+          "+1 Advantage in Provinces affected by Winter (if culture: Some Commander Traits and Personality Traits have extra Winter bonuses)",
+          "+1 Maximum Battle Roll in Forest (if culture: Some Commander Traits and Personality Traits have extra Forest bonuses)",
+          "+1 Maximum Battle Roll in Taiga (if culture: Some Commander Traits and Personality Traits have extra Forest bonuses)",
+          "+1 Maximum Battle Roll in Jungle (if culture: Some Commander Traits and Personality Traits have extra Jungle bonuses)",
+          "+1 Maximum Battle Roll in Drylands (if culture: Some Commander Traits and Personality Traits have extra Dry Terrain bonuses)",
+          "+1 Maximum Battle Roll in Desert (if culture: Some Commander Traits and Personality Traits have extra Dry Terrain bonuses)",
+          "+1 Maximum Battle Roll in Hills (if culture: Some Commander Traits and Personality Traits have extra Hill bonuses)"
         ],
         "33": [
-          "+10% Enemy Fatal Casualties"
+          "+10% Enemy Fatal Casualties",
+          "+1 Advantage in Provinces affected by Winter (if culture: Some Commander Traits and Personality Traits have extra Winter bonuses)",
+          "+1 Maximum Battle Roll in Forest (if culture: Some Commander Traits and Personality Traits have extra Forest bonuses)",
+          "+1 Maximum Battle Roll in Taiga (if culture: Some Commander Traits and Personality Traits have extra Forest bonuses)",
+          "+1 Maximum Battle Roll in Jungle (if culture: Some Commander Traits and Personality Traits have extra Jungle bonuses)",
+          "+1 Maximum Battle Roll in Drylands (if culture: Some Commander Traits and Personality Traits have extra Dry Terrain bonuses)",
+          "+1 Maximum Battle Roll in Desert (if culture: Some Commander Traits and Personality Traits have extra Dry Terrain bonuses)",
+          "+1 Maximum Battle Roll in Hills (if culture: Some Commander Traits and Personality Traits have extra Hill bonuses)"
         ],
         "66": [
           "+1 Advantage",
-          "+10% Enemy Fatal Casualties"
+          "+10% Enemy Fatal Casualties",
+          "+1 Advantage in Provinces affected by Winter (if culture: Some Commander Traits and Personality Traits have extra Winter bonuses)",
+          "+1 Maximum Battle Roll in Forest (if culture: Some Commander Traits and Personality Traits have extra Forest bonuses)",
+          "+1 Maximum Battle Roll in Taiga (if culture: Some Commander Traits and Personality Traits have extra Forest bonuses)",
+          "+1 Maximum Battle Roll in Jungle (if culture: Some Commander Traits and Personality Traits have extra Jungle bonuses)",
+          "+1 Maximum Battle Roll in Drylands (if culture: Some Commander Traits and Personality Traits have extra Dry Terrain bonuses)",
+          "+1 Maximum Battle Roll in Desert (if culture: Some Commander Traits and Personality Traits have extra Dry Terrain bonuses)",
+          "+1 Maximum Battle Roll in Hills (if culture: Some Commander Traits and Personality Traits have extra Hill bonuses)"
         ]
       }
     }
   },
   {
     "category": "commander",
+    "clergy": null,
     "conditional": [
       {
         "condition": "Some Commander Traits and Personality Traits have extra Forest bonuses",
@@ -273,21 +301,31 @@
         "100": [
           "+1 Martial",
           "+2 Advantage",
-          "+2 Minimum Battle Roll"
+          "+2 Minimum Battle Roll",
+          "+1 Minimum Battle Roll in Forest (if culture: Some Commander Traits and Personality Traits have extra Forest bonuses)",
+          "+1 Minimum Battle Roll in Taiga (if culture: Some Commander Traits and Personality Traits have extra Forest bonuses)",
+          "+1 Minimum Battle Roll in Jungle (if culture: Some Commander Traits and Personality Traits have extra Jungle bonuses)"
         ],
         "33": [
           "+2 Minimum Battle Roll",
-          "-1 Maximum Battle Roll"
+          "-1 Maximum Battle Roll",
+          "+1 Minimum Battle Roll in Forest (if culture: Some Commander Traits and Personality Traits have extra Forest bonuses)",
+          "+1 Minimum Battle Roll in Taiga (if culture: Some Commander Traits and Personality Traits have extra Forest bonuses)",
+          "+1 Minimum Battle Roll in Jungle (if culture: Some Commander Traits and Personality Traits have extra Jungle bonuses)"
         ],
         "66": [
           "+1 Advantage",
-          "+2 Minimum Battle Roll"
+          "+2 Minimum Battle Roll",
+          "+1 Minimum Battle Roll in Forest (if culture: Some Commander Traits and Personality Traits have extra Forest bonuses)",
+          "+1 Minimum Battle Roll in Taiga (if culture: Some Commander Traits and Personality Traits have extra Forest bonuses)",
+          "+1 Minimum Battle Roll in Jungle (if culture: Some Commander Traits and Personality Traits have extra Jungle bonuses)"
         ]
       }
     }
   },
   {
     "category": "commander",
+    "clergy": null,
     "conditional": [
       {
         "condition": "The Desert Warrior Commander Trait has additional Camel Cavalry bonuses",
@@ -346,26 +384,33 @@
           "+2 Drylands Advantage",
           "+2 Desert Advantage",
           "+2 Advantage in Desert Mountains",
-          "+2 Advantage in Oasis"
+          "+2 Advantage in Oasis",
+          "+10% Camel Cavalry Damage (if culture: The Desert Warrior Commander Trait has additional Camel Cavalry bonuses)",
+          "+5% Camel Cavalry Screen (if culture: The Desert Warrior Commander Trait has additional Camel Cavalry bonuses)"
         ],
         "33": [
           "+2 Drylands Advantage",
           "+2 Desert Advantage",
           "+2 Advantage in Desert Mountains",
-          "+2 Advantage in Oasis"
+          "+2 Advantage in Oasis",
+          "+10% Camel Cavalry Damage (if culture: The Desert Warrior Commander Trait has additional Camel Cavalry bonuses)",
+          "+5% Camel Cavalry Screen (if culture: The Desert Warrior Commander Trait has additional Camel Cavalry bonuses)"
         ],
         "66": [
           "+1 Advantage",
           "+2 Drylands Advantage",
           "+2 Desert Advantage",
           "+2 Advantage in Desert Mountains",
-          "+2 Advantage in Oasis"
+          "+2 Advantage in Oasis",
+          "+10% Camel Cavalry Damage (if culture: The Desert Warrior Commander Trait has additional Camel Cavalry bonuses)",
+          "+5% Camel Cavalry Screen (if culture: The Desert Warrior Commander Trait has additional Camel Cavalry bonuses)"
         ]
       }
     }
   },
   {
     "category": "commander",
+    "clergy": null,
     "conditional": [
       {
         "condition": "Some Commander Traits and Personality Traits have extra Mountain bonuses",
@@ -388,6 +433,20 @@
             "t": "+1 Maximum Battle Roll in Hills"
           }
         ]
+      },
+      {
+        "condition": "Rite has Sacred Mountains — Some Commander Traits and Personality Traits have extra Mountain bonuses",
+        "lines": [
+          {
+            "p": "good",
+            "t": "+1 Minimum Battle Roll in Mountains"
+          },
+          {
+            "p": "good",
+            "t": "+1 Minimum Battle Roll in Desert Mountains"
+          }
+        ],
+        "tag": "if rite has Sacred Mountains"
       }
     ],
     "desc": "This character knows how to reduce the Advantage defending armies get from fortifications, terrain, rivers, and strait crossings.",
@@ -414,20 +473,36 @@
         "100": [
           "+1 Martial",
           "+2 Advantage",
-          "-20% Enemy Defensive Advantage"
+          "-20% Enemy Defensive Advantage",
+          "+1 Minimum Battle Roll in Mountains (if culture: Some Commander Traits and Personality Traits have extra Mountain bonuses)",
+          "+1 Minimum Battle Roll in Desert Mountains (if culture: Some Commander Traits and Personality Traits have extra Mountain bonuses)",
+          "+1 Maximum Battle Roll in Hills (if culture: Some Commander Traits and Personality Traits have extra Hill bonuses)",
+          "+1 Minimum Battle Roll in Mountains (if rite has Sacred Mountains)",
+          "+1 Minimum Battle Roll in Desert Mountains (if rite has Sacred Mountains)"
         ],
         "33": [
-          "-20% Enemy Defensive Advantage"
+          "-20% Enemy Defensive Advantage",
+          "+1 Minimum Battle Roll in Mountains (if culture: Some Commander Traits and Personality Traits have extra Mountain bonuses)",
+          "+1 Minimum Battle Roll in Desert Mountains (if culture: Some Commander Traits and Personality Traits have extra Mountain bonuses)",
+          "+1 Maximum Battle Roll in Hills (if culture: Some Commander Traits and Personality Traits have extra Hill bonuses)",
+          "+1 Minimum Battle Roll in Mountains (if rite has Sacred Mountains)",
+          "+1 Minimum Battle Roll in Desert Mountains (if rite has Sacred Mountains)"
         ],
         "66": [
           "+1 Advantage",
-          "-20% Enemy Defensive Advantage"
+          "-20% Enemy Defensive Advantage",
+          "+1 Minimum Battle Roll in Mountains (if culture: Some Commander Traits and Personality Traits have extra Mountain bonuses)",
+          "+1 Minimum Battle Roll in Desert Mountains (if culture: Some Commander Traits and Personality Traits have extra Mountain bonuses)",
+          "+1 Maximum Battle Roll in Hills (if culture: Some Commander Traits and Personality Traits have extra Hill bonuses)",
+          "+1 Minimum Battle Roll in Mountains (if rite has Sacred Mountains)",
+          "+1 Minimum Battle Roll in Desert Mountains (if rite has Sacred Mountains)"
         ]
       }
     }
   },
   {
     "category": "commander",
+    "clergy": null,
     "conditional": [],
     "desc": "This character is at home close to water and will suffer no Advantage penalty in battles when attacking across straights or rivers.",
     "dlc": null,
@@ -474,6 +549,7 @@
   },
   {
     "category": "commander",
+    "clergy": null,
     "conditional": [],
     "desc": "Where some see forests as obstacles, this character sees opportunity.",
     "dlc": null,
@@ -520,6 +596,7 @@
   },
   {
     "category": "commander",
+    "clergy": null,
     "conditional": [],
     "desc": "Burning with righteous fervor, the Faithful Blade will not rest until all Heathens are defeated.",
     "dlc": null,
@@ -559,6 +636,7 @@
   },
   {
     "category": "commander",
+    "clergy": null,
     "conditional": [
       {
         "condition": "Some Commander Traits and Personality Traits have extra Jungle bonuses",
@@ -603,22 +681,26 @@
           "+1 Martial",
           "+2 Advantage",
           "+2 Jungle Advantage",
-          "-20% Attrition Taken in Jungle"
+          "-20% Attrition Taken in Jungle",
+          "+1 Minimum Battle Roll in Jungle (if culture: Some Commander Traits and Personality Traits have extra Jungle bonuses)"
         ],
         "33": [
           "+2 Jungle Advantage",
-          "-20% Attrition Taken in Jungle"
+          "-20% Attrition Taken in Jungle",
+          "+1 Minimum Battle Roll in Jungle (if culture: Some Commander Traits and Personality Traits have extra Jungle bonuses)"
         ],
         "66": [
           "+1 Advantage",
           "+2 Jungle Advantage",
-          "-20% Attrition Taken in Jungle"
+          "-20% Attrition Taken in Jungle",
+          "+1 Minimum Battle Roll in Jungle (if culture: Some Commander Traits and Personality Traits have extra Jungle bonuses)"
         ]
       }
     }
   },
   {
     "category": "commander",
+    "clergy": null,
     "conditional": [
       {
         "condition": "Some Commander Traits and Personality Traits have extra Winter bonuses",
@@ -676,6 +758,20 @@
             "t": "-10% Attrition Taken in Desert"
           }
         ]
+      },
+      {
+        "condition": "Rite has Sacred Mountains — Some Commander Traits and Personality Traits have extra Mountain bonuses",
+        "lines": [
+          {
+            "p": "good",
+            "t": "-15% Attrition Taken in Mountains"
+          },
+          {
+            "p": "good",
+            "t": "-15% Attrition Taken in Desert Mountains"
+          }
+        ],
+        "tag": "if rite has Sacred Mountains"
       }
     ],
     "desc": "If there is one thing the Logistician knows, it is how to make supplies last — and last well.",
@@ -707,22 +803,53 @@
           "+1 Martial",
           "+2 Advantage",
           "+4 Travel Safety",
-          "+40% Supply Duration"
+          "+40% Supply Duration",
+          "+10% Movement Speed in Provinces affected by Winter (if culture: Some Commander Traits and Personality Traits have extra Winter bonuses)",
+          "-10% Attrition Taken in Forest (if culture: Some Commander Traits and Personality Traits have extra Forest bonuses)",
+          "-10% Attrition Taken in Taiga (if culture: Some Commander Traits and Personality Traits have extra Forest bonuses)",
+          "-10% Attrition Taken in Jungle (if culture: Some Commander Traits and Personality Traits have extra Jungle bonuses)",
+          "-15% Attrition Taken in Mountains (if culture: Some Commander Traits and Personality Traits have extra Mountain bonuses)",
+          "-15% Attrition Taken in Desert Mountains (if culture: Some Commander Traits and Personality Traits have extra Mountain bonuses)",
+          "-10% Attrition Taken in Drylands (if culture: Some Commander Traits and Personality Traits have extra Dry Terrain bonuses)",
+          "-10% Attrition Taken in Desert (if culture: Some Commander Traits and Personality Traits have extra Dry Terrain bonuses)",
+          "-15% Attrition Taken in Mountains (if rite has Sacred Mountains)",
+          "-15% Attrition Taken in Desert Mountains (if rite has Sacred Mountains)"
         ],
         "33": [
           "+4 Travel Safety",
-          "+40% Supply Duration"
+          "+40% Supply Duration",
+          "+10% Movement Speed in Provinces affected by Winter (if culture: Some Commander Traits and Personality Traits have extra Winter bonuses)",
+          "-10% Attrition Taken in Forest (if culture: Some Commander Traits and Personality Traits have extra Forest bonuses)",
+          "-10% Attrition Taken in Taiga (if culture: Some Commander Traits and Personality Traits have extra Forest bonuses)",
+          "-10% Attrition Taken in Jungle (if culture: Some Commander Traits and Personality Traits have extra Jungle bonuses)",
+          "-15% Attrition Taken in Mountains (if culture: Some Commander Traits and Personality Traits have extra Mountain bonuses)",
+          "-15% Attrition Taken in Desert Mountains (if culture: Some Commander Traits and Personality Traits have extra Mountain bonuses)",
+          "-10% Attrition Taken in Drylands (if culture: Some Commander Traits and Personality Traits have extra Dry Terrain bonuses)",
+          "-10% Attrition Taken in Desert (if culture: Some Commander Traits and Personality Traits have extra Dry Terrain bonuses)",
+          "-15% Attrition Taken in Mountains (if rite has Sacred Mountains)",
+          "-15% Attrition Taken in Desert Mountains (if rite has Sacred Mountains)"
         ],
         "66": [
           "+1 Advantage",
           "+4 Travel Safety",
-          "+40% Supply Duration"
+          "+40% Supply Duration",
+          "+10% Movement Speed in Provinces affected by Winter (if culture: Some Commander Traits and Personality Traits have extra Winter bonuses)",
+          "-10% Attrition Taken in Forest (if culture: Some Commander Traits and Personality Traits have extra Forest bonuses)",
+          "-10% Attrition Taken in Taiga (if culture: Some Commander Traits and Personality Traits have extra Forest bonuses)",
+          "-10% Attrition Taken in Jungle (if culture: Some Commander Traits and Personality Traits have extra Jungle bonuses)",
+          "-15% Attrition Taken in Mountains (if culture: Some Commander Traits and Personality Traits have extra Mountain bonuses)",
+          "-15% Attrition Taken in Desert Mountains (if culture: Some Commander Traits and Personality Traits have extra Mountain bonuses)",
+          "-10% Attrition Taken in Drylands (if culture: Some Commander Traits and Personality Traits have extra Dry Terrain bonuses)",
+          "-10% Attrition Taken in Desert (if culture: Some Commander Traits and Personality Traits have extra Dry Terrain bonuses)",
+          "-15% Attrition Taken in Mountains (if rite has Sacred Mountains)",
+          "-15% Attrition Taken in Desert Mountains (if rite has Sacred Mountains)"
         ]
       }
     }
   },
   {
     "category": "commander",
+    "clergy": null,
     "conditional": [
       {
         "condition": "Some Commander Traits and Personality Traits have extra Mountain bonuses",
@@ -745,6 +872,20 @@
             "t": "-10% Attrition Taken in Hills"
           }
         ]
+      },
+      {
+        "condition": "Rite has Sacred Mountains — Some Commander Traits and Personality Traits have extra Mountain bonuses",
+        "lines": [
+          {
+            "p": "good",
+            "t": "-10% Attrition Taken in Mountains"
+          },
+          {
+            "p": "good",
+            "t": "-10% Attrition Taken in Desert Mountains"
+          }
+        ],
+        "tag": "if rite has Sacred Mountains"
       }
     ],
     "desc": "With an extensive knowledge of siege engines and defensive capabilities, the Military Engineer will not be kept at bay.",
@@ -771,20 +912,36 @@
         "100": [
           "+1 Martial",
           "+2 Advantage",
-          "-10% Siege Phase Time"
+          "-10% Siege Phase Time",
+          "-10% Attrition Taken in Mountains (if culture: Some Commander Traits and Personality Traits have extra Mountain bonuses)",
+          "-10% Attrition Taken in Desert Mountains (if culture: Some Commander Traits and Personality Traits have extra Mountain bonuses)",
+          "-10% Attrition Taken in Hills (if culture: Some Commander Traits and Personality Traits have extra Hill bonuses)",
+          "-10% Attrition Taken in Mountains (if rite has Sacred Mountains)",
+          "-10% Attrition Taken in Desert Mountains (if rite has Sacred Mountains)"
         ],
         "33": [
-          "-10% Siege Phase Time"
+          "-10% Siege Phase Time",
+          "-10% Attrition Taken in Mountains (if culture: Some Commander Traits and Personality Traits have extra Mountain bonuses)",
+          "-10% Attrition Taken in Desert Mountains (if culture: Some Commander Traits and Personality Traits have extra Mountain bonuses)",
+          "-10% Attrition Taken in Hills (if culture: Some Commander Traits and Personality Traits have extra Hill bonuses)",
+          "-10% Attrition Taken in Mountains (if rite has Sacred Mountains)",
+          "-10% Attrition Taken in Desert Mountains (if rite has Sacred Mountains)"
         ],
         "66": [
           "+1 Advantage",
-          "-10% Siege Phase Time"
+          "-10% Siege Phase Time",
+          "-10% Attrition Taken in Mountains (if culture: Some Commander Traits and Personality Traits have extra Mountain bonuses)",
+          "-10% Attrition Taken in Desert Mountains (if culture: Some Commander Traits and Personality Traits have extra Mountain bonuses)",
+          "-10% Attrition Taken in Hills (if culture: Some Commander Traits and Personality Traits have extra Hill bonuses)",
+          "-10% Attrition Taken in Mountains (if rite has Sacred Mountains)",
+          "-10% Attrition Taken in Desert Mountains (if rite has Sacred Mountains)"
         ]
       }
     }
   },
   {
     "category": "commander",
+    "clergy": null,
     "conditional": [
       {
         "condition": "Some Commander Traits and Personality Traits have extra Winter bonuses",
@@ -843,24 +1000,34 @@
           "+2 Advantage",
           "+2 Advantage in Farmlands",
           "+2 Advantage in Plains",
-          "+2 Advantage in Steppe"
+          "+2 Advantage in Steppe",
+          "+10% Movement Speed in Provinces affected by Winter (if culture: Some Commander Traits and Personality Traits have extra Winter bonuses)",
+          "+1 Drylands Advantage (if culture: Some Commander Traits and Personality Traits have extra Dry Terrain bonuses)",
+          "+1 Desert Advantage (if culture: Some Commander Traits and Personality Traits have extra Dry Terrain bonuses)"
         ],
         "33": [
           "+2 Advantage in Farmlands",
           "+2 Advantage in Plains",
-          "+2 Advantage in Steppe"
+          "+2 Advantage in Steppe",
+          "+10% Movement Speed in Provinces affected by Winter (if culture: Some Commander Traits and Personality Traits have extra Winter bonuses)",
+          "+1 Drylands Advantage (if culture: Some Commander Traits and Personality Traits have extra Dry Terrain bonuses)",
+          "+1 Desert Advantage (if culture: Some Commander Traits and Personality Traits have extra Dry Terrain bonuses)"
         ],
         "66": [
           "+1 Advantage",
           "+2 Advantage in Farmlands",
           "+2 Advantage in Plains",
-          "+2 Advantage in Steppe"
+          "+2 Advantage in Steppe",
+          "+10% Movement Speed in Provinces affected by Winter (if culture: Some Commander Traits and Personality Traits have extra Winter bonuses)",
+          "+1 Drylands Advantage (if culture: Some Commander Traits and Personality Traits have extra Dry Terrain bonuses)",
+          "+1 Desert Advantage (if culture: Some Commander Traits and Personality Traits have extra Dry Terrain bonuses)"
         ]
       }
     }
   },
   {
     "category": "commander",
+    "clergy": null,
     "conditional": [
       {
         "condition": "Some Commander Traits and Personality Traits have extra Winter bonuses",
@@ -896,6 +1063,30 @@
             "t": "+1 Desert Advantage"
           }
         ]
+      },
+      {
+        "condition": "Rite has Sacred Mountains — Some Commander Traits and Personality Traits have extra Mountain bonuses",
+        "lines": [
+          {
+            "p": "good",
+            "t": "-50% Attrition Taken in Mountains"
+          },
+          {
+            "p": "good",
+            "t": "-50% Attrition Taken in Desert Mountains"
+          }
+        ],
+        "tag": "if rite has Sacred Mountains"
+      },
+      {
+        "condition": "Rite has Astrology — Organizer Characters: +10% Movement Speed",
+        "lines": [
+          {
+            "p": "good",
+            "t": "+10% Army Movement Speed"
+          }
+        ],
+        "tag": "if rite has Astrology"
       }
     ],
     "desc": "In capable hands, a well organized army can swiftly outmaneuver the enemy in any situation.",
@@ -927,22 +1118,47 @@
           "+1 Martial",
           "+2 Advantage",
           "+10% Army Movement Speed",
-          "-10% Retreat Losses"
+          "-10% Retreat Losses",
+          "+5% Movement Speed in Provinces affected by Winter (if culture: Some Commander Traits and Personality Traits have extra Winter bonuses)",
+          "-50% Attrition Taken in Mountains (if culture: Some Commander Traits and Personality Traits have extra Mountain bonuses)",
+          "-50% Attrition Taken in Desert Mountains (if culture: Some Commander Traits and Personality Traits have extra Mountain bonuses)",
+          "+1 Drylands Advantage (if culture: Some Commander Traits and Personality Traits have extra Dry Terrain bonuses)",
+          "+1 Desert Advantage (if culture: Some Commander Traits and Personality Traits have extra Dry Terrain bonuses)",
+          "-50% Attrition Taken in Mountains (if rite has Sacred Mountains)",
+          "-50% Attrition Taken in Desert Mountains (if rite has Sacred Mountains)",
+          "+10% Army Movement Speed (if rite has Astrology)"
         ],
         "33": [
           "+10% Army Movement Speed",
-          "-10% Retreat Losses"
+          "-10% Retreat Losses",
+          "+5% Movement Speed in Provinces affected by Winter (if culture: Some Commander Traits and Personality Traits have extra Winter bonuses)",
+          "-50% Attrition Taken in Mountains (if culture: Some Commander Traits and Personality Traits have extra Mountain bonuses)",
+          "-50% Attrition Taken in Desert Mountains (if culture: Some Commander Traits and Personality Traits have extra Mountain bonuses)",
+          "+1 Drylands Advantage (if culture: Some Commander Traits and Personality Traits have extra Dry Terrain bonuses)",
+          "+1 Desert Advantage (if culture: Some Commander Traits and Personality Traits have extra Dry Terrain bonuses)",
+          "-50% Attrition Taken in Mountains (if rite has Sacred Mountains)",
+          "-50% Attrition Taken in Desert Mountains (if rite has Sacred Mountains)",
+          "+10% Army Movement Speed (if rite has Astrology)"
         ],
         "66": [
           "+1 Advantage",
           "+10% Army Movement Speed",
-          "-10% Retreat Losses"
+          "-10% Retreat Losses",
+          "+5% Movement Speed in Provinces affected by Winter (if culture: Some Commander Traits and Personality Traits have extra Winter bonuses)",
+          "-50% Attrition Taken in Mountains (if culture: Some Commander Traits and Personality Traits have extra Mountain bonuses)",
+          "-50% Attrition Taken in Desert Mountains (if culture: Some Commander Traits and Personality Traits have extra Mountain bonuses)",
+          "+1 Drylands Advantage (if culture: Some Commander Traits and Personality Traits have extra Dry Terrain bonuses)",
+          "+1 Desert Advantage (if culture: Some Commander Traits and Personality Traits have extra Dry Terrain bonuses)",
+          "-50% Attrition Taken in Mountains (if rite has Sacred Mountains)",
+          "-50% Attrition Taken in Desert Mountains (if rite has Sacred Mountains)",
+          "+10% Army Movement Speed (if rite has Astrology)"
         ]
       }
     }
   },
   {
     "category": "commander",
+    "clergy": null,
     "conditional": [
       {
         "condition": "Some Commander Traits and Personality Traits have extra Winter bonuses",
@@ -996,22 +1212,32 @@
           "+1 Martial",
           "+2 Advantage",
           "+40% Raid Speed",
-          "-30% Hostile County Attrition"
+          "-30% Hostile County Attrition",
+          "+2 Advantage in Provinces affected by Winter (if culture: Some Commander Traits and Personality Traits have extra Winter bonuses)",
+          "+1 Maximum Battle Roll in Drylands (if culture: Some Commander Traits and Personality Traits have extra Dry Terrain bonuses)",
+          "+1 Maximum Battle Roll in Desert (if culture: Some Commander Traits and Personality Traits have extra Dry Terrain bonuses)"
         ],
         "33": [
           "+40% Raid Speed",
-          "-30% Hostile County Attrition"
+          "-30% Hostile County Attrition",
+          "+2 Advantage in Provinces affected by Winter (if culture: Some Commander Traits and Personality Traits have extra Winter bonuses)",
+          "+1 Maximum Battle Roll in Drylands (if culture: Some Commander Traits and Personality Traits have extra Dry Terrain bonuses)",
+          "+1 Maximum Battle Roll in Desert (if culture: Some Commander Traits and Personality Traits have extra Dry Terrain bonuses)"
         ],
         "66": [
           "+1 Advantage",
           "+40% Raid Speed",
-          "-30% Hostile County Attrition"
+          "-30% Hostile County Attrition",
+          "+2 Advantage in Provinces affected by Winter (if culture: Some Commander Traits and Personality Traits have extra Winter bonuses)",
+          "+1 Maximum Battle Roll in Drylands (if culture: Some Commander Traits and Personality Traits have extra Dry Terrain bonuses)",
+          "+1 Maximum Battle Roll in Desert (if culture: Some Commander Traits and Personality Traits have extra Dry Terrain bonuses)"
         ]
       }
     }
   },
   {
     "category": "commander",
+    "clergy": null,
     "conditional": [
       {
         "condition": "Some Commander Traits and Personality Traits have extra Forest bonuses",
@@ -1079,21 +1305,37 @@
         "100": [
           "+1 Martial",
           "+2 Advantage",
-          "+3 Maximum Battle Roll"
+          "+3 Maximum Battle Roll",
+          "+1 Maximum Battle Roll in Forest (if culture: Some Commander Traits and Personality Traits have extra Forest bonuses)",
+          "+1 Maximum Battle Roll in Taiga (if culture: Some Commander Traits and Personality Traits have extra Forest bonuses)",
+          "+1 Maximum Battle Roll in Jungle (if culture: Some Commander Traits and Personality Traits have extra Jungle bonuses)",
+          "+1 Maximum Battle Roll in Drylands (if culture: Some Commander Traits and Personality Traits have extra Dry Terrain bonuses)",
+          "+1 Maximum Battle Roll in Desert (if culture: Some Commander Traits and Personality Traits have extra Dry Terrain bonuses)"
         ],
         "33": [
           "-2 Minimum Battle Roll",
-          "+3 Maximum Battle Roll"
+          "+3 Maximum Battle Roll",
+          "+1 Maximum Battle Roll in Forest (if culture: Some Commander Traits and Personality Traits have extra Forest bonuses)",
+          "+1 Maximum Battle Roll in Taiga (if culture: Some Commander Traits and Personality Traits have extra Forest bonuses)",
+          "+1 Maximum Battle Roll in Jungle (if culture: Some Commander Traits and Personality Traits have extra Jungle bonuses)",
+          "+1 Maximum Battle Roll in Drylands (if culture: Some Commander Traits and Personality Traits have extra Dry Terrain bonuses)",
+          "+1 Maximum Battle Roll in Desert (if culture: Some Commander Traits and Personality Traits have extra Dry Terrain bonuses)"
         ],
         "66": [
           "+1 Advantage",
-          "+3 Maximum Battle Roll"
+          "+3 Maximum Battle Roll",
+          "+1 Maximum Battle Roll in Forest (if culture: Some Commander Traits and Personality Traits have extra Forest bonuses)",
+          "+1 Maximum Battle Roll in Taiga (if culture: Some Commander Traits and Personality Traits have extra Forest bonuses)",
+          "+1 Maximum Battle Roll in Jungle (if culture: Some Commander Traits and Personality Traits have extra Jungle bonuses)",
+          "+1 Maximum Battle Roll in Drylands (if culture: Some Commander Traits and Personality Traits have extra Dry Terrain bonuses)",
+          "+1 Maximum Battle Roll in Desert (if culture: Some Commander Traits and Personality Traits have extra Dry Terrain bonuses)"
         ]
       }
     }
   },
   {
     "category": "commander",
+    "clergy": null,
     "conditional": [
       {
         "condition": "Some Commander Traits and Personality Traits have extra Winter bonuses",
@@ -1151,6 +1393,24 @@
             "t": "+1 Minimum Battle Roll in Hills"
           }
         ]
+      },
+      {
+        "condition": "Rite has Sacred Mountains — Some Commander Traits and Personality Traits have extra Mountain bonuses",
+        "lines": [
+          {
+            "p": "good",
+            "t": "+1 Maximum Battle Roll in Mountains"
+          },
+          {
+            "p": "good",
+            "t": "+1 Maximum Battle Roll in Desert Mountains"
+          },
+          {
+            "p": "good",
+            "t": "+2 Advantage in Desert Mountains"
+          }
+        ],
+        "tag": "if rite has Sacred Mountains"
       }
     ],
     "desc": "Difficult terrain can be a powerful tool for those able to utilize it and gain the upper hand in battle.",
@@ -1187,24 +1447,58 @@
           "+2 Advantage",
           "+2 Advantage in Hills",
           "+2 Advantage in Mountains",
-          "+2 Advantage in Wetlands"
+          "+2 Advantage in Wetlands",
+          "+2 Advantage in Provinces affected by Winter (if culture: Some Commander Traits and Personality Traits have extra Winter bonuses)",
+          "+1 Advantage in Forest (if culture: Some Commander Traits and Personality Traits have extra Forest bonuses)",
+          "+1 Advantage in Taiga (if culture: Some Commander Traits and Personality Traits have extra Forest bonuses)",
+          "+1 Jungle Advantage (if culture: Some Commander Traits and Personality Traits have extra Jungle bonuses)",
+          "+1 Maximum Battle Roll in Mountains (if culture: Some Commander Traits and Personality Traits have extra Mountain bonuses)",
+          "+1 Maximum Battle Roll in Desert Mountains (if culture: Some Commander Traits and Personality Traits have extra Mountain bonuses)",
+          "+2 Advantage in Desert Mountains (if culture: Some Commander Traits and Personality Traits have extra Mountain bonuses)",
+          "+1 Minimum Battle Roll in Hills (if culture: Some Commander Traits and Personality Traits have extra Hill bonuses)",
+          "+1 Maximum Battle Roll in Mountains (if rite has Sacred Mountains)",
+          "+1 Maximum Battle Roll in Desert Mountains (if rite has Sacred Mountains)",
+          "+2 Advantage in Desert Mountains (if rite has Sacred Mountains)"
         ],
         "33": [
           "+2 Advantage in Hills",
           "+2 Advantage in Mountains",
-          "+2 Advantage in Wetlands"
+          "+2 Advantage in Wetlands",
+          "+2 Advantage in Provinces affected by Winter (if culture: Some Commander Traits and Personality Traits have extra Winter bonuses)",
+          "+1 Advantage in Forest (if culture: Some Commander Traits and Personality Traits have extra Forest bonuses)",
+          "+1 Advantage in Taiga (if culture: Some Commander Traits and Personality Traits have extra Forest bonuses)",
+          "+1 Jungle Advantage (if culture: Some Commander Traits and Personality Traits have extra Jungle bonuses)",
+          "+1 Maximum Battle Roll in Mountains (if culture: Some Commander Traits and Personality Traits have extra Mountain bonuses)",
+          "+1 Maximum Battle Roll in Desert Mountains (if culture: Some Commander Traits and Personality Traits have extra Mountain bonuses)",
+          "+2 Advantage in Desert Mountains (if culture: Some Commander Traits and Personality Traits have extra Mountain bonuses)",
+          "+1 Minimum Battle Roll in Hills (if culture: Some Commander Traits and Personality Traits have extra Hill bonuses)",
+          "+1 Maximum Battle Roll in Mountains (if rite has Sacred Mountains)",
+          "+1 Maximum Battle Roll in Desert Mountains (if rite has Sacred Mountains)",
+          "+2 Advantage in Desert Mountains (if rite has Sacred Mountains)"
         ],
         "66": [
           "+1 Advantage",
           "+2 Advantage in Hills",
           "+2 Advantage in Mountains",
-          "+2 Advantage in Wetlands"
+          "+2 Advantage in Wetlands",
+          "+2 Advantage in Provinces affected by Winter (if culture: Some Commander Traits and Personality Traits have extra Winter bonuses)",
+          "+1 Advantage in Forest (if culture: Some Commander Traits and Personality Traits have extra Forest bonuses)",
+          "+1 Advantage in Taiga (if culture: Some Commander Traits and Personality Traits have extra Forest bonuses)",
+          "+1 Jungle Advantage (if culture: Some Commander Traits and Personality Traits have extra Jungle bonuses)",
+          "+1 Maximum Battle Roll in Mountains (if culture: Some Commander Traits and Personality Traits have extra Mountain bonuses)",
+          "+1 Maximum Battle Roll in Desert Mountains (if culture: Some Commander Traits and Personality Traits have extra Mountain bonuses)",
+          "+2 Advantage in Desert Mountains (if culture: Some Commander Traits and Personality Traits have extra Mountain bonuses)",
+          "+1 Minimum Battle Roll in Hills (if culture: Some Commander Traits and Personality Traits have extra Hill bonuses)",
+          "+1 Maximum Battle Roll in Mountains (if rite has Sacred Mountains)",
+          "+1 Maximum Battle Roll in Desert Mountains (if rite has Sacred Mountains)",
+          "+2 Advantage in Desert Mountains (if rite has Sacred Mountains)"
         ]
       }
     }
   },
   {
     "category": "commander",
+    "clergy": null,
     "conditional": [
       {
         "condition": "Some Commander Traits and Personality Traits have extra Winter bonuses",
@@ -1271,6 +1565,20 @@
             "t": "+1 Minimum Battle Roll in Hills"
           }
         ]
+      },
+      {
+        "condition": "Rite has Sacred Mountains — Some Commander Traits and Personality Traits have extra Mountain bonuses",
+        "lines": [
+          {
+            "p": "good",
+            "t": "+1 Advantage in Mountains"
+          },
+          {
+            "p": "good",
+            "t": "+1 Advantage in Desert Mountains"
+          }
+        ],
+        "tag": "if rite has Sacred Mountains"
       }
     ],
     "desc": "A Defender knows one thing above all else: this is as far as the enemy goes.",
@@ -1297,20 +1605,54 @@
         "100": [
           "+1 Martial",
           "+2 Advantage",
-          "-10% Friendly Fatal Casualties"
+          "-10% Friendly Fatal Casualties",
+          "+1 Advantage in Provinces affected by Winter (if culture: Some Commander Traits and Personality Traits have extra Winter bonuses)",
+          "+1 Minimum Battle Roll in Forest (if culture: Some Commander Traits and Personality Traits have extra Forest bonuses)",
+          "+1 Minimum Battle Roll in Taiga (if culture: Some Commander Traits and Personality Traits have extra Forest bonuses)",
+          "+1 Minimum Battle Roll in Jungle (if culture: Some Commander Traits and Personality Traits have extra Jungle bonuses)",
+          "+1 Advantage in Mountains (if culture: Some Commander Traits and Personality Traits have extra Mountain bonuses)",
+          "+1 Advantage in Desert Mountains (if culture: Some Commander Traits and Personality Traits have extra Mountain bonuses)",
+          "+1 Minimum Battle Roll in Drylands (if culture: Some Commander Traits and Personality Traits have extra Dry Terrain bonuses)",
+          "+1 Minimum Battle Roll in Desert (if culture: Some Commander Traits and Personality Traits have extra Dry Terrain bonuses)",
+          "+1 Minimum Battle Roll in Hills (if culture: Some Commander Traits and Personality Traits have extra Hill bonuses)",
+          "+1 Advantage in Mountains (if rite has Sacred Mountains)",
+          "+1 Advantage in Desert Mountains (if rite has Sacred Mountains)"
         ],
         "33": [
-          "-10% Friendly Fatal Casualties"
+          "-10% Friendly Fatal Casualties",
+          "+1 Advantage in Provinces affected by Winter (if culture: Some Commander Traits and Personality Traits have extra Winter bonuses)",
+          "+1 Minimum Battle Roll in Forest (if culture: Some Commander Traits and Personality Traits have extra Forest bonuses)",
+          "+1 Minimum Battle Roll in Taiga (if culture: Some Commander Traits and Personality Traits have extra Forest bonuses)",
+          "+1 Minimum Battle Roll in Jungle (if culture: Some Commander Traits and Personality Traits have extra Jungle bonuses)",
+          "+1 Advantage in Mountains (if culture: Some Commander Traits and Personality Traits have extra Mountain bonuses)",
+          "+1 Advantage in Desert Mountains (if culture: Some Commander Traits and Personality Traits have extra Mountain bonuses)",
+          "+1 Minimum Battle Roll in Drylands (if culture: Some Commander Traits and Personality Traits have extra Dry Terrain bonuses)",
+          "+1 Minimum Battle Roll in Desert (if culture: Some Commander Traits and Personality Traits have extra Dry Terrain bonuses)",
+          "+1 Minimum Battle Roll in Hills (if culture: Some Commander Traits and Personality Traits have extra Hill bonuses)",
+          "+1 Advantage in Mountains (if rite has Sacred Mountains)",
+          "+1 Advantage in Desert Mountains (if rite has Sacred Mountains)"
         ],
         "66": [
           "+1 Advantage",
-          "-10% Friendly Fatal Casualties"
+          "-10% Friendly Fatal Casualties",
+          "+1 Advantage in Provinces affected by Winter (if culture: Some Commander Traits and Personality Traits have extra Winter bonuses)",
+          "+1 Minimum Battle Roll in Forest (if culture: Some Commander Traits and Personality Traits have extra Forest bonuses)",
+          "+1 Minimum Battle Roll in Taiga (if culture: Some Commander Traits and Personality Traits have extra Forest bonuses)",
+          "+1 Minimum Battle Roll in Jungle (if culture: Some Commander Traits and Personality Traits have extra Jungle bonuses)",
+          "+1 Advantage in Mountains (if culture: Some Commander Traits and Personality Traits have extra Mountain bonuses)",
+          "+1 Advantage in Desert Mountains (if culture: Some Commander Traits and Personality Traits have extra Mountain bonuses)",
+          "+1 Minimum Battle Roll in Drylands (if culture: Some Commander Traits and Personality Traits have extra Dry Terrain bonuses)",
+          "+1 Minimum Battle Roll in Desert (if culture: Some Commander Traits and Personality Traits have extra Dry Terrain bonuses)",
+          "+1 Minimum Battle Roll in Hills (if culture: Some Commander Traits and Personality Traits have extra Hill bonuses)",
+          "+1 Advantage in Mountains (if rite has Sacred Mountains)",
+          "+1 Advantage in Desert Mountains (if rite has Sacred Mountains)"
         ]
       }
     }
   },
   {
     "category": "court_type",
+    "clergy": null,
     "conditional": [],
     "desc": "This character has spent at least … years living in an organized Administrative Court home to many bureaucrats and officials.",
     "dlc": null,
@@ -1332,6 +1674,7 @@
   },
   {
     "category": "court_type",
+    "clergy": null,
     "conditional": [],
     "desc": "This character has spent at least … years living in a truly grand Administrative Court, observing the daily toil of efficient bureaucrats and influential officials.",
     "dlc": null,
@@ -1362,6 +1705,7 @@
   },
   {
     "category": "court_type",
+    "clergy": null,
     "conditional": [],
     "desc": "This character has spent at least … years living in a bustling Diplomatic Court filled with emissaries and diplomats.",
     "dlc": null,
@@ -1383,6 +1727,7 @@
   },
   {
     "category": "court_type",
+    "clergy": null,
     "conditional": [],
     "desc": "This character has spent at least … years living in a truly grand Diplomatic Court, rubbing elbows with famed emissaries and prominent diplomats.",
     "dlc": null,
@@ -1413,6 +1758,7 @@
   },
   {
     "category": "court_type",
+    "clergy": null,
     "conditional": [],
     "desc": "This character has spent at least … years living in a taciturn Intrigue Court hosting smooth-talking envoys and keen-eyed retainers.",
     "dlc": null,
@@ -1434,6 +1780,7 @@
   },
   {
     "category": "court_type",
+    "clergy": null,
     "conditional": [],
     "desc": "This character has spent at least … years living in a truly grand Intrigue Court, where they have learned to stay on their toes among the many silver-tongued envoys and perceptive retainers.",
     "dlc": null,
@@ -1468,6 +1815,7 @@
   },
   {
     "category": "court_type",
+    "clergy": null,
     "conditional": [],
     "desc": "This character has spent at least … years living in an erudite Scholarly Court full of learned men and intellectuals.",
     "dlc": null,
@@ -1489,6 +1837,7 @@
   },
   {
     "category": "court_type",
+    "clergy": null,
     "conditional": [],
     "desc": "This character has spent at least … years living in an erudite Scholarly Court full of astute learned men and esteemed intellectuals.",
     "dlc": null,
@@ -1523,6 +1872,7 @@
   },
   {
     "category": "court_type",
+    "clergy": null,
     "conditional": [],
     "desc": "This character has spent at least … years living in a rowdy Warlike Court populated by warriors and tacticians.",
     "dlc": null,
@@ -1545,6 +1895,7 @@
   },
   {
     "category": "court_type",
+    "clergy": null,
     "conditional": [],
     "desc": "This character has spent at least … years living in a truly grand Warlike Court, involving themselves with noble warriors and acclaimed tacticians.",
     "dlc": null,
@@ -1576,6 +1927,7 @@
   },
   {
     "category": "education",
+    "clergy": null,
     "conditional": [
       {
         "condition": "Rulers with poor Education Traits, such as Indulgent Wastrel or Naive Appeaser, are distrusted",
@@ -1616,6 +1968,7 @@
   },
   {
     "category": "education",
+    "clergy": null,
     "conditional": [],
     "desc": "Things often work out in favor of the Adequate Bargainer, but whether this is due to their skill in diplomacy or luck is up for debate.",
     "dlc": null,
@@ -1642,6 +1995,7 @@
   },
   {
     "category": "education",
+    "clergy": null,
     "conditional": [],
     "desc": "A master of persuasive rhetoric and the nuances of diplomacy; the Charismatic Negotiator is an excellent diplomat.",
     "dlc": null,
@@ -1672,6 +2026,7 @@
   },
   {
     "category": "education",
+    "clergy": null,
     "conditional": [
       {
         "condition": "Rulers with high Education Traits are considered a Gajapati and gain significant Elephant Cavalry bonuses",
@@ -1728,6 +2083,7 @@
   },
   {
     "category": "education",
+    "clergy": null,
     "conditional": [
       {
         "condition": "Rulers with high Education Traits are considered a Gajapati and gain significant Elephant Cavalry bonuses",
@@ -1793,6 +2149,7 @@
   },
   {
     "category": "education",
+    "clergy": null,
     "conditional": [
       {
         "condition": "Rulers with poor Education Traits, such as Indulgent Wastrel or Naive Appeaser, are distrusted",
@@ -1833,6 +2190,7 @@
   },
   {
     "category": "education",
+    "clergy": null,
     "conditional": [],
     "desc": "The Flamboyant Trickster has received an education in the art of intrigue, but still has a lot left to learn before mistakes and blunders become exceptions rather than the norm.",
     "dlc": null,
@@ -1859,6 +2217,7 @@
   },
   {
     "category": "education",
+    "clergy": null,
     "conditional": [],
     "desc": "The Intricate Webweaver is a master of intrigue, manipulation, and secrecy.",
     "dlc": null,
@@ -1889,6 +2248,7 @@
   },
   {
     "category": "education",
+    "clergy": null,
     "conditional": [],
     "desc": "The Elusive Shadow has excelled as a master of intrigue, and the shroud of secrecy around them is second to none.",
     "dlc": null,
@@ -1919,6 +2279,7 @@
   },
   {
     "category": "education",
+    "clergy": null,
     "conditional": [],
     "desc": "The Conniving Puppetmaster is a whisper in the wind, a shadow on the wall. Their knife serves where words would not.",
     "dlc": null,
@@ -1958,6 +2319,7 @@
   },
   {
     "category": "education",
+    "clergy": null,
     "conditional": [
       {
         "condition": "Rulers with poor Education Traits, such as Indulgent Wastrel or Naive Appeaser, are distrusted",
@@ -1978,7 +2340,7 @@
         ]
       },
       {
-        "condition": "Learning Education Traits and the Scholar Trait also give Cultural Fascination Progress",
+        "condition": "Learning Education Traits and the Erudite Trait also give Cultural Fascination Progress",
         "lines": [
           {
             "p": "good",
@@ -2029,6 +2391,7 @@
   },
   {
     "category": "education",
+    "clergy": null,
     "conditional": [
       {
         "condition": "Traits such as Astute Intellectual, Devoted or Theologian give Prowess",
@@ -2040,7 +2403,7 @@
         ]
       },
       {
-        "condition": "Learning Education Traits and the Scholar Trait also give Cultural Fascination Progress",
+        "condition": "Learning Education Traits and the Erudite Trait also give Cultural Fascination Progress",
         "lines": [
           {
             "p": "good",
@@ -2087,6 +2450,7 @@
   },
   {
     "category": "education",
+    "clergy": null,
     "conditional": [
       {
         "condition": "Traits such as Astute Intellectual, Devoted or Theologian give Prowess",
@@ -2098,7 +2462,7 @@
         ]
       },
       {
-        "condition": "Learning Education Traits and the Scholar Trait also give Cultural Fascination Progress",
+        "condition": "Learning Education Traits and the Erudite Trait also give Cultural Fascination Progress",
         "lines": [
           {
             "p": "good",
@@ -2149,6 +2513,7 @@
   },
   {
     "category": "education",
+    "clergy": null,
     "conditional": [
       {
         "condition": "Traits such as Astute Intellectual, Devoted or Theologian give Prowess",
@@ -2160,7 +2525,7 @@
         ]
       },
       {
-        "condition": "Learning Education Traits and the Scholar Trait also give Cultural Fascination Progress",
+        "condition": "Learning Education Traits and the Erudite Trait also give Cultural Fascination Progress",
         "lines": [
           {
             "p": "good",
@@ -2240,6 +2605,7 @@
   },
   {
     "category": "education",
+    "clergy": null,
     "conditional": [
       {
         "condition": "Traits such as Astute Intellectual, Devoted or Theologian give Prowess",
@@ -2251,7 +2617,7 @@
         ]
       },
       {
-        "condition": "Learning Education Traits and the Scholar Trait also give Cultural Fascination Progress",
+        "condition": "Learning Education Traits and the Erudite Trait also give Cultural Fascination Progress",
         "lines": [
           {
             "p": "good",
@@ -2344,6 +2710,7 @@
   },
   {
     "category": "education",
+    "clergy": null,
     "conditional": [
       {
         "condition": "Rulers with poor Education Traits, such as Indulgent Wastrel or Naive Appeaser, are distrusted",
@@ -2406,6 +2773,7 @@
   },
   {
     "category": "education",
+    "clergy": null,
     "conditional": [
       {
         "condition": "The Martial Education Traits also grant Prowess",
@@ -2455,6 +2823,7 @@
   },
   {
     "category": "education",
+    "clergy": null,
     "conditional": [
       {
         "condition": "The Martial Education Traits also grant Prowess",
@@ -2508,6 +2877,7 @@
   },
   {
     "category": "education",
+    "clergy": null,
     "conditional": [
       {
         "condition": "The Martial Education Traits also grant Prowess",
@@ -2582,6 +2952,7 @@
   },
   {
     "category": "education",
+    "clergy": null,
     "conditional": [
       {
         "condition": "The Martial Education Traits also grant Prowess",
@@ -2669,6 +3040,7 @@
   },
   {
     "category": "education",
+    "clergy": null,
     "conditional": [
       {
         "condition": "Rulers with poor Education Traits, such as Indulgent Wastrel or Naive Appeaser, are distrusted",
@@ -2709,6 +3081,7 @@
   },
   {
     "category": "education",
+    "clergy": null,
     "conditional": [],
     "desc": "The Thrifty Clerk is adequate when it comes to investments and administrations, but blunders in the art of stewardship are still the norm.",
     "dlc": null,
@@ -2735,6 +3108,7 @@
   },
   {
     "category": "education",
+    "clergy": null,
     "conditional": [],
     "desc": "The Fortune Builder possesses a keen sense for all matters relating to stewardship and is an administrative force to be reckoned with.",
     "dlc": null,
@@ -2765,6 +3139,7 @@
   },
   {
     "category": "education",
+    "clergy": null,
     "conditional": [
       {
         "condition": "Rulers with high Education Traits are considered a Gajapati and gain significant Elephant Cavalry bonuses",
@@ -2817,6 +3192,7 @@
   },
   {
     "category": "education",
+    "clergy": null,
     "conditional": [
       {
         "condition": "Rulers with high Education Traits are considered a Gajapati and gain significant Elephant Cavalry bonuses",
@@ -2878,6 +3254,7 @@
   },
   {
     "category": "fame",
+    "clergy": null,
     "conditional": [
       {
         "condition": "The Adulterer and Fornicator Traits are despised",
@@ -2913,6 +3290,7 @@
   },
   {
     "category": "fame",
+    "clergy": null,
     "conditional": [],
     "desc": "This character has previously lead a life of bravery and action as an adventurer, and proven their worth by working their way up from such humble beginnings.",
     "dlc": null,
@@ -2962,6 +3340,7 @@
   },
   {
     "category": "fame",
+    "clergy": null,
     "conditional": [],
     "desc": "This character spent some time in a … Camp's camp, being part of their entourage when they became landed.",
     "dlc": null,
@@ -2988,6 +3367,7 @@
   },
   {
     "category": "fame",
+    "clergy": null,
     "conditional": [
       {
         "condition": "The Diligent, Patient, and Athletic Traits have additional bonuses",
@@ -3036,6 +3416,7 @@
   },
   {
     "category": "fame",
+    "clergy": null,
     "conditional": [],
     "desc": "This character is the current ruler of the restored Roman Empire and commands the respect an office of such magnitude is due.",
     "dlc": null,
@@ -3070,6 +3451,7 @@
   },
   {
     "category": "fame",
+    "clergy": null,
     "conditional": [],
     "desc": "This character was not born of a legal pairing of parents, or a concubine, and will have to live with the stain of illegitimacy their whole life.",
     "dlc": null,
@@ -3107,6 +3489,7 @@
   },
   {
     "category": "fame",
+    "clergy": null,
     "conditional": [],
     "desc": "A former bastard who has founded their own Dynasty.",
     "dlc": null,
@@ -3133,6 +3516,7 @@
   },
   {
     "category": "fame",
+    "clergy": null,
     "conditional": [],
     "desc": "Once this character's blood starts to boil it will only be sated by the death of their enemies.",
     "dlc": null,
@@ -3163,6 +3547,7 @@
   },
   {
     "category": "fame",
+    "clergy": null,
     "conditional": [],
     "desc": "Coursing through the veins of this character is the blood of a prophet.",
     "dlc": null,
@@ -3187,6 +3572,7 @@
   },
   {
     "category": "fame",
+    "clergy": null,
     "conditional": [],
     "desc": "This character was born to prominent parents, a rich life, and high expectations.",
     "dlc": null,
@@ -3219,6 +3605,7 @@
   },
   {
     "category": "fame",
+    "clergy": null,
     "conditional": [],
     "desc": "Scholarly success eludes this character, their path full of thorns. To escape the constant feelings of inadequacy, this character lets their mind wander to the soft clouds above.",
     "dlc": null,
@@ -3253,6 +3640,7 @@
   },
   {
     "category": "fame",
+    "clergy": null,
     "conditional": [
       {
         "condition": "The Bumbling Squire, Confident Knight, Formidable Banneret and Famous Champion Traits are more valued",
@@ -3294,6 +3682,7 @@
   },
   {
     "category": "fame",
+    "clergy": null,
     "conditional": [],
     "desc": "This character thinks that other people make the best of meals.",
     "dlc": null,
@@ -3327,6 +3716,7 @@
   },
   {
     "category": "fame",
+    "clergy": null,
     "conditional": [],
     "desc": "This character has sworn themselves to celibacy.",
     "dlc": null,
@@ -3361,6 +3751,7 @@
   },
   {
     "category": "fame",
+    "clergy": null,
     "conditional": [],
     "desc": "This character has united the center of the world, and is the rightful ruler of its entirety.",
     "dlc": null,
@@ -3397,6 +3788,7 @@
   },
   {
     "category": "fame",
+    "clergy": null,
     "conditional": [],
     "desc": "This character competes in a Chariot Race for the Blue faction.",
     "dlc": null,
@@ -3435,6 +3827,7 @@
   },
   {
     "category": "fame",
+    "clergy": null,
     "conditional": [],
     "desc": "This character competes in a Chariot Race for the Green faction.",
     "dlc": null,
@@ -3473,6 +3866,7 @@
   },
   {
     "category": "fame",
+    "clergy": null,
     "conditional": [],
     "desc": "This character competes in a Chariot Race for the Red faction.",
     "dlc": null,
@@ -3511,6 +3905,7 @@
   },
   {
     "category": "fame",
+    "clergy": null,
     "conditional": [],
     "desc": "This character competes in a Chariot Race for the White faction.",
     "dlc": null,
@@ -3549,7 +3944,56 @@
   },
   {
     "category": "fame",
+    "clergy": "Court Chaplains, Realm Priests, Theocratic Rulers, and anyone with the Devoted trait are considered members of the Clergy.\n\nThe Doctrines of the Faith determine who can be a member of the Clergy, and whether members of the Clergy can marry, inherit land, etc.",
     "conditional": [],
+    "desc": "This character has been ordained into the clergy, serving the faith without monastic vows.",
+    "dlc": null,
+    "features": [],
+    "genetic": {},
+    "group": null,
+    "icon": "deacon",
+    "id": "cleric",
+    "level": null,
+    "modifiers": [
+      {
+        "p": "good",
+        "t": "+5% Piety Rewards"
+      },
+      {
+        "p": "good",
+        "t": "20 Study Rite Phase Length days faster per Scheme Phase"
+      },
+      {
+        "p": "good",
+        "t": "20 Religious Study Phase Length days faster per Scheme Phase"
+      }
+    ],
+    "name": "Cleric",
+    "opinions": [],
+    "opposites": [],
+    "rulerDesignerCost": null,
+    "skills": {},
+    "tracks": {}
+  },
+  {
+    "category": "fame",
+    "clergy": null,
+    "conditional": [
+      {
+        "condition": "Rite has Asceticism — Comfort Eater Characters lose 0.1 monthly Piety and 5 same-Faith Opinion",
+        "lines": [
+          {
+            "p": "bad",
+            "t": "-0.1 Piety /month"
+          },
+          {
+            "p": "bad",
+            "t": "-5 Same Faith Opinion"
+          }
+        ],
+        "tag": "if rite has Asceticism"
+      }
+    ],
     "desc": "This character often tries to fill the emptiness that they feel by indulging in comforting foods.",
     "dlc": null,
     "features": [],
@@ -3577,6 +4021,7 @@
   },
   {
     "category": "fame",
+    "clergy": null,
     "conditional": [
       {
         "condition": "The Confucian Education and Loyal Traits have additional bonuses",
@@ -3640,6 +4085,7 @@
   },
   {
     "category": "fame",
+    "clergy": null,
     "conditional": [],
     "desc": "The world lies before me, ripe for the taking. It will be mine.",
     "dlc": null,
@@ -3696,6 +4142,7 @@
   },
   {
     "category": "fame",
+    "clergy": null,
     "conditional": [],
     "desc": "The unwavering devotion shown by some of its members have given this dynasty an impeccable reputation in the eyes of the priesthood.",
     "dlc": null,
@@ -3720,7 +4167,23 @@
   },
   {
     "category": "fame",
-    "conditional": [],
+    "clergy": null,
+    "conditional": [
+      {
+        "condition": "Rite has Hesychasm — Journaller, Contrite, Confider and Flagellant Characters: +10% Stress loss, +5% Spiritual Fulfillment gain",
+        "lines": [
+          {
+            "p": "good",
+            "t": "+10% Stress Loss"
+          },
+          {
+            "p": "good",
+            "t": "+5% Character Spiritual Fulfillment Gain Mult"
+          }
+        ],
+        "tag": "if rite has Hesychasm"
+      }
+    ],
     "desc": "This character suffers from a guilty conscience, often feeling compelled to confess things better left unmentioned.",
     "dlc": null,
     "features": [],
@@ -3746,6 +4209,7 @@
   },
   {
     "category": "fame",
+    "clergy": null,
     "conditional": [],
     "desc": null,
     "dlc": null,
@@ -3799,6 +4263,7 @@
   },
   {
     "category": "fame",
+    "clergy": null,
     "conditional": [],
     "desc": "This character has been accused of decadence by their House Head. Whether the claims are true or not, their reputation and credibility is significantly tarnished.",
     "dlc": null,
@@ -3843,6 +4308,7 @@
   },
   {
     "category": "fame",
+    "clergy": null,
     "conditional": [],
     "desc": "This character has been denounced by their Dynasty Head and can now be imprisoned by any other Dynasty member.",
     "dlc": null,
@@ -3871,9 +4337,10 @@
   },
   {
     "category": "fame",
+    "clergy": null,
     "conditional": [
       {
-        "condition": "The Warrior of the Faith and Order Member Traits are seen as Prestige Prestigious",
+        "condition": "The Warrior of the Faith and Military Order Member Traits are seen as Prestige Prestigious",
         "lines": [
           {
             "p": "good",
@@ -3932,7 +4399,37 @@
   },
   {
     "category": "fame",
-    "conditional": [],
+    "clergy": null,
+    "conditional": [
+      {
+        "condition": "Rite has Carnal Exaltation — Characters with Lustful, Rakish, or Deviant gain +2 Intrigue, +2 Diplomacy, and +25% Fertility per trait",
+        "lines": [
+          {
+            "p": "good",
+            "t": "+2 Intrigue"
+          },
+          {
+            "p": "good",
+            "t": "+2 Diplomacy"
+          },
+          {
+            "p": "good",
+            "t": "+25% Fertility"
+          }
+        ],
+        "tag": "if rite has Carnal Exaltation"
+      },
+      {
+        "condition": "Rite has Carnal Exaltation — Characters with Lustful, Rakish, or Deviant complete Seduce Schemes 20 days faster per trait",
+        "lines": [
+          {
+            "p": "neutral",
+            "t": "20 Seduce Phase Length days faster per Scheme Phase"
+          }
+        ],
+        "tag": "if rite has Carnal Exaltation"
+      }
+    ],
     "desc": "This character has an... eclectic and unconventional taste.",
     "dlc": null,
     "features": [],
@@ -3960,6 +4457,7 @@
   },
   {
     "category": "fame",
+    "clergy": "Court Chaplains, Realm Priests, Theocratic Rulers, and anyone with the Devoted trait are considered members of the Clergy.\n\nThe Doctrines of the Faith determine who can be a member of the Clergy, and whether members of the Clergy can marry, inherit land, etc.",
     "conditional": [
       {
         "condition": "Traits such as Astute Intellectual, Devoted or Theologian give Prowess",
@@ -3995,6 +4493,10 @@
       },
       {
         "p": "good",
+        "t": "+10% Monthly Learning Lifestyle Experience"
+      },
+      {
+        "p": "good",
         "t": "+5 Same Faith Opinion"
       }
     ],
@@ -4003,10 +4505,40 @@
     "opposites": [],
     "rulerDesignerCost": null,
     "skills": {},
-    "tracks": {}
+    "tracks": {
+      "monastic": {
+        "100": [
+          "+15% Character Spiritual Fulfillment Gain Mult",
+          "-15% Character Spiritual Fulfillment Loss Mult",
+          "-10% Stress Gain",
+          "+0.1 Health",
+          "+15% Learning",
+          "+15 Clergy Opinion",
+          "+0.4 Piety /month"
+        ],
+        "30": [
+          "+10% Character Spiritual Fulfillment Gain Mult",
+          "-10% Character Spiritual Fulfillment Loss Mult",
+          "-4% Stress Gain",
+          "+0.01 Health",
+          "+5% Learning",
+          "+0.1 Piety /month"
+        ],
+        "65": [
+          "+10% Character Spiritual Fulfillment Gain Mult",
+          "-10% Character Spiritual Fulfillment Loss Mult",
+          "-6% Stress Gain",
+          "+0.05 Health",
+          "+10% Learning",
+          "+10 Clergy Opinion",
+          "+0.2 Piety /month"
+        ]
+      }
+    }
   },
   {
     "category": "fame",
+    "clergy": null,
     "conditional": [],
     "desc": "This character has been disinherited by the Dynasty Head and cannot inherit any title from any other Dynasty member.",
     "dlc": null,
@@ -4031,6 +4563,7 @@
   },
   {
     "category": "fame",
+    "clergy": null,
     "conditional": [
       {
         "condition": "The disloyal Trait is less looked down upon than it is in other cultures",
@@ -4073,6 +4606,7 @@
   },
   {
     "category": "fame",
+    "clergy": null,
     "conditional": [],
     "desc": "Credible rumors surround this character's heritage. Many say that their father is someone else.",
     "dlc": null,
@@ -4107,6 +4641,7 @@
   },
   {
     "category": "fame",
+    "clergy": null,
     "conditional": [],
     "desc": "This character is descended from a person sent from heaven.",
     "dlc": null,
@@ -4133,6 +4668,7 @@
   },
   {
     "category": "fame",
+    "clergy": null,
     "conditional": [],
     "desc": "This character has taken to the bottle, and is continuously looking for its bottom.",
     "dlc": null,
@@ -4170,8 +4706,46 @@
   },
   {
     "category": "fame",
-    "conditional": [],
-    "desc": "This character has been excluded from participating in religious services.",
+    "clergy": null,
+    "conditional": [
+      {
+        "condition": "Rite has Communion — Excommunicated Characters of this Rite suffer -25% Piety gain and -10 same-faith Opinion",
+        "lines": [
+          {
+            "p": "bad",
+            "t": "-25% Monthly Piety"
+          },
+          {
+            "p": "bad",
+            "t": "-25% Piety Rewards"
+          },
+          {
+            "p": "bad",
+            "t": "-10 Same Faith Opinion"
+          }
+        ],
+        "tag": "if rite has Communion"
+      },
+      {
+        "condition": "Rite has Purgatory — Excommunicated Characters of this Rite atone through penance: +25% Piety gain and +10 same-faith Opinion",
+        "lines": [
+          {
+            "p": "good",
+            "t": "+25% Monthly Piety"
+          },
+          {
+            "p": "good",
+            "t": "+25% Piety Rewards"
+          },
+          {
+            "p": "good",
+            "t": "+10 Same Faith Opinion"
+          }
+        ],
+        "tag": "if rite has Purgatory"
+      }
+    ],
+    "desc": "This character has been excluded from participation in religious services.",
     "dlc": null,
     "features": [],
     "genetic": {},
@@ -4186,11 +4760,28 @@
       },
       {
         "p": "bad",
+        "t": "-50% Piety Rewards"
+      },
+      {
+        "p": "bad",
         "t": "-50 Zealot Vassal Opinion"
+      },
+      {
+        "p": "bad",
+        "t": "-25% Domain Taxes (Same Faith)"
+      },
+      {
+        "p": "bad",
+        "t": "-50% Levy Reinforcement Rate (Same Faith)"
+      },
+      {
+        "p": "bad",
+        "t": "-10% Army Toughness"
       }
     ],
     "name": "Excommunicated",
     "opinions": [
+      "+50 Same trait opinion",
       "Excommunicated"
     ],
     "opposites": [],
@@ -4200,6 +4791,7 @@
   },
   {
     "category": "fame",
+    "clergy": null,
     "conditional": [],
     "desc": "This character has had their virtues extolled by their House Head. Whether the attention is deserved or not, they now have a hard time staying away from the prying eyes of the public.",
     "dlc": null,
@@ -4234,9 +4826,10 @@
   },
   {
     "category": "fame",
+    "clergy": null,
     "conditional": [
       {
-        "condition": "The Warrior of the Faith and Order Member Traits are seen as Prestige Prestigious",
+        "condition": "The Warrior of the Faith and Military Order Member Traits are seen as Prestige Prestigious",
         "lines": [
           {
             "p": "good",
@@ -4275,7 +4868,23 @@
   },
   {
     "category": "fame",
-    "conditional": [],
+    "clergy": null,
+    "conditional": [
+      {
+        "condition": "Rite has Hesychasm — Journaller, Contrite, Confider and Flagellant Characters: +10% Stress loss, +5% Spiritual Fulfillment gain",
+        "lines": [
+          {
+            "p": "good",
+            "t": "+10% Stress Loss"
+          },
+          {
+            "p": "good",
+            "t": "+5% Character Spiritual Fulfillment Gain Mult"
+          }
+        ],
+        "tag": "if rite has Hesychasm"
+      }
+    ],
     "desc": "The catharsis of self-flagellation is the only thing which makes this character feel better.",
     "dlc": null,
     "features": [],
@@ -4305,6 +4914,7 @@
   },
   {
     "category": "fame",
+    "clergy": null,
     "conditional": [],
     "desc": "This character was once the Ceremonial Monarch and retains considerable influence despite having left the throne.",
     "dlc": null,
@@ -4333,6 +4943,7 @@
   },
   {
     "category": "fame",
+    "clergy": null,
     "conditional": [
       {
         "condition": "The Adulterer and Fornicator Traits are despised",
@@ -4368,6 +4979,7 @@
   },
   {
     "category": "fame",
+    "clergy": null,
     "conditional": [],
     "desc": "This character eschews responsibilities beyond what they already have — their time is precious, and they do not wish it frittered away on pointless duties and meaningless ambitions.",
     "dlc": null,
@@ -4408,6 +5020,7 @@
   },
   {
     "category": "fame",
+    "clergy": null,
     "conditional": [],
     "desc": "Not every crime concerns the Great and the Good — this character is making a name for themselves as a petty criminal.",
     "dlc": null,
@@ -4589,6 +5202,7 @@
   },
   {
     "category": "fame",
+    "clergy": null,
     "conditional": [],
     "desc": "What this character's bloodline has wrought on the world cannot be forgotten. They are a golden scion of fire and conquest.",
     "dlc": null,
@@ -4637,6 +5251,7 @@
   },
   {
     "category": "fame",
+    "clergy": null,
     "conditional": [],
     "desc": "This character has gained valuable skills in their role as governor.",
     "dlc": null,
@@ -4659,26 +5274,31 @@
           "+1 Martial",
           "+1 Stewardship",
           "+1 Intrigue",
-          "+2 Influence /month"
+          "+2 Influence /month",
+          "+5% Counter Resistance (if culture: Every rank of the Governor Trait grants … Men-at-Arms Counter Resistance)"
         ],
         "25": [
           "+1 Stewardship",
-          "+1 Influence /month"
+          "+1 Influence /month",
+          "+5% Counter Resistance (if culture: Every rank of the Governor Trait grants … Men-at-Arms Counter Resistance)"
         ],
         "50": [
           "+1 Diplomacy",
-          "+1 Influence /month"
+          "+1 Influence /month",
+          "+5% Counter Resistance (if culture: Every rank of the Governor Trait grants … Men-at-Arms Counter Resistance)"
         ],
         "75": [
           "+1 Martial",
           "+1 Intrigue",
-          "+1 Influence /month"
+          "+1 Influence /month",
+          "+5% Counter Resistance (if culture: Every rank of the Governor Trait grants … Men-at-Arms Counter Resistance)"
         ]
       }
     }
   },
   {
     "category": "fame",
+    "clergy": null,
     "conditional": [],
     "desc": "This character has been proclaimed the ruler of the universe itself, by right of conquest.",
     "dlc": null,
@@ -4780,6 +5400,7 @@
   },
   {
     "category": "fame",
+    "clergy": null,
     "conditional": [],
     "desc": "This character is dependent on the consumption of hashish to deal with the stress of everyday life.",
     "dlc": null,
@@ -4809,6 +5430,43 @@
   },
   {
     "category": "fame",
+    "clergy": null,
+    "conditional": [],
+    "desc": "This character is hailed as a living herald of the faith, shaping how the flock worship without breaking from the wider community.",
+    "dlc": null,
+    "features": [],
+    "genetic": {},
+    "group": null,
+    "icon": "herald",
+    "id": "herald",
+    "level": null,
+    "modifiers": [
+      {
+        "p": "good",
+        "t": "+1.5 Piety /month"
+      },
+      {
+        "p": "good",
+        "t": "+20% Legitimacy Gain"
+      },
+      {
+        "p": "good",
+        "t": "-20% Rite Creation and Reformation Cost"
+      }
+    ],
+    "name": "Herald",
+    "opinions": [],
+    "opposites": [],
+    "rulerDesignerCost": 100,
+    "skills": {
+      "diplomacy": 1,
+      "learning": 2
+    },
+    "tracks": {}
+  },
+  {
+    "category": "fame",
+    "clergy": null,
     "conditional": [],
     "desc": "This character is the local leader of a heretical sect.",
     "dlc": null,
@@ -4845,6 +5503,7 @@
   },
   {
     "category": "fame",
+    "clergy": null,
     "conditional": [],
     "desc": "This character has dynamically emerged and is of real life historical importance.",
     "dlc": null,
@@ -4876,6 +5535,7 @@
   },
   {
     "category": "fame",
+    "clergy": null,
     "conditional": [],
     "desc": "This character habitually gives far more money away to charities than they can reasonably afford.",
     "dlc": null,
@@ -4916,8 +5576,32 @@
   },
   {
     "category": "fame",
-    "conditional": [],
-    "desc": "Stress has ruined this character's appetite, causing them to skip meals and waste away...",
+    "clergy": null,
+    "conditional": [
+      {
+        "condition": "Rite has Asceticism — Inappetetic Characters gain +1 Diplomacy, +2 Learning, +10% Spiritual Fulfillment gain, and +10% Stress loss",
+        "lines": [
+          {
+            "p": "good",
+            "t": "+1 Diplomacy"
+          },
+          {
+            "p": "good",
+            "t": "+2 Learning"
+          },
+          {
+            "p": "good",
+            "t": "+10% Character Spiritual Fulfillment Gain Mult"
+          },
+          {
+            "p": "good",
+            "t": "+10% Stress Loss"
+          }
+        ],
+        "tag": "if rite has Asceticism"
+      }
+    ],
+    "desc": "Whether worn down by stress or set on denying the flesh, this character has lost all appetite, skipping meals and wasting away...",
     "dlc": null,
     "features": [],
     "genetic": {},
@@ -4945,6 +5629,7 @@
   },
   {
     "category": "fame",
+    "clergy": null,
     "conditional": [],
     "desc": "This character is known for having sexual relations with relatives.",
     "dlc": null,
@@ -4967,6 +5652,7 @@
   },
   {
     "category": "fame",
+    "clergy": null,
     "conditional": [],
     "desc": "Stress has made this character prone to frequent outbursts and tantrums.",
     "dlc": null,
@@ -5003,7 +5689,23 @@
   },
   {
     "category": "fame",
-    "conditional": [],
+    "clergy": null,
+    "conditional": [
+      {
+        "condition": "Rite has Hesychasm — Journaller, Contrite, Confider and Flagellant Characters: +10% Stress loss, +5% Spiritual Fulfillment gain",
+        "lines": [
+          {
+            "p": "good",
+            "t": "+10% Stress Loss"
+          },
+          {
+            "p": "good",
+            "t": "+5% Character Spiritual Fulfillment Gain Mult"
+          }
+        ],
+        "tag": "if rite has Hesychasm"
+      }
+    ],
     "desc": "This character has taken to writing down the thoughts which plague them to make them easier to manage.",
     "dlc": null,
     "features": [],
@@ -5029,6 +5731,7 @@
   },
   {
     "category": "fame",
+    "clergy": null,
     "conditional": [
       {
         "condition": "The Knight-Errant Trait has additional bonuses",
@@ -5072,18 +5775,21 @@
         "100": [
           "+2 Prowess per Level of Fame",
           "+2 Number of Knight Knights",
-          "+2 Size of Men-at-Arms Regiments"
+          "+2 Size of Men-at-Arms Regiments",
+          "+25% Hastiluder Trait Experience Gain (if culture: The Knight-Errant Trait has additional bonuses)"
         ],
         "50": [
           "+1 Prowess per Level of Fame",
           "+1 Number of Knight Knights",
-          "+1 Size of Men-at-Arms Regiments"
+          "+1 Size of Men-at-Arms Regiments",
+          "+15% Hastiluder Trait Experience Gain (if culture: The Knight-Errant Trait has additional bonuses)"
         ]
       }
     }
   },
   {
     "category": "fame",
+    "clergy": null,
     "conditional": [],
     "desc": "Renowned for their heroic life, this character is known to all as a living legend.",
     "dlc": null,
@@ -5112,6 +5818,7 @@
   },
   {
     "category": "fame",
+    "clergy": null,
     "conditional": [],
     "desc": "This character was born as a bastard, but has since been legitimized.",
     "dlc": null,
@@ -5147,6 +5854,92 @@
   },
   {
     "category": "fame",
+    "clergy": null,
+    "conditional": [
+      {
+        "condition": "Rite has Alexandrian Catechism — The Religious Scholar Trait grants additional bonuses",
+        "lines": [
+          {
+            "p": "good",
+            "t": "+10% Monthly Piety"
+          },
+          {
+            "p": "good",
+            "t": "+10 Zealot Vassal Opinion"
+          },
+          {
+            "p": "good",
+            "t": "+1 Learning"
+          }
+        ],
+        "tag": "if rite has Alexandrian Catechism"
+      }
+    ],
+    "desc": "… has just started … journey to comprehend the nature of religion.",
+    "dlc": null,
+    "features": [],
+    "genetic": {},
+    "group": null,
+    "icon": "lifestyle_scholar",
+    "id": "lifestyle_scholar",
+    "level": null,
+    "modifiers": [
+      {
+        "p": "good",
+        "t": "+5% Monthly Lifestyle Experience"
+      }
+    ],
+    "name": "Religious Scholar",
+    "opinions": [],
+    "opposites": [],
+    "rulerDesignerCost": 15,
+    "skills": {
+      "learning": 1
+    },
+    "tracks": {
+      "default": {
+        "100": [
+          "+1 Learning",
+          "+7.5% Monthly Lifestyle Experience",
+          "+5 Clergy Opinion",
+          "+10% Monthly Piety (if rite has Alexandrian Catechism)",
+          "+10 Zealot Vassal Opinion (if rite has Alexandrian Catechism)",
+          "+1 Learning (if rite has Alexandrian Catechism)"
+        ],
+        "20": [
+          "+2.5% Monthly Lifestyle Experience",
+          "+10% Monthly Piety (if rite has Alexandrian Catechism)",
+          "+10 Zealot Vassal Opinion (if rite has Alexandrian Catechism)",
+          "+1 Learning (if rite has Alexandrian Catechism)"
+        ],
+        "40": [
+          "+2.5% Monthly Lifestyle Experience",
+          "+5 Clergy Opinion",
+          "+10% Monthly Piety (if rite has Alexandrian Catechism)",
+          "+10 Zealot Vassal Opinion (if rite has Alexandrian Catechism)",
+          "+1 Learning (if rite has Alexandrian Catechism)"
+        ],
+        "60": [
+          "+2.5% Monthly Lifestyle Experience",
+          "+5 Clergy Opinion",
+          "+10% Monthly Piety (if rite has Alexandrian Catechism)",
+          "+10 Zealot Vassal Opinion (if rite has Alexandrian Catechism)",
+          "+1 Learning (if rite has Alexandrian Catechism)"
+        ],
+        "80": [
+          "+1 Learning",
+          "+5% Monthly Lifestyle Experience",
+          "+5 Clergy Opinion",
+          "+10% Monthly Piety (if rite has Alexandrian Catechism)",
+          "+10 Zealot Vassal Opinion (if rite has Alexandrian Catechism)",
+          "+1 Learning (if rite has Alexandrian Catechism)"
+        ]
+      }
+    }
+  },
+  {
+    "category": "fame",
+    "clergy": null,
     "conditional": [
       {
         "condition": "The Loyal Trait is more valued",
@@ -5215,6 +6008,7 @@
   },
   {
     "category": "fame",
+    "clergy": null,
     "conditional": [],
     "desc": "This character has illegally brought about someone's demise.",
     "dlc": null,
@@ -5224,14 +6018,11 @@
     "icon": "murderer",
     "id": "murderer",
     "level": null,
-    "modifiers": [
-      {
-        "p": "bad",
-        "t": "-15 General Opinion"
-      }
-    ],
+    "modifiers": [],
     "name": "Murderer",
-    "opinions": [],
+    "opinions": [
+      "Known Murderer"
+    ],
     "opposites": [],
     "rulerDesignerCost": -10,
     "skills": {},
@@ -5239,9 +6030,10 @@
   },
   {
     "category": "fame",
+    "clergy": null,
     "conditional": [
       {
-        "condition": "The Warrior of the Faith and Order Member Traits are seen as Prestige Prestigious",
+        "condition": "The Warrior of the Faith and Military Order Member Traits are seen as Prestige Prestigious",
         "lines": [
           {
             "p": "good",
@@ -5250,7 +6042,7 @@
         ]
       }
     ],
-    "desc": "This character serves in a militarized Holy Order.",
+    "desc": "This character serves in a military order, bound by holy vows to defend their faith.",
     "dlc": null,
     "features": [],
     "genetic": {},
@@ -5259,7 +6051,7 @@
     "id": "order_member",
     "level": null,
     "modifiers": [],
-    "name": "Order Member",
+    "name": "Military Order Member",
     "opinions": [
       "+15 Same trait & faith opinion"
     ],
@@ -5273,6 +6065,7 @@
   },
   {
     "category": "fame",
+    "clergy": null,
     "conditional": [],
     "desc": "This character has become an example of religious virtue beyond reproach.",
     "dlc": null,
@@ -5297,6 +6090,7 @@
   },
   {
     "category": "fame",
+    "clergy": null,
     "conditional": [
       {
         "condition": "Granting Counties to Commoners increases County Control and makes them a Peasant Leader",
@@ -5361,6 +6155,7 @@
   },
   {
     "category": "fame",
+    "clergy": null,
     "conditional": [
       {
         "condition": "Traits such as Astute Intellectual, Devoted or Theologian give Prowess",
@@ -5372,7 +6167,7 @@
         ]
       },
       {
-        "condition": "Basic Pilgrimage Rewards",
+        "condition": "Rite has Encouraged Pilgrimages, Local Rites, Mandatory Pilgrimages or Hajj",
         "lines": [
           {
             "p": "good",
@@ -5382,10 +6177,11 @@
             "p": "good",
             "t": "+5 Zealot Vassal Opinion"
           }
-        ]
+        ],
+        "tag": "if rite has Encouraged Pilgrimages, Local Rites, Mandatory Pilgrimages or Hajj"
       },
       {
-        "condition": "Mandatory Pilgrimage",
+        "condition": "Rite has Mandatory Pilgrimages — The Pilgrim Trait grants additional bonuses and the Pilgrimage Activity grants extra Piety upon completion",
         "lines": [
           {
             "p": "good",
@@ -5403,7 +6199,8 @@
             "p": "good",
             "t": "+5 Clergy Opinion"
           }
-        ]
+        ],
+        "tag": "if rite has Mandatory Pilgrimages"
       }
     ],
     "desc": "This character has completed a pilgrimage to a holy site.",
@@ -5429,10 +6226,33 @@
     "opposites": [],
     "rulerDesignerCost": 30,
     "skills": {},
-    "tracks": {}
+    "tracks": {
+      "default": {
+        "100": [
+          "+3 Prowess (if culture: Traits such as Astute Intellectual, Devoted or Theologian give Prowess)",
+          "+10% Monthly Piety (if rite has Encouraged Pilgrimages, Local Rites, Mandatory Pilgrimages or Hajj)",
+          "+20 Zealot Vassal Opinion (if rite has Encouraged Pilgrimages, Local Rites, Mandatory Pilgrimages or Hajj)",
+          "+5 Different Culture Opinion (if rite has Encouraged Pilgrimages, Local Rites, Mandatory Pilgrimages or Hajj)",
+          "+2 Learning (if rite has Encouraged Pilgrimages, Local Rites, Mandatory Pilgrimages or Hajj)",
+          "+40% Monthly Piety (if rite has Mandatory Pilgrimages)",
+          "+40 Zealot Vassal Opinion (if rite has Mandatory Pilgrimages)",
+          "+10 Clergy Opinion (if rite has Mandatory Pilgrimages)"
+        ],
+        "50": [
+          "+3 Prowess (if culture: Traits such as Astute Intellectual, Devoted or Theologian give Prowess)",
+          "+10% Monthly Piety (if rite has Encouraged Pilgrimages, Local Rites, Mandatory Pilgrimages or Hajj)",
+          "+10 Zealot Vassal Opinion (if rite has Encouraged Pilgrimages, Local Rites, Mandatory Pilgrimages or Hajj)",
+          "+1 Learning (if rite has Encouraged Pilgrimages, Local Rites, Mandatory Pilgrimages or Hajj)",
+          "+40% Monthly Piety (if rite has Mandatory Pilgrimages)",
+          "+20 Zealot Vassal Opinion (if rite has Mandatory Pilgrimages)",
+          "+10 Clergy Opinion (if rite has Mandatory Pilgrimages)"
+        ]
+      }
+    }
   },
   {
     "category": "fame",
+    "clergy": null,
     "conditional": [],
     "desc": "This character came to power after fighting for the independence of their people.",
     "dlc": null,
@@ -5473,6 +6293,7 @@
   },
   {
     "category": "fame",
+    "clergy": null,
     "conditional": [],
     "desc": "Compulsive spending causes this character to frequently waste money on unnecessary purchases.",
     "dlc": null,
@@ -5511,7 +6332,37 @@
   },
   {
     "category": "fame",
-    "conditional": [],
+    "clergy": null,
+    "conditional": [
+      {
+        "condition": "Rite has Carnal Exaltation — Characters with Lustful, Rakish, or Deviant gain +2 Intrigue, +2 Diplomacy, and +25% Fertility per trait",
+        "lines": [
+          {
+            "p": "good",
+            "t": "+2 Intrigue"
+          },
+          {
+            "p": "good",
+            "t": "+2 Diplomacy"
+          },
+          {
+            "p": "good",
+            "t": "+25% Fertility"
+          }
+        ],
+        "tag": "if rite has Carnal Exaltation"
+      },
+      {
+        "condition": "Rite has Carnal Exaltation — Characters with Lustful, Rakish, or Deviant complete Seduce Schemes 20 days faster per trait",
+        "lines": [
+          {
+            "p": "neutral",
+            "t": "20 Seduce Phase Length days faster per Scheme Phase"
+          }
+        ],
+        "tag": "if rite has Carnal Exaltation"
+      }
+    ],
     "desc": "This character spends so much time in the brothel that it has become their second home.",
     "dlc": null,
     "features": [],
@@ -5544,6 +6395,7 @@
   },
   {
     "category": "fame",
+    "clergy": null,
     "conditional": [],
     "desc": "This character often sequesters themselves away and neglects their responsibilities.",
     "dlc": null,
@@ -5575,6 +6427,7 @@
   },
   {
     "category": "fame",
+    "clergy": null,
     "conditional": [],
     "desc": "This is not the first time this character walks upon the earth.",
     "dlc": null,
@@ -5603,6 +6456,7 @@
   },
   {
     "category": "fame",
+    "clergy": null,
     "conditional": [],
     "desc": "Exceptionally holy; this character is venerated for their pious actions.",
     "dlc": null,
@@ -5631,6 +6485,7 @@
   },
   {
     "category": "fame",
+    "clergy": null,
     "conditional": [],
     "desc": "This character is here to deliver us all and perhaps bring about Frashokereti, the final renovation of the world.",
     "dlc": null,
@@ -5661,6 +6516,7 @@
   },
   {
     "category": "fame",
+    "clergy": null,
     "conditional": [],
     "desc": "This character is a direct descendant of the Saoshyant.",
     "dlc": null,
@@ -5689,6 +6545,7 @@
   },
   {
     "category": "fame",
+    "clergy": null,
     "conditional": [],
     "desc": "This character is here to deliver us all.",
     "dlc": null,
@@ -5715,6 +6572,7 @@
   },
   {
     "category": "fame",
+    "clergy": null,
     "conditional": [],
     "desc": "Coursing through the veins of this character is the Blood of the Prophet.",
     "dlc": null,
@@ -5743,6 +6601,7 @@
   },
   {
     "category": "fame",
+    "clergy": null,
     "conditional": [],
     "desc": "This character is known for having sexual relations with people of their own gender.",
     "dlc": null,
@@ -5766,6 +6625,7 @@
   },
   {
     "category": "fame",
+    "clergy": null,
     "conditional": [],
     "desc": "This character was born a twin.",
     "dlc": null,
@@ -5790,6 +6650,7 @@
   },
   {
     "category": "fame",
+    "clergy": null,
     "conditional": [],
     "desc": "This character has served in the Byzantine Army as part of the Varangian Guard.",
     "dlc": null,
@@ -5815,6 +6676,7 @@
   },
   {
     "category": "fame",
+    "clergy": null,
     "conditional": [
       {
         "condition": "The Poet Trait has additional bonuses",
@@ -5891,6 +6753,7 @@
   },
   {
     "category": "fame",
+    "clergy": null,
     "conditional": [],
     "desc": "This character was born out of wedlock.",
     "dlc": null,
@@ -5916,6 +6779,7 @@
   },
   {
     "category": "fame",
+    "clergy": null,
     "conditional": [],
     "desc": "This character dabbles in subjects many would consider occult.",
     "dlc": null,
@@ -5943,6 +6807,7 @@
   },
   {
     "category": "fame",
+    "clergy": null,
     "conditional": [],
     "desc": "This character has committed the sin of murdering a dynasty member.",
     "dlc": null,
@@ -5973,6 +6838,7 @@
   },
   {
     "category": "fame",
+    "clergy": null,
     "conditional": [],
     "desc": "This character has slain a member of their extended family.",
     "dlc": null,
@@ -6008,6 +6874,7 @@
   },
   {
     "category": "fame",
+    "clergy": null,
     "conditional": [],
     "desc": "This character is known for having slain close kin.",
     "dlc": null,
@@ -6044,6 +6911,7 @@
   },
   {
     "category": "health",
+    "clergy": null,
     "conditional": [],
     "desc": "Through an accident or since birth, this character can see nothing.",
     "dlc": null,
@@ -6081,6 +6949,7 @@
   },
   {
     "category": "health",
+    "clergy": null,
     "conditional": [],
     "desc": "This character is beset by black patches of skin and multiple buboes; they are not long for this world.",
     "dlc": null,
@@ -6135,6 +7004,7 @@
   },
   {
     "category": "health",
+    "clergy": null,
     "conditional": [],
     "desc": "Cancer has spread through this character's body, draining the life out of them.",
     "dlc": null,
@@ -6175,6 +7045,7 @@
   },
   {
     "category": "health",
+    "clergy": null,
     "conditional": [],
     "desc": "World and word alike fade behind a cloudy veil, leaving this character to grasp at shadows where certainties once lay.",
     "dlc": null,
@@ -6225,6 +7096,7 @@
   },
   {
     "category": "health",
+    "clergy": null,
     "conditional": [],
     "desc": "Wracked with a bloody cough caused by cold humors in the lungs, this character suffers from the consumption.",
     "dlc": null,
@@ -6277,6 +7149,7 @@
   },
   {
     "category": "health",
+    "clergy": null,
     "conditional": [
       {
         "condition": "Permanent Trait injuries such as Scarred, Maimed or One-Legged give bonuses",
@@ -6330,6 +7203,7 @@
   },
   {
     "category": "health",
+    "clergy": null,
     "conditional": [],
     "desc": "Fever, delirium and severe abdominal pain have made this character... expel blood in the latrines.",
     "dlc": null,
@@ -6374,6 +7248,7 @@
   },
   {
     "category": "health",
+    "clergy": null,
     "conditional": [],
     "desc": "Marked by blisters and infection, this character is afflicted by a venereal disease.",
     "dlc": null,
@@ -6402,6 +7277,7 @@
   },
   {
     "category": "health",
+    "clergy": null,
     "conditional": [],
     "desc": "This character suffers from painful seizures, headaches, nausea and diarrhea — the involuntary spasms make it look as if they were dancing.",
     "dlc": null,
@@ -6439,6 +7315,7 @@
   },
   {
     "category": "health",
+    "clergy": null,
     "conditional": [],
     "desc": "Short of breath and heavy of pulse, this character greets each sunrise unsure whether their weary heart will see the dusk.",
     "dlc": null,
@@ -6504,6 +7381,7 @@
   },
   {
     "category": "health",
+    "clergy": null,
     "conditional": [],
     "desc": "Brittle of frame, this character feels every jolt as a hammer-blow and lives in dread of the smallest stumble.",
     "dlc": null,
@@ -6575,6 +7453,7 @@
   },
   {
     "category": "health",
+    "clergy": null,
     "conditional": [],
     "desc": "This character is plagued by swollen joints, making movement painful and the skin tender and red.",
     "dlc": null,
@@ -6619,6 +7498,7 @@
   },
   {
     "category": "health",
+    "clergy": null,
     "conditional": [],
     "desc": "Plagued by sores and inflammation, this character suffers from the venereal plague.",
     "dlc": null,
@@ -6667,6 +7547,7 @@
   },
   {
     "category": "health",
+    "clergy": null,
     "conditional": [],
     "desc": "Bad humors plague this character, and the severity of the affliction is yet to be determined.",
     "dlc": null,
@@ -6713,6 +7594,7 @@
   },
   {
     "category": "health",
+    "clergy": null,
     "conditional": [],
     "desc": "Due to physical injury or mental disability, this character is unable to take care of themself or take decisions independently.",
     "dlc": null,
@@ -6772,6 +7654,7 @@
   },
   {
     "category": "health",
+    "clergy": null,
     "conditional": [],
     "desc": "Weak of body, this character is not fit for much except waiting for death to claim them.",
     "dlc": null,
@@ -6854,6 +7737,7 @@
   },
   {
     "category": "health",
+    "clergy": null,
     "conditional": [],
     "desc": "This character's skin is marked with lesions and discolored patches, indicative of their reduced ability to feel pleasure, pain, and other sensations.",
     "dlc": null,
@@ -6902,6 +7786,7 @@
   },
   {
     "category": "health",
+    "clergy": null,
     "conditional": [],
     "desc": "Marked by blisters and infection, this character is afflicted by a venereal disease.",
     "dlc": null,
@@ -6932,6 +7817,7 @@
   },
   {
     "category": "health",
+    "clergy": null,
     "conditional": [
       {
         "condition": "Permanent Trait injuries such as Scarred, Maimed or One-Legged give bonuses",
@@ -6996,6 +7882,7 @@
   },
   {
     "category": "health",
+    "clergy": null,
     "conditional": [],
     "desc": "This character suffers from a prolonged fever, rashes and cough, leading many people to equate this malady to a \"little leprosy\".",
     "dlc": null,
@@ -7041,6 +7928,7 @@
   },
   {
     "category": "health",
+    "clergy": null,
     "conditional": [
       {
         "condition": "Permanent Trait injuries such as Scarred, Maimed or One-Legged give bonuses",
@@ -7088,13 +7976,13 @@
     "opposites": [],
     "rulerDesignerCost": 10,
     "skills": {
-      "learning": 1,
       "prowess": -2
     },
     "tracks": {}
   },
   {
     "category": "health",
+    "clergy": null,
     "conditional": [
       {
         "condition": "Permanent Trait injuries such as Scarred, Maimed or One-Legged give bonuses",
@@ -7142,13 +8030,13 @@
     "opposites": [],
     "rulerDesignerCost": -5,
     "skills": {
-      "learning": 1,
       "prowess": -4
     },
     "tracks": {}
   },
   {
     "category": "health",
+    "clergy": null,
     "conditional": [],
     "desc": "Racked by coughs and dizzy with fever, this character suffers from an infection of the lungs.",
     "dlc": null,
@@ -7201,6 +8089,7 @@
   },
   {
     "category": "health",
+    "clergy": null,
     "conditional": [],
     "desc": "This character is with child.",
     "dlc": null,
@@ -7222,6 +8111,7 @@
   },
   {
     "category": "health",
+    "clergy": null,
     "conditional": [
       {
         "condition": "Permanent Trait injuries such as Scarred, Maimed or One-Legged give bonuses",
@@ -7235,6 +8125,20 @@
             "t": "+5 Same Culture Opinion"
           }
         ]
+      },
+      {
+        "condition": "Rite has Mortification of the Flesh — The Scarred Trait grants Piety and Opinion with the faithful",
+        "lines": [
+          {
+            "p": "good",
+            "t": "+10% Monthly Piety"
+          },
+          {
+            "p": "good",
+            "t": "+5 Same Faith Opinion"
+          }
+        ],
+        "tag": "if rite has Mortification of the Flesh"
       }
     ],
     "desc": "Visibly wearing the memories of battles or accidents, this character is noticeably scarred.",
@@ -7266,19 +8170,24 @@
           "+0.05 Prestige /month",
           "-5 Attraction Opinion",
           "-10 Child Opinion",
-          "-0.1 Health"
+          "-0.1 Health",
+          "+5% Monthly Piety (if rite has Mortification of the Flesh)",
+          "+5 Same Faith Opinion (if rite has Mortification of the Flesh)"
         ],
         "trait_third_level": [
           "-20 Attraction Opinion",
           "-20 Child Opinion",
           "-0.1 Health",
-          "+10% Dread Gain"
+          "+10% Dread Gain",
+          "+10% Monthly Piety (if rite has Mortification of the Flesh)",
+          "+10 Same Faith Opinion (if rite has Mortification of the Flesh)"
         ]
       }
     }
   },
   {
     "category": "health",
+    "clergy": null,
     "conditional": [],
     "desc": "This character is suffering from a sickly disposition.",
     "dlc": null,
@@ -7311,6 +8220,7 @@
   },
   {
     "category": "health",
+    "clergy": null,
     "conditional": [],
     "desc": "Riddled by scars, rashes, and bumps, this character will never be the same again even if they survive their malady.",
     "dlc": null,
@@ -7363,6 +8273,7 @@
   },
   {
     "category": "health",
+    "clergy": null,
     "conditional": [],
     "desc": "This character suffers from camp fever and is plagued by rashes, fever, and coughs.",
     "dlc": null,
@@ -7416,6 +8327,7 @@
   },
   {
     "category": "health",
+    "clergy": null,
     "conditional": [],
     "desc": "Fog-bound of memory, this character drifts through waking dreams, their yesterdays falling away like leaves before a winter wind.",
     "dlc": null,
@@ -7485,6 +8397,7 @@
   },
   {
     "category": "health",
+    "clergy": null,
     "conditional": [],
     "desc": "This character has a hard time seeing the good in life.",
     "dlc": null,
@@ -7518,6 +8431,7 @@
   },
   {
     "category": "health",
+    "clergy": null,
     "conditional": [
       {
         "condition": "The Eunuch and Beardless Eunuch Traits grant additional Skills, Aptitude, and Influence",
@@ -7617,6 +8531,7 @@
   },
   {
     "category": "health",
+    "clergy": null,
     "conditional": [],
     "desc": "Plagued by hallucinations, delusions, and disorganized thoughts, this character struggles to distinguish between what is real and what is not.",
     "dlc": null,
@@ -7655,6 +8570,7 @@
   },
   {
     "category": "health",
+    "clergy": null,
     "conditional": [],
     "desc": "The sudden changes in emotion, awareness, and ability this character experiences can only be explained by spirits inhabiting their body.",
     "dlc": null,
@@ -7689,6 +8605,7 @@
   },
   {
     "category": "health",
+    "clergy": null,
     "conditional": [
       {
         "condition": "The Eunuch and Beardless Eunuch Traits grant additional Skills, Aptitude, and Influence",
@@ -7794,6 +8711,7 @@
   },
   {
     "category": "health",
+    "clergy": null,
     "conditional": [],
     "desc": "This character has a hard time seeing the good in life.",
     "dlc": null,
@@ -7831,6 +8749,7 @@
   },
   {
     "category": "health",
+    "clergy": null,
     "conditional": [],
     "desc": "Plagued by hallucinations, delusions, and disorganized thoughts, this character struggles to distinguish between what is real and what is not.",
     "dlc": null,
@@ -7873,6 +8792,7 @@
   },
   {
     "category": "health",
+    "clergy": null,
     "conditional": [],
     "desc": "The sudden changes in emotion, awareness, and ability this character experiences can only be explained by spirits inhabiting their body.",
     "dlc": null,
@@ -7911,6 +8831,7 @@
   },
   {
     "category": "health",
+    "clergy": null,
     "conditional": [],
     "desc": "This character has been wounded, but will probably heal fine given time.",
     "dlc": null,
@@ -7947,6 +8868,7 @@
   },
   {
     "category": "health",
+    "clergy": null,
     "conditional": [],
     "desc": "This character has been severely injured, and the road to recovery could be a long one.",
     "dlc": null,
@@ -7991,6 +8913,7 @@
   },
   {
     "category": "health",
+    "clergy": null,
     "conditional": [],
     "desc": "This character has been broken, and is clinging to life.",
     "dlc": null,
@@ -8035,6 +8958,7 @@
   },
   {
     "category": "lifestyle",
+    "clergy": null,
     "conditional": [
       {
         "condition": "The Administrator Trait has additional bonuses",
@@ -8101,6 +9025,7 @@
   },
   {
     "category": "lifestyle",
+    "clergy": null,
     "conditional": [
       {
         "condition": "The Architect Trait provides a Prestige Prestige bonus",
@@ -8174,6 +9099,7 @@
   },
   {
     "category": "lifestyle",
+    "clergy": null,
     "conditional": [],
     "desc": "They are honored as a true ruler, worthy of the empires of old!",
     "dlc": null,
@@ -8201,6 +9127,7 @@
   },
   {
     "category": "lifestyle",
+    "clergy": null,
     "conditional": [
       {
         "condition": "The Avaricious Trait provides additional bonuses",
@@ -8258,6 +9185,7 @@
   },
   {
     "category": "lifestyle",
+    "clergy": null,
     "conditional": [
       {
         "condition": "The Diplomat Trait provides additional bonuses",
@@ -8310,6 +9238,107 @@
   },
   {
     "category": "lifestyle",
+    "clergy": null,
+    "conditional": [
+      {
+        "condition": "Traits such as Astute Intellectual, Devoted or Theologian give Prowess",
+        "lines": [
+          {
+            "p": "good",
+            "t": "+2 Prowess"
+          }
+        ]
+      },
+      {
+        "condition": "Learning Education Traits and the Erudite Trait also give Cultural Fascination Progress",
+        "lines": [
+          {
+            "p": "good",
+            "t": "+10% Cultural Head Fascination Mult"
+          }
+        ]
+      },
+      {
+        "condition": "Traits such a Insightful Thinker, Mystic, Humble and especially Zealous give Temple construction bonuses",
+        "lines": [
+          {
+            "p": "good",
+            "t": "-10% Temple Buildings Construction Time"
+          },
+          {
+            "p": "good",
+            "t": "-10% Temple Holding Construction Time"
+          },
+          {
+            "p": "good",
+            "t": "-5% Temple Buildings Construction Cost"
+          },
+          {
+            "p": "good",
+            "t": "-5% Temple Holding Construction Cost"
+          }
+        ]
+      },
+      {
+        "condition": "The Gardener, Patient, and Erudite Traits gives a Tax bonus in Deserts, Drylands, and Desert Mountains",
+        "lines": [
+          {
+            "p": "good",
+            "t": "+10% Holding Taxes in Drylands"
+          },
+          {
+            "p": "good",
+            "t": "+10% Holding Taxes in Desert"
+          },
+          {
+            "p": "good",
+            "t": "+10% Holding Taxes in Desert Mountains"
+          }
+        ]
+      }
+    ],
+    "desc": "Philosophy, nature, and knowledge. Understanding the world is the only way to rule it.",
+    "dlc": null,
+    "features": [],
+    "genetic": {},
+    "group": null,
+    "icon": "erudite",
+    "id": "erudite",
+    "level": null,
+    "modifiers": [
+      {
+        "p": "good",
+        "t": "+10% Owned Personal Scheme Success Chance Add"
+      },
+      {
+        "p": "good",
+        "t": "+10% Owned Hostile Scheme Success Chance Add"
+      },
+      {
+        "p": "good",
+        "t": "+15% Development Growth"
+      },
+      {
+        "p": "good",
+        "t": "-15% Development Decline"
+      },
+      {
+        "p": "good",
+        "t": "+15% County Fertility Growth"
+      }
+    ],
+    "name": "Erudite",
+    "opinions": [],
+    "opposites": [],
+    "rulerDesignerCost": 50,
+    "skills": {
+      "learning": 3
+    },
+    "tracks": {}
+  },
+  {
+    "category": "lifestyle",
+    "clergy": null,
     "conditional": [
       {
         "condition": "Characters with the Family First Trait are seen as Prestige Prestigious and will be able to raise more Levies",
@@ -8364,6 +9393,7 @@
   },
   {
     "category": "lifestyle",
+    "clergy": null,
     "conditional": [
       {
         "condition": "The Poet and Gallant Traits give significant Romance Scheme bonuses",
@@ -8418,6 +9448,7 @@
   },
   {
     "category": "lifestyle",
+    "clergy": null,
     "conditional": [
       {
         "condition": "Certain Traits such as Brave, Gregarious, Generous or Blademaster give Popular Opinion",
@@ -8476,20 +9507,29 @@
       "default": {
         "100": [
           "+6 Prowess",
-          "+0.5 Negate Health Penalty Add"
+          "+0.5 Negate Health Penalty Add",
+          "+5 Popular Opinion (if culture: Certain Traits such as Brave, Gregarious, Generous or Blademaster give Popular Opinion)",
+          "+5 Attraction Opinion (if culture: The Blademaster Traits have additional bonuses)",
+          "+0.5 Prestige /month (if culture: The Blademaster Traits have additional bonuses)",
+          "+2 Learning (if culture: The Blademaster Trait gives Learning)"
         ],
         "50": [
           "+3 Prowess",
-          "+0.25 Negate Health Penalty Add"
+          "+0.25 Negate Health Penalty Add",
+          "+3 Popular Opinion (if culture: Certain Traits such as Brave, Gregarious, Generous or Blademaster give Popular Opinion)",
+          "+5 Attraction Opinion (if culture: The Blademaster Traits have additional bonuses)",
+          "+0.25 Prestige /month (if culture: The Blademaster Traits have additional bonuses)",
+          "+2 Learning (if culture: The Blademaster Trait gives Learning)"
         ]
       }
     }
   },
   {
     "category": "lifestyle",
+    "clergy": null,
     "conditional": [
       {
-        "condition": "The Gardener, Patient, and Scholar Traits gives a Tax bonus in Deserts, Drylands, and Desert Mountains",
+        "condition": "The Gardener, Patient, and Erudite Traits gives a Tax bonus in Deserts, Drylands, and Desert Mountains",
         "lines": [
           {
             "p": "good",
@@ -8535,6 +9575,7 @@
   },
   {
     "category": "lifestyle",
+    "clergy": null,
     "conditional": [
       {
         "condition": "Some Commander Traits and Personality Traits have extra Forest bonuses",
@@ -8602,6 +9643,7 @@
   },
   {
     "category": "lifestyle",
+    "clergy": null,
     "conditional": [
       {
         "condition": "Hunter Trait is seen as Prestige Prestigious",
@@ -8674,14 +9716,22 @@
           "+1 Learning",
           "+5 Attraction Opinion",
           "+10 Courtly Vassal Opinion",
-          "+0.5 Prestige /month"
+          "+0.5 Prestige /month",
+          "+0.5 Prestige /month (if culture: Hunter Trait is seen as Prestige Prestigious)",
+          "+5 Courtly Vassal Opinion (Same Culture) (if culture: Hunter Trait is seen as Prestige Prestigious)",
+          "+0.4 Piety /month (if culture: Hunter Trait is seen as Piety Pious)",
+          "+5 Courtly Vassal Opinion (Same Faith) (if culture: Hunter Trait is seen as Piety Pious)"
         ],
         "50": [
           "+1 Stewardship",
           "+1 Learning",
           "+5 Attraction Opinion",
           "+5 Courtly Vassal Opinion",
-          "+0.25 Prestige /month"
+          "+0.25 Prestige /month",
+          "+0.5 Prestige /month (if culture: Hunter Trait is seen as Prestige Prestigious)",
+          "+5 Courtly Vassal Opinion (Same Culture) (if culture: Hunter Trait is seen as Prestige Prestigious)",
+          "+0.15 Piety /month (if culture: Hunter Trait is seen as Piety Pious)",
+          "+5 Courtly Vassal Opinion (Same Faith) (if culture: Hunter Trait is seen as Piety Pious)"
         ]
       },
       "hunter": {
@@ -8690,20 +9740,35 @@
           "+1 Learning",
           "+10% Stress Loss",
           "+0.15 Health",
-          "+10 Glory Hound Vassal Opinion"
+          "+10 Glory Hound Vassal Opinion",
+          "+0.5 Prestige /month (if culture: Hunter Trait is seen as Prestige Prestigious)",
+          "+5 Glory Hound Vassal Opinion (Same Culture) (if culture: Hunter Trait is seen as Prestige Prestigious)",
+          "+0.4 Piety /month (if culture: Hunter Trait is seen as Piety Pious)",
+          "+5 Glory Hound Vassal Opinion (Same Faith) (if culture: Hunter Trait is seen as Piety Pious)",
+          "+1 Advantage in Forest (if culture: Some Commander Traits and Personality Traits have extra Forest bonuses)",
+          "+1 Advantage in Taiga (if culture: Some Commander Traits and Personality Traits have extra Forest bonuses)",
+          "+1 Jungle Advantage (if culture: Some Commander Traits and Personality Traits have extra Jungle bonuses)"
         ],
         "50": [
           "+1 Prowess",
           "+1 Learning",
           "+5% Stress Loss",
           "+0.05 Health",
-          "+5 Glory Hound Vassal Opinion"
+          "+5 Glory Hound Vassal Opinion",
+          "+0.5 Prestige /month (if culture: Hunter Trait is seen as Prestige Prestigious)",
+          "+5 Glory Hound Vassal Opinion (Same Culture) (if culture: Hunter Trait is seen as Prestige Prestigious)",
+          "+0.3 Piety /month (if culture: Hunter Trait is seen as Piety Pious)",
+          "+5 Glory Hound Vassal Opinion (Same Faith) (if culture: Hunter Trait is seen as Piety Pious)",
+          "+1 Advantage in Forest (if culture: Some Commander Traits and Personality Traits have extra Forest bonuses)",
+          "+1 Advantage in Taiga (if culture: Some Commander Traits and Personality Traits have extra Forest bonuses)",
+          "+1 Jungle Advantage (if culture: Some Commander Traits and Personality Traits have extra Jungle bonuses)"
         ]
       }
     }
   },
   {
     "category": "lifestyle",
+    "clergy": null,
     "conditional": [
       {
         "condition": "Traits such as Astute Intellectual, Devoted or Theologian give Prowess",
@@ -8735,6 +9800,16 @@
             "t": "+2% Monthly Income"
           }
         ]
+      },
+      {
+        "condition": "Rite has Gnosticism — Mystic preserves Spiritual Fulfillment and, at higher levels, grants an additional Personal Tenet",
+        "lines": [
+          {
+            "p": "good",
+            "t": "-10% Character Spiritual Fulfillment Loss Mult"
+          }
+        ],
+        "tag": "if rite has Gnosticism"
       }
     ],
     "desc": null,
@@ -8745,7 +9820,12 @@
     "icon": "mystic",
     "id": "lifestyle_mystic",
     "level": null,
-    "modifiers": [],
+    "modifiers": [
+      {
+        "p": "good",
+        "t": "+10% Character Spiritual Fulfillment Gain Mult"
+      }
+    ],
     "name": "Mystic",
     "opinions": [],
     "opposites": [],
@@ -8756,16 +9836,31 @@
     "tracks": {
       "default": {
         "100": [
-          "+2 Learning"
+          "+1 Learning",
+          "+15% Character Spiritual Fulfillment Gain Mult",
+          "+1 Prowess (if culture: Traits such as Astute Intellectual, Devoted or Theologian give Prowess)",
+          "-5% Temple Buildings Construction Cost (if culture: Traits such a Insightful Thinker, Mystic, Humble and especially Zealous give Temple construction bonuses)",
+          "-5% Temple Holding Construction Cost (if culture: Traits such a Insightful Thinker, Mystic, Humble and especially Zealous give Temple construction bonuses)",
+          "+4% Monthly Income (if culture: The Mystic line of Traits have additional bonuses)",
+          "-15% Character Spiritual Fulfillment Loss Mult (if rite has Gnosticism)",
+          "+10% Monthly Piety (if rite has Gnosticism)"
         ],
         "50": [
-          "+1 Learning"
+          "+1 Learning",
+          "+10% Character Spiritual Fulfillment Gain Mult",
+          "+1 Prowess (if culture: Traits such as Astute Intellectual, Devoted or Theologian give Prowess)",
+          "-5% Temple Buildings Construction Cost (if culture: Traits such a Insightful Thinker, Mystic, Humble and especially Zealous give Temple construction bonuses)",
+          "-5% Temple Holding Construction Cost (if culture: Traits such a Insightful Thinker, Mystic, Humble and especially Zealous give Temple construction bonuses)",
+          "+2% Monthly Income (if culture: The Mystic line of Traits have additional bonuses)",
+          "-10% Character Spiritual Fulfillment Loss Mult (if rite has Gnosticism)",
+          "+1 Personal Tenets (if rite has Gnosticism)"
         ]
       }
     }
   },
   {
     "category": "lifestyle",
+    "clergy": null,
     "conditional": [],
     "desc": null,
     "dlc": null,
@@ -8803,6 +9898,7 @@
   },
   {
     "category": "lifestyle",
+    "clergy": null,
     "conditional": [
       {
         "condition": "The Poet Trait has additional bonuses",
@@ -8869,6 +9965,7 @@
   },
   {
     "category": "lifestyle",
+    "clergy": null,
     "conditional": [
       {
         "condition": "Reveler Trait is seen as Prestige Prestigious",
@@ -8909,18 +10006,21 @@
           "+2 Diplomacy",
           "+1 Intrigue",
           "+5 Courtly Vassal Opinion",
-          "+10% Owned Hostile Scheme Success Chance Add"
+          "+10% Owned Hostile Scheme Success Chance Add",
+          "+0.75 Prestige /month (if culture: Reveler Trait is seen as Prestige Prestigious)"
         ],
         "50": [
           "+1 Diplomacy",
           "+1 Intrigue",
-          "+5 Courtly Vassal Opinion"
+          "+5 Courtly Vassal Opinion",
+          "+0.5 Prestige /month (if culture: Reveler Trait is seen as Prestige Prestigious)"
         ]
       }
     }
   },
   {
     "category": "lifestyle",
+    "clergy": null,
     "conditional": [],
     "desc": "This character has become an expert in the ways of husbandry and can ensure that their cattle make the best possible use of the pasture.",
     "dlc": null,
@@ -8945,6 +10045,7 @@
   },
   {
     "category": "lifestyle",
+    "clergy": null,
     "conditional": [],
     "desc": "The realm thrives under the watchful eye of …. With a penchant for travel intricately woven into the fabric of governance, … personally oversees vassals and navigates the challenges of management, ensuring a prosperous and well-tended domain.",
     "dlc": null,
@@ -8983,6 +10084,7 @@
   },
   {
     "category": "lifestyle",
+    "clergy": null,
     "conditional": [],
     "desc": "The most glorious of cities, the ruins of old, kings and queens of faraway realms. … has seen it all, and is happy to share … experiences with others.",
     "dlc": null,
@@ -9017,6 +10119,7 @@
   },
   {
     "category": "lifestyle",
+    "clergy": null,
     "conditional": [],
     "desc": "Travelling is more than a means to an end for …. Disappearing for days at a time … will always return to tell fantastical tales of faraway places, tall mountains, dark caves, or deep forests.",
     "dlc": null,
@@ -9033,7 +10136,7 @@
       },
       {
         "p": "good",
-        "t": "+5% Stress loss per Level of Fame"
+        "t": "+5% Stress Loss per Level of Fame"
       }
     ],
     "name": "Wayfarer",
@@ -9047,6 +10150,7 @@
   },
   {
     "category": "lifestyle",
+    "clergy": null,
     "conditional": [],
     "desc": "This character has been shaped from birth by the harsh life on the steppe. Their ways, though strange to the meek settled peoples, offer unmatched strength and cunning.\n\nMyself against my brothers — my brothers and I against my cousins — my brothers, my cousins and I against the other tribes — all the tribes against the world.",
     "dlc": null,
@@ -9079,6 +10183,7 @@
   },
   {
     "category": "lifestyle",
+    "clergy": null,
     "conditional": [
       {
         "condition": "Gallant, Overseer, and Strategist Traits provide bonuses to Heavy Cavalry Men-at-Arms",
@@ -9124,6 +10229,7 @@
   },
   {
     "category": "lifestyle",
+    "clergy": null,
     "conditional": [],
     "desc": "To understand and manipulate the things that drive other people — and exploit them!",
     "dlc": null,
@@ -9150,105 +10256,7 @@
   },
   {
     "category": "lifestyle",
-    "conditional": [
-      {
-        "condition": "Traits such as Astute Intellectual, Devoted or Theologian give Prowess",
-        "lines": [
-          {
-            "p": "good",
-            "t": "+2 Prowess"
-          }
-        ]
-      },
-      {
-        "condition": "Learning Education Traits and the Scholar Trait also give Cultural Fascination Progress",
-        "lines": [
-          {
-            "p": "good",
-            "t": "+10% Cultural Head Fascination Mult"
-          }
-        ]
-      },
-      {
-        "condition": "Traits such a Insightful Thinker, Mystic, Humble and especially Zealous give Temple construction bonuses",
-        "lines": [
-          {
-            "p": "good",
-            "t": "-10% Temple Buildings Construction Time"
-          },
-          {
-            "p": "good",
-            "t": "-10% Temple Holding Construction Time"
-          },
-          {
-            "p": "good",
-            "t": "-5% Temple Buildings Construction Cost"
-          },
-          {
-            "p": "good",
-            "t": "-5% Temple Holding Construction Cost"
-          }
-        ]
-      },
-      {
-        "condition": "The Gardener, Patient, and Scholar Traits gives a Tax bonus in Deserts, Drylands, and Desert Mountains",
-        "lines": [
-          {
-            "p": "good",
-            "t": "+10% Holding Taxes in Drylands"
-          },
-          {
-            "p": "good",
-            "t": "+10% Holding Taxes in Desert"
-          },
-          {
-            "p": "good",
-            "t": "+10% Holding Taxes in Desert Mountains"
-          }
-        ]
-      }
-    ],
-    "desc": "Philosophy, nature, and knowledge. Understanding the world is the only way to rule it.",
-    "dlc": null,
-    "features": [],
-    "genetic": {},
-    "group": null,
-    "icon": "scholar",
-    "id": "scholar",
-    "level": null,
-    "modifiers": [
-      {
-        "p": "good",
-        "t": "+10% Owned Personal Scheme Success Chance Add"
-      },
-      {
-        "p": "good",
-        "t": "+10% Owned Hostile Scheme Success Chance Add"
-      },
-      {
-        "p": "good",
-        "t": "+15% Development Growth"
-      },
-      {
-        "p": "good",
-        "t": "-15% Development Decline"
-      },
-      {
-        "p": "good",
-        "t": "+15% County Fertility Growth"
-      }
-    ],
-    "name": "Scholar",
-    "opinions": [],
-    "opposites": [],
-    "rulerDesignerCost": 50,
-    "skills": {
-      "learning": 3
-    },
-    "tracks": {}
-  },
-  {
-    "category": "lifestyle",
+    "clergy": null,
     "conditional": [],
     "desc": "It is not difficult to desire. The true challenge is to be desired.",
     "dlc": null,
@@ -9279,6 +10287,7 @@
   },
   {
     "category": "lifestyle",
+    "clergy": null,
     "conditional": [
       {
         "condition": "The Strategist Trait has additional bonuses",
@@ -9333,6 +10342,7 @@
   },
   {
     "category": "lifestyle",
+    "clergy": null,
     "conditional": [],
     "desc": null,
     "dlc": null,
@@ -9368,7 +10378,7 @@
           "+2 Prowess",
           "+10% Supply Limit in Wetlands",
           "-15 Norman Opinion",
-          "+5 Uncontrolled Territory Attacker Advantage",
+          "+5 Hostile Territory Attacker Advantage",
           "+50% Raid Speed",
           "+15 Natural Dread"
         ],
@@ -9401,6 +10411,7 @@
   },
   {
     "category": "lifestyle",
+    "clergy": null,
     "conditional": [
       {
         "condition": "Traits such as Astute Intellectual, Devoted or Theologian give Prowess",
@@ -9423,6 +10434,24 @@
             "t": "-10% Temple Holding Construction Cost"
           }
         ]
+      },
+      {
+        "condition": "Rite has Monophysitism — Theologian Characters: +10% Piety gain, +5 Zealot Opinion, +10% Lifestyle experience",
+        "lines": [
+          {
+            "p": "good",
+            "t": "+10% Monthly Piety"
+          },
+          {
+            "p": "good",
+            "t": "+5 Zealot Vassal Opinion"
+          },
+          {
+            "p": "good",
+            "t": "+10% Monthly Lifestyle Experience"
+          }
+        ],
+        "tag": "if rite has Monophysitism"
       }
     ],
     "desc": "Divinity holds the answer to every question, from what resides in the hearts of men, to the mysteries of life.",
@@ -9436,7 +10465,7 @@
     "modifiers": [
       {
         "p": "good",
-        "t": "+20% Monthly Piety"
+        "t": "+10% Monthly Piety"
       },
       {
         "p": "good",
@@ -9448,12 +10477,14 @@
     "opposites": [],
     "rulerDesignerCost": 50,
     "skills": {
-      "learning": 3
+      "diplomacy": 1,
+      "learning": 2
     },
     "tracks": {}
   },
   {
     "category": "lifestyle",
+    "clergy": null,
     "conditional": [],
     "desc": "Inflicting pain. Holding someone's life in your hands. This is true power.",
     "dlc": null,
@@ -9488,6 +10519,7 @@
   },
   {
     "category": "lifestyle",
+    "clergy": null,
     "conditional": [],
     "desc": "Know yourself, know your limitations, and know the full extent of your reach.",
     "dlc": null,
@@ -9520,6 +10552,7 @@
   },
   {
     "category": "personality",
+    "clergy": null,
     "conditional": [
       {
         "condition": "Some Commander Traits and Personality Traits have extra Mountain bonuses",
@@ -9564,6 +10597,20 @@
             "t": "+0.35 Influence /month"
           }
         ]
+      },
+      {
+        "condition": "Rite has Sacred Mountains — Some Commander Traits and Personality Traits have extra Mountain bonuses",
+        "lines": [
+          {
+            "p": "good",
+            "t": "+2 Advantage in Mountains"
+          },
+          {
+            "p": "good",
+            "t": "+2 Advantage in Desert Mountains"
+          }
+        ],
+        "tag": "if rite has Sacred Mountains"
       }
     ],
     "desc": "This character knows what they want, and they are not afraid to try and get it.",
@@ -9608,6 +10655,7 @@
   },
   {
     "category": "personality",
+    "clergy": null,
     "conditional": [
       {
         "condition": "Loyal, Deceitful, Ambitious, Arbitrary, and Paranoid Characters gain additional monthly Influence",
@@ -9656,6 +10704,7 @@
   },
   {
     "category": "personality",
+    "clergy": null,
     "conditional": [
       {
         "condition": "Some Commander Traits and Personality Traits have extra Mountain bonuses",
@@ -9669,6 +10718,20 @@
             "t": "+2 Advantage in Desert Mountains"
           }
         ]
+      },
+      {
+        "condition": "Rite has Sacred Mountains — Some Commander Traits and Personality Traits have extra Mountain bonuses",
+        "lines": [
+          {
+            "p": "good",
+            "t": "+2 Advantage in Mountains"
+          },
+          {
+            "p": "good",
+            "t": "+2 Advantage in Desert Mountains"
+          }
+        ],
+        "tag": "if rite has Sacred Mountains"
       }
     ],
     "desc": "This character has no problem with their sense of worth.",
@@ -9710,6 +10773,7 @@
   },
   {
     "category": "personality",
+    "clergy": null,
     "conditional": [
       {
         "condition": "Certain Traits such as Brave, Gregarious, Generous or Blademaster give Popular Opinion",
@@ -9767,6 +10831,20 @@
             "t": "+5% Monthly Prestige"
           }
         ]
+      },
+      {
+        "condition": "Rite has Sacred Mountains — Some Commander Traits and Personality Traits have extra Mountain bonuses",
+        "lines": [
+          {
+            "p": "good",
+            "t": "+3 Maximum Battle Roll in Mountains"
+          },
+          {
+            "p": "good",
+            "t": "+3 Maximum Battle Roll in Desert Mountains"
+          }
+        ],
+        "tag": "if rite has Sacred Mountains"
       }
     ],
     "desc": "Challenges or danger, this character fears nothing.",
@@ -9804,6 +10882,7 @@
   },
   {
     "category": "personality",
+    "clergy": null,
     "conditional": [
       {
         "condition": "Some Commander Traits and Personality Traits have extra Winter bonuses",
@@ -9864,6 +10943,7 @@
   },
   {
     "category": "personality",
+    "clergy": null,
     "conditional": [
       {
         "condition": "Some Commander Traits and Personality Traits have extra Winter bonuses",
@@ -9930,6 +11010,20 @@
             "t": "+15% Stress Loss"
           }
         ]
+      },
+      {
+        "condition": "Rite has Sacred Mountains — Some Commander Traits and Personality Traits have extra Mountain bonuses",
+        "lines": [
+          {
+            "p": "good",
+            "t": "+2 Minimum Battle Roll in Mountains"
+          },
+          {
+            "p": "good",
+            "t": "+2 Minimum Battle Roll in Desert Mountains"
+          }
+        ],
+        "tag": "if rite has Sacred Mountains"
       }
     ],
     "desc": "This character takes things in stride, leading a slow-paced life.",
@@ -9971,6 +11065,7 @@
   },
   {
     "category": "personality",
+    "clergy": null,
     "conditional": [
       {
         "condition": "The Chaste, Content, Humble, Shy, and Temperate Traits give bonuses",
@@ -10020,6 +11115,7 @@
   },
   {
     "category": "personality",
+    "clergy": null,
     "conditional": [
       {
         "condition": "Certain Traits such as Brave, Gregarious, Generous or Blademaster give Popular Opinion",
@@ -10087,6 +11183,7 @@
   },
   {
     "category": "personality",
+    "clergy": null,
     "conditional": [
       {
         "condition": "The Craven and Content Traits are looked down upon",
@@ -10171,6 +11268,7 @@
   },
   {
     "category": "personality",
+    "clergy": null,
     "conditional": [
       {
         "condition": "The Craven and Content Traits are looked down upon",
@@ -10242,6 +11340,7 @@
   },
   {
     "category": "personality",
+    "clergy": null,
     "conditional": [
       {
         "condition": "Traits such a Insightful Thinker, Mystic, Humble and especially Zealous give Temple construction bonuses",
@@ -10285,6 +11384,18 @@
       },
       {
         "p": "bad",
+        "t": "-1 Personal Tenets"
+      },
+      {
+        "p": "bad",
+        "t": "-25% Character Spiritual Fulfillment Gain Mult"
+      },
+      {
+        "p": "good",
+        "t": "-75% Character Spiritual Fulfillment Loss Mult"
+      },
+      {
+        "p": "bad",
         "t": "-15 Zealot Vassal Opinion"
       }
     ],
@@ -10305,6 +11416,7 @@
   },
   {
     "category": "personality",
+    "clergy": null,
     "conditional": [
       {
         "condition": "Some Commander Traits and Personality Traits have extra Forest bonuses",
@@ -10336,6 +11448,20 @@
             "t": "+0.25 Influence /month"
           }
         ]
+      },
+      {
+        "condition": "Rite has Miaphysitism — Deceitful Characters: -10% Piety gain, -10 Clergy Opinion",
+        "lines": [
+          {
+            "p": "bad",
+            "t": "-10% Monthly Piety"
+          },
+          {
+            "p": "bad",
+            "t": "-10 Clergy Opinion"
+          }
+        ],
+        "tag": "if rite has Miaphysitism"
       }
     ],
     "desc": "To lie and deceive is in this character's nature.",
@@ -10363,6 +11489,7 @@
   },
   {
     "category": "personality",
+    "clergy": null,
     "conditional": [
       {
         "condition": "The Diligent, Patient, and Athletic Traits have additional bonuses",
@@ -10480,6 +11607,7 @@
   },
   {
     "category": "personality",
+    "clergy": null,
     "conditional": [
       {
         "condition": "The Gregarious, Content, Cynical and Fickle Traits give increased Opinion towards Characters of the same Culture",
@@ -10489,6 +11617,24 @@
             "t": "+5 Same Culture Opinion"
           }
         ]
+      },
+      {
+        "condition": "Rite has Esotericism — The Eccentric Trait grants additional Piety and Opinion, and costs less Stress",
+        "lines": [
+          {
+            "p": "good",
+            "t": "+10% Monthly Piety"
+          },
+          {
+            "p": "good",
+            "t": "+10 Same Faith Opinion"
+          },
+          {
+            "p": "good",
+            "t": "-25% Stress Gain"
+          }
+        ],
+        "tag": "if rite has Esotericism"
       }
     ],
     "desc": "This character's behavior is seen by others to be erratic and irrational, but there appears to be some method to the madness.",
@@ -10530,6 +11676,7 @@
   },
   {
     "category": "personality",
+    "clergy": null,
     "conditional": [
       {
         "condition": "Some Commander Traits and Personality Traits have extra Forest bonuses",
@@ -10593,6 +11740,7 @@
   },
   {
     "category": "personality",
+    "clergy": null,
     "conditional": [
       {
         "condition": "Certain Traits such as Brave, Gregarious, Generous or Blademaster give Popular Opinion",
@@ -10649,6 +11797,7 @@
   },
   {
     "category": "personality",
+    "clergy": null,
     "conditional": [
       {
         "condition": "Certain Traits such as Brave, Gregarious, Generous or Blademaster give Popular Opinion",
@@ -10658,6 +11807,20 @@
             "t": "+5 Popular Opinion"
           }
         ]
+      },
+      {
+        "condition": "Rite has Charity — Generous Characters: +10 same-faith Opinion, +20% Development Growth",
+        "lines": [
+          {
+            "p": "good",
+            "t": "+10 Same Faith Opinion"
+          },
+          {
+            "p": "good",
+            "t": "+20% Development Growth"
+          }
+        ],
+        "tag": "if rite has Charity"
       }
     ],
     "desc": "Acts of benevolence and charity are no strangers to this character.",
@@ -10693,6 +11856,7 @@
   },
   {
     "category": "personality",
+    "clergy": null,
     "conditional": [],
     "desc": "This character scoffs at moderation; they want it all.",
     "dlc": null,
@@ -10728,7 +11892,23 @@
   },
   {
     "category": "personality",
-    "conditional": [],
+    "clergy": null,
+    "conditional": [
+      {
+        "condition": "Rite has Charity — Greedy Characters: -10 same-faith Opinion, -25% Piety gain",
+        "lines": [
+          {
+            "p": "bad",
+            "t": "-10 Same Faith Opinion"
+          },
+          {
+            "p": "bad",
+            "t": "-25% Monthly Piety"
+          }
+        ],
+        "tag": "if rite has Charity"
+      }
+    ],
     "desc": "This character keeps a tight grip on their purse and is always looking for ways to engorge it.",
     "dlc": null,
     "features": [],
@@ -10764,6 +11944,7 @@
   },
   {
     "category": "personality",
+    "clergy": null,
     "conditional": [
       {
         "condition": "Certain Traits such as Brave, Gregarious, Generous or Blademaster give Popular Opinion",
@@ -10834,6 +12015,7 @@
   },
   {
     "category": "personality",
+    "clergy": null,
     "conditional": [
       {
         "condition": "Some Commander Traits and Personality Traits have extra Dry Terrain bonuses",
@@ -10856,6 +12038,20 @@
             "t": "+5 Popular Opinion"
           }
         ]
+      },
+      {
+        "condition": "Rite has Miaphysitism — Honest Characters: +10% Piety gain, +10 Clergy Opinion",
+        "lines": [
+          {
+            "p": "good",
+            "t": "+10% Monthly Piety"
+          },
+          {
+            "p": "good",
+            "t": "+10 Clergy Opinion"
+          }
+        ],
+        "tag": "if rite has Miaphysitism"
       }
     ],
     "desc": "This character values truth and sincerity highly.",
@@ -10889,6 +12085,7 @@
   },
   {
     "category": "personality",
+    "clergy": null,
     "conditional": [
       {
         "condition": "Some Commander Traits and Personality Traits have extra Mountain bonuses",
@@ -10954,6 +12151,20 @@
             "t": "+5% Monthly Prestige"
           }
         ]
+      },
+      {
+        "condition": "Rite has Sacred Mountains — Some Commander Traits and Personality Traits have extra Mountain bonuses",
+        "lines": [
+          {
+            "p": "good",
+            "t": "-25% Attrition Taken in Mountains"
+          },
+          {
+            "p": "good",
+            "t": "-25% Attrition Taken in Desert Mountains"
+          }
+        ],
+        "tag": "if rite has Sacred Mountains"
       }
     ],
     "desc": "This character does not ask for much in life.",
@@ -10999,6 +12210,7 @@
   },
   {
     "category": "personality",
+    "clergy": null,
     "conditional": [
       {
         "condition": "Some Commander Traits and Personality Traits have extra Forest bonuses",
@@ -11021,6 +12233,16 @@
             "t": "+1 Maximum Battle Roll in Jungle"
           }
         ]
+      },
+      {
+        "condition": "Rite has Hesychasm — Impatient Characters: -10% Piety gain",
+        "lines": [
+          {
+            "p": "bad",
+            "t": "-10% Monthly Piety"
+          }
+        ],
+        "tag": "if rite has Hesychasm"
       }
     ],
     "desc": "This character thinks that most things should happen fast: ideally they should happen now.",
@@ -11076,6 +12298,7 @@
   },
   {
     "category": "personality",
+    "clergy": null,
     "conditional": [
       {
         "condition": "The Just Trait has additional bonuses",
@@ -11140,6 +12363,7 @@
   },
   {
     "category": "personality",
+    "clergy": null,
     "conditional": [],
     "desc": "The easiest road in life is the road most taken by this character.",
     "dlc": null,
@@ -11176,7 +12400,37 @@
   },
   {
     "category": "personality",
-    "conditional": [],
+    "clergy": null,
+    "conditional": [
+      {
+        "condition": "Rite has Carnal Exaltation — Characters with Lustful, Rakish, or Deviant gain +2 Intrigue, +2 Diplomacy, and +25% Fertility per trait",
+        "lines": [
+          {
+            "p": "good",
+            "t": "+2 Intrigue"
+          },
+          {
+            "p": "good",
+            "t": "+2 Diplomacy"
+          },
+          {
+            "p": "good",
+            "t": "+25% Fertility"
+          }
+        ],
+        "tag": "if rite has Carnal Exaltation"
+      },
+      {
+        "condition": "Rite has Carnal Exaltation — Characters with Lustful, Rakish, or Deviant complete Seduce Schemes 20 days faster per trait",
+        "lines": [
+          {
+            "p": "neutral",
+            "t": "20 Seduce Phase Length days faster per Scheme Phase"
+          }
+        ],
+        "tag": "if rite has Carnal Exaltation"
+      }
+    ],
     "desc": "Carnal desires burn hot in this character's core.",
     "dlc": null,
     "features": [],
@@ -11211,6 +12465,7 @@
   },
   {
     "category": "personality",
+    "clergy": null,
     "conditional": [
       {
         "condition": "Some Commander Traits and Personality Traits have extra Forest bonuses",
@@ -11305,6 +12560,7 @@
   },
   {
     "category": "personality",
+    "clergy": null,
     "conditional": [
       {
         "condition": "Some Commander Traits and Personality Traits have extra Winter bonuses",
@@ -11351,7 +12607,7 @@
         ]
       },
       {
-        "condition": "The Gardener, Patient, and Scholar Traits gives a Tax bonus in Deserts, Drylands, and Desert Mountains",
+        "condition": "The Gardener, Patient, and Erudite Traits gives a Tax bonus in Deserts, Drylands, and Desert Mountains",
         "lines": [
           {
             "p": "good",
@@ -11375,6 +12631,20 @@
             "t": "+15% Stress Loss"
           }
         ]
+      },
+      {
+        "condition": "Rite has Hesychasm — Patient Characters: +10% Piety gain, +10% Spiritual Fulfillment gain",
+        "lines": [
+          {
+            "p": "good",
+            "t": "+10% Monthly Piety"
+          },
+          {
+            "p": "good",
+            "t": "+10% Character Spiritual Fulfillment Gain Mult"
+          }
+        ],
+        "tag": "if rite has Hesychasm"
       }
     ],
     "desc": "To wait and bide their time is a specialty of this character.",
@@ -11414,6 +12684,7 @@
   },
   {
     "category": "personality",
+    "clergy": null,
     "conditional": [],
     "desc": "Few things bring this character as much joy as the suffering of others.",
     "dlc": null,
@@ -11452,6 +12723,7 @@
   },
   {
     "category": "personality",
+    "clergy": null,
     "conditional": [
       {
         "condition": "The Chaste, Content, Humble, Shy, and Temperate Traits give bonuses",
@@ -11530,6 +12802,7 @@
   },
   {
     "category": "personality",
+    "clergy": null,
     "conditional": [
       {
         "condition": "Some Commander Traits and Personality Traits have extra Winter bonuses",
@@ -11561,6 +12834,34 @@
             "t": "+5 Minimum Battle Roll in Hills"
           }
         ]
+      },
+      {
+        "condition": "Rite has Sacred Mountains — Some Commander Traits and Personality Traits have extra Mountain bonuses",
+        "lines": [
+          {
+            "p": "good",
+            "t": "+2 Minimum Battle Roll in Mountains"
+          },
+          {
+            "p": "good",
+            "t": "+2 Minimum Battle Roll in Desert Mountains"
+          }
+        ],
+        "tag": "if rite has Sacred Mountains"
+      },
+      {
+        "condition": "Rite has Monophysitism — Stubborn Characters: +10% Piety gain, +10 Clergy Opinion",
+        "lines": [
+          {
+            "p": "good",
+            "t": "+10% Monthly Piety"
+          },
+          {
+            "p": "good",
+            "t": "+10 Clergy Opinion"
+          }
+        ],
+        "tag": "if rite has Monophysitism"
       }
     ],
     "desc": "This character does not back down for anything.",
@@ -11607,6 +12908,7 @@
   },
   {
     "category": "personality",
+    "clergy": null,
     "conditional": [
       {
         "condition": "The Chaste, Content, Humble, Shy, and Temperate Traits give bonuses",
@@ -11678,6 +12980,7 @@
   },
   {
     "category": "personality",
+    "clergy": null,
     "conditional": [
       {
         "condition": "Shy, Trusting, Maimed, One-Eyed, One-Legged, and Disfigured Characters have reduced monthly Influence",
@@ -11687,6 +12990,20 @@
             "t": "-0.25 Influence /month"
           }
         ]
+      },
+      {
+        "condition": "Rite has Monophysitism — Trusting Characters: -10% Piety gain, -10 Clergy Opinion",
+        "lines": [
+          {
+            "p": "bad",
+            "t": "-10% Monthly Piety"
+          },
+          {
+            "p": "bad",
+            "t": "-10 Clergy Opinion"
+          }
+        ],
+        "tag": "if rite has Monophysitism"
       }
     ],
     "desc": "This character is quick to place their faith in others.",
@@ -11729,6 +13046,7 @@
   },
   {
     "category": "personality",
+    "clergy": null,
     "conditional": [
       {
         "condition": "Some Commander Traits and Personality Traits have extra Dry Terrain bonuses",
@@ -11795,6 +13113,7 @@
   },
   {
     "category": "personality",
+    "clergy": null,
     "conditional": [
       {
         "condition": "Some Commander Traits and Personality Traits have extra Forest bonuses",
@@ -11843,6 +13162,20 @@
             "t": "+2 Maximum Battle Roll in Desert"
           }
         ]
+      },
+      {
+        "condition": "Rite has Sacred Mountains — Some Commander Traits and Personality Traits have extra Mountain bonuses",
+        "lines": [
+          {
+            "p": "good",
+            "t": "+2 Maximum Battle Roll in Mountains"
+          },
+          {
+            "p": "good",
+            "t": "+2 Maximum Battle Roll in Desert Mountains"
+          }
+        ],
+        "tag": "if rite has Sacred Mountains"
       }
     ],
     "desc": "This character is quick to anger and fury.",
@@ -11886,6 +13219,7 @@
   },
   {
     "category": "personality",
+    "clergy": null,
     "conditional": [
       {
         "condition": "Some Commander Traits and Personality Traits have extra Dry Terrain bonuses",
@@ -11932,12 +13266,24 @@
         "t": "+20% Faith Conversion Cost"
       },
       {
+        "p": "good",
+        "t": "+25% Character Spiritual Fulfillment Gain Mult"
+      },
+      {
+        "p": "bad",
+        "t": "+100% Character Spiritual Fulfillment Loss Mult"
+      },
+      {
         "p": "bad",
         "t": "-35 Opinion of Different Faiths"
       },
       {
         "p": "good",
         "t": "+15 Zealot Vassal Opinion"
+      },
+      {
+        "p": "good",
+        "t": "+1 Personal Tenets"
       }
     ],
     "name": "Zealous",
@@ -11956,7 +13302,49 @@
   },
   {
     "category": "uncategorized",
-    "conditional": [],
+    "clergy": null,
+    "conditional": [
+      {
+        "condition": "Rite has Auspicious Birthright — Characters with Dwarf, Spindly, Wheezing, Ugly, Albino, or Giant gain +3 Learning, +10% Men-at-Arms Toughness, +20% Legitimacy gain, and +10 Dread",
+        "lines": [
+          {
+            "p": "good",
+            "t": "+3 Learning"
+          },
+          {
+            "p": "good",
+            "t": "+10% Men-at-Arms Toughness"
+          },
+          {
+            "p": "good",
+            "t": "+20% Legitimacy Gain"
+          },
+          {
+            "p": "good",
+            "t": "+10 Natural Dread"
+          }
+        ],
+        "tag": "if rite has Auspicious Birthright"
+      },
+      {
+        "condition": "Rite has Astrology — Albino Characters: +10 general Opinion, +20 same-faith Opinion, +30% Piety gain",
+        "lines": [
+          {
+            "p": "good",
+            "t": "+10 General Opinion"
+          },
+          {
+            "p": "good",
+            "t": "+20 Same Faith Opinion"
+          },
+          {
+            "p": "good",
+            "t": "+30% Monthly Piety"
+          }
+        ],
+        "tag": "if rite has Astrology"
+      }
+    ],
     "desc": "With their white hair and red eyes, this character strikes fear in many.",
     "dlc": null,
     "features": [],
@@ -11991,7 +13379,35 @@
   },
   {
     "category": "uncategorized",
-    "conditional": [],
+    "clergy": null,
+    "conditional": [
+      {
+        "condition": "Rite has Auspicious Birthright — Characters with Bleeder, Hunchbacked, Scaly, or Hideous gain +4 Learning, +20% Men-at-Arms Toughness, +30% Legitimacy gain, +20 Dread, and +15 Clergy Opinion",
+        "lines": [
+          {
+            "p": "good",
+            "t": "+4 Learning"
+          },
+          {
+            "p": "good",
+            "t": "+20% Men-at-Arms Toughness"
+          },
+          {
+            "p": "good",
+            "t": "+30% Legitimacy Gain"
+          },
+          {
+            "p": "good",
+            "t": "+20 Natural Dread"
+          },
+          {
+            "p": "good",
+            "t": "+15 Clergy Opinion"
+          }
+        ],
+        "tag": "if rite has Auspicious Birthright"
+      }
+    ],
     "desc": "Any kind of wound might prove fatal to this character since their sanguine humors are in a hurry to escape their body.",
     "dlc": null,
     "features": [],
@@ -12025,7 +13441,27 @@
   },
   {
     "category": "uncategorized",
-    "conditional": [],
+    "clergy": null,
+    "conditional": [
+      {
+        "condition": "Rite has Auspicious Birthright — Characters with Lisping, Stuttering, or Club-footed gain +2 Learning, +5% Men-at-Arms Toughness, and +10% Legitimacy gain",
+        "lines": [
+          {
+            "p": "good",
+            "t": "+2 Learning"
+          },
+          {
+            "p": "good",
+            "t": "+5% Men-at-Arms Toughness"
+          },
+          {
+            "p": "good",
+            "t": "+10% Legitimacy Gain"
+          }
+        ],
+        "tag": "if rite has Auspicious Birthright"
+      }
+    ],
     "desc": "This character is cursed with twisted feet and an unsightly walk.",
     "dlc": null,
     "features": [],
@@ -12059,7 +13495,23 @@
   },
   {
     "category": "uncategorized",
-    "conditional": [],
+    "clergy": null,
+    "conditional": [
+      {
+        "condition": "Rite has Hesychasm — Journaller, Contrite, Confider and Flagellant Characters: +10% Stress loss, +5% Spiritual Fulfillment gain",
+        "lines": [
+          {
+            "p": "good",
+            "t": "+10% Stress Loss"
+          },
+          {
+            "p": "good",
+            "t": "+5% Character Spiritual Fulfillment Gain Mult"
+          }
+        ],
+        "tag": "if rite has Hesychasm"
+      }
+    ],
     "desc": "In sharing their problems with a close confidant, this character has become able to manage life far better than they could alone.",
     "dlc": null,
     "features": [],
@@ -12085,6 +13537,47 @@
   },
   {
     "category": "uncategorized",
+    "clergy": null,
+    "conditional": [],
+    "desc": "Enable raiding with standard restrictions.",
+    "dlc": null,
+    "features": [],
+    "genetic": {},
+    "group": null,
+    "icon": "viking",
+    "id": "debug_enable_raiding_per_standard_restrictions",
+    "level": null,
+    "modifiers": [],
+    "name": "Enable Raiding",
+    "opinions": [],
+    "opposites": [],
+    "rulerDesignerCost": null,
+    "skills": {},
+    "tracks": {}
+  },
+  {
+    "category": "uncategorized",
+    "clergy": null,
+    "conditional": [],
+    "desc": "Enable raiding without restrictions.",
+    "dlc": null,
+    "features": [],
+    "genetic": {},
+    "group": null,
+    "icon": "viking",
+    "id": "debug_enable_raiding_without_restrictions",
+    "level": null,
+    "modifiers": [],
+    "name": "Enable Raiding (no restrictions)",
+    "opinions": [],
+    "opposites": [],
+    "rulerDesignerCost": null,
+    "skills": {},
+    "tracks": {}
+  },
+  {
+    "category": "uncategorized",
+    "clergy": null,
     "conditional": [],
     "desc": "It has been a long time since this character's mind had any exercise.",
     "dlc": null,
@@ -12115,7 +13608,31 @@
   },
   {
     "category": "uncategorized",
-    "conditional": [],
+    "clergy": null,
+    "conditional": [
+      {
+        "condition": "Rite has Auspicious Birthright — Characters with Dwarf, Spindly, Wheezing, Ugly, Albino, or Giant gain +3 Learning, +10% Men-at-Arms Toughness, +20% Legitimacy gain, and +10 Dread",
+        "lines": [
+          {
+            "p": "good",
+            "t": "+3 Learning"
+          },
+          {
+            "p": "good",
+            "t": "+10% Men-at-Arms Toughness"
+          },
+          {
+            "p": "good",
+            "t": "+20% Legitimacy Gain"
+          },
+          {
+            "p": "good",
+            "t": "+10 Natural Dread"
+          }
+        ],
+        "tag": "if rite has Auspicious Birthright"
+      }
+    ],
     "desc": "This character is afflicted by a genetic disorder that stunts their growth.",
     "dlc": null,
     "features": [],
@@ -12151,6 +13668,7 @@
   },
   {
     "category": "uncategorized",
+    "clergy": null,
     "conditional": [],
     "desc": "This character is fruitful and fertile.",
     "dlc": null,
@@ -12189,6 +13707,7 @@
   },
   {
     "category": "uncategorized",
+    "clergy": null,
     "conditional": [],
     "desc": "This character believes that the Caliph's place is, at best, Baghdad. And only Baghdad.",
     "dlc": null,
@@ -12213,6 +13732,7 @@
   },
   {
     "category": "uncategorized",
+    "clergy": null,
     "conditional": [],
     "desc": "This character believes that the Caliphate should reaffirm its hold on the Middle East.",
     "dlc": null,
@@ -12237,6 +13757,7 @@
   },
   {
     "category": "uncategorized",
+    "clergy": null,
     "conditional": [
       {
         "condition": "Traits such as Characters or Hale are seen as Prestige Prestigious",
@@ -12246,6 +13767,28 @@
             "t": "+0.5 Prestige /month"
           }
         ]
+      },
+      {
+        "condition": "Rite has Auspicious Birthright — Characters with Dwarf, Spindly, Wheezing, Ugly, Albino, or Giant gain +3 Learning, +10% Men-at-Arms Toughness, +20% Legitimacy gain, and +10 Dread",
+        "lines": [
+          {
+            "p": "good",
+            "t": "+3 Learning"
+          },
+          {
+            "p": "good",
+            "t": "+10% Men-at-Arms Toughness"
+          },
+          {
+            "p": "good",
+            "t": "+20% Legitimacy Gain"
+          },
+          {
+            "p": "good",
+            "t": "+10 Natural Dread"
+          }
+        ],
+        "tag": "if rite has Auspicious Birthright"
       }
     ],
     "desc": "Others have to crane their necks, and rein in their awe, as this character walks by.",
@@ -12295,7 +13838,35 @@
   },
   {
     "category": "uncategorized",
-    "conditional": [],
+    "clergy": null,
+    "conditional": [
+      {
+        "condition": "Rite has Auspicious Birthright — Characters with Bleeder, Hunchbacked, Scaly, or Hideous gain +4 Learning, +20% Men-at-Arms Toughness, +30% Legitimacy gain, +20 Dread, and +15 Clergy Opinion",
+        "lines": [
+          {
+            "p": "good",
+            "t": "+4 Learning"
+          },
+          {
+            "p": "good",
+            "t": "+20% Men-at-Arms Toughness"
+          },
+          {
+            "p": "good",
+            "t": "+30% Legitimacy Gain"
+          },
+          {
+            "p": "good",
+            "t": "+20 Natural Dread"
+          },
+          {
+            "p": "good",
+            "t": "+15 Clergy Opinion"
+          }
+        ],
+        "tag": "if rite has Auspicious Birthright"
+      }
+    ],
     "desc": "This character is weighed down by the curse of a humpback.",
     "dlc": null,
     "features": [],
@@ -12333,6 +13904,7 @@
   },
   {
     "category": "uncategorized",
+    "clergy": null,
     "conditional": [],
     "desc": "This character stands apart from the rest of humanity, not suffering the rigors of age, decay, and time.",
     "dlc": null,
@@ -12365,6 +13937,7 @@
   },
   {
     "category": "uncategorized",
+    "clergy": null,
     "conditional": [],
     "desc": "This character struggles to perform in the bedroom.",
     "dlc": null,
@@ -12391,6 +13964,7 @@
   },
   {
     "category": "uncategorized",
+    "clergy": null,
     "conditional": [],
     "desc": "This character's family has been a bit too familiar.",
     "dlc": null,
@@ -12437,6 +14011,7 @@
   },
   {
     "category": "uncategorized",
+    "clergy": null,
     "conditional": [],
     "desc": "This character cannot produce children.",
     "dlc": null,
@@ -12469,7 +14044,27 @@
   },
   {
     "category": "uncategorized",
-    "conditional": [],
+    "clergy": null,
+    "conditional": [
+      {
+        "condition": "Rite has Auspicious Birthright — Characters with Lisping, Stuttering, or Club-footed gain +2 Learning, +5% Men-at-Arms Toughness, and +10% Legitimacy gain",
+        "lines": [
+          {
+            "p": "good",
+            "t": "+2 Learning"
+          },
+          {
+            "p": "good",
+            "t": "+5% Men-at-Arms Toughness"
+          },
+          {
+            "p": "good",
+            "t": "+10% Legitimacy Gain"
+          }
+        ],
+        "tag": "if rite has Auspicious Birthright"
+      }
+    ],
     "desc": "This character has trouble pronouncing certain sounds.",
     "dlc": null,
     "features": [],
@@ -12497,6 +14092,7 @@
   },
   {
     "category": "uncategorized",
+    "clergy": null,
     "conditional": [],
     "desc": "This character is of a pure bloodline.",
     "dlc": null,
@@ -12534,7 +14130,53 @@
   },
   {
     "category": "uncategorized",
-    "conditional": [],
+    "clergy": null,
+    "conditional": [
+      {
+        "condition": "Rite has Auspicious Birthright — Characters with Bleeder, Hunchbacked, Scaly, or Hideous gain +4 Learning, +20% Men-at-Arms Toughness, +30% Legitimacy gain, +20 Dread, and +15 Clergy Opinion",
+        "lines": [
+          {
+            "p": "good",
+            "t": "+4 Learning"
+          },
+          {
+            "p": "good",
+            "t": "+20% Men-at-Arms Toughness"
+          },
+          {
+            "p": "good",
+            "t": "+30% Legitimacy Gain"
+          },
+          {
+            "p": "good",
+            "t": "+20 Natural Dread"
+          },
+          {
+            "p": "good",
+            "t": "+15 Clergy Opinion"
+          }
+        ],
+        "tag": "if rite has Auspicious Birthright"
+      },
+      {
+        "condition": "Rite has Astrology — Scaly Characters: +15 Attraction Opinion, +10 Vassal Opinion, +30% Piety gain",
+        "lines": [
+          {
+            "p": "good",
+            "t": "+15 Attraction Opinion"
+          },
+          {
+            "p": "good",
+            "t": "+10 Vassal Opinion"
+          },
+          {
+            "p": "good",
+            "t": "+30% Monthly Piety"
+          }
+        ],
+        "tag": "if rite has Astrology"
+      }
+    ],
     "desc": "This character is covered in scaly patches of skin.",
     "dlc": null,
     "features": [],
@@ -12578,6 +14220,7 @@
   },
   {
     "category": "uncategorized",
+    "clergy": null,
     "conditional": [
       {
         "condition": "The Diligent and Shrewd Traits give Popular Opinion",
@@ -12618,6 +14261,7 @@
   },
   {
     "category": "uncategorized",
+    "clergy": null,
     "conditional": [
       {
         "condition": "Traits such as Weak or Delicate are looked down upon",
@@ -12627,6 +14271,28 @@
             "t": "-15 Same Culture Opinion"
           }
         ]
+      },
+      {
+        "condition": "Rite has Auspicious Birthright — Characters with Dwarf, Spindly, Wheezing, Ugly, Albino, or Giant gain +3 Learning, +10% Men-at-Arms Toughness, +20% Legitimacy gain, and +10 Dread",
+        "lines": [
+          {
+            "p": "good",
+            "t": "+3 Learning"
+          },
+          {
+            "p": "good",
+            "t": "+10% Men-at-Arms Toughness"
+          },
+          {
+            "p": "good",
+            "t": "+20% Legitimacy Gain"
+          },
+          {
+            "p": "good",
+            "t": "+10 Natural Dread"
+          }
+        ],
+        "tag": "if rite has Auspicious Birthright"
       }
     ],
     "desc": "This character's limbs are long and knobby.",
@@ -12666,6 +14332,7 @@
   },
   {
     "category": "uncategorized",
+    "clergy": null,
     "conditional": [
       {
         "condition": "Traits such as Characters or Hale are seen as Prestige Prestigious",
@@ -12707,7 +14374,27 @@
   },
   {
     "category": "uncategorized",
-    "conditional": [],
+    "clergy": null,
+    "conditional": [
+      {
+        "condition": "Rite has Auspicious Birthright — Characters with Lisping, Stuttering, or Club-footed gain +2 Learning, +5% Men-at-Arms Toughness, and +10% Legitimacy gain",
+        "lines": [
+          {
+            "p": "good",
+            "t": "+2 Learning"
+          },
+          {
+            "p": "good",
+            "t": "+5% Men-at-Arms Toughness"
+          },
+          {
+            "p": "good",
+            "t": "+10% Legitimacy Gain"
+          }
+        ],
+        "tag": "if rite has Auspicious Birthright"
+      }
+    ],
     "desc": "Finishing a sentence quickly is not this character's strong suit.",
     "dlc": null,
     "features": [],
@@ -12735,6 +14422,7 @@
   },
   {
     "category": "uncategorized",
+    "clergy": null,
     "conditional": [],
     "desc": "This character has participated in martial games, sharpening their skills in warfare and personal combat.",
     "dlc": null,
@@ -12817,6 +14505,7 @@
   },
   {
     "category": "uncategorized",
+    "clergy": null,
     "conditional": [
       {
         "condition": "Traits such as Weak or Delicate are looked down upon",
@@ -12866,7 +14555,31 @@
   },
   {
     "category": "uncategorized",
-    "conditional": [],
+    "clergy": null,
+    "conditional": [
+      {
+        "condition": "Rite has Auspicious Birthright — Characters with Dwarf, Spindly, Wheezing, Ugly, Albino, or Giant gain +3 Learning, +10% Men-at-Arms Toughness, +20% Legitimacy gain, and +10 Dread",
+        "lines": [
+          {
+            "p": "good",
+            "t": "+3 Learning"
+          },
+          {
+            "p": "good",
+            "t": "+10% Men-at-Arms Toughness"
+          },
+          {
+            "p": "good",
+            "t": "+20% Legitimacy Gain"
+          },
+          {
+            "p": "good",
+            "t": "+10 Natural Dread"
+          }
+        ],
+        "tag": "if rite has Auspicious Birthright"
+      }
+    ],
     "desc": "This character is cursed to spend their life coughing and wheezing.",
     "dlc": null,
     "features": [],
@@ -12900,6 +14613,7 @@
   },
   {
     "category": "uncategorized",
+    "clergy": null,
     "conditional": [],
     "desc": "This character is not pleasant to look at.",
     "dlc": null,
@@ -12939,7 +14653,31 @@
   },
   {
     "category": "uncategorized",
-    "conditional": [],
+    "clergy": null,
+    "conditional": [
+      {
+        "condition": "Rite has Auspicious Birthright — Characters with Dwarf, Spindly, Wheezing, Ugly, Albino, or Giant gain +3 Learning, +10% Men-at-Arms Toughness, +20% Legitimacy gain, and +10 Dread",
+        "lines": [
+          {
+            "p": "good",
+            "t": "+3 Learning"
+          },
+          {
+            "p": "good",
+            "t": "+10% Men-at-Arms Toughness"
+          },
+          {
+            "p": "good",
+            "t": "+20% Legitimacy Gain"
+          },
+          {
+            "p": "good",
+            "t": "+10 Natural Dread"
+          }
+        ],
+        "tag": "if rite has Auspicious Birthright"
+      }
+    ],
     "desc": "This character's face leaves a lot to wish for.",
     "dlc": null,
     "features": [],
@@ -12978,7 +14716,35 @@
   },
   {
     "category": "uncategorized",
-    "conditional": [],
+    "clergy": null,
+    "conditional": [
+      {
+        "condition": "Rite has Auspicious Birthright — Characters with Bleeder, Hunchbacked, Scaly, or Hideous gain +4 Learning, +20% Men-at-Arms Toughness, +30% Legitimacy gain, +20 Dread, and +15 Clergy Opinion",
+        "lines": [
+          {
+            "p": "good",
+            "t": "+4 Learning"
+          },
+          {
+            "p": "good",
+            "t": "+20% Men-at-Arms Toughness"
+          },
+          {
+            "p": "good",
+            "t": "+30% Legitimacy Gain"
+          },
+          {
+            "p": "good",
+            "t": "+20 Natural Dread"
+          },
+          {
+            "p": "good",
+            "t": "+15 Clergy Opinion"
+          }
+        ],
+        "tag": "if rite has Auspicious Birthright"
+      }
+    ],
     "desc": "This character is downright hideous.",
     "dlc": null,
     "features": [],
@@ -13017,6 +14783,7 @@
   },
   {
     "category": "uncategorized",
+    "clergy": null,
     "conditional": [],
     "desc": "This character is pleasant to look at.",
     "dlc": null,
@@ -13057,6 +14824,7 @@
   },
   {
     "category": "uncategorized",
+    "clergy": null,
     "conditional": [],
     "desc": "This character has been blessed with a pleasing physique.",
     "dlc": null,
@@ -13097,6 +14865,7 @@
   },
   {
     "category": "uncategorized",
+    "clergy": null,
     "conditional": [],
     "desc": "Enthralling, mesmerizing, and lovely; this character outshines most with their beauty.",
     "dlc": null,
@@ -13137,6 +14906,7 @@
   },
   {
     "category": "uncategorized",
+    "clergy": null,
     "conditional": [
       {
         "condition": "The Bumbling Squire, Confident Knight, Formidable Banneret and Famous Champion Traits are more valued",
@@ -13172,6 +14942,7 @@
   },
   {
     "category": "uncategorized",
+    "clergy": null,
     "conditional": [
       {
         "condition": "The Bumbling Squire, Confident Knight, Formidable Banneret and Famous Champion Traits are more valued",
@@ -13207,6 +14978,7 @@
   },
   {
     "category": "uncategorized",
+    "clergy": null,
     "conditional": [
       {
         "condition": "The Bumbling Squire, Confident Knight, Formidable Banneret and Famous Champion Traits are more valued",
@@ -13242,6 +15014,7 @@
   },
   {
     "category": "uncategorized",
+    "clergy": null,
     "conditional": [
       {
         "condition": "The Bumbling Squire, Confident Knight, Formidable Banneret and Famous Champion Traits are more valued",
@@ -13277,6 +15050,7 @@
   },
   {
     "category": "uncategorized",
+    "clergy": null,
     "conditional": [],
     "desc": "This character has been initiated to the management of cities.",
     "dlc": null,
@@ -13299,6 +15073,7 @@
   },
   {
     "category": "uncategorized",
+    "clergy": null,
     "conditional": [],
     "desc": "This character has been trained in the art of city management.",
     "dlc": null,
@@ -13321,6 +15096,7 @@
   },
   {
     "category": "uncategorized",
+    "clergy": null,
     "conditional": [],
     "desc": "This character has developed a strong sense of city management.",
     "dlc": null,
@@ -13343,6 +15119,7 @@
   },
   {
     "category": "uncategorized",
+    "clergy": null,
     "conditional": [],
     "desc": "This character has mastered the arcane art of city management.",
     "dlc": null,
@@ -13365,6 +15142,7 @@
   },
   {
     "category": "uncategorized",
+    "clergy": null,
     "conditional": [],
     "desc": "A lot of things pass this character by unnoticed.",
     "dlc": null,
@@ -13405,6 +15183,7 @@
   },
   {
     "category": "uncategorized",
+    "clergy": null,
     "conditional": [],
     "desc": "This character is not blessed with intellect.",
     "dlc": null,
@@ -13445,6 +15224,7 @@
   },
   {
     "category": "uncategorized",
+    "clergy": null,
     "conditional": [],
     "desc": "Dull and witless, this character is a simpleton.",
     "dlc": null,
@@ -13485,6 +15265,7 @@
   },
   {
     "category": "uncategorized",
+    "clergy": null,
     "conditional": [],
     "desc": "This character catches on quick.",
     "dlc": null,
@@ -13526,6 +15307,7 @@
   },
   {
     "category": "uncategorized",
+    "clergy": null,
     "conditional": [],
     "desc": "This character is smarter than most.",
     "dlc": null,
@@ -13567,6 +15349,7 @@
   },
   {
     "category": "uncategorized",
+    "clergy": null,
     "conditional": [],
     "desc": "A towering intellect and wits to match, this character is brilliant.",
     "dlc": null,
@@ -13608,6 +15391,7 @@
   },
   {
     "category": "uncategorized",
+    "clergy": null,
     "conditional": [
       {
         "condition": "Traits such as Weak or Delicate are looked down upon",
@@ -13654,6 +15438,7 @@
   },
   {
     "category": "uncategorized",
+    "clergy": null,
     "conditional": [
       {
         "condition": "Traits such as Weak or Delicate are looked down upon",
@@ -13704,6 +15489,7 @@
   },
   {
     "category": "uncategorized",
+    "clergy": null,
     "conditional": [
       {
         "condition": "Traits such as Weak or Delicate are looked down upon",
@@ -13754,6 +15540,7 @@
   },
   {
     "category": "uncategorized",
+    "clergy": null,
     "conditional": [
       {
         "condition": "Traits such as Characters or Hale are seen as Prestige Prestigious",
@@ -13806,6 +15593,7 @@
   },
   {
     "category": "uncategorized",
+    "clergy": null,
     "conditional": [
       {
         "condition": "Traits such as Characters or Hale are seen as Prestige Prestigious",
@@ -13858,6 +15646,7 @@
   },
   {
     "category": "uncategorized",
+    "clergy": null,
     "conditional": [
       {
         "condition": "Traits such as Characters or Hale are seen as Prestige Prestigious",
@@ -13910,6 +15699,7 @@
   },
   {
     "category": "winter_commander",
+    "clergy": null,
     "conditional": [],
     "desc": "This character is molded by the bitter cold, and knows how to turn it to their advantage.",
     "dlc": null,

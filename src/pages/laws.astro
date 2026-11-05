@@ -8,6 +8,7 @@ const CATEGORIES: { key: string; label: string; note: string }[] = [
   { key: 'title_succession', label: 'Title Succession', note: 'Elective and special succession applied to individual titles.' },
   { key: 'administrative', label: 'Administrative Laws', note: 'Provincial policies and treasury budget allocations for administrative realms.' },
   { key: 'imperial_policy', label: 'Imperial Policies', note: 'Realm-wide policies of the Japanese imperial court.' },
+  { key: 'ecclesiastical', label: 'Ecclesiastical Laws', note: 'Cardinal budget allocation and benefices for Ecclesiastical rulers.' },
 ];
 
 const lawCount = groups.reduce((n, g) => n + g.laws.length, 0);
@@ -39,6 +40,8 @@ const SUCC_LABELS: Record<string, string> = {
   primaryHeirMinimumShare: 'primary heir share',
   excludeRulers: 'rulers excluded',
   limitToCourtiers: 'courtiers only',
+  resignOutsideRealm: 'outside heirs resign prior titles',
+  requiredHeirGovernmentTypes: 'heir government',
 };
 
 function succEntries(s: Record<string, unknown> | null): [string, string][] {
@@ -46,17 +49,28 @@ function succEntries(s: Record<string, unknown> | null): [string, string][] {
   return Object.entries(s).map(([k, v]) => {
     const label = SUCC_LABELS[k] ?? k;
     if (typeof v === 'boolean') return [label, v ? 'yes' : 'no'] as [string, string];
+    if (Array.isArray(v)) return [label, v.map((x) => String(x).replace(/_/g, ' ')).join(', ')] as [string, string];
     if (k === 'primaryHeirMinimumShare') return [label, `≥${Math.round((v as number) * 100)}%`] as [string, string];
     return [label, String(v).replace(/_/g, ' ')] as [string, string];
   });
 }
 
 const hasSuccession = (g: (typeof groups)[number]) => g.laws.some((l) => l.succession);
+
+// treasury-budget law keys end in their allocation percentage (…_salary_30)
+function budgetSummary(g: (typeof groups)[number]): string {
+  const n = g.laws.length;
+  const lv = g.laws.map((l) => l.level).filter((x): x is number => x != null);
+  const steps = `${n} allocation step${n === 1 ? '' : 's'}`;
+  if (lv.length !== n) return steps;
+  const lo = Math.min(...lv), hi = Math.max(...lv);
+  return `${steps} (${lo === hi ? `${lo}%` : `${lo}–${hi}%`})`;
+}
 ---
 <Base
   title="Laws"
   active="laws"
-  lede="All 27 law groups — crown-authority-style ladders, succession order and gender laws, administrative policies, and treasury budgets — with costs, effects, and unlock requirements resolved from the game's script."
+  lede={`All ${groups.length} law groups — authority ladders, succession order and gender laws, administrative policies, ecclesiastical benefices, and treasury budgets — with costs, effects, and unlock requirements resolved from the game's script.`}
   stats={[
     { value: groups.length, label: 'law groups' },
     { value: lawCount, label: 'laws' },
@@ -145,10 +159,23 @@ const hasSuccession = (g: (typeof groups)[number]) => g.laws.some((l) => l.succe
               {g.cumulative && <span class="tag" title="each level keeps all effects of the previous one">cumulative</span>}
               {g.treasuryBudget && <span class="tag">treasury budget</span>}
               <span class="count">{g.laws.length}</span>
+              {g.dlc && <span class="badge-dlc">{g.dlc}</span>}
             </h3>
-            {g.treasuryBudget ? (
+            {(g.requiredGovernments.length > 0 || g.groupRequirements.length > 0) && (
+              <p class="g-req">
+                {g.requiredGovernments.length > 0 && (
+                  <span title={`required_government_flag: ${g.requiredGovernments.map((r) => r.flag).join(', ')}`}>
+                    Governments: {[...new Set(g.requiredGovernments.flatMap((r) => r.governments.map((x) => x.name)))].join(', ') || g.requiredGovernments.map((r) => r.flag.replace(/_/g, ' ')).join(', ')}
+                  </span>
+                )}
+                {g.groupRequirements.map((r) => (
+                  <span class="chip chip--req">{r.negated && <span class="neg">not </span>}{r.text}</span>
+                ))}
+              </p>
+            )}
+            {g.treasuryBudget && g.laws.length > 1 ? (
               <details>
-                <summary>{g.laws.length} allocation steps (0–100%)</summary>
+                <summary>{budgetSummary(g)}</summary>
                 {table}
               </details>
             ) : (
@@ -206,6 +233,7 @@ const hasSuccession = (g: (typeof groups)[number]) => g.laws.some((l) => l.succe
       font-family: var(--font-mono); font-size: 0.65rem; color: var(--dim);
       border: 1px dashed var(--line); border-radius: 999px; padding: 0.05rem 0.45rem; cursor: help;
     }
+    .g-req { color: var(--dim); font-size: 0.78rem; margin: -0.2rem 0 0.45rem; display: flex; flex-wrap: wrap; gap: 0.4rem; align-items: baseline; }
     .lawgroup details summary { cursor: pointer; color: var(--dim); font-size: 0.82rem; padding: 0.2rem 0; }
     td.name { min-width: 11rem; }
     .lvl {

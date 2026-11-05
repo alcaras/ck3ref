@@ -92,10 +92,6 @@
   {
     "canJoin": [
       {
-        "name": "Has access to an Estate",
-        "negated": false
-      },
-      {
         "name": "Realm law use imperial policy",
         "negated": false
       },
@@ -128,7 +124,7 @@
         "negated": false
       },
       {
-        "name": "Has Herd",
+        "name": "Is Nomadic",
         "negated": true
       },
       {
@@ -178,12 +174,12 @@
     "casusBelliName": "Liberty Faction",
     "countyFaction": false,
     "demand": true,
-    "desc": "The Liberty Faction seeks to lower Crown Authority, Tribal Authority, or Imperial Bureaucracy, but members are otherwise loyal to the Realm.",
+    "desc": "The Liberty Faction seeks to lower Government Authority, but members are otherwise loyal to the Realm.",
     "dlc": null,
     "id": "liberty_faction",
     "name": "Liberty Faction",
     "powerThreshold": null,
-    "shortEffect": null,
+    "shortEffect": "Wants to lower Government Authority",
     "validWhen": [
       {
         "name": "Valid faction members",

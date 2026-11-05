@@ -47,7 +47,11 @@ const CH = [...chains.entries()]
       days: num(first.constructionTime),
       levy: num(last.levy),
       garrison: num(last.maxGarrison),
-      fx: (last.modifiers ?? []).flatMap((m: any) => m.lines ?? []).slice(0, 6),
+      // unconditional groups first; gated lines (culture/rite/terrain…) carry their gate
+      fx: [...(last.modifiers ?? [])]
+        .sort((a: any, b: any) => Number(!!a.cond) - Number(!!b.cond))
+        .flatMap((m: any) => (m.lines ?? []).map((l: string) => (m.cond ? `${l} (${m.cond})` : l)))
+        .slice(0, 6),
       reqs: (first.requirements ?? []).map((r: any) => ({
         kind: r.kind, key: r.key, name: r.name, neg: !!r.negated,
       })),

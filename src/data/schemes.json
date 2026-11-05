@@ -234,7 +234,7 @@
         {
           "situational": false,
           "tier": 1,
-          "trait": "Scholar"
+          "trait": "Erudite"
         },
         {
           "situational": false,
@@ -526,7 +526,7 @@
         {
           "situational": false,
           "tier": 1,
-          "trait": "Scholar"
+          "trait": "Erudite"
         },
         {
           "situational": false,
@@ -627,7 +627,7 @@
         {
           "situational": false,
           "tier": 1,
-          "trait": "Scholar"
+          "trait": "Erudite"
         },
         {
           "situational": false,
@@ -1053,7 +1053,7 @@
         {
           "situational": false,
           "tier": 1,
-          "trait": "Scholar"
+          "trait": "Erudite"
         },
         {
           "situational": false,
@@ -1495,32 +1495,7 @@
     },
     {
       "contributionType": "success_chance_max",
-      "gates": [
-        {
-          "anyOf": false,
-          "detail": null,
-          "name": "Administrative government",
-          "negated": false,
-          "scope": null,
-          "stage": "slot"
-        },
-        {
-          "anyOf": true,
-          "detail": null,
-          "name": "Governor",
-          "negated": false,
-          "scope": null,
-          "stage": "slot"
-        },
-        {
-          "anyOf": true,
-          "detail": null,
-          "name": "House head",
-          "negated": false,
-          "scope": null,
-          "stage": "slot"
-        }
-      ],
+      "gates": [],
       "id": "agent_intermediary",
       "name": "Intermediary",
       "other": [
@@ -1994,32 +1969,7 @@
     },
     {
       "contributionType": "success_chance_max",
-      "gates": [
-        {
-          "anyOf": false,
-          "detail": null,
-          "name": "Administrative government",
-          "negated": false,
-          "scope": null,
-          "stage": "slot"
-        },
-        {
-          "anyOf": true,
-          "detail": null,
-          "name": "Governor",
-          "negated": false,
-          "scope": null,
-          "stage": "slot"
-        },
-        {
-          "anyOf": true,
-          "detail": null,
-          "name": "House head",
-          "negated": false,
-          "scope": null,
-          "stage": "slot"
-        }
-      ],
+      "gates": [],
       "id": "agent_proponent",
       "name": "Proponent",
       "other": [],
@@ -2285,32 +2235,7 @@
     },
     {
       "contributionType": "speed",
-      "gates": [
-        {
-          "anyOf": false,
-          "detail": null,
-          "name": "Administrative government",
-          "negated": false,
-          "scope": null,
-          "stage": "slot"
-        },
-        {
-          "anyOf": true,
-          "detail": null,
-          "name": "Governor",
-          "negated": false,
-          "scope": null,
-          "stage": "slot"
-        },
-        {
-          "anyOf": true,
-          "detail": null,
-          "name": "House head",
-          "negated": false,
-          "scope": null,
-          "stage": "slot"
-        }
-      ],
+      "gates": [],
       "id": "agent_political_socialite",
       "name": "Socialite",
       "other": [],
@@ -2515,16 +2440,7 @@
     },
     {
       "contributionType": "success_chance_max",
-      "gates": [
-        {
-          "anyOf": false,
-          "detail": null,
-          "name": "Administrative government",
-          "negated": false,
-          "scope": null,
-          "stage": "slot"
-        }
-      ],
+      "gates": [],
       "id": "agent_sycophant",
       "name": "Sycophant",
       "other": [
@@ -2999,7 +2915,7 @@
         {
           "situational": false,
           "tier": 3,
-          "trait": "Scholar"
+          "trait": "Erudite"
         },
         {
           "situational": false,
@@ -3642,7 +3558,7 @@
         {
           "situational": false,
           "tier": 1,
-          "trait": "Scholar"
+          "trait": "Erudite"
         },
         {
           "situational": false,
@@ -4515,9 +4431,7 @@
     },
     {
       "desc": "When political rivals raise their voice against you, well placed bags of coin and pulling of strings is sure to undermine their efforts.",
-      "gates": [
-        "Administrative government"
-      ],
+      "gates": [],
       "icon": "bribe_officials_t1",
       "id": "bribe_officials",
       "name": "Bribe Officials",
@@ -4531,9 +4445,7 @@
             }
           ],
           "frame": "bronze",
-          "gates": [
-            "Administrative government"
-          ],
+          "gates": [],
           "id": "bribe_officials_t1",
           "ownerModifiers": [
             "-8% Monthly Income",
@@ -4550,9 +4462,7 @@
             }
           ],
           "frame": "silver",
-          "gates": [
-            "Administrative government"
-          ],
+          "gates": [],
           "id": "bribe_officials_t2",
           "ownerModifiers": [
             "-6% Monthly Income",
@@ -4569,9 +4479,7 @@
             }
           ],
           "frame": "gold",
-          "gates": [
-            "Administrative government"
-          ],
+          "gates": [],
           "id": "bribe_officials_t3",
           "ownerModifiers": [
             "-4% Monthly Income",
@@ -4935,7 +4843,8 @@
       "agentGroupsOwner": [
         "courtiers",
         "guests",
-        "scripted_relations"
+        "scripted_relations",
+        "puppets"
       ],
       "agentGroupsTarget": [
         "courtiers",
@@ -5144,12 +5053,8 @@
             "label": "You discovered … escape tunnel: +100"
           },
           {
-            "add": -50,
-            "label": "… is your Spiritual Head of Faith: -50"
-          },
-          {
-            "add": -25,
-            "label": "Target has a Sponsored Inspiration: -25"
+            "add": null,
+            "label": "dangerous hostile scheme base chance"
           },
           {
             "add": null,
@@ -5192,10 +5097,6 @@
           {
             "add": 25,
             "label": "You can use your secret tunnels: +25"
-          },
-          {
-            "add": 10,
-            "label": "Erroneous Identification: +10"
           }
         ]
       },
@@ -5208,7 +5109,8 @@
       "agentGroupsOwner": [
         "courtiers",
         "guests",
-        "scripted_relations"
+        "scripted_relations",
+        "puppets"
       ],
       "agentGroupsTarget": [
         "courtiers",
@@ -5253,22 +5155,6 @@
         {
           "anyOf": false,
           "detail": null,
-          "name": "Adult",
-          "negated": false,
-          "scope": null,
-          "stage": "start"
-        },
-        {
-          "anyOf": false,
-          "detail": null,
-          "name": "Not imprisoned",
-          "negated": false,
-          "scope": null,
-          "stage": "start"
-        },
-        {
-          "anyOf": false,
-          "detail": null,
           "name": "Landed",
           "negated": false,
           "scope": null,
@@ -5278,46 +5164,6 @@
           "anyOf": false,
           "detail": null,
           "name": "Title above Barony",
-          "negated": false,
-          "scope": null,
-          "stage": "start"
-        },
-        {
-          "anyOf": true,
-          "detail": "perk",
-          "name": "Meritocracy",
-          "negated": false,
-          "scope": null,
-          "stage": "start"
-        },
-        {
-          "anyOf": true,
-          "detail": "struggle phase",
-          "name": "During a struggle (claim throne for powerful vassals)",
-          "negated": false,
-          "scope": null,
-          "stage": "start"
-        },
-        {
-          "anyOf": true,
-          "detail": "struggle phase",
-          "name": "During a struggle (claim throne for all)",
-          "negated": false,
-          "scope": null,
-          "stage": "start"
-        },
-        {
-          "anyOf": true,
-          "detail": "struggle phase",
-          "name": "During a struggle (claim throne for caliph vassals)",
-          "negated": false,
-          "scope": null,
-          "stage": "start"
-        },
-        {
-          "anyOf": true,
-          "detail": "event flag",
-          "name": "Confederation claim throne",
           "negated": false,
           "scope": null,
           "stage": "start"
@@ -5401,6 +5247,10 @@
             "label": "your Learning skill"
           },
           {
+            "add": -50,
+            "label": "Without proper access to the Scheme: -50"
+          },
+          {
             "add": null,
             "label": "compare"
           },
@@ -5444,7 +5294,8 @@
         "scripted_relations",
         "peer_vassals",
         "vassals",
-        "family"
+        "family",
+        "puppets"
       ],
       "agentGroupsTarget": [
         "peer_vassals",
@@ -5645,7 +5496,8 @@
       "agentGroupsOwner": [
         "courtiers",
         "guests",
-        "scripted_relations"
+        "scripted_relations",
+        "puppets"
       ],
       "agentGroupsTarget": [
         "courtiers",
@@ -5692,6 +5544,38 @@
       "freezeWhenTargetTraveling": false,
       "freezeWhenTraveling": false,
       "gates": [
+        {
+          "anyOf": true,
+          "detail": "condition",
+          "name": "Your Spiritual Fulfillment is at … or below",
+          "negated": false,
+          "scope": null,
+          "stage": "start"
+        },
+        {
+          "anyOf": true,
+          "detail": "condition",
+          "name": "… is the court chaplain of …",
+          "negated": false,
+          "scope": null,
+          "stage": "start"
+        },
+        {
+          "anyOf": true,
+          "detail": null,
+          "name": "Theocracy government",
+          "negated": false,
+          "scope": null,
+          "stage": "start"
+        },
+        {
+          "anyOf": true,
+          "detail": "condition",
+          "name": "… is the Head of Rite of … Rite",
+          "negated": false,
+          "scope": null,
+          "stage": "start"
+        },
         {
           "anyOf": true,
           "detail": "perk",
@@ -5774,9 +5658,9 @@
         },
         {
           "anyOf": false,
-          "detail": "trait",
-          "name": "Incapable",
-          "negated": true,
+          "detail": null,
+          "name": "Not incapable",
+          "negated": false,
           "scope": "Target",
           "stage": "ongoing"
         },
@@ -5935,8 +5819,16 @@
             "label": "… is a Spymaster: -50"
           },
           {
+            "add": -75,
+            "label": "… cares deeply for … Faith: -75"
+          },
+          {
             "add": -50,
-            "label": "… is your Spiritual Head of Faith: -50"
+            "label": "… holds high clerical office: -50"
+          },
+          {
+            "add": -150,
+            "label": "… is Head of Faith: -150"
           }
         ]
       },
@@ -5949,7 +5841,8 @@
       "agentGroupsOwner": [
         "courtiers",
         "guests",
-        "scripted_relations"
+        "scripted_relations",
+        "puppets"
       ],
       "agentGroupsTarget": [
         "courtiers",
@@ -6008,14 +5901,6 @@
           "anyOf": false,
           "detail": null,
           "name": "Not imprisoned",
-          "negated": false,
-          "scope": null,
-          "stage": "start"
-        },
-        {
-          "anyOf": false,
-          "detail": null,
-          "name": "Barony-tier title or higher",
           "negated": false,
           "scope": null,
           "stage": "start"
@@ -6139,6 +6024,10 @@
             "label": "Your imaginary friend has convinced you of your righteousness in this murder: +50"
           },
           {
+            "add": 50,
+            "label": "A loyal vassal has men in this target's domain: +50"
+          },
+          {
             "add": 20,
             "label": "You focus on … after being crowned by … as The Fool: +20"
           },
@@ -6163,12 +6052,8 @@
             "label": "… knows that you have attempted to murder … before: -50"
           },
           {
-            "add": -50,
-            "label": "… is your Spiritual Head of Faith: -50"
-          },
-          {
-            "add": -25,
-            "label": "Target has a Sponsored Inspiration: -25"
+            "add": null,
+            "label": "dangerous hostile scheme base chance"
           },
           {
             "add": null,
@@ -6187,10 +6072,6 @@
           {
             "add": null,
             "label": "diarch scheming in liege's realm"
-          },
-          {
-            "add": 10,
-            "label": "Erroneous Identification: +10"
           },
           {
             "add": 10,
@@ -6219,7 +6100,8 @@
       "agentGroupsOwner": [
         "courtiers",
         "guests",
-        "scripted_relations"
+        "scripted_relations",
+        "puppets"
       ],
       "agentGroupsTarget": [
         "courtiers",
@@ -6431,7 +6313,7 @@
       "categoryDefaulted": false,
       "conditionalSecrecy": false,
       "cooldown": "10 years",
-      "counterClass": null,
+      "counterClass": "calculated",
       "counterSecrecy": true,
       "desc": "A Hostile Scheme that allows an Adventurer to seize the Realm of a Landed Ruler.\n\nIf successful, Vassals of the Realm may become Independent based on their relationship to the old Ruler, differences in Culture, Faith, and Opinion with the Adventurer, Sub-Realm size, Military Strength, distance from the Capital, and other factors",
       "discoveryDesc": "You are not Imprisoned",
@@ -6604,6 +6486,10 @@
           },
           {
             "add": null,
+            "label": "target's countermeasures (calculated class)"
+          },
+          {
+            "add": null,
             "label": "compare"
           },
           {
@@ -6611,12 +6497,8 @@
             "label": "situational"
           },
           {
-            "add": -50,
-            "label": "… is your Spiritual Head of Faith: -50"
-          },
-          {
-            "add": -25,
-            "label": "Target has a Sponsored Inspiration: -25"
+            "add": null,
+            "label": "dangerous hostile scheme base chance"
           },
           {
             "add": null,
@@ -6638,10 +6520,6 @@
           },
           {
             "add": 10,
-            "label": "Erroneous Identification: +10"
-          },
-          {
-            "add": 10,
             "label": "Observed Habits: +10"
           },
           {
@@ -6658,7 +6536,8 @@
     {
       "agentGroupsOwner": [
         "courtiers",
-        "vassals"
+        "vassals",
+        "puppets"
       ],
       "agentGroupsTarget": [],
       "agentSlots": [
@@ -6688,7 +6567,7 @@
       "categoryDefaulted": false,
       "conditionalSecrecy": false,
       "cooldown": "10 years",
-      "counterClass": null,
+      "counterClass": "political",
       "counterSecrecy": true,
       "desc": "A Hostile Scheme that allows a Ruling Regent to seize the throne from their Ceremonial Monarch.",
       "discoveryDesc": "You are not Imprisoned",
@@ -6813,6 +6692,10 @@
           },
           {
             "add": null,
+            "label": "target's countermeasures (political class)"
+          },
+          {
+            "add": null,
             "label": "compare"
           },
           {
@@ -6820,12 +6703,8 @@
             "label": "situational"
           },
           {
-            "add": -50,
-            "label": "… is your Spiritual Head of Faith: -50"
-          },
-          {
-            "add": -25,
-            "label": "Target has a Sponsored Inspiration: -25"
+            "add": null,
+            "label": "dangerous hostile scheme base chance"
           },
           {
             "add": null,
@@ -6847,10 +6726,6 @@
           },
           {
             "add": 10,
-            "label": "Erroneous Identification: +10"
-          },
-          {
-            "add": 10,
             "label": "Observed Habits: +10"
           },
           {
@@ -6868,7 +6743,8 @@
       "agentGroupsOwner": [
         "courtiers",
         "councillors",
-        "scripted_relations"
+        "scripted_relations",
+        "puppets"
       ],
       "agentGroupsTarget": [],
       "agentSlots": [
@@ -6942,7 +6818,7 @@
           },
           {
             "add": null,
-            "label": "odds skill contribution intrigue title"
+            "label": "your Intrigue"
           },
           {
             "add": null,
@@ -6999,7 +6875,7 @@
           },
           {
             "add": null,
-            "label": "house feud"
+            "label": "house feud title hostile scheme success"
           },
           {
             "add": null,
@@ -7014,24 +6890,8 @@
             "label": "… is your Top Liege: -25"
           },
           {
-            "add": 10,
-            "label": "… House is a Powerful Family: +10"
-          },
-          {
-            "add": -10,
-            "label": "… House is a Powerful Family: -10"
-          },
-          {
-            "add": 20,
-            "label": "… House is a Dominant Family: +20"
-          },
-          {
-            "add": -20,
-            "label": "… House is a Dominant Family: -20"
-          },
-          {
             "add": null,
-            "label": "… Level of Influence"
+            "label": "political scheme title admin base chance"
           },
           {
             "add": 10,
@@ -7040,6 +6900,10 @@
           {
             "add": 50,
             "label": "Minister of Revenue: +50"
+          },
+          {
+            "add": 20,
+            "label": "… Situation Phase: +20"
           },
           {
             "add": 12,
@@ -7064,7 +6928,8 @@
       "agentGroupsOwner": [
         "courtiers",
         "guests",
-        "scripted_relations"
+        "scripted_relations",
+        "puppets"
       ],
       "agentGroupsTarget": [
         "courtiers",
@@ -7255,7 +7120,8 @@
       "agentGroupsOwner": [
         "courtiers",
         "guests",
-        "scripted_relations"
+        "scripted_relations",
+        "puppets"
       ],
       "agentGroupsTarget": [
         "courtiers",
@@ -7333,17 +7199,9 @@
           "stage": "start"
         },
         {
-          "anyOf": true,
+          "anyOf": false,
           "detail": null,
-          "name": "Nomadic government",
-          "negated": false,
-          "scope": "Target",
-          "stage": "start"
-        },
-        {
-          "anyOf": true,
-          "detail": null,
-          "name": "Herder government",
+          "name": "In Steppe government",
           "negated": false,
           "scope": "Target",
           "stage": "start"
@@ -7502,7 +7360,8 @@
         "courtiers",
         "peer_vassals",
         "vassals",
-        "councillors"
+        "councillors",
+        "puppets"
       ],
       "agentGroupsTarget": [],
       "agentSlots": [
@@ -7564,9 +7423,9 @@
         },
         {
           "anyOf": false,
-          "detail": "trait",
-          "name": "Incapable",
-          "negated": true,
+          "detail": null,
+          "name": "Not incapable",
+          "negated": false,
           "scope": null,
           "stage": "start"
         },
@@ -7604,9 +7463,9 @@
         },
         {
           "anyOf": false,
-          "detail": "trait",
-          "name": "Incapable",
-          "negated": true,
+          "detail": null,
+          "name": "Not incapable",
+          "negated": false,
           "scope": null,
           "stage": "ongoing"
         },
@@ -7645,7 +7504,7 @@
           },
           {
             "add": null,
-            "label": "odds skill contribution diplomacy title"
+            "label": "your Diplomacy"
           },
           {
             "add": null,
@@ -7681,24 +7540,28 @@
             "label": "compare"
           },
           {
-            "add": -30,
-            "label": "… is your Spiritual Head of Faith: -30"
-          },
-          {
-            "add": -15,
-            "label": "Target has a Sponsored Inspiration: -15"
+            "add": null,
+            "label": "diplomacy scheme base chance"
           },
           {
             "add": null,
-            "label": "house feud"
+            "label": "dangerous hostile scheme title base chance"
           },
           {
             "add": null,
-            "label": "diarch scheming in liege's realm"
+            "label": "house feud title hostile scheme success"
           },
           {
-            "add": 15,
-            "label": "United Agents in Capital: +15"
+            "add": null,
+            "label": "diarch scheming title within realm bonus"
+          },
+          {
+            "add": null,
+            "label": "political scheme title base chance"
+          },
+          {
+            "add": null,
+            "label": "apply political scheme title success chance adjustments"
           },
           {
             "add": 25,
@@ -7713,40 +7576,12 @@
             "label": "County is their Capital: -25"
           },
           {
-            "add": 10,
-            "label": "… House is a Powerful Family: +10"
-          },
-          {
-            "add": -10,
-            "label": "… House is a Powerful Family: -10"
-          },
-          {
-            "add": 20,
-            "label": "… House is a Dominant Family: +20"
-          },
-          {
-            "add": -20,
-            "label": "… House is a Dominant Family: -20"
-          },
-          {
-            "add": -10,
-            "label": "… is a member of the … House: -10"
-          },
-          {
             "add": null,
-            "label": "… Level of Influence"
+            "label": "political scheme title admin base chance"
           },
           {
             "add": null,
             "label": "opinion"
-          },
-          {
-            "add": null,
-            "label": "Make House Head Request"
-          },
-          {
-            "add": -10,
-            "label": "Distracted from Political Schemes: -10"
           }
         ]
       },
@@ -7760,7 +7595,8 @@
         "peer_vassals",
         "courtiers",
         "vassals",
-        "councillors"
+        "councillors",
+        "puppets"
       ],
       "agentGroupsTarget": [
         "courtiers",
@@ -7827,23 +7663,7 @@
         {
           "anyOf": false,
           "detail": null,
-          "name": "Administrative government",
-          "negated": false,
-          "scope": null,
-          "stage": "start"
-        },
-        {
-          "anyOf": false,
-          "detail": null,
           "name": "Adult",
-          "negated": false,
-          "scope": "Target",
-          "stage": "ongoing"
-        },
-        {
-          "anyOf": false,
-          "detail": null,
-          "name": "Administrative government",
           "negated": false,
           "scope": "Target",
           "stage": "ongoing"
@@ -7919,8 +7739,8 @@
             "label": "… Learning"
           },
           {
-            "add": -50,
-            "label": "… is your Spiritual Head of Faith: -50"
+            "add": null,
+            "label": "dangerous hostile scheme base chance"
           },
           {
             "add": null,
@@ -7931,12 +7751,12 @@
             "label": "diarch scheming in liege's realm"
           },
           {
-            "add": 15,
-            "label": "United Agents in Capital: +15"
+            "add": null,
+            "label": "standard political-scheme factors"
           },
           {
             "add": null,
-            "label": "… Level of Influence"
+            "label": "political scheme admin base chance"
           },
           {
             "add": -10,
@@ -7974,7 +7794,8 @@
         "scripted_relations",
         "peer_vassals",
         "vassals",
-        "family"
+        "family",
+        "puppets"
       ],
       "agentGroupsTarget": [],
       "agentSlots": [
@@ -8115,12 +7936,8 @@
             "label": "your Stewardship skill"
           },
           {
-            "add": -10,
-            "label": "You are a Disbelieved Mandala: -10"
-          },
-          {
-            "add": -10,
-            "label": "Distracted from Political Schemes: -10"
+            "add": null,
+            "label": "mandala scheme base chance"
           },
           {
             "add": null,
@@ -8138,7 +7955,8 @@
         "scripted_relations",
         "peer_vassals",
         "vassals",
-        "family"
+        "family",
+        "puppets"
       ],
       "agentGroupsTarget": [
         "peer_vassals",
@@ -8404,8 +8222,8 @@
             "label": "target suzerain share aspect skill"
           },
           {
-            "add": -10,
-            "label": "You are a Disbelieved Mandala: -10"
+            "add": null,
+            "label": "mandala scheme base chance"
           },
           {
             "add": null,
@@ -8571,20 +8389,12 @@
             "label": "target's countermeasures (political class)"
           },
           {
-            "add": 10,
-            "label": "Overseer Trait: +10"
-          },
-          {
             "add": null,
-            "label": "Make House Head Request"
+            "label": "standard political-scheme factors"
           },
           {
-            "add": -10,
-            "label": "Distracted from Political Schemes: -10"
-          },
-          {
-            "add": 15,
-            "label": "United Agents in Capital: +15"
+            "add": 10,
+            "label": "Schemer Trait: +10"
           }
         ]
       },
@@ -8598,7 +8408,8 @@
         "courtiers",
         "peer_vassals",
         "vassals",
-        "councillors"
+        "councillors",
+        "puppets"
       ],
       "agentGroupsTarget": [
         "courtiers",
@@ -8636,7 +8447,7 @@
       "categoryDefaulted": false,
       "conditionalSecrecy": false,
       "cooldown": "5 years",
-      "counterClass": "calculated",
+      "counterClass": "political",
       "counterSecrecy": false,
       "desc": "In a Depose scheme, you conspire to overthrow the emperor and replace them with a more suitable candidate: you.",
       "discoveryDesc": null,
@@ -8660,22 +8471,6 @@
           "negated": false,
           "scope": null,
           "stage": "start"
-        },
-        {
-          "anyOf": false,
-          "detail": null,
-          "name": "Administrative government",
-          "negated": false,
-          "scope": null,
-          "stage": "start"
-        },
-        {
-          "anyOf": false,
-          "detail": null,
-          "name": "Administrative government",
-          "negated": false,
-          "scope": "Target",
-          "stage": "ongoing"
         },
         {
           "anyOf": false,
@@ -8749,15 +8544,11 @@
           },
           {
             "add": null,
-            "label": "target's countermeasures (calculated class)"
+            "label": "target's countermeasures (political class)"
           },
           {
-            "add": -30,
-            "label": "… is your Spiritual Head of Faith: -30"
-          },
-          {
-            "add": -15,
-            "label": "Target has a Sponsored Inspiration: -15"
+            "add": null,
+            "label": "dangerous hostile scheme base chance"
           },
           {
             "add": null,
@@ -8768,8 +8559,8 @@
             "label": "diarch scheming in liege's realm"
           },
           {
-            "add": 15,
-            "label": "United Agents in Capital: +15"
+            "add": null,
+            "label": "standard political-scheme factors"
           },
           {
             "add": null,
@@ -8788,7 +8579,8 @@
         "vassals",
         "councillors",
         "courtiers",
-        "scripted_relations"
+        "scripted_relations",
+        "puppets"
       ],
       "agentGroupsTarget": [],
       "agentSlots": [
@@ -8899,7 +8691,7 @@
           },
           {
             "add": null,
-            "label": "odds skill contribution diplomacy title"
+            "label": "your Diplomacy"
           },
           {
             "add": null,
@@ -8932,7 +8724,11 @@
           },
           {
             "add": null,
-            "label": "diarch scheming in liege's realm"
+            "label": "diplomacy scheme base chance"
+          },
+          {
+            "add": null,
+            "label": "diarch scheming title within realm bonus"
           },
           {
             "add": null,
@@ -8951,16 +8747,8 @@
             "label": "De Jure Capital Kingdom of the …: -15"
           },
           {
-            "add": 10,
-            "label": "… House is a Powerful Family: +10"
-          },
-          {
-            "add": 20,
-            "label": "… House is a Dominant Family: +20"
-          },
-          {
             "add": null,
-            "label": "… Level of Influence"
+            "label": "political scheme title admin base chance"
           },
           {
             "add": null,
@@ -8968,15 +8756,7 @@
           },
           {
             "add": null,
-            "label": "Make House Head Request"
-          },
-          {
-            "add": -10,
-            "label": "Distracted from Political Schemes: -10"
-          },
-          {
-            "add": 15,
-            "label": "United Agents in Capital: +15"
+            "label": "political scheme title base chance"
           }
         ]
       },
@@ -8991,7 +8771,8 @@
         "vassals",
         "councillors",
         "courtiers",
-        "scripted_relations"
+        "scripted_relations",
+        "puppets"
       ],
       "agentGroupsTarget": [],
       "agentSlots": [
@@ -9028,7 +8809,7 @@
       "cooldown": "10 years",
       "counterClass": null,
       "counterSecrecy": false,
-      "desc": "In an Expand Power Base Scheme, you spend time cultivating your influential connections in order to increase your Investment Capacity.",
+      "desc": "In an Expand Power Base Scheme, you spend time cultivating your influential connections in order to increase your Investment Capacity and Candidate Score.",
       "discoveryDesc": null,
       "dlc": null,
       "features": [],
@@ -9111,19 +8892,11 @@
           },
           {
             "add": null,
-            "label": "Make House Head Request"
-          },
-          {
-            "add": -10,
-            "label": "Distracted from Political Schemes: -10"
-          },
-          {
-            "add": 15,
-            "label": "United Agents in Capital: +15"
+            "label": "political scheme title base chance"
           }
         ]
       },
-      "successDesc": null,
+      "successDesc": "Your Investment Capacity and Candidate Score will be increased",
       "successGrowthPerSkillPoint": 0.45,
       "targetType": "character",
       "usesResistance": true
@@ -9257,12 +9030,12 @@
             "label": "compare"
           },
           {
-            "add": 10,
-            "label": "Overseer Trait: +10"
+            "add": null,
+            "label": "diplomacy scheme base chance"
           },
           {
-            "add": 15,
-            "label": "Silvertongued Poet: +15"
+            "add": 10,
+            "label": "Overseer Trait: +10"
           },
           {
             "add": null,
@@ -9300,9 +9073,9 @@
       "categoryDefaulted": false,
       "conditionalSecrecy": false,
       "cooldown": null,
-      "counterClass": null,
+      "counterClass": "political",
       "counterSecrecy": false,
-      "desc": "Ingratiate Family is a Personal Scheme that aims to win the favor of a House. It is based on Diplomacy and House standing.\n\nA successful Ingratiate Family will grant Opinion, Friendship, and Influence.",
+      "desc": "Ingratiate Family is a Political Scheme that aims to win the favor of a House. It is based on Diplomacy and House standing.\n\nA successful Ingratiate Family will grant Opinion, Friendship, and Influence.",
       "discoveryDesc": null,
       "dlc": "Roads to Power",
       "features": [],
@@ -9429,6 +9202,14 @@
           },
           {
             "add": null,
+            "label": "diplomacy scheme base chance"
+          },
+          {
+            "add": null,
+            "label": "target's countermeasures (political class)"
+          },
+          {
+            "add": null,
             "label": "opinion"
           },
           {
@@ -9480,10 +9261,6 @@
             "label": "house feud sway scheme success"
           },
           {
-            "add": 15,
-            "label": "Silvertongued Poet: +15"
-          },
-          {
             "add": 25,
             "label": "Your House is a Dominant Family: +25"
           },
@@ -9519,7 +9296,8 @@
         "scripted_relations",
         "peer_vassals",
         "vassals",
-        "family"
+        "family",
+        "puppets"
       ],
       "agentGroupsTarget": [
         "peer_vassals",
@@ -9690,16 +9468,12 @@
             "label": "your Intrigue skill"
           },
           {
-            "add": -10,
-            "label": "You are a Disbelieved Mandala: -10"
-          },
-          {
-            "add": -10,
-            "label": "Distracted from Political Schemes: -10"
+            "add": null,
+            "label": "target's countermeasures (political class)"
           },
           {
             "add": null,
-            "label": "target's countermeasures (political class)"
+            "label": "mandala scheme base chance"
           }
         ]
       },
@@ -9752,9 +9526,9 @@
         },
         {
           "anyOf": false,
-          "detail": "trait",
-          "name": "Incapable",
-          "negated": true,
+          "detail": null,
+          "name": "Not incapable",
+          "negated": false,
           "scope": null,
           "stage": "start"
         },
@@ -9784,9 +9558,9 @@
         },
         {
           "anyOf": false,
-          "detail": "trait",
-          "name": "Incapable",
-          "negated": true,
+          "detail": null,
+          "name": "Not incapable",
+          "negated": false,
           "scope": null,
           "stage": "ongoing"
         },
@@ -9937,7 +9711,8 @@
     },
     {
       "agentGroupsOwner": [
-        "courtiers"
+        "courtiers",
+        "puppets"
       ],
       "agentGroupsTarget": [
         "courtiers",
@@ -9949,7 +9724,7 @@
       "categoryDefaulted": false,
       "conditionalSecrecy": false,
       "cooldown": null,
-      "counterClass": null,
+      "counterClass": "indirect",
       "counterSecrecy": false,
       "desc": "Minister conducts an investigation in the Court of Scheme Target to find any Secrets",
       "discoveryDesc": null,
@@ -9991,6 +9766,10 @@
           {
             "add": null,
             "label": "laamp contract scheme basic success chance"
+          },
+          {
+            "add": null,
+            "label": "target's countermeasures (indirect class)"
           }
         ]
       },
@@ -10003,7 +9782,8 @@
       "agentGroupsOwner": [
         "councillors",
         "courtiers",
-        "guests"
+        "guests",
+        "puppets"
       ],
       "agentGroupsTarget": [],
       "agentSlots": [
@@ -10115,15 +9895,7 @@
           },
           {
             "add": null,
-            "label": "Make House Head Request"
-          },
-          {
-            "add": -10,
-            "label": "Distracted from Political Schemes: -10"
-          },
-          {
-            "add": 15,
-            "label": "United Agents in Capital: +15"
+            "label": "political scheme title base chance"
           }
         ]
       },
@@ -10139,7 +9911,8 @@
         "scripted_relations",
         "peer_vassals",
         "vassals",
-        "family"
+        "family",
+        "puppets"
       ],
       "agentGroupsTarget": [
         "courtiers",
@@ -10204,22 +9977,6 @@
           "negated": false,
           "scope": null,
           "stage": "start"
-        },
-        {
-          "anyOf": false,
-          "detail": null,
-          "name": "Administrative government",
-          "negated": false,
-          "scope": null,
-          "stage": "start"
-        },
-        {
-          "anyOf": false,
-          "detail": null,
-          "name": "Administrative government",
-          "negated": false,
-          "scope": "Target",
-          "stage": "ongoing"
         },
         {
           "anyOf": false,
@@ -10293,6 +10050,10 @@
           },
           {
             "add": null,
+            "label": "diplomacy scheme base chance"
+          },
+          {
+            "add": null,
             "label": "diarch scheming in liege's realm"
           },
           {
@@ -10304,20 +10065,8 @@
             "label": "From Traditions vs. same house: +30"
           },
           {
-            "add": 15,
-            "label": "Silvertongued Poet: +15"
-          },
-          {
             "add": null,
-            "label": "Make House Head Request"
-          },
-          {
-            "add": -10,
-            "label": "Distracted from Political Schemes: -10"
-          },
-          {
-            "add": 15,
-            "label": "United Agents in Capital: +15"
+            "label": "political scheme title base chance"
           }
         ]
       },
@@ -10330,7 +10079,8 @@
       "agentGroupsOwner": [
         "courtiers",
         "councillors",
-        "scripted_relations"
+        "scripted_relations",
+        "puppets"
       ],
       "agentGroupsTarget": [],
       "agentSlots": [
@@ -10437,20 +10187,16 @@
             "label": "your Diplomacy skill"
           },
           {
+            "add": null,
+            "label": "diplomacy scheme base chance"
+          },
+          {
             "add": -30,
             "label": "… is your Spiritual Head of Faith: -30"
           },
           {
             "add": null,
             "label": "diarch scheming in liege's realm"
-          },
-          {
-            "add": 10,
-            "label": "… House is a Powerful Family: +10"
-          },
-          {
-            "add": -10,
-            "label": "… House is a Powerful Family: -10"
           },
           {
             "add": 15,
@@ -10461,16 +10207,8 @@
             "label": "… is the Minister of Rites: -15"
           },
           {
-            "add": 20,
-            "label": "… House is a Dominant Family: +20"
-          },
-          {
-            "add": -20,
-            "label": "… House is a Dominant Family: -20"
-          },
-          {
             "add": null,
-            "label": "… Level of Influence"
+            "label": "political scheme admin base chance"
           },
           {
             "add": 10,
@@ -10487,7 +10225,8 @@
       "agentGroupsOwner": [
         "courtiers",
         "guests",
-        "scripted_relations"
+        "scripted_relations",
+        "puppets"
       ],
       "agentGroupsTarget": [],
       "agentSlots": [
@@ -10517,9 +10256,9 @@
       "categoryDefaulted": false,
       "conditionalSecrecy": false,
       "cooldown": "10 years",
-      "counterClass": null,
+      "counterClass": "calculated",
       "counterSecrecy": true,
-      "desc": "Raid Estate is a Hostile Scheme that aims to raid the Domicile of another House. It is based on Intrigue, Domicile, and House standing, and can recruit Agents.\n\nA successful Raid Estate can result in theft of the target's Gold, damage to their Domicile, and even the death of their House members.",
+      "desc": "Raid Estate is a Political Scheme that aims to raid the Domicile of another House. It is based on Intrigue, Domicile, and House standing, and can recruit Agents.\n\nA successful Raid Estate can result in theft of the target's Gold, damage to their Domicile, and even the death of their House members.",
       "discoveryDesc": "You are not exposed for the Crime of raiding",
       "dlc": "Roads to Power",
       "features": [],
@@ -10605,12 +10344,12 @@
             "label": "standard hostile-scheme factors"
           },
           {
-            "add": -30,
-            "label": "… is your Spiritual Head of Faith: -30"
+            "add": null,
+            "label": "target's countermeasures (calculated class)"
           },
           {
-            "add": -15,
-            "label": "Target has a Sponsored Inspiration: -15"
+            "add": null,
+            "label": "dangerous hostile scheme base chance"
           },
           {
             "add": null,
@@ -10621,32 +10360,16 @@
             "label": "diarch scheming in liege's realm"
           },
           {
+            "add": null,
+            "label": "political scheme admin base chance"
+          },
+          {
             "add": 10,
             "label": "… Estate is in your Realm: +10"
           },
           {
             "add": -25,
             "label": "… is your Top Liege: -25"
-          },
-          {
-            "add": 10,
-            "label": "… House is a Powerful Family: +10"
-          },
-          {
-            "add": -10,
-            "label": "… House is a Powerful Family: -10"
-          },
-          {
-            "add": 20,
-            "label": "… House is a Dominant Family: +20"
-          },
-          {
-            "add": -20,
-            "label": "… House is a Dominant Family: -20"
-          },
-          {
-            "add": null,
-            "label": "… Level of Influence"
           },
           {
             "add": null,
@@ -10686,7 +10409,8 @@
         "scripted_relations",
         "peer_vassals",
         "vassals",
-        "family"
+        "family",
+        "puppets"
       ],
       "agentGroupsTarget": [
         "courtiers",
@@ -10751,22 +10475,6 @@
           "negated": false,
           "scope": null,
           "stage": "start"
-        },
-        {
-          "anyOf": false,
-          "detail": null,
-          "name": "Administrative government",
-          "negated": false,
-          "scope": null,
-          "stage": "start"
-        },
-        {
-          "anyOf": false,
-          "detail": null,
-          "name": "Administrative government",
-          "negated": false,
-          "scope": "Target",
-          "stage": "ongoing"
         },
         {
           "anyOf": false,
@@ -10856,15 +10564,15 @@
           },
           {
             "add": null,
+            "label": "diplomacy scheme base chance"
+          },
+          {
+            "add": null,
             "label": "target's countermeasures (political class)"
           },
           {
             "add": -30,
             "label": "… is your Spiritual Head of Faith: -30"
-          },
-          {
-            "add": -15,
-            "label": "Target has a Sponsored Inspiration: -15"
           },
           {
             "add": null,
@@ -10875,12 +10583,8 @@
             "label": "diarch scheming in liege's realm"
           },
           {
-            "add": 15,
-            "label": "Silvertongued Poet: +15"
-          },
-          {
-            "add": 15,
-            "label": "United Agents in Capital: +15"
+            "add": null,
+            "label": "political scheme title base chance"
           },
           {
             "add": 20,
@@ -10901,7 +10605,8 @@
       "agentGroupsOwner": [
         "courtiers",
         "councillors",
-        "scripted_relations"
+        "scripted_relations",
+        "puppets"
       ],
       "agentGroupsTarget": [],
       "agentSlots": [
@@ -11009,6 +10714,10 @@
           },
           {
             "add": null,
+            "label": "diplomacy scheme base chance"
+          },
+          {
+            "add": null,
             "label": "target's countermeasures (political class)"
           },
           {
@@ -11024,22 +10733,6 @@
             "label": "Placate Movements Mandate: +10"
           },
           {
-            "add": 10,
-            "label": "… House is a Powerful Family: +10"
-          },
-          {
-            "add": -10,
-            "label": "… House is a Powerful Family: -10"
-          },
-          {
-            "add": 20,
-            "label": "… House is a Dominant Family: +20"
-          },
-          {
-            "add": -20,
-            "label": "… House is a Dominant Family: -20"
-          },
-          {
             "add": 15,
             "label": "You are the Minister of Rites: +15"
           },
@@ -11049,7 +10742,7 @@
           },
           {
             "add": null,
-            "label": "… Level of Influence"
+            "label": "political scheme admin base chance"
           },
           {
             "add": 10,
@@ -11068,7 +10761,8 @@
         "vassals",
         "councillors",
         "courtiers",
-        "scripted_relations"
+        "scripted_relations",
+        "puppets"
       ],
       "agentGroupsTarget": [],
       "agentSlots": [
@@ -11125,9 +10819,9 @@
         },
         {
           "anyOf": false,
-          "detail": "trait",
-          "name": "Incapable",
-          "negated": true,
+          "detail": null,
+          "name": "Not incapable",
+          "negated": false,
           "scope": null,
           "stage": "start"
         },
@@ -11174,7 +10868,7 @@
           },
           {
             "add": null,
-            "label": "odds skill contribution diplomacy title"
+            "label": "your Diplomacy"
           },
           {
             "add": null,
@@ -11210,20 +10904,24 @@
             "label": "compare"
           },
           {
-            "add": -30,
-            "label": "… is your Spiritual Head of Faith: -30"
-          },
-          {
-            "add": -15,
-            "label": "Target has a Sponsored Inspiration: -15"
+            "add": null,
+            "label": "diplomacy scheme base chance"
           },
           {
             "add": null,
-            "label": "house feud"
+            "label": "apply political scheme title success chance adjustments"
           },
           {
             "add": null,
-            "label": "diarch scheming in liege's realm"
+            "label": "dangerous hostile scheme title base chance"
+          },
+          {
+            "add": null,
+            "label": "house feud title hostile scheme success"
+          },
+          {
+            "add": null,
+            "label": "diarch scheming title within realm bonus"
           },
           {
             "add": null,
@@ -11242,28 +10940,8 @@
             "label": "Top Realm Counties already controlled by your House"
           },
           {
-            "add": 10,
-            "label": "… House is a Powerful Family: +10"
-          },
-          {
-            "add": -10,
-            "label": "… House is a Powerful Family: -10"
-          },
-          {
-            "add": 20,
-            "label": "… House is a Dominant Family: +20"
-          },
-          {
-            "add": -20,
-            "label": "… House is a Dominant Family: -20"
-          },
-          {
-            "add": -10,
-            "label": "… is a member of the … House: -10"
-          },
-          {
             "add": null,
-            "label": "… Level of Influence"
+            "label": "political scheme title admin base chance"
           },
           {
             "add": null,
@@ -11275,15 +10953,7 @@
           },
           {
             "add": null,
-            "label": "Make House Head Request"
-          },
-          {
-            "add": -10,
-            "label": "Distracted from Political Schemes: -10"
-          },
-          {
-            "add": 15,
-            "label": "United Agents in Capital: +15"
+            "label": "political scheme title base chance"
           }
         ]
       },
@@ -11430,6 +11100,10 @@
           },
           {
             "add": null,
+            "label": "diplomacy scheme base chance"
+          },
+          {
+            "add": null,
             "label": "opinion"
           },
           {
@@ -11439,6 +11113,10 @@
           {
             "add": null,
             "label": "target's countermeasures (opportunistic class)"
+          },
+          {
+            "add": -75,
+            "label": "… is Head of Faith: -75"
           },
           {
             "add": 15,
@@ -11585,16 +11263,12 @@
             "label": "diarch scheming in liege's realm"
           },
           {
-            "add": -50,
-            "label": "… is your Head of Faith: -50"
-          },
-          {
             "add": null,
-            "label": "Your Level of Devotion"
+            "label": "… Level of Devotion"
           },
           {
             "add": -50,
-            "label": "Your Level of Devotion: -50"
+            "label": "… Level of Devotion: -50"
           },
           {
             "add": 30,
@@ -11611,10 +11285,6 @@
           {
             "add": null,
             "label": "house feud sway scheme success"
-          },
-          {
-            "add": 15,
-            "label": "Silvertongued Poet: +15"
           },
           {
             "add": 25,
@@ -11805,7 +11475,7 @@
           },
           {
             "add": -30,
-            "label": "Order Member: -30"
+            "label": "Military Order Member: -30"
           },
           {
             "add": -10,
@@ -12097,6 +11767,133 @@
       "agentGroupsOwner": [],
       "agentGroupsTarget": [],
       "agentSlots": [],
+      "baseMaxSuccess": 100,
+      "category": "personal",
+      "categoryDefaulted": true,
+      "conditionalSecrecy": false,
+      "cooldown": null,
+      "counterClass": null,
+      "counterSecrecy": false,
+      "desc": "Find Adherent is a Personal Scheme that allows you to look for practitioners of a Faith with the purpose of starting a Study Rite Scheme. This scheme primarily relies on your Learning and Intrigue, but your Spymaster and Court Chaplain may help out. Having a lenient Faith or being in the same Religious Family also helps consistently. As it is not a Hostile Scheme, it is not Secret and does not use Agents.",
+      "discoveryDesc": null,
+      "dlc": null,
+      "features": [],
+      "freezeWhenTargetTraveling": false,
+      "freezeWhenTraveling": false,
+      "gates": [
+        {
+          "anyOf": true,
+          "detail": "trait",
+          "name": "Theologian",
+          "negated": false,
+          "scope": null,
+          "stage": "start"
+        },
+        {
+          "anyOf": true,
+          "detail": "trait",
+          "name": "Mystic",
+          "negated": false,
+          "scope": null,
+          "stage": "start"
+        },
+        {
+          "anyOf": true,
+          "detail": "trait",
+          "name": "Lunatic",
+          "negated": false,
+          "scope": null,
+          "stage": "start"
+        },
+        {
+          "anyOf": true,
+          "detail": "trait",
+          "name": "Erudite",
+          "negated": false,
+          "scope": null,
+          "stage": "start"
+        },
+        {
+          "anyOf": true,
+          "detail": "trait",
+          "name": "Witch",
+          "negated": false,
+          "scope": null,
+          "stage": "start"
+        }
+      ],
+      "icon": "icon_scheme_study_faith",
+      "id": "find_follower_of_faith",
+      "isBasic": true,
+      "isSecret": false,
+      "maxBreaches": null,
+      "maxSecrecy": null,
+      "minSecrecy": null,
+      "minSuccess": 10,
+      "name": "Find Adherent",
+      "odds": null,
+      "phaseLengthDays": 30,
+      "phasesPerAgentCharge": null,
+      "secrecy": null,
+      "skill": "learning",
+      "skillName": "Learning",
+      "sourceFile": "find_follower_of_faith.txt",
+      "speedPerSkillPoint": -1,
+      "speedPerTargetSkillPoint": null,
+      "successChance": {
+        "base": 10,
+        "factors": [
+          {
+            "add": null,
+            "label": "Your Learning"
+          },
+          {
+            "add": null,
+            "label": "Your Intrigue"
+          },
+          {
+            "add": 100,
+            "label": "… is practiced in your realm: +100"
+          },
+          {
+            "add": 15,
+            "label": "Your Rite is Pluralist: +15"
+          },
+          {
+            "add": 15,
+            "label": "Your Rite accepts the practice of witchcraft: +15"
+          },
+          {
+            "add": 10,
+            "label": "Your Court welcomes all kinds of different Cultures: +10"
+          },
+          {
+            "add": 20,
+            "label": "Your Faith is in the same Religion as your target Faith: +20"
+          },
+          {
+            "add": 5,
+            "label": "Your Faith is in the same Religious Family as your target Faith: +5"
+          },
+          {
+            "add": -60,
+            "label": "… is not practiced any longer: -60"
+          },
+          {
+            "add": null,
+            "label": "Your Realm Priest is helping out"
+          }
+        ]
+      },
+      "successDesc": "You find an adherent of the targeted Faith",
+      "successGrowthPerSkillPoint": null,
+      "targetType": "faith",
+      "usesResistance": false
+    },
+    {
+      "agentGroupsOwner": [],
+      "agentGroupsTarget": [],
+      "agentSlots": [],
       "baseMaxSuccess": 95,
       "category": "personal",
       "categoryDefaulted": true,
@@ -12158,6 +11955,14 @@
           "negated": false,
           "scope": "Target",
           "stage": "ongoing"
+        },
+        {
+          "anyOf": false,
+          "detail": null,
+          "name": "Not imprisoned",
+          "negated": false,
+          "scope": "Target",
+          "stage": "ongoing"
         }
       ],
       "icon": "icon_scheme_learn_language",
@@ -12212,6 +12017,10 @@
           {
             "add": null,
             "label": "Your … Learning"
+          },
+          {
+            "add": 20,
+            "label": "Communal Identity: +20"
           },
           {
             "add": null,
@@ -12336,9 +12145,9 @@
         },
         {
           "anyOf": false,
-          "detail": "trait",
-          "name": "Incapable",
-          "negated": true,
+          "detail": null,
+          "name": "Not incapable",
+          "negated": false,
           "scope": null,
           "stage": "start"
         },
@@ -12352,9 +12161,9 @@
         },
         {
           "anyOf": false,
-          "detail": "trait",
-          "name": "Incapable",
-          "negated": true,
+          "detail": null,
+          "name": "Not incapable",
+          "negated": false,
           "scope": null,
           "stage": "ongoing"
         },
@@ -12495,6 +12304,169 @@
         ]
       },
       "successDesc": "You will become better at the topic of your choice",
+      "successGrowthPerSkillPoint": null,
+      "targetType": "character",
+      "usesResistance": false
+    },
+    {
+      "agentGroupsOwner": [],
+      "agentGroupsTarget": [],
+      "agentSlots": [],
+      "baseMaxSuccess": 95,
+      "category": "personal",
+      "categoryDefaulted": false,
+      "conditionalSecrecy": false,
+      "cooldown": null,
+      "counterClass": null,
+      "counterSecrecy": false,
+      "desc": "Religious Study is a Personal Scheme in which you attempt to gain Piety, Skill, and the Religious Scholar Trait.",
+      "discoveryDesc": null,
+      "dlc": "By God Alone",
+      "features": [],
+      "freezeWhenTargetTraveling": false,
+      "freezeWhenTraveling": true,
+      "gates": [
+        {
+          "anyOf": false,
+          "detail": null,
+          "name": "Age 12+",
+          "negated": false,
+          "scope": null,
+          "stage": "start"
+        },
+        {
+          "anyOf": false,
+          "detail": null,
+          "name": "Not imprisoned",
+          "negated": false,
+          "scope": null,
+          "stage": "start"
+        },
+        {
+          "anyOf": false,
+          "detail": null,
+          "name": "Not incapable",
+          "negated": false,
+          "scope": null,
+          "stage": "start"
+        },
+        {
+          "anyOf": false,
+          "detail": null,
+          "name": "Not imprisoned",
+          "negated": false,
+          "scope": null,
+          "stage": "ongoing"
+        },
+        {
+          "anyOf": false,
+          "detail": null,
+          "name": "Not incapable",
+          "negated": false,
+          "scope": null,
+          "stage": "ongoing"
+        }
+      ],
+      "icon": "icon_scheme_study_scriptures",
+      "id": "study_scripture",
+      "isBasic": true,
+      "isSecret": false,
+      "maxBreaches": null,
+      "maxSecrecy": null,
+      "minSecrecy": null,
+      "minSuccess": 5,
+      "name": "Religious Study",
+      "odds": {
+        "base": null,
+        "factors": [
+          {
+            "add": null,
+            "label": "My Learning"
+          },
+          {
+            "add": null,
+            "label": "min 0"
+          }
+        ]
+      },
+      "phaseLengthDays": 300,
+      "phasesPerAgentCharge": null,
+      "secrecy": null,
+      "skill": "learning",
+      "skillName": "Learning",
+      "sourceFile": "pam_study_scheme.txt",
+      "speedPerSkillPoint": -1,
+      "speedPerTargetSkillPoint": null,
+      "successChance": {
+        "base": 0,
+        "factors": [
+          {
+            "add": null,
+            "label": "My Learning"
+          },
+          {
+            "add": 15,
+            "label": "You embrace Pursuit of Knowledge: +15"
+          },
+          {
+            "add": 10,
+            "label": "You embrace Scholasticism: +10"
+          },
+          {
+            "add": 5,
+            "label": "… Ecclesiastical Estate Building: +5"
+          },
+          {
+            "add": 10,
+            "label": "… Ecclesiastical Estate Building: +10"
+          },
+          {
+            "add": 15,
+            "label": "… Ecclesiastical Estate Building: +15"
+          },
+          {
+            "add": 10,
+            "label": "You have Renewed Zeal: +10"
+          },
+          {
+            "add": null,
+            "label": "Your clerical superior's Learning"
+          },
+          {
+            "add": null,
+            "label": "Your Stress weighs upon your study"
+          },
+          {
+            "add": -10,
+            "label": "You are Lazy: -10"
+          },
+          {
+            "add": 10,
+            "label": "You are Diligent: +10"
+          },
+          {
+            "add": -10,
+            "label": "You are Impatient: -10"
+          },
+          {
+            "add": 10,
+            "label": "You are Stubborn: +10"
+          },
+          {
+            "add": 10,
+            "label": "You are Ambitious: +10"
+          },
+          {
+            "add": 10,
+            "label": "You are Zealous: +10"
+          },
+          {
+            "add": -10,
+            "label": "You are Cynical: -10"
+          }
+        ]
+      },
+      "successDesc": "You improve your skills, gain piety, or find an opportunity",
       "successGrowthPerSkillPoint": null,
       "targetType": "character",
       "usesResistance": false
@@ -12656,6 +12628,10 @@
           },
           {
             "add": null,
+            "label": "Romance and Seduce Scheme Success Chance: Success Chance +35%"
+          },
+          {
+            "add": null,
             "label": "min 0"
           }
         ]
@@ -12677,7 +12653,39 @@
           },
           {
             "add": null,
+            "label": "diplomacy scheme base chance"
+          },
+          {
+            "add": null,
             "label": "target's countermeasures (opportunistic class)"
+          },
+          {
+            "add": 35,
+            "label": "Romance and Seduce Scheme Success Chance: Success Chance +35%: +35"
+          },
+          {
+            "add": -50,
+            "label": "… cares deeply for … Faith: -50"
+          },
+          {
+            "add": -25,
+            "label": "… holds high clerical office: -25"
+          },
+          {
+            "add": -100,
+            "label": "… is Head of Faith: -100"
+          },
+          {
+            "add": -25,
+            "label": "… Rite holds Chaste a virtue: -25"
+          },
+          {
+            "add": 25,
+            "label": "… Rite holds Lustful a virtue: +25"
+          },
+          {
+            "add": -25,
+            "label": "… Rite forbids Clergy from Marrying: -25"
           },
           {
             "add": 20,
@@ -12808,10 +12816,6 @@
             "label": "You are Tribal, but … is not: -50"
           },
           {
-            "add": -50,
-            "label": "… is your Head of Faith: -50"
-          },
-          {
             "add": -25,
             "label": "Incest is taboo: -25"
           },
@@ -12844,12 +12848,12 @@
             "label": "From Traditions vs. Spouse: +30"
           },
           {
-            "add": null,
-            "label": "house feud sway scheme success"
+            "add": 30,
+            "label": "Romancing your spouse is significantly easier and bestows a major Fertility bonus: +30"
           },
           {
-            "add": 15,
-            "label": "Silvertongued Poet: +15"
+            "add": null,
+            "label": "house feud sway scheme success"
           }
         ]
       },
@@ -12909,7 +12913,7 @@
           "stage": "start"
         },
         {
-          "anyOf": true,
+          "anyOf": false,
           "detail": null,
           "name": "Attracted to the target",
           "negated": false,
@@ -13047,6 +13051,14 @@
           },
           {
             "add": null,
+            "label": "Romance and Seduce Scheme Success Chance: Success Chance +35%"
+          },
+          {
+            "add": null,
+            "label": "…"
+          },
+          {
+            "add": null,
             "label": "Claimed Possession by Lust Demons"
           },
           {
@@ -13085,6 +13097,34 @@
           {
             "add": null,
             "label": "target's countermeasures (opportunistic class)"
+          },
+          {
+            "add": 35,
+            "label": "Romance and Seduce Scheme Success Chance: Success Chance +35%: +35"
+          },
+          {
+            "add": -50,
+            "label": "… cares deeply for … Faith: -50"
+          },
+          {
+            "add": -25,
+            "label": "… holds high clerical office: -25"
+          },
+          {
+            "add": -100,
+            "label": "… is Head of Faith: -100"
+          },
+          {
+            "add": -25,
+            "label": "… Rite holds Chaste a virtue: -25"
+          },
+          {
+            "add": 25,
+            "label": "… Rite holds Lustful a virtue: +25"
+          },
+          {
+            "add": -25,
+            "label": "… Rite forbids Clergy from Marrying: -25"
           },
           {
             "add": 20,
@@ -13279,10 +13319,6 @@
             "label": "diarch scheming in liege's realm"
           },
           {
-            "add": -50,
-            "label": "… is your Head of Faith: -50"
-          },
-          {
             "add": -25,
             "label": "Incest is taboo: -25"
           },
@@ -13317,6 +13353,10 @@
           {
             "add": -50,
             "label": "situational"
+          },
+          {
+            "add": 25,
+            "label": "…: ++25"
           }
         ]
       },
@@ -13361,9 +13401,9 @@
         },
         {
           "anyOf": false,
-          "detail": "trait",
-          "name": "Incapable",
-          "negated": true,
+          "detail": null,
+          "name": "Not incapable",
+          "negated": false,
           "scope": null,
           "stage": "start"
         },
@@ -13377,9 +13417,9 @@
         },
         {
           "anyOf": false,
-          "detail": "trait",
-          "name": "Incapable",
-          "negated": true,
+          "detail": null,
+          "name": "Not incapable",
+          "negated": false,
           "scope": null,
           "stage": "ongoing"
         }
@@ -13496,6 +13536,217 @@
       "category": "personal",
       "categoryDefaulted": true,
       "conditionalSecrecy": false,
+      "cooldown": "12 months",
+      "counterClass": null,
+      "counterSecrecy": false,
+      "desc": "The Study Rite Scheme is a Personal Scheme where you try to learn more about the Rite of the Scheme Target.\n\nEach completed phase teaches you something. A successful phase grants Knowledge of the entire Rite in a single breakthrough. A less successful phase instead grants knowledge of only one prioritized Tenet or Doctrine. The Scheme automatically ends once nothing more can be learned. This Scheme relies principally on your Learning, and secondarily on Level of Devotion.\n\nIts Success Chance determines the likelihood of a phase ending in a successful breakthrough, and a Rite learned in full. On failure, you will still gain a smaller insight.",
+      "discoveryDesc": null,
+      "dlc": null,
+      "features": [],
+      "freezeWhenTargetTraveling": false,
+      "freezeWhenTraveling": false,
+      "gates": [
+        {
+          "anyOf": false,
+          "detail": null,
+          "name": "Age 16+",
+          "negated": false,
+          "scope": null,
+          "stage": "start"
+        },
+        {
+          "anyOf": false,
+          "detail": "condition",
+          "name": "You cannot study more than one Rite at once",
+          "negated": true,
+          "scope": null,
+          "stage": "start"
+        },
+        {
+          "anyOf": false,
+          "detail": null,
+          "name": "Not imprisoned",
+          "negated": false,
+          "scope": null,
+          "stage": "start"
+        },
+        {
+          "anyOf": false,
+          "detail": null,
+          "name": "County-tier title or higher",
+          "negated": false,
+          "scope": null,
+          "stage": "ongoing"
+        },
+        {
+          "anyOf": false,
+          "detail": null,
+          "name": "Not incapable",
+          "negated": false,
+          "scope": null,
+          "stage": "ongoing"
+        },
+        {
+          "anyOf": false,
+          "detail": null,
+          "name": "Within diplomatic range",
+          "negated": false,
+          "scope": "Target",
+          "stage": "ongoing"
+        },
+        {
+          "anyOf": false,
+          "detail": null,
+          "name": "Not imprisoned",
+          "negated": false,
+          "scope": "Target",
+          "stage": "ongoing"
+        }
+      ],
+      "icon": "icon_scheme_study_faith",
+      "id": "study_faith",
+      "isBasic": true,
+      "isSecret": false,
+      "maxBreaches": null,
+      "maxSecrecy": null,
+      "minSecrecy": null,
+      "minSuccess": 5,
+      "name": "Study Rite",
+      "odds": {
+        "base": null,
+        "factors": [
+          {
+            "add": null,
+            "label": "Your Learning"
+          },
+          {
+            "add": null,
+            "label": "Your Level of Devotion"
+          },
+          {
+            "add": null,
+            "label": "min 0"
+          }
+        ]
+      },
+      "phaseLengthDays": 365,
+      "phasesPerAgentCharge": null,
+      "secrecy": null,
+      "skill": "learning",
+      "skillName": "Learning",
+      "sourceFile": "study_faith_scheme.txt",
+      "speedPerSkillPoint": -0.1,
+      "speedPerTargetSkillPoint": null,
+      "successChance": {
+        "base": 0,
+        "factors": [
+          {
+            "add": null,
+            "label": "Your Learning"
+          },
+          {
+            "add": null,
+            "label": "Your Level of Devotion"
+          },
+          {
+            "add": 10,
+            "label": "Quick: +10"
+          },
+          {
+            "add": 20,
+            "label": "Intelligent: +20"
+          },
+          {
+            "add": 30,
+            "label": "Genius: +30"
+          },
+          {
+            "add": 5,
+            "label": "Ambitious: +5"
+          },
+          {
+            "add": 10,
+            "label": "Theologian: +10"
+          },
+          {
+            "add": 10,
+            "label": "Erudite: +10"
+          },
+          {
+            "add": 5,
+            "label": "witch: +5"
+          },
+          {
+            "add": 10,
+            "label": "Mystic: +10"
+          },
+          {
+            "add": 10,
+            "label": "Devoted: +10"
+          },
+          {
+            "add": null,
+            "label": "Religious Scholar"
+          },
+          {
+            "add": 10,
+            "label": "Open-Minded: +10"
+          },
+          {
+            "add": -15,
+            "label": "Different Language: -15"
+          },
+          {
+            "add": 30,
+            "label": "Close Bonds: +30"
+          },
+          {
+            "add": 30,
+            "label": "From Traditions vs. same house: +30"
+          },
+          {
+            "add": 15,
+            "label": "Adaptability: +15"
+          },
+          {
+            "add": 15,
+            "label": "Sinitic Syncretism: +15"
+          },
+          {
+            "add": 15,
+            "label": "Dharmic Syncretism: +15"
+          },
+          {
+            "add": 15,
+            "label": "Syncretic Folk Traditions: +15"
+          },
+          {
+            "add": 15,
+            "label": "Christian Syncretism: +15"
+          },
+          {
+            "add": 15,
+            "label": "Islamic Syncretism: +15"
+          },
+          {
+            "add": 15,
+            "label": "Jewish Syncretism: +15"
+          }
+        ]
+      },
+      "successDesc": "You learn about the the target Rite",
+      "successGrowthPerSkillPoint": null,
+      "targetType": "character",
+      "usesResistance": false
+    },
+    {
+      "agentGroupsOwner": [],
+      "agentGroupsTarget": [],
+      "agentSlots": [],
+      "baseMaxSuccess": 95,
+      "category": "personal",
+      "categoryDefaulted": true,
+      "conditionalSecrecy": false,
       "cooldown": null,
       "counterClass": null,
       "counterSecrecy": false,
@@ -13593,8 +13844,24 @@
             "label": "Your Diplomacy"
           },
           {
+            "add": null,
+            "label": "diplomacy scheme base chance"
+          },
+          {
             "add": 15,
             "label": "Your Faith has Harmonious Society: +15"
+          },
+          {
+            "add": 15,
+            "label": "Swaying Characters of another Faith is more likely to succeed: +15"
+          },
+          {
+            "add": 20,
+            "label": "Love Thy Neighbour: +20"
+          },
+          {
+            "add": -30,
+            "label": "… is Head of Faith: -30"
           },
           {
             "add": 5,
@@ -13694,19 +13961,15 @@
           },
           {
             "add": null,
-            "label": "Your Level of Devotion"
+            "label": "… Level of Devotion"
           },
           {
             "add": -50,
-            "label": "Your Level of Devotion: -50"
+            "label": "… Level of Devotion: -50"
           },
           {
             "add": null,
             "label": "diarch scheming in liege's realm"
-          },
-          {
-            "add": -50,
-            "label": "… is your Head of Faith: -50"
           },
           {
             "add": 50,
@@ -13715,10 +13978,6 @@
           {
             "add": null,
             "label": "house feud sway scheme success"
-          },
-          {
-            "add": 15,
-            "label": "Silvertongued Poet: +15"
           },
           {
             "add": 25,
@@ -13742,7 +14001,7 @@
       "categoryDefaulted": false,
       "conditionalSecrecy": false,
       "cooldown": null,
-      "counterClass": null,
+      "counterClass": "calculated",
       "counterSecrecy": true,
       "desc": "Prison can be a sobering, informative experience for malcontents and rivals, as well as a profitable or gratifying one for their jailer. Enough to make it worth the risk of paying a third party to arrange a visit, at least.Contract Schemes involve performing various duties for the landed Rulers of the world in exchange for payment. Completing a Contract for a Ruler automatically adds them to your Roll of Patrons.",
       "discoveryDesc": "You are not exposed for the Crime of kidnapping",
@@ -13791,6 +14050,18 @@
           {
             "add": null,
             "label": "laamp contract scheme basic success chance"
+          },
+          {
+            "add": null,
+            "label": "standard hostile-scheme factors"
+          },
+          {
+            "add": null,
+            "label": "dangerous hostile scheme base chance"
+          },
+          {
+            "add": null,
+            "label": "target's countermeasures (calculated class)"
           }
         ]
       },
@@ -14327,7 +14598,8 @@
       "agentGroupsOwner": [
         "courtiers",
         "guests",
-        "scripted_relations"
+        "scripted_relations",
+        "puppets"
       ],
       "agentGroupsTarget": [],
       "agentSlots": [
@@ -14401,7 +14673,7 @@
           },
           {
             "add": null,
-            "label": "odds skill contribution learning target is title"
+            "label": "your Learning"
           },
           {
             "add": null,
@@ -14449,6 +14721,10 @@
             "label": "hostile scheme title base chance"
           },
           {
+            "add": null,
+            "label": "apply indirect scheme title success chance adjustments"
+          },
+          {
             "add": -50,
             "label": "… is your Spiritual Head of Faith: -50"
           },
@@ -14486,15 +14762,7 @@
           },
           {
             "add": null,
-            "label": "Make House Head Request"
-          },
-          {
-            "add": -10,
-            "label": "Distracted from Political Schemes: -10"
-          },
-          {
-            "add": 15,
-            "label": "United Agents in Capital: +15"
+            "label": "political scheme title base chance"
           }
         ]
       },
@@ -15229,7 +15497,7 @@
       "categoryDefaulted": false,
       "conditionalSecrecy": false,
       "cooldown": null,
-      "counterClass": null,
+      "counterClass": "calculated",
       "counterSecrecy": true,
       "desc": "There are times when a Contractor needs someone dead, but either won't risk orchestrating it themselves or is too preoccupied with other matters. Fortunately, murder is easily outsourced to the right kind of people.Contract Schemes involve performing various duties for the landed Rulers of the world in exchange for payment. Completing a Contract for a Ruler automatically adds them to your Roll of Patrons.",
       "discoveryDesc": "You are not exposed for the Crime of murder",
@@ -15278,6 +15546,18 @@
           {
             "add": null,
             "label": "laamp contract scheme basic success chance"
+          },
+          {
+            "add": null,
+            "label": "standard hostile-scheme factors"
+          },
+          {
+            "add": null,
+            "label": "dangerous hostile scheme base chance"
+          },
+          {
+            "add": null,
+            "label": "target's countermeasures (calculated class)"
           }
         ]
       },

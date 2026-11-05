@@ -1092,6 +1092,13 @@
     "value": "1"
   },
   {
+    "comment": "Giving more personality traits than this to a character will cause the game to log an error.",
+    "file": "00_defines.txt",
+    "key": "INTENDED_MAX_PERSONALITY_TRAITS",
+    "ns": "NCharacter",
+    "value": "6"
+  },
+  {
     "comment": "At this age characters start getting the chance to lose health each year",
     "file": "00_defines.txt",
     "key": "LOWER_HEALTH_START_AGE",
@@ -1729,13 +1736,6 @@
     "value": "5"
   },
   {
-    "comment": "opinion modifiers will start to decay/grow after this many days",
-    "file": "00_defines.txt",
-    "key": "CONVERGENCE_DELAY",
-    "ns": "NCharacterOpinion",
-    "value": "31"
-  },
-  {
     "comment": null,
     "file": "00_defines.txt",
     "key": "MAX_OPINION",
@@ -1858,6 +1858,13 @@
     "comment": null,
     "file": "00_defines.txt",
     "key": "PIOUS_MAGNIFICENCE",
+    "ns": "NCharacterOpinion",
+    "value": "{ -5 0 3 5 10 15 20 25 35 }"
+  },
+  {
+    "comment": "secular opinion bonus towards clergy in theocratic clergy faiths",
+    "file": "00_defines.txt",
+    "key": "PIOUS_CLERGY",
     "ns": "NCharacterOpinion",
     "value": "{ -5 0 3 5 10 15 20 25 35 }"
   },
@@ -3297,6 +3304,13 @@
     "value": "50"
   },
   {
+    "comment": "Virtues and sins are taken from core and approved tenets. only keep this number, giving priority to higher weights",
+    "file": "00_defines.txt",
+    "key": "MAX_VIRTUES_SINS",
+    "ns": "NFaith",
+    "value": "7"
+  },
+  {
     "comment": "Default fervor",
     "file": "00_defines.txt",
     "key": "BASE_FERVOR",
@@ -3315,35 +3329,133 @@
     "file": "00_defines.txt",
     "key": "YEARLY_FERVOR_GROWTH",
     "ns": "NFaith",
-    "value": "3.5"
-  },
-  {
-    "comment": "Adjusts the size modifier for monthly fervor gain for a faith according to the following formula: 1/squareroot(max(define_value, faith_size)/define_value) where define value is the value of MINIMUM_FAITH_SIZE_FERVOR_MODIFIER and faith_size is the current amount of provinces that follows the faith.",
-    "file": "00_defines.txt",
-    "key": "MINIMUM_FAITH_SIZE_FERVOR_MODIFIER",
-    "ns": "NFaith",
-    "value": "10"
+    "value": "0.5"
   },
   {
     "comment": "After how many years do fervor changelog entries get deleted?",
     "file": "00_defines.txt",
     "key": "FERVOR_CHANGELOG_DURATION",
     "ns": "NFaith",
-    "value": "10"
+    "value": "1"
+  },
+  {
+    "comment": null,
+    "file": "00_defines.txt",
+    "key": "MAX_FAITH_SIZE_PER_RITE",
+    "ns": "NFaith",
+    "value": "100"
+  },
+  {
+    "comment": null,
+    "file": "00_defines.txt",
+    "key": "LOW_FERVOR_THREASHOLD",
+    "ns": "NFaith",
+    "value": "40"
+  },
+  {
+    "comment": null,
+    "file": "00_defines.txt",
+    "key": "HERESY_FERVOR_DEPLETION_MULTIPLIER",
+    "ns": "NFaith",
+    "value": "1"
+  },
+  {
+    "comment": null,
+    "file": "00_defines.txt",
+    "key": "FREE_HERETICAL_RITES_BEFORE_DEPLETION",
+    "ns": "NFaith",
+    "value": "0"
+  },
+  {
+    "comment": null,
+    "file": "00_defines.txt",
+    "key": "OVER_NEEDED_RITES_FERVOR_LOSS_PROTECTION_MULT",
+    "ns": "NFaith",
+    "value": "0.5"
+  },
+  {
+    "comment": null,
+    "file": "00_defines.txt",
+    "key": "MAX_FERVOR_LOSS_PER_DIVERGENT_RITE",
+    "ns": "NFaith",
+    "value": "0.9"
+  },
+  {
+    "comment": null,
+    "file": "00_defines.txt",
+    "key": "MAX_RELICS_FROM_SAINT",
+    "ns": "NFaith",
+    "value": "4"
   },
   {
     "comment": "How much cheaper does creating a faith get per fervor below 100%? 1 means 1% per point",
     "file": "00_defines.txt",
-    "key": "FAITH_CREATION_FERVOR_DISCOUNT_PER_MISSING_FERVOR",
-    "ns": "NFaith",
+    "key": "RITE_CREATION_FERVOR_DISCOUNT_PER_MISSING_FERVOR",
+    "ns": "NRite",
     "value": "1"
   },
   {
     "comment": "What percentage does the discount cap out at? With these numbers, 0-50 fervor means a 50% discount. Above 50 means between 0% and 50% discount",
     "file": "00_defines.txt",
-    "key": "FAITH_CREATION_FERVOR_DISCOUNT_MAX",
-    "ns": "NFaith",
+    "key": "RITE_CREATION_FERVOR_DISCOUNT_MAX",
+    "ns": "NRite",
     "value": "50"
+  },
+  {
+    "comment": "when creating a Rite, divergence values at or over this threshold will result in a Faith being created instead of a Rite",
+    "file": "00_defines.txt",
+    "key": "RITE_CREATION_DIVERGENCE_FAITH_THRESHOLD",
+    "ns": "NRite",
+    "value": "100"
+  },
+  {
+    "comment": "Fixed cost how much piety it costs to branch off a Faith with new Rite",
+    "file": "00_defines.txt",
+    "key": "RITE_CREATION_PIETY_COST",
+    "ns": "NRite",
+    "value": "1.0"
+  },
+  {
+    "comment": "Max characters of a Rite/Faith description written in the creation window. Auto-generated descriptions add tenet sentences until this is reached",
+    "file": "00_defines.txt",
+    "key": "RITE_CREATION_DESCRIPTION_MAX_LENGTH",
+    "ns": "NRite",
+    "value": "400"
+  },
+  {
+    "comment": "Divergence above which a Rite is considered heretical",
+    "file": "00_defines.txt",
+    "key": "RITE_DIVERGENCE_HERETICAL_THRESHOLD",
+    "ns": "NRite",
+    "value": "65"
+  },
+  {
+    "comment": "Divergence below that will lower faith hostility by 1 level",
+    "file": "00_defines.txt",
+    "key": "RITE_DIVERGENCE_HOSTILITY_THRESHOLD",
+    "ns": "NRite",
+    "value": "1"
+  },
+  {
+    "comment": "rites below this divergence will not add to the yearly fervor decrease",
+    "file": "00_defines.txt",
+    "key": "RITE_DIVERGENCE_GRACE_THRESHOLD",
+    "ns": "NRite",
+    "value": "0"
+  },
+  {
+    "comment": null,
+    "file": "00_defines.txt",
+    "key": "TENET_STATUS_DIVERGENCE",
+    "ns": "NRite",
+    "value": "{ 15 15 30 5 -5 }"
+  },
+  {
+    "comment": null,
+    "file": "00_defines.txt",
+    "key": "RITE_COLOR_DEVIATION",
+    "ns": "NRite",
+    "value": "{ 0.1 0.6 }"
   },
   {
     "comment": "For faiths with a doctrine with piety_from_long_peace, how long do they need to be at peace (in days)",
@@ -3374,7 +3486,7 @@
     "value": "{…}"
   },
   {
-    "comment": "Localization for each hostility level. See _doctrines.info for more info",
+    "comment": "Localization for each hostility level. See _doctrine_types.info for more info",
     "file": "00_defines.txt",
     "key": "HOSTILITY_LEVEL_NAMES",
     "ns": "NReligion",
@@ -3449,6 +3561,139 @@
     "key": "FAITH_COLOR_DEVIATION",
     "ns": "NReligion",
     "value": "{ 0.25 0.35 }"
+  },
+  {
+    "comment": null,
+    "file": "00_defines.txt",
+    "key": "MIN_SPIRITUAL_FULFILLMENT",
+    "ns": "NReligion",
+    "value": "-100"
+  },
+  {
+    "comment": null,
+    "file": "00_defines.txt",
+    "key": "MAX_SPIRITUAL_FULFILLMENT",
+    "ns": "NReligion",
+    "value": "100"
+  },
+  {
+    "comment": null,
+    "file": "00_defines.txt",
+    "key": "SPIRITUAL_FULFILLMENT_MULT_PERSONAL_TENET",
+    "ns": "NReligion",
+    "value": "2"
+  },
+  {
+    "comment": null,
+    "file": "00_defines.txt",
+    "key": "SPIRITUAL_FULFILLMENT_MULT_CORE_TENET",
+    "ns": "NReligion",
+    "value": "2"
+  },
+  {
+    "comment": null,
+    "file": "00_defines.txt",
+    "key": "SPIRITUAL_FULFILLMENT_MULT_PERMITTED_TENET",
+    "ns": "NReligion",
+    "value": "0.5"
+  },
+  {
+    "comment": null,
+    "file": "00_defines.txt",
+    "key": "SPIRITUAL_FULFILLMENT_MULT_RELIGION_TRAIT",
+    "ns": "NReligion",
+    "value": "1"
+  },
+  {
+    "comment": null,
+    "file": "00_defines.txt",
+    "key": "BASE_PERSONAL_TENETS_CAP",
+    "ns": "NReligion",
+    "value": "1"
+  },
+  {
+    "comment": null,
+    "file": "00_defines.txt",
+    "key": "PERSONAL_TENET_CHANGE_COOLDOWN_DAYS",
+    "ns": "NReligion",
+    "value": "1095"
+  },
+  {
+    "comment": null,
+    "file": "00_defines.txt",
+    "key": "FAITH_CORE_TENETS_CAP",
+    "ns": "NReligion",
+    "value": "3"
+  },
+  {
+    "comment": null,
+    "file": "00_defines.txt",
+    "key": "SPIRITUAL_FULFILLMENT_FOR_STRESS_DIVIDE_FACTOR",
+    "ns": "NReligion",
+    "value": "100"
+  },
+  {
+    "comment": null,
+    "file": "00_defines.txt",
+    "key": "MIN_FULFILLMENT_CHANGE_FOR_EFFECT",
+    "ns": "NReligion",
+    "value": "5"
+  },
+  {
+    "comment": null,
+    "file": "00_defines.txt",
+    "key": "MONTHLY_RITE_CONVERSION_PROCESS_PER_NEIGHBORING_COUNTY",
+    "ns": "NReligion",
+    "value": "2"
+  },
+  {
+    "comment": null,
+    "file": "00_defines.txt",
+    "key": "REQUIRE_SAME_CHAPLAIN_RITE_FOR_REGION_CONVERSION",
+    "ns": "NReligion",
+    "value": "no"
+  },
+  {
+    "comment": null,
+    "file": "00_defines.txt",
+    "key": "FAITH_EMINENT_HOLY_SITES_MAX_DEFAULT",
+    "ns": "NReligion",
+    "value": "3"
+  },
+  {
+    "comment": null,
+    "file": "00_defines.txt",
+    "key": "FAITH_HOLY_SITES_MAX_DEFAULT",
+    "ns": "NReligion",
+    "value": "9"
+  },
+  {
+    "comment": null,
+    "file": "00_defines.txt",
+    "key": "FAITH_EMINENT_HOLY_SITES_MIN_DEFAULT",
+    "ns": "NReligion",
+    "value": "1"
+  },
+  {
+    "comment": null,
+    "file": "00_defines.txt",
+    "key": "FAITH_HOLY_SITES_MIN_DEFAULT",
+    "ns": "NReligion",
+    "value": "1"
+  },
+  {
+    "comment": null,
+    "file": "00_defines.txt",
+    "key": "CREATE_HOLY_SITE_RARITY_REQUIRED",
+    "ns": "NReligion",
+    "value": "3"
+  },
+  {
+    "comment": null,
+    "file": "00_defines.txt",
+    "key": "MAX_HOLY_SITE_RARITY_TOTAL",
+    "ns": "NReligion",
+    "value": "12"
   },
   {
     "comment": null,
@@ -5093,7 +5338,7 @@
     "file": "00_defines.txt",
     "key": "PATRON_MIN_TIER",
     "ns": "NHolyOrder",
-    "value": "4"
+    "value": "3"
   },
   {
     "comment": "The piety cost of the levy regiment part of holy orders, per 100 soldiers for better precision",
@@ -5612,6 +5857,20 @@
     "key": "MAX_AGE",
     "ns": "NPortrait",
     "value": "100.0"
+  },
+  {
+    "comment": "A dead character who died older than this is rendered at DEAD_PORTRAIT_APPARENT_AGE instead of their age at death (their displayed age at death is unaffected)",
+    "file": "00_defines.txt",
+    "key": "DEAD_PORTRAIT_AGE_THRESHOLD",
+    "ns": "NPortrait",
+    "value": "30"
+  },
+  {
+    "comment": "The apparent age used for the portraits of dead characters who died older than DEAD_PORTRAIT_AGE_THRESHOLD",
+    "file": "00_defines.txt",
+    "key": "DEAD_PORTRAIT_APPARENT_AGE",
+    "ns": "NPortrait",
+    "value": "27"
   },
   {
     "comment": "The boy -> male portrait change happens at this age",
@@ -6135,6 +6394,13 @@
     "comment": "yearly decay, on display in court",
     "file": "00_defines.txt",
     "key": "ARTIFACT_DURABILITY_DECAY_DISPLAY",
+    "ns": "NInventory",
+    "value": "0.0"
+  },
+  {
+    "comment": "yearly decay, enshrined in a holy site (disabled in code too)",
+    "file": "00_defines.txt",
+    "key": "ARTIFACT_DURABILITY_DECAY_ENSHRINED",
     "ns": "NInventory",
     "value": "0.0"
   },
@@ -7021,6 +7287,27 @@
     "value": "30"
   },
   {
+    "comment": "Above this top-liege realm_size, AI appointment/candidacy processing is increasingly skipped per attempt (CPU scaledown for huge realms)",
+    "file": "00_defines.txt",
+    "key": "AI_APPOINTMENT_REALM_SIZE_SCALEDOWN_START",
+    "ns": "NAdministrative",
+    "value": "150"
+  },
+  {
+    "comment": "At/above this top-liege realm_size, AI appointment/candidacy processing is skipped at the maximum rate",
+    "file": "00_defines.txt",
+    "key": "AI_APPOINTMENT_REALM_SIZE_SCALEDOWN_FULL",
+    "ns": "NAdministrative",
+    "value": "600"
+  },
+  {
+    "comment": "Maximum chance (per 1000) to skip an AI appointment/candidacy attempt in the largest realms",
+    "file": "00_defines.txt",
+    "key": "AI_APPOINTMENT_MAX_SKIP_PERMILLE",
+    "ns": "NAdministrative",
+    "value": "900"
+  },
+  {
     "comment": "Base value used in the scripted cost for reassigning title troops",
     "file": "00_defines.txt",
     "key": "BASE_REASSIGN_COST",
@@ -7380,6 +7667,13 @@
   {
     "comment": null,
     "file": "ai/00_ai.txt",
+    "key": "MIN_RESERVED_GOLD_CLERICAL_REGION_HOLDER",
+    "ns": "NAI",
+    "value": "0"
+  },
+  {
+    "comment": null,
+    "file": "ai/00_ai.txt",
     "key": "MIN_RESERVED_GOLD_SPIRITUAL_HEAD_OF_FAITH",
     "ns": "NAI",
     "value": "750"
@@ -7390,6 +7684,27 @@
     "key": "MIN_RESERVED_GOLD_HOLY_ORDER",
     "ns": "NAI",
     "value": "500"
+  },
+  {
+    "comment": null,
+    "file": "ai/00_ai.txt",
+    "key": "MIN_RESERVED_TREASURY_CLERICAL_REGION_HOLDER",
+    "ns": "NAI",
+    "value": "0"
+  },
+  {
+    "comment": null,
+    "file": "ai/00_ai.txt",
+    "key": "MIN_RESERVED_TREASURY_SPIRITUAL_HEAD_OF_FAITH",
+    "ns": "NAI",
+    "value": "750"
+  },
+  {
+    "comment": null,
+    "file": "ai/00_ai.txt",
+    "key": "MIN_RESERVED_TREASURY_HOLY_ORDER",
+    "ns": "NAI",
+    "value": "1500"
   },
   {
     "comment": null,
@@ -9109,6 +9424,13 @@
   {
     "comment": null,
     "file": "ai/00_ai.txt",
+    "key": "GATHERING_PROVINCE_RECOMPUTE_DAYS_FOR_GREAT_HOLY_WAR",
+    "ns": "NAI",
+    "value": "7"
+  },
+  {
+    "comment": null,
+    "file": "ai/00_ai.txt",
     "key": "MAX_STAGING_DAYS_FOR_GREAT_HOLY_WAR",
     "ns": "NAI",
     "value": "300"
@@ -9119,6 +9441,13 @@
     "key": "MIN_POWER_ARRIVED_TO_STOP_STAGING_FOR_GREAT_HOLY_WAR",
     "ns": "NAI",
     "value": "0.9"
+  },
+  {
+    "comment": null,
+    "file": "ai/00_ai.txt",
+    "key": "MIN_YEARS_BETWEEN_RITE_CHANGE",
+    "ns": "NAI",
+    "value": "5"
   },
   {
     "comment": null,
@@ -9415,6 +9744,20 @@
     "value": "event:/SFX/UI/Generic/sfx_ui_generic_select"
   },
   {
+    "comment": null,
+    "file": "audio/00_audio.txt",
+    "key": "ARTIFACT",
+    "ns": "NTextLinkAudio",
+    "value": "event:/SFX/UI/Generic/sfx_ui_generic_select"
+  },
+  {
+    "comment": null,
+    "file": "audio/00_audio.txt",
+    "key": "HOLY_SITE",
+    "ns": "NTextLinkAudio",
+    "value": "event:/SFX/UI/Generic/sfx_ui_generic_select"
+  },
+  {
     "comment": "Those buses will have all their events stopped when leaving the map (to main menu, loading a save...)",
     "file": "audio/00_audio.txt",
     "key": "BUSES_TO_STOP_WHEN_NOT_IN_GAME",
@@ -9651,6 +9994,13 @@
     "key": "NULL_MESH",
     "ns": "NJominiGraphics",
     "value": "test_object_mesh"
+  },
+  {
+    "comment": null,
+    "file": "graphic/00_graphics.txt",
+    "key": "ILLUSTRATION_STREAM_PATHS",
+    "ns": "NJominiGraphics",
+    "value": "{ \"/illustrations/\" \"icons/achievements/\" \"icons/artifact/\" \"icons/culture_tradition/\" \"gfx/portraits/environments/\" \"/icons/culture_pillars/\" \"/icons/powerful_family_bonus/\" \"/icons/tutorial_\" \"gfx/portraits/portrait_glow\" \"gfx/portraits/portrait_editor_mask\" \"gfx/portraits/portrait_prison_\" \"gfx/portraits/portrait_rank\" \"gfx/portraits/portrait_main_menu_shadow\" }"
   },
   {
     "comment": "higher means softer shadows and more intense light",
@@ -10892,6 +11242,69 @@
     "value": "{ 1.0 1.0 }"
   },
   {
+    "comment": null,
+    "file": "graphic/00_graphics.txt",
+    "key": "OVERRIDE_DYNASTY_COA_FRAME_NAME",
+    "ns": "NCoatOfArms",
+    "value": ""
+  },
+  {
+    "comment": null,
+    "file": "graphic/00_graphics.txt",
+    "key": "OVERRIDE_DYNASTY_COA_FRAME_OFFSET",
+    "ns": "NCoatOfArms",
+    "value": "{ 0.0 0.0 }"
+  },
+  {
+    "comment": null,
+    "file": "graphic/00_graphics.txt",
+    "key": "OVERRIDE_DYNASTY_COA_FRAME_SCALE",
+    "ns": "NCoatOfArms",
+    "value": "{ 1.0 1.0 }"
+  },
+  {
+    "comment": null,
+    "file": "graphic/00_graphics.txt",
+    "key": "OVERRIDE_HOUSE_COA_FRAME_NAME",
+    "ns": "NCoatOfArms",
+    "value": ""
+  },
+  {
+    "comment": null,
+    "file": "graphic/00_graphics.txt",
+    "key": "OVERRIDE_HOUSE_COA_FRAME_OFFSET",
+    "ns": "NCoatOfArms",
+    "value": "{ 0.0 0.0 }"
+  },
+  {
+    "comment": null,
+    "file": "graphic/00_graphics.txt",
+    "key": "OVERRIDE_HOUSE_COA_FRAME_SCALE",
+    "ns": "NCoatOfArms",
+    "value": "{ 1.0 1.0 }"
+  },
+  {
+    "comment": null,
+    "file": "graphic/00_graphics.txt",
+    "key": "OVERRIDE_REALM_MASK_ENABLED",
+    "ns": "NCoatOfArms",
+    "value": "no"
+  },
+  {
+    "comment": null,
+    "file": "graphic/00_graphics.txt",
+    "key": "OVERRIDE_REALM_MASK_OFFSET",
+    "ns": "NCoatOfArms",
+    "value": "{ 0.0 0.0 }"
+  },
+  {
+    "comment": null,
+    "file": "graphic/00_graphics.txt",
+    "key": "OVERRIDE_REALM_MASK_SCALE",
+    "ns": "NCoatOfArms",
+    "value": "{ 1.0 1.0 }"
+  },
+  {
     "comment": "The maximal distance the unit will move towards the province borders before actually changing the location",
     "file": "graphic/00_graphics.txt",
     "key": "UNIT_MOVEMENT_MAX_BORDER_DISTANCE",
@@ -11767,6 +12180,27 @@
     "value": "{ 0.0 1.0 1.0 1 }"
   },
   {
+    "comment": "The zoom level (more zoomed in) to automatically show Rites in the Faith map mode of the selected faith",
+    "file": "graphic/00_graphics.txt",
+    "key": "FAITH_SHOW_RITE_ZOOM_STEP",
+    "ns": "NMapModes",
+    "value": "27"
+  },
+  {
+    "comment": "Which province effect to use for heretical rites on the map",
+    "file": "graphic/00_graphics.txt",
+    "key": "RITE_DIVERGENCE_MAP_PROVINCE_EFFECT",
+    "ns": "NMapModes",
+    "value": "divergent_rites"
+  },
+  {
+    "comment": "Which province effect to use for heretical rites on the map",
+    "file": "graphic/00_graphics.txt",
+    "key": "RITE_DIVERGENCE_MAP_PROVINCE_EFFECT_FLAT_MAP",
+    "ns": "NMapModes",
+    "value": "divergent_rites"
+  },
+  {
     "comment": null,
     "file": "graphic/00_graphics.txt",
     "key": "DANGER_TYPE_COLOR_DEFAULT",
@@ -12399,6 +12833,34 @@
   {
     "comment": null,
     "file": "graphic/00_graphics.txt",
+    "key": "RITE_CAPITALS_VISIBLE_ZOOM_STEPS",
+    "ns": "NATURAL_DISASTERS_VISIBLE_ZOOM_STEPS",
+    "value": "{ 0 25 }"
+  },
+  {
+    "comment": null,
+    "file": "graphic/00_graphics.txt",
+    "key": "CLERICAL_REGIONS_ELECTORS_VISIBLE_ZOOM_STEPS",
+    "ns": "NATURAL_DISASTERS_VISIBLE_ZOOM_STEPS",
+    "value": "{ 0 25 }"
+  },
+  {
+    "comment": null,
+    "file": "graphic/00_graphics.txt",
+    "key": "CLERICAL_REGION_CONVERSION_PROGRESS_VISIBLE_ZOOM_STEPS",
+    "ns": "NATURAL_DISASTERS_VISIBLE_ZOOM_STEPS",
+    "value": "{ 0 21 }"
+  },
+  {
+    "comment": null,
+    "file": "graphic/00_graphics.txt",
+    "key": "RELIGIOUS_HEADS_VISIBLE_ZOOM_STEPS",
+    "ns": "NATURAL_DISASTERS_VISIBLE_ZOOM_STEPS",
+    "value": "{ 0 27 }"
+  },
+  {
+    "comment": null,
+    "file": "graphic/00_graphics.txt",
     "key": "DETAILED_RAID_VISIBLE_ZOOM_STEPS",
     "ns": "NATURAL_DISASTERS_VISIBLE_ZOOM_STEPS",
     "value": "{ 0 16 }"
@@ -12506,7 +12968,7 @@
     "file": "graphic/00_graphics.txt",
     "key": "CHARACTER_INTERACTION_CATEGORY_ICON_PATH",
     "ns": "NGameIcons",
-    "value": "gfx/interface/icons/character_interaction_category"
+    "value": "gfx/interface/icons/character_interactions"
   },
   {
     "comment": null,
@@ -12591,6 +13053,20 @@
     "key": "DOCTRINE_GROUP_TYPE_ICON_PATH",
     "ns": "NGameIcons",
     "value": "gfx/interface/icons/faith_doctrine_groups"
+  },
+  {
+    "comment": null,
+    "file": "graphic/00_graphics.txt",
+    "key": "DYNAMIC_RITE_ICON_PATH",
+    "ns": "NGameIcons",
+    "value": "gfx/interface/icons/faith"
+  },
+  {
+    "comment": null,
+    "file": "graphic/00_graphics.txt",
+    "key": "TENET_TYPE_ICON_PATH",
+    "ns": "NGameIcons",
+    "value": "gfx/interface/icons/faith_tenets"
   },
   {
     "comment": null,
@@ -12903,9 +13379,9 @@
   {
     "comment": null,
     "file": "graphic/00_graphics.txt",
-    "key": "FAITH_DOCTRINE_BACKGROUND_PATH",
+    "key": "TENET_BACKGROUND_PATH",
     "ns": "NGameIcons",
-    "value": "gfx/interface/icons/faith_doctrines"
+    "value": "gfx/interface/icons/faith_tenets"
   },
   {
     "comment": null,
@@ -13031,14 +13507,14 @@
     "file": "graphic/00_graphics.txt",
     "key": "TRAIT_OVERLAY_VIRTUE",
     "ns": "NGameIcons",
-    "value": "gfx/interface/icons/traits/virtue_big.dds"
+    "value": "gfx/interface/icons/traits/virtue.dds"
   },
   {
     "comment": null,
     "file": "graphic/00_graphics.txt",
     "key": "TRAIT_OVERLAY_SIN",
     "ns": "NGameIcons",
-    "value": "gfx/interface/icons/traits/sin_big.dds"
+    "value": "gfx/interface/icons/traits/sin.dds"
   },
   {
     "comment": "Assumed to be a .dds",
@@ -13375,6 +13851,34 @@
     "key": "GRAPHICAL_UNIT_TYPES_ACCOLADES_ILLUSTRATIONS_BIG_PATH",
     "ns": "NGameIcons",
     "value": "gfx/interface/illustrations/graphical_unit_types/big/accolades"
+  },
+  {
+    "comment": null,
+    "file": "graphic/00_graphics.txt",
+    "key": "SUCCESSION_RESULT_TYPE_ICON_PATH",
+    "ns": "NGameIcons",
+    "value": "gfx/interface/icons/succession_result_type"
+  },
+  {
+    "comment": null,
+    "file": "graphic/00_graphics.txt",
+    "key": "DYNAMIC_ICON_SIZE",
+    "ns": "NGameDynamicIcons",
+    "value": "{ 25 25 }"
+  },
+  {
+    "comment": null,
+    "file": "graphic/00_graphics.txt",
+    "key": "DYNAMIC_ICON_OFFSET",
+    "ns": "NGameDynamicIcons",
+    "value": "{ 0 6 }"
+  },
+  {
+    "comment": null,
+    "file": "graphic/00_graphics.txt",
+    "key": "DYNAMIC_ICON_FONT_SIZE",
+    "ns": "NGameDynamicIcons",
+    "value": "16"
   },
   {
     "comment": null,
@@ -14282,6 +14786,55 @@
   {
     "comment": null,
     "file": "graphic/00_graphics.txt",
+    "key": "TENET_GROUP_SORT_ORDER_KNOWN_BY_YOU",
+    "ns": "NRite",
+    "value": "0"
+  },
+  {
+    "comment": null,
+    "file": "graphic/00_graphics.txt",
+    "key": "TENET_GROUP_SORT_ORDER_CORE",
+    "ns": "NRite",
+    "value": "1"
+  },
+  {
+    "comment": null,
+    "file": "graphic/00_graphics.txt",
+    "key": "TENET_GROUP_SORT_ORDER_PERMITTED",
+    "ns": "NRite",
+    "value": "2"
+  },
+  {
+    "comment": null,
+    "file": "graphic/00_graphics.txt",
+    "key": "TENET_GROUP_SORT_ORDER_KNOWN",
+    "ns": "NRite",
+    "value": "3"
+  },
+  {
+    "comment": null,
+    "file": "graphic/00_graphics.txt",
+    "key": "TENET_GROUP_SORT_ORDER_PROHIBITED",
+    "ns": "NRite",
+    "value": "4"
+  },
+  {
+    "comment": null,
+    "file": "graphic/00_graphics.txt",
+    "key": "TENET_GROUP_SORT_ORDER_UNKNOWN",
+    "ns": "NRite",
+    "value": "5"
+  },
+  {
+    "comment": null,
+    "file": "graphic/00_graphics.txt",
+    "key": "TENET_GROUP_SORT_ORDER_INVALID",
+    "ns": "NRite",
+    "value": "6"
+  },
+  {
+    "comment": null,
+    "file": "graphic/00_graphics.txt",
     "key": "PLACE_ON_THE_LEFT_TRESHOLD",
     "ns": "NCharacterInteractionMenu",
     "value": "580.0"
@@ -14579,6 +15132,13 @@
     "key": "ACCESSORY_PREFIXES_BLOCK_3",
     "ns": "NJominiPortraits",
     "value": "{ \"female_legwear\", \"male_legwear\", \"f_legwear\", \"m_legwear\" }"
+  },
+  {
+    "comment": null,
+    "file": "jomini/portraits.txt",
+    "key": "PATTERN_MASK_MIN_SIZE_PER_QUALITY",
+    "ns": "NJominiPortraits",
+    "value": "{ 128 256 512 1024 }"
   },
   {
     "comment": null,

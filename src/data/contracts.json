@@ -158,7 +158,8 @@
           "enableTitleMaa": null,
           "factors": {},
           "flags": [
-            "admin_theme_balanced"
+            "admin_theme_balanced",
+            "province_balanced"
           ],
           "id": "admin_theme_balanced",
           "isDefault": true,
@@ -193,6 +194,7 @@
             "admin_influence_construction_bonus",
             "admin_ai_is_builder",
             "admin_theme_civilian",
+            "province_civilian",
             "obligation_high_taxes"
           ],
           "id": "admin_theme_civilian",
@@ -246,6 +248,7 @@
           "flags": [
             "admin_martial_obligation_bonus",
             "admin_theme_military",
+            "province_military",
             "obligation_high_levies"
           ],
           "id": "admin_theme_military",
@@ -306,6 +309,7 @@
             "admin_duchy_expansion_unlocked",
             "admin_ai_is_warlike",
             "admin_theme_frontier",
+            "province_military",
             "admin_theme_can_raid"
           ],
           "id": "admin_theme_frontier",
@@ -370,6 +374,7 @@
             "admin_theme_imperial",
             "admin_prestige_obligation_bonus",
             "admin_cannot_revoke_titles_without_cause",
+            "province_civilian",
             "obligation_high_taxes"
           ],
           "id": "admin_theme_imperial",
@@ -414,7 +419,8 @@
           "flags": [
             "admin_naval_duchy_expansion_unlocked",
             "admin_tradeport_obligation_bonus",
-            "admin_theme_naval"
+            "admin_theme_naval",
+            "province_military"
           ],
           "id": "admin_theme_naval",
           "isDefault": false,
@@ -802,7 +808,8 @@
           "factors": {},
           "flags": [
             "celestial_civil_appointment",
-            "celestial_province_standard"
+            "celestial_province_standard",
+            "province_civilian"
           ],
           "id": "celestial_province_standard",
           "isDefault": true,
@@ -831,6 +838,7 @@
             "celestial_civil_appointment",
             "admin_ai_is_builder",
             "celestial_province_industrial",
+            "province_civilian",
             "obligation_high_taxes"
           ],
           "id": "celestial_province_industrial",
@@ -879,6 +887,7 @@
           "flags": [
             "celestial_civil_appointment",
             "celestial_province_metropolitan",
+            "province_civilian",
             "obligation_high_levies"
           ],
           "id": "celestial_province_metropolitan",
@@ -927,6 +936,7 @@
           "flags": [
             "celestial_province_military",
             "celestial_military_appointment",
+            "province_military",
             "obligation_high_levies"
           ],
           "id": "celestial_province_military",
@@ -991,6 +1001,7 @@
             "admin_ai_is_warlike",
             "celestial_province_protectorate",
             "celestial_military_appointment",
+            "province_military",
             "obligation_high_levies"
           ],
           "id": "celestial_province_protectorate",
@@ -2019,6 +2030,7 @@
       "groups": [
         "feudal_vassal",
         "clan_vassal",
+        "nomad_vassal",
         "japan_feudal_vassal"
       ],
       "id": "council_rights",
@@ -3246,7 +3258,8 @@
           "enableTitleMaa": false,
           "factors": {},
           "flags": [
-            "japan_administrative_province_standard"
+            "japan_administrative_province_standard",
+            "province_civilian"
           ],
           "id": "japan_administrative_province_standard",
           "isDefault": true,
@@ -3273,6 +3286,7 @@
           "flags": [
             "admin_ai_is_builder",
             "japan_administrative_province_trade",
+            "province_civilian",
             "obligation_high_taxes"
           ],
           "id": "japan_administrative_province_trade",
@@ -3316,6 +3330,7 @@
           "flags": [
             "japan_administrative_province_military",
             "japan_administrative_military_appointment",
+            "province_military",
             "obligation_high_levies"
           ],
           "id": "japan_administrative_province_military",
@@ -3564,7 +3579,10 @@
       "displayMode": "checkbox",
       "dlc": null,
       "groups": [
-        "nomad_vassal"
+        "feudal_vassal",
+        "clan_vassal",
+        "nomad_vassal",
+        "japan_feudal_vassal"
       ],
       "id": "kurultai_rights",
       "levels": [
@@ -4295,7 +4313,8 @@
           "factors": {},
           "flags": [
             "meritocratic_province_standard",
-            "meritocratic_civil_appointment"
+            "meritocratic_civil_appointment",
+            "province_civilian"
           ],
           "id": "meritocratic_province_standard",
           "isDefault": true,
@@ -4329,6 +4348,7 @@
             "admin_ai_is_builder",
             "meritocratic_province_industrial",
             "meritocratic_civil_appointment",
+            "province_civilian",
             "obligation_high_taxes"
           ],
           "id": "meritocratic_province_industrial",
@@ -4377,6 +4397,7 @@
           "flags": [
             "meritocratic_province_military",
             "meritocratic_military_appointment",
+            "province_military",
             "obligation_high_levies"
           ],
           "id": "meritocratic_province_military",
@@ -4476,7 +4497,7 @@
           "minimums": {},
           "name": "Modest Salary",
           "parent": "salary_very_low",
-          "score": 1,
+          "score": -1,
           "shares": {},
           "shortName": "Modest",
           "subjectModifiers": [
@@ -6240,6 +6261,7 @@
         "succession_rights",
         "war_declaration_rights",
         "council_rights",
+        "kurultai_rights",
         "title_revocation_rights",
         "jizya_special_rights"
       ],
@@ -6276,6 +6298,7 @@
         "religious_rights",
         "war_declaration_rights",
         "council_rights",
+        "kurultai_rights",
         "title_revocation_rights",
         "marriage_favor_rights"
       ],
@@ -6312,6 +6335,7 @@
         "nomad_government_herd",
         "nomad_government_taxes",
         "liege_war_participation_obligation",
+        "council_rights",
         "kurultai_rights",
         "war_declaration_rights"
       ],
@@ -6515,6 +6539,7 @@
         "succession_rights",
         "war_declaration_rights",
         "council_rights",
+        "kurultai_rights",
         "title_revocation_rights",
         "jizya_special_rights"
       ],

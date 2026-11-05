@@ -75,7 +75,7 @@ hover, ruling). Six skill colors (`--sk-*`) are the only other hues.
   `game/gfx/interface/icons/<category>/<key>.dds` → `public/img/<cat>/…webp`
   from the mirror (Pillow reads DDS directly).
 
-## Status (2026-09-11)
+## Status (2026-11-05, CK3 1.20.1.2 + By God Alone)
 
 **Live: https://alcaras.github.io/ck3ref/** — repo `alcaras/ck3ref`, Pages via
 Actions (CI compiles Astro only; data and art are committed).
@@ -284,3 +284,24 @@ Known gaps / next steps:
   carrying `easier_to_hybridize` / `harder_to_hybridize` (the target culture's
   parameter applies too), clamped 0-100. Cooldowns: 50y hybrid, 100y
   divergence, 50y per tradition change.
+- **1.20 (By God Alone) restructured religion — Religion → Faith → Rite.**
+  `religion_types/` (now a `religion_details` block), `faith_types/` (faiths
+  moved out of their religion; holy sites split into `eminent_holy_sites` and
+  `holy_sites`; optional `main_rite`), `rite_types/` (each names its parent
+  `faith =`). Effective doctrines: faith overrides religion per doctrine
+  group, rite overrides both; a faith with a scripted main Rite takes that
+  Rite's tenets and doctrines. A main Rite's default parent can be another
+  faith and be handed over in `history/faiths` (roman_rite: christian_faith
+  -> catholic at 1054.7.16). Doctrines name their own `doctrine_group_type` +
+  `index`; tenets are a separate database (`tenet_types/`, icons in
+  `icons/faith_tenets/`); the 3-tenet cap is define
+  `NReligion.FAITH_CORE_TENETS_CAP`. Cost limits use `rite_has_doctrine` /
+  `rite_has_tenet` / `rite_religion_tag`. Province and character history set
+  `rite =`, not `religion =`. Laws likewise split: groups in
+  `common/law_groups/`, laws carry `law_group_type` + `index`.
+- **Windows PC pipeline**: no `rsync`/`make`. Sync mirror ← Steam with the
+  robocopy lines of the mirror's `update-ck3ref.bat` (drop its `pause`), then
+  robocopy the `scripts/sync.sh` SUBTREES into `reference/` and compare file
+  counts; run the Makefile `data:` lines with `python` and `PYTHONUTF8=1`.
+  The committed lockfile lacks Rollup's Windows binary: `npm i --no-save
+  @rollup/rollup-win32-x64-msvc@<rollup version>`.

@@ -4,6 +4,14 @@ import data from '../data/artifacts.json';
 
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 const { types, templates, named, featureGroups } = data;
+const artSlots = (data as any).slots ?? [];
+const holyRelicConcept: string | null = (data as any).holyRelicConcept ?? null;
+const relicCount = templates.filter((t: any) => t.holyRelic).length;
+const SLOT_WHERE: Record<string, string> = {
+  inventory: 'Character inventory',
+  court: 'Royal court',
+  holy_site: 'Holy site',
+};
 
 const SLOT_LABEL: Record<string, string> = {
   helmet: 'Headgear',
@@ -98,6 +106,7 @@ const rarityLabel = (r: string) => r.charAt(0).toUpperCase() + r.slice(1);
                       <img class="row-icon" src={`${base}/img/artifacts/${a.icon}.webp`} alt="" width="26" height="26" loading="lazy" onerror="this.hidden=true" />
                       <span class="u-name" title={a.desc ?? undefined}>{a.name}</span>
                       {a.unique && <span class="chip chip--unique">unique</span>}
+                      {(tmpl as any)?.holyRelic && <a class="chip chip--relic" href={`#${tmpl!.id}`} title={`Holy relic for: ${(tmpl as any).holyRelic.join('; ')}`}>holy relic</a>}
                     </td>
                     <td><span class="subtle">{typeById.get(a.types[0])?.name ?? a.types[0]}</span></td>
                     <td>
@@ -140,8 +149,10 @@ const rarityLabel = (r: string) => r.charAt(0).toUpperCase() + r.slice(1);
       A template is the scripted rulebook an artifact is built on: who can equip it, who gets its
       full modifiers, and the fallback modifier everyone else gets instead. The real bonus set of a
       named artifact lives on the artifact itself (tables above); generated artifacts draw theirs
-      by rarity at creation.
+      by rarity at creation. {relicCount} templates define a holy-relic rule (the game's
+      <code>is_holy_relic</code>, checked against the faith it would be enshrined for).
     </p>
+    {holyRelicConcept && <blockquote class="concept">{holyRelicConcept}</blockquote>}
     <div class="tbl-scroll">
       <table class="ntbl">
         <thead>
@@ -150,6 +161,7 @@ const rarityLabel = (r: string) => r.charAt(0).toUpperCase() + r.slice(1);
             <th>Equip requires</th>
             <th>Full effect requires</th>
             <th>Fallback modifiers</th>
+            <th>Holy relic for</th>
             <th>Used by</th>
             <th>DLC</th>
           </tr>
@@ -158,7 +170,7 @@ const rarityLabel = (r: string) => r.charAt(0).toUpperCase() + r.slice(1);
           {templates.map((t) => (
             <tr
               id={t.id}
-              data-name={`${t.label} ${t.id} ${t.benefit.join(' ')} ${t.fallback.map((m) => m.text).join(' ')}`.toLowerCase()}
+              data-name={`${t.label} ${t.id} ${t.benefit.join(' ')} ${t.fallback.map((m) => m.text).join(' ')} ${((t as any).holyRelic ?? []).join(' ')}`.toLowerCase()}
               data-dlc={t.dlc ?? 'base'}
             >
               <td class="name">
@@ -186,6 +198,13 @@ const rarityLabel = (r: string) => r.charAt(0).toUpperCase() + r.slice(1);
                   {t.fallback.map((m) => <li class={m.polarity}>{m.text}</li>)}
                 </ul>
                 {!t.fallback.length && <span class="subtle">none</span>}
+              </td>
+              <td>
+                {(t as any).holyRelic ? (
+                  <span class="chips">{(t as any).holyRelic.map((c: string) => <span class="chip chip--req">{c}</span>)}</span>
+                ) : (
+                  <span class="subtle">—</span>
+                )}
               </td>
               <td>
                 {t.artifacts.length ? (
@@ -249,6 +268,49 @@ const rarityLabel = (r: string) => r.charAt(0).toUpperCase() + r.slice(1);
                   {t.optionalFeatures.map((g) => <a class="chip" href={`#fg_${g}`}>{g.replace(/_/g, ' ')}</a>)}
                 </span>
                 {!t.optionalFeatures.length && <span class="subtle">—</span>}
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section data-group="slots">
+    <h2 class="group-h" id="slots">
+      Slots
+      <span class="count">{artSlots.length}</span>
+    </h2>
+    <p class="note">
+      The individual equip slots: each accepts one slot type (or, where marked, any artifact type —
+      then only the template's equip rule and holy-site enshrine rule apply). Holy-site slots live in
+      a holy site's inventory rather than a character's; that is where holy relics are enshrined.
+    </p>
+    <div class="tbl-scroll">
+      <table class="ntbl">
+        <thead>
+          <tr>
+            <th>Slot</th>
+            <th>Accepts</th>
+            <th>Where</th>
+            <th>Available when</th>
+          </tr>
+        </thead>
+        <tbody>
+          {artSlots.map((sl: any) => (
+            <tr id={`slot_${sl.id}`} data-name={`${sl.id} ${sl.type ?? ''} ${sl.category ?? ''} ${sl.available.join(' ')}`.toLowerCase()}>
+              <td class="name"><span class="u-name mono">{sl.id}</span></td>
+              <td>{sl.anyType ? <span class="chip">any type or category</span> : (SLOT_LABEL[sl.type] ?? sl.type ?? '—')}</td>
+              <td><span class="subtle">{SLOT_WHERE[sl.category] ?? sl.category ?? '—'}</span></td>
+              <td>
+                {sl.available.length || sl.availableHolySite.length ? (
+                  <span class="chips">
+                    {sl.available.map((c: string) => <span class="chip chip--req">{c}</span>)}
+                    {sl.availableHolySite.map((c: string) => <span class="chip chip--req" title="checked on the holy site">{c}</span>)}
+                  </span>
+                ) : (
+                  <span class="subtle">always</span>
+                )}
               </td>
             </tr>
           ))}
@@ -352,6 +414,8 @@ const rarityLabel = (r: string) => r.charAt(0).toUpperCase() + r.slice(1);
     .u-name[title] { cursor: help; border-bottom: 1px dotted var(--line); }
     .chips { max-width: 24rem; }
     .chip--req { white-space: normal; }
+    .chip--relic { margin-left: 0.35rem; border-color: color-mix(in oklab, var(--brass) 55%, var(--line)); }
+    blockquote.concept { margin: 0 0 0.9rem; padding: 0.4rem 0.8rem; border-left: 2px solid var(--rubric); color: var(--dim); font-size: 0.85rem; max-width: 72ch; white-space: pre-line; }
     details.fg { margin: 0.4rem 0; }
     details.fg summary {
       cursor: pointer; user-select: none;

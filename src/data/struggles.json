@@ -62,20 +62,12 @@
         "name": "Catholicism"
       },
       {
-        "id": "mozarabic_church",
-        "name": "Mozarabism"
+        "id": "sunni",
+        "name": "Sunni"
       },
       {
-        "id": "ashari",
-        "name": "Ash'arism"
-      },
-      {
-        "id": "muwalladi",
-        "name": "Muwalladism"
-      },
-      {
-        "id": "rabbinism",
-        "name": "Rabbinism"
+        "id": "rabbinic_faith",
+        "name": "Rabbinic"
       },
       {
         "id": "karaism",
@@ -713,7 +705,7 @@
                 "items": [
                   {
                     "key": "holy_order_can_be_created_by_dukes",
-                    "text": "Enables Holy Order creation for Dukes"
+                    "text": "Enables Military Order creation for Dukes"
                   },
                   {
                     "key": "interfaith_marriages_available_between_involved_characters",
@@ -742,7 +734,7 @@
                   {
                     "key": "holy_order_hire_cost_mult",
                     "polarity": "good",
-                    "text": "-25% Holy Order Hire Cost"
+                    "text": "-25% Military Order Hire Cost"
                   },
                   {
                     "key": "opinion_of_different_faith",
@@ -758,7 +750,7 @@
                   {
                     "key": "holy_order_hire_cost_mult",
                     "polarity": "good",
-                    "text": "-25% Holy Order Hire Cost"
+                    "text": "-25% Military Order Hire Cost"
                   }
                 ],
                 "kind": "character"
@@ -2160,36 +2152,16 @@
     "dlc": "Legacy of Persia",
     "faiths": [
       {
-        "id": "ashari",
-        "name": "Ash'arism"
+        "id": "sunni",
+        "name": "Sunni"
       },
       {
-        "id": "zayidi",
-        "name": "Zayidism"
+        "id": "shia",
+        "name": "Shia"
       },
       {
-        "id": "ismaili",
-        "name": "Isma'ilism"
-      },
-      {
-        "id": "azariqa",
-        "name": "Azraqism"
-      },
-      {
-        "id": "mutazila",
-        "name": "Mu'tazilism"
-      },
-      {
-        "id": "maturidi",
-        "name": "Maturidism"
-      },
-      {
-        "id": "imami",
-        "name": "Imamism"
-      },
-      {
-        "id": "alevi",
-        "name": "Alevism"
+        "id": "kharijite",
+        "name": "Kharijite"
       },
       {
         "id": "mazdayasna",
@@ -2208,7 +2180,7 @@
         "name": "Afridunism"
       },
       {
-        "id": "mahayana",
+        "id": "mahayana_faith",
         "name": "Mahayana"
       },
       {

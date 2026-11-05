@@ -32,6 +32,7 @@ SKIP_FIELDS = {
     "house_unity": "house-unity config key; house mechanics page lands later",
     "tax_slot_type": "admin/clan taxation config; tax_slots page lands later",
     "can_get_government": "auto-assignment trigger; DLC gate extracted into dlc field",
+    "grant_vassal_ai_will_do": "AI weighting for which grantable government to pick",
 }
 
 HANDLED_FIELDS = {
@@ -45,6 +46,7 @@ HANDLED_FIELDS = {
     "supply_limit_mult_for_others", "prestige_opinion_override",
     "court_generate_commanders", "court_generate_spouses", "max_dread",
     "currency_levels_cap", "compatible_government_type_succession",
+    "possible_grant_vassal_governments",
 }
 
 # Scripted triggers named has_<prefix>_dlc_trigger gate governments on DLC;
@@ -157,6 +159,15 @@ def main():
 
         contract_group = blk.get("vassal_contract_group")
 
+        # Governments this ruler may give a newly landed vassal via Grant
+        # Titles (county-or-higher); each is still gated per-candidate by the
+        # is_grant_government_shown / _valid scripted rules.
+        grant_govs = []
+        gb = blk.get("possible_grant_vassal_governments")
+        if isinstance(gb, Block):
+            grant_govs = [{"key": g, "name": holding_name(g)}
+                          for g in gb.values() if isinstance(g, str)]
+
         for k in blk.keys():
             if k not in HANDLED_FIELDS and k not in SKIP_FIELDS:
                 unhandled[k] += 1
@@ -206,6 +217,7 @@ def main():
                 blk.get("compatible_government_type_succession").values()
                 if isinstance(blk.get("compatible_government_type_succession"), Block) else [],
                 ck3.loc),
+            "grantVassalGovernments": grant_govs,
             "color": color_hex(blk.get("color")),
             "icon": key,
             "dlc": dlc,

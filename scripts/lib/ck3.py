@@ -579,6 +579,7 @@ FEATURE_TO_DLC = {
     "holy_buildings": "Medieval Monuments",
     "medieval_monuments": "Medieval Monuments",
     "east_asian_wonders": "All Under Heaven",
+    "by_god_alone": "By God Alone",
     # cosmetic packs — gate attire/music/CoA only; tagged for completeness
     "arctic_attire": "Northern Lords",
     "celestial_court_attire": "All Under Heaven",
@@ -601,6 +602,9 @@ PREFIX_TO_DLC = {
     "ce1": "Community Pack 1 (free)", "ce2": "Couture of the Capets",
     # the game's own has_tgp_dlc_trigger checks feature all_under_heaven
     "tgp": "All Under Heaven",
+    # the game's own has_pam_dlc_trigger checks feature by_god_alone;
+    # ce3 is the DLC's own folder tag (game/dlc/dlc030_ce3)
+    "pam": "By God Alone", "ce3": "By God Alone",
     "afr": "African Attire", "laamp": "Roads to Power",
     "roco": "The Royal Court",
 }

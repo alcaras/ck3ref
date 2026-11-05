@@ -133,6 +133,16 @@ const TIER = { county: 'County', duchy: 'Duchy', kingdom: 'Kingdom' } as Record<
               <dd>{g.compatibleSuccession.join(', ')}</dd>
             </>
           )}
+          {(g.grantVassalGovernments ?? []).length > 0 && (
+            <>
+              <dt title="Grant Titles interaction (county or higher, to an unlanded character); each option is still checked by the game's is_grant_government_shown / is_grant_government_valid rules">Can grant vassals</dt>
+              <dd>
+                {g.grantVassalGovernments.map((v, i) => (
+                  <>{i > 0 && ', '}<a href={`#${v.key}`}>{v.name}</a></>
+                ))}
+              </dd>
+            </>
+          )}
         </dl>
 
         {g.characterModifiers.length > 0 && (

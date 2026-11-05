@@ -36,11 +36,11 @@ export const TABS: Tab[] = [
   { slug: 'schemes', label: 'Schemes', section: 'Characters', status: 'built', summary: 'Scheme types, agents, countermeasures.' },
   { slug: 'court-positions', label: 'Court Positions', section: 'Characters', status: 'built', summary: 'Every court position and its tasks.' },
   { slug: 'council', label: 'Council', section: 'Characters', status: 'built', summary: 'Council positions and tasks.' },
-  { slug: 'nicknames', label: 'Nicknames', section: 'Characters', status: 'built', summary: 'All 683 nicknames: good, bad, prefix, DLC.' },
+  { slug: 'nicknames', label: 'Nicknames', section: 'Characters', status: 'built', summary: 'All 729 nicknames: good, bad, prefix, DLC.' },
   // Dynasty
-  { slug: 'legacies', label: 'Dynasty Legacies', section: 'Dynasty', status: 'built', summary: '21 legacy tracks, five steps each.' },
+  { slug: 'legacies', label: 'Dynasty Legacies', section: 'Dynasty', status: 'built', summary: '22 legacy tracks, five steps each.' },
   { slug: 'house', label: 'House Mechanics', section: 'Dynasty', status: 'built', summary: 'Unity, aspirations, mottos.' },
-  { slug: 'artifacts', label: 'Artifacts', section: 'Dynasty', status: 'built', summary: '109 named artifacts and their real modifier sets, plus slot types and crafting features.' },
+  { slug: 'artifacts', label: 'Artifacts', section: 'Dynasty', status: 'built', summary: '113 named artifacts and their real modifier sets, plus slot types and crafting features.' },
   { slug: 'accolades', label: 'Accolades', section: 'Dynasty', status: 'built', summary: 'Knight accolade types and pairings.' },
   // Culture
   { slug: 'traditions', label: 'Traditions', section: 'Culture', status: 'built', summary: '197 traditions: cost, gates, effects.' },
@@ -48,9 +48,9 @@ export const TABS: Tab[] = [
   { slug: 'pillars', label: 'Pillars', section: 'Culture', status: 'built', summary: '162 pillars: ethos, heritage, language, martial custom.' },
   { slug: 'cultures', label: 'Cultures', section: 'Culture', status: 'built', summary: 'All 244 cultures: pillars, traditions, hybrids.' },
   // Faith
-  { slug: 'faiths', label: 'Faiths', section: 'Faith', status: 'built', summary: '140 faiths under 49 religions.' },
+  { slug: 'faiths', label: 'Faiths', section: 'Faith', status: 'built', summary: '103 faiths and 152 rites under 49 religions.' },
   { slug: 'doctrines', label: 'Doctrines & Tenets', section: 'Faith', status: 'built', summary: 'Every doctrine and tenet, with piety costs.' },
-  { slug: 'holy-sites', label: 'Holy Sites', section: 'Faith', status: 'built', summary: '326 holy sites and their bonuses.' },
+  { slug: 'holy-sites', label: 'Holy Sites', section: 'Faith', status: 'built', summary: '283 holy sites and their bonuses.' },
   // Realm
   { slug: 'administration', label: 'Administration', section: 'Realm', status: 'built', summary: 'Tax slots, obligations, and lease contracts.' },
   { slug: 'elections', label: 'Elections & Succession', section: 'Realm', status: 'built', summary: 'Elective and appointed succession, vassal stances, confederations.' },
@@ -61,14 +61,14 @@ export const TABS: Tab[] = [
   { slug: 'task-contracts', label: 'Task Contracts', section: 'Realm', status: 'built', summary: 'The adventurer job board: 153 contracts, requirements, and pay.' },
   { slug: 'domiciles', label: 'Domiciles', section: 'Realm', status: 'built', summary: 'Camps and estates for landless play.' },
   // Holdings
-  { slug: 'buildings', label: 'Buildings', section: 'Holdings', status: 'built', summary: '975 buildings in 366 upgrade chains.' },
+  { slug: 'buildings', label: 'Buildings', section: 'Holdings', status: 'built', summary: '983 buildings in 374 upgrade chains.' },
   { slug: 'holdings', label: 'Holdings', section: 'Holdings', status: 'built', summary: 'Castle, city, temple, tribe.' },
   { slug: 'great-projects', label: 'Great Projects', section: 'Holdings', status: 'built', summary: 'Collaboratively funded works: Mandala temples, the Great Wall, ministries.' },
   { slug: 'terrain', label: 'Terrain', section: 'Holdings', status: 'built', summary: 'Movement, combat, supply, danger for all 17 terrains.' },
   // Warfare
-  { slug: 'men-at-arms', label: 'Men-at-Arms', section: 'Warfare', status: 'built', summary: 'All 110 regiment types: stats, counters, terrain, costs.' },
+  { slug: 'men-at-arms', label: 'Men-at-Arms', section: 'Warfare', status: 'built', summary: 'All 111 regiment types: stats, counters, terrain, costs.' },
   { slug: 'counters', label: 'Counters Matrix', section: 'Warfare', status: 'built', summary: 'Who counters whom, in one grid.' },
-  { slug: 'casus-belli', label: 'Casus Belli', section: 'Warfare', status: 'built', summary: '121 war declarations and their terms.' },
+  { slug: 'casus-belli', label: 'Casus Belli', section: 'Warfare', status: 'built', summary: '126 war declarations and their terms.' },
   { slug: 'combat', label: 'Combat Mechanics', section: 'Warfare', status: 'built', summary: 'Advantage, phases, knights — from defines.' },
   // World
   { slug: 'titles', label: 'Titles', section: 'World', status: 'built', summary: 'De jure trees for every empire, kingdom, duchy.' },
@@ -80,8 +80,8 @@ export const TABS: Tab[] = [
   { slug: 'epidemics', label: 'Epidemics', section: 'World', status: 'built', summary: 'The seven plagues.' },
   // Activities
   { slug: 'activities', label: 'Activities', section: 'Activities', status: 'built', summary: 'Feasts, tours, tournaments, pilgrimages.' },
-  { slug: 'decisions', label: 'Decisions', section: 'Activities', status: 'built', summary: '431 decisions and their requirements.' },
-  { slug: 'events', label: 'Event Browser', section: 'Events', status: 'built', summary: 'Searchable index of all 9,823 events.' },
+  { slug: 'decisions', label: 'Decisions', section: 'Activities', status: 'built', summary: '492 decisions and their requirements.' },
+  { slug: 'events', label: 'Event Browser', section: 'Events', status: 'built', summary: 'Searchable index of all 10,289 events.' },
   // Concepts
   { slug: 'game-rules', label: 'Game Rules', section: 'Concepts', status: 'built', summary: 'Every start-of-game rule, its options, and achievement blockers.' },
   { slug: 'concepts', label: 'Glossary', section: 'Concepts', status: 'built', summary: 'Every game concept, auto-linked.' },
@@ -91,7 +91,7 @@ export const TABS: Tab[] = [
   // Tools
   { slug: 'legacy-builder', label: 'Legacy Builder', section: 'Tools', status: 'built', summary: 'Plan and share a dynasty legacy path in purchase order.' },
   { slug: 'genetics', label: 'Genetics Calculator', section: 'Tools', status: 'built', summary: 'Congenital trait inheritance odds.' },
-  { slug: 'faith-creator', label: 'Faith Cost Calculator', section: 'Tools', status: 'built', summary: 'Reformation piety costs.' },
+  { slug: 'faith-creator', label: 'Rite Cost Calculator', section: 'Tools', status: 'built', summary: 'Piety cost of a new Rite, from your starting Rite.' },
   { slug: 'province-planner', label: 'Province Planner', section: 'Tools', status: 'built', summary: 'Plan a holding\'s buildings by terrain, holding type, culture and government.' },
   { slug: 'culture-builder', label: 'Culture Builder', section: 'Tools', status: 'built', summary: 'Plan a hybrid, divergence, or tradition reform from any starting culture.' },
   { slug: 'culture-calculator', label: 'Culture Calculator', section: 'Tools', status: 'built', summary: 'Hybrid and divergence costs.' },
