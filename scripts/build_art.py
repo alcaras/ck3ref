@@ -65,6 +65,9 @@ CATEGORIES = [
     ("artifacts.json", "named", "artifact", "artifacts", "icon", "icon", False),
     ("interactions.json", None, "character_interactions", "interactions", "icon", "id", True),
     ("domiciles.json", "buildings", "", "domiciles", "icon", "id", True),
+    # By God Alone: level icons are full paths in the data; we keep the stem
+    ("fulfillment.json", "levels", "spiritual_fulfillment_levels", "fulfillment", "icon", "icon", True),
+    ("puppets.json", "types", "", "puppets", "icon", "icon", True),
 ]
 
 

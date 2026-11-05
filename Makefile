@@ -57,6 +57,9 @@ data:
 	@python3 scripts/build_domiciles.py
 	@python3 scripts/build_task_contracts.py
 	@python3 scripts/build_interactions.py
+	@python3 scripts/build_fulfillment.py
+	@python3 scripts/build_holy_orders.py
+	@python3 scripts/build_puppets.py
 	@python3 scripts/build_realm2.py
 	@python3 scripts/build_court2.py
 	@python3 scripts/build_events.py

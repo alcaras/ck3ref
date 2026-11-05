@@ -51,6 +51,9 @@ export const TABS: Tab[] = [
   { slug: 'faiths', label: 'Faiths', section: 'Faith', status: 'built', summary: '103 faiths and 152 rites under 49 religions.' },
   { slug: 'doctrines', label: 'Doctrines & Tenets', section: 'Faith', status: 'built', summary: 'Every doctrine and tenet, with piety costs.' },
   { slug: 'holy-sites', label: 'Holy Sites', section: 'Faith', status: 'built', summary: '283 holy sites and their bonuses.' },
+  { slug: 'spiritual-fulfillment', label: 'Spiritual Fulfillment', section: 'Faith', status: 'built', summary: 'The fulfillment ladders: levels, modifiers and unlocks.' },
+  { slug: 'holy-orders', label: 'Holy Orders', section: 'Faith', status: 'built', summary: '313 holy order types: who can found them, where, and what they field.' },
+  { slug: 'puppets', label: 'Puppets', section: 'Faith', status: 'built', summary: '3 puppet types and the 98 actions you can take through them.' },
   // Realm
   { slug: 'administration', label: 'Administration', section: 'Realm', status: 'built', summary: 'Tax slots, obligations, and lease contracts.' },
   { slug: 'elections', label: 'Elections & Succession', section: 'Realm', status: 'built', summary: 'Elective and appointed succession, vassal stances, confederations.' },

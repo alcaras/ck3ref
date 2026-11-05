@@ -1,0 +1,2125 @@
+{
+  "about": "A Puppet is a Character under the control of a Puppeteer, who may take special Puppet actions through them.\n\nActing through a Puppet opens doors that would otherwise stay closed: a Realm Priest Puppet can petition for Clerical Titles or an Excommunication on your behalf, while a Secular Ruler Puppet can be made to release Tributaries, grant independence, or divorce their Spouse.\n\nThe actions available are determined by the Puppet Type.",
+  "actions": [
+    {
+      "desc": "Use Request Excommunication Interaction to have the Head of Faith Excommunicate a sinful Character",
+      "dlc": "By God Alone",
+      "gate": [],
+      "gateUnmodelled": false,
+      "id": "puppet_action_ask_excommunicate_character",
+      "important": true,
+      "kind": "character_interaction",
+      "link": "interactions#request_excommunication_interaction",
+      "name": "Request Excommunication",
+      "section": "Religious",
+      "target": "request_excommunication_interaction",
+      "targetName": "Request Excommunication",
+      "usedBy": [
+        "theological_agent_puppet",
+        "external_theological_agent_puppet"
+      ]
+    },
+    {
+      "desc": "Create a new Faith",
+      "dlc": "By God Alone",
+      "gate": [],
+      "gateUnmodelled": false,
+      "id": "puppet_trigger_can_create_faith",
+      "important": false,
+      "kind": "trigger",
+      "link": null,
+      "name": "Create a new Faith",
+      "section": "Religious",
+      "target": null,
+      "targetName": null,
+      "usedBy": [
+        "theological_agent_puppet",
+        "external_theological_agent_puppet"
+      ]
+    },
+    {
+      "desc": "Create or modify a Rite",
+      "dlc": "By God Alone",
+      "gate": [],
+      "gateUnmodelled": false,
+      "id": "puppet_trigger_can_create_rite",
+      "important": false,
+      "kind": "trigger",
+      "link": null,
+      "name": "Create or modify a Rite",
+      "section": "Religious",
+      "target": null,
+      "targetName": null,
+      "usedBy": [
+        "theological_agent_puppet",
+        "external_theological_agent_puppet"
+      ]
+    },
+    {
+      "desc": null,
+      "dlc": "By God Alone",
+      "gate": [],
+      "gateUnmodelled": false,
+      "id": "puppet_action_elevate_holy_site",
+      "important": false,
+      "kind": "decision",
+      "link": "decisions#elevate_holy_site_decision",
+      "name": "Elevate Holy Site",
+      "section": "Religious",
+      "target": "elevate_holy_site_decision",
+      "targetName": "Elevate Holy Site",
+      "usedBy": [
+        "theological_agent_puppet",
+        "external_theological_agent_puppet"
+      ]
+    },
+    {
+      "desc": null,
+      "dlc": "By God Alone",
+      "gate": [],
+      "gateUnmodelled": false,
+      "id": "puppet_action_demote_holy_site",
+      "important": false,
+      "kind": "decision",
+      "link": "decisions#demote_holy_site_decision",
+      "name": "Demote Holy Site",
+      "section": "Religious",
+      "target": "demote_holy_site_decision",
+      "targetName": "Demote Holy Site",
+      "usedBy": [
+        "theological_agent_puppet",
+        "external_theological_agent_puppet"
+      ]
+    },
+    {
+      "desc": null,
+      "dlc": "By God Alone",
+      "gate": [],
+      "gateUnmodelled": false,
+      "id": "puppet_action_abandon_holy_site",
+      "important": false,
+      "kind": "decision",
+      "link": "decisions#abandon_holy_site_decision",
+      "name": "Abandon Holy Site",
+      "section": "Religious",
+      "target": "abandon_holy_site_decision",
+      "targetName": "Abandon Holy Site",
+      "usedBy": [
+        "theological_agent_puppet",
+        "external_theological_agent_puppet"
+      ]
+    },
+    {
+      "desc": null,
+      "dlc": "By God Alone",
+      "gate": [],
+      "gateUnmodelled": false,
+      "id": "puppet_action_adopt_holy_site",
+      "important": false,
+      "kind": "decision",
+      "link": "decisions#adopt_holy_site_decision",
+      "name": "Adopt Holy Site",
+      "section": "Religious",
+      "target": "adopt_holy_site_decision",
+      "targetName": "Adopt Holy Site",
+      "usedBy": [
+        "theological_agent_puppet",
+        "external_theological_agent_puppet"
+      ]
+    },
+    {
+      "desc": null,
+      "dlc": "By God Alone",
+      "gate": [],
+      "gateUnmodelled": false,
+      "id": "puppet_action_build_grand_cathedral",
+      "important": false,
+      "kind": "great_project",
+      "link": "great-projects#pam_cathedral_01",
+      "name": "Romanesque Grand Cathedral",
+      "section": "Religious",
+      "target": "pam_cathedral_01",
+      "targetName": "Romanesque Grand Cathedral",
+      "usedBy": [
+        "theological_agent_puppet",
+        "external_theological_agent_puppet"
+      ]
+    },
+    {
+      "desc": null,
+      "dlc": "By God Alone",
+      "gate": [],
+      "gateUnmodelled": false,
+      "id": "puppet_action_mass_rite_conversion",
+      "important": false,
+      "kind": "great_project",
+      "link": "great-projects#pam_mass_rite_conversion",
+      "name": "Mass Conversion",
+      "section": "Religious",
+      "target": "pam_mass_rite_conversion",
+      "targetName": "Mass Conversion",
+      "usedBy": [
+        "theological_agent_puppet",
+        "external_theological_agent_puppet"
+      ]
+    },
+    {
+      "desc": "Use Request Elevation Interaction to petition the Head of Faith for a more prestigious Clerical Title",
+      "dlc": "By God Alone",
+      "gate": [],
+      "gateUnmodelled": false,
+      "id": "puppet_action_request_elevation",
+      "important": true,
+      "kind": "character_interaction",
+      "link": "interactions#request_elevation_interaction",
+      "name": "Request Elevation",
+      "section": "Religious",
+      "target": "request_elevation_interaction",
+      "targetName": "Request Elevation",
+      "usedBy": [
+        "theological_agent_puppet",
+        "external_theological_agent_puppet"
+      ]
+    },
+    {
+      "desc": "Use Request Clerical Title Creation Interaction to petition the Head of Faith to found a new Clerical Region Title anchored to a Title of your choosing",
+      "dlc": "By God Alone",
+      "gate": [],
+      "gateUnmodelled": false,
+      "id": "puppet_action_request_ecclesiastical_title_creation",
+      "important": true,
+      "kind": "character_interaction",
+      "link": "interactions#request_ecclesiastical_title_creation_interaction",
+      "name": "Request Clerical Title Creation",
+      "section": "Religious",
+      "target": "request_ecclesiastical_title_creation_interaction",
+      "targetName": "Request Clerical Title Creation",
+      "usedBy": [
+        "theological_agent_puppet",
+        "external_theological_agent_puppet"
+      ]
+    },
+    {
+      "desc": "Use Request Clerical Title Expansion Interaction to petition the Head of Faith to expand your Clerical Region into an adjacent Duchy",
+      "dlc": "By God Alone",
+      "gate": [],
+      "gateUnmodelled": false,
+      "id": "puppet_action_request_ecclesiastical_title_expansion",
+      "important": true,
+      "kind": "character_interaction",
+      "link": "interactions#request_ecclesiastical_title_expansion_interaction",
+      "name": "Request Clerical Title Expansion",
+      "section": "Religious",
+      "target": "request_ecclesiastical_title_expansion_interaction",
+      "targetName": "Request Clerical Title Expansion",
+      "usedBy": [
+        "theological_agent_puppet",
+        "external_theological_agent_puppet"
+      ]
+    },
+    {
+      "desc": "Use Request Clerical Title Merger Interaction to petition the Head of Faith to merge a neighboring Clerical Region into your own",
+      "dlc": "By God Alone",
+      "gate": [],
+      "gateUnmodelled": false,
+      "id": "puppet_action_request_ecclesiastical_title_merger",
+      "important": true,
+      "kind": "character_interaction",
+      "link": "interactions#request_ecclesiastical_title_merger_interaction",
+      "name": "Request Clerical Title Merger",
+      "section": "Religious",
+      "target": "request_ecclesiastical_title_merger_interaction",
+      "targetName": "Request Clerical Title Merger",
+      "usedBy": [
+        "theological_agent_puppet",
+        "external_theological_agent_puppet"
+      ]
+    },
+    {
+      "desc": "Use Request Ecclesiastical Title Split Interaction to petition the Head of Faith to split a new Clerical Title from an existing Clerical Region",
+      "dlc": "By God Alone",
+      "gate": [],
+      "gateUnmodelled": false,
+      "id": "puppet_action_request_ecclesiastical_title_split",
+      "important": true,
+      "kind": "character_interaction",
+      "link": "interactions#request_ecclesiastical_title_split_interaction",
+      "name": "Request Ecclesiastical Title Split",
+      "section": "Religious",
+      "target": "request_ecclesiastical_title_split_interaction",
+      "targetName": "Request Ecclesiastical Title Split",
+      "usedBy": [
+        "theological_agent_puppet",
+        "external_theological_agent_puppet"
+      ]
+    },
+    {
+      "desc": null,
+      "dlc": "By God Alone",
+      "gate": [],
+      "gateUnmodelled": false,
+      "id": "puppet_action_request_clerical_elector_title",
+      "important": true,
+      "kind": "character_interaction",
+      "link": "interactions#request_clerical_elector_title_interaction",
+      "name": "Request Cardinalate",
+      "section": "Religious",
+      "target": "request_clerical_elector_title_interaction",
+      "targetName": "Request Cardinalate",
+      "usedBy": [
+        "theological_agent_puppet",
+        "external_theological_agent_puppet"
+      ]
+    },
+    {
+      "desc": "Use Decree Church Succession Interaction as Head of Faith to pledge a same-Faith Ruler's primary Title as fallback inheritance",
+      "dlc": "By God Alone",
+      "gate": [],
+      "gateUnmodelled": false,
+      "id": "puppet_action_demand_church_succession_hof",
+      "important": true,
+      "kind": "character_interaction",
+      "link": "interactions#demand_church_succession_religious_head_interaction",
+      "name": "Decree Church Succession",
+      "section": "Religious",
+      "target": "demand_church_succession_religious_head_interaction",
+      "targetName": "Decree Church Succession",
+      "usedBy": [
+        "external_theological_agent_puppet"
+      ]
+    },
+    {
+      "desc": "Use Give Cardinal Order Interaction to apply regional Modifiers in their Baronies",
+      "dlc": "By God Alone",
+      "gate": [],
+      "gateUnmodelled": false,
+      "id": "puppet_action_give_cardinal_order",
+      "important": true,
+      "kind": "character_interaction",
+      "link": "interactions#give_cardinal_order_interaction",
+      "name": "Give Cardinal Order",
+      "section": "Religious",
+      "target": "give_cardinal_order_interaction",
+      "targetName": "Give Cardinal Order",
+      "usedBy": [
+        "external_theological_agent_puppet"
+      ]
+    },
+    {
+      "desc": "Use Appoint Cardinal Interaction to elevate a same-Faith Clergy member to Cardinal",
+      "dlc": "By God Alone",
+      "gate": [],
+      "gateUnmodelled": false,
+      "id": "puppet_action_appoint_cardinal",
+      "important": true,
+      "kind": "character_interaction",
+      "link": "interactions#appoint_cardinal_interaction",
+      "name": "Appoint Cardinal",
+      "section": "Religious",
+      "target": "appoint_cardinal_interaction",
+      "targetName": "Appoint Cardinal",
+      "usedBy": [
+        "external_theological_agent_puppet"
+      ]
+    },
+    {
+      "desc": "Use Strip Cardinalate Interaction to dissolve a Cardinalate and remove its holder from the College of Cardinals",
+      "dlc": "By God Alone",
+      "gate": [],
+      "gateUnmodelled": false,
+      "id": "puppet_action_destroy_cardinalate",
+      "important": true,
+      "kind": "character_interaction",
+      "link": "interactions#destroy_cardinalate_interaction",
+      "name": "Strip Cardinalate",
+      "section": "Religious",
+      "target": "destroy_cardinalate_interaction",
+      "targetName": "Strip Cardinalate",
+      "usedBy": [
+        "theological_agent_puppet",
+        "external_theological_agent_puppet"
+      ]
+    },
+    {
+      "desc": "Use Beseech Claim Interaction for a Pressed Claim on a same-Faith Ruler's Title",
+      "dlc": "By God Alone",
+      "gate": [],
+      "gateUnmodelled": false,
+      "id": "puppet_action_ecclesiastic_grant_claim",
+      "important": true,
+      "kind": "character_interaction",
+      "link": "interactions#ecclesiastic_grant_claim_interaction",
+      "name": "Beseech Claim",
+      "section": "Religious",
+      "target": "ecclesiastic_grant_claim_interaction",
+      "targetName": "Beseech Claim",
+      "usedBy": [
+        "external_theological_agent_puppet",
+        "external_ruler_puppet"
+      ]
+    },
+    {
+      "desc": "Use Sway to Rite Interaction to win over a same-Faith Ruler",
+      "dlc": "By God Alone",
+      "gate": [],
+      "gateUnmodelled": false,
+      "id": "puppet_action_sway_ruler_to_my_rite",
+      "important": true,
+      "kind": "character_interaction",
+      "link": "interactions#sway_ruler_to_my_rite_interaction",
+      "name": "Sway to Rite",
+      "section": "Religious",
+      "target": "sway_ruler_to_my_rite_interaction",
+      "targetName": "Sway to Rite",
+      "usedBy": [
+        "external_theological_agent_puppet",
+        "external_ruler_puppet"
+      ]
+    },
+    {
+      "desc": null,
+      "dlc": "By God Alone",
+      "gate": [],
+      "gateUnmodelled": false,
+      "id": "puppet_action_ecclesiastic_consecrate_kingdom",
+      "important": true,
+      "kind": "character_interaction",
+      "link": "interactions#ecclesiastic_consecrate_kingdom_interaction",
+      "name": "Consecrate Kingdom",
+      "section": "Religious",
+      "target": "ecclesiastic_consecrate_kingdom_interaction",
+      "targetName": "Consecrate Kingdom",
+      "usedBy": [
+        "external_theological_agent_puppet"
+      ]
+    },
+    {
+      "desc": null,
+      "dlc": "By God Alone",
+      "gate": [],
+      "gateUnmodelled": false,
+      "id": "puppet_action_ecclesiastical_bestow_title",
+      "important": true,
+      "kind": "character_interaction",
+      "link": "interactions#ecclesiastical_bestow_title_interaction",
+      "name": "Bestow Title",
+      "section": "Religious",
+      "target": "ecclesiastical_bestow_title_interaction",
+      "targetName": "Bestow Title",
+      "usedBy": [
+        "external_theological_agent_puppet"
+      ]
+    },
+    {
+      "desc": null,
+      "dlc": "By God Alone",
+      "gate": [],
+      "gateUnmodelled": false,
+      "id": "puppet_action_ecclesiastical_de_jure_shifting_grant",
+      "important": true,
+      "kind": "character_interaction",
+      "link": "interactions#ecclesiastical_de_jure_shifting_grant_interaction",
+      "name": "Bestow De Jure Lands",
+      "section": "Religious",
+      "target": "ecclesiastical_de_jure_shifting_grant_interaction",
+      "targetName": "Bestow De Jure Lands",
+      "usedBy": [
+        "external_theological_agent_puppet"
+      ]
+    },
+    {
+      "desc": "Use Demand Conversion Interaction to force a same-House Ruler to adopt your Faith",
+      "dlc": null,
+      "gate": [],
+      "gateUnmodelled": false,
+      "id": "puppet_action_demand_conversion",
+      "important": true,
+      "kind": "character_interaction",
+      "link": "interactions#demand_conversion_interaction",
+      "name": "Demand Conversion",
+      "section": "Religious",
+      "target": "demand_conversion_interaction",
+      "targetName": "Demand Conversion",
+      "usedBy": [
+        "theological_agent_puppet"
+      ]
+    },
+    {
+      "desc": "Use Demand Conversion Interaction to force a Vassal or Tributary to adopt your Faith",
+      "dlc": null,
+      "gate": [],
+      "gateUnmodelled": false,
+      "id": "puppet_action_demand_conversion_vassal_ruler",
+      "important": true,
+      "kind": "character_interaction",
+      "link": "interactions#demand_conversion_vassal_ruler_interaction",
+      "name": "Demand Conversion",
+      "section": "Religious",
+      "target": "demand_conversion_vassal_ruler_interaction",
+      "targetName": "Demand Conversion",
+      "usedBy": [
+        "theological_agent_puppet"
+      ]
+    },
+    {
+      "desc": "Use Demand Chastity Interaction to bind a same-faith adult to a clerical vow",
+      "dlc": null,
+      "gate": [],
+      "gateUnmodelled": false,
+      "id": "puppet_action_request_clerical_chastity",
+      "important": true,
+      "kind": "character_interaction",
+      "link": "interactions#request_clerical_chastity_interaction",
+      "name": "Demand Chastity",
+      "section": "Religious",
+      "target": "request_clerical_chastity_interaction",
+      "targetName": "Demand Chastity",
+      "usedBy": [
+        "theological_agent_puppet"
+      ]
+    },
+    {
+      "desc": "Use Ask to Take Vows Interaction to send a Courtier to join the clergy",
+      "dlc": null,
+      "gate": [],
+      "gateUnmodelled": false,
+      "id": "puppet_action_take_vows",
+      "important": true,
+      "kind": "character_interaction",
+      "link": "interactions#take_vows_interaction",
+      "name": "Ask to Take Vows",
+      "section": "Religious",
+      "target": "take_vows_interaction",
+      "targetName": "Ask to Take Vows",
+      "usedBy": [
+        "external_theological_agent_puppet",
+        "external_ruler_puppet"
+      ]
+    },
+    {
+      "desc": "Use Ask to Take Monastic Vows Interaction to send a Courtier to a Monastic Order",
+      "dlc": null,
+      "gate": [],
+      "gateUnmodelled": false,
+      "id": "puppet_action_take_monastic_vows",
+      "important": true,
+      "kind": "character_interaction",
+      "link": "interactions#take_monastic_vows_interaction",
+      "name": "Ask to Take Monastic Vows",
+      "section": "Religious",
+      "target": "take_monastic_vows_interaction",
+      "targetName": "Ask to Take Monastic Vows",
+      "usedBy": [
+        "theological_agent_puppet",
+        "external_theological_agent_puppet"
+      ]
+    },
+    {
+      "desc": "Use Ask to Join Military Order Interaction to send a Courtier or Child off to serve",
+      "dlc": null,
+      "gate": [],
+      "gateUnmodelled": false,
+      "id": "puppet_action_send_to_holy_order",
+      "important": true,
+      "kind": "character_interaction",
+      "link": "interactions#send_to_holy_order_interaction",
+      "name": "Ask to Join Military Order",
+      "section": "Religious",
+      "target": "send_to_holy_order_interaction",
+      "targetName": "Ask to Join Military Order",
+      "usedBy": [
+        "theological_agent_puppet",
+        "external_theological_agent_puppet"
+      ]
+    },
+    {
+      "desc": "Use Donate to Monastic Order Interaction to give Gold in exchange for Spiritual Fulfillment",
+      "dlc": null,
+      "gate": [],
+      "gateUnmodelled": false,
+      "id": "puppet_action_monastic_donation",
+      "important": false,
+      "kind": "character_interaction",
+      "link": "interactions#monastic_donation_interaction",
+      "name": "Donate to Monastic Order",
+      "section": "Religious",
+      "target": "monastic_donation_interaction",
+      "targetName": "Donate to Monastic Order",
+      "usedBy": [
+        "theological_agent_puppet",
+        "external_theological_agent_puppet"
+      ]
+    },
+    {
+      "desc": "Use Bestow a Monastery Interaction to lease a Church Holding Barony to a Holy Order",
+      "dlc": null,
+      "gate": [],
+      "gateUnmodelled": false,
+      "id": "puppet_action_lease_monastic",
+      "important": false,
+      "kind": "character_interaction",
+      "link": "interactions#lease_title_to_existing_monastic_order_interaction",
+      "name": "Bestow a Monastery",
+      "section": "Religious",
+      "target": "lease_title_to_existing_monastic_order_interaction",
+      "targetName": "Bestow a Monastery",
+      "usedBy": [
+        "theological_agent_puppet",
+        "external_theological_agent_puppet"
+      ]
+    },
+    {
+      "desc": "Use Make Declaration of Repentance Interaction to petition your Head of Faith to lift your Excommunication",
+      "dlc": null,
+      "gate": [],
+      "gateUnmodelled": false,
+      "id": "puppet_action_declaration_of_repentance",
+      "important": false,
+      "kind": "character_interaction",
+      "link": "interactions#declaration_of_repentance_interaction",
+      "name": "Make Declaration of Repentance",
+      "section": "Religious",
+      "target": "declaration_of_repentance_interaction",
+      "targetName": "Make Declaration of Repentance",
+      "usedBy": [
+        "theological_agent_puppet",
+        "external_theological_agent_puppet"
+      ]
+    },
+    {
+      "desc": "Use Literalist Debate Interaction to spar with a same-faith peer for Piety",
+      "dlc": null,
+      "gate": [],
+      "gateUnmodelled": false,
+      "id": "puppet_action_literalist_debate",
+      "important": false,
+      "kind": "character_interaction",
+      "link": "interactions#literalist_debate_interaction",
+      "name": "Literalist Debate",
+      "section": "Religious",
+      "target": "literalist_debate_interaction",
+      "targetName": "Literalist Debate",
+      "usedBy": [
+        "theological_agent_puppet",
+        "external_theological_agent_puppet"
+      ]
+    },
+    {
+      "desc": "Use Request Claim Endorsement Interaction to press a weak Claim with a Bishop's endorsement",
+      "dlc": null,
+      "gate": [],
+      "gateUnmodelled": false,
+      "id": "puppet_action_strengthen_claim",
+      "important": true,
+      "kind": "character_interaction",
+      "link": "interactions#strengthen_claim_interaction",
+      "name": "Request Claim Endorsement",
+      "section": "Religious",
+      "target": "strengthen_claim_interaction",
+      "targetName": "Request Claim Endorsement",
+      "usedBy": [
+        "external_ruler_puppet"
+      ]
+    },
+    {
+      "desc": null,
+      "dlc": null,
+      "gate": [],
+      "gateUnmodelled": false,
+      "id": "puppet_action_sell_claim",
+      "important": true,
+      "kind": "character_interaction",
+      "link": "interactions#sell_claim_interaction",
+      "name": "Sell Claim",
+      "section": "Religious",
+      "target": "sell_claim_interaction",
+      "targetName": "Sell Claim",
+      "usedBy": [
+        "theological_agent_puppet"
+      ]
+    },
+    {
+      "desc": "Use Adopt Rite Interaction to voluntarily take up your Liege's or Suzerain's Faith",
+      "dlc": null,
+      "gate": [],
+      "gateUnmodelled": false,
+      "id": "puppet_action_convert_to_religion",
+      "important": true,
+      "kind": "character_interaction",
+      "link": "interactions#convert_to_religion_interaction",
+      "name": "Adopt Rite",
+      "section": "Religious",
+      "target": "convert_to_religion_interaction",
+      "targetName": "Adopt Rite",
+      "usedBy": [
+        "theological_agent_puppet",
+        "external_theological_agent_puppet"
+      ]
+    },
+    {
+      "desc": "Use Designate Theocratic Heir Interaction to pick a same-faith Courtier to succeed you",
+      "dlc": null,
+      "gate": [],
+      "gateUnmodelled": false,
+      "id": "puppet_action_designate_theocratic_heir",
+      "important": true,
+      "kind": "character_interaction",
+      "link": "interactions#designate_theocratic_heir_interaction",
+      "name": "Designate Theocratic Heir",
+      "section": "Religious",
+      "target": "designate_theocratic_heir_interaction",
+      "targetName": "Designate Theocratic Heir",
+      "usedBy": [
+        "external_theological_agent_puppet"
+      ]
+    },
+    {
+      "desc": "Use Demand Church Succession Interaction as a Clerical Title Holder to take fallback inheritance of a neighbor's Title",
+      "dlc": null,
+      "gate": [],
+      "gateUnmodelled": false,
+      "id": "puppet_action_demand_church_succession",
+      "important": true,
+      "kind": "character_interaction",
+      "link": "interactions#demand_church_succession_interaction",
+      "name": "Demand Church Succession",
+      "section": "Religious",
+      "target": "demand_church_succession_interaction",
+      "targetName": "Demand Church Succession",
+      "usedBy": [
+        "theological_agent_puppet",
+        "external_theological_agent_puppet"
+      ]
+    },
+    {
+      "desc": "Use Support Candidacy Interaction to boost a candidate's Appointment Level on a Clerical Title",
+      "dlc": null,
+      "gate": [],
+      "gateUnmodelled": false,
+      "id": "puppet_action_increase_theocratic_heir_candidacy",
+      "important": true,
+      "kind": "character_interaction",
+      "link": "interactions#increase_theocratic_heir_candidacy",
+      "name": "Support Candidacy",
+      "section": "Religious",
+      "target": "increase_theocratic_heir_candidacy",
+      "targetName": "Support Candidacy",
+      "usedBy": [
+        "external_theological_agent_puppet",
+        "external_ruler_puppet"
+      ]
+    },
+    {
+      "desc": "Use Excommunicate Interaction against a Sinful same-Faith Character",
+      "dlc": null,
+      "gate": [],
+      "gateUnmodelled": false,
+      "id": "puppet_action_excommunicate",
+      "important": true,
+      "kind": "character_interaction",
+      "link": "interactions#excommunicate_interaction",
+      "name": "Excommunicate",
+      "section": "Religious",
+      "target": "excommunicate_interaction",
+      "targetName": "Excommunicate",
+      "usedBy": [
+        "external_theological_agent_puppet"
+      ]
+    },
+    {
+      "desc": "Use Lift Excommunication Interaction to absolve a Character",
+      "dlc": null,
+      "gate": [],
+      "gateUnmodelled": false,
+      "id": "puppet_action_lift_excommunication",
+      "important": true,
+      "kind": "character_interaction",
+      "link": "interactions#lift_excommunication_interaction",
+      "name": "Lift Excommunication",
+      "section": "Religious",
+      "target": "lift_excommunication_interaction",
+      "targetName": "Lift Excommunication",
+      "usedBy": [
+        "external_theological_agent_puppet"
+      ]
+    },
+    {
+      "desc": "Use Issue Religious Condemnation Interaction to attempt to condemn an adult same-Religion Vassal",
+      "dlc": null,
+      "gate": [],
+      "gateUnmodelled": false,
+      "id": "puppet_action_temporal_condemnation",
+      "important": true,
+      "kind": "character_interaction",
+      "link": "interactions#temporal_condemnation_interaction",
+      "name": "Issue Religious Condemnation",
+      "section": "Religious",
+      "target": "temporal_condemnation_interaction",
+      "targetName": "Issue Religious Condemnation",
+      "usedBy": [
+        "external_theological_agent_puppet",
+        "external_ruler_puppet"
+      ]
+    },
+    {
+      "desc": "Use Select Beneficiary Interaction to pick your Beneficiary for a pledged Great Holy War",
+      "dlc": null,
+      "gate": [],
+      "gateUnmodelled": false,
+      "id": "puppet_action_select_ghw_beneficiary",
+      "important": false,
+      "kind": "character_interaction",
+      "link": "interactions#select_ghw_beneficiary_interaction",
+      "name": "Select Beneficiary",
+      "section": "Religious",
+      "target": "select_ghw_beneficiary_interaction",
+      "targetName": "Select Beneficiary",
+      "usedBy": [
+        "external_theological_agent_puppet",
+        "external_ruler_puppet"
+      ]
+    },
+    {
+      "desc": null,
+      "dlc": null,
+      "gate": [],
+      "gateUnmodelled": false,
+      "id": "puppet_action_ecclesiastic_incite_holy_war",
+      "important": true,
+      "kind": "character_interaction",
+      "link": "interactions#ecclesiastic_incite_holy_war_interaction",
+      "name": "Incite Holy War",
+      "section": "Religious",
+      "target": "ecclesiastic_incite_holy_war_interaction",
+      "targetName": "Incite Holy War",
+      "usedBy": [
+        "external_theological_agent_puppet",
+        "external_ruler_puppet"
+      ]
+    },
+    {
+      "desc": "Use Attempt to Convert Interaction as an Adventurer on a local Ruler in your Domicile County",
+      "dlc": null,
+      "gate": [],
+      "gateUnmodelled": false,
+      "id": "puppet_action_attempt_conversion_local_ruler",
+      "important": true,
+      "kind": "character_interaction",
+      "link": "interactions#attempt_conversion_of_local_ruler_interaction",
+      "name": "Attempt to Convert",
+      "section": "Religious",
+      "target": "attempt_conversion_of_local_ruler_interaction",
+      "targetName": "Attempt to Convert",
+      "usedBy": [
+        "external_theological_agent_puppet",
+        "external_ruler_puppet"
+      ]
+    },
+    {
+      "desc": "Use Demand Conversion Interaction to force a Vassal to adopt your Faith",
+      "dlc": null,
+      "gate": [],
+      "gateUnmodelled": false,
+      "id": "puppet_action_demand_conversion_player_ruler",
+      "important": true,
+      "kind": "character_interaction",
+      "link": "interactions#demand_conversion_player_ruler_interaction",
+      "name": "Demand Conversion",
+      "section": "Religious",
+      "target": "demand_conversion_player_ruler_interaction",
+      "targetName": "Demand Conversion",
+      "usedBy": [
+        "external_theological_agent_puppet",
+        "external_ruler_puppet"
+      ]
+    },
+    {
+      "desc": "Use Adopt Rite Interaction to end a Holy War by taking the attacker's Faith",
+      "dlc": null,
+      "gate": [],
+      "gateUnmodelled": false,
+      "id": "puppet_action_convert_at_war",
+      "important": false,
+      "kind": "character_interaction",
+      "link": "interactions#convert_at_war_interaction",
+      "name": "Adopt Rite",
+      "section": "Religious",
+      "target": "convert_at_war_interaction",
+      "targetName": "Adopt Rite",
+      "usedBy": [
+        "external_theological_agent_puppet",
+        "external_ruler_puppet"
+      ]
+    },
+    {
+      "desc": "Use Murder (Scheme) Interaction against a target Character",
+      "dlc": null,
+      "gate": [
+        "puppet is a Secular Ruler Puppet or puppet has Schemer"
+      ],
+      "gateUnmodelled": false,
+      "id": "puppet_action_command_murder",
+      "important": true,
+      "kind": "character_interaction",
+      "link": "interactions#start_murder_interaction",
+      "name": "Murder (Scheme)",
+      "section": "Intrigue",
+      "target": "start_murder_interaction",
+      "targetName": "Murder (Scheme)",
+      "usedBy": [
+        "theological_agent_puppet",
+        "external_theological_agent_puppet",
+        "external_ruler_puppet"
+      ]
+    },
+    {
+      "desc": "Use Abduct (Scheme) Interaction against a target Character",
+      "dlc": null,
+      "gate": [
+        "puppet is a Secular Ruler Puppet or puppet has Schemer"
+      ],
+      "gateUnmodelled": false,
+      "id": "puppet_action_command_abduct",
+      "important": false,
+      "kind": "character_interaction",
+      "link": "interactions#start_abduct",
+      "name": "Abduct (Scheme)",
+      "section": "Intrigue",
+      "target": "start_abduct",
+      "targetName": "Abduct (Scheme)",
+      "usedBy": [
+        "theological_agent_puppet",
+        "external_theological_agent_puppet",
+        "external_ruler_puppet"
+      ]
+    },
+    {
+      "desc": "Use Befriend (Scheme) Interaction against a target Character",
+      "dlc": null,
+      "gate": [],
+      "gateUnmodelled": false,
+      "id": "puppet_action_command_befriend",
+      "important": false,
+      "kind": "character_interaction",
+      "link": "interactions#befriend_interaction",
+      "name": "Befriend (Scheme)",
+      "section": "Intrigue",
+      "target": "befriend_interaction",
+      "targetName": "Befriend (Scheme)",
+      "usedBy": [
+        "theological_agent_puppet",
+        "external_theological_agent_puppet",
+        "external_ruler_puppet"
+      ]
+    },
+    {
+      "desc": "Use Seduce (Scheme) Interaction against a target Character",
+      "dlc": null,
+      "gate": [
+        "puppet is a Secular Ruler Puppet or (puppet holds Papacy and (pope is head of faith or rite)) or puppet has Lustful or puppet has Seducer"
+      ],
+      "gateUnmodelled": false,
+      "id": "puppet_action_command_seduce",
+      "important": false,
+      "kind": "character_interaction",
+      "link": "interactions#seduce_interaction",
+      "name": "Seduce (Scheme)",
+      "section": "Intrigue",
+      "target": "seduce_interaction",
+      "targetName": "Seduce (Scheme)",
+      "usedBy": [
+        "theological_agent_puppet",
+        "external_theological_agent_puppet",
+        "external_ruler_puppet"
+      ]
+    },
+    {
+      "desc": "Use Romance (Scheme) Interaction to pursue a romantic interest",
+      "dlc": null,
+      "gate": [
+        "puppet is a Secular Ruler Puppet or puppet has Lustful or puppet has Seducer"
+      ],
+      "gateUnmodelled": false,
+      "id": "puppet_action_command_court",
+      "important": false,
+      "kind": "character_interaction",
+      "link": "interactions#court_interaction",
+      "name": "Romance (Scheme)",
+      "section": "Intrigue",
+      "target": "court_interaction",
+      "targetName": "Romance (Scheme)",
+      "usedBy": [
+        "theological_agent_puppet",
+        "external_theological_agent_puppet",
+        "external_ruler_puppet"
+      ]
+    },
+    {
+      "desc": "Use Sway (Scheme) Interaction against a target Character",
+      "dlc": null,
+      "gate": [],
+      "gateUnmodelled": false,
+      "id": "puppet_action_command_sway",
+      "important": false,
+      "kind": "character_interaction",
+      "link": "interactions#sway_interaction",
+      "name": "Sway (Scheme)",
+      "section": "Intrigue",
+      "target": "sway_interaction",
+      "targetName": "Sway (Scheme)",
+      "usedBy": [
+        "theological_agent_puppet",
+        "external_theological_agent_puppet",
+        "external_ruler_puppet"
+      ]
+    },
+    {
+      "desc": "Use Learn Language (Scheme) Interaction to pick up a target's tongue",
+      "dlc": null,
+      "gate": [],
+      "gateUnmodelled": false,
+      "id": "puppet_action_command_learn_language",
+      "important": false,
+      "kind": "character_interaction",
+      "link": "interactions#learn_language_interaction",
+      "name": "Learn Language (Scheme)",
+      "section": "Intrigue",
+      "target": "learn_language_interaction",
+      "targetName": "Learn Language (Scheme)",
+      "usedBy": [
+        "theological_agent_puppet",
+        "external_theological_agent_puppet",
+        "external_ruler_puppet"
+      ]
+    },
+    {
+      "desc": "Use Study Rite (Scheme) Interaction to absorb a target's Faith",
+      "dlc": null,
+      "gate": [],
+      "gateUnmodelled": false,
+      "id": "puppet_action_command_study_faith",
+      "important": false,
+      "kind": "character_interaction",
+      "link": "interactions#study_faith_interaction",
+      "name": "Study Rite (Scheme)",
+      "section": "Intrigue",
+      "target": "study_faith_interaction",
+      "targetName": "Study Rite (Scheme)",
+      "usedBy": [
+        "theological_agent_puppet",
+        "external_theological_agent_puppet",
+        "external_ruler_puppet"
+      ]
+    },
+    {
+      "desc": "Use Send Gift Interaction to spend Gold for Opinion with another Character",
+      "dlc": null,
+      "gate": [],
+      "gateUnmodelled": false,
+      "id": "puppet_action_give_gift",
+      "important": false,
+      "kind": "character_interaction",
+      "link": "interactions#gift_interaction",
+      "name": "Send Gift",
+      "section": "Intrigue",
+      "target": "gift_interaction",
+      "targetName": "Send Gift",
+      "usedBy": [
+        "theological_agent_puppet",
+        "external_theological_agent_puppet",
+        "external_ruler_puppet"
+      ]
+    },
+    {
+      "desc": "Use Expose a Secret Interaction to reveal one you already know about a Character",
+      "dlc": null,
+      "gate": [],
+      "gateUnmodelled": false,
+      "id": "puppet_action_expose_secret",
+      "important": true,
+      "kind": "character_interaction",
+      "link": "interactions#expose_secret_interaction",
+      "name": "Expose a Secret",
+      "section": "Intrigue",
+      "target": "expose_secret_interaction",
+      "targetName": "Expose a Secret",
+      "usedBy": [
+        "theological_agent_puppet",
+        "external_ruler_puppet"
+      ]
+    },
+    {
+      "desc": "Use Host as Honored Guest Interaction on a same-Faith Character for Piety",
+      "dlc": null,
+      "gate": [],
+      "gateUnmodelled": false,
+      "id": "puppet_action_host_honored_guest",
+      "important": true,
+      "kind": "character_interaction",
+      "link": "interactions#host_honored_guest_interaction",
+      "name": "Host as Honored Guest",
+      "section": "Intrigue",
+      "target": "host_honored_guest_interaction",
+      "targetName": "Host as Honored Guest",
+      "usedBy": [
+        "external_theological_agent_puppet",
+        "external_ruler_puppet"
+      ]
+    },
+    {
+      "desc": "Use Share Secrets Interaction with a same-House peer",
+      "dlc": null,
+      "gate": [],
+      "gateUnmodelled": false,
+      "id": "puppet_action_share_known_secrets",
+      "important": true,
+      "kind": "character_interaction",
+      "link": "interactions#share_known_secrets_interaction",
+      "name": "Share Secrets",
+      "section": "Intrigue",
+      "target": "share_known_secrets_interaction",
+      "targetName": "Share Secrets",
+      "usedBy": [
+        "external_theological_agent_puppet",
+        "external_ruler_puppet"
+      ]
+    },
+    {
+      "desc": "Use Negotiate Release Interaction on a Prisoner",
+      "dlc": null,
+      "gate": [],
+      "gateUnmodelled": false,
+      "id": "puppet_action_release_from_prison",
+      "important": false,
+      "kind": "character_interaction",
+      "link": "interactions#release_from_prison_interaction",
+      "name": "Negotiate Release",
+      "section": "Prison",
+      "target": "release_from_prison_interaction",
+      "targetName": "Negotiate Release",
+      "usedBy": [
+        "theological_agent_puppet",
+        "external_theological_agent_puppet",
+        "external_ruler_puppet"
+      ]
+    },
+    {
+      "desc": "Use Torture Interaction on a Prisoner",
+      "dlc": null,
+      "gate": [
+        "puppet is a Secular Ruler Puppet or puppet has Torturer or puppet has Sadistic"
+      ],
+      "gateUnmodelled": false,
+      "id": "puppet_action_torture",
+      "important": false,
+      "kind": "character_interaction",
+      "link": "interactions#torture_interaction",
+      "name": "Torture",
+      "section": "Prison",
+      "target": "torture_interaction",
+      "targetName": "Torture",
+      "usedBy": [
+        "theological_agent_puppet",
+        "external_theological_agent_puppet",
+        "external_ruler_puppet"
+      ]
+    },
+    {
+      "desc": "Use Castrate Prisoner Interaction on a male held in your Prison",
+      "dlc": null,
+      "gate": [
+        "puppet is a Secular Ruler Puppet or puppet has Torturer or puppet has Sadistic"
+      ],
+      "gateUnmodelled": false,
+      "id": "puppet_action_castrate",
+      "important": false,
+      "kind": "character_interaction",
+      "link": "interactions#castrate_interaction",
+      "name": "Castrate Prisoner",
+      "section": "Prison",
+      "target": "castrate_interaction",
+      "targetName": "Castrate Prisoner",
+      "usedBy": [
+        "theological_agent_puppet",
+        "external_theological_agent_puppet",
+        "external_ruler_puppet"
+      ]
+    },
+    {
+      "desc": "Use Blind Interaction on a Character held in your Prison",
+      "dlc": null,
+      "gate": [
+        "puppet is a Secular Ruler Puppet or puppet has Torturer or puppet has Sadistic"
+      ],
+      "gateUnmodelled": false,
+      "id": "puppet_action_blind",
+      "important": false,
+      "kind": "character_interaction",
+      "link": "interactions#blind_interaction",
+      "name": "Blind",
+      "section": "Prison",
+      "target": "blind_interaction",
+      "targetName": "Blind",
+      "usedBy": [
+        "theological_agent_puppet",
+        "external_theological_agent_puppet",
+        "external_ruler_puppet"
+      ]
+    },
+    {
+      "desc": "Use Remove Co-Ruler Interaction to cripple a co-ruler Prisoner and end a Power Sharing",
+      "dlc": null,
+      "gate": [
+        "puppet is a Secular Ruler Puppet or puppet has Torturer or puppet has Sadistic"
+      ],
+      "gateUnmodelled": false,
+      "id": "puppet_action_systematically_maim",
+      "important": false,
+      "kind": "character_interaction",
+      "link": "interactions#systematically_maim_character_interaction",
+      "name": "Remove Co-Ruler",
+      "section": "Prison",
+      "target": "systematically_maim_character_interaction",
+      "targetName": "Remove Co-Ruler",
+      "usedBy": [
+        "theological_agent_puppet",
+        "external_theological_agent_puppet",
+        "external_ruler_puppet"
+      ]
+    },
+    {
+      "desc": "Use Declare War Interaction to start a war against a foreign Ruler",
+      "dlc": null,
+      "gate": [],
+      "gateUnmodelled": false,
+      "id": "puppet_action_declare_war",
+      "important": true,
+      "kind": "character_interaction",
+      "link": "interactions#declare_war_interaction",
+      "name": "Declare War",
+      "section": "Warfare & alliances",
+      "target": "declare_war_interaction",
+      "targetName": "Declare War",
+      "usedBy": [
+        "external_ruler_puppet"
+      ]
+    },
+    {
+      "desc": "Use Trial-by-Combat Interaction to settle a grievance",
+      "dlc": null,
+      "gate": [],
+      "gateUnmodelled": false,
+      "id": "puppet_action_challenge_to_trial_by_combat",
+      "important": false,
+      "kind": "character_interaction",
+      "link": "interactions#challenge_to_trial_by_combat_interaction",
+      "name": "Trial-by-Combat",
+      "section": "Warfare & alliances",
+      "target": "challenge_to_trial_by_combat_interaction",
+      "targetName": "Trial-by-Combat",
+      "usedBy": [
+        "theological_agent_puppet",
+        "external_theological_agent_puppet",
+        "external_ruler_puppet"
+      ]
+    },
+    {
+      "desc": "Use Demand as Tributary Interaction on an Independent Ruler",
+      "dlc": null,
+      "gate": [],
+      "gateUnmodelled": false,
+      "id": "puppet_action_demand_tributary",
+      "important": false,
+      "kind": "character_interaction",
+      "link": "interactions#demand_tributary_interaction",
+      "name": "Demand as Tributary",
+      "section": "Tributary diplomacy",
+      "target": "demand_tributary_interaction",
+      "targetName": "Demand as Tributary",
+      "usedBy": [
+        "theological_agent_puppet",
+        "external_theological_agent_puppet",
+        "external_ruler_puppet"
+      ]
+    },
+    {
+      "desc": "Use Cease Paying Tribute Interaction to break free from your Suzerain",
+      "dlc": null,
+      "gate": [],
+      "gateUnmodelled": false,
+      "id": "puppet_action_cease_paying_tribute",
+      "important": false,
+      "kind": "character_interaction",
+      "link": "interactions#cease_paying_tribute_interaction",
+      "name": "Cease Paying Tribute",
+      "section": "Tributary diplomacy",
+      "target": "cease_paying_tribute_interaction",
+      "targetName": "Cease Paying Tribute",
+      "usedBy": [
+        "theological_agent_puppet",
+        "external_theological_agent_puppet",
+        "external_ruler_puppet"
+      ]
+    },
+    {
+      "desc": "Use Release Tributary Interaction to free one of yours back to Independent status",
+      "dlc": null,
+      "gate": [],
+      "gateUnmodelled": false,
+      "id": "puppet_action_release_tributary",
+      "important": true,
+      "kind": "character_interaction",
+      "link": "interactions#release_tributary_interaction",
+      "name": "Release Tributary",
+      "section": "Tributary diplomacy",
+      "target": "release_tributary_interaction",
+      "targetName": "Release Tributary",
+      "usedBy": [
+        "theological_agent_puppet",
+        "external_theological_agent_puppet",
+        "external_ruler_puppet"
+      ]
+    },
+    {
+      "desc": "Use Purchase Truce Interaction to spend Gold for peace with a foreign Ruler",
+      "dlc": null,
+      "gate": [],
+      "gateUnmodelled": false,
+      "id": "puppet_action_purchase_truce",
+      "important": false,
+      "kind": "character_interaction",
+      "link": "interactions#purchase_truce_interaction",
+      "name": "Purchase Truce",
+      "section": "Tributary diplomacy",
+      "target": "purchase_truce_interaction",
+      "targetName": "Purchase Truce",
+      "usedBy": [
+        "theological_agent_puppet",
+        "external_theological_agent_puppet",
+        "external_ruler_puppet"
+      ]
+    },
+    {
+      "desc": "Use Grant Independence Interaction to release one of your Vassals",
+      "dlc": null,
+      "gate": [
+        "You have not ordered a Puppet to release a Vassal in the last 5 years"
+      ],
+      "gateUnmodelled": false,
+      "id": "puppet_action_grant_independence",
+      "important": true,
+      "kind": "character_interaction",
+      "link": "interactions#grant_independence_interaction",
+      "name": "Grant Independence",
+      "section": "Vassalization & independence",
+      "target": "grant_independence_interaction",
+      "targetName": "Grant Independence",
+      "usedBy": [
+        "theological_agent_puppet",
+        "external_theological_agent_puppet",
+        "external_ruler_puppet"
+      ]
+    },
+    {
+      "desc": "Use Give Vassal Directive Interaction to set long-term behavior for a Vassal",
+      "dlc": null,
+      "gate": [],
+      "gateUnmodelled": false,
+      "id": "puppet_action_give_vassal_directive",
+      "important": false,
+      "kind": "character_interaction",
+      "link": "interactions#give_vassal_directive_interaction",
+      "name": "Give Vassal Directive",
+      "section": "Vassal & realm management",
+      "target": "give_vassal_directive_interaction",
+      "targetName": "Give Vassal Directive",
+      "usedBy": [
+        "theological_agent_puppet",
+        "external_theological_agent_puppet",
+        "external_ruler_puppet"
+      ]
+    },
+    {
+      "desc": "Use Inspire Conversion Interaction to bring a Nomadic Vassal (and their counties) into your domicile Faith",
+      "dlc": null,
+      "gate": [
+        "puppet is a Secular Ruler Puppet"
+      ],
+      "gateUnmodelled": false,
+      "id": "puppet_action_inspire_conversion",
+      "important": true,
+      "kind": "character_interaction",
+      "link": "interactions#inspire_conversion_interaction",
+      "name": "Inspire Conversion",
+      "section": "Vassal & realm management",
+      "target": "inspire_conversion_interaction",
+      "targetName": "Inspire Conversion",
+      "usedBy": [
+        "external_ruler_puppet"
+      ]
+    },
+    {
+      "desc": "Use Grant Pardon Interaction on a Character you hold an Imprisonment Reason against",
+      "dlc": null,
+      "gate": [],
+      "gateUnmodelled": false,
+      "id": "puppet_action_pardon",
+      "important": false,
+      "kind": "character_interaction",
+      "link": "interactions#pardon_interaction",
+      "name": "Grant Pardon",
+      "section": "Realm stability",
+      "target": "pardon_interaction",
+      "targetName": "Grant Pardon",
+      "usedBy": [
+        "theological_agent_puppet",
+        "external_theological_agent_puppet",
+        "external_ruler_puppet"
+      ]
+    },
+    {
+      "desc": "Use Invite to Activity Interaction to bring a Character to your hosted Activity",
+      "dlc": null,
+      "gate": [],
+      "gateUnmodelled": false,
+      "id": "puppet_action_invite_to_activity",
+      "important": false,
+      "kind": "character_interaction",
+      "link": "interactions#invite_to_activity_interaction",
+      "name": "Invite to Activity",
+      "section": "Court & guest management",
+      "target": "invite_to_activity_interaction",
+      "targetName": "Invite to Activity",
+      "usedBy": [
+        "theological_agent_puppet",
+        "external_theological_agent_puppet",
+        "external_ruler_puppet"
+      ]
+    },
+    {
+      "desc": "Use Make Concubine Interaction on a chosen Character",
+      "dlc": null,
+      "gate": [],
+      "gateUnmodelled": false,
+      "id": "puppet_action_make_concubine",
+      "important": false,
+      "kind": "character_interaction",
+      "link": "interactions#make_concubine_interaction",
+      "name": "Make Concubine",
+      "section": "Marriage & concubines",
+      "target": "make_concubine_interaction",
+      "targetName": "Make Concubine",
+      "usedBy": [
+        "theological_agent_puppet",
+        "external_theological_agent_puppet",
+        "external_ruler_puppet"
+      ]
+    },
+    {
+      "desc": "Use Divorce Interaction to part ways with your Spouse",
+      "dlc": null,
+      "gate": [],
+      "gateUnmodelled": false,
+      "id": "puppet_action_divorce_character",
+      "important": true,
+      "kind": "character_interaction",
+      "link": "interactions#divorce_character_interaction",
+      "name": "Divorce",
+      "section": "Marriage & concubines",
+      "target": "divorce_character_interaction",
+      "targetName": "Divorce",
+      "usedBy": [
+        "theological_agent_puppet",
+        "external_theological_agent_puppet",
+        "external_ruler_puppet"
+      ]
+    },
+    {
+      "desc": null,
+      "dlc": null,
+      "gate": [],
+      "gateUnmodelled": false,
+      "id": "puppet_action_divorce_character_house_head",
+      "important": false,
+      "kind": "character_interaction",
+      "link": "interactions#divorce_character_house_head_interaction",
+      "name": "Request Divorce",
+      "section": "Marriage & concubines",
+      "target": "divorce_character_house_head_interaction",
+      "targetName": "Request Divorce",
+      "usedBy": [
+        "theological_agent_puppet",
+        "external_theological_agent_puppet",
+        "external_ruler_puppet"
+      ]
+    },
+    {
+      "desc": null,
+      "dlc": null,
+      "gate": [],
+      "gateUnmodelled": false,
+      "id": "puppet_action_divorce_character_rel_head",
+      "important": false,
+      "kind": "character_interaction",
+      "link": "interactions#divorce_character_rel_head_interaction",
+      "name": "Request Divorce",
+      "section": "Marriage & concubines",
+      "target": "divorce_character_rel_head_interaction",
+      "targetName": "Request Divorce",
+      "usedBy": [
+        "theological_agent_puppet",
+        "external_theological_agent_puppet",
+        "external_ruler_puppet"
+      ]
+    },
+    {
+      "desc": null,
+      "dlc": null,
+      "gate": [],
+      "gateUnmodelled": false,
+      "id": "puppet_action_divorce_character_dynast_request",
+      "important": false,
+      "kind": "character_interaction",
+      "link": "interactions#divorce_character_dynast_request_interaction",
+      "name": "Enforce Divorce",
+      "section": "Marriage & concubines",
+      "target": "divorce_character_dynast_request_interaction",
+      "targetName": "Enforce Divorce",
+      "usedBy": [
+        "theological_agent_puppet",
+        "external_theological_agent_puppet",
+        "external_ruler_puppet"
+      ]
+    },
+    {
+      "desc": null,
+      "dlc": null,
+      "gate": [],
+      "gateUnmodelled": false,
+      "id": "puppet_action_divorce_character_dynast_request_rel_head",
+      "important": false,
+      "kind": "character_interaction",
+      "link": "interactions#divorce_character_dynast_request_rel_head_interaction",
+      "name": "Request Divorce",
+      "section": "Marriage & concubines",
+      "target": "divorce_character_dynast_request_rel_head_interaction",
+      "targetName": "Request Divorce",
+      "usedBy": [
+        "theological_agent_puppet",
+        "external_theological_agent_puppet",
+        "external_ruler_puppet"
+      ]
+    },
+    {
+      "desc": "Use Imprison Interaction on a target you hold an Imprisonment Reason against",
+      "dlc": null,
+      "gate": [],
+      "gateUnmodelled": false,
+      "id": "puppet_action_imprison",
+      "important": false,
+      "kind": "character_interaction",
+      "link": "interactions#imprison_interaction",
+      "name": "Imprison",
+      "section": "Prison & ransom",
+      "target": "imprison_interaction",
+      "targetName": "Imprison",
+      "usedBy": [
+        "theological_agent_puppet",
+        "external_theological_agent_puppet",
+        "external_ruler_puppet"
+      ]
+    },
+    {
+      "desc": "Use Pay Ransom Interaction to free a kinsman from another Ruler's Dungeon",
+      "dlc": null,
+      "gate": [],
+      "gateUnmodelled": false,
+      "id": "puppet_action_pay_ransom",
+      "important": false,
+      "kind": "character_interaction",
+      "link": "interactions#pay_ransom_interaction",
+      "name": "Pay Ransom",
+      "section": "Prison & ransom",
+      "target": "pay_ransom_interaction",
+      "targetName": "Pay Ransom",
+      "usedBy": [
+        "theological_agent_puppet",
+        "external_theological_agent_puppet",
+        "external_ruler_puppet"
+      ]
+    },
+    {
+      "desc": "Use Claim Throne (Scheme) Interaction against your Liege",
+      "dlc": null,
+      "gate": [],
+      "gateUnmodelled": false,
+      "id": "puppet_action_claim_throne",
+      "important": false,
+      "kind": "character_interaction",
+      "link": "interactions#claim_throne_interaction",
+      "name": "Claim Throne (Scheme)",
+      "section": "Claims & succession via perks",
+      "target": "claim_throne_interaction",
+      "targetName": "Claim Throne (Scheme)",
+      "usedBy": [
+        "theological_agent_puppet",
+        "external_theological_agent_puppet",
+        "external_ruler_puppet"
+      ]
+    },
+    {
+      "desc": "Use Buy Claim Interaction on a foreign Title for Gold",
+      "dlc": null,
+      "gate": [],
+      "gateUnmodelled": false,
+      "id": "puppet_action_buy_claim",
+      "important": false,
+      "kind": "character_interaction",
+      "link": "interactions#buy_claim_interaction",
+      "name": "Buy Claim",
+      "section": "Claims & succession via perks",
+      "target": "buy_claim_interaction",
+      "targetName": "Buy Claim",
+      "usedBy": [
+        "theological_agent_puppet",
+        "external_theological_agent_puppet",
+        "external_ruler_puppet"
+      ]
+    },
+    {
+      "desc": "Use Claim Title Interaction as Dynasty Head to press one of a dynasty member's holdings",
+      "dlc": null,
+      "gate": [],
+      "gateUnmodelled": false,
+      "id": "puppet_action_dynast_claim_title",
+      "important": false,
+      "kind": "character_interaction",
+      "link": "interactions#dynast_claim_title_interaction",
+      "name": "Claim Title",
+      "section": "Claims & succession via perks",
+      "target": "dynast_claim_title_interaction",
+      "targetName": "Claim Title",
+      "usedBy": [
+        "theological_agent_puppet",
+        "external_theological_agent_puppet",
+        "external_ruler_puppet"
+      ]
+    },
+    {
+      "desc": "Use Demand Payment Interaction from a Character you hold a Hook on",
+      "dlc": null,
+      "gate": [],
+      "gateUnmodelled": false,
+      "id": "puppet_action_demand_payment",
+      "important": false,
+      "kind": "character_interaction",
+      "link": "interactions#demand_payment_interaction",
+      "name": "Demand Payment",
+      "section": "Claims & succession via perks",
+      "target": "demand_payment_interaction",
+      "targetName": "Demand Payment",
+      "usedBy": [
+        "theological_agent_puppet",
+        "external_theological_agent_puppet",
+        "external_ruler_puppet"
+      ]
+    },
+    {
+      "desc": "Use Fabricate Hook Interaction to start a Scheme against a target",
+      "dlc": null,
+      "gate": [
+        "puppet is a Secular Ruler Puppet or puppet has Schemer"
+      ],
+      "gateUnmodelled": false,
+      "id": "puppet_action_fabricate_hook",
+      "important": false,
+      "kind": "character_interaction",
+      "link": "interactions#fabricate_hook_interaction",
+      "name": "Fabricate Hook",
+      "section": "Intrigue / hooks",
+      "target": "fabricate_hook_interaction",
+      "targetName": "Fabricate Hook",
+      "usedBy": [
+        "theological_agent_puppet",
+        "external_theological_agent_puppet",
+        "external_ruler_puppet"
+      ]
+    },
+    {
+      "desc": "Use Blackmail Interaction to turn a known Secret into a Hook on a target",
+      "dlc": null,
+      "gate": [
+        "puppet is a Secular Ruler Puppet or puppet has Schemer"
+      ],
+      "gateUnmodelled": false,
+      "id": "puppet_action_blackmail",
+      "important": false,
+      "kind": "character_interaction",
+      "link": "interactions#blackmail_interaction",
+      "name": "Blackmail",
+      "section": "Intrigue / hooks",
+      "target": "blackmail_interaction",
+      "targetName": "Blackmail",
+      "usedBy": [
+        "theological_agent_puppet",
+        "external_theological_agent_puppet",
+        "external_ruler_puppet"
+      ]
+    },
+    {
+      "desc": "Use Demand Artifact Interaction to claim one from another Character",
+      "dlc": null,
+      "gate": [],
+      "gateUnmodelled": false,
+      "id": "puppet_action_demand_artifact",
+      "important": false,
+      "kind": "character_interaction",
+      "link": "interactions#demand_artifact_interaction",
+      "name": "Demand Artifact",
+      "section": "Artifacts",
+      "target": "demand_artifact_interaction",
+      "targetName": "Demand Artifact",
+      "usedBy": [
+        "theological_agent_puppet",
+        "external_theological_agent_puppet",
+        "external_ruler_puppet"
+      ]
+    },
+    {
+      "desc": "Use Steal Artifact (Scheme) Interaction against another Character",
+      "dlc": null,
+      "gate": [
+        "puppet is a Secular Ruler Puppet or puppet has Schemer"
+      ],
+      "gateUnmodelled": false,
+      "id": "puppet_action_start_stealing_back_artifact",
+      "important": false,
+      "kind": "character_interaction",
+      "link": "interactions#start_stealing_back_artifact",
+      "name": "Steal Artifact (Scheme)",
+      "section": "Artifacts",
+      "target": "start_stealing_back_artifact",
+      "targetName": "Steal Artifact (Scheme)",
+      "usedBy": [
+        "theological_agent_puppet",
+        "external_theological_agent_puppet",
+        "external_ruler_puppet"
+      ]
+    },
+    {
+      "desc": "Use Return Hostage Interaction to send one back to their home Court",
+      "dlc": "Wards & Wardens",
+      "gate": [],
+      "gateUnmodelled": false,
+      "id": "puppet_action_return_hostage",
+      "important": false,
+      "kind": "character_interaction",
+      "link": "interactions#return_hostage_interaction",
+      "name": "Return Hostage",
+      "section": "Hostages",
+      "target": "return_hostage_interaction",
+      "targetName": "Return Hostage",
+      "usedBy": [
+        "theological_agent_puppet",
+        "external_theological_agent_puppet",
+        "external_ruler_puppet"
+      ]
+    },
+    {
+      "desc": "Use Hire as Mercenaries Interaction to retain an Adventurer band for your War",
+      "dlc": "Roads to Power",
+      "gate": [],
+      "gateUnmodelled": false,
+      "id": "puppet_action_hire_laamp_mercenaries",
+      "important": false,
+      "kind": "character_interaction",
+      "link": "interactions#hire_laamp_mercenaries_interaction",
+      "name": "Hire as Mercenaries",
+      "section": "Adventurers",
+      "target": "hire_laamp_mercenaries_interaction",
+      "targetName": "Hire as Mercenaries",
+      "usedBy": [
+        "theological_agent_puppet",
+        "external_theological_agent_puppet",
+        "external_ruler_puppet"
+      ]
+    },
+    {
+      "desc": "Use Expel Adventurer Interaction to drive one from your Realm",
+      "dlc": "Roads to Power",
+      "gate": [],
+      "gateUnmodelled": false,
+      "id": "puppet_action_evict_adventurer",
+      "important": false,
+      "kind": "character_interaction",
+      "link": "interactions#evict_adventurer_interaction",
+      "name": "Expel Adventurer",
+      "section": "Adventurers",
+      "target": "evict_adventurer_interaction",
+      "targetName": "Expel Adventurer",
+      "usedBy": [
+        "theological_agent_puppet",
+        "external_theological_agent_puppet",
+        "external_ruler_puppet"
+      ]
+    },
+    {
+      "desc": "Use Ask to Promote Legend Interaction to enlist another Ruler's help spreading your Legend",
+      "dlc": "Community Pack 1 (free)",
+      "gate": [],
+      "gateUnmodelled": false,
+      "id": "puppet_action_ce1_ask_to_promote_legend",
+      "important": false,
+      "kind": "character_interaction",
+      "link": "interactions#ce1_ask_to_promote_legend_interaction",
+      "name": "Ask to Promote Legend",
+      "section": "Legends",
+      "target": "ce1_ask_to_promote_legend_interaction",
+      "targetName": "Ask to Promote Legend",
+      "usedBy": [
+        "theological_agent_puppet",
+        "external_theological_agent_puppet",
+        "external_ruler_puppet"
+      ]
+    },
+    {
+      "desc": "Use Negotiate Alliance Interaction to ally with a target",
+      "dlc": "Community Pack 1 (free)",
+      "gate": [],
+      "gateUnmodelled": false,
+      "id": "puppet_action_negotiate_alliance",
+      "important": false,
+      "kind": "character_interaction",
+      "link": "interactions#negotiate_alliance_interaction",
+      "name": "Negotiate Alliance",
+      "section": "Legends",
+      "target": "negotiate_alliance_interaction",
+      "targetName": "Negotiate Alliance",
+      "usedBy": [
+        "theological_agent_puppet",
+        "external_theological_agent_puppet",
+        "external_ruler_puppet"
+      ]
+    },
+    {
+      "desc": "Use Propose Alliance Interaction to ally with a target",
+      "dlc": "Community Pack 1 (free)",
+      "gate": [],
+      "gateUnmodelled": false,
+      "id": "puppet_action_perk_alliance",
+      "important": false,
+      "kind": "character_interaction",
+      "link": "interactions#perk_alliance_interaction",
+      "name": "Propose Alliance",
+      "section": "Legends",
+      "target": "perk_alliance_interaction",
+      "targetName": "Propose Alliance",
+      "usedBy": [
+        "theological_agent_puppet",
+        "external_theological_agent_puppet",
+        "external_ruler_puppet"
+      ]
+    }
+  ],
+  "types": [
+    {
+      "actions": [
+        "puppet_action_give_gift",
+        "puppet_action_ask_excommunicate_character",
+        "puppet_trigger_can_create_faith",
+        "puppet_trigger_can_create_rite",
+        "puppet_action_elevate_holy_site",
+        "puppet_action_demote_holy_site",
+        "puppet_action_abandon_holy_site",
+        "puppet_action_adopt_holy_site",
+        "puppet_action_build_grand_cathedral",
+        "puppet_action_mass_rite_conversion",
+        "puppet_action_request_elevation",
+        "puppet_action_request_ecclesiastical_title_creation",
+        "puppet_action_request_ecclesiastical_title_expansion",
+        "puppet_action_request_ecclesiastical_title_merger",
+        "puppet_action_request_ecclesiastical_title_split",
+        "puppet_action_request_clerical_elector_title",
+        "puppet_action_destroy_cardinalate",
+        "puppet_action_sell_claim",
+        "puppet_action_command_murder",
+        "puppet_action_command_abduct",
+        "puppet_action_command_befriend",
+        "puppet_action_command_seduce",
+        "puppet_action_command_court",
+        "puppet_action_command_sway",
+        "puppet_action_command_learn_language",
+        "puppet_action_command_study_faith",
+        "puppet_action_demand_conversion",
+        "puppet_action_demand_conversion_vassal_ruler",
+        "puppet_action_request_clerical_chastity",
+        "puppet_action_expose_secret",
+        "puppet_action_take_monastic_vows",
+        "puppet_action_send_to_holy_order",
+        "puppet_action_monastic_donation",
+        "puppet_action_lease_monastic",
+        "puppet_action_declaration_of_repentance",
+        "puppet_action_literalist_debate",
+        "puppet_action_convert_to_religion",
+        "puppet_action_demand_church_succession",
+        "puppet_action_release_from_prison",
+        "puppet_action_torture",
+        "puppet_action_castrate",
+        "puppet_action_blind",
+        "puppet_action_systematically_maim",
+        "puppet_action_challenge_to_trial_by_combat",
+        "puppet_action_demand_tributary",
+        "puppet_action_cease_paying_tribute",
+        "puppet_action_release_tributary",
+        "puppet_action_purchase_truce",
+        "puppet_action_grant_independence",
+        "puppet_action_give_vassal_directive",
+        "puppet_action_pardon",
+        "puppet_action_invite_to_activity",
+        "puppet_action_make_concubine",
+        "puppet_action_divorce_character",
+        "puppet_action_divorce_character_house_head",
+        "puppet_action_divorce_character_rel_head",
+        "puppet_action_divorce_character_dynast_request",
+        "puppet_action_divorce_character_dynast_request_rel_head",
+        "puppet_action_imprison",
+        "puppet_action_pay_ransom",
+        "puppet_action_claim_throne",
+        "puppet_action_buy_claim",
+        "puppet_action_dynast_claim_title",
+        "puppet_action_demand_payment",
+        "puppet_action_fabricate_hook",
+        "puppet_action_blackmail",
+        "puppet_action_demand_artifact",
+        "puppet_action_start_stealing_back_artifact",
+        "puppet_action_return_hostage",
+        "puppet_action_hire_laamp_mercenaries",
+        "puppet_action_evict_adventurer",
+        "puppet_action_ce1_ask_to_promote_legend",
+        "puppet_action_negotiate_alliance",
+        "puppet_action_perk_alliance"
+      ],
+      "canHave": [
+        "ruler is available",
+        "ruler is an adult",
+        "ruler is an advanced ruler",
+        "not (mercenary government or herder government)",
+        "ruler holds at least a county",
+        "government allows a council",
+        "Rite has Theocratic Clergy",
+        "ruler is not clergy",
+        "not tgp has access to ministry",
+        "not (nomadic government)"
+      ],
+      "color": "#99d9d9",
+      "desc": "The Realm Priest Puppet acts as your voice inside the Church, allowing you to vote at Ecumenical Councils and found Rites.",
+      "dlc": "By God Alone",
+      "icon": "theological_agent_puppet",
+      "id": "theological_agent_puppet",
+      "interaction": "make_clerical_puppet_interaction",
+      "interactionLink": "interactions#make_clerical_puppet_interaction",
+      "interactionName": "Puppet Realm Priest",
+      "isValid": [],
+      "missingActions": [],
+      "name": "Realm Priest Puppet"
+    },
+    {
+      "actions": [
+        "puppet_action_give_gift",
+        "puppet_action_ask_excommunicate_character",
+        "puppet_trigger_can_create_faith",
+        "puppet_trigger_can_create_rite",
+        "puppet_action_elevate_holy_site",
+        "puppet_action_demote_holy_site",
+        "puppet_action_abandon_holy_site",
+        "puppet_action_adopt_holy_site",
+        "puppet_action_build_grand_cathedral",
+        "puppet_action_mass_rite_conversion",
+        "puppet_action_request_elevation",
+        "puppet_action_request_ecclesiastical_title_creation",
+        "puppet_action_request_ecclesiastical_title_expansion",
+        "puppet_action_request_ecclesiastical_title_merger",
+        "puppet_action_request_ecclesiastical_title_split",
+        "puppet_action_request_clerical_elector_title",
+        "puppet_action_command_murder",
+        "puppet_action_command_abduct",
+        "puppet_action_command_befriend",
+        "puppet_action_command_seduce",
+        "puppet_action_command_court",
+        "puppet_action_command_sway",
+        "puppet_action_command_learn_language",
+        "puppet_action_command_study_faith",
+        "puppet_action_excommunicate",
+        "puppet_action_lift_excommunication",
+        "puppet_action_temporal_condemnation",
+        "puppet_action_select_ghw_beneficiary",
+        "puppet_action_ecclesiastic_incite_holy_war",
+        "puppet_action_attempt_conversion_local_ruler",
+        "puppet_action_demand_conversion_player_ruler",
+        "puppet_action_convert_at_war",
+        "puppet_action_demand_church_succession_hof",
+        "puppet_action_give_cardinal_order",
+        "puppet_action_appoint_cardinal",
+        "puppet_action_destroy_cardinalate",
+        "puppet_action_ecclesiastic_grant_claim",
+        "puppet_action_ecclesiastic_consecrate_kingdom",
+        "puppet_action_ecclesiastical_bestow_title",
+        "puppet_action_ecclesiastical_de_jure_shifting_grant",
+        "puppet_action_sway_ruler_to_my_rite",
+        "puppet_action_host_honored_guest",
+        "puppet_action_share_known_secrets",
+        "puppet_action_take_vows",
+        "puppet_action_take_monastic_vows",
+        "puppet_action_send_to_holy_order",
+        "puppet_action_monastic_donation",
+        "puppet_action_lease_monastic",
+        "puppet_action_declaration_of_repentance",
+        "puppet_action_literalist_debate",
+        "puppet_action_convert_to_religion",
+        "puppet_action_designate_theocratic_heir",
+        "puppet_action_demand_church_succession",
+        "puppet_action_increase_theocratic_heir_candidacy",
+        "puppet_action_release_from_prison",
+        "puppet_action_torture",
+        "puppet_action_castrate",
+        "puppet_action_blind",
+        "puppet_action_systematically_maim",
+        "puppet_action_challenge_to_trial_by_combat",
+        "puppet_action_demand_tributary",
+        "puppet_action_cease_paying_tribute",
+        "puppet_action_release_tributary",
+        "puppet_action_purchase_truce",
+        "puppet_action_grant_independence",
+        "puppet_action_give_vassal_directive",
+        "puppet_action_pardon",
+        "puppet_action_invite_to_activity",
+        "puppet_action_make_concubine",
+        "puppet_action_divorce_character",
+        "puppet_action_divorce_character_house_head",
+        "puppet_action_divorce_character_rel_head",
+        "puppet_action_divorce_character_dynast_request",
+        "puppet_action_divorce_character_dynast_request_rel_head",
+        "puppet_action_imprison",
+        "puppet_action_pay_ransom",
+        "puppet_action_claim_throne",
+        "puppet_action_buy_claim",
+        "puppet_action_dynast_claim_title",
+        "puppet_action_demand_payment",
+        "puppet_action_fabricate_hook",
+        "puppet_action_blackmail",
+        "puppet_action_demand_artifact",
+        "puppet_action_start_stealing_back_artifact",
+        "puppet_action_return_hostage",
+        "puppet_action_hire_laamp_mercenaries",
+        "puppet_action_evict_adventurer",
+        "puppet_action_ce1_ask_to_promote_legend",
+        "puppet_action_negotiate_alliance",
+        "puppet_action_perk_alliance"
+      ],
+      "canHave": [
+        "ruler is available",
+        "ruler is an adult",
+        "ruler is an advanced ruler",
+        "not (mercenary government or herder government)",
+        "ruler holds at least a county",
+        "Rite has Theocratic Clergy or Rite has Accept Monasticism or Rite has Encourage Monasticism",
+        "owns By God Alone"
+      ],
+      "color": "#cccccc",
+      "desc": "The Clerical Puppet is outside your Realm; Archbishops, Cardinals, or the Head of Faith. They are powerful and can Excommunicate.",
+      "dlc": "By God Alone",
+      "icon": "external_theological_agent_puppet",
+      "id": "external_theological_agent_puppet",
+      "interaction": "make_external_clerical_puppet_interaction",
+      "interactionLink": "interactions#make_external_clerical_puppet_interaction",
+      "interactionName": "Puppet Clerical Ruler",
+      "isValid": [],
+      "missingActions": [],
+      "name": "Clerical Ruler Puppet"
+    },
+    {
+      "actions": [
+        "puppet_action_give_gift",
+        "puppet_action_command_murder",
+        "puppet_action_command_abduct",
+        "puppet_action_command_befriend",
+        "puppet_action_command_seduce",
+        "puppet_action_command_court",
+        "puppet_action_command_sway",
+        "puppet_action_command_learn_language",
+        "puppet_action_command_study_faith",
+        "puppet_action_expose_secret",
+        "puppet_action_share_known_secrets",
+        "puppet_action_host_honored_guest",
+        "puppet_action_declare_war",
+        "puppet_action_challenge_to_trial_by_combat",
+        "puppet_action_demand_tributary",
+        "puppet_action_cease_paying_tribute",
+        "puppet_action_release_tributary",
+        "puppet_action_purchase_truce",
+        "puppet_action_grant_independence",
+        "puppet_action_give_vassal_directive",
+        "puppet_action_pardon",
+        "puppet_action_invite_to_activity",
+        "puppet_action_make_concubine",
+        "puppet_action_divorce_character",
+        "puppet_action_divorce_character_house_head",
+        "puppet_action_divorce_character_rel_head",
+        "puppet_action_divorce_character_dynast_request",
+        "puppet_action_divorce_character_dynast_request_rel_head",
+        "puppet_action_imprison",
+        "puppet_action_release_from_prison",
+        "puppet_action_torture",
+        "puppet_action_castrate",
+        "puppet_action_blind",
+        "puppet_action_systematically_maim",
+        "puppet_action_pay_ransom",
+        "puppet_action_claim_throne",
+        "puppet_action_buy_claim",
+        "puppet_action_dynast_claim_title",
+        "puppet_action_strengthen_claim",
+        "puppet_action_demand_payment",
+        "puppet_action_fabricate_hook",
+        "puppet_action_blackmail",
+        "puppet_action_demand_artifact",
+        "puppet_action_start_stealing_back_artifact",
+        "puppet_action_return_hostage",
+        "puppet_action_hire_laamp_mercenaries",
+        "puppet_action_evict_adventurer",
+        "puppet_action_ce1_ask_to_promote_legend",
+        "puppet_action_negotiate_alliance",
+        "puppet_action_perk_alliance",
+        "puppet_action_temporal_condemnation",
+        "puppet_action_select_ghw_beneficiary",
+        "puppet_action_ecclesiastic_incite_holy_war",
+        "puppet_action_attempt_conversion_local_ruler",
+        "puppet_action_demand_conversion_player_ruler",
+        "puppet_action_inspire_conversion",
+        "puppet_action_convert_at_war",
+        "puppet_action_ecclesiastic_grant_claim",
+        "puppet_action_sway_ruler_to_my_rite",
+        "puppet_action_take_vows",
+        "puppet_action_increase_theocratic_heir_candidacy"
+      ],
+      "canHave": [
+        "ruler is available",
+        "ruler is an adult",
+        "ruler is an advanced ruler",
+        "not (mercenary government or herder government)",
+        "ruler holds at least a county",
+        "owns By God Alone"
+      ],
+      "color": "#b280b2",
+      "desc": "A Ruler held by love, fear, or obligation. Order them to Scheme for you, and make their Realm serve yours.",
+      "dlc": "By God Alone",
+      "icon": "external_ruler_puppet",
+      "id": "external_ruler_puppet",
+      "interaction": "make_external_ruler_puppet_interaction",
+      "interactionLink": "interactions#make_external_ruler_puppet_interaction",
+      "interactionName": "Puppet Secular Ruler",
+      "isValid": [],
+      "missingActions": [],
+      "name": "Secular Ruler Puppet"
+    }
+  ]
+}

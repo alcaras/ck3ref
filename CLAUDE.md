@@ -299,6 +299,14 @@ Known gaps / next steps:
   `rite_has_tenet` / `rite_religion_tag`. Province and character history set
   `rite =`, not `religion =`. Laws likewise split: groups in
   `common/law_groups/`, laws carry `law_group_type` + `index`.
+- **By God Alone systems** (spiritual fulfillment, holy orders, puppets) each
+  have a builder and page. Holy order types split their trigger on a
+  `*_game_start_founder` variable (game-start placement vs founded in play);
+  the page shows both branches. `build_puppets.py` and `build_holy_orders.py`
+  read the site's own interactions/decisions/great-projects/titles/regions/
+  maa JSON for names and links, so they run after those builders. Their
+  condition describers phrase only shapes they recognise and print "…" for
+  the rest; puppet gates expand the DLC's own `pam_scripted_triggers.txt`.
 - **Windows PC pipeline**: no `rsync`/`make`. Sync mirror ← Steam with the
   robocopy lines of the mirror's `update-ck3ref.bat` (drop its `pause`), then
   robocopy the `scripts/sync.sh` SUBTREES into `reference/` and compare file

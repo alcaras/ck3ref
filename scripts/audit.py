@@ -36,6 +36,9 @@ MAPPED = {
     "governments": "build_governments.py",
     "laws": "build_laws.py",
     "law_groups": "build_laws.py",
+    "spiritual_fulfillment": "build_fulfillment.py",
+    "holy_orders": "build_holy_orders.py",
+    "puppets": "build_puppets.py",
     "subject_contracts": "build_contracts.py",
     "court_positions": "build_court.py",
     "council_positions": "build_council.py",
@@ -94,10 +97,6 @@ SKIP = {
         "accolade_icons", "dynasty_houses", "dynasties",
     "dynasty_house_mottos", "dynasty_house_motto_inserts", "story_cycles", "bookmarks", "flavorization",
     "raids",
-    # By God Alone (1.20) — player-facing, candidates for their own pages:
-    # spiritual fulfillment levels per religion, holy order types, and the
-    # clerical "puppet" agents with their actions
-    "spiritual_fulfillment", "holy_orders", "puppets",
     # engine/plumbing — no reference value planned
     "on_action", "scripted_effects", "scripted_triggers", "scripted_modifiers",
     "scripted_lists", "scripted_costs", "scripted_rules", "scripted_guis",

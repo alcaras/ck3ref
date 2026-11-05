@@ -1,0 +1,165 @@
+---
+import Base from '../layouts/Base.astro';
+import data from '../data/holy_orders.json';
+import titleIndex from '../data/title-index.json';
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const titles = titleIndex as Record<string, { name: string; page?: string }>;
+const titleHref = (id: string) => {
+  const t = titles[id];
+  if (!t?.page) return null;
+  return `${base}/titles/${t.page}${t.page === id ? '' : `#${id}`}`;
+};
+
+const { orders, about } = data as any;
+const KINDS = [
+  ['military', 'Military orders', 'Hired into holy wars; they lease baronies and field men-at-arms.'],
+  ['monastic', 'Monastic orders', 'They lease church holdings, raise development, spread tenets and give spiritual fulfillment.'],
+] as const;
+const groups = [...new Set(orders.map((o: any) => o.group))] as string[];
+const named = orders.filter((o: any) => o.title).length;
+
+const fmt = (n: number | null) => (n == null ? '?' : Number.isInteger(n) ? String(n) : String(Math.round(n * 1000) / 1000));
+const termText = (t: any) => (t.op === 'add' ? `+${fmt(t.value)}` : `×${fmt(t.value)}`);
+const searchText = (o: any) =>
+  [o.name, o.titleName ?? '', ...o.requires, ...(o.gameStart ?? []), ...o.weight.flatMap((w: any) => w.when),
+    ...o.menAtArms.map((m: any) => m.name), ...o.tenets.map((t: any) => t.name)].join(' ').toLowerCase();
+---
+<Base
+  title="Holy Orders"
+  active="holy-orders"
+  lede="When a holy order is founded, the game picks a type for it: among the types of the requested kind whose conditions the founder, leader and leased barony meet, one is drawn by weight. Each type fixes the order's name or title, and some its men-at-arms and its tenet. Read from common/holy_orders."
+  stats={[
+    { value: orders.length, label: 'order types' },
+    { value: named, label: 'with a fixed title' },
+    { value: orders.filter((o: any) => o.gameStart && !(o.gameStart.length === 1 && o.gameStart[0] === 'never')).length, label: 'placed at game start' },
+  ]}
+>
+  {about && <p class="about">{about}</p>}
+
+  <div class="filterbar">
+    <input type="search" id="q" placeholder="Filter by name, place, faith, tenet…" autocomplete="off" />
+    <select id="fgroup">
+      <option value="">every file</option>
+      {groups.map((g) => <option value={g}>{g}</option>)}
+    </select>
+    <label class="chk"><input type="checkbox" id="fnamed" /> fixed title only</label>
+    <span class="hint" id="count"></span>
+  </div>
+
+  {KINDS.map(([kind, label, blurb]) => (
+    <section data-group>
+      <h2 class="group-h" id={kind}>
+        {label}
+        <span class="count">{orders.filter((o: any) => o.kind === kind).length}</span>
+      </h2>
+      <p class="blurb">{blurb}</p>
+      <div class="tbl-scroll">
+        <table class="ntbl">
+          <thead>
+            <tr>
+              <th>Order</th>
+              <th>Who can found it</th>
+              <th title="Conditions for the orders the game places itself at game start">At game start</th>
+              <th title="Base weight, then each conditional add / multiply">Weight</th>
+              <th>Men-at-arms &amp; tenet</th>
+            </tr>
+          </thead>
+          <tbody>
+            {orders.filter((o: any) => o.kind === kind).map((o: any) => (
+              <tr id={o.id} data-name={searchText(o)} data-group={o.group} data-named={o.title ? '1' : ''}>
+                <td class="name">
+                  <span class="u-name">{o.name}</span>
+                  {o.title && (
+                    <span class="u-sub"><br />title: {titleHref(o.title)
+                      ? <a href={titleHref(o.title)!}>{o.titleName}</a>
+                      : o.titleName}</span>
+                  )}
+                  {o.templated && !o.title && <span class="u-sub"><br />name built from the founder or barony</span>}
+                  <span class="u-sub"><br />{o.group}{o.dlc && ` · ${o.dlc}`}</span>
+                </td>
+                <td class="fx">
+                  {o.requires.map((r: string) => <div>{r}</div>)}
+                  {o.requires.length === 0 && <span class="subtle">any founder</span>}
+                </td>
+                <td class="fx">
+                  {o.gameStart == null && <span class="subtle">same as above</span>}
+                  {o.gameStart?.length === 1 && o.gameStart[0] === 'never'
+                    ? <span class="subtle">not placed</span>
+                    : o.gameStart?.map((r: string) => <div>{r}</div>)}
+                </td>
+                <td class="fx wt">
+                  <div class="mono">base {fmt(o.baseWeight)}</div>
+                  {o.weight.map((w: any) => (
+                    <div class:list={{ gs: w.gameStart }} title={w.gameStart ? 'only matters for game-start placement' : undefined}>
+                      <span class="mono">{termText(w)}</span> {w.when.join(', ')}
+                    </div>
+                  ))}
+                </td>
+                <td class="fx">
+                  {o.menAtArms.map((m: any) => (
+                    <div>{m.known ? <a href={`${base}/men-at-arms/${m.id}`}>{m.name}</a> : m.name}</div>
+                  ))}
+                  {o.tenets.map((t: any) => (
+                    <div><a href={`${base}/doctrines#${t.id}`}>{t.name}</a>{t.conditional && <span class="subtle"> (by date)</span>}</div>
+                  ))}
+                  {o.menAtArms.length + o.tenets.length === 0 && <span class="subtle">—</span>}
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </section>
+  ))}
+
+  <p class="prov">
+    Types from <code>common/holy_orders/</code>; "every file" splits them by the file that
+    defines them (Christian, Islamic, or open to any faith). Most types test a
+    <code>*_game_start_founder</code> variable to tell the orders the game places at
+    start from ones founded in play; the two branches are shown separately. Conditions
+    the page cannot phrase — scripted variables, flags, and tests on an existing order's
+    title — show as "…", and weights that only matter at game start are dimmed.
+    Men-at-arms are the type's preferred hires, best last; otherwise the order hires by
+    religion and culture. A tenet marked "by date" is set inside a conditional effect,
+    usually depending on the start date. Name placeholders such as ‹founder's culture› are
+    filled in when the order is founded.
+  </p>
+
+  <script>
+    const q = document.getElementById('q') as HTMLInputElement;
+    const fgroup = document.getElementById('fgroup') as HTMLSelectElement;
+    const fnamed = document.getElementById('fnamed') as HTMLInputElement;
+    const count = document.getElementById('count')!;
+    const rows = [...document.querySelectorAll<HTMLTableRowElement>('section[data-group] tbody tr')];
+    const groups = [...document.querySelectorAll<HTMLElement>('section[data-group]')];
+    function apply() {
+      const needle = q.value.trim().toLowerCase();
+      let shown = 0;
+      for (const r of rows) {
+        const ok =
+          (!needle || (r.dataset.name ?? '').includes(needle)) &&
+          (!fgroup.value || r.dataset.group === fgroup.value) &&
+          (!fnamed.checked || r.dataset.named === '1');
+        r.hidden = !ok;
+        if (ok) shown++;
+      }
+      for (const g of groups) g.hidden = ![...g.querySelectorAll('tbody tr')].some((r) => !(r as HTMLElement).hidden);
+      count.textContent = `${shown} of ${rows.length}`;
+    }
+    for (const el of [q, fgroup, fnamed]) el.addEventListener('input', apply);
+    apply();
+  </script>
+
+  <style>
+    .about { color: var(--dim); max-width: 70ch; white-space: pre-line; margin-bottom: 1.2rem; }
+    .blurb { color: var(--dim); font-size: 0.85rem; margin: -0.3rem 0 0.6rem; }
+    .mono { font-family: var(--font-mono); font-size: 0.75rem; }
+    .wt .gs { opacity: 0.55; }
+    .ntbl td.wt { min-width: 15rem; }
+    .ntbl td.fx { min-width: 11rem; }
+    .chk { color: var(--dim); font-size: 0.8rem; display: flex; gap: 0.3rem; align-items: center; }
+    .prov { color: var(--faint); font-size: 0.78rem; max-width: 70ch; margin-top: 2rem; }
+    .prov code { font-family: var(--font-mono); }
+  </style>
+</Base>

@@ -1,0 +1,427 @@
+{
+  "about": "Spiritual Fulfillment is the measurement of how at peace a Character feels in respect to their Faith.\n\nThe baseline is calculated based on the Traits they have, and whether they are considered Sinful or Virtuous.\n\nSpiritual Fulfillment can be gained or lost by acting in ways that the Faith considers appropriate, and Personal Tenets can be adopted to offset harmful traits.",
+  "defines": {
+    "BASE_PERSONAL_TENETS_CAP": 1,
+    "MAX_SPIRITUAL_FULFILLMENT": 100,
+    "MIN_FULFILLMENT_CHANGE_FOR_EFFECT": 5,
+    "MIN_SPIRITUAL_FULFILLMENT": -100,
+    "PERSONAL_TENET_CHANGE_COOLDOWN_DAYS": 1095,
+    "SPIRITUAL_FULFILLMENT_FOR_STRESS_DIVIDE_FACTOR": 100,
+    "SPIRITUAL_FULFILLMENT_MULT_CORE_TENET": 2,
+    "SPIRITUAL_FULFILLMENT_MULT_PERMITTED_TENET": 0.5,
+    "SPIRITUAL_FULFILLMENT_MULT_PERSONAL_TENET": 2,
+    "SPIRITUAL_FULFILLMENT_MULT_RELIGION_TRAIT": 1
+  },
+  "levels": [
+    {
+      "icon": "spiritual_fulfillment_01",
+      "id": "christian_fulfillment_level_0"
+    },
+    {
+      "icon": "spiritual_fulfillment_02",
+      "id": "christian_fulfillment_level_1"
+    },
+    {
+      "icon": "spiritual_fulfillment_03",
+      "id": "christian_fulfillment_level_2"
+    },
+    {
+      "icon": "spiritual_fulfillment_04",
+      "id": "christian_fulfillment_level_3"
+    },
+    {
+      "icon": "spiritual_fulfillment_05",
+      "id": "christian_fulfillment_level_4"
+    },
+    {
+      "icon": "spiritual_fulfillment_06",
+      "id": "christian_fulfillment_level_5"
+    },
+    {
+      "icon": "spiritual_fulfillment_07",
+      "id": "christian_fulfillment_level_6"
+    },
+    {
+      "icon": "spiritual_fulfillment_01",
+      "id": "default_fulfillment_level_0"
+    },
+    {
+      "icon": "spiritual_fulfillment_02",
+      "id": "default_fulfillment_level_1"
+    },
+    {
+      "icon": "spiritual_fulfillment_04",
+      "id": "default_fulfillment_level_2"
+    },
+    {
+      "icon": "spiritual_fulfillment_05",
+      "id": "default_fulfillment_level_3"
+    },
+    {
+      "icon": "spiritual_fulfillment_06",
+      "id": "default_fulfillment_level_4"
+    }
+  ],
+  "types": [
+    {
+      "dlc": null,
+      "fallback": false,
+      "id": "christian_fulfillment",
+      "levels": [
+        {
+          "flags": [
+            {
+              "key": "dread_puppet_option",
+              "text": "May use Dread to establish Puppets and have them Behave wickedly"
+            },
+            {
+              "key": "sp_flagellant_decision",
+              "text": "Can take the Mortify Flesh Decision"
+            },
+            {
+              "key": "sp_harder_conversion",
+              "text": "Less likely to succeed when demanding conversion or swaying a ruler to your Rite, and swaying costs more Piety"
+            },
+            {
+              "key": "sp_fabricate_hook_court_chaplain",
+              "text": "Can use the Fabricate Hook Scheme against your Court Chaplain"
+            },
+            {
+              "key": "sp_fabricate_hook_hor",
+              "text": "Can use the Fabricate Hook Scheme against your Head of Rite if you are a Theocratic ruler"
+            },
+            {
+              "key": "sp_hostile_schemes_minus_murder_no_stress_loss",
+              "text": "No Stress gain from Hostile Schemes (Except Murder)"
+            },
+            {
+              "key": "sp_ceremonial_humbling",
+              "text": "Can use Donate to Monastic Order Interaction's Plead desperately for special intercession option for the Monastic Intercession Modifier"
+            },
+            {
+              "key": "sp_murder_yields_no_sp_or_stress_loss",
+              "text": "No Stress gain from Murder Schemes"
+            },
+            {
+              "key": "sp_suicide_available",
+              "text": "Can take the Attempt Suicide Decision"
+            },
+            {
+              "key": "sp_clerical_vassals_faction_more",
+              "text": "Landed Theocratic and Ecclesiastical Vassals of your Faith above Baron rank are more willing to join Factions against you"
+            }
+          ],
+          "icon": "spiritual_fulfillment_01",
+          "id": "christian_fulfillment_level_0",
+          "index": 0,
+          "modifiers": [
+            "+50% Stress Gain",
+            "-10% Monthly Piety",
+            "-20% Enemy Hostile Scheme Success Chance Add"
+          ],
+          "name": "Doomed",
+          "threshold": -95
+        },
+        {
+          "flags": [
+            {
+              "key": "dread_puppet_option",
+              "text": "May use Dread to establish Puppets and have them Behave wickedly"
+            },
+            {
+              "key": "sp_flagellant_decision",
+              "text": "Can take the Mortify Flesh Decision"
+            },
+            {
+              "key": "sp_harder_conversion",
+              "text": "Less likely to succeed when demanding conversion or swaying a ruler to your Rite, and swaying costs more Piety"
+            },
+            {
+              "key": "sp_fabricate_hook_court_chaplain",
+              "text": "Can use the Fabricate Hook Scheme against your Court Chaplain"
+            },
+            {
+              "key": "sp_hostile_schemes_minus_murder_no_sp_or_stress_loss",
+              "text": "No Spiritual Fulfillment loss or Stress gain from Hostile Schemes (Except Murder)"
+            },
+            {
+              "key": "sp_ceremonial_humbling",
+              "text": "Can use Donate to Monastic Order Interaction's Plead desperately for special intercession option for the Monastic Intercession Modifier"
+            }
+          ],
+          "icon": "spiritual_fulfillment_02",
+          "id": "christian_fulfillment_level_1",
+          "index": 1,
+          "modifiers": [
+            "+25% Stress Gain",
+            "-5% Monthly Piety"
+          ],
+          "name": "Forsaken",
+          "threshold": -65
+        },
+        {
+          "flags": [
+            {
+              "key": "dread_puppet_option",
+              "text": "May use Dread to establish Puppets and have them Behave wickedly"
+            },
+            {
+              "key": "sp_flagellant_decision",
+              "text": "Can take the Mortify Flesh Decision"
+            },
+            {
+              "key": "sp_harder_conversion",
+              "text": "Less likely to succeed when demanding conversion or swaying a ruler to your Rite, and swaying costs more Piety"
+            }
+          ],
+          "icon": "spiritual_fulfillment_03",
+          "id": "christian_fulfillment_level_2",
+          "index": 2,
+          "modifiers": [
+            "+10% Stress Gain"
+          ],
+          "name": "Troubled",
+          "threshold": -30
+        },
+        {
+          "flags": [],
+          "icon": "spiritual_fulfillment_04",
+          "id": "christian_fulfillment_level_3",
+          "index": 3,
+          "modifiers": [],
+          "name": "Penitent",
+          "threshold": 0
+        },
+        {
+          "flags": [
+            {
+              "key": "sp_befriend_chaplain",
+              "text": "Can use the Befriend Scheme against your Court Chaplain"
+            },
+            {
+              "key": "positive_relation_puppet_option",
+              "text": "May use familial and Special Relations to establish Puppets and have them Behave kindly and nobly"
+            },
+            {
+              "key": "sp_cheaper_pilgrimage",
+              "text": "Pilgrimage costs 25% less"
+            }
+          ],
+          "icon": "spiritual_fulfillment_05",
+          "id": "christian_fulfillment_level_4",
+          "index": 4,
+          "modifiers": [
+            "+10% Stress Loss"
+          ],
+          "name": "Absolved",
+          "threshold": 30
+        },
+        {
+          "flags": [
+            {
+              "key": "sp_befriend_chaplain",
+              "text": "Can use the Befriend Scheme against your Court Chaplain"
+            },
+            {
+              "key": "sp_befriend_hor",
+              "text": "Can use the Befriend Scheme against your Head of Rite"
+            },
+            {
+              "key": "positive_relation_puppet_option",
+              "text": "May use familial and Special Relations to establish Puppets and have them Behave kindly and nobly"
+            },
+            {
+              "key": "sp_cheaper_tithe_legate",
+              "text": "Levy the Tithes and Send Legatine Mission cost less"
+            },
+            {
+              "key": "sp_cheaper_pilgrimage",
+              "text": "Pilgrimage costs 25% less"
+            },
+            {
+              "key": "sp_act_of_devotion_decision",
+              "text": "Can take the Stage an Act of Devotion Decision"
+            },
+            {
+              "key": "pious_puppet_option",
+              "text": "May use pious Traits to establish same-Rite Puppets and have them Behave zealously"
+            },
+            {
+              "key": "sp_easier_conversion",
+              "text": "More likely to succeed when demanding conversion or swaying a ruler to your Rite, and swaying costs less Piety"
+            }
+          ],
+          "icon": "spiritual_fulfillment_06",
+          "id": "christian_fulfillment_level_5",
+          "index": 5,
+          "modifiers": [
+            "+25% Stress Loss"
+          ],
+          "name": "Settled",
+          "threshold": 65
+        },
+        {
+          "flags": [
+            {
+              "key": "sp_befriend_chaplain",
+              "text": "Can use the Befriend Scheme against your Court Chaplain"
+            },
+            {
+              "key": "sp_befriend_hor",
+              "text": "Can use the Befriend Scheme against your Head of Rite"
+            },
+            {
+              "key": "sp_befriend_hof",
+              "text": "Can use the Befriend Scheme against your Head of Faith"
+            },
+            {
+              "key": "positive_relation_puppet_option",
+              "text": "May use familial and Special Relations to establish Puppets and have them Behave kindly and nobly"
+            },
+            {
+              "key": "sp_cheaper_tithe_legate_major",
+              "text": "Levy the Tithes and Send Legatine Mission cost even less"
+            },
+            {
+              "key": "sp_cheaper_pilgrimage_major",
+              "text": "Pilgrimage costs 50% less"
+            },
+            {
+              "key": "sp_act_of_devotion_decision",
+              "text": "Can take the Stage an Act of Devotion Decision"
+            },
+            {
+              "key": "pious_puppet_option",
+              "text": "May use pious Traits to establish same-Rite Puppets and have them Behave zealously"
+            },
+            {
+              "key": "sp_easier_conversion",
+              "text": "More likely to succeed when demanding conversion or swaying a ruler to your Rite, and swaying costs less Piety"
+            },
+            {
+              "key": "sp_mentor_in_sp",
+              "text": "Can take the Provide Spiritual Guidance Decision"
+            },
+            {
+              "key": "sp_suicide_blocked",
+              "text": "Cannot take the Attempt Suicide Decision"
+            }
+          ],
+          "icon": "spiritual_fulfillment_07",
+          "id": "christian_fulfillment_level_6",
+          "index": 6,
+          "modifiers": [
+            "+50% Stress Loss",
+            "+20% Enemy Hostile Scheme Success Chance Add"
+          ],
+          "name": "In Grace",
+          "threshold": 95
+        }
+      ],
+      "religions": [
+        {
+          "id": "christianity_religion",
+          "name": "Christianity"
+        }
+      ]
+    },
+    {
+      "dlc": null,
+      "fallback": true,
+      "id": "default_fulfillment",
+      "levels": [
+        {
+          "flags": [
+            {
+              "key": "default_sf_personal_tenet_change_no_stress",
+              "text": "Dropping a Personal Tenet does not cause Stress"
+            },
+            {
+              "key": "sp_harder_conversion",
+              "text": "Less likely to succeed when demanding conversion or swaying a ruler to your Rite, and swaying costs more Piety"
+            }
+          ],
+          "icon": "spiritual_fulfillment_01",
+          "id": "default_fulfillment_level_0",
+          "index": 0,
+          "modifiers": [
+            "-50% Faith Conversion Cost",
+            "-20% Rite Creation and Reformation Cost",
+            "+25% Stress Gain",
+            "-10 Same Faith Opinion"
+          ],
+          "name": "Adrift",
+          "threshold": -65
+        },
+        {
+          "flags": [
+            {
+              "key": "default_sf_personal_tenet_change_no_stress",
+              "text": "Dropping a Personal Tenet does not cause Stress"
+            }
+          ],
+          "icon": "spiritual_fulfillment_02",
+          "id": "default_fulfillment_level_1",
+          "index": 1,
+          "modifiers": [
+            "-25% Faith Conversion Cost",
+            "+10% Stress Gain",
+            "-5 Same Faith Opinion"
+          ],
+          "name": "Searching",
+          "threshold": -30
+        },
+        {
+          "flags": [],
+          "icon": "spiritual_fulfillment_04",
+          "id": "default_fulfillment_level_2",
+          "index": 2,
+          "modifiers": [],
+          "name": "Observant",
+          "threshold": 0
+        },
+        {
+          "flags": [
+            {
+              "key": "sp_cheaper_pilgrimage",
+              "text": "Pilgrimage costs 25% less"
+            }
+          ],
+          "icon": "spiritual_fulfillment_05",
+          "id": "default_fulfillment_level_3",
+          "index": 3,
+          "modifiers": [
+            "+25% Faith Conversion Cost",
+            "+10% Stress Loss",
+            "+5 Same Faith Opinion"
+          ],
+          "name": "Devout",
+          "threshold": 30
+        },
+        {
+          "flags": [
+            {
+              "key": "sp_cheaper_pilgrimage_major",
+              "text": "Pilgrimage costs 50% less"
+            },
+            {
+              "key": "sp_easier_conversion",
+              "text": "More likely to succeed when demanding conversion or swaying a ruler to your Rite, and swaying costs less Piety"
+            }
+          ],
+          "icon": "spiritual_fulfillment_06",
+          "id": "default_fulfillment_level_4",
+          "index": 4,
+          "modifiers": [
+            "+50% Faith Conversion Cost",
+            "+25% Stress Loss",
+            "+10 Same Faith Opinion"
+          ],
+          "name": "At Peace",
+          "threshold": 65
+        }
+      ],
+      "religions": []
+    }
+  ]
+}
