@@ -26,6 +26,7 @@ import ck3
 from ck3 import Block, Tagged
 
 SKIP_FIELDS = {
+    "header_background": "activity header illustration (illustrations/activity_header_backgrounds); art-name resolution pass not done, see CLAUDE.md",
     "notify_player_can_join_open_activity": "alert-toggle default, GUI plumbing",
     "notify_player_can_join_activity": "alert-toggle default, GUI plumbing (undocumented variant)",
     "guest_description": "planner flavor text (dynamic)",

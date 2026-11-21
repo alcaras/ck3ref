@@ -1,8 +1,11 @@
 #!/usr/bin/env python3
 """Slot constants for the province planner, read from defines NProvince.
 
-Only the numbers the game states are emitted; how slots unlock as a holding
-levels up is not a single constant in the files, so it is not modelled.
+Only the numbers the game states are emitted. Since 1.21 the district slot
+count grows with settlement size (game_concept_district_desc) and each
+district's building slots come from its primary building's
+building_slots_for_host_district modifier (in buildings.json as hostSlots) —
+neither is a single constant here.
 """
 
 import re
@@ -12,7 +15,8 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent / "lib"))
 import ck3
 
-KEYS = ["BARONY_BUILDING_SLOTS", "COUNTY_BUILDING_SLOTS", "MAX_BUILDINGS"]
+KEYS = ["BARONY_BUILDING_SLOTS", "COUNTY_BUILDING_SLOTS", "BARONY_DISTRICT_SLOTS",
+        "COUNTY_DISTRICT_SLOTS", "MAX_BUILDINGS", "MAX_PROVINCE_SIZE_LEVEL"]
 
 
 def main():
@@ -24,6 +28,9 @@ def main():
         if m:
             out[k] = {"value": int(m.group(1)),
                       "comment": (m.group(2) or "").strip() or None}
+    missing = [k for k in KEYS if k not in out]
+    if missing:
+        print(f"⚠ defines not found: {missing}")
     ck3.write_json("province-rules.json", out)
     print("  " + ", ".join(f"{k}={v['value']}" for k, v in out.items()))
 

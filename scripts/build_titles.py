@@ -6,6 +6,7 @@ kept as name lists on their county (no pages). Titular/landless titles are
 flagged. Colors come through as hex for swatches.
 """
 
+import re
 import sys
 from collections import Counter
 from pathlib import Path
@@ -28,7 +29,7 @@ META = {
     "no_partition", "should_show_as_hegemony", "min_independent_dejure_counties_to_be_created",
     "can_destroy", "personal_relation_entry", "personal_relation_vassal",
     "holding_regnal_male_names", "posthumous_regnal_male_names",
-    "posthumous_regnal_female_names",
+    "posthumous_regnal_female_names", "holding_regnal_female_names",
 }
 
 
@@ -93,7 +94,43 @@ def build_node(key, blk):
     return node
 
 
+def load_title_types():
+    """common/title_types/ (new in 1.21): each type claims titles whose key
+    carries `_<prefix>_` right after the tier prefix (see _title_types.info)."""
+    types = []
+    for f in sorted((ck3.COMMON / "title_types").glob("*.txt")):
+        if f.name.startswith("_"):
+            continue
+        for key, _op, blk in ck3.parse_file(f):
+            if key is None or not isinstance(blk, Block):
+                continue
+            props = blk.get("properties")
+            props = {k: v for k, _o, v in props if k and isinstance(v, bool)} \
+                if isinstance(props, Block) else {}
+            raw = ck3.loc(key)
+            types.append({
+                "id": key,
+                "prefix": blk.get("prefix"),
+                "name": ck3.render_text(raw) if raw else key.removeprefix("title_type_").replace("_", " "),
+                "localized": bool(raw),
+                "tradePost": blk.get("trade_post") is True,
+                "houseTitle": blk.get("house_title") is True,
+                "domicileType": blk.get("domicile_type"),
+                "landless": blk.get("landless") is True or props.get("landless") is True,
+                "properties": sorted(k for k, v in props.items() if v is True),
+            })
+    return types
+
+
+def type_of(key, types):
+    for t in types:
+        if t["prefix"] and re.match(rf"^[a-z]_(?:x_)?{re.escape(t['prefix'])}_", key):
+            return t["id"]
+    return None
+
+
 def main():
+    title_types = load_title_types()
     roots = []
     for f in sorted((ck3.COMMON / "landed_titles").glob("*.txt")):
         if f.name.startswith("_"):
@@ -101,7 +138,14 @@ def main():
         blk = ck3.parse_file(f)
         for key, _op, v in blk:
             if key and tier_of(key) and isinstance(v, Block):
-                roots.append(build_node(key, v))
+                node = build_node(key, v)
+                tt = type_of(key, title_types)
+                if tt:
+                    node["titleType"] = tt
+                roots.append(node)
+    by_type = Counter(r.get("titleType") for r in roots)
+    for t in title_types:
+        t["roots"] = by_type.get(t["id"], 0)
 
     counts = Counter()
 
@@ -114,7 +158,7 @@ def main():
     for r in roots:
         count(r)
 
-    ck3.write_json("titles.json", {"roots": roots, "counts": dict(counts)})
+    ck3.write_json("titles.json", {"roots": roots, "counts": dict(counts), "titleTypes": title_types})
     print(f"  tiers: {dict(counts)}")
     if unknown_fields:
         print("⚠ unhandled title fields:")

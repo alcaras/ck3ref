@@ -29,6 +29,11 @@ def _render(s):
     return ck3.render_text(culture_text.expand(s)) if isinstance(s, str) else s
 
 
+PARTNER_DOC = {
+    "number_of_spouses": "Maximum spouses: {} (overrides the faith's limit)",
+    "number_of_consorts": "Maximum concubines: {} (overrides the faith's limit)",
+}
+
 SKIP_FIELDS = {
     "ai_will_do": "AI divergence/hybridization pick weighting, not player-facing",
     "can_pick_for_hybridization": "hybridization-only variant of can_pick (AI/flow plumbing, mirrors can_pick)",
@@ -37,7 +42,8 @@ SKIP_FIELDS = {
 HANDLED_FIELDS = {
     "category", "layers", "cost", "parameters", "character_modifier",
     "province_modifier", "county_modifier", "culture_modifier",
-    "doctrine_character_modifier", "can_pick", "is_shown",
+    "doctrine_character_modifier", "faith_character_modifier", "partners",
+    "can_pick", "is_shown",
     # per _cultural_traits.info these can appear; none do today but honor them
     "name", "desc", "icon",
 }
@@ -271,6 +277,29 @@ def main():
                     "hasLoc": bool(txt),
                 })
 
+        # partners = { number_of_spouses / number_of_consorts / by_tier } is a
+        # container the game turns into culture_parameter_number_of_* texts
+        pt = blk.get("partners")
+        if isinstance(pt, Block):
+            pairs = []
+            for pk, _o, pv in pt:
+                if pk == "number_of_consorts_by_tier" and isinstance(pv, Block):
+                    pairs += [(f"number_of_consorts_{tier}", n) for tier, _o2, n in pv if tier]
+                elif pk in ("number_of_spouses", "number_of_consorts"):
+                    pairs.append((pk, pv))
+            for pk, pv in pairs:
+                lk = f"culture_parameter_{pk}" if ck3.loc(f"culture_parameter_{pk}") else pk
+                txt = culture_text.render(lk, pv)
+                params.append({
+                    "key": pk, "value": pv,
+                    # no loc ships for these two; wording follows
+                    # _cultural_traits.info ("Max number of spouses/concubines
+                    # ... overrides faith"), labelled as such via `fromDoc`
+                    "text": txt if txt else PARTNER_DOC.get(pk, pk.replace("_", " ")).format(pv),
+                    "hasLoc": bool(txt) or pk in PARTNER_DOC,
+                    "fromDoc": (not txt) and pk in PARTNER_DOC,
+                })
+
         mods = {}
         for field, label in (("character_modifier", "Characters"),
                              ("province_modifier", "Provinces"),
@@ -279,12 +308,12 @@ def main():
             lines = modifier_lines(blk.get(field))
             if lines:
                 mods[label] = lines
-        for dcm in blk.get_all("doctrine_character_modifier"):
+        for dcm in blk.get_all("doctrine_character_modifier") + blk.get_all("faith_character_modifier"):
             if isinstance(dcm, Block):
                 doctrine = dcm.get("doctrine")
                 dname = _render(ck3.loc(doctrine) or ck3.loc(f"{doctrine}_name") or str(doctrine))
                 lines = [culture_text.render_modifier(k, v) for k, _o, v in dcm
-                         if k not in (None, "doctrine")]
+                         if k not in (None, "doctrine", "name")]
                 if lines:
                     mods[f"Characters ({dname} faiths)"] = lines
 

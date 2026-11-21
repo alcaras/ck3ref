@@ -147,9 +147,10 @@ ASP_GROUPS = {
     "10_tgp_celestial_house_powers.txt": ("celestial", "Celestial (China) — Family Aspirations"),
     "10_tgp_japan_house_aspirations.txt": ("japan", "Japanese — House Aspirations"),
     "tgp_mandala_devaraja_aspects.txt": ("mandala", "Mandala — Devaraja Aspects"),
+    "gdp_republic_ambitions.txt": ("republic", "Republic — House Ambitions"),
 }
 
-ASP_HANDLED = {"is_shown", "level", "cooldown", "is_default", "confederation_type"}
+ASP_HANDLED = {"automatic_levels", "is_shown", "level", "cooldown", "is_default", "confederation_type"}
 ASP_SKIP = {
     "show_in_main_hud": "GUI placement flag",
     "illustration": "window art; no icon pipeline for aspiration keys yet",
@@ -250,6 +251,9 @@ def build_aspirations():
             "isDefault": bool(blk.get("is_default", False)),
             "confederation": blk.get("confederation_type"),
             "cooldownYears": cd.get("years") if isinstance(cd, Block) else None,
+            "cooldownMonths": cd.get("months") if isinstance(cd, Block) else None,
+            # _house_aspiration.info: upgrades/downgrades itself when can_upgrade holds, at no cost
+            "automaticLevels": bool(blk.get("automatic_levels", False)),
             "levels": levels,
             "dlc": dlc,
         })

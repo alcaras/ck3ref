@@ -147,6 +147,9 @@ function costLine(res: string, c: any): { text: string; varies: boolean } {
                     {c.whitePeacePossible
                       ? c.outcomes.whitePeace && <span class="o o-w"><b>White peace</b> {c.outcomes.whitePeace}</span>
                       : <span class="o o-w"><b>White peace</b> <span class="subtle">not possible</span></span>}
+                    {c.sameFaithDefenderFlags.length > 0 && (
+                      <span class="o"><b>Same-faith defenders</b> may join against a same-faith attacker when their government is flagged: {c.sameFaithDefenderFlags.map((f) => f.replace(/_/g, ' ')).join(', ')}</span>
+                    )}
                   </td>
                   <td>
                     <span class="chips">

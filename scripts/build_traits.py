@@ -35,7 +35,7 @@ META_HANDLED = {
     "genetic_constraint_men", "genetic_constraint_women",
     "parent_inheritance_sex", "inherit_from_real_father", "bastard",
     "same_opinion", "opposite_opinion", "same_opinion_if_same_faith",
-    "triggered_opinion", "culture_modifier", "faith_modifier",
+    "triggered_opinion", "culture_modifier", "faith_modifier", "rite_modifier", "clergy",
     "government_modifier", "track", "tracks", "add_commander_trait",
     "disables_combat_leadership", "culture_succession_prio",
     "trait_exclusive_if_realm_contains", "index",
@@ -84,7 +84,11 @@ def conditional_modifiers(blk, field):
             continue
         param = cm.get("parameter") or cm.get("doctrine") or cm.get("govt")
         label = None
-        if isinstance(param, str):
+        if field == "rite_modifier" and isinstance(param, str):
+            # applies when the character's rite has a tenet/doctrine with this
+            # parameter (_traits.info); parameters of this kind carry no loc
+            label = "Rite parameter: " + param.replace("_", " ")
+        elif isinstance(param, str):
             label = (ck3.render_text(ck3.loc(f"culture_parameter_{param}") or "")
                      or param.replace("_", " ").title())
         lines = modifier_lines(cm)
@@ -178,7 +182,10 @@ def main():
             "opinions": opinions,
             "conditional": (conditional_modifiers(blk, "culture_modifier")
                             + conditional_modifiers(blk, "faith_modifier")
-                            + conditional_modifiers(blk, "government_modifier")),
+                            + conditional_modifiers(blk, "government_modifier")
+                            + conditional_modifiers(blk, "rite_modifier")),
+            # _traits.info: holders count as clergy and join the faith organisation
+            "clergy": blk.get("clergy") is True,
             "tracks": track_levels(blk),
             "opposites": [v for v in (blk.get("opposites").values() if isinstance(blk.get("opposites"), Block) else [])],
             "genetic": genetic,

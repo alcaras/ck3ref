@@ -18,27 +18,16 @@ const PARAM_NOTE: Record<string, string> = {
   county_fertility: 'income scales with County Fertility',
 };
 
-type Ref = { id: string; name: string; category: string | null; tiers: number | null; dlc: string | null };
-
-function byCategory(buildings: Ref[]): [string, Ref[]][] {
-  const groups = new Map<string, Ref[]>();
-  for (const b of buildings) {
-    const cat = b.category ?? 'Other';
-    if (!groups.has(cat)) groups.set(cat, []);
-    groups.get(cat)!.push(b);
-  }
-  return [...groups.entries()].sort((a, b) => a[0].localeCompare(b[0]));
-}
-
-const totalLines = holdings.reduce((n, h) => n + h.buildings.length, 0);
+const H = holdings as any[];
+const standardDistricts = new Set(H.flatMap((h) => h.districts.map((d: any) => d.id)));
 ---
 <Base
   title="Holdings"
   active="holdings"
-  lede="The seven holding types a barony can carry: the primary building chain each is founded on, which building lines it may construct, and its inheritance and domain rules — read from common/holdings."
+  lede="The seven holding types a barony can carry: the holding district each is founded on, the standard districts it may add, and its inheritance and domain rules — read from common/holdings."
   stats={[
     { value: holdings.length, label: 'holding types' },
-    { value: totalLines, label: 'buildable building lines' },
+    { value: standardDistricts.size, label: 'standard districts' },
   ]}
 >
   <div class="cards">
@@ -48,13 +37,19 @@ const totalLines = holdings.reduce((n, h) => n + h.buildings.length, 0);
           <img src={`${base}/img/holdings/${h.id}.webp`} alt="" width="44" height="44" loading="lazy" onerror="this.style.visibility='hidden'" />
           <div>
             <h2>{h.name}</h2>
-            <p class="primary">
-              Founded on{' '}
-              <a href={`${base}/buildings#${h.primaryBuilding.id}`}>{h.primaryBuilding.name}</a>
-              {h.primaryBuilding.tiers && h.primaryBuilding.tiers > 1 && (
-                <span class="subtle"> — a {h.primaryBuilding.tiers}-tier chain</span>
-              )}
-            </p>
+            {h.primaryDistrict && (
+              <p class="primary">
+                Founded on the{' '}
+                <a href={`${base}/buildings/${h.primaryDistrict.id}`}>{h.primaryDistrict.name}</a>
+                {h.primaryBuilding && (
+                  <span class="subtle">
+                    {' '}— main building{' '}
+                    <a href={`${base}/buildings/${h.primaryDistrict.id}#${h.primaryBuilding.id}`}>{h.primaryBuilding.name}</a>
+                    {h.primaryBuilding.tiers > 1 && <>, {h.primaryBuilding.tiers} tiers</>}
+                  </span>
+                )}
+              </p>
+            )}
           </div>
         </header>
 
@@ -84,38 +79,45 @@ const totalLines = holdings.reduce((n, h) => n + h.buildings.length, 0);
           ))}
         </ul>
 
-        {h.buildings.length > 0 ? (
+        {h.buildings.length > 0 && (
           <div class="roster">
-            <h3>Buildable lines <span class="count">{h.buildings.length}</span></h3>
-            {byCategory(h.buildings).map(([cat, list]) => (
-              <p class="cat-row">
-                <b>{cat}</b>
-                <span class="chips">
-                  {list.map((b) => (
-                    <a
-                      class="chip"
-                      href={`${base}/buildings#${b.id}`}
-                      title={`${b.tiers} tier${b.tiers === 1 ? '' : 's'}${b.dlc ? ` · ${b.dlc}` : ''}`}
-                    >
-                      {b.name}
-                    </a>
-                  ))}
-                </span>
-              </p>
-            ))}
+            <h3>In the holding district <span class="count">{h.buildings.length}</span></h3>
+            <p class="cat-row">
+              <span class="chips">
+                {h.buildings.map((b: any) => (
+                  <a class="chip" href={`${base}/buildings/${h.primaryDistrict.id}#${b.id}`}
+                     title={`${b.tiers} tier${b.tiers === 1 ? '' : 's'}${b.dlc ? ` · ${b.dlc}` : ''}`}>{b.name}</a>
+                ))}
+              </span>
+            </p>
+          </div>
+        )}
+        {h.districts.length > 0 ? (
+          <div class="roster">
+            <h3>Standard districts <span class="count">{h.districts.length}</span></h3>
+            <p class="cat-row">
+              <span class="chips">
+                {h.districts.map((d: any) => (
+                  <a class="chip" href={`${base}/buildings/${d.id}`}
+                     title={`${d.buildings} building line${d.buildings === 1 ? '' : 's'}${d.unlockedBy ? ` · after ${d.unlockedBy.name}` : ''}${d.dlc ? ` · ${d.dlc}` : ''}`}>
+                    {d.name}{d.unlockedBy && <span class="subtle"> ↳</span>}
+                  </a>
+                ))}
+              </span>
+            </p>
           </div>
         ) : (
-          <p class="roster none">No constructible buildings — this holding grows through its primary building alone.</p>
+          <p class="roster none">No standard districts and no buildings beyond the holding district's own main building.</p>
         )}
       </article>
     ))}
   </div>
 
   <p class="footnote">
-    Building lines listed here are first tiers; costs, upgrade tiers, and each building's own
-    terrain or innovation gates live on the <a href={`${base}/buildings`}>Buildings</a> page. Some
-    lines are additionally gated by culture or faith (e.g. Monastic Schools require a faith tenet;
-    tribal Tradeports a culture parameter) — those gates are on the building itself. The game also
+    Each district links to its page under <a href={`${base}/buildings`}>Buildings</a>, with every
+    building line's tiers, costs, gates and trade-good needs. Districts marked ↳ carry the game's
+    <code>unlocked_by</code> field (another district comes first). Resource, duchy, special and great
+    districts are not part of a holding type's roster — they occupy their own slots. The game also
     auto-generates per-holding-type construction modifiers
     (<code>&lt;holding&gt;_build_speed</code>, <code>_build_gold_cost</code>, …) which appear
     wherever modifiers are rendered.

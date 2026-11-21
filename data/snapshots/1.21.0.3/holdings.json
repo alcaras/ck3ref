@@ -1,0 +1,1244 @@
+[
+  {
+    "buildings": [
+      {
+        "category": "Holding districts",
+        "dlc": "Crowns of the World",
+        "icon": "oath_buildings/oath_faithful",
+        "id": "oath_faithful_building_01",
+        "name": "Wayside Shrines",
+        "tiers": 4
+      },
+      {
+        "category": "Holding districts",
+        "dlc": null,
+        "icon": "regular_buildings/capital_bureau",
+        "id": "castle_court_1",
+        "name": "Castle Court",
+        "tiers": 5
+      },
+      {
+        "category": "Holding districts",
+        "dlc": null,
+        "icon": "regular_buildings/citadel",
+        "id": "castle_citadel_1",
+        "name": "Citadel",
+        "tiers": 5
+      },
+      {
+        "category": "Holding districts",
+        "dlc": null,
+        "icon": "resource_buildings/meat_buildings",
+        "id": "castle_larder_1",
+        "name": "Castle Larder",
+        "tiers": 5
+      },
+      {
+        "category": "Holding districts",
+        "dlc": "Crowns of the World",
+        "icon": "oath_buildings/oath_warriors",
+        "id": "oath_warriors_building_01",
+        "name": "Veterans' Smallholdings",
+        "tiers": 4
+      },
+      {
+        "category": "Holding districts",
+        "dlc": "Crowns of the World",
+        "icon": "oath_buildings/oath_poor",
+        "id": "oath_poor_building_01",
+        "name": "Charitable Customs",
+        "tiers": 4
+      },
+      {
+        "category": "Holding districts",
+        "dlc": null,
+        "icon": "regular_buildings/barracks",
+        "id": "castle_garrison_1",
+        "name": "Castle Garrison",
+        "tiers": 5
+      },
+      {
+        "category": "Holding districts",
+        "dlc": null,
+        "icon": "regular_buildings/hall_of_heroes",
+        "id": "castle_great_hall_1",
+        "name": "Great Hall",
+        "tiers": 5
+      },
+      {
+        "category": "Holding districts",
+        "dlc": null,
+        "icon": "holding_buildings/castle_training_grounds",
+        "id": "castle_training_grounds_1",
+        "name": "Training Grounds",
+        "tiers": 5
+      },
+      {
+        "category": "Holding districts",
+        "dlc": null,
+        "icon": "regular_buildings/sacred_pool",
+        "id": "city_local_shrine_1",
+        "name": "Local Shrine",
+        "tiers": 5
+      },
+      {
+        "category": "Holding districts",
+        "dlc": null,
+        "icon": "regular_buildings/capital_bureau",
+        "id": "city_magistrate_1",
+        "name": "Magistrate",
+        "tiers": 5
+      }
+    ],
+    "canBeInherited": true,
+    "countsTowardDomainLimitIfDisabled": true,
+    "districts": [
+      {
+        "buildings": 11,
+        "dlc": null,
+        "icon": "regular_buildings/leisure_palace",
+        "id": "household_district",
+        "name": "Royal Household",
+        "type": "regular",
+        "unlockedBy": null
+      },
+      {
+        "buildings": 8,
+        "dlc": null,
+        "icon": "district_buildings/manor_houses_district",
+        "id": "manor_houses_district",
+        "name": "Manor Houses District",
+        "type": "regular",
+        "unlockedBy": {
+          "id": "villages_district",
+          "name": "Villages District"
+        }
+      },
+      {
+        "buildings": 15,
+        "dlc": null,
+        "icon": "district_buildings/religious_community_district",
+        "id": "religious_community_district",
+        "name": "Religious Community District",
+        "type": "regular",
+        "unlockedBy": {
+          "id": "villages_district",
+          "name": "Villages District"
+        }
+      },
+      {
+        "buildings": 10,
+        "dlc": null,
+        "icon": "district_buildings/market_district",
+        "id": "market_district",
+        "name": "Market District",
+        "type": "regular",
+        "unlockedBy": {
+          "id": "urban_housing_district",
+          "name": "Housing District"
+        }
+      },
+      {
+        "buildings": 20,
+        "dlc": null,
+        "icon": "district_buildings/guild_district",
+        "id": "guild_district",
+        "name": "Guild District",
+        "type": "regular",
+        "unlockedBy": {
+          "id": "urban_housing_district",
+          "name": "Housing District"
+        }
+      },
+      {
+        "buildings": 7,
+        "dlc": null,
+        "icon": "district_buildings/port_district",
+        "id": "port_district",
+        "name": "Port District",
+        "type": "regular",
+        "unlockedBy": {
+          "id": "urban_housing_district",
+          "name": "Housing District"
+        }
+      },
+      {
+        "buildings": 10,
+        "dlc": null,
+        "icon": "district_buildings/entertainment_square_district",
+        "id": "entertainment_district",
+        "name": "Entertainment District",
+        "type": "regular",
+        "unlockedBy": {
+          "id": "urban_housing_district",
+          "name": "Housing District"
+        }
+      },
+      {
+        "buildings": 14,
+        "dlc": null,
+        "icon": "district_buildings/patrician_district",
+        "id": "patrician_district",
+        "name": "Patrician District",
+        "type": "regular",
+        "unlockedBy": {
+          "id": "urban_housing_district",
+          "name": "Housing District"
+        }
+      },
+      {
+        "buildings": 14,
+        "dlc": null,
+        "icon": "district_buildings/temple_district",
+        "id": "temple_district",
+        "name": "Religious Enclave",
+        "type": "regular",
+        "unlockedBy": {
+          "id": "urban_housing_district",
+          "name": "Housing District"
+        }
+      },
+      {
+        "buildings": 9,
+        "dlc": null,
+        "icon": "district_buildings/walls_district",
+        "id": "walls_district",
+        "name": "Walls District",
+        "type": "regular",
+        "unlockedBy": null
+      },
+      {
+        "buildings": 8,
+        "dlc": null,
+        "icon": "district_buildings/border_forts_district",
+        "id": "border_forts_district",
+        "name": "Border Forts District",
+        "type": "regular",
+        "unlockedBy": null
+      },
+      {
+        "buildings": 19,
+        "dlc": null,
+        "icon": "district_buildings/villages_district",
+        "id": "villages_district",
+        "name": "Villages District",
+        "type": "regular",
+        "unlockedBy": null
+      },
+      {
+        "buildings": 8,
+        "dlc": null,
+        "icon": "district_buildings/urban_housing_district",
+        "id": "urban_housing_district",
+        "name": "Housing District",
+        "type": "regular",
+        "unlockedBy": null
+      },
+      {
+        "buildings": 17,
+        "dlc": null,
+        "icon": "district_buildings/military_district",
+        "id": "military_district",
+        "name": "Military District",
+        "type": "regular",
+        "unlockedBy": null
+      },
+      {
+        "buildings": 12,
+        "dlc": null,
+        "icon": "district_buildings/bureaucratic_district",
+        "id": "bureaucratic_district",
+        "name": "Bureaucratic District",
+        "type": "regular",
+        "unlockedBy": null
+      }
+    ],
+    "icon": "castle_holding",
+    "id": "castle_holding",
+    "name": "Castle",
+    "parameters": [],
+    "primaryBuilding": {
+      "category": "Holding districts",
+      "dlc": null,
+      "icon": "holding_buildings/castle",
+      "id": "castle_01",
+      "name": "Castle",
+      "tiers": 4
+    },
+    "primaryDistrict": {
+      "buildings": 11,
+      "dlc": null,
+      "icon": "holding_buildings/castle",
+      "id": "castle_holding_district",
+      "name": "Castle Holding District",
+      "type": "holding",
+      "unlockedBy": null
+    },
+    "requiredHeirGovernments": [],
+    "sourceFile": "00_holdings.txt"
+  },
+  {
+    "buildings": [
+      {
+        "category": "Holding districts",
+        "dlc": "Crowns of the World",
+        "icon": "oath_buildings/oath_faithful",
+        "id": "oath_faithful_building_01",
+        "name": "Wayside Shrines",
+        "tiers": 4
+      },
+      {
+        "category": "Holding districts",
+        "dlc": null,
+        "icon": "old_buildings/workshops",
+        "id": "tribe_craftsmens_lodge_1",
+        "name": "Craftsmen's Lodge",
+        "tiers": 2
+      },
+      {
+        "category": "Holding districts",
+        "dlc": "Crowns of the World",
+        "icon": "oath_buildings/oath_warriors",
+        "id": "oath_warriors_building_01",
+        "name": "Veterans' Smallholdings",
+        "tiers": 4
+      },
+      {
+        "category": "Holding districts",
+        "dlc": "Crowns of the World",
+        "icon": "oath_buildings/oath_poor",
+        "id": "oath_poor_building_01",
+        "name": "Charitable Customs",
+        "tiers": 4
+      },
+      {
+        "category": "Holding districts",
+        "dlc": null,
+        "icon": "holding_buildings/tribe_warriors_compound",
+        "id": "tribe_warriors_compound_1",
+        "name": "Warriors' Compound",
+        "tiers": 2
+      },
+      {
+        "category": "Holding districts",
+        "dlc": null,
+        "icon": "duchy_buildings/royal_forest",
+        "id": "tribe_sacred_grove_1",
+        "name": "Sacred Groves",
+        "tiers": 2
+      }
+    ],
+    "canBeInherited": true,
+    "countsTowardDomainLimitIfDisabled": true,
+    "districts": [
+      {
+        "buildings": 7,
+        "dlc": null,
+        "icon": "district_buildings/port_district",
+        "id": "port_district",
+        "name": "Port District",
+        "type": "regular",
+        "unlockedBy": {
+          "id": "urban_housing_district",
+          "name": "Housing District"
+        }
+      },
+      {
+        "buildings": 10,
+        "dlc": null,
+        "icon": "district_buildings/tribal_economy_prestige_district",
+        "id": "tribal_economy_prestige_district",
+        "name": "Feast Halls District",
+        "type": "regular",
+        "unlockedBy": null
+      },
+      {
+        "buildings": 9,
+        "dlc": null,
+        "icon": "district_buildings/tribal_military_district",
+        "id": "tribal_military_district",
+        "name": "War Lodges District",
+        "type": "regular",
+        "unlockedBy": null
+      },
+      {
+        "buildings": 9,
+        "dlc": null,
+        "icon": "district_buildings/wanua_district",
+        "id": "tribal_wanua_district",
+        "name": "Wantilans District",
+        "type": "regular",
+        "unlockedBy": null
+      }
+    ],
+    "icon": "tribal_holding",
+    "id": "tribal_holding",
+    "name": "Tribe",
+    "parameters": [
+      "no_sprawl"
+    ],
+    "primaryBuilding": {
+      "category": "Holding districts",
+      "dlc": null,
+      "icon": "holding_buildings/tribe",
+      "id": "tribe_01",
+      "name": "Tribal Hold",
+      "tiers": 2
+    },
+    "primaryDistrict": {
+      "buildings": 6,
+      "dlc": null,
+      "icon": "holding_buildings/tribe",
+      "id": "tribal_holding_district",
+      "name": "Tribal Holding District",
+      "type": "holding",
+      "unlockedBy": null
+    },
+    "requiredHeirGovernments": [],
+    "sourceFile": "00_holdings.txt"
+  },
+  {
+    "buildings": [
+      {
+        "category": "Holding districts",
+        "dlc": "Crowns of the World",
+        "icon": "oath_buildings/oath_faithful",
+        "id": "oath_faithful_building_01",
+        "name": "Wayside Shrines",
+        "tiers": 4
+      },
+      {
+        "category": "Holding districts",
+        "dlc": null,
+        "icon": "regular_buildings/market_villages",
+        "id": "city_town_market_1",
+        "name": "Town Market",
+        "tiers": 5
+      },
+      {
+        "category": "Holding districts",
+        "dlc": null,
+        "icon": "regular_buildings/watchtowers",
+        "id": "city_town_watch_1",
+        "name": "Town Watch",
+        "tiers": 5
+      },
+      {
+        "category": "Holding districts",
+        "dlc": null,
+        "icon": "regular_buildings/capital_bureau",
+        "id": "city_magistrate_1",
+        "name": "Magistrate",
+        "tiers": 5
+      },
+      {
+        "category": "Holding districts",
+        "dlc": null,
+        "icon": "regular_buildings/village_council",
+        "id": "city_council_hall_1",
+        "name": "Council Hall",
+        "tiers": 5
+      },
+      {
+        "category": "Holding districts",
+        "dlc": "Crowns of the World",
+        "icon": "oath_buildings/oath_warriors",
+        "id": "oath_warriors_building_01",
+        "name": "Veterans' Smallholdings",
+        "tiers": 4
+      },
+      {
+        "category": "Holding districts",
+        "dlc": "Crowns of the World",
+        "icon": "oath_buildings/oath_poor",
+        "id": "oath_poor_building_01",
+        "name": "Charitable Customs",
+        "tiers": 4
+      },
+      {
+        "category": "Holding districts",
+        "dlc": null,
+        "icon": "regular_buildings/sacred_pool",
+        "id": "city_local_shrine_1",
+        "name": "Local Shrine",
+        "tiers": 5
+      }
+    ],
+    "canBeInherited": true,
+    "countsTowardDomainLimitIfDisabled": true,
+    "districts": [
+      {
+        "buildings": 11,
+        "dlc": null,
+        "icon": "regular_buildings/leisure_palace",
+        "id": "household_district",
+        "name": "Royal Household",
+        "type": "regular",
+        "unlockedBy": null
+      },
+      {
+        "buildings": 8,
+        "dlc": null,
+        "icon": "district_buildings/manor_houses_district",
+        "id": "manor_houses_district",
+        "name": "Manor Houses District",
+        "type": "regular",
+        "unlockedBy": {
+          "id": "villages_district",
+          "name": "Villages District"
+        }
+      },
+      {
+        "buildings": 15,
+        "dlc": null,
+        "icon": "district_buildings/religious_community_district",
+        "id": "religious_community_district",
+        "name": "Religious Community District",
+        "type": "regular",
+        "unlockedBy": {
+          "id": "villages_district",
+          "name": "Villages District"
+        }
+      },
+      {
+        "buildings": 10,
+        "dlc": null,
+        "icon": "district_buildings/market_district",
+        "id": "market_district",
+        "name": "Market District",
+        "type": "regular",
+        "unlockedBy": {
+          "id": "urban_housing_district",
+          "name": "Housing District"
+        }
+      },
+      {
+        "buildings": 20,
+        "dlc": null,
+        "icon": "district_buildings/guild_district",
+        "id": "guild_district",
+        "name": "Guild District",
+        "type": "regular",
+        "unlockedBy": {
+          "id": "urban_housing_district",
+          "name": "Housing District"
+        }
+      },
+      {
+        "buildings": 7,
+        "dlc": null,
+        "icon": "district_buildings/port_district",
+        "id": "port_district",
+        "name": "Port District",
+        "type": "regular",
+        "unlockedBy": {
+          "id": "urban_housing_district",
+          "name": "Housing District"
+        }
+      },
+      {
+        "buildings": 10,
+        "dlc": null,
+        "icon": "district_buildings/entertainment_square_district",
+        "id": "entertainment_district",
+        "name": "Entertainment District",
+        "type": "regular",
+        "unlockedBy": {
+          "id": "urban_housing_district",
+          "name": "Housing District"
+        }
+      },
+      {
+        "buildings": 14,
+        "dlc": null,
+        "icon": "district_buildings/patrician_district",
+        "id": "patrician_district",
+        "name": "Patrician District",
+        "type": "regular",
+        "unlockedBy": {
+          "id": "urban_housing_district",
+          "name": "Housing District"
+        }
+      },
+      {
+        "buildings": 14,
+        "dlc": null,
+        "icon": "district_buildings/temple_district",
+        "id": "temple_district",
+        "name": "Religious Enclave",
+        "type": "regular",
+        "unlockedBy": {
+          "id": "urban_housing_district",
+          "name": "Housing District"
+        }
+      },
+      {
+        "buildings": 9,
+        "dlc": null,
+        "icon": "district_buildings/walls_district",
+        "id": "walls_district",
+        "name": "Walls District",
+        "type": "regular",
+        "unlockedBy": null
+      },
+      {
+        "buildings": 8,
+        "dlc": null,
+        "icon": "district_buildings/border_forts_district",
+        "id": "border_forts_district",
+        "name": "Border Forts District",
+        "type": "regular",
+        "unlockedBy": null
+      },
+      {
+        "buildings": 19,
+        "dlc": null,
+        "icon": "district_buildings/villages_district",
+        "id": "villages_district",
+        "name": "Villages District",
+        "type": "regular",
+        "unlockedBy": null
+      },
+      {
+        "buildings": 8,
+        "dlc": null,
+        "icon": "district_buildings/urban_housing_district",
+        "id": "urban_housing_district",
+        "name": "Housing District",
+        "type": "regular",
+        "unlockedBy": null
+      },
+      {
+        "buildings": 17,
+        "dlc": null,
+        "icon": "district_buildings/military_district",
+        "id": "military_district",
+        "name": "Military District",
+        "type": "regular",
+        "unlockedBy": null
+      },
+      {
+        "buildings": 12,
+        "dlc": null,
+        "icon": "district_buildings/bureaucratic_district",
+        "id": "bureaucratic_district",
+        "name": "Bureaucratic District",
+        "type": "regular",
+        "unlockedBy": null
+      }
+    ],
+    "icon": "city_holding",
+    "id": "city_holding",
+    "name": "City",
+    "parameters": [],
+    "primaryBuilding": {
+      "category": "Holding districts",
+      "dlc": null,
+      "icon": "holding_buildings/city",
+      "id": "city_01",
+      "name": "City",
+      "tiers": 4
+    },
+    "primaryDistrict": {
+      "buildings": 8,
+      "dlc": null,
+      "icon": "holding_buildings/city",
+      "id": "city_holding_district",
+      "name": "City Holding District",
+      "type": "holding",
+      "unlockedBy": null
+    },
+    "requiredHeirGovernments": [],
+    "sourceFile": "00_holdings.txt"
+  },
+  {
+    "buildings": [
+      {
+        "category": "Holding districts",
+        "dlc": "Crowns of the World",
+        "icon": "oath_buildings/oath_faithful",
+        "id": "oath_faithful_building_01",
+        "name": "Wayside Shrines",
+        "tiers": 4
+      },
+      {
+        "category": "Holding districts",
+        "dlc": null,
+        "icon": "regular_buildings/caravanserai",
+        "id": "temple_hostels_1",
+        "name": "Hostels",
+        "tiers": 5
+      },
+      {
+        "category": "Holding districts",
+        "dlc": null,
+        "icon": "regular_buildings/sacred_pool",
+        "id": "temple_reliquary_1",
+        "name": "Reliquary",
+        "tiers": 5
+      },
+      {
+        "category": "Holding districts",
+        "dlc": null,
+        "icon": "regular_buildings/market_villages",
+        "id": "temple_religious_fairs_1",
+        "name": "Religious Fairs and Festivals",
+        "tiers": 5
+      },
+      {
+        "category": "Holding districts",
+        "dlc": "Crowns of the World",
+        "icon": "oath_buildings/oath_warriors",
+        "id": "oath_warriors_building_01",
+        "name": "Veterans' Smallholdings",
+        "tiers": 4
+      },
+      {
+        "category": "Holding districts",
+        "dlc": "Crowns of the World",
+        "icon": "oath_buildings/oath_poor",
+        "id": "oath_poor_building_01",
+        "name": "Charitable Customs",
+        "tiers": 4
+      },
+      {
+        "category": "Holding districts",
+        "dlc": null,
+        "icon": "regular_buildings/hospice",
+        "id": "temple_hospices_1",
+        "name": "Almshouses",
+        "tiers": 5
+      },
+      {
+        "category": "Holding districts",
+        "dlc": null,
+        "icon": "duchy_buildings/megalith",
+        "id": "megalith_1",
+        "name": "Megalith",
+        "tiers": 5
+      }
+    ],
+    "canBeInherited": true,
+    "countsTowardDomainLimitIfDisabled": true,
+    "districts": [
+      {
+        "buildings": 8,
+        "dlc": null,
+        "icon": "district_buildings/manor_houses_district",
+        "id": "manor_houses_district",
+        "name": "Manor Houses District",
+        "type": "regular",
+        "unlockedBy": {
+          "id": "villages_district",
+          "name": "Villages District"
+        }
+      },
+      {
+        "buildings": 15,
+        "dlc": null,
+        "icon": "district_buildings/religious_community_district",
+        "id": "religious_community_district",
+        "name": "Religious Community District",
+        "type": "regular",
+        "unlockedBy": {
+          "id": "villages_district",
+          "name": "Villages District"
+        }
+      },
+      {
+        "buildings": 10,
+        "dlc": null,
+        "icon": "district_buildings/market_district",
+        "id": "market_district",
+        "name": "Market District",
+        "type": "regular",
+        "unlockedBy": {
+          "id": "urban_housing_district",
+          "name": "Housing District"
+        }
+      },
+      {
+        "buildings": 20,
+        "dlc": null,
+        "icon": "district_buildings/guild_district",
+        "id": "guild_district",
+        "name": "Guild District",
+        "type": "regular",
+        "unlockedBy": {
+          "id": "urban_housing_district",
+          "name": "Housing District"
+        }
+      },
+      {
+        "buildings": 7,
+        "dlc": null,
+        "icon": "district_buildings/port_district",
+        "id": "port_district",
+        "name": "Port District",
+        "type": "regular",
+        "unlockedBy": {
+          "id": "urban_housing_district",
+          "name": "Housing District"
+        }
+      },
+      {
+        "buildings": 10,
+        "dlc": null,
+        "icon": "district_buildings/entertainment_square_district",
+        "id": "entertainment_district",
+        "name": "Entertainment District",
+        "type": "regular",
+        "unlockedBy": {
+          "id": "urban_housing_district",
+          "name": "Housing District"
+        }
+      },
+      {
+        "buildings": 14,
+        "dlc": null,
+        "icon": "district_buildings/patrician_district",
+        "id": "patrician_district",
+        "name": "Patrician District",
+        "type": "regular",
+        "unlockedBy": {
+          "id": "urban_housing_district",
+          "name": "Housing District"
+        }
+      },
+      {
+        "buildings": 14,
+        "dlc": null,
+        "icon": "district_buildings/temple_district",
+        "id": "temple_district",
+        "name": "Religious Enclave",
+        "type": "regular",
+        "unlockedBy": {
+          "id": "urban_housing_district",
+          "name": "Housing District"
+        }
+      },
+      {
+        "buildings": 9,
+        "dlc": null,
+        "icon": "district_buildings/walls_district",
+        "id": "walls_district",
+        "name": "Walls District",
+        "type": "regular",
+        "unlockedBy": null
+      },
+      {
+        "buildings": 8,
+        "dlc": null,
+        "icon": "district_buildings/border_forts_district",
+        "id": "border_forts_district",
+        "name": "Border Forts District",
+        "type": "regular",
+        "unlockedBy": null
+      },
+      {
+        "buildings": 19,
+        "dlc": null,
+        "icon": "district_buildings/villages_district",
+        "id": "villages_district",
+        "name": "Villages District",
+        "type": "regular",
+        "unlockedBy": null
+      },
+      {
+        "buildings": 8,
+        "dlc": null,
+        "icon": "district_buildings/urban_housing_district",
+        "id": "urban_housing_district",
+        "name": "Housing District",
+        "type": "regular",
+        "unlockedBy": null
+      },
+      {
+        "buildings": 17,
+        "dlc": null,
+        "icon": "district_buildings/military_district",
+        "id": "military_district",
+        "name": "Military District",
+        "type": "regular",
+        "unlockedBy": null
+      },
+      {
+        "buildings": 12,
+        "dlc": null,
+        "icon": "district_buildings/bureaucratic_district",
+        "id": "bureaucratic_district",
+        "name": "Bureaucratic District",
+        "type": "regular",
+        "unlockedBy": null
+      }
+    ],
+    "icon": "church_holding",
+    "id": "church_holding",
+    "name": "Temple",
+    "parameters": [],
+    "primaryBuilding": {
+      "category": "Holding districts",
+      "dlc": "Legends of the Dead",
+      "icon": "holding_buildings/temple",
+      "id": "temple_01",
+      "name": "Temple",
+      "tiers": 4
+    },
+    "primaryDistrict": {
+      "buildings": 8,
+      "dlc": "Legends of the Dead",
+      "icon": "holding_buildings/temple",
+      "id": "temple_holding_district",
+      "name": "Temple Holding District",
+      "type": "holding",
+      "unlockedBy": null
+    },
+    "requiredHeirGovernments": [],
+    "sourceFile": "00_holdings.txt"
+  },
+  {
+    "buildings": [
+      {
+        "category": "Holding districts",
+        "dlc": "Crowns of the World",
+        "icon": "oath_buildings/oath_faithful",
+        "id": "oath_faithful_building_01",
+        "name": "Wayside Shrines",
+        "tiers": 4
+      },
+      {
+        "category": "Holding districts",
+        "dlc": null,
+        "icon": "duchy_buildings/tax_assessor",
+        "id": "temple_citadel_tithe_collection_1",
+        "name": "Tithe Barns",
+        "tiers": 4
+      },
+      {
+        "category": "Holding districts",
+        "dlc": null,
+        "icon": "old_buildings/water_temples",
+        "id": "temple_citadel_shrine_1",
+        "name": "Shrine",
+        "tiers": 4
+      },
+      {
+        "category": "Holding districts",
+        "dlc": "Crowns of the World",
+        "icon": "oath_buildings/oath_warriors",
+        "id": "oath_warriors_building_01",
+        "name": "Veterans' Smallholdings",
+        "tiers": 4
+      },
+      {
+        "category": "Holding districts",
+        "dlc": "Crowns of the World",
+        "icon": "oath_buildings/oath_poor",
+        "id": "oath_poor_building_01",
+        "name": "Charitable Customs",
+        "tiers": 4
+      },
+      {
+        "category": "Holding districts",
+        "dlc": null,
+        "icon": "holding_buildings/castle_training_grounds",
+        "id": "castle_training_grounds_1",
+        "name": "Training Grounds",
+        "tiers": 5
+      },
+      {
+        "category": "Holding districts",
+        "dlc": null,
+        "icon": "regular_buildings/hill_forts",
+        "id": "temple_citadel_outer_wall_1",
+        "name": "Outer Wall",
+        "tiers": 4
+      },
+      {
+        "category": "Holding districts",
+        "dlc": null,
+        "icon": "regular_buildings/hospice",
+        "id": "temple_hospices_1",
+        "name": "Almshouses",
+        "tiers": 5
+      }
+    ],
+    "canBeInherited": true,
+    "countsTowardDomainLimitIfDisabled": true,
+    "districts": [
+      {
+        "buildings": 11,
+        "dlc": null,
+        "icon": "regular_buildings/leisure_palace",
+        "id": "household_district",
+        "name": "Royal Household",
+        "type": "regular",
+        "unlockedBy": null
+      },
+      {
+        "buildings": 9,
+        "dlc": null,
+        "icon": "district_buildings/mandala_district",
+        "id": "mandala_district",
+        "name": "Mandala District",
+        "type": "regular",
+        "unlockedBy": null
+      },
+      {
+        "buildings": 8,
+        "dlc": null,
+        "icon": "district_buildings/manor_houses_district",
+        "id": "manor_houses_district",
+        "name": "Manor Houses District",
+        "type": "regular",
+        "unlockedBy": {
+          "id": "villages_district",
+          "name": "Villages District"
+        }
+      },
+      {
+        "buildings": 15,
+        "dlc": null,
+        "icon": "district_buildings/religious_community_district",
+        "id": "religious_community_district",
+        "name": "Religious Community District",
+        "type": "regular",
+        "unlockedBy": {
+          "id": "villages_district",
+          "name": "Villages District"
+        }
+      },
+      {
+        "buildings": 10,
+        "dlc": null,
+        "icon": "district_buildings/market_district",
+        "id": "market_district",
+        "name": "Market District",
+        "type": "regular",
+        "unlockedBy": {
+          "id": "urban_housing_district",
+          "name": "Housing District"
+        }
+      },
+      {
+        "buildings": 20,
+        "dlc": null,
+        "icon": "district_buildings/guild_district",
+        "id": "guild_district",
+        "name": "Guild District",
+        "type": "regular",
+        "unlockedBy": {
+          "id": "urban_housing_district",
+          "name": "Housing District"
+        }
+      },
+      {
+        "buildings": 7,
+        "dlc": null,
+        "icon": "district_buildings/port_district",
+        "id": "port_district",
+        "name": "Port District",
+        "type": "regular",
+        "unlockedBy": {
+          "id": "urban_housing_district",
+          "name": "Housing District"
+        }
+      },
+      {
+        "buildings": 10,
+        "dlc": null,
+        "icon": "district_buildings/entertainment_square_district",
+        "id": "entertainment_district",
+        "name": "Entertainment District",
+        "type": "regular",
+        "unlockedBy": {
+          "id": "urban_housing_district",
+          "name": "Housing District"
+        }
+      },
+      {
+        "buildings": 14,
+        "dlc": null,
+        "icon": "district_buildings/patrician_district",
+        "id": "patrician_district",
+        "name": "Patrician District",
+        "type": "regular",
+        "unlockedBy": {
+          "id": "urban_housing_district",
+          "name": "Housing District"
+        }
+      },
+      {
+        "buildings": 14,
+        "dlc": null,
+        "icon": "district_buildings/temple_district",
+        "id": "temple_district",
+        "name": "Religious Enclave",
+        "type": "regular",
+        "unlockedBy": {
+          "id": "urban_housing_district",
+          "name": "Housing District"
+        }
+      },
+      {
+        "buildings": 9,
+        "dlc": null,
+        "icon": "district_buildings/walls_district",
+        "id": "walls_district",
+        "name": "Walls District",
+        "type": "regular",
+        "unlockedBy": null
+      },
+      {
+        "buildings": 8,
+        "dlc": null,
+        "icon": "district_buildings/border_forts_district",
+        "id": "border_forts_district",
+        "name": "Border Forts District",
+        "type": "regular",
+        "unlockedBy": null
+      },
+      {
+        "buildings": 19,
+        "dlc": null,
+        "icon": "district_buildings/villages_district",
+        "id": "villages_district",
+        "name": "Villages District",
+        "type": "regular",
+        "unlockedBy": null
+      },
+      {
+        "buildings": 8,
+        "dlc": null,
+        "icon": "district_buildings/urban_housing_district",
+        "id": "urban_housing_district",
+        "name": "Housing District",
+        "type": "regular",
+        "unlockedBy": null
+      },
+      {
+        "buildings": 17,
+        "dlc": null,
+        "icon": "district_buildings/military_district",
+        "id": "military_district",
+        "name": "Military District",
+        "type": "regular",
+        "unlockedBy": null
+      },
+      {
+        "buildings": 12,
+        "dlc": null,
+        "icon": "district_buildings/bureaucratic_district",
+        "id": "bureaucratic_district",
+        "name": "Bureaucratic District",
+        "type": "regular",
+        "unlockedBy": null
+      }
+    ],
+    "icon": "temple_citadel_holding",
+    "id": "temple_citadel_holding",
+    "name": "Temple Citadel",
+    "parameters": [],
+    "primaryBuilding": {
+      "category": "Holding districts",
+      "dlc": "Legends of the Dead",
+      "icon": "holding_buildings/temple_citadel",
+      "id": "temple_citadel_01",
+      "name": "Temple Keep",
+      "tiers": 4
+    },
+    "primaryDistrict": {
+      "buildings": 8,
+      "dlc": "Legends of the Dead",
+      "icon": "holding_buildings/temple_citadel",
+      "id": "temple_citadel_holding_district",
+      "name": "Temple Citadel Holding District",
+      "type": "holding",
+      "unlockedBy": null
+    },
+    "requiredHeirGovernments": [],
+    "sourceFile": "00_holdings.txt"
+  },
+  {
+    "buildings": [],
+    "canBeInherited": true,
+    "countsTowardDomainLimitIfDisabled": false,
+    "districts": [],
+    "icon": "nomad_holding",
+    "id": "nomad_holding",
+    "name": "Nomadic Settlement",
+    "parameters": [
+      "no_sprawl",
+      "no_buildings",
+      "no_levies",
+      "county_fertility"
+    ],
+    "primaryBuilding": {
+      "category": "Holding districts",
+      "dlc": null,
+      "icon": "holding_buildings/nomadic_settlement",
+      "id": "nomadic_camp_01",
+      "name": "Nomadic Settlement",
+      "tiers": 1
+    },
+    "primaryDistrict": {
+      "buildings": 0,
+      "dlc": null,
+      "icon": "holding_buildings/nomadic_settlement",
+      "id": "nomad_holding_district",
+      "name": "Nomadic Settlement District",
+      "type": "holding",
+      "unlockedBy": null
+    },
+    "requiredHeirGovernments": [
+      {
+        "id": "nomad_government",
+        "name": "Nomadic"
+      }
+    ],
+    "sourceFile": "00_holdings.txt"
+  },
+  {
+    "buildings": [],
+    "canBeInherited": true,
+    "countsTowardDomainLimitIfDisabled": false,
+    "districts": [],
+    "icon": "herder_holding",
+    "id": "herder_holding",
+    "name": "Herder Camp",
+    "parameters": [
+      "no_sprawl",
+      "no_buildings",
+      "no_levies",
+      "county_fertility"
+    ],
+    "primaryBuilding": {
+      "category": "Holding districts",
+      "dlc": null,
+      "icon": "holding_buildings/nomadic_settlement",
+      "id": "herder_camp_01",
+      "name": "Herder Pens",
+      "tiers": 1
+    },
+    "primaryDistrict": {
+      "buildings": 0,
+      "dlc": null,
+      "icon": "holding_buildings/nomadic_settlement",
+      "id": "herder_holding_district",
+      "name": "Herder Settlement District",
+      "type": "holding",
+      "unlockedBy": null
+    },
+    "requiredHeirGovernments": [
+      {
+        "id": "nomad_government",
+        "name": "Nomadic"
+      },
+      {
+        "id": "herder_government",
+        "name": "Herder"
+      }
+    ],
+    "sourceFile": "00_holdings.txt"
+  }
+]

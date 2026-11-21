@@ -34,6 +34,7 @@ from ck3 import Block, Tagged
 SKILLS = ("diplomacy", "martial", "stewardship", "intrigue", "learning", "prowess")
 
 SKIP_FIELDS = {
+    "on_push_for_advantages": "script effect run when pushing for advantages",
     "illustration": "event-window art selection; icon derivation covers display",
     "on_phase_completed": "script effect (event scheduling); success_desc carries the outcome",
     "on_hud_click": "GUI event plumbing",

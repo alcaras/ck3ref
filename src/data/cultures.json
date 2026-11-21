@@ -336,18 +336,24 @@
         "name": "Mubarizun"
       },
       {
-        "key": "tradition_caravaneers",
-        "name": "Caravaneers"
-      },
-      {
         "key": "tradition_ep2_avid_falconers",
         "name": "Avid Falconers"
+      },
+      {
+        "dlc": "Silk and Silver",
+        "key": "tradition_binding_oaths",
+        "name": "Binding Oaths"
+      },
+      {
+        "key": "tradition_caravaneers",
+        "name": "Caravaneers",
+        "withoutDlc": "Silk and Silver"
       }
     ]
   },
   {
     "color": "#1a991a",
-    "created": null,
+    "created": "800.1.1",
     "dlc": null,
     "ethos": {
       "key": "ethos_spiritual",
@@ -372,7 +378,10 @@
       "name": "Men Only"
     },
     "name": "Egyptian",
-    "parents": [],
+    "parents": [
+      "bedouin",
+      "remenkimi"
+    ],
     "sourceFile": "00_arabic.txt",
     "traditions": [
       {
@@ -546,8 +555,14 @@
         "name": "Religion Blending"
       },
       {
+        "dlc": "Silk and Silver",
+        "key": "tradition_monsoon_traders",
+        "name": "Monsoon Merchants"
+      },
+      {
         "key": "tradition_maritime_mercantilism",
-        "name": "Maritime Mercantilism"
+        "name": "Maritime Mercantilism",
+        "withoutDlc": "Silk and Silver"
       }
     ]
   },
@@ -754,6 +769,11 @@
         "key": "tradition_seafaring",
         "name": "Seafarers",
         "withoutDlc": "All Under Heaven"
+      },
+      {
+        "dlc": "Silk and Silver",
+        "key": "tradition_fortune_seekers",
+        "name": "Fortune Seekers"
       }
     ]
   },
@@ -1771,16 +1791,27 @@
     "sourceFile": "00_bantu.txt",
     "traditions": [
       {
-        "key": "tradition_maritime_mercantilism",
-        "name": "Maritime Mercantilism"
-      },
-      {
         "key": "tradition_language_scholars",
         "name": "Linguists"
       },
       {
         "key": "tradition_storytellers",
         "name": "Storytellers"
+      },
+      {
+        "dlc": "Silk and Silver",
+        "key": "tradition_monsoon_traders",
+        "name": "Monsoon Merchants"
+      },
+      {
+        "key": "tradition_maritime_mercantilism",
+        "name": "Maritime Mercantilism",
+        "withoutDlc": "Silk and Silver"
+      },
+      {
+        "dlc": "Silk and Silver",
+        "key": "tradition_fortune_seekers",
+        "name": "Fortune Seekers"
       }
     ]
   },
@@ -1825,6 +1856,11 @@
       {
         "key": "tradition_mountain_herding",
         "name": "Mountain Herding"
+      },
+      {
+        "dlc": "Silk and Silver",
+        "key": "tradition_saharan_traders",
+        "name": "Saharan Traders"
       }
     ]
   },
@@ -1873,6 +1909,11 @@
       {
         "key": "tradition_equal_inheritance",
         "name": "Equal Inheritance"
+      },
+      {
+        "dlc": "Silk and Silver",
+        "key": "tradition_saharan_traders",
+        "name": "Saharan Traders"
       }
     ]
   },
@@ -1961,6 +2002,11 @@
       {
         "key": "tradition_desert_ribat",
         "name": "Desert Ribats"
+      },
+      {
+        "dlc": "Silk and Silver",
+        "key": "tradition_saharan_traders",
+        "name": "Saharan Traders"
       }
     ]
   },
@@ -2676,16 +2722,22 @@
     "sourceFile": "00_central_african.txt",
     "traditions": [
       {
-        "key": "tradition_caravaneers",
-        "name": "Caravaneers"
-      },
-      {
         "key": "tradition_parochialism",
         "name": "Parochialism"
       },
       {
         "key": "tradition_family_entrepreneurship",
         "name": "Family Business"
+      },
+      {
+        "dlc": "Silk and Silver",
+        "key": "tradition_saharan_traders",
+        "name": "Saharan Traders"
+      },
+      {
+        "key": "tradition_caravaneers",
+        "name": "Caravaneers",
+        "withoutDlc": "Silk and Silver"
       }
     ]
   },
@@ -2729,6 +2781,11 @@
       {
         "key": "tradition_quarrelsome",
         "name": "Quarrelsome"
+      },
+      {
+        "dlc": "Silk and Silver",
+        "key": "tradition_saharan_traders",
+        "name": "Saharan Traders"
       }
     ]
   },
@@ -2856,7 +2913,7 @@
       },
       {
         "key": "tradition_stand_and_fight",
-        "name": "Stand and Fight!"
+        "name": "Stand and Fight"
       },
       {
         "key": "tradition_hereditary_hierarchy",
@@ -2898,8 +2955,8 @@
     "sourceFile": "00_central_germanic.txt",
     "traditions": [
       {
-        "key": "tradition_agrarian",
-        "name": "Agrarian"
+        "key": "tradition_city_keepers",
+        "name": "City Keepers"
       },
       {
         "key": "tradition_parochialism",
@@ -2966,8 +3023,8 @@
     "created": null,
     "dlc": null,
     "ethos": {
-      "key": "ethos_stoic",
-      "name": "Stoic"
+      "key": "ethos_egalitarian",
+      "name": "Egalitarian"
     },
     "features": [],
     "headDetermination": {
@@ -2996,12 +3053,16 @@
         "name": "Dexterous Fishermen"
       },
       {
-        "key": "tradition_zealous_people",
-        "name": "Strong Believers"
+        "key": "tradition_wetlanders",
+        "name": "Wetlanders"
       },
       {
-        "key": "tradition_battlefield_looters",
-        "name": "Battlefield Looters"
+        "key": "tradition_maritime_mercantilism",
+        "name": "Maritime Mercantilism"
+      },
+      {
+        "key": "tradition_stalwart_defenders",
+        "name": "Stalwart Defenders"
       }
     ]
   },
@@ -3045,7 +3106,7 @@
       },
       {
         "key": "tradition_stand_and_fight",
-        "name": "Stand and Fight!"
+        "name": "Stand and Fight"
       }
     ]
   },
@@ -3089,7 +3150,7 @@
       },
       {
         "key": "tradition_stand_and_fight",
-        "name": "Stand and Fight!"
+        "name": "Stand and Fight"
       },
       {
         "dlc": "The Royal Court",
@@ -3132,7 +3193,7 @@
     "traditions": [
       {
         "key": "tradition_stand_and_fight",
-        "name": "Stand and Fight!"
+        "name": "Stand and Fight"
       },
       {
         "key": "tradition_ruling_caste",
@@ -3298,9 +3359,19 @@
         "name": "Court Machinations"
       },
       {
+        "key": "tradition_concubines",
+        "name": "Concubines",
+        "withoutDlc": "All Under Heaven"
+      },
+      {
         "dlc": "All Under Heaven",
         "key": "tradition_cultivation",
         "name": "Cultivation"
+      },
+      {
+        "key": "tradition_court_eunuchs",
+        "name": "Court Eunuchs",
+        "withoutDlc": "All Under Heaven"
       },
       {
         "dlc": "All Under Heaven",
@@ -3498,6 +3569,11 @@
       {
         "key": "tradition_parochialism",
         "name": "Parochialism"
+      },
+      {
+        "dlc": "Silk and Silver",
+        "key": "tradition_monsoon_traders",
+        "name": "Monsoon Merchants"
       }
     ]
   },
@@ -3826,6 +3902,57 @@
     ]
   },
   {
+    "color": "#40994c",
+    "created": "1136.1.1",
+    "dlc": null,
+    "ethos": {
+      "key": "ethos_bureaucratic",
+      "name": "Bureaucratic"
+    },
+    "features": [],
+    "headDetermination": {
+      "key": "head_determination_domain",
+      "name": "Determine by largest domain"
+    },
+    "heritage": {
+      "key": "heritage_east_slavic",
+      "name": "East Slavic"
+    },
+    "id": "novgorodian",
+    "language": {
+      "key": "language_east_slavic",
+      "name": "East Slavic"
+    },
+    "martialCustom": {
+      "key": "martial_custom_male_only",
+      "name": "Men Only"
+    },
+    "name": "Novgorodian",
+    "parents": [
+      "ilmenian",
+      "russian"
+    ],
+    "sourceFile": "00_east_slavic.txt",
+    "traditions": [
+      {
+        "key": "tradition_druzhina",
+        "name": "Druzhina"
+      },
+      {
+        "key": "tradition_city_keepers",
+        "name": "City Keepers"
+      },
+      {
+        "key": "tradition_maritime_mercantilism",
+        "name": "Maritime Mercantilism"
+      },
+      {
+        "key": "tradition_forest_folk",
+        "name": "Forest Folk"
+      }
+    ]
+  },
+  {
     "color": "#33661a",
     "created": null,
     "dlc": null,
@@ -4028,7 +4155,7 @@
       },
       {
         "key": "tradition_legalistic",
-        "name": "Legalistic",
+        "name": "Legalistic Customs",
         "withoutDlc": "Roads to Power"
       },
       {
@@ -4092,6 +4219,105 @@
     ]
   },
   {
+    "color": "#338c8c",
+    "created": "300.1.1",
+    "dlc": null,
+    "ethos": {
+      "key": "ethos_spiritual",
+      "name": "Spiritual"
+    },
+    "features": [],
+    "headDetermination": {
+      "key": "head_determination_domain",
+      "name": "Determine by largest domain"
+    },
+    "heritage": {
+      "key": "heritage_egyptian",
+      "name": "Egyptian"
+    },
+    "id": "remenkimi",
+    "language": {
+      "key": "language_egyptian",
+      "name": "Egyptian"
+    },
+    "martialCustom": {
+      "key": "martial_custom_male_only",
+      "name": "Men Only"
+    },
+    "name": "Remenkhemi",
+    "parents": [
+      "ancient_egyptian"
+    ],
+    "sourceFile": "00_egyptian.txt",
+    "traditions": [
+      {
+        "key": "tradition_monastic_communities",
+        "name": "Monastic Communities"
+      },
+      {
+        "key": "tradition_philosopher_culture",
+        "name": "Philosopher Culture"
+      },
+      {
+        "key": "tradition_faith_bound",
+        "name": "Bound by Faith"
+      },
+      {
+        "key": "tradition_agrarian",
+        "name": "Agrarian"
+      },
+      {
+        "dlc": "Silk and Silver",
+        "key": "tradition_binding_oaths",
+        "name": "Binding Oaths"
+      }
+    ]
+  },
+  {
+    "color": "#7399e6",
+    "created": null,
+    "dlc": null,
+    "ethos": {
+      "key": "ethos_communal",
+      "name": "Communal"
+    },
+    "features": [],
+    "headDetermination": {
+      "key": "head_determination_domain",
+      "name": "Determine by largest domain"
+    },
+    "heritage": {
+      "key": "heritage_frankish",
+      "name": "Frankish"
+    },
+    "id": "arpitan",
+    "language": {
+      "key": "language_arpitan",
+      "name": "Arpitan"
+    },
+    "martialCustom": {
+      "key": "martial_custom_male_only",
+      "name": "Men Only"
+    },
+    "name": "Arpitan",
+    "parents": [],
+    "sourceFile": "00_frankish.txt",
+    "traditions": [
+      {
+        "key": "tradition_mountain_homes",
+        "name": "Mountain Homes"
+      },
+      {
+        "key": "tradition_mountaineers",
+        "name": "Mountaineers"
+      },
+      {
+        "key": "tradition_esteemed_hospitality",
+        "name": "Esteemed Hospitality"
+      }
+    ]
+  },
+  {
     "color": "#4c4c80",
     "created": null,
     "dlc": null,
@@ -4131,7 +4357,7 @@
       },
       {
         "key": "tradition_stand_and_fight",
-        "name": "Stand and Fight!"
+        "name": "Stand and Fight"
       }
     ]
   },
@@ -4182,6 +4408,62 @@
     ]
   },
   {
+    "color": "#753800",
+    "created": "1130.12.25",
+    "dlc": null,
+    "ethos": {
+      "key": "ethos_bellicose",
+      "name": "Bellicose"
+    },
+    "features": [],
+    "headDetermination": {
+      "key": "head_determination_domain",
+      "name": "Determine by largest domain"
+    },
+    "heritage": {
+      "key": "heritage_frankish",
+      "name": "Frankish"
+    },
+    "id": "italo_norman",
+    "language": {
+      "key": "language_italian",
+      "name": "Italian Vulgar"
+    },
+    "martialCustom": {
+      "key": "martial_custom_male_only",
+      "name": "Men Only"
+    },
+    "name": "Italo-Norman",
+    "parents": [
+      "norman",
+      "sicilian"
+    ],
+    "sourceFile": "00_frankish.txt",
+    "traditions": [
+      {
+        "key": "tradition_ruling_caste",
+        "name": "Ruling Caste"
+      },
+      {
+        "key": "tradition_xenophilic",
+        "name": "Xenophilic"
+      },
+      {
+        "key": "tradition_chanson_de_geste",
+        "name": "Chanson de Geste"
+      },
+      {
+        "key": "tradition_seafaring",
+        "name": "Seafarers"
+      },
+      {
+        "dlc": "Roads to Power",
+        "key": "tradition_ep3_audacious_cadets",
+        "name": "Audacious Cadets"
+      }
+    ]
+  },
+  {
     "color": "#1a3366",
     "created": "911.7.20",
     "dlc": null,
@@ -4220,7 +4502,7 @@
       },
       {
         "key": "tradition_stand_and_fight",
-        "name": "Stand and Fight!"
+        "name": "Stand and Fight"
       },
       {
         "key": "tradition_chanson_de_geste",
@@ -4368,7 +4650,7 @@
     "traditions": [
       {
         "key": "tradition_pastoralists",
-        "name": "Pastorialists"
+        "name": "Pastoralism"
       },
       {
         "key": "tradition_poetry",
@@ -4428,7 +4710,7 @@
       },
       {
         "key": "tradition_stand_and_fight",
-        "name": "Stand and Fight!"
+        "name": "Stand and Fight"
       },
       {
         "dlc": "The Royal Court",
@@ -4569,6 +4851,11 @@
         "dlc": "The Royal Court",
         "key": "tradition_sorcerous_metallurgy",
         "name": "Sorcerous Metallurgy"
+      },
+      {
+        "dlc": "Silk and Silver",
+        "key": "tradition_saharan_traders",
+        "name": "Saharan Traders"
       }
     ]
   },
@@ -4697,7 +4984,7 @@
       },
       {
         "key": "tradition_legalistic",
-        "name": "Legalistic"
+        "name": "Legalistic Customs"
       },
       {
         "key": "tradition_astute_diplomats",
@@ -4741,7 +5028,7 @@
       },
       {
         "key": "tradition_legalistic",
-        "name": "Legalistic"
+        "name": "Legalistic Customs"
       },
       {
         "key": "tradition_astute_diplomats",
@@ -4941,10 +5228,6 @@
     "sourceFile": "00_somalian.txt",
     "traditions": [
       {
-        "key": "tradition_maritime_mercantilism",
-        "name": "Maritime Mercantilism"
-      },
-      {
         "key": "tradition_horn_mountain_skirmishing",
         "name": "Mountain Skirmishing"
       },
@@ -4955,6 +5238,16 @@
       {
         "key": "tradition_dryland_dwellers",
         "name": "Dryland Dwellers"
+      },
+      {
+        "dlc": "Silk and Silver",
+        "key": "tradition_monsoon_traders",
+        "name": "Monsoon Merchants"
+      },
+      {
+        "key": "tradition_maritime_mercantilism",
+        "name": "Maritime Mercantilism",
+        "withoutDlc": "Silk and Silver"
       }
     ]
   },
@@ -4998,7 +5291,7 @@
       },
       {
         "key": "tradition_pastoralists",
-        "name": "Pastorialists"
+        "name": "Pastoralism"
       },
       {
         "key": "tradition_talent_acquisition",
@@ -5483,7 +5776,7 @@
     "traditions": [
       {
         "key": "tradition_stand_and_fight",
-        "name": "Stand and Fight!"
+        "name": "Stand and Fight"
       },
       {
         "key": "tradition_agrarian",
@@ -5690,6 +5983,11 @@
       {
         "key": "tradition_artisans",
         "name": "Expert Artisans"
+      },
+      {
+        "dlc": "Silk and Silver",
+        "key": "tradition_monsoon_traders",
+        "name": "Monsoon Merchants"
       }
     ]
   },
@@ -5918,7 +6216,7 @@
       },
       {
         "key": "tradition_pastoralists",
-        "name": "Pastorialists"
+        "name": "Pastoralism"
       }
     ]
   },
@@ -6337,6 +6635,11 @@
         "dlc": "Legacy of Persia",
         "key": "tradition_fp3_jirga",
         "name": "Jirga"
+      },
+      {
+        "dlc": "Silk and Silver",
+        "key": "tradition_binding_oaths",
+        "name": "Binding Oaths"
       }
     ]
   },
@@ -6429,10 +6732,6 @@
     "sourceFile": "00_iranian.txt",
     "traditions": [
       {
-        "key": "tradition_caravaneers",
-        "name": "Caravaneers"
-      },
-      {
         "key": "tradition_dryland_dwellers",
         "name": "Dryland Dwellers"
       },
@@ -6453,6 +6752,16 @@
         "key": "tradition_futuwaa",
         "name": "Futuwaa",
         "withoutDlc": "Legacy of Persia"
+      },
+      {
+        "dlc": "Silk and Silver",
+        "key": "tradition_silk_road_traders",
+        "name": "Silk Road Entrepreneurs"
+      },
+      {
+        "key": "tradition_caravaneers",
+        "name": "Caravaneers",
+        "withoutDlc": "Silk and Silver"
       }
     ]
   },
@@ -6507,6 +6816,60 @@
         "key": "tradition_futuwaa",
         "name": "Futuwaa",
         "withoutDlc": "Legacy of Persia"
+      }
+    ]
+  },
+  {
+    "color": "#e6991a",
+    "created": "785.1.1",
+    "dlc": null,
+    "ethos": {
+      "key": "ethos_spiritual",
+      "name": "Spiritual"
+    },
+    "features": [],
+    "headDetermination": {
+      "key": "head_determination_domain",
+      "name": "Determine by largest domain"
+    },
+    "heritage": {
+      "key": "heritage_iranian",
+      "name": "Iranian"
+    },
+    "id": "parsi",
+    "language": {
+      "key": "language_rajasthani",
+      "name": "Gurjar"
+    },
+    "martialCustom": {
+      "key": "martial_custom_male_only",
+      "name": "Men Only"
+    },
+    "name": "Parsi",
+    "parents": [
+      "persian"
+    ],
+    "sourceFile": "00_iranian.txt",
+    "traditions": [
+      {
+        "key": "tradition_diasporic",
+        "name": "Diasporic"
+      },
+      {
+        "key": "tradition_ce1_ritual_washing",
+        "name": "Water Rituals"
+      },
+      {
+        "key": "tradition_faith_bound",
+        "name": "Bound by Faith"
+      },
+      {
+        "key": "tradition_maritime_mercantilism",
+        "name": "Maritime Mercantilism"
+      },
+      {
+        "key": "tradition_philosopher_culture",
+        "name": "Philosopher Culture"
       }
     ]
   },
@@ -6615,10 +6978,6 @@
     "sourceFile": "00_iranian.txt",
     "traditions": [
       {
-        "key": "tradition_caravaneers",
-        "name": "Caravaneers"
-      },
-      {
         "key": "tradition_dryland_dwellers",
         "name": "Dryland Dwellers"
       },
@@ -6630,6 +6989,16 @@
         "dlc": "Legacy of Persia",
         "key": "tradition_fp3_frontier_warriors",
         "name": "Frontier Warriors"
+      },
+      {
+        "dlc": "Silk and Silver",
+        "key": "tradition_silk_road_traders",
+        "name": "Silk Road Entrepreneurs"
+      },
+      {
+        "key": "tradition_caravaneers",
+        "name": "Caravaneers",
+        "withoutDlc": "Silk and Silver"
       }
     ]
   },
@@ -6664,10 +7033,6 @@
     "sourceFile": "00_iranian.txt",
     "traditions": [
       {
-        "key": "tradition_caravaneers",
-        "name": "Caravaneers"
-      },
-      {
         "key": "tradition_religion_blending",
         "name": "Religion Blending"
       },
@@ -6689,6 +7054,21 @@
         "dlc": "Legacy of Persia",
         "key": "tradition_horse_breeder",
         "name": "Horse Breeders"
+      },
+      {
+        "dlc": "Silk and Silver",
+        "key": "tradition_silk_road_traders",
+        "name": "Silk Road Entrepreneurs"
+      },
+      {
+        "key": "tradition_caravaneers",
+        "name": "Caravaneers",
+        "withoutDlc": "Silk and Silver"
+      },
+      {
+        "dlc": "Silk and Silver",
+        "key": "tradition_fortune_seekers",
+        "name": "Fortune Seekers"
       }
     ]
   },
@@ -6725,10 +7105,6 @@
     "sourceFile": "00_iranian.txt",
     "traditions": [
       {
-        "key": "tradition_caravaneers",
-        "name": "Caravaneers"
-      },
-      {
         "key": "tradition_futuwaa",
         "name": "Futuwaa"
       },
@@ -6755,6 +7131,16 @@
         "key": "tradition_philosopher_culture",
         "name": "Philosopher Culture",
         "withoutDlc": "Legacy of Persia"
+      },
+      {
+        "dlc": "Silk and Silver",
+        "key": "tradition_silk_road_traders",
+        "name": "Silk Road Entrepreneurs"
+      },
+      {
+        "key": "tradition_caravaneers",
+        "name": "Caravaneers",
+        "withoutDlc": "Silk and Silver"
       }
     ]
   },
@@ -6845,10 +7231,6 @@
         "name": "Diasporic"
       },
       {
-        "key": "tradition_caravaneers",
-        "name": "Caravaneers"
-      },
-      {
         "key": "tradition_xenophilic",
         "name": "Xenophilic"
       },
@@ -6859,6 +7241,16 @@
       {
         "key": "tradition_mobile_guards",
         "name": "Defensive Tactics"
+      },
+      {
+        "dlc": "Silk and Silver",
+        "key": "tradition_fortune_seekers",
+        "name": "Fortune Seekers"
+      },
+      {
+        "key": "tradition_caravaneers",
+        "name": "Caravaneers",
+        "withoutDlc": "Silk and Silver"
       }
     ]
   },
@@ -6965,6 +7357,58 @@
     ]
   },
   {
+    "color": "#80408c",
+    "created": null,
+    "dlc": null,
+    "ethos": {
+      "key": "ethos_communal",
+      "name": "Communal"
+    },
+    "features": [],
+    "headDetermination": {
+      "key": "head_determination_domain",
+      "name": "Determine by largest domain"
+    },
+    "heritage": {
+      "key": "heritage_israelite",
+      "name": "Israelite"
+    },
+    "id": "mustaarabi",
+    "language": {
+      "key": "language_arabic",
+      "name": "Arabic"
+    },
+    "martialCustom": {
+      "key": "martial_custom_male_only",
+      "name": "Men Only"
+    },
+    "name": "Musta'arabi",
+    "parents": [],
+    "sourceFile": "00_israelite.txt",
+    "traditions": [
+      {
+        "key": "tradition_diasporic",
+        "name": "Diasporic"
+      },
+      {
+        "key": "tradition_philosopher_culture",
+        "name": "Philosopher Culture"
+      },
+      {
+        "key": "tradition_faith_bound",
+        "name": "Bound by Faith"
+      },
+      {
+        "key": "tradition_xenophilic",
+        "name": "Xenophilic"
+      },
+      {
+        "key": "tradition_mobile_guards",
+        "name": "Defensive Tactics"
+      }
+    ]
+  },
+  {
     "color": "#8033b2",
     "created": null,
     "dlc": null,
@@ -7051,10 +7495,6 @@
         "name": "Diasporic"
       },
       {
-        "key": "tradition_caravaneers",
-        "name": "Caravaneers"
-      },
-      {
         "key": "tradition_philosopher_culture",
         "name": "Philosopher Culture"
       },
@@ -7065,6 +7505,16 @@
       {
         "key": "tradition_mobile_guards",
         "name": "Defensive Tactics"
+      },
+      {
+        "dlc": "Silk and Silver",
+        "key": "tradition_fortune_seekers",
+        "name": "Fortune Seekers"
+      },
+      {
+        "key": "tradition_caravaneers",
+        "name": "Caravaneers",
+        "withoutDlc": "Silk and Silver"
       }
     ]
   },
@@ -7241,12 +7691,23 @@
         "name": "Republican Legacy"
       },
       {
-        "key": "tradition_mountain_homes",
-        "name": "Mountain Homes"
-      },
-      {
         "key": "tradition_maritime_mercantilism",
         "name": "Maritime Mercantilism"
+      },
+      {
+        "dlc": "Silk and Silver",
+        "key": "tradition_roman_law",
+        "name": "Roman Law"
+      },
+      {
+        "dlc": "Silk and Silver",
+        "key": "tradition_civic_religion",
+        "name": "Civic Religion"
+      },
+      {
+        "dlc": "Silk and Silver",
+        "key": "tradition_fortune_seekers",
+        "name": "Fortune Seekers"
       }
     ]
   },
@@ -7293,6 +7754,16 @@
       {
         "key": "tradition_poetry",
         "name": "Refined Poetry"
+      },
+      {
+        "dlc": "Silk and Silver",
+        "key": "tradition_contado",
+        "name": "Contado"
+      },
+      {
+        "dlc": "Silk and Silver",
+        "key": "tradition_civic_religion",
+        "name": "Civic Religion"
       }
     ]
   },
@@ -7339,7 +7810,7 @@
       },
       {
         "key": "tradition_stand_and_fight",
-        "name": "Stand and Fight!"
+        "name": "Stand and Fight"
       },
       {
         "key": "tradition_republican_legacy",
@@ -7383,15 +7854,11 @@
       },
       {
         "key": "tradition_legalistic",
-        "name": "Legalistic"
+        "name": "Legalistic Customs"
       },
       {
         "key": "tradition_roman_legacy",
         "name": "Eastern Roman Legacy"
-      },
-      {
-        "key": "tradition_poetry",
-        "name": "Refined Poetry"
       },
       {
         "key": "tradition_hereditary_hierarchy",
@@ -7400,6 +7867,11 @@
       {
         "key": "tradition_noble_adoption",
         "name": "Noble Adoption"
+      },
+      {
+        "dlc": "Silk and Silver",
+        "key": "tradition_roman_law",
+        "name": "Roman Law"
       }
     ]
   },
@@ -7442,6 +7914,14 @@
       {
         "key": "tradition_isolationist",
         "name": "Isolationist"
+      },
+      {
+        "key": "tradition_ancient_miners",
+        "name": "Ancient Miners"
+      },
+      {
+        "key": "tradition_hill_dwellers",
+        "name": "Hill Dwellers"
       }
     ]
   },
@@ -7493,10 +7973,6 @@
       {
         "key": "tradition_poetry",
         "name": "Refined Poetry"
-      },
-      {
-        "key": "tradition_republican_legacy",
-        "name": "Republican Legacy"
       }
     ]
   },
@@ -7588,6 +8064,11 @@
         "dlc": "Khans of the Steppe",
         "key": "tradition_devoted_horsemanship",
         "name": "Devoted Horsemanship"
+      },
+      {
+        "key": "tradition_horse_lords",
+        "name": "Horse Lords",
+        "withoutDlc": "Khans of the Steppe"
       }
     ]
   },
@@ -7802,6 +8283,11 @@
         "dlc": "Khans of the Steppe",
         "key": "tradition_mpo_northern_tribes",
         "name": "Tribes of the North"
+      },
+      {
+        "key": "tradition_horse_lords",
+        "name": "Horse Lords",
+        "withoutDlc": "Khans of the Steppe"
       }
     ]
   },
@@ -7851,6 +8337,11 @@
         "dlc": "Khans of the Steppe",
         "key": "tradition_mpo_wolves_of_the_deep_steppe",
         "name": "Wolves of the Deep Steppe"
+      },
+      {
+        "key": "tradition_horse_lords",
+        "name": "Horse Lords",
+        "withoutDlc": "Khans of the Steppe"
       }
     ]
   },
@@ -7886,7 +8377,7 @@
     "traditions": [
       {
         "key": "tradition_pastoralists",
-        "name": "Pastorialists"
+        "name": "Pastoralism"
       },
       {
         "key": "tradition_sacred_hunts",
@@ -7910,6 +8401,11 @@
         "dlc": "Khans of the Steppe",
         "key": "tradition_mpo_iron_cavalry",
         "name": "Iron Cavalry"
+      },
+      {
+        "key": "tradition_horse_lords",
+        "name": "Horse Lords",
+        "withoutDlc": "Khans of the Steppe"
       }
     ]
   },
@@ -7959,6 +8455,11 @@
         "dlc": "Khans of the Steppe",
         "key": "tradition_mpo_wolves_of_the_deep_steppe",
         "name": "Wolves of the Deep Steppe"
+      },
+      {
+        "key": "tradition_horse_lords",
+        "name": "Horse Lords",
+        "withoutDlc": "Khans of the Steppe"
       }
     ]
   },
@@ -7998,7 +8499,7 @@
       },
       {
         "key": "tradition_pastoralists",
-        "name": "Pastorialists"
+        "name": "Pastoralism"
       },
       {
         "key": "tradition_mountain_homes",
@@ -8056,6 +8557,55 @@
         "dlc": "Khans of the Steppe",
         "key": "tradition_mpo_northern_tribes",
         "name": "Tribes of the North"
+      },
+      {
+        "key": "tradition_horse_lords",
+        "name": "Horse Lords",
+        "withoutDlc": "Khans of the Steppe"
+      }
+    ]
+  },
+  {
+    "color": "#494bb5",
+    "created": null,
+    "dlc": null,
+    "ethos": {
+      "key": "ethos_bellicose",
+      "name": "Bellicose"
+    },
+    "features": [],
+    "headDetermination": {
+      "key": "head_determination_herd",
+      "name": "Determine by largest herd"
+    },
+    "heritage": {
+      "key": "heritage_mongolic",
+      "name": "Mongolic"
+    },
+    "id": "serbi",
+    "language": {
+      "key": "language_khitan",
+      "name": "Serbi"
+    },
+    "martialCustom": {
+      "key": "martial_custom_male_only",
+      "name": "Men Only"
+    },
+    "name": "Serbi",
+    "parents": [],
+    "sourceFile": "00_mongolic.txt",
+    "traditions": [
+      {
+        "key": "tradition_sacred_mountains",
+        "name": "Sacred Mountains"
+      },
+      {
+        "key": "tradition_ruling_caste",
+        "name": "Ruling Caste"
+      },
+      {
+        "key": "tradition_malleable_invaders",
+        "name": "Malleable Invaders"
       }
     ]
   },
@@ -8095,16 +8645,11 @@
       },
       {
         "key": "tradition_pastoralists",
-        "name": "Pastorialists"
+        "name": "Pastoralism"
       },
       {
         "key": "tradition_mountaineers",
         "name": "Mountaineers"
-      },
-      {
-        "dlc": "Khans of the Steppe",
-        "key": "tradition_mpo_iron_cavalry",
-        "name": "Iron Cavalry"
       }
     ]
   },
@@ -8144,7 +8689,7 @@
       },
       {
         "key": "tradition_pastoralists",
-        "name": "Pastorialists"
+        "name": "Pastoralism"
       },
       {
         "key": "tradition_dryland_dwellers",
@@ -8154,6 +8699,11 @@
         "dlc": "Khans of the Steppe",
         "key": "tradition_mpo_iron_cavalry",
         "name": "Iron Cavalry"
+      },
+      {
+        "key": "tradition_horse_lords",
+        "name": "Horse Lords",
+        "withoutDlc": "Khans of the Steppe"
       }
     ]
   },
@@ -8279,7 +8829,7 @@
     "traditions": [
       {
         "key": "tradition_legalistic",
-        "name": "Legalistic"
+        "name": "Legalistic Customs"
       },
       {
         "key": "tradition_religion_blending",
@@ -8437,7 +8987,7 @@
   },
   {
     "color": "#26668c",
-    "created": "1000.1.1",
+    "created": "900.1.1",
     "dlc": null,
     "ethos": {
       "key": "ethos_bellicose",
@@ -8491,6 +9041,122 @@
       {
         "key": "tradition_hird",
         "name": "Hirds",
+        "withoutDlc": "Northern Lords"
+      }
+    ]
+  },
+  {
+    "color": "#c8af28",
+    "created": "900.1.1",
+    "dlc": null,
+    "ethos": {
+      "key": "ethos_bellicose",
+      "name": "Bellicose"
+    },
+    "features": [],
+    "headDetermination": {
+      "key": "head_determination_domain",
+      "name": "Determine by largest domain"
+    },
+    "heritage": {
+      "key": "heritage_north_germanic",
+      "name": "North Germanic"
+    },
+    "id": "geatish",
+    "language": {
+      "key": "language_norse",
+      "name": "Norse"
+    },
+    "martialCustom": {
+      "key": "martial_custom_male_only",
+      "name": "Men Only"
+    },
+    "name": "Geatish",
+    "parents": [
+      "norse"
+    ],
+    "sourceFile": "00_north_germanic.txt",
+    "traditions": [
+      {
+        "key": "tradition_things",
+        "name": "Ting-Meet"
+      },
+      {
+        "key": "tradition_runestones",
+        "name": "Runestone Raisers"
+      },
+      {
+        "key": "tradition_staunch_traditionalists",
+        "name": "Staunch Traditionalists"
+      },
+      {
+        "dlc": "Northern Lords",
+        "key": "tradition_fp1_coastal_warriors",
+        "name": "Coastal Warriors"
+      },
+      {
+        "key": "tradition_hird",
+        "name": "Hirds",
+        "withoutDlc": "Northern Lords"
+      }
+    ]
+  },
+  {
+    "color": "#8cc8f0",
+    "created": "930.1.1",
+    "dlc": null,
+    "ethos": {
+      "key": "ethos_bellicose",
+      "name": "Bellicose"
+    },
+    "features": [],
+    "headDetermination": {
+      "key": "head_determination_domain",
+      "name": "Determine by largest domain"
+    },
+    "heritage": {
+      "key": "heritage_north_germanic",
+      "name": "North Germanic"
+    },
+    "id": "icelandic",
+    "language": {
+      "key": "language_norse",
+      "name": "Norse"
+    },
+    "martialCustom": {
+      "key": "martial_custom_male_only",
+      "name": "Men Only"
+    },
+    "name": "Icelandic",
+    "parents": [
+      "norse"
+    ],
+    "sourceFile": "00_north_germanic.txt",
+    "traditions": [
+      {
+        "key": "tradition_things",
+        "name": "Ting-Meet"
+      },
+      {
+        "key": "tradition_storytellers",
+        "name": "Storytellers"
+      },
+      {
+        "key": "tradition_seafaring",
+        "name": "Seafarers"
+      },
+      {
+        "key": "tradition_eye_for_an_eye",
+        "name": "Eye for an Eye"
+      },
+      {
+        "dlc": "Northern Lords",
+        "key": "tradition_fp1_performative_honour",
+        "name": "Performative Honor"
+      },
+      {
+        "key": "tradition_poetry",
+        "name": "Refined Poetry",
         "withoutDlc": "Northern Lords"
       }
     ]
@@ -8567,8 +9233,69 @@
     ]
   },
   {
+    "color": "#56736a",
+    "created": "950.1.1",
+    "dlc": null,
+    "ethos": {
+      "key": "ethos_bellicose",
+      "name": "Bellicose"
+    },
+    "features": [],
+    "headDetermination": {
+      "key": "head_determination_domain",
+      "name": "Determine by largest domain"
+    },
+    "heritage": {
+      "key": "heritage_north_germanic",
+      "name": "North Germanic"
+    },
+    "id": "norse_gael",
+    "language": {
+      "key": "language_goidelic",
+      "name": "Goidelic"
+    },
+    "martialCustom": {
+      "key": "martial_custom_male_only",
+      "name": "Men Only"
+    },
+    "name": "Norse-Gael",
+    "parents": [
+      "norse",
+      "gaelic"
+    ],
+    "sourceFile": "00_north_germanic.txt",
+    "traditions": [
+      {
+        "key": "tradition_things",
+        "name": "Ting-Meet"
+      },
+      {
+        "key": "tradition_seafaring",
+        "name": "Seafarers"
+      },
+      {
+        "key": "tradition_maritime_mercantilism",
+        "name": "Maritime Mercantilism"
+      },
+      {
+        "key": "tradition_warriors_by_merit",
+        "name": "Warriors by Merit"
+      },
+      {
+        "dlc": "Northern Lords",
+        "key": "tradition_fp1_coastal_warriors",
+        "name": "Coastal Warriors"
+      },
+      {
+        "key": "tradition_practiced_pirates",
+        "name": "Practiced Pirates",
+        "withoutDlc": "Northern Lords"
+      }
+    ]
+  },
+  {
     "color": "#d296ff",
-    "created": "1000.1.1",
+    "created": "900.1.1",
     "dlc": null,
     "ethos": {
       "key": "ethos_bellicose",
@@ -8628,7 +9355,7 @@
   },
   {
     "color": "#4080bf",
-    "created": "1000.1.1",
+    "created": "900.1.1",
     "dlc": null,
     "ethos": {
       "key": "ethos_bellicose",
@@ -8829,8 +9556,8 @@
         "name": "Court Eunuchs"
       },
       {
-        "key": "tradition_himalayan_settlers",
-        "name": "Himalayan Settlers"
+        "key": "tradition_metal_craftsmanship",
+        "name": "Metalworkers"
       },
       {
         "dlc": "Khans of the Steppe",
@@ -8918,8 +9645,14 @@
         "name": "Dryland Dwellers"
       },
       {
+        "dlc": "Silk and Silver",
+        "key": "tradition_saharan_traders",
+        "name": "Saharan Traders"
+      },
+      {
         "key": "tradition_caravaneers",
-        "name": "Caravaneers"
+        "name": "Caravaneers",
+        "withoutDlc": "Silk and Silver"
       }
     ]
   },
@@ -9008,6 +9741,11 @@
       {
         "key": "tradition_warrior_culture",
         "name": "Warrior Culture"
+      },
+      {
+        "dlc": "Silk and Silver",
+        "key": "tradition_saharan_traders",
+        "name": "Saharan Traders"
       }
     ]
   },
@@ -9042,10 +9780,6 @@
     "sourceFile": "00_sahelian.txt",
     "traditions": [
       {
-        "key": "tradition_caravaneers",
-        "name": "Caravaneers"
-      },
-      {
         "key": "tradition_city_keepers",
         "name": "City Keepers"
       },
@@ -9056,6 +9790,16 @@
       {
         "key": "tradition_zealous_people",
         "name": "Strong Believers"
+      },
+      {
+        "dlc": "Silk and Silver",
+        "key": "tradition_saharan_traders",
+        "name": "Saharan Traders"
+      },
+      {
+        "key": "tradition_caravaneers",
+        "name": "Caravaneers",
+        "withoutDlc": "Silk and Silver"
       }
     ]
   },
@@ -9454,7 +10198,7 @@
       },
       {
         "key": "tradition_stand_and_fight",
-        "name": "Stand and Fight!"
+        "name": "Stand and Fight"
       },
       {
         "key": "tradition_hussar",
@@ -9560,6 +10304,58 @@
     ]
   },
   {
+    "color": "#8cb2bf",
+    "created": null,
+    "dlc": null,
+    "ethos": {
+      "key": "ethos_spiritual",
+      "name": "Spiritual"
+    },
+    "features": [],
+    "headDetermination": {
+      "key": "head_determination_domain",
+      "name": "Determine by largest domain"
+    },
+    "heritage": {
+      "key": "heritage_syriac",
+      "name": "Syriac"
+    },
+    "id": "mandaean",
+    "language": {
+      "key": "language_aramaic",
+      "name": "Aramaic"
+    },
+    "martialCustom": {
+      "key": "martial_custom_male_only",
+      "name": "Men Only"
+    },
+    "name": "Mandaean",
+    "parents": [],
+    "sourceFile": "00_syriac.txt",
+    "traditions": [
+      {
+        "key": "tradition_ce1_ritual_washing",
+        "name": "Water Rituals"
+      },
+      {
+        "key": "tradition_faith_bound",
+        "name": "Bound by Faith"
+      },
+      {
+        "key": "tradition_pacifism",
+        "name": "Pacifists"
+      },
+      {
+        "key": "tradition_metal_craftsmanship",
+        "name": "Metalworkers"
+      },
+      {
+        "key": "tradition_wetlanders",
+        "name": "Wetlanders"
+      }
+    ]
+  },
+  {
     "color": "#d1d487",
     "created": null,
     "dlc": null,
@@ -9604,6 +10400,11 @@
       {
         "key": "tradition_caravaneers",
         "name": "Caravaneers"
+      },
+      {
+        "dlc": "Silk and Silver",
+        "key": "tradition_binding_oaths",
+        "name": "Binding Oaths"
       }
     ]
   },
@@ -10109,10 +10910,6 @@
     "sourceFile": "00_iranian.txt",
     "traditions": [
       {
-        "key": "tradition_caravaneers",
-        "name": "Caravaneers"
-      },
-      {
         "key": "tradition_xenophilic",
         "name": "Xenophilic"
       },
@@ -10128,6 +10925,16 @@
         "dlc": "Legacy of Persia",
         "key": "tradition_fp3_frontier_warriors",
         "name": "Frontier Warriors"
+      },
+      {
+        "dlc": "Silk and Silver",
+        "key": "tradition_silk_road_traders",
+        "name": "Silk Road Entrepreneurs"
+      },
+      {
+        "key": "tradition_caravaneers",
+        "name": "Caravaneers",
+        "withoutDlc": "Silk and Silver"
       }
     ]
   },
@@ -10291,6 +11098,11 @@
         "name": "Devoted Horsemanship"
       },
       {
+        "key": "tradition_horse_lords",
+        "name": "Horse Lords",
+        "withoutDlc": "Khans of the Steppe"
+      },
+      {
         "dlc": "The Royal Court",
         "key": "tradition_culture_blending",
         "name": "Culture Blending"
@@ -10343,6 +11155,11 @@
         "dlc": "Khans of the Steppe",
         "key": "tradition_devoted_horsemanship",
         "name": "Devoted Horsemanship"
+      },
+      {
+        "key": "tradition_horse_lords",
+        "name": "Horse Lords",
+        "withoutDlc": "Khans of the Steppe"
       }
     ]
   },
@@ -10388,6 +11205,11 @@
         "dlc": "Khans of the Steppe",
         "key": "tradition_devoted_horsemanship",
         "name": "Devoted Horsemanship"
+      },
+      {
+        "key": "tradition_horse_lords",
+        "name": "Horse Lords",
+        "withoutDlc": "Khans of the Steppe"
       }
     ]
   },
@@ -10439,6 +11261,11 @@
         "dlc": "Khans of the Steppe",
         "key": "tradition_devoted_horsemanship",
         "name": "Devoted Horsemanship"
+      },
+      {
+        "key": "tradition_horse_lords",
+        "name": "Horse Lords",
+        "withoutDlc": "Khans of the Steppe"
       }
     ]
   },
@@ -10482,7 +11309,7 @@
       },
       {
         "key": "tradition_pastoralists",
-        "name": "Pastorialists"
+        "name": "Pastoralism"
       },
       {
         "key": "tradition_eye_for_an_eye",
@@ -10492,6 +11319,11 @@
         "dlc": "Khans of the Steppe",
         "key": "tradition_devoted_horsemanship",
         "name": "Devoted Horsemanship"
+      },
+      {
+        "key": "tradition_horse_lords",
+        "name": "Horse Lords",
+        "withoutDlc": "Khans of the Steppe"
       }
     ]
   },
@@ -10577,7 +11409,7 @@
     "traditions": [
       {
         "key": "tradition_pastoralists",
-        "name": "Pastorialists"
+        "name": "Pastoralism"
       },
       {
         "key": "tradition_warrior_culture",
@@ -10625,7 +11457,7 @@
       },
       {
         "key": "tradition_stand_and_fight",
-        "name": "Stand and Fight!"
+        "name": "Stand and Fight"
       },
       {
         "key": "tradition_only_the_strong",
@@ -10635,6 +11467,11 @@
         "dlc": "Khans of the Steppe",
         "key": "tradition_devoted_horsemanship",
         "name": "Devoted Horsemanship"
+      },
+      {
+        "key": "tradition_horse_lords",
+        "name": "Horse Lords",
+        "withoutDlc": "Khans of the Steppe"
       }
     ]
   },
@@ -10674,7 +11511,7 @@
       },
       {
         "key": "tradition_pastoralists",
-        "name": "Pastorialists"
+        "name": "Pastoralism"
       },
       {
         "key": "tradition_stalwart_defenders",
@@ -10684,6 +11521,11 @@
         "dlc": "Khans of the Steppe",
         "key": "tradition_devoted_horsemanship",
         "name": "Devoted Horsemanship"
+      },
+      {
+        "key": "tradition_horse_lords",
+        "name": "Horse Lords",
+        "withoutDlc": "Khans of the Steppe"
       }
     ]
   },
@@ -10733,6 +11575,11 @@
         "dlc": "Khans of the Steppe",
         "key": "tradition_devoted_horsemanship",
         "name": "Devoted Horsemanship"
+      },
+      {
+        "key": "tradition_horse_lords",
+        "name": "Horse Lords",
+        "withoutDlc": "Khans of the Steppe"
       }
     ]
   },
@@ -10783,6 +11630,11 @@
         "dlc": "Khans of the Steppe",
         "key": "tradition_devoted_horsemanship",
         "name": "Devoted Horsemanship"
+      },
+      {
+        "key": "tradition_horse_lords",
+        "name": "Horse Lords",
+        "withoutDlc": "Khans of the Steppe"
       }
     ]
   },
@@ -10832,6 +11684,11 @@
         "dlc": "Khans of the Steppe",
         "key": "tradition_devoted_horsemanship",
         "name": "Devoted Horsemanship"
+      },
+      {
+        "key": "tradition_horse_lords",
+        "name": "Horse Lords",
+        "withoutDlc": "Khans of the Steppe"
       }
     ]
   },
@@ -10883,9 +11740,19 @@
         "name": "Iron Cavalry"
       },
       {
+        "key": "tradition_horse_lords",
+        "name": "Horse Lords",
+        "withoutDlc": "Khans of the Steppe"
+      },
+      {
         "dlc": "Khans of the Steppe",
         "key": "tradition_devoted_horsemanship",
         "name": "Devoted Horsemanship"
+      },
+      {
+        "key": "tradition_horse_lords",
+        "name": "Horse Lords",
+        "withoutDlc": "Khans of the Steppe"
       }
     ]
   },
@@ -10935,6 +11802,11 @@
         "dlc": "Khans of the Steppe",
         "key": "tradition_devoted_horsemanship",
         "name": "Devoted Horsemanship"
+      },
+      {
+        "key": "tradition_horse_lords",
+        "name": "Horse Lords",
+        "withoutDlc": "Khans of the Steppe"
       }
     ]
   },
@@ -10978,7 +11850,7 @@
       },
       {
         "key": "tradition_pastoralists",
-        "name": "Pastorialists"
+        "name": "Pastoralism"
       },
       {
         "dlc": "Khans of the Steppe",
@@ -11040,6 +11912,11 @@
         "dlc": "Khans of the Steppe",
         "key": "tradition_devoted_horsemanship",
         "name": "Devoted Horsemanship"
+      },
+      {
+        "key": "tradition_horse_lords",
+        "name": "Horse Lords",
+        "withoutDlc": "Khans of the Steppe"
       }
     ]
   },
@@ -11089,6 +11966,11 @@
         "dlc": "Khans of the Steppe",
         "key": "tradition_devoted_horsemanship",
         "name": "Devoted Horsemanship"
+      },
+      {
+        "key": "tradition_horse_lords",
+        "name": "Horse Lords",
+        "withoutDlc": "Khans of the Steppe"
       }
     ]
   },
@@ -11127,16 +12009,22 @@
         "name": "Religious Patronage"
       },
       {
-        "key": "tradition_caravaneers",
-        "name": "Caravaneers"
-      },
-      {
         "key": "tradition_charitable",
         "name": "Charitable"
       },
       {
         "key": "tradition_xenophilic",
         "name": "Xenophilic"
+      },
+      {
+        "dlc": "Silk and Silver",
+        "key": "tradition_silk_road_traders",
+        "name": "Silk Road Entrepreneurs"
+      },
+      {
+        "key": "tradition_caravaneers",
+        "name": "Caravaneers",
+        "withoutDlc": "Silk and Silver"
       }
     ]
   },
@@ -11174,7 +12062,7 @@
     "traditions": [
       {
         "key": "tradition_pastoralists",
-        "name": "Pastorialists"
+        "name": "Pastoralism"
       },
       {
         "key": "tradition_horse_breeder",
@@ -11189,6 +12077,11 @@
         "dlc": "Khans of the Steppe",
         "key": "tradition_devoted_horsemanship",
         "name": "Devoted Horsemanship"
+      },
+      {
+        "key": "tradition_horse_lords",
+        "name": "Horse Lords",
+        "withoutDlc": "Khans of the Steppe"
       }
     ]
   },
@@ -11430,7 +12323,7 @@
     "traditions": [
       {
         "key": "tradition_pastoralists",
-        "name": "Pastorialists"
+        "name": "Pastoralism"
       },
       {
         "key": "tradition_zealous_people",

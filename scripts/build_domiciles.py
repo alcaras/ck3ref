@@ -37,6 +37,15 @@ TYPE_DLC = {
 }
 
 TYPE_SKIP_FIELDS = {
+    "header": "GUI header art",
+    "frame": "GUI frame art",
+    "construction_soundeffect": "audio",
+    "move_instantly": "domicile move flag (mechanics, not modelled)",
+    "initial_buildings": "starting buildings list for the type; building pages cover all buildings",
+    "acumen": "merchant acumen config; not modelled",
+    "on_move_start": "script effect",
+    "on_move_end": "script effect",
+    "artifact_slots": "artifact slot grants; not modelled",
     "rename_window": "which GUI rename window opens, not player-facing",
     "illustration": "realm-tab art selection",
     "map_pin_texture": "map pin art",

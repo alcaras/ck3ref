@@ -152,7 +152,7 @@ const classes = Object.entries(r.resolved.byClass as Record<string, number>)
     </div>
   </section>
 
-  {(r.parents.length > 0 || r.modifiers || r.graphical || r.color || r.should_remember_counties_order) && (
+  {(r.parents.length > 0 || r.modifiers || r.prosperityModifiers || r.graphical || r.color || r.should_remember_counties_order) && (
     <section>
       <h2 class="group-h" id="flags">Flags and relationships</h2>
       <div class="tbl-scroll">
@@ -186,6 +186,26 @@ const classes = Object.entries(r.resolved.byClass as Record<string, number>)
                   <table class="sub">
                     <tbody>
                       {r.modifiers.map((m: any) => (
+                        <tr><td><code>{m.key}</code></td><td class="subtle">{m.name}</td></tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </td>
+              </tr>
+            )}
+            {r.prosperityModifiers && (
+              <tr>
+                <td class="name"><code>generate_prosperity_modifiers</code></td>
+                <td>
+                  <p class="note">
+                    Not documented in the region file's header. The game's own
+                    <code>modifier_definition_formats/00_region_definitions.txt</code>
+                    defines these two modifier keys for the regions that set the
+                    flag. The magnitude belongs to whatever applies them.
+                  </p>
+                  <table class="sub">
+                    <tbody>
+                      {r.prosperityModifiers.map((m: any) => (
                         <tr><td><code>{m.key}</code></td><td class="subtle">{m.name}</td></tr>
                       ))}
                     </tbody>

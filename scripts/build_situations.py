@@ -33,6 +33,10 @@ SITUATION_DLC = {
 }
 
 SKIP_FIELDS = {
+    "situation_decisions": "decision-list plumbing; decisions page covers them",
+    "ending_decisions": "decision-list plumbing; decisions page covers them",
+    "religion": "religion-scoped situation binding, engine plumbing",
+    "allow_negative_progress": "progress-bar behaviour flag",
     "illustration": "event-window art",
     "icon": "triggered icon selection; situation_types/<id>.dds covers display",
     "window": "GUI code-window binding",
@@ -57,6 +61,7 @@ HANDLED_FIELDS = {
 }
 
 PHASE_SKIP = {
+    "texture": "phase art path (GUI)",
     "illustration": "event-window art",
     "icon": "phase icon path (seasons/… art)",
     "on_start": "event scripting",
@@ -68,6 +73,9 @@ PHASE_HANDLED = {"max_duration", "max_duration_next_phase", "future_phases",
                  "modifier_sets", "parameters"}
 
 GROUP_SKIP = {
+    "opposite_participant_group": "participant-group pairing for the GUI",
+    "opposite_participant_group_opinion": "opinion values between paired groups, not modelled",
+    "gui_tags": "GUI tags",
     "icon": "GUI group icon",
     "map_color": "map-mode color",
     "on_join": "event scripting",
@@ -273,6 +281,22 @@ def main():
                         "desc": wr.loc_chain(f"{ck}_desc"),
                         "points": wr.value_out(cv),
                     })
+                # catalysts that only apply when a DLC feature is enabled
+                for dk, _opd, dv in tv.get_all("dlc_catalysts") and [(None, None, d) for d in tv.get_all("dlc_catalysts")] or []:
+                    if not isinstance(dv, Block):
+                        continue
+                    feat = dv.get("dlc_feature")
+                    for ck, _op3, cv in (dv.get("dlc_enabled_catalysts") or Block()):
+                        if ck is None:
+                            continue
+                        catalysts.append({
+                            "id": ck,
+                            "name": wr.loc_chain(ck) or ck.removeprefix("catalyst_").replace("_", " ").capitalize(),
+                            "desc": wr.loc_chain(f"{ck}_desc"),
+                            "points": wr.value_out(cv),
+                            "dlcFeature": feat,
+                            "dlc": ck3.FEATURE_TO_DLC.get(feat),
+                        })
                 takeover = tv.get("takeover_type")
                 transitions.append({
                     "to": tk,
@@ -285,7 +309,7 @@ def main():
                 })
                 for k in tv.keys():
                     if k not in ("takeover_type", "takeover_points",
-                                 "takeover_duration", "weight", "catalysts"):
+                                 "takeover_duration", "weight", "catalysts", "dlc_catalysts"):
                         unhandled[f"future.{k}"] += 1
 
             phases.append({

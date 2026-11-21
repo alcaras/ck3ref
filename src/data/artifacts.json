@@ -2846,6 +2846,13 @@
         },
         {
           "conditional": true,
+          "id": "book_subject_religious_text",
+          "text": null,
+          "wealth": null,
+          "weight": 1
+        },
+        {
+          "conditional": true,
           "id": "book_subject_alchemy",
           "text": "alchemy",
           "wealth": null,
@@ -2881,6 +2888,13 @@
         {
           "conditional": true,
           "id": "book_topic_language_manual",
+          "text": null,
+          "wealth": null,
+          "weight": 1
+        },
+        {
+          "conditional": true,
+          "id": "book_topic_religious_text",
           "text": null,
           "wealth": null,
           "weight": 1
@@ -3511,6 +3525,13 @@
           "conditional": true,
           "id": "book_title_language_manual",
           "text": "Worn Language Manual",
+          "wealth": null,
+          "weight": 1
+        },
+        {
+          "conditional": true,
+          "id": "book_title_religious_text",
+          "text": null,
           "wealth": null,
           "weight": 1
         },
@@ -4866,7 +4887,7 @@
             {
               "key": "monthly_martial_lifestyle_xp_gain_mult",
               "polarity": "good",
-              "text": "+15% Monthly Martial Lifestyle Experience"
+              "text": "+15% Monthly Focused Martial Lifestyle Experience"
             },
             {
               "key": "court_grandeur_baseline_add",
@@ -4925,7 +4946,7 @@
             {
               "key": "monthly_learning_lifestyle_xp_gain_mult",
               "polarity": "good",
-              "text": "+15% Monthly Learning Lifestyle Experience"
+              "text": "+15% Monthly Focused Learning Lifestyle Experience"
             }
           ]
         }
@@ -4989,7 +5010,7 @@
     {
       "desc": "There is nary a ruler in Britain who doesn't claim to have the true Excalibur. Wars are paid for by selling Excaliburs, and you must hope your guests don't catch another displaying the sword.",
       "dlc": "The Royal Court",
-      "icon": "artefact_icons_unique_artifact_excalibur",
+      "icon": "artifact_icons_unique_artifact_excalibur",
       "id": "excalibur_name",
       "modifiers": [
         {
@@ -5176,11 +5197,6 @@
               "key": "embarkation_cost_mult",
               "polarity": "good",
               "text": "-20% Embarkation Cost"
-            },
-            {
-              "key": "development_growth_factor",
-              "polarity": "good",
-              "text": "+20% Development Growth"
             },
             {
               "key": "fertility",
@@ -5406,7 +5422,7 @@
     {
       "desc": "This naturalistic bronze head captures the features of a long dead ruler in great detail, appearing more like a sculpture than something cast in metal. The head is adorned with a crown to show the status of the depicted monarch.",
       "dlc": "The Royal Court",
-      "icon": "artefact_icons_unique_artifact_head_st_edmund",
+      "icon": "artifact_icons_unique_artifact_head_st_edmund",
       "id": "artifact_bronze_head_name",
       "modifiers": [
         {
@@ -5431,11 +5447,6 @@
               "key": "happy_powerful_vassal_tax_contribution_mult",
               "polarity": "good",
               "text": "+5% Powerful Vassal Councillor Tax Contribution"
-            },
-            {
-              "key": "development_growth_factor",
-              "polarity": "good",
-              "text": "+5% Development Growth"
             }
           ]
         }
@@ -5545,11 +5556,6 @@
               "text": "+3 Court Grandeur Baseline Add"
             },
             {
-              "key": "domain_tax_same_faith_mult",
-              "polarity": "good",
-              "text": "+4% Domain Taxes (Same Faith)"
-            },
-            {
               "key": "monthly_piety",
               "polarity": "good",
               "text": "+0.5 Piety /month"
@@ -5621,7 +5627,7 @@
     {
       "desc": "This is the ancient crown of Emperor Justinian: golden and inlaid with precious stones, it still holds all the authority and learning of the glorious ruler.",
       "dlc": "The Royal Court",
-      "icon": "artefact_icons_unique_artifact_byzantine_imperial_crown",
+      "icon": "artifact_icons_unique_artifact_byzantine_imperial_crown",
       "id": "artifact_pedestal_crown_justinian_name",
       "modifiers": [
         {
@@ -5665,7 +5671,7 @@
     {
       "desc": "This is the crown of one of the finest tacticians the Imperial line has ever seen. Failure in wars west of the Empire, but conqueror toward the east.",
       "dlc": "The Royal Court",
-      "icon": "artefact_icons_unique_artifact_byzantine_imperial_crown",
+      "icon": "artifact_icons_unique_artifact_byzantine_imperial_crown",
       "id": "nikephoros_crown_name",
       "modifiers": [
         {
@@ -5674,7 +5680,7 @@
             {
               "key": "monthly_martial_lifestyle_xp_gain_mult",
               "polarity": "good",
-              "text": "+15% Monthly Martial Lifestyle Experience"
+              "text": "+15% Monthly Focused Martial Lifestyle Experience"
             },
             {
               "key": "court_grandeur_baseline_add",
@@ -5724,11 +5730,6 @@
               "key": "monthly_dynasty_prestige",
               "polarity": "good",
               "text": "+0.1 Renown /month"
-            },
-            {
-              "key": "domain_tax_mult",
-              "polarity": "good",
-              "text": "+2% Domain Taxes"
             },
             {
               "key": "owned_hostile_scheme_success_chance_add",
@@ -6074,11 +6075,6 @@
               "text": "+6 Court Grandeur Baseline Add"
             },
             {
-              "key": "domain_tax_same_faith_mult",
-              "polarity": "good",
-              "text": "+15% Domain Taxes (Same Faith)"
-            },
-            {
               "key": "monthly_piety",
               "polarity": "good",
               "text": "+0.3 Piety /month"
@@ -6272,7 +6268,7 @@
     {
       "desc": "Edmund demanded he would become a Saint from the moment of his birth. Legends tell he was a King of East Anglia who volunteered as a sacrifice to the Vikings rather than let his people be slaughtered by them.",
       "dlc": "The Royal Court",
-      "icon": "artefact_icons_unique_artifact_head_st_edmund",
+      "icon": "artifact_icons_unique_artifact_head_st_edmund",
       "id": "edmund_head_name",
       "modifiers": [
         {
@@ -6355,16 +6351,6 @@
               "key": "monthly_piety",
               "polarity": "good",
               "text": "+0.3 Piety /month"
-            },
-            {
-              "key": "development_growth_factor",
-              "polarity": "good",
-              "text": "+10% Development Growth"
-            },
-            {
-              "key": "jungle_tax_mult",
-              "polarity": "good",
-              "text": "+10% Holding Taxes in Jungle"
             },
             {
               "key": "jungle_construction_gold_cost",
@@ -6473,11 +6459,6 @@
               "key": "vassal_limit",
               "polarity": "good",
               "text": "+10 Vassal Limit"
-            },
-            {
-              "key": "character_capital_county_monthly_development_growth_add",
-              "polarity": "good",
-              "text": "+0.02 Character Capital County Monthly Development Growth Add /month"
             }
           ]
         }
@@ -6546,7 +6527,7 @@
     {
       "desc": "Some say this was a crown crafted for Otto III's coronation in Essen, others that it was intended to crown a statue of the Virgin. Either way it is very small, but you might be able to squeeze it onto your head if you try.",
       "dlc": "The Royal Court",
-      "icon": "artefact_icons_unique_artifact_reichskrone",
+      "icon": "artifact_icons_unique_artifact_reichskrone",
       "id": "essen_crown_name",
       "modifiers": [
         {
@@ -7003,11 +6984,6 @@
               "text": "+2 Court Grandeur Baseline Add"
             },
             {
-              "key": "domain_tax_mult",
-              "polarity": "good",
-              "text": "+3% Domain Taxes"
-            },
-            {
               "key": "city_holding_holding_build_gold_cost",
               "polarity": "good",
               "text": "-15% City Holding Construction Cost"
@@ -7070,11 +7046,6 @@
               "key": "monthly_piety_from_buildings_mult",
               "polarity": "good",
               "text": "+20% Monthly Piety from Buildings"
-            },
-            {
-              "key": "drylands_development_growth_factor",
-              "polarity": "good",
-              "text": "+20% Development Growth in Drylands"
             }
           ]
         }
@@ -7114,11 +7085,6 @@
               "key": "fertility",
               "polarity": "good",
               "text": "+20% Fertility"
-            },
-            {
-              "key": "jungle_development_growth_factor",
-              "polarity": "good",
-              "text": "+20% Development Growth in Jungle"
             }
           ]
         }
@@ -7221,7 +7187,7 @@
     {
       "desc": "The very pate of Charlemagne is held within this box. Perhaps his wisdom shall descend upon the owner.",
       "dlc": "The Royal Court",
-      "icon": "artefact_icons_unique_artifact_head_st_edmund",
+      "icon": "artifact_icons_unique_artifact_head_st_edmund",
       "id": "skull_cap_charlemagne_name",
       "modifiers": [
         {
@@ -7380,11 +7346,6 @@
               "text": "+0.3 Piety /month"
             },
             {
-              "key": "development_growth_factor",
-              "polarity": "good",
-              "text": "+10% Development Growth"
-            },
-            {
               "key": "clergy_opinion",
               "polarity": "good",
               "text": "+10 Clergy Opinion"
@@ -7426,7 +7387,7 @@
             {
               "key": "dread_baseline_add",
               "polarity": "good",
-              "text": "+15 Natural Dread"
+              "text": "+15 Dread Baseline"
             },
             {
               "key": "monthly_prestige_gain_per_dread_add",
@@ -7939,7 +7900,7 @@
             {
               "key": "monthly_learning_lifestyle_xp_gain_mult",
               "polarity": "good",
-              "text": "+10% Monthly Learning Lifestyle Experience"
+              "text": "+10% Monthly Focused Learning Lifestyle Experience"
             },
             {
               "key": "learning",
@@ -7979,11 +7940,6 @@
               "key": "court_grandeur_baseline_add",
               "polarity": "good",
               "text": "+6 Court Grandeur Baseline Add"
-            },
-            {
-              "key": "domain_tax_same_faith_mult",
-              "polarity": "good",
-              "text": "+15% Domain Taxes (Same Faith)"
             },
             {
               "key": "clergy_opinion",
@@ -8043,16 +7999,6 @@
               "key": "army_maintenance_mult",
               "polarity": "good",
               "text": "-5% Army Gold Maintenance"
-            },
-            {
-              "key": "drylands_tax_mult",
-              "polarity": "good",
-              "text": "+20% Holding Taxes in Drylands"
-            },
-            {
-              "key": "desert_mountains_tax_mult",
-              "polarity": "good",
-              "text": "+20% Holding Taxes in Desert Mountains"
             }
           ]
         }
@@ -8091,7 +8037,7 @@
             {
               "key": "monthly_learning_lifestyle_xp_gain_mult",
               "polarity": "good",
-              "text": "+5% Monthly Learning Lifestyle Experience"
+              "text": "+5% Monthly Focused Learning Lifestyle Experience"
             },
             {
               "key": "learning_per_influence_level",
@@ -8217,6 +8163,33 @@
       "unique": false
     },
     {
+      "desc": null,
+      "dlc": "The Royal Court",
+      "icon": "artifact_statue",
+      "id": "artifact_sculpture_religious_mary_name",
+      "modifiers": [
+        {
+          "key": "artifact_monthly_piety_3_modifier",
+          "lines": [
+            {
+              "key": "monthly_piety",
+              "polarity": "good",
+              "text": "+0.3 Piety /month"
+            }
+          ]
+        }
+      ],
+      "name": "Statue of Mary",
+      "permanent": false,
+      "rarity": [],
+      "sourceFile": "01_ep1_court_artifact_creation_effects.txt",
+      "template": "religious_statue_template",
+      "types": [
+        "sculpture"
+      ],
+      "unique": false
+    },
+    {
       "desc": "An ancient, slightly damaged, but still lovely statue of a Roman woman.",
       "dlc": "The Royal Court",
       "icon": "artifact_icon_statue_roman_woman",
@@ -8269,16 +8242,6 @@
         {
           "key": "heirloom_seal_modifier",
           "lines": [
-            {
-              "key": "domain_tax_mult",
-              "polarity": "good",
-              "text": "+5% Domain Taxes"
-            },
-            {
-              "key": "character_capital_county_monthly_development_growth_add",
-              "polarity": "good",
-              "text": "+0.1 Character Capital County Monthly Development Growth Add /month"
-            },
             {
               "key": "han_opinion",
               "polarity": "good",
@@ -8391,11 +8354,6 @@
               "key": "monthly_dynasty_prestige_mult",
               "polarity": "good",
               "text": "+5% Monthly Renown"
-            },
-            {
-              "key": "character_capital_county_monthly_development_growth_add",
-              "polarity": "good",
-              "text": "+0.05 Character Capital County Monthly Development Growth Add /month"
             }
           ]
         }
@@ -8572,11 +8530,6 @@
               "key": "monthly_dynasty_prestige_mult",
               "polarity": "good",
               "text": "+5% Monthly Renown"
-            },
-            {
-              "key": "character_capital_county_monthly_development_growth_add",
-              "polarity": "good",
-              "text": "+0.05 Character Capital County Monthly Development Growth Add /month"
             }
           ]
         }
@@ -8621,21 +8574,6 @@
               "key": "church_holding_holding_build_gold_cost",
               "polarity": "good",
               "text": "-20% Temple Holding Construction Cost"
-            },
-            {
-              "key": "drylands_development_growth_factor",
-              "polarity": "good",
-              "text": "+10% Development Growth in Drylands"
-            },
-            {
-              "key": "desert_mountains_development_growth_factor",
-              "polarity": "good",
-              "text": "+10% Development Growth in Desert Mountains"
-            },
-            {
-              "key": "desert_mountains_tax_mult",
-              "polarity": "good",
-              "text": "+20% Holding Taxes in Desert Mountains"
             }
           ]
         }
@@ -8679,7 +8617,7 @@
             {
               "key": "holy_order_hire_cost_mult",
               "polarity": "good",
-              "text": "-25% Holy Order Hire Cost"
+              "text": "-25% Military Order Hire Cost"
             },
             {
               "key": "monthly_piety",
@@ -8736,9 +8674,9 @@
               "text": "+0.25 Prestige /month"
             },
             {
-              "key": "county_opinion_add",
+              "key": "popular_opinion_add",
               "polarity": "good",
-              "text": "+5 Popular Opinion"
+              "text": "+5 Popular Opinion Baseline"
             },
             {
               "key": "same_heritage_county_advantage_add",
@@ -8790,9 +8728,9 @@
               "text": "+0.5 Prestige /month"
             },
             {
-              "key": "county_opinion_add",
+              "key": "popular_opinion_add",
               "polarity": "good",
-              "text": "+5 Popular Opinion"
+              "text": "+5 Popular Opinion Baseline"
             },
             {
               "key": "army_maintenance_mult",
@@ -8903,9 +8841,156 @@
       "unique": true
     },
     {
+      "desc": "A pilgrim's badge shaped like a square cross, intricate and with delicate features, commemorating the pilgrimage undertaken to the holy city of Jerusalem.",
+      "dlc": null,
+      "icon": "pilgrim_jerusalem",
+      "id": "jerusalem_badge_name",
+      "modifiers": [
+        {
+          "key": "artifact_monthly_piety_gain_mult_2_modifier",
+          "lines": [
+            {
+              "key": "monthly_piety_gain_mult",
+              "polarity": "good",
+              "text": "+4% Monthly Piety"
+            }
+          ]
+        },
+        {
+          "key": "artifact_monthly_prestige_2_modifier",
+          "lines": [
+            {
+              "key": "monthly_prestige",
+              "polarity": "good",
+              "text": "+0.08 Prestige /month"
+            }
+          ]
+        },
+        {
+          "key": "artifact_epidemic_resistance_3_modifier",
+          "lines": [
+            {
+              "key": "epidemic_resistance",
+              "polarity": "good",
+              "text": "+6 Plague Resistance"
+            }
+          ]
+        }
+      ],
+      "name": "Jerusalem Cross",
+      "permanent": false,
+      "rarity": [
+        "masterwork"
+      ],
+      "sourceFile": "00_artifact_badge_scripted_effects.txt",
+      "template": "pilgrim_badge_template",
+      "types": [
+        "badge"
+      ],
+      "unique": false
+    },
+    {
+      "desc": "A pilgrim's badge shaped like a set of keys depicting the haloed Saint Peter and Saint Paul, commemorating the pilgrimage undertaken to the holy city of Rome.",
+      "dlc": null,
+      "icon": "pilgrim_rome",
+      "id": "rome_badge_name",
+      "modifiers": [
+        {
+          "key": "artifact_monthly_piety_gain_mult_2_modifier",
+          "lines": [
+            {
+              "key": "monthly_piety_gain_mult",
+              "polarity": "good",
+              "text": "+4% Monthly Piety"
+            }
+          ]
+        },
+        {
+          "key": "artifact_monthly_piety_from_buildings_mult_2_modifier",
+          "lines": [
+            {
+              "key": "monthly_piety_from_buildings_mult",
+              "polarity": "good",
+              "text": "+4% Monthly Piety from Buildings"
+            }
+          ]
+        },
+        {
+          "key": "artifact_zealot_tax_contribution_mult_3_modifier",
+          "lines": [
+            {
+              "key": "zealot_tax_contribution_mult",
+              "polarity": "good",
+              "text": "+3% Zealot Vassal Tax Contribution"
+            }
+          ]
+        }
+      ],
+      "name": "Keys of Saint Peter",
+      "permanent": false,
+      "rarity": [
+        "masterwork"
+      ],
+      "sourceFile": "00_artifact_badge_scripted_effects.txt",
+      "template": "pilgrim_badge_template",
+      "types": [
+        "badge"
+      ],
+      "unique": false
+    },
+    {
+      "desc": "A pilgrim's badge shaped like a scallop, commemorating the pilgrimage undertaking the Way of Saint James via Camino the Santiago to the holy site in Santiago de Compostela.",
+      "dlc": null,
+      "icon": "pilgrim_compostella",
+      "id": "santiago_badge_name",
+      "modifiers": [
+        {
+          "key": "artifact_monthly_piety_gain_mult_3_modifier",
+          "lines": [
+            {
+              "key": "monthly_piety_gain_mult",
+              "polarity": "good",
+              "text": "+6% Monthly Piety"
+            }
+          ]
+        },
+        {
+          "key": "artifact_zealot_vassal_opinion_3_modifier",
+          "lines": [
+            {
+              "key": "zealot_opinion",
+              "polarity": "good",
+              "text": "+5 Zealot Vassal Opinion"
+            }
+          ]
+        },
+        {
+          "key": "artifact_clergy_opinion_4_modifier",
+          "lines": [
+            {
+              "key": "clergy_opinion",
+              "polarity": "good",
+              "text": "+5 Clergy Opinion"
+            }
+          ]
+        }
+      ],
+      "name": "Shell of Saint James",
+      "permanent": false,
+      "rarity": [
+        "masterwork"
+      ],
+      "sourceFile": "00_artifact_badge_scripted_effects.txt",
+      "template": "pilgrim_badge_template",
+      "types": [
+        "badge"
+      ],
+      "unique": false
+    },
+    {
       "desc": "This is a crown comprised of golden paneled portraits depicting Constantine IX Monomachus, his wife Zoe, sister Theodora, and some allegorical dancing figures.",
       "dlc": "The Royal Court",
-      "icon": "artefact_icons_unique_artifact_byzantine_imperial_crown",
+      "icon": "artifact_icons_unique_artifact_byzantine_imperial_crown",
       "id": "monomachus_crown_name",
       "modifiers": [
         {
@@ -8935,7 +9020,7 @@
         "famed"
       ],
       "sourceFile": "01_exp1_historical_artifacts_creation_effect.txt",
-      "template": "crown_wearable_template",
+      "template": "unique_crown_wearable_template",
       "types": [
         "helmet"
       ],
@@ -8944,7 +9029,7 @@
     {
       "desc": "This is the jeweled mitre with a golden crown which symbolizes the Papal Office. But wouldn't it look most resplendent atop your head?",
       "dlc": "The Royal Court",
-      "icon": "artefact_icons_unique_artifact_papal_tiara",
+      "icon": "artifact_icons_unique_artifact_papal_tiara",
       "id": "papal_tiara_name",
       "modifiers": [
         {
@@ -8973,7 +9058,7 @@
     {
       "desc": "This is the Emblem of the office of Holy Roman Emperor. Guaranteed to catch the attention of every passing Duke.",
       "dlc": "The Royal Court",
-      "icon": "artefact_icons_unique_artifact_reichskrone",
+      "icon": "artifact_icons_unique_artifact_reichskrone",
       "id": "reichskrone_name",
       "modifiers": [
         {
@@ -9032,11 +9117,6 @@
               "key": "zealot_opinion",
               "polarity": "good",
               "text": "+10 Zealot Vassal Opinion"
-            },
-            {
-              "key": "floodplains_development_growth_factor",
-              "polarity": "good",
-              "text": "+20% Development Growth in Floodplains"
             }
           ]
         }
@@ -9047,7 +9127,7 @@
         "illustrious"
       ],
       "sourceFile": "01_exp1_historical_artifacts_creation_effect.txt",
-      "template": "crown_wearable_template",
+      "template": "unique_crown_wearable_template",
       "types": [
         "helmet"
       ],
@@ -9065,7 +9145,7 @@
             {
               "key": "monthly_learning_lifestyle_xp_gain_mult",
               "polarity": "good",
-              "text": "+5% Monthly Learning Lifestyle Experience"
+              "text": "+5% Monthly Focused Learning Lifestyle Experience"
             }
           ]
         },
@@ -9098,7 +9178,7 @@
       "types": [
         "miscellaneous"
       ],
-      "unique": true
+      "unique": false
     },
     {
       "desc": null,
@@ -9277,11 +9357,6 @@
               "text": "+0.5 Prestige /month"
             },
             {
-              "key": "character_capital_county_monthly_development_growth_add",
-              "polarity": "good",
-              "text": "+0.02 Character Capital County Monthly Development Growth Add /month"
-            },
-            {
               "key": "church_holding_build_gold_cost",
               "polarity": "good",
               "text": "-10% Temple Buildings Construction Cost"
@@ -9316,11 +9391,6 @@
           "key": "qadib_al_mulk_modifier",
           "lines": [
             {
-              "key": "floodplains_tax_mult",
-              "polarity": "good",
-              "text": "+20% Holding Taxes in Floodplains"
-            },
-            {
               "key": "monthly_prestige",
               "polarity": "good",
               "text": "+0.2 Prestige /month"
@@ -9339,7 +9409,7 @@
         "illustrious"
       ],
       "sourceFile": "01_exp1_historical_artifacts_creation_effect.txt",
-      "template": "regalia_template",
+      "template": "unique_regalia_template",
       "types": [
         "regalia"
       ],
@@ -9412,7 +9482,7 @@
         "masterwork"
       ],
       "sourceFile": "01_exp1_historical_artifacts_creation_effect.txt",
-      "template": "regalia_template",
+      "template": "unique_regalia_template",
       "types": [
         "regalia_simple"
       ],
@@ -9427,11 +9497,6 @@
         {
           "key": "mantle_prophet_modifier",
           "lines": [
-            {
-              "key": "domain_tax_same_faith_mult",
-              "polarity": "good",
-              "text": "+10% Domain Taxes (Same Faith)"
-            },
             {
               "key": "monthly_piety_gain_mult",
               "polarity": "good",
@@ -9558,11 +9623,6 @@
               "key": "monthly_prestige",
               "polarity": "good",
               "text": "+0.2 Prestige /month"
-            },
-            {
-              "key": "monthly_county_control_growth_factor",
-              "polarity": "good",
-              "text": "+15% Control Growth"
             }
           ]
         }
@@ -9601,7 +9661,7 @@
             {
               "key": "dread_baseline_add",
               "polarity": "good",
-              "text": "+15 Natural Dread"
+              "text": "+15 Dread Baseline"
             }
           ]
         }
@@ -9842,7 +9902,7 @@
         "artifact_sculpture_ark_of_covenant_name"
       ],
       "benefit": [
-        "Judaism or syncretic with judaism or Christianity or syncretic with christianity or Islam or syncretic with islam"
+        "Jewish artifact access or Christian artifact access or Islamic artifact access"
       ],
       "canReforge": true,
       "canRepair": true,
@@ -9887,7 +9947,7 @@
         {
           "key": "dread_baseline_add",
           "polarity": "good",
-          "text": "+5 Natural Dread"
+          "text": "+5 Dread Baseline"
         }
       ],
       "id": "attila_template",
@@ -9932,7 +9992,7 @@
         "artifact_wall_banner_thankfulness_name"
       ],
       "benefit": [
-        "Islam or syncretic with islam"
+        "Islamic artifact access"
       ],
       "canReforge": true,
       "canRepair": true,
@@ -10182,7 +10242,7 @@
     {
       "artifacts": [],
       "benefit": [
-        "Faith has doctrine parameter = mummification_funeral"
+        "Rite: Rite has parameter = mummification_funeral"
       ],
       "canReforge": true,
       "canRepair": true,
@@ -10222,7 +10282,7 @@
     {
       "artifacts": [],
       "benefit": [
-        "Christianity or syncretic with christianity"
+        "Christian artifact access"
       ],
       "canReforge": true,
       "canRepair": true,
@@ -10247,7 +10307,7 @@
         "edmund_head_name"
       ],
       "benefit": [
-        "Christianity or syncretic with christianity"
+        "Christian artifact access"
       ],
       "canReforge": true,
       "canRepair": true,
@@ -10270,13 +10330,13 @@
     {
       "artifacts": [],
       "benefit": [
-        "Christianity or syncretic with christianity"
+        "Christian artifact access"
       ],
       "canReforge": true,
       "canRepair": true,
       "dlc": null,
       "equip": [
-        "Christianity or syncretic with christianity"
+        "Christian artifact access"
       ],
       "fallback": [
         {
@@ -10297,7 +10357,7 @@
         "fp2_votive_crowns"
       ],
       "benefit": [
-        "Christianity or syncretic with christianity"
+        "Christian artifact access"
       ],
       "canReforge": true,
       "canRepair": true,
@@ -10324,7 +10384,7 @@
         "artifact_pedestal_crown_iron_name"
       ],
       "benefit": [
-        "Christianity or syncretic with christianity"
+        "Christian artifact access"
       ],
       "canReforge": true,
       "canRepair": true,
@@ -10357,10 +10417,7 @@
       "unique": true
     },
     {
-      "artifacts": [
-        "monomachus_crown_name",
-        "al_taj_crown_name"
-      ],
+      "artifacts": [],
       "benefit": [],
       "canReforge": true,
       "canRepair": true,
@@ -10374,7 +10431,7 @@
       "reforgeConditions": [],
       "repairConditions": [],
       "sourceFile": "00_type_templates.txt",
-      "unique": true
+      "unique": false
     },
     {
       "artifacts": [
@@ -10411,7 +10468,7 @@
         "artifact_pedestal_david_harp_name"
       ],
       "benefit": [
-        "Judaism or syncretic with judaism or Christianity or syncretic with christianity or Islam or syncretic with islam"
+        "Jewish artifact access or Christian artifact access or Islamic artifact access"
       ],
       "canReforge": true,
       "canRepair": true,
@@ -10469,7 +10526,7 @@
         "artifact_wall_big_edessa_name"
       ],
       "benefit": [
-        "Christianity or syncretic with christianity"
+        "Christian artifact access"
       ],
       "canReforge": true,
       "canRepair": true,
@@ -10494,7 +10551,7 @@
         "fp2_chalice_dona_urraca"
       ],
       "benefit": [
-        "Christianity or syncretic with christianity"
+        "Christian artifact access"
       ],
       "canReforge": true,
       "canRepair": true,
@@ -10519,7 +10576,7 @@
         "fp2_santiago_aquamanile"
       ],
       "benefit": [
-        "Islam or syncretic with islam",
+        "Islamic artifact access",
         "Any character struggle: Is struggle type = iberian_struggle (when Exists = struggle:iberian_struggle)"
       ],
       "canReforge": true,
@@ -10550,7 +10607,7 @@
         "fp2_santiago_bells"
       ],
       "benefit": [
-        "Christianity or syncretic with christianity",
+        "Christian artifact access",
         "Involved in iberian struggle (when Exists = struggle:iberian_struggle)",
         "Culture: Iberian"
       ],
@@ -10669,7 +10726,7 @@
         {
           "key": "monthly_learning_lifestyle_xp_gain_mult",
           "polarity": "good",
-          "text": "+10% Monthly Learning Lifestyle Experience"
+          "text": "+10% Monthly Focused Learning Lifestyle Experience"
         }
       ],
       "id": "holy_book_template",
@@ -10707,7 +10764,7 @@
         "artifact_hydraulic_organ_name"
       ],
       "benefit": [
-        "Administrative government"
+        "Government has mechanic = administrative"
       ],
       "canReforge": true,
       "canRepair": true,
@@ -10727,7 +10784,7 @@
         {
           "key": "monthly_learning_lifestyle_xp_gain_mult",
           "polarity": "good",
-          "text": "+5% Monthly Learning Lifestyle Experience"
+          "text": "+5% Monthly Focused Learning Lifestyle Experience"
         },
         {
           "key": "court_grandeur_baseline_add",
@@ -10748,7 +10805,7 @@
         "artifact_mantle_of_the_prophet_islam_name"
       ],
       "benefit": [
-        "Islam or syncretic with islam"
+        "Islamic artifact access"
       ],
       "canReforge": true,
       "canRepair": true,
@@ -10771,7 +10828,7 @@
     {
       "artifacts": [],
       "benefit": [
-        "Islam or syncretic with islam"
+        "Islamic artifact access"
       ],
       "canReforge": true,
       "canRepair": true,
@@ -10819,7 +10876,7 @@
     {
       "artifacts": [],
       "benefit": [
-        "Judaism or syncretic with judaism"
+        "Jewish artifact access"
       ],
       "canReforge": true,
       "canRepair": true,
@@ -10933,6 +10990,34 @@
     {
       "artifacts": [],
       "benefit": [
+        "Is merchant",
+        "Save temporary scope as = merchant_temp",
+        "Matches the artifact's charter patron",
+        "… is your Patron or their Liege or above",
+        "… is a Duke or above Rank Ruler",
+        "You are a member of House …"
+      ],
+      "canReforge": true,
+      "canRepair": true,
+      "dlc": null,
+      "equip": [],
+      "fallback": [
+        {
+          "key": "monthly_prestige",
+          "polarity": "good",
+          "text": "+0.05 Prestige /month"
+        }
+      ],
+      "id": "merchant_charter_artifact_template",
+      "label": "Merchant charter artifact",
+      "reforgeConditions": [],
+      "repairConditions": [],
+      "sourceFile": "00_event_templates.txt",
+      "unique": false
+    },
+    {
+      "artifacts": [],
+      "benefit": [
         "Religion: Tengriism or Culture: Mongolic or Culture: Turkic",
         "Trait: Way of the Nomad"
       ],
@@ -10959,7 +11044,7 @@
         "artifact_wall_sword_muhammad_name"
       ],
       "benefit": [
-        "Islam or syncretic with islam"
+        "Islamic artifact access"
       ],
       "canReforge": true,
       "canRepair": true,
@@ -11037,6 +11122,52 @@
       "unique": false
     },
     {
+      "artifacts": [],
+      "benefit": [
+        "Is christian"
+      ],
+      "canReforge": false,
+      "canRepair": false,
+      "dlc": "By God Alone",
+      "equip": [],
+      "fallback": [
+        {
+          "key": "monthly_prestige",
+          "polarity": "good",
+          "text": "+0.1 Prestige /month"
+        }
+      ],
+      "id": "pam_holy_myron_template",
+      "label": "Pam holy myron",
+      "reforgeConditions": [],
+      "repairConditions": [],
+      "sourceFile": "pam_saint_relic_templates.txt",
+      "unique": true
+    },
+    {
+      "artifacts": [],
+      "benefit": [
+        "Holder has the same Religion as …"
+      ],
+      "canReforge": true,
+      "canRepair": true,
+      "dlc": "By God Alone",
+      "equip": [],
+      "fallback": [
+        {
+          "key": "court_grandeur_baseline_add",
+          "polarity": "good",
+          "text": "+3 Court Grandeur Baseline Add"
+        }
+      ],
+      "id": "pam_saint_relic_template",
+      "label": "Pam saint relic",
+      "reforgeConditions": [],
+      "repairConditions": [],
+      "sourceFile": "pam_saint_relic_templates.txt",
+      "unique": true
+    },
+    {
       "artifacts": [
         "papal_tiara_name"
       ],
@@ -11100,9 +11231,28 @@
     },
     {
       "artifacts": [
-        "jira_stick",
-        "qadib_al_mulk_name",
-        "artifact_jewelled_danda_name"
+        "jerusalem_badge_name",
+        "rome_badge_name",
+        "santiago_badge_name"
+      ],
+      "benefit": [],
+      "canReforge": true,
+      "canRepair": true,
+      "dlc": null,
+      "equip": [
+        "Cannot equip as your Faith does not consider … a Holy Site (when artifact has pilgrim badge location)"
+      ],
+      "fallback": [],
+      "id": "pilgrim_badge_template",
+      "label": "Pilgrim badge",
+      "reforgeConditions": [],
+      "repairConditions": [],
+      "sourceFile": "00_badge_templates.txt",
+      "unique": false
+    },
+    {
+      "artifacts": [
+        "jira_stick"
       ],
       "benefit": [],
       "canReforge": true,
@@ -11117,7 +11267,7 @@
       "reforgeConditions": [],
       "repairConditions": [],
       "sourceFile": "00_type_templates.txt",
-      "unique": true
+      "unique": false
     },
     {
       "artifacts": [
@@ -11178,7 +11328,9 @@
       "unique": true
     },
     {
-      "artifacts": [],
+      "artifacts": [
+        "artifact_sculpture_religious_mary_name"
+      ],
       "benefit": [
         "artifact has statue religion",
         "Matches the artifact's statue religion"
@@ -11302,7 +11454,7 @@
         "artifact_statue_constantine_name"
       ],
       "benefit": [
-        "Administrative government"
+        "Government has mechanic = administrative"
       ],
       "canReforge": true,
       "canRepair": true,
@@ -11330,7 +11482,7 @@
     {
       "artifacts": [],
       "benefit": [
-        "Administrative government"
+        "Government has mechanic = administrative"
       ],
       "canReforge": true,
       "canRepair": true,
@@ -11360,7 +11512,7 @@
         "artifact_statue_roman_woman_name"
       ],
       "benefit": [
-        "Administrative government"
+        "Government has mechanic = administrative"
       ],
       "canReforge": true,
       "canRepair": true,
@@ -11428,7 +11580,7 @@
     {
       "artifacts": [],
       "benefit": [
-        "Faith doctrine: Cranial Trophies"
+        "Tgp cranial trophies collection"
       ],
       "canReforge": false,
       "canRepair": false,
@@ -11453,7 +11605,7 @@
         "artifact_throne_charlemagne_name"
       ],
       "benefit": [
-        "Christianity or syncretic with christianity or Islam or syncretic with islam"
+        "Christian artifact access or Islamic artifact access"
       ],
       "canReforge": true,
       "canRepair": true,
@@ -11523,7 +11675,7 @@
         "artifact_throne_solomon_name"
       ],
       "benefit": [
-        "Judaism or syncretic with judaism or Christianity or syncretic with christianity or Islam or syncretic with islam"
+        "Jewish artifact access or Christian artifact access or Islamic artifact access"
       ],
       "canReforge": true,
       "canRepair": true,
@@ -11620,6 +11772,46 @@
       "unique": true
     },
     {
+      "artifacts": [
+        "monomachus_crown_name",
+        "al_taj_crown_name"
+      ],
+      "benefit": [],
+      "canReforge": true,
+      "canRepair": true,
+      "dlc": null,
+      "equip": [
+        "not: Realm law: Uncrowned (when Crowns of the World DLC; Coronation proper artifact crown; not: artifact in a court slot)"
+      ],
+      "fallback": [],
+      "id": "unique_crown_wearable_template",
+      "label": "Unique crown wearable",
+      "reforgeConditions": [],
+      "repairConditions": [],
+      "sourceFile": "00_type_templates.txt",
+      "unique": true
+    },
+    {
+      "artifacts": [
+        "qadib_al_mulk_name",
+        "artifact_jewelled_danda_name"
+      ],
+      "benefit": [],
+      "canReforge": true,
+      "canRepair": true,
+      "dlc": null,
+      "equip": [
+        "not: Realm law: Uncrowned (when Crowns of the World DLC; Coronation proper artifact regalia; not: artifact in a court slot)"
+      ],
+      "fallback": [],
+      "id": "unique_regalia_template",
+      "label": "Unique regalia",
+      "reforgeConditions": [],
+      "repairConditions": [],
+      "sourceFile": "00_type_templates.txt",
+      "unique": true
+    },
+    {
       "artifacts": [],
       "benefit": [
         "Is witch"
@@ -11657,7 +11849,7 @@
         {
           "key": "monthly_learning_lifestyle_xp_gain_mult",
           "polarity": "good",
-          "text": "+5% Monthly Learning Lifestyle Experience"
+          "text": "+5% Monthly Focused Learning Lifestyle Experience"
         },
         {
           "key": "monthly_piety_gain_mult",
@@ -11743,6 +11935,41 @@
       ],
       "requiredFeatures": [],
       "slot": "book"
+    },
+    {
+      "category": "court",
+      "dlc": null,
+      "id": "creature",
+      "name": "Creature",
+      "optionalFeatures": [],
+      "requiredFeatures": [],
+      "slot": "creature"
+    },
+    {
+      "category": "court",
+      "dlc": null,
+      "id": "curio",
+      "name": "Curiosity",
+      "optionalFeatures": [],
+      "requiredFeatures": [],
+      "slot": "curio"
+    },
+    {
+      "category": "court",
+      "dlc": null,
+      "id": "library_item",
+      "name": "Book",
+      "optionalFeatures": [
+        "book_topic",
+        "book_title",
+        "book_decoration",
+        "decoration_pattern",
+        "generic_material_wood",
+        "decoration_material_gem",
+        "decoration_material_inlay_HSB"
+      ],
+      "requiredFeatures": [],
+      "slot": "library"
     },
     {
       "category": "court",
@@ -12248,6 +12475,31 @@
     {
       "category": "inventory",
       "dlc": null,
+      "id": "badge",
+      "name": "Badge",
+      "optionalFeatures": [],
+      "requiredFeatures": [],
+      "slot": "brooch"
+    },
+    {
+      "category": "inventory",
+      "dlc": null,
+      "id": "brooch",
+      "name": "Brooch",
+      "optionalFeatures": [
+        "brooch_centerpiece",
+        "brooch_adornment",
+        "decoration_material_gem"
+      ],
+      "requiredFeatures": [
+        "brooch_decoration",
+        "decoration_material_wire"
+      ],
+      "slot": "brooch"
+    },
+    {
+      "category": "inventory",
+      "dlc": null,
       "id": "helmet",
       "name": "Headgear",
       "optionalFeatures": [
@@ -12312,22 +12564,6 @@
     {
       "category": "inventory",
       "dlc": null,
-      "id": "brooch",
-      "name": "Brooch",
-      "optionalFeatures": [
-        "brooch_centerpiece",
-        "brooch_adornment",
-        "decoration_material_gem"
-      ],
-      "requiredFeatures": [
-        "brooch_decoration",
-        "decoration_material_wire"
-      ],
-      "slot": "miscellaneous"
-    },
-    {
-      "category": "inventory",
-      "dlc": null,
       "id": "miscellaneous",
       "name": "Trinket",
       "optionalFeatures": [
@@ -12353,7 +12589,8 @@
         "sculpture_material",
         "generic_material_wood",
         "decoration_material_inlay",
-        "goblet_material"
+        "goblet_material",
+        "icon_decoration"
       ],
       "requiredFeatures": [],
       "slot": "miscellaneous"

@@ -751,13 +751,6 @@
         "kind": "government",
         "name": "Employer: Theocracy government",
         "negated": true
-      },
-      {
-        "detail": null,
-        "key": "administrative",
-        "kind": "government",
-        "name": "Employer: Administrative government",
-        "negated": true
       }
     ],
     "desc": "Rescue is needed in …! Service and gold are on offer, plus any found spoils.",
@@ -1480,13 +1473,6 @@
         "key": "government_is_theocracy",
         "kind": "government",
         "name": "Employer: Theocracy government",
-        "negated": true
-      },
-      {
-        "detail": null,
-        "key": "administrative",
-        "kind": "government",
-        "name": "Employer: Administrative government",
         "negated": true
       }
     ],
@@ -3725,13 +3711,6 @@
         "kind": "employer",
         "name": "Employer can pay",
         "negated": false
-      },
-      {
-        "detail": null,
-        "key": "administrative",
-        "kind": "government",
-        "name": "Employer: Administrative government",
-        "negated": true
       }
     ],
     "desc": "The … seeks fellow legitimists: those willing to press … rightful claim on … against ….",
@@ -3912,6 +3891,13 @@
         "key": "NOT_FACTION_JOIN_CREATE_CONDITION_NOT_FACTION_MEMBER",
         "kind": "condition",
         "name": "Already in another Faction",
+        "negated": false
+      },
+      {
+        "detail": null,
+        "key": "faction_is_at_war_trigger",
+        "kind": "condition",
+        "name": "Faction is at War",
         "negated": false
       }
     ],
@@ -6130,6 +6116,9 @@
       },
       {
         "amounts": {
+          "control": {
+            "value": 5
+          },
           "piety": {
             "base": 0,
             "scales": true
@@ -6267,6 +6256,9 @@
       },
       {
         "amounts": {
+          "control": {
+            "value": -5
+          },
           "gold": {
             "scales": true
           }
@@ -7314,6 +7306,9 @@
       },
       {
         "amounts": {
+          "control": {
+            "value": 5
+          },
           "dread": {
             "value": 20
           },
@@ -8201,7 +8196,11 @@
         "visible": false
       },
       {
-        "amounts": {},
+        "amounts": {
+          "control": {
+            "value": 5
+          }
+        },
         "id": "mayor_hold_festivities",
         "label": "Success",
         "positive": true,
@@ -8271,7 +8270,7 @@
         "negated": false
       }
     ],
-    "desc": "A recent pestilence has caused a famine, which has pushed some locals to desperate measures to surive.",
+    "desc": "A recent pestilence has caused a famine, which has pushed some locals to desperate measures to survive.",
     "dlc": "Roads to Power",
     "features": [],
     "group": "admin_governance_group",
@@ -8341,7 +8340,11 @@
         "visible": false
       },
       {
-        "amounts": {},
+        "amounts": {
+          "control": {
+            "value": 10
+          }
+        },
         "id": "hungry_control",
         "label": "Success",
         "positive": true,
@@ -8423,6 +8426,9 @@
       },
       {
         "amounts": {
+          "control": {
+            "value": 5
+          },
           "dread": {
             "value": 10
           }
@@ -9404,7 +9410,11 @@
         "visible": false
       },
       {
-        "amounts": {},
+        "amounts": {
+          "control": {
+            "value": 5
+          }
+        },
         "id": "taxes_lower_taxes",
         "label": "Success",
         "positive": true,
@@ -9767,6 +9777,9 @@
       },
       {
         "amounts": {
+          "control": {
+            "value": 5
+          },
           "influence": {
             "base": 30,
             "scales": true
@@ -10114,6 +10127,9 @@
       },
       {
         "amounts": {
+          "control": {
+            "value": 5
+          },
           "dread": {
             "value": 10
           },
@@ -10128,7 +10144,11 @@
         "visible": false
       },
       {
-        "amounts": {},
+        "amounts": {
+          "control": {
+            "value": -5
+          }
+        },
         "id": "peasant_encourage",
         "label": "Success",
         "positive": true,
@@ -10347,6 +10367,9 @@
       },
       {
         "amounts": {
+          "control": {
+            "value": 5
+          },
           "lifestyleXp": {
             "value": 100
           }
@@ -10365,6 +10388,9 @@
       },
       {
         "amounts": {
+          "control": {
+            "value": 5
+          },
           "dread": {
             "value": 20
           }
@@ -10390,7 +10416,11 @@
         "visible": false
       },
       {
-        "amounts": {},
+        "amounts": {
+          "control": {
+            "value": 5
+          }
+        },
         "id": "paying_off_the_looters",
         "label": "Success",
         "positive": true,
@@ -10767,14 +10797,22 @@
         "visible": false
       },
       {
-        "amounts": {},
+        "amounts": {
+          "control": {
+            "value": 5
+          }
+        },
         "id": "prophet_persecute",
         "label": "Success",
         "positive": true,
         "visible": false
       },
       {
-        "amounts": {},
+        "amounts": {
+          "control": {
+            "value": 5
+          }
+        },
         "id": "prophet_arrest",
         "label": "Success",
         "positive": true,
@@ -11291,7 +11329,11 @@
         "visible": false
       },
       {
-        "amounts": {},
+        "amounts": {
+          "control": {
+            "value": 5
+          }
+        },
         "id": "wartime_compensations",
         "label": "Success",
         "positive": true,
@@ -13780,6 +13822,1274 @@
       }
     ],
     "sourceFile": "nomads_migration_contracts.txt",
+    "travel": false,
+    "useDiplomaticRange": false
+  },
+  {
+    "criteria": [
+      {
+        "detail": "scripted trigger valid_merchant_contract_basic_trigger",
+        "key": "valid_merchant_contract_basic_trigger",
+        "kind": "trigger",
+        "name": "Valid merchant contract basic",
+        "negated": false
+      },
+      {
+        "detail": "scripted trigger merchant_trade_opportunity_valid_to_accept_contract_limit_trigger",
+        "key": "merchant_trade_opportunity_valid_to_accept_contract_limit_trigger",
+        "kind": "trigger",
+        "name": "Merchant trade opportunity valid to accept contract limit",
+        "negated": false
+      }
+    ],
+    "desc": "… urgently requests your presence in … to answer grievances against your trader, …",
+    "dlc": "Silk and Silver",
+    "features": [],
+    "group": "merchant_unity_contract_group",
+    "groupName": "Merchant: Unity",
+    "icon": "currencies/house_unity/divided",
+    "id": "unity_irregularities",
+    "isCriminal": false,
+    "name": "Address Irregularities",
+    "request": "If not taken, this contract will automatically fail on …",
+    "rewards": [
+      {
+        "amounts": {
+          "prestige": {
+            "value": 150
+          }
+        },
+        "id": "success_standard",
+        "label": "Success",
+        "positive": true,
+        "visible": true
+      },
+      {
+        "amounts": {
+          "prestige": {
+            "value": 350
+          }
+        },
+        "id": "success_critical",
+        "label": "Exceptional Success",
+        "positive": true,
+        "visible": true
+      },
+      {
+        "amounts": {},
+        "id": "success_qualified_insufficient_assurances",
+        "label": "Qualified Success",
+        "positive": true,
+        "visible": false
+      },
+      {
+        "amounts": {},
+        "id": "success_qualified_betrayed_trader",
+        "label": "Qualified Success",
+        "positive": true,
+        "visible": true
+      },
+      {
+        "amounts": {},
+        "id": "failure_standard",
+        "label": "Failure",
+        "positive": false,
+        "visible": true
+      },
+      {
+        "amounts": {
+          "prestige": {
+            "value": 150
+          }
+        },
+        "id": "failure_denial",
+        "label": "Special Failure",
+        "positive": false,
+        "visible": false
+      }
+    ],
+    "sourceFile": "gdp_merchant_unity_contract.txt",
+    "travel": false,
+    "useDiplomaticRange": false
+  },
+  {
+    "criteria": [
+      {
+        "detail": "scripted trigger valid_merchant_contract_basic_trigger",
+        "key": "valid_merchant_contract_basic_trigger",
+        "kind": "trigger",
+        "name": "Valid merchant contract basic",
+        "negated": false
+      },
+      {
+        "detail": "scripted trigger valid_to_accept_trade_opportunity_trigger",
+        "key": "valid_to_accept_trade_opportunity_trigger",
+        "kind": "trigger",
+        "name": "Valid to accept trade opportunity",
+        "negated": false
+      }
+    ],
+    "desc": "… suffers misfortune. If someone does not step in to help pick up the pieces, the people will suffer, let alone the flow of trade...",
+    "dlc": "Silk and Silver",
+    "features": [],
+    "group": "merchant_trade_opportunity_group",
+    "groupName": "Merchant: Trade opportunity",
+    "icon": "character_interactions/request_trade_support_interaction",
+    "id": "alleviate_upheaval",
+    "isCriminal": false,
+    "name": "Alleviate Upheaval",
+    "request": "Solve the situation by completing a Stewardship Scheme\n Mutually exclusive with Exploit Upheaval Trade Opportunity",
+    "rewards": [
+      {
+        "amounts": {
+          "prestige": {
+            "base": 75,
+            "scales": true
+          }
+        },
+        "id": "success_standard",
+        "label": "Success",
+        "positive": true,
+        "visible": true
+      },
+      {
+        "amounts": {
+          "prestige": {
+            "base": 150,
+            "scales": true
+          }
+        },
+        "id": "success_critical",
+        "label": "Exceptional Success",
+        "positive": true,
+        "visible": true
+      },
+      {
+        "amounts": {
+          "stress": {
+            "base": 20,
+            "scales": true
+          }
+        },
+        "id": "failure_standard",
+        "label": "Failure",
+        "positive": false,
+        "visible": true
+      }
+    ],
+    "sourceFile": "gdp_merchant_trade_opportunity.txt",
+    "travel": false,
+    "useDiplomaticRange": false
+  },
+  {
+    "criteria": [
+      {
+        "detail": "scripted trigger valid_merchant_contract_basic_trigger",
+        "key": "valid_merchant_contract_basic_trigger",
+        "kind": "trigger",
+        "name": "Valid merchant contract basic",
+        "negated": false
+      },
+      {
+        "detail": "scripted trigger valid_to_accept_trade_opportunity_trigger",
+        "key": "valid_to_accept_trade_opportunity_trigger",
+        "kind": "trigger",
+        "name": "Valid to accept trade opportunity",
+        "negated": false
+      }
+    ],
+    "desc": "… threatens our prospects, it seems that whelp … needs to be taught that … is our market...",
+    "dlc": "Silk and Silver",
+    "features": [],
+    "group": "merchant_trade_opportunity_group",
+    "groupName": "Merchant: Trade opportunity",
+    "icon": "scheme_types/icon_scheme_challenge_status",
+    "id": "challenge_competitor",
+    "isCriminal": false,
+    "name": "Challenge Competitor",
+    "request": "Solve the situation by completing a Stewardship Scheme",
+    "rewards": [
+      {
+        "amounts": {
+          "prestige": {
+            "base": 75,
+            "scales": true
+          }
+        },
+        "id": "success_standard",
+        "label": "Success",
+        "positive": true,
+        "visible": true
+      },
+      {
+        "amounts": {
+          "prestige": {
+            "base": 150,
+            "scales": true
+          }
+        },
+        "id": "success_critical",
+        "label": "Exceptional Success",
+        "positive": true,
+        "visible": false
+      },
+      {
+        "amounts": {},
+        "id": "failure_standard",
+        "label": "Failure",
+        "positive": false,
+        "visible": true
+      }
+    ],
+    "sourceFile": "gdp_merchant_trade_opportunity.txt",
+    "travel": false,
+    "useDiplomaticRange": false
+  },
+  {
+    "criteria": [
+      {
+        "detail": "scripted trigger valid_merchant_contract_basic_trigger",
+        "key": "valid_merchant_contract_basic_trigger",
+        "kind": "trigger",
+        "name": "Valid merchant contract basic",
+        "negated": false
+      },
+      {
+        "detail": "scripted trigger merchant_is_silk_road_participant_trigger",
+        "key": "merchant_is_silk_road_participant_trigger",
+        "kind": "trigger",
+        "name": "Merchant is silk road participant",
+        "negated": false
+      },
+      {
+        "detail": "scripted trigger valid_to_accept_trade_opportunity_trigger",
+        "key": "valid_to_accept_trade_opportunity_trigger",
+        "kind": "trigger",
+        "name": "Valid to accept trade opportunity",
+        "negated": false
+      }
+    ],
+    "desc": "The great … lays along …, and we may increase the flow of goods by enjoining other caravans.",
+    "dlc": "Silk and Silver",
+    "features": [],
+    "group": "merchant_silk_road_contract_group",
+    "groupName": "Merchant: Silk Road",
+    "icon": "situation_types/silk_road_situation",
+    "id": "silk_road_caravan",
+    "isCriminal": false,
+    "name": "Consolidate Caravan",
+    "request": "Solve the situation by completing a Stewardship Scheme\n Mutually exclusive with Extend Caravan Trade Opportunity",
+    "rewards": [
+      {
+        "amounts": {
+          "prestige": {
+            "base": 75,
+            "scales": true
+          }
+        },
+        "id": "success_standard",
+        "label": "Success",
+        "positive": true,
+        "visible": true
+      },
+      {
+        "amounts": {
+          "prestige": {
+            "base": 150,
+            "scales": true
+          }
+        },
+        "id": "success_critical",
+        "label": "Exceptional Success",
+        "positive": true,
+        "visible": true
+      },
+      {
+        "amounts": {},
+        "id": "failure_standard",
+        "label": "Failure",
+        "positive": false,
+        "visible": true
+      }
+    ],
+    "sourceFile": "gdp_merchant_silk_road_contract.txt",
+    "travel": false,
+    "useDiplomaticRange": false
+  },
+  {
+    "criteria": [
+      {
+        "detail": "scripted trigger valid_merchant_contract_basic_trigger",
+        "key": "valid_merchant_contract_basic_trigger",
+        "kind": "trigger",
+        "name": "Valid merchant contract basic",
+        "negated": false
+      },
+      {
+        "detail": "scripted trigger valid_to_accept_trade_opportunity_trigger",
+        "key": "valid_to_accept_trade_opportunity_trigger",
+        "kind": "trigger",
+        "name": "Valid to accept trade opportunity",
+        "negated": false
+      }
+    ],
+    "desc": "Our competitors, …, enjoy the grace of … charter. … unfair advantage cannot go unchallenged.",
+    "dlc": "Silk and Silver",
+    "features": [],
+    "group": "merchant_trade_opportunity_group",
+    "groupName": "Merchant: Trade opportunity",
+    "icon": "character_interactions/revoke_merchant_charter_interaction",
+    "id": "disrupt_charter",
+    "isCriminal": false,
+    "name": "Disrupt Charter",
+    "request": "Solve the situation by completing an Intrigue Scheme",
+    "rewards": [
+      {
+        "amounts": {
+          "prestige": {
+            "base": 75,
+            "scales": true
+          }
+        },
+        "id": "success_standard",
+        "label": "Success",
+        "positive": true,
+        "visible": true
+      },
+      {
+        "amounts": {
+          "prestige": {
+            "base": 75,
+            "scales": true
+          }
+        },
+        "id": "success_critical",
+        "label": "Exceptional Success",
+        "positive": true,
+        "visible": true
+      },
+      {
+        "amounts": {},
+        "id": "failure_standard",
+        "label": "Failure",
+        "positive": false,
+        "visible": true
+      }
+    ],
+    "sourceFile": "gdp_merchant_trade_opportunity.txt",
+    "travel": false,
+    "useDiplomaticRange": false
+  },
+  {
+    "criteria": [
+      {
+        "detail": "scripted trigger valid_merchant_contract_basic_trigger",
+        "key": "valid_merchant_contract_basic_trigger",
+        "kind": "trigger",
+        "name": "Valid merchant contract basic",
+        "negated": false
+      },
+      {
+        "detail": "scripted trigger valid_to_accept_trade_opportunity_trigger",
+        "key": "valid_to_accept_trade_opportunity_trigger",
+        "kind": "trigger",
+        "name": "Valid to accept trade opportunity",
+        "negated": false
+      }
+    ],
+    "desc": "The markets of … are pitiful, wasting valuable potential. We must make the locals see the folly in this, else we must advance our own interests.",
+    "dlc": "Silk and Silver",
+    "features": [],
+    "group": "merchant_trade_opportunity_group",
+    "groupName": "Merchant: Trade opportunity",
+    "icon": "character_interactions/commission_trade_route_interaction",
+    "id": "market_investment",
+    "isCriminal": false,
+    "name": "Encourage Investment",
+    "request": "Solve the situation by completing a Stewardship Scheme",
+    "rewards": [
+      {
+        "amounts": {
+          "prestige": {
+            "base": 75,
+            "scales": true
+          }
+        },
+        "id": "success_standard",
+        "label": "Success",
+        "positive": true,
+        "visible": false
+      },
+      {
+        "amounts": {
+          "prestige": {
+            "base": 150,
+            "scales": true
+          }
+        },
+        "id": "success_critical",
+        "label": "Exceptional Success",
+        "positive": true,
+        "visible": true
+      },
+      {
+        "amounts": {},
+        "id": "failure_standard",
+        "label": "Failure",
+        "positive": false,
+        "visible": true
+      }
+    ],
+    "sourceFile": "gdp_merchant_trade_opportunity.txt",
+    "travel": false,
+    "useDiplomaticRange": false
+  },
+  {
+    "criteria": [
+      {
+        "detail": "scripted trigger valid_merchant_contract_basic_trigger",
+        "key": "valid_merchant_contract_basic_trigger",
+        "kind": "trigger",
+        "name": "Valid merchant contract basic",
+        "negated": false
+      },
+      {
+        "detail": "scripted trigger valid_to_accept_trade_opportunity_trigger",
+        "key": "valid_to_accept_trade_opportunity_trigger",
+        "kind": "trigger",
+        "name": "Valid to accept trade opportunity",
+        "negated": false
+      }
+    ],
+    "desc": "… suffers misfortune — a tragedy for some, an opportunity for others. An enterprising family might fill the vacuum by acting swiftly...",
+    "dlc": "Silk and Silver",
+    "features": [],
+    "group": "merchant_trade_opportunity_group",
+    "groupName": "Merchant: Trade opportunity",
+    "icon": "scheme_types/icon_hostile_takeover_scheme",
+    "id": "exploit_upheaval",
+    "isCriminal": false,
+    "name": "Exploit Upheaval",
+    "request": "Solve the situation by completing a Martial Scheme\n Mutually exclusive with Alleviate Upheaval Trade Opportunity",
+    "rewards": [
+      {
+        "amounts": {
+          "prestige": {
+            "base": 75,
+            "scales": true
+          }
+        },
+        "id": "success_standard",
+        "label": "Success",
+        "positive": true,
+        "visible": true
+      },
+      {
+        "amounts": {
+          "prestige": {
+            "base": 150,
+            "scales": true
+          }
+        },
+        "id": "success_critical",
+        "label": "Exceptional Success",
+        "positive": true,
+        "visible": true
+      },
+      {
+        "amounts": {},
+        "id": "failure_standard",
+        "label": "Failure",
+        "positive": false,
+        "visible": true
+      }
+    ],
+    "sourceFile": "gdp_merchant_trade_opportunity.txt",
+    "travel": false,
+    "useDiplomaticRange": false
+  },
+  {
+    "criteria": [
+      {
+        "detail": "scripted trigger valid_merchant_contract_basic_trigger",
+        "key": "valid_merchant_contract_basic_trigger",
+        "kind": "trigger",
+        "name": "Valid merchant contract basic",
+        "negated": false
+      },
+      {
+        "detail": "scripted trigger merchant_is_silk_road_participant_trigger",
+        "key": "merchant_is_silk_road_participant_trigger",
+        "kind": "trigger",
+        "name": "Merchant is silk road participant",
+        "negated": false
+      },
+      {
+        "detail": "scripted trigger valid_to_accept_trade_opportunity_trigger",
+        "key": "valid_to_accept_trade_opportunity_trigger",
+        "kind": "trigger",
+        "name": "Valid to accept trade opportunity",
+        "negated": false
+      }
+    ],
+    "desc": "The great … lays along …, and we may reap the benefits of shared trade by strengthening local ties.",
+    "dlc": "Silk and Silver",
+    "features": [],
+    "group": "merchant_silk_road_contract_group",
+    "groupName": "Merchant: Silk Road",
+    "icon": "situation_types/silk_road_situation",
+    "id": "silk_road_network",
+    "isCriminal": false,
+    "name": "Extend Caravan",
+    "request": "Solve the situation by completing a Stewardship Scheme\n Mutually exclusive with Consolidate Caravan Trade Opportunity",
+    "rewards": [
+      {
+        "amounts": {
+          "prestige": {
+            "base": 75,
+            "scales": true
+          }
+        },
+        "id": "success_standard",
+        "label": "Success",
+        "positive": true,
+        "visible": true
+      },
+      {
+        "amounts": {
+          "prestige": {
+            "base": 150,
+            "scales": true
+          }
+        },
+        "id": "success_critical",
+        "label": "Exceptional Success",
+        "positive": true,
+        "visible": true
+      },
+      {
+        "amounts": {},
+        "id": "failure_standard",
+        "label": "Failure",
+        "positive": false,
+        "visible": true
+      }
+    ],
+    "sourceFile": "gdp_merchant_silk_road_contract.txt",
+    "travel": false,
+    "useDiplomaticRange": false
+  },
+  {
+    "criteria": [
+      {
+        "detail": "scripted trigger valid_merchant_contract_basic_trigger",
+        "key": "valid_merchant_contract_basic_trigger",
+        "kind": "trigger",
+        "name": "Valid merchant contract basic",
+        "negated": false
+      },
+      {
+        "detail": "scripted trigger valid_to_accept_trade_opportunity_trigger",
+        "key": "valid_to_accept_trade_opportunity_trigger",
+        "kind": "trigger",
+        "name": "Valid to accept trade opportunity",
+        "negated": false
+      }
+    ],
+    "desc": "The desperate, the chumps, and the ambitious abound in …. We need only present the right bait and our credit will be seized in no time.",
+    "dlc": "Silk and Silver",
+    "features": [],
+    "group": "merchant_trade_opportunity_group",
+    "groupName": "Merchant: Trade opportunity",
+    "icon": "character_interactions/loan_money_interaction",
+    "id": "seek_debtors",
+    "isCriminal": false,
+    "name": "Extend Credit",
+    "request": "Solve the situation by completing an Intrigue Scheme",
+    "rewards": [
+      {
+        "amounts": {
+          "prestige": {
+            "base": 150,
+            "scales": true
+          }
+        },
+        "id": "success_standard",
+        "label": "Success",
+        "positive": true,
+        "visible": true
+      },
+      {
+        "amounts": {},
+        "id": "failure_standard",
+        "label": "Failure",
+        "positive": false,
+        "visible": true
+      }
+    ],
+    "sourceFile": "gdp_merchant_trade_opportunity.txt",
+    "travel": false,
+    "useDiplomaticRange": false
+  },
+  {
+    "criteria": [
+      {
+        "detail": "scripted trigger valid_merchant_contract_basic_trigger",
+        "key": "valid_merchant_contract_basic_trigger",
+        "kind": "trigger",
+        "name": "Valid merchant contract basic",
+        "negated": false
+      },
+      {
+        "detail": "scripted trigger merchant_trade_opportunity_valid_to_accept_contract_limit_trigger",
+        "key": "merchant_trade_opportunity_valid_to_accept_contract_limit_trigger",
+        "kind": "trigger",
+        "name": "Merchant trade opportunity valid to accept contract limit",
+        "negated": false
+      }
+    ],
+    "desc": "The exotic beasts of distant … are on the lips of … - obtaining such a creature would display the wealth and reach of …!",
+    "dlc": "Silk and Silver",
+    "features": [],
+    "group": "merchant_luxury_contract_group",
+    "groupName": "Merchant: Luxury",
+    "icon": "character_interactions/icon_luxury_contract",
+    "id": "menagerie_acquisition",
+    "isCriminal": false,
+    "name": "Menagerie Acquisition",
+    "request": "Acquire an exotic animal by whatever means arise",
+    "rewards": [
+      {
+        "amounts": {
+          "prestige": {
+            "scales": true
+          }
+        },
+        "id": "success_standard",
+        "label": "Success",
+        "positive": true,
+        "visible": true
+      },
+      {
+        "amounts": {
+          "stress": {
+            "base": 10,
+            "scales": true
+          }
+        },
+        "id": "failure_standard",
+        "label": "Failure",
+        "positive": false,
+        "visible": true
+      }
+    ],
+    "sourceFile": "gdp_merchant_luxury_contract.txt",
+    "travel": true,
+    "useDiplomaticRange": false
+  },
+  {
+    "criteria": [
+      {
+        "detail": "scripted trigger valid_merchant_contract_basic_trigger",
+        "key": "valid_merchant_contract_basic_trigger",
+        "kind": "trigger",
+        "name": "Valid merchant contract basic",
+        "negated": false
+      },
+      {
+        "detail": "scripted trigger merchant_trade_opportunity_valid_to_accept_contract_limit_trigger",
+        "key": "merchant_trade_opportunity_valid_to_accept_contract_limit_trigger",
+        "kind": "trigger",
+        "name": "Merchant trade opportunity valid to accept contract limit",
+        "negated": false
+      }
+    ],
+    "desc": "We rely on … for our privileges and standing in …. Good relations are essential lest we grow complacent...",
+    "dlc": "Silk and Silver",
+    "features": [],
+    "group": "merchant_patron_contract_group",
+    "groupName": "Merchant: Patron",
+    "icon": "message_feed/merchant",
+    "id": "patron_hobnob",
+    "isCriminal": false,
+    "name": "Mingle with Patron",
+    "request": "Ingratiate yourself at your esteemed Patron's court",
+    "rewards": [
+      {
+        "amounts": {
+          "prestige": {
+            "base": 150,
+            "scales": true
+          }
+        },
+        "id": "success_standard",
+        "label": "Success",
+        "positive": true,
+        "visible": true
+      },
+      {
+        "amounts": {
+          "prestige": {
+            "base": 350,
+            "scales": true
+          }
+        },
+        "id": "success_critical",
+        "label": "Exceptional Success",
+        "positive": true,
+        "visible": false
+      },
+      {
+        "amounts": {
+          "stress": {
+            "base": 20,
+            "scales": true
+          }
+        },
+        "id": "failure_standard",
+        "label": "Failure",
+        "positive": false,
+        "visible": true
+      }
+    ],
+    "sourceFile": "gdp_merchant_patron_contract.txt",
+    "travel": true,
+    "useDiplomaticRange": false
+  },
+  {
+    "criteria": [
+      {
+        "detail": "scripted trigger valid_merchant_contract_basic_trigger",
+        "key": "valid_merchant_contract_basic_trigger",
+        "kind": "trigger",
+        "name": "Valid merchant contract basic",
+        "negated": false
+      },
+      {
+        "detail": "scripted trigger valid_to_accept_trade_opportunity_trigger",
+        "key": "valid_to_accept_trade_opportunity_trigger",
+        "kind": "trigger",
+        "name": "Valid to accept trade opportunity",
+        "negated": false
+      }
+    ],
+    "desc": "… tolls in … cut into our profits on …, but an understanding may yet be reached...",
+    "dlc": "Silk and Silver",
+    "features": [],
+    "group": "merchant_trade_opportunity_group",
+    "groupName": "Merchant: Trade opportunity",
+    "icon": "trade/icon_toll",
+    "id": "negotiate_tolls",
+    "isCriminal": false,
+    "name": "Negotiate Tolls",
+    "request": "Solve the situation by completing a Diplomacy Scheme",
+    "rewards": [
+      {
+        "amounts": {
+          "prestige": {
+            "base": 75,
+            "scales": true
+          }
+        },
+        "id": "success_standard",
+        "label": "Success",
+        "positive": true,
+        "visible": true
+      },
+      {
+        "amounts": {
+          "prestige": {
+            "base": 150,
+            "scales": true
+          }
+        },
+        "id": "success_critical",
+        "label": "Exceptional Success",
+        "positive": true,
+        "visible": true
+      },
+      {
+        "amounts": {},
+        "id": "failure_standard",
+        "label": "Failure",
+        "positive": false,
+        "visible": true
+      }
+    ],
+    "sourceFile": "gdp_merchant_trade_opportunity.txt",
+    "travel": false,
+    "useDiplomaticRange": false
+  },
+  {
+    "criteria": [
+      {
+        "detail": "scripted trigger valid_merchant_contract_basic_trigger",
+        "key": "valid_merchant_contract_basic_trigger",
+        "kind": "trigger",
+        "name": "Valid merchant contract basic",
+        "negated": false
+      },
+      {
+        "detail": "scripted trigger valid_to_accept_trade_opportunity_trigger",
+        "key": "valid_to_accept_trade_opportunity_trigger",
+        "kind": "trigger",
+        "name": "Valid to accept trade opportunity",
+        "negated": false
+      }
+    ],
+    "desc": "By patronizing the artisans of …, we may grow our network of skilled craftspeople, and perhaps even discover overlooked talent.",
+    "dlc": "Silk and Silver",
+    "features": [],
+    "group": "merchant_trade_opportunity_group",
+    "groupName": "Merchant: Trade opportunity",
+    "icon": "inspirations/artisan_inspiration",
+    "id": "support_guilds",
+    "isCriminal": false,
+    "name": "Patronize Artisans",
+    "request": "Solve the situation by completing a Learning Scheme",
+    "rewards": [
+      {
+        "amounts": {
+          "prestige": {
+            "base": 75,
+            "scales": true
+          }
+        },
+        "id": "success_standard",
+        "label": "Success",
+        "positive": true,
+        "visible": true
+      },
+      {
+        "amounts": {},
+        "id": "success_critical",
+        "label": "Exceptional Success",
+        "positive": true,
+        "visible": true
+      },
+      {
+        "amounts": {},
+        "id": "failure_standard",
+        "label": "Failure",
+        "positive": false,
+        "visible": true
+      }
+    ],
+    "sourceFile": "gdp_merchant_trade_opportunity.txt",
+    "travel": false,
+    "useDiplomaticRange": false
+  },
+  {
+    "criteria": [
+      {
+        "detail": "scripted trigger valid_merchant_contract_basic_trigger",
+        "key": "valid_merchant_contract_basic_trigger",
+        "kind": "trigger",
+        "name": "Valid merchant contract basic",
+        "negated": false
+      },
+      {
+        "detail": "scripted trigger merchant_trade_opportunity_valid_to_accept_contract_limit_trigger",
+        "key": "merchant_trade_opportunity_valid_to_accept_contract_limit_trigger",
+        "kind": "trigger",
+        "name": "Merchant trade opportunity valid to accept contract limit",
+        "negated": false
+      }
+    ],
+    "desc": "Intriguing artifacts may be acquired in the distant land of … objects that would display the wealth and reach of … to all …!",
+    "dlc": "Silk and Silver",
+    "features": [],
+    "group": "merchant_luxury_contract_group",
+    "groupName": "Merchant: Luxury",
+    "icon": "character_interactions/icon_luxury_contract",
+    "id": "find_curio",
+    "isCriminal": false,
+    "name": "Procure Curio",
+    "request": "Acquire an intriguing curio or text by whatever means arise",
+    "rewards": [
+      {
+        "amounts": {
+          "prestige": {
+            "scales": true
+          }
+        },
+        "id": "success_standard",
+        "label": "Success",
+        "positive": true,
+        "visible": true
+      },
+      {
+        "amounts": {
+          "stress": {
+            "base": 10,
+            "scales": true
+          }
+        },
+        "id": "failure_standard",
+        "label": "Failure",
+        "positive": false,
+        "visible": true
+      }
+    ],
+    "sourceFile": "gdp_merchant_luxury_contract.txt",
+    "travel": true,
+    "useDiplomaticRange": false
+  },
+  {
+    "criteria": [
+      {
+        "detail": "scripted trigger valid_merchant_contract_basic_trigger",
+        "key": "valid_merchant_contract_basic_trigger",
+        "kind": "trigger",
+        "name": "Valid merchant contract basic",
+        "negated": false
+      },
+      {
+        "detail": "scripted trigger valid_to_accept_trade_opportunity_trigger",
+        "key": "valid_to_accept_trade_opportunity_trigger",
+        "kind": "trigger",
+        "name": "Valid to accept trade opportunity",
+        "negated": false
+      }
+    ],
+    "desc": "Our wares are underappreciated in …. By enlightening our customers as to our quality offerings, we might increase prices, and thus profits.",
+    "dlc": "Silk and Silver",
+    "features": [],
+    "group": "merchant_trade_opportunity_group",
+    "groupName": "Merchant: Trade opportunity",
+    "icon": "trade/icon_trade_goods",
+    "id": "promote_goods",
+    "isCriminal": false,
+    "name": "Promote Goods",
+    "request": "Solve the situation by completing a Stewardship Scheme",
+    "rewards": [
+      {
+        "amounts": {
+          "prestige": {
+            "base": 75,
+            "scales": true
+          }
+        },
+        "id": "success_standard",
+        "label": "Success",
+        "positive": true,
+        "visible": true
+      },
+      {
+        "amounts": {
+          "prestige": {
+            "base": 150,
+            "scales": true
+          }
+        },
+        "id": "success_critical",
+        "label": "Exceptional Success",
+        "positive": true,
+        "visible": true
+      },
+      {
+        "amounts": {},
+        "id": "failure_standard",
+        "label": "Failure",
+        "positive": false,
+        "visible": true
+      }
+    ],
+    "sourceFile": "gdp_merchant_trade_opportunity.txt",
+    "travel": false,
+    "useDiplomaticRange": false
+  },
+  {
+    "criteria": [
+      {
+        "detail": "scripted trigger valid_merchant_contract_basic_trigger",
+        "key": "valid_merchant_contract_basic_trigger",
+        "kind": "trigger",
+        "name": "Valid merchant contract basic",
+        "negated": false
+      },
+      {
+        "detail": "scripted trigger valid_to_accept_trade_opportunity_trigger",
+        "key": "valid_to_accept_trade_opportunity_trigger",
+        "kind": "trigger",
+        "name": "Valid to accept trade opportunity",
+        "negated": false
+      }
+    ],
+    "desc": "… business in … is booming. Their arrogant master … ought to be taught a lesson in humility.",
+    "dlc": "Silk and Silver",
+    "features": [],
+    "group": "merchant_trade_opportunity_group",
+    "groupName": "Merchant: Trade opportunity",
+    "icon": "scheme_types/icon_raid_estate",
+    "id": "sabotage_competition",
+    "isCriminal": false,
+    "name": "Sabotage Competitor",
+    "request": "Solve the situation by completing an Intrigue Scheme",
+    "rewards": [
+      {
+        "amounts": {
+          "lifestyleXp": {
+            "value": 100
+          }
+        },
+        "id": "success_standard",
+        "label": "Success",
+        "positive": true,
+        "visible": true
+      },
+      {
+        "amounts": {
+          "lifestyleXp": {
+            "value": 100
+          }
+        },
+        "id": "success_critical",
+        "label": "Exceptional Success",
+        "positive": true,
+        "visible": true
+      },
+      {
+        "amounts": {},
+        "id": "failure_standard",
+        "label": "Failure",
+        "positive": false,
+        "visible": true
+      }
+    ],
+    "sourceFile": "gdp_merchant_trade_opportunity.txt",
+    "travel": false,
+    "useDiplomaticRange": false
+  },
+  {
+    "criteria": [
+      {
+        "detail": "scripted trigger valid_merchant_contract_basic_trigger",
+        "key": "valid_merchant_contract_basic_trigger",
+        "kind": "trigger",
+        "name": "Valid merchant contract basic",
+        "negated": false
+      },
+      {
+        "detail": "scripted trigger valid_to_accept_trade_opportunity_trigger",
+        "key": "valid_to_accept_trade_opportunity_trigger",
+        "kind": "trigger",
+        "name": "Valid to accept trade opportunity",
+        "negated": false
+      }
+    ],
+    "desc": "… passes through the entrepôt hub of …, and we can seek to secure sale prices on … of … there.",
+    "dlc": "Silk and Silver",
+    "features": [],
+    "group": "merchant_trade_opportunity_group",
+    "groupName": "Merchant: Trade opportunity",
+    "icon": "scheme_types/icon_scheme_leverage_contribution",
+    "id": "entrepot_sell",
+    "isCriminal": false,
+    "name": "Secure Buyers",
+    "request": "Solve the situation by completing a Stewardship Scheme\n Mutually exclusive with Secure Sellers Trade Opportunity",
+    "rewards": [
+      {
+        "amounts": {
+          "prestige": {
+            "base": 75,
+            "scales": true
+          }
+        },
+        "id": "success_standard",
+        "label": "Success",
+        "positive": true,
+        "visible": true
+      },
+      {
+        "amounts": {
+          "prestige": {
+            "base": 150,
+            "scales": true
+          }
+        },
+        "id": "success_critical",
+        "label": "Exceptional Success",
+        "positive": true,
+        "visible": false
+      },
+      {
+        "amounts": {},
+        "id": "failure_standard",
+        "label": "Failure",
+        "positive": false,
+        "visible": true
+      }
+    ],
+    "sourceFile": "gdp_merchant_trade_opportunity.txt",
+    "travel": false,
+    "useDiplomaticRange": false
+  },
+  {
+    "criteria": [
+      {
+        "detail": "scripted trigger valid_merchant_contract_basic_trigger",
+        "key": "valid_merchant_contract_basic_trigger",
+        "kind": "trigger",
+        "name": "Valid merchant contract basic",
+        "negated": false
+      },
+      {
+        "detail": "scripted trigger valid_to_accept_trade_opportunity_trigger",
+        "key": "valid_to_accept_trade_opportunity_trigger",
+        "kind": "trigger",
+        "name": "Valid to accept trade opportunity",
+        "negated": false
+      }
+    ],
+    "desc": "… passes through the entrepôt hub of …, and we can seek to secure purchase prices on … of … there.",
+    "dlc": "Silk and Silver",
+    "features": [],
+    "group": "merchant_trade_opportunity_group",
+    "groupName": "Merchant: Trade opportunity",
+    "icon": "scheme_types/steal_market_insights",
+    "id": "entrepot_buy",
+    "isCriminal": false,
+    "name": "Secure Sellers",
+    "request": "Solve the situation by completing a Stewardship Scheme\n Mutually exclusive with Secure Buyers Trade Opportunity",
+    "rewards": [
+      {
+        "amounts": {
+          "prestige": {
+            "base": 75,
+            "scales": true
+          }
+        },
+        "id": "success_standard",
+        "label": "Success",
+        "positive": true,
+        "visible": true
+      },
+      {
+        "amounts": {
+          "prestige": {
+            "base": 150,
+            "scales": true
+          }
+        },
+        "id": "success_critical",
+        "label": "Exceptional Success",
+        "positive": true,
+        "visible": false
+      },
+      {
+        "amounts": {},
+        "id": "failure_standard",
+        "label": "Failure",
+        "positive": false,
+        "visible": true
+      }
+    ],
+    "sourceFile": "gdp_merchant_trade_opportunity.txt",
+    "travel": false,
+    "useDiplomaticRange": false
+  },
+  {
+    "criteria": [
+      {
+        "detail": "scripted trigger valid_merchant_contract_basic_trigger",
+        "key": "valid_merchant_contract_basic_trigger",
+        "kind": "trigger",
+        "name": "Valid merchant contract basic",
+        "negated": false
+      },
+      {
+        "detail": "scripted trigger valid_to_accept_trade_opportunity_trigger",
+        "key": "valid_to_accept_trade_opportunity_trigger",
+        "kind": "trigger",
+        "name": "Valid to accept trade opportunity",
+        "negated": false
+      }
+    ],
+    "desc": "Our profits on … are shorn by … egregious tolls in …, but there are other roads...",
+    "dlc": "Silk and Silver",
+    "features": [],
+    "group": "merchant_trade_opportunity_group",
+    "groupName": "Merchant: Trade opportunity",
+    "icon": "character_interactions/icon_tribute_mission",
+    "id": "smuggle_goods",
+    "isCriminal": false,
+    "name": "Smuggle Goods",
+    "request": "Solve the situation by completing an Intrigue Scheme",
+    "rewards": [
+      {
+        "amounts": {
+          "prestige": {
+            "base": 75,
+            "scales": true
+          }
+        },
+        "id": "success_standard",
+        "label": "Success",
+        "positive": true,
+        "visible": true
+      },
+      {
+        "amounts": {},
+        "id": "failure_standard",
+        "label": "Failure",
+        "positive": false,
+        "visible": true
+      }
+    ],
+    "sourceFile": "gdp_merchant_trade_opportunity.txt",
+    "travel": false,
+    "useDiplomaticRange": false
+  },
+  {
+    "criteria": [
+      {
+        "detail": "scripted trigger valid_merchant_contract_basic_trigger",
+        "key": "valid_merchant_contract_basic_trigger",
+        "kind": "trigger",
+        "name": "Valid merchant contract basic",
+        "negated": false
+      },
+      {
+        "detail": "scripted trigger valid_to_accept_trade_opportunity_trigger",
+        "key": "valid_to_accept_trade_opportunity_trigger",
+        "kind": "trigger",
+        "name": "Valid to accept trade opportunity",
+        "negated": false
+      }
+    ],
+    "desc": "There is always more to learn of the trade in …, and our … crosses many hands as we peddle it through ….",
+    "dlc": "Silk and Silver",
+    "features": [],
+    "group": "merchant_trade_opportunity_group",
+    "groupName": "Merchant: Trade opportunity",
+    "icon": "scheme_types/icon_scheme_befriend",
+    "id": "build_category_connections",
+    "isCriminal": false,
+    "name": "Study Commodity",
+    "request": "Solve the situation by completing a Stewardship Scheme",
+    "rewards": [
+      {
+        "amounts": {
+          "prestige": {
+            "base": 75,
+            "scales": true
+          }
+        },
+        "id": "success_standard",
+        "label": "Success",
+        "positive": true,
+        "visible": true
+      },
+      {
+        "amounts": {},
+        "id": "failure_standard",
+        "label": "Failure",
+        "positive": false,
+        "visible": true
+      }
+    ],
+    "sourceFile": "gdp_merchant_trade_opportunity.txt",
     "travel": false,
     "useDiplomaticRange": false
   }

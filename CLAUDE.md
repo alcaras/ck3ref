@@ -75,12 +75,12 @@ hover, ruling). Six skill colors (`--sk-*`) are the only other hues.
   `game/gfx/interface/icons/<category>/<key>.dds` → `public/img/<cat>/…webp`
   from the mirror (Pillow reads DDS directly).
 
-## Status (2026-09-11)
+## Status (2026-11-21 — game 1.21.0.3 "Florin" + Silk and Silver)
 
 **Live: https://alcaras.github.io/ck3ref/** — repo `alcaras/ck3ref`, Pages via
 Actions (CI compiles Astro only; data and art are committed).
 
-62 catalog pages, no placeholders. **9,538 routes** — the bulk is one page per
+62 catalog pages plus 352 district pages, no placeholders. **10,963 routes** — the bulk is one page per
 event (8,659) and one per geographical region (612). ~57 build scripts, ~7.6k
 registered entities, 10k+ backlinks, ~4.2k converted icons plus 21 panoramic
 legacy banners and 97 decision scenes, and a 1.1 MB province-index map payload
@@ -284,3 +284,28 @@ Known gaps / next steps:
   carrying `easier_to_hybridize` / `harder_to_hybridize` (the target culture's
   parameter applies too), clamped 0-100. Cooldowns: 50y hybrid, 100y
   divergence, 50y per tradition change.
+
+- **1.21 restructures (Silk and Silver patch).** Religion is now
+  religion → faith (`faith_types/`) → rite (`rite_types/`), with tenets in
+  their own `tenet_types/`; doctrines merge religion → faith → rite (later
+  layer wins per group). Province history uses `rite =`. Shared helpers live
+  in `scripts/lib/ck3_religion.py`. Buildings sit in subfolders of
+  `common/buildings/` and are organised by `common/districts/`
+  (`build_districts.py`); icons moved into `icons/building_types/<subdir>/`,
+  so building `icon` keys carry the subdir. Laws split into `law_groups/`
+  (joined by `law_group_type` + `index`). `title_types/` types root titles
+  (merchant/noble/ecclesiastical families → 3.4k roots). Tenet art is in
+  `icons/faith_tenets`.
+- **DLC prefix map was off by one for bp3/bp4/ce1/ce2 before 1.21** —
+  corrected from `has_<prefix>_dlc_trigger`. `reform_culture` → The Royal
+  Court is INFERRED (no game file states it); labelled in ck3.py.
+- **Mirror vs Steam install.** The Dropbox mirror is filled from the PC by
+  `update-ck3ref.bat`. The Mac's Steam install can be used directly:
+  `CK3REF_DIR="$HOME/Library/Application Support/Steam/steamapps/common/Crusader Kings III" make patch`
+  (local disk, no FUSE dropouts). Without it, sync reads the mirror and will
+  revert `reference/` to whatever the PC last copied.
+- **changelog.py diffs against the most recent snapshot of an EARLIER
+  version** (it used to diff against its own version's snapshot, so a patch
+  read as "now tracked" for every file).
+- A game file can end inside a block (gdp_visit_holding_decision_event_2.txt
+  is missing its last `}`); the parser closes it and warns, like the game.

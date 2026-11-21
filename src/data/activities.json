@@ -77,7 +77,8 @@
         }
       ],
       "predictedCost": {
-        "gold": {
+        "treasury_or_gold": {
+          "base": 20,
           "scales": true
         }
       },
@@ -232,7 +233,7 @@
       ],
       "predictedCost": {
         "gold": {
-          "base": 15,
+          "base": 10,
           "scales": true
         }
       },
@@ -247,10 +248,162 @@
       "specialGuests": [
         {
           "id": "camp_party_honorary_guest",
-          "name": "Camp Party Honorary Guest",
+          "name": "A Feast can have an Honorary Guest, in whose honor the celebration is held. The central part of the banquet, the toast, will grant them Prestige due to this prominent position. But beware — it can also be a trap... Murder Feast hosts have a tendency for killing their Honorary Guest.",
           "required": false
         }
       ],
+      "specialOptions": []
+    },
+    {
+      "cooldown": {
+        "unit": "years",
+        "value": 5
+      },
+      "desc": "Appease and amuse your citizens by putting on a dazzling carnival! Give yourself and your subjects the opportunity to lay aside rank and distinction; losing themselves in masked revelry, entertainment and food!\n\nEveryone will be eager to celebrate your republic's history and culture. It is a good opportunity to show off your wealth to stoke the envy of your rivals or move unseen amongst the masses to experience their uninhibited thoughts and concerns.",
+      "dlc": "Silk and Silver",
+      "group": "activities",
+      "guestIntents": [
+        "reduce_stress_intent",
+        "murder_attendee_intent",
+        "woo_attendee_intent",
+        "go_incognito_intent",
+        "flaunt_wealth_intent"
+      ],
+      "hostIntents": [
+        "reduce_stress_intent",
+        "murder_attendee_intent",
+        "woo_attendee_intent",
+        "go_incognito_intent",
+        "flaunt_wealth_intent"
+      ],
+      "icon": "activity_carnival",
+      "id": "activity_carnival",
+      "inviteRules": [
+        "Friends",
+        "Lovers",
+        "Extended Family",
+        "Other Players",
+        "Close Family",
+        "Court Guests",
+        "Vassals",
+        "Courtiers",
+        "Local Ruler",
+        "Adventurers"
+      ],
+      "maxGuests": 50,
+      "name": "Carnival",
+      "numPickablePhases": null,
+      "openInvite": false,
+      "optionCategories": [
+        {
+          "id": "carnival_option_decoration",
+          "name": "Carnival Decorations",
+          "options": [
+            {
+              "blockedPhases": [],
+              "cost": {},
+              "dlc": null,
+              "id": "carnival_decoration_basic",
+              "name": "Basic Decorations",
+              "requirements": []
+            },
+            {
+              "blockedPhases": [],
+              "cost": {
+                "gold": {
+                  "scales": true
+                }
+              },
+              "dlc": null,
+              "id": "carnival_decoration_extensive",
+              "name": "Extensive Decorations",
+              "requirements": []
+            },
+            {
+              "blockedPhases": [],
+              "cost": {
+                "gold": {
+                  "scales": true
+                }
+              },
+              "dlc": null,
+              "id": "carnival_decoration_extravagant",
+              "name": "Extravagant Decorations",
+              "requirements": []
+            }
+          ]
+        },
+        {
+          "id": "carnival_option_entertainment",
+          "name": "Carnival Entertainment",
+          "options": [
+            {
+              "blockedPhases": [],
+              "cost": {},
+              "dlc": null,
+              "id": "carnival_entertainment_basic",
+              "name": "Basic Entertainment",
+              "requirements": []
+            },
+            {
+              "blockedPhases": [],
+              "cost": {
+                "gold": {
+                  "scales": true
+                }
+              },
+              "dlc": null,
+              "id": "carnival_entertainment_extensive",
+              "name": "Extensive Entertainment",
+              "requirements": []
+            },
+            {
+              "blockedPhases": [],
+              "cost": {
+                "gold": {
+                  "scales": true
+                }
+              },
+              "dlc": null,
+              "id": "carnival_entertainment_extravagant",
+              "name": "Extravagant Entertainment",
+              "requirements": []
+            }
+          ]
+        }
+      ],
+      "phases": [
+        {
+          "cost": {},
+          "id": "carnival_phase",
+          "name": "Carnival",
+          "order": 0,
+          "predefined": true
+        }
+      ],
+      "predictedCost": {
+        "gold": {
+          "base": 20,
+          "scales": true
+        }
+      },
+      "requirements": [
+        {
+          "name": "Republic government",
+          "negated": false
+        },
+        {
+          "name": "Republican Rulers may host the Carnival Activity",
+          "negated": false
+        },
+        {
+          "name": "Barony tier+",
+          "negated": false
+        }
+      ],
+      "sortOrder": 0,
+      "sourceFile": "carnival.txt",
+      "specialGuests": [],
       "specialOptions": []
     },
     {
@@ -295,7 +448,8 @@
         "Close Family",
         "Extended Family",
         "Court Guests",
-        "Adventurers"
+        "Adventurers",
+        "Merchants"
       ],
       "maxGuests": 300,
       "name": "Chariot Race",
@@ -380,7 +534,7 @@
           "negated": false
         },
         {
-          "name": "May host the Chariot Race Activity and hire both a Champion Charioteer and a Bookmaker",
+          "name": "May host the Chariot Race Activity and hire the Champion Charioteer and Bookmaker Court Positions",
           "negated": false
         }
       ],
@@ -401,7 +555,7 @@
         "value": 3
       },
       "desc": "Invite the great and powerful of the realm to witness your ascension to the throne. This will forge the foundations for a long and successful rule.",
-      "dlc": "Crowns of the World",
+      "dlc": "Coronations",
       "group": "activities",
       "guestIntents": [
         "coronation_bear_witness",
@@ -435,13 +589,14 @@
         "Vassals",
         "Tributaries",
         "Fellow Vassals",
+        "Clergy",
         "Courtiers",
         "Court Guests",
         "All Lieges",
         "Neighboring Rulers",
         "Nearby Adventurers"
       ],
-      "maxGuests": 100,
+      "maxGuests": 200,
       "name": "Coronation",
       "numPickablePhases": null,
       "openInvite": false,
@@ -580,7 +735,7 @@
       "specialGuests": [
         {
           "id": "coronation_hof_guest",
-          "name": "Head of Faith",
+          "name": "Religious Authority",
           "required": true
         }
       ],
@@ -605,10 +760,6 @@
           "id": "coronation_type_anointment",
           "name": "Anointment",
           "requirements": [
-            {
-              "name": "Spiritual",
-              "negated": false
-            },
             {
               "name": "Empire tier+",
               "negated": false
@@ -760,6 +911,107 @@
     },
     {
       "cooldown": {
+        "unit": "years",
+        "value": 25
+      },
+      "desc": "Summon the great prelates and rulers of Christendom! Our goal shall be to unify belief and practice, all the better to glorify ….\n\nWill we gather as the Apostles did in Jerusalem, one in faith, or crack the Church beneath the weight of our pride?",
+      "dlc": "By God Alone",
+      "group": "grand",
+      "guestIntents": [
+        "spiritual_intent",
+        "fervor_intent",
+        "clerical_appointment_intent",
+        "alliance_intent",
+        "murder_attendee_intent",
+        "befriend_attendee_intent"
+      ],
+      "hostIntents": [
+        "spiritual_intent_host",
+        "fervor_intent",
+        "murder_attendee_intent",
+        "befriend_attendee_intent"
+      ],
+      "icon": "activity_ecumenical_council",
+      "id": "activity_ecumenical_council",
+      "inviteRules": [
+        "Heads of Faith and Rites",
+        "Cardinals",
+        "Archbishops",
+        "Clergy",
+        "Neighboring Rulers",
+        "All Lieges",
+        "Vassals",
+        "Fellow Vassals",
+        "Councillors",
+        "Courtiers",
+        "Court Guests"
+      ],
+      "maxGuests": 100,
+      "name": "Ecumenical Council",
+      "numPickablePhases": null,
+      "openInvite": true,
+      "optionCategories": [],
+      "phases": [
+        {
+          "cost": {},
+          "id": "ecumenical_council_phase_summons",
+          "name": "Summons",
+          "order": 1,
+          "predefined": true
+        },
+        {
+          "cost": {},
+          "id": "ecumenical_council_phase_first_debate",
+          "name": "First Debate",
+          "order": 2,
+          "predefined": true
+        },
+        {
+          "cost": {},
+          "id": "ecumenical_council_phase_second_debate",
+          "name": "Second Debate",
+          "order": 3,
+          "predefined": true
+        },
+        {
+          "cost": {},
+          "id": "ecumenical_council_phase_third_debate",
+          "name": "Third Debate",
+          "order": 4,
+          "predefined": true
+        }
+      ],
+      "predictedCost": {
+        "treasury_or_gold": {
+          "scales": true
+        }
+      },
+      "requirements": [
+        {
+          "name": "… is not already holding an Ecumenical Council",
+          "negated": false
+        },
+        {
+          "name": "At least one of these",
+          "negated": false
+        }
+      ],
+      "sortOrder": 0,
+      "sourceFile": "ecumenical_council.txt",
+      "specialGuests": [],
+      "specialOptions": [
+        {
+          "blockedPhases": [],
+          "cost": {},
+          "dlc": null,
+          "id": "ecumenical_council_type_doctrine",
+          "name": "Ecumenical Council",
+          "requirements": []
+        }
+      ]
+    },
+    {
+      "cooldown": {
         "base": 5,
         "scales": true,
         "unit": "years"
@@ -769,20 +1021,26 @@
       "group": "activities",
       "guestIntents": [
         "reduce_stress_intent",
+        "schmooze_intent",
         "murder_attendee_intent",
         "woo_attendee_intent",
         "befriend_attendee_intent",
         "banquet_mischief_intent",
         "spread_legend_intent",
-        "legitimacy_intent"
+        "legitimacy_intent",
+        "spread_personal_tenet_intent",
+        "praise_the_gods_intent"
       ],
       "hostIntents": [
         "reduce_stress_intent",
+        "schmooze_intent",
         "murder_attendee_intent",
         "woo_attendee_intent",
         "befriend_attendee_intent",
         "spread_legend_intent",
-        "legitimacy_intent"
+        "legitimacy_intent",
+        "spread_personal_tenet_intent",
+        "praise_the_gods_intent"
       ],
       "icon": "activity_feast",
       "id": "activity_feast",
@@ -803,10 +1061,12 @@
         "Confederates",
         "Vassals",
         "Fellow Vassals",
+        "Clergy",
         "Courtiers",
         "Court Guests",
         "Spouses",
-        "Nearby Friendly Adventurers"
+        "Nearby Friendly Adventurers",
+        "Nearby Merchants"
       ],
       "maxGuests": 40,
       "name": "Feast",
@@ -982,24 +1242,19 @@
       ],
       "predictedCost": {
         "barter_goods": {
-          "base": 30,
+          "base": 20,
           "scales": true
         },
         "gold": {
-          "base": 30,
+          "base": 20,
           "scales": true
         },
         "piety": {
-          "base": 30,
+          "base": 20,
           "scales": true
         }
       },
-      "requirements": [
-        {
-          "name": "Barony tier+",
-          "negated": false
-        }
-      ],
+      "requirements": [],
       "sortOrder": 0,
       "sourceFile": "feast.txt",
       "specialGuests": [
@@ -1040,7 +1295,7 @@
           "blockedPhases": [],
           "cost": {
             "gold": {
-              "base": 30,
+              "base": 20,
               "scales": true
             }
           },
@@ -1048,6 +1303,10 @@
           "id": "feast_type_murder",
           "name": "Murder Feast",
           "requirements": [
+            {
+              "name": "Merchant government",
+              "negated": true
+            },
             {
               "name": "Forever Infamous",
               "negated": false
@@ -1062,7 +1321,7 @@
           "blockedPhases": [],
           "cost": {
             "gold": {
-              "base": 30,
+              "base": 20,
               "scales": true
             }
           },
@@ -1185,7 +1444,7 @@
       ],
       "predictedCost": {
         "gold": {
-          "base": 30,
+          "base": 20,
           "scales": true
         }
       },
@@ -1217,14 +1476,16 @@
         "murder_attendee_intent",
         "woo_attendee_intent",
         "befriend_attendee_intent",
-        "legitimacy_intent"
+        "legitimacy_intent",
+        "spread_personal_tenet_intent"
       ],
       "hostIntents": [
         "mourn_intent",
         "murder_attendee_intent",
         "woo_attendee_intent",
         "befriend_attendee_intent",
-        "legitimacy_intent"
+        "legitimacy_intent",
+        "spread_personal_tenet_intent"
       ],
       "icon": "activity_funeral",
       "id": "activity_funeral",
@@ -1245,10 +1506,12 @@
         "Vassals",
         "Confederates",
         "Fellow Vassals",
+        "Clergy",
         "Courtiers",
         "Court Guests",
         "Spouses",
-        "Nearby Adventurers"
+        "Nearby Adventurers",
+        "Nearby Merchants"
       ],
       "maxGuests": 40,
       "name": "Funeral",
@@ -1312,7 +1575,7 @@
       ],
       "predictedCost": {
         "gold": {
-          "base": 30,
+          "base": 20,
           "scales": true
         }
       },
@@ -1338,7 +1601,7 @@
         "unit": "years"
       },
       "desc": "It is high time that all … comes together to make sacrifice to …. These rituals not only bind the faithful together, they confirm my place as … of all the land.",
-      "dlc": "Northern Lords",
+      "dlc": null,
       "group": "activities",
       "guestIntents": [
         "reduce_stress_intent"
@@ -1367,7 +1630,7 @@
               "blockedPhases": [],
               "cost": {
                 "gold": {
-                  "base": 15,
+                  "base": 10,
                   "scales": true
                 }
               },
@@ -1380,25 +1643,20 @@
               "blockedPhases": [],
               "cost": {
                 "gold": {
-                  "base": 40,
+                  "base": 27,
                   "scales": true
                 }
               },
               "dlc": null,
               "id": "gruesome_festival_size_medium",
               "name": "Medium Festival",
-              "requirements": [
-                {
-                  "name": "You don't own at least 2 County Rank Titles",
-                  "negated": false
-                }
-              ]
+              "requirements": []
             },
             {
               "blockedPhases": [],
               "cost": {
                 "gold": {
-                  "base": 120,
+                  "base": 80,
                   "scales": true
                 }
               },
@@ -1430,7 +1688,7 @@
               "blockedPhases": [],
               "cost": {
                 "gold": {
-                  "base": 40,
+                  "base": 27,
                   "scales": true
                 }
               },
@@ -1451,7 +1709,7 @@
               "blockedPhases": [],
               "cost": {
                 "gold": {
-                  "base": 40,
+                  "base": 27,
                   "scales": true
                 }
               },
@@ -1472,7 +1730,7 @@
               "blockedPhases": [],
               "cost": {
                 "gold": {
-                  "base": 40,
+                  "base": 27,
                   "scales": true
                 }
               },
@@ -1498,7 +1756,7 @@
               "blockedPhases": [],
               "cost": {
                 "gold": {
-                  "base": 40,
+                  "base": 27,
                   "scales": true
                 }
               },
@@ -1521,27 +1779,14 @@
       ],
       "predictedCost": {
         "gold": {
-          "base": 15,
+          "base": 27,
           "scales": true
         },
         "prestige": {
           "scales": true
         }
       },
-      "requirements": [
-        {
-          "name": "Barony tier+",
-          "negated": false
-        },
-        {
-          "name": "Duchy tier+",
-          "negated": false
-        },
-        {
-          "name": "You don't control any County of a faith that would allow a Blót",
-          "negated": false
-        }
-      ],
+      "requirements": [],
       "sortOrder": 0,
       "sourceFile": "gruesome_festival.txt",
       "specialGuests": [],
@@ -1558,21 +1803,25 @@
       "guestIntents": [
         "reduce_stress_intent",
         "slay_beast_intent",
-        "murder_attendee_intent",
-        "woo_attendee_intent",
-        "befriend_attendee_intent",
-        "successful_nerge_intent",
-        "dreadful_nerge_intent"
-      ],
-      "hostIntents": [
-        "reduce_stress_intent",
-        "slay_beast_intent",
+        "schmooze_intent",
         "murder_attendee_intent",
         "woo_attendee_intent",
         "befriend_attendee_intent",
         "successful_nerge_intent",
         "dreadful_nerge_intent",
-        "impose_obedience_intent"
+        "spread_personal_tenet_intent"
+      ],
+      "hostIntents": [
+        "reduce_stress_intent",
+        "slay_beast_intent",
+        "schmooze_intent",
+        "murder_attendee_intent",
+        "woo_attendee_intent",
+        "befriend_attendee_intent",
+        "successful_nerge_intent",
+        "dreadful_nerge_intent",
+        "impose_obedience_intent",
+        "spread_personal_tenet_intent"
       ],
       "icon": "activity_hunt",
       "id": "activity_hunt",
@@ -1594,9 +1843,11 @@
         "Glory Hound Vassals",
         "Court Hunters",
         "Knights",
+        "Clergy",
         "Courtiers",
         "Fellow Vassals",
-        "Nearby Adventurers"
+        "Nearby Adventurers",
+        "Nearby Merchants"
       ],
       "maxGuests": 20,
       "name": "Hunt",
@@ -1730,14 +1981,14 @@
       ],
       "predictedCost": {
         "gold": {
-          "base": 30,
+          "base": 20,
           "scales": true
         },
         "herd": {
           "scales": true
         },
         "piety": {
-          "base": 30,
+          "base": 20,
           "scales": true
         }
       },
@@ -1763,7 +2014,7 @@
           "blockedPhases": [],
           "cost": {
             "gold": {
-              "base": 30,
+              "base": 20,
               "scales": true
             },
             "herd": {
@@ -1945,7 +2196,7 @@
       ],
       "predictedCost": {
         "gold": {
-          "base": 30,
+          "base": 20,
           "scales": true
         }
       },
@@ -1975,7 +2226,7 @@
           "blockedPhases": [],
           "cost": {
             "gold": {
-              "base": 30,
+              "base": 20,
               "scales": true
             }
           },
@@ -1988,7 +2239,7 @@
           "blockedPhases": [],
           "cost": {
             "gold": {
-              "base": 30,
+              "base": 20,
               "scales": true
             }
           },
@@ -1998,6 +2249,66 @@
           "requirements": []
         }
       ]
+    },
+    {
+      "cooldown": null,
+      "desc": "A council convened at the close of the … to settle, once and for all, who shall invest the clergy: the Church or the crown.",
+      "dlc": "By God Alone",
+      "group": "activities",
+      "guestIntents": [
+        "spiritual_intent",
+        "clerical_appointment_intent"
+      ],
+      "hostIntents": [
+        "spiritual_intent"
+      ],
+      "icon": "activity_investiture_council",
+      "id": "activity_investiture_council",
+      "inviteRules": [
+        "Heads of Faith and Rites",
+        "Cardinals",
+        "Archbishops",
+        "Clergy",
+        "Neighboring Rulers",
+        "All Lieges",
+        "Vassals",
+        "Fellow Vassals",
+        "Councillors",
+        "Courtiers",
+        "Court Guests"
+      ],
+      "maxGuests": 100,
+      "name": "The Investiture Council",
+      "numPickablePhases": null,
+      "openInvite": true,
+      "optionCategories": [],
+      "phases": [
+        {
+          "cost": {},
+          "id": "investiture_council_phase_summons",
+          "name": "Summons",
+          "order": 1,
+          "predefined": true
+        },
+        {
+          "cost": {},
+          "id": "investiture_council_phase_debate",
+          "name": "The Debate",
+          "order": 2,
+          "predefined": true
+        }
+      ],
+      "predictedCost": {},
+      "requirements": [
+        {
+          "name": "At least one of these",
+          "negated": false
+        }
+      ],
+      "sortOrder": 0,
+      "sourceFile": "pam_investiture_council.txt",
+      "specialGuests": [],
+      "specialOptions": []
     },
     {
       "cooldown": {
@@ -2071,11 +2382,11 @@
       },
       "requirements": [
         {
-          "name": "County tier+",
+          "name": "Journey",
           "negated": false
         },
         {
-          "name": "Journey",
+          "name": "County tier+",
           "negated": false
         }
       ],
@@ -2221,7 +2532,7 @@
       ],
       "predictedCost": {
         "gold": {
-          "base": 30,
+          "base": 20,
           "scales": true
         }
       },
@@ -2362,7 +2673,7 @@
       ],
       "predictedCost": {
         "gold": {
-          "base": 30,
+          "base": 20,
           "scales": true
         }
       },
@@ -2515,7 +2826,7 @@
               "blockedPhases": [],
               "cost": {
                 "gold": {
-                  "base": 35,
+                  "base": 23,
                   "scales": true
                 }
               },
@@ -2551,10 +2862,6 @@
         {
           "name": "County tier+",
           "negated": false
-        },
-        {
-          "name": "Storyteller",
-          "negated": false
         }
       ],
       "sortOrder": 0,
@@ -2570,11 +2877,11 @@
     },
     {
       "cooldown": {
-        "unit": "years",
-        "value": 2
+        "scales": true,
+        "unit": "years"
       },
       "desc": "Perform a thorough inspection of your lands to ensure your realm is a well-running machine, and look for opportunities to improve upon the current bureaucracy and situation.",
-      "dlc": "All Under Heaven",
+      "dlc": null,
       "group": "activities",
       "guestIntents": [
         "survey_learning_intent_guest"
@@ -2607,6 +2914,10 @@
               "blockedPhases": [],
               "cost": {
                 "gold": {
+                  "base": 13,
+                  "scales": true
+                },
+                "piety": {
                   "base": 20,
                   "scales": true
                 }
@@ -2620,6 +2931,10 @@
               "blockedPhases": [],
               "cost": {
                 "gold": {
+                  "base": 27,
+                  "scales": true
+                },
+                "piety": {
                   "base": 40,
                   "scales": true
                 }
@@ -2658,14 +2973,6 @@
         },
         {
           "name": "Settled government",
-          "negated": false
-        },
-        {
-          "name": "Inspection",
-          "negated": false
-        },
-        {
-          "name": "Government allows administrative",
           "negated": false
         }
       ],
@@ -2793,7 +3100,7 @@
               "name": "Extravagant Luxuries",
               "requirements": [
                 {
-                  "name": "Your Government is",
+                  "name": "Your Government is Tribal",
                   "negated": false
                 }
               ]
@@ -2810,7 +3117,7 @@
               "name": "Luxurious Furniture",
               "requirements": [
                 {
-                  "name": "Your Government is",
+                  "name": "Your Government is Tribal",
                   "negated": false
                 }
               ]
@@ -2827,7 +3134,7 @@
               "name": "Excessive Furniture",
               "requirements": [
                 {
-                  "name": "Your Government is",
+                  "name": "Your Government is Tribal",
                   "negated": false
                 }
               ]
@@ -2954,7 +3261,8 @@
         "recruit_knights_intent",
         "murder_attendee_intent",
         "woo_attendee_intent",
-        "befriend_attendee_intent"
+        "befriend_attendee_intent",
+        "spread_personal_tenet_intent"
       ],
       "hostIntents": [
         "reduce_stress_intent",
@@ -2962,7 +3270,8 @@
         "recruit_knights_intent",
         "murder_attendee_intent",
         "woo_attendee_intent",
-        "befriend_attendee_intent"
+        "befriend_attendee_intent",
+        "spread_personal_tenet_intent"
       ],
       "icon": "activity_tournament",
       "id": "activity_tournament",
@@ -3204,7 +3513,7 @@
       ],
       "predictedCost": {
         "gold": {
-          "base": 100,
+          "base": 60,
           "scales": true
         }
       },
@@ -3237,7 +3546,8 @@
         "diplomatic_intent",
         "banquet_mischief_intent",
         "spread_legend_intent",
-        "legitimacy_intent"
+        "legitimacy_intent",
+        "spread_personal_tenet_intent"
       ],
       "hostIntents": [
         "reduce_stress_intent",
@@ -3246,7 +3556,8 @@
         "diplomatic_intent",
         "matchmaking_intent",
         "spread_legend_intent",
-        "legitimacy_intent"
+        "legitimacy_intent",
+        "spread_personal_tenet_intent"
       ],
       "icon": "activity_wedding",
       "id": "activity_wedding",
@@ -3264,13 +3575,15 @@
         "Vassals",
         "Confederates",
         "Fellow Vassals",
+        "Clergy",
         "Courtiers",
         "Court Guests",
         "All Lieges",
         "Spouses' Close Family",
         "Spouses' Extended Family",
         "Neighboring Rulers",
-        "Nearby Adventurers"
+        "Nearby Adventurers",
+        "Nearby Merchants"
       ],
       "maxGuests": 80,
       "name": "Grand Wedding",
@@ -3429,13 +3742,17 @@
       ],
       "predictedCost": {
         "gold": {
-          "base": 25,
+          "base": 20,
           "scales": true
         }
       },
       "requirements": [
         {
           "name": "Barony tier+",
+          "negated": false
+        },
+        {
+          "name": "Merchant government",
           "negated": false
         },
         {
@@ -3470,7 +3787,7 @@
           "blockedPhases": [],
           "cost": {
             "gold": {
-              "base": 25,
+              "base": 20,
               "scales": true
             }
           },
@@ -3481,6 +3798,10 @@
             {
               "name": "Accomplished Forger",
               "negated": false
+            },
+            {
+              "name": "Merchant government",
+              "negated": true
             },
             {
               "name": "You have hosted a Bloody Grand Wedding in the past 15 years",
@@ -3587,6 +3908,37 @@
       "targeted": false
     },
     {
+      "desc": "Don a striking costume and seek opportunities to throw money around lavishly.\nGain Prestige Prestige and Popular Opinion Popular Opinion.",
+      "dlc": null,
+      "family": "Carnival",
+      "icon": "flaunt_wealth_intent",
+      "id": "flaunt_wealth_intent",
+      "name": "Flaunt Wealth",
+      "requirements": [
+        {
+          "name": "Republic government",
+          "negated": false
+        },
+        {
+          "name": "Merchant government",
+          "negated": false
+        }
+      ],
+      "sourceFile": "carnival_intents.txt",
+      "targeted": false
+    },
+    {
+      "desc": "Join the Carnival as a masked participant to mix anonymously with the masses.\nLearn Secret Secrets and act under a veil of anonymity.",
+      "dlc": null,
+      "family": "Carnival",
+      "icon": "go_incognito_intent",
+      "id": "go_incognito_intent",
+      "name": "Go Incognito",
+      "requirements": [],
+      "sourceFile": "carnival_intents.txt",
+      "targeted": false
+    },
+    {
       "desc": "You aim to increase your Legitimacy and Popular Opinion in your Realm Capital, …. This will counteract attendees using the Sow Discord Intent out of hostility towards you.",
       "dlc": "Tours & Tournaments",
       "family": "Chariot Race",
@@ -3625,7 +3977,7 @@
       "targeted": false
     },
     {
-      "desc": "You press your sovereign for policies that foster Development, Control and Popular Opinion in your sub-Realm.",
+      "desc": "You press your sovereign for policies that foster Prosperity, Control and Popular Opinion in your sub-Realm.",
       "dlc": null,
       "family": "Coronation",
       "icon": "advocate_domain_intent",
@@ -3719,7 +4071,12 @@
       "icon": "seize_advantages_intent",
       "id": "coronation_seize_advantages",
       "name": "Seize Advantages",
-      "requirements": [],
+      "requirements": [
+        {
+          "name": "County tier+",
+          "negated": false
+        }
+      ],
       "sourceFile": "coronation_intents.txt",
       "targeted": false
     },
@@ -3773,6 +4130,66 @@
       "targeted": false
     },
     {
+      "desc": "Bind a fellow Ruler to your cause at the council. You may gain an Alliance, at the cost of Piety if you invoke the Church's blessing.",
+      "dlc": null,
+      "family": "Ecumenical Council",
+      "icon": "alliance_intent",
+      "id": "alliance_intent",
+      "name": "Alliance",
+      "requirements": [],
+      "sourceFile": "ecumenical_council_intents.txt",
+      "targeted": true
+    },
+    {
+      "desc": "Impress the prelates gathered here, perhaps improving your Candidate Score for a Clerical Title.",
+      "dlc": null,
+      "family": "Ecumenical Council",
+      "icon": "clerical_appointment_intent",
+      "id": "clerical_appointment_intent",
+      "name": "Appointment Score",
+      "requirements": [
+        {
+          "name": "Ecclesiastical government",
+          "negated": false
+        }
+      ],
+      "sourceFile": "ecumenical_council_intents.txt",
+      "targeted": false
+    },
+    {
+      "desc": "Display righteous zeal before the assembled Church. You may raise your Faith's Fervor, or take the glory for yourself.",
+      "dlc": null,
+      "family": "Ecumenical Council",
+      "icon": "fervor_intent",
+      "id": "fervor_intent",
+      "name": "Kindle Fervor",
+      "requirements": [],
+      "sourceFile": "ecumenical_council_intents.txt",
+      "targeted": false
+    },
+    {
+      "desc": "Seek the host's blessing for Spiritual Fulfillment amid the debate, though others will jostle for the same favor.",
+      "dlc": null,
+      "family": "Ecumenical Council",
+      "icon": "spiritual_intent",
+      "id": "spiritual_intent",
+      "name": "Spiritual Contemplation",
+      "requirements": [],
+      "sourceFile": "ecumenical_council_intents.txt",
+      "targeted": false
+    },
+    {
+      "desc": "Grant your blessing to petitioners and deepen your own Spiritual Fulfillment through prayerful leadership of the council.",
+      "dlc": null,
+      "family": "Ecumenical Council",
+      "icon": "spiritual_intent",
+      "id": "spiritual_intent_host",
+      "name": "Lead in Prayer",
+      "requirements": [],
+      "sourceFile": "ecumenical_council_intents.txt",
+      "targeted": false
+    },
+    {
       "desc": "You came a long way to study here, and you plan to make the absolute most of it.",
       "dlc": null,
       "family": "Education",
@@ -3806,7 +4223,7 @@
       "targeted": true
     },
     {
-      "desc": "You wish to cultivate a greater sense of Cohesion within your Bloc.",
+      "desc": "You wish to cultivate a greater sense of Bloc Cohesion.",
       "dlc": null,
       "family": "Festival",
       "icon": "raise_cohesion_intent",
@@ -4125,6 +4542,22 @@
       "targeted": false
     },
     {
+      "desc": "You seek to grease the wheels of business and improve Competitiveness.",
+      "dlc": "Tours & Tournaments",
+      "family": "Shared",
+      "icon": "schmooze_intent",
+      "id": "schmooze_intent",
+      "name": "Hobnob",
+      "requirements": [
+        {
+          "name": "Merchant government",
+          "negated": false
+        }
+      ],
+      "sourceFile": "shared_intents.txt",
+      "targeted": false
+    },
+    {
       "desc": "You will use this activity as an opportunity to spread your Legend.",
       "dlc": "Legends of the Dead",
       "family": "Shared",
@@ -4150,6 +4583,42 @@
       "requirements": [],
       "sourceFile": "shared_intents.txt",
       "targeted": true
+    },
+    {
+      "desc": "Turn communal celebration into worship, seeking religious knowledge, spiritual insight, and fellowship throughout the feast.",
+      "dlc": "Tours & Tournaments",
+      "family": "Spread Tenet",
+      "icon": "pious_intent",
+      "id": "praise_the_gods_intent",
+      "name": "Honor the Divine",
+      "requirements": [
+        {
+          "name": "You no longer personally follow the Ritual Celebrations Tenet",
+          "negated": false
+        }
+      ],
+      "sourceFile": "spread_tenet_intents.txt",
+      "targeted": false
+    },
+    {
+      "desc": "You want to preach your Personal Tenet to receptive guests, that they may adopt it as their own, increasing Tenet Popularity.",
+      "dlc": "By God Alone",
+      "family": "Spread Tenet",
+      "icon": "pious_intent",
+      "id": "spread_personal_tenet_intent",
+      "name": "Evangelize Tenet",
+      "requirements": [
+        {
+          "name": "Zealous Proselytizer",
+          "negated": false
+        },
+        {
+          "name": "You no longer hold a Personal Tenet",
+          "negated": false
+        }
+      ],
+      "sourceFile": "spread_tenet_intents.txt",
+      "targeted": false
     },
     {
       "desc": "See what learnings we can bring from the local bureaucracy back home to our capital.\n\nA chance to gain additional bonuses for the Capital",
@@ -4307,6 +4776,21 @@
       "visitText": null
     },
     {
+      "icon": "poi_buried_saint",
+      "id": "poi_buried_saint",
+      "name": "Buried Saint",
+      "rewards": [
+        "Pay your respects for modest …Piety, with an option to draw forth a holy Relic for less than it would cost from afar.",
+        "You pause at the tomb of … and pay your respects.",
+        "Pay your respects to … with an option to draw forth a holy Relic for less than it would cost from afar.",
+        "Pay your respects to …, the … resting here.",
+        "Visiting the tomb of …, you are filled with devotion.",
+        "Your faith does not venerate …, but there is much to learn at this tomb."
+      ],
+      "sourceFile": "pam_saint_point_of_interest_types.txt",
+      "visitText": "…"
+    },
+    {
       "icon": "poi_capitals",
       "id": "poi_capitals",
       "name": "Capitals",
@@ -4315,6 +4799,14 @@
       ],
       "sourceFile": "travel_point_of_interest_types.txt",
       "visitText": "Visited capital of the …"
+    },
+    {
+      "icon": "poi_grand_cathedral",
+      "id": "poi_grand_cathedral",
+      "name": "Grand Cathedral",
+      "rewards": [],
+      "sourceFile": "travel_point_of_interest_types.txt",
+      "visitText": null
     },
     {
       "icon": "poi_grand_city",
@@ -4429,6 +4921,14 @@
       "rewards": [],
       "sourceFile": "travel_point_of_interest_types.txt",
       "visitText": null
+    },
+    {
+      "icon": "poi_standalone_holy_site",
+      "id": "poi_standalone_holy_site",
+      "name": "Standalone Holy Site",
+      "rewards": [],
+      "sourceFile": "travel_point_of_interest_types.txt",
+      "visitText": "Visited … Holy Site: …"
     }
   ],
   "travelOptions": [
@@ -4573,8 +5073,30 @@
     {
       "cost": {},
       "dlc": null,
+      "effectText": [],
+      "icon": "innkeepers_mounts_option",
+      "id": "innkeepers_mounts_option",
+      "name": "Fresh Mounts",
+      "ownerMods": [
+        {
+          "polarity": "good",
+          "text": "+5 Travel Companion Opinion"
+        },
+        {
+          "polarity": "good",
+          "text": "+0.5 Prestige /month"
+        }
+      ],
+      "requirements": [],
+      "sourceFile": "travel_options.txt",
+      "travelSafety": null,
+      "travelSpeed": 10
+    },
+    {
+      "cost": {},
+      "dlc": null,
       "effectText": [
-        "When passing through a Barony, a random Follower has a chance to become Inspired\n(Chance % equal to a sixth of your Stewardship )"
+        "When passing through a Barony, a random … has a chance to become Inspired\n(Chance % equal to a sixth of your Stewardship )"
       ],
       "icon": "adventurers_gather_inspiration_option",
       "id": "adventurers_gather_inspiration_option",
@@ -4582,11 +5104,15 @@
       "ownerMods": [],
       "requirements": [
         {
-          "name": "Adventurer",
+          "name": "Merchant government",
           "negated": false
         },
         {
-          "name": "Popular Figurehead",
+          "name": "Artisan",
+          "negated": false
+        },
+        {
+          "name": "Adventurer",
           "negated": false
         }
       ],
@@ -4598,7 +5124,8 @@
       "cost": {},
       "dlc": null,
       "effectText": [
-        "When passing through a Barony, you gain 25% of the Holding's Loot value as Gold Gold\n(can only gain Gold once per Holding)"
+        "When passing through a Barony, you gain 10% of the Holding's Loot value as Gold Gold\n(can only gain Gold once per Holding)",
+        "A successful deal may attract bandits within a few days."
       ],
       "icon": "adventurers_make_local_deals_option",
       "id": "adventurers_make_local_deals_option",
@@ -4606,11 +5133,15 @@
       "ownerMods": [],
       "requirements": [
         {
-          "name": "Adventurer",
+          "name": "Merchant government",
           "negated": false
         },
         {
-          "name": "Fearful Troops",
+          "name": "Caravaneer",
+          "negated": false
+        },
+        {
+          "name": "Adventurer",
           "negated": false
         }
       ],
@@ -4659,15 +5190,15 @@
       "ownerMods": [
         {
           "polarity": "neutral",
-          "text": "-32.33 Desert Danger"
+          "text": "-22.33 Desert Danger"
         },
         {
           "polarity": "neutral",
-          "text": "-32.33 Steppe Danger"
+          "text": "-22.33 Steppe Danger"
         },
         {
           "polarity": "neutral",
-          "text": "-22.33 Drylands Danger"
+          "text": "-15.67 Drylands Danger"
         }
       ],
       "requirements": [],
@@ -4725,11 +5256,11 @@
       "ownerMods": [
         {
           "polarity": "neutral",
-          "text": "-42.33 Wetlands Danger"
+          "text": "-29 Wetlands Danger"
         },
         {
           "polarity": "neutral",
-          "text": "-22.33 Floodplains Danger"
+          "text": "-15.67 Floodplains Danger"
         }
       ],
       "requirements": [],
@@ -4756,11 +5287,11 @@
       "ownerMods": [
         {
           "polarity": "neutral",
-          "text": "-32 Forest Danger"
+          "text": "-22 Forest Danger"
         },
         {
           "polarity": "neutral",
-          "text": "-37.67 Taiga Danger"
+          "text": "-27.67 Taiga Danger"
         }
       ],
       "requirements": [],
@@ -4787,7 +5318,7 @@
       "ownerMods": [
         {
           "polarity": "neutral",
-          "text": "-42.33 Jungle Danger"
+          "text": "-29 Jungle Danger"
         }
       ],
       "requirements": [],
@@ -4841,20 +5372,73 @@
       "ownerMods": [
         {
           "polarity": "neutral",
-          "text": "-42.33 Mountains Danger"
+          "text": "-29 Mountains Danger"
         },
         {
           "polarity": "neutral",
-          "text": "-42.33 Desert Mountains Danger"
+          "text": "-29 Desert Mountains Danger"
         },
         {
           "polarity": "neutral",
-          "text": "-32 Hills Danger"
+          "text": "-22 Hills Danger"
         }
       ],
       "requirements": [],
       "sourceFile": "travel_options.txt",
       "travelSafety": null,
+      "travelSpeed": null
+    },
+    {
+      "cost": {
+        "gold": {
+          "scales": true
+        }
+      },
+      "dlc": null,
+      "effectText": [],
+      "icon": "honored_escort_option",
+      "id": "honored_escort_option",
+      "name": "Honored Escort",
+      "ownerMods": [
+        {
+          "polarity": "good",
+          "text": "+1 Prestige /month"
+        }
+      ],
+      "requirements": [
+        {
+          "name": "Merchant government",
+          "negated": false
+        },
+        {
+          "name": "Honor Guard",
+          "negated": false
+        }
+      ],
+      "sourceFile": "travel_options.txt",
+      "travelSafety": 20,
+      "travelSpeed": -10
+    },
+    {
+      "cost": {},
+      "dlc": null,
+      "effectText": [],
+      "icon": "trusted_lodgings_option",
+      "id": "trusted_lodgings_option",
+      "name": "Known Inns",
+      "ownerMods": [
+        {
+          "polarity": "good",
+          "text": "+5 Travel Companion Opinion"
+        },
+        {
+          "polarity": "good",
+          "text": "+0.5 Prestige /month"
+        }
+      ],
+      "requirements": [],
+      "sourceFile": "travel_options.txt",
+      "travelSafety": 10,
       "travelSpeed": null
     },
     {
@@ -4962,7 +5546,11 @@
           "negated": false
         },
         {
-          "name": "Zealous Proselytizer",
+          "name": "Theocracy government",
+          "negated": false
+        },
+        {
+          "name": "You have the Zealous Proselytizer Perk, or Mendicant Preaching is your Personal Tenet",
           "negated": false
         }
       ],
@@ -4984,19 +5572,19 @@
       "ownerMods": [
         {
           "polarity": "neutral",
-          "text": "-18.67 Desert Danger"
+          "text": "-13.67 Desert Danger"
         },
         {
           "polarity": "neutral",
-          "text": "-18.67 Steppe Danger"
+          "text": "-13.67 Steppe Danger"
         },
         {
           "polarity": "neutral",
-          "text": "-13.67 Drylands Danger"
+          "text": "-10.33 Drylands Danger"
         },
         {
           "polarity": "neutral",
-          "text": "-23.67 Desert Mountains Danger"
+          "text": "-17 Desert Mountains Danger"
         }
       ],
       "requirements": [
@@ -5023,19 +5611,19 @@
       "ownerMods": [
         {
           "polarity": "neutral",
-          "text": "-23.67 Mountains Danger"
+          "text": "-17 Mountains Danger"
         },
         {
           "polarity": "neutral",
-          "text": "-14 Hills Danger"
+          "text": "-9 Hills Danger"
         },
         {
           "polarity": "neutral",
-          "text": "-23.67 Wetlands Danger"
+          "text": "-17 Wetlands Danger"
         },
         {
           "polarity": "neutral",
-          "text": "-13.67 Floodplains Danger"
+          "text": "-10.33 Floodplains Danger"
         }
       ],
       "requirements": [
@@ -5062,15 +5650,15 @@
       "ownerMods": [
         {
           "polarity": "neutral",
-          "text": "-14 Forest Danger"
+          "text": "-9 Forest Danger"
         },
         {
           "polarity": "neutral",
-          "text": "-19.33 Taiga Danger"
+          "text": "-14.33 Taiga Danger"
         },
         {
           "polarity": "neutral",
-          "text": "-23.67 Jungle Danger"
+          "text": "-17 Jungle Danger"
         }
       ],
       "requirements": [
@@ -5087,13 +5675,17 @@
       "cost": {},
       "dlc": null,
       "effectText": [
-        "Enables Events to recruit Wanderers for Gold Gold if you have open positions for Officers"
+        "Enables Events to recruit Wanderers for Gold Gold if you have open positions for …"
       ],
       "icon": "adventurers_scout_for_talent_option",
       "id": "adventurers_scout_for_talent_option",
       "name": "Scout for Talent",
       "ownerMods": [],
       "requirements": [
+        {
+          "name": "Merchant government",
+          "negated": false
+        },
         {
           "name": "Adventurer",
           "negated": false

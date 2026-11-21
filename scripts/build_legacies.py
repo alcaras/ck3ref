@@ -30,7 +30,7 @@ PERK_SKIP_FIELDS = {
     "can_be_picked": "scripted-trigger macro mirroring the track's is_shown gate / DLC check",
     "trait": "single-trait grant form; unused by any shipped perk",
 }
-PERK_HANDLED_FIELDS = {
+PERK_HANDLED_FIELDS = {"faith_character_modifier", 
     "legacy", "character_modifier", "doctrine_character_modifier", "effect", "traits",
 }
 
@@ -313,6 +313,15 @@ def main():
             label = doctrine_label(str(mod.get("doctrine")))
             inner = Block([t for t in mod.triples if t[0] not in ("doctrine",)])
             effects.extend(f"If {label} doctrine: {line}"
+                           for line in modifier_lines(inner, skipped_inner))
+        for mod in blk.get_all("faith_character_modifier"):
+            # same shape as doctrine_character_modifier; applies to characters
+            # whose faith has the doctrine
+            if not isinstance(mod, Block):
+                continue
+            label = doctrine_label(str(mod.get("doctrine")))
+            inner = Block([t for t in mod.triples if t[0] not in ("doctrine",)])
+            effects.extend(f"If your faith has the {label} doctrine: {line}"
                            for line in modifier_lines(inner, skipped_inner))
         for eff in blk.get_all("effect"):
             effects.extend(effect_lines(eff, skipped_inner))

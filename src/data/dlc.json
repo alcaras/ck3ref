@@ -3,9 +3,11 @@
     "content": {
       "Buildings": {
         "items": [
-          "Crown Blacksmiths",
-          "Blacksmith's Guilds",
-          "Royal Forges",
+          "Blacksmiths",
+          "Blacksmiths II",
+          "Blacksmiths III",
+          "Blacksmiths IV",
+          "Blacksmiths V",
           "Al-Azhar University",
           "University of al-Qarawiyyin",
           "Cluny Abbey",
@@ -31,7 +33,7 @@
       "Casus Belli": {
         "items": [
           "Artifact",
-          "Relic Artifact Reclamation"
+          "Holy Relic Reclamation"
         ],
         "page": "casus-belli"
       },
@@ -111,7 +113,7 @@
     },
     "name": "The Royal Court",
     "order": 3,
-    "total": 72,
+    "total": 74,
     "type": "major"
   },
   {
@@ -140,7 +142,6 @@
           "House Unity Level",
           "Install a Supporter",
           "Iranian Intermezzo",
-          "Kindle Royal Fire Decision",
           "Master Assassin",
           "Request Honorary Title",
           "Request House Unity Interference",
@@ -220,7 +221,7 @@
     },
     "name": "Legacy of Persia",
     "order": 9,
-    "total": 61,
+    "total": 60,
     "type": "minor"
   },
   {
@@ -233,9 +234,13 @@
       },
       "Buildings": {
         "items": [
-          "Great Burial Site",
-          "Mausoleum",
-          "Grand Mausoleum",
+          "Burial Site",
+          "Burial Site II",
+          "Burial Site III",
+          "Burial Site IV",
+          "Burial Site V",
+          "Temple",
+          "Temple Keep",
           "Ananda Temple",
           "Boudhanath",
           "Brihadeeswarar Temple",
@@ -250,7 +255,7 @@
           "Canterbury Basilica",
           "Temple of Canterbury",
           "Canterbury Cathedral",
-          "Grand Cathedral",
+          "Grand Basilica",
           "Cologne Cathedral",
           "Great Fire Temple",
           "The Great Mosque of Cordoba",
@@ -285,29 +290,46 @@
           "Archcollegiate Church of St Mary and St Alexius",
           "Cathedral of St Mary and St Alexius",
           "Grand Mosque of Yazd",
-          "Temple Keep",
-          "Libraries",
-          "Copying Chambers",
-          "Translation House",
-          "House of Scribes",
-          "Continental System",
-          "Great Archives",
-          "School of Translation",
-          "Secret Archives",
-          "Shrine"
+          "Cemeteries",
+          "Cemeteries II",
+          "Cemeteries III",
+          "Cemeteries IV",
+          "Cemeteries V"
         ],
         "page": "buildings"
       },
+      "Casus Belli": {
+        "items": [
+          "…… Ancestral Claim on …",
+          "Demand Fealty",
+          "Legendary Adventure"
+        ],
+        "page": "casus-belli"
+      },
       "Concepts": {
         "items": [
-          "Designated Terrain",
-          "Hike",
-          "Inspection",
-          "Inspection Success Chance",
-          "Long Hike",
-          "Master Terrain",
-          "Monument Expedition",
-          "Skill Challenges"
+          "Ancestral Claim",
+          "Chance of Infection",
+          "Court Position Task",
+          "Expected Legitimacy",
+          "Fatalities",
+          "Funeral",
+          "Infection Rate",
+          "Initial Legitimacy",
+          "Legend",
+          "Legend Library",
+          "Legend Promoter",
+          "Legend Protagonist",
+          "Legend Quality",
+          "Legend Seed",
+          "Legend Type",
+          "Legitimacy",
+          "Legitimacy Level",
+          "Owned Legend",
+          "Plague",
+          "Plague Intensity",
+          "Plague Resistance",
+          "Promoted Legend"
         ],
         "page": "concepts"
       },
@@ -329,11 +351,30 @@
           "Bubonic Plague"
         ],
         "page": "epidemics"
+      },
+      "Innovations": {
+        "items": [
+          "Sanitation"
+        ],
+        "page": "innovations"
+      },
+      "Nicknames": {
+        "items": [
+          "the Dragonslayer",
+          "Nature's Bane"
+        ],
+        "page": "nicknames"
+      },
+      "Traditions": {
+        "items": [
+          "Water Rituals"
+        ],
+        "page": "traditions"
       }
     },
     "name": "Legends of the Dead",
     "order": 10,
-    "total": 75,
+    "total": 95,
     "type": "medium"
   },
   {
@@ -344,12 +385,6 @@
           "Chariot Race"
         ],
         "page": "activities"
-      },
-      "Buildings": {
-        "items": [
-          "The Tower of London"
-        ],
-        "page": "buildings"
       },
       "Casus Belli": {
         "items": [
@@ -376,10 +411,8 @@
         "items": [
           "Administrative",
           "Adventurer",
-          "Adventurer Invasion",
           "Appointment Level",
           "Appointment Succession Law",
-          "Become Adventurer Decision",
           "Camp",
           "Camp Purpose",
           "Camp Temperament",
@@ -407,7 +440,6 @@
           "Governorship Confirmation",
           "Hireling Contract",
           "House Attribute",
-          "Hunting Contract",
           "Imperial Bureaucracy",
           "Imperial Family",
           "Influence",
@@ -420,7 +452,6 @@
           "Level of Influence Impact",
           "Manually Reinforce",
           "Mercenary Contract",
-          "Negotiate Settlement",
           "Noble Family",
           "Officer",
           "Pax Romana Casus Belli",
@@ -430,7 +461,6 @@
           "Province",
           "Province Administration",
           "Provincial Army",
-          "Purchase Land",
           "Rodrigo's Loyalty",
           "Roll of Patrons",
           "Seize Peripheral Duchy",
@@ -445,34 +475,6 @@
       },
       "Court Positions": {
         "items": [
-          "Archer Captain",
-          "Armorer",
-          "Camelry Captain",
-          "Chief Cook",
-          "Camp Priest",
-          "Chief Engineer",
-          "Chief Forager",
-          "Elephantry Captain",
-          "Head Groom",
-          "Head Porter",
-          "Heavy Cavalry Captain",
-          "Heavy Infantry Captain",
-          "Horse Archer Captain",
-          "Huntsman",
-          "Kenneler",
-          "Laureate",
-          "Light Cavalry Captain",
-          "Light Infantry Captain",
-          "Master Bard",
-          "Master of Arms",
-          "Master of Spoils",
-          "Master Thief",
-          "Man-Haggler",
-          "Pike Captain",
-          "Quartermaster",
-          "Second",
-          "Stooge",
-          "Witness",
           "Akolouthos",
           "Bookmaker",
           "Champion Charioteer"
@@ -503,12 +505,15 @@
       },
       "Nicknames": {
         "items": [
+          "Adud al-Dawla",
+          "Alam al-Dīn",
+          "Alā al-Dawla",
           "Alā al-Dīn",
           "Amād al-Dawla",
           "Asad al-Dīn",
           "Badr al-Dīn",
+          "Bahā al-Dawla",
           "Bahā al-Dīn",
-          "Bahāʾ al-Dawla",
           "the Bandit King",
           "the Bandit Queen",
           "Barbarossa",
@@ -531,14 +536,14 @@
           "the Lazy",
           "the Liberal",
           "Majd al-Dīn",
+          "Mu'ayyid al-Dīn",
+          "Mu'izz al-Dawla",
           "Mu'izz al-Dīn",
           "Muayyad al-Dīn",
           "Mubāraz al-Dīn",
           "Muhyi al-Dīn",
           "Musharraf al-Dawla",
           "Muzaffar al-Dīn",
-          "Muʾayyid al-Dīn",
-          "Muʾizz al-Dawla",
           "Najm al-Dīn",
           "Nasir al-Dīn",
           "Nizām al-Dawla",
@@ -581,9 +586,6 @@
           "Zahir al-Mulk",
           "Zayn al-Dawla",
           "Zayn al-Dīn",
-          "ʿAlam al-Dīn",
-          "ʿAlāʾ al-Dawla",
-          "ʿAḍud al-Dawla",
           "Ḥiṣn al-Dawla",
           "Ḥusām al-Dawla"
         ],
@@ -649,7 +651,7 @@
     },
     "name": "Roads to Power",
     "order": 13,
-    "total": 258,
+    "total": 224,
     "type": "major"
   },
   {
@@ -660,21 +662,28 @@
           "Hike"
         ],
         "page": "activities"
+      },
+      "Concepts": {
+        "items": [
+          "Designated Terrain",
+          "Hike",
+          "Inspection",
+          "Inspection Success Chance",
+          "Long Hike",
+          "Master Terrain",
+          "Monument Expedition",
+          "Skill Challenges"
+        ],
+        "page": "concepts"
       }
     },
     "name": "Wandering Nobles",
     "order": 14,
-    "total": 2,
+    "total": 10,
     "type": "minor"
   },
   {
     "content": {
-      "Activities": {
-        "items": [
-          "Coronation"
-        ],
-        "page": "activities"
-      },
       "Buildings": {
         "items": [
           "Wayside Shrines",
@@ -691,19 +700,11 @@
           "Vast Martial Holdings"
         ],
         "page": "buildings"
-      },
-      "Doctrines & Tenets": {
-        "items": [
-          "Anointment Permitted",
-          "Imperial Anointment",
-          "No Anointment"
-        ],
-        "page": "doctrines"
       }
     },
     "name": "Crowns of the World",
     "order": 18,
-    "total": 16,
+    "total": 12,
     "type": "minor"
   },
   {
@@ -732,7 +733,7 @@
           "Dominance",
           "Dominate Title",
           "Expand Dominance",
-          "Fertility Equilibrium",
+          "Fertility Baseline",
           "Gurkhan",
           "Herd",
           "Herder",
@@ -744,6 +745,7 @@
           "Nerge",
           "Nomadic",
           "Nomadic Capital",
+          "Nomadic Confederation",
           "Nomadic Horde",
           "Nomadic Settlement",
           "Obedience",
@@ -752,6 +754,7 @@
           "Paiza",
           "Participant Group",
           "Raid Intent",
+          "Region",
           "Seasonal Prediction",
           "Settlement Issue",
           "Settlement Issue Tier",
@@ -819,8 +822,22 @@
     },
     "name": "Khans of the Steppe",
     "order": 19,
-    "total": 78,
+    "total": 80,
     "type": "medium"
+  },
+  {
+    "content": {
+      "Activities": {
+        "items": [
+          "Coronation"
+        ],
+        "page": "activities"
+      }
+    },
+    "name": "Coronations",
+    "order": 20,
+    "total": 1,
+    "type": "minor"
   },
   {
     "content": {
@@ -829,14 +846,12 @@
           "Debate",
           "Festival",
           "Capital Examination",
-          "Local Examination",
-          "Inspection"
+          "Local Examination"
         ],
         "page": "activities"
       },
       "Buildings": {
         "items": [
-          "Great Barracks",
           "Ornate Temple",
           "Majestic Temple",
           "Temple Grounds",
@@ -851,7 +866,6 @@
           "Seize Hegemonic County",
           "Seize Hegemonic Duchy",
           "Chinese Consolidation War",
-          "Consolidate Land Under Heaven (Dynastic Cycle)",
           "Seize the Mandate of Heaven",
           "… China Grand Campaign",
           "Ceremonial Claimant Faction",
@@ -913,6 +927,8 @@
           "Dynastic Cycle Era",
           "Dynastic Cycle Era Type",
           "Earthquake",
+          "East Asian Mansion",
+          "East Asian Mansion Building",
           "Elder",
           "Entrant",
           "Exam Advantage",
@@ -975,7 +991,6 @@
           "Prosperity Decree",
           "Provincial Examination",
           "Regent Family",
-          "Restored Emperor",
           "Retirement Age",
           "Reverence Decree",
           "Ritsuryō Government",
@@ -998,7 +1013,7 @@
           "Tribute Mission",
           "Unallocated Treasury Budget",
           "Unstable Era",
-          "Vassal Development",
+          "Vassal Allowance",
           "Wanua"
         ],
         "page": "concepts"
@@ -1042,6 +1057,7 @@
           "Coking",
           "Cupellation",
           "Dragon Kilns",
+          "Lacquerware",
           "Pharmacopoeia",
           "Sericulture",
           "Waterworks",
@@ -1050,6 +1066,7 @@
           "Bulkheads",
           "Compass",
           "Double-Entry Bookkeeping",
+          "Tea Culture",
           "Rocket Carts"
         ],
         "page": "innovations"
@@ -1078,14 +1095,19 @@
       },
       "Nicknames": {
         "items": [
+          "Confucius of Guanxi",
+          "Empress Mingde",
           "the Fierce",
-          "Ho-seung",
+          "General who Calms the Waves",
           "Izumi Shikibu",
           "Murasaki Shikibu",
           "Sei Shōnagon",
           "Shin'nō",
+          "Taiyangzi",
           "Tenjin",
-          "Ushiwakamaru"
+          "Tiger-Monk",
+          "Ushiwakamaru",
+          "Zenji"
         ],
         "page": "nicknames"
       },
@@ -1133,70 +1155,468 @@
     },
     "name": "All Under Heaven",
     "order": 21,
-    "total": 246,
+    "total": 251,
     "type": "major"
   },
   {
     "content": {
+      "Activities": {
+        "items": [
+          "Ecumenical Council",
+          "The Investiture Council"
+        ],
+        "page": "activities"
+      },
+      "Buildings": {
+        "items": [
+          "Romanesque Grand Cathedral",
+          "Gothic Grand Cathedral",
+          "Flamboyant Grand Cathedral",
+          "Abbey of St Gall",
+          "Archbasilica of Saint John Lateran",
+          "Palais des Papes",
+          "Reims Cathedral"
+        ],
+        "page": "buildings"
+      },
       "Casus Belli": {
         "items": [
-          "Ancestral Claim",
-          "Demand Fealty",
-          "Legendary Adventure"
+          "Depose Challenger Head of Faith",
+          "Challenge Head of Faith",
+          "Humiliation War",
+          "Investiture Conflict"
         ],
         "page": "casus-belli"
       },
       "Concepts": {
         "items": [
-          "Ancestral Claim",
-          "Chance of Infection",
-          "Court Position Task",
-          "Expected Legitimacy",
-          "Fatalities",
-          "Funeral",
-          "Infection Rate",
-          "Initial Legitimacy",
-          "Legend",
-          "Legend Library",
-          "Legend Promoter",
-          "Legend Protagonist",
-          "Legend Quality",
-          "Legend Seed",
-          "Legend Type",
-          "Legitimacy",
-          "Legitimacy Level",
-          "Owned Legend",
-          "Plague",
-          "Plague Intensity",
-          "Plague Resistance",
-          "Promoted Legend"
+          "Abbot",
+          "Archbishop",
+          "Archdiocese",
+          "Beseech Claim",
+          "Bishop",
+          "Canonized",
+          "Cardinal",
+          "Cardinal Budget",
+          "Challenge Head of Faith",
+          "Challenger Head of Faith",
+          "Chapter Type",
+          "Christendom",
+          "Christian",
+          "Church Centralization",
+          "Church Obligations",
+          "Clerical Region",
+          "Clerical Region Capital",
+          "Clerical Ruler Puppet",
+          "Clerical Title",
+          "College of Cardinals",
+          "Conservative",
+          "Core",
+          "Crisis Chapter",
+          "Demand Chastity",
+          "Depose Antipope",
+          "Divergence",
+          "Ecclesiastical",
+          "Ecclesiastical Estate",
+          "Ecclesiastical Estate Building",
+          "Ecumenical Council",
+          "Eminent Holy Site",
+          "Enshrined",
+          "Grand Cathedral",
+          "Guide the Christian Church",
+          "Head of Rite",
+          "Holy Relic",
+          "Incite Holy War",
+          "Innovator",
+          "Instability Chapter",
+          "Known",
+          "Lease Contract",
+          "Mainline Rite",
+          "Military Order",
+          "Military Order Patron",
+          "Monastic Order",
+          "Monastic Order Patron",
+          "Negotiate For Land",
+          "Offer Spiritual Counsel",
+          "Order Vicinity",
+          "Papabile Score",
+          "Papal Bull",
+          "Permitted",
+          "Personal Tenet",
+          "Petition Antipope for Gold",
+          "Prohibited",
+          "Puppet",
+          "Puppet Type",
+          "Puppeteer",
+          "Realm Priest Puppet",
+          "Religious Knowledge",
+          "Religious Subordinate",
+          "Religious Superior",
+          "Request Claim Endorsement",
+          "Request Clerical Title Expansion",
+          "Rite",
+          "Sanctified",
+          "Schism",
+          "Secular Obligations",
+          "Secular Ruler Puppet",
+          "Seek Antipope's Indulgence",
+          "Spiritual Fulfillment",
+          "Spiritual Fulfillment Level",
+          "Stability Chapter",
+          "Tenet Popularity",
+          "Tenet Status",
+          "The Christian Church",
+          "The Christian Church Chapter",
+          "Unknown",
+          "Zeal Chapter"
         ],
         "page": "concepts"
       },
-      "Innovations": {
+      "Doctrines & Tenets": {
         "items": [
-          "Sanitation"
+          "Fervent Proselytism",
+          "Adoptionism",
+          "Anachoresis",
+          "Apostolic Succession",
+          "Be Fruitful and Multiply",
+          "Celestial Hierarchy",
+          "Sacrament of Confession",
+          "Divine Liturgy",
+          "Veneration of Saints",
+          "Hesychasm",
+          "Holy Myron",
+          "Mother of God",
+          "Khachkars",
+          "Love Thy Neighbour",
+          "Miaphysitism",
+          "Soldiery of Christ",
+          "Monophysitism",
+          "Mortification of the Flesh",
+          "To Work Is to Pray",
+          "Original Sin",
+          "Peace of God",
+          "Charity",
+          "Purgatory",
+          "Scholasticism",
+          "Simony",
+          "Transubstantiation"
         ],
-        "page": "innovations"
+        "page": "doctrines"
+      },
+      "Dynasty Legacies": {
+        "items": [
+          "Servants of God"
+        ],
+        "page": "legacies"
       },
       "Nicknames": {
         "items": [
-          "the Dragonslayer",
-          "Nature's Bane"
+          "the Concordant",
+          "the Reconciler",
+          "the Rock",
+          "the Schismat"
         ],
         "page": "nicknames"
       },
+      "Schemes": {
+        "items": [
+          "Religious Study"
+        ],
+        "page": "schemes"
+      }
+    },
+    "name": "By God Alone",
+    "order": 29,
+    "total": 124,
+    "type": "medium"
+  },
+  {
+    "content": {
+      "Activities": {
+        "items": [
+          "Carnival"
+        ],
+        "page": "activities"
+      },
+      "Casus Belli": {
+        "items": [
+          "War for Civic Liberty",
+          "Conquer Trade County",
+          "Proclaim a Commune",
+          "Enforce a Monopoly",
+          "Trade War",
+          "Displace Opposing Ruler",
+          "Dissolve Lombard League",
+          "Reinstate Aligned Ruler",
+          "Seize Realm County",
+          "Seize Realm Duchy",
+          "Seize Realm Kingdom",
+          "Dissolve the Hanse"
+        ],
+        "page": "casus-belli"
+      },
+      "Concepts": {
+        "items": [
+          "Assembly",
+          "Associate",
+          "Balanced",
+          "Basic Trade Good",
+          "Building Need",
+          "Buy Price",
+          "Client Contract",
+          "Client Merchant",
+          "Commission Route",
+          "Company",
+          "Company Building",
+          "Company Direction",
+          "Company Direction Stance",
+          "Company Purpose",
+          "Company Size",
+          "Competitive Pressure",
+          "Complete Monopoly",
+          "Confederation Cohesion",
+          "Consortery",
+          "Creature",
+          "Curiosity",
+          "Deputy",
+          "Direction Contract",
+          "Distribution Route",
+          "Domicile Artifact",
+          "Ennobled",
+          "Exploitative Monopoly",
+          "Ghibelline",
+          "Goods Category",
+          "Grasping",
+          "Guelph",
+          "Guelphs & Ghibellines",
+          "Guelphs & Ghibellines Prelude",
+          "House Ambition",
+          "Involvement",
+          "Leading Title",
+          "League Cohesion",
+          "League Focus",
+          "Legitimizing Actions",
+          "Loan",
+          "Lombard League",
+          "Luxury Contract",
+          "Make a Request",
+          "Market Balance",
+          "Market Capital",
+          "Market Deficit",
+          "Market Owner",
+          "Market Priority",
+          "Market Prosperity",
+          "Market Share",
+          "Market Surplus",
+          "Market Toll",
+          "Max Trade Goods",
+          "Max Trade Markets",
+          "Member Title",
+          "Mercenary Limit",
+          "Merchant",
+          "Merchant Charter",
+          "Merchant Family",
+          "Monopolize Trade",
+          "Opportunistic",
+          "Patrician",
+          "Patrician Family",
+          "Patrician Rating",
+          "Patron",
+          "Patron Contract",
+          "Patron Contract Scheme",
+          "Potential Production",
+          "Primary Good",
+          "Production",
+          "Profit Route",
+          "Profit-Driven Actions",
+          "Put on Notice",
+          "Rapacious",
+          "Republic Administration",
+          "Republic Decree",
+          "Republican Army",
+          "Request Contract Change",
+          "Request Merchant Charter",
+          "Road",
+          "Road Tier",
+          "Ruthless Oversight",
+          "Seize Realm",
+          "Sell Price",
+          "Senator",
+          "Trade",
+          "Trade Acumen",
+          "Trade Competitiveness",
+          "Trade Contract",
+          "Trade Contract Tier",
+          "Trade Expertise",
+          "Trade Expertise Level",
+          "Trade Expertise Progress",
+          "Trade Good",
+          "Trade League",
+          "Trade League Leader",
+          "Trade League Member",
+          "Trade Market",
+          "Trade Monopoly",
+          "Trade Opportunity",
+          "Trade Opportunity Scheme",
+          "Trade Opportunity Tier",
+          "Trade Route",
+          "Trade Route Capacity",
+          "Trade Route Length",
+          "Trade Route Modifier",
+          "Trader",
+          "Usury",
+          "Voting Session"
+        ],
+        "page": "concepts"
+      },
+      "Court Positions": {
+        "items": [
+          "Partner",
+          "Bailiff",
+          "Fixer",
+          "Market Agent",
+          "Translator"
+        ],
+        "page": "court-positions"
+      },
+      "Dynasty Legacies": {
+        "items": [
+          "Res Publica",
+          "Mercantile"
+        ],
+        "page": "legacies"
+      },
+      "Nicknames": {
+        "items": [
+          "Alum-Tongued",
+          "Amator Maris",
+          "Amber-Eyed",
+          "the Apothecary",
+          "the Artisan",
+          "the Beer-Barrel",
+          "the Bejeweled",
+          "the Breadwinner",
+          "the Caravaneer",
+          "Cattle-Rich",
+          "the Cheesemonger",
+          "the Clothier",
+          "Copper-Hands",
+          "Cotton-Soft",
+          "Fur-Lined",
+          "the Gem-Eyed",
+          "the Gilded",
+          "the Glassmaker",
+          "the Heir of Lothair",
+          "Honey-Tongue",
+          "Horse-Trader",
+          "Ink-Fingered",
+          "the Ironmonger",
+          "the Jade-Hearted",
+          "the Lacquered",
+          "the Larder",
+          "the Lender",
+          "the Linen-Clad",
+          "the Mason's Friend",
+          "the Milletmonger",
+          "the Negus Nagast",
+          "Oil-Fingers",
+          "the Orchard",
+          "Pepper-Purse",
+          "the Perfumed",
+          "the Potter's Patron",
+          "Purple-Fingered",
+          "the Rice-Sack",
+          "the Ropemaker",
+          "the Salt-Cellar",
+          "Silk-Clad",
+          "the Silver-Laden",
+          "Stockfish",
+          "Sweet-Tooth",
+          "the Tanner",
+          "Tea-Scented",
+          "Timber-Rich",
+          "the Tusker",
+          "the Vintner",
+          "the Woolsack"
+        ],
+        "page": "nicknames"
+      },
+      "Schemes": {
+        "items": [
+          "Agitate Civic Unrest",
+          "Disrupt Trade Routes",
+          "Hostile Takeover",
+          "Overthrow Government",
+          "Steal Goods Expertise",
+          "Steal Trade Post",
+          "Bolster Reputation",
+          "Find Secrets",
+          "Incite Unrest",
+          "Slander",
+          "Appraising Goods",
+          "Appraising Markets",
+          "Building Connections",
+          "Building Reputation",
+          "Championing Patron's Interests",
+          "Craft Artifact",
+          "Entertaining Merchants",
+          "Expanding Markets",
+          "Hiring Local Talent",
+          "Identifying Rare Goods",
+          "Influence House Ambition",
+          "Learning from Locals",
+          "Lobbying Advantages",
+          "Negotiating Deals",
+          "Negotiating with Nobles",
+          "Organizing Caravans",
+          "Recruiting Informants",
+          "Securing Safe Passage",
+          "Securing Surplus",
+          "Striking Deals",
+          "Studying Local Crafts",
+          "Undermining Competitors",
+          "Alleviate Upheaval",
+          "Build Connections",
+          "Challenge Competitor",
+          "Consolidate Caravan",
+          "Disrupt Charter",
+          "Encourage Investment",
+          "Exploit Upheaval",
+          "Extend Caravan",
+          "Extend Credit",
+          "Mingle with Patron",
+          "Negotiate Tolls",
+          "Patronize Artisans",
+          "Promote Goods",
+          "Sabotage Competitor",
+          "Secure Buyers",
+          "Secure Sellers",
+          "Smuggle Goods",
+          "Improve Trade Capacity",
+          "Improve Trade Competitiveness",
+          "Improve Trade Expertise"
+        ],
+        "page": "schemes"
+      },
       "Traditions": {
         "items": [
-          "Water Rituals"
+          "Civic Religion",
+          "Contado",
+          "Contract Warfare",
+          "Monsoon Merchants",
+          "Roman Law",
+          "Saharan Traders",
+          "Silk Road Entrepreneurs",
+          "Binding Oaths",
+          "Fortune Seekers"
         ],
         "page": "traditions"
       }
     },
-    "name": "Community Pack 1 (free)",
-    "order": 999,
-    "total": 29,
-    "type": null
+    "name": "Silk and Silver",
+    "order": 30,
+    "total": 240,
+    "type": "major"
   },
   {
     "content": {
@@ -1310,12 +1730,6 @@
   },
   {
     "content": {
-      "Activities": {
-        "items": [
-          "Blót"
-        ],
-        "page": "activities"
-      },
       "Casus Belli": {
         "items": [
           "Varangian Adventurer"
@@ -1332,8 +1746,7 @@
       },
       "Doctrines & Tenets": {
         "items": [
-          "Bhakti",
-          "Blót"
+          "Gruesome Festivals"
         ],
         "page": "doctrines"
       },
@@ -1373,7 +1786,7 @@
     },
     "name": "Northern Lords",
     "order": 999,
-    "total": 20,
+    "total": 18,
     "type": null
   },
   {
@@ -1389,47 +1802,30 @@
       "Buildings": {
         "items": [
           "Archery Ranges",
-          "Royal Bowyers",
-          "Marksman's Ranges",
-          "Jousting Fields",
-          "Tournament Grounds",
-          "Royal Tournament Arenas",
-          "Weapon Depots",
-          "Crown Armories",
-          "Royal Arsenal",
-          "Hide Tents",
-          "Camp Cooks",
-          "Training Fields",
-          "Watchposts",
-          "Camp Smiths",
-          "Mustering Halls",
-          "Militia Barracks",
-          "Levying Squares",
-          "Regimental Clearings",
-          "Quartermaster's Offices",
-          "Semi-permanent Housing",
-          "Regimental Barracks",
-          "Military Granaries",
-          "Blacksmiths",
-          "Officers' Lodgings",
-          "Expanded Grounds",
-          "Bloomeries",
-          "Bellows",
-          "Drawplate",
-          "Blacksmith Districts",
-          "Trophy Halls",
-          "Squire Quarters",
-          "Feasting Halls",
-          "Formation Fighting Fields",
-          "Warriors' Graves",
-          "Commemoration Halls",
-          "Library of Warriors",
-          "Visitors Quarters",
-          "Hall of Heroes I",
+          "Archery Ranges II",
+          "Archery Ranges III",
+          "Archery Ranges IV",
+          "Archery Ranges V",
+          "Jousting Lists",
+          "Jousting Lists II",
+          "Jousting Lists III",
+          "Jousting Lists IV",
+          "Jousting Lists V",
+          "Royal Armory",
+          "Royal Armory II",
+          "Royal Armory III",
+          "Royal Armory IV",
+          "Royal Armory V",
+          "Hall of Heroes",
           "Hall of Heroes II",
           "Hall of Heroes III",
           "Hall of Heroes IV",
-          "Hall of Heroes V"
+          "Hall of Heroes V",
+          "Martial Festivals",
+          "Martial Festivals II",
+          "Martial Festivals III",
+          "Martial Festivals IV",
+          "Martial Festivals V"
         ],
         "page": "buildings"
       },
@@ -1446,9 +1842,7 @@
           "Accolade Attribute",
           "Accolade Rank",
           "Accolade Succession",
-          "Banquet",
           "Borrowed Power",
-          "Ceremony",
           "Contest",
           "Contest Aptitude",
           "Contest Round",
@@ -1488,7 +1882,6 @@
           "Retinue Men-at-Arms",
           "Safety",
           "Scales of Power",
-          "Special Guest",
           "Spectator",
           "Speed",
           "Squires",
@@ -1504,9 +1897,7 @@
           "Tour Type",
           "Travel",
           "Travel Option",
-          "Trilateral Interaction",
-          "Turns",
-          "Wedding Night"
+          "Turns"
         ],
         "page": "concepts"
       },
@@ -1557,7 +1948,7 @@
     },
     "name": "Tours & Tournaments",
     "order": 999,
-    "total": 141,
+    "total": 119,
     "type": null
   },
   {
@@ -1573,12 +1964,6 @@
         ],
         "page": "concepts"
       },
-      "Court Positions": {
-        "items": [
-          "Wet Nurse"
-        ],
-        "page": "court-positions"
-      },
       "Nicknames": {
         "items": [
           "the Castle Builder",
@@ -1590,7 +1975,7 @@
     },
     "name": "Wards & Wardens",
     "order": 999,
-    "total": 10,
+    "total": 9,
     "type": null
   }
 ]

@@ -20,7 +20,7 @@ SKIP_FIELDS = {
 HANDLED = {
     "lifestyle", "tree", "position", "icon", "parent", "character_modifier",
     "government_character_modifier", "doctrine_character_modifier",
-    "culture_character_modifier", "effect", "can_be_picked", "trait", "name",
+    "culture_character_modifier", "faith_character_modifier", "effect", "can_be_picked", "trait", "name",
 }
 
 
@@ -107,6 +107,15 @@ def main():
         gov = []
         for m in blk.get_all("government_character_modifier"):
             gov.extend(mod_lines(m))
+        for m in blk.get_all("faith_character_modifier"):
+            # applies when the character's faith has the doctrine
+            if not isinstance(m, Block):
+                continue
+            doc = m.get("doctrine")
+            dname = ck3.render_text(ck3.loc(f"{doc}_name") or "") or str(doc).replace("_", " ")
+            inner = Block([t for t in m.triples if t[0] != "doctrine"])
+            gov.extend(f"If your faith has the {dname} doctrine: {ln}"
+                       for ln in mod_lines(inner))
         texts = []
         for e in blk.get_all("effect"):
             effect_text(e, texts)

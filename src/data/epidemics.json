@@ -4,7 +4,7 @@
     "icon": "bubonic_plague",
     "id": "bubonic_plague",
     "infectionChance": {
-      "rules": "base base 10 (if OR …: add 20) (if scope:epidemic …: add 40) (else …) (else …) (else …) (if has trait = athletic: add -4) (if has perk = iron constitution perk: add -6) (if has perk = healthy perk: add -8) (if has trait = whole of body: add -10) (if is foreign court or pool guest = True: add 40) (if is ruler = False: add 10) (if scope:epidemic.epidemic type.epidemic trait = trait:measles, is adult = False: add 20) (if age >= 65: add 40) (else …) (if host.domicile …: add -10) (else …) (else …) (else …) (else …) (else …) +base base -1 (if has perk = wash your hands perk: add 10) (if has trait = shy: add 1) (if has trait = paranoid: add 2) (if has trait = reclusive: add 4) (if has trait = shrewd: add 1) (if has trait = lifestyle physician: add 4) (if has trait = lifestyle herbalist: add 2) (if has trait = diligent: add 1) (if has trait = craven: add 1) (if has trait = temperate: add 1) (if has trait = arbitrary: add -1) (if has trait = brave: add -1) (if has trait = impatient: add -2) (if has trait = gregarious: add -4) (if has trait = dull: add -2) (if culture …: add -1) (if culture …: add -1) (if culture …: add 20) ×-1 (if location …: multiply 0.25) (else …) (else …) (if has character modifier = isolating modifier: multiply 0.25) (if has character modifier = hiding from epidemic: multiply 0.25) min 1 ×0.02"
+      "rules": "base base 10 (if OR …: add 20) (if scope:epidemic …: add 40) (else …) (else …) (else …) (if has trait = athletic: add -4) (if has perk = iron constitution perk: add -6) (if has perk = healthy perk: add -8) (if has trait = whole of body: add -10) (if is foreign court or pool guest = True: add 40) (if is ruler = False: add 10) (if scope:epidemic.epidemic type.epidemic trait = trait:measles, is adult = False: add 20) (if age >= 65: add 40) (else …) (if OR …: add -10) (else …) (else …) (else …) (else …) (else …) (if OR …: add -30) (else …) (else …) (else …) (else …) +base base -1 (if has perk = wash your hands perk: add 10) (if has trait = shy: add 1) (if has trait = paranoid: add 2) (if has trait = reclusive: add 4) (if has trait = shrewd: add 1) (if has trait = lifestyle physician: add 4) (if has trait = lifestyle herbalist: add 2) (if has trait = diligent: add 1) (if has trait = craven: add 1) (if has trait = temperate: add 1) (if has trait = arbitrary: add -1) (if has trait = brave: add -1) (if has trait = impatient: add -2) (if has trait = gregarious: add -4) (if has trait = dull: add -2) (if culture …: add -1) (if culture …: add -1) (if culture …: add 20) ×-1 (if location …: multiply 0.25) (else …) (else …) (if has character modifier = isolating modifier: multiply 0.25) (if has character modifier = hiding from epidemic: multiply 0.25) min 1 ×0.02"
     },
     "intensities": [
       {
@@ -13,12 +13,12 @@
         "maxProvinces": "180–360",
         "name": "Minor",
         "outbreakChance": {
-          "rules": "base base 0.01 +base num buildings ×0.001 (if has building or higher = common tradeport 01: add 0.016) (else …) (if OR …: multiply 0) ×base 0.6 (if has game rule = epidemic frequency often: add 0.1) (else …) (else …) (else …) (else …) (if county.development level <= 20: add …) (else …) (else …) (if culture …: add -0.2) (else …) (else …) (else …) (if OR …: add -0.2) (else …) (if has holding type = city holding: add 0.2) (else …) (if OR …: add -0.6) (if county.development level < 10: multiply 0.5) ×0.4 min 0.001 ×base 1 (if is target in variable list …: if …; else if …; else …) (else …) min 0 ×0.001 (if has game rule = epidemic frequency disabled: multiply 0)"
+          "rules": "base base 0.01 +base province size level ×0.001 (if has port district = True: add 0.016) (else …) (if OR …: multiply 0) ×base 0.6 (if has game rule = epidemic frequency normal: add 0) (else …) (else …) (else …) (else …) (else …) (if county.prosperity level <= 20: add …) (else …) (else …) (if culture …: add -0.2) (else …) (else …) (if OR …: add -0.2) (else …) (if has holding type = city holding: add 0.2) (else …) (if OR …: add -0.6) (if county.prosperity level < 10: multiply 0.5) ×0.4 min 0.001 ×base 1 (if is target in variable list …: if …; else if …; else …) (else …) min 0 ×0.001 (if has game rule = epidemic frequency disabled: multiply 0)"
         },
         "progressDuration": "40–60 days",
         "recoveryDuration": "25–35 days",
         "spreadChance": {
-          "rules": "base (if scope:epidemic …: add 9) (else …) (else …) (if county …: add 4) (if scope:epidemic.epidemic type = epidemic type:dysentery: add …; add …) +base num buildings ×0.25 (if has building or higher = common tradeport 08: add 4; add 4; add 3; add 3; add 3; add 2; add 2; add 2) (else …) (else …) (else …) (else …) (else …) (else …) (else …) (if has building or higher = market villages 02: add 2; add 2) (else …) (if has building or higher = guild halls 08: add 4; add 4; add 4; add 4) (else …) (else …) (else …) (if terrain = farmlands: add 3) (else …) (else …) (else …) (else …) (else …) (if geographical region = divergence island regions: add -1) (if county.culture …: add 3) (else …) (else …) (if county.culture …: add -2) (else …) (if AND …: add -1) (if scope:epidemic …: add -3) ×base 1 min 0.001 (if OR …, NOR …: add -0.5) (if has global variable = black death, scope:epidemic = global var:black death, OR …, has building or higher = common tradeport 06, num buildings > 10: add 1) (if county …: add 1.5) +base county.development level ×0.025 (if has game rule = epidemic frequency doomsday: add 1.5) (else …) (else …) (else …) (else …) (if scope:epidemic …: add 1) (else …) (if is target in variable list …: if …; else if …; else if …; else …) (if has variable = epidemic cooldown general: if …; else if …; else …) (if has holding = True: add 0.25) (if OR …: add 0.25) (if has holding type = city holding: add 0.75) (if OR …: add -0.991)"
+          "rules": "base (if scope:epidemic …: add 9) (else …) (else …) (if county …: add 4) (if scope:epidemic.epidemic type = epidemic type:dysentery: add …; add …) +base num districts ×0.25 (if has building or higher = pb port 04: add 4; add 4; add 3; add 3; add 3; add 2; add 2; add 2) (else …) (else …) (else …) (if has building or higher = pb market 03: add 2; add 2) (else …) (if has building or higher = pb guild 04: add 4; add 4; add 4; add 4) (else …) (else …) (else …) (if terrain = farmlands: add 3) (else …) (else …) (else …) (else …) (else …) (if geographical region = divergence island regions: add -1) (if county.culture …: add 3) (else …) (else …) (if county.culture …: add -2) (else …) (if AND …: add -1) (if scope:epidemic …: add -3) ×base 1 min 0.001 (if OR …, NOR …: add -0.5) (if has global variable = black death, scope:epidemic = global var:black death, OR …, has building or higher = pb port 03, num districts > 4: add 1) (if county …: add 1.5) +base county.prosperity level ×0.025 (if has game rule = epidemic frequency doomsday: add 1.5) (else …) (else …) (else …) (else …) (if scope:epidemic …: add 1) (else …) (if is target in variable list …: if …; else if …; else if …; else …) (if has variable = epidemic cooldown general: if …; else if …; else …) (if has holding = True: add 0.25) (if OR …: add 0.25) (if has holding type = city holding: add 0.75) (if OR …: add -0.991) ×base 1 (if province size level > spread settlement size level threshold: add …)"
         }
       },
       {
@@ -27,12 +27,12 @@
         "maxProvinces": "540–900",
         "name": "Major",
         "outbreakChance": {
-          "rules": "base base 0.001 +base num buildings ×0.004 (if has building or higher = common tradeport 01: add 0.016) (else …) (if OR …: multiply 0) ×base 0.45 (if has game rule = epidemic frequency often: add 0.1) (else …) (else …) (else …) (else …) (if county.development level <= 20: add …) (else …) (else …) (if culture …: add 0) (else …) (else …) (else …) (if OR …: add -0.2) (else …) (if has holding type = city holding: add 0.2) (else …) (if OR …: add -0.6) (if county.development level < 10: multiply 0.1) ×0.4 min 0.001 ×base 1 (if is target in variable list …: if …; else if …; else …) (else …) min 0 ×0.005 (if has game rule = epidemic frequency disabled: multiply 0)"
+          "rules": "base base 0.001 +base province size level ×0.004 (if has port district = True: add 0.016) (else …) (if OR …: multiply 0) ×base 0.45 (if has game rule = epidemic frequency normal, NOR …: add 0) (else …) (else …) (else …) (else …) (else …) (if county.prosperity level <= 20: add …) (else …) (else …) (if culture …: add 0) (else …) (else …) (if OR …: add -0.2) (else …) (if has holding type = city holding: add 0.2) (else …) (if OR …: add -0.6) (if county.prosperity level < 10: multiply 0.1) ×0.4 min 0.001 ×base 1 (if is target in variable list …: if …; else if …; else …) (else …) min 0 ×0.005 (if has game rule = epidemic frequency disabled: multiply 0)"
         },
         "progressDuration": "25–35 days",
         "recoveryDuration": "50–70 days",
         "spreadChance": {
-          "rules": "base (if scope:epidemic …: add 9) (else …) (else …) (if county …: add 4) (if scope:epidemic.epidemic type = epidemic type:dysentery: add …; add …) +base num buildings ×0.25 (if has building or higher = common tradeport 08: add 4; add 4; add 3; add 3; add 3; add 2; add 2; add 2) (else …) (else …) (else …) (else …) (else …) (else …) (else …) (if has building or higher = market villages 02: add 2; add 2) (else …) (if has building or higher = guild halls 08: add 4; add 4; add 4; add 4) (else …) (else …) (else …) (if terrain = farmlands: add 3) (else …) (else …) (else …) (else …) (else …) (if geographical region = divergence island regions: add -1) (if county.culture …: add 3) (else …) (else …) (if county.culture …: add -2) (else …) (if AND …: add -1) (if scope:epidemic …: add -3) ×base 1 min 0.001 (if OR …, NOR …: add -0.5) (if has global variable = black death, scope:epidemic = global var:black death, OR …, has building or higher = common tradeport 06, num buildings > 10: add 1) (if county …: add 1.5) +base county.development level ×0.025 (if has game rule = epidemic frequency doomsday: add 1.5) (else …) (else …) (else …) (else …) (if scope:epidemic …: add 1) (else …) (if is target in variable list …: if …; else if …; else if …; else …) (if has variable = epidemic cooldown general: if …; else if …; else …) (if has holding = True: add 0.25) (if OR …: add 0.25) (if has holding type = city holding: add 0.75) (if OR …: add -0.991)"
+          "rules": "base (if scope:epidemic …: add 9) (else …) (else …) (if county …: add 4) (if scope:epidemic.epidemic type = epidemic type:dysentery: add …; add …) +base num districts ×0.25 (if has building or higher = pb port 04: add 4; add 4; add 3; add 3; add 3; add 2; add 2; add 2) (else …) (else …) (else …) (if has building or higher = pb market 03: add 2; add 2) (else …) (if has building or higher = pb guild 04: add 4; add 4; add 4; add 4) (else …) (else …) (else …) (if terrain = farmlands: add 3) (else …) (else …) (else …) (else …) (else …) (if geographical region = divergence island regions: add -1) (if county.culture …: add 3) (else …) (else …) (if county.culture …: add -2) (else …) (if AND …: add -1) (if scope:epidemic …: add -3) ×base 1 min 0.001 (if OR …, NOR …: add -0.5) (if has global variable = black death, scope:epidemic = global var:black death, OR …, has building or higher = pb port 03, num districts > 4: add 1) (if county …: add 1.5) +base county.prosperity level ×0.025 (if has game rule = epidemic frequency doomsday: add 1.5) (else …) (else …) (else …) (else …) (if scope:epidemic …: add 1) (else …) (if is target in variable list …: if …; else if …; else if …; else …) (if has variable = epidemic cooldown general: if …; else if …; else …) (if has holding = True: add 0.25) (if OR …: add 0.25) (if has holding type = city holding: add 0.75) (if OR …: add -0.991) ×base 1 (if province size level > spread settlement size level threshold: add …)"
         }
       },
       {
@@ -41,27 +41,49 @@
         "maxProvinces": "12000–13100",
         "name": "Apocalyptic",
         "outbreakChance": {
-          "rules": "base base base 0.001 (if num buildings >= 20: add …) (if has building or higher = common tradeport 01: add 0.016) (else …) (if has global variable = random black plague var: add 1000) (if has game rule = epidemic frequency disabled: multiply 0) (if OR …: multiply 0) ×base 1 +base county.development level ×0.08 (if has game rule = epidemic frequency often: add 0.1) (else …) (else …) (else …) (else …) (if NOR …: if …; else if …; else if …; else if …) (if OR …: add -0.2) (else …) (if has holding type = city holding: add 0.2) (else …) (if county.development level < 10: multiply 0.1) ×0.4 min 0.001 ×base 1 (if is target in variable list …: if …; else if …; else …) (else …) min 0 (if current date >= 1346.1.1, has game rule = bd occurrence historical, NOT …, geographical region = world central asia: add 100) (if has global variable = black death: value 0) (if has global variable = black death happened, has game rule = bd frequency once: value 0) (if has game rule = bd frequency never: value 0) (if has game rule = bd occurrence historical, OR …: value 0) ×0.1"
+          "rules": "(if NOR …: value …; if …) ×0.1"
         },
         "progressDuration": "5–9 days",
         "recoveryDuration": "80–120 days",
         "spreadChance": {
-          "rules": "base (if scope:epidemic …: add 9) (else …) (else …) (if county …: add 4) (if scope:epidemic.epidemic type = epidemic type:dysentery: add …; add …) +base num buildings ×0.25 (if has building or higher = common tradeport 08: add 4; add 4; add 3; add 3; add 3; add 2; add 2; add 2) (else …) (else …) (else …) (else …) (else …) (else …) (else …) (if has building or higher = market villages 02: add 2; add 2) (else …) (if has building or higher = guild halls 08: add 4; add 4; add 4; add 4) (else …) (else …) (else …) (if terrain = farmlands: add 3) (else …) (else …) (else …) (else …) (else …) (if geographical region = divergence island regions: add -1) (if county.culture …: add 3) (else …) (else …) (if county.culture …: add -2) (else …) (if AND …: add -1) (if scope:epidemic …: add -3) ×base 1 min 0.001 (if OR …, NOR …: add -0.5) (if has global variable = black death, scope:epidemic = global var:black death, OR …, has building or higher = common tradeport 06, num buildings > 10: add 1) (if county …: add 1.5) +base county.development level ×0.025 (if has game rule = epidemic frequency doomsday: add 1.5) (else …) (else …) (else …) (else …) (if scope:epidemic …: add 1) (else …) (if is target in variable list …: if …; else if …; else if …; else …) (if has variable = epidemic cooldown general: if …; else if …; else …) (if has holding = True: add 0.25) (if OR …: add 0.25) (if has holding type = city holding: add 0.75) (if OR …: add -0.991) (if has game rule = bd occurrence historical, OR …: multiply 0.02)"
+          "rules": "base (if scope:epidemic …: add 9) (else …) (else …) (if county …: add 4) (if scope:epidemic.epidemic type = epidemic type:dysentery: add …; add …) +base num districts ×0.25 (if has building or higher = pb port 04: add 4; add 4; add 3; add 3; add 3; add 2; add 2; add 2) (else …) (else …) (else …) (if has building or higher = pb market 03: add 2; add 2) (else …) (if has building or higher = pb guild 04: add 4; add 4; add 4; add 4) (else …) (else …) (else …) (if terrain = farmlands: add 3) (else …) (else …) (else …) (else …) (else …) (if geographical region = divergence island regions: add -1) (if county.culture …: add 3) (else …) (else …) (if county.culture …: add -2) (else …) (if AND …: add -1) (if scope:epidemic …: add -3) ×base 1 min 0.001 (if OR …, NOR …: add -0.5) (if has global variable = black death, scope:epidemic = global var:black death, OR …, has building or higher = pb port 03, num districts > 4: add 1) (if county …: add 1.5) +base county.prosperity level ×0.025 (if has game rule = epidemic frequency doomsday: add 1.5) (else …) (else …) (else …) (else …) (if scope:epidemic …: add 1) (else …) (if is target in variable list …: if …; else if …; else if …; else …) (if has variable = epidemic cooldown general: if …; else if …; else …) (if has holding = True: add 0.25) (if OR …: add 0.25) (if has holding type = city holding: add 0.75) (if OR …: add -0.991) ×base 1 (if province size level > spread settlement size level threshold: add …) (if has game rule = bd occurrence historical, OR …: multiply 0.02)"
         }
       }
     ],
     "levels": [
       {
+        "countyModifiers": [
+          {
+            "key": "control_baseline_add",
+            "polarity": "bad",
+            "text": "-10 Control Baseline"
+          }
+        ],
         "provinceModifiers": [
           {
-            "key": "monthly_county_control_decline_add",
+            "key": "all_tax_mult",
             "polarity": "bad",
-            "text": "-0.6 Monthly County Control Decline Add /month"
+            "text": "-10% Holding Taxes"
           },
           {
-            "key": "development_decline",
+            "key": "province_size_baseline_add",
             "polarity": "bad",
-            "text": "-3 Development Decline /month"
+            "text": "-50 Settlement Size Baseline"
+          },
+          {
+            "key": "monthly_province_size_change_when_above_baseline_add",
+            "polarity": "bad",
+            "text": "-4 Settlement Size Decline /month"
+          },
+          {
+            "key": "monthly_control_change_when_above_baseline_add",
+            "polarity": "bad",
+            "text": "-0.6 Control Monthly Change above Control Baseline /month"
+          },
+          {
+            "key": "prosperity_decline",
+            "polarity": "bad",
+            "text": "-3 Prosperity Decline /month"
           },
           {
             "key": "levy_reinforcement_rate",
@@ -79,9 +101,9 @@
             "text": "-20% Supply Limit"
           },
           {
-            "key": "county_opinion_add",
+            "key": "popular_opinion_add",
             "polarity": "bad",
-            "text": "-10 Popular Opinion"
+            "text": "-10 Popular Opinion Baseline"
           },
           {
             "key": "epidemic_travel_danger",
@@ -92,16 +114,38 @@
         "threshold": "10"
       },
       {
+        "countyModifiers": [
+          {
+            "key": "control_baseline_add",
+            "polarity": "bad",
+            "text": "-20 Control Baseline"
+          }
+        ],
         "provinceModifiers": [
           {
-            "key": "monthly_county_control_decline_add",
+            "key": "all_tax_mult",
             "polarity": "bad",
-            "text": "-0.8 Monthly County Control Decline Add /month"
+            "text": "-25% Holding Taxes"
           },
           {
-            "key": "development_decline",
+            "key": "province_size_baseline_add",
             "polarity": "bad",
-            "text": "-6 Development Decline /month"
+            "text": "-100 Settlement Size Baseline"
+          },
+          {
+            "key": "monthly_province_size_change_when_above_baseline_add",
+            "polarity": "bad",
+            "text": "-8 Settlement Size Decline /month"
+          },
+          {
+            "key": "monthly_control_change_when_above_baseline_add",
+            "polarity": "bad",
+            "text": "-0.8 Control Monthly Change above Control Baseline /month"
+          },
+          {
+            "key": "prosperity_decline",
+            "polarity": "bad",
+            "text": "-6 Prosperity Decline /month"
           },
           {
             "key": "levy_reinforcement_rate",
@@ -119,9 +163,9 @@
             "text": "-50% Supply Limit"
           },
           {
-            "key": "county_opinion_add",
+            "key": "popular_opinion_add",
             "polarity": "bad",
-            "text": "-25 Popular Opinion"
+            "text": "-25 Popular Opinion Baseline"
           },
           {
             "key": "epidemic_travel_danger",
@@ -132,16 +176,38 @@
         "threshold": "50"
       },
       {
+        "countyModifiers": [
+          {
+            "key": "control_baseline_add",
+            "polarity": "bad",
+            "text": "-25 Control Baseline"
+          }
+        ],
         "provinceModifiers": [
           {
-            "key": "monthly_county_control_decline_add",
+            "key": "all_tax_mult",
             "polarity": "bad",
-            "text": "-0.8 Monthly County Control Decline Add /month"
+            "text": "-50% Holding Taxes"
           },
           {
-            "key": "development_decline",
+            "key": "province_size_baseline_add",
             "polarity": "bad",
-            "text": "-8 Development Decline /month"
+            "text": "-150 Settlement Size Baseline"
+          },
+          {
+            "key": "monthly_province_size_change_when_above_baseline_add",
+            "polarity": "bad",
+            "text": "-12.5 Settlement Size Decline /month"
+          },
+          {
+            "key": "monthly_control_change_when_above_baseline_add",
+            "polarity": "bad",
+            "text": "-0.8 Control Monthly Change above Control Baseline /month"
+          },
+          {
+            "key": "prosperity_decline",
+            "polarity": "bad",
+            "text": "-8 Prosperity Decline /month"
           },
           {
             "key": "levy_reinforcement_rate",
@@ -159,9 +225,9 @@
             "text": "-100% Supply Limit"
           },
           {
-            "key": "county_opinion_add",
+            "key": "popular_opinion_add",
             "polarity": "bad",
-            "text": "-25 Popular Opinion"
+            "text": "-25 Popular Opinion Baseline"
           },
           {
             "key": "epidemic_travel_danger",
@@ -182,7 +248,7 @@
     "icon": "consumption",
     "id": "consumption",
     "infectionChance": {
-      "rules": "base 10 (if OR …: add 20) (if scope:epidemic …: add 40) (else …) (else …) (else …) (if has trait = athletic: add -4) (if has perk = iron constitution perk: add -6) (if has perk = healthy perk: add -8) (if has trait = whole of body: add -10) (if is foreign court or pool guest = True: add 40) (if is ruler = False: add 10) (if scope:epidemic.epidemic type.epidemic trait = trait:measles, is adult = False: add 20) (if age >= 65: add 40) (else …) (if host.domicile …: add -10) (else …) (else …) (else …) (else …) (else …) +base base -1 (if has perk = wash your hands perk: add 10) (if has trait = shy: add 1) (if has trait = paranoid: add 2) (if has trait = reclusive: add 4) (if has trait = shrewd: add 1) (if has trait = lifestyle physician: add 4) (if has trait = lifestyle herbalist: add 2) (if has trait = diligent: add 1) (if has trait = craven: add 1) (if has trait = temperate: add 1) (if has trait = arbitrary: add -1) (if has trait = brave: add -1) (if has trait = impatient: add -2) (if has trait = gregarious: add -4) (if has trait = dull: add -2) (if culture …: add -1) (if culture …: add -1) (if culture …: add 20) ×-1 (if location …: multiply 0.25) (else …) (else …) (if has character modifier = isolating modifier: multiply 0.25) (if has character modifier = hiding from epidemic: multiply 0.25) min 1"
+      "rules": "base 10 (if OR …: add 20) (if scope:epidemic …: add 40) (else …) (else …) (else …) (if has trait = athletic: add -4) (if has perk = iron constitution perk: add -6) (if has perk = healthy perk: add -8) (if has trait = whole of body: add -10) (if is foreign court or pool guest = True: add 40) (if is ruler = False: add 10) (if scope:epidemic.epidemic type.epidemic trait = trait:measles, is adult = False: add 20) (if age >= 65: add 40) (else …) (if OR …: add -10) (else …) (else …) (else …) (else …) (else …) (if OR …: add -30) (else …) (else …) (else …) (else …) +base base -1 (if has perk = wash your hands perk: add 10) (if has trait = shy: add 1) (if has trait = paranoid: add 2) (if has trait = reclusive: add 4) (if has trait = shrewd: add 1) (if has trait = lifestyle physician: add 4) (if has trait = lifestyle herbalist: add 2) (if has trait = diligent: add 1) (if has trait = craven: add 1) (if has trait = temperate: add 1) (if has trait = arbitrary: add -1) (if has trait = brave: add -1) (if has trait = impatient: add -2) (if has trait = gregarious: add -4) (if has trait = dull: add -2) (if culture …: add -1) (if culture …: add -1) (if culture …: add 20) ×-1 (if location …: multiply 0.25) (else …) (else …) (if has character modifier = isolating modifier: multiply 0.25) (if has character modifier = hiding from epidemic: multiply 0.25) min 1"
     },
     "intensities": [
       {
@@ -191,12 +257,12 @@
         "maxProvinces": "30–55",
         "name": "Minor",
         "outbreakChance": {
-          "rules": "base base 0.01 +base num buildings ×0.001 (if has building or higher = common tradeport 01: add 0.016) (else …) (if OR …: multiply 0) (if geographical region = world atlantic: add 0.004) (if has variable = consumption endemic variable: add 0.016) ×base 0.6 (if has game rule = epidemic frequency often: add 0.1) (else …) (else …) (else …) (else …) (if county.development level <= 20: add …) (else …) (else …) (if culture …: add -0.2) (else …) (else …) (else …) (if OR …: add -0.2) (else …) (if has holding type = city holding: add 0.2) (else …) (if OR …: add -0.6) (if county.development level < 10: multiply 0.5) ×0.4 min 0.001 (if NOT …: multiply 2) (if has game rule = epidemic frequency disabled: multiply 0) ×base 1 (if is target in variable list …: if …; else if …; else …) (else …) min 0"
+          "rules": "base base 0.01 +base province size level ×0.001 (if has port district = True: add 0.016) (else …) (if OR …: multiply 0) (if geographical region = world atlantic: add 0.004) (if has variable = consumption endemic variable: add 0.016) ×base 0.6 (if has game rule = epidemic frequency normal: add 0) (else …) (else …) (else …) (else …) (else …) (if county.prosperity level <= 20: add …) (else …) (else …) (if culture …: add -0.2) (else …) (else …) (if OR …: add -0.2) (else …) (if has holding type = city holding: add 0.2) (else …) (if OR …: add -0.6) (if county.prosperity level < 10: multiply 0.5) ×0.4 min 0.001 (if NOT …: multiply 2) (if has game rule = epidemic frequency disabled: multiply 0) ×base 1 (if is target in variable list …: if …; else if …; else …) (else …) min 0"
         },
         "progressDuration": "80–100 days",
         "recoveryDuration": "30–60 days",
         "spreadChance": {
-          "rules": "base (if scope:epidemic …: add 9) (else …) (else …) (if county …: add 4) (if scope:epidemic.epidemic type = epidemic type:dysentery: add …; add …) +base num buildings ×0.25 (if has building or higher = common tradeport 08: add 4; add 4; add 3; add 3; add 3; add 2; add 2; add 2) (else …) (else …) (else …) (else …) (else …) (else …) (else …) (if has building or higher = market villages 02: add 2; add 2) (else …) (if has building or higher = guild halls 08: add 4; add 4; add 4; add 4) (else …) (else …) (else …) (if terrain = farmlands: add 3) (else …) (else …) (else …) (else …) (else …) (if geographical region = divergence island regions: add -1) (if county.culture …: add 3) (else …) (else …) (if county.culture …: add -2) (else …) (if AND …: add -1) (if scope:epidemic …: add -3) ×base 1 min 0.001 (if OR …, NOR …: add -0.5) (if has global variable = black death, scope:epidemic = global var:black death, OR …, has building or higher = common tradeport 06, num buildings > 10: add 1) (if county …: add 1.5) +base county.development level ×0.025 (if has game rule = epidemic frequency doomsday: add 1.5) (else …) (else …) (else …) (else …) (if scope:epidemic …: add 1) (else …) (if is target in variable list …: if …; else if …; else if …; else …) (if has variable = epidemic cooldown general: if …; else if …; else …) (if has holding = True: add 0.25) (if OR …: add 0.25) (if has holding type = city holding: add 0.75) (if OR …: add -0.991)"
+          "rules": "base (if scope:epidemic …: add 9) (else …) (else …) (if county …: add 4) (if scope:epidemic.epidemic type = epidemic type:dysentery: add …; add …) +base num districts ×0.25 (if has building or higher = pb port 04: add 4; add 4; add 3; add 3; add 3; add 2; add 2; add 2) (else …) (else …) (else …) (if has building or higher = pb market 03: add 2; add 2) (else …) (if has building or higher = pb guild 04: add 4; add 4; add 4; add 4) (else …) (else …) (else …) (if terrain = farmlands: add 3) (else …) (else …) (else …) (else …) (else …) (if geographical region = divergence island regions: add -1) (if county.culture …: add 3) (else …) (else …) (if county.culture …: add -2) (else …) (if AND …: add -1) (if scope:epidemic …: add -3) ×base 1 min 0.001 (if OR …, NOR …: add -0.5) (if has global variable = black death, scope:epidemic = global var:black death, OR …, has building or higher = pb port 03, num districts > 4: add 1) (if county …: add 1.5) +base county.prosperity level ×0.025 (if has game rule = epidemic frequency doomsday: add 1.5) (else …) (else …) (else …) (else …) (if scope:epidemic …: add 1) (else …) (if is target in variable list …: if …; else if …; else if …; else …) (if has variable = epidemic cooldown general: if …; else if …; else …) (if has holding = True: add 0.25) (if OR …: add 0.25) (if has holding type = city holding: add 0.75) (if OR …: add -0.991) ×base 1 (if province size level > spread settlement size level threshold: add …)"
         }
       },
       {
@@ -205,12 +271,12 @@
         "maxProvinces": "75–90",
         "name": "Major",
         "outbreakChance": {
-          "rules": "base base 0.001 +base num buildings ×0.004 (if has building or higher = common tradeport 01: add 0.016) (else …) (if OR …: multiply 0) (if geographical region = world atlantic: add 0.008) (if has variable = consumption endemic variable: add 0.004) ×base 0.45 (if has game rule = epidemic frequency often: add 0.1) (else …) (else …) (else …) (else …) (if county.development level <= 20: add …) (else …) (else …) (if culture …: add 0) (else …) (else …) (else …) (if OR …: add -0.2) (else …) (if has holding type = city holding: add 0.2) (else …) (if OR …: add -0.6) (if county.development level < 10: multiply 0.1) ×0.4 min 0.001 (if NOT …: multiply 1.5) (if has game rule = epidemic frequency disabled: multiply 0) ×base 1 (if is target in variable list …: if …; else if …; else …) (else …) min 0"
+          "rules": "base base 0.001 +base province size level ×0.004 (if has port district = True: add 0.016) (else …) (if OR …: multiply 0) (if geographical region = world atlantic: add 0.008) (if has variable = consumption endemic variable: add 0.004) ×base 0.45 (if has game rule = epidemic frequency normal, NOR …: add 0) (else …) (else …) (else …) (else …) (else …) (if county.prosperity level <= 20: add …) (else …) (else …) (if culture …: add 0) (else …) (else …) (if OR …: add -0.2) (else …) (if has holding type = city holding: add 0.2) (else …) (if OR …: add -0.6) (if county.prosperity level < 10: multiply 0.1) ×0.4 min 0.001 (if NOT …: multiply 1.5) (if has game rule = epidemic frequency disabled: multiply 0) ×base 1 (if is target in variable list …: if …; else if …; else …) (else …) min 0"
         },
         "progressDuration": "40–60 days",
         "recoveryDuration": "60–80 days",
         "spreadChance": {
-          "rules": "base (if scope:epidemic …: add 9) (else …) (else …) (if county …: add 4) (if scope:epidemic.epidemic type = epidemic type:dysentery: add …; add …) +base num buildings ×0.25 (if has building or higher = common tradeport 08: add 4; add 4; add 3; add 3; add 3; add 2; add 2; add 2) (else …) (else …) (else …) (else …) (else …) (else …) (else …) (if has building or higher = market villages 02: add 2; add 2) (else …) (if has building or higher = guild halls 08: add 4; add 4; add 4; add 4) (else …) (else …) (else …) (if terrain = farmlands: add 3) (else …) (else …) (else …) (else …) (else …) (if geographical region = divergence island regions: add -1) (if county.culture …: add 3) (else …) (else …) (if county.culture …: add -2) (else …) (if AND …: add -1) (if scope:epidemic …: add -3) ×base 1 min 0.001 (if OR …, NOR …: add -0.5) (if has global variable = black death, scope:epidemic = global var:black death, OR …, has building or higher = common tradeport 06, num buildings > 10: add 1) (if county …: add 1.5) +base county.development level ×0.025 (if has game rule = epidemic frequency doomsday: add 1.5) (else …) (else …) (else …) (else …) (if scope:epidemic …: add 1) (else …) (if is target in variable list …: if …; else if …; else if …; else …) (if has variable = epidemic cooldown general: if …; else if …; else …) (if has holding = True: add 0.25) (if OR …: add 0.25) (if has holding type = city holding: add 0.75) (if OR …: add -0.991)"
+          "rules": "base (if scope:epidemic …: add 9) (else …) (else …) (if county …: add 4) (if scope:epidemic.epidemic type = epidemic type:dysentery: add …; add …) +base num districts ×0.25 (if has building or higher = pb port 04: add 4; add 4; add 3; add 3; add 3; add 2; add 2; add 2) (else …) (else …) (else …) (if has building or higher = pb market 03: add 2; add 2) (else …) (if has building or higher = pb guild 04: add 4; add 4; add 4; add 4) (else …) (else …) (else …) (if terrain = farmlands: add 3) (else …) (else …) (else …) (else …) (else …) (if geographical region = divergence island regions: add -1) (if county.culture …: add 3) (else …) (else …) (if county.culture …: add -2) (else …) (if AND …: add -1) (if scope:epidemic …: add -3) ×base 1 min 0.001 (if OR …, NOR …: add -0.5) (if has global variable = black death, scope:epidemic = global var:black death, OR …, has building or higher = pb port 03, num districts > 4: add 1) (if county …: add 1.5) +base county.prosperity level ×0.025 (if has game rule = epidemic frequency doomsday: add 1.5) (else …) (else …) (else …) (else …) (if scope:epidemic …: add 1) (else …) (if is target in variable list …: if …; else if …; else if …; else …) (if has variable = epidemic cooldown general: if …; else if …; else …) (if has holding = True: add 0.25) (if OR …: add 0.25) (if has holding type = city holding: add 0.75) (if OR …: add -0.991) ×base 1 (if province size level > spread settlement size level threshold: add …)"
         }
       },
       {
@@ -219,22 +285,44 @@
         "maxProvinces": "145–220",
         "name": "Apocalyptic",
         "outbreakChance": {
-          "rules": "base base 0.001 +base num buildings ×0.004 (if has building or higher = common tradeport 01: add 0.016) (else …) (if OR …: multiply 0) (if has variable = consumption endemic variable: add 0.004) (if geographical region = world atlantic: add 0.004) ×base 0.2 (if has game rule = epidemic frequency often: add 0.1) (else …) (else …) (else …) (else …) (if county.development level <= 20: add …) (else …) (else …) (if culture …: add 0) (else …) (else …) (else …) (if OR …: add -0.2) (else …) (if has holding type = city holding: add 0.2) (else …) ×0.4 min 0.001 (if NOT …: multiply 2) (if has game rule = epidemic frequency disabled: multiply 0) ×base 1 (if is target in variable list …: if …; else if …; else …) (else …) min 0"
+          "rules": "base base 0.001 +base province size level ×0.004 (if has port district = True: add 0.016) (else …) (if OR …: multiply 0) (if has variable = consumption endemic variable: add 0.004) (if geographical region = world atlantic: add 0.004) ×base 0.2 (if has game rule = epidemic frequency normal: add 0) (else …) (else …) (else …) (else …) (else …) (if county.prosperity level <= 20: add …) (else …) (else …) (if culture …: add 0) (else …) (else …) (if OR …: add -0.2) (else …) (if has holding type = city holding: add 0.2) (else …) ×0.4 min 0.001 (if NOT …: multiply 2) (if has game rule = epidemic frequency disabled: multiply 0) ×base 1 (if is target in variable list …: if …; else if …; else …) (else …) min 0"
         },
         "progressDuration": "15–30 days",
         "recoveryDuration": "80–100 days",
         "spreadChance": {
-          "rules": "base (if scope:epidemic …: add 9) (else …) (else …) (if county …: add 4) (if scope:epidemic.epidemic type = epidemic type:dysentery: add …; add …) +base num buildings ×0.25 (if has building or higher = common tradeport 08: add 4; add 4; add 3; add 3; add 3; add 2; add 2; add 2) (else …) (else …) (else …) (else …) (else …) (else …) (else …) (if has building or higher = market villages 02: add 2; add 2) (else …) (if has building or higher = guild halls 08: add 4; add 4; add 4; add 4) (else …) (else …) (else …) (if terrain = farmlands: add 3) (else …) (else …) (else …) (else …) (else …) (if geographical region = divergence island regions: add -1) (if county.culture …: add 3) (else …) (else …) (if county.culture …: add -2) (else …) (if AND …: add -1) (if scope:epidemic …: add -3) ×base 1 min 0.001 (if OR …, NOR …: add -0.5) (if has global variable = black death, scope:epidemic = global var:black death, OR …, has building or higher = common tradeport 06, num buildings > 10: add 1) (if county …: add 1.5) +base county.development level ×0.025 (if has game rule = epidemic frequency doomsday: add 1.5) (else …) (else …) (else …) (else …) (if scope:epidemic …: add 1) (else …) (if is target in variable list …: if …; else if …; else if …; else …) (if has variable = epidemic cooldown general: if …; else if …; else …) (if has holding = True: add 0.25) (if OR …: add 0.25) (if has holding type = city holding: add 0.75) (if OR …: add -0.991)"
+          "rules": "base (if scope:epidemic …: add 9) (else …) (else …) (if county …: add 4) (if scope:epidemic.epidemic type = epidemic type:dysentery: add …; add …) +base num districts ×0.25 (if has building or higher = pb port 04: add 4; add 4; add 3; add 3; add 3; add 2; add 2; add 2) (else …) (else …) (else …) (if has building or higher = pb market 03: add 2; add 2) (else …) (if has building or higher = pb guild 04: add 4; add 4; add 4; add 4) (else …) (else …) (else …) (if terrain = farmlands: add 3) (else …) (else …) (else …) (else …) (else …) (if geographical region = divergence island regions: add -1) (if county.culture …: add 3) (else …) (else …) (if county.culture …: add -2) (else …) (if AND …: add -1) (if scope:epidemic …: add -3) ×base 1 min 0.001 (if OR …, NOR …: add -0.5) (if has global variable = black death, scope:epidemic = global var:black death, OR …, has building or higher = pb port 03, num districts > 4: add 1) (if county …: add 1.5) +base county.prosperity level ×0.025 (if has game rule = epidemic frequency doomsday: add 1.5) (else …) (else …) (else …) (else …) (if scope:epidemic …: add 1) (else …) (if is target in variable list …: if …; else if …; else if …; else …) (if has variable = epidemic cooldown general: if …; else if …; else …) (if has holding = True: add 0.25) (if OR …: add 0.25) (if has holding type = city holding: add 0.75) (if OR …: add -0.991) ×base 1 (if province size level > spread settlement size level threshold: add …)"
         }
       }
     ],
     "levels": [
       {
+        "countyModifiers": [
+          {
+            "key": "control_baseline_add",
+            "polarity": "bad",
+            "text": "-5 Control Baseline"
+          }
+        ],
         "provinceModifiers": [
           {
-            "key": "development_decline",
+            "key": "all_tax_mult",
             "polarity": "bad",
-            "text": "-2 Development Decline /month"
+            "text": "-10% Holding Taxes"
+          },
+          {
+            "key": "province_size_baseline_add",
+            "polarity": "bad",
+            "text": "-30 Settlement Size Baseline"
+          },
+          {
+            "key": "monthly_province_size_change_when_above_baseline_add",
+            "polarity": "bad",
+            "text": "-2.5 Settlement Size Decline /month"
+          },
+          {
+            "key": "prosperity_decline",
+            "polarity": "bad",
+            "text": "-2 Prosperity Decline /month"
           },
           {
             "key": "epidemic_travel_danger",
@@ -245,21 +333,43 @@
         "threshold": "10"
       },
       {
+        "countyModifiers": [
+          {
+            "key": "control_baseline_add",
+            "polarity": "bad",
+            "text": "-10 Control Baseline"
+          }
+        ],
         "provinceModifiers": [
           {
-            "key": "monthly_county_control_decline_add",
+            "key": "all_tax_mult",
             "polarity": "bad",
-            "text": "-0.05 Monthly County Control Decline Add /month"
+            "text": "-25% Holding Taxes"
           },
           {
-            "key": "development_decline",
+            "key": "province_size_baseline_add",
             "polarity": "bad",
-            "text": "-3 Development Decline /month"
+            "text": "-60 Settlement Size Baseline"
           },
           {
-            "key": "county_opinion_add",
+            "key": "monthly_province_size_change_when_above_baseline_add",
             "polarity": "bad",
-            "text": "-2 Popular Opinion"
+            "text": "-5 Settlement Size Decline /month"
+          },
+          {
+            "key": "monthly_control_change_when_above_baseline_add",
+            "polarity": "bad",
+            "text": "-0.05 Control Monthly Change above Control Baseline /month"
+          },
+          {
+            "key": "prosperity_decline",
+            "polarity": "bad",
+            "text": "-3 Prosperity Decline /month"
+          },
+          {
+            "key": "popular_opinion_add",
+            "polarity": "bad",
+            "text": "-2 Popular Opinion Baseline"
           },
           {
             "key": "epidemic_travel_danger",
@@ -270,21 +380,43 @@
         "threshold": "50"
       },
       {
+        "countyModifiers": [
+          {
+            "key": "control_baseline_add",
+            "polarity": "bad",
+            "text": "-15 Control Baseline"
+          }
+        ],
         "provinceModifiers": [
           {
-            "key": "monthly_county_control_decline_add",
+            "key": "all_tax_mult",
             "polarity": "bad",
-            "text": "-0.1 Monthly County Control Decline Add /month"
+            "text": "-50% Holding Taxes"
           },
           {
-            "key": "development_decline",
+            "key": "province_size_baseline_add",
             "polarity": "bad",
-            "text": "-4 Development Decline /month"
+            "text": "-90 Settlement Size Baseline"
           },
           {
-            "key": "county_opinion_add",
+            "key": "monthly_province_size_change_when_above_baseline_add",
             "polarity": "bad",
-            "text": "-3 Popular Opinion"
+            "text": "-7.5 Settlement Size Decline /month"
+          },
+          {
+            "key": "monthly_control_change_when_above_baseline_add",
+            "polarity": "bad",
+            "text": "-0.1 Control Monthly Change above Control Baseline /month"
+          },
+          {
+            "key": "prosperity_decline",
+            "polarity": "bad",
+            "text": "-4 Prosperity Decline /month"
+          },
+          {
+            "key": "popular_opinion_add",
+            "polarity": "bad",
+            "text": "-2 Popular Opinion Baseline"
           },
           {
             "key": "epidemic_travel_danger",
@@ -305,7 +437,7 @@
     "icon": "dysentery",
     "id": "dysentery",
     "infectionChance": {
-      "rules": "base base 10 (if OR …: add 20) (if scope:epidemic …: add 40) (else …) (else …) (else …) (if has trait = athletic: add -4) (if has perk = iron constitution perk: add -6) (if has perk = healthy perk: add -8) (if has trait = whole of body: add -10) (if is foreign court or pool guest = True: add 40) (if is ruler = False: add 10) (if scope:epidemic.epidemic type.epidemic trait = trait:measles, is adult = False: add 20) (if age >= 65: add 40) (else …) (if host.domicile …: add -10) (else …) (else …) (else …) (else …) (else …) +base base -1 (if has perk = wash your hands perk: add 10) (if has trait = shy: add 1) (if has trait = paranoid: add 2) (if has trait = reclusive: add 4) (if has trait = shrewd: add 1) (if has trait = lifestyle physician: add 4) (if has trait = lifestyle herbalist: add 2) (if has trait = diligent: add 1) (if has trait = craven: add 1) (if has trait = temperate: add 1) (if has trait = arbitrary: add -1) (if has trait = brave: add -1) (if has trait = impatient: add -2) (if has trait = gregarious: add -4) (if has trait = dull: add -2) (if culture …: add -1) (if culture …: add -1) (if culture …: add 20) ×-1 (if location …: multiply 0.25) (else …) (else …) (if has character modifier = isolating modifier: multiply 0.25) (if has character modifier = hiding from epidemic: multiply 0.25) min 1 ×3.5 (if is commanding army = True: multiply 2)"
+      "rules": "base base 10 (if OR …: add 20) (if scope:epidemic …: add 40) (else …) (else …) (else …) (if has trait = athletic: add -4) (if has perk = iron constitution perk: add -6) (if has perk = healthy perk: add -8) (if has trait = whole of body: add -10) (if is foreign court or pool guest = True: add 40) (if is ruler = False: add 10) (if scope:epidemic.epidemic type.epidemic trait = trait:measles, is adult = False: add 20) (if age >= 65: add 40) (else …) (if OR …: add -10) (else …) (else …) (else …) (else …) (else …) (if OR …: add -30) (else …) (else …) (else …) (else …) +base base -1 (if has perk = wash your hands perk: add 10) (if has trait = shy: add 1) (if has trait = paranoid: add 2) (if has trait = reclusive: add 4) (if has trait = shrewd: add 1) (if has trait = lifestyle physician: add 4) (if has trait = lifestyle herbalist: add 2) (if has trait = diligent: add 1) (if has trait = craven: add 1) (if has trait = temperate: add 1) (if has trait = arbitrary: add -1) (if has trait = brave: add -1) (if has trait = impatient: add -2) (if has trait = gregarious: add -4) (if has trait = dull: add -2) (if culture …: add -1) (if culture …: add -1) (if culture …: add 20) ×-1 (if location …: multiply 0.25) (else …) (else …) (if has character modifier = isolating modifier: multiply 0.25) (if has character modifier = hiding from epidemic: multiply 0.25) min 1 ×3.5 (if is commanding army = True: multiply 2)"
     },
     "intensities": [
       {
@@ -314,12 +446,12 @@
         "maxProvinces": "20–30",
         "name": "Minor",
         "outbreakChance": {
-          "rules": "base base 0.01 (if any army in location …: add 0.064) (if any army in location …: add 0.032) (if any army in location …: add 0.064; if …; else if …; else if …; else if …; else if …) (if OR …: multiply 0) ×base 0.6 (if has game rule = epidemic frequency often: add 0.1) (else …) (else …) (else …) (else …) (if county.development level <= 20: add …) (else …) (else …) (if culture …: add -0.2) (else …) (else …) (else …) (if OR …: add -0.2) (else …) (if has holding type = city holding: add 0.2) (else …) (if OR …: add -0.6) (if county.development level < 10: multiply 0.5) ×0.4 min 0.001 ×base 1 (if is target in variable list …: if …; else if …; else …) (else …) min 0 (if NOT …: value 0) (if has game rule = epidemic frequency disabled: multiply 0)"
+          "rules": "base base 0.01 (if any army in location …: add 0.064) (if any army in location …: add 0.032) (if any army in location …: add 0.064; if …; else if …; else if …; else if …; else if …) (if OR …: multiply 0) ×base 0.6 (if has game rule = epidemic frequency normal: add 0) (else …) (else …) (else …) (else …) (else …) (if county.prosperity level <= 20: add …) (else …) (else …) (if culture …: add -0.2) (else …) (else …) (if OR …: add -0.2) (else …) (if has holding type = city holding: add 0.2) (else …) (if OR …: add -0.6) (if county.prosperity level < 10: multiply 0.5) ×0.4 min 0.001 ×base 1 (if is target in variable list …: if …; else if …; else …) (else …) min 0 (if NOT …: value 0) (if has game rule = epidemic frequency disabled: multiply 0)"
         },
         "progressDuration": "15–20 days",
         "recoveryDuration": "28–32 days",
         "spreadChance": {
-          "rules": "base (if scope:epidemic …: add 9) (else …) (else …) (if county …: add 4) (if scope:epidemic.epidemic type = epidemic type:dysentery: add …; add …) +base num buildings ×0.25 (if has building or higher = common tradeport 08: add 4; add 4; add 3; add 3; add 3; add 2; add 2; add 2) (else …) (else …) (else …) (else …) (else …) (else …) (else …) (if has building or higher = market villages 02: add 2; add 2) (else …) (if has building or higher = guild halls 08: add 4; add 4; add 4; add 4) (else …) (else …) (else …) (if terrain = farmlands: add 3) (else …) (else …) (else …) (else …) (else …) (if geographical region = divergence island regions: add -1) (if county.culture …: add 3) (else …) (else …) (if county.culture …: add -2) (else …) (if AND …: add -1) (if scope:epidemic …: add -3) ×base 1 min 0.001 (if OR …, NOR …: add -0.5) (if has global variable = black death, scope:epidemic = global var:black death, OR …, has building or higher = common tradeport 06, num buildings > 10: add 1) (if county …: add 1.5) +base county.development level ×0.025 (if has game rule = epidemic frequency doomsday: add 1.5) (else …) (else …) (else …) (else …) (if scope:epidemic …: add 1) (else …) (if is target in variable list …: if …; else if …; else if …; else …) (if has variable = epidemic cooldown general: if …; else if …; else …) (if has holding = True: add 0.25) (if OR …: add 0.25) (if has holding type = city holding: add 0.75) (if OR …: add -0.991)"
+          "rules": "base (if scope:epidemic …: add 9) (else …) (else …) (if county …: add 4) (if scope:epidemic.epidemic type = epidemic type:dysentery: add …; add …) +base num districts ×0.25 (if has building or higher = pb port 04: add 4; add 4; add 3; add 3; add 3; add 2; add 2; add 2) (else …) (else …) (else …) (if has building or higher = pb market 03: add 2; add 2) (else …) (if has building or higher = pb guild 04: add 4; add 4; add 4; add 4) (else …) (else …) (else …) (if terrain = farmlands: add 3) (else …) (else …) (else …) (else …) (else …) (if geographical region = divergence island regions: add -1) (if county.culture …: add 3) (else …) (else …) (if county.culture …: add -2) (else …) (if AND …: add -1) (if scope:epidemic …: add -3) ×base 1 min 0.001 (if OR …, NOR …: add -0.5) (if has global variable = black death, scope:epidemic = global var:black death, OR …, has building or higher = pb port 03, num districts > 4: add 1) (if county …: add 1.5) +base county.prosperity level ×0.025 (if has game rule = epidemic frequency doomsday: add 1.5) (else …) (else …) (else …) (else …) (if scope:epidemic …: add 1) (else …) (if is target in variable list …: if …; else if …; else if …; else …) (if has variable = epidemic cooldown general: if …; else if …; else …) (if has holding = True: add 0.25) (if OR …: add 0.25) (if has holding type = city holding: add 0.75) (if OR …: add -0.991) ×base 1 (if province size level > spread settlement size level threshold: add …)"
         }
       },
       {
@@ -328,12 +460,12 @@
         "maxProvinces": "40–55",
         "name": "Major",
         "outbreakChance": {
-          "rules": "base base 0.01 (if any army in location …: add 0.064) (if any army in location …: add 0.032) (if any army in location …: add 0.064; if …; else if …; else if …; else if …; else if …) (if OR …: multiply 0) ×base 0.45 (if has game rule = epidemic frequency often: add 0.1) (else …) (else …) (else …) (else …) (if county.development level <= 20: add …) (else …) (else …) (if culture …: add 0) (else …) (else …) (else …) (if OR …: add -0.2) (else …) (if has holding type = city holding: add 0.2) (else …) (if OR …: add -0.6) (if county.development level < 10: multiply 0.1) ×0.4 min 0.001 ×base 1 (if is target in variable list …: if …; else if …; else …) (else …) min 0 ×0.25 (if NOT …: value 0) (if has game rule = epidemic frequency disabled: multiply 0)"
+          "rules": "base base 0.01 (if any army in location …: add 0.064) (if any army in location …: add 0.032) (if any army in location …: add 0.064; if …; else if …; else if …; else if …; else if …) (if OR …: multiply 0) ×base 0.45 (if has game rule = epidemic frequency normal, NOR …: add 0) (else …) (else …) (else …) (else …) (else …) (if county.prosperity level <= 20: add …) (else …) (else …) (if culture …: add 0) (else …) (else …) (if OR …: add -0.2) (else …) (if has holding type = city holding: add 0.2) (else …) (if OR …: add -0.6) (if county.prosperity level < 10: multiply 0.1) ×0.4 min 0.001 ×base 1 (if is target in variable list …: if …; else if …; else …) (else …) min 0 ×0.25 (if NOT …: value 0) (if has game rule = epidemic frequency disabled: multiply 0)"
         },
         "progressDuration": "18–22 days",
         "recoveryDuration": "28–32 days",
         "spreadChance": {
-          "rules": "base (if scope:epidemic …: add 9) (else …) (else …) (if county …: add 4) (if scope:epidemic.epidemic type = epidemic type:dysentery: add …; add …) +base num buildings ×0.25 (if has building or higher = common tradeport 08: add 4; add 4; add 3; add 3; add 3; add 2; add 2; add 2) (else …) (else …) (else …) (else …) (else …) (else …) (else …) (if has building or higher = market villages 02: add 2; add 2) (else …) (if has building or higher = guild halls 08: add 4; add 4; add 4; add 4) (else …) (else …) (else …) (if terrain = farmlands: add 3) (else …) (else …) (else …) (else …) (else …) (if geographical region = divergence island regions: add -1) (if county.culture …: add 3) (else …) (else …) (if county.culture …: add -2) (else …) (if AND …: add -1) (if scope:epidemic …: add -3) ×base 1 min 0.001 (if OR …, NOR …: add -0.5) (if has global variable = black death, scope:epidemic = global var:black death, OR …, has building or higher = common tradeport 06, num buildings > 10: add 1) (if county …: add 1.5) +base county.development level ×0.025 (if has game rule = epidemic frequency doomsday: add 1.5) (else …) (else …) (else …) (else …) (if scope:epidemic …: add 1) (else …) (if is target in variable list …: if …; else if …; else if …; else …) (if has variable = epidemic cooldown general: if …; else if …; else …) (if has holding = True: add 0.25) (if OR …: add 0.25) (if has holding type = city holding: add 0.75) (if OR …: add -0.991)"
+          "rules": "base (if scope:epidemic …: add 9) (else …) (else …) (if county …: add 4) (if scope:epidemic.epidemic type = epidemic type:dysentery: add …; add …) +base num districts ×0.25 (if has building or higher = pb port 04: add 4; add 4; add 3; add 3; add 3; add 2; add 2; add 2) (else …) (else …) (else …) (if has building or higher = pb market 03: add 2; add 2) (else …) (if has building or higher = pb guild 04: add 4; add 4; add 4; add 4) (else …) (else …) (else …) (if terrain = farmlands: add 3) (else …) (else …) (else …) (else …) (else …) (if geographical region = divergence island regions: add -1) (if county.culture …: add 3) (else …) (else …) (if county.culture …: add -2) (else …) (if AND …: add -1) (if scope:epidemic …: add -3) ×base 1 min 0.001 (if OR …, NOR …: add -0.5) (if has global variable = black death, scope:epidemic = global var:black death, OR …, has building or higher = pb port 03, num districts > 4: add 1) (if county …: add 1.5) +base county.prosperity level ×0.025 (if has game rule = epidemic frequency doomsday: add 1.5) (else …) (else …) (else …) (else …) (if scope:epidemic …: add 1) (else …) (if is target in variable list …: if …; else if …; else if …; else …) (if has variable = epidemic cooldown general: if …; else if …; else …) (if has holding = True: add 0.25) (if OR …: add 0.25) (if has holding type = city holding: add 0.75) (if OR …: add -0.991) ×base 1 (if province size level > spread settlement size level threshold: add …)"
         }
       },
       {
@@ -342,27 +474,49 @@
         "maxProvinces": "90–270",
         "name": "Apocalyptic",
         "outbreakChance": {
-          "rules": "base base 0.01 (if any army in location …: add 0.064) (if any army in location …: add 0.032) (if any army in location …: add 0.064; if …; else if …; else if …; else if …; else if …) (if OR …: multiply 0) ×base 0.2 (if has game rule = epidemic frequency often: add 0.1) (else …) (else …) (else …) (else …) (if county.development level <= 20: add …) (else …) (else …) (if culture …: add 0) (else …) (else …) (else …) (if OR …: add -0.2) (else …) (if has holding type = city holding: add 0.2) (else …) ×0.4 min 0.001 ×base 1 (if is target in variable list …: if …; else if …; else …) (else …) min 0 ×0.15 (if NOT …: value 0) (if has game rule = epidemic frequency disabled: multiply 0)"
+          "rules": "base base 0.01 (if any army in location …: add 0.064) (if any army in location …: add 0.032) (if any army in location …: add 0.064; if …; else if …; else if …; else if …; else if …) (if OR …: multiply 0) ×base 0.2 (if has game rule = epidemic frequency normal: add 0) (else …) (else …) (else …) (else …) (else …) (if county.prosperity level <= 20: add …) (else …) (else …) (if culture …: add 0) (else …) (else …) (if OR …: add -0.2) (else …) (if has holding type = city holding: add 0.2) (else …) ×0.4 min 0.001 ×base 1 (if is target in variable list …: if …; else if …; else …) (else …) min 0 ×0.15 (if NOT …: value 0) (if has game rule = epidemic frequency disabled: multiply 0)"
         },
         "progressDuration": "10–15 days",
         "recoveryDuration": "28–32 days",
         "spreadChance": {
-          "rules": "base (if scope:epidemic …: add 9) (else …) (else …) (if county …: add 4) (if scope:epidemic.epidemic type = epidemic type:dysentery: add …; add …) +base num buildings ×0.25 (if has building or higher = common tradeport 08: add 4; add 4; add 3; add 3; add 3; add 2; add 2; add 2) (else …) (else …) (else …) (else …) (else …) (else …) (else …) (if has building or higher = market villages 02: add 2; add 2) (else …) (if has building or higher = guild halls 08: add 4; add 4; add 4; add 4) (else …) (else …) (else …) (if terrain = farmlands: add 3) (else …) (else …) (else …) (else …) (else …) (if geographical region = divergence island regions: add -1) (if county.culture …: add 3) (else …) (else …) (if county.culture …: add -2) (else …) (if AND …: add -1) (if scope:epidemic …: add -3) ×base 1 min 0.001 (if OR …, NOR …: add -0.5) (if has global variable = black death, scope:epidemic = global var:black death, OR …, has building or higher = common tradeport 06, num buildings > 10: add 1) (if county …: add 1.5) +base county.development level ×0.025 (if has game rule = epidemic frequency doomsday: add 1.5) (else …) (else …) (else …) (else …) (if scope:epidemic …: add 1) (else …) (if is target in variable list …: if …; else if …; else if …; else …) (if has variable = epidemic cooldown general: if …; else if …; else …) (if has holding = True: add 0.25) (if OR …: add 0.25) (if has holding type = city holding: add 0.75) (if OR …: add -0.991)"
+          "rules": "base (if scope:epidemic …: add 9) (else …) (else …) (if county …: add 4) (if scope:epidemic.epidemic type = epidemic type:dysentery: add …; add …) +base num districts ×0.25 (if has building or higher = pb port 04: add 4; add 4; add 3; add 3; add 3; add 2; add 2; add 2) (else …) (else …) (else …) (if has building or higher = pb market 03: add 2; add 2) (else …) (if has building or higher = pb guild 04: add 4; add 4; add 4; add 4) (else …) (else …) (else …) (if terrain = farmlands: add 3) (else …) (else …) (else …) (else …) (else …) (if geographical region = divergence island regions: add -1) (if county.culture …: add 3) (else …) (else …) (if county.culture …: add -2) (else …) (if AND …: add -1) (if scope:epidemic …: add -3) ×base 1 min 0.001 (if OR …, NOR …: add -0.5) (if has global variable = black death, scope:epidemic = global var:black death, OR …, has building or higher = pb port 03, num districts > 4: add 1) (if county …: add 1.5) +base county.prosperity level ×0.025 (if has game rule = epidemic frequency doomsday: add 1.5) (else …) (else …) (else …) (else …) (if scope:epidemic …: add 1) (else …) (if is target in variable list …: if …; else if …; else if …; else …) (if has variable = epidemic cooldown general: if …; else if …; else …) (if has holding = True: add 0.25) (if OR …: add 0.25) (if has holding type = city holding: add 0.75) (if OR …: add -0.991) ×base 1 (if province size level > spread settlement size level threshold: add …)"
         }
       }
     ],
     "levels": [
       {
+        "countyModifiers": [
+          {
+            "key": "control_baseline_add",
+            "polarity": "bad",
+            "text": "-5 Control Baseline"
+          }
+        ],
         "provinceModifiers": [
           {
-            "key": "monthly_county_control_decline_add",
+            "key": "all_tax_mult",
             "polarity": "bad",
-            "text": "-0.15 Monthly County Control Decline Add /month"
+            "text": "-10% Holding Taxes"
           },
           {
-            "key": "county_opinion_add",
+            "key": "province_size_baseline_add",
             "polarity": "bad",
-            "text": "-2 Popular Opinion"
+            "text": "-20 Settlement Size Baseline"
+          },
+          {
+            "key": "monthly_province_size_change_when_above_baseline_add",
+            "polarity": "bad",
+            "text": "-1.5 Settlement Size Decline /month"
+          },
+          {
+            "key": "monthly_control_change_when_above_baseline_add",
+            "polarity": "bad",
+            "text": "-0.15 Control Monthly Change above Control Baseline /month"
+          },
+          {
+            "key": "popular_opinion_add",
+            "polarity": "bad",
+            "text": "-2 Popular Opinion Baseline"
           },
           {
             "key": "epidemic_travel_danger",
@@ -370,24 +524,46 @@
             "text": "+10 Epidemic Travel Danger"
           },
           {
-            "key": "development_decline",
+            "key": "prosperity_decline",
             "polarity": "bad",
-            "text": "-1.5 Development Decline /month"
+            "text": "-1.5 Prosperity Decline /month"
           }
         ],
         "threshold": "10"
       },
       {
+        "countyModifiers": [
+          {
+            "key": "control_baseline_add",
+            "polarity": "bad",
+            "text": "-10 Control Baseline"
+          }
+        ],
         "provinceModifiers": [
           {
-            "key": "monthly_county_control_decline_add",
+            "key": "all_tax_mult",
             "polarity": "bad",
-            "text": "-0.3 Monthly County Control Decline Add /month"
+            "text": "-25% Holding Taxes"
           },
           {
-            "key": "development_decline",
+            "key": "province_size_baseline_add",
             "polarity": "bad",
-            "text": "-2.5 Development Decline /month"
+            "text": "-40 Settlement Size Baseline"
+          },
+          {
+            "key": "monthly_province_size_change_when_above_baseline_add",
+            "polarity": "bad",
+            "text": "-3.5 Settlement Size Decline /month"
+          },
+          {
+            "key": "monthly_control_change_when_above_baseline_add",
+            "polarity": "bad",
+            "text": "-0.3 Control Monthly Change above Control Baseline /month"
+          },
+          {
+            "key": "prosperity_decline",
+            "polarity": "bad",
+            "text": "-2.5 Prosperity Decline /month"
           },
           {
             "key": "supply_limit_mult",
@@ -395,9 +571,9 @@
             "text": "-10% Supply Limit"
           },
           {
-            "key": "county_opinion_add",
+            "key": "popular_opinion_add",
             "polarity": "bad",
-            "text": "-3 Popular Opinion"
+            "text": "-2 Popular Opinion Baseline"
           },
           {
             "key": "epidemic_travel_danger",
@@ -408,16 +584,38 @@
         "threshold": "50"
       },
       {
+        "countyModifiers": [
+          {
+            "key": "control_baseline_add",
+            "polarity": "bad",
+            "text": "-15 Control Baseline"
+          }
+        ],
         "provinceModifiers": [
           {
-            "key": "monthly_county_control_decline_add",
+            "key": "all_tax_mult",
             "polarity": "bad",
-            "text": "-0.5 Monthly County Control Decline Add /month"
+            "text": "-50% Holding Taxes"
           },
           {
-            "key": "development_decline",
+            "key": "province_size_baseline_add",
             "polarity": "bad",
-            "text": "-4 Development Decline /month"
+            "text": "-60 Settlement Size Baseline"
+          },
+          {
+            "key": "monthly_province_size_change_when_above_baseline_add",
+            "polarity": "bad",
+            "text": "-5 Settlement Size Decline /month"
+          },
+          {
+            "key": "monthly_control_change_when_above_baseline_add",
+            "polarity": "bad",
+            "text": "-0.5 Control Monthly Change above Control Baseline /month"
+          },
+          {
+            "key": "prosperity_decline",
+            "polarity": "bad",
+            "text": "-4 Prosperity Decline /month"
           },
           {
             "key": "supply_limit_mult",
@@ -425,9 +623,9 @@
             "text": "-20% Supply Limit"
           },
           {
-            "key": "county_opinion_add",
+            "key": "popular_opinion_add",
             "polarity": "bad",
-            "text": "-5 Popular Opinion"
+            "text": "-5 Popular Opinion Baseline"
           },
           {
             "key": "epidemic_travel_danger",
@@ -448,7 +646,7 @@
     "icon": "ergotism",
     "id": "ergotism",
     "infectionChance": {
-      "rules": "base 10 (if OR …: add 20) (if scope:epidemic …: add 40) (else …) (else …) (else …) (if has trait = athletic: add -4) (if has perk = iron constitution perk: add -6) (if has perk = healthy perk: add -8) (if has trait = whole of body: add -10) (if is foreign court or pool guest = True: add 40) (if is ruler = False: add 10) (if scope:epidemic.epidemic type.epidemic trait = trait:measles, is adult = False: add 20) (if age >= 65: add 40) (else …) (if host.domicile …: add -10) (else …) (else …) (else …) (else …) (else …) +base base -1 (if has perk = wash your hands perk: add 10) (if has trait = shy: add 1) (if has trait = paranoid: add 2) (if has trait = reclusive: add 4) (if has trait = shrewd: add 1) (if has trait = lifestyle physician: add 4) (if has trait = lifestyle herbalist: add 2) (if has trait = diligent: add 1) (if has trait = craven: add 1) (if has trait = temperate: add 1) (if has trait = arbitrary: add -1) (if has trait = brave: add -1) (if has trait = impatient: add -2) (if has trait = gregarious: add -4) (if has trait = dull: add -2) (if culture …: add -1) (if culture …: add -1) (if culture …: add 20) ×-1 (if location …: multiply 0.25) (else …) (else …) (if has character modifier = isolating modifier: multiply 0.25) (if has character modifier = hiding from epidemic: multiply 0.25) min 1"
+      "rules": "base 10 (if OR …: add 20) (if scope:epidemic …: add 40) (else …) (else …) (else …) (if has trait = athletic: add -4) (if has perk = iron constitution perk: add -6) (if has perk = healthy perk: add -8) (if has trait = whole of body: add -10) (if is foreign court or pool guest = True: add 40) (if is ruler = False: add 10) (if scope:epidemic.epidemic type.epidemic trait = trait:measles, is adult = False: add 20) (if age >= 65: add 40) (else …) (if OR …: add -10) (else …) (else …) (else …) (else …) (else …) (if OR …: add -30) (else …) (else …) (else …) (else …) +base base -1 (if has perk = wash your hands perk: add 10) (if has trait = shy: add 1) (if has trait = paranoid: add 2) (if has trait = reclusive: add 4) (if has trait = shrewd: add 1) (if has trait = lifestyle physician: add 4) (if has trait = lifestyle herbalist: add 2) (if has trait = diligent: add 1) (if has trait = craven: add 1) (if has trait = temperate: add 1) (if has trait = arbitrary: add -1) (if has trait = brave: add -1) (if has trait = impatient: add -2) (if has trait = gregarious: add -4) (if has trait = dull: add -2) (if culture …: add -1) (if culture …: add -1) (if culture …: add 20) ×-1 (if location …: multiply 0.25) (else …) (else …) (if has character modifier = isolating modifier: multiply 0.25) (if has character modifier = hiding from epidemic: multiply 0.25) min 1"
     },
     "intensities": [
       {
@@ -457,12 +655,12 @@
         "maxProvinces": "20–30",
         "name": "Minor",
         "outbreakChance": {
-          "rules": "base base 0.01 +base num buildings ×0.001 (if has building or higher = common tradeport 01: add 0.016) (else …) (if OR …: multiply 0) ×base 0.6 (if has game rule = epidemic frequency often: add 0.1) (else …) (else …) (else …) (else …) (if county.development level <= 20: add …) (else …) (else …) (if culture …: add -0.2) (else …) (else …) (else …) (if OR …: add -0.2) (else …) (if has holding type = city holding: add 0.2) (else …) (if OR …: add -0.6) (if county.development level < 10: multiply 0.5) ×0.4 min 0.001 ×base 1 (if is target in variable list …: if …; else if …; else …) (else …) min 0 ×0.5 (if is target in variable list …: value 0) (if NOT …: value 0) (if has game rule = epidemic frequency disabled: multiply 0)"
+          "rules": "base base 0.01 +base province size level ×0.001 (if has port district = True: add 0.016) (else …) (if OR …: multiply 0) ×base 0.6 (if has game rule = epidemic frequency normal: add 0) (else …) (else …) (else …) (else …) (else …) (if county.prosperity level <= 20: add …) (else …) (else …) (if culture …: add -0.2) (else …) (else …) (if OR …: add -0.2) (else …) (if has holding type = city holding: add 0.2) (else …) (if OR …: add -0.6) (if county.prosperity level < 10: multiply 0.5) ×0.4 min 0.001 ×base 1 (if is target in variable list …: if …; else if …; else …) (else …) min 0 ×0.5 (if is target in variable list …: value 0) (if NOT …: value 0) (if has game rule = epidemic frequency disabled: multiply 0)"
         },
         "progressDuration": "20–40 days",
         "recoveryDuration": "12–20 days",
         "spreadChance": {
-          "rules": "base (if scope:epidemic …: add 9) (else …) (else …) (if county …: add 4) (if scope:epidemic.epidemic type = epidemic type:dysentery: add …; add …) +base num buildings ×0.25 (if has building or higher = common tradeport 08: add 4; add 4; add 3; add 3; add 3; add 2; add 2; add 2) (else …) (else …) (else …) (else …) (else …) (else …) (else …) (if has building or higher = market villages 02: add 2; add 2) (else …) (if has building or higher = guild halls 08: add 4; add 4; add 4; add 4) (else …) (else …) (else …) (if terrain = farmlands: add 3) (else …) (else …) (else …) (else …) (else …) (if geographical region = divergence island regions: add -1) (if county.culture …: add 3) (else …) (else …) (if county.culture …: add -2) (else …) (if AND …: add -1) (if scope:epidemic …: add -3) ×base 1 min 0.001 (if OR …, NOR …: add -0.5) (if has global variable = black death, scope:epidemic = global var:black death, OR …, has building or higher = common tradeport 06, num buildings > 10: add 1) (if county …: add 1.5) +base county.development level ×0.025 (if has game rule = epidemic frequency doomsday: add 1.5) (else …) (else …) (else …) (else …) (if scope:epidemic …: add 1) (else …) (if is target in variable list …: if …; else if …; else if …; else …) (if has variable = epidemic cooldown general: if …; else if …; else …) (if has holding = True: add 0.25) (if OR …: add 0.25) (if has holding type = city holding: add 0.75) (if OR …: add -0.991) (if is target in variable list …: value 0)"
+          "rules": "base (if scope:epidemic …: add 9) (else …) (else …) (if county …: add 4) (if scope:epidemic.epidemic type = epidemic type:dysentery: add …; add …) +base num districts ×0.25 (if has building or higher = pb port 04: add 4; add 4; add 3; add 3; add 3; add 2; add 2; add 2) (else …) (else …) (else …) (if has building or higher = pb market 03: add 2; add 2) (else …) (if has building or higher = pb guild 04: add 4; add 4; add 4; add 4) (else …) (else …) (else …) (if terrain = farmlands: add 3) (else …) (else …) (else …) (else …) (else …) (if geographical region = divergence island regions: add -1) (if county.culture …: add 3) (else …) (else …) (if county.culture …: add -2) (else …) (if AND …: add -1) (if scope:epidemic …: add -3) ×base 1 min 0.001 (if OR …, NOR …: add -0.5) (if has global variable = black death, scope:epidemic = global var:black death, OR …, has building or higher = pb port 03, num districts > 4: add 1) (if county …: add 1.5) +base county.prosperity level ×0.025 (if has game rule = epidemic frequency doomsday: add 1.5) (else …) (else …) (else …) (else …) (if scope:epidemic …: add 1) (else …) (if is target in variable list …: if …; else if …; else if …; else …) (if has variable = epidemic cooldown general: if …; else if …; else …) (if has holding = True: add 0.25) (if OR …: add 0.25) (if has holding type = city holding: add 0.75) (if OR …: add -0.991) ×base 1 (if province size level > spread settlement size level threshold: add …) (if is target in variable list …: value 0)"
         }
       },
       {
@@ -471,12 +669,12 @@
         "maxProvinces": "45–65",
         "name": "Major",
         "outbreakChance": {
-          "rules": "base base 0.001 +base num buildings ×0.004 (if has building or higher = common tradeport 01: add 0.016) (else …) (if OR …: multiply 0) ×base 0.45 (if has game rule = epidemic frequency often: add 0.1) (else …) (else …) (else …) (else …) (if county.development level <= 20: add …) (else …) (else …) (if culture …: add 0) (else …) (else …) (else …) (if OR …: add -0.2) (else …) (if has holding type = city holding: add 0.2) (else …) (if OR …: add -0.6) (if county.development level < 10: multiply 0.1) ×0.4 min 0.001 ×base 1 (if is target in variable list …: if …; else if …; else …) (else …) min 0 ×0.2 (if is target in variable list …: value 0) (if NOT …: value 0) (if has game rule = epidemic frequency disabled: multiply 0)"
+          "rules": "base base 0.001 +base province size level ×0.004 (if has port district = True: add 0.016) (else …) (if OR …: multiply 0) ×base 0.45 (if has game rule = epidemic frequency normal, NOR …: add 0) (else …) (else …) (else …) (else …) (else …) (if county.prosperity level <= 20: add …) (else …) (else …) (if culture …: add 0) (else …) (else …) (if OR …: add -0.2) (else …) (if has holding type = city holding: add 0.2) (else …) (if OR …: add -0.6) (if county.prosperity level < 10: multiply 0.1) ×0.4 min 0.001 ×base 1 (if is target in variable list …: if …; else if …; else …) (else …) min 0 ×0.2 (if is target in variable list …: value 0) (if NOT …: value 0) (if has game rule = epidemic frequency disabled: multiply 0)"
         },
         "progressDuration": "20–40 days",
         "recoveryDuration": "12–20 days",
         "spreadChance": {
-          "rules": "base (if scope:epidemic …: add 9) (else …) (else …) (if county …: add 4) (if scope:epidemic.epidemic type = epidemic type:dysentery: add …; add …) +base num buildings ×0.25 (if has building or higher = common tradeport 08: add 4; add 4; add 3; add 3; add 3; add 2; add 2; add 2) (else …) (else …) (else …) (else …) (else …) (else …) (else …) (if has building or higher = market villages 02: add 2; add 2) (else …) (if has building or higher = guild halls 08: add 4; add 4; add 4; add 4) (else …) (else …) (else …) (if terrain = farmlands: add 3) (else …) (else …) (else …) (else …) (else …) (if geographical region = divergence island regions: add -1) (if county.culture …: add 3) (else …) (else …) (if county.culture …: add -2) (else …) (if AND …: add -1) (if scope:epidemic …: add -3) ×base 1 min 0.001 (if OR …, NOR …: add -0.5) (if has global variable = black death, scope:epidemic = global var:black death, OR …, has building or higher = common tradeport 06, num buildings > 10: add 1) (if county …: add 1.5) +base county.development level ×0.025 (if has game rule = epidemic frequency doomsday: add 1.5) (else …) (else …) (else …) (else …) (if scope:epidemic …: add 1) (else …) (if is target in variable list …: if …; else if …; else if …; else …) (if has variable = epidemic cooldown general: if …; else if …; else …) (if has holding = True: add 0.25) (if OR …: add 0.25) (if has holding type = city holding: add 0.75) (if OR …: add -0.991) (if is target in variable list …: value 0)"
+          "rules": "base (if scope:epidemic …: add 9) (else …) (else …) (if county …: add 4) (if scope:epidemic.epidemic type = epidemic type:dysentery: add …; add …) +base num districts ×0.25 (if has building or higher = pb port 04: add 4; add 4; add 3; add 3; add 3; add 2; add 2; add 2) (else …) (else …) (else …) (if has building or higher = pb market 03: add 2; add 2) (else …) (if has building or higher = pb guild 04: add 4; add 4; add 4; add 4) (else …) (else …) (else …) (if terrain = farmlands: add 3) (else …) (else …) (else …) (else …) (else …) (if geographical region = divergence island regions: add -1) (if county.culture …: add 3) (else …) (else …) (if county.culture …: add -2) (else …) (if AND …: add -1) (if scope:epidemic …: add -3) ×base 1 min 0.001 (if OR …, NOR …: add -0.5) (if has global variable = black death, scope:epidemic = global var:black death, OR …, has building or higher = pb port 03, num districts > 4: add 1) (if county …: add 1.5) +base county.prosperity level ×0.025 (if has game rule = epidemic frequency doomsday: add 1.5) (else …) (else …) (else …) (else …) (if scope:epidemic …: add 1) (else …) (if is target in variable list …: if …; else if …; else if …; else …) (if has variable = epidemic cooldown general: if …; else if …; else …) (if has holding = True: add 0.25) (if OR …: add 0.25) (if has holding type = city holding: add 0.75) (if OR …: add -0.991) ×base 1 (if province size level > spread settlement size level threshold: add …) (if is target in variable list …: value 0)"
         }
       },
       {
@@ -485,22 +683,34 @@
         "maxProvinces": "85–90",
         "name": "Apocalyptic",
         "outbreakChance": {
-          "rules": "base base 0.001 +base num buildings ×0.004 (if has building or higher = common tradeport 01: add 0.016) (else …) (if OR …: multiply 0) ×base 0.2 (if has game rule = epidemic frequency often: add 0.1) (else …) (else …) (else …) (else …) (if county.development level <= 20: add …) (else …) (else …) (if culture …: add 0) (else …) (else …) (else …) (if OR …: add -0.2) (else …) (if has holding type = city holding: add 0.2) (else …) ×0.4 min 0.001 ×base 1 (if is target in variable list …: if …; else if …; else …) (else …) min 0 ×0.1 (if is target in variable list …: value 0) (if NOT …: value 0) (if has game rule = epidemic frequency disabled: multiply 0)"
+          "rules": "base base 0.001 +base province size level ×0.004 (if has port district = True: add 0.016) (else …) (if OR …: multiply 0) ×base 0.2 (if has game rule = epidemic frequency normal: add 0) (else …) (else …) (else …) (else …) (else …) (if county.prosperity level <= 20: add …) (else …) (else …) (if culture …: add 0) (else …) (else …) (if OR …: add -0.2) (else …) (if has holding type = city holding: add 0.2) (else …) ×0.4 min 0.001 ×base 1 (if is target in variable list …: if …; else if …; else …) (else …) min 0 ×0.1 (if is target in variable list …: value 0) (if NOT …: value 0) (if has game rule = epidemic frequency disabled: multiply 0)"
         },
         "progressDuration": "20–40 days",
         "recoveryDuration": "12–20 days",
         "spreadChance": {
-          "rules": "base (if scope:epidemic …: add 9) (else …) (else …) (if county …: add 4) (if scope:epidemic.epidemic type = epidemic type:dysentery: add …; add …) +base num buildings ×0.25 (if has building or higher = common tradeport 08: add 4; add 4; add 3; add 3; add 3; add 2; add 2; add 2) (else …) (else …) (else …) (else …) (else …) (else …) (else …) (if has building or higher = market villages 02: add 2; add 2) (else …) (if has building or higher = guild halls 08: add 4; add 4; add 4; add 4) (else …) (else …) (else …) (if terrain = farmlands: add 3) (else …) (else …) (else …) (else …) (else …) (if geographical region = divergence island regions: add -1) (if county.culture …: add 3) (else …) (else …) (if county.culture …: add -2) (else …) (if AND …: add -1) (if scope:epidemic …: add -3) ×base 1 min 0.001 (if OR …, NOR …: add -0.5) (if has global variable = black death, scope:epidemic = global var:black death, OR …, has building or higher = common tradeport 06, num buildings > 10: add 1) (if county …: add 1.5) +base county.development level ×0.025 (if has game rule = epidemic frequency doomsday: add 1.5) (else …) (else …) (else …) (else …) (if scope:epidemic …: add 1) (else …) (if is target in variable list …: if …; else if …; else if …; else …) (if has variable = epidemic cooldown general: if …; else if …; else …) (if has holding = True: add 0.25) (if OR …: add 0.25) (if has holding type = city holding: add 0.75) (if OR …: add -0.991) (if is target in variable list …: value 0)"
+          "rules": "base (if scope:epidemic …: add 9) (else …) (else …) (if county …: add 4) (if scope:epidemic.epidemic type = epidemic type:dysentery: add …; add …) +base num districts ×0.25 (if has building or higher = pb port 04: add 4; add 4; add 3; add 3; add 3; add 2; add 2; add 2) (else …) (else …) (else …) (if has building or higher = pb market 03: add 2; add 2) (else …) (if has building or higher = pb guild 04: add 4; add 4; add 4; add 4) (else …) (else …) (else …) (if terrain = farmlands: add 3) (else …) (else …) (else …) (else …) (else …) (if geographical region = divergence island regions: add -1) (if county.culture …: add 3) (else …) (else …) (if county.culture …: add -2) (else …) (if AND …: add -1) (if scope:epidemic …: add -3) ×base 1 min 0.001 (if OR …, NOR …: add -0.5) (if has global variable = black death, scope:epidemic = global var:black death, OR …, has building or higher = pb port 03, num districts > 4: add 1) (if county …: add 1.5) +base county.prosperity level ×0.025 (if has game rule = epidemic frequency doomsday: add 1.5) (else …) (else …) (else …) (else …) (if scope:epidemic …: add 1) (else …) (if is target in variable list …: if …; else if …; else if …; else …) (if has variable = epidemic cooldown general: if …; else if …; else …) (if has holding = True: add 0.25) (if OR …: add 0.25) (if has holding type = city holding: add 0.75) (if OR …: add -0.991) ×base 1 (if province size level > spread settlement size level threshold: add …) (if is target in variable list …: value 0)"
         }
       }
     ],
     "levels": [
       {
+        "countyModifiers": [
+          {
+            "key": "control_baseline_add",
+            "polarity": "bad",
+            "text": "-5 Control Baseline"
+          }
+        ],
         "provinceModifiers": [
           {
-            "key": "monthly_county_control_decline_add",
+            "key": "all_tax_mult",
             "polarity": "bad",
-            "text": "-0.1 Monthly County Control Decline Add /month"
+            "text": "-10% Holding Taxes"
+          },
+          {
+            "key": "monthly_control_change_when_above_baseline_add",
+            "polarity": "bad",
+            "text": "-0.1 Control Monthly Change above Control Baseline /month"
           },
           {
             "key": "holding_build_speed",
@@ -526,11 +736,23 @@
         "threshold": "10"
       },
       {
+        "countyModifiers": [
+          {
+            "key": "control_baseline_add",
+            "polarity": "bad",
+            "text": "-10 Control Baseline"
+          }
+        ],
         "provinceModifiers": [
           {
-            "key": "monthly_county_control_decline_add",
+            "key": "all_tax_mult",
             "polarity": "bad",
-            "text": "-0.15 Monthly County Control Decline Add /month"
+            "text": "-25% Holding Taxes"
+          },
+          {
+            "key": "monthly_control_change_when_above_baseline_add",
+            "polarity": "bad",
+            "text": "-0.15 Control Monthly Change above Control Baseline /month"
           },
           {
             "key": "holding_build_speed",
@@ -556,16 +778,28 @@
         "threshold": "50"
       },
       {
+        "countyModifiers": [
+          {
+            "key": "control_baseline_add",
+            "polarity": "bad",
+            "text": "-15 Control Baseline"
+          }
+        ],
         "provinceModifiers": [
           {
-            "key": "development_decline",
+            "key": "all_tax_mult",
             "polarity": "bad",
-            "text": "-0.5 Development Decline /month"
+            "text": "-50% Holding Taxes"
           },
           {
-            "key": "monthly_county_control_decline_add",
+            "key": "prosperity_decline",
             "polarity": "bad",
-            "text": "-0.15 Monthly County Control Decline Add /month"
+            "text": "-0.5 Prosperity Decline /month"
+          },
+          {
+            "key": "monthly_control_change_when_above_baseline_add",
+            "polarity": "bad",
+            "text": "-0.15 Control Monthly Change above Control Baseline /month"
           },
           {
             "key": "holding_build_speed",
@@ -601,7 +835,7 @@
     "icon": "measles",
     "id": "measles",
     "infectionChance": {
-      "rules": "base base 10 (if OR …: add 20) (if scope:epidemic …: add 40) (else …) (else …) (else …) (if has trait = athletic: add -4) (if has perk = iron constitution perk: add -6) (if has perk = healthy perk: add -8) (if has trait = whole of body: add -10) (if is foreign court or pool guest = True: add 40) (if is ruler = False: add 10) (if scope:epidemic.epidemic type.epidemic trait = trait:measles, is adult = False: add 20) (if age >= 65: add 40) (else …) (if host.domicile …: add -10) (else …) (else …) (else …) (else …) (else …) +base base -1 (if has perk = wash your hands perk: add 10) (if has trait = shy: add 1) (if has trait = paranoid: add 2) (if has trait = reclusive: add 4) (if has trait = shrewd: add 1) (if has trait = lifestyle physician: add 4) (if has trait = lifestyle herbalist: add 2) (if has trait = diligent: add 1) (if has trait = craven: add 1) (if has trait = temperate: add 1) (if has trait = arbitrary: add -1) (if has trait = brave: add -1) (if has trait = impatient: add -2) (if has trait = gregarious: add -4) (if has trait = dull: add -2) (if culture …: add -1) (if culture …: add -1) (if culture …: add 20) ×-1 (if location …: multiply 0.25) (else …) (else …) (if has character modifier = isolating modifier: multiply 0.25) (if has character modifier = hiding from epidemic: multiply 0.25) min 1 ×5"
+      "rules": "base base 10 (if OR …: add 20) (if scope:epidemic …: add 40) (else …) (else …) (else …) (if has trait = athletic: add -4) (if has perk = iron constitution perk: add -6) (if has perk = healthy perk: add -8) (if has trait = whole of body: add -10) (if is foreign court or pool guest = True: add 40) (if is ruler = False: add 10) (if scope:epidemic.epidemic type.epidemic trait = trait:measles, is adult = False: add 20) (if age >= 65: add 40) (else …) (if OR …: add -10) (else …) (else …) (else …) (else …) (else …) (if OR …: add -30) (else …) (else …) (else …) (else …) +base base -1 (if has perk = wash your hands perk: add 10) (if has trait = shy: add 1) (if has trait = paranoid: add 2) (if has trait = reclusive: add 4) (if has trait = shrewd: add 1) (if has trait = lifestyle physician: add 4) (if has trait = lifestyle herbalist: add 2) (if has trait = diligent: add 1) (if has trait = craven: add 1) (if has trait = temperate: add 1) (if has trait = arbitrary: add -1) (if has trait = brave: add -1) (if has trait = impatient: add -2) (if has trait = gregarious: add -4) (if has trait = dull: add -2) (if culture …: add -1) (if culture …: add -1) (if culture …: add 20) ×-1 (if location …: multiply 0.25) (else …) (else …) (if has character modifier = isolating modifier: multiply 0.25) (if has character modifier = hiding from epidemic: multiply 0.25) min 1 ×5"
     },
     "intensities": [
       {
@@ -610,12 +844,12 @@
         "maxProvinces": "55–75",
         "name": "Minor",
         "outbreakChance": {
-          "rules": "base base 0.01 +base num buildings ×0.001 (if has building or higher = common tradeport 01: add 0.016) (else …) (if OR …: multiply 0) (if has variable = measles endemic variable: add 0.016) ×base 0.6 (if has game rule = epidemic frequency often: add 0.1) (else …) (else …) (else …) (else …) (if county.development level <= 20: add …) (else …) (else …) (if culture …: add -0.2) (else …) (else …) (else …) (if OR …: add -0.2) (else …) (if has holding type = city holding: add 0.2) (else …) (if OR …: add -0.6) (if county.development level < 10: multiply 0.5) ×0.4 min 0.001 ×base 1 (if is target in variable list …: if …; else if …; else …) (else …) min 0 ×1.25 (if NOT …: value 0) (if has game rule = epidemic frequency disabled: multiply 0)"
+          "rules": "base base 0.01 +base province size level ×0.001 (if has port district = True: add 0.016) (else …) (if OR …: multiply 0) (if has variable = measles endemic variable: add 0.016) ×base 0.6 (if has game rule = epidemic frequency normal: add 0) (else …) (else …) (else …) (else …) (else …) (if county.prosperity level <= 20: add …) (else …) (else …) (if culture …: add -0.2) (else …) (else …) (if OR …: add -0.2) (else …) (if has holding type = city holding: add 0.2) (else …) (if OR …: add -0.6) (if county.prosperity level < 10: multiply 0.5) ×0.4 min 0.001 ×base 1 (if is target in variable list …: if …; else if …; else …) (else …) min 0 ×1.25 (if NOT …: value 0) (if has game rule = epidemic frequency disabled: multiply 0)"
         },
         "progressDuration": "20–40 days",
         "recoveryDuration": "28–32 days",
         "spreadChance": {
-          "rules": "base (if scope:epidemic …: add 9) (else …) (else …) (if county …: add 4) (if scope:epidemic.epidemic type = epidemic type:dysentery: add …; add …) +base num buildings ×0.25 (if has building or higher = common tradeport 08: add 4; add 4; add 3; add 3; add 3; add 2; add 2; add 2) (else …) (else …) (else …) (else …) (else …) (else …) (else …) (if has building or higher = market villages 02: add 2; add 2) (else …) (if has building or higher = guild halls 08: add 4; add 4; add 4; add 4) (else …) (else …) (else …) (if terrain = farmlands: add 3) (else …) (else …) (else …) (else …) (else …) (if geographical region = divergence island regions: add -1) (if county.culture …: add 3) (else …) (else …) (if county.culture …: add -2) (else …) (if AND …: add -1) (if scope:epidemic …: add -3) ×base 1 min 0.001 (if OR …, NOR …: add -0.5) (if has global variable = black death, scope:epidemic = global var:black death, OR …, has building or higher = common tradeport 06, num buildings > 10: add 1) (if county …: add 1.5) +base county.development level ×0.025 (if has game rule = epidemic frequency doomsday: add 1.5) (else …) (else …) (else …) (else …) (if scope:epidemic …: add 1) (else …) (if is target in variable list …: if …; else if …; else if …; else …) (if has variable = epidemic cooldown general: if …; else if …; else …) (if has holding = True: add 0.25) (if OR …: add 0.25) (if has holding type = city holding: add 0.75) (if OR …: add -0.991)"
+          "rules": "base (if scope:epidemic …: add 9) (else …) (else …) (if county …: add 4) (if scope:epidemic.epidemic type = epidemic type:dysentery: add …; add …) +base num districts ×0.25 (if has building or higher = pb port 04: add 4; add 4; add 3; add 3; add 3; add 2; add 2; add 2) (else …) (else …) (else …) (if has building or higher = pb market 03: add 2; add 2) (else …) (if has building or higher = pb guild 04: add 4; add 4; add 4; add 4) (else …) (else …) (else …) (if terrain = farmlands: add 3) (else …) (else …) (else …) (else …) (else …) (if geographical region = divergence island regions: add -1) (if county.culture …: add 3) (else …) (else …) (if county.culture …: add -2) (else …) (if AND …: add -1) (if scope:epidemic …: add -3) ×base 1 min 0.001 (if OR …, NOR …: add -0.5) (if has global variable = black death, scope:epidemic = global var:black death, OR …, has building or higher = pb port 03, num districts > 4: add 1) (if county …: add 1.5) +base county.prosperity level ×0.025 (if has game rule = epidemic frequency doomsday: add 1.5) (else …) (else …) (else …) (else …) (if scope:epidemic …: add 1) (else …) (if is target in variable list …: if …; else if …; else if …; else …) (if has variable = epidemic cooldown general: if …; else if …; else …) (if has holding = True: add 0.25) (if OR …: add 0.25) (if has holding type = city holding: add 0.75) (if OR …: add -0.991) ×base 1 (if province size level > spread settlement size level threshold: add …)"
         }
       },
       {
@@ -624,12 +858,12 @@
         "maxProvinces": "130–180",
         "name": "Major",
         "outbreakChance": {
-          "rules": "base base 0.001 +base num buildings ×0.004 (if has building or higher = common tradeport 01: add 0.016) (else …) (if OR …: multiply 0) (if has variable = measles endemic variable: add 0.008) (else …) ×base 0.45 (if has game rule = epidemic frequency often: add 0.1) (else …) (else …) (else …) (else …) (if county.development level <= 20: add …) (else …) (else …) (if culture …: add 0) (else …) (else …) (else …) (if OR …: add -0.2) (else …) (if has holding type = city holding: add 0.2) (else …) (if OR …: add -0.6) (if county.development level < 10: multiply 0.1) ×0.4 min 0.001 ×base 1 (if is target in variable list …: if …; else if …; else …) (else …) min 0 (if NOT …: value 0) (if has game rule = epidemic frequency disabled: multiply 0)"
+          "rules": "base base 0.001 +base province size level ×0.004 (if has port district = True: add 0.016) (else …) (if OR …: multiply 0) (if has variable = measles endemic variable: add 0.008) (else …) ×base 0.45 (if has game rule = epidemic frequency normal, NOR …: add 0) (else …) (else …) (else …) (else …) (else …) (if county.prosperity level <= 20: add …) (else …) (else …) (if culture …: add 0) (else …) (else …) (if OR …: add -0.2) (else …) (if has holding type = city holding: add 0.2) (else …) (if OR …: add -0.6) (if county.prosperity level < 10: multiply 0.1) ×0.4 min 0.001 ×base 1 (if is target in variable list …: if …; else if …; else …) (else …) min 0 (if NOT …: value 0) (if has game rule = epidemic frequency disabled: multiply 0)"
         },
         "progressDuration": "15–20 days",
         "recoveryDuration": "28–32 days",
         "spreadChance": {
-          "rules": "base (if scope:epidemic …: add 9) (else …) (else …) (if county …: add 4) (if scope:epidemic.epidemic type = epidemic type:dysentery: add …; add …) +base num buildings ×0.25 (if has building or higher = common tradeport 08: add 4; add 4; add 3; add 3; add 3; add 2; add 2; add 2) (else …) (else …) (else …) (else …) (else …) (else …) (else …) (if has building or higher = market villages 02: add 2; add 2) (else …) (if has building or higher = guild halls 08: add 4; add 4; add 4; add 4) (else …) (else …) (else …) (if terrain = farmlands: add 3) (else …) (else …) (else …) (else …) (else …) (if geographical region = divergence island regions: add -1) (if county.culture …: add 3) (else …) (else …) (if county.culture …: add -2) (else …) (if AND …: add -1) (if scope:epidemic …: add -3) ×base 1 min 0.001 (if OR …, NOR …: add -0.5) (if has global variable = black death, scope:epidemic = global var:black death, OR …, has building or higher = common tradeport 06, num buildings > 10: add 1) (if county …: add 1.5) +base county.development level ×0.025 (if has game rule = epidemic frequency doomsday: add 1.5) (else …) (else …) (else …) (else …) (if scope:epidemic …: add 1) (else …) (if is target in variable list …: if …; else if …; else if …; else …) (if has variable = epidemic cooldown general: if …; else if …; else …) (if has holding = True: add 0.25) (if OR …: add 0.25) (if has holding type = city holding: add 0.75) (if OR …: add -0.991)"
+          "rules": "base (if scope:epidemic …: add 9) (else …) (else …) (if county …: add 4) (if scope:epidemic.epidemic type = epidemic type:dysentery: add …; add …) +base num districts ×0.25 (if has building or higher = pb port 04: add 4; add 4; add 3; add 3; add 3; add 2; add 2; add 2) (else …) (else …) (else …) (if has building or higher = pb market 03: add 2; add 2) (else …) (if has building or higher = pb guild 04: add 4; add 4; add 4; add 4) (else …) (else …) (else …) (if terrain = farmlands: add 3) (else …) (else …) (else …) (else …) (else …) (if geographical region = divergence island regions: add -1) (if county.culture …: add 3) (else …) (else …) (if county.culture …: add -2) (else …) (if AND …: add -1) (if scope:epidemic …: add -3) ×base 1 min 0.001 (if OR …, NOR …: add -0.5) (if has global variable = black death, scope:epidemic = global var:black death, OR …, has building or higher = pb port 03, num districts > 4: add 1) (if county …: add 1.5) +base county.prosperity level ×0.025 (if has game rule = epidemic frequency doomsday: add 1.5) (else …) (else …) (else …) (else …) (if scope:epidemic …: add 1) (else …) (if is target in variable list …: if …; else if …; else if …; else …) (if has variable = epidemic cooldown general: if …; else if …; else …) (if has holding = True: add 0.25) (if OR …: add 0.25) (if has holding type = city holding: add 0.75) (if OR …: add -0.991) ×base 1 (if province size level > spread settlement size level threshold: add …)"
         }
       },
       {
@@ -638,22 +872,44 @@
         "maxProvinces": "270–405",
         "name": "Apocalyptic",
         "outbreakChance": {
-          "rules": "base base 0.001 +base num buildings ×0.004 (if has building or higher = common tradeport 01: add 0.016) (else …) (if OR …: multiply 0) (if has variable = measles endemic variable: add 0.004) (else …) ×base 0.2 (if has game rule = epidemic frequency often: add 0.1) (else …) (else …) (else …) (else …) (if county.development level <= 20: add …) (else …) (else …) (if culture …: add 0) (else …) (else …) (else …) (if OR …: add -0.2) (else …) (if has holding type = city holding: add 0.2) (else …) ×0.4 min 0.001 ×base 1 (if is target in variable list …: if …; else if …; else …) (else …) min 0 (if NOT …: value 0) (if has game rule = epidemic frequency disabled: multiply 0)"
+          "rules": "base base 0.001 +base province size level ×0.004 (if has port district = True: add 0.016) (else …) (if OR …: multiply 0) (if has variable = measles endemic variable: add 0.004) (else …) ×base 0.2 (if has game rule = epidemic frequency normal: add 0) (else …) (else …) (else …) (else …) (else …) (if county.prosperity level <= 20: add …) (else …) (else …) (if culture …: add 0) (else …) (else …) (if OR …: add -0.2) (else …) (if has holding type = city holding: add 0.2) (else …) ×0.4 min 0.001 ×base 1 (if is target in variable list …: if …; else if …; else …) (else …) min 0 (if NOT …: value 0) (if has game rule = epidemic frequency disabled: multiply 0)"
         },
         "progressDuration": "7–14 days",
         "recoveryDuration": "28–32 days",
         "spreadChance": {
-          "rules": "base (if scope:epidemic …: add 9) (else …) (else …) (if county …: add 4) (if scope:epidemic.epidemic type = epidemic type:dysentery: add …; add …) +base num buildings ×0.25 (if has building or higher = common tradeport 08: add 4; add 4; add 3; add 3; add 3; add 2; add 2; add 2) (else …) (else …) (else …) (else …) (else …) (else …) (else …) (if has building or higher = market villages 02: add 2; add 2) (else …) (if has building or higher = guild halls 08: add 4; add 4; add 4; add 4) (else …) (else …) (else …) (if terrain = farmlands: add 3) (else …) (else …) (else …) (else …) (else …) (if geographical region = divergence island regions: add -1) (if county.culture …: add 3) (else …) (else …) (if county.culture …: add -2) (else …) (if AND …: add -1) (if scope:epidemic …: add -3) ×base 1 min 0.001 (if OR …, NOR …: add -0.5) (if has global variable = black death, scope:epidemic = global var:black death, OR …, has building or higher = common tradeport 06, num buildings > 10: add 1) (if county …: add 1.5) +base county.development level ×0.025 (if has game rule = epidemic frequency doomsday: add 1.5) (else …) (else …) (else …) (else …) (if scope:epidemic …: add 1) (else …) (if is target in variable list …: if …; else if …; else if …; else …) (if has variable = epidemic cooldown general: if …; else if …; else …) (if has holding = True: add 0.25) (if OR …: add 0.25) (if has holding type = city holding: add 0.75) (if OR …: add -0.991)"
+          "rules": "base (if scope:epidemic …: add 9) (else …) (else …) (if county …: add 4) (if scope:epidemic.epidemic type = epidemic type:dysentery: add …; add …) +base num districts ×0.25 (if has building or higher = pb port 04: add 4; add 4; add 3; add 3; add 3; add 2; add 2; add 2) (else …) (else …) (else …) (if has building or higher = pb market 03: add 2; add 2) (else …) (if has building or higher = pb guild 04: add 4; add 4; add 4; add 4) (else …) (else …) (else …) (if terrain = farmlands: add 3) (else …) (else …) (else …) (else …) (else …) (if geographical region = divergence island regions: add -1) (if county.culture …: add 3) (else …) (else …) (if county.culture …: add -2) (else …) (if AND …: add -1) (if scope:epidemic …: add -3) ×base 1 min 0.001 (if OR …, NOR …: add -0.5) (if has global variable = black death, scope:epidemic = global var:black death, OR …, has building or higher = pb port 03, num districts > 4: add 1) (if county …: add 1.5) +base county.prosperity level ×0.025 (if has game rule = epidemic frequency doomsday: add 1.5) (else …) (else …) (else …) (else …) (if scope:epidemic …: add 1) (else …) (if is target in variable list …: if …; else if …; else if …; else …) (if has variable = epidemic cooldown general: if …; else if …; else …) (if has holding = True: add 0.25) (if OR …: add 0.25) (if has holding type = city holding: add 0.75) (if OR …: add -0.991) ×base 1 (if province size level > spread settlement size level threshold: add …)"
         }
       }
     ],
     "levels": [
       {
+        "countyModifiers": [
+          {
+            "key": "control_baseline_add",
+            "polarity": "bad",
+            "text": "-5 Control Baseline"
+          }
+        ],
         "provinceModifiers": [
           {
-            "key": "monthly_county_control_decline_add",
+            "key": "all_tax_mult",
             "polarity": "bad",
-            "text": "-0.1 Monthly County Control Decline Add /month"
+            "text": "-10% Holding Taxes"
+          },
+          {
+            "key": "province_size_baseline_add",
+            "polarity": "bad",
+            "text": "-25 Settlement Size Baseline"
+          },
+          {
+            "key": "monthly_province_size_change_when_above_baseline_add",
+            "polarity": "bad",
+            "text": "-2 Settlement Size Decline /month"
+          },
+          {
+            "key": "monthly_control_change_when_above_baseline_add",
+            "polarity": "bad",
+            "text": "-0.1 Control Monthly Change above Control Baseline /month"
           },
           {
             "key": "epidemic_travel_danger",
@@ -664,21 +920,43 @@
         "threshold": "10"
       },
       {
+        "countyModifiers": [
+          {
+            "key": "control_baseline_add",
+            "polarity": "bad",
+            "text": "-10 Control Baseline"
+          }
+        ],
         "provinceModifiers": [
           {
-            "key": "monthly_county_control_decline_add",
+            "key": "all_tax_mult",
             "polarity": "bad",
-            "text": "-0.2 Monthly County Control Decline Add /month"
+            "text": "-25% Holding Taxes"
           },
           {
-            "key": "development_decline",
+            "key": "province_size_baseline_add",
             "polarity": "bad",
-            "text": "-0.25 Development Decline /month"
+            "text": "-50 Settlement Size Baseline"
           },
           {
-            "key": "county_opinion_add",
+            "key": "monthly_province_size_change_when_above_baseline_add",
             "polarity": "bad",
-            "text": "-2 Popular Opinion"
+            "text": "-4 Settlement Size Decline /month"
+          },
+          {
+            "key": "monthly_control_change_when_above_baseline_add",
+            "polarity": "bad",
+            "text": "-0.2 Control Monthly Change above Control Baseline /month"
+          },
+          {
+            "key": "prosperity_decline",
+            "polarity": "bad",
+            "text": "-0.25 Prosperity Decline /month"
+          },
+          {
+            "key": "popular_opinion_add",
+            "polarity": "bad",
+            "text": "-2 Popular Opinion Baseline"
           },
           {
             "key": "epidemic_travel_danger",
@@ -689,21 +967,43 @@
         "threshold": "50"
       },
       {
+        "countyModifiers": [
+          {
+            "key": "control_baseline_add",
+            "polarity": "bad",
+            "text": "-15 Control Baseline"
+          }
+        ],
         "provinceModifiers": [
           {
-            "key": "monthly_county_control_decline_add",
+            "key": "all_tax_mult",
             "polarity": "bad",
-            "text": "-0.4 Monthly County Control Decline Add /month"
+            "text": "-50% Holding Taxes"
           },
           {
-            "key": "development_decline",
+            "key": "province_size_baseline_add",
             "polarity": "bad",
-            "text": "-0.5 Development Decline /month"
+            "text": "-75 Settlement Size Baseline"
           },
           {
-            "key": "county_opinion_add",
+            "key": "monthly_province_size_change_when_above_baseline_add",
             "polarity": "bad",
-            "text": "-5 Popular Opinion"
+            "text": "-6 Settlement Size Decline /month"
+          },
+          {
+            "key": "monthly_control_change_when_above_baseline_add",
+            "polarity": "bad",
+            "text": "-0.4 Control Monthly Change above Control Baseline /month"
+          },
+          {
+            "key": "prosperity_decline",
+            "polarity": "bad",
+            "text": "-0.5 Prosperity Decline /month"
+          },
+          {
+            "key": "popular_opinion_add",
+            "polarity": "bad",
+            "text": "-5 Popular Opinion Baseline"
           },
           {
             "key": "epidemic_travel_danger",
@@ -724,7 +1024,7 @@
     "icon": "smallpox",
     "id": "smallpox",
     "infectionChance": {
-      "rules": "base 10 (if OR …: add 20) (if scope:epidemic …: add 40) (else …) (else …) (else …) (if has trait = athletic: add -4) (if has perk = iron constitution perk: add -6) (if has perk = healthy perk: add -8) (if has trait = whole of body: add -10) (if is foreign court or pool guest = True: add 40) (if is ruler = False: add 10) (if scope:epidemic.epidemic type.epidemic trait = trait:measles, is adult = False: add 20) (if age >= 65: add 40) (else …) (if host.domicile …: add -10) (else …) (else …) (else …) (else …) (else …) +base base -1 (if has perk = wash your hands perk: add 10) (if has trait = shy: add 1) (if has trait = paranoid: add 2) (if has trait = reclusive: add 4) (if has trait = shrewd: add 1) (if has trait = lifestyle physician: add 4) (if has trait = lifestyle herbalist: add 2) (if has trait = diligent: add 1) (if has trait = craven: add 1) (if has trait = temperate: add 1) (if has trait = arbitrary: add -1) (if has trait = brave: add -1) (if has trait = impatient: add -2) (if has trait = gregarious: add -4) (if has trait = dull: add -2) (if culture …: add -1) (if culture …: add -1) (if culture …: add 20) ×-1 (if location …: multiply 0.25) (else …) (else …) (if has character modifier = isolating modifier: multiply 0.25) (if has character modifier = hiding from epidemic: multiply 0.25) min 1"
+      "rules": "base 10 (if OR …: add 20) (if scope:epidemic …: add 40) (else …) (else …) (else …) (if has trait = athletic: add -4) (if has perk = iron constitution perk: add -6) (if has perk = healthy perk: add -8) (if has trait = whole of body: add -10) (if is foreign court or pool guest = True: add 40) (if is ruler = False: add 10) (if scope:epidemic.epidemic type.epidemic trait = trait:measles, is adult = False: add 20) (if age >= 65: add 40) (else …) (if OR …: add -10) (else …) (else …) (else …) (else …) (else …) (if OR …: add -30) (else …) (else …) (else …) (else …) +base base -1 (if has perk = wash your hands perk: add 10) (if has trait = shy: add 1) (if has trait = paranoid: add 2) (if has trait = reclusive: add 4) (if has trait = shrewd: add 1) (if has trait = lifestyle physician: add 4) (if has trait = lifestyle herbalist: add 2) (if has trait = diligent: add 1) (if has trait = craven: add 1) (if has trait = temperate: add 1) (if has trait = arbitrary: add -1) (if has trait = brave: add -1) (if has trait = impatient: add -2) (if has trait = gregarious: add -4) (if has trait = dull: add -2) (if culture …: add -1) (if culture …: add -1) (if culture …: add 20) ×-1 (if location …: multiply 0.25) (else …) (else …) (if has character modifier = isolating modifier: multiply 0.25) (if has character modifier = hiding from epidemic: multiply 0.25) min 1"
     },
     "intensities": [
       {
@@ -733,12 +1033,12 @@
         "maxProvinces": "30–55",
         "name": "Minor",
         "outbreakChance": {
-          "rules": "base base 0.01 +base num buildings ×0.001 (if has building or higher = common tradeport 01: add 0.016) (else …) (if OR …: multiply 0) ×base 0.6 (if has game rule = epidemic frequency often: add 0.1) (else …) (else …) (else …) (else …) (if county.development level <= 20: add …) (else …) (else …) (if culture …: add -0.2) (else …) (else …) (else …) (if OR …: add -0.2) (else …) (if has holding type = city holding: add 0.2) (else …) (if OR …: add -0.6) (if county.development level < 10: multiply 0.5) ×0.4 min 0.001 ×base 1 (if is target in variable list …: if …; else if …; else …) (else …) min 0 (if NOT …: multiply 2) (if has game rule = epidemic frequency disabled: multiply 0)"
+          "rules": "base base 0.01 +base province size level ×0.001 (if has port district = True: add 0.016) (else …) (if OR …: multiply 0) ×base 0.6 (if has game rule = epidemic frequency normal: add 0) (else …) (else …) (else …) (else …) (else …) (if county.prosperity level <= 20: add …) (else …) (else …) (if culture …: add -0.2) (else …) (else …) (if OR …: add -0.2) (else …) (if has holding type = city holding: add 0.2) (else …) (if OR …: add -0.6) (if county.prosperity level < 10: multiply 0.5) ×0.4 min 0.001 ×base 1 (if is target in variable list …: if …; else if …; else …) (else …) min 0 (if NOT …: multiply 2) (if has game rule = epidemic frequency disabled: multiply 0)"
         },
         "progressDuration": "80–120 days",
         "recoveryDuration": "15–22 days",
         "spreadChance": {
-          "rules": "base (if scope:epidemic …: add 9) (else …) (else …) (if county …: add 4) (if scope:epidemic.epidemic type = epidemic type:dysentery: add …; add …) +base num buildings ×0.25 (if has building or higher = common tradeport 08: add 4; add 4; add 3; add 3; add 3; add 2; add 2; add 2) (else …) (else …) (else …) (else …) (else …) (else …) (else …) (if has building or higher = market villages 02: add 2; add 2) (else …) (if has building or higher = guild halls 08: add 4; add 4; add 4; add 4) (else …) (else …) (else …) (if terrain = farmlands: add 3) (else …) (else …) (else …) (else …) (else …) (if geographical region = divergence island regions: add -1) (if county.culture …: add 3) (else …) (else …) (if county.culture …: add -2) (else …) (if AND …: add -1) (if scope:epidemic …: add -3) ×base 1 min 0.001 (if OR …, NOR …: add -0.5) (if has global variable = black death, scope:epidemic = global var:black death, OR …, has building or higher = common tradeport 06, num buildings > 10: add 1) (if county …: add 1.5) +base county.development level ×0.025 (if has game rule = epidemic frequency doomsday: add 1.5) (else …) (else …) (else …) (else …) (if scope:epidemic …: add 1) (else …) (if is target in variable list …: if …; else if …; else if …; else …) (if has variable = epidemic cooldown general: if …; else if …; else …) (if has holding = True: add 0.25) (if OR …: add 0.25) (if has holding type = city holding: add 0.75) (if OR …: add -0.991)"
+          "rules": "base (if scope:epidemic …: add 9) (else …) (else …) (if county …: add 4) (if scope:epidemic.epidemic type = epidemic type:dysentery: add …; add …) +base num districts ×0.25 (if has building or higher = pb port 04: add 4; add 4; add 3; add 3; add 3; add 2; add 2; add 2) (else …) (else …) (else …) (if has building or higher = pb market 03: add 2; add 2) (else …) (if has building or higher = pb guild 04: add 4; add 4; add 4; add 4) (else …) (else …) (else …) (if terrain = farmlands: add 3) (else …) (else …) (else …) (else …) (else …) (if geographical region = divergence island regions: add -1) (if county.culture …: add 3) (else …) (else …) (if county.culture …: add -2) (else …) (if AND …: add -1) (if scope:epidemic …: add -3) ×base 1 min 0.001 (if OR …, NOR …: add -0.5) (if has global variable = black death, scope:epidemic = global var:black death, OR …, has building or higher = pb port 03, num districts > 4: add 1) (if county …: add 1.5) +base county.prosperity level ×0.025 (if has game rule = epidemic frequency doomsday: add 1.5) (else …) (else …) (else …) (else …) (if scope:epidemic …: add 1) (else …) (if is target in variable list …: if …; else if …; else if …; else …) (if has variable = epidemic cooldown general: if …; else if …; else …) (if has holding = True: add 0.25) (if OR …: add 0.25) (if has holding type = city holding: add 0.75) (if OR …: add -0.991) ×base 1 (if province size level > spread settlement size level threshold: add …)"
         }
       },
       {
@@ -747,12 +1047,12 @@
         "maxProvinces": "85–130",
         "name": "Major",
         "outbreakChance": {
-          "rules": "base base 0.001 +base num buildings ×0.004 (if has building or higher = common tradeport 01: add 0.016) (else …) (if OR …: multiply 0) ×base 0.45 (if has game rule = epidemic frequency often: add 0.1) (else …) (else …) (else …) (else …) (if county.development level <= 20: add …) (else …) (else …) (if culture …: add 0) (else …) (else …) (else …) (if OR …: add -0.2) (else …) (if has holding type = city holding: add 0.2) (else …) (if OR …: add -0.6) (if county.development level < 10: multiply 0.1) ×0.4 min 0.001 ×base 1 (if is target in variable list …: if …; else if …; else …) (else …) min 0 (if NOT …: multiply 1.5) (if has game rule = epidemic frequency disabled: multiply 0)"
+          "rules": "base base 0.001 +base province size level ×0.004 (if has port district = True: add 0.016) (else …) (if OR …: multiply 0) ×base 0.45 (if has game rule = epidemic frequency normal, NOR …: add 0) (else …) (else …) (else …) (else …) (else …) (if county.prosperity level <= 20: add …) (else …) (else …) (if culture …: add 0) (else …) (else …) (if OR …: add -0.2) (else …) (if has holding type = city holding: add 0.2) (else …) (if OR …: add -0.6) (if county.prosperity level < 10: multiply 0.1) ×0.4 min 0.001 ×base 1 (if is target in variable list …: if …; else if …; else …) (else …) min 0 (if NOT …: multiply 1.5) (if has game rule = epidemic frequency disabled: multiply 0)"
         },
         "progressDuration": "40–60 days",
         "recoveryDuration": "25 days",
         "spreadChance": {
-          "rules": "base (if scope:epidemic …: add 9) (else …) (else …) (if county …: add 4) (if scope:epidemic.epidemic type = epidemic type:dysentery: add …; add …) +base num buildings ×0.25 (if has building or higher = common tradeport 08: add 4; add 4; add 3; add 3; add 3; add 2; add 2; add 2) (else …) (else …) (else …) (else …) (else …) (else …) (else …) (if has building or higher = market villages 02: add 2; add 2) (else …) (if has building or higher = guild halls 08: add 4; add 4; add 4; add 4) (else …) (else …) (else …) (if terrain = farmlands: add 3) (else …) (else …) (else …) (else …) (else …) (if geographical region = divergence island regions: add -1) (if county.culture …: add 3) (else …) (else …) (if county.culture …: add -2) (else …) (if AND …: add -1) (if scope:epidemic …: add -3) ×base 1 min 0.001 (if OR …, NOR …: add -0.5) (if has global variable = black death, scope:epidemic = global var:black death, OR …, has building or higher = common tradeport 06, num buildings > 10: add 1) (if county …: add 1.5) +base county.development level ×0.025 (if has game rule = epidemic frequency doomsday: add 1.5) (else …) (else …) (else …) (else …) (if scope:epidemic …: add 1) (else …) (if is target in variable list …: if …; else if …; else if …; else …) (if has variable = epidemic cooldown general: if …; else if …; else …) (if has holding = True: add 0.25) (if OR …: add 0.25) (if has holding type = city holding: add 0.75) (if OR …: add -0.991)"
+          "rules": "base (if scope:epidemic …: add 9) (else …) (else …) (if county …: add 4) (if scope:epidemic.epidemic type = epidemic type:dysentery: add …; add …) +base num districts ×0.25 (if has building or higher = pb port 04: add 4; add 4; add 3; add 3; add 3; add 2; add 2; add 2) (else …) (else …) (else …) (if has building or higher = pb market 03: add 2; add 2) (else …) (if has building or higher = pb guild 04: add 4; add 4; add 4; add 4) (else …) (else …) (else …) (if terrain = farmlands: add 3) (else …) (else …) (else …) (else …) (else …) (if geographical region = divergence island regions: add -1) (if county.culture …: add 3) (else …) (else …) (if county.culture …: add -2) (else …) (if AND …: add -1) (if scope:epidemic …: add -3) ×base 1 min 0.001 (if OR …, NOR …: add -0.5) (if has global variable = black death, scope:epidemic = global var:black death, OR …, has building or higher = pb port 03, num districts > 4: add 1) (if county …: add 1.5) +base county.prosperity level ×0.025 (if has game rule = epidemic frequency doomsday: add 1.5) (else …) (else …) (else …) (else …) (if scope:epidemic …: add 1) (else …) (if is target in variable list …: if …; else if …; else if …; else …) (if has variable = epidemic cooldown general: if …; else if …; else …) (if has holding = True: add 0.25) (if OR …: add 0.25) (if has holding type = city holding: add 0.75) (if OR …: add -0.991) ×base 1 (if province size level > spread settlement size level threshold: add …)"
         }
       },
       {
@@ -761,22 +1061,44 @@
         "maxProvinces": "220–325",
         "name": "Apocalyptic",
         "outbreakChance": {
-          "rules": "base base 0.001 +base num buildings ×0.004 (if has building or higher = common tradeport 01: add 0.016) (else …) (if OR …: multiply 0) ×base 0.2 (if has game rule = epidemic frequency often: add 0.1) (else …) (else …) (else …) (else …) (if county.development level <= 20: add …) (else …) (else …) (if culture …: add 0) (else …) (else …) (else …) (if OR …: add -0.2) (else …) (if has holding type = city holding: add 0.2) (else …) ×0.4 min 0.001 ×base 1 (if is target in variable list …: if …; else if …; else …) (else …) min 0 (if NOT …: multiply 1.25) (if has game rule = epidemic frequency disabled: multiply 0)"
+          "rules": "base base 0.001 +base province size level ×0.004 (if has port district = True: add 0.016) (else …) (if OR …: multiply 0) ×base 0.2 (if has game rule = epidemic frequency normal: add 0) (else …) (else …) (else …) (else …) (else …) (if county.prosperity level <= 20: add …) (else …) (else …) (if culture …: add 0) (else …) (else …) (if OR …: add -0.2) (else …) (if has holding type = city holding: add 0.2) (else …) ×0.4 min 0.001 ×base 1 (if is target in variable list …: if …; else if …; else …) (else …) min 0 (if NOT …: multiply 1.25) (if has game rule = epidemic frequency disabled: multiply 0)"
         },
         "progressDuration": "15–20 days",
         "recoveryDuration": "25–35 days",
         "spreadChance": {
-          "rules": "base (if scope:epidemic …: add 9) (else …) (else …) (if county …: add 4) (if scope:epidemic.epidemic type = epidemic type:dysentery: add …; add …) +base num buildings ×0.25 (if has building or higher = common tradeport 08: add 4; add 4; add 3; add 3; add 3; add 2; add 2; add 2) (else …) (else …) (else …) (else …) (else …) (else …) (else …) (if has building or higher = market villages 02: add 2; add 2) (else …) (if has building or higher = guild halls 08: add 4; add 4; add 4; add 4) (else …) (else …) (else …) (if terrain = farmlands: add 3) (else …) (else …) (else …) (else …) (else …) (if geographical region = divergence island regions: add -1) (if county.culture …: add 3) (else …) (else …) (if county.culture …: add -2) (else …) (if AND …: add -1) (if scope:epidemic …: add -3) ×base 1 min 0.001 (if OR …, NOR …: add -0.5) (if has global variable = black death, scope:epidemic = global var:black death, OR …, has building or higher = common tradeport 06, num buildings > 10: add 1) (if county …: add 1.5) +base county.development level ×0.025 (if has game rule = epidemic frequency doomsday: add 1.5) (else …) (else …) (else …) (else …) (if scope:epidemic …: add 1) (else …) (if is target in variable list …: if …; else if …; else if …; else …) (if has variable = epidemic cooldown general: if …; else if …; else …) (if has holding = True: add 0.25) (if OR …: add 0.25) (if has holding type = city holding: add 0.75) (if OR …: add -0.991)"
+          "rules": "base (if scope:epidemic …: add 9) (else …) (else …) (if county …: add 4) (if scope:epidemic.epidemic type = epidemic type:dysentery: add …; add …) +base num districts ×0.25 (if has building or higher = pb port 04: add 4; add 4; add 3; add 3; add 3; add 2; add 2; add 2) (else …) (else …) (else …) (if has building or higher = pb market 03: add 2; add 2) (else …) (if has building or higher = pb guild 04: add 4; add 4; add 4; add 4) (else …) (else …) (else …) (if terrain = farmlands: add 3) (else …) (else …) (else …) (else …) (else …) (if geographical region = divergence island regions: add -1) (if county.culture …: add 3) (else …) (else …) (if county.culture …: add -2) (else …) (if AND …: add -1) (if scope:epidemic …: add -3) ×base 1 min 0.001 (if OR …, NOR …: add -0.5) (if has global variable = black death, scope:epidemic = global var:black death, OR …, has building or higher = pb port 03, num districts > 4: add 1) (if county …: add 1.5) +base county.prosperity level ×0.025 (if has game rule = epidemic frequency doomsday: add 1.5) (else …) (else …) (else …) (else …) (if scope:epidemic …: add 1) (else …) (if is target in variable list …: if …; else if …; else if …; else …) (if has variable = epidemic cooldown general: if …; else if …; else …) (if has holding = True: add 0.25) (if OR …: add 0.25) (if has holding type = city holding: add 0.75) (if OR …: add -0.991) ×base 1 (if province size level > spread settlement size level threshold: add …)"
         }
       }
     ],
     "levels": [
       {
+        "countyModifiers": [
+          {
+            "key": "control_baseline_add",
+            "polarity": "bad",
+            "text": "-5 Control Baseline"
+          }
+        ],
         "provinceModifiers": [
           {
-            "key": "county_opinion_add",
+            "key": "all_tax_mult",
             "polarity": "bad",
-            "text": "-2 Popular Opinion"
+            "text": "-10% Holding Taxes"
+          },
+          {
+            "key": "province_size_baseline_add",
+            "polarity": "bad",
+            "text": "-40 Settlement Size Baseline"
+          },
+          {
+            "key": "monthly_province_size_change_when_above_baseline_add",
+            "polarity": "bad",
+            "text": "-3.5 Settlement Size Decline /month"
+          },
+          {
+            "key": "popular_opinion_add",
+            "polarity": "bad",
+            "text": "-2 Popular Opinion Baseline"
           },
           {
             "key": "epidemic_travel_danger",
@@ -784,19 +1106,41 @@
             "text": "+10 Epidemic Travel Danger"
           },
           {
-            "key": "development_decline",
+            "key": "prosperity_decline",
             "polarity": "bad",
-            "text": "-1 Development Decline /month"
+            "text": "-1 Prosperity Decline /month"
           }
         ],
         "threshold": "10"
       },
       {
+        "countyModifiers": [
+          {
+            "key": "control_baseline_add",
+            "polarity": "bad",
+            "text": "-10 Control Baseline"
+          }
+        ],
         "provinceModifiers": [
           {
-            "key": "county_opinion_add",
+            "key": "all_tax_mult",
             "polarity": "bad",
-            "text": "-3 Popular Opinion"
+            "text": "-25% Holding Taxes"
+          },
+          {
+            "key": "province_size_baseline_add",
+            "polarity": "bad",
+            "text": "-80 Settlement Size Baseline"
+          },
+          {
+            "key": "monthly_province_size_change_when_above_baseline_add",
+            "polarity": "bad",
+            "text": "-6.5 Settlement Size Decline /month"
+          },
+          {
+            "key": "popular_opinion_add",
+            "polarity": "bad",
+            "text": "-2 Popular Opinion Baseline"
           },
           {
             "key": "epidemic_travel_danger",
@@ -804,19 +1148,41 @@
             "text": "+20 Epidemic Travel Danger"
           },
           {
-            "key": "development_decline",
+            "key": "prosperity_decline",
             "polarity": "bad",
-            "text": "-2 Development Decline /month"
+            "text": "-2 Prosperity Decline /month"
           }
         ],
         "threshold": "50"
       },
       {
+        "countyModifiers": [
+          {
+            "key": "control_baseline_add",
+            "polarity": "bad",
+            "text": "-15 Control Baseline"
+          }
+        ],
         "provinceModifiers": [
           {
-            "key": "monthly_county_control_decline_add",
+            "key": "all_tax_mult",
             "polarity": "bad",
-            "text": "-0.1 Monthly County Control Decline Add /month"
+            "text": "-50% Holding Taxes"
+          },
+          {
+            "key": "province_size_baseline_add",
+            "polarity": "bad",
+            "text": "-120 Settlement Size Baseline"
+          },
+          {
+            "key": "monthly_province_size_change_when_above_baseline_add",
+            "polarity": "bad",
+            "text": "-10 Settlement Size Decline /month"
+          },
+          {
+            "key": "monthly_control_change_when_above_baseline_add",
+            "polarity": "bad",
+            "text": "-0.1 Control Monthly Change above Control Baseline /month"
           },
           {
             "key": "supply_limit_mult",
@@ -824,9 +1190,9 @@
             "text": "-20% Supply Limit"
           },
           {
-            "key": "county_opinion_add",
+            "key": "popular_opinion_add",
             "polarity": "bad",
-            "text": "-5 Popular Opinion"
+            "text": "-5 Popular Opinion Baseline"
           },
           {
             "key": "epidemic_travel_danger",
@@ -834,9 +1200,9 @@
             "text": "+30 Epidemic Travel Danger"
           },
           {
-            "key": "development_decline",
+            "key": "prosperity_decline",
             "polarity": "bad",
-            "text": "-3 Development Decline /month"
+            "text": "-3 Prosperity Decline /month"
           }
         ],
         "threshold": "80"
@@ -852,7 +1218,7 @@
     "icon": "typhus",
     "id": "typhus",
     "infectionChance": {
-      "rules": "base base 10 (if OR …: add 20) (if scope:epidemic …: add 40) (else …) (else …) (else …) (if has trait = athletic: add -4) (if has perk = iron constitution perk: add -6) (if has perk = healthy perk: add -8) (if has trait = whole of body: add -10) (if is foreign court or pool guest = True: add 40) (if is ruler = False: add 10) (if scope:epidemic.epidemic type.epidemic trait = trait:measles, is adult = False: add 20) (if age >= 65: add 40) (else …) (if host.domicile …: add -10) (else …) (else …) (else …) (else …) (else …) +base base -1 (if has perk = wash your hands perk: add 10) (if has trait = shy: add 1) (if has trait = paranoid: add 2) (if has trait = reclusive: add 4) (if has trait = shrewd: add 1) (if has trait = lifestyle physician: add 4) (if has trait = lifestyle herbalist: add 2) (if has trait = diligent: add 1) (if has trait = craven: add 1) (if has trait = temperate: add 1) (if has trait = arbitrary: add -1) (if has trait = brave: add -1) (if has trait = impatient: add -2) (if has trait = gregarious: add -4) (if has trait = dull: add -2) (if culture …: add -1) (if culture …: add -1) (if culture …: add 20) ×-1 (if location …: multiply 0.25) (else …) (else …) (if has character modifier = isolating modifier: multiply 0.25) (if has character modifier = hiding from epidemic: multiply 0.25) min 1 (if is commanding army = True: multiply 4)"
+      "rules": "base base 10 (if OR …: add 20) (if scope:epidemic …: add 40) (else …) (else …) (else …) (if has trait = athletic: add -4) (if has perk = iron constitution perk: add -6) (if has perk = healthy perk: add -8) (if has trait = whole of body: add -10) (if is foreign court or pool guest = True: add 40) (if is ruler = False: add 10) (if scope:epidemic.epidemic type.epidemic trait = trait:measles, is adult = False: add 20) (if age >= 65: add 40) (else …) (if OR …: add -10) (else …) (else …) (else …) (else …) (else …) (if OR …: add -30) (else …) (else …) (else …) (else …) +base base -1 (if has perk = wash your hands perk: add 10) (if has trait = shy: add 1) (if has trait = paranoid: add 2) (if has trait = reclusive: add 4) (if has trait = shrewd: add 1) (if has trait = lifestyle physician: add 4) (if has trait = lifestyle herbalist: add 2) (if has trait = diligent: add 1) (if has trait = craven: add 1) (if has trait = temperate: add 1) (if has trait = arbitrary: add -1) (if has trait = brave: add -1) (if has trait = impatient: add -2) (if has trait = gregarious: add -4) (if has trait = dull: add -2) (if culture …: add -1) (if culture …: add -1) (if culture …: add 20) ×-1 (if location …: multiply 0.25) (else …) (else …) (if has character modifier = isolating modifier: multiply 0.25) (if has character modifier = hiding from epidemic: multiply 0.25) min 1 (if is commanding army = True: multiply 4)"
     },
     "intensities": [
       {
@@ -861,12 +1227,12 @@
         "maxProvinces": "30–55",
         "name": "Minor",
         "outbreakChance": {
-          "rules": "base base 0.01 +base num buildings ×0.001 (if has building or higher = common tradeport 01: add 0.016) (else …) (if OR …: multiply 0) ×base 0.6 (if has game rule = epidemic frequency often: add 0.1) (else …) (else …) (else …) (else …) (if county.development level <= 20: add …) (else …) (else …) (if culture …: add -0.2) (else …) (else …) (else …) (if OR …: add -0.2) (else …) (if has holding type = city holding: add 0.2) (else …) (if OR …: add -0.6) (if county.development level < 10: multiply 0.5) ×0.4 min 0.001 ×base 1 (if is target in variable list …: if …; else if …; else …) (else …) min 0 (if NOT …: multiply 2) (if has game rule = epidemic frequency disabled: multiply 0)"
+          "rules": "base base 0.01 +base province size level ×0.001 (if has port district = True: add 0.016) (else …) (if OR …: multiply 0) ×base 0.6 (if has game rule = epidemic frequency normal: add 0) (else …) (else …) (else …) (else …) (else …) (if county.prosperity level <= 20: add …) (else …) (else …) (if culture …: add -0.2) (else …) (else …) (if OR …: add -0.2) (else …) (if has holding type = city holding: add 0.2) (else …) (if OR …: add -0.6) (if county.prosperity level < 10: multiply 0.5) ×0.4 min 0.001 ×base 1 (if is target in variable list …: if …; else if …; else …) (else …) min 0 (if NOT …: multiply 2) (if has game rule = epidemic frequency disabled: multiply 0)"
         },
         "progressDuration": "100 days",
         "recoveryDuration": "30 days",
         "spreadChance": {
-          "rules": "base (if scope:epidemic …: add 9) (else …) (else …) (if county …: add 4) (if scope:epidemic.epidemic type = epidemic type:dysentery: add …; add …) +base num buildings ×0.25 (if has building or higher = common tradeport 08: add 4; add 4; add 3; add 3; add 3; add 2; add 2; add 2) (else …) (else …) (else …) (else …) (else …) (else …) (else …) (if has building or higher = market villages 02: add 2; add 2) (else …) (if has building or higher = guild halls 08: add 4; add 4; add 4; add 4) (else …) (else …) (else …) (if terrain = farmlands: add 3) (else …) (else …) (else …) (else …) (else …) (if geographical region = divergence island regions: add -1) (if county.culture …: add 3) (else …) (else …) (if county.culture …: add -2) (else …) (if AND …: add -1) (if scope:epidemic …: add -3) ×base 1 min 0.001 (if OR …, NOR …: add -0.5) (if has global variable = black death, scope:epidemic = global var:black death, OR …, has building or higher = common tradeport 06, num buildings > 10: add 1) (if county …: add 1.5) +base county.development level ×0.025 (if has game rule = epidemic frequency doomsday: add 1.5) (else …) (else …) (else …) (else …) (if scope:epidemic …: add 1) (else …) (if is target in variable list …: if …; else if …; else if …; else …) (if has variable = epidemic cooldown general: if …; else if …; else …) (if has holding = True: add 0.25) (if OR …: add 0.25) (if has holding type = city holding: add 0.75) (if OR …: add -0.991)"
+          "rules": "base (if scope:epidemic …: add 9) (else …) (else …) (if county …: add 4) (if scope:epidemic.epidemic type = epidemic type:dysentery: add …; add …) +base num districts ×0.25 (if has building or higher = pb port 04: add 4; add 4; add 3; add 3; add 3; add 2; add 2; add 2) (else …) (else …) (else …) (if has building or higher = pb market 03: add 2; add 2) (else …) (if has building or higher = pb guild 04: add 4; add 4; add 4; add 4) (else …) (else …) (else …) (if terrain = farmlands: add 3) (else …) (else …) (else …) (else …) (else …) (if geographical region = divergence island regions: add -1) (if county.culture …: add 3) (else …) (else …) (if county.culture …: add -2) (else …) (if AND …: add -1) (if scope:epidemic …: add -3) ×base 1 min 0.001 (if OR …, NOR …: add -0.5) (if has global variable = black death, scope:epidemic = global var:black death, OR …, has building or higher = pb port 03, num districts > 4: add 1) (if county …: add 1.5) +base county.prosperity level ×0.025 (if has game rule = epidemic frequency doomsday: add 1.5) (else …) (else …) (else …) (else …) (if scope:epidemic …: add 1) (else …) (if is target in variable list …: if …; else if …; else if …; else …) (if has variable = epidemic cooldown general: if …; else if …; else …) (if has holding = True: add 0.25) (if OR …: add 0.25) (if has holding type = city holding: add 0.75) (if OR …: add -0.991) ×base 1 (if province size level > spread settlement size level threshold: add …)"
         }
       },
       {
@@ -875,12 +1241,12 @@
         "maxProvinces": "75–90",
         "name": "Major",
         "outbreakChance": {
-          "rules": "base base 0.001 +base num buildings ×0.004 (if has building or higher = common tradeport 01: add 0.016) (else …) (if OR …: multiply 0) ×base 0.45 (if has game rule = epidemic frequency often: add 0.1) (else …) (else …) (else …) (else …) (if county.development level <= 20: add …) (else …) (else …) (if culture …: add 0) (else …) (else …) (else …) (if OR …: add -0.2) (else …) (if has holding type = city holding: add 0.2) (else …) (if OR …: add -0.6) (if county.development level < 10: multiply 0.1) ×0.4 min 0.001 ×base 1 (if is target in variable list …: if …; else if …; else …) (else …) min 0 ×0.75 (if NOT …: multiply 1.5) (if has game rule = epidemic frequency disabled: multiply 0)"
+          "rules": "base base 0.001 +base province size level ×0.004 (if has port district = True: add 0.016) (else …) (if OR …: multiply 0) ×base 0.45 (if has game rule = epidemic frequency normal, NOR …: add 0) (else …) (else …) (else …) (else …) (else …) (if county.prosperity level <= 20: add …) (else …) (else …) (if culture …: add 0) (else …) (else …) (if OR …: add -0.2) (else …) (if has holding type = city holding: add 0.2) (else …) (if OR …: add -0.6) (if county.prosperity level < 10: multiply 0.1) ×0.4 min 0.001 ×base 1 (if is target in variable list …: if …; else if …; else …) (else …) min 0 ×0.75 (if NOT …: multiply 1.5) (if has game rule = epidemic frequency disabled: multiply 0)"
         },
         "progressDuration": "45–55 days",
         "recoveryDuration": "28–32 days",
         "spreadChance": {
-          "rules": "base (if scope:epidemic …: add 9) (else …) (else …) (if county …: add 4) (if scope:epidemic.epidemic type = epidemic type:dysentery: add …; add …) +base num buildings ×0.25 (if has building or higher = common tradeport 08: add 4; add 4; add 3; add 3; add 3; add 2; add 2; add 2) (else …) (else …) (else …) (else …) (else …) (else …) (else …) (if has building or higher = market villages 02: add 2; add 2) (else …) (if has building or higher = guild halls 08: add 4; add 4; add 4; add 4) (else …) (else …) (else …) (if terrain = farmlands: add 3) (else …) (else …) (else …) (else …) (else …) (if geographical region = divergence island regions: add -1) (if county.culture …: add 3) (else …) (else …) (if county.culture …: add -2) (else …) (if AND …: add -1) (if scope:epidemic …: add -3) ×base 1 min 0.001 (if OR …, NOR …: add -0.5) (if has global variable = black death, scope:epidemic = global var:black death, OR …, has building or higher = common tradeport 06, num buildings > 10: add 1) (if county …: add 1.5) +base county.development level ×0.025 (if has game rule = epidemic frequency doomsday: add 1.5) (else …) (else …) (else …) (else …) (if scope:epidemic …: add 1) (else …) (if is target in variable list …: if …; else if …; else if …; else …) (if has variable = epidemic cooldown general: if …; else if …; else …) (if has holding = True: add 0.25) (if OR …: add 0.25) (if has holding type = city holding: add 0.75) (if OR …: add -0.991)"
+          "rules": "base (if scope:epidemic …: add 9) (else …) (else …) (if county …: add 4) (if scope:epidemic.epidemic type = epidemic type:dysentery: add …; add …) +base num districts ×0.25 (if has building or higher = pb port 04: add 4; add 4; add 3; add 3; add 3; add 2; add 2; add 2) (else …) (else …) (else …) (if has building or higher = pb market 03: add 2; add 2) (else …) (if has building or higher = pb guild 04: add 4; add 4; add 4; add 4) (else …) (else …) (else …) (if terrain = farmlands: add 3) (else …) (else …) (else …) (else …) (else …) (if geographical region = divergence island regions: add -1) (if county.culture …: add 3) (else …) (else …) (if county.culture …: add -2) (else …) (if AND …: add -1) (if scope:epidemic …: add -3) ×base 1 min 0.001 (if OR …, NOR …: add -0.5) (if has global variable = black death, scope:epidemic = global var:black death, OR …, has building or higher = pb port 03, num districts > 4: add 1) (if county …: add 1.5) +base county.prosperity level ×0.025 (if has game rule = epidemic frequency doomsday: add 1.5) (else …) (else …) (else …) (else …) (if scope:epidemic …: add 1) (else …) (if is target in variable list …: if …; else if …; else if …; else …) (if has variable = epidemic cooldown general: if …; else if …; else …) (if has holding = True: add 0.25) (if OR …: add 0.25) (if has holding type = city holding: add 0.75) (if OR …: add -0.991) ×base 1 (if province size level > spread settlement size level threshold: add …)"
         }
       },
       {
@@ -889,27 +1255,49 @@
         "maxProvinces": "145–220",
         "name": "Apocalyptic",
         "outbreakChance": {
-          "rules": "base base 0.001 +base num buildings ×0.004 (if has building or higher = common tradeport 01: add 0.016) (else …) (if OR …: multiply 0) ×base 0.2 (if has game rule = epidemic frequency often: add 0.1) (else …) (else …) (else …) (else …) (if county.development level <= 20: add …) (else …) (else …) (if culture …: add 0) (else …) (else …) (else …) (if OR …: add -0.2) (else …) (if has holding type = city holding: add 0.2) (else …) ×0.4 min 0.001 ×base 1 (if is target in variable list …: if …; else if …; else …) (else …) min 0 ×0.5 (if NOT …: multiply 1.25) (if has game rule = epidemic frequency disabled: multiply 0)"
+          "rules": "base base 0.001 +base province size level ×0.004 (if has port district = True: add 0.016) (else …) (if OR …: multiply 0) ×base 0.2 (if has game rule = epidemic frequency normal: add 0) (else …) (else …) (else …) (else …) (else …) (if county.prosperity level <= 20: add …) (else …) (else …) (if culture …: add 0) (else …) (else …) (if OR …: add -0.2) (else …) (if has holding type = city holding: add 0.2) (else …) ×0.4 min 0.001 ×base 1 (if is target in variable list …: if …; else if …; else …) (else …) min 0 ×0.5 (if NOT …: multiply 1.25) (if has game rule = epidemic frequency disabled: multiply 0)"
         },
         "progressDuration": "15–22 days",
         "recoveryDuration": "28–32 days",
         "spreadChance": {
-          "rules": "base (if scope:epidemic …: add 9) (else …) (else …) (if county …: add 4) (if scope:epidemic.epidemic type = epidemic type:dysentery: add …; add …) +base num buildings ×0.25 (if has building or higher = common tradeport 08: add 4; add 4; add 3; add 3; add 3; add 2; add 2; add 2) (else …) (else …) (else …) (else …) (else …) (else …) (else …) (if has building or higher = market villages 02: add 2; add 2) (else …) (if has building or higher = guild halls 08: add 4; add 4; add 4; add 4) (else …) (else …) (else …) (if terrain = farmlands: add 3) (else …) (else …) (else …) (else …) (else …) (if geographical region = divergence island regions: add -1) (if county.culture …: add 3) (else …) (else …) (if county.culture …: add -2) (else …) (if AND …: add -1) (if scope:epidemic …: add -3) ×base 1 min 0.001 (if OR …, NOR …: add -0.5) (if has global variable = black death, scope:epidemic = global var:black death, OR …, has building or higher = common tradeport 06, num buildings > 10: add 1) (if county …: add 1.5) +base county.development level ×0.025 (if has game rule = epidemic frequency doomsday: add 1.5) (else …) (else …) (else …) (else …) (if scope:epidemic …: add 1) (else …) (if is target in variable list …: if …; else if …; else if …; else …) (if has variable = epidemic cooldown general: if …; else if …; else …) (if has holding = True: add 0.25) (if OR …: add 0.25) (if has holding type = city holding: add 0.75) (if OR …: add -0.991)"
+          "rules": "base (if scope:epidemic …: add 9) (else …) (else …) (if county …: add 4) (if scope:epidemic.epidemic type = epidemic type:dysentery: add …; add …) +base num districts ×0.25 (if has building or higher = pb port 04: add 4; add 4; add 3; add 3; add 3; add 2; add 2; add 2) (else …) (else …) (else …) (if has building or higher = pb market 03: add 2; add 2) (else …) (if has building or higher = pb guild 04: add 4; add 4; add 4; add 4) (else …) (else …) (else …) (if terrain = farmlands: add 3) (else …) (else …) (else …) (else …) (else …) (if geographical region = divergence island regions: add -1) (if county.culture …: add 3) (else …) (else …) (if county.culture …: add -2) (else …) (if AND …: add -1) (if scope:epidemic …: add -3) ×base 1 min 0.001 (if OR …, NOR …: add -0.5) (if has global variable = black death, scope:epidemic = global var:black death, OR …, has building or higher = pb port 03, num districts > 4: add 1) (if county …: add 1.5) +base county.prosperity level ×0.025 (if has game rule = epidemic frequency doomsday: add 1.5) (else …) (else …) (else …) (else …) (if scope:epidemic …: add 1) (else …) (if is target in variable list …: if …; else if …; else if …; else …) (if has variable = epidemic cooldown general: if …; else if …; else …) (if has holding = True: add 0.25) (if OR …: add 0.25) (if has holding type = city holding: add 0.75) (if OR …: add -0.991) ×base 1 (if province size level > spread settlement size level threshold: add …)"
         }
       }
     ],
     "levels": [
       {
+        "countyModifiers": [
+          {
+            "key": "control_baseline_add",
+            "polarity": "bad",
+            "text": "-5 Control Baseline"
+          }
+        ],
         "provinceModifiers": [
           {
-            "key": "monthly_county_control_decline_add",
+            "key": "all_tax_mult",
             "polarity": "bad",
-            "text": "-0.3 Monthly County Control Decline Add /month"
+            "text": "-10% Holding Taxes"
           },
           {
-            "key": "development_decline",
+            "key": "province_size_baseline_add",
             "polarity": "bad",
-            "text": "-1 Development Decline /month"
+            "text": "-30 Settlement Size Baseline"
+          },
+          {
+            "key": "monthly_province_size_change_when_above_baseline_add",
+            "polarity": "bad",
+            "text": "-2.5 Settlement Size Decline /month"
+          },
+          {
+            "key": "monthly_control_change_when_above_baseline_add",
+            "polarity": "bad",
+            "text": "-0.3 Control Monthly Change above Control Baseline /month"
+          },
+          {
+            "key": "prosperity_decline",
+            "polarity": "bad",
+            "text": "-1 Prosperity Decline /month"
           },
           {
             "key": "levy_reinforcement_rate",
@@ -917,9 +1305,9 @@
             "text": "-20% Levy Reinforcement Rate"
           },
           {
-            "key": "county_opinion_add",
+            "key": "popular_opinion_add",
             "polarity": "bad",
-            "text": "-2 Popular Opinion"
+            "text": "-2 Popular Opinion Baseline"
           },
           {
             "key": "epidemic_travel_danger",
@@ -930,16 +1318,38 @@
         "threshold": "10"
       },
       {
+        "countyModifiers": [
+          {
+            "key": "control_baseline_add",
+            "polarity": "bad",
+            "text": "-10 Control Baseline"
+          }
+        ],
         "provinceModifiers": [
           {
-            "key": "monthly_county_control_decline_add",
+            "key": "all_tax_mult",
             "polarity": "bad",
-            "text": "-0.4 Monthly County Control Decline Add /month"
+            "text": "-25% Holding Taxes"
           },
           {
-            "key": "development_decline",
+            "key": "province_size_baseline_add",
             "polarity": "bad",
-            "text": "-2 Development Decline /month"
+            "text": "-60 Settlement Size Baseline"
+          },
+          {
+            "key": "monthly_province_size_change_when_above_baseline_add",
+            "polarity": "bad",
+            "text": "-5 Settlement Size Decline /month"
+          },
+          {
+            "key": "monthly_control_change_when_above_baseline_add",
+            "polarity": "bad",
+            "text": "-0.4 Control Monthly Change above Control Baseline /month"
+          },
+          {
+            "key": "prosperity_decline",
+            "polarity": "bad",
+            "text": "-2 Prosperity Decline /month"
           },
           {
             "key": "levy_reinforcement_rate",
@@ -952,9 +1362,9 @@
             "text": "-10% Garrison Size"
           },
           {
-            "key": "county_opinion_add",
+            "key": "popular_opinion_add",
             "polarity": "bad",
-            "text": "-3 Popular Opinion"
+            "text": "-2 Popular Opinion Baseline"
           },
           {
             "key": "epidemic_travel_danger",
@@ -965,16 +1375,38 @@
         "threshold": "50"
       },
       {
+        "countyModifiers": [
+          {
+            "key": "control_baseline_add",
+            "polarity": "bad",
+            "text": "-15 Control Baseline"
+          }
+        ],
         "provinceModifiers": [
           {
-            "key": "monthly_county_control_decline_add",
+            "key": "all_tax_mult",
             "polarity": "bad",
-            "text": "-0.5 Monthly County Control Decline Add /month"
+            "text": "-50% Holding Taxes"
           },
           {
-            "key": "development_decline",
+            "key": "province_size_baseline_add",
             "polarity": "bad",
-            "text": "-3 Development Decline /month"
+            "text": "-90 Settlement Size Baseline"
+          },
+          {
+            "key": "monthly_province_size_change_when_above_baseline_add",
+            "polarity": "bad",
+            "text": "-7.5 Settlement Size Decline /month"
+          },
+          {
+            "key": "monthly_control_change_when_above_baseline_add",
+            "polarity": "bad",
+            "text": "-0.5 Control Monthly Change above Control Baseline /month"
+          },
+          {
+            "key": "prosperity_decline",
+            "polarity": "bad",
+            "text": "-3 Prosperity Decline /month"
           },
           {
             "key": "levy_reinforcement_rate",
@@ -987,9 +1419,9 @@
             "text": "-20% Garrison Size"
           },
           {
-            "key": "county_opinion_add",
+            "key": "popular_opinion_add",
             "polarity": "bad",
-            "text": "-5 Popular Opinion"
+            "text": "-5 Popular Opinion Baseline"
           },
           {
             "key": "epidemic_travel_danger",

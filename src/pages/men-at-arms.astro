@@ -96,6 +96,7 @@ function costText(c: unknown): string {
                       <span>
                         <a class="u-name" href={`${base}/men-at-arms/${m.id}`}>{m.name}</a>
                         {m.specialRecruitOnly && <span class="u-sub"><br />event/effect only</span>}
+                        {m.controlValue != null && <span class="u-sub"><br />county control +{typeof m.controlValue === 'number' ? m.controlValue : JSON.stringify(m.controlValue)}</span>}
                       </span>
                     </span>
                   </td>

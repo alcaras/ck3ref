@@ -7,6 +7,8 @@ const CATEGORIES: { key: string; label: string; note: string }[] = [
   { key: 'succession', label: 'Realm Succession', note: 'Succession order, gender, and faith laws applied realm-wide.' },
   { key: 'title_succession', label: 'Title Succession', note: 'Elective and special succession applied to individual titles.' },
   { key: 'administrative', label: 'Administrative Laws', note: 'Provincial policies and treasury budget allocations for administrative realms.' },
+  { key: 'ecclesiastical', label: 'Ecclesiastical Laws', note: 'Cardinal budgets and church benefices for ecclesiastical governments.' },
+  { key: 'republic', label: 'Republic Laws', note: 'Republic type, tier and assembly laws (assembly mechanics are not modelled here).' },
   { key: 'imperial_policy', label: 'Imperial Policies', note: 'Realm-wide policies of the Japanese imperial court.' },
 ];
 
@@ -56,7 +58,7 @@ const hasSuccession = (g: (typeof groups)[number]) => g.laws.some((l) => l.succe
 <Base
   title="Laws"
   active="laws"
-  lede="All 27 law groups — crown-authority-style ladders, succession order and gender laws, administrative policies, and treasury budgets — with costs, effects, and unlock requirements resolved from the game's script."
+  lede={`All ${groups.length} law groups — crown-authority-style ladders, succession order and gender laws, administrative policies, and treasury budgets — with costs, effects, and unlock requirements resolved from the game's script.`}
   stats={[
     { value: groups.length, label: 'law groups' },
     { value: lawCount, label: 'laws' },
@@ -144,6 +146,7 @@ const hasSuccession = (g: (typeof groups)[number]) => g.laws.some((l) => l.succe
               {g.name}
               {g.cumulative && <span class="tag" title="each level keeps all effects of the previous one">cumulative</span>}
               {g.treasuryBudget && <span class="tag">treasury budget</span>}
+              {g.governmentFlags.length > 0 && <span class="tag" title={g.governmentFlags.join(', ')}>government-gated</span>}
               <span class="count">{g.laws.length}</span>
             </h3>
             {g.treasuryBudget ? (

@@ -6,13 +6,19 @@ import faithData from '../data/faiths.json';
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 
 // reverse map: holy site -> faiths that list it
-const usedBy = new Map<string, { id: string; name: string | null; color: string | null }[]>();
-for (const f of faithData.faiths) {
+const usedBy = new Map<string, { id: string; name: string | null; color: string | null; eminent: boolean }[]>();
+for (const f of (faithData as any).faiths) {
   for (const h of f.holySites) {
     if (!usedBy.has(h.key)) usedBy.set(h.key, []);
-    usedBy.get(h.key)!.push({ id: f.id, name: f.name, color: f.color });
+    usedBy.get(h.key)!.push({ id: f.id, name: f.name, color: f.color, eminent: h.eminent });
   }
 }
+const concepts = (faithData as any).concepts;
+const eminentCount = [...usedBy.values()].filter((u) => u.some((x) => x.eminent)).length;
+// holy-site limits per religion come from religion_types or the NReligion defines
+const limits = (faithData as any).religions[0]?.holySiteLimits;
+const sameLimits = (faithData as any).religions.every((r: any) => JSON.stringify(r.holySiteLimits) === JSON.stringify(limits));
+type Scaled = { scale: string; scaleName: string | null; lines: string[] };
 const usedCount = [...usedBy.keys()].filter((k) => sites.some((s) => s.id === k)).length;
 
 const religionName = new Map(faithData.religions.map((r) => [r.id, r.name]));
@@ -24,10 +30,11 @@ const religions = [...new Set(faithData.faiths.map((f) => f.religion))].sort((a,
 <Base
   title="Holy Sites"
   active="holy-sites"
-  lede="Every holy site defined in the game, where it sits on the map, the bonuses its controller grants to all rulers of a faith that venerates it, and which faiths those are."
+  lede="Every holy site defined in the game, where it sits on the map, and what it grants: faith-wide bonuses only where a faith counts it as Eminent, plus bonuses to the county holder and the county itself wherever it is a holy site at all."
   stats={[
     { value: sites.length, label: 'holy sites' },
     { value: usedCount, label: 'used by a faith at start' },
+    { value: eminentCount, label: 'Eminent for some faith' },
     { value: faithData.faiths.length, label: 'faiths' },
   ]}
 >
@@ -37,8 +44,33 @@ const religions = [...new Set(faithData.faiths.map((f) => f.religion))].sort((a,
       <option value="">every religion</option>
       {religions.map((r) => <option value={r}>{religionName.get(r)}</option>)}
     </select>
-    <label class="hint"><input type="checkbox" id="fused" /> used at start only</label>
+    <select id="fkind">
+      <option value="">all sites</option>
+      <option value="used">used by a faith at start</option>
+      <option value="eminent">Eminent for some faith</option>
+      <option value="dynamic">dynamic (created in play)</option>
+    </select>
     <span class="hint" id="count"></span>
+  </div>
+
+  <div class="concepts">
+    {['eminent_holy_site', 'holy_site'].map((k) => concepts[k]?.desc && (
+      <details>
+        <summary>{concepts[k].name} <span class="subtle">— the game's own description</span></summary>
+        <p class="concept-text">{concepts[k].desc}</p>
+      </details>
+    ))}
+    {limits && sameLimits && (
+      <p class="note">
+        Every religion uses the default limits: at most {limits.eminentMax} Eminent and {limits.totalMax} holy sites in
+        total per faith; at least {limits.eminentMin} Eminent and {limits.totalMin} in total
+        (<code>NReligion</code> defines; no religion overrides them).
+      </p>
+    )}
+    <p class="note">
+      "× relic rarity" bonuses are multiplied by the sum of Rarity values of the holy relics at the site
+      (1=Common, 2=Masterwork, 3=Famed, 4=Illustrious), per <code>_holy_site_types.info</code>.
+    </p>
   </div>
 
   <div class="tbl-scroll">
@@ -47,8 +79,10 @@ const religions = [...new Set(faithData.faiths.map((f) => f.religion))].sort((a,
         <tr>
           <th>Holy site</th>
           <th>County</th>
-          <th>Bonuses for controlling faith</th>
-          <th>Faiths</th>
+          <th title="Applied to every character of the faith while the site's holder shares it — only if the site is Eminent for that faith">Eminent: faith-wide</th>
+          <th title="Applied to the holder of the site's county, if same faith — Eminent or regular">County holder</th>
+          <th title="Applied to the site's county — Eminent or regular">County</th>
+          <th title="❧ = Eminent for that faith">Faiths</th>
         </tr>
       </thead>
       <tbody>
@@ -59,28 +93,41 @@ const religions = [...new Set(faithData.faiths.map((f) => f.religion))].sort((a,
               id={s.id}
               data-name={`${s.name} ${s.countyName ?? ''} ${s.baronyName ?? ''} ${users.map((u) => u.name).join(' ')}`.toLowerCase()}
               data-religions={users.map((u) => religionOf.get(u.id)).join(' ')}
-              data-used={users.length > 0 ? '1' : ''}
+              data-kind={[users.length > 0 ? 'used' : '', users.some((u) => u.eminent) ? 'eminent' : '', s.dynamic ? 'dynamic' : ''].join(' ')}
             >
-              <td class="name"><span class="u-name">{s.name}</span></td>
+              <td class="name">
+                <span class="u-name">{s.name}</span>
+                {s.dynamic && <span class="u-sub"><br />dynamic — no fixed location</span>}
+              </td>
               <td>
                 {s.countyName ?? <span class="subtle">—</span>}
                 {s.baronyName && <span class="u-sub"><br />{s.baronyName}</span>}
               </td>
               <td class="fx">
-                {s.modifiers.map((m) => <div>{m}</div>)}
+                {s.faithModifiers.map((m) => <div>{m}</div>)}
+                {(s.faithModifiersScaled as Scaled[]).map((b) => b.lines.map((m) => <div class="scaled" title={b.scaleName ?? b.scale}>{m} <span class="subtle">× relic rarity</span></div>))}
                 {s.effects && <div>{s.effects}</div>}
                 {s.parameters.map((p) => <div class="subtle">{p.text ?? p.key.replace(/_/g, ' ')}</div>)}
-                {s.modifiers.length + s.parameters.length === 0 && !s.effects && <span class="subtle">—</span>}
+                {s.faithModifiers.length + s.faithModifiersScaled.length + s.parameters.length === 0 && !s.effects && <span class="subtle">—</span>}
+              </td>
+              <td class="fx">
+                {s.holderModifiers.map((m) => <div>{m}</div>)}
+                {s.holderModifiers.length === 0 && <span class="subtle">—</span>}
+              </td>
+              <td class="fx">
+                {(s.countyModifiersScaled as Scaled[]).map((b) => b.lines.map((m) => <div class="scaled" title={b.scaleName ?? b.scale}>{m} <span class="subtle">× relic rarity</span></div>))}
+                {s.countyModifiersScaled.length === 0 && <span class="subtle">—</span>}
               </td>
               <td>
                 <span class="chips">
                   {users.map((u) => (
-                    <a class="chip" href={`${base}/faiths#${u.id}`}>
+                    <a class:list={['chip', { 'chip--counter': u.eminent }]} href={`${base}/faiths#${u.id}`} title={u.eminent ? concepts.eminent_holy_site.name : undefined}>
                       <span class="dot" style={`--c:${u.color ?? 'var(--faint)'}`} />
+                      {u.eminent && <span class="x">❧</span>}
                       {u.name}
                     </a>
                   ))}
-                  {users.length === 0 && <span class="subtle" title="No faith lists this site at game start — reachable via reformation or events">unused at start</span>}
+                  {users.length === 0 && <span class="subtle" title={s.dynamic ? 'A dynamic site type: rulers create it at a barony in play' : 'No faith lists this site at game start'}>{s.dynamic ? 'created in play' : 'unused at start'}</span>}
                 </span>
               </td>
             </tr>
@@ -93,7 +140,7 @@ const religions = [...new Set(faithData.faiths.map((f) => f.religion))].sort((a,
   <script>
     const q = document.getElementById('q') as HTMLInputElement;
     const frel = document.getElementById('frel') as HTMLSelectElement;
-    const fused = document.getElementById('fused') as HTMLInputElement;
+    const fkind = document.getElementById('fkind') as HTMLSelectElement;
     const count = document.getElementById('count')!;
     const rows = [...document.querySelectorAll<HTMLTableRowElement>('tbody tr')];
 
@@ -105,13 +152,13 @@ const religions = [...new Set(faithData.faiths.map((f) => f.religion))].sort((a,
         const ok =
           (!needle || (r.dataset.name ?? '').includes(needle)) &&
           (!rel || (r.dataset.religions ?? '').split(' ').includes(rel)) &&
-          (!fused.checked || r.dataset.used === '1');
+          (!fkind.value || (r.dataset.kind ?? '').split(' ').includes(fkind.value));
         r.hidden = !ok;
         if (ok) shown++;
       }
       count.textContent = `${shown} of ${rows.length}`;
     }
-    for (const el of [q, frel, fused]) el.addEventListener('input', apply);
+    for (const el of [q, frel, fkind]) el.addEventListener('input', apply);
     apply();
   </script>
 
@@ -119,6 +166,12 @@ const religions = [...new Set(faithData.faiths.map((f) => f.religion))].sort((a,
     .fx { font-size: 0.8rem; max-width: 26rem; }
     .chips { max-width: 26rem; }
     tr:target { background: color-mix(in oklab, var(--brass) 12%, transparent); }
-    .filterbar label.hint { display: inline-flex; align-items: center; gap: 0.3rem; margin-left: 0; }
+    .chip .x { color: var(--rubric); margin-right: 0.15rem; }
+    .scaled .subtle { font-size: 0.7rem; }
+    .concepts { margin: 0.4rem 0 1rem; max-width: 72ch; }
+    .concepts summary { cursor: pointer; color: var(--brass); font-size: 0.85rem; }
+    .concept-text { white-space: pre-line; color: var(--dim); font-size: 0.82rem; }
+    .note { color: var(--faint); font-size: 0.78rem; }
+    .note code { font-family: var(--font-mono); }
   </style>
 </Base>

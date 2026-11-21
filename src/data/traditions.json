@@ -56,8 +56,8 @@
       "parameters": [
         {
           "hasLoc": true,
-          "key": "next_level_military_camps",
-          "text": "The Militia Camps line of Buildings can be constructed one Era early",
+          "key": "adaptive_skirmishing_militia_camps_bonuses",
+          "text": "The Militia Camps line of Buildings provides additional Damage and Toughness to Stationed Skirmishers",
           "value": true
         },
         {
@@ -113,7 +113,7 @@
       },
       "modifiers": {
         "Characters": [
-          "+75% Army Loot Capacity"
+          "+50% Army Loot Capacity"
         ]
       },
       "name": "Battlefield Looters",
@@ -177,8 +177,8 @@
       },
       "modifiers": {
         "Characters": [
-          "-14 Forest Danger",
-          "-19 Taiga Danger"
+          "-9 Forest Danger",
+          "-14 Taiga Danger"
         ],
         "Provinces": [
           "+10% Levy Size in Forest",
@@ -286,8 +286,8 @@
       "parameters": [
         {
           "hasLoc": true,
-          "key": "next_level_barracks",
-          "text": "The Barracks line of Buildings can be constructed one Era early",
+          "key": "formation_fighting_archery_ranges_bonuses",
+          "text": "The Archery Ranges line of Buildings provides additional Damage and Toughness to Stationed Archers",
           "value": true
         },
         {
@@ -364,6 +364,24 @@
           "value": true
         },
         {
+          "hasLoc": false,
+          "key": "perk_tactician_pikemen",
+          "text": "Perk tactician pikemen",
+          "value": true
+        },
+        {
+          "hasLoc": false,
+          "key": "perk_tactician_archers",
+          "text": "Perk tactician archers",
+          "value": true
+        },
+        {
+          "hasLoc": false,
+          "key": "perk_tactician_heavy_infantry",
+          "text": "Perk tactician heavy infantry",
+          "value": true
+        },
+        {
           "hasLoc": true,
           "key": "unlock_maa_vigmen",
           "text": "Can recruit Vigmen as Men-at-Arms",
@@ -372,7 +390,7 @@
         {
           "hasLoc": true,
           "key": "unlock_maa_varangian_veterans",
-          "text": "Can recruit Varangian Veterans as Men-at-Arms",
+          "text": "Can recruit one regiment of Varangian Veterans as Men-at-Arms",
           "value": true
         },
         {
@@ -395,14 +413,14 @@
         },
         {
           "hasLoc": true,
-          "key": "trade_ports_stationed_maa_bonus",
-          "text": "The Tradeport line of Buildings provide additional bonuses to Stationed Men-at-Arms",
+          "key": "port_district_stationed_maa_bonus",
+          "text": "The Port District District provides Stationed Men-at-Arms Toughness bonuses",
           "value": true
         },
         {
           "hasLoc": true,
-          "key": "trade_ports_enabled_for_tribals",
-          "text": "The Tradeport line of Buildings can be constructed in coastal Tribe Holdings",
+          "key": "port_district_enabled_for_tribals",
+          "text": "The Port District District can be constructed in Tribal Holdings",
           "value": true
         },
         {
@@ -512,12 +530,13 @@
           "+5 Number of Knights",
           "+3 Size of Men-at-Arms Regiments",
           "-25% Army Gold Maintenance",
-          "-25% Men-at-Arms Recruitment Cost",
+          "-15% Men-at-Arms Recruitment Cost",
           "-40% Knight Effectiveness",
           "-2 Levy Toughness",
           "-30% Heavy Cavalry Toughness",
           "-15% Spearmen Toughness",
-          "-25% Heavy Infantry Toughness"
+          "-25% Heavy Infantry Toughness",
+          "-1% Iron Buy Price"
         ]
       },
       "name": "Frugal Armorers",
@@ -593,7 +612,7 @@
       },
       "modifiers": {
         "Characters": [
-          "-14 Hills Danger"
+          "-9 Hills Danger"
         ],
         "Provinces": [
           "+10% Levy Size in Hills",
@@ -778,25 +797,42 @@
         "Characters": [
           "+2% Herd Conversion into Horde Riders",
           "-15% Light Cavalry Maintenance",
-          "-25% Light Cavalry Recruitment Cost",
+          "-15% Light Cavalry Recruitment Cost",
           "-15% Heavy Cavalry Maintenance",
-          "-25% Heavy Cavalry Recruitment Cost",
+          "-15% Heavy Cavalry Recruitment Cost",
           "-15% Archer Cavalry Maintenance",
-          "-25% Archer Cavalry Recruitment Cost"
+          "-15% Archer Cavalry Recruitment Cost",
+          "+20% Beasts of Burden Trade Expertise Gain",
+          "+2% Horses Sell Price"
+        ],
+        "Counties": [
+          "+20% Horses Production"
         ]
       },
       "name": "Horse Breeders",
       "parameters": [
         {
           "hasLoc": true,
-          "key": "next_level_stables",
-          "text": "The Stables line of Buildings can be constructed one Era early",
+          "key": "horse_breeder_cavalry_buildings_bonuses",
+          "text": "The Light Cavalry Stables, Heavy Cavalry Compound, and Horse Archer Paddocks lines of Buildings provide additional Damage and Toughness to Stationed Light Cavalry, Heavy Cavalry, and Archer Cavalry",
           "value": true
         },
         {
           "hasLoc": true,
           "key": "horse_breeder_internal_yurt_unlock",
           "text": "Unlocks the Finest Horses Internal Upgrade for Nomadic Domiciles",
+          "value": true
+        },
+        {
+          "hasLoc": true,
+          "key": "horse_breeder_productivity_bonus",
+          "text": "Horses Districts provide additional Taxes",
+          "value": true
+        },
+        {
+          "hasLoc": true,
+          "key": "training_grounds_cavalry_horse_need",
+          "text": "Training Grounds's Horses Need also increases Damage of Stationed Light Cavalry, Heavy Cavalry, and Archer Cavalry when met",
           "value": true
         }
       ],
@@ -853,7 +889,7 @@
       },
       "modifiers": {
         "Characters": [
-          "-24 Jungle Danger"
+          "-17 Jungle Danger"
         ],
         "Provinces": [
           "+10% Levy Size in Jungle",
@@ -878,6 +914,12 @@
           "hasLoc": true,
           "key": "can_recruit_jungle_specialist",
           "text": "Gain a Decision to recruit Jungle Commanders",
+          "value": true
+        },
+        {
+          "hasLoc": true,
+          "key": "jungle_warriors_jungle_fort",
+          "text": "Unlocks the Jungle Fort line of Buildings in the Military District District in Jungle",
           "value": true
         }
       ],
@@ -963,6 +1005,12 @@
           "hasLoc": true,
           "key": "unlock_maa_longbowmen",
           "text": "Can recruit Longbowmen as Men-at-Arms",
+          "value": true
+        },
+        {
+          "hasLoc": false,
+          "key": "perk_tactician_archers",
+          "text": "Perk tactician archers",
           "value": true
         },
         {
@@ -1059,7 +1107,7 @@
       "modifiers": {
         "Characters": [
           "-20% Faith Conversion Cost",
-          "-20% Different Faith County Opinion Mult"
+          "-20% Different Faith Popular Opinion Mult"
         ]
       },
       "name": "Malleable Invaders",
@@ -1154,8 +1202,8 @@
       },
       "modifiers": {
         "Characters": [
-          "-24 Mountains Danger",
-          "-24 Desert Mountains Danger"
+          "-17 Mountains Danger",
+          "-17 Desert Mountains Danger"
         ],
         "Provinces": [
           "+10% Levy Size in Mountains",
@@ -1222,6 +1270,12 @@
           "kind": "pillar",
           "negated": true,
           "text": "East African"
+        },
+        {
+          "key": "culture_is_or_has_ancestor_trigger",
+          "kind": "trigger",
+          "negated": true,
+          "text": "Culture is or has ancestor"
         }
       ],
       "sourceFile": "00_combat_traditions.txt"
@@ -1354,7 +1408,7 @@
       },
       "modifiers": {
         "Characters": [
-          "-40% Control Growth"
+          "-5 Control Baseline"
         ]
       },
       "name": "Quarrelsome",
@@ -1458,8 +1512,8 @@
         },
         {
           "hasLoc": true,
-          "key": "warrior_lodges_lift_restrictions",
-          "text": "The Warrior Lodges line of Buildings can always be constructed in Counties of this Culture",
+          "key": "reverence_for_veterans_military_infirmaries_bonuses",
+          "text": "The Military Infirmaries line of Buildings provides additional Popular Opinion",
           "value": true
         }
       ],
@@ -1482,7 +1536,7 @@
             {
               "amount": 3000,
               "op": "add",
-              "when": "The Culture does not have any County with a Strategic Marches Duchy Building"
+              "when": "The Culture does not have any County with a Marches Building"
             },
             {
               "amount": -1500,
@@ -1544,8 +1598,8 @@
         },
         {
           "hasLoc": true,
-          "key": "next_level_fortification",
-          "text": "The Fortification lines of Buildings can be built one Era earlier",
+          "key": "stalwart_defenders_walls_building_slot",
+          "text": "The Walls District District has +1 Building Slot",
           "value": true
         },
         {
@@ -1610,7 +1664,7 @@
           "+8 Defender Advantage"
         ]
       },
-      "name": "Stand and Fight!",
+      "name": "Stand and Fight",
       "parameters": [
         {
           "hasLoc": true,
@@ -1683,8 +1737,8 @@
       "parameters": [
         {
           "hasLoc": true,
-          "key": "strength_in_numbers_maa_limit_bonus",
-          "text": "The Barracks and War Camps lines of Buildings increase Levy Size in Counties of this Culture",
+          "key": "strength_in_numbers_levy_buildings_bonuses",
+          "text": "The Mustering Grounds and Warrior Households lines of Buildings provide additional Levy Size",
           "value": true
         },
         {
@@ -1771,7 +1825,7 @@
         {
           "hasLoc": true,
           "key": "unlocks_contract_assistance",
-          "text": "Unlocks the Offer Military Assistance Interaction",
+          "text": "Unlocks the Offer Military Assistance Interaction (Kings and lower Rank Rulers only)",
           "value": true
         },
         {
@@ -1910,6 +1964,12 @@
       "parameters": [
         {
           "hasLoc": true,
+          "key": "monastery_prowess_martial_bonus",
+          "text": "The Temple School and Schools lines of Buildings provide additional Prowess and Martial bonuses",
+          "value": true
+        },
+        {
+          "hasLoc": true,
           "key": "prowess_from_religious_traits",
           "text": "Traits such as Astute Intellectual, Devoted or Theologian give Prowess",
           "value": true
@@ -1922,8 +1982,8 @@
         },
         {
           "hasLoc": true,
-          "key": "monastery_prowess_martial_bonus",
-          "text": "The Monasteries line of Buildings provide additional Prowess and Martial bonuses",
+          "key": "warrior_monks_temple_martial_prowess",
+          "text": "Temple Holdings and Temple Citadel Holdings provide additional Prowess and Martial bonuses",
           "value": true
         }
       ],
@@ -2038,9 +2098,9 @@
       },
       "modifiers": {
         "Characters": [
-          "-19 Desert Danger",
-          "-14 Drylands Danger",
-          "-24 Desert Mountains Danger"
+          "-14 Desert Danger",
+          "-10 Drylands Danger",
+          "-17 Desert Mountains Danger"
         ],
         "Provinces": [
           "+10% Levy Size in Drylands",
@@ -2141,7 +2201,7 @@
       },
       "modifiers": {
         "Characters": [
-          "-19 Taiga Danger"
+          "-14 Taiga Danger"
         ]
       },
       "name": "Winter Warriors",
@@ -2232,15 +2292,16 @@
         "Characters": [
           "+25% Men-at-Arms Recruitment Cost",
           "-2 Prowess",
-          "-22 Floodplains Danger"
+          "-16 Floodplains Danger",
+          "+10% Cereals Trade Expertise Gain",
+          "-1% Cereals Buy Price"
         ],
         "Counties": [
-          "+30% Development Growth in Farmlands",
-          "-10% Building Construction Cost in Farmlands",
-          "+30% Development Growth in Floodplains",
-          "-10% Building Construction Cost in Floodplains",
-          "+10% Levy Size in Farmlands",
-          "+10% Levy Size in Floodplains"
+          "+15% Agricultural Taxes",
+          "-10% Villages District Construction Cost",
+          "-10% Manor Houses District Construction Cost",
+          "-10% Religious Community District Construction Cost",
+          "+10% Housing District Construction Cost"
         ]
       },
       "name": "Agrarian",
@@ -2261,6 +2322,18 @@
           "hasLoc": true,
           "key": "hard_working_traits_more_valued",
           "text": "The Diligent, Patient, and Athletic Traits have additional bonuses",
+          "value": true
+        },
+        {
+          "hasLoc": true,
+          "key": "agrarian_villages_building_slot",
+          "text": "The Villages District District has +1 Building Slot",
+          "value": true
+        },
+        {
+          "hasLoc": true,
+          "key": "agrarian_villages_maa_maintenance",
+          "text": "Stationed Men-at-Arms in the Villages District District have +10% Maintenance",
           "value": true
         }
       ],
@@ -2322,16 +2395,13 @@
       "modifiers": {
         "Characters": [
           "+5 Advantage in Hills",
-          "-45 Hills Danger",
-          "-24 Mountains Danger",
-          "-24 Desert Mountains Danger"
+          "-30 Hills Danger",
+          "-17 Mountains Danger",
+          "-17 Desert Mountains Danger",
+          "-1.5% Millet Buy Price"
         ],
         "Counties": [
-          "+20% Development Growth in Hills"
-        ],
-        "Provinces": [
-          "-10% Building Construction Cost in Hills",
-          "-10% Holding Construction Cost in Hills"
+          "+20% Prosperity Growth in Hills"
         ]
       },
       "name": "Amharic Highlanders",
@@ -2350,8 +2420,20 @@
         },
         {
           "hasLoc": true,
-          "key": "hill_farms_building_bonuses",
-          "text": "The Hill Farms line of Buildings have additional bonuses in Counties of this Culture",
+          "key": "hills_villages_building_slot",
+          "text": "The Villages District District has +1 Building Slot in Hills",
+          "value": true
+        },
+        {
+          "hasLoc": true,
+          "key": "hills_villages_defender_bonuses",
+          "text": "The Villages District District provides Defender Holding Advantage and Stationed Men-at-Arms Control in Hills",
+          "value": true
+        },
+        {
+          "hasLoc": true,
+          "key": "terrace_gardens_hills",
+          "text": "Unlocks the Terrace Gardens line of Buildings in the Villages District District in Hills",
           "value": true
         }
       ],
@@ -2362,7 +2444,14 @@
           "text": "The Culture is not present in any County with Hilly Terrain"
         }
       ],
-      "shownWhen": [],
+      "shownWhen": [
+        {
+          "key": "culture_is_or_has_ancestor_trigger",
+          "kind": "trigger",
+          "negated": false,
+          "text": "Culture is or has ancestor"
+        }
+      ],
       "sourceFile": "00_maa_traditions.txt"
     },
     {
@@ -2395,19 +2484,29 @@
         "1": "mediterranean",
         "4": "tools"
       },
-      "modifiers": {},
+      "modifiers": {
+        "Characters": [
+          "-1% Copper Buy Price",
+          "-1.5% Alum Buy Price",
+          "-1.25% Gems Buy Price"
+        ],
+        "Counties": [
+          "+10% Mining Taxes",
+          "+25% Base Metals Production",
+          "+25% Alum Production",
+          "+25% Precious Metals Production",
+          "+25% Amber Production",
+          "+25% Jade Production",
+          "+25% Gems Production",
+          "+25% Salt Production"
+        ]
+      },
       "name": "Ancient Miners",
       "parameters": [
         {
           "hasLoc": true,
-          "key": "ancient_miners_quarries_building_bonuses",
-          "text": "The Quarries line of Buildings provide additional bonuses",
-          "value": true
-        },
-        {
-          "hasLoc": true,
-          "key": "can_build_quarries_everywhere",
-          "text": "The Quarries line of Buildings can always be constructed in Counties of this Culture",
+          "key": "ancient_miners_pit_mines",
+          "text": "Unlocks the Small Mining Pit Building in resource Districts",
           "value": true
         }
       ],
@@ -2510,6 +2609,12 @@
           "key": "cultrad_unlocks_t4_bounties_for_whispers",
           "text": "Improves the Bounties for Whispers Countermeasure (Tier 4)",
           "value": true
+        },
+        {
+          "hasLoc": true,
+          "key": "astute_diplomats_household_building_slot",
+          "text": "The Royal Household District has +1 Building Slot",
+          "value": true
         }
       ],
       "requirements": [],
@@ -2531,7 +2636,7 @@
             {
               "amount": 3000,
               "op": "add",
-              "when": "The Culture is not present in at least 5 Counties with a Farms & Fields or Manor Houses Building"
+              "when": "The Culture is not present in at least 5 Counties with a Villages District or one of the following Building lines: Grain Fields, Rice Fields, Millet Fields or Orchards"
             },
             {
               "amount": 0.5,
@@ -2556,23 +2661,31 @@
         "1": "western",
         "4": "food"
       },
-      "modifiers": {},
+      "modifiers": {
+        "Characters": [
+          "+20% Alcohol Trade Expertise Gain",
+          "+3% Beer Sell Price"
+        ],
+        "Counties": [
+          "+50% Beer Production"
+        ]
+      },
       "name": "Brewing Culture",
       "parameters": [
         {
           "hasLoc": true,
-          "key": "allows_brewery",
-          "text": "Unlocks the Breweries line of Buildings for City Holdings",
-          "value": true
-        },
-        {
-          "hasLoc": true,
-          "key": "brewery_farming_bonus",
-          "text": "The Farms & Fields and Manor Houses line of Buildings provide Popular Opinion bonuses",
+          "key": "brewery_popular_opinion",
+          "text": "Beer Brewery, Cider Brewery, Mead Brewery, and Brewers' Guild Buildings provide +1 Popular Opinion per Building level",
           "value": true
         }
       ],
-      "requirements": [],
+      "requirements": [
+        {
+          "kind": "text",
+          "negated": false,
+          "text": "Your Faith does not forbid Alcohol"
+        }
+      ],
       "shownWhen": [],
       "sourceFile": "00_realm_traditions.txt"
     },
@@ -2618,8 +2731,10 @@
       },
       "modifiers": {
         "Characters": [
-          "+10% Castle Holding Construction Time",
-          "+20% Castle Holding Construction Cost"
+          "-10% Castle Holding Construction Time",
+          "-20% Castle Holding Construction Cost",
+          "-20% Walls District Construction Cost",
+          "-1.5% Stone Buy Price"
         ]
       },
       "name": "Castle Keepers",
@@ -2653,6 +2768,12 @@
           "key": "ai_more_likely_to_fortify",
           "text": "Rulers of this Culture are more likely to construct Buildings that increase Fort Level",
           "value": true
+        },
+        {
+          "hasLoc": true,
+          "key": "castle_keepers_walls_building_slot",
+          "text": "The Walls District District has +1 Building Slot",
+          "value": true
         }
       ],
       "requirements": [
@@ -2665,11 +2786,6 @@
           "kind": "text",
           "negated": false,
           "text": "The Culture already has the Tradition City Keepers"
-        },
-        {
-          "kind": "text",
-          "negated": false,
-          "text": "Your Government is Nomadic"
         }
       ],
       "shownWhen": [],
@@ -2724,18 +2840,6 @@
       "parameters": [
         {
           "hasLoc": true,
-          "key": "next_level_guild_halls",
-          "text": "The Guilds line of Buildings can be constructed one Era early",
-          "value": true
-        },
-        {
-          "hasLoc": true,
-          "key": "city_buildings_more_county_opinion",
-          "text": "City Holdings give more Popular Opinion per level",
-          "value": true
-        },
-        {
-          "hasLoc": true,
           "key": "ai_more_likely_to_city",
           "text": "Rulers of this Culture are more likely to construct City Holdings",
           "value": true
@@ -2748,8 +2852,8 @@
         },
         {
           "hasLoc": true,
-          "key": "watermills_windmills_cities",
-          "text": "Watermills or Windmills or Caravanserai lines of Buildings can be constructed in City Holdings after discovering the Windmills Innovation",
+          "key": "city_keepers_urban_housing_building_slot",
+          "text": "The Housing District District has +1 Building Slot",
           "value": true
         }
       ],
@@ -2832,8 +2936,7 @@
       },
       "modifiers": {
         "Counties": [
-          "+10% Development Growth",
-          "-20% Control Growth",
+          "+10% Prosperity Growth",
           "+20% Build Speed"
         ]
       },
@@ -2842,13 +2945,19 @@
         {
           "hasLoc": true,
           "key": "grants_to_lowborns_bonuses",
-          "text": "Granting Counties to Commoners increases County Control and makes them a Peasant Leader",
+          "text": "Granting Counties to Commoners increases County Control and makes them a Peasant Leader, and the Peasant Leader Trait increases the Control Baseline by 20",
           "value": true
         },
         {
           "hasLoc": true,
-          "key": "collective_lands_farms_bonuses",
-          "text": "The Farms & Fields line of Buildings provide Stationed Men-at-Arms bonuses",
+          "key": "collective_lands_villages_maa_bonuses",
+          "text": "The Villages District District provides Stationed Men-at-Arms Damage and Toughness bonuses",
+          "value": true
+        },
+        {
+          "hasLoc": true,
+          "key": "collective_lands_villages_control_penalty",
+          "text": "The Villages District District reduces the Control Baseline by 10",
           "value": true
         }
       ],
@@ -3064,35 +3173,37 @@
       },
       "modifiers": {
         "Characters": [
-          "-32 Desert Danger",
-          "-22 Drylands Danger",
-          "-42 Desert Mountains Danger",
+          "-22 Desert Danger",
+          "-16 Drylands Danger",
+          "-29 Desert Mountains Danger",
           "+10% County Fertility Growth in Drylands Terrain",
           "+10% County Fertility Growth in Desert Terrain"
         ],
         "Counties": [
-          "+35% Development Growth in Desert",
-          "+15% Development Growth in Drylands"
-        ],
-        "Provinces": [
-          "-10% Building Construction Cost in Desert",
-          "-10% Building Construction Cost in Drylands",
-          "-10% Holding Construction Cost in Desert",
-          "-10% Holding Construction Cost in Drylands"
+          "+35% Prosperity Growth in Desert",
+          "+15% Prosperity Growth in Drylands",
+          "-10% District Construction Cost in Desert",
+          "-10% District Construction Cost in Drylands"
         ]
       },
       "name": "Dryland Dwellers",
       "parameters": [
         {
           "hasLoc": true,
-          "key": "plantations_building_bonuses",
-          "text": "The Desert Agriculture line of Buildings have additional bonuses in Counties of this Culture",
+          "key": "drylands_hunt_success_chance",
+          "text": "Increased Hunt Success Chance in Drylands and Desert",
           "value": true
         },
         {
           "hasLoc": true,
-          "key": "drylands_hunt_success_chance",
-          "text": "Increased Hunt Success Chance in Drylands and Desert",
+          "key": "desert_villages_building_slot",
+          "text": "The Villages District District has +1 Building Slot in Desert and Drylands",
+          "value": true
+        },
+        {
+          "hasLoc": true,
+          "key": "dryland_dwellers_irrigation_network_bonuses",
+          "text": "The Irrigation Network and Qanats & Windcatchers lines of Buildings provide additional Agricultural Tax and reduce Stationed Light Cavalry and Camel Cavalry Maintenance",
           "value": true
         }
       ],
@@ -3153,12 +3264,10 @@
       },
       "modifiers": {
         "Characters (Female Dominated faiths)": [
-          "Name: tradition_equal_inheritance_name",
-          "+10 Opinion of Male Rulers"
+          "+5 Opinion of Male Rulers"
         ],
         "Characters (Male Dominated faiths)": [
-          "Name: tradition_equal_inheritance_name",
-          "+10 Opinion of Female Rulers"
+          "+5 Opinion of Female Rulers"
         ]
       },
       "name": "Equal Inheritance",
@@ -3217,7 +3326,8 @@
       "modifiers": {
         "Characters": [
           "+10 Courtier and Guest Opinion",
-          "+5% Owned Personal Scheme Success Chance Add"
+          "+5% Owned Personal Scheme Success Chance Add",
+          "-0.75% Comforts Buy Price"
         ]
       },
       "name": "Esteemed Hospitality",
@@ -3293,7 +3403,9 @@
       },
       "modifiers": {
         "Characters": [
-          "+5 Close Family Opinion"
+          "+5 Close Family Opinion",
+          "+5% Trade Competitiveness",
+          "-20% Trade Expertise Decline"
         ]
       },
       "name": "Family Business",
@@ -3314,6 +3426,24 @@
           "hasLoc": true,
           "key": "penalty_for_revoking_titles_from_close_family",
           "text": "Lose Prestige when revoking Titles from Close Family",
+          "value": true
+        },
+        {
+          "hasLoc": true,
+          "key": "increased_company_direction_gain",
+          "text": "Changes to Company Direction are doubled",
+          "value": true
+        },
+        {
+          "hasLoc": true,
+          "key": "better_stewardship_education",
+          "text": "Children of this Culture are more likely to receive a good Education in Stewardship",
+          "value": true
+        },
+        {
+          "hasLoc": true,
+          "key": "family_first_trade_competitiveness",
+          "text": "The Family First Trait provides Trade Competitiveness",
           "value": true
         }
       ],
@@ -3440,7 +3570,11 @@
       },
       "modifiers": {
         "Characters": [
-          "+10% Temple Buildings Construction Cost"
+          "+10% Temple Buildings Construction Cost",
+          "+10% Temple Citadel Holding Construction Cost",
+          "+10% Religious Community District Construction Cost",
+          "+10% Religious Enclave Construction Cost",
+          "-1.5% Stone Buy Price"
         ]
       },
       "name": "Fervent Temple Builders",
@@ -3466,7 +3600,7 @@
         {
           "hasLoc": true,
           "key": "temple_next_level",
-          "text": "Temple Holdings can be upgraded one Era early",
+          "text": "Temple Holdings, Temple Citadel Holdings, and the Religious Community District and Religious Enclave Districts can be upgraded one Era earlier",
           "value": true
         },
         {
@@ -3528,30 +3662,24 @@
       },
       "modifiers": {
         "Characters": [
-          "-32 Forest Danger",
-          "-38 Taiga Danger",
+          "-22 Forest Danger",
+          "-28 Taiga Danger",
           "+10% County Fertility Growth in Forest Terrain",
-          "+10% County Fertility Growth in Taiga Terrain"
+          "+10% County Fertility Growth in Taiga Terrain",
+          "+15% Carpentries Trade Expertise Gain",
+          "-1.5% Wood Buy Price",
+          "-1.5% Honey Buy Price"
         ],
         "Counties": [
-          "+15% Development Growth in Forest",
-          "+15% Development Growth in Taiga"
+          "+15% Prosperity Growth in Forest",
+          "+15% Prosperity Growth in Taiga"
         ],
         "Provinces": [
-          "-10% Building Construction Cost in Forest",
-          "-10% Building Construction Cost in Taiga",
-          "-10% Holding Construction Cost in Forest",
-          "-10% Holding Construction Cost in Taiga"
+          "+10% Hinterland Taxes"
         ]
       },
       "name": "Forest Folk",
       "parameters": [
-        {
-          "hasLoc": true,
-          "key": "logging_camps_building_bonuses",
-          "text": "The Forestry line of Buildings have additional bonuses in Counties of this Culture",
-          "value": true
-        },
         {
           "hasLoc": true,
           "key": "forest_hunt_success_chance",
@@ -3560,8 +3688,14 @@
         },
         {
           "hasLoc": true,
-          "key": "watermills_forestries_unlock",
-          "text": "The construction of Wood Pastures Building unlocks the first four tiers of Watermills line of Buildings",
+          "key": "forest_villages_building_slot",
+          "text": "The Villages District District has +1 Building Slot in Forest and Taiga",
+          "value": true
+        },
+        {
+          "hasLoc": true,
+          "key": "village_hunter_forest_taiga",
+          "text": "Unlocks the Village Hunter line of Buildings in the Villages District and Feast Halls District Districts in Forest and Taiga",
           "value": true
         }
       ],
@@ -3637,13 +3771,13 @@
       },
       "modifiers": {
         "Characters": [
-          "-50% Mercenary Hire Cost",
+          "-25% Mercenary Hire Cost",
           "+25% Vassal Levy Contribution",
-          "+10 Different Culture Opinion",
+          "+5 Different Culture Opinion",
           "No Negative Opinion of Other Cultures"
         ],
         "Culture": [
-          "+200% Mercenary Count Mult",
+          "+100% Mercenary Count Mult",
           "+25% Cultural Acceptance Gain"
         ]
       },
@@ -3746,7 +3880,7 @@
       "modifiers": {
         "Characters": [
           "-50% Friendly Fatal Casualties",
-          "-25% Monthly Gold Income while at War"
+          "-10% Monthly Gold Income while at War"
         ],
         "Counties": [
           "+10% Levy Size"
@@ -3827,19 +3961,14 @@
       "modifiers": {
         "Characters": [
           "+0.1 Negate Health Penalty Add",
-          "-32 Desert Danger",
-          "-22 Drylands Danger",
-          "-42 Desert Mountains Danger"
+          "-22 Desert Danger",
+          "-16 Drylands Danger",
+          "-29 Desert Mountains Danger",
+          "-0.75% Sugar Buy Price"
         ],
         "Counties": [
-          "+35% Development Growth in Desert",
-          "+15% Development Growth in Drylands"
-        ],
-        "Provinces": [
-          "-10% Building Construction Cost in Desert",
-          "-10% Building Construction Cost in Drylands",
-          "-10% Holding Construction Cost in Desert",
-          "-10% Holding Construction Cost in Drylands"
+          "+35% Prosperity Growth in Desert",
+          "+15% Prosperity Growth in Drylands"
         ]
       },
       "name": "Irrigation Experts",
@@ -3847,25 +3976,31 @@
         {
           "hasLoc": true,
           "key": "innovative_traits_more_valued",
-          "text": "The Gardener, Patient, and Scholar Traits gives a Tax bonus in Deserts, Drylands, and Desert Mountains",
+          "text": "The Gardener, Patient, and Erudite Traits gives a Tax bonus in Deserts, Drylands, and Desert Mountains",
           "value": true
         },
         {
           "hasLoc": true,
           "key": "unlocks_qanat_building",
-          "text": "The Qanats line of Buildings can be constructed in Desert Mountain, Mountain, Hill, Desert, and Dryland Holdings of this Culture",
-          "value": true
-        },
-        {
-          "hasLoc": true,
-          "key": "plantations_building_bonuses",
-          "text": "The Desert Agriculture line of Buildings have additional bonuses in Counties of this Culture",
+          "text": "The Qanats & Windcatchers line of Buildings can be constructed in Crops-producing Resource Districts of this Culture",
           "value": true
         },
         {
           "hasLoc": true,
           "key": "drylands_hunt_success_chance",
           "text": "Increased Hunt Success Chance in Drylands and Desert",
+          "value": true
+        },
+        {
+          "hasLoc": true,
+          "key": "desert_villages_building_slot",
+          "text": "The Villages District District has +1 Building Slot in Desert and Drylands",
+          "value": true
+        },
+        {
+          "hasLoc": true,
+          "key": "dryland_dwellers_irrigation_network_bonuses",
+          "text": "The Irrigation Network and Qanats & Windcatchers lines of Buildings provide additional Agricultural Tax and reduce Stationed Light Cavalry and Camel Cavalry Maintenance",
           "value": true
         }
       ],
@@ -3912,7 +4047,7 @@
             {
               "amount": 3000,
               "op": "add",
-              "when": "The Culture does not have at least 10 Counties with one of the following Building lines: Desert Agriculture, Orchards or Farms & Fields"
+              "when": "The Culture does not have at least 10 Counties with a Villages District or one of the following Building lines: Grain Fields, Rice Fields, Millet Fields or Orchards"
             },
             {
               "amount": 0.5,
@@ -3937,13 +4072,24 @@
         "1": "mediterranean",
         "4": "garden_architects"
       },
-      "modifiers": {},
+      "modifiers": {
+        "Characters": [
+          "+15% Comforts Trade Expertise Gain",
+          "+2% Fruit Sell Price"
+        ]
+      },
       "name": "Garden Architects",
       "parameters": [
         {
           "hasLoc": true,
           "key": "enable_garden_duchy_building",
-          "text": "Rulers can construct the Royal Gardens Duchy Building",
+          "text": "Rulers can construct the Royal Garden Building in the Ducal Residence District Duchy District",
+          "value": true
+        },
+        {
+          "hasLoc": true,
+          "key": "garden_architects_garden_complex",
+          "text": "Unlocks the Garden Complex line of Buildings in the Patrician District District",
           "value": true
         },
         {
@@ -4083,14 +4229,10 @@
       },
       "modifiers": {
         "Characters": [
-          "-65 Jungle Danger"
+          "-45 Jungle Danger"
         ],
         "Counties": [
-          "+35% Development Growth in Jungle"
-        ],
-        "Provinces": [
-          "-10% Building Construction Cost in Jungle",
-          "-10% Holding Construction Cost in Jungle"
+          "+35% Prosperity Growth in Jungle"
         ]
       },
       "name": "Hidden Cities",
@@ -4105,6 +4247,12 @@
           "hasLoc": true,
           "key": "castle_holding_fort_level_in_jungle_bonus",
           "text": "Fort Level per level of Tribal Hold in Jungle Terrain: +2",
+          "value": true
+        },
+        {
+          "hasLoc": true,
+          "key": "hidden_cities_urban_housing_building_slot",
+          "text": "The Housing District District has +1 Building Slot in Jungle",
           "value": true
         }
       ],
@@ -4173,26 +4321,18 @@
       },
       "modifiers": {
         "Characters": [
-          "-32 Hills Danger",
+          "-22 Hills Danger",
           "+5% County Fertility Growth in Hills Terrain"
         ],
         "Counties": [
-          "+20% Development Growth in Hills"
+          "+20% Prosperity Growth in Hills"
         ],
         "Provinces": [
-          "-10% Building Construction Cost in Hills",
-          "-10% Holding Construction Cost in Hills",
           "+0.1 County Fertility Growth in Hills Terrain"
         ]
       },
       "name": "Hill Dwellers",
       "parameters": [
-        {
-          "hasLoc": true,
-          "key": "hill_farms_building_bonuses",
-          "text": "The Hill Farms line of Buildings have additional bonuses in Counties of this Culture",
-          "value": true
-        },
         {
           "hasLoc": true,
           "key": "hills_hunt_success_chance",
@@ -4201,8 +4341,20 @@
         },
         {
           "hasLoc": true,
-          "key": "windmills_hill_farms_unlock",
-          "text": "The construction of Vegetable Fields Building unlocks the first four tiers of Windmills line of Buildings",
+          "key": "hills_villages_building_slot",
+          "text": "The Villages District District has +1 Building Slot in Hills",
+          "value": true
+        },
+        {
+          "hasLoc": true,
+          "key": "hills_villages_defender_bonuses",
+          "text": "The Villages District District provides Defender Holding Advantage and Stationed Men-at-Arms Control in Hills",
+          "value": true
+        },
+        {
+          "hasLoc": true,
+          "key": "terrace_gardens_hills",
+          "text": "Unlocks the Terrace Gardens line of Buildings in the Villages District District in Hills",
           "value": true
         }
       ],
@@ -4213,7 +4365,14 @@
           "text": "The Culture is not present in any County with Hilly Terrain"
         }
       ],
-      "shownWhen": [],
+      "shownWhen": [
+        {
+          "key": "culture_is_or_has_ancestor_trigger",
+          "kind": "trigger",
+          "negated": true,
+          "text": "Culture is or has ancestor"
+        }
+      ],
       "sourceFile": "00_realm_traditions.txt"
     },
     {
@@ -4264,10 +4423,10 @@
       "modifiers": {
         "Characters": [
           "-25% Diplomatic Range",
-          "+5 Same Culture Opinion"
+          "-2 Route Length"
         ],
         "Counties": [
-          "+0.5 Monthly County Control Growth Add /month"
+          "+0.5 Control Growth"
         ],
         "Culture": [
           "-35% Cultural Acceptance Gain"
@@ -4284,7 +4443,7 @@
         {
           "hasLoc": true,
           "key": "dislikes_marrying_outside_of_culture",
-          "text": "Marriage Acceptance towards other Cultures: -50",
+          "text": "Marriage Acceptance towards other Cultures: -100",
           "value": true
         },
         {
@@ -4296,7 +4455,7 @@
         {
           "hasLoc": true,
           "key": "less_likely_to_culture_convert",
-          "text": "The Convert to Local Culture Decision causes Stress gain and is avoided by Rulers",
+          "text": "Convert to Local Culture Decision causes Stress Gain and is avoided by Rulers",
           "value": true
         },
         {
@@ -4364,28 +4523,37 @@
       },
       "modifiers": {
         "Characters": [
-          "-42 Jungle Danger"
+          "-29 Jungle Danger",
+          "-0.75% Spices Buy Price"
         ],
         "Counties": [
-          "+25% Development Growth in Jungle"
-        ],
-        "Provinces": [
-          "-10% Building Construction Cost in Jungle",
-          "-10% Holding Construction Cost in Jungle"
+          "+25% Prosperity Growth in Jungle"
         ]
       },
       "name": "Jungle Dwellers",
       "parameters": [
         {
           "hasLoc": true,
-          "key": "outposts_building_bonuses",
-          "text": "The Outposts line of Buildings have additional bonuses in Counties of this Culture",
+          "key": "jungle_hunt_success_chance",
+          "text": "Increased Hunt Success Chance in Jungle",
           "value": true
         },
         {
           "hasLoc": true,
-          "key": "jungle_hunt_success_chance",
-          "text": "Increased Hunt Success Chance in Jungle",
+          "key": "jungle_villages_building_slot",
+          "text": "The Villages District District has +1 Building Slot in Jungle",
+          "value": true
+        },
+        {
+          "hasLoc": true,
+          "key": "jungle_tribal_economy_building_slot",
+          "text": "The Feast Halls District District has +1 Building Slot in Jungle",
+          "value": true
+        },
+        {
+          "hasLoc": true,
+          "key": "village_hunter_jungle",
+          "text": "Unlocks the Village Hunter line of Buildings in the Villages District and Feast Halls District Districts in Jungle",
           "value": true
         }
       ],
@@ -4466,7 +4634,7 @@
           "+1 Tax Slot Add"
         ]
       },
-      "name": "Legalistic",
+      "name": "Legalistic Customs",
       "parameters": [
         {
           "hasLoc": true,
@@ -4551,22 +4719,27 @@
       },
       "modifiers": {
         "Characters": [
-          "+10 Republic Vassal Opinion",
-          "-25 Sea Danger"
+          "+5 Republic Vassal Opinion",
+          "+10% Maritime Taxes",
+          "+10% Commerce Taxes",
+          "+3 Route Length",
+          "+10% Trade Capacity",
+          "-10% Port District Buildings Construction Time",
+          "-10% Port District Construction Cost"
         ]
       },
       "name": "Maritime Mercantilism",
       "parameters": [
         {
           "hasLoc": true,
-          "key": "next_level_trade_ports",
-          "text": "The Tradeport line of Buildings can be constructed one Era early",
+          "key": "next_level_port_districts",
+          "text": "The Port District District can be upgraded one Era earlier",
           "value": true
         },
         {
           "hasLoc": true,
-          "key": "maritime_mercantilism_coastal_holdings",
-          "text": "Coastal Holdings in Counties of this Culture provide an additional +10% Tax",
+          "key": "maritime_mercantilism_coastal_districts",
+          "text": "Buildings in the Market District and Guild District Districts are 10% cheaper to construct in coastal Baronies",
           "value": true
         },
         {
@@ -4601,7 +4774,7 @@
             {
               "amount": 3000,
               "op": "add",
-              "when": "The Culture does not have a mine Special Building in any of its Counties"
+              "when": "The Culture does not have a mine Special District in any of its Counties"
             },
             {
               "amount": 0.5,
@@ -4631,7 +4804,14 @@
           "+10% Men-at-Arms Toughness",
           "+10% Army Gold Maintenance",
           "+2 Levy Toughness",
-          "+10% Nomadic Horde Toughness"
+          "+10% Nomadic Horde Toughness",
+          "+10% Mining Taxes",
+          "+20% Artisan (Merchant) Trait Experience Gain",
+          "+15% Base Metals Trade Expertise Gain",
+          "+2% Iron Sell Price"
+        ],
+        "Counties": [
+          "+10% Base Metals Production"
         ]
       },
       "name": "Metalworkers",
@@ -4639,19 +4819,19 @@
         {
           "hasLoc": true,
           "key": "better_armory_buildings",
-          "text": "The Royal Armories line of Buildings have additional bonuses in Counties of this Culture",
+          "text": "The Royal Armory line of Buildings have additional bonuses in Counties of this Culture",
           "value": true
         },
         {
           "hasLoc": true,
           "key": "better_blacksmith_buildings",
-          "text": "The Crown Smithies line of Buildings have additional bonuses in Counties of this Culture",
+          "text": "The Blacksmiths line of Buildings have additional bonuses in Counties of this Culture",
           "value": true
         },
         {
           "hasLoc": true,
-          "key": "next_level_smiths",
-          "text": "The Blacksmiths line of Buildings can be constructed one Era early",
+          "key": "metal_craftsmanship_armorer_bonuses",
+          "text": "The Armorer line of Buildings provides additional Damage and Toughness to Stationed Heavy Infantry",
           "value": true
         },
         {
@@ -4664,6 +4844,12 @@
           "hasLoc": true,
           "key": "nomadic_metal_artifact_unlock",
           "text": "Unlocks the Commission Artifact Decision for metal Artifacts",
+          "value": true
+        },
+        {
+          "hasLoc": true,
+          "key": "metal_craftsmanship_early_forges",
+          "text": "Blacksmiths Forge and Blacksmiths' Guild Buildings can be constructed from the first District level",
           "value": true
         }
       ],
@@ -4711,9 +4897,25 @@
         "1": "mediterranean",
         "4": "temple"
       },
-      "modifiers": {},
+      "modifiers": {
+        "Characters": [
+          "+10% Religious Taxes"
+        ]
+      },
       "name": "Monastic Communities",
       "parameters": [
+        {
+          "hasLoc": true,
+          "key": "monastic_monastery_learning_bonus",
+          "text": "The Temple School and Schools lines of Buildings provide additional Learning bonuses",
+          "value": true
+        },
+        {
+          "hasLoc": true,
+          "key": "next_level_monasteries",
+          "text": "The Religious Community District District can be upgraded one Holding District level early",
+          "value": true
+        },
         {
           "hasLoc": true,
           "key": "temperate_trait_more_common",
@@ -4740,14 +4942,8 @@
         },
         {
           "hasLoc": true,
-          "key": "next_level_monasteries",
-          "text": "The Monasteries line of Buildings can be built one Era early",
-          "value": true
-        },
-        {
-          "hasLoc": true,
-          "key": "monastic_monastery_learning_bonus",
-          "text": "The Monasteries line of Buildings provide additional Learning bonuses",
+          "key": "monastic_communities_religious_community_building_slot",
+          "text": "The Religious Community District District has +1 Building Slot",
           "value": true
         }
       ],
@@ -4803,30 +4999,18 @@
       },
       "modifiers": {
         "Characters": [
-          "-42 Mountains Danger",
-          "-42 Desert Mountains Danger",
+          "-29 Mountains Danger",
+          "-29 Desert Mountains Danger",
           "+20% County Fertility Growth in Mountains Terrain",
           "+20% County Fertility Growth in Desert Mountains Terrain"
         ],
         "Counties": [
-          "+20% Development Growth in Mountains",
-          "+35% Development Growth in Desert Mountains"
-        ],
-        "Provinces": [
-          "-10% Building Construction Cost in Mountains",
-          "-10% Building Construction Cost in Desert Mountains",
-          "-10% Holding Construction Cost in Mountains",
-          "-10% Holding Construction Cost in Desert Mountains"
+          "+20% Prosperity Growth in Mountains",
+          "+35% Prosperity Growth in Desert Mountains"
         ]
       },
       "name": "Mountain Homes",
       "parameters": [
-        {
-          "hasLoc": true,
-          "key": "quarries_building_bonuses",
-          "text": "The Quarries line of Buildings have additional bonuses in Counties of this Culture",
-          "value": true
-        },
         {
           "hasLoc": true,
           "key": "prestige_gain_on_building_complete_in_mountains",
@@ -4837,6 +5021,24 @@
           "hasLoc": true,
           "key": "mountains_hunt_success_chance",
           "text": "Increased Hunt Success Chance in Mountains and Desert Mountains",
+          "value": true
+        },
+        {
+          "hasLoc": true,
+          "key": "mountains_villages_building_slot",
+          "text": "The Villages District District has +1 Building Slot in Mountains",
+          "value": true
+        },
+        {
+          "hasLoc": true,
+          "key": "mountains_villages_stationed_toughness",
+          "text": "The Villages District District provides Stationed Men-at-Arms Toughness bonuses in Mountains",
+          "value": true
+        },
+        {
+          "hasLoc": true,
+          "key": "terrace_gardens_mountains",
+          "text": "Unlocks the Terrace Gardens line of Buildings in the Villages District District in Mountains",
           "value": true
         }
       ],
@@ -4928,21 +5130,16 @@
           "-20 Minor Landholder Vassal Opinion",
           "-20 Parochial Vassal Opinion",
           "+10% Parochial Vassal Tax Contribution",
-          "+10% Parochial Vassal Levy Contribution"
+          "+10% Parochial Vassal Levy Contribution",
+          "-10 Republic Vassal Opinion"
         ]
       },
       "name": "Parochialism",
       "parameters": [
         {
           "hasLoc": true,
-          "key": "city_buildings_more_powerful",
-          "text": "City Holdings give more Taxes, Development and Levies",
-          "value": true
-        },
-        {
-          "hasLoc": true,
-          "key": "city_buildings_less_control",
-          "text": "City Holdings significantly lowers Control gain",
+          "key": "more_willing_to_create_republics",
+          "text": "Rulers of this Culture are more willing to allow Merchants to found Republics",
           "value": true
         },
         {
@@ -4953,8 +5150,14 @@
         },
         {
           "hasLoc": true,
+          "key": "city_buildings_more_powerful",
+          "text": "City Holdings give more Taxes, Prosperity and Levies",
+          "value": true
+        },
+        {
+          "hasLoc": true,
           "key": "next_level_cities",
-          "text": "The City main Buildings can be built one Era earlier",
+          "text": "The City Holding District can be upgraded one Era earlier",
           "value": true
         }
       ],
@@ -4965,7 +5168,14 @@
           "text": "Your Government is Nomadic"
         }
       ],
-      "shownWhen": [],
+      "shownWhen": [
+        {
+          "key": "culture_is_or_has_ancestor_trigger",
+          "kind": "trigger",
+          "negated": true,
+          "text": "Culture is or has ancestor"
+        }
+      ],
       "sourceFile": "00_realm_traditions.txt"
     },
     {
@@ -5015,27 +5225,30 @@
           "+5% County Fertility Growth in Plains Terrain",
           "+5% County Fertility Growth in Steppe Terrain",
           "+5% County Fertility Growth in Drylands Terrain",
-          "+5% County Fertility Growth in Desert Terrain"
+          "+5% County Fertility Growth in Desert Terrain",
+          "+15% Beasts of Burden Trade Expertise Gain",
+          "+1% Cattle Sell Price",
+          "+1% Leather Sell Price"
+        ],
+        "Counties": [
+          "-10% Cattle Rearing District Construction Cost",
+          "-10% Horse Rearing District Construction Cost",
+          "-10% Sheep Rearing District Construction Cost",
+          "+10% Beasts of Burden Production"
         ]
       },
-      "name": "Pastorialists",
+      "name": "Pastoralism",
       "parameters": [
-        {
-          "hasLoc": true,
-          "key": "pastures_building_bonuses",
-          "text": "The Cattle Pastures line of Buildings have additional bonuses in Counties of this Culture",
-          "value": true
-        },
-        {
-          "hasLoc": true,
-          "key": "farm_estates_pastures_unlock",
-          "text": "The construction of Coops Building unlocks the first four tiers of Manor Houses line of Buildings",
-          "value": true
-        },
         {
           "hasLoc": true,
           "key": "better_herders_pasturalists",
           "text": "Herders have a higher County Fertility Growth",
+          "value": true
+        },
+        {
+          "hasLoc": true,
+          "key": "pastoralists_district_bonuses",
+          "text": "The Cattle Rearing District, Horse Rearing District, and Sheep Rearing District Districts provide additional Taxes and Levies, and reduce Stationed Light Cavalry Maintenance",
           "value": true
         }
       ],
@@ -5094,8 +5307,8 @@
           "+20% Skirmisher Damage",
           "+20% Skirmisher Screen",
           "-25 Coastal Sea Danger",
-          "-42 Wetlands Danger",
-          "-22 Floodplains Danger"
+          "-29 Wetlands Danger",
+          "-16 Floodplains Danger"
         ]
       },
       "name": "Polders",
@@ -5108,14 +5321,8 @@
         },
         {
           "hasLoc": true,
-          "key": "coastal_agriculture_building_bonuses",
-          "text": "The Cattle Pastures, Farms & Fields, Wetland Farms, Manor Houses, and Orchards line of Buildings have additional bonuses in Coastal Baronies in Counties of this Culture",
-          "value": true
-        },
-        {
-          "hasLoc": true,
-          "key": "coastal_holding_bonuses",
-          "text": "Bonus to construction speed of coastal Holdings",
+          "key": "polders_coastal_villages_building_slot",
+          "text": "The Villages District District has +1 Building Slot in coastal Baronies",
           "value": true
         }
       ],
@@ -5126,7 +5333,14 @@
           "text": "The Culture is not present in any coastal County"
         }
       ],
-      "shownWhen": [],
+      "shownWhen": [
+        {
+          "key": "culture_is_or_has_ancestor_trigger",
+          "kind": "trigger",
+          "negated": false,
+          "text": "Culture is or has ancestor"
+        }
+      ],
       "sourceFile": "00_maa_traditions.txt"
     },
     {
@@ -5172,7 +5386,7 @@
       "modifiers": {
         "Characters": [
           "-25% Levy Size",
-          "-15% Men-at-Arms Recruitment Cost",
+          "-10% Men-at-Arms Recruitment Cost",
           "-15% Men-at-Arms Maintenance",
           "-25% Levy Reinforcement Rate",
           "+2 Max Size of Heavy Infantry Regiments",
@@ -5185,6 +5399,12 @@
           "hasLoc": true,
           "key": "unlock_maa_cataphract",
           "text": "Can recruit Kataphraktoi as Men-at-Arms",
+          "value": true
+        },
+        {
+          "hasLoc": false,
+          "key": "perk_tactician_heavy_cavalry",
+          "text": "Perk tactician heavy cavalry",
           "value": true
         }
       ],
@@ -5341,7 +5561,7 @@
       "modifiers": {
         "Characters": [
           "+5 Controlled Territory Defender Advantage",
-          "+0.3 Monthly County Control Growth Add /month",
+          "+0.3 Control Growth",
           "-5% Cultural Head Fascination Mult"
         ]
       },
@@ -5368,7 +5588,7 @@
         {
           "hasLoc": true,
           "key": "less_likely_to_culture_convert",
-          "text": "The Convert to Local Culture Decision causes Stress gain and is avoided by Rulers",
+          "text": "Convert to Local Culture Decision causes Stress Gain and is avoided by Rulers",
           "value": true
         }
       ],
@@ -5419,10 +5639,15 @@
         "4": "svamp"
       },
       "modifiers": {
+        "Characters": [
+          "+15% Cereals Trade Expertise Gain",
+          "+3% Rice Sell Price"
+        ],
         "Counties": [
-          "+30% Development Growth in Terraced Hills",
+          "+30% Prosperity Growth in Terraced Hills",
           "-10% Building Construction Cost in Terraced Hills",
-          "+10% Levy Size in Terraced Hills"
+          "+10% Levy Size in Terraced Hills",
+          "+20% Rice Production"
         ]
       },
       "name": "Rice Cultivators",
@@ -5430,13 +5655,13 @@
         {
           "hasLoc": true,
           "key": "rice_cultivators_next_level_paddy_fields",
-          "text": "All Paddy Fields line of Buildings may be built an Era early",
+          "text": "The Rice Growing District District can be upgraded one Era earlier",
           "value": true
         },
         {
           "hasLoc": true,
-          "key": "rice_cultivators_can_construct_paddy_fields_in_hills_and_jungle",
-          "text": "The Wet Fields and Mansions line of Buildings may be built in Hills and Jungle",
+          "key": "rice_cultivators_rice_district_bonuses",
+          "text": "The Rice Growing District District provides additional Prosperity and +50% Rice production",
           "value": true
         }
       ],
@@ -5554,7 +5779,14 @@
           "text": "You do not have Tribal Government or Clan Government"
         }
       ],
-      "shownWhen": [],
+      "shownWhen": [
+        {
+          "key": "culture_is_or_has_ancestor_trigger",
+          "kind": "trigger",
+          "negated": true,
+          "text": "Culture is or has ancestor"
+        }
+      ],
       "sourceFile": "00_realm_traditions.txt"
     },
     {
@@ -5678,15 +5910,13 @@
       "modifiers": {
         "Characters": [
           "+10 Advantage in Wetlands",
-          "-65 Wetlands Danger",
-          "-35 Floodplains Danger"
+          "-45 Wetlands Danger",
+          "-25 Floodplains Danger"
         ],
         "Counties": [
-          "+25% Development Growth in Wetlands"
+          "+25% Prosperity Growth in Wetlands"
         ],
         "Provinces": [
-          "-15% Building Construction Cost in Wetlands",
-          "-15% Holding Construction Cost in Wetlands",
           "+10% Levy Size in Wetlands",
           "+25% Supply Limit in Wetlands"
         ]
@@ -5695,14 +5925,20 @@
       "parameters": [
         {
           "hasLoc": true,
-          "key": "peat_quarries_building_bonuses",
-          "text": "The Wetland Farms line of Buildings have additional bonuses in Counties of this Culture",
+          "key": "wetlands_hunt_success_chance",
+          "text": "Increased Hunt Success Chance in Wetlands and Floodplains",
           "value": true
         },
         {
           "hasLoc": true,
-          "key": "wetlands_hunt_success_chance",
-          "text": "Increased Hunt Success Chance in Wetlands and Floodplains",
+          "key": "wetlands_villages_building_slot",
+          "text": "The Villages District District has +1 Building Slot in Wetlands and Floodplains",
+          "value": true
+        },
+        {
+          "hasLoc": true,
+          "key": "wetlanders_turbary_common",
+          "text": "Unlocks the Turbary Common line of Buildings in the Villages District District in Wetlands and Floodplains",
           "value": true
         }
       ],
@@ -5737,7 +5973,7 @@
       },
       "modifiers": {
         "Characters": [
-          "+20% Development Growth",
+          "+20% Prosperity Growth",
           "+1 Diplomacy"
         ]
       },
@@ -5745,7 +5981,7 @@
       "parameters": [
         {
           "hasLoc": true,
-          "key": "synergy_cultures_counties_development",
+          "key": "synergy_cultures_counties_prosperity",
           "text": "Every three years, Counties of this Culture can gain A Fracture Mended by the Oathsworn Sovereign Modifier",
           "value": true
         },
@@ -5820,8 +6056,8 @@
       },
       "modifiers": {
         "Characters": [
-          "+10 Different Faith Opinion",
-          "-25% Different Faith County Opinion Mult"
+          "+5 Different Faith Opinion",
+          "-25% Different Faith Popular Opinion Mult"
         ]
       },
       "name": "African Tolerance",
@@ -5924,7 +6160,7 @@
         "Characters": [
           "+20% Elephant Cavalry Damage",
           "+20% Elephant Cavalry Toughness",
-          "-42 Jungle Danger",
+          "-29 Jungle Danger",
           "+10% Accolade Glory Gain"
         ]
       },
@@ -5934,6 +6170,12 @@
           "hasLoc": true,
           "key": "unlock_maa_palace_guards",
           "text": "Can recruit Palace Guards as Men-at-Arms",
+          "value": true
+        },
+        {
+          "hasLoc": false,
+          "key": "perk_tactician_heavy_infantry",
+          "text": "Perk tactician heavy infantry",
           "value": true
         },
         {
@@ -6017,7 +6259,8 @@
         "Characters": [
           "+20% Archer Damage",
           "+25% Supply Limit in Jungle",
-          "-42 Jungle Danger"
+          "-29 Jungle Danger",
+          "-1.5% Ivory Buy Price"
         ]
       },
       "name": "Bush Hunting",
@@ -6026,6 +6269,12 @@
           "hasLoc": true,
           "key": "unlock_maa_bush_hunter",
           "text": "Can recruit Bush Hunters as Men-at-Arms",
+          "value": true
+        },
+        {
+          "hasLoc": false,
+          "key": "perk_tactician_archers",
+          "text": "Perk tactician archers",
           "value": true
         },
         {
@@ -6044,6 +6293,12 @@
           "hasLoc": true,
           "key": "can_recruit_jungle_specialist",
           "text": "Gain a Decision to recruit Jungle Commanders",
+          "value": true
+        },
+        {
+          "hasLoc": true,
+          "key": "village_hunter_jungle",
+          "text": "Unlocks the Village Hunter line of Buildings in the Villages District and Feast Halls District Districts in Jungle",
           "value": true
         }
       ],
@@ -6146,7 +6401,7 @@
         {
           "hasLoc": true,
           "key": "children_can_be_born_in_the_purple",
-          "text": "Children born to a Ruler holding the Byzantine Empire may gain the Born in the Purple Trait. Having the Born in the Purple Trait increases a character's candidate score under Acclamation Succession.",
+          "text": "Children born to holders of Byzantine Empire Title may gain the Born in the Purple Trait, which increases Candidate Score under Acclamation Succession",
           "value": true
         },
         {
@@ -6170,6 +6425,12 @@
           "text": "Eastern Roman"
         },
         {
+          "key": "is_roman_emperor_trigger",
+          "kind": "trigger",
+          "negated": false,
+          "text": "Is roman emperor"
+        },
+        {
           "kind": "text",
           "negated": false,
           "text": "The Culture already has the Tradition Court Eunuchs"
@@ -6186,6 +6447,12 @@
           "kind": "pillar",
           "negated": false,
           "text": "Eastern Roman"
+        },
+        {
+          "key": "is_roman_emperor_trigger",
+          "kind": "trigger",
+          "negated": false,
+          "text": "Is roman emperor"
         },
         {
           "key": "has_ep3_dlc_trigger",
@@ -6236,7 +6503,10 @@
           "+5% Army Movement Speed",
           "+20% Diplomatic Range",
           "+20% Travel Safety",
-          "+20% Travel Speed"
+          "+20% Travel Speed",
+          "+1 Route Length",
+          "+10% Trade Capacity",
+          "+20% Caravaneer (Merchant) Trait Experience Gain"
         ]
       },
       "name": "Caravaneers",
@@ -6255,14 +6525,20 @@
         },
         {
           "hasLoc": true,
-          "key": "second_caravanserai",
-          "text": "A second Caravanserai can be constructed in Counties of this Culture",
+          "key": "caravaneers_caravanserai",
+          "text": "Unlocks the Caravanserai line of Buildings in the Villages District and Market District Districts in Market Capitals",
           "value": true
         },
         {
           "hasLoc": true,
           "key": "unlock_voluntary_laampdom",
           "text": "Allows the Become Adventurer Decision",
+          "value": true
+        },
+        {
+          "hasLoc": true,
+          "key": "unlock_voluntary_mercantilism",
+          "text": "Allows the Become Merchant Decision",
           "value": true
         }
       ],
@@ -6318,8 +6594,8 @@
       },
       "modifiers": {
         "Characters": [
-          "-42 Mountains Danger",
-          "-42 Desert Mountains Danger"
+          "-29 Mountains Danger",
+          "-29 Desert Mountains Danger"
         ],
         "Provinces": [
           "+10% Levy Size in Mountains",
@@ -6334,6 +6610,12 @@
           "hasLoc": true,
           "key": "unlock_maa_monaspa",
           "text": "Can recruit Monaspa as Men-at-Arms",
+          "value": true
+        },
+        {
+          "hasLoc": false,
+          "key": "perk_tactician_heavy_cavalry",
+          "text": "Perk tactician heavy cavalry",
           "value": true
         },
         {
@@ -6353,6 +6635,12 @@
           "key": "can_recruit_mountain_specialist",
           "text": "Gain a Decision to recruit Mountain Commanders",
           "value": true
+        },
+        {
+          "hasLoc": true,
+          "key": "training_grounds_cavalry_horse_need",
+          "text": "Training Grounds's Horses Need also increases Damage of Stationed Light Cavalry, Heavy Cavalry, and Archer Cavalry when met",
+          "value": true
         }
       ],
       "requirements": [
@@ -6362,7 +6650,14 @@
           "text": "The Culture is not present in any County with Mountain or Desert Mountain Terrain"
         }
       ],
-      "shownWhen": [],
+      "shownWhen": [
+        {
+          "key": "culture_is_or_has_ancestor_trigger",
+          "kind": "trigger",
+          "negated": false,
+          "text": "Culture is or has ancestor"
+        }
+      ],
       "sourceFile": "00_maa_traditions.txt"
     },
     {
@@ -6510,12 +6805,364 @@
             {
               "amount": 2000,
               "op": "add",
+              "when": "The Culture does not have the Communal, Egalitarian or Bureaucratic Ethos"
+            },
+            {
+              "amount": 3000,
+              "op": "add",
+              "when": "You do not have a City Holding in at least 90% of the Counties that share your Culture within your Realm"
+            },
+            {
+              "amount": 0.5,
+              "op": "multiply",
+              "when": "Inspired by Tradition"
+            },
+            {
+              "amount": 1.5,
+              "op": "multiply",
+              "when": "Replacing an existing tradition"
+            }
+          ]
+        }
+      },
+      "desc": "This people is letting guilds and confraternities handle religious matters. Everything from caring for the poor, defending a city, or constructing a church, is the responsibility of pious groups of citizens.",
+      "dlc": "Silk and Silver",
+      "features": [],
+      "icon": "communal_liberties",
+      "id": "tradition_civic_religion",
+      "layers": {
+        "0": "learning",
+        "1": "mediterranean",
+        "4": "communal_liberties"
+      },
+      "modifiers": {
+        "Characters": [
+          "-15% Character Spiritual Fulfillment Loss Mult",
+          "+15% Character Spiritual Fulfillment Gain Mult",
+          "-10 Clergy Opinion",
+          "-25% Religious Taxes",
+          "+10% Civic Taxes"
+        ]
+      },
+      "name": "Civic Religion",
+      "parameters": [
+        {
+          "hasLoc": true,
+          "key": "civic_religion_guild_building_slots",
+          "text": "The Guild District has +2 Building Slots",
+          "value": true
+        },
+        {
+          "hasLoc": true,
+          "key": "civic_religion_guild_charity_buildings",
+          "text": "The Soup Kitchen, Hospitals, Scribe Shop, and Scholarly Guilds lines of Buildings can be built in the Guild District",
+          "value": true
+        },
+        {
+          "hasLoc": true,
+          "key": "civic_religion_basilica",
+          "text": "Unlocks the Grand Basilica Building line in the Great Plaza District for Republics",
+          "value": true
+        },
+        {
+          "hasLoc": true,
+          "key": "civic_religion_temple_district_restriction",
+          "text": "The Religious Enclave District is not available to Secular Rulers",
+          "value": true
+        },
+        {
+          "hasLoc": true,
+          "key": "civic_religion_cathedral_civic_tax",
+          "text": "Cathedral Buildings also give Civic Tax",
+          "value": true
+        },
+        {
+          "hasLoc": true,
+          "key": "unlock_improved_republic_militia",
+          "text": "Republican Rulers may enact the Communal Militia Law",
+          "value": true
+        },
+        {
+          "hasLoc": true,
+          "key": "unlock_carnival_activity",
+          "text": "Republican Rulers may host the Carnival Activity",
+          "value": true
+        },
+        {
+          "hasLoc": true,
+          "key": "civic_religion_reduced_tenet_change_stress",
+          "text": "Changing a Personal Tenet causes less Stress",
+          "value": true
+        },
+        {
+          "hasLoc": true,
+          "key": "civic_religion_education_piety_bonuses",
+          "text": "Diplomacy Education Traits and the Town Maven line of Traits give additional Piety",
+          "value": true
+        },
+        {
+          "hasLoc": true,
+          "key": "civic_religion_trait_piety_bonuses",
+          "text": "The Gregarious and Family First Traits give additional Piety",
+          "value": true
+        }
+      ],
+      "requirements": [
+        {
+          "kind": "text",
+          "negated": false,
+          "text": "Your Government is Nomadic"
+        }
+      ],
+      "shownWhen": [
+        {
+          "key": "has_gdp_dlc_trigger",
+          "kind": "dlc",
+          "negated": false,
+          "text": "Silk and Silver"
+        },
+        {
+          "key": "heritage_latin",
+          "kind": "pillar",
+          "negated": false,
+          "text": "Latin"
+        }
+      ],
+      "sourceFile": "11_gdp_traditions.txt"
+    },
+    {
+      "category": "regional",
+      "categoryName": "Regional",
+      "cost": {
+        "prestige": {
+          "base": 2000,
+          "rules": [
+            {
+              "amount": 2000,
+              "op": "add",
+              "when": "The Culture does not have the Communal or Ceremonious Ethos"
+            },
+            {
+              "amount": 3000,
+              "op": "add",
+              "when": "You do not have a City Holding in at least 90% of the Counties that share your Culture within your Realm"
+            },
+            {
+              "amount": 0.5,
+              "op": "multiply",
+              "when": "Inspired by Tradition"
+            },
+            {
+              "amount": 1.5,
+              "op": "multiply",
+              "when": "Replacing an existing tradition"
+            }
+          ]
+        }
+      },
+      "desc": "A pattern of small but urban fortified towns dot the lands of this culture, often originally put in place by a local landlord. Through sharecropping urban landholders have become distant from the day to day of the countryside.",
+      "dlc": "Silk and Silver",
+      "features": [],
+      "icon": "urban_patriciate",
+      "id": "tradition_contado",
+      "layers": {
+        "0": "steward",
+        "1": "mediterranean",
+        "4": "urban_patriciate"
+      },
+      "modifiers": {
+        "Characters": [
+          "+5% Domicile Income"
+        ],
+        "Counties": [
+          "+10% Agricultural Taxes",
+          "-15% Villages District Construction Cost",
+          "+15% Cheese Production",
+          "+15% Cured Meat Production",
+          "+15% Wine Production",
+          "+15% Olive Oil Production"
+        ]
+      },
+      "name": "Contado",
+      "parameters": [
+        {
+          "hasLoc": true,
+          "key": "contado_castello_buildings",
+          "text": "The Castello line of Buildings can be built in the Villages District",
+          "value": true
+        },
+        {
+          "hasLoc": true,
+          "key": "contado_borghi_buildings",
+          "text": "The Borghi line of Buildings can be built in the Walls District",
+          "value": true
+        },
+        {
+          "hasLoc": true,
+          "key": "contado_towers_domicile_building",
+          "text": "Unlocks the Towers Domicile Building",
+          "value": true
+        }
+      ],
+      "requirements": [
+        {
+          "kind": "text",
+          "negated": false,
+          "text": "Your Government is Nomadic"
+        }
+      ],
+      "shownWhen": [
+        {
+          "key": "has_gdp_dlc_trigger",
+          "kind": "dlc",
+          "negated": false,
+          "text": "Silk and Silver"
+        },
+        {
+          "key": "heritage_latin",
+          "kind": "pillar",
+          "negated": false,
+          "text": "Latin"
+        }
+      ],
+      "sourceFile": "11_gdp_traditions.txt"
+    },
+    {
+      "category": "regional",
+      "categoryName": "Regional",
+      "cost": {
+        "prestige": {
+          "base": 2000,
+          "rules": [
+            {
+              "amount": 2000,
+              "op": "add",
+              "when": "The Culture does not have the Communal or Egalitarian Ethos"
+            },
+            {
+              "amount": 3000,
+              "op": "add",
+              "when": "You do not have a City Holding in at least 90% of the Counties that share your Culture within your Realm"
+            },
+            {
+              "amount": 0.5,
+              "op": "multiply",
+              "when": "Inspired by Tradition"
+            },
+            {
+              "amount": 1.5,
+              "op": "multiply",
+              "when": "Replacing an existing tradition"
+            }
+          ]
+        }
+      },
+      "desc": "This culture has institutionalized warfare far beyond levies and citizen armies. Troops work on a contract and officers negotiate campaign goals with cities and lords. Killing has gone from a personal to a professional matter.",
+      "dlc": "Silk and Silver",
+      "features": [],
+      "icon": "knight",
+      "id": "tradition_contract_warfare",
+      "layers": {
+        "0": "martial",
+        "1": "mediterranean",
+        "4": "knight"
+      },
+      "modifiers": {
+        "Characters": [
+          "+2 Mercenary Limit",
+          "+2 Number of Knights",
+          "-15% Same Culture Mercenary Hire Cost"
+        ]
+      },
+      "name": "Contract Warfare",
+      "parameters": [
+        {
+          "hasLoc": true,
+          "key": "martial_education_more_valued",
+          "text": "The Martial Education Traits are more valued",
+          "value": true
+        },
+        {
+          "hasLoc": true,
+          "key": "prowess_traits_more_valued",
+          "text": "The Bumbling Squire, Confident Knight, Formidable Banneret and Famous Champion Traits are more valued",
+          "value": true
+        },
+        {
+          "hasLoc": true,
+          "key": "mercenary_courtiers_gain_extra_skills",
+          "text": "Knights in Mercenary Courts rapidly gain Prowess",
+          "value": true
+        },
+        {
+          "hasLoc": true,
+          "key": "unlock_voluntary_laampdom",
+          "text": "Allows the Become Adventurer Decision",
+          "value": true
+        },
+        {
+          "hasLoc": true,
+          "key": "knights_slightly_more_prone_to_injury",
+          "text": "Knights are slightly more prone to injury during Battles",
+          "value": true
+        },
+        {
+          "hasLoc": true,
+          "key": "unlock_innovation_condottieri",
+          "text": "The Condottieri Innovation becomes available in the Late Medieval Era",
+          "value": true
+        },
+        {
+          "hasLoc": true,
+          "key": "contract_warfare_single_combat",
+          "text": "Rulers with a Commander Trait, a Martial Education Trait, or the Brave Trait may use the Challenge to Duel Interaction on Characters of equal or lower Tier who are not their Liege",
+          "value": true
+        }
+      ],
+      "requirements": [
+        {
+          "kind": "text",
+          "negated": false,
+          "text": "Your Government is Republic"
+        },
+        {
+          "kind": "text",
+          "negated": false,
+          "text": "You hold a Holding with a Military District"
+        }
+      ],
+      "shownWhen": [
+        {
+          "key": "has_gdp_dlc_trigger",
+          "kind": "dlc",
+          "negated": false,
+          "text": "Silk and Silver"
+        },
+        {
+          "key": "heritage_latin",
+          "kind": "pillar",
+          "negated": false,
+          "text": "Latin"
+        }
+      ],
+      "sourceFile": "11_gdp_traditions.txt"
+    },
+    {
+      "category": "regional",
+      "categoryName": "Regional",
+      "cost": {
+        "prestige": {
+          "base": 2000,
+          "rules": [
+            {
+              "amount": 2000,
+              "op": "add",
               "when": "The Culture does not have the Ceremonious, Communal or Spiritual Ethos"
             },
             {
               "amount": 3000,
               "op": "add",
-              "when": "The Culture does not have 5 Rulers with the Scholar Trait"
+              "when": "The Culture does not have 5 Rulers with the Erudite Trait"
             },
             {
               "amount": -1000,
@@ -6639,7 +7286,7 @@
         {
           "hasLoc": true,
           "key": "innovation_from_learning_traits",
-          "text": "Learning Education Traits and the Scholar Trait also give Cultural Fascination Progress",
+          "text": "Learning Education Traits and the Erudite Trait also give Cultural Fascination Progress",
           "value": true
         },
         {
@@ -6651,7 +7298,7 @@
         {
           "hasLoc": true,
           "key": "less_likely_to_culture_convert",
-          "text": "The Convert to Local Culture Decision causes Stress gain and is avoided by Rulers",
+          "text": "Convert to Local Culture Decision causes Stress Gain and is avoided by Rulers",
           "value": true
         },
         {
@@ -6746,15 +7393,16 @@
         "Characters": [
           "-20% Camel Cavalry Maintenance",
           "-20% Camel Cavalry Recruitment Cost",
+          "+10% Army Movement Speed",
           "+10 Travel Speed",
-          "-50 Desert Danger",
-          "-35 Drylands Danger",
-          "-65 Desert Mountains Danger",
+          "-35 Desert Danger",
+          "-25 Drylands Danger",
+          "-45 Desert Mountains Danger",
           "+20% Movement Speed over land while Raiding",
           "-30% Hostile County Attrition while Raiding"
         ],
-        "Provinces": [
-          "+10% Holding Taxes in Desert"
+        "Counties": [
+          "-10% Military District Construction Cost"
         ]
       },
       "name": "Desert Travelers",
@@ -6766,15 +7414,21 @@
           "value": true
         },
         {
-          "hasLoc": true,
-          "key": "desert_hunt_success_chance",
-          "text": "Increased Hunt Success Chance in Desert and Oasis",
-          "value": true
-        },
-        {
           "hasLoc": false,
           "key": "resistant_to_desert_privation",
           "text": "Resistant to desert privation",
+          "value": true
+        },
+        {
+          "hasLoc": true,
+          "key": "desert_travelers_camelry_compound_bonuses",
+          "text": "The Camelry Compound line of Buildings provides additional Hinterland Tax",
+          "value": true
+        },
+        {
+          "hasLoc": true,
+          "key": "desert_villages_camel_control",
+          "text": "Stationed Camel Cavalry in the Villages District District provide +1 Control in Desert",
           "value": true
         }
       ],
@@ -6785,7 +7439,14 @@
           "text": "The Culture is not present in the Middle East, Persia or North Africa"
         }
       ],
-      "shownWhen": [],
+      "shownWhen": [
+        {
+          "key": "culture_is_or_has_ancestor_trigger",
+          "kind": "trigger",
+          "negated": false,
+          "text": "Culture is or has ancestor"
+        }
+      ],
       "sourceFile": "00_regional_traditions.txt"
     },
     {
@@ -6831,9 +7492,9 @@
       "modifiers": {
         "Characters": [
           "+1 Prowess per Level of Devotion",
-          "-19 Desert Danger",
-          "-14 Drylands Danger",
-          "-24 Desert Mountains Danger"
+          "-14 Desert Danger",
+          "-10 Drylands Danger",
+          "-17 Desert Mountains Danger"
         ]
       },
       "name": "Desert Ribats",
@@ -6842,6 +7503,18 @@
           "hasLoc": true,
           "key": "unlock_maa_mulaththamun",
           "text": "Can recruit Mulathamūn as Men-at-Arms",
+          "value": true
+        },
+        {
+          "hasLoc": false,
+          "key": "perk_tactician_light_cavalry",
+          "text": "Perk tactician light cavalry",
+          "value": true
+        },
+        {
+          "hasLoc": true,
+          "key": "desert_ribats_ribat_buildings",
+          "text": "Unlocks the Ribat line of Buildings in the Religious Community District District in Desert, Desert Mountains, and Oasis",
           "value": true
         },
         {
@@ -6950,8 +7623,8 @@
         },
         {
           "hasLoc": true,
-          "key": "unlock_horse_pastures_building",
-          "text": "Can always build Horse Herds in Holdings of this Culture",
+          "key": "unlock_horse_archer_paddocks_building",
+          "text": "Unlocks the Horse Archer Paddocks line of Buildings in the Military District and War Lodges District Districts of this Culture",
           "value": true
         },
         {
@@ -6970,6 +7643,12 @@
           "hasLoc": true,
           "key": "unlock_maa_tarkhan",
           "text": "Can recruit Tarkhans as Men-at-Arms",
+          "value": true
+        },
+        {
+          "hasLoc": true,
+          "key": "training_grounds_cavalry_horse_need",
+          "text": "Training Grounds's Horses Need also increases Damage of Stationed Light Cavalry, Heavy Cavalry, and Archer Cavalry when met",
           "value": true
         }
       ],
@@ -7084,6 +7763,12 @@
           "value": true
         },
         {
+          "hasLoc": false,
+          "key": "perk_tactician_heavy_infantry",
+          "text": "Perk tactician heavy infantry",
+          "value": true
+        },
+        {
           "hasLoc": true,
           "key": "martial_education_more_valued",
           "text": "The Martial Education Traits are more valued",
@@ -7187,6 +7872,9 @@
           "-15% Same Culture Mercenary Hire Cost",
           "+10% Travel Speed",
           "+10% Travel Safety"
+        ],
+        "Provinces": [
+          "+1 Stationed Heavy Cavalry Control"
         ]
       },
       "name": "Audacious Cadets",
@@ -7195,6 +7883,12 @@
           "hasLoc": true,
           "key": "unlock_maa_conrois",
           "text": "Can recruit Conrois as Men-at-Arms",
+          "value": true
+        },
+        {
+          "hasLoc": false,
+          "key": "perk_tactician_heavy_cavalry",
+          "text": "Perk tactician heavy cavalry",
           "value": true
         },
         {
@@ -7232,6 +7926,12 @@
           "key": "more_likely_to_leave_court",
           "text": "Idle Courtiers are much more likely to become Wanderers",
           "value": true
+        },
+        {
+          "hasLoc": true,
+          "key": "training_grounds_cavalry_horse_need",
+          "text": "Training Grounds's Horses Need also increases Damage of Stationed Light Cavalry, Heavy Cavalry, and Archer Cavalry when met",
+          "value": true
         }
       ],
       "requirements": [
@@ -7243,6 +7943,12 @@
         }
       ],
       "shownWhen": [
+        {
+          "key": "culture_is_or_has_ancestor_trigger",
+          "kind": "trigger",
+          "negated": false,
+          "text": "Culture is or has ancestor"
+        },
         {
           "key": "has_ep3_dlc_trigger",
           "kind": "dlc",
@@ -7267,7 +7973,7 @@
             {
               "amount": 3000,
               "op": "add",
-              "when": "The Culture Head does not hold 8 Counties with Stables built in one of their Holdings"
+              "when": "The Culture Head does not hold 8 Counties with Light Cavalry Stables built in one of their Holdings"
             },
             {
               "amount": 0.5,
@@ -7309,9 +8015,21 @@
           "value": true
         },
         {
+          "hasLoc": false,
+          "key": "perk_tactician_heavy_cavalry",
+          "text": "Perk tactician heavy cavalry",
+          "value": true
+        },
+        {
           "hasLoc": true,
           "key": "unlock_maa_akritai",
           "text": "Can recruit Akritai as Men-at-Arms",
+          "value": true
+        },
+        {
+          "hasLoc": false,
+          "key": "perk_tactician_skirmishers",
+          "text": "Perk tactician skirmishers",
           "value": true
         },
         {
@@ -7321,9 +8039,21 @@
           "value": true
         },
         {
+          "hasLoc": false,
+          "key": "perk_tactician_archers",
+          "text": "Perk tactician archers",
+          "value": true
+        },
+        {
           "hasLoc": true,
           "key": "unlock_maa_skoutatoi",
           "text": "Can recruit Skoutatoi as Men-at-Arms",
+          "value": true
+        },
+        {
+          "hasLoc": false,
+          "key": "perk_tactician_pikemen",
+          "text": "Perk tactician pikemen",
           "value": true
         },
         {
@@ -7335,6 +8065,12 @@
       ],
       "requirements": [],
       "shownWhen": [
+        {
+          "key": "culture_is_or_has_ancestor_trigger",
+          "kind": "trigger",
+          "negated": false,
+          "text": "Culture is or has ancestor"
+        },
         {
           "key": "heritage_byzantine",
           "kind": "pillar",
@@ -7408,6 +8144,12 @@
           "value": true
         },
         {
+          "hasLoc": false,
+          "key": "perk_tactician_light_cavalry",
+          "text": "Perk tactician light cavalry",
+          "value": true
+        },
+        {
           "hasLoc": true,
           "key": "house_hostility_more_common",
           "text": "Rulers act more aggressively against other Houses",
@@ -7417,6 +8159,12 @@
           "hasLoc": true,
           "key": "vassals_more_likely_to_refuse_demands",
           "text": "Characters are more likely to refuse Imprisonment, Retractions and Revocations",
+          "value": true
+        },
+        {
+          "hasLoc": true,
+          "key": "training_grounds_cavalry_horse_need",
+          "text": "Training Grounds's Horses Need also increases Damage of Stationed Light Cavalry, Heavy Cavalry, and Archer Cavalry when met",
           "value": true
         }
       ],
@@ -7429,6 +8177,12 @@
         }
       ],
       "shownWhen": [
+        {
+          "key": "culture_is_or_has_ancestor_trigger",
+          "kind": "trigger",
+          "negated": false,
+          "text": "Culture is or has ancestor"
+        },
         {
           "key": "has_ep3_dlc_trigger",
           "kind": "dlc",
@@ -7492,13 +8246,19 @@
         {
           "hasLoc": true,
           "key": "unlock_maa_varangian_guards",
-          "text": "Emperors have access to the Found the Varangian Guard Decision, which enables Varangian Guards as Men-at-Arms",
+          "text": "Emperors can use the Found the Varangian Guard Decision, which unlocks Varangian Guards Men-at-Arms and the Akolouthos Court Position",
           "value": true
         },
         {
-          "hasLoc": true,
+          "hasLoc": false,
+          "key": "perk_tactician_heavy_infantry",
+          "text": "Perk tactician heavy infantry",
+          "value": true
+        },
+        {
+          "hasLoc": false,
           "key": "unlock_akolouthos",
-          "text": "Can appoint the Akolouthos Court Position, when the Varangian Guard has been founded.",
+          "text": "Unlock akolouthos",
           "value": true
         },
         {
@@ -7558,13 +8318,19 @@
         {
           "hasLoc": true,
           "key": "palace_politics_trait_bonuses",
-          "text": "Loyal, Deceitful, Ambitious, Arbitrary, and Paranoid Characters gain additional monthly Influence",
+          "text": "Loyal, Deceitful, Ambitious, Arbitrary, and Paranoid Traits increase monthly Influence",
           "value": true
         },
         {
           "hasLoc": true,
           "key": "palace_politics_trait_maluses",
-          "text": "Shy, Trusting, Maimed, One-Eyed, One-Legged, and Disfigured Characters have reduced monthly Influence",
+          "text": "Shy, Trusting, Maimed, One-Eyed, One-Legged, and Disfigured Traits reduce monthly Influence",
+          "value": true
+        },
+        {
+          "hasLoc": true,
+          "key": "palace_politics_patrician_building_slot",
+          "text": "The Patrician District District has +1 Building Slot",
           "value": true
         }
       ],
@@ -7581,6 +8347,12 @@
         }
       ],
       "shownWhen": [
+        {
+          "key": "culture_is_or_has_ancestor_trigger",
+          "kind": "trigger",
+          "negated": false,
+          "text": "Culture is or has ancestor"
+        },
         {
           "key": "heritage_byzantine",
           "kind": "pillar",
@@ -7644,7 +8416,7 @@
       },
       "modifiers": {
         "Counties": [
-          "-10 Popular Opinion"
+          "-10 Popular Opinion Baseline"
         ]
       },
       "name": "Roman Ceremonies",
@@ -7652,19 +8424,19 @@
         {
           "hasLoc": true,
           "key": "holds_triumphs",
-          "text": "Gain a Decision to Hold a Triumph",
+          "text": "Can use the Hold a Triumph Decision",
           "value": true
         },
         {
           "hasLoc": true,
           "key": "hosts_chariot_races",
-          "text": "May host the Chariot Race Activity and hire both a Champion Charioteer and a Bookmaker",
+          "text": "May host the Chariot Race Activity and hire the Champion Charioteer and Bookmaker Court Positions",
           "value": true
         },
         {
           "hasLoc": true,
           "key": "children_can_be_born_in_the_purple",
-          "text": "Children born to a Ruler holding the Byzantine Empire may gain the Born in the Purple Trait. Having the Born in the Purple Trait increases a character's candidate score under Acclamation Succession.",
+          "text": "Children born to holders of Byzantine Empire Title may gain the Born in the Purple Trait, which increases Candidate Score under Acclamation Succession",
           "value": true
         },
         {
@@ -7682,6 +8454,12 @@
       ],
       "requirements": [],
       "shownWhen": [
+        {
+          "key": "culture_is_or_has_ancestor_trigger",
+          "kind": "trigger",
+          "negated": false,
+          "text": "Culture is or has ancestor"
+        },
         {
           "key": "heritage_byzantine",
           "kind": "pillar",
@@ -7745,18 +8523,17 @@
       },
       "modifiers": {
         "Characters": [
-          "-45 Forest Danger",
-          "-55 Taiga Danger"
+          "-30 Forest Danger",
+          "-40 Taiga Danger",
+          "+15% Carpentries Trade Expertise Gain",
+          "-1.5% Wood Buy Price"
         ],
         "Counties": [
-          "+15% Development Growth in Forest",
-          "+15% Development Growth in Taiga"
+          "+15% Prosperity Growth in Forest",
+          "+15% Prosperity Growth in Taiga"
         ],
         "Provinces": [
-          "-10% Building Construction Cost in Forest",
-          "-10% Building Construction Cost in Taiga",
-          "-10% Holding Construction Cost in Forest",
-          "-10% Holding Construction Cost in Taiga"
+          "+10% Hinterland Taxes"
         ]
       },
       "name": "Forest Wardens",
@@ -7768,9 +8545,9 @@
           "value": true
         },
         {
-          "hasLoc": true,
-          "key": "logging_camps_building_bonuses",
-          "text": "The Forestry line of Buildings have additional bonuses in Counties of this Culture",
+          "hasLoc": false,
+          "key": "perk_tactician_archers",
+          "text": "Perk tactician archers",
           "value": true
         },
         {
@@ -7793,8 +8570,14 @@
         },
         {
           "hasLoc": true,
-          "key": "watermills_forestries_unlock",
-          "text": "The construction of Wood Pastures Building unlocks the first four tiers of Watermills line of Buildings",
+          "key": "forest_villages_building_slot",
+          "text": "The Villages District District has +1 Building Slot in Forest and Taiga",
+          "value": true
+        },
+        {
+          "hasLoc": true,
+          "key": "village_hunter_forest_taiga",
+          "text": "Unlocks the Village Hunter line of Buildings in the Villages District and Feast Halls District Districts in Forest and Taiga",
           "value": true
         }
       ],
@@ -7872,7 +8655,7 @@
           ]
         }
       },
-      "desc": "This culture has a long tradition of defensive ingenuity, using the local terrain to shield their homeland and repel would-be invaders. They pair this skill with mastery of the bow and agile troops, capable of outmanoeuvring any foe.",
+      "desc": "This culture has a long tradition of defensive ingenuity, using the local terrain to shield their homeland and repel would-be invaders. They pair this skill with mastery of the bow and agile troops, capable of outmaneuvering any foe.",
       "dlc": "All Under Heaven",
       "features": [],
       "icon": "marching_soldiers",
@@ -7990,6 +8773,12 @@
           "value": true
         },
         {
+          "hasLoc": false,
+          "key": "perk_tactician_light_cavalry",
+          "text": "Perk tactician light cavalry",
+          "value": true
+        },
+        {
           "hasLoc": true,
           "key": "harder_to_hybridize",
           "text": "Creating a Hybrid Culture requires 100% more Cultural Acceptance, it is also much harder to Hybridise with this Culture",
@@ -8082,9 +8871,21 @@
           "value": true
         },
         {
+          "hasLoc": false,
+          "key": "perk_tactician_heavy_cavalry",
+          "text": "Perk tactician heavy cavalry",
+          "value": true
+        },
+        {
           "hasLoc": true,
           "key": "faith_warrior_traits_more_valued",
-          "text": "The Warrior of the Faith and Order Member Traits are seen as Prestigious",
+          "text": "The Warrior of the Faith and Military Order Member Traits are seen as Prestigious",
+          "value": true
+        },
+        {
+          "hasLoc": true,
+          "key": "training_grounds_cavalry_horse_need",
+          "text": "Training Grounds's Horses Need also increases Damage of Stationed Light Cavalry, Heavy Cavalry, and Archer Cavalry when met",
           "value": true
         }
       ],
@@ -8257,6 +9058,12 @@
           "value": true
         },
         {
+          "hasLoc": false,
+          "key": "perk_tactician_pikemen",
+          "text": "Perk tactician pikemen",
+          "value": true
+        },
+        {
           "hasLoc": true,
           "key": "diligent_trait_more_common",
           "text": "The Diligent Trait is more common",
@@ -8264,7 +9071,7 @@
         },
         {
           "hasLoc": true,
-          "key": "pragmatic_traits_county_opinion_modifiers",
+          "key": "pragmatic_traits_popular_opinion_modifiers",
           "text": "The Diligent and Shrewd Traits give Popular Opinion",
           "value": true
         },
@@ -8357,6 +9164,12 @@
           "hasLoc": true,
           "key": "unlock_maa_ayyar",
           "text": "Can recruit Ayyar as Men-at-Arms",
+          "value": true
+        },
+        {
+          "hasLoc": false,
+          "key": "perk_tactician_heavy_infantry",
+          "text": "Perk tactician heavy infantry",
           "value": true
         },
         {
@@ -8474,6 +9287,12 @@
           "value": true
         },
         {
+          "hasLoc": false,
+          "key": "perk_tactician_heavy_infantry",
+          "text": "Perk tactician heavy infantry",
+          "value": true
+        },
+        {
           "hasLoc": true,
           "key": "unlock_garuda_warrior_title",
           "text": "Can appoint Knights to the Garuda Court Position",
@@ -8557,14 +9376,11 @@
       },
       "modifiers": {
         "Characters": [
-          "+20% Development Growth in Mountains",
-          "-65 Mountains Danger",
+          "+20% Prosperity Growth in Mountains",
+          "-45 Mountains Danger",
           "+15% Movement Speed over land while Raiding",
-          "-20% Hostile County Attrition while Raiding"
-        ],
-        "Provinces": [
-          "-10% Building Construction Cost in Mountains",
-          "-10% Holding Construction Cost in Mountains"
+          "-20% Hostile County Attrition while Raiding",
+          "+1.5% Wool Sell Price"
         ]
       },
       "name": "Himalayan Settlers",
@@ -8573,6 +9389,12 @@
           "hasLoc": true,
           "key": "unlock_maa_mountaineer",
           "text": "Can recruit Mountaineers as Men-at-Arms",
+          "value": true
+        },
+        {
+          "hasLoc": false,
+          "key": "perk_tactician_heavy_infantry",
+          "text": "Perk tactician heavy infantry",
           "value": true
         },
         {
@@ -8598,6 +9420,24 @@
           "key": "resistant_to_mountain_privation",
           "text": "Resistant to mountain privation",
           "value": true
+        },
+        {
+          "hasLoc": true,
+          "key": "mountains_villages_building_slot",
+          "text": "The Villages District District has +1 Building Slot in Mountains",
+          "value": true
+        },
+        {
+          "hasLoc": true,
+          "key": "mountains_villages_stationed_toughness",
+          "text": "The Villages District District provides Stationed Men-at-Arms Toughness bonuses in Mountains",
+          "value": true
+        },
+        {
+          "hasLoc": true,
+          "key": "terrace_gardens_mountains",
+          "text": "Unlocks the Terrace Gardens line of Buildings in the Villages District District in Mountains",
+          "value": true
         }
       ],
       "requirements": [
@@ -8612,6 +9452,21 @@
           "kind": "pillar",
           "negated": false,
           "text": "Qiangic"
+        },
+        {
+          "kind": "text",
+          "negated": false,
+          "text": "The Culture already has the Tradition Mountain Homes"
+        },
+        {
+          "kind": "text",
+          "negated": false,
+          "text": "The Culture already has the Tradition Mountaineer Ruralism"
+        },
+        {
+          "kind": "text",
+          "negated": false,
+          "text": "The Culture already has the Tradition Yashima"
         }
       ],
       "shownWhen": [
@@ -8687,6 +9542,12 @@
           "value": true
         },
         {
+          "hasLoc": false,
+          "key": "perk_tactician_heavy_infantry",
+          "text": "Perk tactician heavy infantry",
+          "value": true
+        },
+        {
           "hasLoc": true,
           "key": "strong_traits_more_valued",
           "text": "Traits such as Strong or Hale are seen as Prestigious",
@@ -8755,6 +9616,12 @@
           "kind": "dlc",
           "negated": false,
           "text": "Northern Lords"
+        },
+        {
+          "key": "culture_is_or_has_ancestor_trigger",
+          "kind": "trigger",
+          "negated": false,
+          "text": "Culture is or has ancestor"
         }
       ],
       "sourceFile": "00_maa_traditions.txt"
@@ -8801,8 +9668,8 @@
       },
       "modifiers": {
         "Characters": [
-          "-42 Mountains Danger",
-          "-42 Desert Mountains Danger"
+          "-29 Mountains Danger",
+          "-29 Desert Mountains Danger"
         ],
         "Provinces": [
           "+10% Levy Size in Mountains",
@@ -8817,6 +9684,12 @@
           "hasLoc": true,
           "key": "unlock_maa_horn_warrior",
           "text": "Can recruit Horn Warriors as Men-at-Arms",
+          "value": true
+        },
+        {
+          "hasLoc": false,
+          "key": "perk_tactician_skirmishers",
+          "text": "Perk tactician skirmishers",
           "value": true
         },
         {
@@ -8835,6 +9708,12 @@
           "hasLoc": true,
           "key": "can_recruit_mountain_specialist",
           "text": "Gain a Decision to recruit Mountain Commanders",
+          "value": true
+        },
+        {
+          "hasLoc": true,
+          "key": "mountain_skirmishing_castle_skirmisher_control",
+          "text": "Stationed Skirmishers in Castles provide +1 Control in Mountains",
           "value": true
         }
       ],
@@ -8920,6 +9799,12 @@
           "value": true
         },
         {
+          "hasLoc": false,
+          "key": "perk_tactician_archer_cavalry",
+          "text": "Perk tactician archer cavalry",
+          "value": true
+        },
+        {
           "hasLoc": true,
           "key": "can_recruit_open_specialist",
           "text": "Gain a Decision to recruit Open Terrain Commanders",
@@ -8927,8 +9812,8 @@
         },
         {
           "hasLoc": true,
-          "key": "unlock_horse_pastures_building",
-          "text": "Can always build Horse Herds in Holdings of this Culture",
+          "key": "unlock_horse_archer_paddocks_building",
+          "text": "Unlocks the Horse Archer Paddocks line of Buildings in the Military District and War Lodges District Districts of this Culture",
           "value": true
         },
         {
@@ -8941,6 +9826,12 @@
           "hasLoc": true,
           "key": "unlock_voluntary_laampdom",
           "text": "Allows the Become Adventurer Decision",
+          "value": true
+        },
+        {
+          "hasLoc": true,
+          "key": "training_grounds_cavalry_horse_need",
+          "text": "Training Grounds's Horses Need also increases Damage of Stationed Light Cavalry, Heavy Cavalry, and Archer Cavalry when met",
           "value": true
         }
       ],
@@ -9029,6 +9920,18 @@
           "key": "unlock_maa_hussar",
           "text": "Can recruit Konni as Men-at-Arms",
           "value": true
+        },
+        {
+          "hasLoc": false,
+          "key": "perk_tactician_light_cavalry",
+          "text": "Perk tactician light cavalry",
+          "value": true
+        },
+        {
+          "hasLoc": true,
+          "key": "training_grounds_cavalry_horse_need",
+          "text": "Training Grounds's Horses Need also increases Damage of Stationed Light Cavalry, Heavy Cavalry, and Archer Cavalry when met",
+          "value": true
         }
       ],
       "requirements": [],
@@ -9097,15 +10000,16 @@
       "modifiers": {
         "Characters": [
           "+25% Men-at-Arms Recruitment Cost",
-          "+2.5% Levy Maintenance"
+          "+2.5% Levy Maintenance",
+          "+10% Cereals Trade Expertise Gain",
+          "-1% Cereals Buy Price"
         ],
         "Counties": [
-          "+30% Development Growth in Farmlands",
-          "+5% Holding Taxes in Farmlands",
-          "+10% Levy Size in Farmlands",
-          "+30% Development Growth in Terraced Hills",
+          "+15% Agricultural Taxes",
+          "+30% Prosperity Growth in Terraced Hills",
           "+5% Holding Taxes in Terraced Hills",
-          "+10% Levy Size in Terraced Hills"
+          "+10% Levy Size in Terraced Hills",
+          "+10% Cereals Production"
         ]
       },
       "name": "Intensive Farming",
@@ -9131,7 +10035,19 @@
         {
           "hasLoc": true,
           "key": "rice_cultivators_next_level_paddy_fields",
-          "text": "All Paddy Fields line of Buildings may be built an Era early",
+          "text": "The Rice Growing District District can be upgraded one Era earlier",
+          "value": true
+        },
+        {
+          "hasLoc": true,
+          "key": "rice_cultivators_rice_district_bonuses",
+          "text": "The Rice Growing District District provides additional Prosperity and +50% Rice production",
+          "value": true
+        },
+        {
+          "hasLoc": true,
+          "key": "agrarian_villages_building_slot",
+          "text": "The Villages District District has +1 Building Slot",
           "value": true
         }
       ],
@@ -9221,6 +10137,12 @@
           "hasLoc": true,
           "key": "unlock_maa_khandayat",
           "text": "Can recruit Khandayat as Men-at-Arms",
+          "value": true
+        },
+        {
+          "hasLoc": false,
+          "key": "perk_tactician_heavy_infantry",
+          "text": "Perk tactician heavy infantry",
           "value": true
         },
         {
@@ -9314,9 +10236,15 @@
           "value": true
         },
         {
+          "hasLoc": false,
+          "key": "perk_tactician_archers",
+          "text": "Perk tactician archers",
+          "value": true
+        },
+        {
           "hasLoc": true,
-          "key": "hunting_archery_building_bonuses",
-          "text": "The Hunting Grounds line of Buildings will improve Archers",
+          "key": "village_hunter_riverside",
+          "text": "Unlocks the Village Hunter line of Buildings in the Villages District and Feast Halls District Districts in riverside Baronies",
           "value": true
         }
       ],
@@ -9380,11 +10308,11 @@
       },
       "modifiers": {
         "Characters": [
-          "-15% Elephant Cavalry Recruitment Cost",
+          "-10% Elephant Cavalry Recruitment Cost",
           "-15% Elephant Cavalry Maintenance",
           "+20% Elephant Cavalry Toughness",
           "+40% Elephant Cavalry Damage",
-          "-42 Jungle Danger"
+          "-29 Jungle Danger"
         ]
       },
       "name": "Lords of the Elephant",
@@ -9397,14 +10325,20 @@
         },
         {
           "hasLoc": true,
-          "key": "elephant_pens_building_bonuses",
-          "text": "The Elephantry line of Buildings have additional bonuses in Counties of this Culture",
+          "key": "elephant_bonuses_for_rank_4_education",
+          "text": "Rulers with high Education Traits are considered a Gajapati and gain significant Elephant Cavalry bonuses",
           "value": true
         },
         {
           "hasLoc": true,
-          "key": "elephant_bonuses_for_rank_4_education",
-          "text": "Rulers with high Education Traits are considered a Gajapati and gain significant Elephant Cavalry bonuses",
+          "key": "lords_of_the_elephant_temple_elephant_control",
+          "text": "Stationed Elephant Cavalry in the Religious Enclave District provide +1 Control",
+          "value": true
+        },
+        {
+          "hasLoc": true,
+          "key": "lords_of_the_elephant_elephantry_bonuses",
+          "text": "The Elephantry Barracks line of Buildings provides additional Popular Opinion and Religious Tax",
           "value": true
         }
       ],
@@ -9471,7 +10405,12 @@
           "-85% Embarkation Cost",
           "+25% Naval Speed",
           "-45 Coastal Sea Danger",
-          "-45 Sea Danger"
+          "-45 Sea Danger",
+          "+2 Route Length",
+          "-1% Fish Buy Price"
+        ],
+        "Counties": [
+          "+10% Fish Production"
         ]
       },
       "name": "Maritime Way of Life",
@@ -9493,6 +10432,12 @@
           "key": "unlock_maa_pesilat",
           "text": "Can recruit Pesilat Warriors as Men-at-Arms",
           "value": true
+        },
+        {
+          "hasLoc": true,
+          "key": "maritime_way_of_life_port_maa_maintenance",
+          "text": "Stationed Men-at-Arms in the Port District District have -5% Maintenance",
+          "value": true
         }
       ],
       "requirements": [
@@ -9506,6 +10451,16 @@
           "kind": "text",
           "negated": false,
           "text": "At least 50% of the Counties of this Culture must be Coastal"
+        },
+        {
+          "kind": "text",
+          "negated": false,
+          "text": "The Culture already has the Tradition Seafarers"
+        },
+        {
+          "kind": "text",
+          "negated": false,
+          "text": "The Culture already has the Tradition Coastal Warriors"
         }
       ],
       "shownWhen": [
@@ -9583,6 +10538,12 @@
           "key": "unlock_maa_shomer",
           "text": "Can recruit Shomer as Men-at-Arms",
           "value": true
+        },
+        {
+          "hasLoc": false,
+          "key": "perk_tactician_skirmishers",
+          "text": "Perk tactician skirmishers",
+          "value": true
         }
       ],
       "requirements": [],
@@ -9595,6 +10556,125 @@
         }
       ],
       "sourceFile": "00_maa_traditions.txt"
+    },
+    {
+      "category": "regional",
+      "categoryName": "Regional",
+      "cost": {
+        "prestige": {
+          "base": 2000,
+          "rules": [
+            {
+              "amount": 2000,
+              "op": "add",
+              "when": "The Culture does not have the Egalitarian, Stoic or Bureaucratic Ethos"
+            },
+            {
+              "amount": 3000,
+              "op": "add",
+              "when": "The Culture does not have 30% of its Counties on a coast"
+            },
+            {
+              "amount": 0.5,
+              "op": "multiply",
+              "when": "Inspired by Tradition"
+            },
+            {
+              "amount": 1.5,
+              "op": "multiply",
+              "when": "Replacing an existing tradition"
+            }
+          ]
+        }
+      },
+      "desc": "From the nakhudas of the west to the trade guilds and castes in the east, Indian Ocean merchants have brought pepper, cotton cloth and precious goods to market, generation after generation.",
+      "dlc": "Silk and Silver",
+      "features": [],
+      "icon": "monsoon_traders",
+      "id": "tradition_monsoon_traders",
+      "layers": {
+        "0": "steward",
+        "1": "indian",
+        "4": "monsoon_traders"
+      },
+      "modifiers": {
+        "Characters": [
+          "+20% Luxury Consumables Trade Expertise Gain",
+          "+15% Incense Trade Expertise Gain",
+          "+10% Luxury Items Trade Expertise Gain",
+          "+4 Route Length",
+          "+1 Max Trade Goods",
+          "-25 Sea Danger",
+          "+15% Maritime Taxes",
+          "+0.75% Spices Sell Price",
+          "+0.75% Textiles Sell Price"
+        ],
+        "Counties": [
+          "+15% Spices Production",
+          "+10% Incense Production"
+        ]
+      },
+      "name": "Monsoon Merchants",
+      "parameters": [
+        {
+          "hasLoc": true,
+          "key": "stewardship_gain_from_foreign_poi",
+          "text": "Visiting a Point of Interest in the lands of another Culture grants Stewardship Lifestyle Experience",
+          "value": true
+        },
+        {
+          "hasLoc": true,
+          "key": "unlock_voluntary_mercantilism",
+          "text": "Allows the Become Merchant Decision",
+          "value": true
+        },
+        {
+          "hasLoc": true,
+          "key": "next_level_port_districts",
+          "text": "The Port District District can be upgraded one Era earlier",
+          "value": true
+        },
+        {
+          "hasLoc": true,
+          "key": "maritime_mercantilism_coastal_districts",
+          "text": "Buildings in the Market District and Guild District Districts are 10% cheaper to construct in coastal Baronies",
+          "value": true
+        },
+        {
+          "hasLoc": true,
+          "key": "monsoon_traveler_trade_bonuses",
+          "text": "The Wanderer track of the Lifestyle Traveler Trait gives additional Trade Competitiveness, and the Seasoned track gives additional Capacity",
+          "value": true
+        },
+        {
+          "hasLoc": true,
+          "key": "monsoon_port_buildings_settlement_size",
+          "text": "Buildings in the Port District District give +10 Settlement Size",
+          "value": true
+        },
+        {
+          "hasLoc": true,
+          "key": "monsoon_merchant_domicile_buildings",
+          "text": "Unlocks the Diaspora Network and Spice Traders Guild Domicile Buildings",
+          "value": true
+        }
+      ],
+      "requirements": [
+        {
+          "kind": "text",
+          "negated": false,
+          "text": "The Culture is not present in any coastal County of India, Eastern Africa, or Middle East"
+        }
+      ],
+      "shownWhen": [
+        {
+          "key": "has_gdp_dlc_trigger",
+          "kind": "dlc",
+          "negated": false,
+          "text": "Silk and Silver"
+        }
+      ],
+      "sourceFile": "11_gdp_traditions.txt"
     },
     {
       "category": "regional",
@@ -9638,15 +10718,12 @@
       },
       "modifiers": {
         "Characters": [
-          "-65 Mountains Danger",
-          "-65 Desert Mountains Danger"
+          "-45 Mountains Danger",
+          "-45 Desert Mountains Danger",
+          "+1.5% Wool Sell Price"
         ],
         "Counties": [
-          "+35% Development Growth in Desert Mountains"
-        ],
-        "Provinces": [
-          "-10% Building Construction Cost in Desert Mountains",
-          "-10% Holding Construction Cost in Desert Mountains"
+          "+35% Prosperity Growth in Desert Mountains"
         ]
       },
       "name": "Mountain Herding",
@@ -9655,6 +10732,12 @@
           "hasLoc": true,
           "key": "unlock_maa_abudrar",
           "text": "Can recruit Abudrar as Men-at-Arms",
+          "value": true
+        },
+        {
+          "hasLoc": false,
+          "key": "perk_tactician_skirmishers",
+          "text": "Perk tactician skirmishers",
           "value": true
         },
         {
@@ -9679,6 +10762,12 @@
           "hasLoc": true,
           "key": "can_recruit_mountain_specialist",
           "text": "Gain a Decision to recruit Mountain Commanders",
+          "value": true
+        },
+        {
+          "hasLoc": true,
+          "key": "mountain_herding_castle_skirmisher_control",
+          "text": "Stationed Skirmishers in Castles provide +1 Control in Mountains and Desert Mountains",
           "value": true
         }
       ],
@@ -9765,12 +10854,16 @@
       },
       "modifiers": {
         "Characters": [
-          "-65 Mountains Danger",
-          "-45 Hills Danger"
+          "-45 Mountains Danger",
+          "-30 Hills Danger",
+          "-0.75% Silver Buy Price"
         ],
         "Counties": [
-          "+10% Development Growth in Hills",
-          "+10% Development Growth in Mountains"
+          "+10% Prosperity Growth in Hills",
+          "+10% Prosperity Growth in Mountains"
+        ],
+        "Provinces": [
+          "+10% Mining Taxes"
         ]
       },
       "name": "Mountaineer Ruralism",
@@ -9782,15 +10875,9 @@
           "value": true
         },
         {
-          "hasLoc": true,
-          "key": "quarries_building_bonuses",
-          "text": "The Quarries line of Buildings have additional bonuses in Counties of this Culture",
-          "value": true
-        },
-        {
-          "hasLoc": true,
-          "key": "hill_farms_building_bonuses",
-          "text": "The Hill Farms line of Buildings have additional bonuses in Counties of this Culture",
+          "hasLoc": false,
+          "key": "perk_tactician_heavy_infantry",
+          "text": "Perk tactician heavy infantry",
           "value": true
         },
         {
@@ -9810,6 +10897,18 @@
           "key": "can_recruit_mountain_specialist",
           "text": "Gain a Decision to recruit Mountain Commanders",
           "value": true
+        },
+        {
+          "hasLoc": true,
+          "key": "mountaineer_ruralism_mountain_production",
+          "text": "Resource Districts in Mountains produce +25% more of their primary resource",
+          "value": true
+        },
+        {
+          "hasLoc": true,
+          "key": "mountaineer_ruralism_castle_defender",
+          "text": "Castles in Mountains provide an additional 2 Defender Holding Advantage per Holding level",
+          "value": true
         }
       ],
       "requirements": [
@@ -9818,6 +10917,16 @@
           "kind": "pillar",
           "negated": false,
           "text": "West Slavic"
+        },
+        {
+          "kind": "text",
+          "negated": false,
+          "text": "The Culture already has the Tradition Himalayan Settlers"
+        },
+        {
+          "kind": "text",
+          "negated": false,
+          "text": "The Culture already has the Tradition Yashima"
         },
         {
           "kind": "text",
@@ -9870,7 +10979,8 @@
           "+20% Heavy Cavalry Toughness",
           "+20% Archer Cavalry Toughness",
           "+10% Light Cavalry Toughness",
-          "-1% Herd Conversion into Horde Riders"
+          "-1% Herd Conversion into Horde Riders",
+          "-1% Iron Buy Price"
         ]
       },
       "name": "Iron Cavalry",
@@ -9891,6 +11001,12 @@
           "hasLoc": true,
           "key": "metalworkers_internal_yurt_unlock",
           "text": "Unlocks the Portable Forge Internal Upgrade for Nomadic Domiciles",
+          "value": true
+        },
+        {
+          "hasLoc": true,
+          "key": "training_grounds_cavalry_horse_need",
+          "text": "Training Grounds's Horses Need also increases Damage of Stationed Light Cavalry, Heavy Cavalry, and Archer Cavalry when met",
           "value": true
         }
       ],
@@ -9980,10 +11096,12 @@
         "Characters": [
           "+4 Advantage in Taiga",
           "+4 Advantage in Provinces affected by Winter",
-          "-38 Taiga Danger",
-          "-32 Hills Danger",
+          "-28 Taiga Danger",
+          "-22 Hills Danger",
           "-20% Building Construction Cost in Taiga",
-          "-20% Building Construction Cost in Forest"
+          "-20% Building Construction Cost in Forest",
+          "+1% Furs Sell Price",
+          "+1% Iron Sell Price"
         ]
       },
       "name": "Tribes of the North",
@@ -9997,7 +11115,7 @@
         {
           "hasLoc": true,
           "key": "permafrost_modifier_mechanic",
-          "text": "Counties of this Culture start with Siberian Permafrost Modifier that reduces Development and Control. If the Holder and County have Culture with this Cultural Tradition, Siberian Permafrost does not lower Control and provides bonuses.",
+          "text": "Counties of this Culture start with Siberian Permafrost Modifier that reduces Prosperity and Control. If the Holder and County have Culture with this Cultural Tradition, Siberian Permafrost does not lower Control and provides bonuses.",
           "value": true
         },
         {
@@ -10015,7 +11133,7 @@
         {
           "hasLoc": true,
           "key": "permafrost_cannot_become_feudal",
-          "text": "Can not take the Adopt Feudal Ways and Adopt Feudal Ways through Liege Decisions",
+          "text": "Can not take the Adopt Feudal Ways, Adopt Feudal Ways through Liege, and Adopt Republican Ways Decisions",
           "value": true
         }
       ],
@@ -10075,8 +11193,8 @@
           "+15% Archer Cavalry Damage",
           "+20% Archer Cavalry Pursuit",
           "+10% County Fertility Growth in Mountains Terrain",
-          "-42 Mountains Danger",
-          "-32 Hills Danger"
+          "-29 Mountains Danger",
+          "-22 Hills Danger"
         ]
       },
       "name": "Wolves of the Deep Steppe",
@@ -10085,6 +11203,12 @@
           "hasLoc": true,
           "key": "unlock_maa_mangudai",
           "text": "Can recruit Mangudai as Men-at-Arms",
+          "value": true
+        },
+        {
+          "hasLoc": true,
+          "key": "training_grounds_cavalry_horse_need",
+          "text": "Training Grounds's Horses Need also increases Damage of Stationed Light Cavalry, Heavy Cavalry, and Archer Cavalry when met",
           "value": true
         }
       ],
@@ -10184,6 +11308,12 @@
           "hasLoc": true,
           "key": "unlock_maa_mubarizun",
           "text": "Can recruit Mubarizun as Men-at-Arms",
+          "value": true
+        },
+        {
+          "hasLoc": false,
+          "key": "perk_tactician_heavy_infantry",
+          "text": "Perk tactician heavy infantry",
           "value": true
         },
         {
@@ -10292,7 +11422,14 @@
         }
       ],
       "requirements": [],
-      "shownWhen": [],
+      "shownWhen": [
+        {
+          "key": "culture_is_or_has_ancestor_trigger",
+          "kind": "trigger",
+          "negated": false,
+          "text": "Culture is or has ancestor"
+        }
+      ],
       "sourceFile": "00_regional_traditions.txt"
     },
     {
@@ -10364,7 +11501,14 @@
         }
       ],
       "requirements": [],
-      "shownWhen": [],
+      "shownWhen": [
+        {
+          "key": "culture_is_or_has_ancestor_trigger",
+          "kind": "trigger",
+          "negated": false,
+          "text": "Culture is or has ancestor"
+        }
+      ],
       "sourceFile": "00_regional_traditions.txt"
     },
     {
@@ -10414,7 +11558,9 @@
           "-20 Minor Landholder Vassal Opinion",
           "-20 Parochial Vassal Opinion",
           "+10% Parochial Vassal Tax Contribution",
-          "+10% Parochial Vassal Levy Contribution"
+          "+10% Parochial Vassal Levy Contribution",
+          "-10 Republic Vassal Opinion",
+          "+10% Artisan Taxes"
         ]
       },
       "name": "Republican Legacy",
@@ -10427,20 +11573,8 @@
         },
         {
           "hasLoc": true,
-          "key": "unlock_innovation_pike_columns",
-          "text": "The Pike Columns Innovation becomes available in the High Medieval Era",
-          "value": true
-        },
-        {
-          "hasLoc": true,
-          "key": "city_buildings_more_powerful",
-          "text": "City Holdings give more Taxes, Development and Levies",
-          "value": true
-        },
-        {
-          "hasLoc": true,
-          "key": "city_buildings_less_control",
-          "text": "City Holdings significantly lowers Control gain",
+          "key": "more_willing_to_create_republics",
+          "text": "Rulers of this Culture are more willing to allow Merchants to found Republics",
           "value": true
         },
         {
@@ -10457,8 +11591,32 @@
         },
         {
           "hasLoc": true,
+          "key": "city_buildings_more_powerful",
+          "text": "City Holdings give more Taxes, Prosperity and Levies",
+          "value": true
+        },
+        {
+          "hasLoc": true,
           "key": "next_level_cities",
-          "text": "The City main Buildings can be built one Era earlier",
+          "text": "The City Holding District can be upgraded one Era earlier",
+          "value": true
+        },
+        {
+          "hasLoc": true,
+          "key": "unlock_innovation_pike_columns",
+          "text": "The Pike Columns Innovation becomes available in the High Medieval Era",
+          "value": true
+        },
+        {
+          "hasLoc": true,
+          "key": "trade_league_cohesion_bonus",
+          "text": "Each Title of this Culture in a Trade League contributes +0.02 monthly League Cohesion",
+          "value": true
+        },
+        {
+          "hasLoc": true,
+          "key": "county_tier_trade_league_founding",
+          "text": "A Trade League may be founded by County-tier Rulers",
           "value": true
         }
       ],
@@ -10469,8 +11627,144 @@
           "text": "Your Government is Nomadic"
         }
       ],
-      "shownWhen": [],
+      "shownWhen": [
+        {
+          "key": "culture_is_or_has_ancestor_trigger",
+          "kind": "trigger",
+          "negated": false,
+          "text": "Culture is or has ancestor"
+        }
+      ],
       "sourceFile": "00_realm_traditions.txt"
+    },
+    {
+      "category": "regional",
+      "categoryName": "Regional",
+      "cost": {
+        "prestige": {
+          "base": 2000,
+          "rules": [
+            {
+              "amount": 2000,
+              "op": "add",
+              "when": "The Culture does not have the Communal, Egalitarian or Ceremonious Ethos"
+            },
+            {
+              "amount": 3000,
+              "op": "add",
+              "when": "You do not have a City Holding in at least 90% of the Counties that share your Culture within your Realm"
+            },
+            {
+              "amount": 0.5,
+              "op": "multiply",
+              "when": "Inspired by Tradition"
+            },
+            {
+              "amount": 1.5,
+              "op": "multiply",
+              "when": "Replacing an existing tradition"
+            }
+          ]
+        }
+      },
+      "desc": "Roman law once built this land. In this culture law is still taught to everyone of importance, and its use is everywhere in society. Peasants, artisans, widows, nobles, merchants, all rely on the letter of the law to settle conflicts.",
+      "dlc": "Silk and Silver",
+      "features": [],
+      "icon": "roman_law_tradition",
+      "id": "tradition_roman_law",
+      "layers": {
+        "0": "steward",
+        "1": "mediterranean",
+        "4": "roman_law_tradition"
+      },
+      "modifiers": {
+        "Characters": [
+          "-1% Monthly Prestige per Dread",
+          "+25% Tyranny Gain",
+          "+10% Monthly Focused Learning Lifestyle Experience"
+        ],
+        "Counties": [
+          "+25% Books & Paper Production"
+        ]
+      },
+      "name": "Roman Law",
+      "parameters": [
+        {
+          "hasLoc": true,
+          "key": "cheaper_to_change_laws",
+          "text": "Law Cost penalty from Realm Size: -50%",
+          "value": true
+        },
+        {
+          "hasLoc": true,
+          "key": "roman_law_legal_buildings_in_guild_district",
+          "text": "The Notary Office and Court of Law lines of Buildings can be built in the Guild District",
+          "value": true
+        },
+        {
+          "hasLoc": true,
+          "key": "roman_law_legal_buildings_popular_opinion",
+          "text": "The Market Court, Notary Office, and Court of Law lines of Buildings give additional Popular Opinion",
+          "value": true
+        },
+        {
+          "hasLoc": true,
+          "key": "roman_law_notariate_domicile_building",
+          "text": "Unlocks the Notariate Domicile Building",
+          "value": true
+        },
+        {
+          "hasLoc": true,
+          "key": "roman_law_cheaper_university",
+          "text": "Sending a Ward to University and hosting the University Visit Activity cost -0.25%",
+          "value": true
+        },
+        {
+          "hasLoc": true,
+          "key": "roman_law_university_bonuses",
+          "text": "University Buildings give additional benefits",
+          "value": true
+        },
+        {
+          "hasLoc": true,
+          "key": "just_trait_gives_bonuses",
+          "text": "The Just Trait has additional bonuses",
+          "value": true
+        },
+        {
+          "hasLoc": true,
+          "key": "roman_law_education_bonuses",
+          "text": "Learning and Stewardship Education Traits, fifth-level Education Traits, have additional Trade Competitiveness and Stewardship Skill bonuses.",
+          "value": true
+        }
+      ],
+      "requirements": [
+        {
+          "kind": "text",
+          "negated": false,
+          "text": "Your Government is Nomadic"
+        },
+        {
+          "kind": "text",
+          "negated": false,
+          "text": "The Culture is not present in any County with a University"
+        }
+      ],
+      "shownWhen": [
+        {
+          "key": "has_gdp_dlc_trigger",
+          "kind": "dlc",
+          "negated": false,
+          "text": "Silk and Silver"
+        },
+        {
+          "key": "heritage_latin",
+          "kind": "pillar",
+          "negated": false,
+          "text": "Latin"
+        }
+      ],
+      "sourceFile": "11_gdp_traditions.txt"
     },
     {
       "category": "regional",
@@ -10515,24 +11809,20 @@
       "modifiers": {
         "Characters": [
           "-25% Light Cavalry Maintenance",
-          "-25% Light Cavalry Recruitment Cost",
-          "+10% Development Growth in Oasis",
-          "+10% Army Movement Speed",
-          "+10 Travel Speed",
-          "-50 Desert Danger",
-          "-35 Drylands Danger",
-          "-65 Desert Mountains Danger",
-          "+20% Movement Speed over land while Raiding",
-          "-30% Hostile County Attrition while Raiding",
+          "-15% Light Cavalry Recruitment Cost",
+          "+10% Prosperity Growth in Oasis",
           "-66% Desert Provisions Use",
           "-66% Desert Mountains Provisions Use",
           "+50% Supply Limit in Desert",
           "+50% Supply Limit in Desert Mountains",
+          "-25% Oasis Provisions Use",
+          "+25% Supply Limit in Oasis",
+          "-25% Attrition Taken in Desert",
+          "Negate Supply Limit Penalty in Desert",
           "+10% County Fertility Growth in Desert Terrain",
           "+20% County Fertility Growth in Oasis Terrain"
         ],
         "Provinces": [
-          "-15% Building Construction Cost in Oasis",
           "-10% Building Construction Cost in Desert"
         ]
       },
@@ -10545,9 +11835,9 @@
           "value": true
         },
         {
-          "hasLoc": false,
-          "key": "resistant_to_desert_privation",
-          "text": "Resistant to desert privation",
+          "hasLoc": true,
+          "key": "training_grounds_cavalry_horse_need",
+          "text": "Training Grounds's Horses Need also increases Damage of Stationed Light Cavalry, Heavy Cavalry, and Archer Cavalry when met",
           "value": true
         }
       ],
@@ -10565,12 +11855,123 @@
             {
               "amount": 2000,
               "op": "add",
+              "when": "The Culture does not have the Stoic or Spiritual Ethos"
+            },
+            {
+              "amount": 3000,
+              "op": "add",
+              "when": "The Culture is not present in at least 2 Counties with Oasis Terrain"
+            },
+            {
+              "amount": 0.5,
+              "op": "multiply",
+              "when": "Inspired by Tradition"
+            },
+            {
+              "amount": 1.5,
+              "op": "multiply",
+              "when": "Replacing an existing tradition"
+            }
+          ]
+        }
+      },
+      "desc": "It is an old truth that the Sahara desert is not a barrier as much as it is a highway for trade, connecting the Sahel and West African inland with the Mediterranean sea. This culture has embraced its role in this exchange, many live their entire lives in caravans.",
+      "dlc": "Silk and Silver",
+      "features": [],
+      "icon": "saharan_traders",
+      "id": "tradition_saharan_traders",
+      "layers": {
+        "0": "steward",
+        "1": "mena",
+        "4": "saharan_traders"
+      },
+      "modifiers": {
+        "Characters": [
+          "+20% Precious Metals Trade Expertise Gain",
+          "+20% Salt Trade Expertise Gain",
+          "+3 Route Length",
+          "+20% Caravaneer (Merchant) Trait Experience Gain",
+          "+10% Trade Capacity",
+          "+1% Salt Sell Price",
+          "+0.75% Gold Sell Price"
+        ],
+        "Counties": [
+          "+15% Gold Production",
+          "+10% Salt Production"
+        ]
+      },
+      "name": "Saharan Traders",
+      "parameters": [
+        {
+          "hasLoc": true,
+          "key": "oasis_villages_building_slot",
+          "text": "The Villages District, Religious Community District, and Manor Houses District Districts have +1 Building Slot in Oasis",
+          "value": true
+        },
+        {
+          "hasLoc": true,
+          "key": "caravaneers_caravanserai",
+          "text": "Unlocks the Caravanserai line of Buildings in the Villages District and Market District Districts in Market Capitals",
+          "value": true
+        },
+        {
+          "hasLoc": true,
+          "key": "unlock_voluntary_mercantilism",
+          "text": "Allows the Become Merchant Decision",
+          "value": true
+        },
+        {
+          "hasLoc": true,
+          "key": "saharan_seasoned_traveler_route_length",
+          "text": "Each level of the Seasoned track of the Lifestyle Traveler Trait gives +1 Trade Route Length",
+          "value": true
+        },
+        {
+          "hasLoc": true,
+          "key": "saharan_merchant_domicile_buildings",
+          "text": "Unlocks the Tuareg Guide Station and Ornamented Courtyard Domicile Buildings",
+          "value": true
+        },
+        {
+          "hasLoc": true,
+          "key": "caravan_escort_compound_domicile_building",
+          "text": "Unlocks the Caravan Escort Compound Domicile Building",
+          "value": true
+        }
+      ],
+      "requirements": [
+        {
+          "kind": "text",
+          "negated": false,
+          "text": "The Culture is not present in any County with Oasis Terrain"
+        }
+      ],
+      "shownWhen": [
+        {
+          "key": "has_gdp_dlc_trigger",
+          "kind": "dlc",
+          "negated": false,
+          "text": "Silk and Silver"
+        }
+      ],
+      "sourceFile": "11_gdp_traditions.txt"
+    },
+    {
+      "category": "regional",
+      "categoryName": "Regional",
+      "cost": {
+        "prestige": {
+          "base": 2000,
+          "rules": [
+            {
+              "amount": 2000,
+              "op": "add",
               "when": "The Culture does not have the Bureaucratic, Ceremonious or Spiritual Ethos"
             },
             {
               "amount": 0.75,
               "op": "multiply",
-              "when": "Character has the Scholar trait"
+              "when": "Character has the Erudite trait"
             },
             {
               "amount": 0.5,
@@ -10592,7 +11993,9 @@
       },
       "modifiers": {
         "Characters": [
-          "+20% Monthly Learning Lifestyle Experience"
+          "+20% Monthly Focused Learning Lifestyle Experience",
+          "+15% Books Trade Expertise Gain",
+          "+1% Books & Paper Sell Price"
         ]
       },
       "name": "Scholar Officials",
@@ -10638,6 +12041,18 @@
           "key": "doesnt_care_about_culture_faith_in_factions",
           "text": "Vassals of this Culture do not consider differing Faith or Culture when joining Factions",
           "value": true
+        },
+        {
+          "hasLoc": true,
+          "key": "unlock_patrician_garden_calligraphy_houses",
+          "text": "Unlocks the Garden Calligraphy Houses line of Buildings in the Patrician District District",
+          "value": true
+        },
+        {
+          "hasLoc": true,
+          "key": "scholar_officials_bureaucratic_building_slot",
+          "text": "The Bureaucratic District District has +1 Building Slot",
+          "value": true
         }
       ],
       "requirements": [
@@ -10673,12 +12088,134 @@
             {
               "amount": 2000,
               "op": "add",
+              "when": "The Culture does not have the Bureaucratic, Ceremonious or Egalitarian Ethos"
+            },
+            {
+              "amount": 3000,
+              "op": "add",
+              "when": "The Culture does not have 30% of its Counties along the Silk Road"
+            },
+            {
+              "amount": 0.5,
+              "op": "multiply",
+              "when": "Inspired by Tradition"
+            },
+            {
+              "amount": 1.5,
+              "op": "multiply",
+              "when": "Replacing an existing tradition"
+            }
+          ]
+        }
+      },
+      "desc": "The Silk Road brings a constant stream of goods between East and West. Silk, tea, lacquerware, jade and many other expensive goods are brought from station to station along the long trek. This has shaped the societies of the road. Rich cities either engage directly in long-distance trade or sell to those who do.",
+      "dlc": "Silk and Silver",
+      "features": [],
+      "icon": "silk_road_traders",
+      "id": "tradition_silk_road_traders",
+      "layers": {
+        "0": "steward",
+        "1": "asian",
+        "4": "silk_road_traders"
+      },
+      "modifiers": {
+        "Characters": [
+          "+20% Luxury Items Trade Expertise Gain",
+          "+15% Fabric Trade Expertise Gain",
+          "+3 Route Length",
+          "+1.25% Jade Sell Price"
+        ]
+      },
+      "name": "Silk Road Entrepreneurs",
+      "parameters": [
+        {
+          "hasLoc": true,
+          "key": "caravaneers_caravanserai",
+          "text": "Unlocks the Caravanserai line of Buildings in the Villages District and Market District Districts in Market Capitals",
+          "value": true
+        },
+        {
+          "hasLoc": true,
+          "key": "caravanserai_hospitality",
+          "text": "Characters of this Culture can use the Host as Honored Guest Interaction",
+          "value": true
+        },
+        {
+          "hasLoc": true,
+          "key": "stewardship_gain_from_foreign_poi",
+          "text": "Visiting a Point of Interest in the lands of another Culture grants Stewardship Lifestyle Experience",
+          "value": true
+        },
+        {
+          "hasLoc": true,
+          "key": "silk_road_market_expertise",
+          "text": "The Visit a Silk Road Market Decision benefits you more",
+          "value": true
+        },
+        {
+          "hasLoc": true,
+          "key": "unlock_voluntary_mercantilism",
+          "text": "Allows the Become Merchant Decision",
+          "value": true
+        },
+        {
+          "hasLoc": true,
+          "key": "silk_road_oasis_urban_building_slots",
+          "text": "The Housing District and Guild District Districts have +1 Building Slot in Oasis",
+          "value": true
+        },
+        {
+          "hasLoc": true,
+          "key": "silk_road_market_owner_bonuses",
+          "text": "Silk Road Market Buildings give additional Commerce Tax",
+          "value": true
+        },
+        {
+          "hasLoc": true,
+          "key": "silk_road_merchant_domicile_buildings",
+          "text": "Unlocks the Mulberry Plant School and Chinese Merchant Enclave Domicile Buildings",
+          "value": true
+        },
+        {
+          "hasLoc": true,
+          "key": "caravan_escort_compound_domicile_building",
+          "text": "Unlocks the Caravan Escort Compound Domicile Building",
+          "value": true
+        }
+      ],
+      "requirements": [
+        {
+          "kind": "text",
+          "negated": false,
+          "text": "The Culture is not present along the Silk Road"
+        }
+      ],
+      "shownWhen": [
+        {
+          "key": "has_gdp_dlc_trigger",
+          "kind": "dlc",
+          "negated": false,
+          "text": "Silk and Silver"
+        }
+      ],
+      "sourceFile": "11_gdp_traditions.txt"
+    },
+    {
+      "category": "regional",
+      "categoryName": "Regional",
+      "cost": {
+        "prestige": {
+          "base": 2000,
+          "rules": [
+            {
+              "amount": 2000,
+              "op": "add",
               "when": "The Culture does not have the Bureaucratic, Ceremonious or Spiritual Ethos"
             },
             {
               "amount": 3000,
               "op": "add",
-              "when": "The Culture does not have 5 Rulers with the Scholar Trait"
+              "when": "The Culture does not have 5 Rulers with the Erudite Trait"
             }
           ]
         }
@@ -10695,7 +12232,8 @@
       },
       "modifiers": {
         "Characters": [
-          "-15% Artifact Decay Reduction"
+          "-15% Artifact Decay Reduction",
+          "-1% Tea Buy Price"
         ]
       },
       "name": "Sinophilic",
@@ -10767,10 +12305,10 @@
       },
       "modifiers": {
         "Characters": [
-          "-20% Faith Creation and Reformation Cost",
-          "-20% Faith Conversion Cost",
-          "+10 Different Faith Opinion",
-          "-25% Different Faith County Opinion Mult"
+          "-10% Rite Creation and Reformation Cost",
+          "-30% Faith Conversion Cost",
+          "+5 Different Faith Opinion",
+          "-25% Different Faith Popular Opinion Mult"
         ]
       },
       "name": "Steppe Tolerance",
@@ -10917,7 +12455,7 @@
       },
       "modifiers": {
         "Characters": [
-          "+15 House Opinion",
+          "+10 House Opinion",
           "-10 Opinion of Liege"
         ]
       },
@@ -10961,7 +12499,14 @@
         }
       ],
       "requirements": [],
-      "shownWhen": [],
+      "shownWhen": [
+        {
+          "key": "culture_is_or_has_ancestor_trigger",
+          "kind": "trigger",
+          "negated": false,
+          "text": "Culture is or has ancestor"
+        }
+      ],
       "sourceFile": "00_maa_traditions.txt"
     },
     {
@@ -11061,6 +12606,12 @@
       "requirements": [],
       "shownWhen": [
         {
+          "key": "culture_is_or_has_ancestor_trigger",
+          "kind": "trigger",
+          "negated": false,
+          "text": "Culture is or has ancestor"
+        },
+        {
           "key": "heritage_chinese",
           "kind": "pillar",
           "negated": false,
@@ -11117,7 +12668,7 @@
       },
       "modifiers": {
         "Characters": [
-          "+10 Fellow Confederation Member Opinion"
+          "+5 Fellow Confederation Member Opinion"
         ]
       },
       "name": "Barangay Confederations",
@@ -11125,7 +12676,7 @@
         {
           "hasLoc": true,
           "key": "forming_confederations_is_easier",
-          "text": "Forming a Confederation no longer requires either a powerful neighbor, or the Diplomat or Family First Traits",
+          "text": "Forming a Nomadic Confederation no longer requires either a powerful neighbor, or the Diplomat or Family First Traits",
           "value": true
         },
         {
@@ -11137,7 +12688,7 @@
         {
           "hasLoc": true,
           "key": "confederation_tribal_authority",
-          "text": "Can increase Tribal Authority despite being in a Confederation",
+          "text": "Can increase Tribal Authority despite being in a Nomadic Confederation",
           "value": true
         },
         {
@@ -11230,13 +12781,13 @@
         {
           "hasLoc": true,
           "key": "stalwart_leader_non_admin_duels",
-          "text": "Stalwart Leader Single Combat available against any non-Administrative Character of Martial gender of equal or lower Rank",
+          "text": "Stalwart Leader Single Combat available against any non-Bureaucratic Character of Martial gender of equal or lower Rank",
           "value": true
         },
         {
           "hasLoc": true,
           "key": "non_admin_close_family_non_martial_gender_knights_in_defensive_wars",
-          "text": "Non-Martial gender unmarried Close Family and Spouses of non-Administrative Rulers may serve as Knights in defensive Wars",
+          "text": "Non-Martial gender unmarried Close Family and Spouses of non-Bureaucratic Rulers may serve as Knights in defensive Wars",
           "value": true
         }
       ],
@@ -11295,24 +12846,6 @@
       "parameters": [
         {
           "hasLoc": true,
-          "key": "number_of_consorts_hegemony",
-          "text": "Rulers of the Hegemony tier, if allowed by Gender Law, can have up to 20 Concubines",
-          "value": 20
-        },
-        {
-          "hasLoc": true,
-          "key": "number_of_consorts",
-          "text": "Rulers, if allowed by Gender Law, can have up to 3 Concubines",
-          "value": 3
-        },
-        {
-          "hasLoc": true,
-          "key": "number_of_spouses",
-          "text": "Rulers, if allowed by Gender Law, can have up to 1 spouses",
-          "value": 1
-        },
-        {
-          "hasLoc": true,
           "key": "can_appoint_chief_eunuch",
           "text": "Can appoint the Chief Eunuch Court Position",
           "value": true
@@ -11346,6 +12879,33 @@
           "key": "cultrad_unlocks_t4_bounties_for_whispers",
           "text": "Improves the Bounties for Whispers Countermeasure (Tier 4)",
           "value": true
+        },
+        {
+          "hasLoc": true,
+          "key": "palace_politics_patrician_building_slot",
+          "text": "The Patrician District District has +1 Building Slot",
+          "value": true
+        },
+        {
+          "fromDoc": true,
+          "hasLoc": true,
+          "key": "number_of_spouses",
+          "text": "Maximum spouses: 1 (overrides the faith's limit)",
+          "value": 1
+        },
+        {
+          "fromDoc": true,
+          "hasLoc": true,
+          "key": "number_of_consorts",
+          "text": "Maximum concubines: 3 (overrides the faith's limit)",
+          "value": 3
+        },
+        {
+          "fromDoc": false,
+          "hasLoc": true,
+          "key": "number_of_consorts_hegemony",
+          "text": "Rulers of the Hegemony tier, if allowed by Gender Law, can have up to 20 Concubines",
+          "value": 20
         }
       ],
       "requirements": [
@@ -11486,7 +13046,11 @@
         "1": "asian",
         "4": "calligraphy"
       },
-      "modifiers": {},
+      "modifiers": {
+        "Characters": [
+          "+1.25% Lacquerware Sell Price"
+        ]
+      },
       "name": "Ephemeral Grace",
       "parameters": [
         {
@@ -11529,6 +13093,12 @@
           "hasLoc": true,
           "key": "poet_trait_romance_bonuses",
           "text": "The Poet and Gallant Traits give significant Romance Scheme bonuses",
+          "value": true
+        },
+        {
+          "hasLoc": true,
+          "key": "unlock_patrician_garden_calligraphy_houses",
+          "text": "Unlocks the Garden Calligraphy Houses line of Buildings in the Patrician District District",
           "value": true
         }
       ],
@@ -11580,7 +13150,7 @@
       },
       "modifiers": {
         "Characters": [
-          "-42 Jungle Danger"
+          "-29 Jungle Danger"
         ]
       },
       "name": "Esoteric Power",
@@ -11607,6 +13177,12 @@
           "hasLoc": true,
           "key": "unlock_maa_pesilat",
           "text": "Can recruit Pesilat Warriors as Men-at-Arms",
+          "value": true
+        },
+        {
+          "hasLoc": true,
+          "key": "esoteric_power_stationed_skirmisher_control",
+          "text": "Stationed Skirmishers in the Religious Enclave, Religious Community District, and Mandala District Districts provide +1 Control",
           "value": true
         }
       ],
@@ -11663,6 +13239,9 @@
         "4": "wall"
       },
       "modifiers": {
+        "Characters": [
+          "-1.5% Stone Buy Price"
+        ],
         "Counties": [
           "-20% Temple Citadel Holding Construction Cost",
           "-10% Temple Citadel Holding Construction Time"
@@ -11678,20 +13257,20 @@
         },
         {
           "hasLoc": true,
-          "key": "warmonger_city_founders",
-          "text": "Founding Temple Citadel Holdings sets Control to 100%",
-          "value": true
-        },
-        {
-          "hasLoc": true,
           "key": "temple_citadel_fort_level_bonus",
           "text": "Temple Citadels have increased Fort Level",
           "value": true
         },
         {
           "hasLoc": true,
-          "key": "temple_citadel_control_bonus",
-          "text": "Temple Citadels provide a small Control bonus",
+          "key": "temple_citadel_building_slot",
+          "text": "The Temple Citadel Holding District District has +1 Building Slot",
+          "value": true
+        },
+        {
+          "hasLoc": true,
+          "key": "temple_citadel_control_baseline_bonus",
+          "text": "Temple Citadels increase the Control Baseline by 10",
           "value": true
         }
       ],
@@ -11743,7 +13322,7 @@
           ]
         }
       },
-      "desc": "This culture places great importance in utilizing waterworks in spiritual ways. At the center of this fascination is the Baray, which tend to be expanded into large reservoirs with utmost religious significance.",
+      "desc": "This culture places great importance in utilizing waterworks in spiritual ways, expanding them into large reservoirs with utmost religious significance.",
       "dlc": "All Under Heaven",
       "features": [],
       "icon": "wat",
@@ -11753,38 +13332,25 @@
         "1": "asian",
         "4": "wat"
       },
-      "modifiers": {
-        "Counties": [
-          "+25% Development Growth in Wetlands",
-          "-10% Building Construction Cost in Wetlands",
-          "+10% Development Growth in Terraced Hills",
-          "-10% Building Construction Cost in Terraced Hills"
-        ]
-      },
+      "modifiers": {},
       "name": "Hydraulic Builders",
       "parameters": [
         {
           "hasLoc": true,
-          "key": "sacred_pool_additional_bonuses",
-          "text": "The Lotus Pond line of Buildings have additional bonuses in Counties of this Culture",
+          "key": "hydraulic_builders_sacred_pool",
+          "text": "Unlocks the Sacred Pool line of Buildings in the Religious Enclave and Mandala District Districts",
           "value": true
         },
         {
           "hasLoc": true,
-          "key": "may_build_sacred_pools_ahead_of_time",
-          "text": "All Lotus Pond Buildings can be built one Era earlier",
+          "key": "hydraulic_builders_monsoon_bonuses",
+          "text": "The Reservoirs and Cisterns line of Buildings provides additional Agricultural Tax",
           "value": true
         },
         {
           "hasLoc": true,
-          "key": "unlocks_waterworks_buildings",
-          "text": "Unlocks the Man-Made Ponds line of Buildings",
-          "value": true
-        },
-        {
-          "hasLoc": true,
-          "key": "waterworks_additional_bonuses",
-          "text": "The Man-Made Ponds line of Buildings have additional bonuses in Counties of this Culture",
+          "key": "hydraulic_builders_religious_building_slot",
+          "text": "The Religious Enclave and Religious Community District Districts have +1 Building Slot in Wetlands and Terraced Hills",
           "value": true
         }
       ],
@@ -11857,13 +13423,13 @@
         {
           "hasLoc": true,
           "key": "non_admin_close_family_non_martial_gender_knights_in_defensive_wars",
-          "text": "Non-Martial gender unmarried Close Family and Spouses of non-Administrative Rulers may serve as Knights in defensive Wars",
+          "text": "Non-Martial gender unmarried Close Family and Spouses of non-Bureaucratic Rulers may serve as Knights in defensive Wars",
           "value": true
         },
         {
           "hasLoc": true,
           "key": "stalwart_leader_non_admin_duels",
-          "text": "Stalwart Leader Single Combat available against any non-Administrative Character of Martial gender of equal or lower Rank",
+          "text": "Stalwart Leader Single Combat available against any non-Bureaucratic Character of Martial gender of equal or lower Rank",
           "value": true
         }
       ],
@@ -12026,7 +13592,7 @@
         {
           "hasLoc": true,
           "key": "free_adoption",
-          "text": "Characters of this Culture can Adopt without spending any Prestige or Renown",
+          "text": "Characters of this Culture can Adopt without spending Prestige or Renown",
           "value": true
         },
         {
@@ -12042,9 +13608,10 @@
           "value": true
         },
         {
+          "fromDoc": true,
           "hasLoc": true,
           "key": "number_of_spouses",
-          "text": "Rulers, if allowed by Gender Law, can have up to 4 spouses",
+          "text": "Maximum spouses: 4 (overrides the faith's limit)",
           "value": 4
         }
       ],
@@ -12102,19 +13669,13 @@
       "modifiers": {
         "Characters": [
           "-45 Coastal Sea Danger",
-          "-42 Mountains Danger",
-          "-32 Hills Danger",
-          "-32 Forest Danger"
+          "-29 Mountains Danger",
+          "-22 Hills Danger",
+          "-22 Forest Danger"
         ],
         "Counties": [
-          "+5% Development Growth in Hills",
-          "+20% Development Growth in Mountains"
-        ],
-        "Provinces": [
-          "-10% Building Construction Cost in Mountains",
-          "-10% Holding Construction Cost in Mountains",
-          "-10% Building Construction Cost in Forest",
-          "-10% Holding Construction Cost in Forest"
+          "+5% Prosperity Growth in Hills",
+          "+20% Prosperity Growth in Mountains"
         ]
       },
       "name": "Yashima",
@@ -12123,6 +13684,12 @@
           "hasLoc": true,
           "key": "prestige_gain_on_building_complete_in_mountains_forest",
           "text": "Gain Prestige when completing Buildings in Holdings with either Mountains or Forest Terrain",
+          "value": true
+        },
+        {
+          "hasLoc": true,
+          "key": "mountain_herding_castle_skirmisher_control",
+          "text": "Stationed Skirmishers in Castles provide +1 Control in Mountains and Desert Mountains",
           "value": true
         }
       ],
@@ -12206,7 +13773,7 @@
         "Characters": [
           "+20 Different Faith Opinion",
           "-25% Faith Conversion Cost",
-          "-50% Different Faith County Opinion Mult"
+          "-50% Different Faith Popular Opinion Mult"
         ]
       },
       "name": "Religious Hospitality",
@@ -12225,8 +13792,8 @@
         },
         {
           "hasLoc": true,
-          "key": "development_gain_from_religious_exiles_is_doubled",
-          "text": "The Development gain from Invite Religious Exiles Decision is doubled",
+          "key": "prosperity_gain_from_religious_exiles_is_doubled",
+          "text": "The Prosperity gain from Invite Religious Exiles Decision is doubled",
           "value": true
         },
         {
@@ -12286,6 +13853,12 @@
       "parameters": [
         {
           "hasLoc": true,
+          "key": "monastery_prowess_martial_bonus",
+          "text": "The Temple School and Schools lines of Buildings provide additional Prowess and Martial bonuses",
+          "value": true
+        },
+        {
+          "hasLoc": true,
           "key": "unlock_warrior_monk_units",
           "text": "Can recruit Warrior Monks as Men-at-Arms",
           "value": true
@@ -12304,8 +13877,14 @@
         },
         {
           "hasLoc": true,
-          "key": "monastery_prowess_martial_bonus",
-          "text": "The Monasteries line of Buildings provide additional Prowess and Martial bonuses",
+          "key": "warrior_monks_temple_martial_prowess",
+          "text": "Temple Holdings and Temple Citadel Holdings provide additional Prowess and Martial bonuses",
+          "value": true
+        },
+        {
+          "hasLoc": true,
+          "key": "warrior_monks_religious_community_pikemen",
+          "text": "Stationed Pikemen Men-at-Arms in the Religious Community District District gain Toughness bonuses",
           "value": true
         }
       ],
@@ -12468,7 +14047,7 @@
         },
         {
           "hasLoc": true,
-          "key": "trait_county_opinion_modifiers",
+          "key": "trait_popular_opinion_modifiers",
           "text": "Certain Traits such as Brave, Gregarious, Generous or Blademaster give Popular Opinion",
           "value": true
         }
@@ -12533,8 +14112,8 @@
       },
       "modifiers": {
         "Characters": [
-          "-32 Hills Danger",
-          "-32 Forest Danger"
+          "-22 Hills Danger",
+          "-22 Forest Danger"
         ],
         "Provinces": [
           "+10% Levy Size in Hills",
@@ -12550,9 +14129,15 @@
           "value": true
         },
         {
+          "hasLoc": false,
+          "key": "perk_tactician_skirmishers",
+          "text": "Perk tactician skirmishers",
+          "value": true
+        },
+        {
           "hasLoc": true,
-          "key": "hill_farms_building_bonuses",
-          "text": "The Hill Farms line of Buildings have additional bonuses in Counties of this Culture",
+          "key": "upland_skirmishing_militia_camps_bonuses",
+          "text": "The Militia Camps line of Buildings provides additional Defensive Advantage and Levies in Hills Terrain",
           "value": true
         },
         {
@@ -12654,7 +14239,14 @@
         }
       ],
       "requirements": [],
-      "shownWhen": [],
+      "shownWhen": [
+        {
+          "key": "culture_is_or_has_ancestor_trigger",
+          "kind": "trigger",
+          "negated": false,
+          "text": "Culture is or has ancestor"
+        }
+      ],
       "sourceFile": "00_regional_traditions.txt"
     },
     {
@@ -12771,7 +14363,7 @@
         }
       },
       "desc": "The purifying properties of water are an essential part of life for this culture and the ritual of ablution occupies a prominent position in their society.",
-      "dlc": "Community Pack 1 (free)",
+      "dlc": "Legends of the Dead",
       "features": [],
       "icon": "ritual_washing",
       "id": "tradition_ce1_ritual_washing",
@@ -12782,7 +14374,7 @@
       },
       "modifiers": {
         "Characters": [
-          "+10% Monthly Learning Lifestyle Experience"
+          "+10% Monthly Focused Learning Lifestyle Experience"
         ]
       },
       "name": "Water Rituals",
@@ -12797,6 +14389,12 @@
           "hasLoc": true,
           "key": "diligent_trait_more_common",
           "text": "The Diligent Trait is more common",
+          "value": true
+        },
+        {
+          "hasLoc": true,
+          "key": "ritual_washing_bathhouse_popular_opinion",
+          "text": "Bathhouses Buildings provide +1 Popular Opinion per Building level",
           "value": true
         }
       ],
@@ -12843,18 +14441,21 @@
       "name": "Concubines",
       "parameters": [
         {
+          "fromDoc": true,
           "hasLoc": true,
           "key": "number_of_spouses",
-          "text": "Rulers, if allowed by Gender Law, can have up to 1 spouses",
+          "text": "Maximum spouses: 1 (overrides the faith's limit)",
           "value": 1
         },
         {
+          "fromDoc": true,
           "hasLoc": true,
           "key": "number_of_consorts",
-          "text": "Rulers, if allowed by Gender Law, can have up to 3 Concubines",
+          "text": "Maximum concubines: 3 (overrides the faith's limit)",
           "value": 3
         },
         {
+          "fromDoc": false,
           "hasLoc": true,
           "key": "number_of_consorts_hegemony",
           "text": "Rulers of the Hegemony tier, if allowed by Gender Law, can have up to 5 Concubines",
@@ -12911,7 +14512,11 @@
         "1": "indian",
         "4": "food"
       },
-      "modifiers": {},
+      "modifiers": {
+        "Characters": [
+          "-0.75% Spices Buy Price"
+        ]
+      },
       "name": "Culinary Artists",
       "parameters": [
         {
@@ -12942,6 +14547,12 @@
           "hasLoc": true,
           "key": "better_food_tasters",
           "text": "Unlock the Food Taster Court Position one Tier earlier\n• The Food Taster Court Position increases monthly Prestige",
+          "value": true
+        },
+        {
+          "hasLoc": true,
+          "key": "culinary_artists_spice_needs",
+          "text": "Cookshops, Guild Feast Hall, and Banquet Hall Buildings can consume Spices to provide +1 Popular Opinion",
           "value": true
         }
       ],
@@ -13058,7 +14669,11 @@
         "1": "indian",
         "4": "food"
       },
-      "modifiers": {},
+      "modifiers": {
+        "Characters": [
+          "-0.75% Alcohol Buy Price"
+        ]
+      },
       "name": "Frequent Festivities",
       "parameters": [
         {
@@ -13287,7 +14902,12 @@
       },
       "modifiers": {
         "Characters": [
-          "+5% Owned Hostile Scheme Success Chance Add"
+          "+5% Owned Hostile Scheme Success Chance Add",
+          "+20% Medicaments Trade Expertise Gain",
+          "+2% Medicaments Sell Price"
+        ],
+        "Provinces": [
+          "+20% Medicaments Production"
         ]
       },
       "name": "Medicinal Herbalists",
@@ -13302,6 +14922,18 @@
           "hasLoc": true,
           "key": "herbalist_trait_gives_bonuses",
           "text": "The Herbalist Trait has additional bonuses",
+          "value": true
+        },
+        {
+          "hasLoc": true,
+          "key": "medicinal_plants_herb_gardens_unlock",
+          "text": "Unlocks the Herb Gardens line of Buildings in resource Districts even without Medicaments potential",
+          "value": true
+        },
+        {
+          "hasLoc": true,
+          "key": "medicinal_plants_medicaments_district_tax",
+          "text": "The Medicinal Plant Harvesting District District provides additional Artisan Tax",
           "value": true
         }
       ],
@@ -13419,15 +15051,16 @@
       "parameters": [
         {
           "hasLoc": true,
-          "key": "number_of_spouses",
-          "text": "Rulers, if allowed by Gender Law, can have up to 1 spouses",
-          "value": 1
-        },
-        {
-          "hasLoc": true,
           "key": "romance_scheme_bonus_vs_spouse",
           "text": "Romance Success Chance vs. Spouse: +30%",
           "value": true
+        },
+        {
+          "fromDoc": true,
+          "hasLoc": true,
+          "key": "number_of_spouses",
+          "text": "Maximum spouses: 1 (overrides the faith's limit)",
+          "value": 1
         }
       ],
       "requirements": [
@@ -13477,7 +15110,7 @@
       },
       "modifiers": {
         "Characters": [
-          "+10 Dynasty Opinion"
+          "+5 Dynasty Opinion"
         ]
       },
       "name": "Mystical Ancestors",
@@ -13498,6 +15131,12 @@
           "hasLoc": true,
           "key": "piety_penalty_for_revoking_titles_from_house_members",
           "text": "Lose Piety when revoking Titles from House members",
+          "value": true
+        },
+        {
+          "hasLoc": true,
+          "key": "mystical_ancestors_lineage_archive",
+          "text": "Unlocks the Family Lineage Archive line of Buildings in the Bureaucratic District District",
           "value": true
         }
       ],
@@ -13550,9 +15189,10 @@
       "name": "Polygamous",
       "parameters": [
         {
+          "fromDoc": true,
           "hasLoc": true,
           "key": "number_of_spouses",
-          "text": "Rulers, if allowed by Gender Law, can have up to 4 spouses",
+          "text": "Maximum spouses: 4 (overrides the faith's limit)",
           "value": 4
         }
       ],
@@ -13608,7 +15248,7 @@
       },
       "modifiers": {
         "Characters": [
-          "-20% Faith Creation and Reformation Cost",
+          "-10% Rite Creation and Reformation Cost",
           "-20% Faith Conversion Cost",
           "No Negative Opinion of Other Faiths"
         ]
@@ -13682,7 +15322,7 @@
         {
           "hasLoc": true,
           "key": "extra_piety_from_temple_construction",
-          "text": "Piety from constructing Temple Holdings: +1500",
+          "text": "Piety from constructing Temple Holdings: +1500\nPiety from constructing the Religious Enclave or Religious Community District District: +375",
           "value": true
         },
         {
@@ -13694,7 +15334,13 @@
         {
           "hasLoc": true,
           "key": "consolidate_rule_decision",
-          "text": "Gain access to the Consolidate Rule Decision for Empires",
+          "text": "Emperors can use the Consolidate Rule Decision",
+          "value": true
+        },
+        {
+          "hasLoc": true,
+          "key": "cheaper_grand_cathedral_construction",
+          "text": "Cost of starting a Grand Cathedral Great Project: -15%",
           "value": true
         }
       ],
@@ -13827,7 +15473,25 @@
         {
           "hasLoc": true,
           "key": "piety_gain_on_building_complete_in_forest_taiga",
-          "text": "Gain Piety when completing Buildings in Holdings with either Forest, Jungle or Taiga Terrain",
+          "text": "Gain Piety when completing Buildings in Districts with either Forest, Jungle or Taiga Terrain",
+          "value": true
+        },
+        {
+          "hasLoc": true,
+          "key": "sacred_groves_holding_religious_tax",
+          "text": "Main Holding Buildings provide additional Religious Tax in Forest, Taiga, and Jungle",
+          "value": true
+        },
+        {
+          "hasLoc": true,
+          "key": "sacred_groves_religious_building_slot",
+          "text": "The Religious Enclave and Religious Community District Districts have +1 Building Slot in Forest, Taiga, and Jungle",
+          "value": true
+        },
+        {
+          "hasLoc": true,
+          "key": "sacred_groves_building",
+          "text": "Unlocks the Sacred Grove line of Buildings in the Religious Enclave and Religious Community District Districts in Forest, Taiga, and Jungle",
           "value": true
         }
       ],
@@ -13982,6 +15646,12 @@
           "key": "zealous_people_internal_yurt_unlock",
           "text": "Unlocks the Yurt of the Righteous Internal Upgrade for Nomadic Domiciles",
           "value": true
+        },
+        {
+          "hasLoc": true,
+          "key": "sacred_mountains_religious_building_slot",
+          "text": "The Religious Enclave and Religious Community District Districts have +1 Building Slot in Mountains and Desert Mountains",
+          "value": true
         }
       ],
       "requirements": [
@@ -14080,12 +15750,6 @@
         },
         {
           "hasLoc": true,
-          "key": "building_barracks_piety_bonuses",
-          "text": "Characters of this Culture gain Piety from the Barracks line of Buildings",
-          "value": true
-        },
-        {
-          "hasLoc": true,
           "key": "sorcerous_metallurgy_internal_yurt_unlock",
           "text": "Unlocks the Alchemy Yurt Internal Upgrade for Nomadic Domiciles",
           "value": true
@@ -14094,6 +15758,12 @@
           "hasLoc": true,
           "key": "nomadic_metal_artifact_unlock",
           "text": "Unlocks the Commission Artifact Decision for metal Artifacts",
+          "value": true
+        },
+        {
+          "hasLoc": true,
+          "key": "sorcerous_metallurgy_sacred_forge",
+          "text": "Unlocks the Sacred Forge line of Buildings in the Religious Enclave and Mandala District Districts",
           "value": true
         }
       ],
@@ -14144,8 +15814,17 @@
         "4": "artisan"
       },
       "modifiers": {
+        "Characters": [
+          "+15% Artisan (Merchant) Trait Experience Gain",
+          "+15% Luxury Items Trade Expertise Gain",
+          "+10% Clothes Trade Expertise Gain",
+          "+0.75% Luxury Items Sell Price"
+        ],
         "Counties": [
-          "-5% Build Gold Cost"
+          "+10% Guild Goods Production"
+        ],
+        "Provinces": [
+          "+15% Artisan Taxes"
         ]
       },
       "name": "Expert Artisans",
@@ -14161,6 +15840,12 @@
           "key": "improved_weaver_inspiration",
           "text": "Characters of this Culture produce higher-quality Artifacts when completing a Weaver Inspiration",
           "value": true
+        },
+        {
+          "hasLoc": true,
+          "key": "artisans_guild_building_slot",
+          "text": "The Guild District District has +1 Building Slot",
+          "value": true
         }
       ],
       "requirements": [],
@@ -14173,6 +15858,85 @@
         }
       ],
       "sourceFile": "00_societal_traditions.txt"
+    },
+    {
+      "category": "societal",
+      "categoryName": "Social",
+      "cost": {
+        "prestige": {
+          "base": 2000,
+          "rules": [
+            {
+              "amount": 2000,
+              "op": "add",
+              "when": "The Culture does not have the Communal, Spiritual or Stoic Ethos"
+            },
+            {
+              "amount": 0.5,
+              "op": "multiply",
+              "when": "Inspired by Tradition"
+            },
+            {
+              "amount": 1.5,
+              "op": "multiply",
+              "when": "Replacing an existing tradition"
+            }
+          ]
+        }
+      },
+      "desc": "Agreements must be kept. This people believes that a contract that has been struck must never be broken. There can be no tolerance for an oathbreaker.",
+      "dlc": "Silk and Silver",
+      "features": [],
+      "icon": "binding_oaths",
+      "id": "tradition_binding_oaths",
+      "layers": {
+        "0": "diplo",
+        "1": "mena",
+        "4": "binding_oaths"
+      },
+      "modifiers": {
+        "Characters": [
+          "+5 Merchant Opinion",
+          "+5% Trade Competitiveness"
+        ]
+      },
+      "name": "Binding Oaths",
+      "parameters": [
+        {
+          "hasLoc": true,
+          "key": "binding_oaths_harsh_break_penalties",
+          "text": "Breaking a Truce, denouncing a Creditor, or being exposed as a Dealbreaker, causes a far harsher loss of Opinion within the Culture and costs 10% of a Company's Acumen",
+          "value": true
+        },
+        {
+          "hasLoc": true,
+          "key": "binding_oaths_word_is_trusted",
+          "text": "Other Rulers are far likelier to accept their Negotiate Alliance Interaction and to answer their Call to War Interaction, which costs -50%",
+          "value": true
+        },
+        {
+          "hasLoc": true,
+          "key": "good_faith_traits_more_common",
+          "text": "The Honest and Trusting Traits are more common",
+          "value": true
+        },
+        {
+          "hasLoc": true,
+          "key": "good_faith_trait_bonuses",
+          "text": "The Honest and Trusting Traits have additional bonuses",
+          "value": true
+        }
+      ],
+      "requirements": [],
+      "shownWhen": [
+        {
+          "key": "has_gdp_dlc_trigger",
+          "kind": "dlc",
+          "negated": false,
+          "text": "Silk and Silver"
+        }
+      ],
+      "sourceFile": "11_gdp_traditions.txt"
     },
     {
       "category": "societal",
@@ -14350,6 +16114,18 @@
           "key": "knight_errant_trait_bonuses",
           "text": "The Knight-Errant Trait has additional bonuses",
           "value": true
+        },
+        {
+          "hasLoc": true,
+          "key": "chivalry_knights_hall_popular_opinion",
+          "text": "The Knights' Hall Building provides +1 Popular Opinion per Building level",
+          "value": true
+        },
+        {
+          "hasLoc": true,
+          "key": "training_grounds_cavalry_horse_need",
+          "text": "Training Grounds's Horses Need also increases Damage of Stationed Light Cavalry, Heavy Cavalry, and Archer Cavalry when met",
+          "value": true
         }
       ],
       "requirements": [],
@@ -14423,7 +16199,11 @@
           "+1 Stewardship",
           "+1 Learning",
           "No Negative Opinion of Other Cultures",
-          "+20% Diplomatic Range"
+          "+20% Diplomatic Range",
+          "+5% Trade Competitiveness",
+          "+15% Travel Safety",
+          "+10 Travel Speed",
+          "-20 Travel Danger"
         ]
       },
       "name": "Diasporic",
@@ -14444,6 +16224,30 @@
           "hasLoc": true,
           "key": "unlock_voluntary_laampdom",
           "text": "Allows the Become Adventurer Decision",
+          "value": true
+        },
+        {
+          "hasLoc": true,
+          "key": "unlock_voluntary_mercantilism",
+          "text": "Allows the Become Merchant Decision",
+          "value": true
+        },
+        {
+          "hasLoc": true,
+          "key": "extra_merchant_cooperation",
+          "text": "Cooperative Merchant Interactions Acceptance with other Houses of Diasporic Cultures: +25",
+          "value": true
+        },
+        {
+          "hasLoc": true,
+          "key": "increased_house_relation_gain_with_diasporic",
+          "text": "House Relation gains with other Houses of Diasporic Cultures are doubled",
+          "value": true
+        },
+        {
+          "hasLoc": true,
+          "key": "dresses_like_domicile_locals",
+          "text": "Landless Rulers and Courtiers of this Culture dress in the fashion of the Culture where their Domicile is located",
           "value": true
         }
       ],
@@ -14570,7 +16374,7 @@
             {
               "amount": 3000,
               "op": "add",
-              "when": "The Culture Head's capital does not have a Development of 30 or higher"
+              "when": "The Culture Head's capital does not have a Prosperity of 30 or higher"
             },
             {
               "amount": 0.5,
@@ -14599,7 +16403,8 @@
         "Characters": [
           "+10% Monthly Influence",
           "+20% Diplomatic Range",
-          "-10% Cultural Head Fascination Mult"
+          "-10% Cultural Head Fascination Mult",
+          "+0.75% Silk Sell Price"
         ]
       },
       "name": "Cultivated Sophistication",
@@ -14607,7 +16412,7 @@
         {
           "hasLoc": true,
           "key": "less_likely_to_culture_convert",
-          "text": "The Convert to Local Culture Decision causes Stress gain and is avoided by Rulers",
+          "text": "Convert to Local Culture Decision causes Stress Gain and is avoided by Rulers",
           "value": true
         },
         {
@@ -14618,8 +16423,8 @@
         },
         {
           "hasLoc": true,
-          "key": "estate_building_upgrade_development_gain",
-          "text": "Gain 20 Development Growth in your Realm Capital when you construct or upgrade an Estate Building in the same County",
+          "key": "estate_building_upgrade_prosperity_gain",
+          "text": "Gain +20 Prosperity Growth in your Realm Capital when you construct or upgrade an Estate Building in the same County",
           "value": true
         },
         {
@@ -14633,7 +16438,7 @@
         {
           "kind": "text",
           "negated": false,
-          "text": "The Culture Head's Government type must be Administrative"
+          "text": "The Culture Head's Government type must be Bureaucratic"
         }
       ],
       "shownWhen": [
@@ -14710,6 +16515,12 @@
           "key": "more_hostage_acceptance",
           "text": "Characters of this Culture are more willing to send away, take, and return Hostages",
           "value": true
+        },
+        {
+          "hasLoc": true,
+          "key": "equitable_court_buildings_popular_opinion",
+          "text": "Court of Law, Market Court, Ecclesiastical Court, and Legal Codes Buildings provide +1 Popular Opinion per Building level",
+          "value": true
         }
       ],
       "requirements": [],
@@ -14758,7 +16569,7 @@
       },
       "modifiers": {
         "Characters": [
-          "+10 Natural Dread"
+          "+10 Dread Baseline"
         ]
       },
       "name": "Eye for an Eye",
@@ -14841,7 +16652,12 @@
         "Characters": [
           "+5 Coastal Advantage",
           "+50% Supply Capacity",
-          "-25 Coastal Sea Danger"
+          "-25 Coastal Sea Danger",
+          "+20% Meats Trade Expertise Gain",
+          "+2% Fish Sell Price"
+        ],
+        "Counties": [
+          "+20% Fish Production"
         ]
       },
       "name": "Dexterous Fishermen",
@@ -14854,8 +16670,14 @@
         },
         {
           "hasLoc": true,
-          "key": "trade_ports_stationed_maa_bonus",
-          "text": "The Tradeport line of Buildings provide additional bonuses to Stationed Men-at-Arms",
+          "key": "port_district_stationed_maa_bonus",
+          "text": "The Port District District provides Stationed Men-at-Arms Toughness bonuses",
+          "value": true
+        },
+        {
+          "hasLoc": true,
+          "key": "fishermen_productivity_bonus",
+          "text": "Fish Districts provide additional Taxes",
           "value": true
         }
       ],
@@ -14917,7 +16739,7 @@
       "modifiers": {
         "Characters": [
           "-10% Stress Gain",
-          "-5 Natural Dread"
+          "-5 Dread Baseline"
         ]
       },
       "name": "Forbearing",
@@ -14944,6 +16766,95 @@
       "requirements": [],
       "shownWhen": [],
       "sourceFile": "00_societal_traditions.txt"
+    },
+    {
+      "category": "societal",
+      "categoryName": "Social",
+      "cost": {
+        "prestige": {
+          "base": 2000,
+          "rules": [
+            {
+              "amount": 2000,
+              "op": "add",
+              "when": "The Culture does not have the Bellicose, Stoic or Egalitarian Ethos"
+            },
+            {
+              "amount": 0.5,
+              "op": "multiply",
+              "when": "Inspired by Tradition"
+            },
+            {
+              "amount": 1.5,
+              "op": "multiply",
+              "when": "Replacing an existing tradition"
+            }
+          ]
+        }
+      },
+      "desc": "This culture sees no shame in leaving home with nothing, and expects those who stand to inherit little to seek their fortune abroad. There they learn the ways of myriad roads, and with them the weight of every good and the terms of every loan.",
+      "dlc": "Silk and Silver",
+      "features": [],
+      "icon": "fortune_seekers",
+      "id": "tradition_fortune_seekers",
+      "layers": {
+        "0": "steward",
+        "1": "mediterranean",
+        "4": "fortune_seekers"
+      },
+      "modifiers": {
+        "Characters": [
+          "+10% Commerce Taxes",
+          "-0.5% Trade Goods Buy Price",
+          "+15% Monthly Focused Wandering Lifestyle Experience",
+          "+25% Lifestyle Traveler Trait Experience Gain",
+          "+15% Creditor (Merchant) Trait Experience Gain",
+          "+10 Travel Safety"
+        ]
+      },
+      "name": "Fortune Seekers",
+      "parameters": [
+        {
+          "hasLoc": true,
+          "key": "unlock_voluntary_mercantilism",
+          "text": "Allows the Become Merchant Decision",
+          "value": true
+        },
+        {
+          "hasLoc": true,
+          "key": "fortune_seekers_merchant_propensity",
+          "text": "Characters of this Culture are more likely to become Merchants",
+          "value": true
+        },
+        {
+          "hasLoc": true,
+          "key": "more_likely_to_leave_court",
+          "text": "Idle Courtiers are much more likely to become Wanderers",
+          "value": true
+        },
+        {
+          "hasLoc": true,
+          "key": "wanderers_gain_extra_economic_skills",
+          "text": "Wanderers gain extra economic skills over time, such as Stewardship or Lifestyle Traits",
+          "value": true
+        },
+        {
+          "hasLoc": true,
+          "key": "fortune_seekers_wine_storage_domicile_building",
+          "text": "Unlocks the Wine Storage Domicile Building",
+          "value": true
+        }
+      ],
+      "requirements": [],
+      "shownWhen": [
+        {
+          "key": "has_gdp_dlc_trigger",
+          "kind": "dlc",
+          "negated": false,
+          "text": "Silk and Silver"
+        }
+      ],
+      "sourceFile": "11_gdp_traditions.txt"
     },
     {
       "category": "societal",
@@ -15373,8 +17284,9 @@
       },
       "modifiers": {
         "Characters": [
-          "+20 Scheme Phase Length against Friends",
-          "+40 Scheme Phase Length against Best Friends"
+          "-20 Scheme Phase Length against Friends",
+          "-40 Scheme Phase Length against Best Friends",
+          "-1% Wine Buy Price"
         ]
       },
       "name": "Ritualized Friendship",
@@ -15429,7 +17341,7 @@
             {
               "amount": 3000,
               "op": "add",
-              "when": "The Culture does not have 5 Rulers with the Scholar Trait"
+              "when": "The Culture does not have 5 Rulers with the Erudite Trait"
             },
             {
               "amount": 0.5,
@@ -15456,8 +17368,10 @@
       },
       "modifiers": {
         "Characters": [
-          "+20% Monthly Learning Lifestyle Experience",
-          "+1 Learning per Level of Devotion"
+          "+20% Monthly Focused Learning Lifestyle Experience",
+          "+1 Learning per Level of Devotion",
+          "+15% Books Trade Expertise Gain",
+          "+1% Books & Paper Sell Price"
         ]
       },
       "name": "Beacon of Learning",
@@ -15477,7 +17391,7 @@
         {
           "hasLoc": true,
           "key": "innovation_from_learning_traits",
-          "text": "Learning Education Traits and the Scholar Trait also give Cultural Fascination Progress",
+          "text": "Learning Education Traits and the Erudite Trait also give Cultural Fascination Progress",
           "value": true
         },
         {
@@ -15678,14 +17592,14 @@
       "parameters": [
         {
           "hasLoc": true,
-          "key": "development_gain_on_building_complete",
-          "text": "Gain 25 Development Growth when a Building is constructed (up to once a year)",
+          "key": "prosperity_gain_on_building_complete",
+          "text": "Counties gain +25 Prosperity Growth when a Building is constructed (up to once a year)",
           "value": true
         },
         {
           "hasLoc": true,
-          "key": "next_level_w_mills",
-          "text": "The Watermills and Windmills lines of Buildings can be constructed one Era early",
+          "key": "industrious_productivity_bonus",
+          "text": "Resource Districts provide additional Taxes and Trade Goods Production",
           "value": true
         }
       ],
@@ -15746,7 +17660,11 @@
       },
       "modifiers": {
         "Characters": [
-          "+15% Travel Speed"
+          "+15% Travel Speed",
+          "+10% Meats Trade Expertise Gain",
+          "+1% Furs Sell Price",
+          "+1.5% Ivory Sell Price",
+          "+1% Cured Meat Sell Price"
         ]
       },
       "name": "Prolific Hunters",
@@ -15773,6 +17691,12 @@
           "hasLoc": true,
           "key": "always_unlock_legendary_hunting_lodge",
           "text": "Rulers of this Culture can always construct a Legendary Hunting Lodge after completing a Legend",
+          "value": true
+        },
+        {
+          "hasLoc": true,
+          "key": "village_hunter_everywhere",
+          "text": "Unlocks the Village Hunter line of Buildings in the Villages District and Feast Halls District Districts",
           "value": true
         }
       ],
@@ -15914,7 +17838,7 @@
           "+10 Opinion of Liege"
         ],
         "Counties": [
-          "+5 Popular Opinion"
+          "+5 Popular Opinion Baseline"
         ]
       },
       "name": "Loyal Subjects",
@@ -16381,7 +18305,7 @@
         {
           "hasLoc": true,
           "key": "free_adoption",
-          "text": "Characters of this Culture can Adopt without spending any Prestige or Renown",
+          "text": "Characters of this Culture can Adopt without spending Prestige or Renown",
           "value": true
         },
         {
@@ -16434,13 +18358,14 @@
         "Characters": [
           "-10% Stress Gain",
           "+5 Jungle Advantage",
-          "-42 Jungle Danger"
+          "-29 Jungle Danger"
         ],
         "Counties": [
-          "+20% Development Growth in Jungle",
+          "+20% Prosperity Growth in Jungle",
           "+100% Supply Limit in Jungle",
           "-75% Jungle Provisions Use",
-          "+15% Jungle Barter Goods"
+          "+15% Jungle Barter Goods",
+          "-50% Clothes Production"
         ]
       },
       "name": "Nudists",
@@ -16510,14 +18435,14 @@
       "modifiers": {
         "Characters": [
           "-1 Martial",
-          "-20% Monthly Martial Lifestyle Experience"
+          "-20% Monthly Focused Martial Lifestyle Experience"
         ],
         "Counties": [
-          "+15% Development Growth",
-          "+10 Popular Opinion"
+          "+15% Prosperity Growth",
+          "+10 Popular Opinion Baseline"
         ],
         "Provinces": [
-          "-5 Danger"
+          "-5 Travel Danger"
         ]
       },
       "name": "Pacifists",
@@ -16525,7 +18450,7 @@
         {
           "hasLoc": true,
           "key": "reduced_cost_for_conversion_to_pacifist_faith",
-          "text": "Cost for converting to a pacifist faith: -25%",
+          "text": "…Piety cost for converting to a pacifist Faith: -25%",
           "value": true
         }
       ],
@@ -16560,7 +18485,7 @@
             {
               "amount": 3000,
               "op": "add",
-              "when": "The Culture does not have 5 Rulers with the Scholar Trait"
+              "when": "The Culture does not have 5 Rulers with the Erudite Trait"
             },
             {
               "amount": -1000,
@@ -16592,7 +18517,7 @@
       },
       "modifiers": {
         "Characters": [
-          "+20% Monthly Learning Lifestyle Experience",
+          "+20% Monthly Focused Learning Lifestyle Experience",
           "+1 Learning per Level of Fame"
         ]
       },
@@ -16613,7 +18538,7 @@
         {
           "hasLoc": true,
           "key": "innovation_from_learning_traits",
-          "text": "Learning Education Traits and the Scholar Trait also give Cultural Fascination Progress",
+          "text": "Learning Education Traits and the Erudite Trait also give Cultural Fascination Progress",
           "value": true
         }
       ],
@@ -16783,7 +18708,7 @@
         {
           "hasLoc": true,
           "key": "not_tribal_raiding_malus",
-          "text": "When returning from a successful Raid, non-Tribal characters lose 1.5 Prestige per 1 Loot delivered",
+          "text": "When returning from a successful Raid, non-Tribal characters lose -1.5 per 1 delivered",
           "value": true
         }
       ],
@@ -16850,23 +18775,16 @@
       "modifiers": {
         "Characters": [
           "-85% Embarkation Cost",
-          "-45 Sea Danger"
+          "-45 Sea Danger",
+          "-1% Fish Buy Price",
+          "-2% Hemp Buy Price"
+        ],
+        "Counties": [
+          "+10% Fish Production"
         ]
       },
       "name": "Seafarers",
       "parameters": [
-        {
-          "hasLoc": true,
-          "key": "trade_ports_give_control_growth",
-          "text": "The Tradeport line of Buildings will increase Control Growth in Counties of this Culture",
-          "value": true
-        },
-        {
-          "hasLoc": true,
-          "key": "trade_ports_give_levies",
-          "text": "The Tradeport line of Buildings increase Levies in Counties of this Culture",
-          "value": true
-        },
         {
           "hasLoc": true,
           "key": "can_travel_along_rivers",
@@ -16875,8 +18793,20 @@
         },
         {
           "hasLoc": true,
-          "key": "trade_ports_enabled_for_tribals",
-          "text": "The Tradeport line of Buildings can be constructed in coastal Tribe Holdings",
+          "key": "seafarers_port_building_slot",
+          "text": "The Port District District has +1 Building Slot",
+          "value": true
+        },
+        {
+          "hasLoc": true,
+          "key": "seafarers_port_maa_control",
+          "text": "Stationed Men-at-Arms in the Port District District provide +3 Control",
+          "value": true
+        },
+        {
+          "hasLoc": true,
+          "key": "port_district_enabled_for_tribals",
+          "text": "The Port District District can be constructed in Tribal Holdings",
           "value": true
         }
       ],
@@ -17083,10 +19013,19 @@
       },
       "modifiers": {
         "Characters": [
-          "+0 Health"
+          "+0 Health",
+          "+15% Cereals Trade Expertise Gain",
+          "+10% Fabric Trade Expertise Gain"
         ],
         "Counties": [
-          "+10% Development Growth in Plains"
+          "+10% Prosperity Growth in Plains",
+          "+10% Agricultural Taxes",
+          "+20% Cereals Production",
+          "+20% Sugar Production",
+          "+20% Cotton Production",
+          "+20% Flax Production",
+          "+20% Fruit Production",
+          "-50% Meats Production"
         ]
       },
       "name": "Vegetarians",
@@ -17099,20 +19038,8 @@
         },
         {
           "hasLoc": true,
-          "key": "vegetarian_building_ban",
-          "text": "The Hunting Grounds line of Buildings cannot be constructed in Counties of this Culture",
-          "value": true
-        },
-        {
-          "hasLoc": true,
-          "key": "vegetarian_fruit_orchard_allowed",
-          "text": "The Orchards line of Buildings can always be constructed in Counties of this Culture",
-          "value": true
-        },
-        {
-          "hasLoc": true,
-          "key": "vegetarian_next_level_cereal_fields",
-          "text": "The Farms & Fields line of Buildings can be built one Era early",
+          "key": "vegetarianism_no_meat_buildings",
+          "text": "Buildings in these Counties consume comforts in place of Cured Meat\n Buildings that produce Cured Meat cannot be constructed in Counties of this Culture",
           "value": true
         }
       ],
@@ -17210,7 +19137,7 @@
         "Characters": [
           "-25% Cultural Head Fascination Mult",
           "+10% Accolade Glory Gain",
-          "+15% Monthly Martial Lifestyle Experience",
+          "+15% Monthly Focused Martial Lifestyle Experience",
           "+1 Size of Men-at-Arms Regiments"
         ]
       },
@@ -17257,7 +19184,7 @@
         {
           "kind": "text",
           "negated": false,
-          "text": "Your Government is"
+          "text": "Your Government is Tribal"
         },
         {
           "kind": "text",
@@ -17481,6 +19408,12 @@
           "hasLoc": true,
           "key": "zealous_people_internal_yurt_unlock",
           "text": "Unlocks the Yurt of the Righteous Internal Upgrade for Nomadic Domiciles",
+          "value": true
+        },
+        {
+          "hasLoc": true,
+          "key": "zealous_people_religious_district_popular_opinion",
+          "text": "The Religious Enclave and Religious Community District Districts provide +2.5 Popular Opinion per District level",
           "value": true
         }
       ],

@@ -32,7 +32,7 @@
       {
         "desc": null,
         "effects": [
-          "+10% Monthly Martial Lifestyle Experience",
+          "+10% Monthly Focused Martial Lifestyle Experience",
           "Dynasty members are less likely to die or get wounded in Battle, and have a higher chance of gaining Prowess serving as Knights"
         ],
         "id": "warfare_legacy_3",
@@ -75,7 +75,7 @@
       {
         "desc": null,
         "effects": [
-          "+5 Popular Opinion",
+          "+5 Popular Opinion Baseline",
           "Hunt and Feast Cost: Gold -30%"
         ],
         "id": "law_legacy_1",
@@ -85,7 +85,7 @@
       {
         "desc": null,
         "effects": [
-          "+0.2 Monthly County Control Growth Add /month",
+          "+0.2 Control Growth /month",
           "-20% Title Creation Cost"
         ],
         "id": "law_legacy_2",
@@ -95,9 +95,10 @@
       {
         "desc": null,
         "effects": [
-          "+10% Monthly Stewardship Lifestyle Experience",
+          "+10% Monthly Focused Stewardship Lifestyle Experience",
           "-5% Build Gold Cost",
-          "-5% Holding Build Gold Cost"
+          "-5% Holding Build Gold Cost",
+          "-5% District Build Gold Cost"
         ],
         "id": "law_legacy_3",
         "name": "Power and Prosperity",
@@ -140,7 +141,7 @@
         "desc": null,
         "effects": [
           "+20% Dread Gain",
-          "+15 Natural Dread"
+          "+15 Dread Baseline"
         ],
         "id": "guile_legacy_1",
         "name": "Ominous Reputation",
@@ -159,7 +160,7 @@
       {
         "desc": null,
         "effects": [
-          "+10% Monthly Intrigue Lifestyle Experience",
+          "+10% Monthly Focused Intrigue Lifestyle Experience",
           "+15% Scheme Secrecy"
         ],
         "id": "guile_legacy_3",
@@ -275,8 +276,8 @@
         "desc": null,
         "effects": [
           "+10% Monthly Piety",
-          "If Lay Clergy doctrine: +5 Zealot Vassal Opinion",
-          "If Theocratic doctrine: +5 Clergy Opinion"
+          "If your faith has the Lay Clergy doctrine: +5 Zealot Vassal Opinion",
+          "If your faith has the Theocratic doctrine: +5 Clergy Opinion"
         ],
         "id": "erudition_legacy_2",
         "name": "Ordained Rulership",
@@ -285,8 +286,8 @@
       {
         "desc": null,
         "effects": [
-          "+10% Monthly Learning Lifestyle Experience",
-          "+20% Development Growth",
+          "+10% Monthly Focused Learning Lifestyle Experience",
+          "+20% Prosperity Growth",
           "-10% County Fertility Consumption"
         ],
         "id": "erudition_legacy_3",
@@ -296,10 +297,10 @@
       {
         "desc": null,
         "effects": [
-          "-20% Faith Creation and Reformation Cost",
-          "If No Head of Faith doctrine: +5% Domain Taxes (Same Faith)",
-          "If Spiritual Head of Faith doctrine: +15 Head of Faith Opinion",
-          "If Temporal Head of Faith doctrine: +5 Tolerance Advantage Mod",
+          "-10% Rite Creation and Reformation Cost",
+          "If your faith has the No Head of Faith doctrine: +5% Domain Taxes (Same Faith)",
+          "If your faith has the Spiritual Head of Faith doctrine: +15 Head of Faith Opinion",
+          "If your faith has the Temporal Head of Faith doctrine: +5 Tolerance Advantage Mod",
           "More Piety from Pilgrimages: Piety +30%"
         ],
         "id": "erudition_legacy_4",
@@ -353,7 +354,7 @@
       {
         "desc": null,
         "effects": [
-          "+10% Monthly Diplomacy Lifestyle Experience",
+          "+10% Monthly Focused Diplomacy Lifestyle Experience",
           "20 Personal Scheme Phase Length days faster per Scheme Phase"
         ],
         "id": "glory_legacy_3",
@@ -451,6 +452,206 @@
     "sourceFile": "99_legacies.txt"
   },
   {
+    "desc": "Liberty and enlightenment by serving the common good",
+    "dlc": "Silk and Silver",
+    "features": [
+      "silk_and_silver"
+    ],
+    "gate": null,
+    "icon": "gdp_republic_legacy_track",
+    "id": "gdp_republic_legacy_track",
+    "name": "Res Publica",
+    "perks": [
+      {
+        "desc": null,
+        "effects": [
+          "+10% Control Monthly Change",
+          "Republican Appointment Candidate Score: …"
+        ],
+        "id": "gdp_republic_legacy_1",
+        "name": "Civic Virtue",
+        "order": 1
+      },
+      {
+        "desc": null,
+        "effects": [
+          "Patrician Rating: …",
+          "Unlocks the Leverage Trade Posts in Market Decision"
+        ],
+        "id": "gdp_republic_legacy_2",
+        "name": "Public Trust",
+        "order": 2
+      },
+      {
+        "desc": null,
+        "effects": [
+          "+1 Trade Post Limit",
+          "Cost for changing and proposing Laws: …"
+        ],
+        "id": "gdp_republic_legacy_3",
+        "name": "Rule of Law",
+        "order": 3
+      },
+      {
+        "desc": null,
+        "effects": [
+          "Republican Elective support score of House Members: …",
+          "Increased acceptance for Secure Assembly Vote and Sway to Approve Decree Interactions"
+        ],
+        "id": "gdp_republic_legacy_4",
+        "name": "Popular Sovereignty",
+        "order": 4
+      },
+      {
+        "desc": null,
+        "effects": [
+          "Unlocks the Gather Popular Support Decision",
+          "Contribution Cost for all Great Plaza District Great Projects: …"
+        ],
+        "id": "gdp_republic_legacy_5",
+        "name": "Liberty",
+        "order": 5
+      }
+    ],
+    "sourceFile": "81_gdp_legacies.txt"
+  },
+  {
+    "desc": "Profits beyond measure, and the world turns with the wheels of our caravans",
+    "dlc": "Silk and Silver",
+    "features": [
+      "silk_and_silver"
+    ],
+    "gate": null,
+    "icon": "gdp_merchant_legacy_track",
+    "id": "gdp_merchant_legacy_track",
+    "name": "Mercantile",
+    "perks": [
+      {
+        "desc": null,
+        "effects": [
+          "+10 Trade Competitiveness",
+          "+1% Trade Competitiveness per Knight",
+          "+2 Number of Knight Knights"
+        ],
+        "id": "gdp_merchant_legacy_1",
+        "name": "Unequal Opportunity",
+        "order": 1
+      },
+      {
+        "desc": null,
+        "effects": [
+          "+25% Caravaneer (Merchant) Trait Experience Gain",
+          "+25% Artisan (Merchant) Trait Experience Gain",
+          "+25% Creditor (Merchant) Trait Experience Gain"
+        ],
+        "id": "gdp_merchant_legacy_2",
+        "name": "Entrepreneurial",
+        "order": 2
+      },
+      {
+        "desc": null,
+        "effects": [
+          "Trader Aptitude: …",
+          "Ennobled: Gain Credible Merchant",
+          "Rapacious: Gain Careful Accounting"
+        ],
+        "id": "gdp_merchant_legacy_3",
+        "name": "Cooked Books",
+        "order": 3
+      },
+      {
+        "desc": null,
+        "effects": [
+          "Gain … Stewardship per unique Entrepôt District visited, up to a maximum of …",
+          "Trade Opportunity critical successes grants a Weak Hook Weak Hook on Trade Opportunity contract targets"
+        ],
+        "id": "gdp_merchant_legacy_4",
+        "name": "Trade Factors",
+        "order": 4
+      },
+      {
+        "desc": null,
+        "effects": [
+          "+1 Trade Routes"
+        ],
+        "id": "gdp_merchant_legacy_5",
+        "name": "Emporium",
+        "order": 5
+      }
+    ],
+    "sourceFile": "81_gdp_legacies.txt"
+  },
+  {
+    "desc": "What is a crown, to the hand that anoints it?",
+    "dlc": "By God Alone",
+    "features": [
+      "by_god_alone"
+    ],
+    "gate": null,
+    "icon": "pam_legacy_track",
+    "id": "pam_legacy_track",
+    "name": "Servants of God",
+    "perks": [
+      {
+        "desc": null,
+        "effects": [
+          "+10 Character Starting Spiritual Fulfillment Add",
+          "-10% Character Spiritual Fulfillment Loss Mult"
+        ],
+        "id": "pam_legacy_1",
+        "name": "Private Devotions",
+        "order": 1
+      },
+      {
+        "desc": null,
+        "effects": [
+          "-15% Temple Buildings Construction Cost",
+          "-15% Temple Holding Construction Cost",
+          "Head of Faith Petitions are looked upon more favorably",
+          "The Ecclesiastical Treasury is more willing to fund your Dynasty members' requests"
+        ],
+        "id": "pam_legacy_2",
+        "name": "Alms and Endowments",
+        "order": 2
+      },
+      {
+        "desc": null,
+        "effects": [
+          "+1 Personal Tenets",
+          "-20% Military Order Hire Cost",
+          "Dynasty Members gain +50% Tenet Popularity when Evangelizing their Personal Tenets"
+        ],
+        "id": "pam_legacy_3",
+        "name": "A Faithful Flock",
+        "order": 3
+      },
+      {
+        "desc": null,
+        "effects": [
+          "+10% Theocracy Vassal Tax Contribution",
+          "+10% Ecclesiastical Government Vassal Tax Contribution",
+          "Stronger Candidate Score for Christian clerical appointments",
+          "Increased likelihood of being made a Cardinal"
+        ],
+        "id": "pam_legacy_4",
+        "name": "Mitre and Crosier",
+        "order": 4
+      },
+      {
+        "desc": null,
+        "effects": [
+          "+25% …Level of Devotion Impact",
+          "Dynasty Members are stronger candidates for the Papal Throne",
+          "Dynasty Members can take the Guide the Christian Church Decision regardless of rank or clerical office, and the impact is doubled"
+        ],
+        "id": "pam_legacy_5",
+        "name": "Princes of the Church",
+        "order": 5
+      }
+    ],
+    "sourceFile": "81_pam_legacies.txt"
+  },
+  {
     "desc": "Embodying the essence of divine kingship",
     "dlc": "All Under Heaven",
     "features": [
@@ -477,7 +678,7 @@
         "effects": [
           "+10% Tributary Taxes",
           "+10% Tributary Piety contributions",
-          "+10 Tributary Opinion",
+          "+5 Tributary Opinion",
           "Embrace as Tributary Acceptance: +…"
         ],
         "id": "tgp_sea_legacy_2",
@@ -490,7 +691,7 @@
           "+10% Monthly Piety from Buildings",
           "Wanua government: Transitioning to Mandala Government can be done at any level of Legitimacy Legitimacy",
           "Subjects more likely to accept the … Interaction",
-          "Unlocks additional Optional Contributions for the Capital Temple Complex Great Project"
+          "Unlocks additional Optional Contributions for the Ornate Temple Great Project"
         ],
         "id": "tgp_sea_legacy_3",
         "name": "Service and Devotion",
@@ -548,7 +749,7 @@
           "+10% Monthly Domicile Prestige",
           "House Heads can employ a Court Poet even if Count tier",
           "Court Poet poems increases …",
-          "Unlocks the … Estate Building"
+          "Unlocks the … Manor Building"
         ],
         "id": "tgp_japan_legacy_2",
         "name": "Poetic Beauty",
@@ -571,7 +772,7 @@
           "+10% Monthly Domicile Influence",
           "+10% Domicile Income",
           "-10% Domicile Build Speed",
-          "Unlocks the … Estate Building"
+          "Unlocks the … Manor Building"
         ],
         "id": "tgp_japan_legacy_4",
         "name": "Family Estates",
@@ -626,8 +827,8 @@
       {
         "desc": null,
         "effects": [
-          "Governor Efficiency: +5%",
-          "Unlocks the … Estate Building"
+          "+5% Base Governor Efficiency",
+          "Unlocks the … Mansion Building"
         ],
         "id": "tgp_chinese_legacy_3",
         "name": "Propriety",
@@ -654,7 +855,7 @@
           "Celestial government: Department Aide Aptitude: …",
           "Celestial government: Department Aide is cheaper to employ",
           "Celestial government: Interaction to Influence Career Costs …",
-          "Unlocks the … Estate Building"
+          "Unlocks the … Mansion Building"
         ],
         "id": "tgp_chinese_legacy_5",
         "name": "Benevolence",
@@ -669,7 +870,7 @@
     "features": [
       "roads_to_power"
     ],
-    "gate": "Administrative government",
+    "gate": null,
     "icon": "ep3_administrative_legacy_track",
     "id": "ep3_administrative_legacy_track",
     "name": "Bureaucracy",
@@ -678,7 +879,7 @@
         "desc": null,
         "effects": [
           "+10% Monthly Influence",
-          "Governor Efficiency: +5%"
+          "+5% Base Governor Efficiency"
         ],
         "id": "ep3_administrative_legacy_1",
         "name": "Stewards of Empire",
@@ -708,8 +909,8 @@
       {
         "desc": null,
         "effects": [
-          "+15 Popular Opinion",
-          "+0.1 Development Growth /month",
+          "+15 Popular Opinion Baseline",
+          "+0.1 Prosperity Growth /month",
           "Unlocks the … Estate Building"
         ],
         "id": "ep3_administrative_legacy_4",
@@ -834,9 +1035,9 @@
       {
         "desc": null,
         "effects": [
-          "Gains the Saint Trait upon completion of a Mythical Holy Legend",
+          "Gains the Herald Trait upon completion of a Mythical Holy Legend",
           "Legend creation discount: 15%",
-          "Selectable trait: Saint"
+          "Selectable trait: Herald"
         ],
         "id": "ce1_heroic_legacy_3",
         "name": "Golden Legend",
@@ -856,7 +1057,7 @@
       {
         "desc": null,
         "effects": [
-          "+10 Clergy Opinion",
+          "+5 Clergy Opinion",
           "+5% Domain Taxes (Same Faith)",
           "Unlocks access to the Legendary Watchtower Building upon completing a Legend"
         ],
@@ -881,8 +1082,8 @@
       {
         "desc": null,
         "effects": [
-          "+5 Popular Opinion",
-          "+0.1 Monthly County Control Growth Add /month"
+          "+5 Popular Opinion Baseline",
+          "+0.1 Control Growth /month"
         ],
         "id": "ce1_legitimacy_legacy_1",
         "name": "Rightful Rulers",
@@ -955,7 +1156,7 @@
         "effects": [
           "20 Personal Scheme Phase Length days faster per Scheme Phase",
           "+15% Owned Personal Scheme Success Chance Add",
-          "+15% Monthly Stewardship Lifestyle Experience",
+          "+15% Monthly Focused Stewardship Lifestyle Experience",
           "Hostile Scheme Success Chance vs. Dynasty Members: +10%"
         ],
         "id": "fp3_khvarenah_legacy_2",
@@ -1011,7 +1212,7 @@
       {
         "desc": null,
         "effects": [
-          "Every City increases the monthly Development Growth of its County by: +20%"
+          "Every City increases the monthly Prosperity Growth of its County by: +20%"
         ],
         "id": "fp2_urbanism_legacy_1",
         "name": "Influential Cities",
@@ -1020,7 +1221,7 @@
       {
         "desc": null,
         "effects": [
-          "Dynasty members can receive the Town Maven line of Traits in addition to their Education Trait if they are educated in a high Development county"
+          "Dynasty members can receive the Town Maven line of Traits in addition to their Education Trait if they are educated in a high Prosperity county"
         ],
         "id": "fp2_urbanism_legacy_2",
         "name": "Republican Education",
@@ -1093,7 +1294,7 @@
       {
         "desc": null,
         "effects": [
-          "+10 House Opinion",
+          "+5 House Opinion",
           "Gain more Prestige Prestige when contributing to a House members war",
           "Unlocks Call House Member To War for all House members"
         ],
@@ -1162,7 +1363,7 @@
         "desc": null,
         "effects": [
           "-50% Faith Conversion Cost",
-          "-50% Different Faith County Opinion Mult",
+          "-50% Different Faith Popular Opinion Mult",
           "+15 Different Faith Opinion",
           "Dynasty Member Demand Conversion Acceptance: +50"
         ],

@@ -10,7 +10,7 @@
         "cost": {
           "gold": {
             "fromTreasury": true,
-            "rules": "base (base 0; if has_treasury = True: add medium_treasury_value; else …; min 250); multiply 4"
+            "rules": "base (base 0; if has_treasury = True: add medium_treasury_value; min 250; else …; if has_realm_law = republic_type_civic: multiply 0.8); multiply 4"
           }
         },
         "desc": null,
@@ -23,7 +23,7 @@
         "cost": {
           "gold": {
             "fromTreasury": true,
-            "rules": "base (base 0; if has_treasury = True: add medium_treasury_value; else …; min 250); multiply 4"
+            "rules": "base (base 0; if has_treasury = True: add medium_treasury_value; min 250; else …; if has_realm_law = republic_type_civic: multiply 0.8); multiply 4"
           }
         },
         "desc": null,
@@ -36,7 +36,7 @@
         "cost": {
           "gold": {
             "fromTreasury": true,
-            "rules": "base (base 0; if has_treasury = True: add medium_treasury_value; else …; min 250); multiply 2"
+            "rules": "base (base 0; if has_treasury = True: add medium_treasury_value; min 250; else …; if has_realm_law = republic_type_civic: multiply 0.8); multiply 2"
           }
         },
         "desc": null,
@@ -49,7 +49,7 @@
         "cost": {
           "gold": {
             "fromTreasury": true,
-            "rules": "base (base 0; if has_treasury = True: add medium_treasury_value; else …; min 250); multiply 2"
+            "rules": "base (base 0; if has_treasury = True: add medium_treasury_value; min 250; else …; if has_realm_law = republic_type_civic: multiply 0.8); multiply 2"
           }
         },
         "desc": null,
@@ -68,7 +68,7 @@
     "cost": {
       "gold": {
         "fromTreasury": true,
-        "rules": "base 0; if has_treasury = True: add major_treasury_value; else …; min 500"
+        "rules": "base 0; if has_treasury = True: add major_treasury_value; min 500; else …; if has_realm_law = republic_type_civic: multiply 0.8"
       }
     },
     "dlc": "All Under Heaven",
@@ -157,6 +157,13 @@
         "kind": "condition",
         "name": "Does not already have a Great Barracks Building",
         "negated": false
+      },
+      {
+        "building": null,
+        "key": "great_project_type_construct_great_barracks_has_governance_district",
+        "kind": "condition",
+        "name": "Has a Governance Quarter with a free Building slot",
+        "negated": false
       }
     ],
     "showInList": true,
@@ -174,7 +181,7 @@
         "cost": {
           "gold": {
             "fromTreasury": true,
-            "rules": "base 0; if has_treasury = True: add medium_treasury_value; else …; min 250"
+            "rules": "base 0; if has_treasury = True: add medium_treasury_value; min 250; else …; if has_realm_law = republic_type_civic: multiply 0.8"
           }
         },
         "desc": "A project of this size will require a vast amount of construction materials.",
@@ -187,7 +194,7 @@
         "cost": {
           "gold": {
             "fromTreasury": true,
-            "rules": "base 0; if has_treasury = True: add medium_treasury_value; else …; min 250"
+            "rules": "base 0; if has_treasury = True: add medium_treasury_value; min 250; else …; if has_realm_law = republic_type_civic: multiply 0.8"
           }
         },
         "desc": "Projects of this size requires a considerable amount of planning.",
@@ -200,7 +207,7 @@
         "cost": {
           "gold": {
             "fromTreasury": true,
-            "rules": "base 0; if has_treasury = True: add medium_treasury_value; else …; min 250"
+            "rules": "base 0; if has_treasury = True: add medium_treasury_value; min 250; else …; if has_realm_law = republic_type_civic: multiply 0.8"
           }
         },
         "desc": null,
@@ -213,7 +220,7 @@
         "cost": {
           "gold": {
             "fromTreasury": true,
-            "rules": "base 0; if has_treasury = True: add medium_treasury_value; else …; min 250"
+            "rules": "base 0; if has_treasury = True: add medium_treasury_value; min 250; else …; if has_realm_law = republic_type_civic: multiply 0.8"
           }
         },
         "desc": null,
@@ -226,7 +233,7 @@
         "cost": {
           "gold": {
             "fromTreasury": true,
-            "rules": "base 0; if has_treasury = True: add medium_treasury_value; else …; min 250"
+            "rules": "base 0; if has_treasury = True: add medium_treasury_value; min 250; else …; if has_realm_law = republic_type_civic: multiply 0.8"
           }
         },
         "desc": null,
@@ -239,7 +246,7 @@
         "cost": {
           "gold": {
             "fromTreasury": true,
-            "rules": "base 0; if has_treasury = True: add medium_treasury_value; else …; min 250"
+            "rules": "base 0; if has_treasury = True: add medium_treasury_value; min 250; else …; if has_realm_law = republic_type_civic: multiply 0.8"
           }
         },
         "desc": null,
@@ -259,7 +266,7 @@
     "cost": {
       "gold": {
         "fromTreasury": true,
-        "rules": "base (base 0; if has_treasury = True: add major_treasury_value; else …; min 500); multiply 1.5"
+        "rules": "base (base 0; if has_treasury = True: add major_treasury_value; min 500; else …; if has_realm_law = republic_type_civic: multiply 0.8); multiply 1.5"
       }
     },
     "dlc": "All Under Heaven",
@@ -318,7 +325,7 @@
         "cost": {
           "gold": {
             "fromTreasury": true,
-            "rules": "base (base 0; if has_treasury = True: add medium_treasury_value; else …; min 250); multiply 2"
+            "rules": "base (base 0; if has_treasury = True: add medium_treasury_value; min 250; else …; if has_realm_law = republic_type_civic: multiply 0.8); multiply 2"
           }
         },
         "desc": "Fortifications must be taken seriously! The most skilled minds must be tasked with overseeing this Great Project, to ensure that the best materials are used, the hardiest laborers are employed, and the strongest walls are made.",
@@ -793,16 +800,11 @@
     "cost": {
       "gold": {
         "fromTreasury": true,
-        "rules": "base (base 0; if has_treasury = True: add major_treasury_value; else …; min 500); multiply 0.3"
+        "rules": "base (base 0; if has_treasury = True: add major_treasury_value; min 500; else …; if has_realm_law = republic_type_civic: multiply 0.8); multiply 0.3"
       }
     },
-    "dlc": "All Under Heaven",
-    "grantsBuildings": [
-      {
-        "id": "the_great_wall_04",
-        "name": "The Great Wall"
-      }
-    ],
+    "dlc": null,
+    "grantsBuildings": [],
     "group": "major",
     "icon": "great_projects/great_wall",
     "id": "great_wall",
@@ -926,17 +928,8 @@
         "rules": "base 0; if has_treasury = True: add major_treasury_value; min 500"
       }
     },
-    "dlc": "All Under Heaven",
-    "grantsBuildings": [
-      {
-        "id": "the_great_wall_04",
-        "name": "The Great Wall"
-      },
-      {
-        "id": "the_great_wall_liaodong",
-        "name": "The Great Wall"
-      }
-    ],
+    "dlc": null,
+    "grantsBuildings": [],
     "group": "major",
     "icon": "great_projects/great_wall",
     "id": "great_wall_extend_to_liaodong",
@@ -1112,17 +1105,8 @@
         "rules": "base 0; if has_treasury = True: add major_treasury_value; min 500"
       }
     },
-    "dlc": "All Under Heaven",
-    "grantsBuildings": [
-      {
-        "id": "the_great_wall_04",
-        "name": "The Great Wall"
-      },
-      {
-        "id": "the_great_wall_shanhai_pass",
-        "name": "The Great Wall"
-      }
-    ],
+    "dlc": null,
+    "grantsBuildings": [],
     "group": "major",
     "icon": "great_projects/great_wall",
     "id": "great_wall_extend_to_shanhai_pass",
@@ -1205,7 +1189,7 @@
         "contributors": null,
         "cost": {
           "gold": {
-            "rules": "base monthly_character_income; multiply 3; if has_treasury = True, this != top_liege, is_landed = True: multiply 0.25; min 15; max (base 150; if exists = culture: culture …); divide 5; ceiling True; multiply 5"
+            "rules": "base monthly_character_income; multiply 3; if has_treasury = True, this != top_liege, is_landed = True: multiply 0.25; min 10; max (base 150; if exists = culture: culture …); divide 5; ceiling True; multiply 5"
           },
           "piety": {
             "rules": "if is_ai = True: value 0; else …"
@@ -1220,7 +1204,7 @@
         "contributors": null,
         "cost": {
           "gold": {
-            "rules": "base monthly_character_income; multiply 3; if has_treasury = True, this != top_liege, is_landed = True: multiply 0.25; min 15; max (base 150; if exists = culture: culture …); divide 5; ceiling True; multiply 5"
+            "rules": "base monthly_character_income; multiply 3; if has_treasury = True, this != top_liege, is_landed = True: multiply 0.25; min 10; max (base 150; if exists = culture: culture …); divide 5; ceiling True; multiply 5"
           },
           "piety": {
             "rules": "if is_ai = True: value 0; else …"
@@ -1512,13 +1496,8 @@
         "n": 500
       }
     },
-    "dlc": "All Under Heaven",
-    "grantsBuildings": [
-      {
-        "id": "mandala_capital_02",
-        "name": "Majestic Temple"
-      }
-    ],
+    "dlc": null,
+    "grantsBuildings": [],
     "group": "major",
     "icon": "great_projects/mandala_capital",
     "id": "mandala_capital_02",
@@ -1755,13 +1734,8 @@
         "rules": "base 500; multiply 1.5"
       }
     },
-    "dlc": "All Under Heaven",
-    "grantsBuildings": [
-      {
-        "id": "mandala_capital_03",
-        "name": "Temple Grounds"
-      }
-    ],
+    "dlc": null,
+    "grantsBuildings": [],
     "group": "major",
     "icon": "great_projects/mandala_capital",
     "id": "mandala_capital_03",
@@ -1899,7 +1873,7 @@
             "rules": "if is_ai = True: value 0; else …"
           }
         },
-        "desc": "The finest marble shall be offered for the Divine Temple Palace, that it may rest on the most elegant foundations.",
+        "desc": "The finest marble shall be offered for the Grand Temple Complex, that it may rest on the most elegant foundations.",
         "id": "bell_stupas",
         "name": "Bell Stupas",
         "required": false
@@ -1908,7 +1882,7 @@
         "contributors": null,
         "cost": {
           "gold": {
-            "rules": "base (base monthly_character_income; multiply 36; if has_treasury = True, this != top_liege, is_landed = True: multiply 0.25; min 200; max (base 1500; if exists = culture: culture …); divide 5; ceiling True; multiply 5); divide 5; ceiling True; multiply 5"
+            "rules": "base (base monthly_character_income; multiply 36; if has_treasury = True, this != top_liege, is_landed = True: multiply 0.25; min 80; max (base 1500; if exists = culture: culture …); divide 5; ceiling True; multiply 5); divide 5; ceiling True; multiply 5"
           },
           "piety": {
             "rules": "if is_ai = True: value 0; else …"
@@ -1950,13 +1924,8 @@
         "rules": "base 500; multiply 2"
       }
     },
-    "dlc": "All Under Heaven",
-    "grantsBuildings": [
-      {
-        "id": "mandala_capital_04",
-        "name": "Grand Temple Complex"
-      }
-    ],
+    "dlc": null,
+    "grantsBuildings": [],
     "group": "major",
     "icon": "great_projects/mandala_capital",
     "id": "mandala_capital_04",
@@ -2130,13 +2099,8 @@
         "rules": "base 500; multiply 3"
       }
     },
-    "dlc": "All Under Heaven",
-    "grantsBuildings": [
-      {
-        "id": "mandala_capital_05",
-        "name": "Divine Temple Palace"
-      }
-    ],
+    "dlc": null,
+    "grantsBuildings": [],
     "group": "major",
     "icon": "great_projects/mandala_capital",
     "id": "mandala_capital_05",
@@ -2205,7 +2169,7 @@
         "cost": {
           "gold": {
             "fromTreasury": true,
-            "rules": "base (base 0; if has_treasury = True: add medium_treasury_value; else …; min 250); multiply 2"
+            "rules": "base (base 0; if has_treasury = True: add medium_treasury_value; min 250; else …; if has_realm_law = republic_type_civic: multiply 0.8); multiply 2"
           }
         },
         "desc": null,
@@ -2218,7 +2182,7 @@
         "cost": {
           "gold": {
             "fromTreasury": true,
-            "rules": "base (base 0; if has_treasury = True: add medium_treasury_value; else …; min 250); multiply 2"
+            "rules": "base (base 0; if has_treasury = True: add medium_treasury_value; min 250; else …; if has_realm_law = republic_type_civic: multiply 0.8); multiply 2"
           }
         },
         "desc": null,
@@ -2231,7 +2195,7 @@
         "cost": {
           "gold": {
             "fromTreasury": true,
-            "rules": "base (base 0; if has_treasury = True: add medium_treasury_value; else …; min 250); multiply 1.5"
+            "rules": "base (base 0; if has_treasury = True: add medium_treasury_value; min 250; else …; if has_realm_law = republic_type_civic: multiply 0.8); multiply 1.5"
           }
         },
         "desc": null,
@@ -2244,7 +2208,7 @@
         "cost": {
           "gold": {
             "fromTreasury": true,
-            "rules": "base (base 0; if has_treasury = True: add medium_treasury_value; else …; min 250); multiply 1.5"
+            "rules": "base (base 0; if has_treasury = True: add medium_treasury_value; min 250; else …; if has_realm_law = republic_type_civic: multiply 0.8); multiply 1.5"
           }
         },
         "desc": null,
@@ -2257,7 +2221,7 @@
         "cost": {
           "gold": {
             "fromTreasury": true,
-            "rules": "base (base 0; if has_treasury = True: add medium_treasury_value; else …; min 250); multiply 1.5"
+            "rules": "base (base 0; if has_treasury = True: add medium_treasury_value; min 250; else …; if has_realm_law = republic_type_civic: multiply 0.8); multiply 1.5"
           }
         },
         "desc": null,
@@ -2270,7 +2234,7 @@
         "cost": {
           "gold": {
             "fromTreasury": true,
-            "rules": "base (base 0; if has_treasury = True: add medium_treasury_value; else …; min 250); multiply 3"
+            "rules": "base (base 0; if has_treasury = True: add medium_treasury_value; min 250; else …; if has_realm_law = republic_type_civic: multiply 0.8); multiply 3"
           }
         },
         "desc": null,
@@ -2289,16 +2253,11 @@
     "cost": {
       "gold": {
         "fromTreasury": true,
-        "rules": "base (base 0; if has_treasury = True: add major_treasury_value; else …; min 500); multiply 2"
+        "rules": "base (base 0; if has_treasury = True: add major_treasury_value; min 500; else …; if has_realm_law = republic_type_civic: multiply 0.8); multiply 2"
       }
     },
     "dlc": "All Under Heaven",
-    "grantsBuildings": [
-      {
-        "id": "forbidden_city_01",
-        "name": "The Forbidden City"
-      }
-    ],
+    "grantsBuildings": [],
     "group": "major",
     "icon": "great_projects/city_china",
     "id": "strengthen_capital",
@@ -2353,7 +2312,7 @@
         "cost": {
           "gold": {
             "fromTreasury": true,
-            "rules": "base 0; if has_treasury = True: add medium_treasury_value; else …; min 250"
+            "rules": "base 0; if has_treasury = True: add medium_treasury_value; min 250; else …; if has_realm_law = republic_type_civic: multiply 0.8"
           }
         },
         "desc": null,
@@ -2366,7 +2325,7 @@
         "cost": {
           "gold": {
             "fromTreasury": true,
-            "rules": "base 0; if has_treasury = True: add medium_treasury_value; else …; min 250"
+            "rules": "base 0; if has_treasury = True: add medium_treasury_value; min 250; else …; if has_realm_law = republic_type_civic: multiply 0.8"
           }
         },
         "desc": null,
@@ -2379,7 +2338,7 @@
         "cost": {
           "gold": {
             "fromTreasury": true,
-            "rules": "base 0; if has_treasury = True: add medium_treasury_value; else …; min 250"
+            "rules": "base 0; if has_treasury = True: add medium_treasury_value; min 250; else …; if has_realm_law = republic_type_civic: multiply 0.8"
           }
         },
         "desc": null,
@@ -2392,7 +2351,7 @@
         "cost": {
           "gold": {
             "fromTreasury": true,
-            "rules": "base 0; if has_treasury = True: add medium_treasury_value; else …; min 250"
+            "rules": "base 0; if has_treasury = True: add medium_treasury_value; min 250; else …; if has_realm_law = republic_type_civic: multiply 0.8"
           }
         },
         "desc": null,
@@ -2405,7 +2364,7 @@
         "cost": {
           "gold": {
             "fromTreasury": true,
-            "rules": "base 0; if has_treasury = True: add medium_treasury_value; else …; min 250"
+            "rules": "base 0; if has_treasury = True: add medium_treasury_value; min 250; else …; if has_realm_law = republic_type_civic: multiply 0.8"
           }
         },
         "desc": null,
@@ -2418,7 +2377,7 @@
         "cost": {
           "gold": {
             "fromTreasury": true,
-            "rules": "base 0; if has_treasury = True: add medium_treasury_value; else …; min 250"
+            "rules": "base 0; if has_treasury = True: add medium_treasury_value; min 250; else …; if has_realm_law = republic_type_civic: multiply 0.8"
           }
         },
         "desc": null,
@@ -2431,7 +2390,7 @@
         "cost": {
           "gold": {
             "fromTreasury": true,
-            "rules": "base 0; if has_treasury = True: add medium_treasury_value; else …; min 250"
+            "rules": "base 0; if has_treasury = True: add medium_treasury_value; min 250; else …; if has_realm_law = republic_type_civic: multiply 0.8"
           }
         },
         "desc": null,
@@ -2444,7 +2403,7 @@
         "cost": {
           "gold": {
             "fromTreasury": true,
-            "rules": "base 0; if has_treasury = True: add medium_treasury_value; else …; min 250"
+            "rules": "base 0; if has_treasury = True: add medium_treasury_value; min 250; else …; if has_realm_law = republic_type_civic: multiply 0.8"
           }
         },
         "desc": null,
@@ -2457,7 +2416,7 @@
         "cost": {
           "gold": {
             "fromTreasury": true,
-            "rules": "base 0; if has_treasury = True: add medium_treasury_value; else …; min 250"
+            "rules": "base 0; if has_treasury = True: add medium_treasury_value; min 250; else …; if has_realm_law = republic_type_civic: multiply 0.8"
           }
         },
         "desc": null,
@@ -2470,7 +2429,7 @@
         "cost": {
           "gold": {
             "fromTreasury": true,
-            "rules": "base 0; if has_treasury = True: add medium_treasury_value; else …; min 250"
+            "rules": "base 0; if has_treasury = True: add medium_treasury_value; min 250; else …; if has_realm_law = republic_type_civic: multiply 0.8"
           }
         },
         "desc": null,
@@ -2483,7 +2442,7 @@
         "cost": {
           "gold": {
             "fromTreasury": true,
-            "rules": "base 0; if has_treasury = True: add medium_treasury_value; else …; min 250"
+            "rules": "base 0; if has_treasury = True: add medium_treasury_value; min 250; else …; if has_realm_law = republic_type_civic: multiply 0.8"
           }
         },
         "desc": null,
@@ -2496,7 +2455,7 @@
         "cost": {
           "gold": {
             "fromTreasury": true,
-            "rules": "base 0; if has_treasury = True: add medium_treasury_value; else …; min 250"
+            "rules": "base 0; if has_treasury = True: add medium_treasury_value; min 250; else …; if has_realm_law = republic_type_civic: multiply 0.8"
           }
         },
         "desc": null,
@@ -2509,7 +2468,7 @@
         "cost": {
           "gold": {
             "fromTreasury": true,
-            "rules": "base 0; if has_treasury = True: add medium_treasury_value; else …; min 250"
+            "rules": "base 0; if has_treasury = True: add medium_treasury_value; min 250; else …; if has_realm_law = republic_type_civic: multiply 0.8"
           }
         },
         "desc": null,
@@ -2522,7 +2481,7 @@
         "cost": {
           "gold": {
             "fromTreasury": true,
-            "rules": "base 0; if has_treasury = True: add medium_treasury_value; else …; min 250"
+            "rules": "base 0; if has_treasury = True: add medium_treasury_value; min 250; else …; if has_realm_law = republic_type_civic: multiply 0.8"
           }
         },
         "desc": null,
@@ -2535,7 +2494,7 @@
         "cost": {
           "gold": {
             "fromTreasury": true,
-            "rules": "base 0; if has_treasury = True: add medium_treasury_value; else …; min 250"
+            "rules": "base 0; if has_treasury = True: add medium_treasury_value; min 250; else …; if has_realm_law = republic_type_civic: multiply 0.8"
           }
         },
         "desc": null,
@@ -2548,7 +2507,7 @@
         "cost": {
           "gold": {
             "fromTreasury": true,
-            "rules": "base 0; if has_treasury = True: add medium_treasury_value; else …; min 250"
+            "rules": "base 0; if has_treasury = True: add medium_treasury_value; min 250; else …; if has_realm_law = republic_type_civic: multiply 0.8"
           }
         },
         "desc": null,
@@ -2561,7 +2520,7 @@
         "cost": {
           "gold": {
             "fromTreasury": true,
-            "rules": "base 0; if has_treasury = True: add medium_treasury_value; else …; min 250"
+            "rules": "base 0; if has_treasury = True: add medium_treasury_value; min 250; else …; if has_realm_law = republic_type_civic: multiply 0.8"
           }
         },
         "desc": null,
@@ -2574,7 +2533,7 @@
         "cost": {
           "gold": {
             "fromTreasury": true,
-            "rules": "base 0; if has_treasury = True: add medium_treasury_value; else …; min 250"
+            "rules": "base 0; if has_treasury = True: add medium_treasury_value; min 250; else …; if has_realm_law = republic_type_civic: multiply 0.8"
           }
         },
         "desc": null,
@@ -2587,7 +2546,7 @@
         "cost": {
           "gold": {
             "fromTreasury": true,
-            "rules": "base 0; if has_treasury = True: add medium_treasury_value; else …; min 250"
+            "rules": "base 0; if has_treasury = True: add medium_treasury_value; min 250; else …; if has_realm_law = republic_type_civic: multiply 0.8"
           }
         },
         "desc": null,
@@ -2600,7 +2559,7 @@
         "cost": {
           "gold": {
             "fromTreasury": true,
-            "rules": "base 0; if has_treasury = True: add medium_treasury_value; else …; min 250"
+            "rules": "base 0; if has_treasury = True: add medium_treasury_value; min 250; else …; if has_realm_law = republic_type_civic: multiply 0.8"
           }
         },
         "desc": null,
@@ -2619,7 +2578,7 @@
     "cost": {
       "gold": {
         "fromTreasury": true,
-        "rules": "base (base 0; if has_treasury = True: add major_treasury_value; else …; min 500); if has_title = title:h_china: multiply 2"
+        "rules": "base (base 0; if has_treasury = True: add major_treasury_value; min 500; else …; if has_realm_law = republic_type_civic: multiply 0.8); if has_title = title:h_china: multiply 2"
       },
       "influence": {
         "rules": "base 100; if has_title = title:h_china: multiply 2"
@@ -2672,7 +2631,7 @@
   },
   {
     "constructionTime": {
-      "rules": "base 1825; multiply 7; scope:great_project …; multiply (base 1; if top_participant_group:dynastic_cycle …: add -0.5)"
+      "rules": "base 1825; multiply 7; if OR …: multiply 0.75; scope:great_project …; multiply (base 1; if top_participant_group:dynastic_cycle …: add -0.5)"
     },
     "contributionThreshold": null,
     "contributions": [
@@ -2681,7 +2640,7 @@
         "cost": {
           "gold": {
             "fromTreasury": true,
-            "rules": "base (base 0; if has_treasury = True: add medium_treasury_value; else …; min 250); multiply 0.5"
+            "rules": "base (base 0; if has_treasury = True: add medium_treasury_value; min 250; else …; if has_realm_law = republic_type_civic: multiply 0.8); multiply 0.5"
           }
         },
         "desc": null,
@@ -2694,7 +2653,7 @@
         "cost": {
           "gold": {
             "fromTreasury": true,
-            "rules": "base (base 0; if has_treasury = True: add medium_treasury_value; else …; min 250); multiply 0.25"
+            "rules": "base (base 0; if has_treasury = True: add medium_treasury_value; min 250; else …; if has_realm_law = republic_type_civic: multiply 0.8); multiply 0.25"
           }
         },
         "desc": null,
@@ -2707,7 +2666,7 @@
         "cost": {
           "gold": {
             "fromTreasury": true,
-            "rules": "base (base 0; if has_treasury = True: add medium_treasury_value; else …; min 250); multiply 0.25"
+            "rules": "base (base 0; if has_treasury = True: add medium_treasury_value; min 250; else …; if has_realm_law = republic_type_civic: multiply 0.8); multiply 0.25"
           }
         },
         "desc": null,
@@ -2720,7 +2679,7 @@
         "cost": {
           "gold": {
             "fromTreasury": true,
-            "rules": "base (base 0; if has_treasury = True: add medium_treasury_value; else …; min 250); multiply 0.25"
+            "rules": "base (base 0; if has_treasury = True: add medium_treasury_value; min 250; else …; if has_realm_law = republic_type_civic: multiply 0.8); multiply 0.25"
           }
         },
         "desc": null,
@@ -2740,7 +2699,7 @@
     "cost": {
       "gold": {
         "fromTreasury": true,
-        "rules": "base (base 0; if has_treasury = True: add major_treasury_value; else …; min 500); multiply 0.2; if is_councillor = True: multiply 0.5"
+        "rules": "base (base 0; if has_treasury = True: add major_treasury_value; min 500; else …; if has_realm_law = republic_type_civic: multiply 0.8); multiply 0.2; if is_councillor = True: multiply 0.5"
       }
     },
     "dlc": "All Under Heaven",
@@ -2806,7 +2765,7 @@
         "cost": {
           "gold": {
             "fromTreasury": true,
-            "rules": "base 0; if has_treasury = True: add medium_treasury_value; else …; min 250"
+            "rules": "base 0; if has_treasury = True: add medium_treasury_value; min 250; else …; if has_realm_law = republic_type_civic: multiply 0.8"
           }
         },
         "desc": null,
@@ -2819,7 +2778,7 @@
         "cost": {
           "gold": {
             "fromTreasury": true,
-            "rules": "base 0; if has_treasury = True: add medium_treasury_value; else …; min 250"
+            "rules": "base 0; if has_treasury = True: add medium_treasury_value; min 250; else …; if has_realm_law = republic_type_civic: multiply 0.8"
           }
         },
         "desc": null,
@@ -2832,7 +2791,7 @@
         "cost": {
           "gold": {
             "fromTreasury": true,
-            "rules": "base 0; if has_treasury = True: add medium_treasury_value; else …; min 250"
+            "rules": "base 0; if has_treasury = True: add medium_treasury_value; min 250; else …; if has_realm_law = republic_type_civic: multiply 0.8"
           }
         },
         "desc": null,
@@ -2845,7 +2804,7 @@
         "cost": {
           "gold": {
             "fromTreasury": true,
-            "rules": "base 0; if has_treasury = True: add medium_treasury_value; else …; min 250"
+            "rules": "base 0; if has_treasury = True: add medium_treasury_value; min 250; else …; if has_realm_law = republic_type_civic: multiply 0.8"
           }
         },
         "desc": null,
@@ -2858,7 +2817,7 @@
         "cost": {
           "gold": {
             "fromTreasury": true,
-            "rules": "base 0; if has_treasury = True: add medium_treasury_value; else …; min 250"
+            "rules": "base 0; if has_treasury = True: add medium_treasury_value; min 250; else …; if has_realm_law = republic_type_civic: multiply 0.8"
           }
         },
         "desc": null,
@@ -2878,7 +2837,7 @@
     "cost": {
       "gold": {
         "fromTreasury": true,
-        "rules": "base (base 0; if has_treasury = True: add major_treasury_value; else …; min 500); multiply 2; if is_councillor = True: divide 2"
+        "rules": "base (base 0; if has_treasury = True: add major_treasury_value; min 500; else …; if has_realm_law = republic_type_civic: multiply 0.8); multiply 2; if is_councillor = True: divide 2"
       }
     },
     "dlc": "All Under Heaven",
@@ -2928,7 +2887,7 @@
   },
   {
     "constructionTime": {
-      "rules": "base 1825; multiply 7; scope:great_project …; multiply (base 1; if top_participant_group:dynastic_cycle …: add -0.5)"
+      "rules": "base 1825; multiply 7; if OR …: multiply 0.75; scope:great_project …; multiply (base 1; if top_participant_group:dynastic_cycle …: add -0.5)"
     },
     "contributionThreshold": null,
     "contributions": [
@@ -2937,7 +2896,7 @@
         "cost": {
           "gold": {
             "fromTreasury": true,
-            "rules": "base (base 0; if has_treasury = True: add medium_treasury_value; else …; min 250); multiply 0.5"
+            "rules": "base (base 0; if has_treasury = True: add medium_treasury_value; min 250; else …; if has_realm_law = republic_type_civic: multiply 0.8); multiply 0.5"
           }
         },
         "desc": null,
@@ -2950,7 +2909,7 @@
         "cost": {
           "gold": {
             "fromTreasury": true,
-            "rules": "base (base 0; if has_treasury = True: add medium_treasury_value; else …; min 250); multiply 0.25"
+            "rules": "base (base 0; if has_treasury = True: add medium_treasury_value; min 250; else …; if has_realm_law = republic_type_civic: multiply 0.8); multiply 0.25"
           }
         },
         "desc": null,
@@ -2963,7 +2922,7 @@
         "cost": {
           "gold": {
             "fromTreasury": true,
-            "rules": "base (base 0; if has_treasury = True: add medium_treasury_value; else …; min 250); multiply 0.25"
+            "rules": "base (base 0; if has_treasury = True: add medium_treasury_value; min 250; else …; if has_realm_law = republic_type_civic: multiply 0.8); multiply 0.25"
           }
         },
         "desc": null,
@@ -2976,7 +2935,7 @@
         "cost": {
           "gold": {
             "fromTreasury": true,
-            "rules": "base (base 0; if has_treasury = True: add medium_treasury_value; else …; min 250); multiply 0.25"
+            "rules": "base (base 0; if has_treasury = True: add medium_treasury_value; min 250; else …; if has_realm_law = republic_type_civic: multiply 0.8); multiply 0.25"
           }
         },
         "desc": null,
@@ -2996,7 +2955,7 @@
     "cost": {
       "gold": {
         "fromTreasury": true,
-        "rules": "base (base 0; if has_treasury = True: add major_treasury_value; else …; min 500); multiply 0.2; if is_councillor = True: multiply 0.5"
+        "rules": "base (base 0; if has_treasury = True: add major_treasury_value; min 500; else …; if has_realm_law = republic_type_civic: multiply 0.8); multiply 0.2; if is_councillor = True: multiply 0.5"
       }
     },
     "dlc": "All Under Heaven",
@@ -3053,7 +3012,7 @@
   },
   {
     "constructionTime": {
-      "rules": "base 3650; scope:great_project …; multiply (base 1; if top_participant_group:dynastic_cycle …: add -0.5)"
+      "rules": "base 1825; multiply (base 1; if top_participant_group:dynastic_cycle …: add -0.5)"
     },
     "contributionThreshold": null,
     "contributions": [
@@ -3062,7 +3021,132 @@
         "cost": {
           "gold": {
             "fromTreasury": true,
-            "rules": "base 0; if has_treasury = True: add medium_treasury_value; else …; min 250"
+            "rules": "base 0; if has_treasury = True: add medium_treasury_value; min 250; else …; if has_realm_law = republic_type_civic: multiply 0.8"
+          }
+        },
+        "desc": null,
+        "id": "city_guards",
+        "name": "City Guards",
+        "required": true
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base 0; if has_treasury = True: add medium_treasury_value; min 250; else …; if has_realm_law = republic_type_civic: multiply 0.8"
+          }
+        },
+        "desc": null,
+        "id": "highway_patrols",
+        "name": "Highway Patrols",
+        "required": true
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base 0; if has_treasury = True: add medium_treasury_value; min 250; else …; if has_realm_law = republic_type_civic: multiply 0.8"
+          }
+        },
+        "desc": null,
+        "id": "administrators",
+        "name": "Administrators",
+        "required": true
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base 0; if has_treasury = True: add medium_treasury_value; min 250; else …; if has_realm_law = republic_type_civic: multiply 0.8"
+          }
+        },
+        "desc": null,
+        "id": "court_magistrates",
+        "name": "Court Magistrates",
+        "required": true
+      }
+    ],
+    "contributorCooldown": {
+      "n": 0
+    },
+    "contributors": [
+      "owner",
+      "tributaries",
+      "vassals"
+    ],
+    "cost": {
+      "gold": {
+        "fromTreasury": true,
+        "rules": "base (base 0; if has_treasury = True: add major_treasury_value; min 500; else …; if has_realm_law = republic_type_civic: multiply 0.8); multiply 2; if is_councillor = True: divide 2"
+      }
+    },
+    "dlc": "All Under Heaven",
+    "grantsBuildings": [],
+    "group": "major",
+    "icon": "icon_game_concept_house_realm_county_control",
+    "id": "minister_project_establish_control",
+    "isImportant": false,
+    "name": "Establish Control",
+    "owner": "top liege of the province",
+    "plannable": true,
+    "provinceFilter": "top_realm",
+    "provinceFilterTarget": null,
+    "requirements": [
+      {
+        "building": null,
+        "key": "title:h_china",
+        "kind": "title",
+        "name": "China",
+        "negated": false
+      },
+      {
+        "building": null,
+        "key": "title:e_minister_of_justice",
+        "kind": "title",
+        "name": "Ministry of Justice",
+        "negated": false
+      },
+      {
+        "building": null,
+        "key": "grand_secretariat",
+        "kind": "diarchy",
+        "name": "Grand Secretariat",
+        "negated": false
+      },
+      {
+        "building": null,
+        "key": "has_low_control_or_county_corruption_desc",
+        "kind": "condition",
+        "name": "Has low County Control or County Corruption",
+        "negated": false
+      },
+      {
+        "building": null,
+        "key": "GREAT_PROJECT_CAN_PLAN",
+        "kind": "condition",
+        "name": "You can plan this Great Project",
+        "negated": false
+      }
+    ],
+    "showInList": true,
+    "sourceFile": "00_ministry_projects.txt",
+    "targetTitleTier": null
+  },
+  {
+    "constructionTime": {
+      "rules": "base 3650; if OR …: multiply 0.75; multiply (base 1; if top_participant_group:dynastic_cycle …: add -0.5)"
+    },
+    "contributionThreshold": null,
+    "contributions": [
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base 0; if has_treasury = True: add medium_treasury_value; min 250; else …; if has_realm_law = republic_type_civic: multiply 0.8"
           }
         },
         "desc": null,
@@ -3075,7 +3159,7 @@
         "cost": {
           "gold": {
             "fromTreasury": true,
-            "rules": "base 0; if has_treasury = True: add medium_treasury_value; else …; min 250"
+            "rules": "base 0; if has_treasury = True: add medium_treasury_value; min 250; else …; if has_realm_law = republic_type_civic: multiply 0.8"
           }
         },
         "desc": null,
@@ -3088,7 +3172,7 @@
         "cost": {
           "gold": {
             "fromTreasury": true,
-            "rules": "base (base 0; if has_treasury = True: add medium_treasury_value; else …; min 250); multiply 2"
+            "rules": "base (base 0; if has_treasury = True: add medium_treasury_value; min 250; else …; if has_realm_law = republic_type_civic: multiply 0.8); multiply 2"
           }
         },
         "desc": null,
@@ -3108,14 +3192,14 @@
     "cost": {
       "gold": {
         "fromTreasury": true,
-        "rules": "base (base 0; if has_treasury = True: add medium_treasury_value; else …; min 250); multiply 4; if is_councillor = True: divide 2"
+        "rules": "base (base 0; if has_treasury = True: add medium_treasury_value; min 250; else …; if has_realm_law = republic_type_civic: multiply 0.8); multiply 4; if is_councillor = True: divide 2"
       }
     },
     "dlc": "All Under Heaven",
     "grantsBuildings": [],
     "group": "major",
     "icon": "great_projects/city_china",
-    "id": "minister_project_development",
+    "id": "minister_project_prosperity",
     "isImportant": false,
     "name": "Develop Communities",
     "owner": "top liege of the province",
@@ -3174,132 +3258,7 @@
         "cost": {
           "gold": {
             "fromTreasury": true,
-            "rules": "base 0; if has_treasury = True: add medium_treasury_value; else …; min 250"
-          }
-        },
-        "desc": null,
-        "id": "city_guards",
-        "name": "City Guards",
-        "required": true
-      },
-      {
-        "contributors": null,
-        "cost": {
-          "gold": {
-            "fromTreasury": true,
-            "rules": "base 0; if has_treasury = True: add medium_treasury_value; else …; min 250"
-          }
-        },
-        "desc": null,
-        "id": "highway_patrols",
-        "name": "Highway Patrols",
-        "required": true
-      },
-      {
-        "contributors": null,
-        "cost": {
-          "gold": {
-            "fromTreasury": true,
-            "rules": "base 0; if has_treasury = True: add medium_treasury_value; else …; min 250"
-          }
-        },
-        "desc": null,
-        "id": "administrators",
-        "name": "Administrators",
-        "required": true
-      },
-      {
-        "contributors": null,
-        "cost": {
-          "gold": {
-            "fromTreasury": true,
-            "rules": "base 0; if has_treasury = True: add medium_treasury_value; else …; min 250"
-          }
-        },
-        "desc": null,
-        "id": "court_magistrates",
-        "name": "Court Magistrates",
-        "required": true
-      }
-    ],
-    "contributorCooldown": {
-      "n": 0
-    },
-    "contributors": [
-      "owner",
-      "tributaries",
-      "vassals"
-    ],
-    "cost": {
-      "gold": {
-        "fromTreasury": true,
-        "rules": "base (base 0; if has_treasury = True: add major_treasury_value; else …; min 500); multiply 2; if is_councillor = True: divide 2"
-      }
-    },
-    "dlc": "All Under Heaven",
-    "grantsBuildings": [],
-    "group": "major",
-    "icon": "icon_game_concept_house_realm_county_control",
-    "id": "minister_project_establish_control",
-    "isImportant": false,
-    "name": "Establish Control",
-    "owner": "top liege of the province",
-    "plannable": true,
-    "provinceFilter": "top_realm",
-    "provinceFilterTarget": null,
-    "requirements": [
-      {
-        "building": null,
-        "key": "title:h_china",
-        "kind": "title",
-        "name": "China",
-        "negated": false
-      },
-      {
-        "building": null,
-        "key": "title:e_minister_of_justice",
-        "kind": "title",
-        "name": "Ministry of Justice",
-        "negated": false
-      },
-      {
-        "building": null,
-        "key": "grand_secretariat",
-        "kind": "diarchy",
-        "name": "Grand Secretariat",
-        "negated": false
-      },
-      {
-        "building": null,
-        "key": "has_low_control_or_county_corruption_desc",
-        "kind": "condition",
-        "name": "Has low County Control or County Corruption",
-        "negated": false
-      },
-      {
-        "building": null,
-        "key": "GREAT_PROJECT_CAN_PLAN",
-        "kind": "condition",
-        "name": "You can plan this Great Project",
-        "negated": false
-      }
-    ],
-    "showInList": true,
-    "sourceFile": "00_ministry_projects.txt",
-    "targetTitleTier": null
-  },
-  {
-    "constructionTime": {
-      "rules": "base 1825; multiply (base 1; if top_participant_group:dynastic_cycle …: add -0.5)"
-    },
-    "contributionThreshold": null,
-    "contributions": [
-      {
-        "contributors": null,
-        "cost": {
-          "gold": {
-            "fromTreasury": true,
-            "rules": "base 0; if has_treasury = True: add medium_treasury_value; else …; min 250"
+            "rules": "base 0; if has_treasury = True: add medium_treasury_value; min 250; else …; if has_realm_law = republic_type_civic: multiply 0.8"
           }
         },
         "desc": null,
@@ -3312,7 +3271,7 @@
         "cost": {
           "gold": {
             "fromTreasury": true,
-            "rules": "base 0; if has_treasury = True: add medium_treasury_value; else …; min 250"
+            "rules": "base 0; if has_treasury = True: add medium_treasury_value; min 250; else …; if has_realm_law = republic_type_civic: multiply 0.8"
           }
         },
         "desc": null,
@@ -3325,7 +3284,7 @@
         "cost": {
           "gold": {
             "fromTreasury": true,
-            "rules": "base 0; if has_treasury = True: add medium_treasury_value; else …; min 250"
+            "rules": "base 0; if has_treasury = True: add medium_treasury_value; min 250; else …; if has_realm_law = republic_type_civic: multiply 0.8"
           }
         },
         "desc": null,
@@ -3338,7 +3297,7 @@
         "cost": {
           "gold": {
             "fromTreasury": true,
-            "rules": "base 0; if has_treasury = True: add medium_treasury_value; else …; min 250"
+            "rules": "base 0; if has_treasury = True: add medium_treasury_value; min 250; else …; if has_realm_law = republic_type_civic: multiply 0.8"
           }
         },
         "desc": null,
@@ -3351,7 +3310,7 @@
         "cost": {
           "gold": {
             "fromTreasury": true,
-            "rules": "base 0; if has_treasury = True: add medium_treasury_value; else …; min 250"
+            "rules": "base 0; if has_treasury = True: add medium_treasury_value; min 250; else …; if has_realm_law = republic_type_civic: multiply 0.8"
           }
         },
         "desc": null,
@@ -3364,7 +3323,7 @@
         "cost": {
           "gold": {
             "fromTreasury": true,
-            "rules": "base 0; if has_treasury = True: add medium_treasury_value; else …; min 250"
+            "rules": "base 0; if has_treasury = True: add medium_treasury_value; min 250; else …; if has_realm_law = republic_type_civic: multiply 0.8"
           }
         },
         "desc": null,
@@ -3384,7 +3343,7 @@
     "cost": {
       "gold": {
         "fromTreasury": true,
-        "rules": "base (base 0; if has_treasury = True: add major_treasury_value; else …; min 500); multiply 2; if is_councillor = True: divide 2"
+        "rules": "base (base 0; if has_treasury = True: add major_treasury_value; min 500; else …; if has_realm_law = republic_type_civic: multiply 0.8); multiply 2; if is_councillor = True: divide 2"
       }
     },
     "dlc": "All Under Heaven",
@@ -3437,6 +3396,3181 @@
     ],
     "showInList": true,
     "sourceFile": "00_ministry_projects.txt",
+    "targetTitleTier": null
+  },
+  {
+    "constructionTime": {
+      "rules": "base 1825; multiply (base 1; if top_participant_group:dynastic_cycle …: add -0.5)"
+    },
+    "contributionThreshold": null,
+    "contributions": [
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base 0; if has_treasury = True: add medium_treasury_value; min 250; else …; if has_realm_law = republic_type_civic: multiply 0.8"
+          }
+        },
+        "desc": "Recruit and organize the workforce needed to carry out the construction.",
+        "id": "labor",
+        "name": "Organize Labor",
+        "required": true
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base 0; if has_treasury = True: add medium_treasury_value; min 250; else …; if has_realm_law = republic_type_civic: multiply 0.8"
+          }
+        },
+        "desc": "Procure the stone, timber, and supplies required to build at scale.",
+        "id": "materials",
+        "name": "Source Materials",
+        "required": true
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base 0; if has_treasury = True: add medium_treasury_value; min 250; else …; if has_realm_law = republic_type_civic: multiply 0.8"
+          }
+        },
+        "desc": "Build public baths, fountains, and gathering spaces to raise the spirits of the people.",
+        "id": "civic_amenities",
+        "name": "Fund Civic Amenities",
+        "required": true
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base 0; if has_treasury = True: add medium_treasury_value; min 250; else …; if has_realm_law = republic_type_civic: multiply 0.8"
+          }
+        },
+        "desc": "Commission watchmen, magistrates, and civil infrastructure to bring order to the streets of the capital.",
+        "id": "civic_order",
+        "name": "Fund the Watch",
+        "required": false
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base 0; if has_treasury = True: add medium_treasury_value; min 250; else …; if has_realm_law = republic_type_civic: multiply 0.8"
+          }
+        },
+        "desc": "Extend the market district and open up trade at the heart of the city.",
+        "id": "market_expansion",
+        "name": "Expand the Market",
+        "required": false
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base 0; if has_treasury = True: add medium_treasury_value; min 250; else …; if has_realm_law = republic_type_civic: multiply 0.8"
+          }
+        },
+        "desc": "Fund the expansion of the capital's built-up area, making room for the people and trade a great city requires.",
+        "id": "settlement_expansion",
+        "name": "Support Urban Development",
+        "required": false
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base 0; if has_treasury = True: add medium_treasury_value; min 250; else …; if has_realm_law = republic_type_civic: multiply 0.8"
+          }
+        },
+        "desc": "Build schools to ensure that every child has a chance to learn and grow, and to get an education.",
+        "id": "support_schools",
+        "name": "Finance Schools",
+        "required": false
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base 0; if has_treasury = True: add medium_treasury_value; min 250; else …; if has_realm_law = republic_type_civic: multiply 0.8"
+          }
+        },
+        "desc": "Sponsor the city's artisan guilds to accelerate construction and raise the quality of what is built here.",
+        "id": "artisan_guilds",
+        "name": "Endow Artisan Guilds",
+        "required": false
+      }
+    ],
+    "contributorCooldown": {
+      "n": 21
+    },
+    "contributors": [
+      "owner",
+      "vassals"
+    ],
+    "cost": {
+      "gold": {
+        "fromTreasury": true,
+        "rules": "base 0; if has_treasury = True: add major_treasury_value; min 500; else …; if has_realm_law = republic_type_civic: multiply 0.8"
+      }
+    },
+    "dlc": "Silk and Silver",
+    "grantsBuildings": [],
+    "group": "major",
+    "icon": "great_projects/_default",
+    "id": "gdp_republic_civic_works",
+    "isImportant": false,
+    "name": "Civic Works",
+    "owner": "direct owner of the province",
+    "plannable": true,
+    "provinceFilter": "capital",
+    "provinceFilterTarget": null,
+    "requirements": [
+      {
+        "building": null,
+        "key": "only_single_great_project_type_allowed",
+        "kind": "condition",
+        "name": "Great Project of this type is not already being planned or ongoing",
+        "negated": false
+      },
+      {
+        "building": null,
+        "key": "GREAT_PROJECT_CAN_PLAN",
+        "kind": "condition",
+        "name": "You can plan this Great Project",
+        "negated": false
+      }
+    ],
+    "showInList": true,
+    "sourceFile": "00_republic_projects.txt",
+    "targetTitleTier": "county"
+  },
+  {
+    "constructionTime": {
+      "rules": "base 1825; multiply (base 1; if top_participant_group:dynastic_cycle …: add -0.5)"
+    },
+    "contributionThreshold": null,
+    "contributions": [
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base 0; if has_treasury = True: add medium_treasury_value; min 250; else …; if has_realm_law = republic_type_civic: multiply 0.8"
+          }
+        },
+        "desc": null,
+        "id": "recruit_architects",
+        "name": "Recruit Architects",
+        "required": true
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base 0; if has_treasury = True: add medium_treasury_value; min 250; else …; if has_realm_law = republic_type_civic: multiply 0.8"
+          }
+        },
+        "desc": null,
+        "id": "manage_paperwork",
+        "name": "Manage Paperwork",
+        "required": true
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base 0; if has_treasury = True: add medium_treasury_value; min 250; else …; if has_realm_law = republic_type_civic: multiply 0.8"
+          }
+        },
+        "desc": null,
+        "id": "labor",
+        "name": "Organize Labor",
+        "required": true
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base 0; if has_treasury = True: add medium_treasury_value; min 250; else …; if has_realm_law = republic_type_civic: multiply 0.8"
+          }
+        },
+        "desc": null,
+        "id": "materials",
+        "name": "Source Materials",
+        "required": true
+      }
+    ],
+    "contributorCooldown": {
+      "n": 21
+    },
+    "contributors": [
+      "owner",
+      "vassals"
+    ],
+    "cost": {
+      "gold": {
+        "fromTreasury": true,
+        "rules": "base 0; if has_treasury = True: add major_treasury_value; min 500; else …; if has_realm_law = republic_type_civic: multiply 0.8"
+      }
+    },
+    "dlc": "Silk and Silver",
+    "grantsBuildings": [],
+    "group": "major",
+    "icon": "great_projects/_default",
+    "id": "gdp_republic_expand_great_plaza_project",
+    "isImportant": false,
+    "name": "Expand the Great Plaza",
+    "owner": "direct owner of the province",
+    "plannable": true,
+    "provinceFilter": "capital",
+    "provinceFilterTarget": null,
+    "requirements": [
+      {
+        "building": null,
+        "key": "can_start_great_plaza_project_has_law_desc",
+        "kind": "condition",
+        "name": "You have the Republic Law or higher",
+        "negated": false
+      },
+      {
+        "building": null,
+        "key": "gdp_is_planning_great_plaza_project_trigger_desc",
+        "kind": "condition",
+        "name": "A Great Plaza District Great Project is not already being planned or ongoing",
+        "negated": false
+      },
+      {
+        "building": null,
+        "key": "GREAT_PROJECT_CAN_PLAN",
+        "kind": "condition",
+        "name": "You can plan this Great Project",
+        "negated": false
+      }
+    ],
+    "showInList": true,
+    "sourceFile": "00_republic_projects.txt",
+    "targetTitleTier": "county"
+  },
+  {
+    "constructionTime": {
+      "rules": "base 1825; multiply (base 1; if top_participant_group:dynastic_cycle …: add -0.5)"
+    },
+    "contributionThreshold": null,
+    "contributions": [
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base 0; add (if has_treasury = True: add medium_treasury_value; else …; desc great_project_base_contribution_cost_desc); min 75; if dynasty …: multiply …"
+          }
+        },
+        "desc": null,
+        "id": "master_builder",
+        "name": "Recruit a Master Builder",
+        "required": true
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base 0; add (if has_treasury = True: add medium_treasury_value; else …; desc great_project_base_contribution_cost_desc); min 75; if dynasty …: multiply …"
+          }
+        },
+        "desc": null,
+        "id": "outsource_heavy_work",
+        "name": "Outsource Heavy Work",
+        "required": true
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base 0; add (if has_treasury = True: add medium_treasury_value; else …; desc great_project_base_contribution_cost_desc); min 75; if dynasty …: multiply …"
+          }
+        },
+        "desc": null,
+        "id": "commission_furnishing",
+        "name": "Commission Furnishing",
+        "required": true
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base 0; add (if has_treasury = True: add medium_treasury_value; else …; desc great_project_base_contribution_cost_desc); min 75; if dynasty …: multiply …"
+          }
+        },
+        "desc": null,
+        "id": "construct_chapels",
+        "name": "Construct Chapels",
+        "required": true
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base 0; add (if has_treasury = True: add medium_treasury_value; else …; desc great_project_base_contribution_cost_desc); min 75; if dynasty …: multiply …"
+          }
+        },
+        "desc": null,
+        "id": "fund_metal_work",
+        "name": "Fund Metal Work",
+        "required": true
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base 0; add (if has_treasury = True: add medium_treasury_value; else …; desc great_project_base_contribution_cost_desc); min 75; if dynasty …: multiply …"
+          }
+        },
+        "desc": null,
+        "id": "garden",
+        "name": "Lay Garden",
+        "required": false
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base 0; add (if has_treasury = True: add medium_treasury_value; else …; desc great_project_base_contribution_cost_desc); min 75; if dynasty …: multiply …"
+          }
+        },
+        "desc": null,
+        "id": "secure_burial_rights",
+        "name": "Secure Burial Rights",
+        "required": false
+      }
+    ],
+    "contributorCooldown": {
+      "n": 21
+    },
+    "contributors": [
+      "owner",
+      "vassals"
+    ],
+    "cost": {
+      "gold": {
+        "fromTreasury": true,
+        "rules": "base 0; if has_treasury = True: add major_treasury_value; else …; min 250"
+      }
+    },
+    "dlc": "Silk and Silver",
+    "grantsBuildings": [
+      {
+        "id": "republic_basilica_01",
+        "name": "Grand Basilica"
+      }
+    ],
+    "group": "major",
+    "icon": "great_projects/_default",
+    "id": "gdp_republic_great_plaza_basilica_project",
+    "isImportant": false,
+    "name": "Great Plaza: Grand Basilica",
+    "owner": "direct owner of the province",
+    "plannable": true,
+    "provinceFilter": "capital",
+    "provinceFilterTarget": null,
+    "requirements": [
+      {
+        "building": null,
+        "key": "can_start_great_plaza_project_has_law_desc",
+        "kind": "condition",
+        "name": "You have the Republic Law or higher",
+        "negated": false
+      },
+      {
+        "building": null,
+        "key": "gdp_is_planning_great_plaza_project_trigger_desc",
+        "kind": "condition",
+        "name": "A Great Plaza District Great Project is not already being planned or ongoing",
+        "negated": false
+      },
+      {
+        "building": null,
+        "key": "gdp_republic_plaza_has_free_building_slot_desc",
+        "kind": "condition",
+        "name": "Great Plaza District has at least 1 free building slot",
+        "negated": false
+      },
+      {
+        "building": null,
+        "key": "GREAT_PROJECT_CAN_PLAN",
+        "kind": "condition",
+        "name": "You can plan this Great Project",
+        "negated": false
+      }
+    ],
+    "showInList": true,
+    "sourceFile": "00_republic_projects.txt",
+    "targetTitleTier": "county"
+  },
+  {
+    "constructionTime": {
+      "rules": "base 1825; multiply (base 1; if top_participant_group:dynastic_cycle …: add -0.5)"
+    },
+    "contributionThreshold": null,
+    "contributions": [
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base 0; add (if has_treasury = True: add medium_treasury_value; else …; desc great_project_base_contribution_cost_desc); min 75; if dynasty …: multiply …"
+          }
+        },
+        "desc": null,
+        "id": "stock_the_apothecary",
+        "name": "Stock the Apothecary",
+        "required": true
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base 0; add (if has_treasury = True: add medium_treasury_value; else …; desc great_project_base_contribution_cost_desc); min 75; if dynasty …: multiply …"
+          }
+        },
+        "desc": null,
+        "id": "expand_the_wards",
+        "name": "Expand the Wards",
+        "required": true
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base 0; add (if has_treasury = True: add medium_treasury_value; else …; desc great_project_base_contribution_cost_desc); min 75; if dynasty …: multiply …"
+          }
+        },
+        "desc": null,
+        "id": "linen",
+        "name": "Provide Linen",
+        "required": true
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base 0; add (if has_treasury = True: add medium_treasury_value; else …; desc great_project_base_contribution_cost_desc); min 75; if dynasty …: multiply …"
+          }
+        },
+        "desc": null,
+        "id": "feed_the_sick",
+        "name": "Provision the Sick",
+        "required": true
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base 0; add (if has_treasury = True: add medium_treasury_value; else …; desc great_project_base_contribution_cost_desc); min 75; if dynasty …: multiply …"
+          }
+        },
+        "desc": null,
+        "id": "scour_the_wards",
+        "name": "Scour the Wards",
+        "required": true
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base 0; add (if has_treasury = True: add medium_treasury_value; else …; desc great_project_base_contribution_cost_desc); min 75; if dynasty …: multiply …"
+          }
+        },
+        "desc": null,
+        "id": "endow_a_dispensary",
+        "name": "Endow a Dispensary",
+        "required": false
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base 0; add (if has_treasury = True: add medium_treasury_value; else …; desc great_project_base_contribution_cost_desc); min 75; if dynasty …: multiply …"
+          }
+        },
+        "desc": null,
+        "id": "copy_the_physicians_texts",
+        "name": "Copy the Physicians' Texts",
+        "required": false
+      }
+    ],
+    "contributorCooldown": {
+      "n": 21
+    },
+    "contributors": [
+      "owner",
+      "vassals"
+    ],
+    "cost": {
+      "gold": {
+        "fromTreasury": true,
+        "rules": "base 0; if has_treasury = True: add major_treasury_value; else …; min 250"
+      }
+    },
+    "dlc": "Silk and Silver",
+    "grantsBuildings": [
+      {
+        "id": "republic_civic_hospital_01",
+        "name": "Civic Hospital"
+      }
+    ],
+    "group": "major",
+    "icon": "great_projects/_default",
+    "id": "gdp_republic_great_plaza_civic_hospital_project",
+    "isImportant": false,
+    "name": "Great Plaza: Civic Hospital",
+    "owner": "direct owner of the province",
+    "plannable": true,
+    "provinceFilter": "capital",
+    "provinceFilterTarget": null,
+    "requirements": [
+      {
+        "building": null,
+        "key": "can_start_great_plaza_project_has_law_desc",
+        "kind": "condition",
+        "name": "You have the Republic Law or higher",
+        "negated": false
+      },
+      {
+        "building": null,
+        "key": "gdp_is_planning_great_plaza_project_trigger_desc",
+        "kind": "condition",
+        "name": "A Great Plaza District Great Project is not already being planned or ongoing",
+        "negated": false
+      },
+      {
+        "building": null,
+        "key": "gdp_republic_plaza_has_free_building_slot_desc",
+        "kind": "condition",
+        "name": "Great Plaza District has at least 1 free building slot",
+        "negated": false
+      },
+      {
+        "building": null,
+        "key": "GREAT_PROJECT_CAN_PLAN",
+        "kind": "condition",
+        "name": "You can plan this Great Project",
+        "negated": false
+      }
+    ],
+    "showInList": true,
+    "sourceFile": "00_republic_projects.txt",
+    "targetTitleTier": "county"
+  },
+  {
+    "constructionTime": {
+      "rules": "base 1825; multiply (base 1; if top_participant_group:dynastic_cycle …: add -0.5)"
+    },
+    "contributionThreshold": null,
+    "contributions": [
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base 0; add (if has_treasury = True: add medium_treasury_value; else …; desc great_project_base_contribution_cost_desc); min 75; if dynasty …: multiply …"
+          }
+        },
+        "desc": null,
+        "id": "staff_the_permit_office",
+        "name": "Staff the Permit Office",
+        "required": true
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base 0; add (if has_treasury = True: add medium_treasury_value; else …; desc great_project_base_contribution_cost_desc); min 75; if dynasty …: multiply …"
+          }
+        },
+        "desc": null,
+        "id": "stockpile_the_stone",
+        "name": "Stockpile the Stone",
+        "required": true
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base 0; add (if has_treasury = True: add medium_treasury_value; else …; desc great_project_base_contribution_cost_desc); min 75; if dynasty …: multiply …"
+          }
+        },
+        "desc": null,
+        "id": "contract_the_timber_yards",
+        "name": "Contract the Timber Yards",
+        "required": true
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base 0; add (if has_treasury = True: add medium_treasury_value; else …; desc great_project_base_contribution_cost_desc); min 75; if dynasty …: multiply …"
+          }
+        },
+        "desc": null,
+        "id": "tool_the_workshops",
+        "name": "Tool the Workshops",
+        "required": true
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base 0; add (if has_treasury = True: add medium_treasury_value; else …; desc great_project_base_contribution_cost_desc); min 75; if dynasty …: multiply …"
+          }
+        },
+        "desc": null,
+        "id": "hire_the_haulers",
+        "name": "Hire the Haulers",
+        "required": true
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base 0; add (if has_treasury = True: add medium_treasury_value; else …; desc great_project_base_contribution_cost_desc); min 75; if dynasty …: multiply …"
+          }
+        },
+        "desc": null,
+        "id": "victual_the_worksites",
+        "name": "Victual the Worksites",
+        "required": false
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base 0; add (if has_treasury = True: add medium_treasury_value; else …; desc great_project_base_contribution_cost_desc); min 75; if dynasty …: multiply …"
+          }
+        },
+        "desc": null,
+        "id": "clothe_the_laborers",
+        "name": "Clothe the Laborers",
+        "required": false
+      }
+    ],
+    "contributorCooldown": {
+      "n": 21
+    },
+    "contributors": [
+      "owner",
+      "vassals"
+    ],
+    "cost": {
+      "gold": {
+        "fromTreasury": true,
+        "rules": "base 0; if has_treasury = True: add major_treasury_value; else …; min 250"
+      }
+    },
+    "dlc": "Silk and Silver",
+    "grantsBuildings": [
+      {
+        "id": "republic_civic_ward_01",
+        "name": "Civic Ward"
+      }
+    ],
+    "group": "major",
+    "icon": "great_projects/_default",
+    "id": "gdp_republic_great_plaza_civic_ward_project",
+    "isImportant": false,
+    "name": "Great Plaza: Civic Ward",
+    "owner": "direct owner of the province",
+    "plannable": true,
+    "provinceFilter": "capital",
+    "provinceFilterTarget": null,
+    "requirements": [
+      {
+        "building": null,
+        "key": "can_start_great_plaza_project_has_law_desc",
+        "kind": "condition",
+        "name": "You have the Republic Law or higher",
+        "negated": false
+      },
+      {
+        "building": null,
+        "key": "gdp_is_planning_great_plaza_project_trigger_desc",
+        "kind": "condition",
+        "name": "A Great Plaza District Great Project is not already being planned or ongoing",
+        "negated": false
+      },
+      {
+        "building": null,
+        "key": "gdp_republic_plaza_has_free_building_slot_desc",
+        "kind": "condition",
+        "name": "Great Plaza District has at least 1 free building slot",
+        "negated": false
+      },
+      {
+        "building": null,
+        "key": "GREAT_PROJECT_CAN_PLAN",
+        "kind": "condition",
+        "name": "You can plan this Great Project",
+        "negated": false
+      }
+    ],
+    "showInList": true,
+    "sourceFile": "00_republic_projects.txt",
+    "targetTitleTier": "county"
+  },
+  {
+    "constructionTime": {
+      "rules": "base 1825; multiply (base 1; if top_participant_group:dynastic_cycle …: add -0.5)"
+    },
+    "contributionThreshold": null,
+    "contributions": [
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base 0; add (if has_treasury = True: add medium_treasury_value; else …; desc great_project_base_contribution_cost_desc); min 75; if dynasty …: multiply …"
+          }
+        },
+        "desc": null,
+        "id": "forge_the_movement",
+        "name": "Forge the Movement",
+        "required": true
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base 0; add (if has_treasury = True: add medium_treasury_value; else …; desc great_project_base_contribution_cost_desc); min 75; if dynasty …: multiply …"
+          }
+        },
+        "desc": null,
+        "id": "hang_the_bells",
+        "name": "Hang the Bells",
+        "required": true
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base 0; add (if has_treasury = True: add medium_treasury_value; else …; desc great_project_base_contribution_cost_desc); min 75; if dynasty …: multiply …"
+          }
+        },
+        "desc": null,
+        "id": "raise_the_tower",
+        "name": "Raise the Tower",
+        "required": true
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base 0; add (if has_treasury = True: add medium_treasury_value; else …; desc great_project_base_contribution_cost_desc); min 75; if dynasty …: multiply …"
+          }
+        },
+        "desc": null,
+        "id": "carve_the_dial",
+        "name": "Carve the Dial",
+        "required": true
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base 0; add (if has_treasury = True: add medium_treasury_value; else …; desc great_project_base_contribution_cost_desc); min 75; if dynasty …: multiply …"
+          }
+        },
+        "desc": null,
+        "id": "time_the_working_day",
+        "name": "Time the Working Day",
+        "required": true
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base 0; add (if has_treasury = True: add medium_treasury_value; else …; desc great_project_base_contribution_cost_desc); min 75; if dynasty …: multiply …"
+          }
+        },
+        "desc": null,
+        "id": "fit_the_astronomical_dial",
+        "name": "Fit an Astronomical Dial",
+        "required": false
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base 0; add (if has_treasury = True: add medium_treasury_value; else …; desc great_project_base_contribution_cost_desc); min 75; if dynasty …: multiply …"
+          }
+        },
+        "desc": null,
+        "id": "welcome_the_visitors",
+        "name": "Welcome the Visitors",
+        "required": false
+      }
+    ],
+    "contributorCooldown": {
+      "n": 21
+    },
+    "contributors": [
+      "owner",
+      "vassals"
+    ],
+    "cost": {
+      "gold": {
+        "fromTreasury": true,
+        "rules": "base 0; if has_treasury = True: add major_treasury_value; else …; min 250"
+      }
+    },
+    "dlc": "Silk and Silver",
+    "grantsBuildings": [
+      {
+        "id": "republic_clock_tower_01",
+        "name": "Civic Clock Tower"
+      }
+    ],
+    "group": "major",
+    "icon": "great_projects/_default",
+    "id": "gdp_republic_great_plaza_clock_tower_project",
+    "isImportant": false,
+    "name": "Great Plaza: Civic Clock Tower",
+    "owner": "direct owner of the province",
+    "plannable": true,
+    "provinceFilter": "capital",
+    "provinceFilterTarget": null,
+    "requirements": [
+      {
+        "building": null,
+        "key": "innovation_prosperity_03",
+        "kind": "innovation",
+        "name": "Urbanization",
+        "negated": false
+      },
+      {
+        "building": null,
+        "key": "can_start_great_plaza_project_has_law_desc",
+        "kind": "condition",
+        "name": "You have the Republic Law or higher",
+        "negated": false
+      },
+      {
+        "building": null,
+        "key": "gdp_is_planning_great_plaza_project_trigger_desc",
+        "kind": "condition",
+        "name": "A Great Plaza District Great Project is not already being planned or ongoing",
+        "negated": false
+      },
+      {
+        "building": null,
+        "key": "gdp_republic_plaza_has_free_building_slot_desc",
+        "kind": "condition",
+        "name": "Great Plaza District has at least 1 free building slot",
+        "negated": false
+      },
+      {
+        "building": null,
+        "key": "GREAT_PROJECT_CAN_PLAN",
+        "kind": "condition",
+        "name": "You can plan this Great Project",
+        "negated": false
+      }
+    ],
+    "showInList": true,
+    "sourceFile": "00_republic_projects.txt",
+    "targetTitleTier": "county"
+  },
+  {
+    "constructionTime": {
+      "rules": "base 1825; multiply (base 1; if top_participant_group:dynastic_cycle …: add -0.5)"
+    },
+    "contributionThreshold": null,
+    "contributions": [
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base 0; add (if has_treasury = True: add medium_treasury_value; else …; desc great_project_base_contribution_cost_desc); min 75; if dynasty …: multiply …"
+          }
+        },
+        "desc": null,
+        "id": "cushion_the_benches",
+        "name": "Cushion the Benches",
+        "required": true
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base 0; add (if has_treasury = True: add medium_treasury_value; else …; desc great_project_base_contribution_cost_desc); min 75; if dynasty …: multiply …"
+          }
+        },
+        "desc": null,
+        "id": "enroll_the_citizens",
+        "name": "Enroll the Citizens",
+        "required": true
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base 0; add (if has_treasury = True: add medium_treasury_value; else …; desc great_project_base_contribution_cost_desc); min 75; if dynasty …: multiply …"
+          }
+        },
+        "desc": null,
+        "id": "pave_the_chamber",
+        "name": "Pave the Chamber",
+        "required": true
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base 0; add (if has_treasury = True: add medium_treasury_value; else …; desc great_project_base_contribution_cost_desc); min 75; if dynasty …: multiply …"
+          }
+        },
+        "desc": null,
+        "id": "provisions",
+        "name": "Provide Provisions",
+        "required": true
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base 0; add (if has_treasury = True: add medium_treasury_value; else …; desc great_project_base_contribution_cost_desc); min 75; if dynasty …: multiply …"
+          }
+        },
+        "desc": null,
+        "id": "vest_the_officers",
+        "name": "Vest the Officers",
+        "required": true
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base 0; add (if has_treasury = True: add medium_treasury_value; else …; desc great_project_base_contribution_cost_desc); min 75; if dynasty …: multiply …"
+          }
+        },
+        "desc": null,
+        "id": "gild_the_ballot_urns",
+        "name": "Gild the Ballot Urns",
+        "required": false
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base 0; add (if has_treasury = True: add medium_treasury_value; else …; desc great_project_base_contribution_cost_desc); min 75; if dynasty …: multiply …"
+          }
+        },
+        "desc": null,
+        "id": "feast_the_new_council",
+        "name": "Hold Communal Meeting",
+        "required": false
+      }
+    ],
+    "contributorCooldown": {
+      "n": 21
+    },
+    "contributors": [
+      "owner",
+      "vassals"
+    ],
+    "cost": {
+      "gold": {
+        "fromTreasury": true,
+        "rules": "base 0; if has_treasury = True: add major_treasury_value; else …; min 250"
+      }
+    },
+    "dlc": "Silk and Silver",
+    "grantsBuildings": [
+      {
+        "id": "republic_council_chamber_01",
+        "name": "Great Council Chamber"
+      }
+    ],
+    "group": "major",
+    "icon": "great_projects/_default",
+    "id": "gdp_republic_great_plaza_council_chamber_project",
+    "isImportant": false,
+    "name": "Great Plaza: Great Council Chamber",
+    "owner": "direct owner of the province",
+    "plannable": true,
+    "provinceFilter": "capital",
+    "provinceFilterTarget": null,
+    "requirements": [
+      {
+        "building": null,
+        "key": "can_start_great_plaza_project_has_law_desc",
+        "kind": "condition",
+        "name": "You have the Republic Law or higher",
+        "negated": false
+      },
+      {
+        "building": null,
+        "key": "gdp_is_planning_great_plaza_project_trigger_desc",
+        "kind": "condition",
+        "name": "A Great Plaza District Great Project is not already being planned or ongoing",
+        "negated": false
+      },
+      {
+        "building": null,
+        "key": "gdp_republic_plaza_has_free_building_slot_desc",
+        "kind": "condition",
+        "name": "Great Plaza District has at least 1 free building slot",
+        "negated": false
+      },
+      {
+        "building": null,
+        "key": "GREAT_PROJECT_CAN_PLAN",
+        "kind": "condition",
+        "name": "You can plan this Great Project",
+        "negated": false
+      }
+    ],
+    "showInList": true,
+    "sourceFile": "00_republic_projects.txt",
+    "targetTitleTier": "county"
+  },
+  {
+    "constructionTime": {
+      "rules": "base 1825; multiply (base 1; if top_participant_group:dynastic_cycle …: add -0.5)"
+    },
+    "contributionThreshold": null,
+    "contributions": [
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base 0; add (if has_treasury = True: add medium_treasury_value; else …; desc great_project_base_contribution_cost_desc); min 75; if dynasty …: multiply …"
+          }
+        },
+        "desc": null,
+        "id": "mint_the_shares",
+        "name": "Mint the Shares",
+        "required": true
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base 0; add (if has_treasury = True: add medium_treasury_value; else …; desc great_project_base_contribution_cost_desc); min 75; if dynasty …: multiply …"
+          }
+        },
+        "desc": null,
+        "id": "strongbox",
+        "name": "Contract Strongboxes",
+        "required": true
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base 0; add (if has_treasury = True: add medium_treasury_value; else …; desc great_project_base_contribution_cost_desc); min 75; if dynasty …: multiply …"
+          }
+        },
+        "desc": null,
+        "id": "audit_the_rolls",
+        "name": "Audit the Rolls",
+        "required": true
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base 0; add (if has_treasury = True: add medium_treasury_value; else …; desc great_project_base_contribution_cost_desc); min 75; if dynasty …: multiply …"
+          }
+        },
+        "desc": null,
+        "id": "pledge_the_collateral",
+        "name": "Pledge the Collateral",
+        "required": true
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base 0; add (if has_treasury = True: add medium_treasury_value; else …; desc great_project_base_contribution_cost_desc); min 75; if dynasty …: multiply …"
+          }
+        },
+        "desc": null,
+        "id": "pay_the_companies",
+        "name": "Pay the Companies",
+        "required": true
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base 0; add (if has_treasury = True: add medium_treasury_value; else …; desc great_project_base_contribution_cost_desc); min 75; if dynasty …: multiply …"
+          }
+        },
+        "desc": null,
+        "id": "underwrite_the_grain_dole",
+        "name": "Underwrite the Grain Dole",
+        "required": false
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base 0; add (if has_treasury = True: add medium_treasury_value; else …; desc great_project_base_contribution_cost_desc); min 75; if dynasty …: multiply …"
+          }
+        },
+        "desc": null,
+        "id": "court_foreign_investors",
+        "name": "Court Foreign Investors",
+        "required": false
+      }
+    ],
+    "contributorCooldown": {
+      "n": 21
+    },
+    "contributors": [
+      "owner",
+      "vassals"
+    ],
+    "cost": {
+      "gold": {
+        "fromTreasury": true,
+        "rules": "base 0; if has_treasury = True: add major_treasury_value; else …; min 250"
+      }
+    },
+    "dlc": "Silk and Silver",
+    "grantsBuildings": [
+      {
+        "id": "republic_debt_office_01",
+        "name": "Public Debt Office"
+      }
+    ],
+    "group": "major",
+    "icon": "great_projects/_default",
+    "id": "gdp_republic_great_plaza_debt_office_project",
+    "isImportant": false,
+    "name": "Great Plaza: Public Debt Office",
+    "owner": "direct owner of the province",
+    "plannable": true,
+    "provinceFilter": "capital",
+    "provinceFilterTarget": null,
+    "requirements": [
+      {
+        "building": null,
+        "key": "can_start_great_plaza_project_has_law_desc",
+        "kind": "condition",
+        "name": "You have the Republic Law or higher",
+        "negated": false
+      },
+      {
+        "building": null,
+        "key": "gdp_is_planning_great_plaza_project_trigger_desc",
+        "kind": "condition",
+        "name": "A Great Plaza District Great Project is not already being planned or ongoing",
+        "negated": false
+      },
+      {
+        "building": null,
+        "key": "gdp_republic_plaza_has_free_building_slot_desc",
+        "kind": "condition",
+        "name": "Great Plaza District has at least 1 free building slot",
+        "negated": false
+      },
+      {
+        "building": null,
+        "key": "GREAT_PROJECT_CAN_PLAN",
+        "kind": "condition",
+        "name": "You can plan this Great Project",
+        "negated": false
+      }
+    ],
+    "showInList": true,
+    "sourceFile": "00_republic_projects.txt",
+    "targetTitleTier": "county"
+  },
+  {
+    "constructionTime": {
+      "rules": "base 1825; multiply (base 1; if top_participant_group:dynastic_cycle …: add -0.5)"
+    },
+    "contributionThreshold": null,
+    "contributions": [
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base 0; add (if has_treasury = True: add medium_treasury_value; else …; desc great_project_base_contribution_cost_desc); min 75; if dynasty …: multiply …"
+          }
+        },
+        "desc": null,
+        "id": "cut_the_basins",
+        "name": "Cut the Basins",
+        "required": true
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base 0; add (if has_treasury = True: add medium_treasury_value; else …; desc great_project_base_contribution_cost_desc); min 75; if dynasty …: multiply …"
+          }
+        },
+        "desc": null,
+        "id": "lay_the_pipes",
+        "name": "Lay the Pipes",
+        "required": true
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base 0; add (if has_treasury = True: add medium_treasury_value; else …; desc great_project_base_contribution_cost_desc); min 75; if dynasty …: multiply …"
+          }
+        },
+        "desc": null,
+        "id": "sweeten_the_water",
+        "name": "Sweeten the Water",
+        "required": true
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base 0; add (if has_treasury = True: add medium_treasury_value; else …; desc great_project_base_contribution_cost_desc); min 75; if dynasty …: multiply …"
+          }
+        },
+        "desc": null,
+        "id": "set_the_mosaics",
+        "name": "Set the Mosaics",
+        "required": true
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base 0; add (if has_treasury = True: add medium_treasury_value; else …; desc great_project_base_contribution_cost_desc); min 75; if dynasty …: multiply …"
+          }
+        },
+        "desc": null,
+        "id": "timber_the_aqueduct",
+        "name": "Timber the Aqueduct",
+        "required": true
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base 0; add (if has_treasury = True: add medium_treasury_value; else …; desc great_project_base_contribution_cost_desc); min 75; if dynasty …: multiply …"
+          }
+        },
+        "desc": null,
+        "id": "bless_the_waters",
+        "name": "Bless the Waters",
+        "required": false
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base 0; add (if has_treasury = True: add medium_treasury_value; else …; desc great_project_base_contribution_cost_desc); min 75; if dynasty …: multiply …"
+          }
+        },
+        "desc": null,
+        "id": "purify_the_cisterns",
+        "name": "Purify the Cisterns",
+        "required": false
+      }
+    ],
+    "contributorCooldown": {
+      "n": 21
+    },
+    "contributors": [
+      "owner",
+      "vassals"
+    ],
+    "cost": {
+      "gold": {
+        "fromTreasury": true,
+        "rules": "base 0; if has_treasury = True: add major_treasury_value; else …; min 250"
+      }
+    },
+    "dlc": "Silk and Silver",
+    "grantsBuildings": [
+      {
+        "id": "republic_fountain_01",
+        "name": "Fountains"
+      }
+    ],
+    "group": "major",
+    "icon": "great_projects/_default",
+    "id": "gdp_republic_great_plaza_fountain_project",
+    "isImportant": false,
+    "name": "Great Plaza: Fountains",
+    "owner": "direct owner of the province",
+    "plannable": true,
+    "provinceFilter": "capital",
+    "provinceFilterTarget": null,
+    "requirements": [
+      {
+        "building": null,
+        "key": "can_start_great_plaza_project_has_law_desc",
+        "kind": "condition",
+        "name": "You have the Republic Law or higher",
+        "negated": false
+      },
+      {
+        "building": null,
+        "key": "gdp_is_planning_great_plaza_project_trigger_desc",
+        "kind": "condition",
+        "name": "A Great Plaza District Great Project is not already being planned or ongoing",
+        "negated": false
+      },
+      {
+        "building": null,
+        "key": "gdp_republic_plaza_has_free_building_slot_desc",
+        "kind": "condition",
+        "name": "Great Plaza District has at least 1 free building slot",
+        "negated": false
+      },
+      {
+        "building": null,
+        "key": "GREAT_PROJECT_CAN_PLAN",
+        "kind": "condition",
+        "name": "You can plan this Great Project",
+        "negated": false
+      }
+    ],
+    "showInList": true,
+    "sourceFile": "00_republic_projects.txt",
+    "targetTitleTier": "county"
+  },
+  {
+    "constructionTime": {
+      "rules": "base 1825; multiply (base 1; if top_participant_group:dynastic_cycle …: add -0.5)"
+    },
+    "contributionThreshold": null,
+    "contributions": [
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base 0; add (if has_treasury = True: add medium_treasury_value; else …; desc great_project_base_contribution_cost_desc); min 75; if dynasty …: multiply …"
+          }
+        },
+        "desc": null,
+        "id": "furnish_the_lodgings",
+        "name": "Furnish the Lodgings",
+        "required": true
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base 0; add (if has_treasury = True: add medium_treasury_value; else …; desc great_project_base_contribution_cost_desc); min 75; if dynasty …: multiply …"
+          }
+        },
+        "desc": null,
+        "id": "stock_the_guest_table",
+        "name": "Stock the Guest Table",
+        "required": true
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base 0; add (if has_treasury = True: add medium_treasury_value; else …; desc great_project_base_contribution_cost_desc); min 75; if dynasty …: multiply …"
+          }
+        },
+        "desc": null,
+        "id": "line_the_strongroom",
+        "name": "Line the Strongroom",
+        "required": true
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base 0; add (if has_treasury = True: add medium_treasury_value; else …; desc great_project_base_contribution_cost_desc); min 75; if dynasty …: multiply …"
+          }
+        },
+        "desc": null,
+        "id": "gift_the_delegates",
+        "name": "Gift the Delegates",
+        "required": true
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base 0; add (if has_treasury = True: add medium_treasury_value; else …; desc great_project_base_contribution_cost_desc); min 75; if dynasty …: multiply …"
+          }
+        },
+        "desc": null,
+        "id": "hang_the_league_banners",
+        "name": "Hang the League Banners",
+        "required": true
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base 0; add (if has_treasury = True: add medium_treasury_value; else …; desc great_project_base_contribution_cost_desc); min 75; if dynasty …: multiply …"
+          }
+        },
+        "desc": null,
+        "id": "perfume_the_hall",
+        "name": "Perfume the Hall",
+        "required": false
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base 0; add (if has_treasury = True: add medium_treasury_value; else …; desc great_project_base_contribution_cost_desc); min 75; if dynasty …: multiply …"
+          }
+        },
+        "desc": null,
+        "id": "broach_the_league_casks",
+        "name": "Broach the League Casks",
+        "required": false
+      }
+    ],
+    "contributorCooldown": {
+      "n": 21
+    },
+    "contributors": [
+      "owner",
+      "vassals"
+    ],
+    "cost": {
+      "gold": {
+        "fromTreasury": true,
+        "rules": "base 0; if has_treasury = True: add major_treasury_value; else …; min 250"
+      }
+    },
+    "dlc": "Silk and Silver",
+    "grantsBuildings": [
+      {
+        "id": "republic_league_chapter_house_01",
+        "name": "League Chapter House"
+      }
+    ],
+    "group": "major",
+    "icon": "great_projects/_default",
+    "id": "gdp_republic_great_plaza_league_chapter_house_project",
+    "isImportant": false,
+    "name": "Great Plaza: League Chapter House",
+    "owner": "direct owner of the province",
+    "plannable": true,
+    "provinceFilter": "capital",
+    "provinceFilterTarget": null,
+    "requirements": [
+      {
+        "building": null,
+        "key": "can_start_great_plaza_project_has_law_desc",
+        "kind": "condition",
+        "name": "You have the Republic Law or higher",
+        "negated": false
+      },
+      {
+        "building": null,
+        "key": "gdp_is_planning_great_plaza_project_trigger_desc",
+        "kind": "condition",
+        "name": "A Great Plaza District Great Project is not already being planned or ongoing",
+        "negated": false
+      },
+      {
+        "building": null,
+        "key": "gdp_republic_plaza_has_free_building_slot_desc",
+        "kind": "condition",
+        "name": "Great Plaza District has at least 1 free building slot",
+        "negated": false
+      },
+      {
+        "building": null,
+        "key": "GREAT_PROJECT_CAN_PLAN",
+        "kind": "condition",
+        "name": "You can plan this Great Project",
+        "negated": false
+      }
+    ],
+    "showInList": true,
+    "sourceFile": "00_republic_projects.txt",
+    "targetTitleTier": "county"
+  },
+  {
+    "constructionTime": {
+      "rules": "base 1825; multiply (base 1; if top_participant_group:dynastic_cycle …: add -0.5)"
+    },
+    "contributionThreshold": null,
+    "contributions": [
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base 0; add (if has_treasury = True: add medium_treasury_value; else …; desc great_project_base_contribution_cost_desc); min 75; if dynasty …: multiply …"
+          }
+        },
+        "desc": null,
+        "id": "master_builder",
+        "name": "Recruit a Master Builder",
+        "required": true
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base (base 0; add (if has_treasury = True: add medium_treasury_value; else …; desc great_project_base_contribution_cost_desc); min 75; if dynasty …: multiply …); if any_held_title …: multiply …"
+          }
+        },
+        "desc": null,
+        "id": "quarry_stone",
+        "name": "Quarry the Stone",
+        "required": true
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base 0; add (if has_treasury = True: add medium_treasury_value; else …; desc great_project_base_contribution_cost_desc); min 75; if dynasty …: multiply …"
+          }
+        },
+        "desc": null,
+        "id": "levy_guilds",
+        "name": "Levy the Guilds",
+        "required": true
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base 0; add (if has_treasury = True: add medium_treasury_value; else …; desc great_project_base_contribution_cost_desc); min 75; if dynasty …: multiply …"
+          }
+        },
+        "desc": null,
+        "id": "manage_contractors",
+        "name": "Manage Contractors",
+        "required": true
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base 0; add (if has_treasury = True: add medium_treasury_value; else …; desc great_project_base_contribution_cost_desc); min 75; if dynasty …: multiply …"
+          }
+        },
+        "desc": null,
+        "id": "clear_grounds",
+        "name": "Clear the Grounds",
+        "required": true
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base 0; add (if has_treasury = True: add medium_treasury_value; else …; desc great_project_base_contribution_cost_desc); min 75; if dynasty …: multiply …"
+          }
+        },
+        "desc": null,
+        "id": "publish_accounts",
+        "name": "Publish the Accounts",
+        "required": false
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base 0; add (if has_treasury = True: add medium_treasury_value; else …; desc great_project_base_contribution_cost_desc); min 75; if dynasty …: multiply …"
+          }
+        },
+        "desc": null,
+        "id": "recompense_citizens",
+        "name": "Recompense Citizens",
+        "required": false
+      }
+    ],
+    "contributorCooldown": {
+      "n": 21
+    },
+    "contributors": [
+      "owner",
+      "vassals"
+    ],
+    "cost": {
+      "gold": {
+        "fromTreasury": true,
+        "rules": "base 0; if has_treasury = True: add major_treasury_value; else …; min 250"
+      }
+    },
+    "dlc": "Silk and Silver",
+    "grantsBuildings": [
+      {
+        "id": "republic_loggia_01",
+        "name": "Communal Loggia"
+      }
+    ],
+    "group": "major",
+    "icon": "great_projects/_default",
+    "id": "gdp_republic_great_plaza_loggia_project",
+    "isImportant": false,
+    "name": "Great Plaza: Communal Loggia",
+    "owner": "direct owner of the province",
+    "plannable": true,
+    "provinceFilter": "capital",
+    "provinceFilterTarget": null,
+    "requirements": [
+      {
+        "building": null,
+        "key": "can_start_great_plaza_project_has_law_desc",
+        "kind": "condition",
+        "name": "You have the Republic Law or higher",
+        "negated": false
+      },
+      {
+        "building": null,
+        "key": "gdp_is_planning_great_plaza_project_trigger_desc",
+        "kind": "condition",
+        "name": "A Great Plaza District Great Project is not already being planned or ongoing",
+        "negated": false
+      },
+      {
+        "building": null,
+        "key": "gdp_republic_plaza_has_free_building_slot_desc",
+        "kind": "condition",
+        "name": "Great Plaza District has at least 1 free building slot",
+        "negated": false
+      },
+      {
+        "building": null,
+        "key": "GREAT_PROJECT_CAN_PLAN",
+        "kind": "condition",
+        "name": "You can plan this Great Project",
+        "negated": false
+      }
+    ],
+    "showInList": true,
+    "sourceFile": "00_republic_projects.txt",
+    "targetTitleTier": "county"
+  },
+  {
+    "constructionTime": {
+      "rules": "base 1825; multiply (base 1; if top_participant_group:dynastic_cycle …: add -0.5)"
+    },
+    "contributionThreshold": null,
+    "contributions": [
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base 0; add (if has_treasury = True: add medium_treasury_value; else …; desc great_project_base_contribution_cost_desc); min 75; if dynasty …: multiply …"
+          }
+        },
+        "desc": null,
+        "id": "furnish_the_residence",
+        "name": "Furnish the Residence",
+        "required": true
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base 0; add (if has_treasury = True: add medium_treasury_value; else …; desc great_project_base_contribution_cost_desc); min 75; if dynasty …: multiply …"
+          }
+        },
+        "desc": null,
+        "id": "cloth_staff",
+        "name": "Cloth the Staff",
+        "required": true
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base 0; add (if has_treasury = True: add medium_treasury_value; else …; desc great_project_base_contribution_cost_desc); min 75; if dynasty …: multiply …"
+          }
+        },
+        "desc": null,
+        "id": "stock_the_larder",
+        "name": "Stock the Larder",
+        "required": true
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base 0; add (if has_treasury = True: add medium_treasury_value; else …; desc great_project_base_contribution_cost_desc); min 75; if dynasty …: multiply …"
+          }
+        },
+        "desc": null,
+        "id": "pay_the_stipend",
+        "name": "Pay the Stipend",
+        "required": true
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base 0; add (if has_treasury = True: add medium_treasury_value; else …; desc great_project_base_contribution_cost_desc); min 75; if dynasty …: multiply …"
+          }
+        },
+        "desc": null,
+        "id": "appoint_notaries",
+        "name": "Appoint Notaries",
+        "required": true
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base 0; add (if has_treasury = True: add medium_treasury_value; else …; desc great_project_base_contribution_cost_desc); min 75; if dynasty …: multiply …"
+          }
+        },
+        "desc": null,
+        "id": "equip_retinue",
+        "name": "Equip the Retinue",
+        "required": false
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base 0; add (if has_treasury = True: add medium_treasury_value; else …; desc great_project_base_contribution_cost_desc); min 75; if dynasty …: multiply …"
+          }
+        },
+        "desc": null,
+        "id": "host_the_investiture",
+        "name": "Host the Investiture",
+        "required": false
+      }
+    ],
+    "contributorCooldown": {
+      "n": 21
+    },
+    "contributors": [
+      "owner",
+      "vassals"
+    ],
+    "cost": {
+      "gold": {
+        "fromTreasury": true,
+        "rules": "base 0; if has_treasury = True: add major_treasury_value; else …; min 250"
+      }
+    },
+    "dlc": "Silk and Silver",
+    "grantsBuildings": [
+      {
+        "id": "republic_podesta_residence_01",
+        "name": "Podestà's Residence"
+      }
+    ],
+    "group": "major",
+    "icon": "great_projects/_default",
+    "id": "gdp_republic_great_plaza_podesta_residence_project",
+    "isImportant": false,
+    "name": "Great Plaza: Podestà's Residence",
+    "owner": "direct owner of the province",
+    "plannable": true,
+    "provinceFilter": "capital",
+    "provinceFilterTarget": null,
+    "requirements": [
+      {
+        "building": null,
+        "key": "can_start_great_plaza_project_has_law_desc",
+        "kind": "condition",
+        "name": "You have the Republic Law or higher",
+        "negated": false
+      },
+      {
+        "building": null,
+        "key": "gdp_is_planning_great_plaza_project_trigger_desc",
+        "kind": "condition",
+        "name": "A Great Plaza District Great Project is not already being planned or ongoing",
+        "negated": false
+      },
+      {
+        "building": null,
+        "key": "gdp_republic_plaza_has_free_building_slot_desc",
+        "kind": "condition",
+        "name": "Great Plaza District has at least 1 free building slot",
+        "negated": false
+      },
+      {
+        "building": null,
+        "key": "GREAT_PROJECT_CAN_PLAN",
+        "kind": "condition",
+        "name": "You can plan this Great Project",
+        "negated": false
+      }
+    ],
+    "showInList": true,
+    "sourceFile": "00_republic_projects.txt",
+    "targetTitleTier": "county"
+  },
+  {
+    "constructionTime": {
+      "rules": "base 1825; multiply (base 1; if top_participant_group:dynastic_cycle …: add -0.5)"
+    },
+    "contributionThreshold": null,
+    "contributions": [
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base 0; if has_treasury = True: add medium_treasury_value; min 250; else …; if has_realm_law = republic_type_civic: multiply 0.8"
+          }
+        },
+        "desc": null,
+        "id": "recruit_architects",
+        "name": "Recruit Architects",
+        "required": true
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base 0; if has_treasury = True: add medium_treasury_value; min 250; else …; if has_realm_law = republic_type_civic: multiply 0.8"
+          }
+        },
+        "desc": null,
+        "id": "manage_paperwork",
+        "name": "Manage Paperwork",
+        "required": true
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base 0; if has_treasury = True: add medium_treasury_value; min 250; else …; if has_realm_law = republic_type_civic: multiply 0.8"
+          }
+        },
+        "desc": null,
+        "id": "labor",
+        "name": "Organize Labor",
+        "required": true
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base 0; if has_treasury = True: add medium_treasury_value; min 250; else …; if has_realm_law = republic_type_civic: multiply 0.8"
+          }
+        },
+        "desc": null,
+        "id": "materials",
+        "name": "Source Materials",
+        "required": true
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base 0; if has_treasury = True: add medium_treasury_value; min 250; else …; if has_realm_law = republic_type_civic: multiply 0.8"
+          }
+        },
+        "desc": null,
+        "id": "plan_logistics",
+        "name": "Plan Logistics",
+        "required": true
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base 0; if has_treasury = True: add medium_treasury_value; min 250; else …; if has_realm_law = republic_type_civic: multiply 0.8"
+          }
+        },
+        "desc": null,
+        "id": "fund_institution",
+        "name": "Fund Project Institution",
+        "required": true
+      }
+    ],
+    "contributorCooldown": {
+      "n": 21
+    },
+    "contributors": [
+      "owner",
+      "vassals"
+    ],
+    "cost": {
+      "gold": {
+        "fromTreasury": true,
+        "rules": "base 0; if has_treasury = True: add major_treasury_value; min 500; else …; if has_realm_law = republic_type_civic: multiply 0.8"
+      }
+    },
+    "dlc": "Silk and Silver",
+    "grantsBuildings": [],
+    "group": "major",
+    "icon": "great_projects/_default",
+    "id": "gdp_republic_great_plaza_project",
+    "isImportant": false,
+    "name": "Establish a Great Plaza",
+    "owner": "direct owner of the province",
+    "plannable": true,
+    "provinceFilter": "capital",
+    "provinceFilterTarget": null,
+    "requirements": [
+      {
+        "building": null,
+        "key": "can_start_great_plaza_project_has_law_desc",
+        "kind": "condition",
+        "name": "You have the Republic Law or higher",
+        "negated": false
+      },
+      {
+        "building": null,
+        "key": "only_single_great_project_type_allowed",
+        "kind": "condition",
+        "name": "Great Project of this type is not already being planned or ongoing",
+        "negated": false
+      },
+      {
+        "building": null,
+        "key": "GREAT_PROJECT_CAN_PLAN",
+        "kind": "condition",
+        "name": "You can plan this Great Project",
+        "negated": false
+      }
+    ],
+    "showInList": true,
+    "sourceFile": "00_republic_projects.txt",
+    "targetTitleTier": "county"
+  },
+  {
+    "constructionTime": {
+      "rules": "base 1825; multiply (base 1; if top_participant_group:dynastic_cycle …: add -0.5)"
+    },
+    "contributionThreshold": null,
+    "contributions": [
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base 0; add (if has_treasury = True: add medium_treasury_value; else …; desc great_project_base_contribution_cost_desc); min 75; if dynasty …: multiply …"
+          }
+        },
+        "desc": null,
+        "id": "hire_masons",
+        "name": "Hire Masons",
+        "required": true
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base 0; add (if has_treasury = True: add medium_treasury_value; else …; desc great_project_base_contribution_cost_desc); min 75; if dynasty …: multiply …"
+          }
+        },
+        "desc": null,
+        "id": "recruit_carpenters",
+        "name": "Recruit Carpenters",
+        "required": true
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base 0; add (if has_treasury = True: add medium_treasury_value; else …; desc great_project_base_contribution_cost_desc); min 75; if dynasty …: multiply …"
+          }
+        },
+        "desc": null,
+        "id": "commission_altar",
+        "name": "Commission Altar",
+        "required": true
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base 0; add (if has_treasury = True: add medium_treasury_value; else …; desc great_project_base_contribution_cost_desc); min 75; if dynasty …: multiply …"
+          }
+        },
+        "desc": null,
+        "id": "stained_glass",
+        "name": "Procure Stained Glass",
+        "required": true
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base 0; add (if has_treasury = True: add medium_treasury_value; else …; desc great_project_base_contribution_cost_desc); min 75; if dynasty …: multiply …"
+          }
+        },
+        "desc": null,
+        "id": "reliquary_storage",
+        "name": "Provide Reliquary Storage",
+        "required": true
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base 0; add (if has_treasury = True: add medium_treasury_value; else …; desc great_project_base_contribution_cost_desc); min 75; if dynasty …: multiply …"
+          }
+        },
+        "desc": null,
+        "id": "bequeath_assets",
+        "name": "Bequeath Assets",
+        "required": false
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base 0; add (if has_treasury = True: add medium_treasury_value; else …; desc great_project_base_contribution_cost_desc); min 75; if dynasty …: multiply …"
+          }
+        },
+        "desc": null,
+        "id": "fund_family_chapel",
+        "name": "Fund Family Chapel",
+        "required": false
+      }
+    ],
+    "contributorCooldown": {
+      "n": 21
+    },
+    "contributors": [
+      "owner",
+      "vassals"
+    ],
+    "cost": {
+      "gold": {
+        "fromTreasury": true,
+        "rules": "base 0; if has_treasury = True: add major_treasury_value; else …; min 250"
+      }
+    },
+    "dlc": "Silk and Silver",
+    "grantsBuildings": [
+      {
+        "id": "patron_saint_sanctuary_1",
+        "name": "Patron Saint Sanctuary"
+      }
+    ],
+    "group": "major",
+    "icon": "great_projects/_default",
+    "id": "gdp_republic_great_plaza_saint_sanctuary_project",
+    "isImportant": false,
+    "name": "Great Plaza: Patron Saint Sanctuary",
+    "owner": "direct owner of the province",
+    "plannable": true,
+    "provinceFilter": "capital",
+    "provinceFilterTarget": null,
+    "requirements": [
+      {
+        "building": null,
+        "key": "can_start_great_plaza_project_has_law_desc",
+        "kind": "condition",
+        "name": "You have the Republic Law or higher",
+        "negated": false
+      },
+      {
+        "building": null,
+        "key": "gdp_is_planning_great_plaza_project_trigger_desc",
+        "kind": "condition",
+        "name": "A Great Plaza District Great Project is not already being planned or ongoing",
+        "negated": false
+      },
+      {
+        "building": null,
+        "key": "gdp_republic_plaza_has_free_building_slot_desc",
+        "kind": "condition",
+        "name": "Great Plaza District has at least 1 free building slot",
+        "negated": false
+      },
+      {
+        "building": null,
+        "key": "GREAT_PROJECT_CAN_PLAN",
+        "kind": "condition",
+        "name": "You can plan this Great Project",
+        "negated": false
+      }
+    ],
+    "showInList": true,
+    "sourceFile": "00_republic_projects.txt",
+    "targetTitleTier": "county"
+  },
+  {
+    "constructionTime": {
+      "rules": "base 1825; multiply (base 1; if top_participant_group:dynastic_cycle …: add -0.5)"
+    },
+    "contributionThreshold": null,
+    "contributions": [
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base 0; add (if has_treasury = True: add medium_treasury_value; else …; desc great_project_base_contribution_cost_desc); min 75; if dynasty …: multiply …"
+          }
+        },
+        "desc": null,
+        "id": "commission_jurists",
+        "name": "Commission the Jurists",
+        "required": true
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base (base 0; add (if has_treasury = True: add medium_treasury_value; else …; desc great_project_base_contribution_cost_desc); min 75; if dynasty …: multiply …); if any_held_title …: multiply …"
+          }
+        },
+        "desc": null,
+        "id": "fit_the_archive",
+        "name": "Fit Out the Archive",
+        "required": true
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base 0; add (if has_treasury = True: add medium_treasury_value; else …; desc great_project_base_contribution_cost_desc); min 75; if dynasty …: multiply …"
+          }
+        },
+        "desc": null,
+        "id": "supply_the_inkwells",
+        "name": "Supply the Inkwells",
+        "required": true
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base 0; add (if has_treasury = True: add medium_treasury_value; else …; desc great_project_base_contribution_cost_desc); min 75; if dynasty …: multiply …"
+          }
+        },
+        "desc": null,
+        "id": "robe_the_magistrates",
+        "name": "Robe the Magistrates",
+        "required": true
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base 0; add (if has_treasury = True: add medium_treasury_value; else …; desc great_project_base_contribution_cost_desc); min 75; if dynasty …: multiply …"
+          }
+        },
+        "desc": null,
+        "id": "victual_the_clerks",
+        "name": "Victual the Clerks",
+        "required": true
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base 0; add (if has_treasury = True: add medium_treasury_value; else …; desc great_project_base_contribution_cost_desc); min 75; if dynasty …: multiply …"
+          }
+        },
+        "desc": null,
+        "id": "proclaim_the_statutes",
+        "name": "Proclaim the Statutes",
+        "required": false
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base 0; add (if has_treasury = True: add medium_treasury_value; else …; desc great_project_base_contribution_cost_desc); min 75; if dynasty …: multiply …"
+          }
+        },
+        "desc": null,
+        "id": "strike_the_seals",
+        "name": "Strike the Civic Seals",
+        "required": false
+      }
+    ],
+    "contributorCooldown": {
+      "n": 21
+    },
+    "contributors": [
+      "owner",
+      "vassals"
+    ],
+    "cost": {
+      "gold": {
+        "fromTreasury": true,
+        "rules": "base 0; if has_treasury = True: add major_treasury_value; else …; min 250"
+      }
+    },
+    "dlc": "Silk and Silver",
+    "grantsBuildings": [
+      {
+        "id": "republic_statute_hall_01",
+        "name": "Hall of Statutes"
+      }
+    ],
+    "group": "major",
+    "icon": "great_projects/_default",
+    "id": "gdp_republic_great_plaza_statute_hall_project",
+    "isImportant": false,
+    "name": "Great Plaza: Hall of Statutes",
+    "owner": "direct owner of the province",
+    "plannable": true,
+    "provinceFilter": "capital",
+    "provinceFilterTarget": null,
+    "requirements": [
+      {
+        "building": null,
+        "key": "can_start_great_plaza_project_has_law_desc",
+        "kind": "condition",
+        "name": "You have the Republic Law or higher",
+        "negated": false
+      },
+      {
+        "building": null,
+        "key": "gdp_is_planning_great_plaza_project_trigger_desc",
+        "kind": "condition",
+        "name": "A Great Plaza District Great Project is not already being planned or ongoing",
+        "negated": false
+      },
+      {
+        "building": null,
+        "key": "gdp_republic_plaza_has_free_building_slot_desc",
+        "kind": "condition",
+        "name": "Great Plaza District has at least 1 free building slot",
+        "negated": false
+      },
+      {
+        "building": null,
+        "key": "GREAT_PROJECT_CAN_PLAN",
+        "kind": "condition",
+        "name": "You can plan this Great Project",
+        "negated": false
+      }
+    ],
+    "showInList": true,
+    "sourceFile": "00_republic_projects.txt",
+    "targetTitleTier": "county"
+  },
+  {
+    "constructionTime": {
+      "rules": "base 1825; multiply (base 1; if top_participant_group:dynastic_cycle …: add -0.5)"
+    },
+    "contributionThreshold": null,
+    "contributions": [
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base 0; add (if has_treasury = True: add medium_treasury_value; else …; desc great_project_base_contribution_cost_desc); min 75; if dynasty …: multiply …"
+          }
+        },
+        "desc": null,
+        "id": "cast_the_weights",
+        "name": "Cast the Weights",
+        "required": true
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base 0; add (if has_treasury = True: add medium_treasury_value; else …; desc great_project_base_contribution_cost_desc); min 75; if dynasty …: multiply …"
+          }
+        },
+        "desc": null,
+        "id": "cut_the_standard_stone",
+        "name": "Cut the Standard Stone",
+        "required": true
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base 0; add (if has_treasury = True: add medium_treasury_value; else …; desc great_project_base_contribution_cost_desc); min 75; if dynasty …: multiply …"
+          }
+        },
+        "desc": null,
+        "id": "stable_the_carters",
+        "name": "Stable the Carters",
+        "required": true
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base 0; add (if has_treasury = True: add medium_treasury_value; else …; desc great_project_base_contribution_cost_desc); min 75; if dynasty …: multiply …"
+          }
+        },
+        "desc": null,
+        "id": "hire_clerks",
+        "name": "Hire Clerks",
+        "required": true
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base 0; add (if has_treasury = True: add medium_treasury_value; else …; desc great_project_base_contribution_cost_desc); min 75; if dynasty …: multiply …"
+          }
+        },
+        "desc": null,
+        "id": "build_the_weighing_cranes",
+        "name": "Build the Weighing Cranes",
+        "required": true
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base 0; add (if has_treasury = True: add medium_treasury_value; else …; desc great_project_base_contribution_cost_desc); min 75; if dynasty …: multiply …"
+          }
+        },
+        "desc": null,
+        "id": "salt_the_customs_stores",
+        "name": "Salt the Customs Stores",
+        "required": false
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base 0; add (if has_treasury = True: add medium_treasury_value; else …; desc great_project_base_contribution_cost_desc); min 75; if dynasty …: multiply …"
+          }
+        },
+        "desc": null,
+        "id": "certify_the_luxury_trade",
+        "name": "Certify the Luxury Trade",
+        "required": false
+      }
+    ],
+    "contributorCooldown": {
+      "n": 21
+    },
+    "contributors": [
+      "owner",
+      "vassals"
+    ],
+    "cost": {
+      "gold": {
+        "fromTreasury": true,
+        "rules": "base 0; if has_treasury = True: add major_treasury_value; else …; min 250"
+      }
+    },
+    "dlc": "Silk and Silver",
+    "grantsBuildings": [
+      {
+        "id": "republic_weigh_house_01",
+        "name": "Public Weigh House"
+      }
+    ],
+    "group": "major",
+    "icon": "great_projects/_default",
+    "id": "gdp_republic_great_plaza_weigh_house_project",
+    "isImportant": false,
+    "name": "Great Plaza: Public Weigh House",
+    "owner": "direct owner of the province",
+    "plannable": true,
+    "provinceFilter": "capital",
+    "provinceFilterTarget": null,
+    "requirements": [
+      {
+        "building": null,
+        "key": "can_start_great_plaza_project_has_law_desc",
+        "kind": "condition",
+        "name": "You have the Republic Law or higher",
+        "negated": false
+      },
+      {
+        "building": null,
+        "key": "gdp_is_planning_great_plaza_project_trigger_desc",
+        "kind": "condition",
+        "name": "A Great Plaza District Great Project is not already being planned or ongoing",
+        "negated": false
+      },
+      {
+        "building": null,
+        "key": "gdp_republic_plaza_has_free_building_slot_desc",
+        "kind": "condition",
+        "name": "Great Plaza District has at least 1 free building slot",
+        "negated": false
+      },
+      {
+        "building": null,
+        "key": "GREAT_PROJECT_CAN_PLAN",
+        "kind": "condition",
+        "name": "You can plan this Great Project",
+        "negated": false
+      }
+    ],
+    "showInList": true,
+    "sourceFile": "00_republic_projects.txt",
+    "targetTitleTier": "county"
+  },
+  {
+    "constructionTime": {
+      "rules": "base 1625; multiply (base 1; if scope:province.county …: add -0.05; if scope:founder …: add -0.05; if scope:founder …: add -0.05; if scope:founder …: add 0.05; if scope:founder …: add 0.05; if scope:founder …: add -0.05; if scope:founder …: add -0.05; if scope:founder …: add 0.05; if scope:founder …: add 0.05; if situation:the_christian_church …: add -0.15; if culture …: add -0.02; if culture …: add -0.03; if culture …: add -0.05); multiply (base 1; if top_participant_group:dynastic_cycle …: add -0.5)"
+    },
+    "contributionThreshold": null,
+    "contributions": [
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base (base (base 0; if has_treasury = True: add medium_treasury_value; min 250; else …; if has_realm_law = republic_type_civic: multiply 0.8); multiply 2; desc great_project_base_contribution_cost_desc); if any_held_title …: multiply …; else_if …; else_if …; else_if …; else_if …"
+          }
+        },
+        "desc": null,
+        "id": "stone",
+        "name": "Vast Quantities of Stone",
+        "required": true
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base (base (base 0; if has_treasury = True: add medium_treasury_value; min 250; else …; if has_realm_law = republic_type_civic: multiply 0.8); desc great_project_base_contribution_cost_desc); if any_held_title …: multiply …; else_if …; else_if …; else_if …; else_if …"
+          }
+        },
+        "desc": null,
+        "id": "master_mason",
+        "name": "A Master Mason",
+        "required": true
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base (base (base 0; if has_treasury = True: add medium_treasury_value; min 250; else …; if has_realm_law = republic_type_civic: multiply 0.8); desc great_project_base_contribution_cost_desc); if any_held_title …: multiply …; else_if …; else_if …; else_if …; else_if …"
+          }
+        },
+        "desc": null,
+        "id": "bells",
+        "name": "Bronze Bells",
+        "required": true
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base (base 0; if has_treasury = True: add medium_treasury_value; min 250; else …; if has_realm_law = republic_type_civic: multiply 0.8); multiply 1.5; desc great_project_base_contribution_cost_desc"
+          }
+        },
+        "desc": null,
+        "id": "facade",
+        "name": "Ornate Facade & Portico",
+        "required": false
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base (base (base 0; if has_treasury = True: add medium_treasury_value; min 250; else …; if has_realm_law = republic_type_civic: multiply 0.8); multiply 0.33; desc great_project_base_contribution_cost_desc); if any_held_title …: multiply …; else_if …; else_if …; else_if …; else_if …"
+          },
+          "piety": {
+            "rules": "base (base (base (base 0; if has_treasury = True: add medium_treasury_value; min 250; else …; if has_realm_law = republic_type_civic: multiply 0.8); if has_treasury = False: min 250); multiply 1.33; desc great_project_base_contribution_cost_desc); if any_held_title …: multiply …; else_if …; else_if …; else_if …; else_if …"
+          }
+        },
+        "desc": null,
+        "id": "frescoes",
+        "name": "Sacred Frescoes",
+        "required": false
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base (base (base 0; if has_treasury = True: add medium_treasury_value; min 250; else …; if has_realm_law = republic_type_civic: multiply 0.8); multiply 0.5; desc great_project_base_contribution_cost_desc); if any_held_title …: multiply …; else_if …; else_if …; else_if …; else_if …"
+          },
+          "piety": {
+            "rules": "base (base (base (base 0; if has_treasury = True: add medium_treasury_value; min 250; else …; if has_realm_law = republic_type_civic: multiply 0.8); if has_treasury = False: min 250); multiply 0.67; desc great_project_base_contribution_cost_desc); if any_held_title …: multiply …; else_if …; else_if …; else_if …; else_if …"
+          }
+        },
+        "desc": null,
+        "id": "stained_glass",
+        "name": "Stained Glass",
+        "required": false
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base (base 0; if has_treasury = True: add medium_treasury_value; min 250; else …; if has_realm_law = republic_type_civic: multiply 0.8); multiply 0.5; desc great_project_base_contribution_cost_desc"
+          },
+          "influence": {
+            "rules": "base 0; if government_has_flag = government_has_influence: add 60"
+          },
+          "prestige": {
+            "rules": "base 0; if is_clergy = False, NOT …: add 150"
+          }
+        },
+        "desc": null,
+        "id": "north_chapel",
+        "name": "A Northern Chapel",
+        "required": false
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base (base 0; if has_treasury = True: add medium_treasury_value; min 250; else …; if has_realm_law = republic_type_civic: multiply 0.8); multiply 0.5; desc great_project_base_contribution_cost_desc"
+          },
+          "influence": {
+            "rules": "base 0; if government_has_flag = government_has_influence: add 60"
+          },
+          "prestige": {
+            "rules": "base 0; if is_clergy = False, NOT …: add 150"
+          }
+        },
+        "desc": null,
+        "id": "south_chapel",
+        "name": "A Southern Chapel",
+        "required": false
+      }
+    ],
+    "contributorCooldown": {
+      "n": 21
+    },
+    "contributors": [
+      "allies",
+      "clerical_region",
+      "councillor",
+      "duchy",
+      "founder",
+      "head_of_faith",
+      "liege",
+      "owner",
+      "puppeteer",
+      "top_liege",
+      "vassals"
+    ],
+    "cost": {
+      "gold": {
+        "fromTreasury": true,
+        "rules": "base (base 0; if has_treasury = True: add major_treasury_value; min 500; else …; if has_realm_law = republic_type_civic: multiply 0.8); divide 1.5; if culture …: multiply …"
+      }
+    },
+    "dlc": null,
+    "grantsBuildings": [],
+    "group": "major",
+    "icon": "great_projects/grand_cathedral_gp",
+    "id": "pam_cathedral_01",
+    "isImportant": false,
+    "name": "Romanesque Grand Cathedral",
+    "owner": "province_clerical_region_or_theocracy_holder",
+    "plannable": true,
+    "provinceFilter": "clerical_region_theocracy_capitals",
+    "provinceFilterTarget": null,
+    "requirements": [
+      {
+        "building": null,
+        "key": "not_planning_great_project_type",
+        "kind": "condition",
+        "name": "Great Project of this type is not already being planned",
+        "negated": false
+      },
+      {
+        "building": null,
+        "key": "same_faith_holder_tt",
+        "kind": "condition",
+        "name": "The Holder belongs to your Faith",
+        "negated": false
+      }
+    ],
+    "showInList": true,
+    "sourceFile": "01_pam_projects.txt",
+    "targetTitleTier": null
+  },
+  {
+    "constructionTime": {
+      "rules": "base 7300; multiply (base 1; if scope:province.county …: add -0.05; if scope:founder …: add -0.05; if scope:founder …: add -0.05; if scope:founder …: add 0.05; if scope:founder …: add 0.05; if scope:founder …: add -0.05; if scope:founder …: add -0.05; if scope:founder …: add 0.05; if scope:founder …: add 0.05; if situation:the_christian_church …: add -0.15; if culture …: add -0.02; if culture …: add -0.03; if culture …: add -0.05); multiply (base 1; if top_participant_group:dynastic_cycle …: add -0.5)"
+    },
+    "contributionThreshold": null,
+    "contributions": [
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base (base (base 0; if has_treasury = True: add medium_treasury_value; min 250; else …; if has_realm_law = republic_type_civic: multiply 0.8); multiply 3; desc great_project_base_contribution_cost_desc); if any_held_title …: multiply …; else_if …; else_if …; else_if …; else_if …"
+          }
+        },
+        "desc": null,
+        "id": "stone",
+        "name": "Vast Quantities of Stone",
+        "required": true
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base (base (base 0; if has_treasury = True: add medium_treasury_value; min 250; else …; if has_realm_law = republic_type_civic: multiply 0.8); desc great_project_base_contribution_cost_desc); if any_held_title …: multiply …; else_if …; else_if …; else_if …; else_if …"
+          }
+        },
+        "desc": null,
+        "id": "master_mason",
+        "name": "A Master Mason",
+        "required": true
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base (base (base 0; if has_treasury = True: add medium_treasury_value; min 250; else …; if has_realm_law = republic_type_civic: multiply 0.8); desc great_project_base_contribution_cost_desc); if any_held_title …: multiply …; else_if …; else_if …; else_if …; else_if …"
+          }
+        },
+        "desc": null,
+        "id": "bells",
+        "name": "Bronze Bells",
+        "required": true
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base (base 0; if has_treasury = True: add medium_treasury_value; min 250; else …; if has_realm_law = republic_type_civic: multiply 0.8); multiply 2.25; desc great_project_base_contribution_cost_desc"
+          }
+        },
+        "desc": null,
+        "id": "facade",
+        "name": "Ornate Facade & Portico",
+        "required": false
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base (base (base 0; if has_treasury = True: add medium_treasury_value; min 250; else …; if has_realm_law = republic_type_civic: multiply 0.8); multiply 0.75; desc great_project_base_contribution_cost_desc); if any_held_title …: multiply …; else_if …; else_if …; else_if …; else_if …"
+          },
+          "piety": {
+            "rules": "base (base (base (base 0; if has_treasury = True: add medium_treasury_value; min 250; else …; if has_realm_law = republic_type_civic: multiply 0.8); if has_treasury = False: min 250); multiply 2; desc great_project_base_contribution_cost_desc); if any_held_title …: multiply …; else_if …; else_if …; else_if …; else_if …"
+          }
+        },
+        "desc": null,
+        "id": "frescoes",
+        "name": "Sacred Frescoes",
+        "required": false
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base (base (base 0; if has_treasury = True: add medium_treasury_value; min 250; else …; if has_realm_law = republic_type_civic: multiply 0.8); multiply 0.75; desc great_project_base_contribution_cost_desc); if any_held_title …: multiply …; else_if …; else_if …; else_if …; else_if …"
+          },
+          "piety": {
+            "rules": "base (base (base (base 0; if has_treasury = True: add medium_treasury_value; min 250; else …; if has_realm_law = republic_type_civic: multiply 0.8); if has_treasury = False: min 250); multiply 1; desc great_project_base_contribution_cost_desc); if any_held_title …: multiply …; else_if …; else_if …; else_if …; else_if …"
+          }
+        },
+        "desc": null,
+        "id": "stained_glass",
+        "name": "Stained Glass",
+        "required": false
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base (base 0; if has_treasury = True: add medium_treasury_value; min 250; else …; if has_realm_law = republic_type_civic: multiply 0.8); multiply 0.75; desc great_project_base_contribution_cost_desc"
+          },
+          "influence": {
+            "rules": "base 0; if government_has_mechanic = administrative: add 60"
+          },
+          "prestige": {
+            "rules": "base 0; if is_clergy = False, NOT …: add 150"
+          }
+        },
+        "desc": null,
+        "id": "north_chapel",
+        "name": "A Northern Chapel",
+        "required": false
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base (base 0; if has_treasury = True: add medium_treasury_value; min 250; else …; if has_realm_law = republic_type_civic: multiply 0.8); multiply 0.75; desc great_project_base_contribution_cost_desc"
+          },
+          "influence": {
+            "rules": "base 0; if government_has_mechanic = administrative: add 60"
+          },
+          "prestige": {
+            "rules": "base 0; if is_clergy = False, NOT …: add 150"
+          }
+        },
+        "desc": null,
+        "id": "south_chapel",
+        "name": "A Southern Chapel",
+        "required": false
+      }
+    ],
+    "contributorCooldown": {
+      "n": 21
+    },
+    "contributors": [
+      "allies",
+      "clerical_region",
+      "councillor",
+      "duchy",
+      "founder",
+      "head_of_faith",
+      "liege",
+      "owner",
+      "puppeteer",
+      "top_liege",
+      "vassals"
+    ],
+    "cost": {
+      "gold": {
+        "fromTreasury": true,
+        "rules": "base (base 0; if has_treasury = True: add major_treasury_value; min 500; else …; if has_realm_law = republic_type_civic: multiply 0.8); if culture …: multiply …"
+      }
+    },
+    "dlc": null,
+    "grantsBuildings": [],
+    "group": "major",
+    "icon": "great_projects/grand_cathedral_gp",
+    "id": "pam_cathedral_02",
+    "isImportant": false,
+    "name": "Raise a Gothic Grand Cathedral",
+    "owner": "province_clerical_region_or_theocracy_holder",
+    "plannable": true,
+    "provinceFilter": "clerical_region_theocracy_capitals",
+    "provinceFilterTarget": null,
+    "requirements": [
+      {
+        "building": null,
+        "key": "not_planning_great_project_type",
+        "kind": "condition",
+        "name": "Great Project of this type is not already being planned",
+        "negated": false
+      },
+      {
+        "building": null,
+        "key": "innovation_manorialism",
+        "kind": "innovation",
+        "name": "Manorialism",
+        "negated": false
+      },
+      {
+        "building": null,
+        "key": "same_faith_holder_tt",
+        "kind": "condition",
+        "name": "The Holder belongs to your Faith",
+        "negated": false
+      }
+    ],
+    "showInList": true,
+    "sourceFile": "01_pam_projects.txt",
+    "targetTitleTier": null
+  },
+  {
+    "constructionTime": {
+      "rules": "base 10950; multiply (base 1; if scope:province.county …: add -0.05; if scope:founder …: add -0.05; if scope:founder …: add -0.05; if scope:founder …: add 0.05; if scope:founder …: add 0.05; if scope:founder …: add -0.05; if scope:founder …: add -0.05; if scope:founder …: add 0.05; if scope:founder …: add 0.05; if situation:the_christian_church …: add -0.15; if culture …: add -0.02; if culture …: add -0.03; if culture …: add -0.05); multiply (base 1; if top_participant_group:dynastic_cycle …: add -0.5)"
+    },
+    "contributionThreshold": null,
+    "contributions": [
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base (base (base 0; if has_treasury = True: add medium_treasury_value; min 250; else …; if has_realm_law = republic_type_civic: multiply 0.8); multiply 4.5; desc great_project_base_contribution_cost_desc); if any_held_title …: multiply …; else_if …; else_if …; else_if …; else_if …"
+          }
+        },
+        "desc": null,
+        "id": "stone",
+        "name": "Vast Quantities of Stone",
+        "required": true
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base (base (base 0; if has_treasury = True: add medium_treasury_value; min 250; else …; if has_realm_law = republic_type_civic: multiply 0.8); desc great_project_base_contribution_cost_desc); if any_held_title …: multiply …; else_if …; else_if …; else_if …; else_if …"
+          }
+        },
+        "desc": null,
+        "id": "master_mason",
+        "name": "A Master Mason",
+        "required": true
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base (base (base 0; if has_treasury = True: add medium_treasury_value; min 250; else …; if has_realm_law = republic_type_civic: multiply 0.8); desc great_project_base_contribution_cost_desc); if any_held_title …: multiply …; else_if …; else_if …; else_if …; else_if …"
+          }
+        },
+        "desc": null,
+        "id": "bells",
+        "name": "Bronze Bells",
+        "required": true
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base (base 0; if has_treasury = True: add medium_treasury_value; min 250; else …; if has_realm_law = republic_type_civic: multiply 0.8); multiply 3.375; desc great_project_base_contribution_cost_desc"
+          }
+        },
+        "desc": null,
+        "id": "facade",
+        "name": "Ornate Facade & Portico",
+        "required": false
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base (base (base 0; if has_treasury = True: add medium_treasury_value; min 250; else …; if has_realm_law = republic_type_civic: multiply 0.8); multiply 1.125; desc great_project_base_contribution_cost_desc); if any_held_title …: multiply …; else_if …; else_if …; else_if …; else_if …"
+          },
+          "piety": {
+            "rules": "base (base (base (base 0; if has_treasury = True: add medium_treasury_value; min 250; else …; if has_realm_law = republic_type_civic: multiply 0.8); if has_treasury = False: min 250); multiply 3; desc great_project_base_contribution_cost_desc); if any_held_title …: multiply …; else_if …; else_if …; else_if …; else_if …"
+          }
+        },
+        "desc": null,
+        "id": "frescoes",
+        "name": "Sacred Frescoes",
+        "required": false
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base (base (base 0; if has_treasury = True: add medium_treasury_value; min 250; else …; if has_realm_law = republic_type_civic: multiply 0.8); multiply 1.125; desc great_project_base_contribution_cost_desc); if any_held_title …: multiply …; else_if …; else_if …; else_if …; else_if …"
+          },
+          "piety": {
+            "rules": "base (base (base (base 0; if has_treasury = True: add medium_treasury_value; min 250; else …; if has_realm_law = republic_type_civic: multiply 0.8); if has_treasury = False: min 250); multiply 1; desc great_project_base_contribution_cost_desc); if any_held_title …: multiply …; else_if …; else_if …; else_if …; else_if …"
+          }
+        },
+        "desc": null,
+        "id": "stained_glass",
+        "name": "Stained Glass",
+        "required": false
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base (base 0; if has_treasury = True: add medium_treasury_value; min 250; else …; if has_realm_law = republic_type_civic: multiply 0.8); multiply 1.125; desc great_project_base_contribution_cost_desc"
+          },
+          "influence": {
+            "rules": "base 0; if government_has_mechanic = administrative: add 60"
+          },
+          "prestige": {
+            "rules": "base 0; if is_clergy = False, NOT …: add 150"
+          }
+        },
+        "desc": null,
+        "id": "north_chapel",
+        "name": "A Northern Chapel",
+        "required": false
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base (base 0; if has_treasury = True: add medium_treasury_value; min 250; else …; if has_realm_law = republic_type_civic: multiply 0.8); multiply 1.125; desc great_project_base_contribution_cost_desc"
+          },
+          "influence": {
+            "rules": "base 0; if government_has_mechanic = administrative: add 60"
+          },
+          "prestige": {
+            "rules": "base 0; if is_clergy = False, NOT …: add 150"
+          }
+        },
+        "desc": null,
+        "id": "south_chapel",
+        "name": "A Southern Chapel",
+        "required": false
+      }
+    ],
+    "contributorCooldown": {
+      "n": 21
+    },
+    "contributors": [
+      "allies",
+      "clerical_region",
+      "councillor",
+      "duchy",
+      "founder",
+      "head_of_faith",
+      "liege",
+      "owner",
+      "puppeteer",
+      "top_liege",
+      "vassals"
+    ],
+    "cost": {
+      "gold": {
+        "fromTreasury": true,
+        "rules": "base (base (base 0; if has_treasury = True: add major_treasury_value; min 500; else …; if has_realm_law = republic_type_civic: multiply 0.8); multiply 1.5); if culture …: multiply …"
+      }
+    },
+    "dlc": null,
+    "grantsBuildings": [],
+    "group": "major",
+    "icon": "great_projects/grand_cathedral_gp",
+    "id": "pam_cathedral_03",
+    "isImportant": false,
+    "name": "Raise a Flamboyant Grand Cathedral",
+    "owner": "province_clerical_region_or_theocracy_holder",
+    "plannable": true,
+    "provinceFilter": "clerical_region_theocracy_capitals",
+    "provinceFilterTarget": null,
+    "requirements": [
+      {
+        "building": null,
+        "key": "not_planning_great_project_type",
+        "kind": "condition",
+        "name": "Great Project of this type is not already being planned",
+        "negated": false
+      },
+      {
+        "building": null,
+        "key": "innovation_manorialism",
+        "kind": "innovation",
+        "name": "Manorialism",
+        "negated": false
+      },
+      {
+        "building": null,
+        "key": "innovation_prosperity_03",
+        "kind": "innovation",
+        "name": "Urbanization",
+        "negated": false
+      },
+      {
+        "building": null,
+        "key": "same_faith_holder_tt",
+        "kind": "condition",
+        "name": "The Holder belongs to your Faith",
+        "negated": false
+      }
+    ],
+    "showInList": true,
+    "sourceFile": "01_pam_projects.txt",
+    "targetTitleTier": null
+  },
+  {
+    "constructionTime": {
+      "rules": "base 1825; multiply 4; scope:great_project …"
+    },
+    "contributionThreshold": null,
+    "contributions": [
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "add (base 75; desc BASE); multiply (add 1; scope:province …; desc pam_mass_rite_send_missionaries_value_desc)"
+          }
+        },
+        "desc": null,
+        "id": "send_missionaries",
+        "name": "Send Missionaries",
+        "required": true
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base (add 200; desc BASE); multiply (add 1; scope:province …; desc pam_mass_rite_construct_new_shrines_value_desc)"
+          }
+        },
+        "desc": null,
+        "id": "construct_new_shrines",
+        "name": "Construct New Shrines",
+        "required": false
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base (add 100; desc BASE); multiply (add 1; scope:province …; desc pam_mass_rite_promote_faithful_relocation_value_desc)"
+          }
+        },
+        "desc": null,
+        "id": "promote_faithful_relocation",
+        "name": "Promote Faithful Relocation",
+        "required": false
+      },
+      {
+        "contributors": null,
+        "cost": {
+          "gold": {
+            "fromTreasury": true,
+            "rules": "base (add 25; desc BASE); multiply (add 1; scope:province …; desc pam_mass_rite_integrate_existing_rituals_value_desc); if has_variable = pam_theocratic_ruler_events_0014_mass_conversion_discount: multiply …"
+          }
+        },
+        "desc": null,
+        "id": "integrate_existing_rituals",
+        "name": "Integrate Existing Rituals",
+        "required": false
+      }
+    ],
+    "contributorCooldown": {
+      "n": 21
+    },
+    "contributors": [
+      "owner",
+      "top_liege",
+      "vassals"
+    ],
+    "cost": {
+      "gold": {
+        "fromTreasury": true,
+        "rules": "base (base 0; if has_treasury = True: add major_treasury_value; min 500; else …; if has_realm_law = republic_type_civic: multiply 0.8); multiply 0.2; if is_councillor = True: multiply 0.5; if pam_mass_rite_conversion_conversion_phase_trigger = True: multiply 0.65; if has_variable = no_great_project_cost: multiply 0"
+      },
+      "piety": {
+        "rules": "base (base (base 0; if has_treasury = True: add major_treasury_value; min 500; else …; if has_realm_law = republic_type_civic: multiply 0.8); if has_treasury = False: min 500); if pam_mass_rite_conversion_conversion_phase_trigger = True: multiply 0.65; if has_variable = no_great_project_cost: multiply 0"
+      }
+    },
+    "dlc": null,
+    "grantsBuildings": [],
+    "group": "major",
+    "icon": "faith/christian_faith",
+    "id": "pam_mass_rite_conversion",
+    "isImportant": false,
+    "name": "Mass Conversion",
+    "owner": "holder of the founder's top liege title",
+    "plannable": true,
+    "provinceFilter": "top_liege_border_outer",
+    "provinceFilterTarget": null,
+    "requirements": [
+      {
+        "building": null,
+        "key": "pam_mass_rite_conversion_founder_clergy_tt",
+        "kind": "condition",
+        "name": "Must hold a Clerical Title, have Ecclesiastical Government, be a member of the Clergy, or have an Archbishop or higher as your Puppet",
+        "negated": false
+      },
+      {
+        "building": null,
+        "key": "pam_mass_rite_conversion_already_targets_province",
+        "kind": "condition",
+        "name": "Another Mass Conversion already targets this County",
+        "negated": false
+      }
+    ],
+    "showInList": true,
+    "sourceFile": "01_pam_projects.txt",
     "targetTitleTier": null
   },
   {

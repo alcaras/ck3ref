@@ -22,6 +22,7 @@ data:
 	@python3 scripts/build_lifestyles.py
 	@python3 scripts/build_legacies.py
 	@python3 scripts/build_buildings.py
+	@python3 scripts/build_districts.py
 	@python3 scripts/build_faiths.py
 	@python3 scripts/build_doctrines.py
 	@python3 scripts/build_holy_sites.py

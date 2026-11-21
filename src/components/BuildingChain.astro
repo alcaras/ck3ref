@@ -1,0 +1,150 @@
+---
+// One building line, every tier in full: costs, district-tier requirement,
+// construction gates, modifiers (incl. market modifiers), trade-good needs,
+// triggered names and DLC override sets. Used by /buildings/<district>.
+import { getEntity } from '../lib/entities';
+
+interface Props {
+  tiers: any[];
+  /** id of the district page this renders on — other districts are linked. */
+  district?: string;
+  districtNames?: Record<string, string>;
+}
+const { tiers, district, districtNames = {} } = Astro.props;
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+
+const ROMAN = ['', 'I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII', 'IX', 'X', 'XI', 'XII'];
+const num = (v: any): number | null => (typeof v === 'number' ? v : null);
+const fmt = (v: any) => {
+  const n = num(v);
+  return n == null ? 'varies' : String(Math.round(n * 1000) / 1000);
+};
+const terrainName = (t: string) => getEntity(`terrain_${t}`)?.name ?? t.replace(/_/g, ' ');
+const chipName = (r: any) => (r.kind === 'terrain' ? terrainName(r.key) : r.name);
+const chipClass = (r: any) =>
+  r.kind === 'terrain' ? 'chip chip--terrain' : r.conditional ? 'chip chip--cond' : 'chip chip--req';
+const chipTitle = (r: any) =>
+  [r.detail ?? r.kind.replace(/_/g, ' '), r.conditional ? 'only in some situations (inside a trigger_if branch)' : null]
+    .filter(Boolean).join(' — ');
+
+const root = tiers[0];
+const others = (root.districts ?? []).filter((d: string) => d !== district);
+---
+<div class="bchain">
+  {root.desc && <p class="b-desc">{root.desc}</p>}
+  {others.length > 0 && (
+    <p class="b-also">
+      Also buildable in:{' '}
+      {others.map((d: string, i: number) => (
+        <>{i > 0 && ', '}<a href={`${base}/buildings/${d}#${root.id}`}>{districtNames[d] ?? d}</a></>
+      ))}
+    </p>
+  )}
+  <div class="tiers-grid">
+    {tiers.map((t) => (
+      <div class="tier-card" id={t.tier > 1 ? t.id : undefined}>
+        <div class="tier-head">
+          <span class="tier-n">{t.tier}</span>
+          <span class="tier-name">{t.name}</span>
+          <span class="tier-stats">
+            {t.districtLevel != null && <span class="dl" title="district_level_requirement: the district's own tier">district tier {typeof t.districtLevel === 'number' ? (ROMAN[t.districtLevel] ?? t.districtLevel) : 'varies'}+</span>}
+            {t.cost && Object.entries(t.cost).map(([k, v]) => <span>{fmt(v)} {k.replace(/_/g, ' ')}</span>)}
+            {t.constructionTime != null && <span>{fmt(t.constructionTime)} days</span>}
+            {t.levy != null && <span>{fmt(t.levy)} levy</span>}
+            {t.maxGarrison != null && <span>{fmt(t.maxGarrison)} garrison</span>}
+            {t.hostSlots != null && <span title="building_slots_for_host_district">{t.hostSlots} building slot{t.hostSlots === 1 ? '' : 's'} in this district</span>}
+            {t.dlc && <span class="badge-dlc">{t.dlc}</span>}
+          </span>
+        </div>
+        {t.requirements.length > 0 && (
+          <div class="chips tier-reqs">
+            {t.requirements.map((r: any) => (
+              <span class={chipClass(r)} title={chipTitle(r)}>
+                {r.negated && <span class="neg">not </span>}{chipName(r)}
+              </span>
+            ))}
+          </div>
+        )}
+        {t.nameVariants?.length > 0 && (
+          <p class="b-names">
+            Named {t.nameVariants.map((n: any, i: number) => (
+              <>{i > 0 && '; '}<b>{n.name}</b> <span class="subtle">when {n.when}</span></>
+            ))}
+          </p>
+        )}
+        {t.modifiers.map((g: any) => (
+          <div class="mod-group">
+            <span class:list={['mod-scope', { 'mod-scope--market': g.scope === 'Market' }]}>{g.scope}</span>
+            {g.cond && <span class="mod-cond">{g.cond}</span>}
+            <span class="mod-lines">{g.lines.join(' · ')}</span>
+          </div>
+        ))}
+        {t.needs?.length > 0 && (
+          <div class="needs">
+            <span class="needs-h">Trade-good needs</span>
+            {t.needs.map((n: any) => (
+              <div class="need">
+                <span class:list={['need-good', { 'need-good--cat': n.kind === 'category' }]} title={`${n.kind === 'category' ? 'trade good category' : 'trade good'} ${n.good}`}>
+                  {fmt(n.amount)} {n.name}
+                </span>
+                {n.times != null && <span class="need-x" title="can_be_filled_multiple_times">×{fmt(n.times)}</span>}
+                {n.skipInternal && <span class="need-x" title="skip_internal_fulfillment: not met by buildings in the same market">external only</span>}
+                {n.conds.length > 0 && <span class="mod-cond">if {n.conds.join(', ')}</span>}
+                <span class="need-fx">
+                  {n.modifiers.length === 0 ? <span class="subtle">no modifier</span> :
+                    n.modifiers.map((g: any) => (
+                      <span><span class="mod-scope">{g.scope}</span>{g.cond && <span class="mod-cond">{g.cond}</span>}{g.lines.join(' · ')} </span>
+                    ))}
+                </span>
+              </div>
+            ))}
+          </div>
+        )}
+        {t.overrides?.map((o: any) => (
+          <div class="mod-group">
+            <span class="mod-cond">with DLC flag {o.dlcFlag ?? '?'} instead:</span>
+            {o.modifiers.map((g: any) => <span class="mod-lines"><span class="mod-scope">{g.scope}</span>{g.lines.join(' · ')} </span>)}
+          </div>
+        ))}
+        {t.effects && <p class="b-fx">{t.effects}</p>}
+      </div>
+    ))}
+  </div>
+</div>
+
+<style>
+  .b-desc { color: var(--dim); font-size: 0.8rem; max-width: 70ch; margin: 0 0 0.5rem; font-style: italic; }
+  .b-also { color: var(--faint); font-size: 0.76rem; margin: 0 0 0.5rem; }
+  .tiers-grid { display: grid; gap: 0.6rem; }
+  .tier-card { border-left: 2px solid var(--line); padding: 0.1rem 0 0.1rem 0.7rem; }
+  .tier-head { display: flex; align-items: baseline; gap: 0.55rem; flex-wrap: wrap; }
+  .tier-n {
+    font-family: var(--font-mono); font-size: 0.72rem; color: var(--rubric);
+    border: 1px solid color-mix(in oklab, var(--rubric) 45%, var(--line));
+    border-radius: 3px; padding: 0 0.3rem;
+  }
+  .tier-name { font-weight: 600; font-size: 0.85rem; }
+  .tier-stats { display: inline-flex; gap: 0.7rem; font-family: var(--font-mono); font-size: 0.72rem; color: var(--dim); flex-wrap: wrap; align-items: baseline; }
+  .tier-stats .dl { color: var(--rubric); }
+  .tier-reqs { margin: 0.25rem 0 0.1rem; max-width: none; }
+  .b-names { font-size: 0.76rem; margin: 0.2rem 0; color: var(--dim); }
+  .mod-group { font-size: 0.8rem; margin-top: 0.2rem; }
+  .mod-scope {
+    font-family: var(--font-mono); font-size: 0.68rem; color: var(--brass);
+    border: 1px solid color-mix(in oklab, var(--brass) 35%, transparent);
+    border-radius: 3px; padding: 0 0.3rem; margin-right: 0.4rem;
+  }
+  .mod-scope--market { color: var(--sk-stewardship); border-color: color-mix(in oklab, var(--sk-stewardship) 40%, transparent); }
+  .mod-cond { color: var(--sk-intrigue); font-size: 0.74rem; margin-right: 0.4rem; }
+  .mod-lines { color: var(--vellum); }
+  .needs { margin-top: 0.35rem; font-size: 0.78rem; }
+  .needs-h { display: block; color: var(--faint); font-size: 0.7rem; margin-bottom: 0.1rem; }
+  .need { display: flex; flex-wrap: wrap; gap: 0.2rem 0.45rem; align-items: baseline; padding: 0.1rem 0; border-bottom: 1px dotted var(--line-soft); }
+  .need-good { font-family: var(--font-mono); font-size: 0.74rem; color: var(--vellum); min-width: 9rem; }
+  .need-good--cat { font-style: italic; }
+  .need-x { font-family: var(--font-mono); font-size: 0.68rem; color: var(--faint); }
+  .need-fx { color: var(--dim); }
+  .b-fx { color: var(--dim); font-size: 0.78rem; margin: 0.3rem 0 0; max-width: 70ch; }
+  .chip .neg { color: var(--bad); }
+  :global(.chip--cond) { border-style: dotted; opacity: 0.85; }
+</style>

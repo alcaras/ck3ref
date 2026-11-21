@@ -62,20 +62,12 @@
         "name": "Catholicism"
       },
       {
-        "id": "mozarabic_church",
-        "name": "Mozarabism"
+        "id": "sunni",
+        "name": "Sunni"
       },
       {
-        "id": "ashari",
-        "name": "Ash'arism"
-      },
-      {
-        "id": "muwalladi",
-        "name": "Muwalladism"
-      },
-      {
-        "id": "rabbinism",
-        "name": "Rabbinism"
+        "id": "rabbinic_faith",
+        "name": "Rabbinic"
       },
       {
         "id": "karaism",
@@ -216,7 +208,7 @@
                   },
                   {
                     "key": "gain_acceptance_when_developing_other_culture_county",
-                    "text": "Increasing the Development of a county with a different Culture increases Cultural Acceptance"
+                    "text": "Increasing the Prosperity of a county with a different Culture increases Cultural Acceptance"
                   }
                 ],
                 "kind": "parameters"
@@ -287,12 +279,12 @@
                 "audience": "interloper",
                 "items": [
                   {
-                    "key": "county_opinion_add",
+                    "key": "popular_opinion_add",
                     "polarity": "bad",
-                    "text": "-5 Popular Opinion"
+                    "text": "-5 Popular Opinion Baseline"
                   },
                   {
-                    "key": "tax_mult",
+                    "key": "all_tax_mult",
                     "polarity": "bad",
                     "text": "-10% Holding Taxes"
                   }
@@ -313,12 +305,12 @@
                 "audience": "uninvolved",
                 "items": [
                   {
-                    "key": "county_opinion_add",
+                    "key": "popular_opinion_add",
                     "polarity": "bad",
-                    "text": "-10 Popular Opinion"
+                    "text": "-10 Popular Opinion Baseline"
                   },
                   {
-                    "key": "tax_mult",
+                    "key": "all_tax_mult",
                     "polarity": "bad",
                     "text": "-15% Holding Taxes"
                   }
@@ -446,9 +438,9 @@
           {
             "catalysts": [
               {
-                "desc": "Increase the Development of a County of a different Faith or Culture",
-                "id": "catalyst_improve_development_vassal_diff_faith_culture",
-                "name": "Development increased Catalyst",
+                "desc": "Increase the Prosperity of a County of a different Faith or Culture",
+                "id": "catalyst_improve_prosperity_vassal_diff_faith_culture",
+                "name": "Prosperity increased Catalyst",
                 "points": {
                   "value": 1
                 }
@@ -634,7 +626,7 @@
                   {
                     "key": "army_siege_value_mult",
                     "polarity": "good",
-                    "text": "+20% Army Siege Weapon Effectiveness"
+                    "text": "+20% Army Siege Weapon"
                   },
                   {
                     "key": "enemy_hard_casualty_modifier",
@@ -713,7 +705,7 @@
                 "items": [
                   {
                     "key": "holy_order_can_be_created_by_dukes",
-                    "text": "Enables Holy Order creation for Dukes"
+                    "text": "Enables Military Order creation for Dukes"
                   },
                   {
                     "key": "interfaith_marriages_available_between_involved_characters",
@@ -742,7 +734,7 @@
                   {
                     "key": "holy_order_hire_cost_mult",
                     "polarity": "good",
-                    "text": "-25% Holy Order Hire Cost"
+                    "text": "-25% Military Order Hire Cost"
                   },
                   {
                     "key": "opinion_of_different_faith",
@@ -758,7 +750,7 @@
                   {
                     "key": "holy_order_hire_cost_mult",
                     "polarity": "good",
-                    "text": "-25% Holy Order Hire Cost"
+                    "text": "-25% Military Order Hire Cost"
                   }
                 ],
                 "kind": "character"
@@ -869,9 +861,9 @@
                 "audience": "involved",
                 "items": [
                   {
-                    "key": "development_growth_factor",
+                    "key": "prosperity_growth_factor",
                     "polarity": "bad",
-                    "text": "-30% Development Growth"
+                    "text": "-30% Prosperity Growth"
                   }
                 ],
                 "kind": "county"
@@ -890,19 +882,19 @@
                 "audience": "interloper",
                 "items": [
                   {
-                    "key": "county_opinion_add",
+                    "key": "popular_opinion_add",
                     "polarity": "bad",
-                    "text": "-15 Popular Opinion"
+                    "text": "-15 Popular Opinion Baseline"
                   },
                   {
-                    "key": "tax_mult",
+                    "key": "all_tax_mult",
                     "polarity": "bad",
                     "text": "-30% Holding Taxes"
                   },
                   {
-                    "key": "development_growth_factor",
+                    "key": "prosperity_growth_factor",
                     "polarity": "bad",
-                    "text": "-40% Development Growth"
+                    "text": "-40% Prosperity Growth"
                   }
                 ],
                 "kind": "county"
@@ -921,19 +913,19 @@
                 "audience": "uninvolved",
                 "items": [
                   {
-                    "key": "county_opinion_add",
+                    "key": "popular_opinion_add",
                     "polarity": "bad",
-                    "text": "-50 Popular Opinion"
+                    "text": "-50 Popular Opinion Baseline"
                   },
                   {
-                    "key": "tax_mult",
+                    "key": "all_tax_mult",
                     "polarity": "bad",
                     "text": "-75% Holding Taxes"
                   },
                   {
-                    "key": "development_growth_factor",
+                    "key": "prosperity_growth_factor",
                     "polarity": "bad",
-                    "text": "-50% Development Growth"
+                    "text": "-50% Prosperity Growth"
                   }
                 ],
                 "kind": "county"
@@ -972,9 +964,9 @@
                 }
               },
               {
-                "desc": "Increase the Development of a County of a different Faith or Culture",
-                "id": "catalyst_improve_development_vassal_diff_faith_culture",
-                "name": "Development increased Catalyst",
+                "desc": "Increase the Prosperity of a County of a different Faith or Culture",
+                "id": "catalyst_improve_prosperity_vassal_diff_faith_culture",
+                "name": "Prosperity increased Catalyst",
                 "points": {
                   "value": 1
                 }
@@ -1214,14 +1206,14 @@
                 "audience": "interloper",
                 "items": [
                   {
-                    "key": "monthly_county_control_decline_at_war_add",
-                    "polarity": "good",
-                    "text": "+0.01 Monthly County Control Decline At War Add /month"
+                    "key": "monthly_control_change_when_above_baseline_add",
+                    "polarity": "bad",
+                    "text": "-0.01 Control Monthly Change above Control Baseline /month"
                   },
                   {
-                    "key": "monthly_county_control_growth_at_war_factor",
+                    "key": "monthly_control_change_when_below_baseline_mult",
                     "polarity": "bad",
-                    "text": "-25% Monthly County Control Growth At War Factor"
+                    "text": "-25% Control Growth"
                   },
                   {
                     "key": "defender_holding_advantage",
@@ -1235,14 +1227,14 @@
                 "audience": "uninvolved",
                 "items": [
                   {
-                    "key": "monthly_county_control_decline_at_war_add",
-                    "polarity": "good",
-                    "text": "+0.02 Monthly County Control Decline At War Add /month"
+                    "key": "monthly_control_change_when_above_baseline_add",
+                    "polarity": "bad",
+                    "text": "-0.02 Control Monthly Change above Control Baseline /month"
                   },
                   {
-                    "key": "monthly_county_control_growth_at_war_factor",
+                    "key": "monthly_control_change_when_below_baseline_mult",
                     "polarity": "bad",
-                    "text": "-50% Monthly County Control Growth At War Factor"
+                    "text": "-50% Control Growth"
                   },
                   {
                     "key": "defender_holding_advantage",
@@ -1393,8 +1385,8 @@
                 "audience": "involved",
                 "items": [
                   {
-                    "key": "completing_building_in_castle_gives_development",
-                    "text": "Completing buildings in Castle Holdings provides Development Growth"
+                    "key": "completing_building_in_castle_gives_prosperity",
+                    "text": "Completing buildings in Castle Holdings provides Prosperity Growth"
                   },
                   {
                     "key": "granting_independence_to_non_dejure_gives_renown",
@@ -1427,12 +1419,12 @@
                 "audience": "interloper",
                 "items": [
                   {
-                    "key": "county_opinion_add",
+                    "key": "popular_opinion_add",
                     "polarity": "bad",
-                    "text": "-10 Popular Opinion"
+                    "text": "-10 Popular Opinion Baseline"
                   },
                   {
-                    "key": "tax_mult",
+                    "key": "all_tax_mult",
                     "polarity": "bad",
                     "text": "-25% Holding Taxes"
                   }
@@ -1443,12 +1435,12 @@
                 "audience": "uninvolved",
                 "items": [
                   {
-                    "key": "county_opinion_add",
+                    "key": "popular_opinion_add",
                     "polarity": "bad",
-                    "text": "-25 Popular Opinion"
+                    "text": "-25 Popular Opinion Baseline"
                   },
                   {
-                    "key": "tax_mult",
+                    "key": "all_tax_mult",
                     "polarity": "bad",
                     "text": "-50% Holding Taxes"
                   }
@@ -1637,14 +1629,14 @@
                 "audience": "involved",
                 "items": [
                   {
-                    "key": "monthly_county_control_decline_at_war_add",
-                    "polarity": "good",
-                    "text": "+0.01 Monthly County Control Decline At War Add /month"
+                    "key": "monthly_control_change_when_above_baseline_add",
+                    "polarity": "bad",
+                    "text": "-0.01 Control Monthly Change above Control Baseline /month"
                   },
                   {
-                    "key": "monthly_county_control_growth_at_war_factor",
+                    "key": "monthly_control_change_when_below_baseline_mult",
                     "polarity": "bad",
-                    "text": "-10% Monthly County Control Growth At War Factor"
+                    "text": "-10% Control Growth"
                   }
                 ],
                 "kind": "county"
@@ -1663,14 +1655,14 @@
                 "audience": "interloper",
                 "items": [
                   {
-                    "key": "monthly_county_control_decline_at_war_add",
-                    "polarity": "good",
-                    "text": "+0.02 Monthly County Control Decline At War Add /month"
+                    "key": "monthly_control_change_when_above_baseline_add",
+                    "polarity": "bad",
+                    "text": "-0.02 Control Monthly Change above Control Baseline /month"
                   },
                   {
-                    "key": "monthly_county_control_growth_at_war_factor",
+                    "key": "monthly_control_change_when_below_baseline_mult",
                     "polarity": "bad",
-                    "text": "-25% Monthly County Control Growth At War Factor"
+                    "text": "-25% Control Growth"
                   }
                 ],
                 "kind": "county"
@@ -1679,14 +1671,14 @@
                 "audience": "uninvolved",
                 "items": [
                   {
-                    "key": "monthly_county_control_decline_at_war_add",
-                    "polarity": "good",
-                    "text": "+0.05 Monthly County Control Decline At War Add /month"
+                    "key": "monthly_control_change_when_above_baseline_add",
+                    "polarity": "bad",
+                    "text": "-0.05 Control Monthly Change above Control Baseline /month"
                   },
                   {
-                    "key": "monthly_county_control_growth_at_war_factor",
+                    "key": "monthly_control_change_when_below_baseline_mult",
                     "polarity": "bad",
-                    "text": "-50% Monthly County Control Growth At War Factor"
+                    "text": "-50% Control Growth"
                   }
                 ],
                 "kind": "county"
@@ -1706,9 +1698,9 @@
                     "text": "+20 Opinion of Different Faiths"
                   },
                   {
-                    "key": "different_faith_county_opinion_mult",
+                    "key": "different_faith_popular_opinion_mult",
                     "polarity": "good",
-                    "text": "-50% Different Faith County Opinion Mult"
+                    "text": "-50% Different Faith Popular Opinion Mult"
                   },
                   {
                     "key": "opinion_of_different_faith_liege",
@@ -1831,9 +1823,9 @@
                 "audience": "common",
                 "items": [
                   {
-                    "key": "development_growth_factor",
+                    "key": "prosperity_growth_factor",
                     "polarity": "good",
-                    "text": "+30% Development Growth"
+                    "text": "+30% Prosperity Growth"
                   }
                 ],
                 "kind": "county"
@@ -1884,9 +1876,9 @@
                 "audience": "involved",
                 "items": [
                   {
-                    "key": "county_opinion_add",
+                    "key": "popular_opinion_add",
                     "polarity": "good",
-                    "text": "+20 Popular Opinion"
+                    "text": "+20 Popular Opinion Baseline"
                   },
                   {
                     "key": "build_speed",
@@ -1931,9 +1923,9 @@
                 "audience": "interloper",
                 "items": [
                   {
-                    "key": "county_opinion_add",
+                    "key": "popular_opinion_add",
                     "polarity": "good",
-                    "text": "+10 Popular Opinion"
+                    "text": "+10 Popular Opinion Baseline"
                   },
                   {
                     "key": "build_speed",
@@ -1941,7 +1933,7 @@
                     "text": "-5% Build Speed"
                   },
                   {
-                    "key": "tax_mult",
+                    "key": "all_tax_mult",
                     "polarity": "bad",
                     "text": "-25% Holding Taxes"
                   }
@@ -1952,14 +1944,14 @@
                 "audience": "uninvolved",
                 "items": [
                   {
-                    "key": "tax_mult",
+                    "key": "all_tax_mult",
                     "polarity": "bad",
                     "text": "-50% Holding Taxes"
                   },
                   {
-                    "key": "county_opinion_add",
+                    "key": "popular_opinion_add",
                     "polarity": "bad",
-                    "text": "-50 Popular Opinion"
+                    "text": "-50 Popular Opinion Baseline"
                   },
                   {
                     "key": "garrison_size",
@@ -2160,36 +2152,16 @@
     "dlc": "Legacy of Persia",
     "faiths": [
       {
-        "id": "ashari",
-        "name": "Ash'arism"
+        "id": "sunni",
+        "name": "Sunni"
       },
       {
-        "id": "zayidi",
-        "name": "Zayidism"
+        "id": "shia",
+        "name": "Shia"
       },
       {
-        "id": "ismaili",
-        "name": "Isma'ilism"
-      },
-      {
-        "id": "azariqa",
-        "name": "Azraqism"
-      },
-      {
-        "id": "mutazila",
-        "name": "Mu'tazilism"
-      },
-      {
-        "id": "maturidi",
-        "name": "Maturidism"
-      },
-      {
-        "id": "imami",
-        "name": "Imamism"
-      },
-      {
-        "id": "alevi",
-        "name": "Alevism"
+        "id": "kharijite",
+        "name": "Kharijite"
       },
       {
         "id": "mazdayasna",
@@ -2208,7 +2180,7 @@
         "name": "Afridunism"
       },
       {
-        "id": "mahayana",
+        "id": "mahayana_faith",
         "name": "Mahayana"
       },
       {
@@ -2248,12 +2220,12 @@
                   {
                     "key": "men_at_arms_recruitment_cost",
                     "polarity": "good",
-                    "text": "-50% Men-at-Arms Recruitment Cost"
+                    "text": "-20% Men-at-Arms Recruitment Cost"
                   },
                   {
                     "key": "men_at_arms_maintenance",
                     "polarity": "good",
-                    "text": "-25% Men-at-Arms Maintenance"
+                    "text": "-10% Men-at-Arms Maintenance"
                   },
                   {
                     "key": "glory_hound_ai_energy",
@@ -2274,7 +2246,7 @@
                   {
                     "key": "men_at_arms_recruitment_cost",
                     "polarity": "good",
-                    "text": "-25% Men-at-Arms Recruitment Cost"
+                    "text": "-10% Men-at-Arms Recruitment Cost"
                   }
                 ],
                 "kind": "character"
@@ -2338,7 +2310,7 @@
                   },
                   {
                     "key": "gain_acceptance_when_developing_other_culture_county",
-                    "text": "Increasing the Development of a county with a different Culture increases Cultural Acceptance"
+                    "text": "Increasing the Prosperity of a county with a different Culture increases Cultural Acceptance"
                   },
                   {
                     "key": "release_prisoner_diff_culture_gives_prestige",
@@ -2852,7 +2824,7 @@
                   {
                     "key": "levy_size",
                     "polarity": "good",
-                    "text": "+100% Levy Size"
+                    "text": "+50% Levy Size"
                   },
                   {
                     "key": "garrison_size",
@@ -2868,7 +2840,7 @@
                   {
                     "key": "levy_size",
                     "polarity": "good",
-                    "text": "+50% Levy Size"
+                    "text": "+25% Levy Size"
                   },
                   {
                     "key": "garrison_size",
@@ -2884,7 +2856,7 @@
                   {
                     "key": "levy_size",
                     "polarity": "bad",
-                    "text": "-50% Levy Size"
+                    "text": "-25% Levy Size"
                   },
                   {
                     "key": "garrison_size",
@@ -3100,7 +3072,7 @@
                   {
                     "key": "travel_danger",
                     "polarity": "bad",
-                    "text": "+25 Danger"
+                    "text": "+25 Travel Danger"
                   }
                 ],
                 "kind": "county"
@@ -3109,9 +3081,9 @@
                 "audience": "involved",
                 "items": [
                   {
-                    "key": "monthly_county_control_decline_at_war_add",
-                    "polarity": "good",
-                    "text": "+0.02 Monthly County Control Decline At War Add /month"
+                    "key": "monthly_control_change_when_above_baseline_add",
+                    "polarity": "bad",
+                    "text": "-0.02 Control Monthly Change above Control Baseline /month"
                   }
                 ],
                 "kind": "county"
@@ -3120,9 +3092,9 @@
                 "audience": "interloper",
                 "items": [
                   {
-                    "key": "monthly_county_control_decline_at_war_add",
-                    "polarity": "good",
-                    "text": "+0.01 Monthly County Control Decline At War Add /month"
+                    "key": "monthly_control_change_when_above_baseline_add",
+                    "polarity": "bad",
+                    "text": "-0.01 Control Monthly Change above Control Baseline /month"
                   }
                 ],
                 "kind": "county"
@@ -3131,9 +3103,9 @@
                 "audience": "uninvolved",
                 "items": [
                   {
-                    "key": "monthly_county_control_decline_at_war_add",
-                    "polarity": "good",
-                    "text": "+0.03 Monthly County Control Decline At War Add /month"
+                    "key": "monthly_control_change_when_above_baseline_add",
+                    "polarity": "bad",
+                    "text": "-0.03 Control Monthly Change above Control Baseline /month"
                   }
                 ],
                 "kind": "county"

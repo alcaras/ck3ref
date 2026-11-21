@@ -32,7 +32,7 @@ SKIP_FIELDS = {
 
 HANDLED_FIELDS = {
     "type", "icon", "damage", "toughness", "pursuit", "screen", "siege_value",
-    "siege_tier", "fights_in_main_phase", "stack", "max", "max_sub_regiments",
+    "siege_tier", "control_value", "fights_in_main_phase", "stack", "max", "max_sub_regiments",
     "max_regiments", "buy_cost", "low_maintenance_cost", "high_maintenance_cost",
     "provision_cost", "terrain_bonus", "counters", "can_recruit",
     "special_recruit_only", "winter_bonus", "holding_bonus",
@@ -208,6 +208,8 @@ def main():
             "stats": {s: blk.get(s, 0) for s in STATS},
             "siegeValue": cost_value(blk.get("siege_value")) if blk.has("siege_value") else None,
             "siegeTier": blk.get("siege_tier"),
+            # game: REGIMENT_CONTROL_VALUE_TT, "county control in stationed holding"
+            "controlValue": cost_value(blk.get("control_value")) if blk.has("control_value") else None,
             "mainPhase": not blk.get("fights_in_main_phase") is False if blk.has("fights_in_main_phase") else True,
             "stack": blk.get("stack"),
             "maxSubRegiments": blk.get("max_sub_regiments"),

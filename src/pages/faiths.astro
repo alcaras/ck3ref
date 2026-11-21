@@ -3,23 +3,58 @@ import Base from '../layouts/Base.astro';
 import Backlinks from '../components/Backlinks.astro';
 import data from '../data/faiths.json';
 import startworld from '../data/startworld.json';
+import doctrinesData from '../data/doctrines.json';
 
 const startFaiths = (startworld as any).faiths;
+const startRites = (startworld as any).rites ?? {};
 
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 
-const { families, religions, faiths } = data;
+const { families, religions, faiths, rites, concepts, tenetStatusNames } = data as any;
+const riteById = new Map<string, any>(rites.map((r: any) => [r.id, r]));
+const faithById = new Map<string, any>(faiths.map((f: any) => [f.id, f]));
+const ritesOf = (fid: string) => rites.filter((r: any) => r.faith === fid);
+// tenet stances: history/faiths entries, later dates overwrite (per _faith_history.info)
+function stances(f: any) {
+  const st = new Map<string, { name: string; status: string; date: string }>();
+  for (const e of f.history ?? []) {
+    for (const s of ['known', 'permitted', 'prohibited'])
+      for (const t of e[s]) st.set(t.key, { name: t.name, status: s, date: e.date });
+  }
+  const by: Record<string, { name: string; date: string }[]> = { permitted: [], prohibited: [], known: [] };
+  for (const v of st.values()) by[v.status].push(v);
+  for (const k in by) by[k].sort((a, b) => a.name.localeCompare(b.name));
+  return by;
+}
+const membership = (f: any, rid: string) => f.riteMembership.find((m: any) => m.id === rid);
+const docName = new Map<string, string>((doctrinesData as any).doctrines.map((d: any) => [d.id, d.name]));
+const dName = (k: string) => docName.get(k) ?? k;
+// doctrines a rite holds that differ from its faith's effective (mainline) set
+const distinct = (r: any) => {
+  const f = faithById.get(r.faith);
+  if (!f) return r.effectiveDoctrines;
+  return r.effectiveDoctrines.filter((d: string) => !f.doctrines.includes(d));
+};
+const riteRows = [...rites].sort((a: any, b: any) => {
+  const fa = faithById.get(a.faith), fb = faithById.get(b.faith);
+  return (fa?.family ?? '').localeCompare(fb?.family ?? '') ||
+    (fa?.religion ?? '').localeCompare(fb?.religion ?? '') ||
+    (fa?.name ?? '').localeCompare(fb?.name ?? '') ||
+    Number(b.id === fa?.mainRite) - Number(a.id === fa?.mainRite) ||
+    (a.name ?? '').localeCompare(b.name ?? '');
+});
 const FAMILY_ORDER = ['rf_abrahamic', 'rf_eastern', 'rf_sinitic', 'rf_pagan'];
 const orderedFamilies = [...families].sort(
   (a, b) => FAMILY_ORDER.indexOf(a.id) - FAMILY_ORDER.indexOf(b.id)
 );
 const religionsOf = (fam: string) => religions.filter((r) => r.family === fam);
-const faithsOf = (rel: string) => faiths.filter((f) => f.religion === rel);
+const faithsOf = (rel: string) => faiths.filter((f: any) => f.religion === rel);
 
-const traitText = (r: (typeof religions)[number]) =>
+const tw = (t: any) => `${t.name}${t.weight !== 1 ? ` (${t.weight})` : ''}`;
+const traitText = (r: any) =>
   [
-    r.virtues.length ? `Virtues: ${r.virtues.map((t) => t.name).join(', ')}` : null,
-    r.sins.length ? `Sins: ${r.sins.map((t) => t.name).join(', ')}` : null,
+    r.virtues.length ? `Virtues: ${r.virtues.map(tw).join(', ')}` : null,
+    r.sins.length ? `Sins: ${r.sins.map(tw).join(', ')}` : null,
   ]
     .filter(Boolean)
     .join(' · ');
@@ -27,9 +62,10 @@ const traitText = (r: (typeof religions)[number]) =>
 <Base
   title="Faiths"
   active="faiths"
-  lede="Every faith at game start, grouped by religion family and religion — with its three tenets, holy sites, religious head, and the virtues and sins of its religion. Read from religion_types, where faiths nest inside their religion."
+  lede="Every faith and rite, grouped by religion family and religion: each faith's rites (the mainline one marked), the core tenets of its mainline rite, its Eminent and regular holy sites, religious head, and the virtues and sins of its religion. Read from faith_types, rite_types and history/faiths."
   stats={[
     { value: faiths.length, label: 'faiths' },
+    { value: rites.length, label: 'rites' },
     { value: religions.length, label: 'religions' },
     { value: families.length, label: 'families' },
   ]}
@@ -41,6 +77,15 @@ const traitText = (r: (typeof religions)[number]) =>
       {orderedFamilies.map((f) => <option value={f.id}>{f.name}</option>)}
     </select>
     <span class="hint" id="count"></span>
+  </div>
+
+  <div class="concepts">
+    {['rite', 'mainline_rite'].map((k) => concepts[k]?.desc && (
+      <details>
+        <summary>{concepts[k].name} <span class="subtle">— the game's own description</span></summary>
+        <p class="concept-text">{concepts[k].desc}</p>
+      </details>
+    ))}
   </div>
 
   {orderedFamilies.map((fam) => (
@@ -61,17 +106,18 @@ const traitText = (r: (typeof religions)[number]) =>
               <thead>
                 <tr>
                   <th>Faith</th>
-                  <th>Tenets</th>
-                  <th>Holy sites</th>
+                  <th>Rites</th>
+                  <th title="Core tenets of the mainline rite">Tenets</th>
+                  <th title="❧ = Eminent: also grants faith-wide bonuses">Holy sites</th>
                   <th>Head of faith</th>
                   <th title="Provinces at the scripted world setup">At start</th>
                 </tr>
               </thead>
               <tbody>
-                {faithsOf(rel.id).map((f) => (
+                {faithsOf(rel.id).map((f: any) => (
                   <tr
                     id={f.id}
-                    data-name={`${f.name} ${f.adherent ?? ''} ${f.tenets.map((t) => t.name).join(' ')} ${f.holySites.map((h) => h.name).join(' ')}`.toLowerCase()}
+                    data-name={`${f.name} ${f.adherent ?? ''} ${f.rites.map((r: string) => riteById.get(r)?.name ?? r).join(' ')} ${f.tenets.map((t: any) => t.name).join(' ')} ${f.holySites.map((h: any) => h.name).join(' ')}`.toLowerCase()}
                     data-family={f.family}
                   >
                     <td class="name">
@@ -83,16 +129,54 @@ const traitText = (r: (typeof religions)[number]) =>
                           {f.adherent && f.adherent !== f.name && (
                             <span class="u-sub"><br />{f.adherent}</span>
                           )}
+                          {f.historical && <span class="u-sub"><br />historical</span>}
                         </span>
+                      </span>
+                      {(() => {
+                        const st = stances(f);
+                        const n = st.permitted.length + st.prohibited.length + st.known.length;
+                        return n > 0 && (
+                          <details class="stances">
+                            <summary>tenet stances ({n})</summary>
+                            {(['permitted', 'prohibited', 'known'] as const).map((s) => st[s].length > 0 && (
+                              <div><span class={`st st--${s}`}>{tenetStatusNames[s]}</span> {st[s].map((t) => t.name).join(', ')}</div>
+                            ))}
+                          </details>
+                        );
+                      })()}
+                    </td>
+                    <td>
+                      <span class="chips">
+                        {f.rites.map((rid: string) => {
+                          const r = riteById.get(rid);
+                          const m = membership(f, rid);
+                          const isMain = rid === f.mainRite;
+                          const dated = f.mainRiteByDate.filter((x: any) => x.rite === rid).map((x: any) => x.date);
+                          return (
+                            <a
+                              class:list={['chip', { 'chip--main': isMain || dated.length }]}
+                              href={`#rite-${rid}`}
+                              title={[
+                                isMain ? `mainline rite (${f.mainRiteSource})` : null,
+                                dated.length ? `mainline from ${dated.join(', ')}` : null,
+                                m?.from ? `joins this faith ${m.from}` : null,
+                              ].filter(Boolean).join('; ') || undefined}
+                            >
+                              {(isMain || dated.length > 0) && <span class="x">❧</span>}
+                              {r?.name ?? rid}
+                              {m?.from && <span class="subtle"> {m.from.split('.')[0]}</span>}
+                            </a>
+                          );
+                        })}
                       </span>
                     </td>
                     <td>
                       <span class="chips">
-                        {f.tenets.map((t) => (
+                        {f.tenets.map((t: any) => (
                           <a
                             class:list={['chip', 'chip--tenet', { 'chip--dlc': t.dlc }]}
                             href={`${base}/doctrines#${t.key}`}
-                            title={t.dlc ? `with ${t.dlc}; otherwise ${t.fallback}` : undefined}
+                            title={t.dlc ? `with ${t.dlc}${t.fallbackName ? `; otherwise ${t.fallbackName}` : ''}` : undefined}
                           >
                             {t.name}
                           </a>
@@ -101,12 +185,17 @@ const traitText = (r: (typeof religions)[number]) =>
                     </td>
                     <td>
                       <span class="chips">
-                        {f.holySites.map((h) => (
-                          <a class="chip" href={`${base}/holy-sites#${h.key}`}>{h.name}</a>
+                        {f.holySites.map((h: any) => (
+                          <a class:list={['chip', { 'chip--counter': h.eminent }]} href={`${base}/holy-sites#${h.key}`} title={h.eminent ? concepts.eminent_holy_site.name : undefined}>
+                            {h.eminent && <span class="x">❧</span>}{h.name}
+                          </a>
                         ))}
                       </span>
                     </td>
-                    <td>{f.religiousHead ? f.religiousHead.name ?? f.religiousHead.title : <span class="subtle">—</span>}</td>
+                    <td>
+                      {f.religiousHead ? f.religiousHead.name ?? f.religiousHead.title : <span class="subtle">—</span>}
+                      {f.headOfRite && <span class="u-sub"><br />head of rite: {f.headOfRite.name ?? f.headOfRite.title}</span>}
+                    </td>
                     <td class="start">
                       {startFaiths[f.id] ? (
                         <span title={startFaiths[f.id].regions.map((r: any) => `${r.name} (${r.n})`).join(', ')}>
@@ -126,6 +215,100 @@ const traitText = (r: (typeof religions)[number]) =>
       ))}
     </section>
   ))}
+
+  <section data-group="rites">
+    <h2 class="group-h" id="rites">
+      Rites
+      <span class="count">{rites.length}</span>
+    </h2>
+    <p class="note">
+      A rite's doctrines are its religion's, then its faith's, then its own: a later layer replaces the doctrine
+      of the same group (<code>_rite_types.info</code>). "Differs from mainline" lists the doctrines where the
+      rite departs from its faith's mainline rite. A rite is listed under the faith its rite type names;
+      <code>history/faiths</code> can move it to another faith at a later date (shown with →).
+    </p>
+    <div class="tbl-scroll">
+      <table class="ntbl">
+        <thead>
+          <tr>
+            <th>Rite</th>
+            <th>Faith</th>
+            <th>Core tenets</th>
+            <th>Differs from mainline</th>
+            <th>Founder · cultures</th>
+            <th title="Provinces at the scripted world setup">At start</th>
+          </tr>
+        </thead>
+        <tbody>
+          {riteRows.map((r: any) => {
+            const f = faithById.get(r.faith);
+            const diff = distinct(r);
+            return (
+              <tr
+                id={`rite-${r.id}`}
+                data-name={`${r.name ?? r.id} ${r.adherent ?? ''} ${f?.name ?? ''} ${r.tenets.map((t: any) => t.name).join(' ')}`.toLowerCase()}
+                data-family={f?.family}
+              >
+                <td class="name">
+                  <span class="faith">
+                    <span class="dot" style={`--c:${r.color ?? 'var(--faint)'}`} />
+                    <span>
+                      <span class="u-name">{r.name ?? r.id}</span>
+                      {r.mainOf.length > 0 && <span class="main-mark" title={`mainline rite of ${r.mainOf.map((x: string) => faithById.get(x)?.name ?? x).join(', ')}`}> ❧</span>}
+                      {r.adherent && r.adherent !== r.name && <span class="u-sub"><br />{r.adherent}</span>}
+                      {!r.convert && <span class="u-sub"><br />cannot be converted to</span>}
+                      {r.historyOnly && <span class="u-sub"><br />history only</span>}
+                      {!r.create && <span class="u-sub"><br />created only by history</span>}
+                    </span>
+                  </span>
+                  {r.desc && <div class="desc">{r.desc}</div>}
+                </td>
+                <td>
+                  {f ? <a href={`#${f.id}`}>{f.name}</a> : <span class="subtle">{r.faith}</span>}
+                  {r.historyFaiths.map((h: any) => (
+                    <span class="u-sub"><br />→ <a href={`#${h.faith}`}>{faithById.get(h.faith)?.name ?? h.faith}</a> from {h.from}</span>
+                  ))}
+                </td>
+                <td>
+                  <span class="chips">
+                    {r.tenets.map((t: any) => (
+                      <a
+                        class:list={['chip', 'chip--tenet', { 'chip--dlc': t.dlc }]}
+                        href={`${base}/doctrines#${t.key}`}
+                        title={t.dlc ? `with ${t.dlc}${t.fallbackName ? `; otherwise ${t.fallbackName}` : ''}` : undefined}
+                      >{t.name}</a>
+                    ))}
+                    {r.tenets.length === 0 && <span class="subtle">—</span>}
+                  </span>
+                </td>
+                <td>
+                  <span class="chips">
+                    {diff.map((d: string) => <a class="chip" href={`${base}/doctrines#${d}`}>{dName(d)}</a>)}
+                    {diff.length === 0 && <span class="subtle">—</span>}
+                  </span>
+                </td>
+                <td>
+                  {r.founder && <span>{r.founder.name ?? r.founder.title}</span>}
+                  {r.cultures.length > 0 && <span class="u-sub">{r.founder && <br />}{r.cultures.map((c: any) => c.name).join(', ')}</span>}
+                  {!r.founder && r.cultures.length === 0 && <span class="subtle">—</span>}
+                </td>
+                <td class="start">
+                  {startRites[r.id] ? (
+                    <span title={startRites[r.id].regions.map((x: any) => `${x.name} (${x.n})`).join(', ')}>
+                      <b>{startRites[r.id].provinces}</b>
+                      <span class="subtle"> prov · {startRites[r.id].counties} counties</span>
+                    </span>
+                  ) : (
+                    <span class="subtle">not on the map</span>
+                  )}
+                </td>
+              </tr>
+            );
+          })}
+        </tbody>
+      </table>
+    </div>
+  </section>
 
   <script>
     const q = document.getElementById('q') as HTMLInputElement;
@@ -174,6 +357,19 @@ const traitText = (r: (typeof religions)[number]) =>
     }
     .chip--tenet { border-color: color-mix(in oklab, var(--rubric) 40%, var(--line)); }
     .chip--dlc { border-style: dashed; cursor: help; }
+    .chip--main { border-color: color-mix(in oklab, var(--rubric) 45%, var(--line)); }
+    .chip .x, .main-mark { color: var(--rubric); margin-right: 0.2rem; }
+    .stances { font-size: 0.72rem; color: var(--dim); margin-top: 0.3rem; max-width: 30rem; white-space: normal; }
+    .stances summary { cursor: pointer; color: var(--faint); }
+    .st { font-family: var(--font-mono); font-size: 0.66rem; color: var(--faint); }
+    .st--permitted { color: var(--good); }
+    .st--prohibited { color: var(--bad); }
+    td.name .desc { color: var(--faint); font-size: 0.75rem; max-width: 40ch; margin-top: 0.15rem; white-space: normal; }
+    .note { color: var(--faint); font-size: 0.78rem; max-width: 70ch; }
+    .note code { font-family: var(--font-mono); }
+    .concepts { margin: 0.4rem 0 1rem; max-width: 72ch; }
+    .concepts summary { cursor: pointer; color: var(--brass); font-size: 0.85rem; }
+    .concept-text { white-space: pre-line; color: var(--dim); font-size: 0.82rem; }
   </style>
 
   <Backlinks ids={faiths.map((x: any) => x.id)} />

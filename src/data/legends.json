@@ -247,7 +247,7 @@
       "desc": "There is nay a soul in … that does not know the name of … and … accomplishments.",
       "id": "great_deed_region",
       "impact": {},
-      "name": "… True Hero",
+      "name": "True Hero of …",
       "properties": [
         "founder",
         "legend_region"
@@ -1173,7 +1173,7 @@
       "chronicle": "great_deed_dynasty",
       "chronicleName": "A Mighty Endeavor for …",
       "desc": null,
-      "dlc": "Community Pack 1 (free)",
+      "dlc": "Legends of the Dead",
       "id": "ce1_heroic_legacy_1",
       "name": "Ce1 Heroic Legacy 1",
       "quality": "famed",
@@ -1618,10 +1618,17 @@
         {
           "creationCost": {
             "gold": {
-              "rules": "base 200 ×base root.primary title.tier −1 ×0.5 min 1 (if root …: multiply 0.8) +base 200 ×base 0 (if exists = culture: culture …) −200 +(if dynasty …: multiply 0.75) (else …) (if has game rule = legend cost high: multiply 2) (else …) (else …) (else …)"
+              "rules": "base base 200 ×base root.primary title.tier −1 ×0.5 min 1 (if root …: multiply 0.8) +base 200 ×base 0 (if exists = culture: culture …) −200 (if has game rule = legend cost high: multiply 2) (else …) (else …) (else …) ×base 1 (if dynasty …: multiply 0.75) (else …)"
             }
           },
           "impact": {
+            "county_modifier": [
+              {
+                "key": "popular_opinion_add",
+                "polarity": "good",
+                "text": "+3 Popular Opinion Baseline"
+              }
+            ],
             "owner_modifier": [
               {
                 "key": "monthly_prestige_gain_mult",
@@ -1642,11 +1649,6 @@
               }
             ],
             "province_modifier": [
-              {
-                "key": "county_opinion_add",
-                "polarity": "good",
-                "text": "+5 Popular Opinion"
-              },
               {
                 "key": "stationed_maa_damage_mult",
                 "polarity": "good",
@@ -1670,7 +1672,7 @@
           "removalDuration": "25–35 years",
           "upgradeCost": {
             "gold": {
-              "rules": "base base 200 ×base root.primary title.tier −1 ×0.5 min 1 (if root …: multiply 0.8) +base 200 ×base 0 (if exists = culture: culture …) −200 +(if dynasty …: multiply 0.75) (else …) (if has game rule = legend cost high: multiply 2) (else …) (else …) (else …) ×0.8 (if promoted legend …: subtract …)"
+              "rules": "base base 200 ×base root.primary title.tier −1 ×0.5 min 1 (if root …: multiply 0.8) +base 200 ×base 0 (if exists = culture: culture …) −200 (if has game rule = legend cost high: multiply 2) (else …) (else …) (else …) ×0.8 (if promoted legend …: subtract …)"
             },
             "prestige": {
               "rules": "base 200 ×base root.primary title.tier −1 ×0.5 min 1 (if root …: multiply 0.8) +base 200 ×base 0 (if exists = culture: culture …) −200 (if has game rule = legend cost high: multiply 2) (else …) (else …) (else …)"
@@ -1680,10 +1682,17 @@
         {
           "creationCost": {
             "gold": {
-              "rules": "base base 200 ×base root.primary title.tier −1 ×0.5 min 1 (if root …: multiply 0.8) +base 200 ×base 0 (if exists = culture: culture …) −200 +(if dynasty …: multiply 0.75) (else …) (if has game rule = legend cost high: multiply 2) (else …) (else …) (else …) ×1.5"
+              "rules": "base base base 200 ×base root.primary title.tier −1 ×0.5 min 1 (if root …: multiply 0.8) +base 200 ×base 0 (if exists = culture: culture …) −200 (if has game rule = legend cost high: multiply 2) (else …) (else …) (else …) ×base 1 (if dynasty …: multiply 0.75) (else …) ×1.5"
             }
           },
           "impact": {
+            "county_modifier": [
+              {
+                "key": "popular_opinion_add",
+                "polarity": "good",
+                "text": "+5 Popular Opinion Baseline"
+              }
+            ],
             "owner_modifier": [
               {
                 "key": "monthly_prestige_gain_mult",
@@ -1710,11 +1719,6 @@
             ],
             "province_modifier": [
               {
-                "key": "county_opinion_add",
-                "polarity": "good",
-                "text": "+10 Popular Opinion"
-              },
-              {
                 "key": "stationed_maa_damage_mult",
                 "polarity": "good",
                 "text": "+10% Stationed Men-at-Arms Damage"
@@ -1737,7 +1741,7 @@
           "removalDuration": "50–70 years",
           "upgradeCost": {
             "gold": {
-              "rules": "base base 200 ×base root.primary title.tier −1 ×0.5 min 1 (if root …: multiply 0.8) +base 200 ×base 0 (if exists = culture: culture …) −200 +(if dynasty …: multiply 0.75) (else …) (if has game rule = legend cost high: multiply 2) (else …) (else …) (else …) ×0.8 (if promoted legend …: subtract …)"
+              "rules": "base base 200 ×base root.primary title.tier −1 ×0.5 min 1 (if root …: multiply 0.8) +base 200 ×base 0 (if exists = culture: culture …) −200 (if has game rule = legend cost high: multiply 2) (else …) (else …) (else …) ×0.8 (if promoted legend …: subtract …)"
             },
             "prestige": {
               "rules": "base 200 ×base root.primary title.tier −1 ×0.5 min 1 (if root …: multiply 0.8) +base 200 ×base 0 (if exists = culture: culture …) −200 (if has game rule = legend cost high: multiply 2) (else …) (else …) (else …)"
@@ -1747,10 +1751,17 @@
         {
           "creationCost": {
             "gold": {
-              "rules": "base base 200 ×base root.primary title.tier −1 ×0.5 min 1 (if root …: multiply 0.8) +base 200 ×base 0 (if exists = culture: culture …) −200 +(if dynasty …: multiply 0.75) (else …) (if has game rule = legend cost high: multiply 2) (else …) (else …) (else …) ×2"
+              "rules": "base base base 200 ×base root.primary title.tier −1 ×0.5 min 1 (if root …: multiply 0.8) +base 200 ×base 0 (if exists = culture: culture …) −200 (if has game rule = legend cost high: multiply 2) (else …) (else …) (else …) ×base 1 (if dynasty …: multiply 0.75) (else …) ×2"
             }
           },
           "impact": {
+            "county_modifier": [
+              {
+                "key": "popular_opinion_add",
+                "polarity": "good",
+                "text": "+10 Popular Opinion Baseline"
+              }
+            ],
             "owner_modifier": [
               {
                 "key": "monthly_prestige_gain_mult",
@@ -1777,11 +1788,6 @@
             ],
             "province_modifier": [
               {
-                "key": "county_opinion_add",
-                "polarity": "good",
-                "text": "+20 Popular Opinion"
-              },
-              {
                 "key": "stationed_maa_damage_mult",
                 "polarity": "good",
                 "text": "+20% Stationed Men-at-Arms Damage"
@@ -1804,7 +1810,7 @@
           "removalDuration": "75–100 years",
           "upgradeCost": {
             "gold": {
-              "rules": "base base base 200 ×base root.primary title.tier −1 ×0.5 min 1 (if root …: multiply 0.8) +base 200 ×base 0 (if exists = culture: culture …) −200 +(if dynasty …: multiply 0.75) (else …) (if has game rule = legend cost high: multiply 2) (else …) (else …) (else …) ×0.8 (if promoted legend …: subtract …) ×2"
+              "rules": "base base base 200 ×base root.primary title.tier −1 ×0.5 min 1 (if root …: multiply 0.8) +base 200 ×base 0 (if exists = culture: culture …) −200 (if has game rule = legend cost high: multiply 2) (else …) (else …) (else …) ×0.8 (if promoted legend …: subtract …) ×2"
             },
             "prestige": {
               "rules": "base 200 ×base root.primary title.tier −1 ×0.5 min 1 (if root …: multiply 0.8) +base 200 ×base 0 (if exists = culture: culture …) −200 (if has game rule = legend cost high: multiply 2) (else …) (else …) (else …)"
@@ -1832,10 +1838,17 @@
         {
           "creationCost": {
             "gold": {
-              "rules": "base 200 ×base root.primary title.tier −1 ×0.5 min 1 (if root …: multiply 0.8) +base 200 ×base 0 (if exists = culture: culture …) −200 +(if dynasty …: multiply 0.75) (else …) (if has game rule = legend cost high: multiply 2) (else …) (else …) (else …)"
+              "rules": "base base 200 ×base root.primary title.tier −1 ×0.5 min 1 (if root …: multiply 0.8) +base 200 ×base 0 (if exists = culture: culture …) −200 (if has game rule = legend cost high: multiply 2) (else …) (else …) (else …) ×base 1 (if dynasty …: multiply 0.75) (else …)"
             }
           },
           "impact": {
+            "county_modifier": [
+              {
+                "key": "popular_opinion_add",
+                "polarity": "good",
+                "text": "+3 Popular Opinion Baseline"
+              }
+            ],
             "owner_modifier": [
               {
                 "key": "monthly_piety_gain_mult",
@@ -1857,14 +1870,9 @@
             ],
             "province_modifier": [
               {
-                "key": "county_opinion_add",
+                "key": "monthly_control_change_when_below_baseline_add",
                 "polarity": "good",
-                "text": "+5 Popular Opinion"
-              },
-              {
-                "key": "monthly_county_control_growth_add",
-                "polarity": "good",
-                "text": "+0.1 Monthly County Control Growth Add /month"
+                "text": "+0.1 Control Growth /month"
               }
             ]
           },
@@ -1884,7 +1892,7 @@
           "removalDuration": "25–35 years",
           "upgradeCost": {
             "gold": {
-              "rules": "base base 200 ×base root.primary title.tier −1 ×0.5 min 1 (if root …: multiply 0.8) +base 200 ×base 0 (if exists = culture: culture …) −200 +(if dynasty …: multiply 0.75) (else …) (if has game rule = legend cost high: multiply 2) (else …) (else …) (else …) ×0.8 (if promoted legend …: subtract …)"
+              "rules": "base base 200 ×base root.primary title.tier −1 ×0.5 min 1 (if root …: multiply 0.8) +base 200 ×base 0 (if exists = culture: culture …) −200 (if has game rule = legend cost high: multiply 2) (else …) (else …) (else …) ×0.8 (if promoted legend …: subtract …)"
             },
             "prestige": {
               "rules": "base 200 ×base root.primary title.tier −1 ×0.5 min 1 (if root …: multiply 0.8) +base 200 ×base 0 (if exists = culture: culture …) −200 (if has game rule = legend cost high: multiply 2) (else …) (else …) (else …)"
@@ -1894,10 +1902,17 @@
         {
           "creationCost": {
             "gold": {
-              "rules": "base base 200 ×base root.primary title.tier −1 ×0.5 min 1 (if root …: multiply 0.8) +base 200 ×base 0 (if exists = culture: culture …) −200 +(if dynasty …: multiply 0.75) (else …) (if has game rule = legend cost high: multiply 2) (else …) (else …) (else …) ×1.5"
+              "rules": "base base base 200 ×base root.primary title.tier −1 ×0.5 min 1 (if root …: multiply 0.8) +base 200 ×base 0 (if exists = culture: culture …) −200 (if has game rule = legend cost high: multiply 2) (else …) (else …) (else …) ×base 1 (if dynasty …: multiply 0.75) (else …) ×1.5"
             }
           },
           "impact": {
+            "county_modifier": [
+              {
+                "key": "popular_opinion_add",
+                "polarity": "good",
+                "text": "+5 Popular Opinion Baseline"
+              }
+            ],
             "owner_modifier": [
               {
                 "key": "monthly_piety_gain_mult",
@@ -1924,14 +1939,9 @@
             ],
             "province_modifier": [
               {
-                "key": "county_opinion_add",
+                "key": "monthly_control_change_when_below_baseline_add",
                 "polarity": "good",
-                "text": "+10 Popular Opinion"
-              },
-              {
-                "key": "monthly_county_control_growth_add",
-                "polarity": "good",
-                "text": "+0.15 Monthly County Control Growth Add /month"
+                "text": "+0.15 Control Growth /month"
               }
             ]
           },
@@ -1951,7 +1961,7 @@
           "removalDuration": "50–70 years",
           "upgradeCost": {
             "gold": {
-              "rules": "base base 200 ×base root.primary title.tier −1 ×0.5 min 1 (if root …: multiply 0.8) +base 200 ×base 0 (if exists = culture: culture …) −200 +(if dynasty …: multiply 0.75) (else …) (if has game rule = legend cost high: multiply 2) (else …) (else …) (else …) ×0.8 (if promoted legend …: subtract …)"
+              "rules": "base base 200 ×base root.primary title.tier −1 ×0.5 min 1 (if root …: multiply 0.8) +base 200 ×base 0 (if exists = culture: culture …) −200 (if has game rule = legend cost high: multiply 2) (else …) (else …) (else …) ×0.8 (if promoted legend …: subtract …)"
             },
             "prestige": {
               "rules": "base 200 ×base root.primary title.tier −1 ×0.5 min 1 (if root …: multiply 0.8) +base 200 ×base 0 (if exists = culture: culture …) −200 (if has game rule = legend cost high: multiply 2) (else …) (else …) (else …)"
@@ -1961,10 +1971,17 @@
         {
           "creationCost": {
             "gold": {
-              "rules": "base base 200 ×base root.primary title.tier −1 ×0.5 min 1 (if root …: multiply 0.8) +base 200 ×base 0 (if exists = culture: culture …) −200 +(if dynasty …: multiply 0.75) (else …) (if has game rule = legend cost high: multiply 2) (else …) (else …) (else …) ×2"
+              "rules": "base base base 200 ×base root.primary title.tier −1 ×0.5 min 1 (if root …: multiply 0.8) +base 200 ×base 0 (if exists = culture: culture …) −200 (if has game rule = legend cost high: multiply 2) (else …) (else …) (else …) ×base 1 (if dynasty …: multiply 0.75) (else …) ×2"
             }
           },
           "impact": {
+            "county_modifier": [
+              {
+                "key": "popular_opinion_add",
+                "polarity": "good",
+                "text": "+10 Popular Opinion Baseline"
+              }
+            ],
             "owner_modifier": [
               {
                 "key": "monthly_piety_gain_mult",
@@ -1991,14 +2008,9 @@
             ],
             "province_modifier": [
               {
-                "key": "county_opinion_add",
+                "key": "monthly_control_change_when_below_baseline_add",
                 "polarity": "good",
-                "text": "+20 Popular Opinion"
-              },
-              {
-                "key": "monthly_county_control_growth_add",
-                "polarity": "good",
-                "text": "+0.25 Monthly County Control Growth Add /month"
+                "text": "+0.25 Control Growth /month"
               }
             ]
           },
@@ -2018,7 +2030,7 @@
           "removalDuration": "75–100 years",
           "upgradeCost": {
             "gold": {
-              "rules": "base base base 200 ×base root.primary title.tier −1 ×0.5 min 1 (if root …: multiply 0.8) +base 200 ×base 0 (if exists = culture: culture …) −200 +(if dynasty …: multiply 0.75) (else …) (if has game rule = legend cost high: multiply 2) (else …) (else …) (else …) ×0.8 (if promoted legend …: subtract …) ×2"
+              "rules": "base base base 200 ×base root.primary title.tier −1 ×0.5 min 1 (if root …: multiply 0.8) +base 200 ×base 0 (if exists = culture: culture …) −200 (if has game rule = legend cost high: multiply 2) (else …) (else …) (else …) ×0.8 (if promoted legend …: subtract …) ×2"
             },
             "prestige": {
               "rules": "base 200 ×base root.primary title.tier −1 ×0.5 min 1 (if root …: multiply 0.8) +base 200 ×base 0 (if exists = culture: culture …) −200 (if has game rule = legend cost high: multiply 2) (else …) (else …) (else …)"
@@ -2046,13 +2058,20 @@
         {
           "creationCost": {
             "gold": {
-              "rules": "base 200 ×base root.primary title.tier −1 ×0.5 min 1 (if root …: multiply 0.8) +base 200 ×base 0 (if exists = culture: culture …) −200 +(if dynasty …: multiply 0.75) (else …) (if has game rule = legend cost high: multiply 2) (else …) (else …) (else …)"
+              "rules": "base base 200 ×base root.primary title.tier −1 ×0.5 min 1 (if root …: multiply 0.8) +base 200 ×base 0 (if exists = culture: culture …) −200 (if has game rule = legend cost high: multiply 2) (else …) (else …) (else …) ×base 1 (if dynasty …: multiply 0.75) (else …)"
             },
             "prestige": {
               "value": 75
             }
           },
           "impact": {
+            "county_modifier": [
+              {
+                "key": "popular_opinion_add",
+                "polarity": "good",
+                "text": "+3 Popular Opinion Baseline"
+              }
+            ],
             "owner_modifier": [
               {
                 "key": "monthly_dynasty_prestige",
@@ -2084,14 +2103,9 @@
             ],
             "province_modifier": [
               {
-                "key": "county_opinion_add",
+                "key": "prosperity_growth_factor",
                 "polarity": "good",
-                "text": "+5 Popular Opinion"
-              },
-              {
-                "key": "development_growth_factor",
-                "polarity": "good",
-                "text": "+1% Development Growth"
+                "text": "+1% Prosperity Growth"
               }
             ]
           },
@@ -2111,7 +2125,7 @@
           "removalDuration": "25–35 years",
           "upgradeCost": {
             "gold": {
-              "rules": "base base 200 ×base root.primary title.tier −1 ×0.5 min 1 (if root …: multiply 0.8) +base 200 ×base 0 (if exists = culture: culture …) −200 +(if dynasty …: multiply 0.75) (else …) (if has game rule = legend cost high: multiply 2) (else …) (else …) (else …) ×0.8 (if promoted legend …: subtract …)"
+              "rules": "base base 200 ×base root.primary title.tier −1 ×0.5 min 1 (if root …: multiply 0.8) +base 200 ×base 0 (if exists = culture: culture …) −200 (if has game rule = legend cost high: multiply 2) (else …) (else …) (else …) ×0.8 (if promoted legend …: subtract …)"
             },
             "prestige": {
               "rules": "base 200 ×base root.primary title.tier −1 ×0.5 min 1 (if root …: multiply 0.8) +base 200 ×base 0 (if exists = culture: culture …) −200 (if has game rule = legend cost high: multiply 2) (else …) (else …) (else …)"
@@ -2121,13 +2135,20 @@
         {
           "creationCost": {
             "gold": {
-              "rules": "base base 200 ×base root.primary title.tier −1 ×0.5 min 1 (if root …: multiply 0.8) +base 200 ×base 0 (if exists = culture: culture …) −200 +(if dynasty …: multiply 0.75) (else …) (if has game rule = legend cost high: multiply 2) (else …) (else …) (else …) ×1.5"
+              "rules": "base base base 200 ×base root.primary title.tier −1 ×0.5 min 1 (if root …: multiply 0.8) +base 200 ×base 0 (if exists = culture: culture …) −200 (if has game rule = legend cost high: multiply 2) (else …) (else …) (else …) ×base 1 (if dynasty …: multiply 0.75) (else …) ×1.5"
             },
             "prestige": {
               "value": 150
             }
           },
           "impact": {
+            "county_modifier": [
+              {
+                "key": "popular_opinion_add",
+                "polarity": "good",
+                "text": "+5 Popular Opinion Baseline"
+              }
+            ],
             "owner_modifier": [
               {
                 "key": "monthly_dynasty_prestige",
@@ -2159,14 +2180,9 @@
             ],
             "province_modifier": [
               {
-                "key": "county_opinion_add",
+                "key": "prosperity_growth_factor",
                 "polarity": "good",
-                "text": "+10 Popular Opinion"
-              },
-              {
-                "key": "development_growth_factor",
-                "polarity": "good",
-                "text": "+2% Development Growth"
+                "text": "+2% Prosperity Growth"
               }
             ]
           },
@@ -2186,7 +2202,7 @@
           "removalDuration": "50–70 years",
           "upgradeCost": {
             "gold": {
-              "rules": "base base 200 ×base root.primary title.tier −1 ×0.5 min 1 (if root …: multiply 0.8) +base 200 ×base 0 (if exists = culture: culture …) −200 +(if dynasty …: multiply 0.75) (else …) (if has game rule = legend cost high: multiply 2) (else …) (else …) (else …) ×0.8 (if promoted legend …: subtract …)"
+              "rules": "base base 200 ×base root.primary title.tier −1 ×0.5 min 1 (if root …: multiply 0.8) +base 200 ×base 0 (if exists = culture: culture …) −200 (if has game rule = legend cost high: multiply 2) (else …) (else …) (else …) ×0.8 (if promoted legend …: subtract …)"
             },
             "prestige": {
               "rules": "base 200 ×base root.primary title.tier −1 ×0.5 min 1 (if root …: multiply 0.8) +base 200 ×base 0 (if exists = culture: culture …) −200 (if has game rule = legend cost high: multiply 2) (else …) (else …) (else …)"
@@ -2196,13 +2212,20 @@
         {
           "creationCost": {
             "gold": {
-              "rules": "base base 200 ×base root.primary title.tier −1 ×0.5 min 1 (if root …: multiply 0.8) +base 200 ×base 0 (if exists = culture: culture …) −200 +(if dynasty …: multiply 0.75) (else …) (if has game rule = legend cost high: multiply 2) (else …) (else …) (else …) ×2"
+              "rules": "base base base 200 ×base root.primary title.tier −1 ×0.5 min 1 (if root …: multiply 0.8) +base 200 ×base 0 (if exists = culture: culture …) −200 (if has game rule = legend cost high: multiply 2) (else …) (else …) (else …) ×base 1 (if dynasty …: multiply 0.75) (else …) ×2"
             },
             "prestige": {
               "rules": "base 150 ×1.5"
             }
           },
           "impact": {
+            "county_modifier": [
+              {
+                "key": "popular_opinion_add",
+                "polarity": "good",
+                "text": "+10 Popular Opinion Baseline"
+              }
+            ],
             "owner_modifier": [
               {
                 "key": "monthly_dynasty_prestige",
@@ -2239,14 +2262,9 @@
             ],
             "province_modifier": [
               {
-                "key": "county_opinion_add",
+                "key": "prosperity_growth_factor",
                 "polarity": "good",
-                "text": "+20 Popular Opinion"
-              },
-              {
-                "key": "development_growth_factor",
-                "polarity": "good",
-                "text": "+6% Development Growth"
+                "text": "+6% Prosperity Growth"
               }
             ]
           },
@@ -2266,7 +2284,7 @@
           "removalDuration": "75–100 years",
           "upgradeCost": {
             "gold": {
-              "rules": "base base base 200 ×base root.primary title.tier −1 ×0.5 min 1 (if root …: multiply 0.8) +base 200 ×base 0 (if exists = culture: culture …) −200 +(if dynasty …: multiply 0.75) (else …) (if has game rule = legend cost high: multiply 2) (else …) (else …) (else …) ×0.8 (if promoted legend …: subtract …) ×2"
+              "rules": "base base base 200 ×base root.primary title.tier −1 ×0.5 min 1 (if root …: multiply 0.8) +base 200 ×base 0 (if exists = culture: culture …) −200 (if has game rule = legend cost high: multiply 2) (else …) (else …) (else …) ×0.8 (if promoted legend …: subtract …) ×2"
             },
             "prestige": {
               "rules": "base 200 ×base root.primary title.tier −1 ×0.5 min 1 (if root …: multiply 0.8) +base 200 ×base 0 (if exists = culture: culture …) −200 (if has game rule = legend cost high: multiply 2) (else …) (else …) (else …)"

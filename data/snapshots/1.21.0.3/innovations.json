@@ -1,0 +1,4412 @@
+[
+  {
+    "desc": "The great canoes of West Africa are excellent for navigating rivers and allows us to quickly ferry troops to where we need them.",
+    "dlc": null,
+    "effects": [
+      "Unlocks the ability to Raid over seas, if you can already Raid",
+      "Unlocks the ability to sail in Major Rivers"
+    ],
+    "era": "culture_era_tribal",
+    "eraName": "Tribal",
+    "features": [],
+    "group": "culture_group_military",
+    "groupName": "Military",
+    "icon": "innovation_majesty_01",
+    "id": "innovation_african_canoes",
+    "modifiers": {
+      "Characters": [
+        "-25% Embarkation Cost",
+        "+10% Raid Speed"
+      ]
+    },
+    "name": "West African Canoes",
+    "parameters": [],
+    "region": "world_africa_west",
+    "regionName": "Western Africa",
+    "requirements": [],
+    "skill": "martial",
+    "sourceFile": "00_tribal_innovations.txt",
+    "unlocks": []
+  },
+  {
+    "desc": "One of the oldest traditional weapons for Indian footmen is the bamboo bow, which is both cheap to make and easy to carry and maintain. Since the bow is also a favorite weapon of many hunters there is no shortage of experienced archers in Indian armies.",
+    "dlc": null,
+    "effects": [],
+    "era": "culture_era_tribal",
+    "eraName": "Tribal",
+    "features": [],
+    "group": "culture_group_military",
+    "groupName": "Military",
+    "icon": "innovation_special_maa_02",
+    "id": "innovation_bamboo_bows",
+    "modifiers": {},
+    "name": "Bamboo Bow",
+    "parameters": [],
+    "region": "world_india",
+    "regionName": "India",
+    "requirements": [],
+    "skill": "martial",
+    "sourceFile": "00_cultural_maa_innovations.txt",
+    "unlocks": [
+      {
+        "key": "paiks",
+        "kind": "maa",
+        "text": "Paiks"
+      }
+    ]
+  },
+  {
+    "desc": "Based on the authority to command men in battle, the bann gives our rulers the power to compel free men to fight for them, forming a legal basis for the mustering of large armies.",
+    "dlc": null,
+    "effects": [
+      "Unlocks the March Contract Vassal Contract",
+      "Unlocks the Castellan Contract Vassal Contract"
+    ],
+    "era": "culture_era_tribal",
+    "eraName": "Tribal",
+    "features": [],
+    "group": "culture_group_military",
+    "groupName": "Military",
+    "icon": "innovation_raised_banner",
+    "id": "innovation_bannus",
+    "modifiers": {
+      "Characters": [
+        "+15% Levy Reinforcement Rate",
+        "+1 Accolades",
+        "+0.5% Herd Conversion into Horde Riders"
+      ]
+    },
+    "name": "Bannus",
+    "parameters": [],
+    "region": null,
+    "regionName": null,
+    "requirements": [],
+    "skill": "martial",
+    "sourceFile": "00_tribal_innovations.txt",
+    "unlocks": []
+  },
+  {
+    "desc": "By constructing dedicated buildings for us to quarter our soldiers in we can make sure that we have sufficient space to accommodate our growing armies.",
+    "dlc": null,
+    "effects": [
+      "Unlocks District Tiers:\n    • Military District\n    • War Lodges District Tier II"
+    ],
+    "era": "culture_era_tribal",
+    "eraName": "Tribal",
+    "features": [],
+    "group": "culture_group_military",
+    "groupName": "Military",
+    "icon": "innovation_levy_building",
+    "id": "innovation_barracks",
+    "modifiers": {
+      "Characters": [
+        "+5% Herd Capacity"
+      ]
+    },
+    "name": "Barracks",
+    "parameters": [],
+    "region": null,
+    "regionName": null,
+    "requirements": [],
+    "skill": "martial",
+    "sourceFile": "00_tribal_innovations.txt",
+    "unlocks": []
+  },
+  {
+    "desc": "Andalusian stallions are better at traveling and fighting in rough terrain than other breeds of horses. We can train specialized cavalry regiments which take advantage of this.",
+    "dlc": null,
+    "effects": [],
+    "era": "culture_era_tribal",
+    "eraName": "Tribal",
+    "features": [],
+    "group": "culture_group_military",
+    "groupName": "Military",
+    "icon": "innovation_caballeros",
+    "id": "innovation_caballeros",
+    "modifiers": {},
+    "name": "Caballeros",
+    "parameters": [],
+    "region": "world_europe_west_iberia",
+    "regionName": "Iberia",
+    "requirements": [],
+    "skill": "martial",
+    "sourceFile": "00_cultural_maa_innovations.txt",
+    "unlocks": [
+      {
+        "key": "caballero",
+        "kind": "maa",
+        "text": "Caballeros"
+      }
+    ]
+  },
+  {
+    "desc": "While slow to load and fire, torsion-powered catapults like these allow us to assail enemy fortifications while staying out of their archers' range.",
+    "dlc": null,
+    "effects": [
+      "Can recruit Onagers as Men-at-Arms",
+      "Unlocks Building lines:\n    • Workers' Camps in the Military District"
+    ],
+    "era": "culture_era_tribal",
+    "eraName": "Tribal",
+    "features": [],
+    "group": "culture_group_military",
+    "groupName": "Military",
+    "icon": "innovation_siege_weapons",
+    "id": "innovation_catapult",
+    "modifiers": {},
+    "name": "Onager",
+    "parameters": [],
+    "region": null,
+    "regionName": null,
+    "requirements": [],
+    "skill": "learning",
+    "sourceFile": "00_tribal_innovations.txt",
+    "unlocks": []
+  },
+  {
+    "desc": "As with self bows, the strength of a bow's limb determines the potential power of its draw. By reinforcing the span with horn or even steel, the draw-weight and thus range and power of a crossbow can be made magnitudes higher than any wooden counterpart, as well as making it more hard-wearing and longer-lived.",
+    "dlc": "All Under Heaven",
+    "effects": [],
+    "era": "culture_era_tribal",
+    "eraName": "Tribal",
+    "features": [],
+    "group": "culture_group_military",
+    "groupName": "Military",
+    "icon": "innovation_advanced_bowmaking",
+    "id": "innovation_composite_crossbow",
+    "modifiers": {},
+    "name": "Composite Crossbows",
+    "parameters": [
+      {
+        "hasLoc": true,
+        "key": "silk_road_innovation_parameter",
+        "text": "May only be acquired as a potential Cultural Fascination via Chinese Heritage, Sinophilic Tradition, or via The Silk Road Situation",
+        "value": true
+      }
+    ],
+    "region": null,
+    "regionName": null,
+    "requirements": [
+      {
+        "key": "silk_road_innovation_trigger",
+        "kind": "trigger",
+        "negated": false,
+        "text": "Spreads along the Silk Road"
+      }
+    ],
+    "skill": "learning",
+    "sourceFile": "tgp_innovations.txt",
+    "unlocks": [
+      {
+        "key": null,
+        "kind": "maa_upgrade",
+        "text": "None: crossbowmen men at arms, +5 damage, +5 screen, +0.1 siege value"
+      },
+      {
+        "key": null,
+        "kind": "maa_upgrade",
+        "text": "None: shenbigong men at arms, +5 damage, +5 screen, +0.1 siege value"
+      }
+    ]
+  },
+  {
+    "desc": "Elephants are difficult to raise in captivity, so each mahout must capture their own wild elephants and train them. This means there is a delicate art to properly using these great creatures in battle, but it is an art we are dedicated to mastering.",
+    "dlc": null,
+    "effects": [
+      "Knights of this Culture become eligible for Elephant Rider Accolades",
+      "May recruit Elephant Cavalry Men-at-Arms"
+    ],
+    "era": "culture_era_tribal",
+    "eraName": "Tribal",
+    "features": [],
+    "group": "culture_group_military",
+    "groupName": "Military",
+    "icon": "innovation_elephant",
+    "id": "innovation_elephantry",
+    "modifiers": {},
+    "name": "Elephantry",
+    "parameters": [
+      {
+        "hasLoc": true,
+        "key": "royal_elephant_stables",
+        "text": "The Royal Stables Building keeps royal elephants: it increases the control value of Stationed elephant Regiments, strengthens Stationed elephant Regiments and has an Ivory Need. The Training Grounds Building also has an Ivory Need that increases Damage and Toughness and reduces Maintenance of Stationed elephant Regiments when met",
+        "value": true
+      }
+    ],
+    "region": "world_innovation_elephants",
+    "regionName": "India or South East Asia",
+    "requirements": [],
+    "skill": "stewardship",
+    "sourceFile": "00_tribal_innovations.txt",
+    "unlocks": [
+      {
+        "key": "elephantry_barracks_1",
+        "kind": "building",
+        "text": "Elephantry Barracks"
+      }
+    ]
+  },
+  {
+    "desc": "Meticulous application of certain resins to armors strengthens them considerably, and helps weatherproof heavier iron plates. While this process has been known for some time, its use has been largely limited to boxes, bottles, and other wares. Lacquered armor represents a new way to protect both soldiers and their equipment.",
+    "dlc": "All Under Heaven",
+    "effects": [],
+    "era": "culture_era_tribal",
+    "eraName": "Tribal",
+    "features": [],
+    "group": "culture_group_military",
+    "groupName": "Military",
+    "icon": "innovation_weapons_and_armor_02",
+    "id": "innovation_lacquered_armor",
+    "modifiers": {
+      "Characters": [
+        "-5% Heavy Infantry Maintenance",
+        "-5% Heavy Cavalry Maintenance"
+      ]
+    },
+    "name": "Lacquered Armor",
+    "parameters": [
+      {
+        "hasLoc": true,
+        "key": "higher_quality_armor_artifacts_parameter",
+        "text": "Armor Artifacts from Sponsored Inspirations and Commission Artifact are of higher Quality",
+        "value": true
+      },
+      {
+        "hasLoc": true,
+        "key": "silk_road_innovation_parameter",
+        "text": "May only be acquired as a potential Cultural Fascination via Chinese Heritage, Sinophilic Tradition, or via The Silk Road Situation",
+        "value": true
+      }
+    ],
+    "region": null,
+    "regionName": null,
+    "requirements": [
+      {
+        "key": "silk_road_innovation_trigger",
+        "kind": "trigger",
+        "negated": false,
+        "text": "Spreads along the Silk Road"
+      }
+    ],
+    "skill": "stewardship",
+    "sourceFile": "tgp_innovations.txt",
+    "unlocks": [
+      {
+        "key": "skirmishers",
+        "kind": "maa_upgrade",
+        "text": "Skirmishers: +2 toughness"
+      },
+      {
+        "key": "heavy_infantry",
+        "kind": "maa_upgrade",
+        "text": "Heavy Infantry: +4 toughness"
+      },
+      {
+        "key": "heavy_cavalry",
+        "kind": "maa_upgrade",
+        "text": "Heavy Cavalry: +8 toughness"
+      }
+    ]
+  },
+  {
+    "desc": "Our longships are formidable seafaring vessels which can travel almost anywhere and even brave rough weather, giving us exceptional mobility on the seas.",
+    "dlc": null,
+    "effects": [
+      "Unlocks the ability to Raid over seas, if you can already Raid",
+      "Unlocks the ability to sail in Major Rivers",
+      "Unlocks the Adventure Raid Intent"
+    ],
+    "era": "culture_era_tribal",
+    "eraName": "Tribal",
+    "features": [],
+    "group": "culture_group_military",
+    "groupName": "Military",
+    "icon": "innovation_longboats",
+    "id": "innovation_longboats",
+    "modifiers": {
+      "Characters": [
+        "-75% Embarkation Cost",
+        "+25% Naval Speed"
+      ]
+    },
+    "name": "Longships",
+    "parameters": [],
+    "region": "world_europe_north",
+    "regionName": "Northern Europe",
+    "requirements": [],
+    "skill": "martial",
+    "sourceFile": "00_tribal_innovations.txt",
+    "unlocks": []
+  },
+  {
+    "desc": "Simple yet effective, building our castles on raised earthen mounds is the best way to ensure we quite literally have the high ground over our enemies.",
+    "dlc": null,
+    "effects": [
+      "Unlocks Districts:\n    • Border Forts District\n    • Walls District"
+    ],
+    "era": "culture_era_tribal",
+    "eraName": "Tribal",
+    "features": [],
+    "group": "culture_group_military",
+    "groupName": "Military",
+    "icon": "innovation_fortifications",
+    "id": "innovation_motte",
+    "modifiers": {},
+    "name": "Earthworks",
+    "parameters": [
+      {
+        "hasLoc": true,
+        "key": "nomad_motte_innovation_bonus",
+        "text": "If Nomadic, increased chance of Other Effects from Raid Intents",
+        "value": true
+      }
+    ],
+    "region": null,
+    "regionName": null,
+    "requirements": [],
+    "skill": "stewardship",
+    "sourceFile": "00_tribal_innovations.txt",
+    "unlocks": []
+  },
+  {
+    "desc": "Simply having people willing to fight for us is not enough to win wars. Setting aside space for people to both train and muster for battle will allow us to support groups of more experienced fighters who can lead us to victory.",
+    "dlc": null,
+    "effects": [],
+    "era": "culture_era_tribal",
+    "eraName": "Tribal",
+    "features": [],
+    "group": "culture_group_military",
+    "groupName": "Military",
+    "icon": "innovation_leadership_02",
+    "id": "innovation_mustering_grounds",
+    "modifiers": {
+      "Characters": [
+        "+1 Max Men-at-Arms Regiments",
+        "+2 Size of Men-at-Arms Regiments"
+      ]
+    },
+    "name": "Mustering Grounds",
+    "parameters": [],
+    "region": null,
+    "regionName": null,
+    "requirements": [],
+    "skill": "martial",
+    "sourceFile": "00_tribal_innovations.txt",
+    "unlocks": []
+  },
+  {
+    "desc": "By twisting and forge-welding rods of iron and steel together, our smiths can produce blades that are harder, more flexible, and far deadlier than plain iron. Such weapons demand skilled hands and constant care, and warriors who carry them expect to be paid accordingly.",
+    "dlc": null,
+    "effects": [],
+    "era": "culture_era_tribal",
+    "eraName": "Tribal",
+    "features": [],
+    "group": "culture_group_military",
+    "groupName": "Military",
+    "icon": "innovation_weapons_and_armor_01",
+    "id": "innovation_pattern_welding",
+    "modifiers": {
+      "Characters": [
+        "+5% Skirmisher Damage",
+        "+5% Skirmisher Maintenance",
+        "+5% Light Cavalry Damage",
+        "+5% Light Cavalry Maintenance",
+        "+5% Heavy Infantry Damage",
+        "+5% Heavy Infantry Maintenance"
+      ]
+    },
+    "name": "Pattern-Welded Blades",
+    "parameters": [],
+    "region": null,
+    "regionName": null,
+    "requirements": [],
+    "skill": "martial",
+    "sourceFile": "00_tribal_innovations.txt",
+    "unlocks": []
+  },
+  {
+    "desc": "The pole vault, is a simple invention which requires much training and practice to master. A skilled vaulter will be able to propel themselves forward over great gaps and tall rocks, as well as over some fortifications.",
+    "dlc": null,
+    "effects": [],
+    "era": "culture_era_tribal",
+    "eraName": "Tribal",
+    "features": [],
+    "group": "culture_group_military",
+    "groupName": "Military",
+    "icon": "innovation_weapons_and_armor_01",
+    "id": "innovation_pole_vault",
+    "modifiers": {},
+    "name": "Pole Vault",
+    "parameters": [],
+    "region": null,
+    "regionName": null,
+    "requirements": [],
+    "skill": "martial",
+    "sourceFile": "00_cultural_maa_innovations.txt",
+    "unlocks": [
+      {
+        "key": "guanch_vaulter",
+        "kind": "maa",
+        "text": "Vaulter Infantry"
+      }
+    ]
+  },
+  {
+    "desc": "Formed of a dozen or more layers of linen stitched together, these jackets can stop even heavy arrows and are an affordable way for us to armor an entire regiment for battle.",
+    "dlc": null,
+    "effects": [
+      "Can recruit Armored Footmen as Men-at-Arms",
+      "Knights of this Culture become eligible for Vanguard Accolades"
+    ],
+    "era": "culture_era_tribal",
+    "eraName": "Tribal",
+    "features": [],
+    "group": "culture_group_military",
+    "groupName": "Military",
+    "icon": "innovation_quilted_armor",
+    "id": "innovation_quilted_armor",
+    "modifiers": {
+      "Characters": [
+        "+5% Skirmisher Toughness",
+        "+5% Heavy Infantry Toughness",
+        "+2% Nomadic Horde Toughness"
+      ]
+    },
+    "name": "Quilted Armor",
+    "parameters": [],
+    "region": null,
+    "regionName": null,
+    "requirements": [],
+    "skill": "martial",
+    "sourceFile": "00_tribal_innovations.txt",
+    "unlocks": []
+  },
+  {
+    "desc": "Combining steel-tensioned limbs with mechanical draw systems, these advanced bows extended both range and killing power. The innovation heralded the shift from volume-based defense to precision-focused field deployment, empowering professional armies with tools worthy of empire.",
+    "dlc": null,
+    "effects": [],
+    "era": "culture_era_tribal",
+    "eraName": "Tribal",
+    "features": [],
+    "group": "culture_group_military",
+    "groupName": "Military",
+    "icon": "innovation_special_maa_02",
+    "id": "innovation_repeating_crossbow",
+    "modifiers": {},
+    "name": "Repeating Crossbow",
+    "parameters": [],
+    "region": null,
+    "regionName": null,
+    "requirements": [
+      {
+        "key": "unlock_shenbigong_innovation",
+        "kind": "parameter",
+        "negated": false,
+        "text": "The Repeating Crossbow Innovation is available from the Tribal Era onward"
+      },
+      {
+        "key": "heritage_chinese",
+        "kind": "pillar",
+        "negated": false,
+        "text": "Chinese"
+      }
+    ],
+    "skill": "learning",
+    "sourceFile": "00_cultural_maa_innovations.txt",
+    "unlocks": [
+      {
+        "key": "shenbigong",
+        "kind": "maa",
+        "text": "Shenbigong"
+      }
+    ]
+  },
+  {
+    "desc": "The Sahel is a dry and arid plain, where vast distances are often covered with horses. The Sahel Riders are mounted warriors who use light quilted armor and javelins to devastate their enemies. They are quick and can easily brave deserts and drylands.",
+    "dlc": null,
+    "effects": [],
+    "era": "culture_era_tribal",
+    "eraName": "Tribal",
+    "features": [],
+    "group": "culture_group_military",
+    "groupName": "Military",
+    "icon": "innovation_special_maa_01",
+    "id": "innovation_sahel_horsemen",
+    "modifiers": {},
+    "name": "Sahel Horsemen",
+    "parameters": [],
+    "region": "custom_sahel_proper",
+    "regionName": "the Sahel",
+    "requirements": [],
+    "skill": "martial",
+    "sourceFile": "00_cultural_maa_innovations.txt",
+    "unlocks": [
+      {
+        "key": "sahel_horsemen",
+        "kind": "maa",
+        "text": "Sahel Horsemen"
+      }
+    ]
+  },
+  {
+    "desc": "Known as Iron Pagodas, these heavily armed cavalrymen were introduced to China by the Jurchen Jin dynasty. Pairing skilled horsemanship with heavy armor, they are a fierce enemy on any battlefield.",
+    "dlc": "All Under Heaven",
+    "effects": [],
+    "era": "culture_era_tribal",
+    "eraName": "Tribal",
+    "features": [],
+    "group": "culture_group_military",
+    "groupName": "Military",
+    "icon": "innovation_special_maa_01",
+    "id": "innovation_tiefutu",
+    "modifiers": {},
+    "name": "Tiefutu",
+    "parameters": [
+      {
+        "hasLoc": true,
+        "key": "tiefutu_iron_armor",
+        "text": "Castles have an Iron Need that strengthens Stationed Heavy Cavalry when met",
+        "value": true
+      }
+    ],
+    "region": "world_asia_north_east",
+    "regionName": "Northeast Asia",
+    "requirements": [],
+    "skill": "martial",
+    "sourceFile": "tgp_innovations.txt",
+    "unlocks": [
+      {
+        "key": "tiefutu",
+        "kind": "maa",
+        "text": "Tiefutu"
+      }
+    ]
+  },
+  {
+    "desc": "What do we owe these lands we live in? Nothing! The realm's heart is its people, and do we not deserve the best soil, the greatest treasures, the finest palaces? Having them is as simple as taking them!",
+    "dlc": "Northern Lords",
+    "effects": [
+      "Unlocks the Varangian Adventure Casus Belli during the Tribal Era"
+    ],
+    "era": "culture_era_tribal",
+    "eraName": "Tribal",
+    "features": [],
+    "group": "culture_group_military",
+    "groupName": "Military",
+    "icon": "innovation_hird",
+    "id": "innovation_varangian_adventurers",
+    "modifiers": {
+      "Characters": [
+        "+5% Heavy Infantry Damage",
+        "+5% Heavy Infantry Maintenance"
+      ]
+    },
+    "name": "Varangian Adventurers",
+    "parameters": [],
+    "region": null,
+    "regionName": null,
+    "requirements": [
+      {
+        "key": "has_fp1_dlc_trigger",
+        "kind": "dlc",
+        "negated": false,
+        "text": "Northern Lords"
+      },
+      {
+        "key": "heritage_north_germanic",
+        "kind": "pillar",
+        "negated": false,
+        "text": "North Germanic"
+      }
+    ],
+    "skill": "martial",
+    "sourceFile": "01_fp1_innovations.txt",
+    "unlocks": []
+  },
+  {
+    "desc": "Camels are naturally suited for living in desert terrain, but they aren't inherently creatures of battle. Our breeders and trainers can change this, giving us access to adaptive cavalry which will let us master the sands.",
+    "dlc": null,
+    "effects": [
+      "Knights of this Culture become eligible for Camelier Accolades"
+    ],
+    "era": "culture_era_tribal",
+    "eraName": "Tribal",
+    "features": [],
+    "group": "culture_group_military",
+    "groupName": "Military",
+    "icon": "innovation_camel",
+    "id": "innovation_war_camels",
+    "modifiers": {},
+    "name": "War Camels",
+    "parameters": [
+      {
+        "hasLoc": true,
+        "key": "royal_camel_stables",
+        "text": "The Royal Stables Building increases the control value of Stationed camel Regiments",
+        "value": true
+      }
+    ],
+    "region": "world_innovation_camels",
+    "regionName": "the Middle East, Persia or North Africa",
+    "requirements": [],
+    "skill": "stewardship",
+    "sourceFile": "00_tribal_innovations.txt",
+    "unlocks": [
+      {
+        "key": "camel_rider",
+        "kind": "maa",
+        "text": "Camel Riders"
+      },
+      {
+        "key": "camelry_compound_1",
+        "kind": "building",
+        "text": "Camelry Compound"
+      }
+    ]
+  },
+  {
+    "desc": "Among our people, there is a strong tradition of public gatherings of all free, empowered adults, where anyone may raise their grievances with the ruler. Of course, for those who stand tall in the eyes of the smallfolk, there can be power in swaying the mob...",
+    "dlc": "Northern Lords",
+    "effects": [
+      "Characters may break the Government Authority cooldowns at a heavy Prestige cost",
+      "Belligerent Vassals are more common"
+    ],
+    "era": "culture_era_tribal",
+    "eraName": "Tribal",
+    "features": [],
+    "group": "culture_group_civic",
+    "groupName": "Civic",
+    "icon": "innovation_raised_banner",
+    "id": "innovation_all_things",
+    "modifiers": {
+      "Characters": [
+        "+5 Tribal Vassal Opinion"
+      ]
+    },
+    "name": "All-Things",
+    "parameters": [],
+    "region": "world_europe_north",
+    "regionName": "Northern Europe",
+    "requirements": [
+      {
+        "key": "has_fp1_dlc_trigger",
+        "kind": "dlc",
+        "negated": false,
+        "text": "Northern Lords"
+      }
+    ],
+    "skill": "diplomacy",
+    "sourceFile": "01_fp1_innovations.txt",
+    "unlocks": []
+  },
+  {
+    "desc": "Using a series of carved wooden blocks, it becomes possible to assemble an array of stamps that can be used several times over to reproduce the same words and images on any suitable material. This vastly simplifies the process of book production, reducing costs and making the written word that much more accessible to everyone.",
+    "dlc": "All Under Heaven",
+    "effects": [],
+    "era": "culture_era_tribal",
+    "eraName": "Tribal",
+    "features": [],
+    "group": "culture_group_civic",
+    "groupName": "Civic",
+    "icon": "innovation_block_printing",
+    "id": "innovation_block_printing",
+    "modifiers": {
+      "Characters": [
+        "+15% Legend Spread Chance"
+      ],
+      "Counties": [
+        "+10% Prosperity Growth",
+        "+15% Books & Paper Production"
+      ]
+    },
+    "name": "Block Printing",
+    "parameters": [
+      {
+        "hasLoc": true,
+        "key": "cheaper_book_inspiration",
+        "text": "Book Artifact Inspiration Cost: -50%",
+        "value": true
+      },
+      {
+        "hasLoc": true,
+        "key": "block_printing_scriptorium_bonuses",
+        "text": "The Scriptorium Building line grants additional bonuses",
+        "value": true
+      },
+      {
+        "hasLoc": true,
+        "key": "silk_road_innovation_parameter",
+        "text": "May only be acquired as a potential Cultural Fascination via Chinese Heritage, Sinophilic Tradition, or via The Silk Road Situation",
+        "value": true
+      }
+    ],
+    "region": null,
+    "regionName": null,
+    "requirements": [
+      {
+        "key": "silk_road_innovation_trigger",
+        "kind": "trigger",
+        "negated": false,
+        "text": "Spreads along the Silk Road"
+      }
+    ],
+    "skill": "learning",
+    "sourceFile": "tgp_innovations.txt",
+    "unlocks": []
+  },
+  {
+    "desc": "For as long as anyone can remember India has been a center of voluminous and high quality textile production and export. To the Romans this was the 'woven wind' that merchants brought from afar, and later the port of Calicut would become synonymous with the 'Calicoe' cloth bought there.",
+    "dlc": null,
+    "effects": [],
+    "era": "culture_era_tribal",
+    "eraName": "Tribal",
+    "features": [],
+    "group": "culture_group_civic",
+    "groupName": "Civic",
+    "icon": "gdp_innovation_persian_weaver",
+    "id": "innovation_calicoes_and_muslin",
+    "modifiers": {
+      "Counties": [
+        "+25% Textiles Production"
+      ]
+    },
+    "name": "Calicoes & Muslin",
+    "parameters": [],
+    "region": null,
+    "regionName": null,
+    "requirements": [
+      {
+        "key": "heritage_dravidian",
+        "kind": "pillar",
+        "negated": false,
+        "text": "Dravidian"
+      },
+      {
+        "key": "heritage_indo_aryan",
+        "kind": "pillar",
+        "negated": false,
+        "text": "Indo-Aryan"
+      }
+    ],
+    "skill": "stewardship",
+    "sourceFile": "00_tribal_innovations.txt",
+    "unlocks": []
+  },
+  {
+    "desc": "Carpets and rugs can be important everyday objects as well as fine courtly prestige products. Throughout Anatolia and Persia there is a long-standing tradition of carpets that are both durable and beautiful.",
+    "dlc": null,
+    "effects": [
+      "Unlocks Building lines:\n    • Rug Weaving in the Sheep Rearing District\n    • Carpet Workshop in the Guild District"
+    ],
+    "era": "culture_era_tribal",
+    "eraName": "Tribal",
+    "features": [],
+    "group": "culture_group_civic",
+    "groupName": "Civic",
+    "icon": "gdp_innovation_persian_weaver",
+    "id": "innovation_carpet_weaving",
+    "modifiers": {
+      "Counties": [
+        "+5% Artisan Taxes",
+        "+15% Textiles Production"
+      ]
+    },
+    "name": "Carpet Weaving",
+    "parameters": [],
+    "region": "world_innovation_carpets",
+    "regionName": "Carpet Weaving Region",
+    "requirements": [],
+    "skill": "stewardship",
+    "sourceFile": "00_tribal_innovations.txt",
+    "unlocks": []
+  },
+  {
+    "desc": "Might makes right has been the law of the land for generations, but if we have a justification for our wars then we can avoid provoking the ire of our neighbors and the retaliation that often comes with it.",
+    "dlc": null,
+    "effects": [],
+    "era": "culture_era_tribal",
+    "eraName": "Tribal",
+    "features": [],
+    "group": "culture_group_civic",
+    "groupName": "Civic",
+    "icon": "innovation_administration_01",
+    "id": "innovation_casus_belli",
+    "modifiers": {},
+    "name": "Casus Belli",
+    "parameters": [],
+    "region": null,
+    "regionName": null,
+    "requirements": [],
+    "skill": "diplomacy",
+    "sourceFile": "00_tribal_innovations.txt",
+    "unlocks": [
+      {
+        "key": "individual_county_de_jure_cb",
+        "kind": "casus_belli",
+        "text": "Individual De Jure County"
+      },
+      {
+        "key": "individual_duchy_de_jure_cb",
+        "kind": "casus_belli",
+        "text": "Individual De Jure Duchy"
+      }
+    ]
+  },
+  {
+    "desc": "Rice requires an abundance of time and water — except for the rice from Champa. This variety grows faster, survives droughts better, and gives a more bountiful yield than practically any other sort of rice known. In some cases, it can even be harvested twice in one year. Properly managed, this rice can boost farms and fuel a population boom.",
+    "dlc": "All Under Heaven",
+    "effects": [],
+    "era": "culture_era_tribal",
+    "eraName": "Tribal",
+    "features": [],
+    "group": "culture_group_civic",
+    "groupName": "Civic",
+    "icon": "innovation_farm",
+    "id": "innovation_champa_rice",
+    "modifiers": {
+      "Counties": [
+        "+15% Prosperity Growth in Wetlands",
+        "-10% Building Construction Cost in Wetlands",
+        "+10% Levy Size in Wetlands"
+      ]
+    },
+    "name": "Champa Rice",
+    "parameters": [
+      {
+        "hasLoc": true,
+        "key": "silk_road_innovation_parameter",
+        "text": "May only be acquired as a potential Cultural Fascination via Chinese Heritage, Sinophilic Tradition, or via The Silk Road Situation",
+        "value": true
+      },
+      {
+        "hasLoc": true,
+        "key": "champa_rice_building_bonuses",
+        "text": "The Rice Fields Building line gains additional bonuses in Wetlands",
+        "value": true
+      },
+      {
+        "hasLoc": true,
+        "key": "champa_rice_wet_land_paddies",
+        "text": "The Rice Growing District may be constructed in Wetlands",
+        "value": true
+      }
+    ],
+    "region": null,
+    "regionName": null,
+    "requirements": [
+      {
+        "key": "silk_road_innovation_trigger",
+        "kind": "trigger",
+        "negated": false,
+        "text": "Spreads along the Silk Road"
+      }
+    ],
+    "skill": "stewardship",
+    "sourceFile": "tgp_innovations.txt",
+    "unlocks": []
+  },
+  {
+    "desc": "By designing our cities before we start constructing them, we can create new holdings in strategic locations which are both more functional and aesthetically pleasing than the older ones which haphazardly arose over time.",
+    "dlc": null,
+    "effects": [
+      "Unlocks District Tiers:\n    • Feast Halls District Tier II"
+    ],
+    "era": "culture_era_tribal",
+    "eraName": "Tribal",
+    "features": [],
+    "group": "culture_group_civic",
+    "groupName": "Civic",
+    "icon": "innovation_civil_construction_02",
+    "id": "innovation_city_planning",
+    "modifiers": {
+      "Characters": [
+        "+5% Herd Capacity",
+        "-5% Housing District Construction Cost"
+      ],
+      "Counties": [
+        "+2% Urban Taxes"
+      ]
+    },
+    "name": "City Planning",
+    "parameters": [],
+    "region": null,
+    "regionName": null,
+    "requirements": [],
+    "skill": "stewardship",
+    "sourceFile": "00_tribal_innovations.txt",
+    "unlocks": []
+  },
+  {
+    "desc": "Charcoal is a vital part of smithing, but it needs ample forests nearby in order to reduce wood down into this essential fuel. Coal, heated in something similar to a charcoal kiln, can be reduced down into coke. Coke is just as useful as charcoal in smithing and other industrial fires, without needing to clearcut an entire forest.",
+    "dlc": "All Under Heaven",
+    "effects": [],
+    "era": "culture_era_tribal",
+    "eraName": "Tribal",
+    "features": [],
+    "group": "culture_group_civic",
+    "groupName": "Civic",
+    "icon": "innovation_weapons_and_armor_01",
+    "id": "innovation_coking",
+    "modifiers": {
+      "Characters": [
+        "-10% Men-at-Arms Recruitment Cost"
+      ],
+      "Counties": [
+        "+15% Prosperity Growth in Forest",
+        "+15% Prosperity Growth in Taiga",
+        "-15% Building Construction Cost in Forest",
+        "-15% Building Construction Cost in Taiga",
+        "+10% Iron Production"
+      ]
+    },
+    "name": "Coking",
+    "parameters": [
+      {
+        "hasLoc": true,
+        "key": "coking_smith_bonuses",
+        "text": "The Blacksmiths Duchy District line grants additional bonuses",
+        "value": true
+      },
+      {
+        "hasLoc": true,
+        "key": "silk_road_innovation_parameter",
+        "text": "May only be acquired as a potential Cultural Fascination via Chinese Heritage, Sinophilic Tradition, or via The Silk Road Situation",
+        "value": true
+      }
+    ],
+    "region": null,
+    "regionName": null,
+    "requirements": [
+      {
+        "key": "silk_road_innovation_trigger",
+        "kind": "trigger",
+        "negated": false,
+        "text": "Spreads along the Silk Road"
+      }
+    ],
+    "skill": "stewardship",
+    "sourceFile": "tgp_innovations.txt",
+    "unlocks": []
+  },
+  {
+    "desc": "By transitioning from the traditional two-field farming model to three-field crop rotation, we can grow more crops each year without depleting the soil on our farms.",
+    "dlc": null,
+    "effects": [
+      "Unlocks District Tiers:\n    • Tier I for all Farmed Resource Goods Resource Districts\n    • Minor Farmed Resource Goods Building lines"
+    ],
+    "era": "culture_era_tribal",
+    "eraName": "Tribal",
+    "features": [],
+    "group": "culture_group_civic",
+    "groupName": "Civic",
+    "icon": "innovation_farm",
+    "id": "innovation_crop_rotation",
+    "modifiers": {
+      "Characters": [
+        "+5% County Fertility Growth"
+      ],
+      "Counties": [
+        "+10% Cereals Production"
+      ]
+    },
+    "name": "Crop Rotation",
+    "parameters": [],
+    "region": null,
+    "regionName": null,
+    "requirements": [],
+    "skill": "stewardship",
+    "sourceFile": "00_tribal_innovations.txt",
+    "unlocks": []
+  },
+  {
+    "desc": "Specialized high-temperature furnaces can melt precious metals out of mining samples, extracting them from smelted ores and producing a refined sample that can be further examined by assayers. Cupellating ore from a lead mine is the best way to determine the silver content of that mine, and cupellating gold can determine its purity for potential coinage.",
+    "dlc": "All Under Heaven",
+    "effects": [],
+    "era": "culture_era_tribal",
+    "eraName": "Tribal",
+    "features": [],
+    "group": "culture_group_civic",
+    "groupName": "Civic",
+    "icon": "innovation_cupellation",
+    "id": "innovation_cupellation",
+    "modifiers": {
+      "Counties": [
+        "+10% Silver Production"
+      ],
+      "Provinces": [
+        "+5% Mining Taxes"
+      ]
+    },
+    "name": "Cupellation",
+    "parameters": [
+      {
+        "hasLoc": true,
+        "key": "silk_road_innovation_parameter",
+        "text": "May only be acquired as a potential Cultural Fascination via Chinese Heritage, Sinophilic Tradition, or via The Silk Road Situation",
+        "value": true
+      }
+    ],
+    "region": null,
+    "regionName": null,
+    "requirements": [
+      {
+        "key": "silk_road_innovation_trigger",
+        "kind": "trigger",
+        "negated": false,
+        "text": "Spreads along the Silk Road"
+      }
+    ],
+    "skill": "stewardship",
+    "sourceFile": "tgp_innovations.txt",
+    "unlocks": []
+  },
+  {
+    "desc": "Bartering is slow and inefficient; adopting an officially-recognized currency like cowrie shells or metal nuggets will bolster trade and increase the spread of ideas within our realm.",
+    "dlc": null,
+    "effects": [],
+    "era": "culture_era_tribal",
+    "eraName": "Tribal",
+    "features": [],
+    "group": "culture_group_civic",
+    "groupName": "Civic",
+    "icon": "innovation_currency",
+    "id": "innovation_currency_01",
+    "modifiers": {
+      "Characters": [
+        "+5% Prosperity Growth",
+        "+5% Monthly Income from Herd"
+      ]
+    },
+    "name": "Currency",
+    "parameters": [],
+    "region": null,
+    "regionName": null,
+    "requirements": [],
+    "skill": "stewardship",
+    "sourceFile": "00_tribal_innovations.txt",
+    "unlocks": []
+  },
+  {
+    "desc": "The smiths of the Near East have perfected a technique where they can forge more resilient and sharper blades. These blades, also often lavishly ornamented, have become associated with the markets of Damascus.",
+    "dlc": null,
+    "effects": [],
+    "era": "culture_era_tribal",
+    "eraName": "Tribal",
+    "features": [],
+    "group": "culture_group_civic",
+    "groupName": "Civic",
+    "icon": "innovation_weapons_and_armor_02",
+    "id": "innovation_damascus_steel",
+    "modifiers": {},
+    "name": "Damascus Steel",
+    "parameters": [
+      {
+        "hasLoc": true,
+        "key": "damascus_steel_smithing",
+        "text": "Increases the effect of Base Metals needs in the Blacksmiths' Guild and Bladesmiths of Toledo Buildings",
+        "value": true
+      }
+    ],
+    "region": "custom_damascus_steel_region",
+    "regionName": "Damascus Steel Region",
+    "requirements": [],
+    "skill": "learning",
+    "sourceFile": "00_tribal_innovations.txt",
+    "unlocks": []
+  },
+  {
+    "desc": "The best porcelain can only be produced at highly-specialized kilns, located near valuable mining deposits. These kilns are built on steep slopes that help create a vortex of heat to fire the hardest ceramics possible. Although challenging to build, the products they make are some of the most fashionable (and the most lucrative) pottery known to any court.",
+    "dlc": "All Under Heaven",
+    "effects": [],
+    "era": "culture_era_tribal",
+    "eraName": "Tribal",
+    "features": [],
+    "group": "culture_group_civic",
+    "groupName": "Civic",
+    "icon": "innovation_dragon_kiln",
+    "id": "innovation_dragon_kiln",
+    "modifiers": {
+      "Counties": [
+        "+15% Ceramics Production"
+      ]
+    },
+    "name": "Dragon Kilns",
+    "parameters": [
+      {
+        "hasLoc": true,
+        "key": "unlock_dragon_kiln_buildings",
+        "text": "Unlocks the Dragon Kiln Duchy District and Dragon Kiln Building lines, which can be built in mountains, desert mountains, or hills Terrain",
+        "value": true
+      },
+      {
+        "hasLoc": true,
+        "key": "silk_road_innovation_parameter",
+        "text": "May only be acquired as a potential Cultural Fascination via Chinese Heritage, Sinophilic Tradition, or via The Silk Road Situation",
+        "value": true
+      }
+    ],
+    "region": null,
+    "regionName": null,
+    "requirements": [
+      {
+        "key": "silk_road_innovation_trigger",
+        "kind": "trigger",
+        "negated": false,
+        "text": "Spreads along the Silk Road"
+      }
+    ],
+    "skill": "learning",
+    "sourceFile": "tgp_innovations.txt",
+    "unlocks": []
+  },
+  {
+    "desc": "Stability and prosperity go hand-in-hand. Instead of having vassals jockey for power when the old monarch passes away, we can define a predetermined, equitable system of inheritance which will eliminate much of the instability which traditionally occurs on succession.",
+    "dlc": null,
+    "effects": [],
+    "era": "culture_era_tribal",
+    "eraName": "Tribal",
+    "features": [],
+    "group": "culture_group_civic",
+    "groupName": "Civic",
+    "icon": "innovation_administration_03",
+    "id": "innovation_gavelkind",
+    "modifiers": {
+      "Characters": [
+        "+1 Domain Limit"
+      ]
+    },
+    "name": "Gavelkind",
+    "parameters": [],
+    "region": null,
+    "regionName": null,
+    "requirements": [],
+    "skill": "diplomacy",
+    "sourceFile": "00_tribal_innovations.txt",
+    "unlocks": [
+      {
+        "key": "confederate_partition_succession_law",
+        "kind": "law",
+        "text": "Confederate Partition"
+      }
+    ]
+  },
+  {
+    "desc": "The art of lacquering, and the turning of sap and wood into expensive prestige objects is one that is as old as it is hard to master. Originating in Japan and China it has slowly spread throughout East Asia, along with the precious Lacquerware objects themselves.",
+    "dlc": "All Under Heaven",
+    "effects": [],
+    "era": "culture_era_tribal",
+    "eraName": "Tribal",
+    "features": [],
+    "group": "culture_group_civic",
+    "groupName": "Civic",
+    "icon": "innovation_sericulture",
+    "id": "innovation_lacquerware",
+    "modifiers": {
+      "Characters": [
+        "+5% Monthly Prestige"
+      ]
+    },
+    "name": "Lacquerware",
+    "parameters": [
+      {
+        "hasLoc": true,
+        "key": "unlock_lacquerware_buildings",
+        "text": "Unlocks the Lacquerware Workshop line of Buildings in the Forestry District",
+        "value": true
+      },
+      {
+        "hasLoc": true,
+        "key": "silk_road_innovation_parameter",
+        "text": "May only be acquired as a potential Cultural Fascination via Chinese Heritage, Sinophilic Tradition, or via The Silk Road Situation",
+        "value": true
+      }
+    ],
+    "region": null,
+    "regionName": null,
+    "requirements": [
+      {
+        "key": "silk_road_innovation_trigger",
+        "kind": "trigger",
+        "negated": false,
+        "text": "Spreads along the Silk Road"
+      },
+      {
+        "key": "heritage_chinese",
+        "kind": "pillar",
+        "negated": false,
+        "text": "Chinese"
+      },
+      {
+        "key": "heritage_japonic",
+        "kind": "pillar",
+        "negated": false,
+        "text": "Japonic"
+      },
+      {
+        "key": "heritage_korean",
+        "kind": "pillar",
+        "negated": false,
+        "text": "Samhanic"
+      },
+      {
+        "key": "heritage_buyeo",
+        "kind": "pillar",
+        "negated": false,
+        "text": "Buyeo"
+      }
+    ],
+    "skill": "stewardship",
+    "sourceFile": "tgp_innovations.txt",
+    "unlocks": []
+  },
+  {
+    "desc": "As our lands grow, we need a better way to keep track of what we own. Maintaining a ledger of our possessions will ensure that we always know what resources we have at our disposal.",
+    "dlc": null,
+    "effects": [
+      "Unlocks District Tiers:\n    • Bureaucratic District\n    • Governance Quarter"
+    ],
+    "era": "culture_era_tribal",
+    "eraName": "Tribal",
+    "features": [],
+    "group": "culture_group_civic",
+    "groupName": "Civic",
+    "icon": "innovation_administration_02",
+    "id": "innovation_ledger",
+    "modifiers": {
+      "Characters": [
+        "+5% Monthly Income from Herd"
+      ],
+      "Counties": [
+        "+5% Prosperity Growth"
+      ]
+    },
+    "name": "Ledger",
+    "parameters": [],
+    "region": null,
+    "regionName": null,
+    "requirements": [],
+    "skill": "stewardship",
+    "sourceFile": "00_tribal_innovations.txt",
+    "unlocks": []
+  },
+  {
+    "desc": "The use of honey in alcoholic beverages is especially common in the northern parts of Europe.",
+    "dlc": null,
+    "effects": [],
+    "era": "culture_era_tribal",
+    "eraName": "Tribal",
+    "features": [],
+    "group": "culture_group_civic",
+    "groupName": "Civic",
+    "icon": "gdp_innovation_wine",
+    "id": "innovation_mead_brewing",
+    "modifiers": {
+      "Counties": [
+        "+5% Artisan Taxes",
+        "+15% Beer Production"
+      ]
+    },
+    "name": "Mead Brewing",
+    "parameters": [
+      {
+        "hasLoc": true,
+        "key": "unlocks_mead_brewery",
+        "text": "Unlocks Building lines:\n    • Mead Brewery in the Apiary District",
+        "value": true
+      }
+    ],
+    "region": "world_innovation_mead",
+    "regionName": "Mead Brewing Region",
+    "requirements": [],
+    "skill": "stewardship",
+    "sourceFile": "00_tribal_innovations.txt",
+    "unlocks": []
+  },
+  {
+    "desc": "All good doctors need to know how to produce the right medicines at the right time, using the right ingredients prepared the right way in the right amounts. While this knowledge is often passed down from master to apprentice on an individual basis, writing down how to make specific medicines can help immensely in standardizing and propagating the preparation of different treatments.",
+    "dlc": "All Under Heaven",
+    "effects": [],
+    "era": "culture_era_tribal",
+    "eraName": "Tribal",
+    "features": [],
+    "group": "culture_group_civic",
+    "groupName": "Civic",
+    "icon": "innovation_pharmacopoeia",
+    "id": "innovation_pharmacopoeia",
+    "modifiers": {
+      "Characters": [
+        "+3 Life Expectancy (years)"
+      ],
+      "Counties": [
+        "+5 Plague Resistance",
+        "+10% Medicaments Production"
+      ]
+    },
+    "name": "Pharmacopoeia",
+    "parameters": [
+      {
+        "hasLoc": true,
+        "key": "physician_pharmacopoeia_bonus",
+        "text": "Personal Physician Court Position Treatment Effectiveness: +20%",
+        "value": true
+      },
+      {
+        "hasLoc": true,
+        "key": "silk_road_innovation_parameter",
+        "text": "May only be acquired as a potential Cultural Fascination via Chinese Heritage, Sinophilic Tradition, or via The Silk Road Situation",
+        "value": true
+      }
+    ],
+    "region": null,
+    "regionName": null,
+    "requirements": [
+      {
+        "key": "silk_road_innovation_trigger",
+        "kind": "trigger",
+        "negated": false,
+        "text": "Spreads along the Silk Road"
+      }
+    ],
+    "skill": "learning",
+    "sourceFile": "tgp_innovations.txt",
+    "unlocks": []
+  },
+  {
+    "desc": "In order to effectively govern, we must bring all free men of the realm together to discuss and resolve legislative matters. Attendance is mandatory, and those who do not come will be fined and forfeit their ability to influence any decision made.",
+    "dlc": null,
+    "effects": [
+      "Unlocks District Tiers:\n    • Tribal Holding District Tier II\n    • Royal Household\n    • Wantilans District Tier II"
+    ],
+    "era": "culture_era_tribal",
+    "eraName": "Tribal",
+    "features": [],
+    "group": "culture_group_civic",
+    "groupName": "Civic",
+    "icon": "innovation_plenary_assemblies",
+    "id": "innovation_plenary_assemblies",
+    "modifiers": {
+      "Characters": [
+        "+2% Vassal Herd Contribution"
+      ]
+    },
+    "name": "Plenary Assemblies",
+    "parameters": [],
+    "region": null,
+    "regionName": null,
+    "requirements": [],
+    "skill": "diplomacy",
+    "sourceFile": "00_tribal_innovations.txt",
+    "unlocks": [
+      {
+        "key": "crown_authority_1",
+        "kind": "law",
+        "text": "Limited Crown Authority"
+      }
+    ]
+  },
+  {
+    "desc": "Funding the construction of public works like roads, schools, and aqueducts will allow our settlements to grow to larger sizes, ensuring the prosperity of our people for generations to come.",
+    "dlc": null,
+    "effects": [
+      "Counties now reach the maximum Existing Prosperity penalty at 20 Prosperity",
+      "Unlocks District Tiers:\n    • Housing District Tier II"
+    ],
+    "era": "culture_era_tribal",
+    "eraName": "Tribal",
+    "features": [],
+    "group": "culture_group_civic",
+    "groupName": "Civic",
+    "icon": "innovation_civil_construction_01",
+    "id": "innovation_prosperity_01",
+    "modifiers": {
+      "Characters": [
+        "+5% County Fertility Growth"
+      ],
+      "Provinces": [
+        "+10% Settlement Size Growth"
+      ]
+    },
+    "name": "Public Works",
+    "parameters": [],
+    "region": null,
+    "regionName": null,
+    "requirements": [],
+    "skill": "stewardship",
+    "sourceFile": "00_tribal_innovations.txt",
+    "unlocks": []
+  },
+  {
+    "desc": "The art of silk production is a complex but very rewarding process, the knowledge of which is jealously guarded by those who profit from their mastery of this industry.",
+    "dlc": "All Under Heaven",
+    "effects": [],
+    "era": "culture_era_tribal",
+    "eraName": "Tribal",
+    "features": [],
+    "group": "culture_group_civic",
+    "groupName": "Civic",
+    "icon": "innovation_sericulture",
+    "id": "innovation_sericulture",
+    "modifiers": {
+      "Characters": [
+        "+0.1 Prestige per Legitimacy Level"
+      ],
+      "Counties": [
+        "+10% Silk Production"
+      ]
+    },
+    "name": "Sericulture",
+    "parameters": [
+      {
+        "hasLoc": true,
+        "key": "unlocks_silk_buildings_parameter",
+        "text": "Unlocks the Mulberry Copse line of Domicile Buildings",
+        "value": true
+      },
+      {
+        "hasLoc": true,
+        "key": "reduces_court_fashion_costs_parameter",
+        "text": "Court Fashion Court Amenities Cost: -50%",
+        "value": true
+      },
+      {
+        "hasLoc": true,
+        "key": "silk_road_innovation_parameter",
+        "text": "May only be acquired as a potential Cultural Fascination via Chinese Heritage, Sinophilic Tradition, or via The Silk Road Situation",
+        "value": true
+      }
+    ],
+    "region": null,
+    "regionName": null,
+    "requirements": [
+      {
+        "key": "silk_road_innovation_trigger",
+        "kind": "trigger",
+        "negated": false,
+        "text": "Spreads along the Silk Road"
+      }
+    ],
+    "skill": "stewardship",
+    "sourceFile": "tgp_innovations.txt",
+    "unlocks": []
+  },
+  {
+    "desc": "By drying fish on wooden racks under the open sky we can make it last for years, enabling us to store it for ourselves through winter or on long expeditions, as well as exporting it to faraway customers.",
+    "dlc": null,
+    "effects": [],
+    "era": "culture_era_tribal",
+    "eraName": "Tribal",
+    "features": [],
+    "group": "culture_group_civic",
+    "groupName": "Civic",
+    "icon": "gdp_innovation_stockfish",
+    "id": "innovation_stockfisk",
+    "modifiers": {
+      "Counties": [
+        "+25% Fish Production",
+        "+5% Maritime Taxes"
+      ]
+    },
+    "name": "Stockfisk",
+    "parameters": [],
+    "region": null,
+    "regionName": null,
+    "requirements": [
+      {
+        "key": "heritage_north_germanic",
+        "kind": "pillar",
+        "negated": false,
+        "text": "North Germanic"
+      }
+    ],
+    "skill": "stewardship",
+    "sourceFile": "00_tribal_innovations.txt",
+    "unlocks": []
+  },
+  {
+    "desc": "The Table of Princes is the royal seat of Bohemian rulers, with the one sitting at the table being recognized as the rightful ruler. Under the code of house seniority, titles were given to the eldest living member of the ruling dynasty.",
+    "dlc": null,
+    "effects": [
+      "Can enact House Seniority at any Crown Authority"
+    ],
+    "era": "culture_era_tribal",
+    "eraName": "Tribal",
+    "features": [],
+    "group": "culture_group_civic",
+    "groupName": "Civic",
+    "icon": "innovation_nobility_01",
+    "id": "innovation_table_of_princes",
+    "modifiers": {},
+    "name": "Table of Princes",
+    "parameters": [],
+    "region": null,
+    "regionName": null,
+    "requirements": [],
+    "skill": "diplomacy",
+    "sourceFile": "00_tribal_innovations.txt",
+    "unlocks": [
+      {
+        "key": "single_heir_dynasty_house",
+        "kind": "law",
+        "text": "House Seniority"
+      }
+    ]
+  },
+  {
+    "desc": "Water is the life giver, but has many uses besides quenching thirst or irrigating fields. Artfully harnessed, the sky-fallen resource may power machines many times stronger than any livestock, facilitate travel and trade along man-made canals, or simply keep keep bustling streets sanitary and livable.",
+    "dlc": "All Under Heaven",
+    "effects": [],
+    "era": "culture_era_tribal",
+    "eraName": "Tribal",
+    "features": [],
+    "group": "culture_group_civic",
+    "groupName": "Civic",
+    "icon": "innovation_waterworks",
+    "id": "innovation_waterworks",
+    "modifiers": {
+      "Counties": [
+        "+5 Plague Resistance",
+        "+10% Rice Production"
+      ]
+    },
+    "name": "Waterworks",
+    "parameters": [
+      {
+        "hasLoc": true,
+        "key": "waterworks_agricultural_bonuses",
+        "text": "The Qanats & Windcatchers, Reservoirs and Cisterns, Irrigation Network, and Water Canal lines of Buildings provide additional Agricultural Tax",
+        "value": true
+      },
+      {
+        "hasLoc": true,
+        "key": "silk_road_innovation_parameter",
+        "text": "May only be acquired as a potential Cultural Fascination via Chinese Heritage, Sinophilic Tradition, or via The Silk Road Situation",
+        "value": true
+      }
+    ],
+    "region": null,
+    "regionName": null,
+    "requirements": [
+      {
+        "key": "silk_road_innovation_trigger",
+        "kind": "trigger",
+        "negated": false,
+        "text": "Spreads along the Silk Road"
+      }
+    ],
+    "skill": "stewardship",
+    "sourceFile": "tgp_innovations.txt",
+    "unlocks": []
+  },
+  {
+    "desc": "Also known as Hinduwani or Seric steel, this carbon-rich metal is excellent for making weapons. Wootz steel is widely traded and is deemed the finest steel in the world. Throughout most of history, it has drawn the attention of Arab, Egyptian, Chinese, and even Roman traders.",
+    "dlc": null,
+    "effects": [
+      "Unlocks the Wind Furnace line of Buildings in Iron-producing Counties"
+    ],
+    "era": "culture_era_tribal",
+    "eraName": "Tribal",
+    "features": [],
+    "group": "culture_group_civic",
+    "groupName": "Civic",
+    "icon": "innovation_weapons_and_armor_01",
+    "id": "innovation_wootz_steel",
+    "modifiers": {
+      "Characters": [
+        "+1 Prowess"
+      ]
+    },
+    "name": "Wootz Steel",
+    "parameters": [],
+    "region": "world_india_deccan",
+    "regionName": "Deccan India",
+    "requirements": [],
+    "skill": "learning",
+    "sourceFile": "00_tribal_innovations.txt",
+    "unlocks": []
+  },
+  {
+    "desc": "Light cavalry are a force to be reckoned with, but they do not truly exploit the potential of the warhorse. Arched saddles allow us to field heavily armored warriors with couched lances, which lets them take full advantage of their momentum as they charge into enemy lines.",
+    "dlc": null,
+    "effects": [
+      "Can recruit Armored Horsemen as Men-at-Arms",
+      "Knights of this Culture become eligible for Lancer Accolades"
+    ],
+    "era": "culture_era_early_medieval",
+    "eraName": "Early Medieval",
+    "features": [],
+    "group": "culture_group_military",
+    "groupName": "Military",
+    "icon": "innovation_knight",
+    "id": "innovation_arched_saddle",
+    "modifiers": {
+      "Characters": [
+        "+5% Heavy Cavalry Toughness",
+        "+5% Heavy Cavalry Maintenance",
+        "+5% Archer Cavalry Toughness",
+        "+5% Archer Cavalry Maintenance",
+        "+5% Camel Cavalry Toughness",
+        "+5% Camel Cavalry Maintenance"
+      ]
+    },
+    "name": "Arched Saddle",
+    "parameters": [],
+    "region": null,
+    "regionName": null,
+    "requirements": [],
+    "skill": "martial",
+    "sourceFile": "00_early_medieval_innovations.txt",
+    "unlocks": []
+  },
+  {
+    "desc": "Beyond fortifying just the keep itself, building a durable outer wall which can be safely manned by our archers will give our castles an extra layer of protection against attackers.",
+    "dlc": null,
+    "effects": [
+      "Unlocks District Tiers:\n    • Walls District Tier II",
+      "Unlocks the Fortification Rights Granted Vassal Contract"
+    ],
+    "era": "culture_era_early_medieval",
+    "eraName": "Early Medieval",
+    "features": [],
+    "group": "culture_group_military",
+    "groupName": "Military",
+    "icon": "innovation_fortifications",
+    "id": "innovation_battlements",
+    "modifiers": {},
+    "name": "Battlements",
+    "parameters": [],
+    "region": null,
+    "regionName": null,
+    "requirements": [],
+    "skill": "stewardship",
+    "sourceFile": "00_early_medieval_innovations.txt",
+    "unlocks": []
+  },
+  {
+    "desc": "Scattered across the countryside, the best mustering grounds and administrative centers are protected by solid walls of stone.",
+    "dlc": null,
+    "effects": [
+      "Unlocks District Tiers:\n    • Border Forts District Tier II\n    • Mustering Grounds District"
+    ],
+    "era": "culture_era_early_medieval",
+    "eraName": "Early Medieval",
+    "features": [],
+    "group": "culture_group_military",
+    "groupName": "Military",
+    "icon": "innovation_civil_construction_02",
+    "id": "innovation_burhs",
+    "modifiers": {
+      "Characters": [
+        "+5% Levy Size"
+      ]
+    },
+    "name": "Stone Forts",
+    "parameters": [
+      {
+        "hasLoc": true,
+        "key": "stone_forts",
+        "text": "Wall Wardens' Office needs Stone rather than Carpentries",
+        "value": true
+      }
+    ],
+    "region": null,
+    "regionName": null,
+    "requirements": [],
+    "skill": "stewardship",
+    "sourceFile": "00_early_medieval_innovations.txt",
+    "unlocks": []
+  },
+  {
+    "desc": "Plumbing the mysteries of life can sometimes uncover things that create only death. Fire medicine, a potent combination of sulfur, saltpeter, and some burnable material, creates a deadly flame that burns fiercely, almost explosively.",
+    "dlc": "All Under Heaven",
+    "effects": [
+      "Unlocks Building lines:\n    • Gunsmiths in the Military District\n    • Powder Mills in the Military District\n    • Bulwarks in the Walls District\n    • Artillery Works"
+    ],
+    "era": "culture_era_early_medieval",
+    "eraName": "Early Medieval",
+    "features": [],
+    "group": "culture_group_military",
+    "groupName": "Military",
+    "icon": "innovation_gunpowder",
+    "id": "innovation_fire_medicine",
+    "modifiers": {
+      "Characters": [
+        "+5% Handgunner Damage",
+        "+5% Handgunner Maintenance"
+      ]
+    },
+    "name": "Fire Medicine",
+    "parameters": [
+      {
+        "hasLoc": true,
+        "key": "silk_road_innovation_parameter",
+        "text": "May only be acquired as a potential Cultural Fascination via Chinese Heritage, Sinophilic Tradition, or via The Silk Road Situation",
+        "value": true
+      },
+      {
+        "hasLoc": true,
+        "key": "unlock_fire_lancers_units",
+        "text": "Can recruit Fire Lancers as Men-at-Arms",
+        "value": true
+      },
+      {
+        "hasLoc": true,
+        "key": "unlock_powder_magazines",
+        "text": "Unlocks the Gunsmiths Building line in the Military District, after constructing Training Grounds IV",
+        "value": true
+      }
+    ],
+    "region": null,
+    "regionName": null,
+    "requirements": [
+      {
+        "key": "silk_road_innovation_trigger",
+        "kind": "trigger",
+        "negated": false,
+        "text": "Spreads along the Silk Road"
+      }
+    ],
+    "skill": "learning",
+    "sourceFile": "tgp_innovations.txt",
+    "unlocks": []
+  },
+  {
+    "desc": "Slave-soldiers taken as prisoners of war, ghilman are dedicated fighters who are both more loyal to us and cheaper to pay than common mercenaries.",
+    "dlc": null,
+    "effects": [],
+    "era": "culture_era_early_medieval",
+    "eraName": "Early Medieval",
+    "features": [],
+    "group": "culture_group_military",
+    "groupName": "Military",
+    "icon": "innovation_maa_02",
+    "id": "innovation_ghilman",
+    "modifiers": {
+      "Characters": [
+        "-5% Men-at-Arms Maintenance"
+      ]
+    },
+    "name": "Ghilman",
+    "parameters": [],
+    "region": "world_middle_east_arabia",
+    "regionName": "Arabia",
+    "requirements": [],
+    "skill": "martial",
+    "sourceFile": "00_early_medieval_innovations.txt",
+    "unlocks": []
+  },
+  {
+    "desc": "Despite all the advancements in warfare, one ancient tool remains invaluable: the arm. Small vessels filled with a flammable or explosive substance can be easily made and thrown by anyone with a decent pitching technique. Grenades distributed to soldiers before a battle can give them a secondary way to attack and shock the enemy.",
+    "dlc": "All Under Heaven",
+    "effects": [],
+    "era": "culture_era_early_medieval",
+    "eraName": "Early Medieval",
+    "features": [],
+    "group": "culture_group_military",
+    "groupName": "Military",
+    "icon": "innovation_grenades",
+    "id": "innovation_grenades",
+    "modifiers": {
+      "Provinces": [
+        "+5 Defender Holding Advantage"
+      ]
+    },
+    "name": "Grenades",
+    "parameters": [
+      {
+        "hasLoc": true,
+        "key": "silk_road_innovation_parameter",
+        "text": "May only be acquired as a potential Cultural Fascination via Chinese Heritage, Sinophilic Tradition, or via The Silk Road Situation",
+        "value": true
+      }
+    ],
+    "region": null,
+    "regionName": null,
+    "requirements": [
+      {
+        "key": "silk_road_innovation_trigger",
+        "kind": "trigger",
+        "negated": false,
+        "text": "Spreads along the Silk Road"
+      }
+    ],
+    "skill": "learning",
+    "sourceFile": "tgp_innovations.txt",
+    "unlocks": [
+      {
+        "key": "skirmishers",
+        "kind": "maa_upgrade",
+        "text": "Skirmishers: +6 damage, +2 toughness, +5 screen"
+      },
+      {
+        "key": "gunpowder",
+        "kind": "maa_upgrade",
+        "text": "Handgunner: +6 damage, +2 toughness, +5 screen"
+      }
+    ]
+  },
+  {
+    "desc": "A horse with a split hoof will quickly go lame and be unable to work or be ridden into battle. By shoeing our horses with bronze or iron plates, we can keep their hooves healthy and protected from damage.",
+    "dlc": null,
+    "effects": [],
+    "era": "culture_era_early_medieval",
+    "eraName": "Early Medieval",
+    "features": [],
+    "group": "culture_group_military",
+    "groupName": "Military",
+    "icon": "innovation_horseshoes",
+    "id": "innovation_horseshoes",
+    "modifiers": {
+      "Characters": [
+        "+10% Army Movement Speed",
+        "+5% Light Cavalry Damage",
+        "+5% Light Cavalry Maintenance",
+        "+5% Heavy Cavalry Damage",
+        "+5% Heavy Cavalry Maintenance",
+        "+5% Archer Cavalry Damage",
+        "+5% Archer Cavalry Maintenance"
+      ]
+    },
+    "name": "Horseshoes",
+    "parameters": [],
+    "region": null,
+    "regionName": null,
+    "requirements": [],
+    "skill": "martial",
+    "sourceFile": "00_early_medieval_innovations.txt",
+    "unlocks": []
+  },
+  {
+    "desc": "As our noble families grow in power, they need soldiers to enforce their will. Establishing an order of dedicated household soldiers will ensure that we have troops which are better trained and equipped than a standard levy.",
+    "dlc": null,
+    "effects": [
+      "Unlocks District Tiers:\n    • Military District Tier II\n• Unlocks Building lines in the Military District:\n    • Armorer\n    • Heavy Cavalry Compound"
+    ],
+    "era": "culture_era_early_medieval",
+    "eraName": "Early Medieval",
+    "features": [],
+    "group": "culture_group_military",
+    "groupName": "Military",
+    "icon": "innovation_maa_01",
+    "id": "innovation_house_soldiers",
+    "modifiers": {
+      "Characters": [
+        "+1 Max Men-at-Arms Regiments",
+        "+3 Size of Men-at-Arms Regiments"
+      ]
+    },
+    "name": "Household Soldiers",
+    "parameters": [],
+    "region": null,
+    "regionName": null,
+    "requirements": [],
+    "skill": "martial",
+    "sourceFile": "00_early_medieval_innovations.txt",
+    "unlocks": []
+  },
+  {
+    "desc": "A significant improvement to our existing catapult designs, traction-powered mangonels are much faster to load and fire than torsion-powered machines.",
+    "dlc": null,
+    "effects": [
+      "Can recruit Mangonels as Men-at-Arms",
+      "Knights of this Culture become eligible for Besieger Accolades",
+      "Unlocks Building lines:\n    • Siegecraft Academies in the Military District"
+    ],
+    "era": "culture_era_early_medieval",
+    "eraName": "Early Medieval",
+    "features": [],
+    "group": "culture_group_military",
+    "groupName": "Military",
+    "icon": "innovation_siege_weapons",
+    "id": "innovation_mangonel",
+    "modifiers": {},
+    "name": "Mangonels",
+    "parameters": [],
+    "region": null,
+    "regionName": null,
+    "requirements": [],
+    "skill": "learning",
+    "sourceFile": "00_early_medieval_innovations.txt",
+    "unlocks": []
+  },
+  {
+    "desc": "Distracted by infighting, we have tolerated the presence of infidels in Hispania for too long. The time has come for us to rally our forces to drive them from this land once and for all!",
+    "dlc": null,
+    "effects": [
+      "Casus Belli Piety Cost: -10%",
+      "Zealot Vassals are more common"
+    ],
+    "era": "culture_era_early_medieval",
+    "eraName": "Early Medieval",
+    "features": [],
+    "group": "culture_group_military",
+    "groupName": "Military",
+    "icon": "innovation_leadership_02",
+    "id": "innovation_reconquista",
+    "modifiers": {
+      "Characters": [
+        "+10% Monthly Piety"
+      ]
+    },
+    "name": "Spiritual Expansionism",
+    "parameters": [],
+    "region": "world_europe_west_iberia",
+    "regionName": "Iberia",
+    "requirements": [],
+    "skill": "martial",
+    "sourceFile": "00_early_medieval_innovations.txt",
+    "unlocks": []
+  },
+  {
+    "desc": "Mail is the gold standard for protecting yourself and has up until now often been reserved for only the nobles among us. Through simplified production we can make it the standard for all our men at arms.",
+    "dlc": null,
+    "effects": [],
+    "era": "culture_era_early_medieval",
+    "eraName": "Early Medieval",
+    "features": [],
+    "group": "culture_group_military",
+    "groupName": "Military",
+    "icon": "innovation_weapons_and_armor_01",
+    "id": "innovation_riveted_mail",
+    "modifiers": {
+      "Characters": [
+        "+5% Heavy Infantry Toughness",
+        "+5% Heavy Infantry Maintenance",
+        "+5% Spearmen Toughness",
+        "+5% Spearmen Maintenance"
+      ]
+    },
+    "name": "Haubergeon",
+    "parameters": [],
+    "region": null,
+    "regionName": null,
+    "requirements": [],
+    "skill": "martial",
+    "sourceFile": "00_early_medieval_innovations.txt",
+    "unlocks": []
+  },
+  {
+    "desc": "These large mural instruments can be used to precisely read and measure the position of heavenly objects.",
+    "dlc": "Legacy of Persia",
+    "effects": [],
+    "era": "culture_era_early_medieval",
+    "eraName": "Early Medieval",
+    "features": [],
+    "group": "culture_group_civic",
+    "groupName": "Civic",
+    "icon": "innovation_misc_inventions",
+    "id": "fp3_innovation_mural_sextant",
+    "modifiers": {
+      "Characters": [
+        "+5% Monthly Focused Learning Lifestyle Experience",
+        "+0.2 Character Capital County Monthly Prosperity Growth Add /month",
+        "+0.2 Capital County Fertility Growth"
+      ]
+    },
+    "name": "Mural Sextant",
+    "parameters": [],
+    "region": null,
+    "regionName": null,
+    "requirements": [
+      {
+        "key": "has_fp3_dlc_trigger",
+        "kind": "dlc",
+        "negated": false,
+        "text": "Legacy of Persia"
+      }
+    ],
+    "skill": "learning",
+    "sourceFile": "00_fp3_innovations.txt",
+    "unlocks": []
+  },
+  {
+    "desc": "Astrolabes let us know the altitude of the sun or known stars, allowing us to calculate our latitude. Navigational instruments like this, or its more advanced cousin the Armillary Sphere, let us navigate waters farther from land.",
+    "dlc": null,
+    "effects": [
+      "Unlocks District Tiers:\n    • Tier III for all Fishing District Resource Districts\n    • Port District Tier II\n    • Fishing Villages II"
+    ],
+    "era": "culture_era_early_medieval",
+    "eraName": "Early Medieval",
+    "features": [],
+    "group": "culture_group_civic",
+    "groupName": "Civic",
+    "icon": "gdp_innovation_navigator",
+    "id": "innovation_armilary_sphere",
+    "modifiers": {
+      "Characters": [
+        "+25% Naval Speed",
+        "+1 Route Length"
+      ],
+      "Counties": [
+        "+5% Maritime Taxes"
+      ]
+    },
+    "name": "Astrolabe",
+    "parameters": [],
+    "region": null,
+    "regionName": null,
+    "requirements": [],
+    "skill": "learning",
+    "sourceFile": "00_early_medieval_innovations.txt",
+    "unlocks": []
+  },
+  {
+    "desc": "A ruler cannot be everywhere at once. By appointing magistrates and other representatives to enforce the lord's law throughout the realm, we can govern a larger area more effectively than we could otherwise.",
+    "dlc": null,
+    "effects": [
+      "Glory Hound Vassals are more common",
+      "Unlocks District Tiers:\n    • Bailiwick District\n    • Governance Quarter Tier II\n    • Bureaucratic District Tier II"
+    ],
+    "era": "culture_era_early_medieval",
+    "eraName": "Early Medieval",
+    "features": [],
+    "group": "culture_group_civic",
+    "groupName": "Civic",
+    "icon": "innovation_leadership_01",
+    "id": "innovation_baliffs",
+    "modifiers": {
+      "Characters": [
+        "+1 Tax Slot Add"
+      ],
+      "Counties": [
+        "+5% Levy Size"
+      ]
+    },
+    "name": "Magistrates",
+    "parameters": [],
+    "region": null,
+    "regionName": null,
+    "requirements": [],
+    "skill": "stewardship",
+    "sourceFile": "00_early_medieval_innovations.txt",
+    "unlocks": []
+  },
+  {
+    "desc": "The surest way to prevent a ship from sinking is to not breach its hull in the first place. But if that were to happen, the ship might still be saved if the hull was separated into compartments with watertight walls between them. Even if the ship was damaged, a bulkhead could prevent water from sinking the ship entirely, saving men, supplies, and the ship itself in the process.",
+    "dlc": "All Under Heaven",
+    "effects": [],
+    "era": "culture_era_early_medieval",
+    "eraName": "Early Medieval",
+    "features": [],
+    "group": "culture_group_civic",
+    "groupName": "Civic",
+    "icon": "innovation_bulkheads",
+    "id": "innovation_bulkheads",
+    "modifiers": {
+      "Characters": [
+        "-45 Coastal Sea Danger",
+        "-45 Sea Danger",
+        "+5% Maritime Taxes"
+      ]
+    },
+    "name": "Bulkheads",
+    "parameters": [
+      {
+        "hasLoc": true,
+        "key": "silk_road_innovation_parameter",
+        "text": "May only be acquired as a potential Cultural Fascination via Chinese Heritage, Sinophilic Tradition, or via The Silk Road Situation",
+        "value": true
+      }
+    ],
+    "region": null,
+    "regionName": null,
+    "requirements": [
+      {
+        "key": "silk_road_innovation_trigger",
+        "kind": "trigger",
+        "negated": false,
+        "text": "Spreads along the Silk Road"
+      }
+    ],
+    "skill": "stewardship",
+    "sourceFile": "tgp_innovations.txt",
+    "unlocks": []
+  },
+  {
+    "desc": "No more will the stories of our family's exploits be passed down just through oral tradition. We will keep a record of all that we accomplish, both to inspire future generations as well as to prove our claims over lands we should rightfully hold.",
+    "dlc": null,
+    "effects": [
+      "Can press several of your Claims in a single war",
+      "Casus Belli Prestige Cost: -10%",
+      "Zealot Vassals are more common"
+    ],
+    "era": "culture_era_early_medieval",
+    "eraName": "Early Medieval",
+    "features": [],
+    "group": "culture_group_civic",
+    "groupName": "Civic",
+    "icon": "innovation_administration_03",
+    "id": "innovation_chronicle_writing",
+    "modifiers": {},
+    "name": "Chronicle Writing",
+    "parameters": [],
+    "region": null,
+    "regionName": null,
+    "requirements": [],
+    "skill": "learning",
+    "sourceFile": "00_early_medieval_innovations.txt",
+    "unlocks": []
+  },
+  {
+    "desc": "With a piece of simple lodestone, it becomes possible to always know what direction a person is traveling in. With time and further development, it may eventually become possible to navigate without ever having to stop and ask someone for directions.",
+    "dlc": "All Under Heaven",
+    "effects": [],
+    "era": "culture_era_early_medieval",
+    "eraName": "Early Medieval",
+    "features": [],
+    "group": "culture_group_civic",
+    "groupName": "Civic",
+    "icon": "innovation_compass",
+    "id": "innovation_compass",
+    "modifiers": {
+      "Characters": [
+        "+5 Travel Speed",
+        "+5 Travel Safety",
+        "+5% Army Movement Speed"
+      ]
+    },
+    "name": "Compass",
+    "parameters": [
+      {
+        "hasLoc": true,
+        "key": "cheaper_adventure_inspiration",
+        "text": "Adventure Inspiration Cost: -50%",
+        "value": true
+      },
+      {
+        "hasLoc": true,
+        "key": "silk_road_innovation_parameter",
+        "text": "May only be acquired as a potential Cultural Fascination via Chinese Heritage, Sinophilic Tradition, or via The Silk Road Situation",
+        "value": true
+      }
+    ],
+    "region": null,
+    "regionName": null,
+    "requirements": [
+      {
+        "key": "silk_road_innovation_trigger",
+        "kind": "trigger",
+        "negated": false,
+        "text": "Spreads along the Silk Road"
+      }
+    ],
+    "skill": "learning",
+    "sourceFile": "tgp_innovations.txt",
+    "unlocks": []
+  },
+  {
+    "desc": "By correctly curating and cutting trees in a methodical and organized way we can greatly increase the output of our forestry for supported trades such as charcoal and firewood production.",
+    "dlc": null,
+    "effects": [
+      "Unlocks District Tiers:\n    • Tier III for all Forest Resource Goods Resource Districts\n    • Minor Forest Resource Goods Building lines"
+    ],
+    "era": "culture_era_early_medieval",
+    "eraName": "Early Medieval",
+    "features": [],
+    "group": "culture_group_civic",
+    "groupName": "Civic",
+    "icon": "gdp_innovation_coppicing",
+    "id": "innovation_coppicing",
+    "modifiers": {
+      "Counties": [
+        "+5% Hinterland Taxes"
+      ]
+    },
+    "name": "Coppicing",
+    "parameters": [],
+    "region": null,
+    "regionName": null,
+    "requirements": [],
+    "skill": "stewardship",
+    "sourceFile": "00_early_medieval_innovations.txt",
+    "unlocks": []
+  },
+  {
+    "desc": "While artisans might not relish regulation they do put value in being given the right to fashion rules for their specialized trades. If quality and prices are controlled it is better for everyone.",
+    "dlc": null,
+    "effects": [
+      "Unlocks District Tiers:\n    • Tier III for all Exotic Resource Goods and Crafted Resource Goods Resource Districts\n    • Guild District Tier II\n    • Minor Exotic Resource Goods and Crafted Resource Goods Building lines"
+    ],
+    "era": "culture_era_early_medieval",
+    "eraName": "Early Medieval",
+    "features": [],
+    "group": "culture_group_civic",
+    "groupName": "Civic",
+    "icon": "gdp_innovation_persian_weaver",
+    "id": "innovation_craft_ordinances",
+    "modifiers": {
+      "Counties": [
+        "+5% Artisan Taxes"
+      ]
+    },
+    "name": "Craft Ordinances",
+    "parameters": [],
+    "region": null,
+    "regionName": null,
+    "requirements": [],
+    "skill": "stewardship",
+    "sourceFile": "00_early_medieval_innovations.txt",
+    "unlocks": []
+  },
+  {
+    "desc": "Unregulated currencies are difficult to control and lack stability. Minted coins, measured to specific weights and stamped with a royal seal, give new confidence to commercial transactions.",
+    "dlc": null,
+    "effects": [
+      "Unlocks the Coinage Rights Granted Vassal Contract",
+      "Unlocks Building lines:\n    • Mint in the Mining District\n    • State Mint in the Bureaucratic District\n• Unlocks District Tiers:\n    • Market District Tier II\n    • Entrepôt District Tier II\n    • Staple District"
+    ],
+    "era": "culture_era_early_medieval",
+    "eraName": "Early Medieval",
+    "features": [],
+    "group": "culture_group_civic",
+    "groupName": "Civic",
+    "icon": "innovation_coinage",
+    "id": "innovation_currency_02",
+    "modifiers": {
+      "Characters": [
+        "+5% Prosperity Growth"
+      ],
+      "Counties": [
+        "+2% Commerce Taxes"
+      ]
+    },
+    "name": "Coinage",
+    "parameters": [],
+    "region": null,
+    "regionName": null,
+    "requirements": [],
+    "skill": "stewardship",
+    "sourceFile": "00_early_medieval_innovations.txt",
+    "unlocks": []
+  },
+  {
+    "desc": "Records must keep up with the growing complexity of finances and the economy. Recording all payments in and all payments out as separate records helps maintain reliable balance sheets and ensure that entries aren't accidentally — or \"accidentally\" — overlooked when reviewing accounts.",
+    "dlc": "All Under Heaven",
+    "effects": [],
+    "era": "culture_era_early_medieval",
+    "eraName": "Early Medieval",
+    "features": [],
+    "group": "culture_group_civic",
+    "groupName": "Civic",
+    "icon": "innovation_double_entry_bookkeeping",
+    "id": "innovation_double_entry_bookkeeping",
+    "modifiers": {
+      "Characters": [
+        "+5% Civic Taxes",
+        "+5% Commerce Taxes",
+        "+5% Monthly Income from Trade"
+      ]
+    },
+    "name": "Double-Entry Bookkeeping",
+    "parameters": [
+      {
+        "hasLoc": true,
+        "key": "bookkeeping_collect_taxes_bonus",
+        "text": "Manage Estates Councillor Task: +10%",
+        "value": true
+      },
+      {
+        "hasLoc": true,
+        "key": "silk_road_innovation_parameter",
+        "text": "May only be acquired as a potential Cultural Fascination via Chinese Heritage, Sinophilic Tradition, or via The Silk Road Situation",
+        "value": true
+      }
+    ],
+    "region": null,
+    "regionName": null,
+    "requirements": [
+      {
+        "key": "silk_road_innovation_trigger",
+        "kind": "trigger",
+        "negated": false,
+        "text": "Spreads along the Silk Road"
+      }
+    ],
+    "skill": "stewardship",
+    "sourceFile": "tgp_innovations.txt",
+    "unlocks": []
+  },
+  {
+    "desc": "Even heaver iron plows can easily be drawn by oxes or horses if mounted on wheels and drawn by multiple animals. This innovation lets us work grounds that would otherwise be hard or even impossible to cultivate.",
+    "dlc": null,
+    "effects": [
+      "Unlocks District Tiers:\n    • Tier III for all Farmed Resource Goods Resource Districts\n• Unlocks Building lines:\n    • Qanats & Windcatchers\n    • Irrigation Network\n    • Reservoirs and Cisterns\n    • Minor Farmed Resource Goods Building lines"
+    ],
+    "era": "culture_era_early_medieval",
+    "eraName": "Early Medieval",
+    "features": [],
+    "group": "culture_group_civic",
+    "groupName": "Civic",
+    "icon": "gdp_innovation_heavy_plow",
+    "id": "innovation_heavy_plow",
+    "modifiers": {
+      "Counties": [
+        "+2% Agricultural Taxes"
+      ]
+    },
+    "name": "Heavy Plow",
+    "parameters": [
+      {
+        "hasLoc": true,
+        "key": "heavy_plow",
+        "text": "Grain Growing District will now need Iron and Beasts of Burden instead of just Cattle",
+        "value": true
+      }
+    ],
+    "region": null,
+    "regionName": null,
+    "requirements": [],
+    "skill": "stewardship",
+    "sourceFile": "00_early_medieval_innovations.txt",
+    "unlocks": []
+  },
+  {
+    "desc": "Evenly dividing the realm amongst all eligible heirs fractures the unity of our people. Instead of tearing our realm asunder on every succession we can ensure we have a stable and prosperous heartland by establishing a system of hereditary rule.",
+    "dlc": null,
+    "effects": [
+      "Unlocks District Tiers:\n    • Wantilans District Tier IV"
+    ],
+    "era": "culture_era_early_medieval",
+    "eraName": "Early Medieval",
+    "features": [],
+    "group": "culture_group_civic",
+    "groupName": "Civic",
+    "icon": "innovation_majesty_02",
+    "id": "innovation_hereditary_rule",
+    "modifiers": {
+      "Characters": [
+        "+10% Control Growth"
+      ]
+    },
+    "name": "Hereditary Rule",
+    "parameters": [],
+    "region": null,
+    "regionName": null,
+    "requirements": [],
+    "skill": "diplomacy",
+    "sourceFile": "00_early_medieval_innovations.txt",
+    "unlocks": [
+      {
+        "key": "partition_succession_law",
+        "kind": "law",
+        "text": "Partition"
+      }
+    ]
+  },
+  {
+    "desc": "With land ownership consolidated under our elite, many men and women find themselves unable to work. We will establish a manor system where free men can work our fields in exchange for rent, while those who cannot pay may enter our service as bound serfs instead.",
+    "dlc": null,
+    "effects": [
+      "Unlocks Districts:\n    • Manor Houses District\n• Unlocks Duchy District tiers:\n    • Ducal Residence District",
+      "Parochial Vassals are more common"
+    ],
+    "era": "culture_era_early_medieval",
+    "eraName": "Early Medieval",
+    "features": [],
+    "group": "culture_group_civic",
+    "groupName": "Civic",
+    "icon": "innovation_fortifications",
+    "id": "innovation_manorialism",
+    "modifiers": {
+      "Characters": [
+        "-10% Villages District Buildings Construction Time"
+      ]
+    },
+    "name": "Manorialism",
+    "parameters": [],
+    "region": null,
+    "regionName": null,
+    "requirements": [],
+    "skill": "stewardship",
+    "sourceFile": "00_early_medieval_innovations.txt",
+    "unlocks": []
+  },
+  {
+    "desc": "While monasteries are not new they have grown both bigger and more common. Entire religious communities now spring up around what was once isolated retreats, with their own economy and lay settlements to match.",
+    "dlc": null,
+    "effects": [
+      "Unlocks District Tiers:\n    • Religious Community District Tier II\n    • Religious Enclave Tier II\n    • Endowment District"
+    ],
+    "era": "culture_era_early_medieval",
+    "eraName": "Early Medieval",
+    "features": [],
+    "group": "culture_group_civic",
+    "groupName": "Civic",
+    "icon": "gdp_innovation_wine",
+    "id": "innovation_monasticism",
+    "modifiers": {
+      "Characters": [
+        "+5% Monthly Piety"
+      ],
+      "Counties": [
+        "+5% Religious Taxes"
+      ]
+    },
+    "name": "Monasticism",
+    "parameters": [],
+    "region": null,
+    "regionName": null,
+    "requirements": [],
+    "skill": "learning",
+    "sourceFile": "00_early_medieval_innovations.txt",
+    "unlocks": []
+  },
+  {
+    "desc": "By actively and methodically seeking out new veins of ore we can greatly expand the mining business in our realm.",
+    "dlc": null,
+    "effects": [
+      "Unlocks District Tiers:\n    • Tier III for all Minerals Resource Districts\n    • Assay District\n    • Minor Minerals Building lines"
+    ],
+    "era": "culture_era_early_medieval",
+    "eraName": "Early Medieval",
+    "features": [],
+    "group": "culture_group_civic",
+    "groupName": "Civic",
+    "icon": "gdp_innovation_miner",
+    "id": "innovation_prospecting",
+    "modifiers": {
+      "Counties": [
+        "+2% Mining Taxes"
+      ]
+    },
+    "name": "Prospecting",
+    "parameters": [],
+    "region": null,
+    "regionName": null,
+    "requirements": [],
+    "skill": "learning",
+    "sourceFile": "00_early_medieval_innovations.txt",
+    "unlocks": []
+  },
+  {
+    "desc": "Larger towns regularly face a series of increasingly complex problems. Delegating some authority to local councils will let them resolve these issues without needing to get the king involved.",
+    "dlc": null,
+    "effects": [
+      "Counties now reach the maximum Existing Prosperity penalty at 35 Prosperity",
+      "Unlocks District Tiers:\n    • Patrician District\n    • Villages District Tier II\n    • Entertainment District Tier II\n    • Feast Halls District Tier IV"
+    ],
+    "era": "culture_era_early_medieval",
+    "eraName": "Early Medieval",
+    "features": [],
+    "group": "culture_group_civic",
+    "groupName": "Civic",
+    "icon": "gdp_innovation_merchant_deal",
+    "id": "innovation_prosperity_02",
+    "modifiers": {
+      "Counties": [
+        "+2% Urban Taxes"
+      ]
+    },
+    "name": "Communal Government",
+    "parameters": [],
+    "region": null,
+    "regionName": null,
+    "requirements": [],
+    "skill": "stewardship",
+    "sourceFile": "00_early_medieval_innovations.txt",
+    "unlocks": []
+  },
+  {
+    "desc": "As our royalty has a greater burden placed upon them by their responsibility to govern the realm, so too shall they be bestowed with privileges reserved exclusively for them.",
+    "dlc": null,
+    "effects": [
+      "Courtly Vassals are more common",
+      "Unlocks District Tiers:\n    • Royal Household Tier II\n    • Mandala District Tier II"
+    ],
+    "era": "culture_era_early_medieval",
+    "eraName": "Early Medieval",
+    "features": [],
+    "group": "culture_group_civic",
+    "groupName": "Civic",
+    "icon": "innovation_majesty_01",
+    "id": "innovation_royal_prerogative",
+    "modifiers": {},
+    "name": "Royal Prerogative",
+    "parameters": [],
+    "region": null,
+    "regionName": null,
+    "requirements": [],
+    "skill": "diplomacy",
+    "sourceFile": "00_early_medieval_innovations.txt",
+    "unlocks": [
+      {
+        "key": "crown_authority_2",
+        "kind": "law",
+        "text": "High Crown Authority"
+      },
+      {
+        "key": "crown_authority_3",
+        "kind": "law",
+        "text": "Absolute Crown Authority"
+      }
+    ]
+  },
+  {
+    "desc": "Despite coming from different tribes, we recognize the importance of unity and cooperation. Independence is overvalued when stability is what leads to safety and prosperity.",
+    "dlc": null,
+    "effects": [
+      "Vassals whose Culture has a shared Heritage with yours are less likely to join Independence Factions"
+    ],
+    "era": "culture_era_early_medieval",
+    "eraName": "Early Medieval",
+    "features": [],
+    "group": "culture_group_civic",
+    "groupName": "Civic",
+    "icon": "innovation_majesty_03",
+    "id": "innovation_stem_duchies",
+    "modifiers": {
+      "Characters": [
+        "+5 Courtly Vassal Opinion"
+      ]
+    },
+    "name": "Stammesherzogtum",
+    "parameters": [],
+    "region": "custom_europe_western_germany",
+    "regionName": "Western Germany",
+    "requirements": [],
+    "skill": "diplomacy",
+    "sourceFile": "00_early_medieval_innovations.txt",
+    "unlocks": []
+  },
+  {
+    "desc": "The art of drinking tea is more than just putting leaves in a cup of hot water. In some societies it has grown into a social medium, and drinking it alone as well as together has become an important strand of the social fabric.",
+    "dlc": "All Under Heaven",
+    "effects": [],
+    "era": "culture_era_early_medieval",
+    "eraName": "Early Medieval",
+    "features": [],
+    "group": "culture_group_civic",
+    "groupName": "Civic",
+    "icon": "innovation_sericulture",
+    "id": "innovation_tea_culture",
+    "modifiers": {
+      "Counties": [
+        "+10% Tea Production"
+      ]
+    },
+    "name": "Tea Culture",
+    "parameters": [
+      {
+        "hasLoc": true,
+        "key": "unlocks_tea_house_buildings",
+        "text": "Unlocks the Tea House Building line in Entertainment District",
+        "value": true
+      },
+      {
+        "hasLoc": true,
+        "key": "silk_road_innovation_parameter",
+        "text": "May only be acquired as a potential Cultural Fascination via Chinese Heritage, Sinophilic Tradition, or via The Silk Road Situation",
+        "value": true
+      }
+    ],
+    "region": null,
+    "regionName": null,
+    "requirements": [
+      {
+        "key": "silk_road_innovation_trigger",
+        "kind": "trigger",
+        "negated": false,
+        "text": "Spreads along the Silk Road"
+      }
+    ],
+    "skill": "stewardship",
+    "sourceFile": "tgp_innovations.txt",
+    "unlocks": []
+  },
+  {
+    "desc": "While archers have traditionally made and maintained their own bows, craftsmen have begun making new types of bows which are stronger and more complex than before. By embracing these new designs we can turn these master bowyers into an invaluable military asset.",
+    "dlc": null,
+    "effects": [
+      "Can recruit Crossbowmen as Men-at-Arms",
+      "Unlocks District Tiers:\n    • Archery Ranges III in the Military District",
+      "Knights of this Culture become eligible for Crossbow Captain Accolades"
+    ],
+    "era": "culture_era_high_medieval",
+    "eraName": "High Medieval",
+    "features": [],
+    "group": "culture_group_military",
+    "groupName": "Military",
+    "icon": "innovation_advanced_bowmaking",
+    "id": "innovation_advanced_bowmaking",
+    "modifiers": {
+      "Characters": [
+        "+5% Archer Damage",
+        "+5% Archer Maintenance",
+        "+5% Archer Cavalry Damage",
+        "+5% Archer Cavalry Maintenance"
+      ]
+    },
+    "name": "Advanced Bowmaking",
+    "parameters": [],
+    "region": null,
+    "regionName": null,
+    "requirements": [],
+    "skill": "learning",
+    "sourceFile": "00_high_medieval_innovations.txt",
+    "unlocks": []
+  },
+  {
+    "desc": "While the keep serves as the heart of a castle, it is far from the only important building. Constructing buildings like the stables and armory in a protected bailey will ensure we can properly garrison and equip our levies no matter the circumstances.",
+    "dlc": null,
+    "effects": [
+      "Unlocks District Tiers:\n    • Mustering Grounds District Tier II"
+    ],
+    "era": "culture_era_high_medieval",
+    "eraName": "High Medieval",
+    "features": [],
+    "group": "culture_group_military",
+    "groupName": "Military",
+    "icon": "innovation_levy_building",
+    "id": "innovation_castle_baileys",
+    "modifiers": {
+      "Characters": [
+        "+15% Levy Reinforcement Rate"
+      ]
+    },
+    "name": "Castle Baileys",
+    "parameters": [],
+    "region": null,
+    "regionName": null,
+    "requirements": [],
+    "skill": "martial",
+    "sourceFile": "00_high_medieval_innovations.txt",
+    "unlocks": []
+  },
+  {
+    "desc": "Riveting overlapping iron plates to the inside of a sturdy cloth garment gives our soldiers protection approaching that of solid armor at a fraction of the weight. Fitting an entire regiment with these coats is costly work for our armorers, but the men who wear them can weather blows that would fell an unarmored warrior outright.",
+    "dlc": null,
+    "effects": [],
+    "era": "culture_era_high_medieval",
+    "eraName": "High Medieval",
+    "features": [],
+    "group": "culture_group_military",
+    "groupName": "Military",
+    "icon": "innovation_weapons_and_armor_02",
+    "id": "innovation_coat_of_plates",
+    "modifiers": {
+      "Characters": [
+        "+5% Heavy Infantry Toughness",
+        "+5% Heavy Infantry Maintenance",
+        "+5% Spearmen Toughness",
+        "+5% Spearmen Maintenance",
+        "+5% Heavy Cavalry Toughness",
+        "+5% Heavy Cavalry Maintenance",
+        "+5% Elephant Cavalry Toughness",
+        "+5% Elephant Cavalry Maintenance"
+      ]
+    },
+    "name": "Coats of Plates",
+    "parameters": [],
+    "region": null,
+    "regionName": null,
+    "requirements": [],
+    "skill": "martial",
+    "sourceFile": "00_high_medieval_innovations.txt",
+    "unlocks": []
+  },
+  {
+    "desc": "The Levant is an unfamiliar place with poor terrain for cavalry charges. We should adapt to these lands and field cavalry which is better suited to fight in our new home.",
+    "dlc": null,
+    "effects": [],
+    "era": "culture_era_high_medieval",
+    "eraName": "High Medieval",
+    "features": [],
+    "group": "culture_group_military",
+    "groupName": "Military",
+    "icon": "innovation_special_maa_02",
+    "id": "innovation_desert_tactics",
+    "modifiers": {},
+    "name": "Desert Tactics",
+    "parameters": [],
+    "region": null,
+    "regionName": null,
+    "requirements": [],
+    "skill": "martial",
+    "sourceFile": "00_cultural_maa_innovations.txt",
+    "unlocks": [
+      {
+        "key": "chasseur",
+        "kind": "maa",
+        "text": "Chasseurs"
+      }
+    ]
+  },
+  {
+    "desc": "Placed on the top of our battlements, these wooden constructions extend out above the base of our castle walls.\n\nThey allow our defenders to fire arrows, drop stones, or pour boiling oil on attackers while remaining completely protected from enemy archers.",
+    "dlc": null,
+    "effects": [
+      "Unlocks District Tiers:\n    • Border Forts District Tier III\n    • Walls District Tier III"
+    ],
+    "era": "culture_era_high_medieval",
+    "eraName": "High Medieval",
+    "features": [],
+    "group": "culture_group_military",
+    "groupName": "Military",
+    "icon": "innovation_fortifications",
+    "id": "innovation_hoardings",
+    "modifiers": {},
+    "name": "Hoardings",
+    "parameters": [],
+    "region": null,
+    "regionName": null,
+    "requirements": [],
+    "skill": "stewardship",
+    "sourceFile": "00_high_medieval_innovations.txt",
+    "unlocks": []
+  },
+  {
+    "desc": "Riders on our Celtic hobby horses are both fast and agile — perfect for scouting and raiding in rough terrain where enemy knights are loathe to go.",
+    "dlc": null,
+    "effects": [],
+    "era": "culture_era_high_medieval",
+    "eraName": "High Medieval",
+    "features": [],
+    "group": "culture_group_military",
+    "groupName": "Military",
+    "icon": "innovation_special_maa_02",
+    "id": "innovation_hobbies",
+    "modifiers": {},
+    "name": "Hobbies",
+    "parameters": [],
+    "region": "ghw_region_britannia",
+    "regionName": "the British Isles",
+    "requirements": [],
+    "skill": "martial",
+    "sourceFile": "00_cultural_maa_innovations.txt",
+    "unlocks": [
+      {
+        "key": "hobelar",
+        "kind": "maa",
+        "text": "Hobelars"
+      }
+    ]
+  },
+  {
+    "desc": "By bestowing knighthoods upon our best fighters and paying them with land holdings instead of mere coin, we can give them the honor they deserve as well as secure their loyalty to us.",
+    "dlc": null,
+    "effects": [
+      "Children completing their Education with a Martial Education Focus gain a Students of Knighthood Trait",
+      "Glory Hound Vassals are more common",
+      "Unlocks Buildings:\n    • Knights' Hall"
+    ],
+    "era": "culture_era_high_medieval",
+    "eraName": "High Medieval",
+    "features": [],
+    "group": "culture_group_military",
+    "groupName": "Military",
+    "icon": "innovation_knighthood",
+    "id": "innovation_knighthood",
+    "modifiers": {
+      "Characters": [
+        "+1 Accolades",
+        "+5 Glory Hound Vassal Opinion",
+        "+20% Knight Effectiveness",
+        "+10% Accolade Glory Gain"
+      ]
+    },
+    "name": "Knighthood",
+    "parameters": [],
+    "region": null,
+    "regionName": null,
+    "requirements": [],
+    "skill": "martial",
+    "sourceFile": "00_high_medieval_innovations.txt",
+    "unlocks": []
+  },
+  {
+    "desc": "Training and equipping standing armies that remain under the direct disposal of our rulers will be a stepping stone on the road to centralize our power.",
+    "dlc": null,
+    "effects": [
+      "Unlocks District Tiers:\n    • Military District Tier III"
+    ],
+    "era": "culture_era_high_medieval",
+    "eraName": "High Medieval",
+    "features": [],
+    "group": "culture_group_military",
+    "groupName": "Military",
+    "icon": "innovation_maa_02",
+    "id": "innovation_men_at_arms",
+    "modifiers": {
+      "Characters": [
+        "+1 Max Men-at-Arms Regiments",
+        "+4 Size of Men-at-Arms Regiments",
+        "+1 Size of Title Men-at-Arms Regiments"
+      ]
+    },
+    "name": "Men-at-Arms",
+    "parameters": [],
+    "region": null,
+    "regionName": null,
+    "requirements": [],
+    "skill": "martial",
+    "sourceFile": "00_high_medieval_innovations.txt",
+    "unlocks": []
+  },
+  {
+    "desc": "Pikemen have always been strong defenders, but they have historically lacked in mobility and offense. Devising new formations to address this deficiency will improve our chances of victory in battle.",
+    "dlc": null,
+    "effects": [],
+    "era": "culture_era_high_medieval",
+    "eraName": "High Medieval",
+    "features": [],
+    "group": "culture_group_military",
+    "groupName": "Military",
+    "icon": "innovation_special_maa_01",
+    "id": "innovation_pike_columns",
+    "modifiers": {},
+    "name": "Pike Columns",
+    "parameters": [],
+    "region": null,
+    "regionName": null,
+    "requirements": [
+      {
+        "key": "unlock_innovation_pike_columns",
+        "kind": "parameter",
+        "negated": false,
+        "text": "The Pike Columns Innovation becomes available in the High Medieval Era"
+      }
+    ],
+    "skill": "martial",
+    "sourceFile": "00_cultural_maa_innovations.txt",
+    "unlocks": [
+      {
+        "key": "picchieri",
+        "kind": "maa",
+        "text": "Picchieri"
+      }
+    ]
+  },
+  {
+    "desc": "The highlands where our ancestors settled requires a particular approach to agriculture. The building of terraced fields taught us to develop new military tactics, which are employed by our Serawit soldiers.",
+    "dlc": null,
+    "effects": [],
+    "era": "culture_era_high_medieval",
+    "eraName": "High Medieval",
+    "features": [],
+    "group": "culture_group_military",
+    "groupName": "Military",
+    "icon": "innovation_maa_02",
+    "id": "innovation_sarawit",
+    "modifiers": {},
+    "name": "Sarawit",
+    "parameters": [],
+    "region": null,
+    "regionName": null,
+    "requirements": [
+      {
+        "key": "unlock_sarawit_innovation",
+        "kind": "parameter",
+        "negated": false,
+        "text": "The Sarawit Innovation becomes available in the High Medieval Era"
+      }
+    ],
+    "skill": "martial",
+    "sourceFile": "00_cultural_maa_innovations.txt",
+    "unlocks": [
+      {
+        "key": "sarawit",
+        "kind": "maa",
+        "text": "Sarawit"
+      }
+    ]
+  },
+  {
+    "desc": "An engineering marvel, the counterweight trebuchet can hurl heavy projectiles at distances further than any siege engine that came before it.",
+    "dlc": null,
+    "effects": [
+      "Can recruit Trebuchets as Men-at-Arms",
+      "Unlocks Building lines:\n    • Surveyor's Hall in the Military District"
+    ],
+    "era": "culture_era_high_medieval",
+    "eraName": "High Medieval",
+    "features": [],
+    "group": "culture_group_military",
+    "groupName": "Military",
+    "icon": "innovation_siege_weapons",
+    "id": "innovation_trebuchet",
+    "modifiers": {},
+    "name": "Trebuchet",
+    "parameters": [],
+    "region": null,
+    "regionName": null,
+    "requirements": [],
+    "skill": "learning",
+    "sourceFile": "00_high_medieval_innovations.txt",
+    "unlocks": []
+  },
+  {
+    "desc": "By forcing air through a towering charcoal-fired furnace, we can smelt iron in quantities and qualities our forefathers could only dream of. Ore that once yielded a smith a handful now runs molten by the ton.",
+    "dlc": null,
+    "effects": [
+      "Unlocks a Building line:\n    • Blast Furnace in the Mining District"
+    ],
+    "era": "culture_era_high_medieval",
+    "eraName": "High Medieval",
+    "features": [],
+    "group": "culture_group_civic",
+    "groupName": "Civic",
+    "icon": "innovation_dragon_kiln",
+    "id": "innovation_blast_furnaces",
+    "modifiers": {
+      "Counties": [
+        "+20% Iron Production",
+        "+2% Mining Taxes"
+      ]
+    },
+    "name": "Blast Furnaces",
+    "parameters": [],
+    "region": null,
+    "regionName": null,
+    "requirements": [],
+    "skill": "learning",
+    "sourceFile": "00_high_medieval_innovations.txt",
+    "unlocks": []
+  },
+  {
+    "desc": "Particularly large or expensive trades often require an unwieldy amount of heavy coinage. Depositing that wealth in secure treasuries and transferring ownership without moving the physical coins will allow large quantities of goods to be traded more easily.",
+    "dlc": null,
+    "effects": [
+      "Unlocks District Tiers:\n    • Mint II\n    • Staple District Tier III"
+    ],
+    "era": "culture_era_high_medieval",
+    "eraName": "High Medieval",
+    "features": [],
+    "group": "culture_group_civic",
+    "groupName": "Civic",
+    "icon": "innovation_majesty_02",
+    "id": "innovation_currency_03",
+    "modifiers": {
+      "Characters": [
+        "+5% Prosperity Growth"
+      ],
+      "Counties": [
+        "+2% Commerce Taxes"
+      ]
+    },
+    "name": "Banking",
+    "parameters": [],
+    "region": null,
+    "regionName": null,
+    "requirements": [],
+    "skill": "stewardship",
+    "sourceFile": "00_high_medieval_innovations.txt",
+    "unlocks": []
+  },
+  {
+    "desc": "It is time that we recognize that it is divine will that has placed our rulers on their thrones, and to oppose them is to oppose divinity itself.",
+    "dlc": null,
+    "effects": [
+      "Can press multiple Claims for another character in a single war",
+      "Unlocks the Palatinate Contract Vassal Contract",
+      "Zealot Vassals are more common"
+    ],
+    "era": "culture_era_high_medieval",
+    "eraName": "High Medieval",
+    "features": [],
+    "group": "culture_group_civic",
+    "groupName": "Civic",
+    "icon": "innovation_majesty_03",
+    "id": "innovation_divine_right",
+    "modifiers": {
+      "Characters": [
+        "-10% Short Reign Duration",
+        "+10% Monthly Piety",
+        "-20% Title Creation Cost",
+        "+10% Control Growth"
+      ]
+    },
+    "name": "Divine Right",
+    "parameters": [],
+    "region": null,
+    "regionName": null,
+    "requirements": [],
+    "skill": "diplomacy",
+    "sourceFile": "00_high_medieval_innovations.txt",
+    "unlocks": [
+      {
+        "key": "de_jure_cb",
+        "kind": "casus_belli",
+        "text": "De Jure"
+      }
+    ]
+  },
+  {
+    "desc": "The lands to our east are sparsely inhabited, but rich in natural resources. Establishing an initiative to expand and establish homesteads there will lead to the growth and prosperity of our people.",
+    "dlc": null,
+    "effects": [
+      "Promote Culture Councillor Task Speed: +15%"
+    ],
+    "era": "culture_era_high_medieval",
+    "eraName": "High Medieval",
+    "features": [],
+    "group": "culture_group_civic",
+    "groupName": "Civic",
+    "icon": "gdp_innovation_navigator",
+    "id": "innovation_east_settling",
+    "modifiers": {
+      "Characters": [
+        "+5% Prosperity Growth"
+      ],
+      "Provinces": [
+        "+10% Settlement Size Growth"
+      ]
+    },
+    "name": "Ostsiedlung",
+    "parameters": [],
+    "region": "custom_europe_eastern_germany",
+    "regionName": "Eastern Germany",
+    "requirements": [],
+    "skill": "stewardship",
+    "sourceFile": "00_high_medieval_innovations.txt",
+    "unlocks": []
+  },
+  {
+    "desc": "By rightfully recognizing the most illustrious amongst the noble vassals of our realm we will foster a sentiment of greater loyalty towards the crown.",
+    "dlc": null,
+    "effects": [],
+    "era": "culture_era_high_medieval",
+    "eraName": "High Medieval",
+    "features": [],
+    "group": "culture_group_civic",
+    "groupName": "Civic",
+    "icon": "innovation_nobility_03",
+    "id": "innovation_french_peerage",
+    "modifiers": {
+      "Characters": [
+        "+5 Courtly Vassal Opinion",
+        "-10 Fellow Vassal Opinion",
+        "+10% Vassal Tax Contribution"
+      ]
+    },
+    "name": "Peerage",
+    "parameters": [],
+    "region": "world_europe_west_francia",
+    "regionName": "Francia",
+    "requirements": [],
+    "skill": "diplomacy",
+    "sourceFile": "00_high_medieval_innovations.txt",
+    "unlocks": []
+  },
+  {
+    "desc": "Through careful experimentation with sand, ash, and fire, our artisans have learned to produce clear, workable glass. This craft enables the creation of windows, vessels, and ornamental wares that bring light and beauty to buildings and courts alike.",
+    "dlc": null,
+    "effects": [
+      "Unlocks a Building line:\n    • Glassmakers' Guild in the Guild District"
+    ],
+    "era": "culture_era_high_medieval",
+    "eraName": "High Medieval",
+    "features": [],
+    "group": "culture_group_civic",
+    "groupName": "Civic",
+    "icon": "gdp_innovation_wine",
+    "id": "innovation_glassmaking",
+    "modifiers": {
+      "Counties": [
+        "+20% Glass Production"
+      ]
+    },
+    "name": "Glassmaking",
+    "parameters": [],
+    "region": null,
+    "regionName": null,
+    "requirements": [],
+    "skill": "stewardship",
+    "sourceFile": "00_high_medieval_innovations.txt",
+    "unlocks": []
+  },
+  {
+    "desc": "As our lands expand it becomes increasingly inefficient to directly manage all trade going on within our domain. By granting guild charters to organizations of merchants and craftsmen we can give them more autonomy over their businesses while still ensuring we profit from their ventures.",
+    "dlc": null,
+    "effects": [
+      "Unlocks District Tiers:\n    • Guild District Tier III"
+    ],
+    "era": "culture_era_high_medieval",
+    "eraName": "High Medieval",
+    "features": [],
+    "group": "culture_group_civic",
+    "groupName": "Civic",
+    "icon": "gdp_innovation_persian_weaver",
+    "id": "innovation_guilds",
+    "modifiers": {
+      "Counties": [
+        "+5% Artisan Taxes",
+        "+25% Guild Goods Production"
+      ]
+    },
+    "name": "Guilds",
+    "parameters": [],
+    "region": null,
+    "regionName": null,
+    "requirements": [],
+    "skill": "stewardship",
+    "sourceFile": "00_high_medieval_innovations.txt",
+    "unlocks": []
+  },
+  {
+    "desc": "Establishing hereditary designs to identify our noble families will cause their members to see themselves as part of a greater whole, encouraging them to improve their dynasty's reputation instead of merely being obsessed with personal status.",
+    "dlc": null,
+    "effects": [
+      "Courtly Vassals are more common",
+      "Unlocks District Tiers:\n    • Royal Household Tier III"
+    ],
+    "era": "culture_era_high_medieval",
+    "eraName": "High Medieval",
+    "features": [],
+    "group": "culture_group_civic",
+    "groupName": "Civic",
+    "icon": "innovation_heraldry",
+    "id": "innovation_heraldry",
+    "modifiers": {},
+    "name": "Heraldry",
+    "parameters": [],
+    "region": null,
+    "regionName": null,
+    "requirements": [],
+    "skill": "diplomacy",
+    "sourceFile": "00_high_medieval_innovations.txt",
+    "unlocks": [
+      {
+        "key": "high_partition_succession_law",
+        "kind": "law",
+        "text": "High Partition"
+      },
+      {
+        "key": "single_heir_dynasty_house",
+        "kind": "law",
+        "text": "House Seniority"
+      }
+    ]
+  },
+  {
+    "desc": "Land is the most valuable reward we can bestow upon our subjects, but there is only so much that we directly own. However, if we were to grant them permission to start farming that unworked land over there... who would object? Even if conflict does result, we will clearly be in the right when we defend our subjects!",
+    "dlc": null,
+    "effects": [
+      "Fabricate Claim on County Councillor Task Speed: +50%",
+      "Casus Belli Prestige Cost: -10%",
+      "Parochial Vassals are more common",
+      "Unlocks District Tiers:\n    • Religious Community District Tier III\n    • Manor Houses District Tier III"
+    ],
+    "era": "culture_era_high_medieval",
+    "eraName": "High Medieval",
+    "features": [],
+    "group": "culture_group_civic",
+    "groupName": "Civic",
+    "icon": "innovation_administration_03",
+    "id": "innovation_land_grants",
+    "modifiers": {},
+    "name": "Land Grants",
+    "parameters": [],
+    "region": null,
+    "regionName": null,
+    "requirements": [],
+    "skill": "stewardship",
+    "sourceFile": "00_high_medieval_innovations.txt",
+    "unlocks": []
+  },
+  {
+    "desc": "By writing down the customs that have come to govern trade, and enforcing their letter, we can ensure that trade flows both more freely and in a more orderly fashion through our lands.",
+    "dlc": null,
+    "effects": [
+      "Unlocks District Tiers:\n    • Tier V for all Fishing District Resource Districts\n    • Market District Tier III\n    • Entrepôt District Tier III\n    • Port District Tier III\n    • Bureaucratic District Tier III"
+    ],
+    "era": "culture_era_high_medieval",
+    "eraName": "High Medieval",
+    "features": [],
+    "group": "culture_group_civic",
+    "groupName": "Civic",
+    "icon": "gdp_innovation_merchant_deal",
+    "id": "innovation_merchant_law",
+    "modifiers": {
+      "Characters": [
+        "+5% Trade Competitiveness"
+      ],
+      "Counties": [
+        "+2% Commerce Taxes"
+      ]
+    },
+    "name": "Merchant Law",
+    "parameters": [],
+    "region": null,
+    "regionName": null,
+    "requirements": [],
+    "skill": "diplomacy",
+    "sourceFile": "00_high_medieval_innovations.txt",
+    "unlocks": []
+  },
+  {
+    "desc": "Wars, raids, and persecution all over the world have driven many people from their homes. By welcoming these displaced souls to our lands regardless of their background we can develop a rich and prosperous society.",
+    "dlc": null,
+    "effects": [],
+    "era": "culture_era_high_medieval",
+    "eraName": "High Medieval",
+    "features": [],
+    "group": "culture_group_civic",
+    "groupName": "Civic",
+    "icon": "innovation_nobility_02",
+    "id": "innovation_muladi",
+    "modifiers": {
+      "Characters": [
+        "+10 Different Culture Opinion",
+        "+10% Prosperity Growth"
+      ]
+    },
+    "name": "Muladi",
+    "parameters": [],
+    "region": "world_africa_north",
+    "regionName": "Northern Africa",
+    "requirements": [],
+    "skill": "diplomacy",
+    "sourceFile": "00_high_medieval_innovations.txt",
+    "unlocks": []
+  },
+  {
+    "desc": "The great cities of Rome, Byzantium, and Delhi have long stood out as relics of a great, unmatchable legacy. As our infrastructure and population grow, we finally have the means to develop new settlements which rival these ancient urban centers.",
+    "dlc": null,
+    "effects": [
+      "Counties now reach the maximum Existing Prosperity penalty at 55 Prosperity",
+      "Unlocks District Tiers:\n    • Entertainment District Tier III\n    • Patrician District Tier III\n    • Housing District Tier III"
+    ],
+    "era": "culture_era_high_medieval",
+    "eraName": "High Medieval",
+    "features": [],
+    "group": "culture_group_civic",
+    "groupName": "Civic",
+    "icon": "innovation_civil_construction_02",
+    "id": "innovation_prosperity_03",
+    "modifiers": {
+      "Counties": [
+        "+10% Urban Taxes"
+      ],
+      "Provinces": [
+        "+10% Settlement Size Growth"
+      ]
+    },
+    "name": "Urbanization",
+    "parameters": [],
+    "region": null,
+    "regionName": null,
+    "requirements": [],
+    "skill": "stewardship",
+    "sourceFile": "00_high_medieval_innovations.txt",
+    "unlocks": []
+  },
+  {
+    "desc": "Cleanliness is paramount, and investment in the civic engineering required to provide all with the ability to maintain appropriate levels of hygiene is extremely important to our people.",
+    "dlc": "Legends of the Dead",
+    "effects": [],
+    "era": "culture_era_high_medieval",
+    "eraName": "High Medieval",
+    "features": [],
+    "group": "culture_group_civic",
+    "groupName": "Civic",
+    "icon": "innovation_welfare_02",
+    "id": "innovation_sanitation",
+    "modifiers": {
+      "Counties": [
+        "+10 Plague Resistance"
+      ]
+    },
+    "name": "Sanitation",
+    "parameters": [],
+    "region": null,
+    "regionName": null,
+    "requirements": [
+      {
+        "key": "heritage_byzantine",
+        "kind": "pillar",
+        "negated": false,
+        "text": "Eastern Roman"
+      },
+      {
+        "key": "heritage_arabic",
+        "kind": "pillar",
+        "negated": false,
+        "text": "Arabic"
+      },
+      {
+        "key": "heritage_syriac",
+        "kind": "pillar",
+        "negated": false,
+        "text": "Syriac"
+      }
+    ],
+    "skill": "stewardship",
+    "sourceFile": "02_ce1_innovations.txt",
+    "unlocks": []
+  },
+  {
+    "desc": "Military service has always been expected of our subjects, but there are some who are unable or unwilling to provide it. By offering a way for them to meet their obligations with coin instead of steel, we can ensure that we get our dues from everyone.",
+    "dlc": null,
+    "effects": [
+      "Unlocks the Scutage Contract Vassal Contract"
+    ],
+    "era": "culture_era_high_medieval",
+    "eraName": "High Medieval",
+    "features": [],
+    "group": "culture_group_civic",
+    "groupName": "Civic",
+    "icon": "innovation_leadership_02",
+    "id": "innovation_scutage",
+    "modifiers": {
+      "Characters": [
+        "+5% Republican Vassal Tax Contribution"
+      ]
+    },
+    "name": "Scutage",
+    "parameters": [],
+    "region": null,
+    "regionName": null,
+    "requirements": [],
+    "skill": "stewardship",
+    "sourceFile": "00_high_medieval_innovations.txt",
+    "unlocks": []
+  },
+  {
+    "desc": "By delegating more responsibilities to local nobles, we can both make them happy as well as freeing up more of our attention to focus on our own domain.",
+    "dlc": null,
+    "effects": [],
+    "era": "culture_era_high_medieval",
+    "eraName": "High Medieval",
+    "features": [],
+    "group": "culture_group_civic",
+    "groupName": "Civic",
+    "icon": "innovation_administration_01",
+    "id": "innovation_seigneurialism",
+    "modifiers": {
+      "Characters": [
+        "+5% Agricultural Taxes",
+        "+5% Mining Taxes",
+        "+5% Hinterland Taxes"
+      ]
+    },
+    "name": "Seigneurialism",
+    "parameters": [],
+    "region": "world_europe_west_francia",
+    "regionName": "Francia",
+    "requirements": [],
+    "skill": "stewardship",
+    "sourceFile": "00_high_medieval_innovations.txt",
+    "unlocks": []
+  },
+  {
+    "desc": "High and slender vaults are both inspiring to look at and a much safer way to construct a ceiling for large buildings. The vaults our masons now construct use less stone and create buildings that last longer.",
+    "dlc": null,
+    "effects": [
+      "Unlocks District Tiers:\n    • Religious Enclave Tier III\n    • Endowment District, Assay District and Ducal Residence District Tier III"
+    ],
+    "era": "culture_era_high_medieval",
+    "eraName": "High Medieval",
+    "features": [],
+    "group": "culture_group_civic",
+    "groupName": "Civic",
+    "icon": "innovation_civil_construction_01",
+    "id": "innovation_vaulting",
+    "modifiers": {
+      "Characters": [
+        "-5% Housing District Buildings Construction Time",
+        "-5% Market District Buildings Construction Time",
+        "-5% Guild District Buildings Construction Time",
+        "-5% Religious Enclave Buildings Construction Time",
+        "-5% Entertainment District Buildings Construction Time",
+        "-5% Patrician District Buildings Construction Time",
+        "+2 Trade Capacity"
+      ],
+      "Counties": [
+        "+20% Stone Production"
+      ]
+    },
+    "name": "Vaulting",
+    "parameters": [],
+    "region": null,
+    "regionName": null,
+    "requirements": [],
+    "skill": "learning",
+    "sourceFile": "00_high_medieval_innovations.txt",
+    "unlocks": []
+  },
+  {
+    "desc": "The vertical windmill turns wherever the wind blows, freeing our millers from the tyranny of falling water. The same geared shafts are now set to work far beyond grain: hammers full our cloth, bellows feed the forge, and saws bite through timber that men once cut by hand.",
+    "dlc": null,
+    "effects": [
+      "Unlocks District Tiers:\n    • Tier V for all Resource Districts except the Fishing District\n    • Villages District Tier III"
+    ],
+    "era": "culture_era_high_medieval",
+    "eraName": "High Medieval",
+    "features": [],
+    "group": "culture_group_civic",
+    "groupName": "Civic",
+    "icon": "innovation_windmills",
+    "id": "innovation_windmills",
+    "modifiers": {
+      "Characters": [
+        "+5% County Fertility Growth"
+      ]
+    },
+    "name": "Advanced Mills",
+    "parameters": [],
+    "region": null,
+    "regionName": null,
+    "requirements": [],
+    "skill": "stewardship",
+    "sourceFile": "00_high_medieval_innovations.txt",
+    "unlocks": []
+  },
+  {
+    "desc": "Weapons like the goedendag are cheap and easy to produce, yet surprisingly effective against cavalry charges. Their existence allows us to adapt our militias to have much better odds when fighting armored knights.",
+    "dlc": null,
+    "effects": [],
+    "era": "culture_era_late_medieval",
+    "eraName": "Late Medieval",
+    "features": [],
+    "group": "culture_group_military",
+    "groupName": "Military",
+    "icon": "innovation_special_maa_02",
+    "id": "innovation_adaptive_militia",
+    "modifiers": {},
+    "name": "Adaptive Militia",
+    "parameters": [],
+    "region": null,
+    "regionName": null,
+    "requirements": [
+      {
+        "key": "unlock_adaptive_militia_innovation",
+        "kind": "parameter",
+        "negated": false,
+        "text": "The Adaptive Militia Innovation becomes available in the Late Medieval Era"
+      }
+    ],
+    "skill": "martial",
+    "sourceFile": "00_cultural_maa_innovations.txt",
+    "unlocks": [
+      {
+        "key": "goedendag",
+        "kind": "maa",
+        "text": "Goedendag Militia"
+      }
+    ]
+  },
+  {
+    "desc": "Being both wealthy and centrally located, Italy has become a major center for mercenary companies to travel to when not on active campaign. Since they are already here, we should be able to negotiate a better rate for them than they would normally charge.",
+    "dlc": null,
+    "effects": [
+      "Can recruit Condottieri as Men-at-Arms"
+    ],
+    "era": "culture_era_late_medieval",
+    "eraName": "Late Medieval",
+    "features": [],
+    "group": "culture_group_military",
+    "groupName": "Military",
+    "icon": "innovation_maa_01",
+    "id": "innovation_condottieri",
+    "modifiers": {
+      "Characters": [
+        "-10% Same Culture Mercenary Hire Cost"
+      ],
+      "Culture": [
+        "+50% Mercenary Count Mult"
+      ]
+    },
+    "name": "Condottieri",
+    "parameters": [],
+    "region": null,
+    "regionName": null,
+    "requirements": [
+      {
+        "key": "unlock_innovation_condottieri",
+        "kind": "parameter",
+        "negated": false,
+        "text": "The Condottieri Innovation becomes available in the Late Medieval Era"
+      },
+      {
+        "key": "has_gdp_dlc_trigger",
+        "kind": "dlc",
+        "negated": false,
+        "text": "Silk and Silver"
+      },
+      {
+        "key": "heritage_latin",
+        "kind": "pillar",
+        "negated": false,
+        "text": "Latin"
+      }
+    ],
+    "skill": "intrigue",
+    "sourceFile": "00_late_medieval_innovations.txt",
+    "unlocks": []
+  },
+  {
+    "desc": "The development of explosive powders has created new breeds of weapons, and new types of warriors to use them. Fielding these potent guns requires production and supply chains uncalled for in the past, but cost of these works pays for itself with the might unlocked by this new technology.",
+    "dlc": null,
+    "effects": [
+      "Can recruit Bombards as Men-at-Arms",
+      "Unlocks Building lines:\n    • Gunsmiths in the Military District\n    • Powder Mills in the Military District\n    • Bulwarks in the Walls District\n    • Artillery Works"
+    ],
+    "era": "culture_era_late_medieval",
+    "eraName": "Late Medieval",
+    "features": [],
+    "group": "culture_group_military",
+    "groupName": "Military",
+    "icon": "innovation_bombards",
+    "id": "innovation_gunpowder",
+    "modifiers": {},
+    "name": "Gunpowder",
+    "parameters": [
+      {
+        "hasLoc": true,
+        "key": "unlock_late_medieval_gunpowder_units",
+        "text": "Can recruit Handgunners as Men-at-Arms",
+        "value": true
+      },
+      {
+        "hasLoc": true,
+        "key": "unlock_powder_magazines",
+        "text": "Unlocks the Gunsmiths Building line in the Military District, after constructing Training Grounds IV",
+        "value": true
+      }
+    ],
+    "region": null,
+    "regionName": null,
+    "requirements": [],
+    "skill": "learning",
+    "sourceFile": "00_late_medieval_innovations.txt",
+    "unlocks": []
+  },
+  {
+    "desc": "Just as we have restored the Roman empire, so too shall restore the structure of the old Roman legion and its feared elite troops!",
+    "dlc": null,
+    "effects": [],
+    "era": "culture_era_late_medieval",
+    "eraName": "Late Medieval",
+    "features": [],
+    "group": "culture_group_military",
+    "groupName": "Military",
+    "icon": "innovation_special_maa_02",
+    "id": "innovation_legionnaires",
+    "modifiers": {},
+    "name": "Legionnaires",
+    "parameters": [],
+    "region": null,
+    "regionName": null,
+    "requirements": [
+      {
+        "key": "is_roman_emperor_primary_title_excluding_byzantium_trigger",
+        "kind": "trigger",
+        "negated": false,
+        "text": "Rules a restored Roman Empire (not Byzantium)"
+      }
+    ],
+    "skill": "martial",
+    "sourceFile": "00_cultural_maa_innovations.txt",
+    "unlocks": [
+      {
+        "key": "praetorian",
+        "kind": "maa",
+        "text": "Palatini"
+      }
+    ]
+  },
+  {
+    "desc": "A notable improvement on our earlier hoardings, stone machicolations serve the same purpose while being significantly more durable and offering more protection for our defenders.",
+    "dlc": null,
+    "effects": [
+      "Unlocks District Tiers:\n    • Border Forts District Tier IV\n    • Walls District Tier IV"
+    ],
+    "era": "culture_era_late_medieval",
+    "eraName": "Late Medieval",
+    "features": [],
+    "group": "culture_group_military",
+    "groupName": "Military",
+    "icon": "innovation_fortifications",
+    "id": "innovation_machicolations",
+    "modifiers": {},
+    "name": "Machicolations",
+    "parameters": [],
+    "region": null,
+    "regionName": null,
+    "requirements": [],
+    "skill": "stewardship",
+    "sourceFile": "00_late_medieval_innovations.txt",
+    "unlocks": []
+  },
+  {
+    "desc": "The ultimate form of personal protection, a well-crafted suit of plate armor has articulated joints which give it a superior range of motion to earlier armors, while being all but impenetrable to enemy weapons.",
+    "dlc": null,
+    "effects": [],
+    "era": "culture_era_late_medieval",
+    "eraName": "Late Medieval",
+    "features": [],
+    "group": "culture_group_military",
+    "groupName": "Military",
+    "icon": "innovation_plate_armor",
+    "id": "innovation_plate_armor",
+    "modifiers": {
+      "Characters": [
+        "+10% Heavy Infantry Toughness",
+        "+10% Heavy Infantry Maintenance",
+        "+10% Heavy Cavalry Toughness",
+        "+10% Heavy Cavalry Maintenance"
+      ]
+    },
+    "name": "Plate Armor",
+    "parameters": [],
+    "region": null,
+    "regionName": null,
+    "requirements": [],
+    "skill": "martial",
+    "sourceFile": "00_late_medieval_innovations.txt",
+    "unlocks": []
+  },
+  {
+    "desc": "The traditional pike circle is a powerful defensive formation, but it is limited in offense and mobility. While requiring great discipline to employ, our rectilinear schiltron is a superior formation which is capable of both powerful offensive and defensive tactics.",
+    "dlc": null,
+    "effects": [],
+    "era": "culture_era_late_medieval",
+    "eraName": "Late Medieval",
+    "features": [],
+    "group": "culture_group_military",
+    "groupName": "Military",
+    "icon": "innovation_special_maa_01",
+    "id": "innovation_rectilinear_schiltron",
+    "modifiers": {},
+    "name": "Rectilinear Schiltron",
+    "parameters": [],
+    "region": null,
+    "regionName": null,
+    "requirements": [
+      {
+        "key": "unlock_schiltron_innovation",
+        "kind": "parameter",
+        "negated": false,
+        "text": "The Rectilinear Schiltron Innovation becomes available in the Late Medieval Era"
+      }
+    ],
+    "skill": "martial",
+    "sourceFile": "00_cultural_maa_innovations.txt",
+    "unlocks": [
+      {
+        "key": "schiltron",
+        "kind": "maa",
+        "text": "Schiltron"
+      }
+    ]
+  },
+  {
+    "desc": "Using explosive formulas cruder than anything needed by expensive bombards, massive volleys of fire arrows can be fired from a single device. Since these fire arrows still only have the impact of... an arrow, they are far better-suited for shooting from walls than at them.",
+    "dlc": "All Under Heaven",
+    "effects": [],
+    "era": "culture_era_late_medieval",
+    "eraName": "Late Medieval",
+    "features": [],
+    "group": "culture_group_military",
+    "groupName": "Military",
+    "icon": "innovation_rocket_cart",
+    "id": "innovation_rocket_cart",
+    "modifiers": {
+      "Provinces": [
+        "+5 Defender Holding Advantage"
+      ]
+    },
+    "name": "Rocket Carts",
+    "parameters": [],
+    "region": null,
+    "regionName": null,
+    "requirements": [
+      {
+        "key": "has_tgp_dlc_trigger",
+        "kind": "dlc",
+        "negated": false,
+        "text": "All Under Heaven"
+      },
+      {
+        "key": "heritage_chinese",
+        "kind": "pillar",
+        "negated": false,
+        "text": "Chinese"
+      },
+      {
+        "key": "heritage_korean",
+        "kind": "pillar",
+        "negated": false,
+        "text": "Samhanic"
+      },
+      {
+        "key": "heritage_buyeo",
+        "kind": "pillar",
+        "negated": false,
+        "text": "Buyeo"
+      }
+    ],
+    "skill": "learning",
+    "sourceFile": "tgp_innovations.txt",
+    "unlocks": [
+      {
+        "key": "rocket_carts",
+        "kind": "maa",
+        "text": "Rocket Carts"
+      }
+    ]
+  },
+  {
+    "desc": "As the size of our armies increases, we must guarantee that each and every soldier will be properly armed and armored. The establishment of a royal armory to produce and house all of our armies' equipment will go a long way towards meeting this need.",
+    "dlc": null,
+    "effects": [
+      "Unlocks District Tiers:\n    • Mustering Grounds District Tier IV"
+    ],
+    "era": "culture_era_late_medieval",
+    "eraName": "Late Medieval",
+    "features": [],
+    "group": "culture_group_military",
+    "groupName": "Military",
+    "icon": "innovation_levy_building",
+    "id": "innovation_royal_armory",
+    "modifiers": {
+      "Characters": [
+        "+15% Levy Reinforcement Rate"
+      ]
+    },
+    "name": "Royal Armory",
+    "parameters": [],
+    "region": null,
+    "regionName": null,
+    "requirements": [],
+    "skill": "martial",
+    "sourceFile": "00_late_medieval_innovations.txt",
+    "unlocks": []
+  },
+  {
+    "desc": "It does not matter how strong our enemy's walls are if the earth beneath them can be dug through. Employing sappers to undermine enemy fortifications is an effective way to breach even the toughest defenses.",
+    "dlc": null,
+    "effects": [],
+    "era": "culture_era_late_medieval",
+    "eraName": "Late Medieval",
+    "features": [],
+    "group": "culture_group_military",
+    "groupName": "Military",
+    "icon": "innovation_sappers",
+    "id": "innovation_sappers",
+    "modifiers": {
+      "Characters": [
+        "-10% Siege Phase Time"
+      ]
+    },
+    "name": "Sappers",
+    "parameters": [],
+    "region": null,
+    "regionName": null,
+    "requirements": [],
+    "skill": "martial",
+    "sourceFile": "00_late_medieval_innovations.txt",
+    "unlocks": []
+  },
+  {
+    "desc": "Military levies provide us with large numbers of soldiers, yet no matter how well we try to train and equip them they will always be inferior to professional soldiers. Establishing a large standing army will ensure the interests of our realm are enforced by the best fighters around.",
+    "dlc": null,
+    "effects": [
+      "Belligerent Vassals are more common",
+      "Unlocks District Tiers:\n    • Military District Tier IV\n    • Knights' Hall III"
+    ],
+    "era": "culture_era_late_medieval",
+    "eraName": "Late Medieval",
+    "features": [],
+    "group": "culture_group_military",
+    "groupName": "Military",
+    "icon": "innovation_leadership_02",
+    "id": "innovation_standing_armies",
+    "modifiers": {
+      "Characters": [
+        "+1 Max Men-at-Arms Regiments",
+        "+5 Size of Men-at-Arms Regiments",
+        "+1 Size of Title Men-at-Arms Regiments"
+      ],
+      "Counties": [
+        "+10% Stationed Men-at-Arms Control"
+      ]
+    },
+    "name": "Standing Armies",
+    "parameters": [],
+    "region": null,
+    "regionName": null,
+    "requirements": [],
+    "skill": "martial",
+    "sourceFile": "00_late_medieval_innovations.txt",
+    "unlocks": []
+  },
+  {
+    "desc": "We have discovered a way to make steel harder and less brittle by first heating it up and then quenching it quickly, and then heating it up again. This makes for a weapon that is harder and less brittle than any steel before it.",
+    "dlc": null,
+    "effects": [],
+    "era": "culture_era_late_medieval",
+    "eraName": "Late Medieval",
+    "features": [],
+    "group": "culture_group_military",
+    "groupName": "Military",
+    "icon": "innovation_weapons_and_armor_02",
+    "id": "innovation_tempered_steel",
+    "modifiers": {
+      "Characters": [
+        "+5% Heavy Infantry Damage",
+        "+5% Heavy Infantry Maintenance",
+        "+5% Spearmen Damage",
+        "+5% Spearmen Maintenance",
+        "+5% Heavy Cavalry Damage",
+        "+5% Heavy Cavalry Maintenance",
+        "+5% Handgunner Damage",
+        "+5% Handgunner Maintenance"
+      ]
+    },
+    "name": "Tempered Steel",
+    "parameters": [],
+    "region": null,
+    "regionName": null,
+    "requirements": [],
+    "skill": "learning",
+    "sourceFile": "00_late_medieval_innovations.txt",
+    "unlocks": []
+  },
+  {
+    "desc": "Establishing a valet system of dedicated servants for our noble horsemen will enable us to field knights who are both better armed and armored.",
+    "dlc": null,
+    "effects": [],
+    "era": "culture_era_late_medieval",
+    "eraName": "Late Medieval",
+    "features": [],
+    "group": "culture_group_military",
+    "groupName": "Military",
+    "icon": "innovation_special_maa_01",
+    "id": "innovation_valets",
+    "modifiers": {},
+    "name": "Valets",
+    "parameters": [],
+    "region": null,
+    "regionName": null,
+    "requirements": [
+      {
+        "key": "unlock_valets_innovation",
+        "kind": "parameter",
+        "negated": false,
+        "text": "The Valets Innovation becomes available in the Late Medieval Era"
+      }
+    ],
+    "skill": "martial",
+    "sourceFile": "00_cultural_maa_innovations.txt",
+    "unlocks": [
+      {
+        "key": "gendarme",
+        "kind": "maa",
+        "text": "Gendarmes"
+      }
+    ]
+  },
+  {
+    "desc": "These massive two-handed swords are as adept at cutting down charging knights as they are at breaking enemy pike formations, making them a formidable addition to our own pike regiments.",
+    "dlc": null,
+    "effects": [],
+    "era": "culture_era_late_medieval",
+    "eraName": "Late Medieval",
+    "features": [],
+    "group": "culture_group_military",
+    "groupName": "Military",
+    "icon": "innovation_special_maa_01",
+    "id": "innovation_zweihanders",
+    "modifiers": {},
+    "name": "Zweihanders",
+    "parameters": [],
+    "region": "ghw_region_germany",
+    "regionName": "Germany",
+    "requirements": [
+      {
+        "key": "heritage_central_germanic",
+        "kind": "pillar",
+        "negated": false,
+        "text": "Central Germanic"
+      }
+    ],
+    "skill": "martial",
+    "sourceFile": "00_cultural_maa_innovations.txt",
+    "unlocks": [
+      {
+        "key": "landsknecht",
+        "kind": "maa",
+        "text": "Landsknechts"
+      }
+    ]
+  },
+  {
+    "desc": "Beautiful stone pottery in the image of eastern porcelain, by mixing in materials such as quartz or glass. They make for valuable merchandise, or impressive gifts.",
+    "dlc": "Legacy of Persia",
+    "effects": [
+      "Opinion Gain from Send Gift: +20%"
+    ],
+    "era": "culture_era_late_medieval",
+    "eraName": "Late Medieval",
+    "features": [],
+    "group": "culture_group_civic",
+    "groupName": "Civic",
+    "icon": "innovation_misc_inventions",
+    "id": "fp3_innovation_fritware",
+    "modifiers": {
+      "Counties": [
+        "+5% Artisan Taxes",
+        "+25% Ceramics Production"
+      ]
+    },
+    "name": "Fritware",
+    "parameters": [],
+    "region": null,
+    "regionName": null,
+    "requirements": [
+      {
+        "key": "has_fp3_dlc_trigger",
+        "kind": "dlc",
+        "negated": false,
+        "text": "Legacy of Persia"
+      }
+    ],
+    "skill": "learning",
+    "sourceFile": "00_fp3_innovations.txt",
+    "unlocks": []
+  },
+  {
+    "desc": "Working land can be hard and is often only taught from one farmer to another. By collecting such knowledge and writing down treatieses on crops and husbandry we can spread knowledge that has been proven, and refine traditions into methods.",
+    "dlc": null,
+    "effects": [
+      "Unlocks District Tiers:\n    • Villages District Tier IV\n    • Manor Houses District Tier IV\n    • Religious Community District Tier IV\n    • Bailiwick District Tier IV"
+    ],
+    "era": "culture_era_late_medieval",
+    "eraName": "Late Medieval",
+    "features": [],
+    "group": "culture_group_civic",
+    "groupName": "Civic",
+    "icon": "innovation_farm",
+    "id": "innovation_agronomy",
+    "modifiers": {
+      "Counties": [
+        "+2% Agricultural Taxes",
+        "+25% Cereals Production"
+      ]
+    },
+    "name": "Agronomy",
+    "parameters": [],
+    "region": null,
+    "regionName": null,
+    "requirements": [],
+    "skill": "learning",
+    "sourceFile": "00_late_medieval_innovations.txt",
+    "unlocks": []
+  },
+  {
+    "desc": "While bricks were not unknown to our ancestors the knowledge is not as widespread as it once was. The technology to reliably manufacture and use this simple man made building material allows any house to be built more quickly and more efficiently.",
+    "dlc": null,
+    "effects": [
+      "Unlocks District Tiers:\n    • Housing District Tier IV\n    • Guild District Tier IV\n    • Entertainment District Tier IV\n    • Religious Enclave Tier IV\n    • Staple District and Endowment District Tier IV"
+    ],
+    "era": "culture_era_late_medieval",
+    "eraName": "Late Medieval",
+    "features": [],
+    "group": "culture_group_civic",
+    "groupName": "Civic",
+    "icon": "innovation_civil_construction_02",
+    "id": "innovation_bricks",
+    "modifiers": {
+      "Characters": [
+        "+2 Trade Capacity",
+        "-10% Housing District Buildings Construction Time",
+        "-10% Religious Enclave Buildings Construction Time",
+        "-10% Patrician District Buildings Construction Time"
+      ]
+    },
+    "name": "Bricks",
+    "parameters": [],
+    "region": null,
+    "regionName": null,
+    "requirements": [],
+    "skill": "stewardship",
+    "sourceFile": "00_late_medieval_innovations.txt",
+    "unlocks": []
+  },
+  {
+    "desc": "Our realm has expanded to the point where even minor nobles cannot administer everything effectively. Appointing court officials and bureaucrats to handle the more mundane court tasks will ensure that the wheels of government continue turning smoothly.",
+    "dlc": null,
+    "effects": [
+      "Courtly Vassals are more common",
+      "Unlocks District Tiers:\n    • Bureaucratic District Tier IV\n    • Governance Quarter Tier IV\n• Unlocks a Building line:\n    • Printing Press in the Bureaucratic District"
+    ],
+    "era": "culture_era_late_medieval",
+    "eraName": "Late Medieval",
+    "features": [],
+    "group": "culture_group_civic",
+    "groupName": "Civic",
+    "icon": "innovation_nobility_02",
+    "id": "innovation_court_officials",
+    "modifiers": {
+      "Characters": [
+        "+1 Domain Limit",
+        "+1 Tax Slot Add"
+      ],
+      "Counties": [
+        "+2% Civic Taxes"
+      ]
+    },
+    "name": "Court Officials",
+    "parameters": [],
+    "region": null,
+    "regionName": null,
+    "requirements": [],
+    "skill": "stewardship",
+    "sourceFile": "00_late_medieval_innovations.txt",
+    "unlocks": []
+  },
+  {
+    "desc": "A forgotten marvel of engineering, the Romans used tread-wheel cranes to great effect when building their empire, and so too shall we.",
+    "dlc": null,
+    "effects": [],
+    "era": "culture_era_late_medieval",
+    "eraName": "Late Medieval",
+    "features": [],
+    "group": "culture_group_civic",
+    "groupName": "Civic",
+    "icon": "innovation_civil_construction_01",
+    "id": "innovation_cranes",
+    "modifiers": {
+      "Characters": [
+        "-15% Build Speed"
+      ],
+      "Counties": [
+        "+25% Stone Production"
+      ]
+    },
+    "name": "Cranes",
+    "parameters": [],
+    "region": null,
+    "regionName": null,
+    "requirements": [],
+    "skill": "stewardship",
+    "sourceFile": "00_late_medieval_innovations.txt",
+    "unlocks": []
+  },
+  {
+    "desc": "An evolution of earlier banking systems, paper promissory notes allow our citizens to quickly and safely trade goods and services across large distances without being weighed down by heavy specie.",
+    "dlc": null,
+    "effects": [
+      "Unlocks District Tiers:\n    • Market District Tier IV\n    • Entrepôt District Tier IV\n    • Mint IV"
+    ],
+    "era": "culture_era_late_medieval",
+    "eraName": "Late Medieval",
+    "features": [],
+    "group": "culture_group_civic",
+    "groupName": "Civic",
+    "icon": "innovation_administration_01",
+    "id": "innovation_currency_04",
+    "modifiers": {
+      "Characters": [
+        "+5% Prosperity Growth",
+        "+5% Trade Expertise Growth"
+      ],
+      "Counties": [
+        "+2% Commerce Taxes"
+      ]
+    },
+    "name": "Promissory Notes",
+    "parameters": [],
+    "region": null,
+    "regionName": null,
+    "requirements": [],
+    "skill": "stewardship",
+    "sourceFile": "00_late_medieval_innovations.txt",
+    "unlocks": []
+  },
+  {
+    "desc": "The influx of new beliefs and religions into our society has made it clear that our past focus on regionalism has been a mistake. We should band together with others of our faith and ensure a strong and enduring state that can stand up to external pressures.",
+    "dlc": null,
+    "effects": [],
+    "era": "culture_era_late_medieval",
+    "eraName": "Late Medieval",
+    "features": [],
+    "group": "culture_group_civic",
+    "groupName": "Civic",
+    "icon": "innovation_nobility_04",
+    "id": "innovation_deccan_unity",
+    "modifiers": {
+      "Characters": [
+        "+5 Same Faith Opinion"
+      ]
+    },
+    "name": "Deccan Unity",
+    "parameters": [],
+    "region": "world_india_deccan",
+    "regionName": "Deccan India",
+    "requirements": [],
+    "skill": "diplomacy",
+    "sourceFile": "00_late_medieval_innovations.txt",
+    "unlocks": []
+  },
+  {
+    "desc": "In order to create deeper mines than ever before we have come up with a number of technical solutions, timbered galleries, better drainage, and windlasses. These improvements have let us follow veins much deeper than anyone before us.",
+    "dlc": null,
+    "effects": [
+      "Unlocks District Tiers:\n    • Tier VII for all Minerals Resource Districts\n    • Assay District Tier IV"
+    ],
+    "era": "culture_era_late_medieval",
+    "eraName": "Late Medieval",
+    "features": [],
+    "group": "culture_group_civic",
+    "groupName": "Civic",
+    "icon": "gdp_innovation_miner",
+    "id": "innovation_deep_mining",
+    "modifiers": {
+      "Counties": [
+        "+2% Mining Taxes",
+        "+25% Minerals Production"
+      ]
+    },
+    "name": "Deep Mining",
+    "parameters": [],
+    "region": null,
+    "regionName": null,
+    "requirements": [],
+    "skill": "learning",
+    "sourceFile": "00_late_medieval_innovations.txt",
+    "unlocks": []
+  },
+  {
+    "desc": "Anyone may claim a title, but in order to be a true monarch they must inspire awe and majesty in their subjects. Using the most rare and exotic materials in our regal clothing is sure to accomplish just that.",
+    "dlc": null,
+    "effects": [
+      "Unlocks District Tiers:\n    • Ducal Residence District Tier IV\n    • Mandala District Tier IV"
+    ],
+    "era": "culture_era_late_medieval",
+    "eraName": "Late Medieval",
+    "features": [],
+    "group": "culture_group_civic",
+    "groupName": "Civic",
+    "icon": "innovation_majesty_03",
+    "id": "innovation_ermine_cloaks",
+    "modifiers": {
+      "Characters": [
+        "+20 Vassal Limit"
+      ],
+      "Counties": [
+        "+25% Jewelry Production"
+      ]
+    },
+    "name": "Exotic Regalia",
+    "parameters": [],
+    "region": null,
+    "regionName": null,
+    "requirements": [],
+    "skill": "stewardship",
+    "sourceFile": "00_late_medieval_innovations.txt",
+    "unlocks": []
+  },
+  {
+    "desc": "Nobility is more than just privileges and rights; it also comes with a duty to the realm, an obligation to act in ways that are proper and just. Clearly establishing what is expected from our elite will give us an ideal to aspire to and bring us together as we work to achieve it.",
+    "dlc": null,
+    "effects": [
+      "Unlocks District Tiers:\n    • Royal Household Tier IV"
+    ],
+    "era": "culture_era_late_medieval",
+    "eraName": "Late Medieval",
+    "features": [],
+    "group": "culture_group_civic",
+    "groupName": "Civic",
+    "icon": "innovation_nobility_03",
+    "id": "innovation_noblesse_oblige",
+    "modifiers": {
+      "Characters": [
+        "+5 Courtly Vassal Opinion",
+        "+5 Parochial Vassal Opinion",
+        "+5 Fellow Vassal Opinion",
+        "+10% Accolade Glory Gain"
+      ]
+    },
+    "name": "Noblesse Oblige",
+    "parameters": [],
+    "region": null,
+    "regionName": null,
+    "requirements": [],
+    "skill": "diplomacy",
+    "sourceFile": "00_late_medieval_innovations.txt",
+    "unlocks": []
+  },
+  {
+    "desc": "Navigation is a dangerous business and without local pilots most ships would be doomed even along a relatively safe, but unknown, coast. By drawing up charts of every headland, shoal and anchorage, with their bearings and distances we can preserve for eternity what would otherwise die with a single person.",
+    "dlc": null,
+    "effects": [
+      "Unlocks District Tiers:\n    • Tier VII for all Fishing District Resource Districts\n    • Port District Tier IV"
+    ],
+    "era": "culture_era_late_medieval",
+    "eraName": "Late Medieval",
+    "features": [],
+    "group": "culture_group_civic",
+    "groupName": "Civic",
+    "icon": "gdp_innovation_navigator",
+    "id": "innovation_pilot_books",
+    "modifiers": {
+      "Characters": [
+        "+2 Route Length"
+      ],
+      "Counties": [
+        "+2% Maritime Taxes"
+      ]
+    },
+    "name": "Pilot Books",
+    "parameters": [],
+    "region": null,
+    "regionName": null,
+    "requirements": [],
+    "skill": "learning",
+    "sourceFile": "00_late_medieval_innovations.txt",
+    "unlocks": []
+  },
+  {
+    "desc": "One kingdom, one heir. While the younger children of our monarch may feel forsaken by being denied an inheritance, this is the best way to ensure we keep a stable realm which does not get torn apart by succession crises.",
+    "dlc": null,
+    "effects": [
+      "Zealot Vassals are more common"
+    ],
+    "era": "culture_era_late_medieval",
+    "eraName": "Late Medieval",
+    "features": [],
+    "group": "culture_group_civic",
+    "groupName": "Civic",
+    "icon": "innovation_majesty_01",
+    "id": "innovation_primogeniture",
+    "modifiers": {},
+    "name": "Primogeniture",
+    "parameters": [],
+    "region": null,
+    "regionName": null,
+    "requirements": [],
+    "skill": "diplomacy",
+    "sourceFile": "00_late_medieval_innovations.txt",
+    "unlocks": [
+      {
+        "key": "single_heir_succession_law",
+        "kind": "law",
+        "text": "Primogeniture"
+      },
+      {
+        "key": "single_heir_succession_law_youngest",
+        "kind": "law",
+        "text": "Ultimogeniture"
+      }
+    ]
+  },
+  {
+    "desc": "Developments in science, philosophy, and logic have turned our cities into wondrous centers of education and innovation. The massive technological and cultural leaps we are now making has put hitherto undreamed potential within our grasp.",
+    "dlc": null,
+    "effects": [
+      "Counties now reach the maximum Existing Prosperity penalty at 90 Prosperity",
+      "Parochial Vassals are more common",
+      "Unlocks District Tiers:\n    • Patrician District Tier IV"
+    ],
+    "era": "culture_era_late_medieval",
+    "eraName": "Late Medieval",
+    "features": [],
+    "group": "culture_group_civic",
+    "groupName": "Civic",
+    "icon": "innovation_misc_inventions",
+    "id": "innovation_prosperity_04",
+    "modifiers": {
+      "Characters": [
+        "+5 Trade Competitiveness"
+      ],
+      "Counties": [
+        "+25% Books & Paper Production"
+      ]
+    },
+    "name": "Renaissance Thought",
+    "parameters": [],
+    "region": null,
+    "regionName": null,
+    "requirements": [],
+    "skill": "stewardship",
+    "sourceFile": "00_late_medieval_innovations.txt",
+    "unlocks": []
+  },
+  {
+    "desc": "By having an overarching organization for the production that takes place daily in every cottage or homestead in our realm we can achieve much greater efficiency. Merchants will take care of buying raw materials as well as the sale of the final product.",
+    "dlc": null,
+    "effects": [
+      "Unlocks District Tiers:\n    • Tier VII for all Farmed Resource Goods, Exotic Resource Goods, Forest Resource Goods and Crafted Resource Goods Resource Districts"
+    ],
+    "era": "culture_era_late_medieval",
+    "eraName": "Late Medieval",
+    "features": [],
+    "group": "culture_group_civic",
+    "groupName": "Civic",
+    "icon": "gdp_innovation_persian_weaver",
+    "id": "innovation_putting_out_system",
+    "modifiers": {
+      "Characters": [
+        "-10% Villages District Construction Cost"
+      ],
+      "Counties": [
+        "+25% Guild Goods Production"
+      ]
+    },
+    "name": "Putting-Out System",
+    "parameters": [],
+    "region": null,
+    "regionName": null,
+    "requirements": [],
+    "skill": "stewardship",
+    "sourceFile": "00_late_medieval_innovations.txt",
+    "unlocks": []
+  },
+  {
+    "desc": "It is our divine right to possess our de jure lands, and it is time the world recognizes this fact. No longer will we be held back by obsolete protocols and decorum.",
+    "dlc": null,
+    "effects": [
+      "Casus Belli Prestige Cost: -10%",
+      "Glory Hound Vassals are more common"
+    ],
+    "era": "culture_era_late_medieval",
+    "eraName": "Late Medieval",
+    "features": [],
+    "group": "culture_group_civic",
+    "groupName": "Civic",
+    "icon": "innovation_leadership_01",
+    "id": "innovation_rightful_ownership",
+    "modifiers": {
+      "Characters": [
+        "-20% Title Creation Cost"
+      ]
+    },
+    "name": "Rightful Ownership",
+    "parameters": [],
+    "region": null,
+    "regionName": null,
+    "requirements": [],
+    "skill": "diplomacy",
+    "sourceFile": "00_late_medieval_innovations.txt",
+    "unlocks": []
+  },
+  {
+    "desc": "Building strong and reliable dikes is an essential task if we wish to live and prosper within the low countries. New techniques of reinforcing earthen dikes with seaweed mats will increase their strength and durability.",
+    "dlc": null,
+    "effects": [],
+    "era": "culture_era_late_medieval",
+    "eraName": "Late Medieval",
+    "features": [],
+    "group": "culture_group_civic",
+    "groupName": "Civic",
+    "icon": "innovation_civil_construction_02",
+    "id": "innovation_wierdijks",
+    "modifiers": {
+      "Characters": [
+        "+1% Levy Size",
+        "-10% City Buildings Construction Time",
+        "-10% City Holding Construction Time",
+        "+10% Prosperity Growth"
+      ]
+    },
+    "name": "Wierdijks",
+    "parameters": [],
+    "region": "custom_netherlands",
+    "regionName": "Netherlands",
+    "requirements": [],
+    "skill": "stewardship",
+    "sourceFile": "00_late_medieval_innovations.txt",
+    "unlocks": []
+  }
+]

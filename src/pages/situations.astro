@@ -145,7 +145,7 @@ const NEXT_LABEL: Record<string, string> = {
                         <tbody>
                           {t.catalysts.map((c) => (
                             <tr>
-                              <td title={c.desc ?? undefined}>{c.name}</td>
+                              <td title={c.desc ?? undefined}>{c.name}{c.dlc && <span class="badge-dlc" title={`only with ${c.dlc} (${c.dlcFeature})`}>{c.dlc}</span>}</td>
                               <td class="num">{pointsText(c.points)}</td>
                             </tr>
                           ))}

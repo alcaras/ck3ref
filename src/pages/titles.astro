@@ -4,13 +4,18 @@ import data from '../data/titles.json';
 
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 const { roots, counts } = data;
+const titleTypes = ((data as any).titleTypes ?? []) as any[];
 
 const hegemonies = roots.filter((r) => r.tier === 'hegemony');
 const empires = [
   ...hegemonies.flatMap((h) => (h.children ?? []).filter((c) => c.tier === 'empire')),
   ...roots.filter((r) => r.tier === 'empire'),
 ];
-const looseTitles = roots.filter((r) => r.tier !== 'hegemony' && r.tier !== 'empire');
+const looseAll = roots.filter((r) => r.tier !== 'hegemony' && r.tier !== 'empire');
+const typedGroups = titleTypes
+  .map((t) => ({ t, rows: looseAll.filter((r: any) => r.titleType === t.id) }))
+  .filter((g) => g.rows.length > 0);
+const looseTitles = looseAll.filter((r: any) => !r.titleType);
 
 function countTier(n: any, tier: string): number {
   let c = n.tier === tier ? 1 : 0;
@@ -36,11 +41,19 @@ const isTitular = (n: any) => !(n.children ?? []).length;
       <h2 class="group-h">Hegemonies <span class="count">{hegemonies.length}</span></h2>
       <div class="tgrid">
         {hegemonies.map((h) => (
-          <a class="tcard" href={`${base}/titles/${h.id}`}>
-            <span class="sw" style={`--c:${h.color ?? 'var(--line)'}`} />
-            <span class="tname">{h.name}</span>
-            <span class="tsub">{(h.children ?? []).filter((c: any) => c.tier === 'empire').length} empires</span>
-          </a>
+          (h.children ?? []).length > 0 ? (
+            <a class="tcard" href={`${base}/titles/${h.id}`}>
+              <span class="sw" style={`--c:${h.color ?? 'var(--line)'}`} />
+              <span class="tname">{h.name}</span>
+              <span class="tsub">{(h.children ?? []).filter((c: any) => c.tier === 'empire').length} empires</span>
+            </a>
+          ) : (
+            <div class="tcard">
+              <span class="sw" style={`--c:${h.color ?? 'var(--line)'}`} />
+              <span class="tname">{h.name}</span>
+              <span class="tsub">titular · declares no de jure empires</span>
+            </div>
+          )
         ))}
       </div>
     </section>
@@ -64,6 +77,30 @@ const isTitular = (n: any) => !(n.children ?? []).length;
       ))}
     </div>
   </section>
+
+  {typedGroups.length > 0 && (
+    <section>
+      <h2 class="group-h">Title types <span class="count">{typedGroups.length}</span></h2>
+      <p class="lede">
+        Titles outside the de jure pyramid, grouped by the game's own
+        <code>common/title_types/</code>: a type claims every title whose key
+        carries its prefix (e.g. <code>c_merchant_…</code>).
+      </p>
+      {typedGroups.map(({ t, rows }) => (
+        <details>
+          <summary>
+            <b>{t.name}</b> <span class="count">{rows.length}</span>
+            <span class="tsub"> · prefix <code>{t.prefix}</code>{t.tradePost ? ' · may own trade posts' : ''}{t.houseTitle ? ' · house title' : ''}{t.domicileType ? ` · domicile ${t.domicileType}` : ''}</span>
+          </summary>
+          <div class="chips">
+            {rows.map((r: any) => (
+              <span class="chip" title={r.id}>{r.name}</span>
+            ))}
+          </div>
+        </details>
+      ))}
+    </section>
+  )}
 
   {looseTitles.length > 0 && (
     <section>

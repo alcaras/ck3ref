@@ -1,136 +1,82 @@
 ---
 import Base from '../layouts/Base.astro';
+import BuildingChain from '../components/BuildingChain.astro';
 import buildings from '../data/buildings.json';
+import districtsData from '../data/districts.json';
+import holdingsData from '../data/holdings.json';
 import { getEntity } from '../lib/entities';
 
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
-
-interface ReqChip {
-  kind: string;
-  key: string;
-  name: string;
-  detail: string | null;
-  negated: boolean;
-}
-interface ModGroup {
-  scope: string;
-  cond: string | null;
-  lines: string[];
-}
-interface Bld {
-  id: string;
-  name: string | null;
-  desc: string | null;
-  category: string;
-  type: string;
-  chain: string;
-  tier: number;
-  constructionTime: number | { rules: unknown } | null;
-  cost: Record<string, number | { rules: unknown }> | null;
-  rebuildCost: Record<string, number | { rules: unknown }> | null;
-  levy: number | null;
-  maxGarrison: number | null;
-  garrisonReinforcement: number | null;
-  modifiers: ModGroup[];
-  effects: string | null;
-  requirements: ReqChip[];
-  mandalaCapital: boolean;
-  icon: string | null;
-  dlc: string | null;
-  features: string[];
-  sourceFile: string;
-}
-
-const all = buildings as Bld[];
-
-const CATEGORY_ORDER = [
-  'Economy', 'Military', 'Fortifications', 'Common',
-  'Castle holdings', 'City holdings', 'Temple holdings', 'Temple citadels',
-  'Tribal', 'Nomadic', 'Administrative', 'Duchy capital', 'Oath buildings',
-  'Special', 'Special mines', 'Great projects', 'Legendary',
-];
+const D = districtsData as any;
+const all = buildings as any[];
+const holdingName: Record<string, string> = Object.fromEntries((holdingsData as any[]).map((h) => [h.id, h.name]));
+const districtNames: Record<string, string> = Object.fromEntries(D.districts.map((x: any) => [x.id, x.name]));
 
 // chain root id -> tiers sorted 1..N
-const chainMap = new Map<string, Bld[]>();
+const chainMap = new Map<string, any[]>();
 for (const b of all) {
   if (!chainMap.has(b.chain)) chainMap.set(b.chain, []);
   chainMap.get(b.chain)!.push(b);
 }
 for (const tiers of chainMap.values()) tiers.sort((a, b) => a.tier - b.tier);
+// a chain's home district (first that lists it) carries its #anchor here
+const home = (chainId: string) => chainMap.get(chainId)?.[0]?.districts?.[0] ?? null;
 
-const categories = [...new Set(all.map((b) => b.category))].sort(
-  (a, b) => CATEGORY_ORDER.indexOf(a) - CATEGORY_ORDER.indexOf(b),
-);
-const chainsByCat = new Map<string, Bld[][]>();
-for (const c of categories) chainsByCat.set(c, []);
-for (const [root, tiers] of chainMap) {
-  chainsByCat.get(tiers[0].category)!.push(tiers);
+const byType = new Map<string, any[]>();
+for (const d of D.districts) {
+  if (!byType.has(d.type)) byType.set(d.type, []);
+  byType.get(d.type)!.push(d);
 }
-for (const chains of chainsByCat.values()) {
-  chains.sort((a, b) => (a[0].name ?? '').localeCompare(b[0].name ?? ''));
-}
+// special districts split by the district file they come from (the game's grouping)
+const SPECIAL_ORDER = ['Special', 'Special mines', 'Legendary'];
 
-const dlcs = [...new Set(all.map((b) => b.dlc).filter(Boolean))].sort() as string[];
-
-const num = (v: number | { rules: unknown } | null | undefined): number | null =>
-  typeof v === 'number' ? v : null;
-
-function fmt(v: number | { rules: unknown } | null | undefined): string {
-  const n = num(v);
-  return n == null ? '—' : String(Math.round(n * 100) / 100);
-}
-function range(tiers: Bld[], pick: (b: Bld) => number | { rules: unknown } | null): string {
-  const vals = tiers.map(pick).map(num).filter((n): n is number => n != null);
-  if (!vals.length) return '—';
-  const a = vals[0], z = vals[vals.length - 1];
-  return a === z ? fmt(a) : `${fmt(a)} → ${fmt(z)}`;
-}
-
-const chainDlc = (tiers: Bld[]) => tiers.map((t) => t.dlc).find(Boolean) ?? null;
-
-// final-tier modifier lines, unconditional groups first, for the summary cell
-function summaryLines(tiers: Bld[]): string[] {
-  const last = tiers[tiers.length - 1];
-  const groups = [...last.modifiers].sort((a, b) => Number(!!a.cond) - Number(!!b.cond));
-  return groups.flatMap((g) => g.lines.map((l) => (g.cond ? `${l} *` : l)));
-}
-
-function searchText(tiers: Bld[]): string {
-  const parts = new Set<string>();
-  for (const t of tiers) {
-    parts.add(t.id);
-    if (t.name) parts.add(t.name);
-    for (const r of t.requirements) parts.add(r.name);
-    for (const g of t.modifiers) for (const l of g.lines) parts.add(l);
-  }
-  parts.add(tiers[0].category);
-  const d = chainDlc(tiers);
-  if (d) parts.add(d);
-  return [...parts].join(' ').toLowerCase();
-}
+const orphans = [...chainMap.values()].filter((t) => !(t[0].districts?.length));
+const dlcs = [...new Set(D.districts.map((d: any) => d.dlc).filter(Boolean))].sort() as string[];
 
 const terrainName = (t: string) => getEntity(`terrain_${t}`)?.name ?? t.replace(/_/g, ' ');
-const chipName = (r: ReqChip) => (r.kind === 'terrain' ? terrainName(r.key) : r.name);
-const chipClass = (r: ReqChip) =>
-  r.kind === 'terrain' ? 'chip chip--terrain' : 'chip chip--req';
+const chipName = (r: any) => (r.kind === 'terrain' ? terrainName(r.key) : r.name);
 
-const totalChains = chainMap.size;
+// the final tier's unconditional effects, for one-building (special) districts
+function finalLines(chainId: string): string[] {
+  const tiers = chainMap.get(chainId);
+  if (!tiers) return [];
+  const last = tiers[tiers.length - 1];
+  return last.modifiers.filter((g: any) => !g.cond).flatMap((g: any) => g.lines);
+}
+
+function searchText(d: any): string {
+  const parts = new Set<string>([d.id, d.name, d.category]);
+  if (d.primaryBuilding) parts.add(d.primaryBuilding.name);
+  for (const b of d.buildings) parts.add(b.name);
+  for (const r of d.requirements) parts.add(r.name);
+  for (const f of d.focus ?? []) parts.add(f);
+  if (d.dlc) parts.add(d.dlc);
+  return [...parts].join(' ').toLowerCase();
+}
+const ROMAN = ['', 'I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII', 'IX', 'X', 'XI', 'XII'];
 ---
 <Base
   title="Buildings"
   active="buildings"
-  lede="Every constructible building, grouped into its upgrade chain: costs, build times, levies, garrisons, and the full modifier list per tier — with terrain, holding, and innovation gates resolved from the game's construction triggers."
+  lede="Every district and the building lines inside it: holding districts, standard districts, resource, duchy, special and great districts, trade posts and entrepôts. Open a district for each line's tiers, costs, trade-good needs and market modifiers."
   stats={[
+    { value: D.districts.length, label: 'districts' },
+    { value: chainMap.size, label: 'building lines' },
     { value: all.length, label: 'buildings' },
-    { value: totalChains, label: 'upgrade chains' },
-    { value: categories.length, label: 'categories' },
   ]}
 >
+  {D.concept && (
+    <blockquote class="concept">
+      {D.concept.split('\n').filter(Boolean).map((p: string) => <p>{p}</p>)}
+      <cite>— the game's District concept</cite>
+    </blockquote>
+  )}
+
   <div class="filterbar">
-    <input type="search" id="q" placeholder="Filter by name, modifier, terrain…" autocomplete="off" />
-    <select id="fcat">
-      <option value="">every category</option>
-      {categories.map((c) => <option value={c}>{c}</option>)}
+    <input type="search" id="q" placeholder="Filter by district, building, focus…" autocomplete="off" />
+    <select id="ftype">
+      <option value="">every district type</option>
+      {D.types.map((t: any) => <option value={t.id}>{t.name}</option>)}
     </select>
     <select id="fdlc">
       <option value="">base game + DLC</option>
@@ -139,238 +85,185 @@ const totalChains = chainMap.size;
     </select>
     <span class="hint" id="count"></span>
   </div>
-  <p class="legend">
-    Costs and times run first tier → last tier; levy and garrison are the final tier's.
-    Effects marked <span class="cond-mark">*</span> are conditional — expand a chain for
-    the per-tier detail, requirements, and conditions.
-  </p>
 
-  {categories.map((cat) => {
-    const chains = chainsByCat.get(cat)!;
-    const nBld = chains.reduce((s, c) => s + c.length, 0);
+  {D.types.map((t: any) => {
+    const list = byType.get(t.id) ?? [];
+    if (!list.length) return null;
+    const groups: [string, any[]][] = t.id === 'special'
+      ? SPECIAL_ORDER.map((c) => [c, list.filter((d) => d.category === c)] as [string, any[]]).filter(([, l]) => l.length)
+      : [[t.name, list]];
+    const oneBuilding = list.every((d) => d.buildings.length === 0);
     return (
-      <section data-group={cat}>
-        <h2 class="group-h" id={cat.toLowerCase().replace(/ /g, '-')}>
-          {cat}
-          <span class="count">{chains.length} chains · {nBld} buildings</span>
-        </h2>
-        <div class="tbl-scroll">
-          <table class="ntbl">
-            <thead>
-              <tr>
-                <th>Building chain</th>
-                <th class="num" title="Number of upgrade tiers">Tiers</th>
-                <th class="num" title="Construction cost, first tier → last tier">Cost</th>
-                <th class="num" title="Construction time in days, first tier → last tier">Days</th>
-                <th class="num" title="Levy at final tier">Levy</th>
-                <th class="num" title="Garrison at final tier">Garrison</th>
-                <th>Effects at final tier</th>
-                <th>Requirements</th>
-                <th>DLC</th>
-              </tr>
-            </thead>
-            <tbody>
-              {chains.map((tiers) => {
-                const root = tiers[0];
-                const last = tiers[tiers.length - 1];
-                const dlc = chainDlc(tiers);
-                const lines = summaryLines(tiers);
-                const shown = lines.slice(0, 3);
-                const extraCost = ['prestige', 'piety'].filter((k) =>
-                  tiers.some((t) => t.cost && k in t.cost));
-                return (
-                  <>
-                    <tr
-                      class="sum"
-                      id={root.id}
-                      data-name={searchText(tiers)}
-                      data-cat={cat}
-                      data-dlc={dlc ?? 'base'}
-                    >
-                      <td class="name">
-                        <span class="caret">▸</span>
-                        <img class="b-icon" src={`${base}/img/buildings/${root.icon}.webp`} alt="" width="26" height="26" loading="lazy" />
-                        <span class="u-name">{root.name}</span>
-                        {tiers.length > 1 && last.name !== root.name && (
-                          <span class="final subtle"> → {last.name}</span>
-                        )}
-                        {root.mandalaCapital && <span class="subtle"> · mandala capital</span>}
-                      </td>
-                      <td class="num">
-                        <span class="tierpips">{tiers.map(() => <i />)}</span> {tiers.length}
-                      </td>
-                      <td class="num cost">
-                        {range(tiers, (t) => t.cost?.gold ?? null)}
-                        {extraCost.includes('prestige') && <span class="subtle"> +p</span>}
-                        {extraCost.includes('piety') && <span class="subtle"> +pi</span>}
-                      </td>
-                      <td class="num">{range(tiers, (t) => t.constructionTime)}</td>
-                      <td class="num">{fmt(last.levy)}</td>
-                      <td class="num">{fmt(last.maxGarrison)}</td>
-                      <td class="fx">
-                        {shown.map((l) => <span class="fx-line">{l}</span>)}
-                        {lines.length > shown.length && (
-                          <span class="fx-line subtle">+{lines.length - shown.length} more…</span>
-                        )}
-                      </td>
-                      <td>
-                        <span class="chips">
-                          {root.requirements.map((r) => (
-                            <span class={chipClass(r)} title={r.detail ?? r.kind.replace(/_/g, ' ')}>
-                              {r.negated && <span class="neg">not </span>}{chipName(r)}
+      <section data-type={t.id}>
+        <h2 class="group-h" id={`type-${t.id}`}>{t.name}s <span class="count">{list.length}</span></h2>
+        {t.desc && <p class="tdesc">{t.desc.split('\n').filter(Boolean)[0]}</p>}
+        {groups.map(([gname, gl]) => (
+          <div class="tgroup" data-group>
+            {groups.length > 1 && <h3 class="sub-h">{gname} <span class="count">{gl.length}</span></h3>}
+            <div class="tbl-scroll">
+              <table class="ntbl">
+                <thead>
+                  <tr>
+                    <th>District</th>
+                    <th>Primary building</th>
+                    <th>Where</th>
+                    <th>{oneBuilding ? 'Effects at final tier' : 'Building lines'}</th>
+                    <th>DLC</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {gl.map((d: any) => {
+                    const pb = d.primaryBuilding;
+                    const pbHome = pb && home(pb.id) === d.id;
+                    const fx = oneBuilding && pb ? finalLines(pb.id) : [];
+                    return (
+                      <tr class="drow" id={d.id} data-name={searchText(d)} data-type={d.type} data-dlc={d.dlc ?? 'base'}>
+                        <td class="name">
+                          {d.icon && <img class="b-icon" src={`${base}/img/buildings/${d.icon}.webp`} alt="" width="24" height="24" loading="lazy" onerror="this.style.visibility='hidden'" />}
+                          <a href={`${base}/buildings/${d.id}`}>{d.name}</a>
+                          {d.focus?.length > 0 && <span class="focus">{d.focus.join(' · ')}</span>}
+                        </td>
+                        <td class="pb">
+                          {pb && (
+                            <a id={pbHome ? pb.id : undefined} data-go={pbHome ? `${base}/buildings/${d.id}#${pb.id}` : undefined}
+                               href={`${base}/buildings/${d.id}#${pb.id}`}>{pb.name}</a>
+                          )}
+                          {pb?.tiers > 1 && <span class="subtle"> · {pb.tiers} tiers</span>}
+                          {d.tierSlots?.some((s: any) => s) && (
+                            <span class="slots" title="building slots by district tier (building_slots_for_host_district)">
+                              slots {d.tierSlots.map((s: any) => s ?? 0).join('/')}
                             </span>
-                          ))}
-                        </span>
-                      </td>
-                      <td>{dlc ? <span class="badge-dlc">{dlc}</span> : <span class="subtle">—</span>}</td>
-                    </tr>
-                    <tr class="det" hidden>
-                      <td colspan="9">
-                        {root.desc && <p class="b-desc">{root.desc}</p>}
-                        <div class="tiers-grid">
-                          {tiers.map((t) => (
-                            <div class="tier-card" id={t.tier > 1 ? t.id : undefined}>
-                              <div class="tier-head">
-                                <span class="tier-n">{t.tier}</span>
-                                <span class="tier-name">{t.name}</span>
-                                <span class="tier-stats">
-                                  {t.cost?.gold != null && <span>{fmt(t.cost.gold)} gold</span>}
-                                  {t.cost?.prestige != null && <span>{fmt(t.cost.prestige)} prestige</span>}
-                                  {t.cost?.piety != null && <span>{fmt(t.cost.piety)} piety</span>}
-                                  {t.constructionTime != null && <span>{fmt(t.constructionTime)} days</span>}
-                                  {t.levy != null && <span>{fmt(t.levy)} levy</span>}
-                                  {t.maxGarrison != null && <span>{fmt(t.maxGarrison)} garrison</span>}
-                                </span>
-                              </div>
-                              {t.requirements.length > 0 && (
-                                <div class="chips tier-reqs">
-                                  {t.requirements.map((r) => (
-                                    <span class={chipClass(r)} title={r.detail ?? r.kind.replace(/_/g, ' ')}>
-                                      {r.negated && <span class="neg">not </span>}{chipName(r)}
-                                    </span>
-                                  ))}
-                                </div>
-                              )}
-                              {t.modifiers.map((g) => (
-                                <div class="mod-group">
-                                  <span class="mod-scope">{g.scope}</span>
-                                  {g.cond && <span class="mod-cond">{g.cond}</span>}
-                                  <span class="mod-lines">{g.lines.join(' · ')}</span>
-                                </div>
-                              ))}
-                              {t.effects && <p class="b-fx">{t.effects}</p>}
-                            </div>
-                          ))}
-                        </div>
-                      </td>
-                    </tr>
-                  </>
-                );
-              })}
-            </tbody>
-          </table>
-        </div>
+                          )}
+                        </td>
+                        <td class="where">
+                          {d.holdings.length > 0 && (
+                            <span class="hold">{d.holdings.map((h: any) => holdingName[h.id] ?? h.id).join(', ')}</span>
+                          )}
+                          {d.unlockedBy && <span class="subtle">after {d.unlockedBy.name}</span>}
+                          <span class="chips">
+                            {d.requirements.slice(0, 4).map((r: any) => (
+                              <span class={r.kind === 'terrain' ? 'chip chip--terrain' : 'chip chip--req'} title={r.detail ?? r.kind.replace(/_/g, ' ')}>
+                                {r.negated && <span class="neg">not </span>}{chipName(r)}
+                              </span>
+                            ))}
+                            {d.requirements.length > 4 && <span class="subtle">+{d.requirements.length - 4}</span>}
+                          </span>
+                        </td>
+                        <td class="lines">
+                          {oneBuilding ? (
+                            <>
+                              {fx.slice(0, 3).map((l) => <span class="fx-line">{l}</span>)}
+                              {fx.length > 3 && <span class="fx-line subtle">+{fx.length - 3} more…</span>}
+                            </>
+                          ) : (
+                            <span class="chips">
+                              {d.buildings.map((b: any) => {
+                                const isHome = home(b.id) === d.id;
+                                return (
+                                  <a class="chip" id={isHome ? b.id : undefined}
+                                     data-go={isHome ? `${base}/buildings/${d.id}#${b.id}` : undefined}
+                                     href={`${base}/buildings/${d.id}#${b.id}`}
+                                     title={`${b.tiers} tier${b.tiers === 1 ? '' : 's'}${b.dlc ? ` · ${b.dlc}` : ''}`}>{b.name}</a>
+                                );
+                              })}
+                            </span>
+                          )}
+                        </td>
+                        <td>{d.dlc ? <span class="badge-dlc">{d.dlc}</span> : <span class="subtle">—</span>}</td>
+                      </tr>
+                    );
+                  })}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        ))}
       </section>
     );
   })}
 
+  {orphans.length > 0 && (
+    <section data-type="none">
+      <h2 class="group-h" id="type-none">In no district roster <span class="count">{orphans.length}</span></h2>
+      <p class="tdesc">
+        Defined in <code>common/buildings/</code> but named by no district's primary building or roster —
+        placed by script effects (great-project stages, events) rather than built from a district.
+      </p>
+      {orphans.map((tiers) => (
+        <div class="orphan" id={tiers[0].id}>
+          <h3 class="sub-h">{tiers[0].name} <span class="count">{tiers[0].sourceFile}</span></h3>
+          <BuildingChain tiers={tiers} districtNames={districtNames} />
+        </div>
+      ))}
+    </section>
+  )}
+
+  <p class="prov">
+    Districts from <code>common/districts/</code>; holding rosters from <code>common/holdings/</code>; buildings from
+    every subfolder of <code>common/buildings/</code>. Requirement chips are the district's own
+    <code>can_construct</code> / <code>is_enabled</code> triggers, with named scripted triggers resolved one level down.
+    The DLC badge on special districts comes from their primary building.
+  </p>
+
   <script>
+    // Old links point at /buildings#<building>; send them to the district page.
+    if (location.hash) {
+      const el = document.getElementById(decodeURIComponent(location.hash.slice(1)));
+      const go = el?.getAttribute('data-go');
+      if (go) location.replace(go);
+    }
     const q = document.getElementById('q') as HTMLInputElement;
-    const fcat = document.getElementById('fcat') as HTMLSelectElement;
+    const ftype = document.getElementById('ftype') as HTMLSelectElement;
     const fdlc = document.getElementById('fdlc') as HTMLSelectElement;
     const count = document.getElementById('count')!;
-    const rows = [...document.querySelectorAll<HTMLTableRowElement>('tr.sum')];
-    const groups = [...document.querySelectorAll<HTMLElement>('section[data-group]')];
-
-    for (const r of rows) {
-      r.addEventListener('click', (e) => {
-        if ((e.target as HTMLElement).closest('a')) return;
-        const det = r.nextElementSibling as HTMLTableRowElement;
-        det.hidden = !det.hidden;
-        r.classList.toggle('open', !det.hidden);
-      });
-    }
-
+    const rows = [...document.querySelectorAll<HTMLTableRowElement>('tr.drow')];
+    const groups = [...document.querySelectorAll<HTMLElement>('[data-group]')];
+    const sections = [...document.querySelectorAll<HTMLElement>('section[data-type]')];
     function apply() {
       const needle = q.value.trim().toLowerCase();
-      const c = fcat.value;
+      const t = ftype.value;
       const d = fdlc.value;
       let shown = 0;
       for (const r of rows) {
         const ok =
           (!needle || (r.dataset.name ?? '').includes(needle)) &&
-          (!c || r.dataset.cat === c) &&
+          (!t || r.dataset.type === t) &&
           (!d || (d === 'base' ? r.dataset.dlc === 'base' : r.dataset.dlc === d));
         r.hidden = !ok;
-        const det = r.nextElementSibling as HTMLTableRowElement;
-        if (!ok) {
-          det.hidden = true;
-          r.classList.remove('open');
-        }
         if (ok) shown++;
       }
-      for (const g of groups) {
-        g.hidden = ![...g.querySelectorAll('tr.sum')].some((r) => !(r as HTMLTableRowElement).hidden);
+      for (const g of groups) g.hidden = ![...g.querySelectorAll('tr.drow')].some((r) => !(r as HTMLElement).hidden);
+      for (const s of sections) {
+        if (s.dataset.type === 'none') { s.hidden = !!(needle || t || d); continue; }
+        s.hidden = ![...s.querySelectorAll('tr.drow')].some((r) => !(r as HTMLElement).hidden);
       }
-      count.textContent = `${shown} of ${rows.length} chains`;
+      count.textContent = `${shown} of ${rows.length} districts`;
     }
-    for (const el of [q, fcat, fdlc]) el.addEventListener('input', apply);
+    for (const el of [q, ftype, fdlc]) el.addEventListener('input', apply);
     apply();
-
-    // deep links (#building_id) should open the owning chain
-    if (location.hash) {
-      const el = document.getElementById(location.hash.slice(1));
-      const sum = el?.closest('tr.det')?.previousElementSibling ?? el;
-      if (sum instanceof HTMLTableRowElement && sum.classList.contains('sum')) {
-        (sum.nextElementSibling as HTMLTableRowElement).hidden = false;
-        sum.classList.add('open');
-        sum.scrollIntoView();
-      }
-    }
   </script>
 
   <style>
-    .legend { color: var(--faint); font-size: 0.78rem; margin: -0.4rem 0 1rem; }
-    .cond-mark { color: var(--sk-intrigue); }
-
-    tr.sum { cursor: pointer; }
-    .caret { color: var(--faint); display: inline-block; width: 1em; font-size: 0.7rem; }
-    tr.sum.open .caret { transform: rotate(90deg); color: var(--rubric); }
-    .ntbl td.name { white-space: normal; min-width: 14rem; }
-    .final { font-size: 0.78rem; }
-
-    .tierpips { display: inline-flex; gap: 2px; margin-right: 0.3rem; vertical-align: middle; }
-    .tierpips i { width: 4px; height: 9px; background: color-mix(in oklab, var(--brass) 55%, transparent); border-radius: 1px; }
-
-    .fx { max-width: 19rem; }
-    .fx-line { display: block; font-size: 0.78rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-
-    tr.det > td { background: var(--panel); border-bottom: 1px solid var(--line); padding: 0.7rem 0.9rem 0.9rem; }
-    .b-desc { color: var(--dim); font-size: 0.8rem; max-width: 70ch; margin: 0 0 0.6rem; font-style: italic; }
-    .tiers-grid { display: grid; gap: 0.55rem; }
-    .tier-card { border-left: 2px solid var(--line); padding: 0.1rem 0 0.1rem 0.7rem; }
-    .tier-head { display: flex; align-items: baseline; gap: 0.55rem; flex-wrap: wrap; }
-    .tier-n {
-      font-family: var(--font-mono); font-size: 0.72rem; color: var(--rubric);
-      border: 1px solid color-mix(in oklab, var(--rubric) 45%, var(--line));
-      border-radius: 3px; padding: 0 0.3rem;
-    }
-    .tier-name { font-weight: 600; font-size: 0.85rem; }
-    .tier-stats { display: inline-flex; gap: 0.7rem; font-family: var(--font-mono); font-size: 0.72rem; color: var(--dim); flex-wrap: wrap; }
-    .tier-reqs { margin: 0.25rem 0 0.1rem; }
-    .mod-group { font-size: 0.8rem; margin-top: 0.2rem; }
-    .mod-scope {
-      font-family: var(--font-mono); font-size: 0.68rem; color: var(--brass);
-      border: 1px solid color-mix(in oklab, var(--brass) 35%, transparent);
-      border-radius: 3px; padding: 0 0.3rem; margin-right: 0.4rem;
-    }
-    .mod-cond { color: var(--sk-intrigue); font-size: 0.74rem; margin-right: 0.4rem; }
-    .mod-lines { color: var(--vellum); }
-    .b-fx { color: var(--dim); font-size: 0.78rem; margin: 0.3rem 0 0; max-width: 70ch; }
+    .concept { margin: 0 0 1.2rem; padding: 0.2rem 0 0.2rem 0.9rem; border-left: 2px solid var(--rubric); color: var(--dim); font-size: 0.84rem; max-width: 75ch; }
+    .concept p { margin: 0.25rem 0; }
+    .concept cite { color: var(--faint); font-size: 0.74rem; font-style: normal; }
+    .tdesc { color: var(--dim); font-size: 0.8rem; max-width: 75ch; margin: -0.2rem 0 0.6rem; font-style: italic; }
+    .tdesc code, .prov code { font-family: var(--font-mono); font-size: 0.95em; font-style: normal; }
+    .sub-h { font-size: 0.85rem; color: var(--dim); margin: 0.8rem 0 0.3rem; font-weight: 600; }
+    .sub-h .count { color: var(--faint); font-family: var(--font-mono); font-size: 0.72rem; font-weight: 400; }
+    .ntbl td.name { white-space: normal; min-width: 12rem; }
+    .b-icon { vertical-align: -7px; margin-right: 0.35rem; }
+    .focus { display: block; color: var(--faint); font-size: 0.7rem; margin-top: 0.1rem; }
+    .pb { white-space: normal; min-width: 9rem; font-size: 0.82rem; }
+    .slots { display: block; font-family: var(--font-mono); font-size: 0.68rem; color: var(--faint); }
+    .where { white-space: normal; font-size: 0.78rem; min-width: 10rem; max-width: 18rem; }
+    .where > span { display: block; }
+    .hold { color: var(--dim); }
+    .lines .chips { max-width: 34rem; }
+    .lines .chip { border-bottom: none; font-size: 0.74rem; }
+    .fx-line { display: block; font-size: 0.78rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 22rem; }
     .chip .neg { color: var(--bad); }
-    .chips { max-width: 22rem; }
+    .orphan { margin-bottom: 1rem; }
+    .prov { color: var(--faint); font-size: 0.78rem; max-width: 70ch; margin-top: 2rem; }
   </style>
 </Base>
-<style is:global>
-  .b-icon { vertical-align: -7px; margin-right: 0.35rem; }
-</style>

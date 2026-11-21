@@ -23,7 +23,7 @@
         },
         {
           "key": "adoptionists_like_ecumenism",
-          "text": "Considers Christian Faiths with … to be … rather than …",
+          "text": "Considers Christian Faiths with Ecumenism to be … rather than …",
           "value": true
         },
         {
@@ -77,7 +77,7 @@
         },
         {
           "key": "adoptionists_like_ecumenism",
-          "text": "Considers Christian Faiths with … to be … rather than …",
+          "text": "Considers Christian Faiths with Ecumenism to be … rather than …",
           "value": true
         },
         {
@@ -112,7 +112,7 @@
       "characterModifier": [
         "+5 Advantage Against Coreligionists",
         "+1 Ai War Chance",
-        "-0 Ai War Cooldown"
+        "-0.5 Ai War Cooldown"
       ],
       "clergyModifier": [],
       "desc": "Radical Adoptionists admit no God but the Father, accept no divinity from mortal flesh, and acknowledge no Christians but themselves. To receive Christ without agreeing on every letter of canon is to acknowledge apostasy.",
@@ -2406,7 +2406,7 @@
         "+5 Jungle Advantage",
         "-25% Attrition Taken in Jungle",
         "+1 Minimum Battle Roll in Jungle",
-        "+0 Piety per Dread",
+        "+0.01 Piety per Dread /month",
         "+3 Prowess"
       ],
       "clergyModifier": [],
@@ -2533,8 +2533,8 @@
     {
       "characterModifier": [
         "+1 Domain Limit",
-        "-0 Ai War Chance",
-        "+0 Ai War Cooldown"
+        "-0.25 Ai War Chance",
+        "+0.25 Ai War Cooldown"
       ],
       "clergyModifier": [],
       "desc": "We are all a part of the cosmic order. Violence against anything is violence against everything, oneself included.",
@@ -2638,7 +2638,7 @@
         },
         {
           "key": "divine_marriage_piety_gain_active",
-          "text": "The … marriage bonus also grants a large amount of Piety if you are marrying a Close Family member",
+          "text": "The Monogamous marriage bonus also grants a large amount of Piety if you are marrying a Close Family member",
           "value": true
         }
       ],
@@ -3084,7 +3084,7 @@
     {
       "characterModifier": [
         "+5 Controlled Territory Defender Advantage",
-        "+0 Piety per Dread",
+        "+0.01 Piety per Dread /month",
         "+2 Prowess"
       ],
       "clergyModifier": [],
@@ -3116,7 +3116,7 @@
         },
         {
           "key": "sanctioned_assassinations",
-          "text": "No Piety loss for killing characters of a different Faith through the … Schemes",
+          "text": "No Piety loss for killing characters of a different Faith through the Murder Schemes",
           "value": true
         },
         {
@@ -3328,12 +3328,12 @@
       "parameters": [
         {
           "key": "sway_scheme_better",
-          "text": "… Scheme Success Chance: …+15%",
+          "text": "Sway Scheme Success Chance: Success Chance +15%",
           "value": true
         },
         {
           "key": "sway_scheme_piety",
-          "text": "Successful … Schemes targeting your Liege or Vassals give …Piety",
+          "text": "Successful Sway Schemes targeting your Liege or Vassals give Piety Piety",
           "value": true
         },
         {
@@ -3461,7 +3461,7 @@
     },
     {
       "characterModifier": [
-        "+0.5 Influence",
+        "+0.5 Influence /month",
         "No Negative Opinion of Other Faiths",
         "-10% Different Faith County Opinion Mult",
         "+25% Levy Reinforcement Rate (Same Faith)",
@@ -3515,7 +3515,7 @@
     {
       "characterModifier": [
         "+1 Ai War Chance",
-        "-0 Ai War Cooldown"
+        "-0.5 Ai War Cooldown"
       ],
       "clergyModifier": [],
       "desc": "The best way to prove our devotion is through the act of sacrifice. The most valuable sacrifice we can offer is the sacrifice of human life.",
@@ -4348,7 +4348,7 @@
     {
       "characterModifier": [
         "+1 Domain Limit",
-        "-0 Ai War Chance",
+        "-0.25 Ai War Chance",
         "+5 Ai War Cooldown"
       ],
       "clergyModifier": [],
@@ -4431,7 +4431,7 @@
     },
     {
       "characterModifier": [
-        "-10% Development Growth Factor",
+        "-10% Development Growth",
         "+10 Different Faith Liege Opinion",
         "+10 Opinion of Different Faith Liege"
       ],
@@ -4757,7 +4757,7 @@
       "parameters": [
         {
           "key": "better_study_scheme",
-          "text": "… Scheme Success Chance: …+15%",
+          "text": "Study Scheme Success Chance: Success Chance +15%",
           "value": true
         }
       ],
@@ -5204,7 +5204,7 @@
     },
     {
       "characterModifier": [
-        "+0.3 Piety per Powerful Vassal on the Council"
+        "+0.3 Piety per Powerful Vassal on the Council /month"
       ],
       "clergyModifier": [],
       "desc": "Hospitality is one of the greatest virtues mankind can exhibit. Guests in our homes, be they mortal or divine, should always be treated with the utmost honor and respect.",
@@ -5450,7 +5450,7 @@
       "characterModifier": [
         "-50% Short Reign Duration",
         "+1 Ai War Chance",
-        "-0 Ai War Cooldown"
+        "-0.5 Ai War Cooldown"
       ],
       "clergyModifier": [],
       "desc": "Human sacrifice both voluntary and involuntary bring us closer to the divine. It is customary and virtuous for one to volunteer to sacrifice oneself in ceremony, just as it is virtuous to sacrifice those who have committed unforgivable crimes against the Gods.",
@@ -5828,7 +5828,7 @@
         },
         {
           "key": "chance_to_gain_prowess_during_bear_hunts",
-          "text": "Slaying a Bear during a Hunt gives …Prowess and …Martial",
+          "text": "Slaying a Bear during a Hunt gives Prowess Prowess and Martial Martial",
           "value": true
         }
       ],
@@ -5950,7 +5950,7 @@
         },
         {
           "key": "unreformed_syncretic_actor_opinion_active",
-          "text": "Mutual … Opinion bonus with … Faiths",
+          "text": "Mutual … Opinion bonus with Unreformed Faiths",
           "value": true
         },
         {
@@ -6127,8 +6127,8 @@
     },
     {
       "characterModifier": [
-        "+0 Ai War Chance",
-        "-0 Ai War Cooldown",
+        "+0.5 Ai War Chance",
+        "-0.25 Ai War Cooldown",
         "+10% Accolade Glory Gain"
       ],
       "clergyModifier": [],
@@ -6826,7 +6826,7 @@
     },
     {
       "characterModifier": [
-        "+0 Negate Health Penalty Add"
+        "+0.25 Negate Health Penalty Add"
       ],
       "clergyModifier": [],
       "desc": "The dead should not be imprisoned underground — it is far better to allowed them to be consumed by scavenging birds, where in a final act of generosity they can feed the world which fed them.",

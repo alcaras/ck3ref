@@ -45,6 +45,7 @@ TYPE_SKIP = {
 TEMPLATE_HANDLED = {"can_equip", "can_benefit", "can_reforge", "can_repair",
                     "fallback", "unique"}
 TEMPLATE_SKIP = {
+    "is_holy_relic": "holy-relic flag on templates; relics are not given a separate page section",
     "ai_score": "AI equipping weight, not player-facing",
 }
 
@@ -52,6 +53,9 @@ FEATURE_HANDLED = {"group", "trigger", "weight"}
 
 SLOT_HANDLED = {"type", "category"}
 SLOT_SKIP = {
+    "available": "slot availability trigger (per-character), not statically resolvable",
+    "holy_site": "holy-site-bound slot flag",
+    "allow_any_type_or_category": "slot matching flag",
     "icon": "GUI slot-icon override (trinket/journal slots), not reference data",
 }
 

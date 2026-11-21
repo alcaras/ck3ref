@@ -7,6 +7,8 @@ safe on the FUSE mount; only batch enumeration is not. Skips conversions whose
 output is already newer than the source.
 """
 
+from __future__ import annotations
+
 import json
 import os
 import sys
@@ -37,6 +39,9 @@ CATEGORIES = [
     ("buildings.json", None, "building_types", "buildings", "icon", "icon", False),
     ("faiths.json", "faiths", "faith", "faith", "icon", "id", False),
     ("doctrines.json", "doctrines", "faith_doctrines", "faith_doctrines", "icon", "id", True),
+    # 1.21 split tenets out of doctrines; their art moved to icons/faith_tenets
+    # but pages still load both from img/faith_doctrines/.
+    ("doctrines.json", "doctrines?isTenet", "faith_tenets", "faith_doctrines", "icon", "id", True),
     ("innovations.json", None, "culture_innovations", "innovations", "icon", "id", False),
     ("pillars.json", None, "culture_pillars", "pillars", "icon", "id", True),
     ("traditions.json", "traditions", "culture_tradition/4-items", "traditions", "icon", "id", True),
@@ -138,6 +143,37 @@ def build_decision_art():
         print(f"  ({missing} referenced files not present in the mirror)")
 
 
+# 1.21 split several icon sets into subfolders (building_types/old_buildings,
+# duchy_buildings, district_buildings, regular_buildings, ...), and a few
+# records key their art under a different file name. Resolve in this order:
+# exact path, alias, then the unique-by-stem match anywhere under the folder.
+ICON_ALIASES = {
+    # situation key -> the file the game ships (situation_types/christian_church.dds)
+    ("situation_types", "the_christian_church"): "christian_church",
+}
+_STEM_INDEX: dict[str, dict[str, Path]] = {}
+
+
+def find_icon(gfx_sub: str, icon: str) -> Path | None:
+    base = ICONS / gfx_sub
+    direct = base / f"{icon}.dds"
+    if direct.exists():
+        return direct
+    alias = ICON_ALIASES.get((gfx_sub, icon))
+    if alias and (base / f"{alias}.dds").exists():
+        return base / f"{alias}.dds"
+    if not gfx_sub:
+        return None  # whole-tree stem matches would cross categories
+    if gfx_sub not in _STEM_INDEX:
+        idx: dict[str, Path] = {}
+        if base.exists():
+            # shallowest path wins, then alphabetical, so the result is stable
+            for f in sorted(base.rglob("*.dds"), key=lambda f: (len(f.parts), str(f))):
+                idx.setdefault(f.stem, f)
+        _STEM_INDEX[gfx_sub] = idx
+    return _STEM_INDEX[gfx_sub].get(icon)
+
+
 def main():
     build_decision_art()
     for sub, out_sub, maxw in ILLUSTRATIONS:
@@ -155,8 +191,13 @@ def main():
         if not path.exists():
             continue
         records = json.loads(path.read_text(encoding="utf-8"))
+        flag = None
+        if rec_path and "?" in rec_path:
+            rec_path, flag = rec_path.split("?")
         if rec_path:
             records = records[rec_path]
+        if flag:
+            records = [r for r in records if r.get(flag)]
         seen = set()
         missing = []
         done = 0
@@ -167,7 +208,8 @@ def main():
                 continue
             seen.add(out_id)
             dst = ck3.ROOT / "public/img" / out_sub / f"{out_id}.webp"
-            if convert(ICONS / gfx_sub / f"{icon}.dds", dst):
+            src = find_icon(gfx_sub, icon)
+            if src and convert(src, dst):
                 done += 1
             elif quiet:
                 continue

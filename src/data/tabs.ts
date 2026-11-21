@@ -48,9 +48,9 @@ export const TABS: Tab[] = [
   { slug: 'pillars', label: 'Pillars', section: 'Culture', status: 'built', summary: '162 pillars: ethos, heritage, language, martial custom.' },
   { slug: 'cultures', label: 'Cultures', section: 'Culture', status: 'built', summary: 'All 244 cultures: pillars, traditions, hybrids.' },
   // Faith
-  { slug: 'faiths', label: 'Faiths', section: 'Faith', status: 'built', summary: '140 faiths under 49 religions.' },
+  { slug: 'faiths', label: 'Faiths', section: 'Faith', status: 'built', summary: 'Religions, faiths and their rites.' },
   { slug: 'doctrines', label: 'Doctrines & Tenets', section: 'Faith', status: 'built', summary: 'Every doctrine and tenet, with piety costs.' },
-  { slug: 'holy-sites', label: 'Holy Sites', section: 'Faith', status: 'built', summary: '326 holy sites and their bonuses.' },
+  { slug: 'holy-sites', label: 'Holy Sites', section: 'Faith', status: 'built', summary: 'Holy sites, eminent and regular, and their bonuses.' },
   // Realm
   { slug: 'administration', label: 'Administration', section: 'Realm', status: 'built', summary: 'Tax slots, obligations, and lease contracts.' },
   { slug: 'elections', label: 'Elections & Succession', section: 'Realm', status: 'built', summary: 'Elective and appointed succession, vassal stances, confederations.' },
@@ -91,7 +91,7 @@ export const TABS: Tab[] = [
   // Tools
   { slug: 'legacy-builder', label: 'Legacy Builder', section: 'Tools', status: 'built', summary: 'Plan and share a dynasty legacy path in purchase order.' },
   { slug: 'genetics', label: 'Genetics Calculator', section: 'Tools', status: 'built', summary: 'Congenital trait inheritance odds.' },
-  { slug: 'faith-creator', label: 'Faith Cost Calculator', section: 'Tools', status: 'built', summary: 'Reformation piety costs.' },
+  { slug: 'faith-creator', label: 'Faith Cost Calculator', section: 'Tools', status: 'built', summary: 'Rite creation piety costs.' },
   { slug: 'province-planner', label: 'Province Planner', section: 'Tools', status: 'built', summary: 'Plan a holding\'s buildings by terrain, holding type, culture and government.' },
   { slug: 'culture-builder', label: 'Culture Builder', section: 'Tools', status: 'built', summary: 'Plan a hybrid, divergence, or tradition reform from any starting culture.' },
   { slug: 'culture-calculator', label: 'Culture Calculator', section: 'Tools', status: 'built', summary: 'Hybrid and divergence costs.' },

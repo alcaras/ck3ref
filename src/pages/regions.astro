@@ -25,6 +25,7 @@ const declaredSummary = (r: any) =>
 
 const totalProvinces = regions.reduce((n, r) => n + r.resolved.provinces, 0);
 const withModifiers = regions.filter((r) => r.modifiers).length;
+const withProsperity = regions.filter((r) => r.prosperityModifiers).length;
 ---
 <Base
   title="Regions"
@@ -223,8 +224,18 @@ const withModifiers = regions.filter((r) => r.modifiers).length;
         without putting a number on them.
       </li>
       <li>
-        “Used by” is a scan of every file under <code>common/</code> and
-        <code>events/</code> for the region key. {D.counts.unreferenced} regions
+        {withProsperity} regions set <code>generate_prosperity_modifiers</code>
+        (undocumented in the file header); the game's modifier definitions
+        provide <code>&lt;key&gt;_prosperity_growth</code> and
+        <code>&lt;key&gt;_prosperity_growth_factor</code> for them.
+      </li>
+      <li>
+        The <i>Ecclesiastical</i> family (<code>et_867_*</code>,
+        <code>et_1066_*</code>, <code>et_1178_*</code>) is named only by
+        <code>clerical_region =</code> in
+        <code>history/titles/ce3/00_ecclesiastical_titles.txt</code>.
+        “Used by” is a scan of every file under <code>common/</code>,
+        <code>events/</code> and <code>history/titles/</code> for the region key. {D.counts.unreferenced} regions
         are named by nothing in script — the island regions among them are
         consumed by the engine itself for pathfinding, as
         <code>island_region.txt</code> says in its header.

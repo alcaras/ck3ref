@@ -15,7 +15,7 @@
         {
           "polarity": "good",
           "scale": "liege tier",
-          "text": "+5% Monthly Diplomacy Lifestyle Experience"
+          "text": "+5% Monthly Focused Diplomacy Lifestyle Experience"
         },
         {
           "polarity": "good",
@@ -31,6 +31,26 @@
           "polarity": "good",
           "scale": "admin",
           "text": "-5% Enemy Political Scheme Success Chance Max Add"
+        },
+        {
+          "polarity": "good",
+          "scale": "republic",
+          "text": "+0.5 Prestige /month"
+        },
+        {
+          "polarity": "good",
+          "scale": "republic",
+          "text": "+0.25 Tax /month"
+        },
+        {
+          "polarity": "good",
+          "scale": "republic",
+          "text": "+4% Owned Personal Scheme Success Chance Add"
+        },
+        {
+          "polarity": "good",
+          "scale": "republic",
+          "text": "+10% Stress Loss"
         }
       ],
       "name": "Chancellor",
@@ -48,11 +68,15 @@
       ],
       "requirements": [
         {
+          "name": "Nomadic government",
+          "negated": true
+        },
+        {
           "name": "Landless Adventurer government",
           "negated": true
         },
         {
-          "name": "Nomadic government",
+          "name": "Merchant government",
           "negated": true
         }
       ],
@@ -61,7 +85,7 @@
       "sourceFile": "00_council_positions.txt"
     },
     {
-      "desc": "The Steward is the Councillor in charge of Domain administration, for example matters of Taxation, Culture and Development.",
+      "desc": "The Steward is the Councillor in charge of Domain administration, for example matters of Taxation, Culture and Prosperity.",
       "dlc": null,
       "features": [],
       "id": "councillor_steward",
@@ -70,7 +94,7 @@
         {
           "polarity": "good",
           "scale": "monthly income",
-          "text": "+1 Tax /month"
+          "text": "+0.25 Tax /month"
         },
         {
           "polarity": "good",
@@ -80,7 +104,7 @@
         {
           "polarity": "good",
           "scale": "liege tier",
-          "text": "+5% Monthly Stewardship Lifestyle Experience"
+          "text": "+5% Monthly Focused Stewardship Lifestyle Experience"
         },
         {
           "polarity": "good",
@@ -96,6 +120,21 @@
           "polarity": "good",
           "scale": "admin",
           "text": "-5% Domicile Building Construction Cost"
+        },
+        {
+          "polarity": "good",
+          "scale": "republic",
+          "text": "+0.5 Prestige /month"
+        },
+        {
+          "polarity": "good",
+          "scale": "republic",
+          "text": "+0.25 Tax /month"
+        },
+        {
+          "polarity": "good",
+          "scale": "republic",
+          "text": "+2 Trade Competitiveness"
         }
       ],
       "name": "Steward",
@@ -113,11 +152,15 @@
       ],
       "requirements": [
         {
+          "name": "Nomadic government",
+          "negated": true
+        },
+        {
           "name": "Landless Adventurer government",
           "negated": true
         },
         {
-          "name": "Nomadic government",
+          "name": "Merchant government",
           "negated": true
         }
       ],
@@ -145,7 +188,7 @@
         {
           "polarity": "good",
           "scale": "liege tier",
-          "text": "+5% Monthly Martial Lifestyle Experience"
+          "text": "+5% Monthly Focused Martial Lifestyle Experience"
         },
         {
           "polarity": "good",
@@ -166,6 +209,26 @@
           "polarity": "good",
           "scale": "celestial ministry",
           "text": "+1 Merit /month"
+        },
+        {
+          "polarity": "good",
+          "scale": "republic",
+          "text": "+0.5 Prestige /month"
+        },
+        {
+          "polarity": "good",
+          "scale": "republic",
+          "text": "+0.25 Tax /month"
+        },
+        {
+          "polarity": "good",
+          "scale": "republic",
+          "text": "+1 Mercenary Limit"
+        },
+        {
+          "polarity": "good",
+          "scale": "republic",
+          "text": "-5% Mercenary Hire Cost"
         }
       ],
       "name": "Marshal",
@@ -183,11 +246,15 @@
       ],
       "requirements": [
         {
+          "name": "Nomadic government",
+          "negated": true
+        },
+        {
           "name": "Landless Adventurer government",
           "negated": true
         },
         {
-          "name": "Nomadic government",
+          "name": "Merchant government",
           "negated": true
         }
       ],
@@ -205,12 +272,12 @@
         {
           "polarity": "good",
           "scale": "liege tier",
-          "text": "+5% Monthly Intrigue Lifestyle Experience"
+          "text": "+5% Monthly Focused Intrigue Lifestyle Experience"
         },
         {
           "polarity": "good",
           "scale": "liege tier",
-          "text": "+10 Natural Dread"
+          "text": "+10 Dread Baseline"
         },
         {
           "polarity": "good",
@@ -229,6 +296,21 @@
           "polarity": "good",
           "scale": "admin",
           "text": "+5% Scheme Secrecy"
+        },
+        {
+          "polarity": "good",
+          "scale": "republic",
+          "text": "+0.5 Prestige /month"
+        },
+        {
+          "polarity": "good",
+          "scale": "republic",
+          "text": "+0.25 Tax /month"
+        },
+        {
+          "polarity": "good",
+          "scale": "republic",
+          "text": "+4% Owned Hostile Scheme Success Chance Growth Add"
         }
       ],
       "name": "Spymaster",
@@ -248,6 +330,10 @@
         {
           "name": "Landless Adventurer government",
           "negated": true
+        },
+        {
+          "name": "Merchant government",
+          "negated": true
         }
       ],
       "seats": 1,
@@ -264,12 +350,12 @@
         {
           "polarity": "good",
           "scale": "liege tier",
-          "text": "+5 Popular Opinion"
+          "text": "+5 Popular Opinion Baseline"
         },
         {
           "polarity": "good",
           "scale": "liege tier",
-          "text": "+5% Monthly Learning Lifestyle Experience"
+          "text": "+5% Monthly Focused Learning Lifestyle Experience"
         },
         {
           "polarity": "good",
@@ -292,11 +378,15 @@
       ],
       "requirements": [
         {
+          "name": "Nomadic government",
+          "negated": true
+        },
+        {
           "name": "Landless Adventurer government",
           "negated": true
         },
         {
-          "name": "Nomadic government",
+          "name": "Merchant government",
           "negated": true
         }
       ],
@@ -347,7 +437,7 @@
         {
           "polarity": "good",
           "scale": "monthly income",
-          "text": "+0.5 Tax /month"
+          "text": "+0.25 Tax /month"
         },
         {
           "polarity": "good",
@@ -427,7 +517,7 @@
         {
           "polarity": "good",
           "scale": "liege tier",
-          "text": "+5% Monthly Diplomacy Lifestyle Experience"
+          "text": "+5% Monthly Focused Diplomacy Lifestyle Experience"
         },
         {
           "polarity": "good",
@@ -483,7 +573,7 @@
         {
           "polarity": "good",
           "scale": "liege tier",
-          "text": "+5% Monthly Diplomacy Lifestyle Experience"
+          "text": "+5% Monthly Focused Diplomacy Lifestyle Experience"
         },
         {
           "polarity": "good",
@@ -525,7 +615,7 @@
       "sourceFile": "01_ministry_positions.txt"
     },
     {
-      "desc": "The Minister of Works is the Minister in charge of construction and development throughout the Realm, and may start Great Projects.\n\nThe minister can, for example:\nStart the Develop Communities Great Project\nStart the The Grand Canals Great Project\nStart the Improve the Great Wall Great Project\nCan construct Buildings and Holdings inside the Realm\nCan construct Buildings and Holdings inside Tributaries of Son of Heaven in … Era\nAccess special Influence Career Interaction options",
+      "desc": "The Minister of Works is the Minister in charge of construction and prosperity throughout the Realm, and may start Great Projects.\n\nThe minister can, for example:\nStart the Develop Communities Great Project\nStart the The Grand Canals Great Project\nStart the Improve the Great Wall Great Project\nCan construct Buildings and Holdings inside the Realm\nCan construct Buildings and Holdings inside Tributaries of Son of Heaven in … Era\nAccess special Influence Career Interaction options",
       "dlc": "The Great People",
       "features": [],
       "id": "minister_works",
@@ -544,7 +634,7 @@
         {
           "polarity": "good",
           "scale": "liege tier",
-          "text": "+5% Monthly Stewardship Lifestyle Experience"
+          "text": "+5% Monthly Focused Stewardship Lifestyle Experience"
         },
         {
           "polarity": "good",
@@ -610,7 +700,7 @@
         {
           "polarity": "good",
           "scale": "liege tier",
-          "text": "+5% Monthly Martial Lifestyle Experience"
+          "text": "+5% Monthly Focused Martial Lifestyle Experience"
         },
         {
           "polarity": "good",
@@ -767,6 +857,23 @@
       "cloneOf": null,
       "councillorMods": [],
       "countyMods": [],
+      "countyTarget": null,
+      "dlc": null,
+      "effectDesc": "Approval for your next Voting Session: +…\n(Increases by +…/month up to +…)\n… Diplomacy Diplomacy Skill: +…",
+      "icon": "task_assembly_preparation",
+      "id": "task_republic_assembly_preparation",
+      "name": "Prepare Assembly Support",
+      "ownerMods": [],
+      "position": "councillor_chancellor",
+      "progress": "infinite",
+      "skill": null,
+      "sourceFile": "00_chancellor_tasks.txt",
+      "taskType": "general"
+    },
+    {
+      "cloneOf": null,
+      "councillorMods": [],
+      "countyMods": [],
       "countyTarget": "realm",
       "dlc": "The Royal Court",
       "effectDesc": null,
@@ -789,12 +896,17 @@
       "effectDesc": "Domain Taxes: Gold +…%\n… … Stewardship Skill: +…%",
       "icon": "task_collect_taxes",
       "id": "task_collect_taxes",
-      "name": "Collect Taxes",
+      "name": "Manage Estates",
       "ownerMods": [
         {
           "polarity": "good",
           "scale": "steward collect taxes total",
           "text": "+100% Domain Taxes"
+        },
+        {
+          "polarity": "good",
+          "scale": "steward collect taxes total",
+          "text": "+100% Domicile Income"
         }
       ],
       "position": "councillor_steward",
@@ -827,7 +939,7 @@
         {
           "polarity": "good",
           "scale": "steward develop county ÷100",
-          "text": "+100 Development Growth /month"
+          "text": "+100 Prosperity Growth /month"
         },
         {
           "polarity": "good",
@@ -841,21 +953,26 @@
         },
         {
           "polarity": "good",
-          "scale": "current development penalty ÷100",
-          "text": "+100 Development Growth /month"
+          "scale": "steward develop county ÷100",
+          "text": "-700% District Build Speed"
         },
         {
           "polarity": "good",
           "scale": "situational",
-          "text": "+100 Development Growth /month"
+          "text": "+100 Prosperity Growth /month"
+        },
+        {
+          "polarity": "good",
+          "scale": "situational",
+          "text": "+100 Prosperity Growth /month"
         }
       ],
       "countyTarget": "realm",
       "dlc": null,
       "effectDesc": null,
-      "icon": "task_develop_county",
+      "icon": "task_increase_prosperity_county",
       "id": "task_develop_county",
-      "name": "Increase Development in County",
+      "name": "Increase Prosperity in County",
       "ownerMods": [],
       "position": "councillor_steward",
       "progress": "value",
@@ -883,11 +1000,67 @@
     {
       "cloneOf": null,
       "councillorMods": [],
+      "countyMods": [],
+      "countyTarget": null,
+      "dlc": null,
+      "effectDesc": null,
+      "icon": "task_market_oversight",
+      "id": "task_republic_market_oversight",
+      "name": "Oversee Market Exchange",
+      "ownerMods": [
+        {
+          "polarity": "good",
+          "scale": "republic market oversight final",
+          "text": "+1% Trade Competitiveness"
+        },
+        {
+          "polarity": "good",
+          "scale": "republic market oversight sell price final",
+          "text": "+1% Trade Goods Trade Goods Sell Price"
+        }
+      ],
+      "position": "councillor_steward",
+      "progress": "infinite",
+      "skill": null,
+      "sourceFile": "00_steward_tasks.txt",
+      "taskType": "general"
+    },
+    {
+      "cloneOf": null,
+      "councillorMods": [],
+      "countyMods": [],
+      "countyTarget": null,
+      "dlc": null,
+      "effectDesc": null,
+      "icon": "task_trade_logistics",
+      "id": "task_republic_trade_logistics",
+      "name": "Coordinate Trade Logistics",
+      "ownerMods": [
+        {
+          "polarity": "good",
+          "scale": "republic trade logistics final",
+          "text": "+1% Trade Capacity"
+        },
+        {
+          "polarity": "good",
+          "scale": "republic trade logistics expertise final",
+          "text": "+1% Trade Expertise Growth"
+        }
+      ],
+      "position": "councillor_steward",
+      "progress": "infinite",
+      "skill": null,
+      "sourceFile": "00_steward_tasks.txt",
+      "taskType": "general"
+    },
+    {
+      "cloneOf": null,
+      "councillorMods": [],
       "countyMods": [
         {
           "polarity": "good",
           "scale": "marshal increase control",
-          "text": "+1 Monthly County Control Growth Add /month"
+          "text": "+0.5 Control Growth /month"
         }
       ],
       "countyTarget": "realm",
@@ -1322,7 +1495,7 @@
       "countyMods": [],
       "countyTarget": "realm",
       "dlc": null,
-      "effectDesc": "At 100%:\nThe County will change Faith to…",
+      "effectDesc": "At 100%:\nThe County will change Faith to … and Rite to …",
       "icon": "task_conversion",
       "id": "task_conversion",
       "name": "Convert Faith in County",
@@ -1723,7 +1896,7 @@
         {
           "polarity": "good",
           "scale": "marshal increase control",
-          "text": "+1 Monthly County Control Growth Add /month"
+          "text": "+0.5 Control Growth /month"
         }
       ],
       "countyTarget": "realm",
@@ -2028,7 +2201,7 @@
         {
           "polarity": "good",
           "scale": "steward develop county ÷100",
-          "text": "+100 Development Growth /month"
+          "text": "+100 Prosperity Growth /month"
         },
         {
           "polarity": "good",
@@ -2042,21 +2215,26 @@
         },
         {
           "polarity": "good",
-          "scale": "current development penalty ÷100",
-          "text": "+100 Development Growth /month"
+          "scale": "steward develop county ÷100",
+          "text": "-700% District Build Speed"
         },
         {
           "polarity": "good",
           "scale": "situational",
-          "text": "+100 Development Growth /month"
+          "text": "+100 Prosperity Growth /month"
+        },
+        {
+          "polarity": "good",
+          "scale": "situational",
+          "text": "+100 Prosperity Growth /month"
         }
       ],
       "countyTarget": "realm",
       "dlc": null,
       "effectDesc": null,
-      "icon": "task_develop_county",
+      "icon": "task_increase_prosperity_county",
       "id": "task_develop_county_minister_of_works",
-      "name": "Increase Development in County",
+      "name": "Increase Prosperity in County",
       "ownerMods": [],
       "position": "minister_works",
       "progress": "value",

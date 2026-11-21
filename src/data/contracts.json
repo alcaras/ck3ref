@@ -24,11 +24,11 @@
           "score": null,
           "shares": {
             "levies": {
-              "value": 0.3,
+              "value": 0.2,
               "varies": false
             },
             "tax": {
-              "value": 0.75,
+              "value": 0.5,
               "varies": false
             }
           },
@@ -158,7 +158,8 @@
           "enableTitleMaa": null,
           "factors": {},
           "flags": [
-            "admin_theme_balanced"
+            "admin_theme_balanced",
+            "province_balanced"
           ],
           "id": "admin_theme_balanced",
           "isDefault": true,
@@ -193,6 +194,7 @@
             "admin_influence_construction_bonus",
             "admin_ai_is_builder",
             "admin_theme_civilian",
+            "province_civilian",
             "obligation_high_taxes"
           ],
           "id": "admin_theme_civilian",
@@ -206,9 +208,9 @@
           "shortName": "Civilian",
           "subjectModifiers": [
             {
-              "key": "development_growth_factor",
+              "key": "prosperity_growth_factor",
               "polarity": "good",
-              "text": "+20% Development Growth"
+              "text": "+20% Prosperity Growth"
             },
             {
               "key": "build_gold_cost",
@@ -229,6 +231,11 @@
               "key": "men_at_arms_title_cap",
               "polarity": "bad",
               "text": "-2 Max Title Men-at-Arms Regiments"
+            },
+            {
+              "key": "governor_efficiency_per_stewardship_add",
+              "polarity": "good",
+              "text": "+0.5% Governor Efficiency per Stewardship Skill"
             }
           ],
           "subjectOpinion": null
@@ -246,6 +253,7 @@
           "flags": [
             "admin_martial_obligation_bonus",
             "admin_theme_military",
+            "province_military",
             "obligation_high_levies"
           ],
           "id": "admin_theme_military",
@@ -259,14 +267,14 @@
           "shortName": "Military",
           "subjectModifiers": [
             {
-              "key": "development_growth_factor",
+              "key": "prosperity_growth_factor",
               "polarity": "bad",
-              "text": "-25% Development Growth"
+              "text": "-25% Prosperity Growth"
             },
             {
-              "key": "monthly_county_control_growth_factor",
+              "key": "monthly_control_change_when_above_baseline_mult",
               "polarity": "good",
-              "text": "+10% Control Growth"
+              "text": "-10% Control Decline"
             },
             {
               "key": "maa_damage_mult",
@@ -287,6 +295,11 @@
               "key": "monthly_treasury_from_military_budget_base",
               "polarity": "good",
               "text": "+100% Monthly Military Base Rate"
+            },
+            {
+              "key": "governor_efficiency_per_martial_add",
+              "polarity": "good",
+              "text": "+0.5% Governor Efficiency per Martial Skill"
             }
           ],
           "subjectOpinion": null
@@ -306,6 +319,7 @@
             "admin_duchy_expansion_unlocked",
             "admin_ai_is_warlike",
             "admin_theme_frontier",
+            "province_military",
             "admin_theme_can_raid"
           ],
           "id": "admin_theme_frontier",
@@ -352,6 +366,11 @@
               "key": "monthly_treasury_from_military_budget_base",
               "polarity": "good",
               "text": "+150% Monthly Military Base Rate"
+            },
+            {
+              "key": "governor_efficiency_per_prowess_add",
+              "polarity": "good",
+              "text": "+0.5% Governor Efficiency per Prowess Skill"
             }
           ],
           "subjectOpinion": null
@@ -370,6 +389,7 @@
             "admin_theme_imperial",
             "admin_prestige_obligation_bonus",
             "admin_cannot_revoke_titles_without_cause",
+            "province_civilian",
             "obligation_high_taxes"
           ],
           "id": "admin_theme_imperial",
@@ -402,6 +422,11 @@
               "key": "monthly_influence",
               "polarity": "good",
               "text": "+0.25 Influence /month"
+            },
+            {
+              "key": "governor_efficiency_per_prestige_level_add",
+              "polarity": "good",
+              "text": "+4% Governor Efficiency per Level of Fame"
             }
           ],
           "subjectOpinion": null
@@ -413,8 +438,8 @@
           "factors": {},
           "flags": [
             "admin_naval_duchy_expansion_unlocked",
-            "admin_tradeport_obligation_bonus",
-            "admin_theme_naval"
+            "admin_theme_naval",
+            "province_military"
           ],
           "id": "admin_theme_naval",
           "isDefault": false,
@@ -458,9 +483,9 @@
               "text": "+10 Coastal Advantage"
             },
             {
-              "key": "development_growth_factor",
+              "key": "prosperity_growth_factor",
               "polarity": "good",
-              "text": "+10% Development Growth"
+              "text": "+10% Prosperity Growth"
             },
             {
               "key": "monthly_treasury_from_military_budget_base",
@@ -770,11 +795,11 @@
           "score": null,
           "shares": {
             "levies": {
-              "value": 0.3,
+              "value": 0.2,
               "varies": false
             },
             "tax": {
-              "value": 0.75,
+              "value": 0.5,
               "varies": false
             }
           },
@@ -802,7 +827,8 @@
           "factors": {},
           "flags": [
             "celestial_civil_appointment",
-            "celestial_province_standard"
+            "celestial_province_standard",
+            "province_civilian"
           ],
           "id": "celestial_province_standard",
           "isDefault": true,
@@ -831,6 +857,7 @@
             "celestial_civil_appointment",
             "admin_ai_is_builder",
             "celestial_province_industrial",
+            "province_civilian",
             "obligation_high_taxes"
           ],
           "id": "celestial_province_industrial",
@@ -844,19 +871,24 @@
           "shortName": "Industrial",
           "subjectModifiers": [
             {
-              "key": "development_growth_factor",
+              "key": "prosperity_growth_factor",
               "polarity": "good",
-              "text": "+5% Development Growth"
-            },
-            {
-              "key": "build_gold_cost",
-              "polarity": "good",
-              "text": "-10% Build Gold Cost"
+              "text": "+5% Prosperity Growth"
             },
             {
               "key": "build_speed",
               "polarity": "good",
               "text": "-20% Build Speed"
+            },
+            {
+              "key": "artisan_tax_mult",
+              "polarity": "good",
+              "text": "+5% Artisan Taxes"
+            },
+            {
+              "key": "mining_tax_mult",
+              "polarity": "good",
+              "text": "+5% Mining Taxes"
             },
             {
               "key": "monthly_merit_per_liege_tax",
@@ -879,6 +911,7 @@
           "flags": [
             "celestial_civil_appointment",
             "celestial_province_metropolitan",
+            "province_civilian",
             "obligation_high_levies"
           ],
           "id": "celestial_province_metropolitan",
@@ -892,24 +925,29 @@
           "shortName": "Metropolitan",
           "subjectModifiers": [
             {
-              "key": "domain_tax_mult",
+              "key": "urban_tax_mult",
               "polarity": "good",
-              "text": "+5% Domain Taxes"
+              "text": "+5% Urban Taxes"
             },
             {
-              "key": "development_growth_factor",
+              "key": "prosperity_growth_factor",
               "polarity": "good",
-              "text": "+5% Development Growth"
+              "text": "+5% Prosperity Growth"
             },
             {
-              "key": "monthly_county_control_growth_factor",
-              "polarity": "bad",
-              "text": "-10% Control Growth"
+              "key": "monthly_control_change_when_below_baseline_mult",
+              "polarity": "good",
+              "text": "+10% Control Growth"
             },
             {
               "key": "monthly_merit_per_liege_tax",
               "polarity": "good",
               "text": "+240% Monthly Merit per total Tax paid to Liege"
+            },
+            {
+              "key": "governor_efficiency_per_diplomacy_add",
+              "polarity": "good",
+              "text": "+0.5% Governor Efficiency per Diplomacy Skill"
             }
           ],
           "subjectOpinion": null
@@ -927,6 +965,7 @@
           "flags": [
             "celestial_province_military",
             "celestial_military_appointment",
+            "province_military",
             "obligation_high_levies"
           ],
           "id": "celestial_province_military",
@@ -940,14 +979,14 @@
           "shortName": "Military",
           "subjectModifiers": [
             {
-              "key": "development_growth_factor",
+              "key": "prosperity_growth_factor",
               "polarity": "bad",
-              "text": "-20% Development Growth"
+              "text": "-20% Prosperity Growth"
             },
             {
-              "key": "monthly_county_control_growth_factor",
+              "key": "monthly_control_change_when_above_baseline_mult",
               "polarity": "good",
-              "text": "+10% Control Growth"
+              "text": "-10% Control Decline"
             },
             {
               "key": "additional_fort_level",
@@ -991,6 +1030,7 @@
             "admin_ai_is_warlike",
             "celestial_province_protectorate",
             "celestial_military_appointment",
+            "province_military",
             "obligation_high_levies"
           ],
           "id": "celestial_province_protectorate",
@@ -1004,9 +1044,9 @@
           "shortName": "Protectorate",
           "subjectModifiers": [
             {
-              "key": "development_growth_factor",
+              "key": "prosperity_growth_factor",
               "polarity": "bad",
-              "text": "-30% Development Growth"
+              "text": "-30% Prosperity Growth"
             },
             {
               "key": "maa_damage_mult",
@@ -1042,6 +1082,11 @@
               "key": "monthly_treasury_from_military_budget_base",
               "polarity": "good",
               "text": "+150% Monthly Military Base Rate"
+            },
+            {
+              "key": "governor_efficiency_per_martial_add",
+              "polarity": "good",
+              "text": "+0.5% Governor Efficiency per Martial Skill"
             }
           ],
           "subjectOpinion": null
@@ -1367,7 +1412,7 @@
           "isDefault": false,
           "liegeModifiers": [],
           "minimums": {},
-          "name": "Very Low Vassal Development",
+          "name": "Very Low Vassal Allowance",
           "parent": null,
           "score": -2,
           "shares": {},
@@ -1391,7 +1436,7 @@
           "isDefault": false,
           "liegeModifiers": [],
           "minimums": {},
-          "name": "Low Vassal Development",
+          "name": "Low Vassal Allowance",
           "parent": "celestial_treasury_very_low",
           "score": -1,
           "shares": {},
@@ -1415,7 +1460,7 @@
           "isDefault": true,
           "liegeModifiers": [],
           "minimums": {},
-          "name": "Medium Vassal Development",
+          "name": "Medium Vassal Allowance",
           "parent": "celestial_treasury_low",
           "score": 0,
           "shares": {},
@@ -1433,7 +1478,7 @@
           "isDefault": false,
           "liegeModifiers": [],
           "minimums": {},
-          "name": "High Vassal Development",
+          "name": "High Vassal Allowance",
           "parent": "celestial_treasury_medium",
           "score": 1,
           "shares": {},
@@ -1457,7 +1502,7 @@
           "isDefault": false,
           "liegeModifiers": [],
           "minimums": {},
-          "name": "Very High Vassal Development",
+          "name": "Very High Vassal Allowance",
           "parent": "celestial_treasury_high",
           "score": 2,
           "shares": {},
@@ -1472,7 +1517,7 @@
           "subjectOpinion": 15
         }
       ],
-      "name": "Vassal Development",
+      "name": "Vassal Allowance",
       "sourceFile": "celestial.txt"
     },
     {
@@ -1988,9 +2033,9 @@
           "isDefault": false,
           "liegeModifiers": [
             {
-              "key": "development_growth_factor",
+              "key": "prosperity_growth_factor",
               "polarity": "bad",
-              "text": "-2% Development Growth"
+              "text": "-2% Prosperity Growth"
             }
           ],
           "minimums": {},
@@ -2001,9 +2046,9 @@
           "shortName": "Granted",
           "subjectModifiers": [
             {
-              "key": "character_capital_county_monthly_development_growth_add",
+              "key": "character_capital_county_monthly_prosperity_growth_add",
               "polarity": "good",
-              "text": "+0.3 Character Capital County Monthly Development Growth Add /month"
+              "text": "+0.3 Character Capital County Monthly Prosperity Growth Add /month"
             }
           ],
           "subjectOpinion": null
@@ -2019,6 +2064,7 @@
       "groups": [
         "feudal_vassal",
         "clan_vassal",
+        "nomad_vassal",
         "japan_feudal_vassal"
       ],
       "id": "council_rights",
@@ -2289,8 +2335,19 @@
           "score": 0,
           "shares": {
             "tax": {
-              "value": 0.25,
-              "varies": false
+              "rules": [
+                {
+                  "base": 0.25
+                },
+                {
+                  "if": "scope:subject …",
+                  "then": [
+                    "multiply 0.5"
+                  ]
+                }
+              ],
+              "value": null,
+              "varies": true
             }
           },
           "shortName": "Low",
@@ -2312,8 +2369,19 @@
           "score": -1,
           "shares": {
             "tax": {
-              "value": 0.5,
-              "varies": false
+              "rules": [
+                {
+                  "base": 0.5
+                },
+                {
+                  "if": "scope:subject …",
+                  "then": [
+                    "multiply 0.5"
+                  ]
+                }
+              ],
+              "value": null,
+              "varies": true
             }
           },
           "shortName": "High",
@@ -3177,7 +3245,7 @@
             {
               "key": "men_at_arms_maintenance",
               "polarity": "good",
-              "text": "-10% Men-at-Arms Maintenance"
+              "text": "-5% Men-at-Arms Maintenance"
             },
             {
               "key": "men_at_arms_recruitment_cost",
@@ -3246,7 +3314,8 @@
           "enableTitleMaa": false,
           "factors": {},
           "flags": [
-            "japan_administrative_province_standard"
+            "japan_administrative_province_standard",
+            "province_civilian"
           ],
           "id": "japan_administrative_province_standard",
           "isDefault": true,
@@ -3273,6 +3342,7 @@
           "flags": [
             "admin_ai_is_builder",
             "japan_administrative_province_trade",
+            "province_civilian",
             "obligation_high_taxes"
           ],
           "id": "japan_administrative_province_trade",
@@ -3286,9 +3356,9 @@
           "shortName": "Industrial",
           "subjectModifiers": [
             {
-              "key": "development_growth_factor",
+              "key": "prosperity_growth_factor",
               "polarity": "good",
-              "text": "+15% Development Growth"
+              "text": "+15% Prosperity Growth"
             },
             {
               "key": "build_gold_cost",
@@ -3316,6 +3386,7 @@
           "flags": [
             "japan_administrative_province_military",
             "japan_administrative_military_appointment",
+            "province_military",
             "obligation_high_levies"
           ],
           "id": "japan_administrative_province_military",
@@ -3329,14 +3400,14 @@
           "shortName": "Military",
           "subjectModifiers": [
             {
-              "key": "development_growth_factor",
+              "key": "prosperity_growth_factor",
               "polarity": "bad",
-              "text": "-20% Development Growth"
+              "text": "-20% Prosperity Growth"
             },
             {
-              "key": "monthly_county_control_growth_factor",
+              "key": "monthly_control_change_when_above_baseline_mult",
               "polarity": "good",
-              "text": "+10% Control Growth"
+              "text": "-10% Control Decline"
             },
             {
               "key": "fort_level",
@@ -3408,7 +3479,7 @@
           "minimums": {},
           "name": "Modest Salary",
           "parent": "salary_very_low",
-          "score": 1,
+          "score": -1,
           "shares": {},
           "shortName": "Modest",
           "subjectModifiers": [
@@ -3564,7 +3635,10 @@
       "displayMode": "checkbox",
       "dlc": null,
       "groups": [
-        "nomad_vassal"
+        "feudal_vassal",
+        "clan_vassal",
+        "nomad_vassal",
+        "japan_feudal_vassal"
       ],
       "id": "kurultai_rights",
       "levels": [
@@ -4145,7 +4219,7 @@
           "isDefault": false,
           "liegeModifiers": [],
           "minimums": {},
-          "name": "No Suzerain Guarantee",
+          "name": "No … Guarantee",
           "parent": null,
           "score": null,
           "shares": {},
@@ -4165,7 +4239,7 @@
           "isDefault": true,
           "liegeModifiers": [],
           "minimums": {},
-          "name": "Suzerain Guarantee",
+          "name": "… Guarantee",
           "parent": "mandala_suzerain_war_participation_guarantee_none",
           "score": null,
           "shares": {},
@@ -4174,7 +4248,7 @@
           "subjectOpinion": null
         }
       ],
-      "name": "Suzerain Guarantee",
+      "name": "… Guarantee",
       "sourceFile": "special_contracts.txt"
     },
     {
@@ -4241,6 +4315,357 @@
     },
     {
       "defaultsToHighest": false,
+      "displayMode": "checkbox",
+      "dlc": null,
+      "groups": [
+        "tributary_merchant"
+      ],
+      "id": "merchant_competitiveness",
+      "levels": [
+        {
+          "appointmentTraitFlag": null,
+          "enableCharacterMaa": null,
+          "enableTitleMaa": null,
+          "factors": {},
+          "flags": [],
+          "id": "no_competitiveness",
+          "isDefault": true,
+          "liegeModifiers": [],
+          "minimums": {},
+          "name": "Trade Not Supported",
+          "parent": null,
+          "score": 0,
+          "shares": {},
+          "shortName": "Not Supported",
+          "subjectModifiers": [],
+          "subjectOpinion": null
+        },
+        {
+          "appointmentTraitFlag": null,
+          "enableCharacterMaa": null,
+          "enableTitleMaa": null,
+          "factors": {},
+          "flags": [
+            "competitiveness_supported"
+          ],
+          "id": "competitiveness_support",
+          "isDefault": false,
+          "liegeModifiers": [
+            {
+              "key": "monthly_prestige",
+              "polarity": "bad",
+              "text": "-0.15 Prestige /month"
+            }
+          ],
+          "minimums": {},
+          "name": "Trade Supported",
+          "parent": "no_competitiveness",
+          "score": 1,
+          "shares": {},
+          "shortName": "Supported",
+          "subjectModifiers": [
+            {
+              "key": "trade_competitiveness_mult",
+              "polarity": "good",
+              "text": "+15% Trade Competitiveness"
+            }
+          ],
+          "subjectOpinion": 5
+        }
+      ],
+      "name": "Trade Support",
+      "sourceFile": "merchant.txt"
+    },
+    {
+      "defaultsToHighest": false,
+      "displayMode": "checkbox",
+      "dlc": null,
+      "groups": [
+        "tributary_merchant"
+      ],
+      "id": "merchant_marriage",
+      "levels": [
+        {
+          "appointmentTraitFlag": null,
+          "enableCharacterMaa": null,
+          "enableTitleMaa": null,
+          "factors": {},
+          "flags": [],
+          "id": "no_marriage",
+          "isDefault": true,
+          "liegeModifiers": [],
+          "minimums": {},
+          "name": "Marriage Not Supported",
+          "parent": null,
+          "score": 0,
+          "shares": {},
+          "shortName": "Not Supported",
+          "subjectModifiers": [],
+          "subjectOpinion": null
+        },
+        {
+          "appointmentTraitFlag": null,
+          "enableCharacterMaa": null,
+          "enableTitleMaa": null,
+          "factors": {},
+          "flags": [
+            "marriage_supported"
+          ],
+          "id": "marriage_support",
+          "isDefault": false,
+          "liegeModifiers": [
+            {
+              "key": "monthly_prestige",
+              "polarity": "bad",
+              "text": "-0.15 Prestige /month"
+            }
+          ],
+          "minimums": {},
+          "name": "Marriage Supported",
+          "parent": "no_marriage",
+          "score": 1,
+          "shares": {},
+          "shortName": "Supported",
+          "subjectModifiers": [],
+          "subjectOpinion": 5
+        }
+      ],
+      "name": "Marriage Support",
+      "sourceFile": "merchant.txt"
+    },
+    {
+      "defaultsToHighest": false,
+      "displayMode": "tree",
+      "dlc": null,
+      "groups": [
+        "tributary_merchant"
+      ],
+      "id": "merchant_prestige",
+      "levels": [
+        {
+          "appointmentTraitFlag": null,
+          "enableCharacterMaa": null,
+          "enableTitleMaa": null,
+          "factors": {},
+          "flags": [],
+          "id": "merchant_prestige_none",
+          "isDefault": true,
+          "liegeModifiers": [],
+          "minimums": {},
+          "name": "No Prestige",
+          "parent": null,
+          "score": 1,
+          "shares": {
+            "prestige": {
+              "value": 0,
+              "varies": false
+            }
+          },
+          "shortName": "None",
+          "subjectModifiers": [],
+          "subjectOpinion": null
+        },
+        {
+          "appointmentTraitFlag": null,
+          "enableCharacterMaa": null,
+          "enableTitleMaa": null,
+          "factors": {},
+          "flags": [],
+          "id": "merchant_prestige_low",
+          "isDefault": false,
+          "liegeModifiers": [
+            {
+              "key": "monthly_prestige",
+              "polarity": "bad",
+              "text": "-0.2 Prestige /month"
+            }
+          ],
+          "minimums": {},
+          "name": "Low Prestige",
+          "parent": "merchant_prestige_none",
+          "score": 2,
+          "shares": {},
+          "shortName": "Low",
+          "subjectModifiers": [
+            {
+              "key": "monthly_prestige",
+              "polarity": "good",
+              "text": "+0.2 Prestige /month"
+            }
+          ],
+          "subjectOpinion": 5
+        },
+        {
+          "appointmentTraitFlag": null,
+          "enableCharacterMaa": null,
+          "enableTitleMaa": null,
+          "factors": {},
+          "flags": [],
+          "id": "merchant_prestige_medium",
+          "isDefault": false,
+          "liegeModifiers": [
+            {
+              "key": "monthly_prestige",
+              "polarity": "bad",
+              "text": "-0.4 Prestige /month"
+            }
+          ],
+          "minimums": {},
+          "name": "Medium Prestige",
+          "parent": "merchant_prestige_low",
+          "score": 3,
+          "shares": {},
+          "shortName": "Medium",
+          "subjectModifiers": [
+            {
+              "key": "monthly_prestige",
+              "polarity": "good",
+              "text": "+0.4 Prestige /month"
+            }
+          ],
+          "subjectOpinion": 10
+        },
+        {
+          "appointmentTraitFlag": null,
+          "enableCharacterMaa": null,
+          "enableTitleMaa": null,
+          "factors": {},
+          "flags": [],
+          "id": "merchant_prestige_high",
+          "isDefault": false,
+          "liegeModifiers": [
+            {
+              "key": "monthly_prestige",
+              "polarity": "bad",
+              "text": "-0.8 Prestige /month"
+            }
+          ],
+          "minimums": {},
+          "name": "High Prestige",
+          "parent": "merchant_prestige_medium",
+          "score": 4,
+          "shares": {},
+          "shortName": "High",
+          "subjectModifiers": [
+            {
+              "key": "monthly_prestige",
+              "polarity": "good",
+              "text": "+0.8 Prestige /month"
+            }
+          ],
+          "subjectOpinion": 15
+        }
+      ],
+      "name": "Patron Contract",
+      "sourceFile": "merchant.txt"
+    },
+    {
+      "defaultsToHighest": false,
+      "displayMode": "tree",
+      "dlc": null,
+      "groups": [
+        "tributary_merchant"
+      ],
+      "id": "merchant_taxes",
+      "levels": [
+        {
+          "appointmentTraitFlag": null,
+          "enableCharacterMaa": null,
+          "enableTitleMaa": null,
+          "factors": {},
+          "flags": [],
+          "id": "merchant_tax_none",
+          "isDefault": false,
+          "liegeModifiers": [],
+          "minimums": {},
+          "name": "No Taxes",
+          "parent": null,
+          "score": 4,
+          "shares": {
+            "tax": {
+              "value": 0,
+              "varies": false
+            }
+          },
+          "shortName": "None",
+          "subjectModifiers": [],
+          "subjectOpinion": 5
+        },
+        {
+          "appointmentTraitFlag": null,
+          "enableCharacterMaa": null,
+          "enableTitleMaa": null,
+          "factors": {},
+          "flags": [],
+          "id": "merchant_tax_low",
+          "isDefault": true,
+          "liegeModifiers": [],
+          "minimums": {},
+          "name": "Low Taxes",
+          "parent": "merchant_tax_none",
+          "score": 3,
+          "shares": {
+            "tax": {
+              "value": 0.1,
+              "varies": false
+            }
+          },
+          "shortName": "Low",
+          "subjectModifiers": [],
+          "subjectOpinion": -5
+        },
+        {
+          "appointmentTraitFlag": null,
+          "enableCharacterMaa": null,
+          "enableTitleMaa": null,
+          "factors": {},
+          "flags": [],
+          "id": "merchant_tax_medium",
+          "isDefault": false,
+          "liegeModifiers": [],
+          "minimums": {},
+          "name": "Medium Taxes",
+          "parent": "merchant_tax_low",
+          "score": 2,
+          "shares": {
+            "tax": {
+              "value": 0.2,
+              "varies": false
+            }
+          },
+          "shortName": "Medium",
+          "subjectModifiers": [],
+          "subjectOpinion": -15
+        },
+        {
+          "appointmentTraitFlag": null,
+          "enableCharacterMaa": null,
+          "enableTitleMaa": null,
+          "factors": {},
+          "flags": [],
+          "id": "merchant_tax_high",
+          "isDefault": false,
+          "liegeModifiers": [],
+          "minimums": {},
+          "name": "High Taxes",
+          "parent": "merchant_tax_medium",
+          "score": 1,
+          "shares": {
+            "tax": {
+              "value": 0.3,
+              "varies": false
+            }
+          },
+          "shortName": "High",
+          "subjectModifiers": [],
+          "subjectOpinion": -25
+        }
+      ],
+      "name": "Patron Contract",
+      "sourceFile": "merchant.txt"
+    },
+    {
+      "defaultsToHighest": false,
       "displayMode": "radiobutton",
       "dlc": null,
       "groups": [
@@ -4263,11 +4688,11 @@
           "score": null,
           "shares": {
             "levies": {
-              "value": 0.3,
+              "value": 0.2,
               "varies": false
             },
             "tax": {
-              "value": 0.75,
+              "value": 0.5,
               "varies": false
             }
           },
@@ -4295,7 +4720,8 @@
           "factors": {},
           "flags": [
             "meritocratic_province_standard",
-            "meritocratic_civil_appointment"
+            "meritocratic_civil_appointment",
+            "province_civilian"
           ],
           "id": "meritocratic_province_standard",
           "isDefault": true,
@@ -4329,6 +4755,7 @@
             "admin_ai_is_builder",
             "meritocratic_province_industrial",
             "meritocratic_civil_appointment",
+            "province_civilian",
             "obligation_high_taxes"
           ],
           "id": "meritocratic_province_industrial",
@@ -4342,9 +4769,9 @@
           "shortName": "Industrial",
           "subjectModifiers": [
             {
-              "key": "development_growth_factor",
+              "key": "prosperity_growth_factor",
               "polarity": "good",
-              "text": "+15% Development Growth"
+              "text": "+15% Prosperity Growth"
             },
             {
               "key": "build_gold_cost",
@@ -4377,6 +4804,7 @@
           "flags": [
             "meritocratic_province_military",
             "meritocratic_military_appointment",
+            "province_military",
             "obligation_high_levies"
           ],
           "id": "meritocratic_province_military",
@@ -4390,14 +4818,14 @@
           "shortName": "Military",
           "subjectModifiers": [
             {
-              "key": "development_growth_factor",
+              "key": "prosperity_growth_factor",
               "polarity": "bad",
-              "text": "-20% Development Growth"
+              "text": "-20% Prosperity Growth"
             },
             {
-              "key": "monthly_county_control_growth_factor",
+              "key": "monthly_control_change_when_above_baseline_mult",
               "polarity": "good",
-              "text": "+10% Control Growth"
+              "text": "-10% Control Decline"
             },
             {
               "key": "additional_fort_level",
@@ -4476,7 +4904,7 @@
           "minimums": {},
           "name": "Modest Salary",
           "parent": "salary_very_low",
-          "score": 1,
+          "score": -1,
           "shares": {},
           "shortName": "Modest",
           "subjectModifiers": [
@@ -4704,7 +5132,7 @@
           "isDefault": false,
           "liegeModifiers": [],
           "minimums": {},
-          "name": "Very Low Vassal Development",
+          "name": "Very Low Vassal Allowance",
           "parent": null,
           "score": -2,
           "shares": {},
@@ -4728,7 +5156,7 @@
           "isDefault": false,
           "liegeModifiers": [],
           "minimums": {},
-          "name": "Low Vassal Development",
+          "name": "Low Vassal Allowance",
           "parent": "treasury_very_low",
           "score": -1,
           "shares": {},
@@ -4752,7 +5180,7 @@
           "isDefault": true,
           "liegeModifiers": [],
           "minimums": {},
-          "name": "Medium Vassal Development",
+          "name": "Medium Vassal Allowance",
           "parent": "treasury_low",
           "score": 0,
           "shares": {},
@@ -4770,7 +5198,7 @@
           "isDefault": false,
           "liegeModifiers": [],
           "minimums": {},
-          "name": "High Vassal Development",
+          "name": "High Vassal Allowance",
           "parent": "treasury_medium",
           "score": 1,
           "shares": {},
@@ -4794,7 +5222,7 @@
           "isDefault": false,
           "liegeModifiers": [],
           "minimums": {},
-          "name": "Very High Vassal Development",
+          "name": "Very High Vassal Allowance",
           "parent": "treasury_high",
           "score": 2,
           "shares": {},
@@ -4809,7 +5237,7 @@
           "subjectOpinion": 10
         }
       ],
-      "name": "Vassal Development",
+      "name": "Vassal Allowance",
       "sourceFile": "meritocratic.txt"
     },
     {
@@ -5463,9 +5891,9 @@
           "shortName": "Protected",
           "subjectModifiers": [
             {
-              "key": "county_opinion_add",
+              "key": "popular_opinion_add",
               "polarity": "good",
-              "text": "+5 Popular Opinion"
+              "text": "+5 Popular Opinion Baseline"
             }
           ],
           "subjectOpinion": 5
@@ -5473,6 +5901,199 @@
       ],
       "name": "Religious Rights",
       "sourceFile": "special_contracts.txt"
+    },
+    {
+      "defaultsToHighest": false,
+      "displayMode": "checkbox",
+      "dlc": null,
+      "groups": [
+        "republic_vassal"
+      ],
+      "id": "republic_government_defensive_obligation",
+      "levels": [
+        {
+          "appointmentTraitFlag": null,
+          "enableCharacterMaa": null,
+          "enableTitleMaa": null,
+          "factors": {},
+          "flags": [],
+          "id": "republic_government_defensive_obligation_none",
+          "isDefault": true,
+          "liegeModifiers": [],
+          "minimums": {},
+          "name": "No Defensive Duties",
+          "parent": null,
+          "score": 0,
+          "shares": {},
+          "shortName": "None",
+          "subjectModifiers": [],
+          "subjectOpinion": null
+        },
+        {
+          "appointmentTraitFlag": null,
+          "enableCharacterMaa": null,
+          "enableTitleMaa": null,
+          "factors": {
+            "tax": {
+              "value": -0.2,
+              "varies": false
+            }
+          },
+          "flags": [],
+          "id": "republic_government_defensive_obligation_enforced",
+          "isDefault": false,
+          "liegeModifiers": [
+            {
+              "key": "garrison_size",
+              "polarity": "good",
+              "text": "+10% Garrison Size"
+            },
+            {
+              "key": "additional_fort_level",
+              "polarity": "good",
+              "text": "+1 Additional Fort Level"
+            }
+          ],
+          "minimums": {},
+          "name": "Enforced Defensive Duties",
+          "parent": "republic_government_defensive_obligation_none",
+          "score": -1,
+          "shares": {},
+          "shortName": "Enforced",
+          "subjectModifiers": [],
+          "subjectOpinion": -10
+        }
+      ],
+      "name": "Defensive Duties",
+      "sourceFile": "republic.txt"
+    },
+    {
+      "defaultsToHighest": false,
+      "displayMode": "tree",
+      "dlc": null,
+      "groups": [
+        "republic_vassal"
+      ],
+      "id": "republic_government_free_city",
+      "levels": [
+        {
+          "appointmentTraitFlag": null,
+          "enableCharacterMaa": null,
+          "enableTitleMaa": null,
+          "factors": {},
+          "flags": [],
+          "id": "republic_government_free_city_unset",
+          "isDefault": true,
+          "liegeModifiers": [],
+          "minimums": {},
+          "name": "Limited City Rights",
+          "parent": null,
+          "score": 0,
+          "shares": {},
+          "shortName": "Limited",
+          "subjectModifiers": [],
+          "subjectOpinion": null
+        },
+        {
+          "appointmentTraitFlag": null,
+          "enableCharacterMaa": null,
+          "enableTitleMaa": null,
+          "factors": {
+            "levies": {
+              "value": -0.5,
+              "varies": false
+            },
+            "tax": {
+              "value": -0.25,
+              "varies": false
+            }
+          },
+          "flags": [
+            "chartered_city_obligation"
+          ],
+          "id": "republic_government_free_city_chartered",
+          "isDefault": false,
+          "liegeModifiers": [
+            {
+              "key": "character_capital_county_monthly_prosperity_growth_add",
+              "polarity": "good",
+              "text": "+0.1 Character Capital County Monthly Prosperity Growth Add /month"
+            }
+          ],
+          "minimums": {},
+          "name": "Chartered City Rights",
+          "parent": "republic_government_free_city_unset",
+          "score": 1,
+          "shares": {},
+          "shortName": "Chartered",
+          "subjectModifiers": [
+            {
+              "key": "character_capital_county_monthly_prosperity_growth_add",
+              "polarity": "good",
+              "text": "+0.5 Character Capital County Monthly Prosperity Growth Add /month"
+            },
+            {
+              "key": "max_trade_goods_on_route",
+              "polarity": "good",
+              "text": "+1 Max Trade Goods"
+            }
+          ],
+          "subjectOpinion": 10
+        },
+        {
+          "appointmentTraitFlag": null,
+          "enableCharacterMaa": null,
+          "enableTitleMaa": null,
+          "factors": {
+            "levies": {
+              "value": -1,
+              "varies": false
+            },
+            "tax": {
+              "value": -0.5,
+              "varies": false
+            }
+          },
+          "flags": [
+            "free_city_obligation"
+          ],
+          "id": "republic_government_free_city_granted",
+          "isDefault": false,
+          "liegeModifiers": [
+            {
+              "key": "character_capital_county_monthly_prosperity_growth_add",
+              "polarity": "good",
+              "text": "+0.2 Character Capital County Monthly Prosperity Growth Add /month"
+            }
+          ],
+          "minimums": {},
+          "name": "Free City Rights",
+          "parent": "republic_government_free_city_chartered",
+          "score": 2,
+          "shares": {},
+          "shortName": "Free",
+          "subjectModifiers": [
+            {
+              "key": "character_capital_county_monthly_prosperity_growth_add",
+              "polarity": "good",
+              "text": "+1 Character Capital County Monthly Prosperity Growth Add /month"
+            },
+            {
+              "key": "max_trade_goods_on_route",
+              "polarity": "good",
+              "text": "+1 Max Trade Goods"
+            },
+            {
+              "key": "max_trade_routes",
+              "polarity": "good",
+              "text": "+1 Trade Routes"
+            }
+          ],
+          "subjectOpinion": 20
+        }
+      ],
+      "name": "Free City Status",
+      "sourceFile": "republic.txt"
     },
     {
       "defaultsToHighest": false,
@@ -5500,7 +6121,25 @@
             "levies": {
               "rules": [
                 {
-                  "scope:liege": "…"
+                  "if": "scope:liege …",
+                  "then": [
+                    "value 0"
+                  ]
+                },
+                {
+                  "else": "…"
+                },
+                {
+                  "if": "scope:liege.culture …, scope:subject …",
+                  "then": [
+                    "add 0.05"
+                  ]
+                },
+                {
+                  "if": "scope:liege.dynasty …",
+                  "then": [
+                    "add 0.15"
+                  ]
                 }
               ],
               "value": null,
@@ -5509,7 +6148,28 @@
             "tax": {
               "rules": [
                 {
-                  "scope:liege": "…"
+                  "if": "scope:liege …",
+                  "then": [
+                    "value 0.05"
+                  ]
+                },
+                {
+                  "else_if": "…"
+                },
+                {
+                  "else": "…"
+                },
+                {
+                  "if": "scope:liege.culture …, scope:subject …",
+                  "then": [
+                    "add 0.1"
+                  ]
+                },
+                {
+                  "if": "scope:liege.dynasty …",
+                  "then": [
+                    "add 0.15"
+                  ]
                 }
               ],
               "value": null,
@@ -5522,6 +6182,250 @@
         }
       ],
       "name": "Republic Obligations",
+      "sourceFile": "republic.txt"
+    },
+    {
+      "defaultsToHighest": true,
+      "displayMode": "radiobutton",
+      "dlc": null,
+      "groups": [
+        "republic_vassal"
+      ],
+      "id": "republic_government_salaries",
+      "levels": [
+        {
+          "appointmentTraitFlag": null,
+          "enableCharacterMaa": null,
+          "enableTitleMaa": null,
+          "factors": {},
+          "flags": [],
+          "id": "republic_government_salary_none",
+          "isDefault": true,
+          "liegeModifiers": [],
+          "minimums": {},
+          "name": "No Salary",
+          "parent": null,
+          "score": 0,
+          "shares": {},
+          "shortName": "None",
+          "subjectModifiers": [],
+          "subjectOpinion": null
+        },
+        {
+          "appointmentTraitFlag": null,
+          "enableCharacterMaa": null,
+          "enableTitleMaa": null,
+          "factors": {},
+          "flags": [],
+          "id": "republic_government_salary_normal",
+          "isDefault": false,
+          "liegeModifiers": [],
+          "minimums": {},
+          "name": "Normal Salary",
+          "parent": "republic_government_salary_none",
+          "score": 1,
+          "shares": {},
+          "shortName": "Normal",
+          "subjectModifiers": [
+            {
+              "key": "monthly_treasury_from_salary_budget_base",
+              "polarity": "good",
+              "text": "+100% Monthly Salary Base Rate"
+            }
+          ],
+          "subjectOpinion": null
+        },
+        {
+          "appointmentTraitFlag": null,
+          "enableCharacterMaa": null,
+          "enableTitleMaa": null,
+          "factors": {},
+          "flags": [],
+          "id": "republic_government_salary_high",
+          "isDefault": false,
+          "liegeModifiers": [],
+          "minimums": {},
+          "name": "High Salary",
+          "parent": "republic_government_salary_normal",
+          "score": 2,
+          "shares": {},
+          "shortName": "High",
+          "subjectModifiers": [
+            {
+              "key": "monthly_treasury_from_salary_budget_base",
+              "polarity": "good",
+              "text": "+125% Monthly Salary Base Rate"
+            }
+          ],
+          "subjectOpinion": null
+        },
+        {
+          "appointmentTraitFlag": null,
+          "enableCharacterMaa": null,
+          "enableTitleMaa": null,
+          "factors": {},
+          "flags": [],
+          "id": "republic_government_salary_generous",
+          "isDefault": false,
+          "liegeModifiers": [],
+          "minimums": {},
+          "name": "Generous Salary",
+          "parent": "republic_government_salary_high",
+          "score": 3,
+          "shares": {},
+          "shortName": "Generous",
+          "subjectModifiers": [
+            {
+              "key": "monthly_treasury_from_salary_budget_base",
+              "polarity": "good",
+              "text": "+150% Monthly Salary Base Rate"
+            }
+          ],
+          "subjectOpinion": null
+        },
+        {
+          "appointmentTraitFlag": null,
+          "enableCharacterMaa": null,
+          "enableTitleMaa": null,
+          "factors": {},
+          "flags": [],
+          "id": "republic_government_salary_exceptional",
+          "isDefault": false,
+          "liegeModifiers": [],
+          "minimums": {},
+          "name": "Exceptional Salary",
+          "parent": "republic_government_salary_generous",
+          "score": 4,
+          "shares": {},
+          "shortName": "Exceptional",
+          "subjectModifiers": [
+            {
+              "key": "monthly_treasury_from_salary_budget_base",
+              "polarity": "good",
+              "text": "+200% Monthly Salary Base Rate"
+            }
+          ],
+          "subjectOpinion": null
+        }
+      ],
+      "name": "Republic Salary",
+      "sourceFile": "republic.txt"
+    },
+    {
+      "defaultsToHighest": true,
+      "displayMode": "hidden",
+      "dlc": null,
+      "groups": [
+        "republic_vassal"
+      ],
+      "id": "republic_government_treasury_conversion",
+      "levels": [
+        {
+          "appointmentTraitFlag": null,
+          "enableCharacterMaa": null,
+          "enableTitleMaa": null,
+          "factors": {},
+          "flags": [],
+          "id": "republic_government_treasury_conversion_none",
+          "isDefault": true,
+          "liegeModifiers": [],
+          "minimums": {},
+          "name": "No Treasury Conversion",
+          "parent": null,
+          "score": 0,
+          "shares": {},
+          "shortName": "No Treasury Conversion",
+          "subjectModifiers": [],
+          "subjectOpinion": null
+        },
+        {
+          "appointmentTraitFlag": null,
+          "enableCharacterMaa": null,
+          "enableTitleMaa": null,
+          "factors": {},
+          "flags": [],
+          "id": "republic_government_treasury_conversion_extra",
+          "isDefault": false,
+          "liegeModifiers": [],
+          "minimums": {},
+          "name": "Vassal Republic",
+          "parent": "republic_government_treasury_conversion_none",
+          "score": 1,
+          "shares": {},
+          "shortName": "Vassal Republic",
+          "subjectModifiers": [],
+          "subjectOpinion": null
+        }
+      ],
+      "name": "Treasury Conversion Rate",
+      "sourceFile": "republic.txt"
+    },
+    {
+      "defaultsToHighest": false,
+      "displayMode": "checkbox",
+      "dlc": null,
+      "groups": [
+        "republic_vassal"
+      ],
+      "id": "republic_government_war_aids",
+      "levels": [
+        {
+          "appointmentTraitFlag": null,
+          "enableCharacterMaa": null,
+          "enableTitleMaa": null,
+          "factors": {},
+          "flags": [],
+          "id": "republic_government_war_aids_none",
+          "isDefault": true,
+          "liegeModifiers": [],
+          "minimums": {},
+          "name": "No War Aids",
+          "parent": null,
+          "score": 0,
+          "shares": {},
+          "shortName": "None",
+          "subjectModifiers": [],
+          "subjectOpinion": null
+        },
+        {
+          "appointmentTraitFlag": null,
+          "enableCharacterMaa": null,
+          "enableTitleMaa": null,
+          "factors": {
+            "tax": {
+              "rules": [
+                {
+                  "base": 0
+                },
+                {
+                  "if": "scope:liege …",
+                  "then": [
+                    "add 10"
+                  ]
+                },
+                {
+                  "else": "…"
+                }
+              ],
+              "value": null,
+              "varies": true
+            }
+          },
+          "flags": [],
+          "id": "republic_government_war_aids_enforced",
+          "isDefault": false,
+          "liegeModifiers": [],
+          "minimums": {},
+          "name": "Enforced War Aids",
+          "parent": "republic_government_war_aids_none",
+          "score": -1,
+          "shares": {},
+          "shortName": "Enforced",
+          "subjectModifiers": [],
+          "subjectOpinion": -10
+        }
+      ],
+      "name": "War Aids",
       "sourceFile": "republic.txt"
     },
     {
@@ -5831,7 +6735,7 @@
           "isDefault": true,
           "liegeModifiers": [],
           "minimums": {},
-          "name": "No Suzerain Guarantee",
+          "name": "No … Guarantee",
           "parent": null,
           "score": -2,
           "shares": {},
@@ -5851,7 +6755,7 @@
           "isDefault": false,
           "liegeModifiers": [],
           "minimums": {},
-          "name": "Suzerain Guarantee",
+          "name": "… Guarantee",
           "parent": "suzerain_war_participation_guarantee_none",
           "score": 2,
           "shares": {},
@@ -5860,7 +6764,7 @@
           "subjectOpinion": 25
         }
       ],
-      "name": "Suzerain Guarantee",
+      "name": "… Guarantee",
       "sourceFile": "special_contracts.txt"
     },
     {
@@ -5910,7 +6814,7 @@
                   ]
                 },
                 {
-                  "else_if": "…"
+                  "else": "…"
                 }
               ],
               "value": null,
@@ -6240,21 +7144,29 @@
         "succession_rights",
         "war_declaration_rights",
         "council_rights",
+        "kurultai_rights",
         "title_revocation_rights",
         "jizya_special_rights"
       ],
       "heirSuccession": null,
       "id": "feudal_vassal",
+      "isBeneficiaryRelationship": false,
       "isTributary": false,
       "name": "Feudal"
     },
     {
       "adminProvinceContract": null,
       "contracts": [
-        "republic_government_obligations"
+        "republic_government_obligations",
+        "republic_government_salaries",
+        "republic_government_treasury_conversion",
+        "republic_government_free_city",
+        "republic_government_defensive_obligation",
+        "republic_government_war_aids"
       ],
       "heirSuccession": null,
       "id": "republic_vassal",
+      "isBeneficiaryRelationship": false,
       "isTributary": false,
       "name": "Republic"
     },
@@ -6265,6 +7177,7 @@
       ],
       "heirSuccession": null,
       "id": "theocracy_vassal",
+      "isBeneficiaryRelationship": false,
       "isTributary": false,
       "name": "Theocracy"
     },
@@ -6276,11 +7189,13 @@
         "religious_rights",
         "war_declaration_rights",
         "council_rights",
+        "kurultai_rights",
         "title_revocation_rights",
         "marriage_favor_rights"
       ],
       "heirSuccession": null,
       "id": "clan_vassal",
+      "isBeneficiaryRelationship": false,
       "isTributary": false,
       "name": "Clan"
     },
@@ -6291,6 +7206,7 @@
       ],
       "heirSuccession": null,
       "id": "tribal_vassal",
+      "isBeneficiaryRelationship": false,
       "isTributary": false,
       "name": "Tribal"
     },
@@ -6303,6 +7219,7 @@
       ],
       "heirSuccession": null,
       "id": "admin_vassal",
+      "isBeneficiaryRelationship": false,
       "isTributary": false,
       "name": "Administrative"
     },
@@ -6312,11 +7229,13 @@
         "nomad_government_herd",
         "nomad_government_taxes",
         "liege_war_participation_obligation",
+        "council_rights",
         "kurultai_rights",
         "war_declaration_rights"
       ],
       "heirSuccession": null,
       "id": "nomad_vassal",
+      "isBeneficiaryRelationship": false,
       "isTributary": false,
       "name": "Nomadic"
     },
@@ -6334,6 +7253,7 @@
         "tributary": false
       },
       "id": "tributary_settled",
+      "isBeneficiaryRelationship": false,
       "isTributary": true,
       "name": "Settled Tributary"
     },
@@ -6350,6 +7270,7 @@
         "tributary": false
       },
       "id": "tributary_nomadic",
+      "isBeneficiaryRelationship": false,
       "isTributary": true,
       "name": "Nomadic Tributary"
     },
@@ -6366,6 +7287,7 @@
         "tributary": false
       },
       "id": "tributary_subjugated",
+      "isBeneficiaryRelationship": false,
       "isTributary": true,
       "name": "Subjugated Tributary"
     },
@@ -6382,6 +7304,7 @@
         "tributary": false
       },
       "id": "tributary_steppe",
+      "isBeneficiaryRelationship": false,
       "isTributary": true,
       "name": "Steppe Tributary"
     },
@@ -6392,6 +7315,7 @@
       ],
       "heirSuccession": null,
       "id": "herder_vassal",
+      "isBeneficiaryRelationship": false,
       "isTributary": false,
       "name": "Herder"
     },
@@ -6408,6 +7332,7 @@
       ],
       "heirSuccession": null,
       "id": "celestial_vassal",
+      "isBeneficiaryRelationship": false,
       "isTributary": false,
       "name": "Celestial"
     },
@@ -6425,6 +7350,7 @@
         "tributary": true
       },
       "id": "tributary_celestial",
+      "isBeneficiaryRelationship": false,
       "isTributary": true,
       "name": "Celestial Tributary"
     },
@@ -6439,6 +7365,7 @@
         "tributary": true
       },
       "id": "tributary_hegemonic",
+      "isBeneficiaryRelationship": false,
       "isTributary": true,
       "name": "Hegemonic Tributary"
     },
@@ -6456,6 +7383,7 @@
       ],
       "heirSuccession": null,
       "id": "mandala_vassal",
+      "isBeneficiaryRelationship": false,
       "isTributary": false,
       "name": "Mandala"
     },
@@ -6472,6 +7400,7 @@
         "tributary": true
       },
       "id": "tributary_mandala",
+      "isBeneficiaryRelationship": false,
       "isTributary": true,
       "name": "Mandala Tributary"
     },
@@ -6489,6 +7418,7 @@
         "tributary": true
       },
       "id": "tributary_mandala_tribal",
+      "isBeneficiaryRelationship": false,
       "isTributary": true,
       "name": "Tribal Tributary"
     },
@@ -6500,6 +7430,7 @@
       ],
       "heirSuccession": null,
       "id": "japan_administrative_vassal",
+      "isBeneficiaryRelationship": false,
       "isTributary": false,
       "name": "Ritsuryō"
     },
@@ -6515,11 +7446,13 @@
         "succession_rights",
         "war_declaration_rights",
         "council_rights",
+        "kurultai_rights",
         "title_revocation_rights",
         "jizya_special_rights"
       ],
       "heirSuccession": null,
       "id": "japan_feudal_vassal",
+      "isBeneficiaryRelationship": false,
       "isTributary": false,
       "name": "Sōryō"
     },
@@ -6530,6 +7463,7 @@
       ],
       "heirSuccession": null,
       "id": "wanua_vassal",
+      "isBeneficiaryRelationship": false,
       "isTributary": false,
       "name": "Wanua"
     },
@@ -6545,6 +7479,7 @@
         "tributary": false
       },
       "id": "tributary_wanua",
+      "isBeneficiaryRelationship": false,
       "isTributary": true,
       "name": "Wanua Tributary"
     },
@@ -6559,8 +7494,26 @@
       ],
       "heirSuccession": null,
       "id": "meritocratic_vassal",
+      "isBeneficiaryRelationship": false,
       "isTributary": false,
       "name": "Meritocratic"
+    },
+    {
+      "adminProvinceContract": null,
+      "contracts": [
+        "merchant_taxes",
+        "merchant_prestige",
+        "merchant_competitiveness",
+        "merchant_marriage"
+      ],
+      "heirSuccession": {
+        "suzerain": true,
+        "tributary": true
+      },
+      "id": "tributary_merchant",
+      "isBeneficiaryRelationship": true,
+      "isTributary": true,
+      "name": "Client"
     }
   ]
 }

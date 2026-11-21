@@ -29,12 +29,16 @@ MAPPED = {
     "dynasty_legacies": "build_legacies.py",
     "dynasty_perks": "build_legacies.py",
     "buildings": "build_buildings.py",
+    "districts": "build_districts.py",
+    "trade": "build_districts.py (trade goods + county potential goods; toll levels pending)",
     "religion": "build_faiths.py / build_doctrines.py / build_holy_sites.py",
     "casus_belli_types": "build_cbs.py",
     "casus_belli_groups": "build_cbs.py",
     "landed_titles": "build_titles.py + build_startworld.py",
     "governments": "build_governments.py",
     "laws": "build_laws.py",
+    "law_groups": "build_laws.py (1.21 split groups out of laws/)",
+    "title_types": "build_titles.py (root title typing: merchant/noble/ecclesiastical…)",
     "subject_contracts": "build_contracts.py",
     "court_positions": "build_court.py",
     "council_positions": "build_council.py",
@@ -110,6 +114,12 @@ SKIP = {
     "combat_phase_events", "ai_war_stances", "ai_goaltypes",
     "connection_arrows", "playable_difficulty_infos", "console_groups",
     "province_mapping",
+    # 1.21 / Silk and Silver — candidates for new pages, not yet built
+    "trade_tasks", "holy_orders", "spiritual_fulfillment", "puppets",
+    "confederation_aspirations",
+    # 1.21 engine/graphics plumbing — no reference value
+    "roads", "holding_sprawl_graphics", "holding_sprawl_patterns",
+    "trade_goods_graphics", "menu_scenes", "morpheme_strip_rules",
 }
 
 # game/ subtrees the site reads outside common/: map_data is parsed by

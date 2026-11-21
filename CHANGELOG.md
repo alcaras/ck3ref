@@ -1,5 +1,1373 @@
 # Changelog
 
+## 1.21.0.3
+
+- ✏️ `accolades.json` changed (4 → 4 entries)
+- ✏️ `activities.json` changed (5 → 5 entries)
+- ✏️ `administration.json` changed (3 → 3 entries)
+- ✏️ `artifacts.json` changed (4 → 4 entries)
+- ✏️ `backlinks.json` changed (1297 → 1537 entries)
+- ➕ `buildings.json` added **admiralty_court_01**
+- ➕ `buildings.json` added **admiralty_court_02**
+- ➕ `buildings.json` added **admiralty_court_03**
+- ➕ `buildings.json` added **admiralty_court_04**
+- ➕ `buildings.json` added **admiralty_court_05**
+- ➕ `buildings.json` added **almonry_general_01**
+- ➕ `buildings.json` added **almonry_general_02**
+- ➕ `buildings.json` added **almonry_general_03**
+- ➕ `buildings.json` added **almonry_general_04**
+- ➕ `buildings.json` added **almonry_general_05**
+- ➕ `buildings.json` added **alnagers_office_01**
+- ➕ `buildings.json` added **alnagers_office_02**
+- ➕ `buildings.json` added **alnagers_office_03**
+- ➕ `buildings.json` added **alnagers_office_04**
+- ➕ `buildings.json` added **alnagers_office_05**
+- ➕ `buildings.json` added **archery_ranges_04**
+- ➕ `buildings.json` added **archery_ranges_05**
+- ➕ `buildings.json` added **assay_district_01**
+- ➕ `buildings.json` added **assay_district_02**
+- ➕ `buildings.json` added **assay_district_03**
+- ➕ `buildings.json` added **assay_district_04**
+- ➕ `buildings.json` added **bailiwick_01**
+- ➕ `buildings.json` added **bailiwick_02**
+- ➕ `buildings.json` added **bailiwick_03**
+- ➕ `buildings.json` added **bailiwick_04**
+- ➕ `buildings.json` added **blacksmiths_04**
+- ➕ `buildings.json` added **blacksmiths_05**
+- ➕ `buildings.json` added **burial_site_04**
+- ➕ `buildings.json` added **burial_site_05**
+- ➕ `buildings.json` added **celestial_great_barracks_02**
+- ➕ `buildings.json` added **celestial_great_barracks_03**
+- ➕ `buildings.json` added **celestial_great_barracks_04**
+- ➕ `buildings.json` added **celestial_great_barracks_05**
+- ➕ `buildings.json` added **charnel_grounds_04**
+- ➕ `buildings.json` added **charnel_grounds_05**
+- ➕ `buildings.json` added **colonization_office_01**
+- ➕ `buildings.json` added **colonization_office_02**
+- ➕ `buildings.json` added **colonization_office_03**
+- ➕ `buildings.json` added **colonization_office_04**
+- ➕ `buildings.json` added **colonization_office_05**
+- ➕ `buildings.json` added **consistory_01**
+- ➕ `buildings.json` added **consistory_02**
+- ➕ `buildings.json` added **consistory_03**
+- ➕ `buildings.json` added **consistory_04**
+- ➕ `buildings.json` added **consistory_05**
+- ➕ `buildings.json` added **court_of_the_towns_01**
+- ➕ `buildings.json` added **court_of_the_towns_02**
+- ➕ `buildings.json` added **court_of_the_towns_03**
+- ➕ `buildings.json` added **court_of_the_towns_04**
+- ➕ `buildings.json` added **court_of_the_towns_05**
+- ➕ `buildings.json` added **courts_of_commons_01**
+- ➕ `buildings.json` added **courts_of_commons_02**
+- ➕ `buildings.json` added **courts_of_commons_03**
+- ➕ `buildings.json` added **courts_of_commons_04**
+- ➕ `buildings.json` added **courts_of_commons_05**
+- ➕ `buildings.json` added **dragon_kiln_04**
+- ➕ `buildings.json` added **dragon_kiln_05**
+- ➕ `buildings.json` added **ducal_chase_01**
+- ➕ `buildings.json` added **ducal_chase_02**
+- ➕ `buildings.json` added **ducal_chase_03**
+- ➕ `buildings.json` added **ducal_chase_04**
+- ➕ `buildings.json` added **ducal_chase_05**
+- ➕ `buildings.json` added **ducal_residence_01**
+- ➕ `buildings.json` added **ducal_residence_02**
+- ➕ `buildings.json` added **ducal_residence_03**
+- ➕ `buildings.json` added **ducal_residence_04**
+- ➕ `buildings.json` added **endowment_district_01**
+- ➕ `buildings.json` added **endowment_district_02**
+- ➕ `buildings.json` added **endowment_district_03**
+- ➕ `buildings.json` added **endowment_district_04**
+- ➕ `buildings.json` added **examination_hall_04**
+- ➕ `buildings.json` added **examination_hall_05**
+- ➕ `buildings.json` added **exchequer_01**
+- ➕ `buildings.json` added **exchequer_02**
+- ➕ `buildings.json` added **exchequer_03**
+- ➕ `buildings.json` added **exchequer_04**
+- ➕ `buildings.json` added **exchequer_05**
+- ➕ `buildings.json` added **feodarys_circuit_01**
+- ➕ `buildings.json` added **feodarys_circuit_02**
+- ➕ `buildings.json` added **feodarys_circuit_03**
+- ➕ `buildings.json` added **feodarys_circuit_04**
+- ➕ `buildings.json` added **feodarys_circuit_05**
+- ➕ `buildings.json` added **governance_district_01**
+- ➕ `buildings.json` added **governance_district_02**
+- ➕ `buildings.json` added **governance_district_03**
+- ➕ `buildings.json` added **governance_district_04**
+- ➕ `buildings.json` added **grain_exchange_01**
+- ➕ `buildings.json` added **grain_exchange_02**
+- ➕ `buildings.json` added **grain_exchange_03**
+- ➕ `buildings.json` added **grain_exchange_04**
+- ➕ `buildings.json` added **grain_exchange_05**
+- ➕ `buildings.json` added **jousting_lists_04**
+- ➕ `buildings.json` added **jousting_lists_05**
+- ➕ `buildings.json` added **leisure_palace_04**
+- ➕ `buildings.json` added **leisure_palace_05**
+- ➕ `buildings.json` added **march_04**
+- ➕ `buildings.json` added **march_05**
+- ➕ `buildings.json` added **military_academy_04**
+- ➕ `buildings.json` added **military_academy_05**
+- ➕ `buildings.json` added **military_duchy_building_01**
+- ➕ `buildings.json` added **military_duchy_building_02**
+- ➕ `buildings.json` added **military_duchy_building_03**
+- ➕ `buildings.json` added **military_duchy_building_04**
+- ➕ `buildings.json` added **mining_office_01**
+- ➕ `buildings.json` added **mining_office_02**
+- ➕ `buildings.json` added **mining_office_03**
+- ➕ `buildings.json` added **mining_office_04**
+- ➕ `buildings.json` added **mining_office_05**
+- ➕ `buildings.json` added **minting_court_01**
+- ➕ `buildings.json` added **minting_court_02**
+- ➕ `buildings.json` added **minting_court_03**
+- ➕ `buildings.json` added **minting_court_04**
+- ➕ `buildings.json` added **minting_court_05**
+- ➕ `buildings.json` added **pilgrimage_office_01**
+- ➕ `buildings.json` added **pilgrimage_office_02**
+- ➕ `buildings.json` added **pilgrimage_office_03**
+- ➕ `buildings.json` added **pilgrimage_office_04**
+- ➕ `buildings.json` added **pilgrimage_office_05**
+- ➕ `buildings.json` added **prerogative_chancery_01**
+- ➕ `buildings.json` added **prerogative_chancery_02**
+- … and 3833 more changes in `buildings.json`
+- ✏️ `cbs.json` changed (3 → 3 entries)
+- ✏️ `combat_sim.json` changed (9 → 9 entries)
+- ➕ `concepts.json` added **archabbot**
+- ➕ `concepts.json` added **advanced_succession**
+- ➕ `concepts.json` added **agricultural_taxes**
+- ➕ `concepts.json` added **archbishop**
+- ➕ `concepts.json` added **archdiocese**
+- ➕ `concepts.json` added **artisan_taxes**
+- ➕ `concepts.json` added **assembly**
+- ➕ `concepts.json` added **associate**
+- ➕ `concepts.json` added **company_sentiment_independent**
+- ➕ `concepts.json` added **basic_trade_good**
+- ➕ `concepts.json` added **ecclesiastic_grant_claim_interaction**
+- ➕ `concepts.json` added **bishop**
+- ➕ `concepts.json` added **building_need**
+- ➕ `concepts.json` added **buy_price**
+- ➕ `concepts.json` added **canonized**
+- ➕ `concepts.json` added **cardinal**
+- ➕ `concepts.json` added **treasury_cardinal_budget**
+- ➕ `concepts.json` added **promote_other_culture_prosperity_decision**
+- ➕ `concepts.json` added **pam_challenge_hof_cb**
+- ➕ `concepts.json` added **challenger_hof**
+- ➕ `concepts.json` added **the_christian_church_chapter_type**
+- ➕ `concepts.json` added **christendom**
+- ➕ `concepts.json` added **christian**
+- ➕ `concepts.json` added **church_authority**
+- ➕ `concepts.json` added **church_centralization**
+- ➕ `concepts.json` added **church_obligations**
+- ➕ `concepts.json` added **civic_taxes**
+- ➕ `concepts.json` added **clerical_region**
+- ➕ `concepts.json` added **clerical_region_capital**
+- ➕ `concepts.json` added **external_clerical_puppet**
+- ➕ `concepts.json` added **clerical_title**
+- ➕ `concepts.json` added **client_contract**
+- ➕ `concepts.json` added **client_merchant**
+- ➕ `concepts.json` added **college_of_cardinals**
+- ➕ `concepts.json` added **commerce_taxes**
+- ➕ `concepts.json` added **commission_route**
+- ➕ `concepts.json` added **company**
+- ➕ `concepts.json` added **company_building**
+- ➕ `concepts.json` added **company_sentiment**
+- ➕ `concepts.json` added **company_sentiment_level**
+- ➕ `concepts.json` added **company_purpose**
+- ➕ `concepts.json` added **company_size**
+- ➕ `concepts.json` added **competitive_pressure**
+- ➕ `concepts.json` added **complete_monopoly**
+- ➕ `concepts.json` added **confederation_cohesion**
+- ➕ `concepts.json` added **ecumenical_council_conservative**
+- ➕ `concepts.json` added **consortery**
+- ➕ `concepts.json` added **control_baseline**
+- ➕ `concepts.json` added **core_tenet_status**
+- ➕ `concepts.json` added **creature**
+- ➕ `concepts.json` added **creditor**
+- ➕ `concepts.json` added **the_christian_church_crisis**
+- ➕ `concepts.json` added **curio**
+- ➕ `concepts.json` added **debtor**
+- ➕ `concepts.json` added **request_clerical_chastity_interaction**
+- ➕ `concepts.json` added **pam_antiking_cb**
+- ➕ `concepts.json` added **deputy**
+- ➕ `concepts.json` added **diligent_prosperity_focus_decision**
+- ➕ `concepts.json` added **unity_contract**
+- ➕ `concepts.json` added **dissolve_empire_casus_belli**
+- ➕ `concepts.json` added **distribution_route**
+- ➕ `concepts.json` added **district**
+- ➕ `concepts.json` added **district_tier**
+- ➕ `concepts.json` added **rite_divergence**
+- ➕ `concepts.json` added **domicile_artifact**
+- ➕ `concepts.json` added **duchy_district**
+- ➕ `concepts.json` added **east_asian_estate**
+- ➕ `concepts.json` added **east_asian_estate_building**
+- ➕ `concepts.json` added **ecclesiastical**
+- ➕ `concepts.json` added **ecclesiastical_domicile**
+- ➕ `concepts.json` added **ecclesiastical_domicile_building**
+- ➕ `concepts.json` added **ecumenical_council**
+- ➕ `concepts.json` added **elective_succession**
+- ➕ `concepts.json` added **eminent_holy_site**
+- ➕ `concepts.json` added **company_sentiment_concerted**
+- ➕ `concepts.json` added **enshrined**
+- ➕ `concepts.json` added **entrepot_district**
+- ➕ `concepts.json` added **existing_prosperity**
+- ➕ `concepts.json` added **exploitative_monopoly**
+- ➕ `concepts.json` added **fallback_heir**
+- ➕ `concepts.json` added **fallback_heir_title**
+- ➕ `concepts.json` added **feast**
+- ➕ `concepts.json` added **fertility_baseline**
+- ➕ `concepts.json` added **food_supply**
+- ➕ `concepts.json` added **full_maintenance**
+- ➕ `concepts.json` added **ghibelline**
+- ➕ `concepts.json` added **trade_category**
+- ➕ `concepts.json` added **government_authority**
+- ➕ `concepts.json` added **grand_cathedral**
+- ➕ `concepts.json` added **company_sentiment_cooperative**
+- ➕ `concepts.json` added **great_district**
+- ➕ `concepts.json` added **guelph**
+- ➕ `concepts.json` added **guelph_ghibelline_situation**
+- ➕ `concepts.json` added **guelph_ghibelline_precursor_situation**
+- ➕ `concepts.json` added **pam_shape_the_christian_church_decision**
+- ➕ `concepts.json` added **head_of_rite**
+- ➕ `concepts.json` added **woodland_taxes**
+- ➕ `concepts.json` added **holding_district**
+- ➕ `concepts.json` added **holy_relic**
+- ➕ `concepts.json` added **house_ambition**
+- ➕ `concepts.json` added **ecclesiastic_incite_holy_war_interaction**
+- ➕ `concepts.json` added **ecumenical_council_innovator**
+- ➕ `concepts.json` added **the_christian_church_unstable**
+- ➕ `concepts.json` added **gg_involvement**
+- ➕ `concepts.json` added **known_tenet_status**
+- ➕ `concepts.json` added **landless_title**
+- ➕ `concepts.json` added **leading_title**
+- ➕ `concepts.json` added **league_cohesion**
+- ➕ `concepts.json` added **league_focus**
+- ➕ `concepts.json` added **lease_contract**
+- ➕ `concepts.json` added **company_sentiment_positive_actions**
+- ➕ `concepts.json` added **loan**
+- ➕ `concepts.json` added **lombard_league**
+- ➕ `concepts.json` added **luxury_contract**
+- ➕ `concepts.json` added **mainline_rite**
+- ➕ `concepts.json` added **make_a_request**
+- ➕ `concepts.json` added **maritime_taxes**
+- ➕ `concepts.json` added **market_balance**
+- ➕ `concepts.json` added **market_capital**
+- ➕ `concepts.json` added **trade_deficit**
+- … and 375 more changes in `concepts.json`
+- ✏️ `contracts.json` changed (2 → 2 entries)
+- ✏️ `council.json` changed (2 → 2 entries)
+- ✏️ `court_positions.json` changed (2 → 2 entries)
+- ➕ `cultures.json` added **novgorodian**
+- ➕ `cultures.json` added **remenkimi**
+- ➕ `cultures.json` added **arpitan**
+- ➕ `cultures.json` added **italo_norman**
+- ➕ `cultures.json` added **parsi**
+- ➕ `cultures.json` added **mustaarabi**
+- ➕ `cultures.json` added **serbi**
+- ➕ `cultures.json` added **geatish**
+- ➕ `cultures.json` added **icelandic**
+- ➕ `cultures.json` added **norse_gael**
+- ➕ `cultures.json` added **mandaean**
+- ✏️ `cultures.json` **bedouin**: traditions
+- ✏️ `cultures.json` **egyptian**: created, parents
+- ✏️ `cultures.json` **yemeni**: traditions
+- ✏️ `cultures.json` **bugis**: traditions
+- ✏️ `cultures.json` **swahili**: traditions
+- ✏️ `cultures.json` **baranis**: traditions
+- ✏️ `cultures.json` **butr**: traditions
+- ✏️ `cultures.json` **zaghawa**: traditions
+- ✏️ `cultures.json` **hausa**: traditions
+- ✏️ `cultures.json` **kanuri**: traditions
+- ✏️ `cultures.json` **bavarian**: traditions
+- ✏️ `cultures.json` **dutch**: traditions
+- ✏️ `cultures.json` **frisian**: ethos, traditions
+- ✏️ `cultures.json` **german**: traditions
+- ✏️ `cultures.json` **langobard**: traditions
+- ✏️ `cultures.json` **saxon**: traditions
+- ✏️ `cultures.json` **han**: traditions
+- ✏️ `cultures.json` **tamil**: traditions
+- ✏️ `cultures.json` **greek**: traditions
+- ✏️ `cultures.json` **frankish**: traditions
+- ✏️ `cultures.json` **norman**: traditions
+- ✏️ `cultures.json` **irish**: traditions
+- ✏️ `cultures.json` **gothic**: traditions
+- ✏️ `cultures.json` **malinke**: traditions
+- ✏️ `cultures.json` **macedonian**: traditions
+- ✏️ `cultures.json` **trojan**: traditions
+- ✏️ `cultures.json` **somali**: traditions
+- ✏️ `cultures.json` **hunnic**: traditions
+- ✏️ `cultures.json` **suebi**: traditions
+- ✏️ `cultures.json` **gujarati**: traditions
+- ✏️ `cultures.json` **marathi**: traditions
+- ✏️ `cultures.json` **baloch**: traditions
+- ✏️ `cultures.json` **khwarezmian**: traditions
+- ✏️ `cultures.json` **saka**: traditions
+- ✏️ `cultures.json` **sogdian**: traditions
+- ✏️ `cultures.json` **tajik**: traditions
+- ✏️ `cultures.json` **bavlim**: traditions
+- ✏️ `cultures.json` **sephardi**: traditions
+- ✏️ `cultures.json` **cisalpine**: traditions
+- ✏️ `cultures.json` **italian**: traditions
+- ✏️ `cultures.json` **lombard**: traditions
+- ✏️ `cultures.json` **roman**: traditions
+- ✏️ `cultures.json` **sardinian**: traditions
+- ✏️ `cultures.json` **sicilian**: traditions
+- ✏️ `cultures.json` **mogyer**: traditions
+- ✏️ `cultures.json` **buryat**: traditions
+- ✏️ `cultures.json` **kerait**: traditions
+- ✏️ `cultures.json` **khitan**: traditions
+- ✏️ `cultures.json` **mongol**: traditions
+- ✏️ `cultures.json` **naiman**: traditions
+- ✏️ `cultures.json` **oirat**: traditions
+- ✏️ `cultures.json` **shiwei**: traditions
+- ✏️ `cultures.json` **tuyuhun**: traditions
+- ✏️ `cultures.json` **ewe**: traditions
+- ✏️ `cultures.json` **danish**: created
+- ✏️ `cultures.json` **norwegian**: created
+- ✏️ `cultures.json` **swedish**: created
+- ✏️ `cultures.json` **tangut**: traditions
+- ✏️ `cultures.json` **gaw**: traditions
+- ✏️ `cultures.json` **songhai**: traditions
+- ✏️ `cultures.json` **soninke**: traditions
+- ✏️ `cultures.json` **bulgarian**: traditions
+- ✏️ `cultures.json` **assyrian**: traditions
+- ✏️ `cultures.json` **tocharian**: traditions
+- ✏️ `cultures.json` **avar**: traditions
+- ✏️ `cultures.json` **bashkir**: traditions
+- ✏️ `cultures.json` **bolghar**: traditions
+- ✏️ `cultures.json` **chuvash**: traditions
+- ✏️ `cultures.json` **cuman**: traditions
+- ✏️ `cultures.json` **kazak**: traditions
+- ✏️ `cultures.json` **khazar**: traditions
+- ✏️ `cultures.json` **kimek**: traditions
+- ✏️ `cultures.json` **kipchak**: traditions
+- ✏️ `cultures.json` **kirghiz**: traditions
+- ✏️ `cultures.json` **laktan**: traditions
+- ✏️ `cultures.json` **turkish**: traditions
+- ✏️ `cultures.json` **pecheneg**: traditions
+- ✏️ `cultures.json` **shatuo**: traditions
+- ✏️ `cultures.json` **turkmen**: traditions
+- ✏️ `cultures.json` **uriankhai**: traditions
+- ✏️ `cultures.json` **uyghur**: traditions
+- ✏️ `cultures.json` **yughur**: traditions
+- ✏️ `cultures.json` **vlach**: traditions
+- ✏️ `decisions.json` changed (2 → 2 entries)
+- ✏️ `defines.json` changed (2095 → 2356 entries)
+- 🌱 `districts.json` now tracked (6 entries)
+- ➕ `dlc.json` added **Coronations**
+- ➕ `dlc.json` added **By God Alone**
+- ➕ `dlc.json` added **Silk and Silver**
+- ➖ `dlc.json` removed **Community Pack 1 (free)**
+- ✏️ `dlc.json` **The Royal Court**: content, total
+- ✏️ `dlc.json` **Legacy of Persia**: content, total
+- ✏️ `dlc.json` **Legends of the Dead**: content, total
+- ✏️ `dlc.json` **Roads to Power**: content, total
+- ✏️ `dlc.json` **Wandering Nobles**: content, total
+- ✏️ `dlc.json` **Crowns of the World**: content, total
+- ✏️ `dlc.json` **Khans of the Steppe**: content, total
+- ✏️ `dlc.json` **All Under Heaven**: content, total
+- ✏️ `dlc.json` **Northern Lords**: content, total
+- ✏️ `dlc.json` **Tours & Tournaments**: content, total
+- ✏️ `dlc.json` **Wards & Wardens**: content, total
+- ✏️ `doctrines.json` changed (2 → 5 entries)
+- ✏️ `domiciles.json` changed (2 → 2 entries)
+- ✏️ `elections.json` changed (4 → 4 entries)
+- ✏️ `entities.json` changed (2 → 2 entries)
+- ✏️ `epidemics.json` **bubonic_plague**: infectionChance, intensities, levels
+- ✏️ `epidemics.json` **consumption**: infectionChance, intensities, levels
+- ✏️ `epidemics.json` **dysentery**: infectionChance, intensities, levels
+- ✏️ `epidemics.json` **ergotism**: infectionChance, intensities, levels
+- ✏️ `epidemics.json` **measles**: infectionChance, intensities, levels
+- ✏️ `epidemics.json` **smallpox**: infectionChance, intensities, levels
+- ✏️ `epidemics.json` **typhus**: infectionChance, intensities, levels
+- ✏️ `event-categories.json` changed (32 → 34 entries)
+- ➕ `factions.json` added **republic_popular_faction**
+- ➕ `factions.json` added **burgher_autonomy_faction**
+- ✏️ `factions.json` **imperial_policy_faction**: canJoin
+- ✏️ `factions.json` **independence_faction**: canJoin
+- ✏️ `factions.json` **liberty_faction**: desc, shortEffect
+- ✏️ `faiths.json` changed (3 → 6 entries)
+- ➕ `gamerules.json` added **branched_rite_frequency**
+- ➕ `gamerules.json` added **heresy_outbreak_frequency**
+- ➕ `gamerules.json` added **northeast_asia_nomad_region**
+- ➕ `gamerules.json` added **empire_faith_gate**
+- ➕ `gamerules.json` added **branched_rite_amount**
+- ✏️ `gamerules.json` **randomized_faiths**: name, options
+- ✏️ `gamerules.json` **custom_duchies**: default, options
+- ✏️ `gamerules.json` **regional_heresy**: options
+- ✏️ `gamerules.json` **title_creation_imperial_power_projection_targeting**: options
+- ✏️ `genetics.json` changed (6 → 6 entries)
+- ➕ `governments.json` added **merchant_government**
+- ➕ `governments.json` added **ecclesiastical_government**
+- ➕ `governments.json` added **monastic_holy_order_government**
+- ✏️ `governments.json` **administrative_government**: buildQueueReserve, characterModifiers, desc, flags, grantableVassalGovernments, rules, titleMaaSetup
+- ✏️ `governments.json` **landless_adventurer_government**: buildQueueReserve, characterModifiers, flags, grantableVassalGovernments, rules
+- ✏️ `governments.json` **clan_government**: buildQueueReserve, flags, grantableVassalGovernments
+- ✏️ `governments.json` **feudal_government**: buildQueueReserve, desc, flags, grantableVassalGovernments
+- ✏️ `governments.json` **herder_government**: buildQueueReserve, characterModifiers, flags, grantableVassalGovernments, rules
+- ✏️ `governments.json` **mandala_government**: buildQueueReserve, flags, grantableVassalGovernments
+- ✏️ `governments.json` **mercenary_government**: buildQueueReserve, flags, grantableVassalGovernments, rules
+- ✏️ `governments.json` **holy_order_government**: buildQueueReserve, flags, grantableVassalGovernments, name, rules
+- ✏️ `governments.json` **nomad_government**: buildQueueReserve, characterModifiers, desc, flags, grantableVassalGovernments, rules
+- ✏️ `governments.json` **republic_government**: adminTiers, buildQueueReserve, characterModifiers, desc, dlc, domicileType, flags, grantableVassalGovernments, isMechanicDefault, mechanicType, royalCourt, rules, titleMaaSetup, validHoldings
+- ✏️ `governments.json` **theocracy_government**: adminTiers, buildQueueReserve, desc, flags, grantableVassalGovernments, royalCourt, rules, sourceFile
+- ✏️ `governments.json` **celestial_government**: buildQueueReserve, characterModifiers, desc, flags, grantableVassalGovernments, mechanicType, rules
+- ✏️ `governments.json` **meritocratic_government**: buildQueueReserve, characterModifiers, desc, flags, grantableVassalGovernments, mechanicType, rules, titleMaaSetup
+- ✏️ `governments.json` **steppe_admin_government**: buildQueueReserve, characterModifiers, desc, flags, grantableVassalGovernments, mechanicType, rules, titleMaaSetup
+- ✏️ `governments.json` **japan_administrative_government**: buildQueueReserve, characterModifiers, desc, flags, grantableVassalGovernments, mechanicType, rules, titleMaaSetup
+- ✏️ `governments.json` **japan_feudal_government**: buildQueueReserve, dlc, flags, grantableVassalGovernments
+- ✏️ `governments.json` **tribal_government**: buildQueueReserve, characterModifiers, desc, flags, grantableVassalGovernments, rules
+- ✏️ `governments.json` **wanua_government**: buildQueueReserve, characterModifiers, desc, flags, grantableVassalGovernments, rules
+- ➕ `great_projects.json` added **minister_project_prosperity**
+- ➕ `great_projects.json` added **gdp_republic_civic_works**
+- ➕ `great_projects.json` added **gdp_republic_expand_great_plaza_project**
+- ➕ `great_projects.json` added **gdp_republic_great_plaza_basilica_project**
+- ➕ `great_projects.json` added **gdp_republic_great_plaza_civic_hospital_project**
+- ➕ `great_projects.json` added **gdp_republic_great_plaza_civic_ward_project**
+- ➕ `great_projects.json` added **gdp_republic_great_plaza_clock_tower_project**
+- ➕ `great_projects.json` added **gdp_republic_great_plaza_council_chamber_project**
+- ➕ `great_projects.json` added **gdp_republic_great_plaza_debt_office_project**
+- ➕ `great_projects.json` added **gdp_republic_great_plaza_fountain_project**
+- ➕ `great_projects.json` added **gdp_republic_great_plaza_league_chapter_house_project**
+- ➕ `great_projects.json` added **gdp_republic_great_plaza_loggia_project**
+- ➕ `great_projects.json` added **gdp_republic_great_plaza_podesta_residence_project**
+- ➕ `great_projects.json` added **gdp_republic_great_plaza_project**
+- ➕ `great_projects.json` added **gdp_republic_great_plaza_saint_sanctuary_project**
+- ➕ `great_projects.json` added **gdp_republic_great_plaza_statute_hall_project**
+- ➕ `great_projects.json` added **gdp_republic_great_plaza_weigh_house_project**
+- ➕ `great_projects.json` added **pam_cathedral_01**
+- ➕ `great_projects.json` added **pam_cathedral_02**
+- ➕ `great_projects.json` added **pam_cathedral_03**
+- ➕ `great_projects.json` added **pam_mass_rite_conversion**
+- ➖ `great_projects.json` removed **minister_project_development**
+- ✏️ `great_projects.json` **construct_great_barracks**: contributions, cost, requirements
+- ✏️ `great_projects.json` **grand_canals**: contributions, cost
+- ✏️ `great_projects.json` **great_wall**: contributions, cost, dlc, grantsBuildings
+- ✏️ `great_projects.json` **great_wall_extend_to_liaodong**: dlc, grantsBuildings
+- ✏️ `great_projects.json` **great_wall_extend_to_shanhai_pass**: dlc, grantsBuildings
+- ✏️ `great_projects.json` **mandala_capital_01**: contributions
+- ✏️ `great_projects.json` **mandala_capital_02**: dlc, grantsBuildings
+- ✏️ `great_projects.json` **mandala_capital_03**: dlc, grantsBuildings
+- ✏️ `great_projects.json` **mandala_capital_04**: contributions, dlc, grantsBuildings
+- ✏️ `great_projects.json` **mandala_capital_05**: dlc, grantsBuildings
+- ✏️ `great_projects.json` **strengthen_capital**: contributions, cost, grantsBuildings
+- ✏️ `great_projects.json` **grand_campaign_project**: contributions, cost
+- ✏️ `great_projects.json` **minister_compel_religious_uniformity**: constructionTime, contributions, cost
+- ✏️ `great_projects.json` **minister_project_conduct_census**: contributions, cost
+- ✏️ `great_projects.json` **minister_project_culture**: constructionTime, contributions, cost
+- ✏️ `great_projects.json` **minister_project_establish_control**: contributions, cost
+- ✏️ `great_projects.json` **minister_project_train_troops**: contributions, cost
+- ✏️ `holdings.json` **castle_holding**: buildings, districts, primaryBuilding, primaryDistrict
+- ✏️ `holdings.json` **tribal_holding**: buildings, districts, parameters, primaryBuilding, primaryDistrict
+- ✏️ `holdings.json` **city_holding**: buildings, districts, primaryBuilding, primaryDistrict
+- ✏️ `holdings.json` **church_holding**: buildings, districts, primaryBuilding, primaryDistrict
+- ✏️ `holdings.json` **temple_citadel_holding**: buildings, districts, primaryBuilding, primaryDistrict
+- ✏️ `holdings.json` **nomad_holding**: districts, parameters, primaryBuilding, primaryDistrict
+- ✏️ `holdings.json` **herder_holding**: districts, parameters, primaryBuilding, primaryDistrict
+- ➕ `holy_sites.json` added **site_of_ancestors**
+- ➕ `holy_sites.json` added **site_of_communion**
+- ➕ `holy_sites.json` added **site_of_healing**
+- ➕ `holy_sites.json` added **site_of_martyrs**
+- ➕ `holy_sites.json` added **site_of_miracles**
+- ➕ `holy_sites.json` added **site_of_prophecy**
+- ➕ `holy_sites.json` added **site_of_revelation**
+- ➕ `holy_sites.json` added **site_of_seclusion**
+- ➕ `holy_sites.json` added **site_of_valor**
+- ➕ `holy_sites.json` added **site_of_wisdom**
+- ➖ `holy_sites.json` removed **armagh**
+- ➖ `holy_sites.json` removed **ava**
+- ➖ `holy_sites.json` removed **awa**
+- ➖ `holy_sites.json` removed **badrinath**
+- ➖ `holy_sites.json` removed **bulguksa**
+- ➖ `holy_sites.json` removed **bumiayu**
+- ➖ `holy_sites.json` removed **cheongju**
+- ➖ `holy_sites.json` removed **danai**
+- ➖ `holy_sites.json` removed **dongting**
+- ➖ `holy_sites.json` removed **gaeseong**
+- ➖ `holy_sites.json` removed **goseong**
+- ➖ `holy_sites.json` removed **hangzhou**
+- ➖ `holy_sites.json` removed **heiankyo**
+- ➖ `holy_sites.json` removed **donggang**
+- ➖ `holy_sites.json` removed **jianchang**
+- ➖ `holy_sites.json` removed **colonea**
+- ➖ `holy_sites.json` removed **lejre**
+- ➖ `holy_sites.json` removed **linzi**
+- ➖ `holy_sites.json` removed **kusinagara**
+- ➖ `holy_sites.json` removed **magadha**
+- ➖ `holy_sites.json` removed **mogao**
+- ➖ `holy_sites.json` removed **haguro**
+- ➖ `holy_sites.json` removed **haku**
+- ➖ `holy_sites.json` removed **hiei**
+- ➖ `holy_sites.json` removed **ishizuchi**
+- ➖ `holy_sites.json` removed **mount_kunyu**
+- ➖ `holy_sites.json` removed **koya**
+- ➖ `holy_sites.json` removed **putuo**
+- ➖ `holy_sites.json` removed **emei**
+- ➖ `holy_sites.json` removed **jiuhua**
+- ➖ `holy_sites.json` removed **nanhua**
+- ➖ `holy_sites.json` removed **napata**
+- ➖ `holy_sites.json` removed **prambanan**
+- ➖ `holy_sites.json` removed **preah_vihear**
+- ➖ `holy_sites.json` removed **puri**
+- ➖ `holy_sites.json` removed **qom**
+- ➖ `holy_sites.json` removed **quanzhou**
+- ➖ `holy_sites.json` removed **quzhou**
+- ➖ `holy_sites.json` removed **sagya**
+- ➖ `holy_sites.json` removed **sarasvati**
+- ➖ `holy_sites.json` removed **shaolin**
+- ➖ `holy_sites.json` removed **shicheng**
+- ➖ `holy_sites.json` removed **shringeri**
+- ➖ `holy_sites.json` removed **siffa**
+- ➖ `holy_sites.json` removed **sittaung**
+- ➖ `holy_sites.json` removed **sparta**
+- ➖ `holy_sites.json` removed **suzhou**
+- ➖ `holy_sites.json` removed **tate**
+- ➖ `holy_sites.json` removed **turpan**
+- ➖ `holy_sites.json` removed **wehale**
+- ➖ `holy_sites.json` removed **yamama**
+- ➖ `holy_sites.json` removed **zeeland**
+- ➖ `holy_sites.json` removed **zhuolu**
+- ✏️ `holy_sites.json` **adur_burzen_mihr**: countyModifiersScaled, dynamic, faithModifiers, faithModifiersScaled, holderModifiers, modifiers
+- ✏️ `holy_sites.json` **adur_farnbag**: countyModifiersScaled, dynamic, faithModifiers, faithModifiersScaled, holderModifiers, modifiers
+- ✏️ `holy_sites.json` **takht-e_soleyman**: countyModifiersScaled, dynamic, faithModifiers, faithModifiersScaled, holderModifiers, modifiers
+- ✏️ `holy_sites.json` **ahvaz**: countyModifiersScaled, dynamic, faithModifiers, faithModifiersScaled, holderModifiers, modifiers
+- ✏️ `holy_sites.json` **ajanta**: countyModifiersScaled, dynamic, faithModifiers, faithModifiersScaled, holderModifiers, modifiers
+- ✏️ `holy_sites.json` **akkel**: countyModifiersScaled, dynamic, faithModifiers, faithModifiersScaled, holderModifiers, modifiers
+- ✏️ `holy_sites.json` **aksum**: countyModifiersScaled, dynamic, faithModifiers, faithModifiersScaled, holderModifiers, modifiers
+- ✏️ `holy_sites.json` **albi**: countyModifiersScaled, dynamic, faithModifiers, faithModifiersScaled, holderModifiers, modifiers
+- ✏️ `holy_sites.json` **alexandria**: countyModifiersScaled, dynamic, faithModifiers, faithModifiersScaled, holderModifiers, modifiers
+- ✏️ `holy_sites.json` **alxa**: countyModifiersScaled, dynamic, faithModifiers, faithModifiersScaled, holderModifiers, modifiers
+- ✏️ `holy_sites.json` **amandee**: countyModifiersScaled, dynamic, faithModifiers, faithModifiersScaled, holderModifiers, modifiers
+- ✏️ `holy_sites.json` **amaravati**: countyModifiersScaled, dynamic, faithModifiers, faithModifiersScaled, holderModifiers, modifiers
+- ✏️ `holy_sites.json` **amparita**: countyModifiersScaled, dynamic, faithModifiers, faithModifiersScaled, holderModifiers, modifiers
+- ✏️ `holy_sites.json` **aneto**: countyModifiersScaled, dynamic, faithModifiers, faithModifiersScaled, holderModifiers, modifiers
+- ✏️ `holy_sites.json` **angkor**: countyModifiersScaled, dynamic, faithModifiers, faithModifiersScaled, holderModifiers, modifiers
+- ✏️ `holy_sites.json` **ani**: countyModifiersScaled, dynamic, faithModifiers, faithModifiersScaled, holderModifiers, modifiers
+- ✏️ `holy_sites.json` **anlong**: countyModifiersScaled, dynamic, faithModifiers, faithModifiersScaled, holderModifiers, modifiers
+- ✏️ `holy_sites.json` **antioch**: countyModifiersScaled, dynamic, faithModifiers, faithModifiersScaled, holderModifiers, modifiers
+- ✏️ `holy_sites.json` **ar_kol**: countyModifiersScaled, dynamic, faithModifiers, faithModifiersScaled, holderModifiers, modifiers
+- ✏️ `holy_sites.json` **aswan**: countyModifiersScaled, dynamic, faithModifiers, faithModifiersScaled, holderModifiers, modifiers
+- ✏️ `holy_sites.json` **atamasthana**: countyModifiersScaled, dynamic, faithModifiers, faithModifiersScaled, holderModifiers, modifiers
+- ✏️ `holy_sites.json` **athens**: countyModifiersScaled, dynamic, faithModifiers, faithModifiersScaled, holderModifiers, modifiers
+- ✏️ `holy_sites.json` **awkar**: countyModifiersScaled, dynamic, faithModifiers, faithModifiersScaled, holderModifiers, modifiers
+- ✏️ `holy_sites.json` **ayodhya**: countyModifiersScaled, dynamic, faithModifiers, faithModifiersScaled, holderModifiers, modifiers
+- ✏️ `holy_sites.json` **baalbek**: countyModifiersScaled, dynamic, faithModifiers, faithModifiersScaled, holderModifiers, modifiers
+- ✏️ `holy_sites.json` **babylon**: countyModifiersScaled, dynamic, faithModifiers, faithModifiersScaled, holderModifiers, modifiers
+- ✏️ `holy_sites.json` **badd**: countyModifiersScaled, dynamic, faithModifiers, faithModifiersScaled, holderModifiers, modifiers
+- ✏️ `holy_sites.json` **baghdad**: countyModifiersScaled, dynamic, faithModifiers, faithModifiersScaled, holderModifiers, modifiers
+- ✏️ `holy_sites.json` **bahrein**: countyModifiersScaled, dynamic, faithModifiers, faithModifiersScaled, holderModifiers, modifiers
+- ✏️ `holy_sites.json` **balkh**: countyModifiersScaled, dynamic, faithModifiers, faithModifiersScaled, holderModifiers, modifiers
+- ✏️ `holy_sites.json` **bantey_srei**: countyModifiersScaled, dynamic, faithModifiers, faithModifiersScaled, holderModifiers, modifiers
+- ✏️ `holy_sites.json` **barlad**: countyModifiersScaled, dynamic, faithModifiers, faithModifiersScaled, holderModifiers, modifiers
+- ✏️ `holy_sites.json` **basra**: countyModifiersScaled, dynamic, faithModifiers, faithModifiersScaled, holderModifiers, modifiers
+- ✏️ `holy_sites.json` **bayon**: countyModifiersScaled, dynamic, faithModifiers, faithModifiersScaled, holderModifiers, modifiers
+- ✏️ `holy_sites.json` **beirut**: countyModifiersScaled, dynamic, faithModifiers, faithModifiersScaled, holderModifiers, modifiers
+- ✏️ `holy_sites.json` **bianliang**: countyModifiersScaled, dynamic, faithModifiers, faithModifiersScaled, holderModifiers, modifiers
+- ✏️ `holy_sites.json` **biri_larosa**: countyModifiersScaled, dynamic, faithModifiers, faithModifiersScaled, holderModifiers, modifiers
+- ✏️ `holy_sites.json` **bodh_gaya**: countyModifiersScaled, dynamic, faithModifiers, faithModifiersScaled, holderModifiers, modifiers
+- ✏️ `holy_sites.json` **bono**: countyModifiersScaled, dynamic, faithModifiers, faithModifiersScaled, holderModifiers, modifiers
+- ✏️ `holy_sites.json` **bordeaux**: countyModifiersScaled, dynamic, faithModifiers, faithModifiersScaled, holderModifiers, modifiers
+- ✏️ `holy_sites.json` **borobudur**: countyModifiersScaled, dynamic, faithModifiers, faithModifiersScaled, holderModifiers, modifiers
+- ✏️ `holy_sites.json` **bost**: countyModifiersScaled, dynamic, faithModifiers, faithModifiersScaled, holderModifiers, modifiers
+- ✏️ `holy_sites.json` **braslau**: countyModifiersScaled, dynamic, faithModifiers, faithModifiersScaled, holderModifiers, modifiers
+- ✏️ `holy_sites.json` **bupaya**: countyModifiersScaled, dynamic, faithModifiers, faithModifiersScaled, holderModifiers, modifiers
+- ✏️ `holy_sites.json` **buru-sula**: countyModifiersScaled, dynamic, faithModifiers, faithModifiersScaled, holderModifiers, modifiers
+- ✏️ `holy_sites.json` **kent**: countyModifiersScaled, dynamic, faithModifiers, faithModifiersScaled, holderModifiers, modifiers
+- ✏️ `holy_sites.json` **cao_bang**: countyModifiersScaled, dynamic, faithModifiers, faithModifiersScaled, holderModifiers, modifiers
+- ✏️ `holy_sites.json` **cartagena**: countyModifiersScaled, dynamic, faithModifiers, faithModifiersScaled, holderModifiers, modifiers
+- ✏️ `holy_sites.json` **carthage**: countyModifiersScaled, dynamic, faithModifiers, faithModifiersScaled, holderModifiers, modifiers
+- ✏️ `holy_sites.json` **carthage_adoptionist**: countyModifiersScaled, dynamic, faithModifiers, faithModifiersScaled, holderModifiers, modifiers
+- ✏️ `holy_sites.json` **chakla**: countyModifiersScaled, dynamic, faithModifiers, faithModifiersScaled, holderModifiers, modifiers
+- ✏️ `holy_sites.json` **chang_an**: countyModifiersScaled, dynamic, faithModifiers, faithModifiersScaled, holderModifiers, modifiers
+- ✏️ `holy_sites.json` **chupka**: countyModifiersScaled, dynamic, faithModifiers, faithModifiersScaled, holderModifiers, modifiers
+- ✏️ `holy_sites.json` **cologne**: countyModifiersScaled, dynamic, faithModifiers, faithModifiersScaled, holderModifiers, modifiers
+- ✏️ `holy_sites.json` **constantinople**: countyModifiersScaled, dynamic, faithModifiers, faithModifiersScaled, holderModifiers, modifiers
+- ✏️ `holy_sites.json` **cordoba**: countyModifiersScaled, dynamic, faithModifiers, faithModifiersScaled, holderModifiers, modifiers
+- ✏️ `holy_sites.json` **cotabato**: countyModifiersScaled, dynamic, faithModifiers, faithModifiersScaled, holderModifiers, modifiers
+- … and 216 more changes in `holy_sites.json`
+- ✏️ `house.json` changed (6 → 6 entries)
+- ➕ `innovations.json` added **innovation_pattern_welding**
+- ➕ `innovations.json` added **innovation_calicoes_and_muslin**
+- ➕ `innovations.json` added **innovation_carpet_weaving**
+- ➕ `innovations.json` added **innovation_damascus_steel**
+- ➕ `innovations.json` added **innovation_lacquerware**
+- ➕ `innovations.json` added **innovation_mead_brewing**
+- ➕ `innovations.json` added **innovation_prosperity_01**
+- ➕ `innovations.json` added **innovation_stockfisk**
+- ➕ `innovations.json` added **innovation_riveted_mail**
+- ➕ `innovations.json` added **innovation_coppicing**
+- ➕ `innovations.json` added **innovation_craft_ordinances**
+- ➕ `innovations.json` added **innovation_heavy_plow**
+- ➕ `innovations.json` added **innovation_monasticism**
+- ➕ `innovations.json` added **innovation_prospecting**
+- ➕ `innovations.json` added **innovation_prosperity_02**
+- ➕ `innovations.json` added **innovation_tea_culture**
+- ➕ `innovations.json` added **innovation_coat_of_plates**
+- ➕ `innovations.json` added **innovation_blast_furnaces**
+- ➕ `innovations.json` added **innovation_glassmaking**
+- ➕ `innovations.json` added **innovation_merchant_law**
+- ➕ `innovations.json` added **innovation_prosperity_03**
+- ➕ `innovations.json` added **innovation_vaulting**
+- ➕ `innovations.json` added **innovation_tempered_steel**
+- ➕ `innovations.json` added **innovation_agronomy**
+- ➕ `innovations.json` added **innovation_bricks**
+- ➕ `innovations.json` added **innovation_deep_mining**
+- ➕ `innovations.json` added **innovation_pilot_books**
+- ➕ `innovations.json` added **innovation_prosperity_04**
+- ➕ `innovations.json` added **innovation_putting_out_system**
+- ➖ `innovations.json` removed **innovation_development_01**
+- ➖ `innovations.json` removed **innovation_development_02**
+- ➖ `innovations.json` removed **innovation_development_03**
+- ➖ `innovations.json` removed **innovation_development_04**
+- ✏️ `innovations.json` **innovation_barracks**: effects
+- ✏️ `innovations.json` **innovation_catapult**: effects
+- ✏️ `innovations.json` **innovation_composite_crossbow**: parameters
+- ✏️ `innovations.json` **innovation_elephantry**: parameters, unlocks
+- ✏️ `innovations.json` **innovation_lacquered_armor**: parameters
+- ✏️ `innovations.json` **innovation_motte**: effects
+- ✏️ `innovations.json` **innovation_quilted_armor**: modifiers
+- ✏️ `innovations.json` **innovation_tiefutu**: parameters
+- ✏️ `innovations.json` **innovation_varangian_adventurers**: modifiers
+- ✏️ `innovations.json` **innovation_war_camels**: parameters, unlocks
+- ✏️ `innovations.json` **innovation_all_things**: effects
+- ✏️ `innovations.json` **innovation_block_printing**: modifiers, parameters
+- ✏️ `innovations.json` **innovation_champa_rice**: modifiers, parameters
+- ✏️ `innovations.json` **innovation_city_planning**: effects, modifiers, unlocks
+- ✏️ `innovations.json` **innovation_coking**: modifiers, parameters
+- ✏️ `innovations.json` **innovation_crop_rotation**: effects, modifiers
+- ✏️ `innovations.json` **innovation_cupellation**: modifiers, parameters
+- ✏️ `innovations.json` **innovation_currency_01**: modifiers
+- ✏️ `innovations.json` **innovation_dragon_kiln**: modifiers, parameters
+- ✏️ `innovations.json` **innovation_ledger**: effects, modifiers
+- ✏️ `innovations.json` **innovation_pharmacopoeia**: modifiers, parameters
+- ✏️ `innovations.json` **innovation_plenary_assemblies**: effects, unlocks
+- ✏️ `innovations.json` **innovation_sericulture**: modifiers, parameters
+- ✏️ `innovations.json` **innovation_waterworks**: modifiers, parameters
+- ✏️ `innovations.json` **innovation_wootz_steel**: effects
+- ✏️ `innovations.json` **innovation_arched_saddle**: modifiers
+- ✏️ `innovations.json` **innovation_battlements**: effects, modifiers
+- ✏️ `innovations.json` **innovation_burhs**: effects, parameters
+- ✏️ `innovations.json` **innovation_fire_medicine**: effects, modifiers, parameters
+- ✏️ `innovations.json` **innovation_ghilman**: modifiers
+- ✏️ `innovations.json` **innovation_grenades**: parameters
+- ✏️ `innovations.json` **innovation_horseshoes**: modifiers
+- ✏️ `innovations.json` **innovation_house_soldiers**: effects
+- ✏️ `innovations.json` **innovation_mangonel**: effects
+- ✏️ `innovations.json` **fp3_innovation_mural_sextant**: modifiers
+- ✏️ `innovations.json` **innovation_armilary_sphere**: desc, effects, icon, modifiers, name
+- ✏️ `innovations.json` **innovation_baliffs**: effects, modifiers
+- ✏️ `innovations.json` **innovation_bulkheads**: modifiers, parameters
+- ✏️ `innovations.json` **innovation_compass**: parameters
+- ✏️ `innovations.json` **innovation_currency_02**: effects, modifiers
+- ✏️ `innovations.json` **innovation_double_entry_bookkeeping**: modifiers, parameters
+- ✏️ `innovations.json` **innovation_hereditary_rule**: effects, modifiers
+- ✏️ `innovations.json` **innovation_manorialism**: effects, modifiers
+- ✏️ `innovations.json` **innovation_royal_prerogative**: effects
+- ✏️ `innovations.json` **innovation_advanced_bowmaking**: effects, modifiers, unlocks
+- ✏️ `innovations.json` **innovation_castle_baileys**: effects
+- ✏️ `innovations.json` **innovation_hoardings**: effects
+- ✏️ `innovations.json` **innovation_knighthood**: effects
+- ✏️ `innovations.json` **innovation_men_at_arms**: effects
+- ✏️ `innovations.json` **innovation_trebuchet**: effects
+- ✏️ `innovations.json` **innovation_currency_03**: effects, modifiers
+- ✏️ `innovations.json` **innovation_divine_right**: modifiers
+- ✏️ `innovations.json` **innovation_east_settling**: icon, modifiers
+- ✏️ `innovations.json` **innovation_guilds**: effects, icon, modifiers, unlocks
+- ✏️ `innovations.json` **innovation_heraldry**: effects
+- ✏️ `innovations.json` **innovation_land_grants**: effects
+- ✏️ `innovations.json` **innovation_muladi**: modifiers
+- ✏️ `innovations.json` **innovation_sanitation**: dlc
+- ✏️ `innovations.json` **innovation_seigneurialism**: modifiers
+- ✏️ `innovations.json` **innovation_windmills**: desc, effects, modifiers, name, unlocks
+- ✏️ `innovations.json` **innovation_condottieri**: effects, modifiers, region, regionName, requirements
+- ✏️ `innovations.json` **innovation_gunpowder**: effects, parameters
+- ✏️ `innovations.json` **innovation_machicolations**: effects
+- ✏️ `innovations.json` **innovation_plate_armor**: modifiers, unlocks
+- ✏️ `innovations.json` **innovation_royal_armory**: effects
+- ✏️ `innovations.json` **innovation_standing_armies**: effects, modifiers
+- ✏️ `innovations.json` **fp3_innovation_fritware**: modifiers
+- ✏️ `innovations.json` **innovation_court_officials**: effects, modifiers
+- ✏️ `innovations.json` **innovation_cranes**: effects, modifiers
+- ✏️ `innovations.json` **innovation_currency_04**: effects, modifiers
+- ✏️ `innovations.json` **innovation_ermine_cloaks**: effects, modifiers
+- ✏️ `innovations.json` **innovation_noblesse_oblige**: effects
+- ✏️ `innovations.json` **innovation_wierdijks**: modifiers
+- ➕ `interactions.json` added **purchase_sacred_land_interaction**
+- ➕ `interactions.json` added **start_patrician_promote_interaction**
+- ➕ `interactions.json` added **gdp_petition_governorate_interaction**
+- ➕ `interactions.json` added **gdp_republic_promote_for_title_interaction**
+- ➕ `interactions.json` added **start_patrician_slander_interaction**
+- ➕ `interactions.json` added **ecclesiastic_grant_claim_interaction**
+- ➕ `interactions.json` added **religious_head_call_to_war_interaction**
+- ➕ `interactions.json` added **request_league_leadership_interaction**
+- ➕ `interactions.json` added **commission_trade_route_interaction**
+- ➕ `interactions.json` added **gdp_merchant_seize_realm_call_debtor_interaction**
+- ➕ `interactions.json` added **demand_repayment_interaction**
+- ➕ `interactions.json` added **designate_theocratic_heir_interaction**
+- ➕ `interactions.json` added **expel_rival_leagues_interaction**
+- ➕ `interactions.json` added **fire_puppet_interaction**
+- ➕ `interactions.json` added **force_assembly_vote_interaction**
+- ➕ `interactions.json` added **gift_claim_interaction**
+- ➕ `interactions.json` added **grant_merchant_charter_interaction**
+- ➕ `interactions.json` added **grant_toll_exception_interaction**
+- ➕ `interactions.json` added **ecclesiastic_incite_claim_war_interaction**
+- ➕ `interactions.json` added **ecclesiastic_incite_holy_war_interaction**
+- ➕ `interactions.json` added **merchant_join_republic_interaction**
+- ➕ `interactions.json` added **loan_money_interaction**
+- ➕ `interactions.json` added **merchant_patron_request_interaction**
+- ➕ `interactions.json` added **merge_company_interaction**
+- ➕ `interactions.json` added **request_trade_monopoly_for_character_interaction**
+- ➕ `interactions.json` added **request_trade_monopoly_for_republic_interaction**
+- ➕ `interactions.json` added **request_trade_monopoly_for_trade_league_interaction**
+- ➕ `interactions.json` added **ecclesiastic_transfer_land_interaction**
+- ➕ `interactions.json` added **gdp_republic_aquire_land_interaction**
+- ➕ `interactions.json` added **oust_trade_post_interaction**
+- ➕ `interactions.json` added **gdp_pay_off_debt_for_hook_interaction**
+- ➕ `interactions.json` added **merchant_ransom_interaction**
+- ➕ `interactions.json` added **merchant_procure_estate_interaction**
+- ➕ `interactions.json` added **make_external_clerical_puppet_interaction**
+- ➕ `interactions.json` added **make_clerical_puppet_interaction**
+- ➕ `interactions.json` added **make_external_ruler_puppet_interaction**
+- ➕ `interactions.json` added **merchant_purchase_land_interaction**
+- ➕ `interactions.json` added **remove_from_trade_league_interaction**
+- ➕ `interactions.json` added **request_toll_exception_interaction**
+- ➕ `interactions.json` added **request_trade_league_membership_interaction**
+- ➕ `interactions.json` added **request_trade_post_interaction**
+- ➕ `interactions.json` added **gdp_request_trade_support_interaction**
+- ➕ `interactions.json` added **rescind_trade_monopoly_interaction**
+- ➕ `interactions.json` added **revoke_merchant_charter_interaction**
+- ➕ `interactions.json` added **revoke_toll_exception_interaction**
+- ➕ `interactions.json` added **secure_assembly_vote_interaction**
+- ➕ `interactions.json` added **sell_claim_interaction**
+- ➕ `interactions.json` added **share_market_insights_interaction**
+- ➕ `interactions.json` added **share_market_competitiveness_interaction**
+- ➕ `interactions.json` added **gdp_trade_post_solicit_alliance_interaction**
+- ➕ `interactions.json` added **merchant_sponsor_construction_interaction**
+- ➕ `interactions.json` added **sponsor_war_interaction**
+- ➕ `interactions.json` added **increase_theocratic_heir_candidacy**
+- ➕ `interactions.json` added **gdp_sway_to_approve_decree_interaction**
+- ➕ `interactions.json` added **merchant_trade_hook_interaction**
+- ➕ `interactions.json` added **agitate_civic_unrest_interaction**
+- ➕ `interactions.json` added **start_hostile_takeover_interaction**
+- ➕ `interactions.json` added **start_gdp_disrupt_trade_routes_interaction**
+- ➕ `interactions.json` added **evict_merchant_interaction**
+- ➕ `interactions.json` added **start_patrician_find_secrets_interaction**
+- ➕ `interactions.json` added **gdp_incite_unrest_start_interaction**
+- ➕ `interactions.json` added **gdp_indict_before_assembly_interaction**
+- ➕ `interactions.json` added **leverage_charter_authority_interaction**
+- ➕ `interactions.json` added **gg_banish_guelph_ghibelline_family_interaction**
+- ➕ `interactions.json` added **put_on_notice_interaction**
+- ➕ `interactions.json` added **petition_head_of_faith_excommunication_setup_interaction**
+- ➕ `interactions.json` added **steal_market_insights_interaction**
+- ➕ `interactions.json` added **start_steal_trade_post_interaction**
+- ➕ `interactions.json` added **influence_house_ambition_interaction**
+- ➕ `interactions.json` added **offer_bedside_support_interaction**
+- ➕ `interactions.json` added **filial_piety_request_child_gold_interaction**
+- ➕ `interactions.json` added **sell_artifact_interaction**
+- ➕ `interactions.json` added **study_faith_interaction**
+- ➕ `interactions.json` added **merchant_adopt_interaction**
+- ➕ `interactions.json` added **appoint_cardinal_interaction**
+- ➕ `interactions.json` added **pam_ask_subordinates_for_gold_interaction**
+- ➕ `interactions.json` added **sanctify_artifact_interaction**
+- ➕ `interactions.json` added **ecclesiastical_de_jure_shifting_interaction**
+- ➕ `interactions.json` added **request_unformed_title_interaction**
+- ➕ `interactions.json` added **ecclesiastical_de_jure_shifting_grant_interaction**
+- ➕ `interactions.json` added **exaltation_of_pain_wound_courtier_interaction**
+- ➕ `interactions.json` added **ecclesiastical_bestow_title_interaction**
+- ➕ `interactions.json` added **lease_title_to_existing_monastic_order_interaction**
+- ➕ `interactions.json` added **buy_ecclesiastical_title_interaction**
+- ➕ `interactions.json` added **ecclesiastic_consecrate_kingdom_interaction**
+- ➕ `interactions.json` added **convert_on_reform_interaction**
+- ➕ `interactions.json` added **create_new_ecclesiastical_title_interaction**
+- ➕ `interactions.json` added **demand_church_succession_religious_head_interaction**
+- ➕ `interactions.json` added **request_clerical_chastity_interaction**
+- ➕ `interactions.json` added **demand_child_as_monk_interaction**
+- ➕ `interactions.json` added **demand_church_succession_interaction**
+- ➕ `interactions.json` added **demand_divorce_interaction**
+- ➕ `interactions.json` added **pam_destroy_monastic_order_interaction**
+- ➕ `interactions.json` added **monastic_donation_interaction**
+- ➕ `interactions.json` added **pam_evangelize_personal_tenet_interaction**
+- ➕ `interactions.json` added **pam_ai_evangelize_personal_tenet_interaction**
+- ➕ `interactions.json` added **expand_ecclesiastical_title_interaction**
+- ➕ `interactions.json` added **pam_give_holy_myron_interaction**
+- ➕ `interactions.json` added **give_cardinal_order_interaction**
+- ➕ `interactions.json` added **grant_ecclesiastical_title_interaction**
+- ➕ `interactions.json` added **grant_pope_blessing_interaction**
+- ➕ `interactions.json` added **increase_papabile_score_interaction**
+- ➕ `interactions.json` added **influence_clerical_candidacy_interaction**
+- ➕ `interactions.json` added **influence_papal_vote_interaction**
+- ➕ `interactions.json` added **influence_head_of_faith_candidacy_interaction**
+- ➕ `interactions.json` added **pam_clergy_legitimize_bastard_interaction**
+- ➕ `interactions.json` added **merge_new_ecclesiastical_title_interaction**
+- ➕ `interactions.json` added **spiritual_counsel_interaction**
+- ➕ `interactions.json` added **petition_antipope_gold_interaction**
+- ➕ `interactions.json` added **request_legitimacy_interaction**
+- ➕ `interactions.json` added **monastic_espouse_beliefs_interaction**
+- ➕ `interactions.json` added **pam_reaffirm_doctrine_interaction**
+- ➕ `interactions.json` added **pam_reform_order_interaction**
+- ➕ `interactions.json` added **replace_ecclesiastical_title_holder_interaction**
+- ➕ `interactions.json` added **request_clerical_elector_title_interaction**
+- ➕ `interactions.json` added **request_court_chaplain_cardinalate_interaction**
+- ➕ `interactions.json` added **request_ecclesiastical_treasury_interaction**
+- ➕ `interactions.json` added **strengthen_claim_interaction**
+- ➕ `interactions.json` added **request_ecclesiastical_title_creation_interaction**
+- ➕ `interactions.json` added **request_ecclesiastical_title_expansion_interaction**
+- … and 256 more changes in `interactions.json`
+- ✏️ `kingdom.json` changed (2 → 2 entries)
+- ➕ `laws.json` added **church_authority**
+- ➕ `laws.json` added **company_size**
+- ➕ `laws.json` added **company_purpose**
+- ➕ `laws.json` added **budget_allocation_cardinal_law**
+- ➕ `laws.json` added **church_benefices_law**
+- ➕ `laws.json` added **republic_type**
+- ➕ `laws.json` added **republic_tier_law**
+- ➕ `laws.json` added **republic_assembly_composition_laws**
+- ➕ `laws.json` added **republic_assembly_authority_laws**
+- ➕ `laws.json` added **republic_assembly_voting_thresholds**
+- ➕ `laws.json` added **republic_assembly_term_length_laws**
+- ➕ `laws.json` added **republic_senate_size_laws**
+- ➕ `laws.json` added **republic_war_declaration**
+- ➕ `laws.json` added **republic_army_organization**
+- ➕ `laws.json` added **republic_banishment**
+- ➕ `laws.json` added **republic_execution**
+- ➕ `laws.json` added **republic_title_revocation**
+- ➕ `laws.json` added **republic_retract_vassal**
+- ➕ `laws.json` added **republic_vassal_refusal**
+- ➕ `laws.json` added **republic_trade_specialization**
+- ➕ `laws.json` added **republic_trade_pricing**
+- ➕ `laws.json` added **republic_end_term_laws**
+- ✏️ `laws.json` **crown_authority**: governmentFlags, groupRequirements, laws, sourceFile
+- ✏️ `laws.json` **tribal_authority**: governmentFlags, groupRequirements, laws, sourceFile
+- ✏️ `laws.json` **camp_purpose**: flags, governmentFlags, groupRequirements, laws, sourceFile
+- ✏️ `laws.json` **imperial_bureaucracy**: governmentFlags, groupRequirements, laws, sourceFile
+- ✏️ `laws.json` **nomadic_authority**: flags, governmentFlags, groupRequirements, laws, sourceFile
+- ✏️ `laws.json` **celestial_bureaucracy**: governmentFlags, groupRequirements, laws, sourceFile
+- ✏️ `laws.json` **mandala_decree**: governmentFlags, groupRequirements, laws, sourceFile
+- ✏️ `laws.json` **meritocratic_bureaucracy**: governmentFlags, groupRequirements, laws, name, sourceFile
+- ✏️ `laws.json` **japanese_bureaucracy**: governmentFlags, groupRequirements, laws, sourceFile
+- ✏️ `laws.json` **crowned_laws**: governmentFlags, groupRequirements, laws, sourceFile
+- ✏️ `laws.json` **succession_order_laws**: flags, governmentFlags, groupRequirements, laws, sourceFile
+- ✏️ `laws.json` **succession_gender_laws**: flags, governmentFlags, groupRequirements, laws, sourceFile
+- ✏️ `laws.json` **succession_faith**: governmentFlags, groupRequirements, laws, sourceFile
+- ✏️ `laws.json` **succession_rel_head**: governmentFlags, groupRequirements, laws, sourceFile
+- ✏️ `laws.json` **title_succession_laws**: governmentFlags, groupRequirements, laws, sourceFile
+- ✏️ `laws.json` **province_war_law**: governmentFlags, groupRequirements, laws, sourceFile
+- ✏️ `laws.json` **province_border_law**: governmentFlags, groupRequirements, laws, sourceFile
+- ✏️ `laws.json` **celestial_army_liege_law**: governmentFlags, groupRequirements, laws, sourceFile
+- ✏️ `laws.json` **celestial_army_vassal_law**: governmentFlags, groupRequirements, laws, sourceFile
+- ✏️ `laws.json` **celestial_retirement_law**: governmentFlags, groupRequirements, laws, sourceFile
+- ✏️ `laws.json` **border_wars_laws**: governmentFlags, groupRequirements, sourceFile
+- ✏️ `laws.json` **grand_secretariat_laws**: governmentFlags, groupRequirements, sourceFile
+- ✏️ `laws.json` **candidate_score_laws**: governmentFlags, groupRequirements, sourceFile
+- ✏️ `laws.json` **budget_allocation_salary_law**: governmentFlags, groupRequirements, laws, sourceFile
+- ✏️ `laws.json` **budget_allocation_ministry_law**: governmentFlags, groupRequirements, laws, sourceFile
+- ✏️ `laws.json` **budget_allocation_military_law**: governmentFlags, groupRequirements, laws, sourceFile
+- ✏️ `laws.json` **imperial_policy_laws**: governmentFlags, groupRequirements, laws, sourceFile
+- ➕ `legacies.json` added **gdp_republic_legacy_track**
+- ➕ `legacies.json` added **gdp_merchant_legacy_track**
+- ➕ `legacies.json` added **pam_legacy_track**
+- ✏️ `legacies.json` **warfare_legacy_track**: perks
+- ✏️ `legacies.json` **law_legacy_track**: perks
+- ✏️ `legacies.json` **guile_legacy_track**: perks
+- ✏️ `legacies.json` **erudition_legacy_track**: perks
+- ✏️ `legacies.json` **glory_legacy_track**: perks
+- ✏️ `legacies.json` **tgp_southeast_asia_legacy_track**: perks
+- ✏️ `legacies.json` **tgp_japan_legacy_track**: perks
+- ✏️ `legacies.json` **tgp_china_legacy_track**: perks
+- ✏️ `legacies.json` **ep3_administrative_legacy_track**: gate, perks
+- ✏️ `legacies.json` **ce1_heroic_track**: perks
+- ✏️ `legacies.json` **ce1_legitimacy_legacy_track**: perks
+- ✏️ `legacies.json` **fp3_khvarenah_legacy_track**: perks
+- ✏️ `legacies.json` **fp2_urbanism_legacy_track**: perks
+- ✏️ `legacies.json` **fp2_coterie_legacy_track**: perks
+- ✏️ `legacies.json` **fp1_adventure_legacy_track**: perks
+- ✏️ `legends.json` changed (3 → 3 entries)
+- ✏️ `lifestyles.json` changed (3 → 3 entries)
+- ➕ `maa.json` added **condottieri**
+- ➕ `maa.json` added **order_knights**
+- ➕ `maa.json` added **order_serjeants**
+- ➖ `maa.json` removed **teutonic_knights**
+- ✏️ `maa.json` **accolade_maa_horse_archers**: buyCost, controlValue, highMaintenance, lowMaintenance
+- ✏️ `maa.json` **asawira**: controlValue
+- ✏️ `maa.json` **emishi_horse_archers**: buyCost, controlValue, highMaintenance, lowMaintenance
+- ✏️ `maa.json` **heavy_horse_archers**: buyCost, controlValue, highMaintenance, lowMaintenance
+- ✏️ `maa.json` **horse_archers**: buyCost, controlValue, highMaintenance, lowMaintenance
+- ✏️ `maa.json` **japanese_horse_archers**: buyCost, controlValue, highMaintenance, lowMaintenance
+- ✏️ `maa.json` **kheshig**: buyCost, controlValue, highMaintenance, lowMaintenance
+- ✏️ `maa.json` **mangudai**: buyCost, controlValue, highMaintenance, lowMaintenance
+- ✏️ `maa.json` **accolade_maa_archers**: buyCost, controlValue, highMaintenance, lowMaintenance
+- ✏️ `maa.json` **accolade_maa_crossbowers**: buyCost, controlValue, highMaintenance, lowMaintenance
+- ✏️ `maa.json` **archers_of_the_nile**: buyCost, controlValue, highMaintenance, lowMaintenance
+- ✏️ `maa.json` **ballistrai**: buyCost, controlValue, highMaintenance, lowMaintenance
+- ✏️ `maa.json` **bowmen**: buyCost, controlValue, highMaintenance, lowMaintenance, requirements
+- ✏️ `maa.json` **bush_hunter**: buyCost, controlValue, highMaintenance, lowMaintenance
+- ✏️ `maa.json` **crossbowmen**: buyCost, controlValue, highMaintenance, lowMaintenance, requirements
+- ✏️ `maa.json` **gakgung_archers**: buyCost, controlValue, highMaintenance, lowMaintenance
+- ✏️ `maa.json` **longbowmen**: buyCost, controlValue, highMaintenance, lowMaintenance
+- ✏️ `maa.json` **maa_poachers**: buyCost, controlValue, highMaintenance, lowMaintenance
+- ✏️ `maa.json` **maturkan_warriors**: buyCost, controlValue, highMaintenance, lowMaintenance
+- ✏️ `maa.json` **metsanvartija**: buyCost, controlValue, highMaintenance, lowMaintenance
+- ✏️ `maa.json` **paiks**: buyCost, controlValue, highMaintenance, lowMaintenance
+- ✏️ `maa.json` **rocket_carts**: buyCost, controlValue, highMaintenance, lowMaintenance
+- ✏️ `maa.json` **shenbigong**: buyCost, controlValue, highMaintenance, lowMaintenance
+- ✏️ `maa.json` **vigmen**: buyCost, controlValue, highMaintenance, lowMaintenance
+- ✏️ `maa.json` **accolade_maa_cameliers**: buyCost, controlValue, highMaintenance, lowMaintenance
+- ✏️ `maa.json` **camel_rider**: buyCost, controlValue, highMaintenance, lowMaintenance
+- ✏️ `maa.json` **accolade_maa_elephantiers**: buyCost, controlValue, highMaintenance, lowMaintenance, requirements
+- ✏️ `maa.json` **ballista_elephant**: buyCost, controlValue, highMaintenance, lowMaintenance, requirements
+- ✏️ `maa.json` **war_elephant**: buyCost, controlValue, highMaintenance, lowMaintenance, requirements
+- ✏️ `maa.json` **accolade_maa_handgunners**: buyCost, controlValue, highMaintenance, lowMaintenance
+- ✏️ `maa.json` **fire_lancers**: buyCost, controlValue, flavor, highMaintenance, lowMaintenance
+- ✏️ `maa.json` **handgunners**: buyCost, controlValue, flavor, highMaintenance, lowMaintenance, requirements
+- ✏️ `maa.json` **accolade_maa_lancers**: buyCost, controlValue, highMaintenance, lowMaintenance, requirements
+- ✏️ `maa.json` **armored_horsemen**: buyCost, controlValue, highMaintenance, lowMaintenance, requirements
+- ✏️ `maa.json` **black_armor_cavalry**: buyCost, controlValue, highMaintenance, lowMaintenance
+- ✏️ `maa.json` **cataphract**: buyCost, controlValue, highMaintenance, lowMaintenance
+- ✏️ `maa.json` **cataphract_archers**: buyCost, controlValue, highMaintenance, lowMaintenance
+- ✏️ `maa.json` **conrois**: buyCost, controlValue, highMaintenance, lowMaintenance
+- ✏️ `maa.json` **gendarme**: buyCost, controlValue, highMaintenance, lowMaintenance
+- ✏️ `maa.json` **monaspa**: buyCost, controlValue, highMaintenance, lowMaintenance
+- ✏️ `maa.json` **nomad_lancers**: buyCost, controlValue, highMaintenance, lowMaintenance
+- ✏️ `maa.json` **tarkhan**: buyCost, controlValue, highMaintenance, lowMaintenance
+- ✏️ `maa.json` **tiefutu**: buyCost, controlValue, highMaintenance, lowMaintenance
+- ✏️ `maa.json` **accolade_maa_vanguards**: buyCost, controlValue, highMaintenance, lowMaintenance
+- ✏️ `maa.json` **armored_footmen**: buyCost, controlValue, highMaintenance, lowMaintenance, requirements
+- ✏️ `maa.json` **ayyar**: buyCost, controlValue, highMaintenance, lowMaintenance
+- ✏️ `maa.json` **burenjia**: buyCost, controlValue, highMaintenance, lowMaintenance
+- ✏️ `maa.json` **druzhina**: buyCost, controlValue, highMaintenance, lowMaintenance
+- ✏️ `maa.json` **garudas**: buyCost, controlValue, highMaintenance, lowMaintenance
+- ✏️ `maa.json` **handpicked_faithful**: buyCost, controlValue, highMaintenance, lowMaintenance
+- ✏️ `maa.json` **house_guard**: controlValue, requirements
+- ✏️ `maa.json` **huscarl**: buyCost, controlValue, highMaintenance, lowMaintenance
+- ✏️ `maa.json` **khandayat**: buyCost, controlValue, highMaintenance, lowMaintenance
+- ✏️ `maa.json` **mountaineer**: buyCost, controlValue, highMaintenance, lowMaintenance
+- ✏️ `maa.json` **mubarizun**: buyCost, controlValue, highMaintenance, lowMaintenance
+- ✏️ `maa.json` **palace_guards**: buyCost, controlValue, highMaintenance, lowMaintenance
+- ✏️ `maa.json` **praetorian**: buyCost, controlValue, highMaintenance, lowMaintenance
+- ✏️ `maa.json` **samurai**: buyCost, controlValue, highMaintenance, lowMaintenance
+- ✏️ `maa.json` **sarawit**: buyCost, controlValue, highMaintenance, lowMaintenance
+- ✏️ `maa.json` **varangian_guards**: buyCost, controlValue, highMaintenance, lowMaintenance
+- ✏️ `maa.json` **varangian_veterans**: buyCost, controlValue, highMaintenance, lowMaintenance, requirements
+- ✏️ `maa.json` **zbrojnosh**: buyCost, controlValue, highMaintenance, lowMaintenance
+- ✏️ `maa.json` **zhanmadao_infantry**: buyCost, controlValue, highMaintenance, lowMaintenance
+- ✏️ `maa.json` **accolade_maa_outriders**: buyCost, controlValue, highMaintenance, lowMaintenance
+- ✏️ `maa.json` **ayrudzi**: buyCost, controlValue, highMaintenance, lowMaintenance
+- ✏️ `maa.json` **caballero**: buyCost, controlValue, highMaintenance, lowMaintenance
+- ✏️ `maa.json` **chasseur**: buyCost, controlValue, highMaintenance, lowMaintenance
+- ✏️ `maa.json` **hobelar**: buyCost, controlValue, highMaintenance, lowMaintenance
+- ✏️ `maa.json` **hussar**: buyCost, controlValue, highMaintenance, lowMaintenance
+- ✏️ `maa.json` **light_horsemen**: buyCost, controlValue, highMaintenance, lowMaintenance, requirements
+- ✏️ `maa.json` **maa_marauders**: buyCost, controlValue, highMaintenance, lowMaintenance
+- ✏️ `maa.json` **mulaththamun**: buyCost, controlValue, highMaintenance, lowMaintenance
+- ✏️ `maa.json` **sahel_horsemen**: buyCost, controlValue, highMaintenance, lowMaintenance
+- ✏️ `maa.json` **steppe_raiders**: buyCost, controlValue, highMaintenance, lowMaintenance
+- ✏️ `maa.json` **tawashi**: buyCost, controlValue, highMaintenance, lowMaintenance
+- ✏️ `maa.json` **teulu**: buyCost, controlValue, flavor, highMaintenance, lowMaintenance
+- ✏️ `maa.json` **nomadic_riders**: controlValue
+- ✏️ `maa.json` **pikemen_militia**: controlValue
+- ✏️ `maa.json` **accolade_maa_pikes**: buyCost, controlValue, highMaintenance, lowMaintenance
+- ✏️ `maa.json` **bondi**: buyCost, controlValue, highMaintenance, lowMaintenance
+- ✏️ `maa.json` **landsknecht**: buyCost, controlValue, highMaintenance, lowMaintenance
+- ✏️ `maa.json` **maa_thieves**: buyCost, controlValue, highMaintenance, lowMaintenance
+- ✏️ `maa.json` **picchieri**: buyCost, controlValue, highMaintenance, lowMaintenance
+- ✏️ `maa.json` **pikemen_unit**: buyCost, controlValue, highMaintenance, lowMaintenance, requirements
+- ✏️ `maa.json` **schiltron**: buyCost, controlValue, highMaintenance, lowMaintenance
+- ✏️ `maa.json` **skoutatoi**: buyCost, controlValue, highMaintenance, lowMaintenance
+- ✏️ `maa.json` **warrior_monks**: controlValue
+- ✏️ `maa.json` **zupin_warrior**: buyCost, controlValue, highMaintenance, lowMaintenance
+- ✏️ `maa.json` **ballista**: buyCost, highMaintenance, lowMaintenance, requirements
+- ✏️ `maa.json` **bombard**: buyCost, highMaintenance, lowMaintenance, requirements
+- ✏️ `maa.json` **cannon**: buyCost, highMaintenance, lowMaintenance, requirements
+- ✏️ `maa.json` **cloud_ladder**: buyCost, highMaintenance, lowMaintenance, requirements
+- ✏️ `maa.json` **mangonel**: buyCost, highMaintenance, lowMaintenance, requirements
+- ✏️ `maa.json` **onager**: buyCost, highMaintenance, lowMaintenance, requirements
+- ✏️ `maa.json` **siege_tower**: buyCost, highMaintenance, lowMaintenance, requirements
+- ✏️ `maa.json` **torch_bearers**: buyCost, highMaintenance, lowMaintenance
+- ✏️ `maa.json` **trebuchet**: buyCost, highMaintenance, lowMaintenance, requirements
+- ✏️ `maa.json` **abudrar**: buyCost, controlValue, highMaintenance, lowMaintenance
+- ✏️ `maa.json` **accolade_maa_skirmishers**: buyCost, controlValue, highMaintenance, lowMaintenance
+- ✏️ `maa.json` **akritai**: buyCost, controlValue, highMaintenance, lowMaintenance
+- ✏️ `maa.json` **goedendag**: buyCost, controlValue, highMaintenance, lowMaintenance
+- ✏️ `maa.json` **guanch_vaulter**: buyCost, controlValue, highMaintenance, lowMaintenance
+- ✏️ `maa.json` **guinea_warrior**: buyCost, controlValue, highMaintenance, lowMaintenance
+- ✏️ `maa.json` **horn_warrior**: buyCost, controlValue, highMaintenance, lowMaintenance
+- ✏️ `maa.json` **jomsviking_pirates**: buyCost, controlValue, highMaintenance, lowMaintenance
+- ✏️ `maa.json` **light_footmen**: buyCost, controlValue, highMaintenance, lowMaintenance, requirements
+- ✏️ `maa.json` **maa_bandits**: buyCost, controlValue, highMaintenance, lowMaintenance
+- ✏️ `maa.json` **pesilat_warriors**: buyCost, controlValue, highMaintenance, lowMaintenance
+- ✏️ `maa.json` **shomer**: buyCost, controlValue, highMaintenance, lowMaintenance
+- ➕ `nicknames.json` added **nick_al_kashgari**
+- ➕ `nicknames.json` added **nick_al_mutanabbi**
+- ➕ `nicknames.json` added **nick_al_muzaffar**
+- ➕ `nicknames.json` added **nick_albanach**
+- ➕ `nicknames.json` added **nick_alpharabius**
+- ➕ `nicknames.json` added **nick_tgf_alum**
+- ➕ `nicknames.json` added **nick_amator_maris**
+- ➕ `nicknames.json` added **nick_tgf_amber**
+- ➕ `nicknames.json` added **nick_the_angelic**
+- ➕ `nicknames.json` added **nick_anonymus**
+- ➕ `nicknames.json` added **nick_the_apostle_paul**
+- ➕ `nicknames.json` added **nick_tgf_medicaments**
+- ➕ `nicknames.json` added **nick_the_artisan**
+- ➕ `nicknames.json` added **nick_attar**
+- ➕ `nicknames.json` added **nick_tgf_beer**
+- ➕ `nicknames.json` added **nick_tgf_jewelry**
+- ➕ `nicknames.json` added **nick_blotsven**
+- ➕ `nicknames.json` added **nick_tgf_grain**
+- ➕ `nicknames.json` added **nick_the_caravaneer**
+- ➕ `nicknames.json` added **nick_tgf_cattle**
+- ➕ `nicknames.json` added **nick_tgf_cheese**
+- ➕ `nicknames.json` added **nick_the_childless**
+- ➕ `nicknames.json` added **nick_chronicler**
+- ➕ `nicknames.json` added **nick_cimabue**
+- ➕ `nicknames.json` added **nick_tgf_textiles**
+- ➕ `nicknames.json` added **nick_the_concordant**
+- ➕ `nicknames.json` added **nick_guanxi_kongzi**
+- ➕ `nicknames.json` added **nick_the_convicted**
+- ➕ `nicknames.json` added **nick_tgf_copper**
+- ➕ `nicknames.json` added **nick_tgf_cotton**
+- ➕ `nicknames.json` added **nick_dongpo**
+- ➕ `nicknames.json` added **nick_mingde_huanghou**
+- ➕ `nicknames.json` added **nick_enemy_of_god**
+- ➕ `nicknames.json` added **nick_ferdowsi**
+- ➕ `nicknames.json` added **nick_the_friar**
+- ➕ `nicknames.json` added **nick_tgf_furs**
+- ➕ `nicknames.json` added **nick_ganjavi**
+- ➕ `nicknames.json` added **nick_tgf_gems**
+- ➕ `nicknames.json` added **nick_fubo_jiangjun**
+- ➕ `nicknames.json` added **nick_gharib_nawaz**
+- ➕ `nicknames.json` added **nick_tgf_gold**
+- ➕ `nicknames.json` added **nick_tgf_glass**
+- ➕ `nicknames.json` added **nick_grammaticus**
+- ➕ `nicknames.json` added **nick_hafez**
+- ➕ `nicknames.json` added **nick_haji**
+- ➕ `nicknames.json` added **nick_the_harvester**
+- ➕ `nicknames.json` added **nick_heir_of_lothair**
+- ➕ `nicknames.json` added **nick_tgf_honey**
+- ➕ `nicknames.json` added **nick_tgf_horses**
+- ➕ `nicknames.json` added **nick_ibn_fadlan**
+- ➕ `nicknames.json` added **nick_tgf_books_paper**
+- ➕ `nicknames.json` added **nick_tgf_iron**
+- ➕ `nicknames.json` added **nick_tgf_jade**
+- ➕ `nicknames.json` added **nick_khatam_an_nabiyyin**
+- ➕ `nicknames.json` added **nick_khass_hajib**
+- ➕ `nicknames.json` added **nick_tgf_lacquerware**
+- ➕ `nicknames.json` added **nick_tgf_meat**
+- ➕ `nicknames.json` added **nick_the_lender**
+- ➕ `nicknames.json` added **nick_tgf_flax**
+- ➕ `nicknames.json` added **nick_the_maid**
+- ➕ `nicknames.json` added **nick_tgf_stone**
+- ➕ `nicknames.json` added **nick_mahbub_e_ilahi**
+- ➕ `nicknames.json` added **nick_tgf_millet**
+- ➕ `nicknames.json` added **nick_negus_nagast**
+- ➕ `nicknames.json` added **nick_tgf_oil**
+- ➕ `nicknames.json` added **nick_tgf_fruit**
+- ➕ `nicknames.json` added **nick_tgf_spices**
+- ➕ `nicknames.json` added **nick_tgf_incense**
+- ➕ `nicknames.json` added **nick_the_pole**
+- ➕ `nicknames.json` added **nick_tgf_ceramics**
+- ➕ `nicknames.json` added **nick_the_prisoner**
+- ➕ `nicknames.json` added **nick_tgf_dyes**
+- ➕ `nicknames.json` added **nick_the_rapacious**
+- ➕ `nicknames.json` added **nick_the_reconciler**
+- ➕ `nicknames.json` added **nick_rhazes**
+- ➕ `nicknames.json` added **nick_tgf_rice**
+- ➕ `nicknames.json` added **nick_the_rich**
+- ➕ `nicknames.json` added **nick_the_rock**
+- ➕ `nicknames.json` added **nick_tgf_hemp**
+- ➕ `nicknames.json` added **nick_saadi**
+- ➕ `nicknames.json` added **nick_tgf_salt**
+- ➕ `nicknames.json` added **nick_saltfish**
+- ➕ `nicknames.json` added **nick_the_schismat**
+- ➕ `nicknames.json` added **nick_the_scribe**
+- ➕ `nicknames.json` added **nick_tgf_silk**
+- ➕ `nicknames.json` added **nick_tgf_silver**
+- ➕ `nicknames.json` added **nick_the_springer**
+- ➕ `nicknames.json` added **nick_tgf_fish**
+- ➕ `nicknames.json` added **nick_tgf_sugar**
+- ➕ `nicknames.json` added **nick_taiyangzi**
+- ➕ `nicknames.json` added **nick_tgf_leather**
+- ➕ `nicknames.json` added **nick_tgf_tea**
+- ➕ `nicknames.json` added **nick_theophorus**
+- ➕ `nicknames.json` added **nick_tgf_wood**
+- ➕ `nicknames.json` added **nick_tgf_ivory**
+- ➕ `nicknames.json` added **nick_tuti_e_hind**
+- ➕ `nicknames.json` added **nick_tgf_wine**
+- ➕ `nicknames.json` added **nick_the_virgin**
+- ➕ `nicknames.json` added **nick_the_wonderful**
+- ➕ `nicknames.json` added **nick_tgf_wool**
+- ➕ `nicknames.json` added **nick_wuhsha_al_dallala**
+- ➕ `nicknames.json` added **nick_yasawi**
+- ➕ `nicknames.json` added **nick_zenji**
+- ➕ `nicknames.json` added **nick_profession**
+- ✏️ `nicknames.json` **nick_adud_al_dawla**: name
+- ✏️ `nicknames.json` **nick_alam_al_din**: name
+- ✏️ `nicknames.json` **nick_ala_al_dawla**: name
+- ✏️ `nicknames.json` **nick_baha_al_dawla**: name
+- ✏️ `nicknames.json` **nick_the_dragonslayer**: dlc
+- ✏️ `nicknames.json` **nick_the_forgetful**: isBad
+- ✏️ `nicknames.json` **nick_muayyid_al_din**: name
+- ✏️ `nicknames.json` **nick_muizz_al_dawla**: name
+- ✏️ `nicknames.json` **nick_natures_bane**: dlc
+- ✏️ `nicknames.json` **nick_ho_seung**: name
+- ➕ `pillars.json` added **language_arpitan**
+- ✏️ `pillars.json` **ethos_bureaucratic**: modifiers, parameters
+- ✏️ `pillars.json` **ethos_egalitarian**: modifiers
+- ✏️ `pillars.json` **ethos_spiritual**: modifiers
+- ✏️ `pillars.json` **heritage_ainuic**: parameters
+- ✏️ `pillars.json` **heritage_akan**: parameters
+- ✏️ `pillars.json` **heritage_albanian**: parameters
+- ✏️ `pillars.json` **heritage_arabic**: parameters
+- ✏️ `pillars.json` **heritage_austronesian**: parameters
+- ✏️ `pillars.json` **heritage_baltic**: parameters
+- ✏️ `pillars.json` **heritage_balto_finnic**: parameters
+- ✏️ `pillars.json` **heritage_bantu**: parameters
+- ✏️ `pillars.json` **heritage_berber**: parameters
+- ✏️ `pillars.json` **heritage_brythonic**: parameters
+- ✏️ `pillars.json` **heritage_burman**: parameters
+- ✏️ `pillars.json` **heritage_buyeo**: parameters
+- ✏️ `pillars.json` **heritage_caucasian**: parameters
+- ✏️ `pillars.json` **heritage_central_african**: parameters
+- ✏️ `pillars.json` **heritage_central_germanic**: parameters
+- ✏️ `pillars.json` **heritage_chinese**: parameters
+- ✏️ `pillars.json` **heritage_dravidian**: parameters
+- ✏️ `pillars.json` **heritage_east_african**: parameters
+- ✏️ `pillars.json` **heritage_east_slavic**: parameters
+- ✏️ `pillars.json` **heritage_byzantine**: parameters
+- ✏️ `pillars.json` **heritage_egyptian**: parameters
+- ✏️ `pillars.json` **heritage_frankish**: parameters
+- ✏️ `pillars.json` **heritage_goidelic**: parameters
+- ✏️ `pillars.json` **heritage_gothic**: parameters
+- ✏️ `pillars.json` **heritage_west_african**: parameters
+- ✏️ `pillars.json` **heritage_ancient_greek**: parameters
+- ✏️ `pillars.json` **heritage_hmongic**: parameters
+- ✏️ `pillars.json` **heritage_somalian**: parameters
+- ✏️ `pillars.json` **heritage_hunnic**: parameters
+- ✏️ `pillars.json` **heritage_iberian**: parameters
+- ✏️ `pillars.json` **heritage_indo_aryan**: parameters
+- ✏️ `pillars.json` **heritage_iranian**: parameters
+- ✏️ `pillars.json` **heritage_israelite**: parameters
+- ✏️ `pillars.json` **heritage_japonic**: parameters
+- ✏️ `pillars.json` **heritage_latin**: parameters
+- ✏️ `pillars.json` **heritage_magyar**: parameters
+- ✏️ `pillars.json` **heritage_mon_khmer**: parameters
+- ✏️ `pillars.json` **heritage_mongolic**: parameters
+- ✏️ `pillars.json` **heritage_yoruba**: parameters
+- ✏️ `pillars.json` **heritage_nivkh**: parameters
+- ✏️ `pillars.json` **heritage_north_germanic**: parameters
+- ✏️ `pillars.json` **heritage_phoenician**: parameters
+- ✏️ `pillars.json` **heritage_qiangic**: parameters
+- ✏️ `pillars.json` **heritage_sahelian**: parameters
+- ✏️ `pillars.json` **heritage_korean**: parameters
+- ✏️ `pillars.json` **heritage_senegambian**: parameters
+- ✏️ `pillars.json` **heritage_south_slavic**: parameters
+- ✏️ `pillars.json` **heritage_syriac**: parameters
+- ✏️ `pillars.json` **heritage_tai**: parameters
+- ✏️ `pillars.json` **heritage_tibetan**: parameters
+- ✏️ `pillars.json` **heritage_tocharian**: parameters
+- ✏️ `pillars.json` **heritage_tungusic**: parameters
+- ✏️ `pillars.json` **heritage_turkic**: parameters
+- ✏️ `pillars.json` **heritage_ugro_permian**: parameters
+- ✏️ `pillars.json` **heritage_viet**: parameters
+- ✏️ `pillars.json` **heritage_vlach**: parameters
+- ✏️ `pillars.json` **heritage_volga_finnic**: parameters
+- ✏️ `pillars.json` **heritage_west_germanic**: parameters
+- ✏️ `pillars.json` **heritage_west_slavic**: parameters
+- ✏️ `pillars.json` **head_determination_domain**: desc
+- ✏️ `pillars.json` **head_determination_herd**: desc
+- ✏️ `province-rules.json` changed (3 → 6 entries)
+- ✏️ `regions.json` changed (4 → 4 entries)
+- ✏️ `royalcourt.json` changed (3 → 3 entries)
+- ✏️ `schemes.json` changed (3 → 3 entries)
+- ✏️ `secrets.json` changed (3 → 3 entries)
+- ➕ `situations.json` added **the_christian_church**
+- ➕ `situations.json` added **guelph_ghibelline**
+- ✏️ `situations.json` **dynastic_cycle**: name, phases
+- ✏️ `situations.json` **the_great_steppe**: phases
+- ✏️ `situations.json` **natural_disaster_earthquake**: phases
+- ✏️ `situations.json` **natural_disaster_flood**: phases
+- ✏️ `situations.json` **silk_road_situation**: desc, groups, phases
+- ✏️ `startdates.json` changed (2 → 2 entries)
+- ✏️ `startworld.json` changed (4 → 5 entries)
+- ✏️ `struggles.json` **iberian_struggle**: faiths, phases
+- ✏️ `struggles.json` **persian_struggle**: faiths, phases
+- ➕ `task_contracts.json` added **unity_irregularities**
+- ➕ `task_contracts.json` added **alleviate_upheaval**
+- ➕ `task_contracts.json` added **challenge_competitor**
+- ➕ `task_contracts.json` added **silk_road_caravan**
+- ➕ `task_contracts.json` added **disrupt_charter**
+- ➕ `task_contracts.json` added **market_investment**
+- ➕ `task_contracts.json` added **exploit_upheaval**
+- ➕ `task_contracts.json` added **silk_road_network**
+- ➕ `task_contracts.json` added **seek_debtors**
+- ➕ `task_contracts.json` added **menagerie_acquisition**
+- ➕ `task_contracts.json` added **patron_hobnob**
+- ➕ `task_contracts.json` added **negotiate_tolls**
+- ➕ `task_contracts.json` added **support_guilds**
+- ➕ `task_contracts.json` added **find_curio**
+- ➕ `task_contracts.json` added **promote_goods**
+- ➕ `task_contracts.json` added **sabotage_competition**
+- ➕ `task_contracts.json` added **entrepot_sell**
+- ➕ `task_contracts.json` added **entrepot_buy**
+- ➕ `task_contracts.json` added **smuggle_goods**
+- ➕ `task_contracts.json` added **build_category_connections**
+- ✏️ `task_contracts.json` **laamp_gain_wanderer_contract**: criteria
+- ✏️ `task_contracts.json` **laamp_eliminate_heir_contract**: criteria
+- ✏️ `task_contracts.json` **laamp_help_claimant_contract**: criteria
+- ✏️ `task_contracts.json` **laamp_join_faction_contract**: criteria
+- ✏️ `task_contracts.json` **evil_presence**: rewards
+- ✏️ `task_contracts.json` **bountiful_harvest**: rewards
+- ✏️ `task_contracts.json` **discontent_soldiers**: rewards
+- ✏️ `task_contracts.json` **hoarding_mayor**: rewards
+- ✏️ `task_contracts.json` **hungry_times**: desc, rewards
+- ✏️ `task_contracts.json` **inept_mayor**: rewards
+- ✏️ `task_contracts.json` **overdue_taxes**: rewards
+- ✏️ `task_contracts.json` **prov_investment**: rewards
+- ✏️ `task_contracts.json` **raiding_peasants**: rewards
+- ✏️ `task_contracts.json` **tgp_disaster_displacement**: rewards
+- ✏️ `task_contracts.json` **mad_prophet**: rewards
+- ✏️ `task_contracts.json` **wartime_measures**: rewards
+- ✏️ `terrain.json` **coastal_sea**: provinceModifiers
+- ✏️ `terrain.json` **desert**: countyCapitalModifiers, provinceModifiers, travelDangerScore
+- ✏️ `terrain.json` **desert_mountains**: countyCapitalModifiers, provinceModifiers, travelDangerScore
+- ✏️ `terrain.json` **drylands**: countyCapitalModifiers, provinceModifiers, travelDangerScore
+- ✏️ `terrain.json` **farmlands**: countyCapitalModifiers, provinceModifiers
+- ✏️ `terrain.json` **floodplains**: countyCapitalModifiers, provinceModifiers, travelDangerScore
+- ✏️ `terrain.json` **forest**: provinceModifiers, travelDangerScore
+- ✏️ `terrain.json` **hills**: countyCapitalModifiers, provinceModifiers, travelDangerScore
+- ✏️ `terrain.json` **jungle**: countyCapitalModifiers, provinceModifiers, travelDangerScore
+- ✏️ `terrain.json` **mountains**: countyCapitalModifiers, provinceModifiers, travelDangerScore
+- ✏️ `terrain.json` **oasis**: countyCapitalModifiers, provinceModifiers
+- ✏️ `terrain.json` **plains**: provinceModifiers
+- ✏️ `terrain.json` **sea**: provinceModifiers
+- ✏️ `terrain.json` **steppe**: countyCapitalModifiers, provinceModifiers, travelDangerScore
+- ✏️ `terrain.json` **taiga**: countyCapitalModifiers, provinceModifiers, travelDangerScore
+- ✏️ `terrain.json` **terraced_hills**: countyCapitalModifiers, provinceModifiers, travelDangerScore
+- ✏️ `terrain.json` **wetlands**: countyCapitalModifiers, provinceModifiers, travelDangerScore
+- ✏️ `tiers.json` changed (2 → 2 entries)
+- ✏️ `title-index.json` changed (6157 → 8196 entries)
+- ✏️ `titles.json` changed (2 → 3 entries)
+- ✏️ `traditions.json` changed (2 → 2 entries)
+- ➕ `traits.json` added **adopted_no_inheritance**
+- ➕ `traits.json` added **cleric**
+- ➕ `traits.json` added **dealbreaker**
+- ➕ `traits.json` added **herald**
+- ➕ `traits.json` added **lifestyle_merchant**
+- ➕ `traits.json` added **lifestyle_scholar**
+- ➕ `traits.json` added **merchant_associate**
+- ➕ `traits.json` added **erudite**
+- ➕ `traits.json` added **debug_enable_raiding_per_standard_restrictions**
+- ➕ `traits.json` added **debug_enable_raiding_without_restrictions**
+- ➕ `traits.json` added **education_republican_knowledge_5**
+- ➖ `traits.json` removed **scholar**
+- ✏️ `traits.json` **bossy**: clergy
+- ✏️ `traits.json` **charming**: clergy
+- ✏️ `traits.json` **curious**: clergy
+- ✏️ `traits.json` **pensive**: clergy
+- ✏️ `traits.json` **rowdy**: clergy
+- ✏️ `traits.json` **aggressive_attacker**: clergy
+- ✏️ `traits.json` **cautious_leader**: clergy
+- ✏️ `traits.json` **desert_warrior**: clergy
+- ✏️ `traits.json` **flexible_leader**: clergy, conditional
+- ✏️ `traits.json` **forder**: clergy
+- ✏️ `traits.json` **forest_fighter**: clergy
+- ✏️ `traits.json` **holy_warrior**: clergy
+- ✏️ `traits.json` **jungle_stalker**: clergy
+- ✏️ `traits.json` **logistician**: clergy, conditional
+- ✏️ `traits.json` **military_engineer**: clergy, conditional, modifiers
+- ✏️ `traits.json` **open_terrain_expert**: clergy
+- ✏️ `traits.json` **organizer**: clergy, conditional
+- ✏️ `traits.json` **reaver**: clergy
+- ✏️ `traits.json` **reckless**: clergy
+- ✏️ `traits.json` **rough_terrain_expert**: clergy, conditional
+- ✏️ `traits.json` **unyielding_defender**: clergy, conditional
+- ✏️ `traits.json` **administrative_court_1**: clergy
+- ✏️ `traits.json` **administrative_court_2**: clergy, modifiers
+- ✏️ `traits.json` **diplomatic_court_1**: clergy
+- ✏️ `traits.json` **diplomatic_court_2**: clergy, modifiers
+- ✏️ `traits.json` **intrigue_court_1**: clergy
+- ✏️ `traits.json` **intrigue_court_2**: clergy, modifiers
+- ✏️ `traits.json` **scholarly_court_1**: clergy
+- ✏️ `traits.json` **scholarly_court_2**: clergy, modifiers
+- ✏️ `traits.json` **warlike_court_1**: clergy
+- ✏️ `traits.json` **warlike_court_2**: clergy, modifiers
+- ✏️ `traits.json` **education_diplomacy_1**: clergy, modifiers
+- ✏️ `traits.json` **education_diplomacy_2**: clergy, modifiers
+- ✏️ `traits.json` **education_diplomacy_3**: clergy, conditional, modifiers
+- ✏️ `traits.json` **education_diplomacy_4**: clergy, conditional, modifiers
+- ✏️ `traits.json` **education_diplomacy_5**: clergy, conditional, modifiers
+- ✏️ `traits.json` **education_intrigue_1**: clergy, modifiers
+- ✏️ `traits.json` **education_intrigue_2**: clergy, modifiers
+- ✏️ `traits.json` **education_intrigue_3**: clergy, modifiers
+- ✏️ `traits.json` **education_intrigue_4**: clergy, modifiers
+- ✏️ `traits.json` **education_intrigue_5**: clergy, conditional, modifiers
+- ✏️ `traits.json` **education_learning_1**: clergy, conditional, modifiers
+- ✏️ `traits.json` **education_learning_2**: clergy, conditional, modifiers
+- ✏️ `traits.json` **education_learning_3**: clergy, conditional, modifiers
+- ✏️ `traits.json` **education_learning_4**: clergy, conditional, modifiers
+- ✏️ `traits.json` **education_learning_5**: clergy, conditional, modifiers
+- ✏️ `traits.json` **education_martial_1**: clergy, modifiers
+- ✏️ `traits.json` **education_martial_2**: clergy, modifiers
+- ✏️ `traits.json` **education_martial_3**: clergy, modifiers
+- ✏️ `traits.json` **education_martial_4**: clergy, modifiers
+- ✏️ `traits.json` **education_martial_5**: clergy, conditional, modifiers
+- ✏️ `traits.json` **education_stewardship_1**: clergy, conditional, modifiers
+- ✏️ `traits.json` **education_stewardship_2**: clergy, conditional, modifiers
+- ✏️ `traits.json` **education_stewardship_3**: clergy, conditional, modifiers
+- ✏️ `traits.json` **education_stewardship_4**: clergy, conditional, modifiers
+- ✏️ `traits.json` **education_stewardship_5**: clergy, conditional, modifiers
+- ✏️ `traits.json` **adulterer**: clergy, opinions
+- ✏️ `traits.json` **adventurer**: clergy, modifiers
+- ✏️ `traits.json` **adventurer_follower**: clergy
+- ✏️ `traits.json` **athletic**: clergy, conditional
+- ✏️ `traits.json` **augustus**: clergy, modifiers
+- ✏️ `traits.json` **bastard**: clergy
+- ✏️ `traits.json` **bastard_founder**: clergy
+- ✏️ `traits.json` **berserker**: clergy, modifiers, opinions
+- ✏️ `traits.json` **blood_of_prophet**: clergy
+- ✏️ `traits.json` **born_in_the_purple**: clergy
+- ✏️ `traits.json` **burdened**: clergy
+- ✏️ `traits.json` **campeador**: clergy
+- ✏️ `traits.json` **cannibal**: clergy, modifiers
+- ✏️ `traits.json` **celibate**: clergy, modifiers
+- ✏️ `traits.json` **chakravarti**: clergy
+- ✏️ `traits.json` **charioteer_blue**: clergy
+- ✏️ `traits.json` **charioteer_green**: clergy
+- ✏️ `traits.json` **charioteer_red**: clergy
+- ✏️ `traits.json` **charioteer_white**: clergy
+- ✏️ `traits.json` **comfort_eater**: clergy, conditional, modifiers
+- ✏️ `traits.json` **confider**: category, clergy, conditional
+- ✏️ `traits.json` **confucian_education**: clergy, opinions
+- ✏️ `traits.json` **conqueror**: clergy
+- ✏️ `traits.json` **consecrated_blood**: clergy
+- ✏️ `traits.json` **contrite**: clergy, conditional
+- ✏️ `traits.json` **crusader_king**: clergy, modifiers
+- ✏️ `traits.json` **decadent**: clergy
+- ✏️ `traits.json` **denounced**: clergy
+- ✏️ `traits.json` **despoiler_of_byzantium**: clergy, conditional, modifiers
+- ✏️ `traits.json` **deviant**: clergy, conditional
+- ✏️ `traits.json` **devoted**: clergy, modifiers, tracks
+- ✏️ `traits.json` **disinherited**: clergy
+- ✏️ `traits.json` **disloyal**: clergy
+- ✏️ `traits.json` **disputed_heritage**: clergy
+- ✏️ `traits.json` **divine_blood**: clergy
+- ✏️ `traits.json` **drunkard**: clergy, modifiers, opinions
+- ✏️ `traits.json` **excommunicated**: clergy, conditional, desc, modifiers, opinions
+- ✏️ `traits.json` **extolled**: clergy
+- ✏️ `traits.json` **faith_warrior**: clergy, conditional
+- ✏️ `traits.json` **flagellant**: clergy, conditional
+- ✏️ `traits.json` **former_emperor**: clergy
+- ✏️ `traits.json` **fornicator**: clergy
+- ✏️ `traits.json` **gallivanter**: clergy
+- ✏️ `traits.json` **gallowsbait**: clergy, opinions
+- ✏️ `traits.json` **golden_lineage**: clergy
+- ✏️ `traits.json` **governor**: clergy, tracks
+- ✏️ `traits.json` **greatest_of_khans**: clergy, modifiers
+- ✏️ `traits.json` **hashishiyah**: clergy, opinions
+- ✏️ `traits.json` **heresiarch**: clergy
+- ✏️ `traits.json` **historical_character**: clergy
+- ✏️ `traits.json` **improvident**: clergy
+- ✏️ `traits.json` **inappetetic**: clergy, conditional, desc
+- … and 186 more changes in `traits.json`
+- ✏️ `unit_details.json` changed (110 → 112 entries)
+
 ## build-a533805123
 
 - 🌱 `accolades.json` now tracked (4 entries)

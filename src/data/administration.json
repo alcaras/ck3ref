@@ -8,7 +8,21 @@
       "levy": null,
       "maxHookOpinion": "strong",
       "minOpinion": 1,
-      "name": "Theocracy lease",
+      "name": "Theocratic Lease",
+      "tax": null,
+      "validHoldings": [
+        "church_holding"
+      ]
+    },
+    {
+      "dlc": null,
+      "government": "ecclesiastical_government",
+      "hierarchy": [],
+      "id": "ecclesiastical_lease",
+      "levy": null,
+      "maxHookOpinion": "strong",
+      "minOpinion": 1,
+      "name": "Ecclesiastical Lease",
       "tax": null,
       "validHoldings": [
         "church_holding"
@@ -56,8 +70,8 @@
       "subjectModifiers": [
         "+0.5 Piety /month",
         "+10% Monthly Gold Income while at War",
-        "+0.25 Monthly County Control Growth Add /month",
-        "+15% Army Siege Weapon Effectiveness",
+        "-10% Control Decline",
+        "+15% Army Siege Weapon",
         "+15% Raid Speed",
         "-0.5 Ai War Cooldown"
       ],
@@ -74,7 +88,7 @@
       ],
       "name": "Iqta Grant",
       "subjectModifiers": [
-        "-10% Men-at-Arms Maintenance",
+        "-5% Men-at-Arms Maintenance",
         "-10% Men-at-Arms Recruitment Cost",
         "+15 Opinion of Liege"
       ],
@@ -100,11 +114,11 @@
       "id": "maguh_special_rights_tax_collector",
       "levies": null,
       "liegeModifiers": [
-        "+1% Development Growth"
+        "+1% Prosperity Growth"
       ],
       "name": "Maguh Status",
       "subjectModifiers": [
-        "+0.1 Character Capital County Monthly Development Growth Add /month",
+        "+0.1 Character Capital County Monthly Prosperity Growth Add /month",
         "-10% Holding Build Gold Cost",
         "-10% Build Gold Cost",
         "+15 Opinion of Liege"
@@ -122,11 +136,11 @@
       ],
       "name": "Muqata Status",
       "subjectModifiers": [
-        "+10% Development Growth",
-        "+10 Popular Opinion",
+        "+10% Prosperity Growth",
+        "+10 Popular Opinion Baseline",
         "+30 Opinion of Liege",
         "+10 Plague Resistance",
-        "-5 Danger"
+        "-5 Travel Danger"
       ],
       "tax": null
     },

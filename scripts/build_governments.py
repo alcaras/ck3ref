@@ -17,6 +17,8 @@ from ck3 import Block, Tagged
 
 # Fields we deliberately do not render, with reasons.
 SKIP_FIELDS = {
+    "house_power": "script value for noble-family house power; not modelled",
+    "grant_vassal_ai_will_do": "AI weighting for granting this government to vassals",
     "ai": "AI behaviour toggles, not player-facing",
     "ai_ruler_desired_kingdom_titles": "AI title-retention tuning",
     "ai_ruler_desired_empire_titles": "AI title-retention tuning",
@@ -41,6 +43,7 @@ HANDLED_FIELDS = {
     "domicile_type", "main_administrative_tier", "min_appointment_tier",
     "minimum_provincial_maa_tier", "administrative_title_maa_setup",
     "title_maa_setup", "character_modifier", "top_liege_character_modifier",
+    "possible_grant_vassal_governments", "build_queue_reserve_categories",
     "flags", "mechanic_type", "is_mechanic_type_default", "color",
     "supply_limit_mult_for_others", "prestige_opinion_override",
     "court_generate_commanders", "court_generate_spouses", "max_dread",
@@ -176,6 +179,14 @@ def main():
             "requiredCountyHoldings": [{"key": h, "name": holding_name(h)} for h in required if isinstance(h, str)],
             "rules": rules,
             "flags": flags,
+            # governments a ruler may assign to a newly landed vassal (Grant Titles)
+            "grantableVassalGovernments": [g for g in (blk.get("possible_grant_vassal_governments").values()
+                                           if isinstance(blk.get("possible_grant_vassal_governments"), Block) else [])
+                                           if isinstance(g, str)],
+            # currencies reservable in the build queue interface
+            "buildQueueReserve": [c for c in (blk.get("build_queue_reserve_categories").values()
+                                  if isinstance(blk.get("build_queue_reserve_categories"), Block) else [])
+                                  if isinstance(c, str)],
             "royalCourt": blk.get("royal_court"),
             "blockedSubjectCourts": name_list(
                 blk.get("blocked_subject_courts").values() if isinstance(blk.get("blocked_subject_courts"), Block) else [],

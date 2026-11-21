@@ -27,6 +27,8 @@ from ck3 import Block, Tagged
 EXCLUDED_GROUPS = {"debug", "tutorial_objectives"}
 
 SKIP_FIELDS = {
+    "requires_approve": "republic voting-body approval gate (assembly/powerful vassals); approval is AI-evaluated per voter, not modelled",
+    "ai_approval": "per-voter AI approval value for requires_approve, not player-facing",
     "extra_picture": "struggle-button illustration",
     "soundeffect": "audio",
     "confirm_click_sound": "audio",

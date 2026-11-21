@@ -319,7 +319,7 @@
         {
           "knight": [],
           "knightArmy": [
-            "+2 Uncontrolled Territory Attacker Advantage"
+            "+2 Hostile Territory Attacker Advantage"
           ],
           "liege": [
             "+0.1% Monthly Prestige per Dread"
@@ -331,7 +331,7 @@
         {
           "knight": [],
           "knightArmy": [
-            "+3 Uncontrolled Territory Attacker Advantage"
+            "+3 Hostile Territory Attacker Advantage"
           ],
           "liege": [
             "+0.2% Monthly Prestige per Dread"
@@ -343,7 +343,7 @@
         {
           "knight": [],
           "knightArmy": [
-            "+5 Uncontrolled Territory Attacker Advantage"
+            "+5 Hostile Territory Attacker Advantage"
           ],
           "liege": [
             "+0.3% Monthly Prestige per Dread"
@@ -495,7 +495,7 @@
         "The Acclaimed Knight is Just",
         "The Acclaimed Knight is Patient",
         "The Acclaimed Knight is an Defender",
-        "May become available when Acclaimed Knight is Traveling in your Entourage through Provinces with high Danger"
+        "May become available when Acclaimed Knight is Traveling in your Entourage through Baronies with high Danger"
       ]
     },
     {
@@ -759,7 +759,7 @@
           "liege": [
             "15 Intrigue Intrigue Scheme Phase Length days faster per Scheme Phase",
             "+0.5% Knight Effectiveness per Dread",
-            "+20 Natural Dread",
+            "+20 Dread Baseline",
             "+2 Intrigue"
           ],
           "maa": [],
@@ -956,7 +956,7 @@
           ],
           "maa": [],
           "params": [
-            "Completing a Grand Tournament grants +50 Development Growth in your least-developed County"
+            "Completing a Grand Tournament grants +50 Prosperity Growth in your least-prosperous County"
           ],
           "rank": 2
         },
@@ -969,7 +969,7 @@
           ],
           "maa": [],
           "params": [
-            "Completing a Grand Tournament grants +1 Development Level to your least-developed County",
+            "Completing a Grand Tournament grants +1 Prosperity Level to your least-prosperous County",
             "The Increase Control in County Councillor Task will occasionally gain a significant boost"
           ],
           "rank": 3
@@ -1007,7 +1007,7 @@
           "knight": [],
           "knightArmy": [],
           "liege": [
-            "+15% Monthly Martial Lifestyle Experience"
+            "+15% Monthly Focused Martial Lifestyle Experience"
           ],
           "maa": [],
           "params": [],
@@ -1019,7 +1019,7 @@
             "+25% Counter Efficiency"
           ],
           "liege": [
-            "+25% Monthly Martial Lifestyle Experience",
+            "+25% Monthly Focused Martial Lifestyle Experience",
             "+1 Martial"
           ],
           "maa": [],
@@ -1032,7 +1032,7 @@
             "+35% Counter Efficiency"
           ],
           "liege": [
-            "+35% Monthly Martial Lifestyle Experience",
+            "+35% Monthly Focused Martial Lifestyle Experience",
             "+2 Martial"
           ],
           "maa": [],
@@ -1080,7 +1080,7 @@
           "knight": [],
           "knightArmy": [],
           "liege": [
-            "+0.15 Blademaster Trait Experience"
+            "+15% Blademaster Trait Experience Gain"
           ],
           "maa": [],
           "params": [
@@ -1093,7 +1093,7 @@
           "knight": [],
           "knightArmy": [],
           "liege": [
-            "+0.25 Blademaster Trait Experience",
+            "+25% Blademaster Trait Experience Gain",
             "+40% Knight Effectiveness"
           ],
           "maa": [],
@@ -1107,7 +1107,7 @@
           "knight": [],
           "knightArmy": [],
           "liege": [
-            "+0.35 Blademaster Trait Experience",
+            "+35% Blademaster Trait Experience Gain",
             "+80% Knight Effectiveness"
           ],
           "maa": [],
@@ -1805,8 +1805,8 @@
       "skills": [],
       "sourceFile": "04_ep2_maa_attributes.txt",
       "unlock": [
-        "The Acclaimed Knight is a Scholar",
-        "The Acclaimed Knight's Learning Skill is 12 or higher",
+        "The Acclaimed Knight is a Erudite",
+        "The Acclaimed Knight's Learning Skill is higher or equal 12 or higher",
         "May become available when the Acclaimed Knight fights a Battle alongside any Handgunner Men-at-Arms"
       ]
     },

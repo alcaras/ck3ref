@@ -194,7 +194,13 @@ class Parser:
                 self._next()
                 triples.append((None, None, self._resolve(kind, val)))
         if not top:
-            raise ValueError(f"{self.path}: unexpected EOF inside block")
+            # The game tolerates a file that ends inside a block (Silk and
+            # Silver's gdp_visit_holding_decision_event_2.txt omits the last
+            # `}`), just as a stray top-level `}` is skipped above. Close the
+            # block implicitly, and say so.
+            import sys
+            print(f"⚠ {self.path}: EOF inside block — closed implicitly "
+                  "(unbalanced braces in the game file)", file=sys.stderr)
         return Block(triples)
 
 
@@ -326,7 +332,10 @@ def render_text(s, _depth=0):
 
     def bracket(m):
         inner = m.group(1).strip()
-        if re.search(r"\.Get\w*Icon\w*(\|\w+)?$", inner):
+        # GetNameWithIcon on a static entity still carries the name; only
+        # pure icon calls (GetIcon, GetTypeIcon…) render to nothing.
+        if re.search(r"\.Get\w*Icon\w*(\|\w+)?$", inner) and not (
+                ".GetNameWithIcon" in inner and _GET_ENTITY.match(inner)):
             return ""  # inline icon call — nothing to say in plain text
         # `[dread_i]`-style inline icon tokens carry the noun in the game's
         # own templates ("You gain [dread_i]+10"); render the word so the
@@ -574,7 +583,7 @@ FEATURE_TO_DLC = {
     "wandering_nobles": "Wandering Nobles",
     "khans_of_the_steppe": "Khans of the Steppe",
     "all_under_heaven": "All Under Heaven",
-    "coronations": "Crowns of the World",
+    "coronations": "Coronations",   # dlc021_bp4; Crowns of the World is dlc019_sp4
     "crowns_of_the_world": "Crowns of the World",
     "holy_buildings": "Medieval Monuments",
     "medieval_monuments": "Medieval Monuments",
@@ -589,18 +598,38 @@ FEATURE_TO_DLC = {
     "elegance_of_the_empire": "Elegance of the Empire",
     "symbols_of_authority": "Symbols of Authority",
     "songs_of_the_realm": "Songs of the Realm",
+    "by_god_alone": "By God Alone",
+    # Silk and Silver (dlc031_ep5; has_gdp_dlc_trigger checks silk_and_silver)
+    "silk_and_silver": "Silk and Silver",
+    # the game's DLC text for Silk & Silver: "seize power in a republic"
+    "playable_republics": "Silk and Silver",
+    # has_playable_adventurer_dlc_trigger; dlc_014_desc (Roads to Power):
+    # "be a wandering mercenary"
+    "landless_adventurer": "Roads to Power",
+    # INFERRED, not stated by the game: dlc_004_desc says the Royal Court
+    # brings "major changes to the cultural system"; diverge/hybridize are
+    # already mapped there. Verify if the DLC page looks wrong.
+    "reform_culture": "The Royal Court",
 }
 
+# Prefix -> DLC, taken from the .dlc file names (game/dlc/dlcNNN_<prefix>/)
+# and cross-checked against has_<prefix>_dlc_trigger in
+# scripted_triggers/00_has_dlc_scripted_triggers.txt. (Earlier revisions had
+# bp3/bp4/ce1/ce2 shifted by one; the game's own triggers say bp3 =
+# wandering_nobles, bp4 = coronations, ce1 = legends_of_the_dead.)
 PREFIX_TO_DLC = {
     "fp1": "Northern Lords", "fp2": "Fate of Iberia", "fp3": "Legacy of Persia",
     "ep1": "The Royal Court", "ep2": "Tours & Tournaments", "ep3": "Roads to Power",
-    "ep4": "All Under Heaven",
-    "bp1": "Friends & Foes", "bp2": "Wards & Wardens", "bp3": "Legends of the Dead",
-    "bp4": "Wandering Nobles",
+    "ep4": "All Under Heaven", "ep5": "Silk and Silver",
+    "bp1": "Friends & Foes", "bp2": "Wards & Wardens", "bp3": "Wandering Nobles",
+    "bp4": "Coronations",
     "mpo": "Khans of the Steppe",
-    "ce1": "Community Pack 1 (free)", "ce2": "Couture of the Capets",
+    "ce1": "Legends of the Dead", "ce2": "Khans of the Steppe",
+    "ce3": "By God Alone", "pam": "By God Alone",
     # the game's own has_tgp_dlc_trigger checks feature all_under_heaven
     "tgp": "All Under Heaven",
+    "gdp": "Silk and Silver",
+    "mp1": "Songs of the Realm",
     "afr": "African Attire", "laamp": "Roads to Power",
     "roco": "The Royal Court",
 }

@@ -1,0 +1,226 @@
+---
+import Base from '../../layouts/Base.astro';
+import BuildingChain from '../../components/BuildingChain.astro';
+import buildingsData from '../../data/buildings.json';
+import districtsData from '../../data/districts.json';
+import holdingsData from '../../data/holdings.json';
+import { getEntity } from '../../lib/entities';
+
+const D = districtsData as any;
+
+export function getStaticPaths() {
+  return (districtsData as any).districts.map((d: any) => ({ params: { district: d.id }, props: { d } }));
+}
+const { d } = Astro.props as { d: any };
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+
+const all = buildingsData as any[];
+const chains = new Map<string, any[]>();
+for (const b of all) {
+  if (!chains.has(b.chain)) chains.set(b.chain, []);
+  chains.get(b.chain)!.push(b);
+}
+for (const t of chains.values()) t.sort((a, b) => a.tier - b.tier);
+
+const districtNames: Record<string, string> = Object.fromEntries(D.districts.map((x: any) => [x.id, x.name]));
+const typeInfo = D.types.find((t: any) => t.id === d.type);
+const holdingName: Record<string, string> = Object.fromEntries((holdingsData as any[]).map((h) => [h.id, h.name]));
+
+const primary = d.primaryBuilding ? chains.get(d.primaryBuilding.id) : null;
+const lines = d.buildings.map((b: any) => chains.get(b.id)).filter(Boolean) as any[][];
+const missing = d.buildings.filter((b: any) => !chains.has(b.id));
+
+const ROMAN = ['', 'I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII', 'IX', 'X', 'XI', 'XII'];
+const num = (v: any): number | null => (typeof v === 'number' ? v : null);
+const fmt = (v: any) => {
+  const n = num(v);
+  return n == null ? 'varies' : String(Math.round(n * 100) / 100);
+};
+function range(tiers: any[], pick: (b: any) => any): string {
+  const vals = tiers.map(pick).map(num).filter((n): n is number => n != null);
+  if (!vals.length) return '—';
+  const a = vals[0], z = vals[vals.length - 1];
+  return a === z ? fmt(a) : `${fmt(a)} → ${fmt(z)}`;
+}
+const firstTierReq = (tiers: any[]) => {
+  const v = tiers[0].districtLevel;
+  return typeof v === 'number' ? ROMAN[v] ?? String(v) : v ? 'varies' : 'I';
+};
+const needNames = (tiers: any[]) =>
+  [...new Set(tiers.flatMap((t) => (t.needs ?? []).map((n: any) => n.name)))];
+const chainDlc = (tiers: any[]) => tiers.map((t) => t.dlc).find(Boolean) ?? null;
+const terrainName = (t: string) => getEntity(`terrain_${t}`)?.name ?? t.replace(/_/g, ' ');
+const chipName = (r: any) => (r.kind === 'terrain' ? terrainName(r.key) : r.name);
+
+const lede = d.flavor ?? `${typeInfo?.name ?? d.type}.`;
+const stats = [
+  { value: typeInfo?.name ?? d.type, label: 'district type' },
+  ...(d.tierSlots?.length ? [{ value: d.tierSlots.length, label: 'tiers' }] : []),
+  { value: lines.length, label: 'building lines' },
+];
+---
+<Base title={d.name} docTitle={`${d.name} — Buildings — CK3 Reference`} active="buildings" lede={lede} stats={stats}>
+  <p class="crumbs">
+    <a href={`${base}/buildings`}>Buildings</a> › <a href={`${base}/buildings#type-${d.type}`}>{typeInfo?.name ?? d.type}s</a>
+    {d.dlc && <span class="badge-dlc">{d.dlc}</span>}
+  </p>
+
+  <section class="dfacts">
+    {d.focus?.length > 0 && (
+      <p><b>District focus</b> <span class="chips">{d.focus.map((f: string) => <span class="chip">{f}</span>)}</span></p>
+    )}
+    {d.holdings.length > 0 && (
+      <p><b>Built in</b>{' '}
+        {d.holdings.map((h: any, i: number) => (
+          <>{i > 0 && ', '}<a href={`${base}/holdings#${h.id}`}>{holdingName[h.id] ?? h.id}</a>{h.primary && <span class="subtle"> (its holding district)</span>}</>
+        ))}
+      </p>
+    )}
+    {d.unlockedBy && (
+      <p><b>Unlocked by</b> <a href={`${base}/buildings/${d.unlockedBy.id}`}>{d.unlockedBy.name}</a>
+        <span class="subtle"> — the game's <code>unlocked_by</code> field; its district schema doc does not describe it</span></p>
+    )}
+    {d.unlocks.length > 0 && (
+      <p><b>Unlocks</b>{' '}{d.unlocks.map((u: any, i: number) => <>{i > 0 && ', '}<a href={`${base}/buildings/${u.id}`}>{u.name}</a></>)}</p>
+    )}
+    {d.requirements.length > 0 && (
+      <p><b>Requirements</b>{' '}
+        <span class="chips">
+          {d.requirements.map((r: any) => (
+            <span class={r.kind === 'terrain' ? 'chip chip--terrain' : 'chip chip--req'} title={r.detail ?? r.kind.replace(/_/g, ' ')}>
+              {r.negated && <span class="neg">not </span>}{chipName(r)}
+            </span>
+          ))}
+        </span>
+      </p>
+    )}
+    <p><b>Replaceable</b> {d.canBeReplaced ? 'yes — by another district of the same type, paying its cost and time; incompatible buildings are destroyed' : 'no'}</p>
+    {d.nameVariants?.length > 0 && (
+      <p><b>Also named</b> {d.nameVariants.map((n: any, i: number) => <>{i > 0 && '; '}{n.name} <span class="subtle">when {n.when}</span></>)}</p>
+    )}
+    {d.rebuildCost && (
+      <p><b>Rebuild cost</b> {Object.entries(d.rebuildCost).map(([k, v]) => `${fmt(v)} ${k}`).join(', ')}</p>
+    )}
+    {d.tierSlots?.some((s: any) => s != null) && (
+      <p><b>Building slots by district tier</b>{' '}
+        <span class="slots">
+          {d.tierSlots.map((s: any, i: number) => <span><i>{ROMAN[i + 1] ?? i + 1}</i>{s ?? 0}</span>)}
+        </span>
+        <span class="subtle"> — <code>building_slots_for_host_district</code> on each tier of the primary building</span>
+      </p>
+    )}
+  </section>
+
+  {primary && (
+    <section>
+      <h2 class="group-h" id={primary[0].id}>Primary building <span class="count">{primary.length} tiers</span></h2>
+      <p class="note">Built with the district; its tier is the district's tier.</p>
+      <BuildingChain tiers={primary} district={d.id} districtNames={districtNames} />
+    </section>
+  )}
+
+  {lines.length > 0 && (
+    <section>
+      <h2 class="group-h">Building lines <span class="count">{lines.length}</span></h2>
+      <div class="tbl-scroll">
+        <table class="ntbl">
+          <thead>
+            <tr>
+              <th>Building line</th>
+              <th class="num" title="Upgrade tiers">Tiers</th>
+              <th class="num" title="District tier needed for the first tier (district_level_requirement)">From tier</th>
+              <th class="num" title="Gold cost, first tier → last tier">Gold</th>
+              <th class="num" title="Construction days, first tier → last tier">Days</th>
+              <th>Trade-good needs</th>
+              <th>DLC</th>
+            </tr>
+          </thead>
+          <tbody>
+            {lines.map((tiers) => {
+              const root = tiers[0];
+              const last = tiers[tiers.length - 1];
+              const needs = needNames(tiers);
+              const dlc = chainDlc(tiers);
+              return (
+                <>
+                  <tr class="sum" id={root.id}>
+                    <td class="name">
+                      <span class="caret">▸</span>
+                      {root.icon && <img class="b-icon" src={`${base}/img/buildings/${root.icon}.webp`} alt="" width="22" height="22" loading="lazy" onerror="this.style.visibility='hidden'" />}
+                      {root.name}
+                      {tiers.length > 1 && last.name !== root.name && <span class="subtle"> → {last.name}</span>}
+                    </td>
+                    <td class="num">{tiers.length}</td>
+                    <td class="num">{firstTierReq(tiers)}</td>
+                    <td class="num">{range(tiers, (t) => t.cost?.gold ?? null)}</td>
+                    <td class="num">{range(tiers, (t) => t.constructionTime)}</td>
+                    <td class="needs-cell">{needs.length ? needs.join(', ') : <span class="subtle">—</span>}</td>
+                    <td>{dlc ? <span class="badge-dlc">{dlc}</span> : <span class="subtle">—</span>}</td>
+                  </tr>
+                  <tr class="det" hidden>
+                    <td colspan="7"><BuildingChain tiers={tiers} district={d.id} districtNames={districtNames} /></td>
+                  </tr>
+                </>
+              );
+            })}
+          </tbody>
+        </table>
+      </div>
+    </section>
+  )}
+  {missing.length > 0 && (
+    <p class="note">Listed in the district but not defined as buildings: {missing.map((m: any) => m.id).join(', ')}.</p>
+  )}
+
+  <p class="prov">
+    From <code>common/districts/{d.sourceFile}</code> and the buildings it names in
+    <code>common/buildings/</code>. Trade-good needs are the game's <code>trade_good_need</code> blocks:
+    the modifiers apply when the market fills the need. Amounts are the game's script values.
+  </p>
+
+  <script>
+    const rows = [...document.querySelectorAll<HTMLTableRowElement>('tr.sum')];
+    function open(r: HTMLTableRowElement) {
+      const det = r.nextElementSibling as HTMLTableRowElement;
+      det.hidden = false;
+      r.classList.add('open');
+    }
+    for (const r of rows) {
+      r.addEventListener('click', (e) => {
+        if ((e.target as HTMLElement).closest('a')) return;
+        const det = r.nextElementSibling as HTMLTableRowElement;
+        det.hidden = !det.hidden;
+        r.classList.toggle('open', !det.hidden);
+      });
+    }
+    if (location.hash) {
+      const el = document.getElementById(decodeURIComponent(location.hash.slice(1)));
+      const sum = el?.closest('tr.det')?.previousElementSibling ?? el;
+      if (sum instanceof HTMLTableRowElement && sum.classList.contains('sum')) {
+        open(sum);
+        (el ?? sum).scrollIntoView();
+      }
+    }
+  </script>
+
+  <style>
+    .crumbs { font-size: 0.8rem; color: var(--faint); margin: -0.4rem 0 1rem; display: flex; gap: 0.4rem; align-items: baseline; }
+    .dfacts { font-size: 0.84rem; margin-bottom: 1.2rem; }
+    .dfacts p { margin: 0.25rem 0; display: flex; gap: 0.5rem; flex-wrap: wrap; align-items: baseline; }
+    .dfacts b { color: var(--faint); font-weight: 600; min-width: 9rem; }
+    .dfacts .chips { max-width: none; }
+    .slots { display: inline-flex; gap: 0.5rem; font-family: var(--font-mono); font-size: 0.75rem; }
+    .slots i { color: var(--rubric); font-style: normal; margin-right: 0.2rem; }
+    .note { color: var(--faint); font-size: 0.8rem; margin: 0 0 0.5rem; }
+    tr.sum { cursor: pointer; }
+    .caret { color: var(--faint); display: inline-block; width: 1em; font-size: 0.7rem; }
+    tr.sum.open .caret { transform: rotate(90deg); color: var(--rubric); }
+    .ntbl td.name { white-space: normal; min-width: 14rem; }
+    .b-icon { vertical-align: -6px; margin-right: 0.35rem; }
+    .needs-cell { font-size: 0.76rem; color: var(--dim); max-width: 20rem; white-space: normal; }
+    tr.det > td { background: var(--panel); border-bottom: 1px solid var(--line); padding: 0.7rem 0.9rem 0.9rem; }
+    .chip .neg { color: var(--bad); }
+    .prov { color: var(--faint); font-size: 0.78rem; max-width: 70ch; margin-top: 2rem; }
+    .prov code, .dfacts code { font-family: var(--font-mono); font-size: 0.95em; }
+  </style>
+</Base>

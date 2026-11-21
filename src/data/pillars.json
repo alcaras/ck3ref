@@ -44,7 +44,7 @@
         "-10 Minority Vassal Opinion (Different Culture)"
       ],
       "Counties": [
-        "+15% Development Growth"
+        "+15% Prosperity Growth"
       ]
     },
     "name": "Bureaucratic",
@@ -52,7 +52,7 @@
       {
         "hasLoc": true,
         "key": "can_adopt_administrative_government_as_kingdom_tier",
-        "text": "Rulers can adopt Administrative Government type as a King as well when they are Emperors",
+        "text": "Rulers can adopt Bureaucratic Government type as a King as well when they are Emperors",
         "value": true
       }
     ],
@@ -132,7 +132,7 @@
         "+10 Vassal Limit",
         "+5 Different Culture Opinion",
         "+5 Different Faith Opinion",
-        "+15 Tributary Opinion",
+        "+10 Tributary Opinion",
         "+10% Tributary Taxes"
       ],
       "Culture": [
@@ -158,7 +158,8 @@
       "Characters": [
         "+15% Control Growth",
         "+10% Monthly Piety",
-        "-20% Faith Creation and Reformation Cost",
+        "+10% Character Spiritual Fulfillment Gain Mult",
+        "-5% Rite Creation and Reformation Cost",
         "-10 Minority Vassal Opinion (Different Culture)",
         "+5% Herd Capacity"
       ]
@@ -220,7 +221,26 @@
     "id": "heritage_ainuic",
     "modifiers": {},
     "name": "Ainuic",
-    "parameters": [],
+    "parameters": [
+      {
+        "hasLoc": true,
+        "key": "housing_fruit_demand",
+        "text": "Housing District and Manor Houses District Districts have a Fruit Need that increases Popular Opinion when met",
+        "value": true
+      },
+      {
+        "hasLoc": true,
+        "key": "court_finery_furs_demand",
+        "text": "The Royal Palace and Noble Quarters have a Furs Need that increases Prosperity when met",
+        "value": true
+      },
+      {
+        "hasLoc": true,
+        "key": "votive_lacquerware_demand",
+        "text": "The Ornate Temple has a Lacquerware Need that increases Popular Opinion when met, and the Donation Store and Relic Chapel have one that increases Religious Tax",
+        "value": true
+      }
+    ],
     "requirements": [],
     "sourceFile": "00_heritage.txt",
     "type": "heritage",
@@ -236,7 +256,32 @@
     "id": "heritage_akan",
     "modifiers": {},
     "name": "Akan",
-    "parameters": [],
+    "parameters": [
+      {
+        "hasLoc": true,
+        "key": "copper_casting",
+        "text": "Feasting Grounds have a Copper Need that increases their Tribal Tax when met",
+        "value": true
+      },
+      {
+        "hasLoc": true,
+        "key": "housing_fruit_demand",
+        "text": "Housing District and Manor Houses District Districts have a Fruit Need that increases Popular Opinion when met",
+        "value": true
+      },
+      {
+        "hasLoc": true,
+        "key": "court_finery_textiles_demand",
+        "text": "The Royal Palace and Noble Quarters have a Textiles Need that increases Prosperity when met",
+        "value": true
+      },
+      {
+        "hasLoc": true,
+        "key": "votive_gold_demand",
+        "text": "The Ornate Temple has a Gold Need that increases Popular Opinion when met, and the Donation Store and Relic Chapel have one that increases Religious Tax",
+        "value": true
+      }
+    ],
     "requirements": [],
     "sourceFile": "00_heritage.txt",
     "type": "heritage",
@@ -252,7 +297,26 @@
     "id": "heritage_albanian",
     "modifiers": {},
     "name": "Albanian",
-    "parameters": [],
+    "parameters": [
+      {
+        "hasLoc": true,
+        "key": "housing_olive_oil_demand",
+        "text": "Housing District and Manor Houses District Districts have an Olive Oil Need that increases Popular Opinion when met",
+        "value": true
+      },
+      {
+        "hasLoc": true,
+        "key": "court_finery_textiles_demand",
+        "text": "The Royal Palace and Noble Quarters have a Textiles Need that increases Prosperity when met",
+        "value": true
+      },
+      {
+        "hasLoc": true,
+        "key": "votive_silver_demand",
+        "text": "The Ornate Temple has a Silver Need that increases Popular Opinion when met, and the Donation Store and Relic Chapel have one that increases Religious Tax",
+        "value": true
+      }
+    ],
     "requirements": [],
     "sourceFile": "00_heritage.txt",
     "type": "heritage",
@@ -268,7 +332,38 @@
     "id": "heritage_arabic",
     "modifiers": {},
     "name": "Arabic",
-    "parameters": [],
+    "parameters": [
+      {
+        "hasLoc": true,
+        "key": "spiced_cuisine",
+        "text": "Castles and Cities have a Spices Need that grants Prestige when met",
+        "value": true
+      },
+      {
+        "hasLoc": true,
+        "key": "fleet_timber_imports",
+        "text": "Coastal Cities have a Wood Need that increases their Maritime Tax when met",
+        "value": true
+      },
+      {
+        "hasLoc": true,
+        "key": "housing_fruit_demand",
+        "text": "Housing District and Manor Houses District Districts have a Fruit Need that increases Popular Opinion when met",
+        "value": true
+      },
+      {
+        "hasLoc": true,
+        "key": "court_finery_silk_demand",
+        "text": "The Royal Palace and Noble Quarters have a Silk Need that increases Prosperity when met",
+        "value": true
+      },
+      {
+        "hasLoc": true,
+        "key": "votive_incense_demand",
+        "text": "The Ornate Temple has an Incense Need that increases Popular Opinion when met, and the Donation Store and Relic Chapel have one that increases Religious Tax",
+        "value": true
+      }
+    ],
     "requirements": [],
     "sourceFile": "00_heritage.txt",
     "type": "heritage",
@@ -284,7 +379,32 @@
     "id": "heritage_austronesian",
     "modifiers": {},
     "name": "Austronesian",
-    "parameters": [],
+    "parameters": [
+      {
+        "hasLoc": true,
+        "key": "chinese_ceramics_barter",
+        "text": "Barter Markets and Temple Citadels have a Ceramics Need that increases their Tribal Tax or Religious Tax when met",
+        "value": true
+      },
+      {
+        "hasLoc": true,
+        "key": "housing_fruit_demand",
+        "text": "Housing District and Manor Houses District Districts have a Fruit Need that increases Popular Opinion when met",
+        "value": true
+      },
+      {
+        "hasLoc": true,
+        "key": "court_finery_silk_demand",
+        "text": "The Royal Palace and Noble Quarters have a Silk Need that increases Prosperity when met",
+        "value": true
+      },
+      {
+        "hasLoc": true,
+        "key": "votive_spices_demand",
+        "text": "The Ornate Temple has a Spices Need that increases Popular Opinion when met, and the Donation Store and Relic Chapel have one that increases Religious Tax",
+        "value": true
+      }
+    ],
     "requirements": [],
     "sourceFile": "00_heritage.txt",
     "type": "heritage",
@@ -300,7 +420,38 @@
     "id": "heritage_baltic",
     "modifiers": {},
     "name": "Baltic",
-    "parameters": [],
+    "parameters": [
+      {
+        "hasLoc": true,
+        "key": "northern_salt_curing",
+        "text": "Fish Districts and Fishing Villages have a Salt Need that increases their Production and lowers the Buy Price of Fish in their Market when met",
+        "value": true
+      },
+      {
+        "hasLoc": true,
+        "key": "amber_amulets",
+        "text": "Feasting Grounds have an Amber Need that grants Prestige when met",
+        "value": true
+      },
+      {
+        "hasLoc": true,
+        "key": "housing_honey_demand",
+        "text": "Housing District and Manor Houses District Districts have a Honey Need that increases Popular Opinion when met",
+        "value": true
+      },
+      {
+        "hasLoc": true,
+        "key": "court_finery_furs_demand",
+        "text": "The Royal Palace and Noble Quarters have a Furs Need that increases Prosperity when met",
+        "value": true
+      },
+      {
+        "hasLoc": true,
+        "key": "votive_amber_demand",
+        "text": "The Ornate Temple has an Amber Need that increases Popular Opinion when met, and the Donation Store and Relic Chapel have one that increases Religious Tax",
+        "value": true
+      }
+    ],
     "requirements": [],
     "sourceFile": "00_heritage.txt",
     "type": "heritage",
@@ -316,7 +467,38 @@
     "id": "heritage_balto_finnic",
     "modifiers": {},
     "name": "Balto-Finnic",
-    "parameters": [],
+    "parameters": [
+      {
+        "hasLoc": true,
+        "key": "northern_salt_curing",
+        "text": "Fish Districts and Fishing Villages have a Salt Need that increases their Production and lowers the Buy Price of Fish in their Market when met",
+        "value": true
+      },
+      {
+        "hasLoc": true,
+        "key": "amber_amulets",
+        "text": "Feasting Grounds have an Amber Need that grants Prestige when met",
+        "value": true
+      },
+      {
+        "hasLoc": true,
+        "key": "housing_cheese_demand",
+        "text": "Housing District and Manor Houses District Districts have a Cheese Need that increases Popular Opinion when met",
+        "value": true
+      },
+      {
+        "hasLoc": true,
+        "key": "court_finery_furs_demand",
+        "text": "The Royal Palace and Noble Quarters have a Furs Need that increases Prosperity when met",
+        "value": true
+      },
+      {
+        "hasLoc": true,
+        "key": "votive_silver_demand",
+        "text": "The Ornate Temple has a Silver Need that increases Popular Opinion when met, and the Donation Store and Relic Chapel have one that increases Religious Tax",
+        "value": true
+      }
+    ],
     "requirements": [],
     "sourceFile": "00_heritage.txt",
     "type": "heritage",
@@ -332,7 +514,38 @@
     "id": "heritage_bantu",
     "modifiers": {},
     "name": "Bantu",
-    "parameters": [],
+    "parameters": [
+      {
+        "hasLoc": true,
+        "key": "imported_porcelain_display",
+        "text": "Castles and Cities have a Ceramics Need that grants Prestige when met",
+        "value": true
+      },
+      {
+        "hasLoc": true,
+        "key": "glass_bead_trade",
+        "text": "Tribes have a Glass Need that grants Prestige when met",
+        "value": true
+      },
+      {
+        "hasLoc": true,
+        "key": "housing_fruit_demand",
+        "text": "Housing District and Manor Houses District Districts have a Fruit Need that increases Popular Opinion when met",
+        "value": true
+      },
+      {
+        "hasLoc": true,
+        "key": "court_finery_textiles_demand",
+        "text": "The Royal Palace and Noble Quarters have a Textiles Need that increases Prosperity when met",
+        "value": true
+      },
+      {
+        "hasLoc": true,
+        "key": "votive_copper_demand",
+        "text": "The Ornate Temple has a Copper Need that increases Popular Opinion when met, and the Donation Store and Relic Chapel have one that increases Religious Tax",
+        "value": true
+      }
+    ],
     "requirements": [],
     "sourceFile": "00_heritage.txt",
     "type": "heritage",
@@ -348,7 +561,38 @@
     "id": "heritage_berber",
     "modifiers": {},
     "name": "Berber",
-    "parameters": [],
+    "parameters": [
+      {
+        "hasLoc": true,
+        "key": "saharan_gold_minting",
+        "text": "Cities and Castles have a Gold Need that increases their Urban Tax and Civic Tax when met",
+        "value": true
+      },
+      {
+        "hasLoc": true,
+        "key": "fleet_timber_imports",
+        "text": "Coastal Cities have a Wood Need that increases their Maritime Tax when met",
+        "value": true
+      },
+      {
+        "hasLoc": true,
+        "key": "housing_fruit_demand",
+        "text": "Housing District and Manor Houses District Districts have a Fruit Need that increases Popular Opinion when met",
+        "value": true
+      },
+      {
+        "hasLoc": true,
+        "key": "court_finery_textiles_demand",
+        "text": "The Royal Palace and Noble Quarters have a Textiles Need that increases Prosperity when met",
+        "value": true
+      },
+      {
+        "hasLoc": true,
+        "key": "votive_silver_demand",
+        "text": "The Ornate Temple has a Silver Need that increases Popular Opinion when met, and the Donation Store and Relic Chapel have one that increases Religious Tax",
+        "value": true
+      }
+    ],
     "requirements": [],
     "sourceFile": "00_heritage.txt",
     "type": "heritage",
@@ -364,7 +608,26 @@
     "id": "heritage_brythonic",
     "modifiers": {},
     "name": "Brythonic",
-    "parameters": [],
+    "parameters": [
+      {
+        "hasLoc": true,
+        "key": "housing_cheese_demand",
+        "text": "Housing District and Manor Houses District Districts have a Cheese Need that increases Popular Opinion when met",
+        "value": true
+      },
+      {
+        "hasLoc": true,
+        "key": "court_finery_furs_demand",
+        "text": "The Royal Palace and Noble Quarters have a Furs Need that increases Prosperity when met",
+        "value": true
+      },
+      {
+        "hasLoc": true,
+        "key": "votive_copper_demand",
+        "text": "The Ornate Temple has a Copper Need that increases Popular Opinion when met, and the Donation Store and Relic Chapel have one that increases Religious Tax",
+        "value": true
+      }
+    ],
     "requirements": [],
     "sourceFile": "00_heritage.txt",
     "type": "heritage",
@@ -380,7 +643,32 @@
     "id": "heritage_burman",
     "modifiers": {},
     "name": "Burman",
-    "parameters": [],
+    "parameters": [
+      {
+        "hasLoc": true,
+        "key": "gilded_temples",
+        "text": "Temple Citadels have a Gold Need that grants Piety when met",
+        "value": true
+      },
+      {
+        "hasLoc": true,
+        "key": "housing_tea_demand",
+        "text": "Housing District and Manor Houses District Districts have a Tea Need that increases Popular Opinion when met",
+        "value": true
+      },
+      {
+        "hasLoc": true,
+        "key": "court_finery_silk_demand",
+        "text": "The Royal Palace and Noble Quarters have a Silk Need that increases Prosperity when met",
+        "value": true
+      },
+      {
+        "hasLoc": true,
+        "key": "votive_gems_demand",
+        "text": "The Ornate Temple has a Gems Need that increases Popular Opinion when met, and the Donation Store and Relic Chapel have one that increases Religious Tax",
+        "value": true
+      }
+    ],
     "requirements": [],
     "sourceFile": "00_heritage.txt",
     "type": "heritage",
@@ -396,7 +684,26 @@
     "id": "heritage_buyeo",
     "modifiers": {},
     "name": "Buyeo",
-    "parameters": [],
+    "parameters": [
+      {
+        "hasLoc": true,
+        "key": "housing_tea_demand",
+        "text": "Housing District and Manor Houses District Districts have a Tea Need that increases Popular Opinion when met",
+        "value": true
+      },
+      {
+        "hasLoc": true,
+        "key": "court_finery_silk_demand",
+        "text": "The Royal Palace and Noble Quarters have a Silk Need that increases Prosperity when met",
+        "value": true
+      },
+      {
+        "hasLoc": true,
+        "key": "votive_copper_demand",
+        "text": "The Ornate Temple has a Copper Need that increases Popular Opinion when met, and the Donation Store and Relic Chapel have one that increases Religious Tax",
+        "value": true
+      }
+    ],
     "requirements": [],
     "sourceFile": "00_heritage.txt",
     "type": "heritage",
@@ -412,7 +719,26 @@
     "id": "heritage_caucasian",
     "modifiers": {},
     "name": "Caucasian",
-    "parameters": [],
+    "parameters": [
+      {
+        "hasLoc": true,
+        "key": "housing_fruit_demand",
+        "text": "Housing District and Manor Houses District Districts have a Fruit Need that increases Popular Opinion when met",
+        "value": true
+      },
+      {
+        "hasLoc": true,
+        "key": "court_finery_textiles_demand",
+        "text": "The Royal Palace and Noble Quarters have a Textiles Need that increases Prosperity when met",
+        "value": true
+      },
+      {
+        "hasLoc": true,
+        "key": "votive_silver_demand",
+        "text": "The Ornate Temple has a Silver Need that increases Popular Opinion when met, and the Donation Store and Relic Chapel have one that increases Religious Tax",
+        "value": true
+      }
+    ],
     "requirements": [],
     "sourceFile": "00_heritage.txt",
     "type": "heritage",
@@ -428,7 +754,32 @@
     "id": "heritage_central_african",
     "modifiers": {},
     "name": "Central African",
-    "parameters": [],
+    "parameters": [
+      {
+        "hasLoc": true,
+        "key": "saharan_salt_reliance",
+        "text": "Feasting Grounds and Farming Villages have a Salt Need that increases their Tribal Tax or Agricultural Tax when met",
+        "value": true
+      },
+      {
+        "hasLoc": true,
+        "key": "housing_honey_demand",
+        "text": "Housing District and Manor Houses District Districts have a Honey Need that increases Popular Opinion when met",
+        "value": true
+      },
+      {
+        "hasLoc": true,
+        "key": "court_finery_textiles_demand",
+        "text": "The Royal Palace and Noble Quarters have a Textiles Need that increases Prosperity when met",
+        "value": true
+      },
+      {
+        "hasLoc": true,
+        "key": "votive_copper_demand",
+        "text": "The Ornate Temple has a Copper Need that increases Popular Opinion when met, and the Donation Store and Relic Chapel have one that increases Religious Tax",
+        "value": true
+      }
+    ],
     "requirements": [],
     "sourceFile": "00_heritage.txt",
     "type": "heritage",
@@ -444,7 +795,44 @@
     "id": "heritage_central_germanic",
     "modifiers": {},
     "name": "Central Germanic",
-    "parameters": [],
+    "parameters": [
+      {
+        "hasLoc": true,
+        "key": "cloth_mordant_alum",
+        "text": "Cities in Counties that can produce Wool and Village Weaver buildings have an Alum Need that increases Textiles and Fabric Production when met",
+        "value": true
+      },
+      {
+        "hasLoc": true,
+        "key": "fur_trimmed_finery",
+        "text": "Castles and Cities have a Furs Need that grants Prestige when met",
+        "value": true
+      },
+      {
+        "hasLoc": true,
+        "key": "northern_salt_curing",
+        "text": "Fish Districts and Fishing Villages have a Salt Need that increases their Production and lowers the Buy Price of Fish in their Market when met",
+        "value": true
+      },
+      {
+        "hasLoc": true,
+        "key": "housing_cheese_demand",
+        "text": "Housing District and Manor Houses District Districts have a Cheese Need that increases Popular Opinion when met",
+        "value": true
+      },
+      {
+        "hasLoc": true,
+        "key": "court_finery_furs_demand",
+        "text": "The Royal Palace and Noble Quarters have a Furs Need that increases Prosperity when met",
+        "value": true
+      },
+      {
+        "hasLoc": true,
+        "key": "votive_silver_demand",
+        "text": "The Ornate Temple has a Silver Need that increases Popular Opinion when met, and the Donation Store and Relic Chapel have one that increases Religious Tax",
+        "value": true
+      }
+    ],
     "requirements": [],
     "sourceFile": "00_heritage.txt",
     "type": "heritage",
@@ -460,7 +848,38 @@
     "id": "heritage_chinese",
     "modifiers": {},
     "name": "Chinese",
-    "parameters": [],
+    "parameters": [
+      {
+        "hasLoc": true,
+        "key": "song_horse_shortage",
+        "text": "Castle Garrison and Training Grounds have a Horses Need that strengthens Stationed Light Cavalry and Heavy Cavalry when met",
+        "value": true
+      },
+      {
+        "hasLoc": true,
+        "key": "ivory_carving_patronage",
+        "text": "Cities have an Ivory Need that grants Prestige when met",
+        "value": true
+      },
+      {
+        "hasLoc": true,
+        "key": "housing_tea_demand",
+        "text": "Housing District and Manor Houses District Districts have a Tea Need that increases Popular Opinion when met",
+        "value": true
+      },
+      {
+        "hasLoc": true,
+        "key": "court_finery_silk_demand",
+        "text": "The Royal Palace and Noble Quarters have a Silk Need that increases Prosperity when met",
+        "value": true
+      },
+      {
+        "hasLoc": true,
+        "key": "votive_incense_demand",
+        "text": "The Ornate Temple has an Incense Need that increases Popular Opinion when met, and the Donation Store and Relic Chapel have one that increases Religious Tax",
+        "value": true
+      }
+    ],
     "requirements": [],
     "sourceFile": "00_heritage.txt",
     "type": "heritage",
@@ -476,7 +895,38 @@
     "id": "heritage_dravidian",
     "modifiers": {},
     "name": "Dravidian",
-    "parameters": [],
+    "parameters": [
+      {
+        "hasLoc": true,
+        "key": "temple_silver_offerings",
+        "text": "Temples have a Silver Need that grants Piety when met",
+        "value": true
+      },
+      {
+        "hasLoc": true,
+        "key": "imported_war_horses",
+        "text": "Castles and Training Grounds have a Horses Need that strengthens Stationed Light Cavalry and Heavy Cavalry when met",
+        "value": true
+      },
+      {
+        "hasLoc": true,
+        "key": "housing_fruit_demand",
+        "text": "Housing District and Manor Houses District Districts have a Fruit Need that increases Popular Opinion when met",
+        "value": true
+      },
+      {
+        "hasLoc": true,
+        "key": "court_finery_silk_demand",
+        "text": "The Royal Palace and Noble Quarters have a Silk Need that increases Prosperity when met",
+        "value": true
+      },
+      {
+        "hasLoc": true,
+        "key": "votive_gold_demand",
+        "text": "The Ornate Temple has a Gold Need that increases Popular Opinion when met, and the Donation Store and Relic Chapel have one that increases Religious Tax",
+        "value": true
+      }
+    ],
     "requirements": [],
     "sourceFile": "00_heritage.txt",
     "type": "heritage",
@@ -492,7 +942,26 @@
     "id": "heritage_east_african",
     "modifiers": {},
     "name": "East African",
-    "parameters": [],
+    "parameters": [
+      {
+        "hasLoc": true,
+        "key": "housing_fruit_demand",
+        "text": "Housing District and Manor Houses District Districts have a Fruit Need that increases Popular Opinion when met",
+        "value": true
+      },
+      {
+        "hasLoc": true,
+        "key": "court_finery_textiles_demand",
+        "text": "The Royal Palace and Noble Quarters have a Textiles Need that increases Prosperity when met",
+        "value": true
+      },
+      {
+        "hasLoc": true,
+        "key": "votive_ivory_demand",
+        "text": "The Ornate Temple has an Ivory Need that increases Popular Opinion when met, and the Donation Store and Relic Chapel have one that increases Religious Tax",
+        "value": true
+      }
+    ],
     "requirements": [],
     "sourceFile": "00_heritage.txt",
     "type": "heritage",
@@ -508,7 +977,44 @@
     "id": "heritage_east_slavic",
     "modifiers": {},
     "name": "East Slavic",
-    "parameters": [],
+    "parameters": [
+      {
+        "hasLoc": true,
+        "key": "silver_ingot_currency",
+        "text": "Castles and Cities have a Silver Need that increases their Civic Tax and Urban Tax when met",
+        "value": true
+      },
+      {
+        "hasLoc": true,
+        "key": "northern_wine_imports",
+        "text": "Castles and Cities have a Wine Need that grants Prestige when met",
+        "value": true
+      },
+      {
+        "hasLoc": true,
+        "key": "amber_amulets",
+        "text": "Feasting Grounds have an Amber Need that grants Prestige when met",
+        "value": true
+      },
+      {
+        "hasLoc": true,
+        "key": "housing_honey_demand",
+        "text": "Housing District and Manor Houses District Districts have a Honey Need that increases Popular Opinion when met",
+        "value": true
+      },
+      {
+        "hasLoc": true,
+        "key": "court_finery_furs_demand",
+        "text": "The Royal Palace and Noble Quarters have a Furs Need that increases Prosperity when met",
+        "value": true
+      },
+      {
+        "hasLoc": true,
+        "key": "votive_silver_demand",
+        "text": "The Ornate Temple has a Silver Need that increases Popular Opinion when met, and the Donation Store and Relic Chapel have one that increases Religious Tax",
+        "value": true
+      }
+    ],
     "requirements": [],
     "sourceFile": "00_heritage.txt",
     "type": "heritage",
@@ -524,7 +1030,44 @@
     "id": "heritage_byzantine",
     "modifiers": {},
     "name": "Eastern Roman",
-    "parameters": [],
+    "parameters": [
+      {
+        "hasLoc": true,
+        "key": "fur_trimmed_finery",
+        "text": "Castles and Cities have a Furs Need that grants Prestige when met",
+        "value": true
+      },
+      {
+        "hasLoc": true,
+        "key": "castle_wine_demand",
+        "text": "Castles have a Wine Need that grants Prestige when met",
+        "value": true
+      },
+      {
+        "hasLoc": true,
+        "key": "housing_olive_oil_demand",
+        "text": "Housing District and Manor Houses District Districts have an Olive Oil Need that increases Popular Opinion when met",
+        "value": true
+      },
+      {
+        "hasLoc": true,
+        "key": "court_finery_silk_demand",
+        "text": "The Royal Palace and Noble Quarters have a Silk Need that increases Prosperity when met",
+        "value": true
+      },
+      {
+        "hasLoc": true,
+        "key": "votive_incense_demand",
+        "text": "The Ornate Temple has an Incense Need that increases Popular Opinion when met, and the Donation Store and Relic Chapel have one that increases Religious Tax",
+        "value": true
+      },
+      {
+        "hasLoc": true,
+        "key": "hetaireia_guard",
+        "text": "The Knights' Hall Building houses a foreign imperial guard: it gives Opinion with characters of different Cultures, and its Leather Need is replaced by Silk and Gold Needs",
+        "value": true
+      }
+    ],
     "requirements": [],
     "sourceFile": "00_heritage.txt",
     "type": "heritage",
@@ -540,7 +1083,32 @@
     "id": "heritage_egyptian",
     "modifiers": {},
     "name": "Egyptian",
-    "parameters": [],
+    "parameters": [
+      {
+        "hasLoc": true,
+        "key": "fleet_timber_imports",
+        "text": "Coastal Cities have a Wood Need that increases their Maritime Tax when met",
+        "value": true
+      },
+      {
+        "hasLoc": true,
+        "key": "housing_fruit_demand",
+        "text": "Housing District and Manor Houses District Districts have a Fruit Need that increases Popular Opinion when met",
+        "value": true
+      },
+      {
+        "hasLoc": true,
+        "key": "court_finery_silk_demand",
+        "text": "The Royal Palace and Noble Quarters have a Silk Need that increases Prosperity when met",
+        "value": true
+      },
+      {
+        "hasLoc": true,
+        "key": "votive_incense_demand",
+        "text": "The Ornate Temple has an Incense Need that increases Popular Opinion when met, and the Donation Store and Relic Chapel have one that increases Religious Tax",
+        "value": true
+      }
+    ],
     "requirements": [],
     "sourceFile": "00_heritage.txt",
     "type": "heritage",
@@ -556,7 +1124,44 @@
     "id": "heritage_frankish",
     "modifiers": {},
     "name": "Frankish",
-    "parameters": [],
+    "parameters": [
+      {
+        "hasLoc": true,
+        "key": "cloth_mordant_alum",
+        "text": "Cities in Counties that can produce Wool and Village Weaver buildings have an Alum Need that increases Textiles and Fabric Production when met",
+        "value": true
+      },
+      {
+        "hasLoc": true,
+        "key": "fur_trimmed_finery",
+        "text": "Castles and Cities have a Furs Need that grants Prestige when met",
+        "value": true
+      },
+      {
+        "hasLoc": true,
+        "key": "castle_wine_demand",
+        "text": "Castles have a Wine Need that grants Prestige when met",
+        "value": true
+      },
+      {
+        "hasLoc": true,
+        "key": "housing_olive_oil_demand",
+        "text": "Housing District and Manor Houses District Districts have an Olive Oil Need that increases Popular Opinion when met",
+        "value": true
+      },
+      {
+        "hasLoc": true,
+        "key": "court_finery_furs_demand",
+        "text": "The Royal Palace and Noble Quarters have a Furs Need that increases Prosperity when met",
+        "value": true
+      },
+      {
+        "hasLoc": true,
+        "key": "votive_gold_demand",
+        "text": "The Ornate Temple has a Gold Need that increases Popular Opinion when met, and the Donation Store and Relic Chapel have one that increases Religious Tax",
+        "value": true
+      }
+    ],
     "requirements": [],
     "sourceFile": "00_heritage.txt",
     "type": "heritage",
@@ -572,7 +1177,32 @@
     "id": "heritage_goidelic",
     "modifiers": {},
     "name": "Goidelic",
-    "parameters": [],
+    "parameters": [
+      {
+        "hasLoc": true,
+        "key": "cattle_wealth",
+        "text": "Castles have a Cattle Need that grants Prestige when met",
+        "value": true
+      },
+      {
+        "hasLoc": true,
+        "key": "housing_cheese_demand",
+        "text": "Housing District and Manor Houses District Districts have a Cheese Need that increases Popular Opinion when met",
+        "value": true
+      },
+      {
+        "hasLoc": true,
+        "key": "court_finery_furs_demand",
+        "text": "The Royal Palace and Noble Quarters have a Furs Need that increases Prosperity when met",
+        "value": true
+      },
+      {
+        "hasLoc": true,
+        "key": "votive_gold_demand",
+        "text": "The Ornate Temple has a Gold Need that increases Popular Opinion when met, and the Donation Store and Relic Chapel have one that increases Religious Tax",
+        "value": true
+      }
+    ],
     "requirements": [],
     "sourceFile": "00_heritage.txt",
     "type": "heritage",
@@ -588,7 +1218,26 @@
     "id": "heritage_gothic",
     "modifiers": {},
     "name": "Gothic",
-    "parameters": [],
+    "parameters": [
+      {
+        "hasLoc": true,
+        "key": "housing_olive_oil_demand",
+        "text": "Housing District and Manor Houses District Districts have an Olive Oil Need that increases Popular Opinion when met",
+        "value": true
+      },
+      {
+        "hasLoc": true,
+        "key": "court_finery_furs_demand",
+        "text": "The Royal Palace and Noble Quarters have a Furs Need that increases Prosperity when met",
+        "value": true
+      },
+      {
+        "hasLoc": true,
+        "key": "votive_gold_demand",
+        "text": "The Ornate Temple has a Gold Need that increases Popular Opinion when met, and the Donation Store and Relic Chapel have one that increases Religious Tax",
+        "value": true
+      }
+    ],
     "requirements": [],
     "sourceFile": "00_heritage.txt",
     "type": "heritage",
@@ -604,7 +1253,38 @@
     "id": "heritage_west_african",
     "modifiers": {},
     "name": "Guinean Uplander",
-    "parameters": [],
+    "parameters": [
+      {
+        "hasLoc": true,
+        "key": "saharan_salt_reliance",
+        "text": "Feasting Grounds and Farming Villages have a Salt Need that increases their Tribal Tax or Agricultural Tax when met",
+        "value": true
+      },
+      {
+        "hasLoc": true,
+        "key": "saharan_cloth_imports",
+        "text": "Tribes and Castles have a Textiles Need that grants Prestige when met",
+        "value": true
+      },
+      {
+        "hasLoc": true,
+        "key": "housing_fruit_demand",
+        "text": "Housing District and Manor Houses District Districts have a Fruit Need that increases Popular Opinion when met",
+        "value": true
+      },
+      {
+        "hasLoc": true,
+        "key": "court_finery_textiles_demand",
+        "text": "The Royal Palace and Noble Quarters have a Textiles Need that increases Prosperity when met",
+        "value": true
+      },
+      {
+        "hasLoc": true,
+        "key": "votive_gold_demand",
+        "text": "The Ornate Temple has a Gold Need that increases Popular Opinion when met, and the Donation Store and Relic Chapel have one that increases Religious Tax",
+        "value": true
+      }
+    ],
     "requirements": [],
     "sourceFile": "00_heritage.txt",
     "type": "heritage",
@@ -620,7 +1300,26 @@
     "id": "heritage_ancient_greek",
     "modifiers": {},
     "name": "Hellenic",
-    "parameters": [],
+    "parameters": [
+      {
+        "hasLoc": true,
+        "key": "housing_olive_oil_demand",
+        "text": "Housing District and Manor Houses District Districts have an Olive Oil Need that increases Popular Opinion when met",
+        "value": true
+      },
+      {
+        "hasLoc": true,
+        "key": "court_finery_textiles_demand",
+        "text": "The Royal Palace and Noble Quarters have a Textiles Need that increases Prosperity when met",
+        "value": true
+      },
+      {
+        "hasLoc": true,
+        "key": "votive_copper_demand",
+        "text": "The Ornate Temple has a Copper Need that increases Popular Opinion when met, and the Donation Store and Relic Chapel have one that increases Religious Tax",
+        "value": true
+      }
+    ],
     "requirements": [],
     "sourceFile": "00_heritage.txt",
     "type": "heritage",
@@ -636,7 +1335,26 @@
     "id": "heritage_hmongic",
     "modifiers": {},
     "name": "Hmongic",
-    "parameters": [],
+    "parameters": [
+      {
+        "hasLoc": true,
+        "key": "housing_tea_demand",
+        "text": "Housing District and Manor Houses District Districts have a Tea Need that increases Popular Opinion when met",
+        "value": true
+      },
+      {
+        "hasLoc": true,
+        "key": "court_finery_silk_demand",
+        "text": "The Royal Palace and Noble Quarters have a Silk Need that increases Prosperity when met",
+        "value": true
+      },
+      {
+        "hasLoc": true,
+        "key": "votive_silver_demand",
+        "text": "The Ornate Temple has a Silver Need that increases Popular Opinion when met, and the Donation Store and Relic Chapel have one that increases Religious Tax",
+        "value": true
+      }
+    ],
     "requirements": [],
     "sourceFile": "00_heritage.txt",
     "type": "heritage",
@@ -652,7 +1370,26 @@
     "id": "heritage_somalian",
     "modifiers": {},
     "name": "Horn African",
-    "parameters": [],
+    "parameters": [
+      {
+        "hasLoc": true,
+        "key": "housing_fruit_demand",
+        "text": "Housing District and Manor Houses District Districts have a Fruit Need that increases Popular Opinion when met",
+        "value": true
+      },
+      {
+        "hasLoc": true,
+        "key": "court_finery_textiles_demand",
+        "text": "The Royal Palace and Noble Quarters have a Textiles Need that increases Prosperity when met",
+        "value": true
+      },
+      {
+        "hasLoc": true,
+        "key": "votive_incense_demand",
+        "text": "The Ornate Temple has an Incense Need that increases Popular Opinion when met, and the Donation Store and Relic Chapel have one that increases Religious Tax",
+        "value": true
+      }
+    ],
     "requirements": [],
     "sourceFile": "00_heritage.txt",
     "type": "heritage",
@@ -668,7 +1405,26 @@
     "id": "heritage_hunnic",
     "modifiers": {},
     "name": "Hunnic",
-    "parameters": [],
+    "parameters": [
+      {
+        "hasLoc": true,
+        "key": "housing_cheese_demand",
+        "text": "Housing District and Manor Houses District Districts have a Cheese Need that increases Popular Opinion when met",
+        "value": true
+      },
+      {
+        "hasLoc": true,
+        "key": "court_finery_furs_demand",
+        "text": "The Royal Palace and Noble Quarters have a Furs Need that increases Prosperity when met",
+        "value": true
+      },
+      {
+        "hasLoc": true,
+        "key": "votive_gold_demand",
+        "text": "The Ornate Temple has a Gold Need that increases Popular Opinion when met, and the Donation Store and Relic Chapel have one that increases Religious Tax",
+        "value": true
+      }
+    ],
     "requirements": [],
     "sourceFile": "00_heritage.txt",
     "type": "heritage",
@@ -684,7 +1440,32 @@
     "id": "heritage_iberian",
     "modifiers": {},
     "name": "Iberian",
-    "parameters": [],
+    "parameters": [
+      {
+        "hasLoc": true,
+        "key": "castle_wine_demand",
+        "text": "Castles have a Wine Need that grants Prestige when met",
+        "value": true
+      },
+      {
+        "hasLoc": true,
+        "key": "housing_olive_oil_demand",
+        "text": "Housing District and Manor Houses District Districts have an Olive Oil Need that increases Popular Opinion when met",
+        "value": true
+      },
+      {
+        "hasLoc": true,
+        "key": "court_finery_textiles_demand",
+        "text": "The Royal Palace and Noble Quarters have a Textiles Need that increases Prosperity when met",
+        "value": true
+      },
+      {
+        "hasLoc": true,
+        "key": "votive_silver_demand",
+        "text": "The Ornate Temple has a Silver Need that increases Popular Opinion when met, and the Donation Store and Relic Chapel have one that increases Religious Tax",
+        "value": true
+      }
+    ],
     "requirements": [],
     "sourceFile": "00_heritage.txt",
     "type": "heritage",
@@ -700,7 +1481,26 @@
     "id": "heritage_indo_aryan",
     "modifiers": {},
     "name": "Indo-Aryan",
-    "parameters": [],
+    "parameters": [
+      {
+        "hasLoc": true,
+        "key": "housing_fruit_demand",
+        "text": "Housing District and Manor Houses District Districts have a Fruit Need that increases Popular Opinion when met",
+        "value": true
+      },
+      {
+        "hasLoc": true,
+        "key": "court_finery_silk_demand",
+        "text": "The Royal Palace and Noble Quarters have a Silk Need that increases Prosperity when met",
+        "value": true
+      },
+      {
+        "hasLoc": true,
+        "key": "votive_gems_demand",
+        "text": "The Ornate Temple has a Gems Need that increases Popular Opinion when met, and the Donation Store and Relic Chapel have one that increases Religious Tax",
+        "value": true
+      }
+    ],
     "requirements": [],
     "sourceFile": "00_heritage.txt",
     "type": "heritage",
@@ -716,7 +1516,32 @@
     "id": "heritage_iranian",
     "modifiers": {},
     "name": "Iranian",
-    "parameters": [],
+    "parameters": [
+      {
+        "hasLoc": true,
+        "key": "fur_trimmed_finery",
+        "text": "Castles and Cities have a Furs Need that grants Prestige when met",
+        "value": true
+      },
+      {
+        "hasLoc": true,
+        "key": "housing_fruit_demand",
+        "text": "Housing District and Manor Houses District Districts have a Fruit Need that increases Popular Opinion when met",
+        "value": true
+      },
+      {
+        "hasLoc": true,
+        "key": "court_finery_silk_demand",
+        "text": "The Royal Palace and Noble Quarters have a Silk Need that increases Prosperity when met",
+        "value": true
+      },
+      {
+        "hasLoc": true,
+        "key": "votive_silver_demand",
+        "text": "The Ornate Temple has a Silver Need that increases Popular Opinion when met, and the Donation Store and Relic Chapel have one that increases Religious Tax",
+        "value": true
+      }
+    ],
     "requirements": [],
     "sourceFile": "00_heritage.txt",
     "type": "heritage",
@@ -732,7 +1557,26 @@
     "id": "heritage_israelite",
     "modifiers": {},
     "name": "Israelite",
-    "parameters": [],
+    "parameters": [
+      {
+        "hasLoc": true,
+        "key": "housing_olive_oil_demand",
+        "text": "Housing District and Manor Houses District Districts have an Olive Oil Need that increases Popular Opinion when met",
+        "value": true
+      },
+      {
+        "hasLoc": true,
+        "key": "court_finery_textiles_demand",
+        "text": "The Royal Palace and Noble Quarters have a Textiles Need that increases Prosperity when met",
+        "value": true
+      },
+      {
+        "hasLoc": true,
+        "key": "votive_incense_demand",
+        "text": "The Ornate Temple has an Incense Need that increases Popular Opinion when met, and the Donation Store and Relic Chapel have one that increases Religious Tax",
+        "value": true
+      }
+    ],
     "requirements": [],
     "sourceFile": "00_heritage.txt",
     "type": "heritage",
@@ -748,7 +1592,26 @@
     "id": "heritage_japonic",
     "modifiers": {},
     "name": "Japonic",
-    "parameters": [],
+    "parameters": [
+      {
+        "hasLoc": true,
+        "key": "housing_tea_demand",
+        "text": "Housing District and Manor Houses District Districts have a Tea Need that increases Popular Opinion when met",
+        "value": true
+      },
+      {
+        "hasLoc": true,
+        "key": "court_finery_silk_demand",
+        "text": "The Royal Palace and Noble Quarters have a Silk Need that increases Prosperity when met",
+        "value": true
+      },
+      {
+        "hasLoc": true,
+        "key": "votive_incense_demand",
+        "text": "The Ornate Temple has an Incense Need that increases Popular Opinion when met, and the Donation Store and Relic Chapel have one that increases Religious Tax",
+        "value": true
+      }
+    ],
     "requirements": [],
     "sourceFile": "00_heritage.txt",
     "type": "heritage",
@@ -764,7 +1627,50 @@
     "id": "heritage_latin",
     "modifiers": {},
     "name": "Latin",
-    "parameters": [],
+    "parameters": [
+      {
+        "hasLoc": true,
+        "key": "cloth_mordant_alum",
+        "text": "Cities in Counties that can produce Wool and Village Weaver buildings have an Alum Need that increases Textiles and Fabric Production when met",
+        "value": true
+      },
+      {
+        "hasLoc": true,
+        "key": "fur_trimmed_finery",
+        "text": "Castles and Cities have a Furs Need that grants Prestige when met",
+        "value": true
+      },
+      {
+        "hasLoc": true,
+        "key": "fustian_weaving",
+        "text": "Cities have a Cotton Need that increases their Artisan Tax and Textiles Production when met",
+        "value": true
+      },
+      {
+        "hasLoc": true,
+        "key": "castle_wine_demand",
+        "text": "Castles have a Wine Need that grants Prestige when met",
+        "value": true
+      },
+      {
+        "hasLoc": true,
+        "key": "housing_olive_oil_demand",
+        "text": "Housing District and Manor Houses District Districts have an Olive Oil Need that increases Popular Opinion when met",
+        "value": true
+      },
+      {
+        "hasLoc": true,
+        "key": "court_finery_textiles_demand",
+        "text": "The Royal Palace and Noble Quarters have a Textiles Need that increases Prosperity when met",
+        "value": true
+      },
+      {
+        "hasLoc": true,
+        "key": "votive_gold_demand",
+        "text": "The Ornate Temple has a Gold Need that increases Popular Opinion when met, and the Donation Store and Relic Chapel have one that increases Religious Tax",
+        "value": true
+      }
+    ],
     "requirements": [],
     "sourceFile": "00_heritage.txt",
     "type": "heritage",
@@ -780,7 +1686,32 @@
     "id": "heritage_magyar",
     "modifiers": {},
     "name": "Magyar",
-    "parameters": [],
+    "parameters": [
+      {
+        "hasLoc": true,
+        "key": "imported_war_horses",
+        "text": "Castles and Training Grounds have a Horses Need that strengthens Stationed Light Cavalry and Heavy Cavalry when met",
+        "value": true
+      },
+      {
+        "hasLoc": true,
+        "key": "housing_cheese_demand",
+        "text": "Housing District and Manor Houses District Districts have a Cheese Need that increases Popular Opinion when met",
+        "value": true
+      },
+      {
+        "hasLoc": true,
+        "key": "court_finery_furs_demand",
+        "text": "The Royal Palace and Noble Quarters have a Furs Need that increases Prosperity when met",
+        "value": true
+      },
+      {
+        "hasLoc": true,
+        "key": "votive_silver_demand",
+        "text": "The Ornate Temple has a Silver Need that increases Popular Opinion when met, and the Donation Store and Relic Chapel have one that increases Religious Tax",
+        "value": true
+      }
+    ],
     "requirements": [],
     "sourceFile": "00_heritage.txt",
     "type": "heritage",
@@ -796,7 +1727,32 @@
     "id": "heritage_mon_khmer",
     "modifiers": {},
     "name": "Mon-Khmer",
-    "parameters": [],
+    "parameters": [
+      {
+        "hasLoc": true,
+        "key": "gilded_temples",
+        "text": "Temple Citadels have a Gold Need that grants Piety when met",
+        "value": true
+      },
+      {
+        "hasLoc": true,
+        "key": "housing_fruit_demand",
+        "text": "Housing District and Manor Houses District Districts have a Fruit Need that increases Popular Opinion when met",
+        "value": true
+      },
+      {
+        "hasLoc": true,
+        "key": "court_finery_silk_demand",
+        "text": "The Royal Palace and Noble Quarters have a Silk Need that increases Prosperity when met",
+        "value": true
+      },
+      {
+        "hasLoc": true,
+        "key": "votive_gold_demand",
+        "text": "The Ornate Temple has a Gold Need that increases Popular Opinion when met, and the Donation Store and Relic Chapel have one that increases Religious Tax",
+        "value": true
+      }
+    ],
     "requirements": [],
     "sourceFile": "00_heritage.txt",
     "type": "heritage",
@@ -812,7 +1768,38 @@
     "id": "heritage_mongolic",
     "modifiers": {},
     "name": "Mongolic",
-    "parameters": [],
+    "parameters": [
+      {
+        "hasLoc": true,
+        "key": "steppe_sable_finery",
+        "text": "Nomadic Settlement buildings have a Furs Need that grants Prestige when met",
+        "value": true
+      },
+      {
+        "hasLoc": true,
+        "key": "steppe_border_trade",
+        "text": "Nomadic Settlement buildings have Silk and Grain Needs that increase Herd contributions from Vassals and Herd growth when met",
+        "value": true
+      },
+      {
+        "hasLoc": true,
+        "key": "housing_cheese_demand",
+        "text": "Housing District and Manor Houses District Districts have a Cheese Need that increases Popular Opinion when met",
+        "value": true
+      },
+      {
+        "hasLoc": true,
+        "key": "court_finery_furs_demand",
+        "text": "The Royal Palace and Noble Quarters have a Furs Need that increases Prosperity when met",
+        "value": true
+      },
+      {
+        "hasLoc": true,
+        "key": "votive_silver_demand",
+        "text": "The Ornate Temple has a Silver Need that increases Popular Opinion when met, and the Donation Store and Relic Chapel have one that increases Religious Tax",
+        "value": true
+      }
+    ],
     "requirements": [],
     "sourceFile": "00_heritage.txt",
     "type": "heritage",
@@ -828,7 +1815,32 @@
     "id": "heritage_yoruba",
     "modifiers": {},
     "name": "Niger Delta",
-    "parameters": [],
+    "parameters": [
+      {
+        "hasLoc": true,
+        "key": "copper_casting",
+        "text": "Feasting Grounds have a Copper Need that increases their Tribal Tax when met",
+        "value": true
+      },
+      {
+        "hasLoc": true,
+        "key": "housing_fruit_demand",
+        "text": "Housing District and Manor Houses District Districts have a Fruit Need that increases Popular Opinion when met",
+        "value": true
+      },
+      {
+        "hasLoc": true,
+        "key": "court_finery_textiles_demand",
+        "text": "The Royal Palace and Noble Quarters have a Textiles Need that increases Prosperity when met",
+        "value": true
+      },
+      {
+        "hasLoc": true,
+        "key": "votive_copper_demand",
+        "text": "The Ornate Temple has a Copper Need that increases Popular Opinion when met, and the Donation Store and Relic Chapel have one that increases Religious Tax",
+        "value": true
+      }
+    ],
     "requirements": [],
     "sourceFile": "00_heritage.txt",
     "type": "heritage",
@@ -844,7 +1856,26 @@
     "id": "heritage_nivkh",
     "modifiers": {},
     "name": "Nivkh",
-    "parameters": [],
+    "parameters": [
+      {
+        "hasLoc": true,
+        "key": "housing_fruit_demand",
+        "text": "Housing District and Manor Houses District Districts have a Fruit Need that increases Popular Opinion when met",
+        "value": true
+      },
+      {
+        "hasLoc": true,
+        "key": "court_finery_furs_demand",
+        "text": "The Royal Palace and Noble Quarters have a Furs Need that increases Prosperity when met",
+        "value": true
+      },
+      {
+        "hasLoc": true,
+        "key": "votive_ivory_demand",
+        "text": "The Ornate Temple has an Ivory Need that increases Popular Opinion when met, and the Donation Store and Relic Chapel have one that increases Religious Tax",
+        "value": true
+      }
+    ],
     "requirements": [],
     "sourceFile": "00_heritage.txt",
     "type": "heritage",
@@ -860,7 +1891,44 @@
     "id": "heritage_north_germanic",
     "modifiers": {},
     "name": "North Germanic",
-    "parameters": [],
+    "parameters": [
+      {
+        "hasLoc": true,
+        "key": "northern_beer_imports",
+        "text": "Castles and Cities have a Beer Need that grants Prestige when met",
+        "value": true
+      },
+      {
+        "hasLoc": true,
+        "key": "northern_salt_curing",
+        "text": "Fish Districts and Fishing Villages have a Salt Need that increases their Production and lowers the Buy Price of Fish in their Market when met",
+        "value": true
+      },
+      {
+        "hasLoc": true,
+        "key": "amber_amulets",
+        "text": "Feasting Grounds have an Amber Need that grants Prestige when met",
+        "value": true
+      },
+      {
+        "hasLoc": true,
+        "key": "housing_cheese_demand",
+        "text": "Housing District and Manor Houses District Districts have a Cheese Need that increases Popular Opinion when met",
+        "value": true
+      },
+      {
+        "hasLoc": true,
+        "key": "court_finery_furs_demand",
+        "text": "The Royal Palace and Noble Quarters have a Furs Need that increases Prosperity when met",
+        "value": true
+      },
+      {
+        "hasLoc": true,
+        "key": "votive_silver_demand",
+        "text": "The Ornate Temple has a Silver Need that increases Popular Opinion when met, and the Donation Store and Relic Chapel have one that increases Religious Tax",
+        "value": true
+      }
+    ],
     "requirements": [],
     "sourceFile": "00_heritage.txt",
     "type": "heritage",
@@ -876,7 +1944,26 @@
     "id": "heritage_phoenician",
     "modifiers": {},
     "name": "Phoenician",
-    "parameters": [],
+    "parameters": [
+      {
+        "hasLoc": true,
+        "key": "housing_olive_oil_demand",
+        "text": "Housing District and Manor Houses District Districts have an Olive Oil Need that increases Popular Opinion when met",
+        "value": true
+      },
+      {
+        "hasLoc": true,
+        "key": "court_finery_textiles_demand",
+        "text": "The Royal Palace and Noble Quarters have a Textiles Need that increases Prosperity when met",
+        "value": true
+      },
+      {
+        "hasLoc": true,
+        "key": "votive_ivory_demand",
+        "text": "The Ornate Temple has an Ivory Need that increases Popular Opinion when met, and the Donation Store and Relic Chapel have one that increases Religious Tax",
+        "value": true
+      }
+    ],
     "requirements": [],
     "sourceFile": "00_heritage.txt",
     "type": "heritage",
@@ -892,7 +1979,32 @@
     "id": "heritage_qiangic",
     "modifiers": {},
     "name": "Qiangic",
-    "parameters": [],
+    "parameters": [
+      {
+        "hasLoc": true,
+        "key": "butter_tea_drinking",
+        "text": "Meadowlands and Pastures, Sheep Pastures, Cattle Pastures and Temples have a Tea Need that increases Wool and Cattle Production, or grants Piety, when met",
+        "value": true
+      },
+      {
+        "hasLoc": true,
+        "key": "housing_tea_demand",
+        "text": "Housing District and Manor Houses District Districts have a Tea Need that increases Popular Opinion when met",
+        "value": true
+      },
+      {
+        "hasLoc": true,
+        "key": "court_finery_silk_demand",
+        "text": "The Royal Palace and Noble Quarters have a Silk Need that increases Prosperity when met",
+        "value": true
+      },
+      {
+        "hasLoc": true,
+        "key": "votive_copper_demand",
+        "text": "The Ornate Temple has a Copper Need that increases Popular Opinion when met, and the Donation Store and Relic Chapel have one that increases Religious Tax",
+        "value": true
+      }
+    ],
     "requirements": [],
     "sourceFile": "00_heritage.txt",
     "type": "heritage",
@@ -908,7 +2020,38 @@
     "id": "heritage_sahelian",
     "modifiers": {},
     "name": "Sahelian",
-    "parameters": [],
+    "parameters": [
+      {
+        "hasLoc": true,
+        "key": "saharan_salt_reliance",
+        "text": "Feasting Grounds and Farming Villages have a Salt Need that increases their Tribal Tax or Agricultural Tax when met",
+        "value": true
+      },
+      {
+        "hasLoc": true,
+        "key": "saharan_cloth_imports",
+        "text": "Tribes and Castles have a Textiles Need that grants Prestige when met",
+        "value": true
+      },
+      {
+        "hasLoc": true,
+        "key": "housing_fruit_demand",
+        "text": "Housing District and Manor Houses District Districts have a Fruit Need that increases Popular Opinion when met",
+        "value": true
+      },
+      {
+        "hasLoc": true,
+        "key": "court_finery_textiles_demand",
+        "text": "The Royal Palace and Noble Quarters have a Textiles Need that increases Prosperity when met",
+        "value": true
+      },
+      {
+        "hasLoc": true,
+        "key": "votive_gold_demand",
+        "text": "The Ornate Temple has a Gold Need that increases Popular Opinion when met, and the Donation Store and Relic Chapel have one that increases Religious Tax",
+        "value": true
+      }
+    ],
     "requirements": [],
     "sourceFile": "00_heritage.txt",
     "type": "heritage",
@@ -924,7 +2067,26 @@
     "id": "heritage_korean",
     "modifiers": {},
     "name": "Samhanic",
-    "parameters": [],
+    "parameters": [
+      {
+        "hasLoc": true,
+        "key": "housing_tea_demand",
+        "text": "Housing District and Manor Houses District Districts have a Tea Need that increases Popular Opinion when met",
+        "value": true
+      },
+      {
+        "hasLoc": true,
+        "key": "court_finery_silk_demand",
+        "text": "The Royal Palace and Noble Quarters have a Silk Need that increases Prosperity when met",
+        "value": true
+      },
+      {
+        "hasLoc": true,
+        "key": "votive_ceramics_demand",
+        "text": "The Ornate Temple has a Ceramics Need that increases Popular Opinion when met, and the Donation Store and Relic Chapel have one that increases Religious Tax",
+        "value": true
+      }
+    ],
     "requirements": [],
     "sourceFile": "00_heritage.txt",
     "type": "heritage",
@@ -940,7 +2102,38 @@
     "id": "heritage_senegambian",
     "modifiers": {},
     "name": "Senegambian",
-    "parameters": [],
+    "parameters": [
+      {
+        "hasLoc": true,
+        "key": "saharan_salt_reliance",
+        "text": "Feasting Grounds and Farming Villages have a Salt Need that increases their Tribal Tax or Agricultural Tax when met",
+        "value": true
+      },
+      {
+        "hasLoc": true,
+        "key": "saharan_cloth_imports",
+        "text": "Tribes and Castles have a Textiles Need that grants Prestige when met",
+        "value": true
+      },
+      {
+        "hasLoc": true,
+        "key": "housing_fruit_demand",
+        "text": "Housing District and Manor Houses District Districts have a Fruit Need that increases Popular Opinion when met",
+        "value": true
+      },
+      {
+        "hasLoc": true,
+        "key": "court_finery_textiles_demand",
+        "text": "The Royal Palace and Noble Quarters have a Textiles Need that increases Prosperity when met",
+        "value": true
+      },
+      {
+        "hasLoc": true,
+        "key": "votive_gold_demand",
+        "text": "The Ornate Temple has a Gold Need that increases Popular Opinion when met, and the Donation Store and Relic Chapel have one that increases Religious Tax",
+        "value": true
+      }
+    ],
     "requirements": [],
     "sourceFile": "00_heritage.txt",
     "type": "heritage",
@@ -956,7 +2149,32 @@
     "id": "heritage_south_slavic",
     "modifiers": {},
     "name": "South Slavic",
-    "parameters": [],
+    "parameters": [
+      {
+        "hasLoc": true,
+        "key": "fur_trimmed_finery",
+        "text": "Castles and Cities have a Furs Need that grants Prestige when met",
+        "value": true
+      },
+      {
+        "hasLoc": true,
+        "key": "housing_cheese_demand",
+        "text": "Housing District and Manor Houses District Districts have a Cheese Need that increases Popular Opinion when met",
+        "value": true
+      },
+      {
+        "hasLoc": true,
+        "key": "court_finery_textiles_demand",
+        "text": "The Royal Palace and Noble Quarters have a Textiles Need that increases Prosperity when met",
+        "value": true
+      },
+      {
+        "hasLoc": true,
+        "key": "votive_silver_demand",
+        "text": "The Ornate Temple has a Silver Need that increases Popular Opinion when met, and the Donation Store and Relic Chapel have one that increases Religious Tax",
+        "value": true
+      }
+    ],
     "requirements": [],
     "sourceFile": "00_heritage.txt",
     "type": "heritage",
@@ -972,7 +2190,26 @@
     "id": "heritage_syriac",
     "modifiers": {},
     "name": "Syriac",
-    "parameters": [],
+    "parameters": [
+      {
+        "hasLoc": true,
+        "key": "housing_olive_oil_demand",
+        "text": "Housing District and Manor Houses District Districts have an Olive Oil Need that increases Popular Opinion when met",
+        "value": true
+      },
+      {
+        "hasLoc": true,
+        "key": "court_finery_silk_demand",
+        "text": "The Royal Palace and Noble Quarters have a Silk Need that increases Prosperity when met",
+        "value": true
+      },
+      {
+        "hasLoc": true,
+        "key": "votive_incense_demand",
+        "text": "The Ornate Temple has an Incense Need that increases Popular Opinion when met, and the Donation Store and Relic Chapel have one that increases Religious Tax",
+        "value": true
+      }
+    ],
     "requirements": [],
     "sourceFile": "00_heritage.txt",
     "type": "heritage",
@@ -988,7 +2225,32 @@
     "id": "heritage_tai",
     "modifiers": {},
     "name": "Tai",
-    "parameters": [],
+    "parameters": [
+      {
+        "hasLoc": true,
+        "key": "gilded_temples",
+        "text": "Temple Citadels have a Gold Need that grants Piety when met",
+        "value": true
+      },
+      {
+        "hasLoc": true,
+        "key": "housing_tea_demand",
+        "text": "Housing District and Manor Houses District Districts have a Tea Need that increases Popular Opinion when met",
+        "value": true
+      },
+      {
+        "hasLoc": true,
+        "key": "court_finery_silk_demand",
+        "text": "The Royal Palace and Noble Quarters have a Silk Need that increases Prosperity when met",
+        "value": true
+      },
+      {
+        "hasLoc": true,
+        "key": "votive_lacquerware_demand",
+        "text": "The Ornate Temple has a Lacquerware Need that increases Popular Opinion when met, and the Donation Store and Relic Chapel have one that increases Religious Tax",
+        "value": true
+      }
+    ],
     "requirements": [],
     "sourceFile": "00_heritage.txt",
     "type": "heritage",
@@ -1004,7 +2266,32 @@
     "id": "heritage_tibetan",
     "modifiers": {},
     "name": "Tibetan",
-    "parameters": [],
+    "parameters": [
+      {
+        "hasLoc": true,
+        "key": "butter_tea_drinking",
+        "text": "Meadowlands and Pastures, Sheep Pastures, Cattle Pastures and Temples have a Tea Need that increases Wool and Cattle Production, or grants Piety, when met",
+        "value": true
+      },
+      {
+        "hasLoc": true,
+        "key": "housing_tea_demand",
+        "text": "Housing District and Manor Houses District Districts have a Tea Need that increases Popular Opinion when met",
+        "value": true
+      },
+      {
+        "hasLoc": true,
+        "key": "court_finery_silk_demand",
+        "text": "The Royal Palace and Noble Quarters have a Silk Need that increases Prosperity when met",
+        "value": true
+      },
+      {
+        "hasLoc": true,
+        "key": "votive_medicaments_demand",
+        "text": "The Ornate Temple has a Medicaments Need that increases Popular Opinion when met, and the Donation Store and Relic Chapel have one that increases Religious Tax",
+        "value": true
+      }
+    ],
     "requirements": [],
     "sourceFile": "00_heritage.txt",
     "type": "heritage",
@@ -1020,7 +2307,26 @@
     "id": "heritage_tocharian",
     "modifiers": {},
     "name": "Tocharian",
-    "parameters": [],
+    "parameters": [
+      {
+        "hasLoc": true,
+        "key": "housing_fruit_demand",
+        "text": "Housing District and Manor Houses District Districts have a Fruit Need that increases Popular Opinion when met",
+        "value": true
+      },
+      {
+        "hasLoc": true,
+        "key": "court_finery_silk_demand",
+        "text": "The Royal Palace and Noble Quarters have a Silk Need that increases Prosperity when met",
+        "value": true
+      },
+      {
+        "hasLoc": true,
+        "key": "votive_incense_demand",
+        "text": "The Ornate Temple has an Incense Need that increases Popular Opinion when met, and the Donation Store and Relic Chapel have one that increases Religious Tax",
+        "value": true
+      }
+    ],
     "requirements": [],
     "sourceFile": "00_heritage.txt",
     "type": "heritage",
@@ -1036,7 +2342,26 @@
     "id": "heritage_tungusic",
     "modifiers": {},
     "name": "Tungusic",
-    "parameters": [],
+    "parameters": [
+      {
+        "hasLoc": true,
+        "key": "housing_honey_demand",
+        "text": "Housing District and Manor Houses District Districts have a Honey Need that increases Popular Opinion when met",
+        "value": true
+      },
+      {
+        "hasLoc": true,
+        "key": "court_finery_furs_demand",
+        "text": "The Royal Palace and Noble Quarters have a Furs Need that increases Prosperity when met",
+        "value": true
+      },
+      {
+        "hasLoc": true,
+        "key": "votive_copper_demand",
+        "text": "The Ornate Temple has a Copper Need that increases Popular Opinion when met, and the Donation Store and Relic Chapel have one that increases Religious Tax",
+        "value": true
+      }
+    ],
     "requirements": [],
     "sourceFile": "00_heritage.txt",
     "type": "heritage",
@@ -1052,7 +2377,32 @@
     "id": "heritage_turkic",
     "modifiers": {},
     "name": "Turkic",
-    "parameters": [],
+    "parameters": [
+      {
+        "hasLoc": true,
+        "key": "steppe_border_trade",
+        "text": "Nomadic Settlement buildings have Silk and Grain Needs that increase Herd contributions from Vassals and Herd growth when met",
+        "value": true
+      },
+      {
+        "hasLoc": true,
+        "key": "housing_cheese_demand",
+        "text": "Housing District and Manor Houses District Districts have a Cheese Need that increases Popular Opinion when met",
+        "value": true
+      },
+      {
+        "hasLoc": true,
+        "key": "court_finery_furs_demand",
+        "text": "The Royal Palace and Noble Quarters have a Furs Need that increases Prosperity when met",
+        "value": true
+      },
+      {
+        "hasLoc": true,
+        "key": "votive_silver_demand",
+        "text": "The Ornate Temple has a Silver Need that increases Popular Opinion when met, and the Donation Store and Relic Chapel have one that increases Religious Tax",
+        "value": true
+      }
+    ],
     "requirements": [],
     "sourceFile": "00_heritage.txt",
     "type": "heritage",
@@ -1068,7 +2418,26 @@
     "id": "heritage_ugro_permian",
     "modifiers": {},
     "name": "Ugro-Permian",
-    "parameters": [],
+    "parameters": [
+      {
+        "hasLoc": true,
+        "key": "housing_honey_demand",
+        "text": "Housing District and Manor Houses District Districts have a Honey Need that increases Popular Opinion when met",
+        "value": true
+      },
+      {
+        "hasLoc": true,
+        "key": "court_finery_furs_demand",
+        "text": "The Royal Palace and Noble Quarters have a Furs Need that increases Prosperity when met",
+        "value": true
+      },
+      {
+        "hasLoc": true,
+        "key": "votive_silver_demand",
+        "text": "The Ornate Temple has a Silver Need that increases Popular Opinion when met, and the Donation Store and Relic Chapel have one that increases Religious Tax",
+        "value": true
+      }
+    ],
     "requirements": [],
     "sourceFile": "00_heritage.txt",
     "type": "heritage",
@@ -1084,7 +2453,26 @@
     "id": "heritage_viet",
     "modifiers": {},
     "name": "Viet",
-    "parameters": [],
+    "parameters": [
+      {
+        "hasLoc": true,
+        "key": "housing_tea_demand",
+        "text": "Housing District and Manor Houses District Districts have a Tea Need that increases Popular Opinion when met",
+        "value": true
+      },
+      {
+        "hasLoc": true,
+        "key": "court_finery_silk_demand",
+        "text": "The Royal Palace and Noble Quarters have a Silk Need that increases Prosperity when met",
+        "value": true
+      },
+      {
+        "hasLoc": true,
+        "key": "votive_incense_demand",
+        "text": "The Ornate Temple has an Incense Need that increases Popular Opinion when met, and the Donation Store and Relic Chapel have one that increases Religious Tax",
+        "value": true
+      }
+    ],
     "requirements": [],
     "sourceFile": "00_heritage.txt",
     "type": "heritage",
@@ -1100,7 +2488,26 @@
     "id": "heritage_vlach",
     "modifiers": {},
     "name": "Vlach",
-    "parameters": [],
+    "parameters": [
+      {
+        "hasLoc": true,
+        "key": "housing_cheese_demand",
+        "text": "Housing District and Manor Houses District Districts have a Cheese Need that increases Popular Opinion when met",
+        "value": true
+      },
+      {
+        "hasLoc": true,
+        "key": "court_finery_textiles_demand",
+        "text": "The Royal Palace and Noble Quarters have a Textiles Need that increases Prosperity when met",
+        "value": true
+      },
+      {
+        "hasLoc": true,
+        "key": "votive_silver_demand",
+        "text": "The Ornate Temple has a Silver Need that increases Popular Opinion when met, and the Donation Store and Relic Chapel have one that increases Religious Tax",
+        "value": true
+      }
+    ],
     "requirements": [],
     "sourceFile": "00_heritage.txt",
     "type": "heritage",
@@ -1116,7 +2523,26 @@
     "id": "heritage_volga_finnic",
     "modifiers": {},
     "name": "Volga-Finnic",
-    "parameters": [],
+    "parameters": [
+      {
+        "hasLoc": true,
+        "key": "housing_honey_demand",
+        "text": "Housing District and Manor Houses District Districts have a Honey Need that increases Popular Opinion when met",
+        "value": true
+      },
+      {
+        "hasLoc": true,
+        "key": "court_finery_furs_demand",
+        "text": "The Royal Palace and Noble Quarters have a Furs Need that increases Prosperity when met",
+        "value": true
+      },
+      {
+        "hasLoc": true,
+        "key": "votive_copper_demand",
+        "text": "The Ornate Temple has a Copper Need that increases Popular Opinion when met, and the Donation Store and Relic Chapel have one that increases Religious Tax",
+        "value": true
+      }
+    ],
     "requirements": [],
     "sourceFile": "00_heritage.txt",
     "type": "heritage",
@@ -1132,7 +2558,44 @@
     "id": "heritage_west_germanic",
     "modifiers": {},
     "name": "West Germanic",
-    "parameters": [],
+    "parameters": [
+      {
+        "hasLoc": true,
+        "key": "northern_beer_imports",
+        "text": "Castles and Cities have a Beer Need that grants Prestige when met",
+        "value": true
+      },
+      {
+        "hasLoc": true,
+        "key": "cloth_mordant_alum",
+        "text": "Cities in Counties that can produce Wool and Village Weaver buildings have an Alum Need that increases Textiles and Fabric Production when met",
+        "value": true
+      },
+      {
+        "hasLoc": true,
+        "key": "northern_salt_curing",
+        "text": "Fish Districts and Fishing Villages have a Salt Need that increases their Production and lowers the Buy Price of Fish in their Market when met",
+        "value": true
+      },
+      {
+        "hasLoc": true,
+        "key": "housing_cheese_demand",
+        "text": "Housing District and Manor Houses District Districts have a Cheese Need that increases Popular Opinion when met",
+        "value": true
+      },
+      {
+        "hasLoc": true,
+        "key": "court_finery_furs_demand",
+        "text": "The Royal Palace and Noble Quarters have a Furs Need that increases Prosperity when met",
+        "value": true
+      },
+      {
+        "hasLoc": true,
+        "key": "votive_silver_demand",
+        "text": "The Ornate Temple has a Silver Need that increases Popular Opinion when met, and the Donation Store and Relic Chapel have one that increases Religious Tax",
+        "value": true
+      }
+    ],
     "requirements": [],
     "sourceFile": "00_heritage.txt",
     "type": "heritage",
@@ -1148,7 +2611,44 @@
     "id": "heritage_west_slavic",
     "modifiers": {},
     "name": "West Slavic",
-    "parameters": [],
+    "parameters": [
+      {
+        "hasLoc": true,
+        "key": "fur_trimmed_finery",
+        "text": "Castles and Cities have a Furs Need that grants Prestige when met",
+        "value": true
+      },
+      {
+        "hasLoc": true,
+        "key": "northern_salt_curing",
+        "text": "Fish Districts and Fishing Villages have a Salt Need that increases their Production and lowers the Buy Price of Fish in their Market when met",
+        "value": true
+      },
+      {
+        "hasLoc": true,
+        "key": "amber_amulets",
+        "text": "Feasting Grounds have an Amber Need that grants Prestige when met",
+        "value": true
+      },
+      {
+        "hasLoc": true,
+        "key": "housing_honey_demand",
+        "text": "Housing District and Manor Houses District Districts have a Honey Need that increases Popular Opinion when met",
+        "value": true
+      },
+      {
+        "hasLoc": true,
+        "key": "court_finery_furs_demand",
+        "text": "The Royal Palace and Noble Quarters have a Furs Need that increases Prosperity when met",
+        "value": true
+      },
+      {
+        "hasLoc": true,
+        "key": "votive_amber_demand",
+        "text": "The Ornate Temple has an Amber Need that increases Popular Opinion when met, and the Donation Store and Relic Chapel have one that increases Religious Tax",
+        "value": true
+      }
+    ],
     "requirements": [],
     "sourceFile": "00_heritage.txt",
     "type": "heritage",
@@ -1268,6 +2768,26 @@
     "id": "language_armenian",
     "modifiers": {},
     "name": "Armenian",
+    "parameters": [],
+    "requirements": [],
+    "sourceFile": "00_language.txt",
+    "type": "language",
+    "typeName": "Language"
+  },
+  {
+    "color": [
+      115,
+      153,
+      230
+    ],
+    "desc": "A Culture's dominant Language includes a broad selection of dialects, vernaculars, creoles, and related minor tongues which are often (though not necessarily) mutually intelligible or easier to learn.",
+    "dlc": null,
+    "features": [],
+    "headDeterminationType": null,
+    "icon": "language_arpitan",
+    "id": "language_arpitan",
+    "modifiers": {},
+    "name": "Arpitan",
     "parameters": [],
     "requirements": [],
     "sourceFile": "00_language.txt",
@@ -3083,7 +4603,7 @@
   },
   {
     "color": null,
-    "desc": "A Culture's Head Determination decides how the cultural head is decided.",
+    "desc": "A Culture's head determination decides how the cultural head is decided.",
     "dlc": null,
     "features": [],
     "headDeterminationType": "domain",
@@ -3099,7 +4619,7 @@
   },
   {
     "color": null,
-    "desc": "A Culture's Head Determination decides how the cultural head is decided.",
+    "desc": "A Culture's head determination decides how the cultural head is decided.",
     "dlc": null,
     "features": [],
     "headDeterminationType": "herd",

@@ -1,0 +1,51 @@
+{
+  "cooldownYears": {
+    "addTradition": 50.0,
+    "divergence": 100.0,
+    "hybrid": 50.0
+  },
+  "defines": {
+    "DEFAULT_MAX_TRADITIONS": 5.0,
+    "REFORMATION_MAX_YEARS": 30.0,
+    "REFORMATION_PROGRESS_GAIN_BASE": 1.66,
+    "REFORMATION_PROGRESS_REPLACE_TRADITION_MULT": 0.75,
+    "REFORMATION_PROGRESS_SLOWDOWN_PER_COUNTY_WITH_CULTURE": 0.2
+  },
+  "hybridization": {
+    "base": 40.0,
+    "multipliers": {
+      "easier_to_hybridize": 0.5,
+      "harder_to_hybridize": 2.0
+    },
+    "note": "Threshold is cultural acceptance between the two cultures. Multipliers stack: your culture's own parameter, the target culture's, struggle phases, and Kurultai influence all apply, clamped to 0-100.",
+    "traditions": {
+      "easier_to_hybridize": [
+        {
+          "id": "tradition_malleable_invaders",
+          "name": "Malleable Invaders"
+        }
+      ],
+      "harder_to_hybridize": [
+        {
+          "id": "tradition_staunch_traditionalists",
+          "name": "Staunch Traditionalists"
+        },
+        {
+          "id": "tradition_fp3_fierce_independence",
+          "name": "Fierce Independence"
+        },
+        {
+          "id": "tradition_tgp_inward_perfection",
+          "name": "Inward Perfection"
+        },
+        {
+          "id": "tradition_cultural_primacy",
+          "name": "Cultural Primacy"
+        }
+      ]
+    }
+  },
+  "values": {
+    "hybridization_threshold_flat_number_value": 40.0
+  }
+}

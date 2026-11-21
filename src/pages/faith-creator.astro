@@ -11,51 +11,98 @@ const artFiles = new Set(
 );
 const hasArt = (dir: string, id: string) => artFiles.has(dir + '/' + id);
 
-const { doctrines, groups } = doctrinesData as any;
-const faiths = (faithsData as any).faiths;
+const { doctrines, groups, categories, defines, concepts } = doctrinesData as any;
+const { faiths, rites, religions, tenetStatusNames } = faithsData as any;
+const faithById = new Map<string, any>(faiths.map((f: any) => [f.id, f]));
+const famOfReligion = new Map<string, string>(religions.map((r: any) => [r.id, r.family]));
 
 // client payload: only what the math needs
 const docMap = Object.fromEntries(doctrines.map((d: any) => [d.id, {
-  n: d.name, cost: d.pietyCost, tenet: d.isTenet,
-  art: hasArt('faith_doctrines', d.id) ? d.id : null,
+  n: d.name, c: d.pietyCost?.steps ?? null, u: d.pietyCost?.unmodelled ?? [],
+  tenet: d.isTenet, dv: d.isTenet ? d.divergenceMultiplier : d.divergence,
+  art: hasArt('faith_doctrines', d.id) ? d.id : null, dlc: d.requiresDlc ?? null,
 }]));
-const creatableGroups = groups.filter((g: any) =>
-  g.category !== 'not_creatable' && g.doctrines.some((id: string) => docMap[id]));
-const tenetIds = doctrines.filter((d: any) => d.isTenet).map((d: any) => d.id);
-const faithMap = Object.fromEntries(faiths.map((f: any) => [f.id, {
-  n: f.name, d: f.doctrines, art: hasArt('faith', f.id) ? f.id : null,
-  t: f.tenets.map((t: any) => (typeof t === 'string' ? t : t.key)),
-}]));
-const contexts = ['Christianity or Islam', 'Judaism or Buddhism or Jainism', 'otherwise'];
+const catOrder = new Map<string, number>(categories.map((c: any) => [c.id, c.sortOrder]));
+const creatableGroups = groups
+  .filter((g: any) => g.category !== 'not_creatable' && g.doctrines.some((id: string) => docMap[id]))
+  .sort((a: any, b: any) => (catOrder.get(a.category) ?? 99) - (catOrder.get(b.category) ?? 99));
+const groupMode = Object.fromEntries(groups.map((g: any) => [g.id, g.divergence]));
+const tenetIds = doctrines.filter((d: any) => d.isTenet)
+  .sort((a: any, b: any) => a.name.localeCompare(b.name)).map((d: any) => d.id);
+
+// tenet stances from the faith's history (cumulative, as of the earliest start)
+function stances(f: any): Record<string, string> {
+  const out: Record<string, string> = {};
+  for (const h of f?.history ?? []) {
+    for (const st of ['known', 'permitted', 'prohibited']) for (const t of h[st] ?? []) out[t.key] = st;
+  }
+  return out;
+}
+const creatable = rites.filter((r: any) => !r.historyOnly);
+const riteMap = Object.fromEntries(creatable.map((r: any) => {
+  const f = faithById.get(r.faith);
+  return [r.id, {
+    n: r.name, faith: r.faith, fn: f?.name ?? r.faith, rel: r.religion,
+    fam: f?.family ?? famOfReligion.get(r.religion) ?? null,
+    d: r.effectiveDoctrines,
+    t: r.tenets.map((t: any) => ({ k: t.key, fb: t.fallback, dlc: t.dlc })),
+    st: stances(f), main: (r.mainOf ?? []).includes(r.faith),
+    art: hasArt('faith', r.icon ?? r.id) ? (r.icon ?? r.id) : null,
+  }];
+}));
+const byFaith = new Map<string, any[]>();
+for (const r of creatable) {
+  const fn = faithById.get(r.faith)?.name ?? r.faith;
+  if (!byFaith.has(fn)) byFaith.set(fn, []);
+  byFaith.get(fn)!.push(r);
+}
+const faithGroups = [...byFaith.entries()].sort((a, b) => a[0].localeCompare(b[0]));
+const defaultRite = creatable.find((r: any) => (r.mainOf ?? []).includes('catholic'))?.id ?? creatable[0]?.id;
+const D = {
+  cap: defines.FAITH_CORE_TENETS_CAP,
+  tsd: defines.TENET_STATUS_DIVERGENCE,
+  fervPer: defines.RITE_CREATION_FERVOR_DISCOUNT_PER_MISSING_FERVOR,
+  fervMax: defines.RITE_CREATION_FERVOR_DISCOUNT_MAX,
+  heretical: defines.RITE_DIVERGENCE_HERETICAL_THRESHOLD,
+  newFaith: defines.RITE_CREATION_DIVERGENCE_FAITH_THRESHOLD,
+  fixed: defines.RITE_CREATION_PIETY_COST,
+};
+const statusOrder = ['unknown', 'known', 'prohibited', 'permitted', 'core'];
+const statusNames = statusOrder.map((k) => tenetStatusNames[k] ?? k);
 ---
 <Base
   title="Faith Cost Calculator"
   active="faith-creator"
-  lede="Pick a starting faith, change doctrines and tenets, and see the piety bill — keeping a doctrine costs half, per the game's own cost chains."
+  lede="Start from any rite, change its tenets and doctrines, and see the piety bill. Every price is the game's own piety_cost script, evaluated against the rite you start from."
   stats={[
     { value: creatableGroups.length, label: 'doctrine groups' },
     { value: tenetIds.length, label: 'tenets' },
+    { value: creatable.length, label: 'rites' },
   ]}
 >
   <div class="filterbar">
-    <label>Starting faith
+    <label>Starting rite
       <img id="faithart" class="pick-art lg" src="" alt="" width="34" height="34" hidden />
-      <select id="basefaith">
-        {faiths.map((f: any) => <option value={f.id}>{f.name}</option>)}
+      <select id="baserite">
+        {faithGroups.map(([fn, rs]) => (
+          <optgroup label={fn}>
+            {rs.map((r: any) => <option value={r.id} selected={r.id === defaultRite}>{r.name}{riteMap[r.id].main ? ' ❧' : ''}</option>)}
+          </optgroup>
+        ))}
       </select>
     </label>
-    <label>Cost context
-      <select id="ctx">
-        {contexts.map((c) => <option value={c}>{c}</option>)}
-      </select>
+    <label title="NRite.RITE_CREATION_FERVOR_DISCOUNT_*: creating gets cheaper per point of fervor below 100, capped">Fervor
+      <input type="number" id="fervor" min="0" max="100" step="1" value="100" />
     </label>
+    <label title="Tenets that need a DLC feature fall back to another tenet without it"><input type="checkbox" id="dlcon" checked /> DLC tenets</label>
     <span class="hint total">Total: <b id="total">0</b> piety</span>
   </div>
+  <p class="subtle ctxline" id="ctxline"></p>
 
   <section>
-    <h2 class="group-h">Tenets <span class="count">3 picks</span></h2>
+    <h2 class="group-h">Tenets <span class="count">{D.cap} picks</span></h2>
     <div class="pickgrid" id="tenets">
-      {[0, 1, 2].map((i) => (
+      {Array.from({ length: D.cap }, (_, i) => (
         <label class="pick">
           <span class="subtle">tenet {i + 1}</span>
           <span class="pick-row">
@@ -65,6 +112,7 @@ const contexts = ['Christianity or Islam', 'Judaism or Buddhism or Jainism', 'ot
             </select>
           </span>
           <span class="pcost subtle"></span>
+          <span class="pdiv subtle"></span>
         </label>
       ))}
     </div>
@@ -75,7 +123,7 @@ const contexts = ['Christianity or Islam', 'Judaism or Buddhism or Jainism', 'ot
     <div class="pickgrid" id="doctrines">
       {creatableGroups.map((g: any) => (
         <label class="pick">
-          <span class="subtle">{g.name}</span>
+          <span class="subtle">{g.name}{g.mainRiteOnly ? ' · mainline rite only' : ''}</span>
           <span class="pick-row">
             <img class="pick-art" src="" alt="" width="28" height="28" hidden />
             <select data-group={g.id}>
@@ -85,65 +133,128 @@ const contexts = ['Christianity or Islam', 'Judaism or Buddhism or Jainism', 'ot
             </select>
           </span>
           <span class="pcost subtle"></span>
+          <span class="pdiv subtle"></span>
         </label>
       ))}
     </div>
   </section>
 
-  <p class="prov">
-    Costs come from each doctrine's own <code>piety_cost</code> chain (tenets
-    500–1,500 by religion, doctrines 200–600), with the game's universal ×0.5
-    keep-same multiplier applied to unchanged picks. Situational surcharges
-    (two-step switches, conversion catalysts) and the fixed reformation cost
-    of unreformed faiths are not included.
-  </p>
+  <section class="prov">
+    <p>
+      Each price runs the doctrine's or tenet's own <code>piety_cost</code> script value with the
+      starting rite as scope, so "rite has X", religion, family and faith checks are answered from
+      that rite. Unchanged picks therefore get the game's own keep multiplier, and doctrines in
+      ordered groups get their step multipliers. A condition the calculator cannot evaluate (marked
+      <span class="warn">?</span>) is treated as false.
+    </p>
+    <p>
+      Fervor below 100 discounts the total by {D.fervPer}% per point, up to {D.fervMax}%
+      (<code>NRite</code> defines). The define <code>RITE_CREATION_PIETY_COST = {D.fixed}</code>
+      is commented "Fixed cost how much piety it costs to branch off a Faith with new Rite"; how
+      it combines with the total is not documented, so it is shown here but not added.
+    </p>
+    <p>
+      <b>Divergence is not totalled.</b> Each pick shows its inputs: a tenet's status in the
+      starting faith ({statusNames.map((n, i) => `${n} ${D.tsd[i]}`).join(', ')}, from
+      <code>TENET_STATUS_DIVERGENCE</code>) and its divergence multiplier, and a doctrine's
+      divergence value with its group's sequence or category rule. How these combine is described
+      only loosely in the game's files, so the calculator does not claim a number. For reference, a
+      rite above {D.heretical} divergence is heretical and one created at {D.newFaith} or more
+      becomes a new faith. Which tenets and doctrines a given rite may pick is not checked; see the
+      <a href={`${base}/doctrines`}>doctrines page</a> for each one's conditions.
+    </p>
+    {concepts.rite_divergence?.desc && (
+      <details>
+        <summary>{concepts.rite_divergence.name} — the game's own description</summary>
+        <p class="concept-text">{concepts.rite_divergence.desc}</p>
+      </details>
+    )}
+  </section>
 
-  <script define:vars={{ docMap, faithMap, contexts, base }}>
-    const baseSel = document.getElementById('basefaith');
-    const ctxSel = document.getElementById('ctx');
+  <script define:vars={{ docMap, riteMap, groupMode, D, statusOrder, statusNames, base }}>
+    const baseSel = document.getElementById('baserite');
+    const fervEl = document.getElementById('fervor');
+    const dlcEl = document.getElementById('dlcon');
     const totalEl = document.getElementById('total');
+    const ctxEl = document.getElementById('ctxline');
 
-    function costOf(id, unchanged) {
-      const d = docMap[id];
-      if (!d || !d.cost) return 0;
-      let v = d.cost.base;
-      if (v == null && d.cost.values) {
-        const ctx = ctxSel.value;
-        const hit = d.cost.values.find((x) => x.when === ctx) ??
-          d.cost.values.find((x) => x.when === 'otherwise') ?? d.cost.values[0];
-        v = hit ? hit.value : 0;
-      }
-      if (typeof v !== 'number') v = 0;
-      if (unchanged) {
-        const keep = (d.cost.mults ?? []).find((m) => (m.when ?? '').includes('keeping'));
-        v *= keep ? keep.factor : 0.5;
+    function test(c, ctx, miss) {
+      if (!c) return false;
+      if ('religion' in c) return ctx.rel === c.religion;
+      if ('family' in c) return ctx.fam === c.family;
+      if ('faith' in c) return ctx.faith === c.faith;
+      if ('doctrine' in c) return ctx.docs.has(c.doctrine);
+      if ('tenet' in c) return ctx.tenets.has(c.tenet);
+      if ('const' in c) return !!c.const;
+      if ('not' in c) return !test(c.not, ctx, miss);
+      if ('and' in c) return c.and.every((x) => test(x, ctx, miss));
+      if ('or' in c) return c.or.some((x) => test(x, ctx, miss));
+      miss.push(c.unknown ?? JSON.stringify(c));
+      return false;
+    }
+
+    // a script value: ordered steps, if / else_if / else chains
+    function run(steps, ctx, miss, v) {
+      let chainDone = false;
+      for (const s of steps) {
+        if (s.op === 'if' || s.op === 'else_if' || s.op === 'else') {
+          if (s.op === 'if') chainDone = false;
+          if (chainDone) continue;
+          if (s.op === 'else' || test(s.cond, ctx, miss)) { v = run(s.then, ctx, miss, v); chainDone = true; }
+          continue;
+        }
+        const x = s.value;
+        switch (s.op) {
+          case 'value': v = x; break;
+          case 'add': v += x; break;
+          case 'subtract': v -= x; break;
+          case 'multiply': v *= x; break;
+          case 'divide': v = x ? v / x : v; break;
+          case 'min': v = Math.min(v, x); break;
+          case 'max': v = Math.max(v, x); break;
+          case 'round': v = Math.round(v); break;
+          case 'ceiling': v = Math.ceil(v); break;
+          case 'floor': v = Math.floor(v); break;
+          default: miss.push(`step ${s.op}`);
+        }
       }
       return v;
     }
 
-    function currentPicks() {
-      return faithMap[baseSel.value] ?? { d: [], t: [] };
+    function ctxOf(r) {
+      const tenets = r.t.map((t) => (!dlcEl.checked && t.dlc && t.fb ? t.fb : t.k));
+      return { rel: r.rel, fam: r.fam, faith: r.faith, docs: new Set(r.d), tenets: new Set(tenets), tl: tenets };
     }
 
-    function initFromFaith() {
-      const f = currentPicks();
+    function costOf(id, ctx) {
+      const d = docMap[id];
+      if (!d || !d.c) return { v: 0, miss: [] };
+      const miss = [...d.u];
+      const v = run(d.c, ctx, [], 0);
+      return { v, miss };
+    }
+
+    function initFromRite() {
+      const r = riteMap[baseSel.value];
+      if (!r) return;
+      const ctx = ctxOf(r);
       document.querySelectorAll('[data-tenet]').forEach((sel, i) => {
-        if (f.t[i] && [...sel.options].some((o) => o.value === f.t[i])) sel.value = f.t[i];
+        const t = ctx.tl[i];
+        if (t && [...sel.options].some((o) => o.value === t)) sel.value = t;
       });
       document.querySelectorAll('[data-group]').forEach((sel) => {
-        const cur = f.d.find((id) => [...sel.options].some((o) => o.value === id));
+        const cur = r.d.find((id) => [...sel.options].some((o) => o.value === id));
         if (cur) sel.value = cur;
       });
     }
 
     function syncArt() {
-      const f = faithMap[baseSel.value];
+      const r = riteMap[baseSel.value];
       const fa = document.getElementById('faithart');
-      if (f?.art) { fa.src = `${base}/img/faith/${f.art}.webp`; fa.hidden = false; }
+      if (r?.art) { fa.src = `${base}/img/faith/${r.art}.webp`; fa.hidden = false; }
       else fa.hidden = true;
       document.querySelectorAll('.pick').forEach((p) => {
         const img = p.querySelector('.pick-art');
-        if (!img) return;
         const art = docMap[p.querySelector('select').value]?.art;
         if (art) { img.src = `${base}/img/faith_doctrines/${art}.webp`; img.hidden = false; }
         else img.hidden = true;
@@ -152,24 +263,48 @@ const contexts = ['Christianity or Islam', 'Judaism or Buddhism or Jainism', 'ot
 
     function update() {
       syncArt();
-      const f = currentPicks();
+      const r = riteMap[baseSel.value];
+      if (!r) return;
+      const ctx = ctxOf(r);
+      ctxEl.textContent = `Scope: ${r.n}, a ${r.main ? 'mainline ' : ''}rite of ${r.fn}.`;
       let total = 0;
       document.querySelectorAll('.pick').forEach((p) => {
         const sel = p.querySelector('select');
         const id = sel.value;
-        const unchanged = f.d.includes(id) || f.t.includes(id);
-        const c = costOf(id, unchanged);
-        total += c;
-        p.querySelector('.pcost').textContent =
-          c ? `${Math.round(c)} piety${unchanged ? ' (kept ×0.5)' : ''}` : 'free';
+        const d = docMap[id];
+        const kept = d?.tenet ? ctx.tenets.has(id) : ctx.docs.has(id);
+        const { v, miss } = costOf(id, ctx);
+        total += v;
+        const pc = p.querySelector('.pcost');
+        pc.textContent = (v ? `${Math.round(v).toLocaleString()} piety` : 'free') + (kept ? ' · kept' : '');
+        if (miss.length) {
+          const w = document.createElement('span');
+          w.className = 'warn';
+          w.textContent = ' ?';
+          w.title = 'Not evaluated (treated as false): ' + miss.join('; ');
+          pc.appendChild(w);
+        }
+        const pd = p.querySelector('.pdiv');
+        if (d?.tenet) {
+          const st = kept ? 'core' : (r.st[id] ?? 'unknown');
+          const i = statusOrder.indexOf(st);
+          pd.textContent = `status in faith: ${statusNames[i]} (${D.tsd[i]})` + (d.dv !== 1 ? ` · divergence ×${d.dv}` : '');
+        } else {
+          const g = sel.dataset.group;
+          pd.textContent = kept ? '' : `divergence ${d?.dv ?? 0}` + (groupMode[g] ? ` (${groupMode[g]})` : '');
+        }
       });
-      totalEl.textContent = Math.round(total).toLocaleString();
+      const fervor = Math.max(0, Math.min(100, Number(fervEl.value) || 0));
+      const disc = Math.min(D.fervMax, (100 - fervor) * D.fervPer);
+      const final = total * (1 - disc / 100);
+      totalEl.textContent = Math.round(final).toLocaleString() + (disc ? ` (−${disc}% fervor)` : '');
     }
 
-    baseSel.addEventListener('input', () => { initFromFaith(); update(); });
-    ctxSel.addEventListener('input', update);
+    baseSel.addEventListener('input', () => { initFromRite(); update(); });
+    dlcEl.addEventListener('input', () => { initFromRite(); update(); });
+    fervEl.addEventListener('input', update);
     document.querySelectorAll('.pick select').forEach((s) => s.addEventListener('input', update));
-    initFromFaith();
+    initFromRite();
     update();
   </script>
 
@@ -187,5 +322,12 @@ const contexts = ['Christianity or Islam', 'Judaism or Buddhism or Jainism', 'ot
     .pick-art { flex: none; filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.6)); }
     .prov { color: var(--faint); font-size: 0.78rem; max-width: 64ch; margin-top: 2rem; }
     .prov code { font-family: var(--font-mono); }
+    .ctxline { font-size: 0.8rem; margin: 0.2rem 0 0.8rem; }
+    .pdiv { font-family: var(--font-mono); font-size: 0.68rem; min-height: 1em; color: var(--faint); }
+    .warn { color: var(--rubric); cursor: help; }
+    #fervor { width: 4.5rem; background: var(--ink); color: var(--vellum); border: 1px solid var(--line); border-radius: var(--r); padding: 0.2rem 0.3rem; }
+    .prov p { margin: 0.5rem 0; }
+    .prov summary { cursor: pointer; color: var(--brass); }
+    .concept-text { white-space: pre-line; }
   </style>
 </Base>

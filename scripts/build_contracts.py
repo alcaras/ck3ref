@@ -48,7 +48,7 @@ LEVEL_SKIP = {
     "min_contribution_label": "tooltip breakdown label",
 }
 
-GROUP_HANDLED = {"contracts", "is_tributary", "tributary_heir_succession",
+GROUP_HANDLED = {"contracts", "is_tributary", "is_beneficiary_relationship", "tributary_heir_succession",
                  "suzerain_heir_succession", "admin_province_contract"}
 GROUP_SKIP = {
     "modify_contract_layout": "negotiate-UI layout key",
@@ -190,6 +190,8 @@ def main():
             "id": gkey,
             "name": loc_text(gkey, f"{gkey}_name") or prettify(gkey),
             "isTributary": bool(gblk.get("is_tributary", False)),
+            # tributary between a merchant and their patron (_subject_contract_groups.info)
+            "isBeneficiaryRelationship": bool(gblk.get("is_beneficiary_relationship", False)),
             "heirSuccession": {
                 "suzerain": bool(gblk.get("suzerain_heir_succession", True)),
                 "tributary": bool(gblk.get("tributary_heir_succession", False)),

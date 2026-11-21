@@ -1,14 +1,26 @@
 {
   "BARONY_BUILDING_SLOTS": {
-    "comment": null,
-    "value": 2
+    "comment": "Base number of building slots for districts in non-capital baronies",
+    "value": 1
+  },
+  "BARONY_DISTRICT_SLOTS": {
+    "comment": "Base number of regular district slots for non-capital baronies",
+    "value": 1
   },
   "COUNTY_BUILDING_SLOTS": {
-    "comment": null,
-    "value": 3
+    "comment": "Base number of building slots for districts in county capital",
+    "value": 1
+  },
+  "COUNTY_DISTRICT_SLOTS": {
+    "comment": "Base number of regular district slots for county capitals",
+    "value": 1
   },
   "MAX_BUILDINGS": {
     "comment": "Maximum number of building slots that a province can have",
     "value": 7
+  },
+  "MAX_PROVINCE_SIZE_LEVEL": {
+    "comment": "Highest named size level (matches province_size_level_0..province_size_level_10)",
+    "value": 10
   }
 }

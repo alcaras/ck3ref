@@ -57,10 +57,15 @@ def province_index():
 
 _PROV = re.compile(r"^(\d+)\s*=\s*\{", re.M)
 _FIELD = re.compile(r'^\s*(culture|religion)\s*=\s*"?([\w.-]+)"?', re.M)
+# 1.21: provinces name a RITE (`rite = roman_rite`), occasionally a faith
+# (`religion = mahayana_faith`). Read only the undated head of the block (before
+# the first `867.1.1 = {`); a repeated key there means the later one wins.
+_DATED = re.compile(r"^\s*\d+\.\d+\.\d+\s*=", re.M)
+_FAITH_FIELD = re.compile(r'^\s*(religion|faith|rite)\s*=\s*"?([\w.-]+)"?', re.M)
 
 
 def province_setup():
-    """province id -> {culture, religion} (top-level fields only)."""
+    """province id -> {culture, religion|rite} (top-level fields only)."""
     out = {}
     for f in sorted(HIST.glob("*.txt")):
         text = f.read_text(encoding="utf-8-sig", errors="replace")
@@ -70,10 +75,24 @@ def province_setup():
             body = text[m.end():end]
             fields = {}
             for k, v in _FIELD.findall(body):
-                fields.setdefault(k, v)
+                if k == "culture":
+                    fields.setdefault(k, v)
+            d = _DATED.search(body)
+            head = body[:d.start()] if d else body
+            for k, v in _FAITH_FIELD.findall(head):
+                fields["faith_ref"] = (k, v)   # later wins
             if fields:
                 out[int(m.group(1))] = fields
     return out
+
+
+def rite_to_faith():
+    """rite key -> parent faith key (rite_types `faith =`), and the faith set."""
+    rel = ck3.COMMON / "religion"
+    faiths = {k for _p, k, b in ck3.parse_dir(rel / "faith_types") if isinstance(b, Block)}
+    rites = {k: b.get("faith") for _p, k, b in ck3.parse_dir(rel / "rite_types")
+             if isinstance(b, Block)}
+    return rites, faiths
 
 
 def main():
@@ -92,10 +111,23 @@ def main():
 
     cultures = defaultdict(lambda: {"provinces": 0, "counties": set(), "kingdoms": Counter()})
     faiths = defaultdict(lambda: {"provinces": 0, "counties": set(), "kingdoms": Counter()})
+    rites = defaultdict(lambda: {"provinces": 0, "counties": set(), "kingdoms": Counter()})
+    rite_faith, faith_keys = rite_to_faith()
+    unresolved = Counter()
 
     for pid, fields in setup.items():
         county, _duchy, kingdom = idx.get(pid, (None, None, None))
-        for key, bucket in (("culture", cultures), ("religion", faiths)):
+        ref = fields.get("faith_ref")
+        if ref:
+            kind, val = ref
+            if val in rite_faith:
+                fields["rite"] = val
+                fields["religion"] = rite_faith[val]
+            elif val in faith_keys:
+                fields["religion"] = val
+            else:
+                unresolved[val] += 1
+        for key, bucket in (("culture", cultures), ("religion", faiths), ("rite", rites)):
             val = fields.get(key)
             if not val:
                 continue
@@ -117,12 +149,18 @@ def main():
 
     ck3.write_json("startworld.json", {
         "cultures": pack(cultures),
+        # faiths at the rite type's parent faith; history/faiths can re-parent
+        # a rite at a later date (e.g. roman_rite -> catholic in 1054), which
+        # this undated province view does not apply
         "faiths": pack(faiths),
+        "rites": pack(rites),
         "totalProvinces": len(setup),
         "mappedProvinces": sum(1 for p in setup if p in idx),
     })
-    print(f"  {len(cultures)} cultures, {len(faiths)} faiths placed across "
+    print(f"  {len(cultures)} cultures, {len(faiths)} faiths ({len(rites)} rites) placed across "
           f"{len(setup)} provinces")
+    if unresolved:
+        print(f"⚠ province faith/rite keys with no faith or rite type: {dict(unresolved)}")
 
 
 if __name__ == "__main__":

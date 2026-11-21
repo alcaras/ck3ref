@@ -1,0 +1,1037 @@
+[
+  {
+    "attackerAdvantage": null,
+    "attackerModifiers": [],
+    "color": "#1a1a1a",
+    "combatWidth": 1,
+    "countyCapitalModifiers": [],
+    "countyFertility": 0,
+    "defenderAdvantage": null,
+    "defenderModifiers": [],
+    "icon": "coastal_sea",
+    "id": "coastal_sea",
+    "movementSpeed": 1,
+    "name": "Coastal Sea",
+    "provinceModifiers": [
+      {
+        "polarity": "bad",
+        "text": "+35 Travel Danger"
+      }
+    ],
+    "provisionCost": 80,
+    "sourceFile": "00_terrains.txt",
+    "travelDangerScore": 20
+  },
+  {
+    "attackerAdvantage": null,
+    "attackerModifiers": [],
+    "color": "#ffe500",
+    "combatWidth": 1,
+    "countyCapitalModifiers": [
+      {
+        "polarity": "bad",
+        "text": "-50% Prosperity Growth"
+      }
+    ],
+    "countyFertility": 20,
+    "defenderAdvantage": null,
+    "defenderModifiers": [],
+    "icon": "desert",
+    "id": "desert",
+    "movementSpeed": 0.7,
+    "name": "Desert",
+    "provinceModifiers": [
+      {
+        "polarity": "bad",
+        "text": "-30% Supply Limit"
+      },
+      {
+        "polarity": "bad",
+        "text": "+35 Travel Danger"
+      },
+      {
+        "polarity": "good",
+        "text": "+0.25 County Fertility Growth"
+      },
+      {
+        "polarity": "bad",
+        "text": "-50% Cereals Production"
+      },
+      {
+        "polarity": "good",
+        "text": "+25% Salt Production"
+      },
+      {
+        "polarity": "bad",
+        "text": "-50% Carpentries Production"
+      },
+      {
+        "polarity": "good",
+        "text": "+25% Incense Production"
+      },
+      {
+        "polarity": "neutral",
+        "text": "+0.1% Cereals Sell Price"
+      },
+      {
+        "polarity": "neutral",
+        "text": "-0.1% Salt Buy Price"
+      },
+      {
+        "polarity": "neutral",
+        "text": "+0.1% Carpentries Sell Price"
+      },
+      {
+        "polarity": "neutral",
+        "text": "-0.1% Incense Buy Price"
+      }
+    ],
+    "provisionCost": 150,
+    "sourceFile": "00_terrains.txt",
+    "travelDangerScore": 35
+  },
+  {
+    "attackerAdvantage": null,
+    "attackerModifiers": [],
+    "color": "#171326",
+    "combatWidth": 0.5,
+    "countyCapitalModifiers": [
+      {
+        "polarity": "bad",
+        "text": "-50% Prosperity Growth"
+      }
+    ],
+    "countyFertility": 20,
+    "defenderAdvantage": 12,
+    "defenderModifiers": [
+      {
+        "polarity": "good",
+        "text": "-30% Retreat Losses"
+      }
+    ],
+    "icon": "desert_mountains",
+    "id": "desert_mountains",
+    "movementSpeed": 0.5,
+    "name": "Desert Mountains",
+    "provinceModifiers": [
+      {
+        "polarity": "bad",
+        "text": "-60% Supply Limit"
+      },
+      {
+        "polarity": "bad",
+        "text": "+45 Travel Danger"
+      },
+      {
+        "polarity": "good",
+        "text": "+0.15 County Fertility Growth"
+      },
+      {
+        "polarity": "bad",
+        "text": "-25% Cereals Production"
+      },
+      {
+        "polarity": "neutral",
+        "text": "+0.1% Cereals Sell Price"
+      },
+      {
+        "polarity": "good",
+        "text": "+25% Wool Production"
+      },
+      {
+        "polarity": "neutral",
+        "text": "-0.1% Wool Buy Price"
+      },
+      {
+        "polarity": "good",
+        "text": "+10 Settlement Size Baseline"
+      }
+    ],
+    "provisionCost": 150,
+    "sourceFile": "00_terrains.txt",
+    "travelDangerScore": 45
+  },
+  {
+    "attackerAdvantage": null,
+    "attackerModifiers": [],
+    "color": "#dc2d78",
+    "combatWidth": 1,
+    "countyCapitalModifiers": [
+      {
+        "polarity": "bad",
+        "text": "-5% Prosperity Growth"
+      }
+    ],
+    "countyFertility": 25,
+    "defenderAdvantage": null,
+    "defenderModifiers": [],
+    "icon": "drylands",
+    "id": "drylands",
+    "movementSpeed": 1,
+    "name": "Drylands",
+    "provinceModifiers": [
+      {
+        "polarity": "neutral",
+        "text": "+0% Supply Limit"
+      },
+      {
+        "polarity": "bad",
+        "text": "+25 Travel Danger"
+      },
+      {
+        "polarity": "good",
+        "text": "+0.25 County Fertility Growth"
+      },
+      {
+        "polarity": "good",
+        "text": "+25% Millet Production"
+      },
+      {
+        "polarity": "good",
+        "text": "+25% Cotton Production"
+      },
+      {
+        "polarity": "neutral",
+        "text": "-0.1% Millet Buy Price"
+      },
+      {
+        "polarity": "neutral",
+        "text": "-0.1% Cotton Buy Price"
+      },
+      {
+        "polarity": "good",
+        "text": "+20 Settlement Size Baseline"
+      }
+    ],
+    "provisionCost": 80,
+    "sourceFile": "00_terrains.txt",
+    "travelDangerScore": 25
+  },
+  {
+    "attackerAdvantage": null,
+    "attackerModifiers": [],
+    "color": "#ff0000",
+    "combatWidth": 1,
+    "countyCapitalModifiers": [
+      {
+        "polarity": "good",
+        "text": "+20% Prosperity Growth"
+      }
+    ],
+    "countyFertility": 40,
+    "defenderAdvantage": null,
+    "defenderModifiers": [],
+    "icon": "farmlands",
+    "id": "farmlands",
+    "movementSpeed": 1,
+    "name": "Farmlands",
+    "provinceModifiers": [
+      {
+        "polarity": "good",
+        "text": "+0.05 Agricultural Taxes /month"
+      },
+      {
+        "polarity": "good",
+        "text": "+50% Supply Limit"
+      },
+      {
+        "polarity": "good",
+        "text": "+0.35 County Fertility Growth"
+      },
+      {
+        "polarity": "good",
+        "text": "+20 Food Supply"
+      },
+      {
+        "polarity": "good",
+        "text": "+50% Cereals Production"
+      },
+      {
+        "polarity": "good",
+        "text": "+50% Flax Production"
+      },
+      {
+        "polarity": "neutral",
+        "text": "-0.1% Cereals Buy Price"
+      },
+      {
+        "polarity": "neutral",
+        "text": "-0.1% Flax Buy Price"
+      },
+      {
+        "polarity": "good",
+        "text": "+40 Settlement Size Baseline"
+      }
+    ],
+    "provisionCost": 25,
+    "sourceFile": "00_terrains.txt",
+    "travelDangerScore": 0
+  },
+  {
+    "attackerAdvantage": null,
+    "attackerModifiers": [],
+    "color": "#371f99",
+    "combatWidth": 0.75,
+    "countyCapitalModifiers": [
+      {
+        "polarity": "good",
+        "text": "+20% Prosperity Growth"
+      }
+    ],
+    "countyFertility": 30,
+    "defenderAdvantage": null,
+    "defenderModifiers": [],
+    "icon": "floodplains",
+    "id": "floodplains",
+    "movementSpeed": 1,
+    "name": "Floodplains",
+    "provinceModifiers": [
+      {
+        "polarity": "good",
+        "text": "+0.03 Agricultural Taxes /month"
+      },
+      {
+        "polarity": "good",
+        "text": "+35% Supply Limit"
+      },
+      {
+        "polarity": "bad",
+        "text": "+25 Travel Danger"
+      },
+      {
+        "polarity": "good",
+        "text": "+0.2 County Fertility Growth"
+      },
+      {
+        "polarity": "good",
+        "text": "+25% Cereals Production"
+      },
+      {
+        "polarity": "good",
+        "text": "+25% Cotton Production"
+      },
+      {
+        "polarity": "neutral",
+        "text": "-0.1% Cereals Buy Price"
+      },
+      {
+        "polarity": "neutral",
+        "text": "-0.1% Cotton Buy Price"
+      },
+      {
+        "polarity": "good",
+        "text": "+40 Settlement Size Baseline"
+      }
+    ],
+    "provisionCost": 25,
+    "sourceFile": "00_terrains.txt",
+    "travelDangerScore": 25
+  },
+  {
+    "attackerAdvantage": null,
+    "attackerModifiers": [],
+    "color": "#47b22d",
+    "combatWidth": 0.9,
+    "countyCapitalModifiers": [],
+    "countyFertility": 15,
+    "defenderAdvantage": 3,
+    "defenderModifiers": [],
+    "icon": "forest",
+    "id": "forest",
+    "movementSpeed": 0.8,
+    "name": "Forest",
+    "provinceModifiers": [
+      {
+        "polarity": "bad",
+        "text": "-10% Supply Limit"
+      },
+      {
+        "polarity": "bad",
+        "text": "+30 Travel Danger"
+      },
+      {
+        "polarity": "good",
+        "text": "+0.15 County Fertility Growth"
+      },
+      {
+        "polarity": "good",
+        "text": "+0.05 Hinterland Taxes /month"
+      },
+      {
+        "polarity": "good",
+        "text": "+10% Hinterland Taxes"
+      },
+      {
+        "polarity": "good",
+        "text": "+50% Carpentries Production"
+      },
+      {
+        "polarity": "good",
+        "text": "+25% Furs Production"
+      },
+      {
+        "polarity": "good",
+        "text": "+25% Honey Production"
+      },
+      {
+        "polarity": "good",
+        "text": "-0.5% Carpentries Buy Price"
+      },
+      {
+        "polarity": "neutral",
+        "text": "-0.1% Furs Buy Price"
+      },
+      {
+        "polarity": "neutral",
+        "text": "-0.1% Honey Buy Price"
+      },
+      {
+        "polarity": "good",
+        "text": "+10 Settlement Size Baseline"
+      }
+    ],
+    "provisionCost": 50,
+    "sourceFile": "00_terrains.txt",
+    "travelDangerScore": 30
+  },
+  {
+    "attackerAdvantage": null,
+    "attackerModifiers": [],
+    "color": "#5a320c",
+    "combatWidth": 0.8,
+    "countyCapitalModifiers": [
+      {
+        "polarity": "bad",
+        "text": "-10% Prosperity Growth"
+      }
+    ],
+    "countyFertility": 20,
+    "defenderAdvantage": 5,
+    "defenderModifiers": [],
+    "icon": "hills",
+    "id": "hills",
+    "movementSpeed": 0.8,
+    "name": "Hills",
+    "provinceModifiers": [
+      {
+        "polarity": "good",
+        "text": "+0.02 Mining Taxes /month"
+      },
+      {
+        "polarity": "bad",
+        "text": "-10% Supply Limit"
+      },
+      {
+        "polarity": "bad",
+        "text": "+30 Travel Danger"
+      },
+      {
+        "polarity": "good",
+        "text": "+0.2 County Fertility Growth"
+      },
+      {
+        "polarity": "good",
+        "text": "+10% Wine Production"
+      },
+      {
+        "polarity": "good",
+        "text": "+25% Stone Production"
+      },
+      {
+        "polarity": "good",
+        "text": "-0.5% Wine Buy Price"
+      },
+      {
+        "polarity": "neutral",
+        "text": "-0.1% Stone Buy Price"
+      },
+      {
+        "polarity": "good",
+        "text": "+20 Settlement Size Baseline"
+      }
+    ],
+    "provisionCost": 50,
+    "sourceFile": "00_terrains.txt",
+    "travelDangerScore": 30
+  },
+  {
+    "attackerAdvantage": null,
+    "attackerModifiers": [],
+    "color": "#0a3c23",
+    "combatWidth": 0.7,
+    "countyCapitalModifiers": [
+      {
+        "polarity": "bad",
+        "text": "-40% Prosperity Growth"
+      }
+    ],
+    "countyFertility": 10,
+    "defenderAdvantage": 6,
+    "defenderModifiers": [],
+    "icon": "jungle",
+    "id": "jungle",
+    "movementSpeed": 0.5,
+    "name": "Jungle",
+    "provinceModifiers": [
+      {
+        "polarity": "good",
+        "text": "+0.02 Hinterland Taxes /month"
+      },
+      {
+        "polarity": "bad",
+        "text": "-25% Supply Limit"
+      },
+      {
+        "polarity": "bad",
+        "text": "+45 Travel Danger"
+      },
+      {
+        "polarity": "good",
+        "text": "+0.05 County Fertility Growth"
+      },
+      {
+        "polarity": "bad",
+        "text": "-50% Grain Production"
+      },
+      {
+        "polarity": "bad",
+        "text": "-25% Beasts of Burden Production"
+      },
+      {
+        "polarity": "good",
+        "text": "+50% Carpentries Production"
+      },
+      {
+        "polarity": "good",
+        "text": "+25% Spices Production"
+      },
+      {
+        "polarity": "good",
+        "text": "+10% Hinterland Taxes"
+      },
+      {
+        "polarity": "good",
+        "text": "+0.5% Grain Sell Price"
+      },
+      {
+        "polarity": "good",
+        "text": "-0.5% Carpentries Buy Price"
+      },
+      {
+        "polarity": "neutral",
+        "text": "-0.1% Spices Buy Price"
+      },
+      {
+        "polarity": "good",
+        "text": "+10 Settlement Size Baseline"
+      }
+    ],
+    "provisionCost": 100,
+    "sourceFile": "00_terrains.txt",
+    "travelDangerScore": 45
+  },
+  {
+    "attackerAdvantage": null,
+    "attackerModifiers": [],
+    "color": "#646464",
+    "combatWidth": 0.5,
+    "countyCapitalModifiers": [
+      {
+        "polarity": "bad",
+        "text": "-25% Prosperity Growth"
+      }
+    ],
+    "countyFertility": 15,
+    "defenderAdvantage": 12,
+    "defenderModifiers": [],
+    "icon": "mountains",
+    "id": "mountains",
+    "movementSpeed": 0.5,
+    "name": "Mountains",
+    "provinceModifiers": [
+      {
+        "polarity": "good",
+        "text": "+0.02 Mining Taxes /month"
+      },
+      {
+        "polarity": "bad",
+        "text": "-50% Supply Limit"
+      },
+      {
+        "polarity": "bad",
+        "text": "+45 Travel Danger"
+      },
+      {
+        "polarity": "good",
+        "text": "+0.15 County Fertility Growth"
+      },
+      {
+        "polarity": "bad",
+        "text": "-25% Cereals Production"
+      },
+      {
+        "polarity": "good",
+        "text": "+50% Stone Production"
+      },
+      {
+        "polarity": "good",
+        "text": "+25% Wool Production"
+      },
+      {
+        "polarity": "neutral",
+        "text": "+0.1% Cereals Sell Price"
+      },
+      {
+        "polarity": "good",
+        "text": "-0.5% Stone Buy Price"
+      },
+      {
+        "polarity": "neutral",
+        "text": "-0.1% Wool Buy Price"
+      },
+      {
+        "polarity": "good",
+        "text": "+10 Settlement Size Baseline"
+      }
+    ],
+    "provisionCost": 150,
+    "sourceFile": "00_terrains.txt",
+    "travelDangerScore": 45
+  },
+  {
+    "attackerAdvantage": null,
+    "attackerModifiers": [],
+    "color": "#9b8fcc",
+    "combatWidth": 1,
+    "countyCapitalModifiers": [
+      {
+        "polarity": "good",
+        "text": "+10% Prosperity Growth"
+      }
+    ],
+    "countyFertility": 30,
+    "defenderAdvantage": null,
+    "defenderModifiers": [],
+    "icon": "oasis",
+    "id": "oasis",
+    "movementSpeed": 1,
+    "name": "Oasis",
+    "provinceModifiers": [
+      {
+        "polarity": "good",
+        "text": "+10% Supply Limit"
+      },
+      {
+        "polarity": "bad",
+        "text": "+10 Travel Danger"
+      },
+      {
+        "polarity": "good",
+        "text": "+0.35 County Fertility Growth"
+      },
+      {
+        "polarity": "good",
+        "text": "+10 Food Supply"
+      },
+      {
+        "polarity": "good",
+        "text": "+50% Fruit Production"
+      },
+      {
+        "polarity": "bad",
+        "text": "-25% Carpentries Production"
+      },
+      {
+        "polarity": "good",
+        "text": "-0.5% Fruit Buy Price"
+      },
+      {
+        "polarity": "neutral",
+        "text": "+0.1% Carpentries Sell Price"
+      },
+      {
+        "polarity": "good",
+        "text": "+30 Settlement Size Baseline"
+      }
+    ],
+    "provisionCost": 25,
+    "sourceFile": "00_terrains.txt",
+    "travelDangerScore": 10
+  },
+  {
+    "attackerAdvantage": null,
+    "attackerModifiers": [],
+    "color": "#cca366",
+    "combatWidth": 1,
+    "countyCapitalModifiers": [],
+    "countyFertility": 30,
+    "defenderAdvantage": null,
+    "defenderModifiers": [],
+    "icon": "plains",
+    "id": "plains",
+    "movementSpeed": 1,
+    "name": "Plains",
+    "provinceModifiers": [
+      {
+        "polarity": "neutral",
+        "text": "+0% Supply Limit"
+      },
+      {
+        "polarity": "bad",
+        "text": "+10 Travel Danger"
+      },
+      {
+        "polarity": "good",
+        "text": "+0.25 County Fertility Growth"
+      },
+      {
+        "polarity": "good",
+        "text": "+25% Grain Production"
+      },
+      {
+        "polarity": "good",
+        "text": "+25% Flax Production"
+      },
+      {
+        "polarity": "neutral",
+        "text": "-0.1% Grain Buy Price"
+      },
+      {
+        "polarity": "neutral",
+        "text": "-0.1% Flax Buy Price"
+      },
+      {
+        "polarity": "good",
+        "text": "+30 Settlement Size Baseline"
+      }
+    ],
+    "provisionCost": 50,
+    "sourceFile": "00_terrains.txt",
+    "travelDangerScore": 10
+  },
+  {
+    "attackerAdvantage": null,
+    "attackerModifiers": [],
+    "color": "#1a1a1a",
+    "combatWidth": 1,
+    "countyCapitalModifiers": [],
+    "countyFertility": 0,
+    "defenderAdvantage": null,
+    "defenderModifiers": [],
+    "icon": "sea",
+    "id": "sea",
+    "movementSpeed": 1,
+    "name": "Sea",
+    "provinceModifiers": [
+      {
+        "polarity": "bad",
+        "text": "+50 Travel Danger"
+      }
+    ],
+    "provisionCost": 100,
+    "sourceFile": "00_terrains.txt",
+    "travelDangerScore": 20
+  },
+  {
+    "attackerAdvantage": null,
+    "attackerModifiers": [],
+    "color": "#c86419",
+    "combatWidth": 1,
+    "countyCapitalModifiers": [
+      {
+        "polarity": "bad",
+        "text": "-50% Prosperity Growth"
+      }
+    ],
+    "countyFertility": 30,
+    "defenderAdvantage": null,
+    "defenderModifiers": [],
+    "icon": "steppe",
+    "id": "steppe",
+    "movementSpeed": 1,
+    "name": "Steppe",
+    "provinceModifiers": [
+      {
+        "polarity": "neutral",
+        "text": "+0% Supply Limit"
+      },
+      {
+        "polarity": "bad",
+        "text": "+35 Travel Danger"
+      },
+      {
+        "polarity": "good",
+        "text": "+0.35 County Fertility Growth"
+      },
+      {
+        "polarity": "good",
+        "text": "+50% Beasts of Burden Production"
+      },
+      {
+        "polarity": "good",
+        "text": "+25% Wool Production"
+      },
+      {
+        "polarity": "bad",
+        "text": "-25% Grain Production"
+      },
+      {
+        "polarity": "good",
+        "text": "-0.5% Horses Buy Price"
+      },
+      {
+        "polarity": "neutral",
+        "text": "-0.1% Wool Buy Price"
+      },
+      {
+        "polarity": "neutral",
+        "text": "+0.1% Grain Sell Price"
+      }
+    ],
+    "provisionCost": 80,
+    "sourceFile": "00_terrains.txt",
+    "travelDangerScore": 35
+  },
+  {
+    "attackerAdvantage": null,
+    "attackerModifiers": [],
+    "color": "#2e9959",
+    "combatWidth": 0.8,
+    "countyCapitalModifiers": [
+      {
+        "polarity": "bad",
+        "text": "-5% Prosperity Growth"
+      }
+    ],
+    "countyFertility": 15,
+    "defenderAdvantage": 4,
+    "defenderModifiers": [],
+    "icon": "taiga",
+    "id": "taiga",
+    "movementSpeed": 0.8,
+    "name": "Taiga",
+    "provinceModifiers": [
+      {
+        "polarity": "good",
+        "text": "+0.02 Hinterland Taxes /month"
+      },
+      {
+        "polarity": "bad",
+        "text": "-20% Supply Limit"
+      },
+      {
+        "polarity": "bad",
+        "text": "+40 Travel Danger"
+      },
+      {
+        "polarity": "good",
+        "text": "+0.15 County Fertility Growth"
+      },
+      {
+        "polarity": "bad",
+        "text": "-50% Cereals Production"
+      },
+      {
+        "polarity": "good",
+        "text": "+50% Carpentries Production"
+      },
+      {
+        "polarity": "good",
+        "text": "+50% Furs Production"
+      },
+      {
+        "polarity": "neutral",
+        "text": "+0.1% Cereals Sell Price"
+      },
+      {
+        "polarity": "good",
+        "text": "-0.5% Carpentries Buy Price"
+      },
+      {
+        "polarity": "good",
+        "text": "-0.5% Furs Buy Price"
+      }
+    ],
+    "provisionCost": 100,
+    "sourceFile": "00_terrains.txt",
+    "travelDangerScore": 40
+  },
+  {
+    "attackerAdvantage": null,
+    "attackerModifiers": [],
+    "color": "#e12328",
+    "combatWidth": 0.8,
+    "countyCapitalModifiers": [
+      {
+        "polarity": "good",
+        "text": "+10% Prosperity Growth"
+      }
+    ],
+    "countyFertility": 0,
+    "defenderAdvantage": 5,
+    "defenderModifiers": [],
+    "icon": "terraced_hills",
+    "id": "terraced_hills",
+    "movementSpeed": 0.8,
+    "name": "Terraced Hills",
+    "provinceModifiers": [
+      {
+        "polarity": "good",
+        "text": "+0.02 Agricultural Taxes /month"
+      },
+      {
+        "polarity": "good",
+        "text": "+10% Supply Limit"
+      },
+      {
+        "polarity": "good",
+        "text": "+200% Sugar Production"
+      },
+      {
+        "polarity": "good",
+        "text": "+200% Cotton Production"
+      },
+      {
+        "polarity": "good",
+        "text": "+200% Flax Production"
+      },
+      {
+        "polarity": "good",
+        "text": "+10% Tea Production"
+      },
+      {
+        "polarity": "good",
+        "text": "+50% Rice Production"
+      },
+      {
+        "polarity": "good",
+        "text": "+10 Food Supply"
+      },
+      {
+        "polarity": "good",
+        "text": "-0.5% Tea Buy Price"
+      },
+      {
+        "polarity": "neutral",
+        "text": "-0.1% Cotton Buy Price"
+      },
+      {
+        "polarity": "neutral",
+        "text": "-0.1% Rice Buy Price"
+      },
+      {
+        "polarity": "neutral",
+        "text": "-0.1% Sugar Buy Price"
+      },
+      {
+        "polarity": "good",
+        "text": "+30 Settlement Size Baseline"
+      }
+    ],
+    "provisionCost": 50,
+    "sourceFile": "00_terrains.txt",
+    "travelDangerScore": 30
+  },
+  {
+    "attackerAdvantage": null,
+    "attackerModifiers": [
+      {
+        "polarity": "bad",
+        "text": "+20% Friendly Fatal Casualties"
+      },
+      {
+        "polarity": "bad",
+        "text": "+25% Retreat Losses"
+      }
+    ],
+    "color": "#4c9999",
+    "combatWidth": 0.6,
+    "countyCapitalModifiers": [
+      {
+        "polarity": "bad",
+        "text": "-25% Prosperity Growth"
+      }
+    ],
+    "countyFertility": 20,
+    "defenderAdvantage": 5,
+    "defenderModifiers": [
+      {
+        "polarity": "bad",
+        "text": "+20% Friendly Fatal Casualties"
+      },
+      {
+        "polarity": "bad",
+        "text": "+25% Retreat Losses"
+      }
+    ],
+    "icon": "wetlands",
+    "id": "wetlands",
+    "movementSpeed": 0.7,
+    "name": "Wetlands",
+    "provinceModifiers": [
+      {
+        "polarity": "good",
+        "text": "+0.03 Hinterland Taxes /month"
+      },
+      {
+        "polarity": "bad",
+        "text": "-25% Supply Limit"
+      },
+      {
+        "polarity": "bad",
+        "text": "+45 Travel Danger"
+      },
+      {
+        "polarity": "good",
+        "text": "+0.2 County Fertility Growth"
+      },
+      {
+        "polarity": "good",
+        "text": "+10% Salt Production"
+      },
+      {
+        "polarity": "good",
+        "text": "+25% Fish Production"
+      },
+      {
+        "polarity": "bad",
+        "text": "-25% Grain Production"
+      },
+      {
+        "polarity": "bad",
+        "text": "-25% Millet Production"
+      },
+      {
+        "polarity": "good",
+        "text": "+25% Rice Production"
+      },
+      {
+        "polarity": "good",
+        "text": "-0.5% Salt Buy Price"
+      },
+      {
+        "polarity": "neutral",
+        "text": "-0.1% Fish Buy Price"
+      },
+      {
+        "polarity": "neutral",
+        "text": "+0.1% Grain Sell Price"
+      },
+      {
+        "polarity": "neutral",
+        "text": "+0.1% Millet Sell Price"
+      },
+      {
+        "polarity": "neutral",
+        "text": "-0.1% Rice Buy Price"
+      },
+      {
+        "polarity": "good",
+        "text": "+20 Settlement Size Baseline"
+      }
+    ],
+    "provisionCost": 80,
+    "sourceFile": "00_terrains.txt",
+    "travelDangerScore": 45
+  }
+]

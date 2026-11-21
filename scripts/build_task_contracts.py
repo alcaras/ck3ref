@@ -26,6 +26,7 @@ from ck3 import Block, Tagged
 
 # Fields we deliberately do not render, with reasons.
 SKIP_FIELDS = {
+    "can_accept_while_traveling": "trigger gating interface acceptance while the owner travels; plumbing, valid_to_accept carries the requirements",
     "weight": "spawn-pool weighting for populate_task_contracts_for_area, AI-facing",
     "on_create": "scripted setup effects (variables, scheme prep)",
     "on_accepted": "scripted flow effects (events, schemes, travel plans)",
@@ -56,6 +57,13 @@ GROUP_LABELS = {
     "laamp_contracts_war_group": "War",
     "laamp_contracts_noticeboard_group": "Noticeboard",
     "laamp_contracts_legitimist_group": "Legitimist",
+    # Silk and Silver merchant-company contracts. No group loc exists; labelled
+    # from the group key (and the gdp_merchant_<x>_contract.txt file names).
+    "merchant_luxury_contract_group": "Merchant: Luxury",
+    "merchant_patron_contract_group": "Merchant: Patron",
+    "merchant_silk_road_contract_group": "Merchant: Silk Road",
+    "merchant_trade_opportunity_group": "Merchant: Trade opportunity",
+    "merchant_unity_contract_group": "Merchant: Unity",
     "admin_governance_group": "Governance",
     "mandala_realm_group": "Mandala Realm",
     "nomadic_settling_group": "Nomadic Settling",

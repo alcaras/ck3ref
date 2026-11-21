@@ -53,7 +53,38 @@
         }
       },
       "scalingCourtModifiers": {},
-      "scalingModifiers": {},
+      "scalingModifiers": {
+        "average": [
+          {
+            "polarity": "good",
+            "text": "+3% Base Governor Efficiency"
+          }
+        ],
+        "excellent": [
+          {
+            "polarity": "good",
+            "text": "+5% Base Governor Efficiency"
+          }
+        ],
+        "good": [
+          {
+            "polarity": "good",
+            "text": "+4% Base Governor Efficiency"
+          }
+        ],
+        "poor": [
+          {
+            "polarity": "good",
+            "text": "+2% Base Governor Efficiency"
+          }
+        ],
+        "terrible": [
+          {
+            "polarity": "good",
+            "text": "+1% Base Governor Efficiency"
+          }
+        ]
+      },
       "skill": "stewardship",
       "sourceFile": "00_admin_court_position.txt"
     },
@@ -75,7 +106,7 @@
       "customEmployeeDesc": null,
       "customEmployerDesc": null,
       "desc": "The Archer Captain commands the camp's bowmen. They are responsible for the contingent's leadership, training, and tactics.",
-      "dlc": "Roads to Power",
+      "dlc": null,
       "employeeMods": [
         {
           "polarity": "good",
@@ -179,7 +210,7 @@
       "customEmployeeDesc": null,
       "customEmployerDesc": null,
       "desc": "The Armorer is a smith who specializes in helmets and maile. They are responsible for making and mending the garb of the men-at-arms and horses.",
-      "dlc": "Roads to Power",
+      "dlc": null,
       "employeeMods": [
         {
           "polarity": "good",
@@ -258,7 +289,7 @@
       "customEmployeeDesc": null,
       "customEmployerDesc": null,
       "desc": "The Camelry Captain commands the camp's camel-riders. They are responsible for the contingent's leadership, training, and tactics.",
-      "dlc": "Roads to Power",
+      "dlc": null,
       "employeeMods": [
         {
           "polarity": "good",
@@ -361,7 +392,7 @@
       "customEmployeeDesc": null,
       "customEmployerDesc": null,
       "desc": "The Chief Cook rustles up hearty grub, keeping the camp well fed and in good spirits. They are also responsible for preparing the officers' meals.",
-      "dlc": "Roads to Power",
+      "dlc": null,
       "employeeMods": [
         {
           "polarity": "good",
@@ -439,7 +470,7 @@
       "customEmployeeDesc": null,
       "customEmployerDesc": null,
       "desc": "The Camp Priest offers spiritual support to the camp.",
-      "dlc": "Roads to Power",
+      "dlc": null,
       "employeeMods": [
         {
           "polarity": "good",
@@ -530,7 +561,7 @@
       "customEmployeeDesc": null,
       "customEmployerDesc": null,
       "desc": "The Chief Engineer is responsible for all tasks requiring a knowledge of mechanisms and machinery. They build and repair siege weapons, and instruct the men in their use.",
-      "dlc": "Roads to Power",
+      "dlc": null,
       "employeeMods": [
         {
           "polarity": "good",
@@ -560,7 +591,7 @@
         "average": [
           {
             "polarity": "good",
-            "text": "+25% Men-at-Arms Siege Weapon Effectiveness"
+            "text": "+25% Men-at-Arms Siege Weapon"
           },
           {
             "polarity": "good",
@@ -570,7 +601,7 @@
         "excellent": [
           {
             "polarity": "good",
-            "text": "+66% Men-at-Arms Siege Weapon Effectiveness"
+            "text": "+66% Men-at-Arms Siege Weapon"
           },
           {
             "polarity": "good",
@@ -580,7 +611,7 @@
         "good": [
           {
             "polarity": "good",
-            "text": "+40% Men-at-Arms Siege Weapon Effectiveness"
+            "text": "+40% Men-at-Arms Siege Weapon"
           },
           {
             "polarity": "good",
@@ -590,7 +621,7 @@
         "poor": [
           {
             "polarity": "good",
-            "text": "+15% Men-at-Arms Siege Weapon Effectiveness"
+            "text": "+15% Men-at-Arms Siege Weapon"
           },
           {
             "polarity": "good",
@@ -600,7 +631,7 @@
         "terrible": [
           {
             "polarity": "good",
-            "text": "+10% Men-at-Arms Siege Weapon Effectiveness"
+            "text": "+10% Men-at-Arms Siege Weapon"
           },
           {
             "polarity": "good",
@@ -634,7 +665,7 @@
       "customEmployeeDesc": null,
       "customEmployerDesc": "May aid in Gather Provisions Decisions",
       "desc": "The Chief Forager is tasked with supplementing the camp's provisions. They are responsible for organizing parties to gather fare from the local area.",
-      "dlc": "Roads to Power",
+      "dlc": null,
       "employeeMods": [
         {
           "polarity": "good",
@@ -733,7 +764,7 @@
       "customEmployeeDesc": null,
       "customEmployerDesc": null,
       "desc": "The Elephantry Captain commands the camp's mahouts. They are responsible for the contingent's leadership, training, and tactics.",
-      "dlc": "Roads to Power",
+      "dlc": null,
       "employeeMods": [
         {
           "polarity": "good",
@@ -852,7 +883,7 @@
       "customEmployeeDesc": null,
       "customEmployerDesc": null,
       "desc": "The Head Groom is charged with the livery of the camp's horses and beasts of burden. They are responsible for the animal's provender, care, and tack.",
-      "dlc": "Roads to Power",
+      "dlc": null,
       "employeeMods": [
         {
           "polarity": "good",
@@ -952,7 +983,7 @@
       "customEmployeeDesc": null,
       "customEmployerDesc": null,
       "desc": "The Head Porter is in charge of transporting the camp and all its provisions. They ensure everything arrives at the next destination in one piece.",
-      "dlc": "Roads to Power",
+      "dlc": null,
       "employeeMods": [
         {
           "polarity": "good",
@@ -976,7 +1007,7 @@
           "negated": false
         },
         {
-          "name": "Inspection",
+          "name": "Eye for Details",
           "negated": false
         }
       ],
@@ -1055,7 +1086,7 @@
       "customEmployeeDesc": null,
       "customEmployerDesc": null,
       "desc": "The Heavy Cavalry Captain commands the camp's armored chargers. They are responsible for the contingent's leadership, training, and tactics.",
-      "dlc": "Roads to Power",
+      "dlc": null,
       "employeeMods": [
         {
           "polarity": "good",
@@ -1154,7 +1185,7 @@
       "customEmployeeDesc": null,
       "customEmployerDesc": null,
       "desc": "The Heavy Infantry Captain commands the camp's armored battle-line. They are responsible for the contingent's leadership, training, and tactics.",
-      "dlc": "Roads to Power",
+      "dlc": null,
       "employeeMods": [
         {
           "polarity": "good",
@@ -1253,7 +1284,7 @@
       "customEmployeeDesc": null,
       "customEmployerDesc": null,
       "desc": "The Horse Archer Captain commands the camp's mounted skirmishers. They are responsible for the contingent's leadership, training, and tactics.",
-      "dlc": "Roads to Power",
+      "dlc": null,
       "employeeMods": [
         {
           "polarity": "good",
@@ -1352,7 +1383,7 @@
       "customEmployeeDesc": null,
       "customEmployerDesc": "Hunt Success Chance increases with Aptitude\nImproves Martial Education outcomes for all Children in your Camp\nMay aid in Gather Provisions Decisions",
       "desc": "The Huntsman is an acolyte in the ways of the horn, hound, and bow. They are responsible for planning and leading the camp's hunting expeditions.",
-      "dlc": "Roads to Power",
+      "dlc": null,
       "employeeMods": [
         {
           "polarity": "good",
@@ -1463,7 +1494,7 @@
       "customEmployeeDesc": null,
       "customEmployerDesc": "Enables Toss to Dogs Execution Prisoners method",
       "desc": "The Kenneler is tasked with the care and training of the camp's pack of hounds. They keep the dogs healthy and well fed — most of the time.",
-      "dlc": "Roads to Power",
+      "dlc": null,
       "employeeMods": [
         {
           "polarity": "good",
@@ -1543,7 +1574,7 @@
       "customEmployeeDesc": null,
       "customEmployerDesc": "Unlocks Send Poem Interaction\nEnables the Invite Poets Decision",
       "desc": "The Laureate is a live-in verse writer for all occasions. Their work is known far and wide, and brings in plenty of eager poets to learn at their feet.",
-      "dlc": "Roads to Power",
+      "dlc": null,
       "employeeMods": [
         {
           "polarity": "good",
@@ -1654,7 +1685,7 @@
       "customEmployeeDesc": null,
       "customEmployerDesc": null,
       "desc": "The Light Cavalry Captain is commander of the camp's swiftest horsemen. They are responsible for the contingent's leadership, training, and tactics.",
-      "dlc": "Roads to Power",
+      "dlc": null,
       "employeeMods": [
         {
           "polarity": "good",
@@ -1753,7 +1784,7 @@
       "customEmployeeDesc": null,
       "customEmployerDesc": null,
       "desc": "The Light Infantry Captain commands the camp's skirmishers. They are responsible for the contingent's leadership, training, and tactics.",
-      "dlc": "Roads to Power",
+      "dlc": null,
       "employeeMods": [
         {
           "polarity": "good",
@@ -1852,7 +1883,7 @@
       "customEmployeeDesc": null,
       "customEmployerDesc": "Unlocks Send Poem Interaction",
       "desc": "The Master Bard entertains the camp and its officers with ballads and tall tales. Their efforts may also go some way to immortalizing an adventurer's grand deeds.",
-      "dlc": "Roads to Power",
+      "dlc": null,
       "employeeMods": [
         {
           "polarity": "good",
@@ -1931,7 +1962,7 @@
       "customEmployeeDesc": null,
       "customEmployerDesc": "Unlocks Train for a Tournament Decision",
       "desc": "The Master of Arms is tasked with keeping the fighting men in line, both at camp and on the battlefield. They are responsible for discipline and training.",
-      "dlc": "Roads to Power",
+      "dlc": null,
       "employeeMods": [
         {
           "polarity": "good",
@@ -2031,7 +2062,7 @@
       "customEmployeeDesc": null,
       "customEmployerDesc": "Increases Gold Gold, Prestige Prestige, and Piety Piety gain from winning Battles and Sieges (based on Aptitude)\nIncreases the chance of stealing an Artifact after a Siege (based on Aptitude)",
       "desc": "The Master of Spoils is responsible for the collection and distribution of the camp's booty. They ensure the spoils of war are properly divided between the men.",
-      "dlc": "Roads to Power",
+      "dlc": null,
       "employeeMods": [
         {
           "polarity": "good",
@@ -2069,7 +2100,7 @@
       "baseCourtMods": [
         {
           "polarity": "good",
-          "text": "+0.25 Domicile Income /month"
+          "text": "+0.1 Domicile Income /month"
         }
       ],
       "baseEmployerMods": [],
@@ -2084,7 +2115,7 @@
       "customEmployeeDesc": null,
       "customEmployerDesc": "Unlocks Steal Artifact Interaction",
       "desc": "The Master Thief is a rogue tasked with the varied and morally dubious arts of burglary. They may ensure access to objects otherwise out of reach.",
-      "dlc": "Roads to Power",
+      "dlc": null,
       "employeeMods": [
         {
           "polarity": "good",
@@ -2165,7 +2196,7 @@
       "customEmployeeDesc": null,
       "customEmployerDesc": "Gold gain from ransoming Prisoners: Gold +7% to Gold +33% (based on Aptitude)\nGold to pay to ransom your Followers: Gold -9% to Gold -33% (based on Aptitude)",
       "desc": "The Man-Haggler is responsible for valuable prisoners, and extracting the greatest possible profit from them. They look to the captives, and handle the ransom negotiations.",
-      "dlc": "Roads to Power",
+      "dlc": null,
       "employeeMods": [
         {
           "polarity": "good",
@@ -2213,7 +2244,7 @@
       "customEmployeeDesc": null,
       "customEmployerDesc": null,
       "desc": "The Pike Captain commands of the spear lines. They are responsible for the contingent's leadership, training, and tactics.",
-      "dlc": "Roads to Power",
+      "dlc": null,
       "employeeMods": [
         {
           "polarity": "good",
@@ -2320,7 +2351,7 @@
       "customEmployeeDesc": null,
       "customEmployerDesc": null,
       "desc": "The Quartermaster is responsible for ensuring the camp is well fed and watered. They manage, safeguard, and distribute the provisions as needed.",
-      "dlc": "Roads to Power",
+      "dlc": null,
       "employeeMods": [
         {
           "polarity": "good",
@@ -2344,7 +2375,7 @@
           "negated": false
         },
         {
-          "name": "Inspection",
+          "name": "Eye for Details",
           "negated": false
         }
       ],
@@ -2427,7 +2458,7 @@
       "customEmployeeDesc": null,
       "customEmployerDesc": null,
       "desc": "A Second is the most trusted officer at camp, aiding the leader as next-in-command. They are responsible for orders and organization in the leader's absence.",
-      "dlc": "Roads to Power",
+      "dlc": null,
       "employeeMods": [
         {
           "polarity": "good",
@@ -2605,7 +2636,7 @@
       "customEmployeeDesc": null,
       "customEmployerDesc": "Unlocks special options in events\nUnlocks the Humiliate the Stooge Decision",
       "desc": "The Stooge is the involuntary focus of the camp's irritation and cruel humor. Their maltreatment is a great source of morale and the origin of many risible fireside yarns.",
-      "dlc": "Roads to Power",
+      "dlc": null,
       "employeeMods": [
         {
           "polarity": "bad",
@@ -2648,7 +2679,7 @@
       "customEmployeeDesc": null,
       "customEmployerDesc": null,
       "desc": "The Witness has the solemn task of recording the deeds and rightful claims of the camp's leader. They attest to the great deeds and struggles of the camp.",
-      "dlc": "Roads to Power",
+      "dlc": null,
       "employeeMods": [
         {
           "polarity": "good",
@@ -2829,7 +2860,7 @@
       "maxPositions": 1,
       "minimumRank": null,
       "name": "Fire Dragon Engineer",
-      "opinion": 5,
+      "opinion": null,
       "requirements": [
         {
           "name": "Kingdom tier+",
@@ -2858,31 +2889,31 @@
       "scalingModifiers": {
         "average": [
           {
-            "polarity": "good",
+            "polarity": "neutral",
             "text": "-15% Siege Phase Time"
           }
         ],
         "excellent": [
           {
-            "polarity": "good",
+            "polarity": "neutral",
             "text": "-25% Siege Phase Time"
           }
         ],
         "good": [
           {
-            "polarity": "good",
+            "polarity": "neutral",
             "text": "-20% Siege Phase Time"
           }
         ],
         "poor": [
           {
-            "polarity": "good",
+            "polarity": "neutral",
             "text": "-10% Siege Phase Time"
           }
         ],
         "terrible": [
           {
-            "polarity": "good",
+            "polarity": "neutral",
             "text": "-5% Siege Phase Time"
           }
         ]
@@ -2919,7 +2950,7 @@
         },
         {
           "polarity": "good",
-          "text": "+10% Monthly Martial Lifestyle Experience"
+          "text": "+10% Monthly Focused Martial Lifestyle Experience"
         }
       ],
       "features": [],
@@ -2928,7 +2959,7 @@
       "maxPositions": 1,
       "minimumRank": "empire",
       "name": "Grand Guardian",
-      "opinion": 5,
+      "opinion": null,
       "requirements": [
         {
           "name": "Celestial government",
@@ -2959,6 +2990,10 @@
           {
             "polarity": "good",
             "text": "+5% Army Toughness"
+          },
+          {
+            "polarity": "good",
+            "text": "+3% Base Governor Efficiency"
           }
         ],
         "excellent": [
@@ -2969,6 +3004,10 @@
           {
             "polarity": "good",
             "text": "+15% Army Toughness"
+          },
+          {
+            "polarity": "good",
+            "text": "+5% Base Governor Efficiency"
           }
         ],
         "good": [
@@ -2979,6 +3018,10 @@
           {
             "polarity": "good",
             "text": "+8% Army Toughness"
+          },
+          {
+            "polarity": "good",
+            "text": "+4% Base Governor Efficiency"
           }
         ],
         "poor": [
@@ -2989,6 +3032,10 @@
           {
             "polarity": "good",
             "text": "+3% Army Toughness"
+          },
+          {
+            "polarity": "good",
+            "text": "+2% Base Governor Efficiency"
           }
         ],
         "terrible": [
@@ -2999,6 +3046,10 @@
           {
             "polarity": "good",
             "text": "+1% Army Toughness"
+          },
+          {
+            "polarity": "good",
+            "text": "+1% Base Governor Efficiency"
           }
         ]
       },
@@ -3034,7 +3085,7 @@
         },
         {
           "polarity": "good",
-          "text": "+10% Monthly Learning Lifestyle Experience"
+          "text": "+10% Monthly Focused Learning Lifestyle Experience"
         }
       ],
       "features": [],
@@ -3043,7 +3094,7 @@
       "maxPositions": 1,
       "minimumRank": "empire",
       "name": "Grand Mentor",
-      "opinion": 5,
+      "opinion": null,
       "requirements": [
         {
           "name": "Celestial government",
@@ -3078,6 +3129,10 @@
           {
             "polarity": "good",
             "text": "+3 Learning"
+          },
+          {
+            "polarity": "good",
+            "text": "+3% Base Governor Efficiency"
           }
         ],
         "excellent": [
@@ -3092,6 +3147,10 @@
           {
             "polarity": "good",
             "text": "+5 Learning"
+          },
+          {
+            "polarity": "good",
+            "text": "+5% Base Governor Efficiency"
           }
         ],
         "good": [
@@ -3106,6 +3165,10 @@
           {
             "polarity": "good",
             "text": "+4 Learning"
+          },
+          {
+            "polarity": "good",
+            "text": "+4% Base Governor Efficiency"
           }
         ],
         "poor": [
@@ -3120,6 +3183,10 @@
           {
             "polarity": "good",
             "text": "+2 Learning"
+          },
+          {
+            "polarity": "good",
+            "text": "+2% Base Governor Efficiency"
           }
         ],
         "terrible": [
@@ -3134,6 +3201,10 @@
           {
             "polarity": "good",
             "text": "+1 Learning"
+          },
+          {
+            "polarity": "good",
+            "text": "+1% Base Governor Efficiency"
           }
         ]
       },
@@ -3169,7 +3240,7 @@
         },
         {
           "polarity": "good",
-          "text": "+10% Monthly Diplomacy Lifestyle Experience"
+          "text": "+10% Monthly Focused Diplomacy Lifestyle Experience"
         }
       ],
       "features": [],
@@ -3178,7 +3249,7 @@
       "maxPositions": 1,
       "minimumRank": "empire",
       "name": "Grand Preceptor",
-      "opinion": 5,
+      "opinion": null,
       "requirements": [
         {
           "name": "Celestial government",
@@ -3209,6 +3280,10 @@
           {
             "polarity": "good",
             "text": "+6 Direct Vassal Opinion"
+          },
+          {
+            "polarity": "good",
+            "text": "+3% Base Governor Efficiency"
           }
         ],
         "excellent": [
@@ -3219,6 +3294,10 @@
           {
             "polarity": "good",
             "text": "+10 Direct Vassal Opinion"
+          },
+          {
+            "polarity": "good",
+            "text": "+5% Base Governor Efficiency"
           }
         ],
         "good": [
@@ -3229,6 +3308,10 @@
           {
             "polarity": "good",
             "text": "+8 Direct Vassal Opinion"
+          },
+          {
+            "polarity": "good",
+            "text": "+4% Base Governor Efficiency"
           }
         ],
         "poor": [
@@ -3239,6 +3322,10 @@
           {
             "polarity": "good",
             "text": "+4 Direct Vassal Opinion"
+          },
+          {
+            "polarity": "good",
+            "text": "+2% Base Governor Efficiency"
           }
         ],
         "terrible": [
@@ -3249,6 +3336,10 @@
           {
             "polarity": "good",
             "text": "+2 Direct Vassal Opinion"
+          },
+          {
+            "polarity": "good",
+            "text": "+1% Base Governor Efficiency"
           }
         ]
       },
@@ -3281,7 +3372,7 @@
       "maxPositions": 1,
       "minimumRank": "empire",
       "name": "Keeper of the Harem",
-      "opinion": 5,
+      "opinion": null,
       "requirements": [
         {
           "name": "Hegemony tier",
@@ -3482,10 +3573,14 @@
       "maxPositions": 1,
       "minimumRank": null,
       "name": "Antiquarian",
-      "opinion": 5,
+      "opinion": null,
       "requirements": [
         {
           "name": "Nomadic government",
+          "negated": false
+        },
+        {
+          "name": "Merchant government",
           "negated": false
         }
       ],
@@ -3547,7 +3642,7 @@
       "cultureMods": [],
       "customEmployeeDesc": null,
       "customEmployerDesc": "Performs Medical Treatments",
-      "desc": "The Personal Physician is responsible for the health and well-being of the Court they are in. They will treat disease and suture wounds to the best of their abilities.",
+      "desc": "The Personal Physician is responsible for the health and well-being of their Court, Camp, or Company. They will treat disease and suture wounds to the best of their abilities.",
       "dlc": null,
       "employeeMods": [
         {
@@ -3561,7 +3656,7 @@
       "maxPositions": 1,
       "minimumRank": null,
       "name": "Personal Physician",
-      "opinion": 5,
+      "opinion": null,
       "requirements": [],
       "salary": {
         "gold": {
@@ -3638,6 +3733,178 @@
     },
     {
       "aptitudeSkills": [
+        "stewardship"
+      ],
+      "baseCourtMods": [],
+      "baseEmployerMods": [],
+      "breakpoints": [
+        20,
+        40,
+        60,
+        80
+      ],
+      "category": "Important positions",
+      "cultureMods": [],
+      "customEmployeeDesc": null,
+      "customEmployerDesc": null,
+      "desc": "The Partner is largely considered to be a stand-in for the owner of the Company, taking responsibility for its day-to-day operations and bearing the brunt of its mistakes more often than not.",
+      "dlc": "Silk and Silver",
+      "employeeMods": [
+        {
+          "polarity": "good",
+          "text": "+5 General Opinion"
+        },
+        {
+          "polarity": "good",
+          "text": "+20% Monthly Focused Stewardship Lifestyle Experience"
+        }
+      ],
+      "features": [],
+      "icon": "partner_court_position",
+      "id": "partner_court_position",
+      "maxPositions": 1,
+      "minimumRank": null,
+      "name": "Partner",
+      "opinion": null,
+      "requirements": [
+        {
+          "name": "You are a Merchant",
+          "negated": false
+        },
+        {
+          "name": "Merchant government",
+          "negated": false
+        }
+      ],
+      "salary": {
+        "gold": {
+          "base": 0.25,
+          "scales": true
+        }
+      },
+      "scalingCourtModifiers": {},
+      "scalingModifiers": {
+        "average": [
+          {
+            "polarity": "good",
+            "text": "+5% Trade Expertise Growth"
+          }
+        ],
+        "excellent": [
+          {
+            "polarity": "good",
+            "text": "+20% Trade Expertise Growth"
+          }
+        ],
+        "good": [
+          {
+            "polarity": "good",
+            "text": "+10% Trade Expertise Growth"
+          }
+        ],
+        "poor": [
+          {
+            "polarity": "good",
+            "text": "+2% Trade Expertise Growth"
+          }
+        ],
+        "terrible": [
+          {
+            "polarity": "good",
+            "text": "+1% Trade Expertise Growth"
+          }
+        ]
+      },
+      "skill": "stewardship",
+      "sourceFile": "00_gdp_associate_positions.txt"
+    },
+    {
+      "aptitudeSkills": [
+        "stewardship",
+        "diplomacy",
+        "intrigue"
+      ],
+      "baseCourtMods": [],
+      "baseEmployerMods": [],
+      "breakpoints": [
+        20,
+        40,
+        60,
+        80
+      ],
+      "category": "Important positions",
+      "cultureMods": [],
+      "customEmployeeDesc": "Patrician Rating: …",
+      "customEmployerDesc": null,
+      "desc": "The Roman Censor is a prestigious office upholding public morality and overseeing various senatorial and governmental affairs.",
+      "dlc": null,
+      "employeeMods": [
+        {
+          "polarity": "good",
+          "text": "+1 Prestige /month"
+        },
+        {
+          "polarity": "good",
+          "text": "+25% Monthly Prestige"
+        }
+      ],
+      "features": [],
+      "icon": "roman_censor_court_position",
+      "id": "roman_censor_court_position",
+      "maxPositions": 1,
+      "minimumRank": "empire",
+      "name": "Roman Censor",
+      "opinion": 20,
+      "requirements": [
+        {
+          "name": "Roman Republic",
+          "negated": false
+        }
+      ],
+      "salary": {
+        "treasury_or_gold": {
+          "base": 0.5,
+          "scales": true
+        }
+      },
+      "scalingCourtModifiers": {},
+      "scalingModifiers": {
+        "average": [
+          {
+            "polarity": "good",
+            "text": "+4% Monthly Renown"
+          }
+        ],
+        "excellent": [
+          {
+            "polarity": "good",
+            "text": "+10% Monthly Renown"
+          }
+        ],
+        "good": [
+          {
+            "polarity": "good",
+            "text": "+7% Monthly Renown"
+          }
+        ],
+        "poor": [
+          {
+            "polarity": "good",
+            "text": "+2% Monthly Renown"
+          }
+        ],
+        "terrible": [
+          {
+            "polarity": "good",
+            "text": "+1% Monthly Renown"
+          }
+        ]
+      },
+      "skill": "stewardship",
+      "sourceFile": "00_republic_court_positions.txt"
+    },
+    {
+      "aptitudeSkills": [
         "learning",
         "stewardship"
       ],
@@ -3671,7 +3938,7 @@
       "maxPositions": 1,
       "minimumRank": null,
       "name": "Caravan Master",
-      "opinion": 5,
+      "opinion": null,
       "requirements": [],
       "salary": {
         "gold": {
@@ -3684,36 +3951,148 @@
         "average": [
           {
             "polarity": "good",
-            "text": "+7.5% Monthly Wandering Lifestyle Experience"
+            "text": "+7.5% Monthly Focused Wandering Lifestyle Experience"
           }
         ],
         "excellent": [
           {
             "polarity": "good",
-            "text": "+25% Monthly Wandering Lifestyle Experience"
+            "text": "+25% Monthly Focused Wandering Lifestyle Experience"
           }
         ],
         "good": [
           {
             "polarity": "good",
-            "text": "+15% Monthly Wandering Lifestyle Experience"
+            "text": "+15% Monthly Focused Wandering Lifestyle Experience"
           }
         ],
         "poor": [
           {
             "polarity": "good",
-            "text": "+5% Monthly Wandering Lifestyle Experience"
+            "text": "+5% Monthly Focused Wandering Lifestyle Experience"
           }
         ],
         "terrible": [
           {
             "polarity": "good",
-            "text": "+2.5% Monthly Wandering Lifestyle Experience"
+            "text": "+2.5% Monthly Focused Wandering Lifestyle Experience"
           }
         ]
       },
       "skill": "stewardship",
       "sourceFile": "00_court_positions.txt"
+    },
+    {
+      "aptitudeSkills": [
+        "intrigue",
+        "stewardship"
+      ],
+      "baseCourtMods": [],
+      "baseEmployerMods": [],
+      "breakpoints": [
+        20,
+        40,
+        60,
+        80
+      ],
+      "category": "Kingdom-tier positions",
+      "cultureMods": [],
+      "customEmployeeDesc": null,
+      "customEmployerDesc": null,
+      "desc": "The Bailiff keeps tabs on the Company's troublesome borrowers, solving problems before they arise, and enforcing debt collection.",
+      "dlc": "Silk and Silver",
+      "employeeMods": [
+        {
+          "polarity": "good",
+          "text": "+1 Intrigue"
+        },
+        {
+          "polarity": "good",
+          "text": "+5% Monthly Focused Intrigue Lifestyle Experience"
+        }
+      ],
+      "features": [],
+      "icon": "bailiff_court_position",
+      "id": "bailiff_court_position",
+      "maxPositions": 1,
+      "minimumRank": "county",
+      "name": "Bailiff",
+      "opinion": null,
+      "requirements": [
+        {
+          "name": "You are a Merchant",
+          "negated": false
+        },
+        {
+          "name": "You have the Creditor Company Purpose",
+          "negated": false
+        },
+        {
+          "name": "Merchant government",
+          "negated": false
+        }
+      ],
+      "salary": {
+        "gold": {
+          "base": 0.25,
+          "scales": true
+        }
+      },
+      "scalingCourtModifiers": {},
+      "scalingModifiers": {
+        "average": [
+          {
+            "polarity": "good",
+            "text": "+3% Trade Competitiveness"
+          },
+          {
+            "polarity": "good",
+            "text": "+10% Dread Gain"
+          }
+        ],
+        "excellent": [
+          {
+            "polarity": "good",
+            "text": "+5% Trade Competitiveness"
+          },
+          {
+            "polarity": "good",
+            "text": "+15% Dread Gain"
+          }
+        ],
+        "good": [
+          {
+            "polarity": "good",
+            "text": "+4% Trade Competitiveness"
+          },
+          {
+            "polarity": "good",
+            "text": "+12.5% Dread Gain"
+          }
+        ],
+        "poor": [
+          {
+            "polarity": "good",
+            "text": "+2% Trade Competitiveness"
+          },
+          {
+            "polarity": "good",
+            "text": "+7.5% Dread Gain"
+          }
+        ],
+        "terrible": [
+          {
+            "polarity": "good",
+            "text": "+1% Trade Competitiveness"
+          },
+          {
+            "polarity": "good",
+            "text": "+5% Dread Gain"
+          }
+        ]
+      },
+      "skill": "intrigue",
+      "sourceFile": "00_gdp_associate_positions.txt"
     },
     {
       "aptitudeSkills": [
@@ -3736,7 +4115,7 @@
       "employeeMods": [
         {
           "polarity": "good",
-          "text": "+10 Natural Dread"
+          "text": "+10 Dread Baseline"
         },
         {
           "polarity": "good",
@@ -3753,7 +4132,7 @@
       "maxPositions": 2,
       "minimumRank": null,
       "name": "Bodyguard",
-      "opinion": 5,
+      "opinion": null,
       "requirements": [],
       "salary": {
         "gold": {
@@ -3827,7 +4206,7 @@
       "employeeMods": [
         {
           "polarity": "good",
-          "text": "+10% Monthly Learning Lifestyle Experience"
+          "text": "+10% Monthly Focused Learning Lifestyle Experience"
         },
         {
           "polarity": "good",
@@ -3840,7 +4219,7 @@
       "maxPositions": 3,
       "minimumRank": "kingdom",
       "name": "Court Artificer",
-      "opinion": 10,
+      "opinion": null,
       "requirements": [
         {
           "name": "Royal Court",
@@ -3948,6 +4327,10 @@
         {
           "name": "Celestial government",
           "negated": true
+        },
+        {
+          "name": "Merchant government",
+          "negated": true
         }
       ],
       "salary": {
@@ -4035,7 +4418,7 @@
         },
         {
           "polarity": "good",
-          "text": "+10% Monthly Diplomacy Lifestyle Experience"
+          "text": "+10% Monthly Focused Diplomacy Lifestyle Experience"
         },
         {
           "polarity": "good",
@@ -4046,9 +4429,9 @@
       "icon": "court_musician_court_position",
       "id": "court_musician_court_position",
       "maxPositions": 1,
-      "minimumRank": "duchy",
+      "minimumRank": "county",
       "name": "Court Musician",
-      "opinion": 5,
+      "opinion": null,
       "requirements": [
         {
           "name": "Nomadic government",
@@ -4161,7 +4544,7 @@
         },
         {
           "polarity": "good",
-          "text": "+10% Monthly Diplomacy Lifestyle Experience"
+          "text": "+10% Monthly Focused Diplomacy Lifestyle Experience"
         },
         {
           "polarity": "good",
@@ -4174,7 +4557,7 @@
       "maxPositions": 1,
       "minimumRank": "county",
       "name": "Court Poet",
-      "opinion": 5,
+      "opinion": null,
       "requirements": [
         {
           "name": "Nomadic government",
@@ -4268,7 +4651,7 @@
       "employeeMods": [
         {
           "polarity": "good",
-          "text": "+10% Monthly Diplomacy Lifestyle Experience"
+          "text": "+10% Monthly Focused Diplomacy Lifestyle Experience"
         },
         {
           "polarity": "good",
@@ -4281,7 +4664,7 @@
       "maxPositions": 1,
       "minimumRank": "kingdom",
       "name": "Cup-Bearer",
-      "opinion": 10,
+      "opinion": null,
       "requirements": [
         {
           "name": "Kingdom tier+",
@@ -4356,7 +4739,7 @@
       "employeeMods": [
         {
           "polarity": "good",
-          "text": "+25 Natural Dread"
+          "text": "+25 Dread Baseline"
         },
         {
           "polarity": "bad",
@@ -4373,7 +4756,7 @@
       "maxPositions": 1,
       "minimumRank": "kingdom",
       "name": "Executioner",
-      "opinion": 5,
+      "opinion": null,
       "requirements": [
         {
           "name": "Kingdom tier+",
@@ -4385,6 +4768,10 @@
         },
         {
           "name": "Celestial government",
+          "negated": true
+        },
+        {
+          "name": "Merchant government",
           "negated": true
         }
       ],
@@ -4452,6 +4839,94 @@
     },
     {
       "aptitudeSkills": [
+        "intrigue",
+        "prowess"
+      ],
+      "baseCourtMods": [],
+      "baseEmployerMods": [],
+      "breakpoints": [
+        20,
+        40,
+        60,
+        80
+      ],
+      "category": "Kingdom-tier positions",
+      "cultureMods": [],
+      "customEmployeeDesc": null,
+      "customEmployerDesc": null,
+      "desc": "The Fixer is responsible for tying loose ends that would otherwise hinder the Company's interests.",
+      "dlc": "Silk and Silver",
+      "employeeMods": [
+        {
+          "polarity": "good",
+          "text": "+5% Monthly Focused Intrigue Lifestyle Experience"
+        },
+        {
+          "polarity": "good",
+          "text": "+10 Dread Baseline"
+        }
+      ],
+      "features": [],
+      "icon": "fixer_court_position",
+      "id": "fixer_court_position",
+      "maxPositions": 1,
+      "minimumRank": "county",
+      "name": "Fixer",
+      "opinion": null,
+      "requirements": [
+        {
+          "name": "You are a Merchant",
+          "negated": false
+        },
+        {
+          "name": "Merchant government",
+          "negated": false
+        }
+      ],
+      "salary": {
+        "gold": {
+          "base": 0.25,
+          "scales": true
+        }
+      },
+      "scalingCourtModifiers": {},
+      "scalingModifiers": {
+        "average": [
+          {
+            "polarity": "good",
+            "text": "-6% Enemy Hostile Scheme Success Chance Add"
+          }
+        ],
+        "excellent": [
+          {
+            "polarity": "good",
+            "text": "-10% Enemy Hostile Scheme Success Chance Add"
+          }
+        ],
+        "good": [
+          {
+            "polarity": "good",
+            "text": "-8% Enemy Hostile Scheme Success Chance Add"
+          }
+        ],
+        "poor": [
+          {
+            "polarity": "good",
+            "text": "-4% Enemy Hostile Scheme Success Chance Add"
+          }
+        ],
+        "terrible": [
+          {
+            "polarity": "good",
+            "text": "-2% Enemy Hostile Scheme Success Chance Add"
+          }
+        ]
+      },
+      "skill": "intrigue",
+      "sourceFile": "00_gdp_associate_positions.txt"
+    },
+    {
+      "aptitudeSkills": [
         "intrigue"
       ],
       "baseCourtMods": [],
@@ -4498,8 +4973,12 @@
       "maxPositions": 1,
       "minimumRank": "duchy",
       "name": "Food Taster",
-      "opinion": 5,
+      "opinion": null,
       "requirements": [
+        {
+          "name": "Merchant government",
+          "negated": false
+        },
         {
           "name": "Nomadic government",
           "negated": true
@@ -4591,25 +5070,21 @@
         },
         {
           "polarity": "good",
-          "text": "+10% Monthly Piety"
+          "text": "+5% Monthly Piety"
         },
         {
           "polarity": "good",
-          "text": "+10% Monthly Learning Lifestyle Experience"
+          "text": "+10% Monthly Focused Learning Lifestyle Experience"
         }
       ],
       "features": [],
       "icon": "high_almoner_court_position",
       "id": "high_almoner_court_position",
       "maxPositions": 1,
-      "minimumRank": "kingdom",
+      "minimumRank": "county",
       "name": "High Almoner",
-      "opinion": 10,
+      "opinion": null,
       "requirements": [
-        {
-          "name": "Kingdom tier+",
-          "negated": false
-        },
         {
           "name": "Nomadic government",
           "negated": true
@@ -4620,6 +5095,10 @@
         },
         {
           "name": "Mandala government",
+          "negated": true
+        },
+        {
+          "name": "Merchant government",
           "negated": true
         }
       ],
@@ -4704,7 +5183,7 @@
       "maxPositions": 1,
       "minimumRank": "kingdom",
       "name": "Keeper of the Swans",
-      "opinion": 10,
+      "opinion": null,
       "requirements": [
         {
           "name": "Kingdom tier+",
@@ -4716,6 +5195,10 @@
         },
         {
           "name": "Celestial government",
+          "negated": true
+        },
+        {
+          "name": "Merchant government",
           "negated": true
         }
       ],
@@ -4761,6 +5244,94 @@
     },
     {
       "aptitudeSkills": [
+        "stewardship",
+        "diplomacy"
+      ],
+      "baseCourtMods": [],
+      "baseEmployerMods": [],
+      "breakpoints": [
+        20,
+        40,
+        60,
+        80
+      ],
+      "category": "Kingdom-tier positions",
+      "cultureMods": [],
+      "customEmployeeDesc": null,
+      "customEmployerDesc": null,
+      "desc": "The Market Agent maintains the Company's wide-reaching network, keeping information on prices and caravans up-to-date.",
+      "dlc": "Silk and Silver",
+      "employeeMods": [
+        {
+          "polarity": "good",
+          "text": "+10% Monthly Focused Stewardship Lifestyle Experience"
+        }
+      ],
+      "features": [],
+      "icon": "market_agent_court_position",
+      "id": "market_agent_court_position",
+      "maxPositions": 1,
+      "minimumRank": "county",
+      "name": "Market Agent",
+      "opinion": null,
+      "requirements": [
+        {
+          "name": "You are a Merchant",
+          "negated": false
+        },
+        {
+          "name": "You have the Caravaneer Company Purpose",
+          "negated": false
+        },
+        {
+          "name": "Merchant government",
+          "negated": false
+        }
+      ],
+      "salary": {
+        "prestige": {
+          "base": 0.25,
+          "scales": true
+        }
+      },
+      "scalingCourtModifiers": {},
+      "scalingModifiers": {
+        "average": [
+          {
+            "polarity": "good",
+            "text": "+0.3% Trade Goods Trade Goods Sell Price"
+          }
+        ],
+        "excellent": [
+          {
+            "polarity": "good",
+            "text": "+0.8% Trade Goods Trade Goods Sell Price"
+          }
+        ],
+        "good": [
+          {
+            "polarity": "good",
+            "text": "+0.5% Trade Goods Trade Goods Sell Price"
+          }
+        ],
+        "poor": [
+          {
+            "polarity": "good",
+            "text": "+0.2% Trade Goods Trade Goods Sell Price"
+          }
+        ],
+        "terrible": [
+          {
+            "polarity": "good",
+            "text": "+0.1% Trade Goods Trade Goods Sell Price"
+          }
+        ]
+      },
+      "skill": "stewardship",
+      "sourceFile": "00_gdp_associate_positions.txt"
+    },
+    {
+      "aptitudeSkills": [
         "stewardship"
       ],
       "baseCourtMods": [],
@@ -4788,7 +5359,7 @@
         },
         {
           "polarity": "good",
-          "text": "+10% Monthly Stewardship Lifestyle Experience"
+          "text": "+10% Monthly Focused Stewardship Lifestyle Experience"
         }
       ],
       "features": [],
@@ -4797,7 +5368,7 @@
       "maxPositions": 1,
       "minimumRank": "kingdom",
       "name": "Royal Architect",
-      "opinion": 5,
+      "opinion": null,
       "requirements": [
         {
           "name": "Kingdom tier+",
@@ -4896,6 +5467,90 @@
     },
     {
       "aptitudeSkills": [
+        "diplomacy",
+        "intrigue"
+      ],
+      "baseCourtMods": [],
+      "baseEmployerMods": [],
+      "breakpoints": [
+        20,
+        40,
+        60,
+        80
+      ],
+      "category": "Kingdom-tier positions",
+      "cultureMods": [],
+      "customEmployeeDesc": null,
+      "customEmployerDesc": null,
+      "desc": "Trading goods across the known world demands proper communication. The Translator is responsible for mediating with the most diverse Company clients.",
+      "dlc": "Silk and Silver",
+      "employeeMods": [
+        {
+          "polarity": "good",
+          "text": "10 Learn Language Phase Length days faster per Scheme Phase"
+        }
+      ],
+      "features": [],
+      "icon": "translator_court_position",
+      "id": "translator_court_position",
+      "maxPositions": 1,
+      "minimumRank": "county",
+      "name": "Translator",
+      "opinion": null,
+      "requirements": [
+        {
+          "name": "You are a Merchant",
+          "negated": false
+        },
+        {
+          "name": "Merchant government",
+          "negated": false
+        }
+      ],
+      "salary": {
+        "gold": {
+          "base": 0.25,
+          "scales": true
+        }
+      },
+      "scalingCourtModifiers": {},
+      "scalingModifiers": {
+        "average": [
+          {
+            "polarity": "good",
+            "text": "+15 Different Culture Opinion"
+          }
+        ],
+        "excellent": [
+          {
+            "polarity": "good",
+            "text": "+25 Different Culture Opinion"
+          }
+        ],
+        "good": [
+          {
+            "polarity": "good",
+            "text": "+20 Different Culture Opinion"
+          }
+        ],
+        "poor": [
+          {
+            "polarity": "good",
+            "text": "+10 Different Culture Opinion"
+          }
+        ],
+        "terrible": [
+          {
+            "polarity": "good",
+            "text": "+5 Different Culture Opinion"
+          }
+        ]
+      },
+      "skill": "diplomacy",
+      "sourceFile": "00_gdp_associate_positions.txt"
+    },
+    {
+      "aptitudeSkills": [
         "learning"
       ],
       "baseCourtMods": [],
@@ -4923,7 +5578,7 @@
         },
         {
           "polarity": "good",
-          "text": "+10% Monthly Learning Lifestyle Experience"
+          "text": "+10% Monthly Focused Learning Lifestyle Experience"
         }
       ],
       "features": [],
@@ -4932,7 +5587,7 @@
       "maxPositions": 1,
       "minimumRank": "duchy",
       "name": "Court Brahmin",
-      "opinion": 10,
+      "opinion": null,
       "requirements": [
         {
           "name": "Duchy tier+",
@@ -5041,7 +5696,7 @@
       "maxPositions": 1,
       "minimumRank": null,
       "name": "Guru",
-      "opinion": 5,
+      "opinion": null,
       "requirements": [
         {
           "name": "Mandala government",
@@ -5140,7 +5795,7 @@
         },
         {
           "polarity": "good",
-          "text": "+20% Monthly Stewardship Lifestyle Experience"
+          "text": "+20% Monthly Focused Stewardship Lifestyle Experience"
         }
       ],
       "features": [],
@@ -5149,7 +5804,7 @@
       "maxPositions": 1,
       "minimumRank": null,
       "name": "Khlon Glan",
-      "opinion": 5,
+      "opinion": null,
       "requirements": [
         {
           "name": "Mandala government",
@@ -5171,7 +5826,7 @@
         "average": [
           {
             "polarity": "good",
-            "text": "+0.2 Monthly County Control Growth Add /month"
+            "text": "+0.2 Control Growth /month"
           },
           {
             "polarity": "good",
@@ -5185,7 +5840,7 @@
         "excellent": [
           {
             "polarity": "good",
-            "text": "+0.3 Monthly County Control Growth Add /month"
+            "text": "+0.3 Control Growth /month"
           },
           {
             "polarity": "good",
@@ -5199,7 +5854,7 @@
         "good": [
           {
             "polarity": "good",
-            "text": "+0.25 Monthly County Control Growth Add /month"
+            "text": "+0.25 Control Growth /month"
           },
           {
             "polarity": "good",
@@ -5213,7 +5868,7 @@
         "poor": [
           {
             "polarity": "good",
-            "text": "+0.15 Monthly County Control Growth Add /month"
+            "text": "+0.15 Control Growth /month"
           },
           {
             "polarity": "good",
@@ -5227,7 +5882,7 @@
         "terrible": [
           {
             "polarity": "good",
-            "text": "+0.1 Monthly County Control Growth Add /month"
+            "text": "+0.1 Control Growth /month"
           },
           {
             "polarity": "good",
@@ -5265,7 +5920,7 @@
       "employeeMods": [
         {
           "polarity": "good",
-          "text": "+10% Monthly Martial Lifestyle Experience"
+          "text": "+10% Monthly Focused Martial Lifestyle Experience"
         },
         {
           "polarity": "good",
@@ -5278,7 +5933,7 @@
       "maxPositions": 1,
       "minimumRank": null,
       "name": "Noyan",
-      "opinion": 5,
+      "opinion": null,
       "requirements": [
         {
           "name": "County tier+",
@@ -5414,7 +6069,7 @@
         },
         {
           "polarity": "good",
-          "text": "+15 Natural Dread"
+          "text": "+15 Dread Baseline"
         },
         {
           "polarity": "good",
@@ -5427,7 +6082,7 @@
       "maxPositions": 1,
       "minimumRank": null,
       "name": "Cherbi",
-      "opinion": 5,
+      "opinion": null,
       "requirements": [
         {
           "name": "County tier+",
@@ -5530,7 +6185,7 @@
       "maxPositions": 1,
       "minimumRank": null,
       "name": "Stargazer",
-      "opinion": 5,
+      "opinion": null,
       "requirements": [
         {
           "name": "County tier+",
@@ -5633,7 +6288,7 @@
         },
         {
           "polarity": "good",
-          "text": "+10% Monthly Diplomacy Lifestyle Experience"
+          "text": "+10% Monthly Focused Diplomacy Lifestyle Experience"
         }
       ],
       "features": [],
@@ -5642,7 +6297,7 @@
       "maxPositions": 1,
       "minimumRank": null,
       "name": "Foreign Emissary",
-      "opinion": 5,
+      "opinion": null,
       "requirements": [
         {
           "name": "County tier+",
@@ -5761,7 +6416,7 @@
         },
         {
           "polarity": "good",
-          "text": "+10% Monthly Martial Lifestyle Experience"
+          "text": "+10% Monthly Focused Martial Lifestyle Experience"
         }
       ],
       "features": [],
@@ -5770,7 +6425,7 @@
       "maxPositions": 1,
       "minimumRank": null,
       "name": "Keeper of the Horses",
-      "opinion": 5,
+      "opinion": null,
       "requirements": [
         {
           "name": "County tier+",
@@ -5894,7 +6549,7 @@
         },
         {
           "polarity": "good",
-          "text": "+10% Monthly Learning Lifestyle Experience"
+          "text": "+10% Monthly Focused Learning Lifestyle Experience"
         }
       ],
       "features": [],
@@ -5903,7 +6558,7 @@
       "maxPositions": 1,
       "minimumRank": null,
       "name": "Siege Engineer",
-      "opinion": 5,
+      "opinion": null,
       "requirements": [
         {
           "name": "County tier+",
@@ -5928,31 +6583,31 @@
       "scalingModifiers": {
         "average": [
           {
-            "polarity": "good",
+            "polarity": "neutral",
             "text": "-15% Siege Phase Time"
           }
         ],
         "excellent": [
           {
-            "polarity": "good",
+            "polarity": "neutral",
             "text": "-25% Siege Phase Time"
           }
         ],
         "good": [
           {
-            "polarity": "good",
+            "polarity": "neutral",
             "text": "-20% Siege Phase Time"
           }
         ],
         "poor": [
           {
-            "polarity": "good",
+            "polarity": "neutral",
             "text": "-10% Siege Phase Time"
           }
         ],
         "terrible": [
           {
-            "polarity": "good",
+            "polarity": "neutral",
             "text": "-5% Siege Phase Time"
           }
         ]
@@ -5986,7 +6641,7 @@
         },
         {
           "polarity": "good",
-          "text": "+10% Monthly Diplomacy Lifestyle Experience"
+          "text": "+10% Monthly Focused Diplomacy Lifestyle Experience"
         }
       ],
       "features": [],
@@ -5995,7 +6650,7 @@
       "maxPositions": 1,
       "minimumRank": null,
       "name": "Yeke Jarquchi",
-      "opinion": 5,
+      "opinion": null,
       "requirements": [
         {
           "name": "County tier+",
@@ -6021,7 +6676,7 @@
         "average": [
           {
             "polarity": "good",
-            "text": "+0.3 Character Capital County Monthly Control Add /month"
+            "text": "+0.3 Control Growth /month"
           },
           {
             "polarity": "good",
@@ -6031,7 +6686,7 @@
         "excellent": [
           {
             "polarity": "good",
-            "text": "+0.5 Character Capital County Monthly Control Add /month"
+            "text": "+0.5 Control Growth /month"
           },
           {
             "polarity": "good",
@@ -6041,7 +6696,7 @@
         "good": [
           {
             "polarity": "good",
-            "text": "+0.4 Character Capital County Monthly Control Add /month"
+            "text": "+0.4 Control Growth /month"
           },
           {
             "polarity": "good",
@@ -6051,7 +6706,7 @@
         "poor": [
           {
             "polarity": "good",
-            "text": "+0.2 Character Capital County Monthly Control Add /month"
+            "text": "+0.2 Control Growth /month"
           },
           {
             "polarity": "good",
@@ -6061,7 +6716,7 @@
         "terrible": [
           {
             "polarity": "good",
-            "text": "+0.1 Character Capital County Monthly Control Add /month"
+            "text": "+0.1 Control Growth /month"
           },
           {
             "polarity": "good",
@@ -6102,7 +6757,7 @@
         },
         {
           "polarity": "good",
-          "text": "+10% Monthly Stewardship Lifestyle Experience"
+          "text": "+10% Monthly Focused Stewardship Lifestyle Experience"
         }
       ],
       "features": [],
@@ -6111,7 +6766,7 @@
       "maxPositions": 1,
       "minimumRank": null,
       "name": "Yurtchi",
-      "opinion": 5,
+      "opinion": null,
       "requirements": [
         {
           "name": "County tier+",
@@ -6246,7 +6901,7 @@
       "maxPositions": 1,
       "minimumRank": null,
       "name": "Akolouthos",
-      "opinion": 5,
+      "opinion": null,
       "requirements": [
         {
           "name": "Empire tier+",
@@ -6329,7 +6984,7 @@
       "employeeMods": [
         {
           "polarity": "good",
-          "text": "+10% Monthly Stewardship Lifestyle Experience"
+          "text": "+10% Monthly Focused Stewardship Lifestyle Experience"
         },
         {
           "polarity": "good",
@@ -6342,10 +6997,14 @@
       "maxPositions": 1,
       "minimumRank": null,
       "name": "Bookmaker",
-      "opinion": 5,
+      "opinion": null,
       "requirements": [
         {
-          "name": "May host the Chariot Race Activity and hire both a Champion Charioteer and a Bookmaker",
+          "name": "Merchant government",
+          "negated": false
+        },
+        {
+          "name": "May host the Chariot Race Activity and hire the Champion Charioteer and Bookmaker Court Positions",
           "negated": false
         }
       ],
@@ -6420,7 +7079,7 @@
         },
         {
           "polarity": "good",
-          "text": "+10% Monthly Learning Lifestyle Experience"
+          "text": "+10% Monthly Focused Learning Lifestyle Experience"
         }
       ],
       "features": [],
@@ -6429,7 +7088,7 @@
       "maxPositions": 1,
       "minimumRank": null,
       "name": "Garden Hermit",
-      "opinion": 5,
+      "opinion": null,
       "requirements": [
         {
           "name": "You've found a Garden Hermit during your Travels",
@@ -6437,6 +7096,10 @@
         },
         {
           "name": "Nomadic government",
+          "negated": true
+        },
+        {
+          "name": "Merchant government",
           "negated": true
         }
       ],
@@ -6459,7 +7122,7 @@
           },
           {
             "polarity": "good",
-            "text": "+4% Monthly Learning Lifestyle Experience"
+            "text": "+4% Monthly Focused Learning Lifestyle Experience"
           }
         ],
         "excellent": [
@@ -6473,7 +7136,7 @@
           },
           {
             "polarity": "good",
-            "text": "+10% Monthly Learning Lifestyle Experience"
+            "text": "+10% Monthly Focused Learning Lifestyle Experience"
           }
         ],
         "good": [
@@ -6487,7 +7150,7 @@
           },
           {
             "polarity": "good",
-            "text": "+6% Monthly Learning Lifestyle Experience"
+            "text": "+6% Monthly Focused Learning Lifestyle Experience"
           }
         ],
         "poor": [
@@ -6501,7 +7164,7 @@
           },
           {
             "polarity": "good",
-            "text": "+2% Monthly Learning Lifestyle Experience"
+            "text": "+2% Monthly Focused Learning Lifestyle Experience"
           }
         ],
         "terrible": [
@@ -6547,7 +7210,7 @@
         },
         {
           "polarity": "good",
-          "text": "+25% Blademaster Trait Experience gain"
+          "text": "+25% Blademaster Trait Experience Gain"
         }
       ],
       "features": [],
@@ -6556,8 +7219,12 @@
       "maxPositions": 1,
       "minimumRank": null,
       "name": "Personal Champion",
-      "opinion": 5,
+      "opinion": null,
       "requirements": [
+        {
+          "name": "Merchant government",
+          "negated": false
+        },
         {
           "name": "Nomadic government",
           "negated": true
@@ -6671,10 +7338,10 @@
       "maxPositions": 1,
       "minimumRank": null,
       "name": "Champion Charioteer",
-      "opinion": 5,
+      "opinion": null,
       "requirements": [
         {
-          "name": "May host the Chariot Race Activity and hire both a Champion Charioteer and a Bookmaker",
+          "name": "May host the Chariot Race Activity and hire the Champion Charioteer and Bookmaker Court Positions",
           "negated": false
         },
         {
@@ -6754,7 +7421,7 @@
         },
         {
           "polarity": "good",
-          "text": "+20% Monthly Intrigue Lifestyle Experience"
+          "text": "+20% Monthly Focused Intrigue Lifestyle Experience"
         }
       ],
       "features": [],
@@ -6763,7 +7430,7 @@
       "maxPositions": 1,
       "minimumRank": "duchy",
       "name": "Chief Eunuch",
-      "opinion": 5,
+      "opinion": null,
       "requirements": [
         {
           "name": "Nomadic government",
@@ -6877,7 +7544,7 @@
       "employeeMods": [
         {
           "polarity": "good",
-          "text": "+10% Monthly Learning Lifestyle Experience"
+          "text": "+10% Monthly Focused Learning Lifestyle Experience"
         },
         {
           "polarity": "good",
@@ -6894,7 +7561,7 @@
       "maxPositions": 1,
       "minimumRank": "kingdom",
       "name": "Chief Qadi",
-      "opinion": 10,
+      "opinion": null,
       "requirements": [
         {
           "name": "Kingdom tier+",
@@ -6902,6 +7569,10 @@
         },
         {
           "name": "Nomadic government",
+          "negated": true
+        },
+        {
+          "name": "Merchant government",
           "negated": true
         }
       ],
@@ -6985,7 +7656,7 @@
       "employeeMods": [
         {
           "polarity": "good",
-          "text": "+10% Monthly Diplomacy Lifestyle Experience"
+          "text": "+10% Monthly Focused Diplomacy Lifestyle Experience"
         },
         {
           "polarity": "good",
@@ -7004,7 +7675,7 @@
       "maxPositions": 1,
       "minimumRank": null,
       "name": "Court Chronicler",
-      "opinion": 5,
+      "opinion": null,
       "requirements": [],
       "salary": {
         "gold": {
@@ -7110,14 +7781,18 @@
       "maxPositions": 1,
       "minimumRank": "county",
       "name": "Court Brewmaster",
-      "opinion": 5,
+      "opinion": null,
       "requirements": [
         {
           "name": "Nomadic government",
           "negated": false
         },
         {
-          "name": "A Barony in your Domain has a Brewing House Building or one of its upgrades",
+          "name": "Merchant government",
+          "negated": false
+        },
+        {
+          "name": "A Barony in your Domain has a Beer Brewery Building or one of its upgrades",
           "negated": false
         }
       ],
@@ -7136,31 +7811,31 @@
         "average": [
           {
             "polarity": "good",
-            "text": "+3 Popular Opinion"
+            "text": "+6 Popular Opinion Baseline"
           }
         ],
         "excellent": [
           {
             "polarity": "good",
-            "text": "+10 Popular Opinion"
+            "text": "+10 Popular Opinion Baseline"
           }
         ],
         "good": [
           {
             "polarity": "good",
-            "text": "+6 Popular Opinion"
+            "text": "+8 Popular Opinion Baseline"
           }
         ],
         "poor": [
           {
             "polarity": "good",
-            "text": "+2 Popular Opinion"
+            "text": "+4 Popular Opinion Baseline"
           }
         ],
         "terrible": [
           {
             "polarity": "good",
-            "text": "+1 Popular Opinion"
+            "text": "+2 Popular Opinion Baseline"
           }
         ]
       },
@@ -7193,11 +7868,11 @@
       "employeeMods": [
         {
           "polarity": "good",
-          "text": "+10% Monthly Stewardship Lifestyle Experience"
+          "text": "+10% Monthly Focused Stewardship Lifestyle Experience"
         },
         {
           "polarity": "good",
-          "text": "+0.02 Character Capital County Monthly Development Growth Add /month"
+          "text": "+0.02 Character Capital County Monthly Prosperity Growth Add /month"
         },
         {
           "polarity": "good",
@@ -7210,7 +7885,7 @@
       "maxPositions": 1,
       "minimumRank": "county",
       "name": "Court Gardener",
-      "opinion": 5,
+      "opinion": null,
       "requirements": [
         {
           "name": "Can appoint the Court Gardener Court Position",
@@ -7232,31 +7907,31 @@
         "average": [
           {
             "polarity": "good",
-            "text": "+0.2 Character Capital County Monthly Development Growth Add /month"
+            "text": "+0.2 Character Capital County Monthly Prosperity Growth Add /month"
           }
         ],
         "excellent": [
           {
             "polarity": "good",
-            "text": "+0.5 Character Capital County Monthly Development Growth Add /month"
+            "text": "+0.5 Character Capital County Monthly Prosperity Growth Add /month"
           }
         ],
         "good": [
           {
             "polarity": "good",
-            "text": "+0.35 Character Capital County Monthly Development Growth Add /month"
+            "text": "+0.35 Character Capital County Monthly Prosperity Growth Add /month"
           }
         ],
         "poor": [
           {
             "polarity": "good",
-            "text": "+0.1 Character Capital County Monthly Development Growth Add /month"
+            "text": "+0.1 Character Capital County Monthly Prosperity Growth Add /month"
           }
         ],
         "terrible": [
           {
             "polarity": "good",
-            "text": "+0.05 Character Capital County Monthly Development Growth Add /month"
+            "text": "+0.05 Character Capital County Monthly Prosperity Growth Add /month"
           }
         ]
       },
@@ -7288,26 +7963,17 @@
         },
         {
           "polarity": "good",
-          "text": "+20% Monthly Learning Lifestyle Experience"
+          "text": "+20% Monthly Focused Learning Lifestyle Experience"
         }
       ],
       "features": [],
       "icon": "court_scholar_court_position",
       "id": "court_scholar_court_position",
       "maxPositions": 1,
-      "minimumRank": "kingdom",
+      "minimumRank": "duchy",
       "name": "Court Scholar",
-      "opinion": 10,
-      "requirements": [
-        {
-          "name": "Kingdom tier+",
-          "negated": false
-        },
-        {
-          "name": "Beacon of Learning",
-          "negated": false
-        }
-      ],
+      "opinion": null,
+      "requirements": [],
       "salary": {
         "gold": {
           "base": 0.25,
@@ -7363,7 +8029,7 @@
           }
         ]
       },
-      "skill": null,
+      "skill": "learning",
       "sourceFile": "00_court_positions.txt"
     },
     {
@@ -7399,7 +8065,7 @@
         },
         {
           "polarity": "good",
-          "text": "+10% Monthly Learning Lifestyle Experience"
+          "text": "+10% Monthly Focused Learning Lifestyle Experience"
         }
       ],
       "features": [],
@@ -7408,8 +8074,13 @@
       "maxPositions": 1,
       "minimumRank": null,
       "name": "Tutor",
-      "opinion": 5,
-      "requirements": [],
+      "opinion": null,
+      "requirements": [
+        {
+          "name": "Merchant government",
+          "negated": false
+        }
+      ],
       "salary": {
         "gold": {
           "base": 0.25,
@@ -7485,7 +8156,7 @@
         },
         {
           "polarity": "good",
-          "text": "-20% Different Faith County Opinion Mult"
+          "text": "-20% Different Faith Popular Opinion Mult"
         }
       ],
       "features": [],
@@ -7494,7 +8165,7 @@
       "maxPositions": 1,
       "minimumRank": "county",
       "name": "Cultural Emissary",
-      "opinion": 5,
+      "opinion": null,
       "requirements": [],
       "salary": {
         "gold": {
@@ -7519,7 +8190,7 @@
           },
           {
             "polarity": "good",
-            "text": "-15% Different Faith County Opinion Mult"
+            "text": "-15% Different Faith Popular Opinion Mult"
           }
         ],
         "excellent": [
@@ -7533,7 +8204,7 @@
           },
           {
             "polarity": "good",
-            "text": "-25% Different Faith County Opinion Mult"
+            "text": "-25% Different Faith Popular Opinion Mult"
           }
         ],
         "good": [
@@ -7547,7 +8218,7 @@
           },
           {
             "polarity": "good",
-            "text": "-20% Different Faith County Opinion Mult"
+            "text": "-20% Different Faith Popular Opinion Mult"
           }
         ],
         "poor": [
@@ -7561,7 +8232,7 @@
           },
           {
             "polarity": "good",
-            "text": "-10% Different Faith County Opinion Mult"
+            "text": "-10% Different Faith Popular Opinion Mult"
           }
         ],
         "terrible": [
@@ -7575,7 +8246,7 @@
           },
           {
             "polarity": "good",
-            "text": "-5% Different Faith County Opinion Mult"
+            "text": "-5% Different Faith Popular Opinion Mult"
           }
         ]
       },
@@ -7603,7 +8274,7 @@
       "employeeMods": [
         {
           "polarity": "good",
-          "text": "+10% Monthly Diplomacy Lifestyle Experience"
+          "text": "+10% Monthly Focused Diplomacy Lifestyle Experience"
         },
         {
           "polarity": "good",
@@ -7620,7 +8291,7 @@
       "maxPositions": 2,
       "minimumRank": "duchy",
       "name": "Lady-in-waiting",
-      "opinion": 5,
+      "opinion": null,
       "requirements": [
         {
           "name": "Duchy tier+",
@@ -7719,7 +8390,7 @@
       "employeeMods": [
         {
           "polarity": "good",
-          "text": "+20% Monthly Intrigue Lifestyle Experience"
+          "text": "+20% Monthly Focused Intrigue Lifestyle Experience"
         },
         {
           "polarity": "good",
@@ -7736,14 +8407,14 @@
       "maxPositions": 1,
       "minimumRank": "county",
       "name": "Master Assassin",
-      "opinion": 5,
+      "opinion": null,
       "requirements": [
         {
           "name": "Nomadic government",
           "negated": false
         },
         {
-          "name": "Fedayeen",
+          "name": "Merchant government",
           "negated": false
         }
       ],
@@ -7810,7 +8481,7 @@
           }
         ]
       },
-      "skill": null,
+      "skill": "intrigue",
       "sourceFile": "00_court_positions.txt"
     },
     {
@@ -7835,7 +8506,7 @@
       "employeeMods": [
         {
           "polarity": "good",
-          "text": "+15% Monthly Martial Lifestyle Experience"
+          "text": "+15% Monthly Focused Martial Lifestyle Experience"
         },
         {
           "polarity": "good",
@@ -7848,7 +8519,7 @@
       "maxPositions": 1,
       "minimumRank": "duchy",
       "name": "Master of the Horse",
-      "opinion": 10,
+      "opinion": null,
       "requirements": [
         {
           "name": "Duchy tier+",
@@ -7963,7 +8634,7 @@
       "employeeMods": [
         {
           "polarity": "good",
-          "text": "+10% Monthly Martial Lifestyle Experience"
+          "text": "+10% Monthly Focused Martial Lifestyle Experience"
         },
         {
           "polarity": "good",
@@ -7976,11 +8647,19 @@
       "maxPositions": 1,
       "minimumRank": "county",
       "name": "Master of the Hunt",
-      "opinion": 10,
+      "opinion": null,
       "requirements": [
         {
           "name": "Nomadic government",
           "negated": false
+        },
+        {
+          "name": "Merchant government",
+          "negated": false
+        },
+        {
+          "name": "Cannot use the Hunt Activity",
+          "negated": true
         }
       ],
       "salary": {
@@ -8054,7 +8733,7 @@
         },
         {
           "polarity": "good",
-          "text": "+20% Monthly Stewardship Lifestyle Experience"
+          "text": "+20% Monthly Focused Stewardship Lifestyle Experience"
         }
       ],
       "features": [],
@@ -8063,7 +8742,7 @@
       "maxPositions": 1,
       "minimumRank": null,
       "name": "Seneschal",
-      "opinion": 5,
+      "opinion": null,
       "requirements": [
         {
           "name": "Nomadic government",
@@ -8071,6 +8750,10 @@
         },
         {
           "name": "Mandala government",
+          "negated": true
+        },
+        {
+          "name": "Merchant government",
           "negated": true
         }
       ],
@@ -8089,7 +8772,7 @@
         "average": [
           {
             "polarity": "good",
-            "text": "+0.2 Character Capital County Monthly Control Add /month"
+            "text": "+0.2 Control Growth /month"
           },
           {
             "polarity": "good",
@@ -8103,7 +8786,7 @@
         "excellent": [
           {
             "polarity": "good",
-            "text": "+0.3 Character Capital County Monthly Control Add /month"
+            "text": "+0.3 Control Growth /month"
           },
           {
             "polarity": "good",
@@ -8117,7 +8800,7 @@
         "good": [
           {
             "polarity": "good",
-            "text": "+0.25 Character Capital County Monthly Control Add /month"
+            "text": "+0.25 Control Growth /month"
           },
           {
             "polarity": "good",
@@ -8131,7 +8814,7 @@
         "poor": [
           {
             "polarity": "good",
-            "text": "+0.15 Character Capital County Monthly Control Add /month"
+            "text": "+0.15 Control Growth /month"
           },
           {
             "polarity": "good",
@@ -8145,7 +8828,7 @@
         "terrible": [
           {
             "polarity": "good",
-            "text": "+0.1 Character Capital County Monthly Control Add /month"
+            "text": "+0.1 Control Growth /month"
           },
           {
             "polarity": "good",
@@ -8175,7 +8858,7 @@
       "customEmployeeDesc": null,
       "customEmployerDesc": "Influence Ward's Personality Acceptance: +10\nReduces chance for Children to contract Illnesses\nPossibility for Child development events",
       "desc": "A Wet Nurse is a caretaker of your Children and child Hostages.",
-      "dlc": "Wards & Wardens",
+      "dlc": null,
       "employeeMods": [
         {
           "polarity": "good",
@@ -8192,8 +8875,13 @@
       "maxPositions": 1,
       "minimumRank": null,
       "name": "Wet Nurse",
-      "opinion": 5,
-      "requirements": [],
+      "opinion": null,
+      "requirements": [
+        {
+          "name": "Merchant government",
+          "negated": false
+        }
+      ],
       "salary": {
         "gold": {
           "base": 0.05,
@@ -8231,7 +8919,7 @@
       "employeeMods": [
         {
           "polarity": "good",
-          "text": "+15 Natural Dread"
+          "text": "+15 Dread Baseline"
         },
         {
           "polarity": "good",
@@ -8244,7 +8932,7 @@
       "maxPositions": 2,
       "minimumRank": "kingdom",
       "name": "Garuda",
-      "opinion": 5,
+      "opinion": null,
       "requirements": [
         {
           "name": "Nomadic government",
@@ -8282,7 +8970,7 @@
           },
           {
             "polarity": "good",
-            "text": "+4 Natural Dread"
+            "text": "+4 Dread Baseline"
           }
         ],
         "excellent": [
@@ -8296,7 +8984,7 @@
           },
           {
             "polarity": "good",
-            "text": "+10 Natural Dread"
+            "text": "+10 Dread Baseline"
           }
         ],
         "good": [
@@ -8310,7 +8998,7 @@
           },
           {
             "polarity": "good",
-            "text": "+7 Natural Dread"
+            "text": "+7 Dread Baseline"
           }
         ],
         "poor": [
@@ -8324,13 +9012,13 @@
           },
           {
             "polarity": "good",
-            "text": "+2 Natural Dread"
+            "text": "+2 Dread Baseline"
           }
         ],
         "terrible": [
           {
             "polarity": "good",
-            "text": "+1 Natural Dread"
+            "text": "+1 Dread Baseline"
           }
         ]
       },
@@ -8352,11 +9040,11 @@
           "scales": true
         }
       },
-      "desc": "Your Antiquarian will exibit your illustrious artifacts to the public, showing everyone that you are in possession of something truly unique.",
+      "desc": "Your Antiquarian will exhibit your illustrious artifacts to the public, showing everyone that you are in possession of something truly unique.",
       "dlc": "The Royal Court",
       "employeeMods": [],
       "id": "antiquarian_court_position_task_exibit_artifacts",
-      "name": "Exibit Illustrious Artifacts",
+      "name": "Exhibit Illustrious Artifacts",
       "positions": [
         "antiquarian_court_position"
       ],
@@ -8436,6 +9124,82 @@
       "sourceFile": "00_antiquarian_tasks.txt"
     },
     {
+      "baseEmployerMods": [
+        {
+          "polarity": "good",
+          "text": "+2 Stewardship"
+        }
+      ],
+      "cost": {
+        "prestige": {
+          "base": 0.05,
+          "scales": true
+        }
+      },
+      "desc": "Your Antiquarian will exhibit your illustrious artifacts to the public, showing everyone that you are in possession of something truly unique.",
+      "dlc": null,
+      "employeeMods": [],
+      "id": "antiquarian_court_position_task_exibit_artifacts_merchant",
+      "name": "Exhibit Illustrious Artifacts",
+      "positions": [
+        "antiquarian_court_position"
+      ],
+      "scalingCourtModifiers": {},
+      "scalingModifiers": {
+        "average": [
+          {
+            "polarity": "good",
+            "text": "+3% Trade Competitiveness"
+          },
+          {
+            "polarity": "good",
+            "text": "+20% Legend Spread Chance"
+          }
+        ],
+        "excellent": [
+          {
+            "polarity": "good",
+            "text": "+5% Trade Competitiveness"
+          },
+          {
+            "polarity": "good",
+            "text": "+50% Legend Spread Chance"
+          }
+        ],
+        "good": [
+          {
+            "polarity": "good",
+            "text": "+4% Trade Competitiveness"
+          },
+          {
+            "polarity": "good",
+            "text": "+30% Legend Spread Chance"
+          }
+        ],
+        "poor": [
+          {
+            "polarity": "good",
+            "text": "+2% Trade Competitiveness"
+          },
+          {
+            "polarity": "good",
+            "text": "+10% Legend Spread Chance"
+          }
+        ],
+        "terrible": [
+          {
+            "polarity": "good",
+            "text": "+1% Trade Competitiveness"
+          },
+          {
+            "polarity": "good",
+            "text": "+5% Legend Spread Chance"
+          }
+        ]
+      },
+      "sourceFile": "00_antiquarian_tasks.txt"
+    },
+    {
       "baseEmployerMods": [],
       "cost": {
         "gold": {
@@ -8463,7 +9227,7 @@
           "scales": true
         }
       },
-      "desc": "Your Antiquarian will scour ancient tomes and investigate loose rumors, searching for those who might be able to bring something spectacular back to court.",
+      "desc": "Your … will scour ancient tomes and investigate loose rumors, searching for those who might be able to bring something spectacular back to court.",
       "dlc": "The Royal Court",
       "employeeMods": [],
       "id": "antiquarian_court_position_task_scout_for_artifacts",
@@ -8474,6 +9238,75 @@
       "scalingCourtModifiers": {},
       "scalingModifiers": {},
       "sourceFile": "00_antiquarian_tasks.txt"
+    },
+    {
+      "baseEmployerMods": [],
+      "cost": {
+        "prestige": {
+          "scales": true
+        }
+      },
+      "desc": "This character is pressing Debtors to repay what they owe the Company.",
+      "dlc": "Silk and Silver",
+      "employeeMods": [],
+      "id": "bailiff_collect_loans",
+      "name": "Collect Loans",
+      "positions": [
+        "bailiff_court_position"
+      ],
+      "scalingCourtModifiers": {},
+      "scalingModifiers": {},
+      "sourceFile": "gdp_merchant_associate_tasks.txt"
+    },
+    {
+      "baseEmployerMods": [],
+      "cost": {
+        "gold": {
+          "scales": true
+        }
+      },
+      "desc": "This character is leaning on those less-forthcoming in repaying what is owed to the Company.",
+      "dlc": "Silk and Silver",
+      "employeeMods": [],
+      "id": "bailiff_threaten_debtors",
+      "name": "Threaten Debtors",
+      "positions": [
+        "bailiff_court_position"
+      ],
+      "scalingCourtModifiers": {},
+      "scalingModifiers": {
+        "average": [
+          {
+            "polarity": "good",
+            "text": "+6% Owned Hostile Scheme Success Chance Add"
+          }
+        ],
+        "excellent": [
+          {
+            "polarity": "good",
+            "text": "+10% Owned Hostile Scheme Success Chance Add"
+          }
+        ],
+        "good": [
+          {
+            "polarity": "good",
+            "text": "+8% Owned Hostile Scheme Success Chance Add"
+          }
+        ],
+        "poor": [
+          {
+            "polarity": "good",
+            "text": "+4% Owned Hostile Scheme Success Chance Add"
+          }
+        ],
+        "terrible": [
+          {
+            "polarity": "good",
+            "text": "+2% Owned Hostile Scheme Success Chance Add"
+          }
+        ]
+      },
+      "sourceFile": "gdp_merchant_associate_tasks.txt"
     },
     {
       "baseEmployerMods": [],
@@ -8946,51 +9779,51 @@
         "average": [
           {
             "polarity": "good",
-            "text": "+10 Popular Opinion"
+            "text": "+9 Popular Opinion Baseline"
           },
           {
             "polarity": "good",
-            "text": "+0.1 Monthly County Control Growth Add /month"
+            "text": "+0.1 Control Growth /month"
           }
         ],
         "excellent": [
           {
             "polarity": "good",
-            "text": "+20 Popular Opinion"
+            "text": "+15 Popular Opinion Baseline"
           },
           {
             "polarity": "good",
-            "text": "+0.2 Monthly County Control Growth Add /month"
+            "text": "+0.2 Control Growth /month"
           }
         ],
         "good": [
           {
             "polarity": "good",
-            "text": "+15 Popular Opinion"
+            "text": "+12 Popular Opinion Baseline"
           },
           {
             "polarity": "good",
-            "text": "+0.15 Monthly County Control Growth Add /month"
+            "text": "+0.15 Control Growth /month"
           }
         ],
         "poor": [
           {
             "polarity": "good",
-            "text": "+5 Popular Opinion"
+            "text": "+6 Popular Opinion Baseline"
           },
           {
             "polarity": "good",
-            "text": "+0.05 Monthly County Control Growth Add /month"
+            "text": "+0.05 Control Growth /month"
           }
         ],
         "terrible": [
           {
             "polarity": "good",
-            "text": "+2 Popular Opinion"
+            "text": "+3 Popular Opinion Baseline"
           },
           {
             "polarity": "good",
-            "text": "+0.02 Monthly County Control Growth Add /month"
+            "text": "+0.02 Control Growth /month"
           }
         ]
       },
@@ -9334,31 +10167,31 @@
         "average": [
           {
             "polarity": "good",
-            "text": "+10 Popular Opinion"
+            "text": "+9 Popular Opinion Baseline"
           }
         ],
         "excellent": [
           {
             "polarity": "good",
-            "text": "+20 Popular Opinion"
+            "text": "+15 Popular Opinion Baseline"
           }
         ],
         "good": [
           {
             "polarity": "good",
-            "text": "+15 Popular Opinion"
+            "text": "+12 Popular Opinion Baseline"
           }
         ],
         "poor": [
           {
             "polarity": "good",
-            "text": "+5 Popular Opinion"
+            "text": "+6 Popular Opinion Baseline"
           }
         ],
         "terrible": [
           {
             "polarity": "good",
-            "text": "+2 Popular Opinion"
+            "text": "+3 Popular Opinion Baseline"
           }
         ]
       },
@@ -9394,31 +10227,31 @@
         "average": [
           {
             "polarity": "good",
-            "text": "+6 Monthly Diplomacy Lifestyle Experience"
+            "text": "+6 Monthly Focused Diplomacy Lifestyle Experience"
           }
         ],
         "excellent": [
           {
             "polarity": "good",
-            "text": "+15 Monthly Diplomacy Lifestyle Experience"
+            "text": "+15 Monthly Focused Diplomacy Lifestyle Experience"
           }
         ],
         "good": [
           {
             "polarity": "good",
-            "text": "+10 Monthly Diplomacy Lifestyle Experience"
+            "text": "+10 Monthly Focused Diplomacy Lifestyle Experience"
           }
         ],
         "poor": [
           {
             "polarity": "good",
-            "text": "+4 Monthly Diplomacy Lifestyle Experience"
+            "text": "+4 Monthly Focused Diplomacy Lifestyle Experience"
           }
         ],
         "terrible": [
           {
             "polarity": "good",
-            "text": "+2 Monthly Diplomacy Lifestyle Experience"
+            "text": "+2 Monthly Focused Diplomacy Lifestyle Experience"
           }
         ]
       },
@@ -9454,31 +10287,31 @@
         "average": [
           {
             "polarity": "good",
-            "text": "+6 Monthly Intrigue Lifestyle Experience"
+            "text": "+6 Monthly Focused Intrigue Lifestyle Experience"
           }
         ],
         "excellent": [
           {
             "polarity": "good",
-            "text": "+15 Monthly Intrigue Lifestyle Experience"
+            "text": "+15 Monthly Focused Intrigue Lifestyle Experience"
           }
         ],
         "good": [
           {
             "polarity": "good",
-            "text": "+10 Monthly Intrigue Lifestyle Experience"
+            "text": "+10 Monthly Focused Intrigue Lifestyle Experience"
           }
         ],
         "poor": [
           {
             "polarity": "good",
-            "text": "+4 Monthly Intrigue Lifestyle Experience"
+            "text": "+4 Monthly Focused Intrigue Lifestyle Experience"
           }
         ],
         "terrible": [
           {
             "polarity": "good",
-            "text": "+2 Monthly Intrigue Lifestyle Experience"
+            "text": "+2 Monthly Focused Intrigue Lifestyle Experience"
           }
         ]
       },
@@ -9514,31 +10347,31 @@
         "average": [
           {
             "polarity": "good",
-            "text": "+6 Monthly Learning Lifestyle Experience"
+            "text": "+6 Monthly Focused Learning Lifestyle Experience"
           }
         ],
         "excellent": [
           {
             "polarity": "good",
-            "text": "+15 Monthly Learning Lifestyle Experience"
+            "text": "+15 Monthly Focused Learning Lifestyle Experience"
           }
         ],
         "good": [
           {
             "polarity": "good",
-            "text": "+10 Monthly Learning Lifestyle Experience"
+            "text": "+10 Monthly Focused Learning Lifestyle Experience"
           }
         ],
         "poor": [
           {
             "polarity": "good",
-            "text": "+4 Monthly Learning Lifestyle Experience"
+            "text": "+4 Monthly Focused Learning Lifestyle Experience"
           }
         ],
         "terrible": [
           {
             "polarity": "good",
-            "text": "+2 Monthly Learning Lifestyle Experience"
+            "text": "+2 Monthly Focused Learning Lifestyle Experience"
           }
         ]
       },
@@ -9548,7 +10381,7 @@
       "baseEmployerMods": [
         {
           "polarity": "good",
-          "text": "+10 Natural Dread"
+          "text": "+10 Dread Baseline"
         }
       ],
       "cost": {
@@ -9595,7 +10428,11 @@
       "employeeMods": [
         {
           "polarity": "good",
-          "text": "+10 General Opinion"
+          "text": "+5 Vassal Opinion"
+        },
+        {
+          "polarity": "good",
+          "text": "+5 Courtier and Guest Opinion"
         }
       ],
       "id": "court_jester_court_position_task_entertain_court",
@@ -9898,7 +10735,7 @@
       "employeeMods": [
         {
           "polarity": "good",
-          "text": "+25% Physician Trait Experience gain"
+          "text": "+25% Physician Trait Experience Gain"
         }
       ],
       "id": "physician_improve_self",
@@ -9999,7 +10836,11 @@
       "employeeMods": [
         {
           "polarity": "good",
-          "text": "+5 General Opinion"
+          "text": "+5 Vassal Opinion"
+        },
+        {
+          "polarity": "good",
+          "text": "+5 Courtier and Guest Opinion"
         }
       ],
       "id": "court_tutor_improve_others",
@@ -10238,11 +11079,11 @@
           "scales": true
         }
       },
-      "desc": "The Eparch will put the city's administrators to good use to develop and improve the city.",
+      "desc": "The Eparch will have soldiers patrol the streets to keep the peace and secure public order no matter the cost.",
       "dlc": null,
       "employeeMods": [],
-      "id": "eparch_development",
-      "name": "Develop Capital",
+      "id": "eparch_enforce_public_order",
+      "name": "Enforce Public Order",
       "positions": [
         "eparch_court_position"
       ],
@@ -10258,11 +11099,11 @@
           "scales": true
         }
       },
-      "desc": "The Eparch will have soldiers patrol the streets to keep the peace and secure public order no matter the cost.",
+      "desc": "The Eparch will put the city's administrators to good use to develop and improve the city.",
       "dlc": null,
       "employeeMods": [],
-      "id": "eparch_enforce_public_order",
-      "name": "Enforce Public Order",
+      "id": "eparch_prosperity",
+      "name": "Develop Capital",
       "positions": [
         "eparch_court_position"
       ],
@@ -10319,7 +11160,7 @@
           },
           {
             "polarity": "good",
-            "text": "+4 Natural Dread"
+            "text": "+4 Dread Baseline"
           }
         ],
         "excellent": [
@@ -10329,7 +11170,7 @@
           },
           {
             "polarity": "good",
-            "text": "+10 Natural Dread"
+            "text": "+10 Dread Baseline"
           }
         ],
         "good": [
@@ -10339,7 +11180,7 @@
           },
           {
             "polarity": "good",
-            "text": "+7 Natural Dread"
+            "text": "+7 Dread Baseline"
           }
         ],
         "poor": [
@@ -10349,7 +11190,7 @@
           },
           {
             "polarity": "good",
-            "text": "+2 Natural Dread"
+            "text": "+2 Dread Baseline"
           }
         ],
         "terrible": [
@@ -10359,7 +11200,7 @@
           },
           {
             "polarity": "good",
-            "text": "+1 Natural Dread"
+            "text": "+1 Dread Baseline"
           }
         ]
       },
@@ -10390,7 +11231,7 @@
           },
           {
             "polarity": "neutral",
-            "text": "+20% Handgunner Siege Weapon Effectiveness"
+            "text": "+20% Handgunner Siege Weapon"
           },
           {
             "polarity": "good",
@@ -10404,7 +11245,7 @@
           },
           {
             "polarity": "neutral",
-            "text": "+30% Handgunner Siege Weapon Effectiveness"
+            "text": "+30% Handgunner Siege Weapon"
           },
           {
             "polarity": "good",
@@ -10418,7 +11259,7 @@
           },
           {
             "polarity": "neutral",
-            "text": "+25% Handgunner Siege Weapon Effectiveness"
+            "text": "+25% Handgunner Siege Weapon"
           },
           {
             "polarity": "good",
@@ -10432,7 +11273,7 @@
           },
           {
             "polarity": "neutral",
-            "text": "+15% Handgunner Siege Weapon Effectiveness"
+            "text": "+15% Handgunner Siege Weapon"
           },
           {
             "polarity": "good",
@@ -10446,7 +11287,7 @@
           },
           {
             "polarity": "neutral",
-            "text": "+10% Handgunner Siege Weapon Effectiveness"
+            "text": "+10% Handgunner Siege Weapon"
           },
           {
             "polarity": "good",
@@ -10526,6 +11367,94 @@
         ]
       },
       "sourceFile": "00_fire_dragon_engineer_tasks.txt"
+    },
+    {
+      "baseEmployerMods": [],
+      "cost": {
+        "prestige": {
+          "scales": true
+        }
+      },
+      "desc": "This character is uncovering rival merchants' weaknesses and improving the Company's Trade Competitiveness.",
+      "dlc": "Silk and Silver",
+      "employeeMods": [],
+      "id": "fixer_investigate_competition",
+      "name": "Investigate Competition",
+      "positions": [
+        "fixer_court_position"
+      ],
+      "scalingCourtModifiers": {},
+      "scalingModifiers": {
+        "average": [
+          {
+            "polarity": "good",
+            "text": "+5% Trade Competitiveness"
+          }
+        ],
+        "excellent": [
+          {
+            "polarity": "good",
+            "text": "+10% Trade Competitiveness"
+          }
+        ],
+        "good": [
+          {
+            "polarity": "good",
+            "text": "+7.5% Trade Competitiveness"
+          }
+        ],
+        "poor": [
+          {
+            "polarity": "good",
+            "text": "+2.5% Trade Competitiveness"
+          }
+        ],
+        "terrible": [
+          {
+            "polarity": "good",
+            "text": "+1% Trade Competitiveness"
+          }
+        ]
+      },
+      "sourceFile": "gdp_merchant_associate_tasks.txt"
+    },
+    {
+      "baseEmployerMods": [],
+      "cost": {
+        "prestige": {
+          "scales": true
+        }
+      },
+      "desc": "This character is spreading rumors and discontent among House members.",
+      "dlc": "Silk and Silver",
+      "employeeMods": [],
+      "id": "fixer_sow_dissent",
+      "name": "Sow Dissent",
+      "positions": [
+        "fixer_court_position"
+      ],
+      "scalingCourtModifiers": {},
+      "scalingModifiers": {},
+      "sourceFile": "gdp_merchant_associate_tasks.txt"
+    },
+    {
+      "baseEmployerMods": [],
+      "cost": {
+        "prestige": {
+          "scales": true
+        }
+      },
+      "desc": "This character is making sure the House's interests come above any petty squabbles.",
+      "dlc": "Silk and Silver",
+      "employeeMods": [],
+      "id": "fixer_unite_house",
+      "name": "Unite House",
+      "positions": [
+        "fixer_court_position"
+      ],
+      "scalingCourtModifiers": {},
+      "scalingModifiers": {},
+      "sourceFile": "gdp_merchant_associate_tasks.txt"
     },
     {
       "baseEmployerMods": [],
@@ -10626,7 +11555,7 @@
           },
           {
             "polarity": "good",
-            "text": "+5% Monthly Intrigue Lifestyle Experience"
+            "text": "+5% Monthly Focused Intrigue Lifestyle Experience"
           }
         ],
         "excellent": [
@@ -10636,7 +11565,7 @@
           },
           {
             "polarity": "good",
-            "text": "+10% Monthly Intrigue Lifestyle Experience"
+            "text": "+10% Monthly Focused Intrigue Lifestyle Experience"
           }
         ],
         "good": [
@@ -10646,7 +11575,7 @@
           },
           {
             "polarity": "good",
-            "text": "+7% Monthly Intrigue Lifestyle Experience"
+            "text": "+7% Monthly Focused Intrigue Lifestyle Experience"
           }
         ],
         "poor": [
@@ -10656,7 +11585,7 @@
           },
           {
             "polarity": "good",
-            "text": "+3% Monthly Intrigue Lifestyle Experience"
+            "text": "+3% Monthly Focused Intrigue Lifestyle Experience"
           }
         ],
         "terrible": [
@@ -10666,7 +11595,7 @@
           },
           {
             "polarity": "good",
-            "text": "+1% Monthly Intrigue Lifestyle Experience"
+            "text": "+1% Monthly Focused Intrigue Lifestyle Experience"
           }
         ]
       },
@@ -10751,7 +11680,7 @@
         "average": [
           {
             "polarity": "good",
-            "text": "+0.2 Character Capital County Monthly Control Add /month"
+            "text": "+0.2 Control Growth /month"
           },
           {
             "polarity": "good",
@@ -10761,7 +11690,7 @@
         "excellent": [
           {
             "polarity": "good",
-            "text": "+0.3 Character Capital County Monthly Control Add /month"
+            "text": "+0.3 Control Growth /month"
           },
           {
             "polarity": "good",
@@ -10771,7 +11700,7 @@
         "good": [
           {
             "polarity": "good",
-            "text": "+0.25 Character Capital County Monthly Control Add /month"
+            "text": "+0.25 Control Growth /month"
           },
           {
             "polarity": "good",
@@ -10781,7 +11710,7 @@
         "poor": [
           {
             "polarity": "good",
-            "text": "+0.15 Character Capital County Monthly Control Add /month"
+            "text": "+0.15 Control Growth /month"
           },
           {
             "polarity": "good",
@@ -10791,7 +11720,7 @@
         "terrible": [
           {
             "polarity": "good",
-            "text": "+0.1 Character Capital County Monthly Control Add /month"
+            "text": "+0.1 Control Growth /month"
           },
           {
             "polarity": "good",
@@ -10830,7 +11759,7 @@
           },
           {
             "polarity": "good",
-            "text": "+15% Monthly Martial Lifestyle Experience"
+            "text": "+15% Monthly Focused Martial Lifestyle Experience"
           }
         ],
         "excellent": [
@@ -10844,7 +11773,7 @@
           },
           {
             "polarity": "good",
-            "text": "+30% Monthly Martial Lifestyle Experience"
+            "text": "+30% Monthly Focused Martial Lifestyle Experience"
           }
         ],
         "good": [
@@ -10858,7 +11787,7 @@
           },
           {
             "polarity": "good",
-            "text": "+20% Monthly Martial Lifestyle Experience"
+            "text": "+20% Monthly Focused Martial Lifestyle Experience"
           }
         ],
         "poor": [
@@ -10872,7 +11801,7 @@
           },
           {
             "polarity": "good",
-            "text": "+10% Monthly Martial Lifestyle Experience"
+            "text": "+10% Monthly Focused Martial Lifestyle Experience"
           }
         ],
         "terrible": [
@@ -10886,7 +11815,7 @@
           },
           {
             "polarity": "good",
-            "text": "+5% Monthly Martial Lifestyle Experience"
+            "text": "+5% Monthly Focused Martial Lifestyle Experience"
           }
         ]
       },
@@ -11359,71 +12288,71 @@
         "average": [
           {
             "polarity": "good",
-            "text": "+20% Development Growth"
+            "text": "+20% Prosperity Growth"
           },
           {
             "polarity": "good",
-            "text": "+10 Popular Opinion"
+            "text": "+9 Popular Opinion Baseline"
           },
           {
             "polarity": "good",
-            "text": "+0.1 Monthly County Control Growth Add /month"
+            "text": "+0.1 Control Growth /month"
           }
         ],
         "excellent": [
           {
             "polarity": "good",
-            "text": "+30% Development Growth"
+            "text": "+30% Prosperity Growth"
           },
           {
             "polarity": "good",
-            "text": "+20 Popular Opinion"
+            "text": "+15 Popular Opinion Baseline"
           },
           {
             "polarity": "good",
-            "text": "+0.2 Monthly County Control Growth Add /month"
+            "text": "+0.2 Control Growth /month"
           }
         ],
         "good": [
           {
             "polarity": "good",
-            "text": "+25% Development Growth"
+            "text": "+25% Prosperity Growth"
           },
           {
             "polarity": "good",
-            "text": "+15 Popular Opinion"
+            "text": "+12 Popular Opinion Baseline"
           },
           {
             "polarity": "good",
-            "text": "+0.15 Monthly County Control Growth Add /month"
+            "text": "+0.15 Control Growth /month"
           }
         ],
         "poor": [
           {
             "polarity": "good",
-            "text": "+15% Development Growth"
+            "text": "+15% Prosperity Growth"
           },
           {
             "polarity": "good",
-            "text": "+5 Popular Opinion"
+            "text": "+6 Popular Opinion Baseline"
           },
           {
             "polarity": "good",
-            "text": "+0.05 Monthly County Control Growth Add /month"
+            "text": "+0.05 Control Growth /month"
           }
         ],
         "terrible": [
           {
             "polarity": "good",
-            "text": "+10% Development Growth"
+            "text": "+10% Prosperity Growth"
           },
           {
             "polarity": "good",
-            "text": "+2 Popular Opinion"
+            "text": "+3 Popular Opinion Baseline"
           },
           {
             "polarity": "good",
-            "text": "+0.02 Monthly County Control Growth Add /month"
+            "text": "+0.02 Control Growth /month"
           }
         ]
       },
@@ -11771,7 +12700,7 @@
           },
           {
             "polarity": "good",
-            "text": "+0.2 Character Capital County Monthly Development Growth Add /month"
+            "text": "+0.2 Character Capital County Monthly Prosperity Growth Add /month"
           }
         ],
         "excellent": [
@@ -11785,7 +12714,7 @@
           },
           {
             "polarity": "good",
-            "text": "+0.5 Character Capital County Monthly Development Growth Add /month"
+            "text": "+0.5 Character Capital County Monthly Prosperity Growth Add /month"
           }
         ],
         "good": [
@@ -11799,7 +12728,7 @@
           },
           {
             "polarity": "good",
-            "text": "+0.35 Character Capital County Monthly Development Growth Add /month"
+            "text": "+0.35 Character Capital County Monthly Prosperity Growth Add /month"
           }
         ],
         "poor": [
@@ -11813,7 +12742,7 @@
           },
           {
             "polarity": "good",
-            "text": "+0.1 Character Capital County Monthly Development Growth Add /month"
+            "text": "+0.1 Character Capital County Monthly Prosperity Growth Add /month"
           }
         ],
         "terrible": [
@@ -11827,11 +12756,111 @@
           },
           {
             "polarity": "good",
-            "text": "+0.05 Character Capital County Monthly Development Growth Add /month"
+            "text": "+0.05 Character Capital County Monthly Prosperity Growth Add /month"
           }
         ]
       },
       "sourceFile": "00_khlon_glan_tasks.txt"
+    },
+    {
+      "baseEmployerMods": [],
+      "cost": {
+        "prestige": {
+          "scales": true
+        }
+      },
+      "desc": "This character is securing contacts further afield and improving the Company's Trade Expertise.",
+      "dlc": "Silk and Silver",
+      "employeeMods": [],
+      "id": "market_agent_extend_networks",
+      "name": "Secure Contracts",
+      "positions": [
+        "market_agent_court_position"
+      ],
+      "scalingCourtModifiers": {},
+      "scalingModifiers": {
+        "average": [
+          {
+            "polarity": "good",
+            "text": "+5% Trade Expertise Growth"
+          }
+        ],
+        "excellent": [
+          {
+            "polarity": "good",
+            "text": "+15% Trade Expertise Growth"
+          }
+        ],
+        "good": [
+          {
+            "polarity": "good",
+            "text": "+10% Trade Expertise Growth"
+          }
+        ],
+        "poor": [
+          {
+            "polarity": "good",
+            "text": "+2.5% Trade Expertise Growth"
+          }
+        ],
+        "terrible": [
+          {
+            "polarity": "good",
+            "text": "+1% Trade Expertise Growth"
+          }
+        ]
+      },
+      "sourceFile": "gdp_merchant_associate_tasks.txt"
+    },
+    {
+      "baseEmployerMods": [],
+      "cost": {
+        "prestige": {
+          "scales": true
+        }
+      },
+      "desc": "This character is arranging deals for the bulk purchase of specific goods for the Company.",
+      "dlc": "Silk and Silver",
+      "employeeMods": [],
+      "id": "market_agent_negotiate_contracts",
+      "name": "Negotiate Contracts",
+      "positions": [
+        "market_agent_court_position"
+      ],
+      "scalingCourtModifiers": {},
+      "scalingModifiers": {
+        "average": [
+          {
+            "polarity": "good",
+            "text": "-0.3% Trade Goods Trade Goods Buy Price"
+          }
+        ],
+        "excellent": [
+          {
+            "polarity": "good",
+            "text": "-0.8% Trade Goods Trade Goods Buy Price"
+          }
+        ],
+        "good": [
+          {
+            "polarity": "good",
+            "text": "-0.5% Trade Goods Trade Goods Buy Price"
+          }
+        ],
+        "poor": [
+          {
+            "polarity": "good",
+            "text": "-0.2% Trade Goods Trade Goods Buy Price"
+          }
+        ],
+        "terrible": [
+          {
+            "polarity": "good",
+            "text": "-0.1% Trade Goods Trade Goods Buy Price"
+          }
+        ]
+      },
+      "sourceFile": "gdp_merchant_associate_tasks.txt"
     },
     {
       "baseEmployerMods": [],
@@ -12018,6 +13047,167 @@
     {
       "baseEmployerMods": [],
       "cost": {
+        "prestige": {
+          "scales": true
+        }
+      },
+      "desc": "This character is tasked with handling the expansion of the market of the trade routes.",
+      "dlc": "Silk and Silver",
+      "employeeMods": [],
+      "id": "partner_handle_trade",
+      "name": "Handle Trade",
+      "positions": [
+        "partner_court_position"
+      ],
+      "scalingCourtModifiers": {},
+      "scalingModifiers": {
+        "average": [
+          {
+            "polarity": "good",
+            "text": "+6% Trade Capacity"
+          }
+        ],
+        "excellent": [
+          {
+            "polarity": "good",
+            "text": "+10% Trade Capacity"
+          }
+        ],
+        "good": [
+          {
+            "polarity": "good",
+            "text": "+8% Trade Capacity"
+          }
+        ],
+        "poor": [
+          {
+            "polarity": "good",
+            "text": "+4% Trade Capacity"
+          }
+        ],
+        "terrible": [
+          {
+            "polarity": "good",
+            "text": "+2% Trade Capacity"
+          }
+        ]
+      },
+      "sourceFile": "gdp_merchant_associate_tasks.txt"
+    },
+    {
+      "baseEmployerMods": [],
+      "cost": {
+        "gold": {
+          "base": 0.05,
+          "scales": true
+        }
+      },
+      "desc": "This character is tasked with improving the skills of important associates of the Company.",
+      "dlc": "Silk and Silver",
+      "employeeMods": [],
+      "id": "partner_mentoring",
+      "name": "Mentor Associates",
+      "positions": [
+        "partner_court_position"
+      ],
+      "scalingCourtModifiers": {},
+      "scalingModifiers": {},
+      "sourceFile": "gdp_merchant_associate_tasks.txt"
+    },
+    {
+      "baseEmployerMods": [],
+      "cost": {
+        "treasury_or_gold": {
+          "base": 0,
+          "scales": true
+        }
+      },
+      "desc": "The Roman Censor will appoint Senators on a regular basis to fill any empty seats in the Senate.",
+      "dlc": "Silk and Silver",
+      "employeeMods": [],
+      "id": "roman_censor_appoint_senators",
+      "name": "Appoint Senators",
+      "positions": [
+        "roman_censor_court_position"
+      ],
+      "scalingCourtModifiers": {},
+      "scalingModifiers": {},
+      "sourceFile": "gdp_republic_tasks.txt"
+    },
+    {
+      "baseEmployerMods": [],
+      "cost": {
+        "treasury_or_gold": {
+          "base": 0.05,
+          "scales": true
+        }
+      },
+      "desc": "The Roman Censor will work to improve the public morale of the Realm Capital.",
+      "dlc": "Silk and Silver",
+      "employeeMods": [],
+      "id": "roman_censor_public_morale",
+      "name": "Improve Public Morale",
+      "positions": [
+        "roman_censor_court_position"
+      ],
+      "scalingCourtModifiers": {},
+      "scalingModifiers": {
+        "average": [
+          {
+            "polarity": "good",
+            "text": "+9 Capital Popular Opinion Baseline"
+          },
+          {
+            "polarity": "good",
+            "text": "+3 Direct Vassal Opinion"
+          }
+        ],
+        "excellent": [
+          {
+            "polarity": "good",
+            "text": "+15 Capital Popular Opinion Baseline"
+          },
+          {
+            "polarity": "good",
+            "text": "+5 Direct Vassal Opinion"
+          }
+        ],
+        "good": [
+          {
+            "polarity": "good",
+            "text": "+12 Capital Popular Opinion Baseline"
+          },
+          {
+            "polarity": "good",
+            "text": "+4 Direct Vassal Opinion"
+          }
+        ],
+        "poor": [
+          {
+            "polarity": "good",
+            "text": "+6 Capital Popular Opinion Baseline"
+          },
+          {
+            "polarity": "good",
+            "text": "+2 Direct Vassal Opinion"
+          }
+        ],
+        "terrible": [
+          {
+            "polarity": "good",
+            "text": "+3 Capital Popular Opinion Baseline"
+          },
+          {
+            "polarity": "good",
+            "text": "+1 Direct Vassal Opinion"
+          }
+        ]
+      },
+      "sourceFile": "gdp_republic_tasks.txt"
+    },
+    {
+      "baseEmployerMods": [],
+      "cost": {
         "gold": {
           "base": 0.05,
           "scales": true
@@ -12095,7 +13285,7 @@
           "scales": true
         }
       },
-      "desc": "This character is tasked with managing the development of the capital city.",
+      "desc": "This character is tasked with managing the prosperity of the capital city.",
       "dlc": null,
       "employeeMods": [],
       "id": "royal_architect_public_works",
@@ -12109,31 +13299,31 @@
         "average": [
           {
             "polarity": "good",
-            "text": "+0.05 Character Capital County Monthly Development Growth Add /month"
+            "text": "+0.05 Character Capital County Monthly Prosperity Growth Add /month"
           }
         ],
         "excellent": [
           {
             "polarity": "good",
-            "text": "+0.15 Character Capital County Monthly Development Growth Add /month"
+            "text": "+0.15 Character Capital County Monthly Prosperity Growth Add /month"
           }
         ],
         "good": [
           {
             "polarity": "good",
-            "text": "+0.1 Character Capital County Monthly Development Growth Add /month"
+            "text": "+0.1 Character Capital County Monthly Prosperity Growth Add /month"
           }
         ],
         "poor": [
           {
             "polarity": "good",
-            "text": "+0.02 Character Capital County Monthly Development Growth Add /month"
+            "text": "+0.02 Character Capital County Monthly Prosperity Growth Add /month"
           }
         ],
         "terrible": [
           {
             "polarity": "good",
-            "text": "+0.01 Character Capital County Monthly Development Growth Add /month"
+            "text": "+0.01 Character Capital County Monthly Prosperity Growth Add /month"
           }
         ]
       },
@@ -12263,31 +13453,31 @@
         "average": [
           {
             "polarity": "good",
-            "text": "+0.1 Monthly County Control Growth Add /month"
+            "text": "+0.1 Control Growth /month"
           }
         ],
         "excellent": [
           {
             "polarity": "good",
-            "text": "+0.2 Monthly County Control Growth Add /month"
+            "text": "+0.2 Control Growth /month"
           }
         ],
         "good": [
           {
             "polarity": "good",
-            "text": "+0.15 Monthly County Control Growth Add /month"
+            "text": "+0.15 Control Growth /month"
           }
         ],
         "poor": [
           {
             "polarity": "good",
-            "text": "+0.05 Monthly County Control Growth Add /month"
+            "text": "+0.05 Control Growth /month"
           }
         ],
         "terrible": [
           {
             "polarity": "good",
-            "text": "+0.02 Monthly County Control Growth Add /month"
+            "text": "+0.02 Control Growth /month"
           }
         ]
       },
@@ -12343,6 +13533,111 @@
         ]
       },
       "sourceFile": "00_siege_engineer_tasks.txt"
+    },
+    {
+      "baseEmployerMods": [],
+      "cost": {
+        "prestige": {
+          "scales": true
+        }
+      },
+      "desc": "This character is stretching the Company's Trade Routes farther into foreign Markets.",
+      "dlc": "Silk and Silver",
+      "employeeMods": [],
+      "id": "translator_foreign_deals",
+      "name": "Foreign Deals",
+      "positions": [
+        "translator_court_position"
+      ],
+      "scalingCourtModifiers": {},
+      "scalingModifiers": {
+        "average": [
+          {
+            "polarity": "good",
+            "text": "+2 Route Length"
+          }
+        ],
+        "excellent": [
+          {
+            "polarity": "good",
+            "text": "+3 Route Length"
+          }
+        ],
+        "good": [
+          {
+            "polarity": "good",
+            "text": "+2 Route Length"
+          }
+        ],
+        "poor": [
+          {
+            "polarity": "good",
+            "text": "+1 Route Length"
+          }
+        ],
+        "terrible": [
+          {
+            "polarity": "good",
+            "text": "+1 Route Length"
+          }
+        ]
+      },
+      "sourceFile": "gdp_merchant_associate_tasks.txt"
+    },
+    {
+      "baseEmployerMods": [],
+      "cost": {
+        "gold": {
+          "scales": true
+        }
+      },
+      "desc": "This character is focused on learning languages and helping the Company to broaden its market horizons.",
+      "dlc": "Silk and Silver",
+      "employeeMods": [
+        {
+          "polarity": "good",
+          "text": "20 Learn Language Phase Length days faster per Scheme Phase"
+        }
+      ],
+      "id": "translator_learn_language",
+      "name": "Learn Languages",
+      "positions": [
+        "translator_court_position"
+      ],
+      "scalingCourtModifiers": {},
+      "scalingModifiers": {
+        "average": [
+          {
+            "polarity": "good",
+            "text": "12 Learn Language Phase Length days faster per Scheme Phase"
+          }
+        ],
+        "excellent": [
+          {
+            "polarity": "good",
+            "text": "20 Learn Language Phase Length days faster per Scheme Phase"
+          }
+        ],
+        "good": [
+          {
+            "polarity": "good",
+            "text": "16 Learn Language Phase Length days faster per Scheme Phase"
+          }
+        ],
+        "poor": [
+          {
+            "polarity": "good",
+            "text": "8 Learn Language Phase Length days faster per Scheme Phase"
+          }
+        ],
+        "terrible": [
+          {
+            "polarity": "good",
+            "text": "4 Learn Language Phase Length days faster per Scheme Phase"
+          }
+        ]
+      },
+      "sourceFile": "gdp_merchant_associate_tasks.txt"
     },
     {
       "baseEmployerMods": [],
@@ -12484,7 +13779,7 @@
       "employeeMods": [
         {
           "polarity": "good",
-          "text": "+10 Child Opinion"
+          "text": "+5 Child Opinion"
         }
       ],
       "id": "wet_nurse_instill_virtue",
@@ -12644,11 +13939,11 @@
       "baseEmployerMods": [
         {
           "polarity": "good",
-          "text": "+25 Popular Opinion"
+          "text": "+15 Popular Opinion Baseline"
         },
         {
           "polarity": "good",
-          "text": "+10 Courtier and Guest Opinion"
+          "text": "+5 Courtier and Guest Opinion"
         },
         {
           "polarity": "good",

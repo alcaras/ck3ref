@@ -749,6 +749,13 @@
     "value": "100"
   },
   {
+    "comment": "Replaces MARRIAGE_TIER_DIFF_PRESTIGE_MULT when the character gaining the prestige is a Merchant",
+    "file": "00_defines.txt",
+    "key": "MERCHANT_MARRIAGE_TIER_DIFF_PRESTIGE_MULT",
+    "ns": "NCharacter",
+    "value": "50"
+  },
+  {
     "comment": null,
     "file": "00_defines.txt",
     "key": "FOCUS_CHILD_MIN_AGE",
@@ -1090,6 +1097,13 @@
     "key": "MONTHLY_INFLUENCE_GAIN_BEING_GOVERNOR",
     "ns": "NCharacter",
     "value": "1"
+  },
+  {
+    "comment": "Giving more personality traits than this to a character will cause the game to log an error.",
+    "file": "00_defines.txt",
+    "key": "INTENDED_MAX_PERSONALITY_TRAITS",
+    "ns": "NCharacter",
+    "value": "6"
   },
   {
     "comment": "At this age characters start getting the chance to lose health each year",
@@ -1729,13 +1743,6 @@
     "value": "5"
   },
   {
-    "comment": "opinion modifiers will start to decay/grow after this many days",
-    "file": "00_defines.txt",
-    "key": "CONVERGENCE_DELAY",
-    "ns": "NCharacterOpinion",
-    "value": "31"
-  },
-  {
     "comment": null,
     "file": "00_defines.txt",
     "key": "MAX_OPINION",
@@ -1858,6 +1865,13 @@
     "comment": null,
     "file": "00_defines.txt",
     "key": "PIOUS_MAGNIFICENCE",
+    "ns": "NCharacterOpinion",
+    "value": "{ -5 0 3 5 10 15 20 25 35 }"
+  },
+  {
+    "comment": "secular opinion bonus towards clergy in theocratic clergy faiths",
+    "file": "00_defines.txt",
+    "key": "PIOUS_CLERGY",
     "ns": "NCharacterOpinion",
     "value": "{ -5 0 3 5 10 15 20 25 35 }"
   },
@@ -2182,6 +2196,34 @@
     "key": "ACTIVE_ACCLAIMED_KNIGHT",
     "ns": "NCharacterOpinion",
     "value": "15"
+  },
+  {
+    "comment": "Voting session length in days",
+    "file": "00_defines.txt",
+    "key": "VOTING_SESSION_LENGTH",
+    "ns": "NLaw",
+    "value": "90"
+  },
+  {
+    "comment": "How high should ai_will_do be for them to want to propose a law?",
+    "file": "00_defines.txt",
+    "key": "LAW_PROPOSAL_THRESHOLD",
+    "ns": "NLaw",
+    "value": "1"
+  },
+  {
+    "comment": "How many days should pass before another proposal can be made after a session ends?",
+    "file": "00_defines.txt",
+    "key": "LAW_PROPOSAL_COOLDOWN",
+    "ns": "NLaw",
+    "value": "1095"
+  },
+  {
+    "comment": "How many days should pass before an AI character can propose another law, from the day of their last proposal?",
+    "file": "00_defines.txt",
+    "key": "LAW_PROPOSER_PERSONAL_COOLDOWN",
+    "ns": "NLaw",
+    "value": "2190"
   },
   {
     "comment": "non-answered interactions expire after this time",
@@ -3157,6 +3199,13 @@
     "value": "100"
   },
   {
+    "comment": "The absolute max success chance a trade scheme can have",
+    "file": "00_defines.txt",
+    "key": "TRADE_SCHEME_MAX_SUCCESS_CHANCE",
+    "ns": "NScheme",
+    "value": "95"
+  },
+  {
     "comment": "The maximum number of saved opportunities a schmeme can have",
     "file": "00_defines.txt",
     "key": "SCHEME_MAX_OPPORTUNITIES",
@@ -3297,6 +3346,13 @@
     "value": "50"
   },
   {
+    "comment": "Virtues and sins come from core and approved tenets. Only this many are kept, highest weight first, and traits in the same trait group count as one",
+    "file": "00_defines.txt",
+    "key": "MAX_VIRTUES_SINS",
+    "ns": "NFaith",
+    "value": "7"
+  },
+  {
     "comment": "Default fervor",
     "file": "00_defines.txt",
     "key": "BASE_FERVOR",
@@ -3315,35 +3371,133 @@
     "file": "00_defines.txt",
     "key": "YEARLY_FERVOR_GROWTH",
     "ns": "NFaith",
-    "value": "3.5"
-  },
-  {
-    "comment": "Adjusts the size modifier for monthly fervor gain for a faith according to the following formula: 1/squareroot(max(define_value, faith_size)/define_value) where define value is the value of MINIMUM_FAITH_SIZE_FERVOR_MODIFIER and faith_size is the current amount of provinces that follows the faith.",
-    "file": "00_defines.txt",
-    "key": "MINIMUM_FAITH_SIZE_FERVOR_MODIFIER",
-    "ns": "NFaith",
-    "value": "10"
+    "value": "0.5"
   },
   {
     "comment": "After how many years do fervor changelog entries get deleted?",
     "file": "00_defines.txt",
     "key": "FERVOR_CHANGELOG_DURATION",
     "ns": "NFaith",
-    "value": "10"
+    "value": "1"
+  },
+  {
+    "comment": null,
+    "file": "00_defines.txt",
+    "key": "MAX_FAITH_SIZE_PER_RITE",
+    "ns": "NFaith",
+    "value": "100"
+  },
+  {
+    "comment": null,
+    "file": "00_defines.txt",
+    "key": "LOW_FERVOR_THREASHOLD",
+    "ns": "NFaith",
+    "value": "40"
+  },
+  {
+    "comment": null,
+    "file": "00_defines.txt",
+    "key": "HERESY_FERVOR_DEPLETION_MULTIPLIER",
+    "ns": "NFaith",
+    "value": "1"
+  },
+  {
+    "comment": null,
+    "file": "00_defines.txt",
+    "key": "FREE_HERETICAL_RITES_BEFORE_DEPLETION",
+    "ns": "NFaith",
+    "value": "0"
+  },
+  {
+    "comment": null,
+    "file": "00_defines.txt",
+    "key": "OVER_NEEDED_RITES_FERVOR_LOSS_PROTECTION_MULT",
+    "ns": "NFaith",
+    "value": "0.5"
+  },
+  {
+    "comment": null,
+    "file": "00_defines.txt",
+    "key": "MAX_FERVOR_LOSS_PER_DIVERGENT_RITE",
+    "ns": "NFaith",
+    "value": "0.9"
+  },
+  {
+    "comment": null,
+    "file": "00_defines.txt",
+    "key": "MAX_RELICS_FROM_SAINT",
+    "ns": "NFaith",
+    "value": "4"
   },
   {
     "comment": "How much cheaper does creating a faith get per fervor below 100%? 1 means 1% per point",
     "file": "00_defines.txt",
-    "key": "FAITH_CREATION_FERVOR_DISCOUNT_PER_MISSING_FERVOR",
-    "ns": "NFaith",
+    "key": "RITE_CREATION_FERVOR_DISCOUNT_PER_MISSING_FERVOR",
+    "ns": "NRite",
     "value": "1"
   },
   {
     "comment": "What percentage does the discount cap out at? With these numbers, 0-50 fervor means a 50% discount. Above 50 means between 0% and 50% discount",
     "file": "00_defines.txt",
-    "key": "FAITH_CREATION_FERVOR_DISCOUNT_MAX",
-    "ns": "NFaith",
+    "key": "RITE_CREATION_FERVOR_DISCOUNT_MAX",
+    "ns": "NRite",
     "value": "50"
+  },
+  {
+    "comment": "when creating a Rite, divergence values at or over this threshold will result in a Faith being created instead of a Rite",
+    "file": "00_defines.txt",
+    "key": "RITE_CREATION_DIVERGENCE_FAITH_THRESHOLD",
+    "ns": "NRite",
+    "value": "100"
+  },
+  {
+    "comment": "Fixed cost how much piety it costs to branch off a Faith with new Rite",
+    "file": "00_defines.txt",
+    "key": "RITE_CREATION_PIETY_COST",
+    "ns": "NRite",
+    "value": "1.0"
+  },
+  {
+    "comment": "Max characters of a Rite/Faith description written in the creation window. Auto-generated descriptions add tenet sentences until this is reached",
+    "file": "00_defines.txt",
+    "key": "RITE_CREATION_DESCRIPTION_MAX_LENGTH",
+    "ns": "NRite",
+    "value": "400"
+  },
+  {
+    "comment": "Divergence above which a Rite is considered heretical",
+    "file": "00_defines.txt",
+    "key": "RITE_DIVERGENCE_HERETICAL_THRESHOLD",
+    "ns": "NRite",
+    "value": "65"
+  },
+  {
+    "comment": "Divergence below that will lower faith hostility by 1 level",
+    "file": "00_defines.txt",
+    "key": "RITE_DIVERGENCE_HOSTILITY_THRESHOLD",
+    "ns": "NRite",
+    "value": "1"
+  },
+  {
+    "comment": "rites below this divergence will not add to the yearly fervor decrease",
+    "file": "00_defines.txt",
+    "key": "RITE_DIVERGENCE_GRACE_THRESHOLD",
+    "ns": "NRite",
+    "value": "0"
+  },
+  {
+    "comment": null,
+    "file": "00_defines.txt",
+    "key": "TENET_STATUS_DIVERGENCE",
+    "ns": "NRite",
+    "value": "{ 15 15 30 5 -5 }"
+  },
+  {
+    "comment": null,
+    "file": "00_defines.txt",
+    "key": "RITE_COLOR_DEVIATION",
+    "ns": "NRite",
+    "value": "{ 0.1 0.6 }"
   },
   {
     "comment": "For faiths with a doctrine with piety_from_long_peace, how long do they need to be at peace (in days)",
@@ -3362,7 +3516,7 @@
   {
     "comment": "The opinion effects of each hostility level on counties. Modified by fervor of the county's faith divided by 100",
     "file": "00_defines.txt",
-    "key": "HOSTILITY_COUNTY_OPINION_EFFECTS",
+    "key": "HOSTILITY_POPULAR_OPINION_EFFECTS",
     "ns": "NReligion",
     "value": "{…}"
   },
@@ -3374,7 +3528,7 @@
     "value": "{…}"
   },
   {
-    "comment": "Localization for each hostility level. See _doctrines.info for more info",
+    "comment": "Localization for each hostility level. See _doctrine_types.info for more info",
     "file": "00_defines.txt",
     "key": "HOSTILITY_LEVEL_NAMES",
     "ns": "NReligion",
@@ -3453,6 +3607,139 @@
   {
     "comment": null,
     "file": "00_defines.txt",
+    "key": "MIN_SPIRITUAL_FULFILLMENT",
+    "ns": "NReligion",
+    "value": "-100"
+  },
+  {
+    "comment": null,
+    "file": "00_defines.txt",
+    "key": "MAX_SPIRITUAL_FULFILLMENT",
+    "ns": "NReligion",
+    "value": "100"
+  },
+  {
+    "comment": null,
+    "file": "00_defines.txt",
+    "key": "SPIRITUAL_FULFILLMENT_MULT_PERSONAL_TENET",
+    "ns": "NReligion",
+    "value": "2"
+  },
+  {
+    "comment": null,
+    "file": "00_defines.txt",
+    "key": "SPIRITUAL_FULFILLMENT_MULT_CORE_TENET",
+    "ns": "NReligion",
+    "value": "2"
+  },
+  {
+    "comment": null,
+    "file": "00_defines.txt",
+    "key": "SPIRITUAL_FULFILLMENT_MULT_PERMITTED_TENET",
+    "ns": "NReligion",
+    "value": "0.5"
+  },
+  {
+    "comment": null,
+    "file": "00_defines.txt",
+    "key": "SPIRITUAL_FULFILLMENT_MULT_RELIGION_TRAIT",
+    "ns": "NReligion",
+    "value": "1"
+  },
+  {
+    "comment": null,
+    "file": "00_defines.txt",
+    "key": "BASE_PERSONAL_TENETS_CAP",
+    "ns": "NReligion",
+    "value": "1"
+  },
+  {
+    "comment": null,
+    "file": "00_defines.txt",
+    "key": "PERSONAL_TENET_CHANGE_COOLDOWN_DAYS",
+    "ns": "NReligion",
+    "value": "1095"
+  },
+  {
+    "comment": null,
+    "file": "00_defines.txt",
+    "key": "FAITH_CORE_TENETS_CAP",
+    "ns": "NReligion",
+    "value": "3"
+  },
+  {
+    "comment": null,
+    "file": "00_defines.txt",
+    "key": "SPIRITUAL_FULFILLMENT_FOR_STRESS_DIVIDE_FACTOR",
+    "ns": "NReligion",
+    "value": "100"
+  },
+  {
+    "comment": null,
+    "file": "00_defines.txt",
+    "key": "MIN_FULFILLMENT_CHANGE_FOR_EFFECT",
+    "ns": "NReligion",
+    "value": "5"
+  },
+  {
+    "comment": null,
+    "file": "00_defines.txt",
+    "key": "MONTHLY_RITE_CONVERSION_PROCESS_PER_NEIGHBORING_COUNTY",
+    "ns": "NReligion",
+    "value": "2"
+  },
+  {
+    "comment": null,
+    "file": "00_defines.txt",
+    "key": "REQUIRE_SAME_CHAPLAIN_RITE_FOR_REGION_CONVERSION",
+    "ns": "NReligion",
+    "value": "no"
+  },
+  {
+    "comment": null,
+    "file": "00_defines.txt",
+    "key": "FAITH_EMINENT_HOLY_SITES_MAX_DEFAULT",
+    "ns": "NReligion",
+    "value": "3"
+  },
+  {
+    "comment": null,
+    "file": "00_defines.txt",
+    "key": "FAITH_HOLY_SITES_MAX_DEFAULT",
+    "ns": "NReligion",
+    "value": "9"
+  },
+  {
+    "comment": null,
+    "file": "00_defines.txt",
+    "key": "FAITH_EMINENT_HOLY_SITES_MIN_DEFAULT",
+    "ns": "NReligion",
+    "value": "1"
+  },
+  {
+    "comment": null,
+    "file": "00_defines.txt",
+    "key": "FAITH_HOLY_SITES_MIN_DEFAULT",
+    "ns": "NReligion",
+    "value": "1"
+  },
+  {
+    "comment": null,
+    "file": "00_defines.txt",
+    "key": "CREATE_HOLY_SITE_RARITY_REQUIRED",
+    "ns": "NReligion",
+    "value": "3"
+  },
+  {
+    "comment": null,
+    "file": "00_defines.txt",
+    "key": "MAX_HOLY_SITE_RARITY_TOTAL",
+    "ns": "NReligion",
+    "value": "12"
+  },
+  {
+    "comment": null,
+    "file": "00_defines.txt",
     "key": "CREATE_TITLE_OR_TIER_HEGEMONY",
     "ns": "NTitle",
     "value": "{ -1 -1 -1 -1 -1 2 1 }"
@@ -3490,10 +3777,10 @@
     "file": "00_defines.txt",
     "key": "CREATE_TITLE_GOLD_COST",
     "ns": "NTitle",
-    "value": "{ 0 0 0 250 500 1000 2000 }"
+    "value": "{ 0 0 0 150 300 600 1200 }"
   },
   {
-    "comment": "creating a title will always cost at least this much in percent of the base cost, ex. 20% of 250 for a duchy",
+    "comment": "creating a title will always cost at least this much in percent of the base cost, ex. 20% of 150 for a duchy",
     "file": "00_defines.txt",
     "key": "CREATE_TITLE_MIN_COST_FACTOR",
     "ns": "NTitle",
@@ -3532,7 +3819,7 @@
     "file": "00_defines.txt",
     "key": "USURP_TITLE_GOLD_COST",
     "ns": "NTitle",
-    "value": "{ 0 0 0 250 500 1000 2000 }"
+    "value": "{ 0 0 0 150 300 600 1200 }"
   },
   {
     "comment": null,
@@ -3598,6 +3885,55 @@
     "value": "{ 0 0 0.1 0.25 0.5 1 2 }"
   },
   {
+    "comment": null,
+    "file": "00_defines.txt",
+    "key": "LAW_CHANGE_DREAD_THRESHOLD",
+    "ns": "NTitle",
+    "value": "2"
+  },
+  {
+    "comment": "How high does approval of a law need to be for a voting member to approve of it?",
+    "file": "00_defines.txt",
+    "key": "LAW_CHANGE_APPROVAL_THRESHOLD",
+    "ns": "NTitle",
+    "value": "20"
+  },
+  {
+    "comment": "How low does approval of a law need to be for a voting member to disapprove of it?",
+    "file": "00_defines.txt",
+    "key": "LAW_CHANGE_DISAPPROVAL_THRESHOLD",
+    "ns": "NTitle",
+    "value": "-20"
+  },
+  {
+    "comment": "What % of voting members need to approve to pass law changes if not defined by laws?",
+    "file": "00_defines.txt",
+    "key": "LAW_CHANGE_VOTING_THRESHOLD",
+    "ns": "NTitle",
+    "value": "0.6"
+  },
+  {
+    "comment": "What \"approval\" should players be assigned when viewing laws? Used for sorting voting members by approval.",
+    "file": "00_defines.txt",
+    "key": "LAW_PLAYER_APPROVAL",
+    "ns": "NTitle",
+    "value": "100"
+  },
+  {
+    "comment": "How High does approval of a decision need to be for a voting member to approve of it?",
+    "file": "00_defines.txt",
+    "key": "DECISION_APPROVAL_THRESHOLD",
+    "ns": "NTitle",
+    "value": "0"
+  },
+  {
+    "comment": "What % of voting members need to approve to pass decisions if not defined by laws?",
+    "file": "00_defines.txt",
+    "key": "DECISION_VOTING_THRESHOLD",
+    "ns": "NTitle",
+    "value": "0.6"
+  },
+  {
     "comment": "What is the Saturation and Value of dynamic title map colors? (via HSV color - Hue is fully randomized)",
     "file": "00_defines.txt",
     "key": "DYNAMIC_TITLE_MAP_COLOR_S_V",
@@ -3631,6 +3967,20 @@
     "key": "AI_RULER_DESIRED_EMPIRE_TITLES_DEFAULT",
     "ns": "NTitle",
     "value": "{ -1 -1 -1 -1 -1 -1 1 }"
+  },
+  {
+    "comment": null,
+    "file": "00_defines.txt",
+    "key": "MIN_INITIAL_TERM_LENGTH_FRACTION",
+    "ns": "NTitle",
+    "value": "0.3"
+  },
+  {
+    "comment": "Default term length in months, if no length is set by laws, 0 is life",
+    "file": "00_defines.txt",
+    "key": "DEFAULT_TERM_LENGTH",
+    "ns": "NTitle",
+    "value": "0"
   },
   {
     "comment": "How many previous siege actions are remembered",
@@ -3901,49 +4251,42 @@
   {
     "comment": null,
     "file": "00_defines.txt",
-    "key": "DEVELOPMENT_SPREAD_NEIGHBOUR_FACTOR",
+    "key": "PROSPERITY_SPREAD_NEIGHBOUR_FACTOR",
     "ns": "NCounty",
     "value": "0.1"
   },
   {
     "comment": "\"yes\" means only the difference from the highest dev neighbor will be used. \"no\" means that all higher-dev neighbors will be used",
     "file": "00_defines.txt",
-    "key": "DEVELOPMENT_SPREAD_USES_HIGHEST_NEIGHBOUR",
+    "key": "PROSPERITY_SPREAD_USES_HIGHEST_NEIGHBOUR",
     "ns": "NCounty",
     "value": "yes"
   },
   {
     "comment": null,
     "file": "00_defines.txt",
-    "key": "LEVELS_DEVELOPMENT",
+    "key": "LEVELS_PROSPERITY",
     "ns": "NCounty",
     "value": "{ 100 200 300 400 500 600 700 800 900 }"
   },
   {
     "comment": null,
     "file": "00_defines.txt",
-    "key": "LEVEL_DROP_MAX_RETAINED_PROGRESS_DEVELOPMENT",
+    "key": "LEVEL_DROP_MAX_RETAINED_PROGRESS_PROSPERITY",
     "ns": "NCounty",
     "value": "0.5"
   },
   {
     "comment": null,
     "file": "00_defines.txt",
-    "key": "DEFAULT_COUNTY_CONTROL",
-    "ns": "NCounty",
-    "value": "100"
-  },
-  {
-    "comment": null,
-    "file": "00_defines.txt",
-    "key": "DEFAULT_COUNTY_DEVELOPMENT",
+    "key": "DEFAULT_COUNTY_PROSPERITY",
     "ns": "NCounty",
     "value": "0"
   },
   {
     "comment": null,
     "file": "00_defines.txt",
-    "key": "COUNTY_OPINION_ZERO_ACCEPTANCE",
+    "key": "POPULAR_OPINION_ZERO_ACCEPTANCE",
     "ns": "NCounty",
     "value": "-15"
   },
@@ -3952,7 +4295,7 @@
     "file": "00_defines.txt",
     "key": "COUNTY_CONTROL_LOSS_ON_HOSTILE_OWNER_CHANGE",
     "ns": "NCounty",
-    "value": "75"
+    "value": "20"
   },
   {
     "comment": null,
@@ -4032,6 +4375,83 @@
     "value": "0.5"
   },
   {
+    "comment": "Baseline before any modifiers; control trends toward this",
+    "file": "00_defines.txt",
+    "key": "COUNTY_CONTROL_DEFAULT_BASELINE",
+    "ns": "NCounty",
+    "value": "35"
+  },
+  {
+    "comment": null,
+    "file": "00_defines.txt",
+    "key": "DEFAULT_COUNTY_CONTROL",
+    "ns": "NCounty",
+    "value": "25"
+  },
+  {
+    "comment": "Absolute base convergence rate per month",
+    "file": "00_defines.txt",
+    "key": "COUNTY_CONTROL_BASE_MONTHLY_CHANGE",
+    "ns": "NCounty",
+    "value": "0.1"
+  },
+  {
+    "comment": "Minimum convergence rate per month",
+    "file": "00_defines.txt",
+    "key": "COUNTY_CONTROL_MIN_MONTHLY_CHANGE",
+    "ns": "NCounty",
+    "value": "0.05"
+  },
+  {
+    "comment": null,
+    "file": "00_defines.txt",
+    "key": "COUNTY_CONTROL_LEVEL_CUTOFFS",
+    "ns": "NCounty",
+    "value": "{ 0 5 10 15 20 25 30 35 40 45 50 55 60 65 70 75 80 85 90 95 100 }"
+  },
+  {
+    "comment": "Absolute value, applied as negative if growth is negative",
+    "file": "00_defines.txt",
+    "key": "POPULAR_OPINION_BASE_MONTHLY_CHANGE",
+    "ns": "NCounty",
+    "value": "0.5"
+  },
+  {
+    "comment": "Same as above, minimum value for monthly opinion change",
+    "file": "00_defines.txt",
+    "key": "POPULAR_OPINION_MIN_MONTHLY_CHANGE",
+    "ns": "NCounty",
+    "value": "0.1"
+  },
+  {
+    "comment": null,
+    "file": "00_defines.txt",
+    "key": "POPULAR_OPINION_MAX",
+    "ns": "NCounty",
+    "value": "100"
+  },
+  {
+    "comment": null,
+    "file": "00_defines.txt",
+    "key": "POPULAR_OPINION_MIN",
+    "ns": "NCounty",
+    "value": "-100"
+  },
+  {
+    "comment": null,
+    "file": "00_defines.txt",
+    "key": "POPULAR_OPINION_THRESHOLDS",
+    "ns": "NCounty",
+    "value": "{ -100 -75 -50 -25 0 25 50 75 100 }"
+  },
+  {
+    "comment": "Default level, middle index of thresholds above, starting from 0",
+    "file": "00_defines.txt",
+    "key": "POPULAR_OPINION_STARTING_LEVEL",
+    "ns": "NCounty",
+    "value": "4"
+  },
+  {
     "comment": "The unmodified base supply limit of a province",
     "file": "00_defines.txt",
     "key": "BASE_SUPPLY_LIMIT",
@@ -4039,23 +4459,37 @@
     "value": "2000"
   },
   {
-    "comment": null,
+    "comment": "Base number of building slots for districts in non-capital baronies",
     "file": "00_defines.txt",
     "key": "BARONY_BUILDING_SLOTS",
     "ns": "NProvince",
-    "value": "2"
+    "value": "1"
   },
   {
-    "comment": null,
+    "comment": "Base number of building slots for districts in county capital",
     "file": "00_defines.txt",
     "key": "COUNTY_BUILDING_SLOTS",
     "ns": "NProvince",
-    "value": "3"
+    "value": "1"
   },
   {
-    "comment": "Each development adds this much sto the supply limit",
+    "comment": "Base number of regular district slots for non-capital baronies",
     "file": "00_defines.txt",
-    "key": "SUPPLY_PER_DEVELOPMENT",
+    "key": "BARONY_DISTRICT_SLOTS",
+    "ns": "NProvince",
+    "value": "1"
+  },
+  {
+    "comment": "Base number of regular district slots for county capitals",
+    "file": "00_defines.txt",
+    "key": "COUNTY_DISTRICT_SLOTS",
+    "ns": "NProvince",
+    "value": "1"
+  },
+  {
+    "comment": "Each level of prosperity adds this much to the supply limit",
+    "file": "00_defines.txt",
+    "key": "SUPPLY_PER_PROSPERITY",
     "ns": "NProvince",
     "value": "150"
   },
@@ -4151,6 +4585,62 @@
     "value": "7"
   },
   {
+    "comment": "Size level used when history omits province_size, and the level the raw DEFAULT_PROVINCE_SIZE_BASELINE maps to",
+    "file": "00_defines.txt",
+    "key": "DEFAULT_PROVINCE_SIZE",
+    "ns": "NProvince",
+    "value": "1"
+  },
+  {
+    "comment": "Default baseline value a province's raw size trends toward in absence of modifiers",
+    "file": "00_defines.txt",
+    "key": "DEFAULT_PROVINCE_SIZE_BASELINE",
+    "ns": "NProvince",
+    "value": "150"
+  },
+  {
+    "comment": "Highest named size level (matches province_size_level_0..province_size_level_10)",
+    "file": "00_defines.txt",
+    "key": "MAX_PROVINCE_SIZE_LEVEL",
+    "ns": "NProvince",
+    "value": "10"
+  },
+  {
+    "comment": "Upper bound on the raw CFixedPoint province size value",
+    "file": "00_defines.txt",
+    "key": "MAX_PROVINCE_SIZE_VALUE",
+    "ns": "NProvince",
+    "value": "1000"
+  },
+  {
+    "comment": "Value per level - history `province_size = X` resolves to value X * PROVINCE_SIZE_LEVEL_STEP",
+    "file": "00_defines.txt",
+    "key": "PROVINCE_SIZE_LEVEL_STEP",
+    "ns": "NProvince",
+    "value": "100"
+  },
+  {
+    "comment": "Absolute base convergence rate per month toward the baseline",
+    "file": "00_defines.txt",
+    "key": "PROVINCE_SIZE_BASE_MONTHLY_CHANGE",
+    "ns": "NProvince",
+    "value": "0.2"
+  },
+  {
+    "comment": "Minimum absolute monthly change once the province is not already at its baseline",
+    "file": "00_defines.txt",
+    "key": "PROVINCE_SIZE_MIN_MONTHLY_CHANGE",
+    "ns": "NProvince",
+    "value": "0.1"
+  },
+  {
+    "comment": "Cutoffs mapping raw size value to level",
+    "file": "00_defines.txt",
+    "key": "PROVINCE_SIZE_LEVEL_CUTOFFS",
+    "ns": "NProvince",
+    "value": "{ 0 100 200 300 400 500 600 700 800 900 1000 }"
+  },
+  {
     "comment": "Duration will show as years if it's at least this many months",
     "file": "00_defines.txt",
     "key": "DURATION_SHOW_YEARS_THRESHOLD",
@@ -4240,6 +4730,13 @@
     "key": "MARRIAGE_PRESTIGE",
     "ns": "NDynasty",
     "value": "{ -100\t0\t100\t200\t300\t400\t500\t600\t700\t800 900 }"
+  },
+  {
+    "comment": "Replaces MARRIAGE_PRESTIGE for merchants. Must have at least one more entry than LEVELS_PRESTIGE",
+    "file": "00_defines.txt",
+    "key": "MERCHANT_MARRIAGE_PRESTIGE",
+    "ns": "NDynasty",
+    "value": "{ 100\t200\t300\t400\t500\t600\t700\t800\t900\t1000 1100 }"
   },
   {
     "comment": null,
@@ -4480,32 +4977,11 @@
     "value": "200"
   },
   {
-    "comment": "How many % levies do you get at 0 county control? Interpolated between this value and 100% when between 0 and 100",
+    "comment": "Tax bonus at 100 county prosperity, scaling down evenly to 0% at 0 prosperity",
     "file": "00_defines.txt",
-    "key": "LEVIES_AT_ZERO_COUNTY_CONTROL",
+    "key": "TAX_AT_MAX_COUNTY_PROSPERITY",
     "ns": "NDomain",
-    "value": "0.5"
-  },
-  {
-    "comment": "How much % tax do you get at 0 county control? Interpolated between this value and 100% when between 0 and 100",
-    "file": "00_defines.txt",
-    "key": "TAX_AT_ZERO_COUNTY_CONTROL",
-    "ns": "NDomain",
-    "value": "0.0"
-  },
-  {
-    "comment": "How many % levies bonus do you get at 100 county development? Interpolated between this value and 0% when between 0 and 100",
-    "file": "00_defines.txt",
-    "key": "LEVIES_AT_MAX_COUNTY_DEVELOPMENT",
-    "ns": "NDomain",
-    "value": "0.5"
-  },
-  {
-    "comment": "How much % tax bonus do you get at 100 county development? Interpolated between this value and 0% when between 0 and 100",
-    "file": "00_defines.txt",
-    "key": "TAX_AT_MAX_COUNTY_DEVELOPMENT",
-    "ns": "NDomain",
-    "value": "0.5"
+    "value": "0.25"
   },
   {
     "comment": "The minimal amount of garrisons a holding should have if it should have garrisons",
@@ -4617,7 +5093,7 @@
     "file": "00_defines.txt",
     "key": "MINIMUM_INNOVATIONS_TO_NEXT_ERA",
     "ns": "NCulture",
-    "value": "8"
+    "value": "10"
   },
   {
     "comment": "Base percentage gain every month for era spread",
@@ -4627,9 +5103,9 @@
     "value": "0.1"
   },
   {
-    "comment": "How much extra per average development level",
+    "comment": "How much extra per average prosperity level",
     "file": "00_defines.txt",
-    "key": "ERA_PROGRESS_GAIN_MONTHLY_PER_AVERAGE_DEVELOPMENT_LEVEL",
+    "key": "ERA_PROGRESS_GAIN_MONTHLY_PER_AVERAGE_PROSPERITY_LEVEL",
     "ns": "NCulture",
     "value": "0.05"
   },
@@ -4680,7 +5156,7 @@
     "file": "00_defines.txt",
     "key": "INNOVATION_PROGRESS_CHANCE_SPREAD_AND_FASCINATION_MULTIPLIER",
     "ns": "NCulture",
-    "value": "2"
+    "value": "1.2"
   },
   {
     "comment": "base progress chance bonus if fascination",
@@ -4741,7 +5217,7 @@
   {
     "comment": null,
     "file": "00_defines.txt",
-    "key": "INNOVATION_PROGRESS_GAIN_PER_AVERAGE_DEVELOPMENT_LEVEL",
+    "key": "INNOVATION_PROGRESS_GAIN_PER_AVERAGE_PROSPERITY_LEVEL",
     "ns": "NCulture",
     "value": "0.02"
   },
@@ -5047,6 +5523,13 @@
     "value": "1.2"
   },
   {
+    "comment": "Baseline for how many mercenary companies a character can hire at the same time",
+    "file": "00_defines.txt",
+    "key": "MERCENARY_BASE_LIMIT",
+    "ns": "NUM_KNIGHTS",
+    "value": "1"
+  },
+  {
     "comment": null,
     "file": "00_defines.txt",
     "key": "NUM_LEVIES_BASE",
@@ -5093,7 +5576,7 @@
     "file": "00_defines.txt",
     "key": "PATRON_MIN_TIER",
     "ns": "NHolyOrder",
-    "value": "4"
+    "value": "3"
   },
   {
     "comment": "The piety cost of the levy regiment part of holy orders, per 100 soldiers for better precision",
@@ -5408,7 +5891,7 @@
     "file": "00_defines.txt",
     "key": "REALM_VIEW_CONTROL_THRESHOLD",
     "ns": "NGUI",
-    "value": "35"
+    "value": "20"
   },
   {
     "comment": "min text string length to start matching",
@@ -5537,6 +6020,27 @@
     "value": "0.25"
   },
   {
+    "comment": "Default time between periodic window updates, in seconds",
+    "file": "00_defines.txt",
+    "key": "DEFAULT_WINDOW_UPDATE_TIME",
+    "ns": "NGUI",
+    "value": "0.05"
+  },
+  {
+    "comment": "Fallback background for use in the holding view",
+    "file": "00_defines.txt",
+    "key": "DEFAULT_DISTRICT_BACKGROUND_PATH",
+    "ns": "NGUI",
+    "value": "gfx/interface/illustrations/event_scenes/gdp_artisans_street_western.dds"
+  },
+  {
+    "comment": "Icons for the different district slot types",
+    "file": "00_defines.txt",
+    "key": "DISTRICT_TYPES_ICONS_PATH",
+    "ns": "NGUI",
+    "value": "gfx/interface/icons/district_types_icons"
+  },
+  {
     "comment": "How many suggestions should show up maximum in the interface (currently disabled until suggestion definitions are reworked for better quality)",
     "file": "00_defines.txt",
     "key": "NUM_OF_SUGGESTIONS",
@@ -5612,6 +6116,20 @@
     "key": "MAX_AGE",
     "ns": "NPortrait",
     "value": "100.0"
+  },
+  {
+    "comment": "A dead character who died older than this is rendered at DEAD_PORTRAIT_APPARENT_AGE instead of their age at death (their displayed age at death is unaffected)",
+    "file": "00_defines.txt",
+    "key": "DEAD_PORTRAIT_AGE_THRESHOLD",
+    "ns": "NPortrait",
+    "value": "30"
+  },
+  {
+    "comment": "The apparent age used for the portraits of dead characters who died older than DEAD_PORTRAIT_AGE_THRESHOLD",
+    "file": "00_defines.txt",
+    "key": "DEAD_PORTRAIT_APPARENT_AGE",
+    "ns": "NPortrait",
+    "value": "27"
   },
   {
     "comment": "The boy -> male portrait change happens at this age",
@@ -5772,14 +6290,14 @@
     "file": "00_defines.txt",
     "key": "MONTHS_OF_RAID_LOOT",
     "ns": "NRaid",
-    "value": "12"
+    "value": "10"
   },
   {
     "comment": "This is subtracted from MONTHS_OF_RAID_LOOT if you have the government 'barter = yes'",
     "file": "00_defines.txt",
     "key": "LESS_MONTHS_OF_RAID_LOOT",
     "ns": "NRaid",
-    "value": "6"
+    "value": "4"
   },
   {
     "comment": "How much base raid action progress do you get per day?",
@@ -6013,6 +6531,20 @@
     "value": "{…}"
   },
   {
+    "comment": null,
+    "file": "00_defines.txt",
+    "key": "ROUTE_GENERATION_NAV_MESH_DENSITY",
+    "ns": "NGraphics",
+    "value": "0.375"
+  },
+  {
+    "comment": null,
+    "file": "00_defines.txt",
+    "key": "ARROW_CONTROL_POINT_OFFSET_VALUE",
+    "ns": "NGraphics",
+    "value": "0.25"
+  },
+  {
     "comment": "Above this value achievements are not allowed",
     "file": "00_defines.txt",
     "key": "IRONMAN_POINT_MAX",
@@ -6135,6 +6667,13 @@
     "comment": "yearly decay, on display in court",
     "file": "00_defines.txt",
     "key": "ARTIFACT_DURABILITY_DECAY_DISPLAY",
+    "ns": "NInventory",
+    "value": "0.0"
+  },
+  {
+    "comment": "yearly decay, enshrined in a holy site (disabled in code too)",
+    "file": "00_defines.txt",
+    "key": "ARTIFACT_DURABILITY_DECAY_ENSHRINED",
     "ns": "NInventory",
     "value": "0.0"
   },
@@ -6552,25 +7091,32 @@
     "value": "2"
   },
   {
-    "comment": "Multiplier for each point of county control below 100",
+    "comment": "Actual county control will be subtracted from this number to determine travel danger. Can make travel safer.",
+    "file": "00_defines.txt",
+    "key": "COUNTY_CONTROL_DANGER_MAX",
+    "ns": "NTravel",
+    "value": "30"
+  },
+  {
+    "comment": "Multiplier for each point of county control below COUNTY_CONTROL_DANGER_MAX",
     "file": "00_defines.txt",
     "key": "COUNTY_CONTROL_DANGER_MULTIPLIER",
     "ns": "NTravel",
     "value": "0.6"
   },
   {
-    "comment": "Multiplier for each point of county opinion above/below 0, -10 opinion -> 5 danger, 10 opinion -> -5 danger",
+    "comment": "Multiplier for each point of county opinion above/below 0, -10 opinion -> 2 danger, 10 opinion -> -2 danger",
     "file": "00_defines.txt",
-    "key": "COUNTY_OPINION_DANGER_MULTIPLIER",
+    "key": "POPULAR_OPINION_DANGER_MULTIPLIER",
     "ns": "NTravel",
-    "value": "0.5"
+    "value": "0.25"
   },
   {
-    "comment": "Multiplier for each point of province owner opinion abive/below 0, -10 opinion -> 5 danger, 10 opinion -> -5 danger",
+    "comment": "Travel danger per point of the province owner's opinion, low opinion makes travel more dangerous",
     "file": "00_defines.txt",
     "key": "PROVINCE_OWNER_OPINION_DANGER_MULTIPLIER",
     "ns": "NTravel",
-    "value": "0.5"
+    "value": "0.25"
   },
   {
     "comment": "The minimum chance of danger happening in any province",
@@ -6944,6 +7490,48 @@
     "value": "60"
   },
   {
+    "comment": "Default depth index for background layers in domicile assets",
+    "file": "00_defines.txt",
+    "key": "BACKGROUND_LAYER_DEPTH",
+    "ns": "NDomicile",
+    "value": "0"
+  },
+  {
+    "comment": "Default depth index for foreground layers in domicile assets",
+    "file": "00_defines.txt",
+    "key": "FOREGROUND_LAYER_DEPTH",
+    "ns": "NDomicile",
+    "value": "999"
+  },
+  {
+    "comment": "Default depth index for building slots in domicile assets",
+    "file": "00_defines.txt",
+    "key": "BUILDING_LAYER_DEPTH_DEFAULT",
+    "ns": "NDomicile",
+    "value": "50"
+  },
+  {
+    "comment": "Acumen needed before company_size law level 2 is unlocked",
+    "file": "00_defines.txt",
+    "key": "MERCHANT_ACUMEN_LEVEL_2_THRESHOLD",
+    "ns": "NDomicile",
+    "value": "1000"
+  },
+  {
+    "comment": "Acumen needed before company_size law level 3 is unlocked",
+    "file": "00_defines.txt",
+    "key": "MERCHANT_ACUMEN_LEVEL_3_THRESHOLD",
+    "ns": "NDomicile",
+    "value": "5000"
+  },
+  {
+    "comment": "Acumen needed before company_size law level 4 is unlocked",
+    "file": "00_defines.txt",
+    "key": "MERCHANT_ACUMEN_LEVEL_4_THRESHOLD",
+    "ns": "NDomicile",
+    "value": "17000"
+  },
+  {
     "comment": null,
     "file": "00_defines.txt",
     "key": "LOW_TASK_CONTRACT_TIER",
@@ -7021,6 +7609,27 @@
     "value": "30"
   },
   {
+    "comment": "Above this top-liege realm_size, AI appointment/candidacy processing is increasingly skipped per attempt (CPU scaledown for huge realms)",
+    "file": "00_defines.txt",
+    "key": "AI_APPOINTMENT_REALM_SIZE_SCALEDOWN_START",
+    "ns": "NAdministrative",
+    "value": "150"
+  },
+  {
+    "comment": "At/above this top-liege realm_size, AI appointment/candidacy processing is skipped at the maximum rate",
+    "file": "00_defines.txt",
+    "key": "AI_APPOINTMENT_REALM_SIZE_SCALEDOWN_FULL",
+    "ns": "NAdministrative",
+    "value": "600"
+  },
+  {
+    "comment": "Maximum chance (per 1000) to skip an AI appointment/candidacy attempt in the largest realms",
+    "file": "00_defines.txt",
+    "key": "AI_APPOINTMENT_MAX_SKIP_PERMILLE",
+    "ns": "NAdministrative",
+    "value": "900"
+  },
+  {
     "comment": "Base value used in the scripted cost for reassigning title troops",
     "file": "00_defines.txt",
     "key": "BASE_REASSIGN_COST",
@@ -7086,6 +7695,62 @@
   {
     "comment": null,
     "file": "00_defines.txt",
+    "key": "GOVERNOR_EFFICIENCY_PER_DIPLOMACY",
+    "ns": "NAdministrative",
+    "value": "0.015"
+  },
+  {
+    "comment": null,
+    "file": "00_defines.txt",
+    "key": "GOVERNOR_EFFICIENCY_PER_MARTIAL",
+    "ns": "NAdministrative",
+    "value": "0.015"
+  },
+  {
+    "comment": null,
+    "file": "00_defines.txt",
+    "key": "GOVERNOR_EFFICIENCY_PER_STEWARDSHIP",
+    "ns": "NAdministrative",
+    "value": "0.015"
+  },
+  {
+    "comment": null,
+    "file": "00_defines.txt",
+    "key": "GOVERNOR_EFFICIENCY_PER_INTRIGUE",
+    "ns": "NAdministrative",
+    "value": "0.015"
+  },
+  {
+    "comment": null,
+    "file": "00_defines.txt",
+    "key": "GOVERNOR_EFFICIENCY_PER_LEARNING",
+    "ns": "NAdministrative",
+    "value": "0.015"
+  },
+  {
+    "comment": "Added for governors whose realm has a county outside the de jure primary title of their top liege",
+    "file": "00_defines.txt",
+    "key": "GOVERNOR_EFFICIENCY_NON_DE_JURE",
+    "ns": "NAdministrative",
+    "value": "-0.2"
+  },
+  {
+    "comment": null,
+    "file": "00_defines.txt",
+    "key": "GOVERNOR_EFFICIENCY_MIN",
+    "ns": "NAdministrative",
+    "value": "0.5"
+  },
+  {
+    "comment": null,
+    "file": "00_defines.txt",
+    "key": "GOVERNOR_EFFICIENCY_MAX",
+    "ns": "NAdministrative",
+    "value": "1.5"
+  },
+  {
+    "comment": null,
+    "file": "00_defines.txt",
     "key": "COUNCIL_TASK_DEFAULT_ICON_ASSET",
     "ns": "NCouncilTasks",
     "value": "gfx/interface/_invalid_icon_debug.dds"
@@ -7145,6 +7810,13 @@
     "key": "COHESION_SOFT_CAP_TAX",
     "ns": "NConfederation",
     "value": "0.5"
+  },
+  {
+    "comment": "Cooldown days before changes to confederation goals",
+    "file": "00_defines.txt",
+    "key": "CONFEDERATION_ASPIRATION_COOLDOWN_DAYS",
+    "ns": "NConfederation",
+    "value": "1800"
   },
   {
     "comment": "Minimum age when a child gets to vote in the Kurultai Succession",
@@ -7280,6 +7952,293 @@
     "value": "{ \"reduction_large\" \"reduction_medium\" \"reduction_small\" \"\" \"increase_small\" \"increase_medium\" \"increase_large\" }"
   },
   {
+    "comment": null,
+    "file": "00_defines.txt",
+    "key": "BASE_COMPETITIVENESS",
+    "ns": "NTrade",
+    "value": "10.0"
+  },
+  {
+    "comment": null,
+    "file": "00_defines.txt",
+    "key": "BASE_MAX_TRADE_ROUTE_LENGTH",
+    "ns": "NTrade",
+    "value": "10"
+  },
+  {
+    "comment": null,
+    "file": "00_defines.txt",
+    "key": "BASE_MAX_TRADE_ROUTES",
+    "ns": "NTrade",
+    "value": "1"
+  },
+  {
+    "comment": null,
+    "file": "00_defines.txt",
+    "key": "BASE_MAX_COMMISSION_ROUTES",
+    "ns": "NTrade",
+    "value": "1"
+  },
+  {
+    "comment": null,
+    "file": "00_defines.txt",
+    "key": "MAX_DISTRIBUTION_ROUTES_PER_TIER",
+    "ns": "NTrade",
+    "value": "{ 0 0 0 1 2 3 4 }"
+  },
+  {
+    "comment": null,
+    "file": "00_defines.txt",
+    "key": "BASE_MAX_TRADE_MARKETS_ON_ROUTE",
+    "ns": "NTrade",
+    "value": "3"
+  },
+  {
+    "comment": null,
+    "file": "00_defines.txt",
+    "key": "MAX_TRADE_MARKETS_ON_DISTRIBUTION_ROUTE",
+    "ns": "NTrade",
+    "value": "2"
+  },
+  {
+    "comment": null,
+    "file": "00_defines.txt",
+    "key": "BASE_MAX_TRADE_GOODS_ON_ROUTE",
+    "ns": "NTrade",
+    "value": "1"
+  },
+  {
+    "comment": null,
+    "file": "00_defines.txt",
+    "key": "MAX_TRADE_GOODS_ON_ROUTE_CAP",
+    "ns": "NTrade",
+    "value": "6"
+  },
+  {
+    "comment": null,
+    "file": "00_defines.txt",
+    "key": "BASE_TRADE_CAPACITY",
+    "ns": "NTrade",
+    "value": "35"
+  },
+  {
+    "comment": "Values against which an agent's skill is compared to determine aptitude level",
+    "file": "00_defines.txt",
+    "key": "TRADER_APTITUDE_LEVEL_BREAKPOINTS",
+    "ns": "NTrade",
+    "value": "{ 5 8 13 21 }"
+  },
+  {
+    "comment": "Portrait animation used by trade tasks that do not define one",
+    "file": "00_defines.txt",
+    "key": "DEFAULT_TRADE_TASK_ANIMATION",
+    "ns": "NTrade",
+    "value": "idle"
+  },
+  {
+    "comment": "Scales the overall buy price of trade goods in a market; must be >= 0.0",
+    "file": "00_defines.txt",
+    "key": "BUY_PRICE_SCALAR",
+    "ns": "NTrade",
+    "value": "0.95"
+  },
+  {
+    "comment": "Scales the overall sell price of trade goods in a market; must be >= 0.0",
+    "file": "00_defines.txt",
+    "key": "SELL_PRICE_SCALAR",
+    "ns": "NTrade",
+    "value": "1.0"
+  },
+  {
+    "comment": "Prosperity level at which the buy price is unaffected; 0.0 <= x <= 100.0",
+    "file": "00_defines.txt",
+    "key": "BUY_PRICE_PROSPERITY_BASELINE",
+    "ns": "NTrade",
+    "value": "50.0"
+  },
+  {
+    "comment": "Buy price change per prosperity point above the baseline; positive = more expensive in prosperous markets",
+    "file": "00_defines.txt",
+    "key": "BUY_PRICE_PROSPERITY_ABOVE_BASELINE_MULT",
+    "ns": "NTrade",
+    "value": "0.0"
+  },
+  {
+    "comment": "Buy price change per prosperity point below the baseline; positive = cheaper in poor markets",
+    "file": "00_defines.txt",
+    "key": "BUY_PRICE_PROSPERITY_BELOW_BASELINE_MULT",
+    "ns": "NTrade",
+    "value": "0.003"
+  },
+  {
+    "comment": "Prosperity level at which the sell price is unaffected; 0.0 <= x <= 100.0",
+    "file": "00_defines.txt",
+    "key": "SELL_PRICE_PROSPERITY_BASELINE",
+    "ns": "NTrade",
+    "value": "0.0"
+  },
+  {
+    "comment": "Sell price change per point above the baseline, positive means goods fetch more in prosperous markets",
+    "file": "00_defines.txt",
+    "key": "SELL_PRICE_PROSPERITY_ABOVE_BASELINE_MULT",
+    "ns": "NTrade",
+    "value": "0.005"
+  },
+  {
+    "comment": "Sell price change per prosperity point below the baseline; positive = goods sell for less in poor markets",
+    "file": "00_defines.txt",
+    "key": "SELL_PRICE_PROSPERITY_BELOW_BASELINE_MULT",
+    "ns": "NTrade",
+    "value": "0.0"
+  },
+  {
+    "comment": null,
+    "file": "00_defines.txt",
+    "key": "MAX_RECOMMENDED_GOODS",
+    "ns": "NTrade",
+    "value": "5"
+  },
+  {
+    "comment": null,
+    "file": "00_defines.txt",
+    "key": "RECOMMENDED_GOODS_TO_SHOW_ON_MAP",
+    "ns": "NTrade",
+    "value": "2"
+  },
+  {
+    "comment": "Number of goods listed in the trade market tooltip's \"Known for\" line, ranked by surplus descending",
+    "file": "00_defines.txt",
+    "key": "TOP_GOODS_BY_SURPLUS_COUNT",
+    "ns": "NTrade",
+    "value": "3"
+  },
+  {
+    "comment": "Goods shown per row on the distribution trade market map icon; the rest are counted in a \"more\" tooltip",
+    "file": "00_defines.txt",
+    "key": "GOODS_TO_SHOW_ON_MAP_ICON",
+    "ns": "NTrade",
+    "value": "4"
+  },
+  {
+    "comment": "Unmet needs listed in the holding view's market needs tooltip; the rest go behind its \"and X more\" row",
+    "file": "00_defines.txt",
+    "key": "NEEDS_TO_SHOW_IN_HOLDING_TOOLTIP",
+    "ns": "NTrade",
+    "value": "8"
+  },
+  {
+    "comment": "Base number of trade posts a character's merchant company (title) can have before getting penalized for it.",
+    "file": "00_defines.txt",
+    "key": "BASE_TRADE_POST_LIMIT",
+    "ns": "NTrade",
+    "value": "2"
+  },
+  {
+    "comment": "How much XP to get per month as a base",
+    "file": "00_defines.txt",
+    "key": "TRADE_CATEGORY_BASE_MONTHLY_XP_GAIN",
+    "ns": "NTrade",
+    "value": "15"
+  },
+  {
+    "comment": "Monthly XP lost if the category has XP stored but no active route trading that category",
+    "file": "00_defines.txt",
+    "key": "TRADE_CATEGORY_BASE_MONTHLY_XP_DECLINE",
+    "ns": "NTrade",
+    "value": "15"
+  },
+  {
+    "comment": "How much XP is needed to level your trade category xp track - if this is 100 and xp is 230 - you're level 2",
+    "file": "00_defines.txt",
+    "key": "TRADE_CATEGORY_XP_LEVEL_THRESHOLD",
+    "ns": "NTrade",
+    "value": "150"
+  },
+  {
+    "comment": "Minimum absolute monthly change in a player route's gold income before a feed notification fires",
+    "file": "00_defines.txt",
+    "key": "TRADE_ROUTE_VALUE_CHANGE_NOTIFICATION_THRESHOLD",
+    "ns": "NTrade",
+    "value": "0.05"
+  },
+  {
+    "comment": "Share of a route's monthly income change one factor must cover before the notification names it. 0 names every factor, 1 only a factor covering the whole change",
+    "file": "00_defines.txt",
+    "key": "TRADE_ROUTE_INCOME_CAUSE_MIN_SHARE_OF_CHANGE",
+    "ns": "NTrade",
+    "value": "0.01"
+  },
+  {
+    "comment": "How long should the cooldown be to change the toll levels in a market? Number is in months.",
+    "file": "00_defines.txt",
+    "key": "CHANGE_TOLL_LEVEL_COOLDOWN",
+    "ns": "NTrade",
+    "value": "36"
+  },
+  {
+    "comment": "How long should a toll exception be valid if no duration is specified? Number is in years.",
+    "file": "00_defines.txt",
+    "key": "DEFAULT_TOLL_EXCEPTION_DURATION",
+    "ns": "NTrade",
+    "value": "10"
+  },
+  {
+    "comment": "Starting toll level, must be a valid index in the toll level database or we use 0",
+    "file": "00_defines.txt",
+    "key": "DEFAULT_TOLL_LEVEL",
+    "ns": "NTrade",
+    "value": "3"
+  },
+  {
+    "comment": "Minimum tier required to be able to use Distribution routes",
+    "file": "00_defines.txt",
+    "key": "MIN_DISTRIBUTION_ROUTE_TIER",
+    "ns": "NTrade",
+    "value": "duchy"
+  },
+  {
+    "comment": "How many months can a commission route remain idle before being automatically destroyed?",
+    "file": "00_defines.txt",
+    "key": "MAX_COMMISSION_IDLE_TIME",
+    "ns": "NTrade",
+    "value": "3"
+  },
+  {
+    "comment": "How many other marriage recipient characters should a merchant try to find in their traded markets?",
+    "file": "00_defines.txt",
+    "key": "MIN_MERCHANT_MARRIAGE_CANDIDATES",
+    "ns": "NTrade",
+    "value": "3"
+  },
+  {
+    "comment": null,
+    "file": "00_defines.txt",
+    "key": "MAX_ROAD_TIER",
+    "ns": "NRoad",
+    "value": "5"
+  },
+  {
+    "comment": "If there is this amount of active trade routes, it will skip regular construction time",
+    "file": "00_defines.txt",
+    "key": "ROAD_TIER_TRADE_THRESHOLD",
+    "ns": "NRoad",
+    "value": "{ 20 50 80 100 200 0 }"
+  },
+  {
+    "comment": null,
+    "file": "00_defines.txt",
+    "key": "ROAD_TIER_CONSTRUCTION_TIME_MONTHS",
+    "ns": "NRoad",
+    "value": "{…}"
+  },
+  {
+    "comment": "Months without a trade route before a road drops a tier",
+    "file": "00_defines.txt",
+    "key": "ROAD_TIER_DECAY_TIME_MONTHS",
+    "ns": "NRoad",
+    "value": "48"
+  },
+  {
     "comment": "Number of days between recalculating short  tasks (per tier)",
     "file": "ai/00_ai.txt",
     "key": "SHORT_TASK_TICK",
@@ -7338,6 +8297,27 @@
   {
     "comment": null,
     "file": "ai/00_ai.txt",
+    "key": "MERCHANT_TRADE_ROUTE_EDITING_TASK_TICK",
+    "ns": "NAI",
+    "value": "{…}"
+  },
+  {
+    "comment": null,
+    "file": "ai/00_ai.txt",
+    "key": "REPUBLIC_TRADE_ROUTE_EDITING_TASK_TICK",
+    "ns": "NAI",
+    "value": "{…}"
+  },
+  {
+    "comment": null,
+    "file": "ai/00_ai.txt",
+    "key": "DISTRIBUTION_TRADE_ROUTE_EDITING_TASK_TICK",
+    "ns": "NAI",
+    "value": "{…}"
+  },
+  {
+    "comment": null,
+    "file": "ai/00_ai.txt",
     "key": "MINIMUM_TASKS_IN_TICK",
     "ns": "NAI",
     "value": "128"
@@ -7380,6 +8360,13 @@
   {
     "comment": null,
     "file": "ai/00_ai.txt",
+    "key": "MIN_RESERVED_GOLD_CLERICAL_REGION_HOLDER",
+    "ns": "NAI",
+    "value": "0"
+  },
+  {
+    "comment": null,
+    "file": "ai/00_ai.txt",
     "key": "MIN_RESERVED_GOLD_SPIRITUAL_HEAD_OF_FAITH",
     "ns": "NAI",
     "value": "750"
@@ -7390,6 +8377,27 @@
     "key": "MIN_RESERVED_GOLD_HOLY_ORDER",
     "ns": "NAI",
     "value": "500"
+  },
+  {
+    "comment": null,
+    "file": "ai/00_ai.txt",
+    "key": "MIN_RESERVED_TREASURY_CLERICAL_REGION_HOLDER",
+    "ns": "NAI",
+    "value": "0"
+  },
+  {
+    "comment": null,
+    "file": "ai/00_ai.txt",
+    "key": "MIN_RESERVED_TREASURY_SPIRITUAL_HEAD_OF_FAITH",
+    "ns": "NAI",
+    "value": "750"
+  },
+  {
+    "comment": null,
+    "file": "ai/00_ai.txt",
+    "key": "MIN_RESERVED_TREASURY_HOLY_ORDER",
+    "ns": "NAI",
+    "value": "1500"
   },
   {
     "comment": null,
@@ -7459,7 +8467,7 @@
     "file": "ai/00_ai.txt",
     "key": "MEN_AT_ARMS_STATIONED_MODIFIER_SCORE_MULTIPLIER",
     "ns": "NAI",
-    "value": "{ 0 0 2 1.5 1 1 }"
+    "value": "{ 0 0 2 1.5 1 1 0 0 2.5 0 }"
   },
   {
     "comment": null,
@@ -9109,6 +10117,13 @@
   {
     "comment": null,
     "file": "ai/00_ai.txt",
+    "key": "GATHERING_PROVINCE_RECOMPUTE_DAYS_FOR_GREAT_HOLY_WAR",
+    "ns": "NAI",
+    "value": "7"
+  },
+  {
+    "comment": null,
+    "file": "ai/00_ai.txt",
     "key": "MAX_STAGING_DAYS_FOR_GREAT_HOLY_WAR",
     "ns": "NAI",
     "value": "300"
@@ -9119,6 +10134,34 @@
     "key": "MIN_POWER_ARRIVED_TO_STOP_STAGING_FOR_GREAT_HOLY_WAR",
     "ns": "NAI",
     "value": "0.9"
+  },
+  {
+    "comment": null,
+    "file": "ai/00_ai.txt",
+    "key": "MIN_YEARS_BETWEEN_RITE_CHANGE",
+    "ns": "NAI",
+    "value": "5"
+  },
+  {
+    "comment": null,
+    "file": "ai/00_ai.txt",
+    "key": "AI_ADDITIONAL_MONTHS_OF_GROSS_INCOME",
+    "ns": "NAI",
+    "value": "6"
+  },
+  {
+    "comment": null,
+    "file": "ai/00_ai.txt",
+    "key": "AI_BOLDNESS_ADJUSTMENT_FACTOR_POTENTIAL_MERC_POWER",
+    "ns": "NAI",
+    "value": "1.0"
+  },
+  {
+    "comment": null,
+    "file": "ai/00_ai.txt",
+    "key": "AI_APPLY_POTENTIAL_MERCS_TO_MILITARY_STRENGTH_CURRENCY_THRESHOLD",
+    "ns": "NAI",
+    "value": "50"
   },
   {
     "comment": null,
@@ -9275,6 +10318,69 @@
     "value": "1.3"
   },
   {
+    "comment": "Number of batches for parallel AI trade route setup at game start. A merchant only sees what earlier batches picked, so more batches spread a market's goods more evenly. Results are in debug.log",
+    "file": "ai/00_ai.txt",
+    "key": "AI_TRADE_ROUTE_SEEDING_BATCH_COUNT",
+    "ns": "NTrade",
+    "value": "10"
+  },
+  {
+    "comment": "How many consecutive months an AI trade route may trade nothing before it is abandoned for greener pastures",
+    "file": "ai/00_ai.txt",
+    "key": "AI_ABANDON_IDLE_TRADE_ROUTE_MONTHS",
+    "ns": "NTrade",
+    "value": "3"
+  },
+  {
+    "comment": "Top-scoring goods the AI looks for a counterpart market for. Each one scans every market in range, so cost grows almost linearly with this number",
+    "file": "ai/00_ai.txt",
+    "key": "AI_TRADE_GOOD_COUNTERPART_EVAL_COUNT",
+    "ns": "NTrade",
+    "value": "8"
+  },
+  {
+    "comment": "Goods scoring at least this share of the best are picked at random, so alike merchants do not all choose alike. 1.0 makes the AI always take the best",
+    "file": "ai/00_ai.txt",
+    "key": "AI_TRADE_GOOD_PICK_VARIANCE_BASELINE",
+    "ns": "NTrade",
+    "value": "0.6"
+  },
+  {
+    "comment": "Score multiplier for a good no home-market route carries yet, so a busy market fills out its goods instead of stacking onto the dearest few. 1.0 disables it",
+    "file": "ai/00_ai.txt",
+    "key": "AI_TRADE_GOOD_UNTRADED_IN_MARKET_MULT",
+    "ns": "NTrade",
+    "value": "3.0"
+  },
+  {
+    "comment": "Months between profit route creation checks, spread so the same share of characters checks each month",
+    "file": "ai/00_ai.txt",
+    "key": "AI_PROFIT_TRADE_ROUTE_CREATION_INTERVAL_MONTHS",
+    "ns": "NTrade",
+    "value": "6"
+  },
+  {
+    "comment": "Months between distribution route creation checks, spread so the same share of characters checks each month",
+    "file": "ai/00_ai.txt",
+    "key": "AI_DISTRIBUTION_TRADE_ROUTE_CREATION_INTERVAL_MONTHS",
+    "ns": "NTrade",
+    "value": "6"
+  },
+  {
+    "comment": null,
+    "file": "ai/00_ai.txt",
+    "key": "AI_MAX_MERCHANT_TRADE_ROUTE_LENGTH_PER_COMPANY_SIZE",
+    "ns": "NTrade",
+    "value": "{…}"
+  },
+  {
+    "comment": null,
+    "file": "ai/00_ai.txt",
+    "key": "AI_MAX_REPUBLIC_TRADE_ROUTE_LENGTH",
+    "ns": "NTrade",
+    "value": "{…}"
+  },
+  {
     "comment": null,
     "file": "audio/00_audio.txt",
     "key": "RANGE_MIN",
@@ -9345,6 +10451,69 @@
     "value": "event:/SFX/UI/Generic/sfx_ui_generic_confirm"
   },
   {
+    "comment": "fallback for trade goods without a dedicated ep5_uix_<trade good key> event",
+    "file": "audio/00_audio.txt",
+    "key": "SELECT_TRADE_GOOD_DEFAULT",
+    "ns": "NGameAudioEffects",
+    "value": "event:/SFX/UI/Generic/sfx_ui_generic_select"
+  },
+  {
+    "comment": "confirming creation of a new trade route in the planner",
+    "file": "audio/00_audio.txt",
+    "key": "CREATE_TRADE_ROUTE",
+    "ns": "NGameAudioEffects",
+    "value": "event:/DLC/EP5/SFX/UIX/ep5_uix_trade_route_create"
+  },
+  {
+    "comment": "confirming changes to an existing trade route in the planner",
+    "file": "audio/00_audio.txt",
+    "key": "CHANGE_TRADE_ROUTE",
+    "ns": "NGameAudioEffects",
+    "value": "event:/DLC/EP5/SFX/UIX/ep5_uix_trade_route_change"
+  },
+  {
+    "comment": "clicking a market on the map to add it to the route in the planner",
+    "file": "audio/00_audio.txt",
+    "key": "ADD_TRADE_STOP",
+    "ns": "NGameAudioEffects",
+    "value": "event:/SFX/UI/Generic/sfx_ui_generic_increment"
+  },
+  {
+    "comment": "clicking a market on the map to remove it from the route in the planner",
+    "file": "audio/00_audio.txt",
+    "key": "REMOVE_TRADE_STOP",
+    "ns": "NGameAudioEffects",
+    "value": "event:/SFX/UI/Generic/sfx_ui_generic_decrement"
+  },
+  {
+    "comment": "confirming a company size law enactment",
+    "file": "audio/00_audio.txt",
+    "key": "COMPANY_SIZE_INCREASE",
+    "ns": "NGameAudioEffects",
+    "value": "event:/DLC/EP5/SFX/UIX/ep5_uix_merchants_company_size_increase"
+  },
+  {
+    "comment": "confirming a republic tier law enactment",
+    "file": "audio/00_audio.txt",
+    "key": "REPUBLIC_TIER_INCREASE",
+    "ns": "NGameAudioEffects",
+    "value": "event:/DLC/EP5/SFX/UIX/ep5_uix_republic_tier_increase"
+  },
+  {
+    "comment": "confirming a law proposal",
+    "file": "audio/00_audio.txt",
+    "key": "PROPOSE_LAW",
+    "ns": "NGameAudioEffects",
+    "value": "event:/DLC/EP5/SFX/UIX/ep5_uix_law_proposed"
+  },
+  {
+    "comment": null,
+    "file": "audio/00_audio.txt",
+    "key": "DEFAULT",
+    "ns": "NTextLinkAudio",
+    "value": "event:/SFX/UI/Generic/Windows/sfx_ui_generic_window_standard_show"
+  },
+  {
     "comment": null,
     "file": "audio/00_audio.txt",
     "key": "CHARACTER",
@@ -9411,6 +10580,20 @@
     "comment": null,
     "file": "audio/00_audio.txt",
     "key": "SITUATION",
+    "ns": "NTextLinkAudio",
+    "value": "event:/SFX/UI/Generic/sfx_ui_generic_select"
+  },
+  {
+    "comment": null,
+    "file": "audio/00_audio.txt",
+    "key": "ARTIFACT",
+    "ns": "NTextLinkAudio",
+    "value": "event:/SFX/UI/Generic/sfx_ui_generic_select"
+  },
+  {
+    "comment": null,
+    "file": "audio/00_audio.txt",
+    "key": "HOLY_SITE",
     "ns": "NTextLinkAudio",
     "value": "event:/SFX/UI/Generic/sfx_ui_generic_select"
   },
@@ -9651,6 +10834,13 @@
     "key": "NULL_MESH",
     "ns": "NJominiGraphics",
     "value": "test_object_mesh"
+  },
+  {
+    "comment": null,
+    "file": "graphic/00_graphics.txt",
+    "key": "ILLUSTRATION_STREAM_PATHS",
+    "ns": "NJominiGraphics",
+    "value": "{ \"/illustrations/\" \"icons/achievements/\" \"icons/artifact/\" \"icons/culture_tradition/\" \"gfx/portraits/environments/\" \"/icons/culture_pillars/\" \"/icons/powerful_family_bonus/\" \"/icons/tutorial_\" \"gfx/portraits/portrait_glow\" \"gfx/portraits/portrait_editor_mask\" \"gfx/portraits/portrait_prison_\" \"gfx/portraits/portrait_rank\" \"gfx/portraits/portrait_main_menu_shadow\" }"
   },
   {
     "comment": "higher means softer shadows and more intense light",
@@ -9940,11 +11130,53 @@
     "value": "{ 0.0 0.3 0.6 1.0 }"
   },
   {
+    "comment": "Day where tree autumn colors start ( 0 before this day and from 1 Jan )",
+    "file": "graphic/00_graphics.txt",
+    "key": "AUTUMN_START_DAY",
+    "ns": "NGraphics",
+    "value": "244"
+  },
+  {
+    "comment": "Day where tree autumn colors are at full strength, held until 31 Dec",
+    "file": "graphic/00_graphics.txt",
+    "key": "AUTUMN_PEAK_DAY",
+    "ns": "NGraphics",
+    "value": "305"
+  },
+  {
+    "comment": "Fade speed of tree autumn colors toward the date-based target",
+    "file": "graphic/00_graphics.txt",
+    "key": "AUTUMN_FADE_SPEED",
+    "ns": "NGraphics",
+    "value": "0.2"
+  },
+  {
     "comment": null,
     "file": "graphic/00_graphics.txt",
     "key": "ERRORHOOF_DIVISOR",
     "ns": "NGraphics",
     "value": "100"
+  },
+  {
+    "comment": "Land road strip width per tier, in spline style width units",
+    "file": "graphic/00_graphics.txt",
+    "key": "ROAD_TIER_WIDTH",
+    "ns": "NGraphics",
+    "value": "{ 0 2 2.3 2.8 3.3 3.8 }"
+  },
+  {
+    "comment": "Land road strip width per tier, in trade route planner mode.",
+    "file": "graphic/00_graphics.txt",
+    "key": "ROAD_PLANNER_TIER_WIDTH",
+    "ns": "NGraphics",
+    "value": "{ 0 5 6 7 8 9 }"
+  },
+  {
+    "comment": "How far along the road one style fades into the next, in world units. A province is about 30 across, and 0 turns blending off",
+    "file": "graphic/00_graphics.txt",
+    "key": "ROAD_JUNCTION_BLEND_RADIUS",
+    "ns": "NGraphics",
+    "value": "20"
   },
   {
     "comment": "Remove the terrain rendering beneath the ocean and the color overlay to improve performance",
@@ -10598,6 +11830,20 @@
     "value": "{ 0 0 1 }"
   },
   {
+    "comment": "Highlight color when hovering a trade market. Needs contrast against the Markets map mode, which already paints each province in its own market's color",
+    "file": "graphic/00_graphics.txt",
+    "key": "TRADE_MARKET_HIGHLIGHT_COLOR",
+    "ns": "NMapColors",
+    "value": "{ 1 0.85 0.25 }"
+  },
+  {
+    "comment": "When a text link to a region is clicked, this is the color we use",
+    "file": "graphic/00_graphics.txt",
+    "key": "GEOGRAPHICAL_REGION_HIGHLIGHT_COLOR",
+    "ns": "NMapColors",
+    "value": "{ 0.2 0.75 1.0 }"
+  },
+  {
     "comment": "Transparency of the map highlight color overlay",
     "file": "graphic/00_graphics.txt",
     "key": "MAP_HIGHLIGHT_ALPHA",
@@ -10892,6 +12138,69 @@
     "value": "{ 1.0 1.0 }"
   },
   {
+    "comment": null,
+    "file": "graphic/00_graphics.txt",
+    "key": "OVERRIDE_DYNASTY_COA_FRAME_NAME",
+    "ns": "NCoatOfArms",
+    "value": ""
+  },
+  {
+    "comment": null,
+    "file": "graphic/00_graphics.txt",
+    "key": "OVERRIDE_DYNASTY_COA_FRAME_OFFSET",
+    "ns": "NCoatOfArms",
+    "value": "{ 0.0 0.0 }"
+  },
+  {
+    "comment": null,
+    "file": "graphic/00_graphics.txt",
+    "key": "OVERRIDE_DYNASTY_COA_FRAME_SCALE",
+    "ns": "NCoatOfArms",
+    "value": "{ 1.0 1.0 }"
+  },
+  {
+    "comment": null,
+    "file": "graphic/00_graphics.txt",
+    "key": "OVERRIDE_HOUSE_COA_FRAME_NAME",
+    "ns": "NCoatOfArms",
+    "value": ""
+  },
+  {
+    "comment": null,
+    "file": "graphic/00_graphics.txt",
+    "key": "OVERRIDE_HOUSE_COA_FRAME_OFFSET",
+    "ns": "NCoatOfArms",
+    "value": "{ 0.0 0.0 }"
+  },
+  {
+    "comment": null,
+    "file": "graphic/00_graphics.txt",
+    "key": "OVERRIDE_HOUSE_COA_FRAME_SCALE",
+    "ns": "NCoatOfArms",
+    "value": "{ 1.0 1.0 }"
+  },
+  {
+    "comment": null,
+    "file": "graphic/00_graphics.txt",
+    "key": "OVERRIDE_REALM_MASK_ENABLED",
+    "ns": "NCoatOfArms",
+    "value": "no"
+  },
+  {
+    "comment": null,
+    "file": "graphic/00_graphics.txt",
+    "key": "OVERRIDE_REALM_MASK_OFFSET",
+    "ns": "NCoatOfArms",
+    "value": "{ 0.0 0.0 }"
+  },
+  {
+    "comment": null,
+    "file": "graphic/00_graphics.txt",
+    "key": "OVERRIDE_REALM_MASK_SCALE",
+    "ns": "NCoatOfArms",
+    "value": "{ 1.0 1.0 }"
+  },
+  {
     "comment": "The maximal distance the unit will move towards the province borders before actually changing the location",
     "file": "graphic/00_graphics.txt",
     "key": "UNIT_MOVEMENT_MAX_BORDER_DISTANCE",
@@ -10973,7 +12282,7 @@
     "file": "graphic/00_graphics.txt",
     "key": "UNIT_SCALE_PER_ZOOM_STEP",
     "ns": "NTravelRouteGraphics",
-    "value": "{ 1.0 1.0 1.1 1.2  1.4  1.6  1.8  2.0 2.2  2.4  2.6  2.8  2.1  1.4  0.7  0.0  0.0  0.0  0.0  0.0 }"
+    "value": "{ 1.0 1.0 1.1 1.2 1.2 1.2 1.0 1.0 0.5 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 }"
   },
   {
     "comment": "Speed of the travel unit when animating between daily steps",
@@ -10995,6 +12304,48 @@
     "key": "UNIT_MOVEMENT_CATCHUP_SPEED",
     "ns": "NTravelRouteGraphics",
     "value": "120"
+  },
+  {
+    "comment": null,
+    "file": "graphic/00_graphics.txt",
+    "key": "ENTITY_HIDE_ZOOM_STEP",
+    "ns": "NTradeRouteGraphics",
+    "value": "8"
+  },
+  {
+    "comment": null,
+    "file": "graphic/00_graphics.txt",
+    "key": "OTHER_ENTITY_MAX_ROUTES",
+    "ns": "NTradeRouteGraphics",
+    "value": "10"
+  },
+  {
+    "comment": null,
+    "file": "graphic/00_graphics.txt",
+    "key": "OTHER_ENTITY_MIN_ROAD_TIER",
+    "ns": "NTradeRouteGraphics",
+    "value": "1"
+  },
+  {
+    "comment": null,
+    "file": "graphic/00_graphics.txt",
+    "key": "OTHER_ENTITY_VIEW_MARGIN",
+    "ns": "NTradeRouteGraphics",
+    "value": "10.0"
+  },
+  {
+    "comment": null,
+    "file": "graphic/00_graphics.txt",
+    "key": "TRADE_POSSIBLE_TRADES_TO_SHOW",
+    "ns": "NTradeRouteGraphics",
+    "value": "3"
+  },
+  {
+    "comment": null,
+    "file": "graphic/00_graphics.txt",
+    "key": "TRADE_BEST_TRADES_TO_SHOW",
+    "ns": "NTradeRouteGraphics",
+    "value": "5"
   },
   {
     "comment": "If the balance of the combat is within this range around 50% (0.5) the prediction is considered undecided",
@@ -11197,7 +12548,7 @@
     "file": "graphic/00_graphics.txt",
     "key": "OTHER_REALM_COLOR",
     "ns": "NMapModes",
-    "value": "{ 0.25 0.25 0.2 1.0 }"
+    "value": "{ 0.29 0.25 0.2 1.0 }"
   },
   {
     "comment": "My Realm (international)",
@@ -11305,16 +12656,16 @@
     "value": "0.998"
   },
   {
-    "comment": "map color for 0-development county",
+    "comment": "map color for 0-prosperity county",
     "file": "graphic/00_graphics.txt",
-    "key": "COUNCIL_DEVELOPMENT_LOW",
+    "key": "COUNCIL_PROSPERITY_LOW",
     "ns": "NMapModes",
     "value": "{ .4 0 0.2 1 }"
   },
   {
-    "comment": "map color for max development county",
+    "comment": "map color for max prosperity county",
     "file": "graphic/00_graphics.txt",
-    "key": "COUNCIL_DEVELOPMENT_HIGH",
+    "key": "COUNCIL_PROSPERITY_HIGH",
     "ns": "NMapModes",
     "value": "{ 0.9 0.9 0 1 }"
   },
@@ -11767,6 +13118,188 @@
     "value": "{ 0.0 1.0 1.0 1 }"
   },
   {
+    "comment": "Building a resource building",
+    "file": "graphic/00_graphics.txt",
+    "key": "DEBUG_RESOURCE_BUILDING_COLOR",
+    "ns": "NMapModes",
+    "value": "{ 1.0 0.0 1.0 1 }"
+  },
+  {
+    "comment": "Building a trade post building",
+    "file": "graphic/00_graphics.txt",
+    "key": "DEBUG_TRADE_POST_BUILDING_COLOR",
+    "ns": "NMapModes",
+    "value": "{ 0.025 0.5 1.0 1 }"
+  },
+  {
+    "comment": "Building an entrepot building",
+    "file": "graphic/00_graphics.txt",
+    "key": "DEBUG_ENTREPOT_BUILDING_COLOR",
+    "ns": "NMapModes",
+    "value": "{ 0.5 0.75 0.0 1 }"
+  },
+  {
+    "comment": "The zoom level (more zoomed in) to automatically show Rites in the Faith map mode of the selected faith",
+    "file": "graphic/00_graphics.txt",
+    "key": "FAITH_SHOW_RITE_ZOOM_STEP",
+    "ns": "NMapModes",
+    "value": "27"
+  },
+  {
+    "comment": "Which province effect to use for heretical rites on the map",
+    "file": "graphic/00_graphics.txt",
+    "key": "RITE_DIVERGENCE_MAP_PROVINCE_EFFECT",
+    "ns": "NMapModes",
+    "value": "divergent_rites"
+  },
+  {
+    "comment": "Which province effect to use for heretical rites on the map",
+    "file": "graphic/00_graphics.txt",
+    "key": "RITE_DIVERGENCE_MAP_PROVINCE_EFFECT_FLAT_MAP",
+    "ns": "NMapModes",
+    "value": "divergent_rites"
+  },
+  {
+    "comment": null,
+    "file": "graphic/00_graphics.txt",
+    "key": "TRADE_GOOD_OUT_OF_RANGE_FACTOR",
+    "ns": "NMapModes",
+    "value": "0.8"
+  },
+  {
+    "comment": null,
+    "file": "graphic/00_graphics.txt",
+    "key": "TRADE_GOOD_DEFAULT",
+    "ns": "NMapModes",
+    "value": "{ 0.5 0.5 0.5 1 }"
+  },
+  {
+    "comment": "map color for small surplus (can buy)",
+    "file": "graphic/00_graphics.txt",
+    "key": "TRADE_GOOD_SURPLUS_LOW",
+    "ns": "NMapModes",
+    "value": "{ 0.70 0.88 0.90 1 }"
+  },
+  {
+    "comment": null,
+    "file": "graphic/00_graphics.txt",
+    "key": "TRADE_GOOD_SURPLUS_MEDIUM",
+    "ns": "NMapModes",
+    "value": "{ 0.25 0.7 0.75 1 }"
+  },
+  {
+    "comment": "map color for large surplus (can buy)",
+    "file": "graphic/00_graphics.txt",
+    "key": "TRADE_GOOD_SURPLUS_HIGH",
+    "ns": "NMapModes",
+    "value": "{ 0.00 0.32 0.55 1 }"
+  },
+  {
+    "comment": "map color for small need (can sell)",
+    "file": "graphic/00_graphics.txt",
+    "key": "TRADE_GOOD_NEED_LOW",
+    "ns": "NMapModes",
+    "value": "{ 0.90 0.86 0.70 1 }"
+  },
+  {
+    "comment": null,
+    "file": "graphic/00_graphics.txt",
+    "key": "TRADE_GOOD_NEED_MEDIUM",
+    "ns": "NMapModes",
+    "value": "{ 0.89 0.59 0.06 1 }"
+  },
+  {
+    "comment": "map color for large need (can sell)",
+    "file": "graphic/00_graphics.txt",
+    "key": "TRADE_GOOD_NEED_HIGH",
+    "ns": "NMapModes",
+    "value": "{ 0.55 0.18 0.00 1 }"
+  },
+  {
+    "comment": "map color for a province whose county could produce the focused good",
+    "file": "graphic/00_graphics.txt",
+    "key": "TRADE_GOOD_POTENTIAL",
+    "ns": "NMapModes",
+    "value": "{ 0.92 0.80 0.20 1 }"
+  },
+  {
+    "comment": "map color when nothing relevant is produced",
+    "file": "graphic/00_graphics.txt",
+    "key": "TRADE_GOOD_NOT_PRODUCING",
+    "ns": "NMapModes",
+    "value": "{ 0.22 0.22 0.22 1 }"
+  },
+  {
+    "comment": "map color for markets a profit route can start from",
+    "file": "graphic/00_graphics.txt",
+    "key": "TRADE_GOOD_START_MARKET",
+    "ns": "NMapModes",
+    "value": "{ 0.35 0.72 0.30 1 }"
+  },
+  {
+    "comment": "Share of the largest producer that reads as the medium surplus color; 0.5 spreads the ramp evenly",
+    "file": "graphic/00_graphics.txt",
+    "key": "TRADE_GOOD_PRODUCTION_RAMP_MIDPOINT",
+    "ns": "NMapModes",
+    "value": "0.15"
+  },
+  {
+    "comment": null,
+    "file": "graphic/00_graphics.txt",
+    "key": "TRADE_MONOPOLY_COLOR",
+    "ns": "NMapModes",
+    "value": "{ 0.1 0.1 0.1 1 }"
+  },
+  {
+    "comment": "In distribution mode, how far a small buyable surplus fades toward grey. 1 is fully grey and 0 is full teal, so tiny surpluses keep a faint teal",
+    "file": "graphic/00_graphics.txt",
+    "key": "TRADE_GOOD_SURPLUS_FADE_FACTOR",
+    "ns": "NMapModes",
+    "value": "0.8"
+  },
+  {
+    "comment": "In profit mode, this share of base price is added to each market's price difference from base, so volume still counts at base price. 0 means volume adds nothing at base price",
+    "file": "graphic/00_graphics.txt",
+    "key": "TRADE_GOOD_PROFIT_BASE_PRICE_SHARE",
+    "ns": "NMapModes",
+    "value": "0.1"
+  },
+  {
+    "comment": "Should match size of POPULAR_OPINION_THRESHOLDS",
+    "file": "graphic/00_graphics.txt",
+    "key": "POPULAR_OPINION_COLORS",
+    "ns": "NMapModes",
+    "value": "{…}"
+  },
+  {
+    "comment": null,
+    "file": "graphic/00_graphics.txt",
+    "key": "SETTLEMENT_SIZE_EMPTY",
+    "ns": "NMapModes",
+    "value": "{ 0.5 0.5 0.5 1 }"
+  },
+  {
+    "comment": null,
+    "file": "graphic/00_graphics.txt",
+    "key": "SETTLEMENT_SIZE_SMALL",
+    "ns": "NMapModes",
+    "value": "{ 0.2 0.1 0.1 1 }"
+  },
+  {
+    "comment": null,
+    "file": "graphic/00_graphics.txt",
+    "key": "SETTLEMENT_SIZE_MEDIUM",
+    "ns": "NMapModes",
+    "value": "{ 0.8 0.8 0.1 1 }"
+  },
+  {
+    "comment": null,
+    "file": "graphic/00_graphics.txt",
+    "key": "SETTLEMENT_SIZE_LARGE",
+    "ns": "NMapModes",
+    "value": "{ 0.1 1.0 0.1 1 }"
+  },
+  {
     "comment": null,
     "file": "graphic/00_graphics.txt",
     "key": "DANGER_TYPE_COLOR_DEFAULT",
@@ -11825,7 +13358,7 @@
   {
     "comment": null,
     "file": "graphic/00_graphics.txt",
-    "key": "DANGER_TYPE_COLOR_COUNTY_OPINION",
+    "key": "DANGER_TYPE_COLOR_POPULAR_OPINION",
     "ns": "NTravel",
     "value": "{ 0.93 0.8 0.6 }"
   },
@@ -12166,11 +13699,25 @@
     "value": "4"
   },
   {
+    "comment": "Longest building upgrade track that still fits beside the building name in the holding view. Longer tracks move to their own row below",
+    "file": "graphic/00_graphics.txt",
+    "key": "MAX_INLINE_BUILDING_TRACK_LENGTH",
+    "ns": "NGui",
+    "value": "8"
+  },
+  {
     "comment": "If a war side has more than this number of people, we cap the list and say \"and x more\"",
     "file": "graphic/00_graphics.txt",
     "key": "MAX_WAR_PARTICIPANTS_IN_TOOLTIP",
     "ns": "NGui",
     "value": "6"
+  },
+  {
+    "comment": "If a stacking modifier has more stacks than this, we cap the list and say \"+x more\"",
+    "file": "graphic/00_graphics.txt",
+    "key": "MAX_MODIFIER_STACKS_IN_TOOLTIP",
+    "ns": "NGui",
+    "value": "10"
   },
   {
     "comment": null,
@@ -12399,6 +13946,62 @@
   {
     "comment": null,
     "file": "graphic/00_graphics.txt",
+    "key": "RITE_CAPITALS_VISIBLE_ZOOM_STEPS",
+    "ns": "NATURAL_DISASTERS_VISIBLE_ZOOM_STEPS",
+    "value": "{ 0 25 }"
+  },
+  {
+    "comment": null,
+    "file": "graphic/00_graphics.txt",
+    "key": "CLERICAL_REGIONS_ELECTORS_VISIBLE_ZOOM_STEPS",
+    "ns": "NATURAL_DISASTERS_VISIBLE_ZOOM_STEPS",
+    "value": "{ 0 25 }"
+  },
+  {
+    "comment": null,
+    "file": "graphic/00_graphics.txt",
+    "key": "TRADE_MARKET_VISIBLE_ZOOM_STEPS",
+    "ns": "NATURAL_DISASTERS_VISIBLE_ZOOM_STEPS",
+    "value": "{ 0 20 }"
+  },
+  {
+    "comment": null,
+    "file": "graphic/00_graphics.txt",
+    "key": "TRADE_MARKET_SMALL_VISIBLE_ZOOM_STEPS",
+    "ns": "NATURAL_DISASTERS_VISIBLE_ZOOM_STEPS",
+    "value": "{ 0 12 }"
+  },
+  {
+    "comment": null,
+    "file": "graphic/00_graphics.txt",
+    "key": "TOP_PRODUCED_GOOD_VISIBLE_ZOOM_STEPS",
+    "ns": "NATURAL_DISASTERS_VISIBLE_ZOOM_STEPS",
+    "value": "{ 0 19 }"
+  },
+  {
+    "comment": null,
+    "file": "graphic/00_graphics.txt",
+    "key": "CLERICAL_REGION_CONVERSION_PROGRESS_VISIBLE_ZOOM_STEPS",
+    "ns": "NATURAL_DISASTERS_VISIBLE_ZOOM_STEPS",
+    "value": "{ 0 21 }"
+  },
+  {
+    "comment": null,
+    "file": "graphic/00_graphics.txt",
+    "key": "RELIGIOUS_HEADS_VISIBLE_ZOOM_STEPS",
+    "ns": "NATURAL_DISASTERS_VISIBLE_ZOOM_STEPS",
+    "value": "{ 0 27 }"
+  },
+  {
+    "comment": null,
+    "file": "graphic/00_graphics.txt",
+    "key": "MAP_ICON_CULL_SCREEN_MARGIN",
+    "ns": "NATURAL_DISASTERS_VISIBLE_ZOOM_STEPS",
+    "value": "100"
+  },
+  {
+    "comment": null,
+    "file": "graphic/00_graphics.txt",
     "key": "DETAILED_RAID_VISIBLE_ZOOM_STEPS",
     "ns": "NATURAL_DISASTERS_VISIBLE_ZOOM_STEPS",
     "value": "{ 0 16 }"
@@ -12506,7 +14109,7 @@
     "file": "graphic/00_graphics.txt",
     "key": "CHARACTER_INTERACTION_CATEGORY_ICON_PATH",
     "ns": "NGameIcons",
-    "value": "gfx/interface/icons/character_interaction_category"
+    "value": "gfx/interface/icons/character_interactions"
   },
   {
     "comment": null,
@@ -12591,6 +14194,20 @@
     "key": "DOCTRINE_GROUP_TYPE_ICON_PATH",
     "ns": "NGameIcons",
     "value": "gfx/interface/icons/faith_doctrine_groups"
+  },
+  {
+    "comment": null,
+    "file": "graphic/00_graphics.txt",
+    "key": "DYNAMIC_RITE_ICON_PATH",
+    "ns": "NGameIcons",
+    "value": "gfx/interface/icons/faith"
+  },
+  {
+    "comment": null,
+    "file": "graphic/00_graphics.txt",
+    "key": "TENET_TYPE_ICON_PATH",
+    "ns": "NGameIcons",
+    "value": "gfx/interface/icons/faith_tenets"
   },
   {
     "comment": null,
@@ -12854,6 +14471,20 @@
   {
     "comment": null,
     "file": "graphic/00_graphics.txt",
+    "key": "TRADE_GOOD_TYPE_ICON_PATH",
+    "ns": "NGameIcons",
+    "value": "gfx/interface/icons/trade/trade_goods"
+  },
+  {
+    "comment": null,
+    "file": "graphic/00_graphics.txt",
+    "key": "TRADE_GOOD_CATEGORY_TYPE_ICON_PATH",
+    "ns": "NGameIcons",
+    "value": "gfx/interface/icons/trade/trade_good_categories"
+  },
+  {
+    "comment": null,
+    "file": "graphic/00_graphics.txt",
     "key": "REGIMENTYPE_HORIZONTAL_IMAGE_PATH",
     "ns": "NGameIcons",
     "value": "gfx/interface/illustrations/men_at_arms_big/"
@@ -12903,9 +14534,9 @@
   {
     "comment": null,
     "file": "graphic/00_graphics.txt",
-    "key": "FAITH_DOCTRINE_BACKGROUND_PATH",
+    "key": "TENET_BACKGROUND_PATH",
     "ns": "NGameIcons",
-    "value": "gfx/interface/icons/faith_doctrines"
+    "value": "gfx/interface/icons/faith_tenets"
   },
   {
     "comment": null,
@@ -13031,14 +14662,14 @@
     "file": "graphic/00_graphics.txt",
     "key": "TRAIT_OVERLAY_VIRTUE",
     "ns": "NGameIcons",
-    "value": "gfx/interface/icons/traits/virtue_big.dds"
+    "value": "gfx/interface/icons/traits/virtue.dds"
   },
   {
     "comment": null,
     "file": "graphic/00_graphics.txt",
     "key": "TRAIT_OVERLAY_SIN",
     "ns": "NGameIcons",
-    "value": "gfx/interface/icons/traits/sin_big.dds"
+    "value": "gfx/interface/icons/traits/sin.dds"
   },
   {
     "comment": "Assumed to be a .dds",
@@ -13379,6 +15010,34 @@
   {
     "comment": null,
     "file": "graphic/00_graphics.txt",
+    "key": "SUCCESSION_RESULT_TYPE_ICON_PATH",
+    "ns": "NGameIcons",
+    "value": "gfx/interface/icons/succession_result_type"
+  },
+  {
+    "comment": null,
+    "file": "graphic/00_graphics.txt",
+    "key": "DYNAMIC_ICON_SIZE",
+    "ns": "NGameDynamicIcons",
+    "value": "{ 25 25 }"
+  },
+  {
+    "comment": null,
+    "file": "graphic/00_graphics.txt",
+    "key": "DYNAMIC_ICON_OFFSET",
+    "ns": "NGameDynamicIcons",
+    "value": "{ 0 6 }"
+  },
+  {
+    "comment": null,
+    "file": "graphic/00_graphics.txt",
+    "key": "DYNAMIC_ICON_FONT_SIZE",
+    "ns": "NGameDynamicIcons",
+    "value": "16"
+  },
+  {
+    "comment": null,
+    "file": "graphic/00_graphics.txt",
     "key": "DEFAULT_COLOR",
     "ns": "NOwnMapMode",
     "value": "{ 0.15 0.15 0.15 1.0 }"
@@ -13437,7 +15096,7 @@
     "file": "graphic/00_graphics.txt",
     "key": "MAX_ACTIVE_SOUND_EFFECTS",
     "ns": "NHoldingGraphics",
-    "value": "5"
+    "value": "30"
   },
   {
     "comment": null,
@@ -14259,6 +15918,104 @@
     "value": "5"
   },
   {
+    "comment": "All holdings will start with this value",
+    "file": "graphic/00_graphics.txt",
+    "key": "SPRAWL_BASE_VALUE",
+    "ns": "NHoldingSprawl",
+    "value": "-10.0"
+  },
+  {
+    "comment": "Start spawning sprawl around holding if population exceeds this value",
+    "file": "graphic/00_graphics.txt",
+    "key": "SPRAWL_SPAWN_THRESHOLD",
+    "ns": "NHoldingSprawl",
+    "value": "10.0"
+  },
+  {
+    "comment": "Add this as a bonus to capital holdings",
+    "file": "graphic/00_graphics.txt",
+    "key": "CAPITAL_HOLDING_SPRAWL_BONUS",
+    "ns": "NHoldingSprawl",
+    "value": "10.0"
+  },
+  {
+    "comment": "Percentage of prosperity that should transform into population (1.0 = 100%)",
+    "file": "graphic/00_graphics.txt",
+    "key": "SPRAWL_PROSPERITY_INTENSITY",
+    "ns": "NHoldingSprawl",
+    "value": "0.2"
+  },
+  {
+    "comment": "Add sprawl per size level of the province",
+    "file": "graphic/00_graphics.txt",
+    "key": "SPRAWL_POPULATION_PER_SIZE",
+    "ns": "NHoldingSprawl",
+    "value": "{ 0.0 8.0 16.0 24.0 32.0 40.0 48.0 56.0 64.0 72.0 80.0 }"
+  },
+  {
+    "comment": "Scale all meshes by this",
+    "file": "graphic/00_graphics.txt",
+    "key": "MESH_SCALE",
+    "ns": "NHoldingSprawl",
+    "value": "1.0"
+  },
+  {
+    "comment": "Disallow any placement of sprawl within border pad",
+    "file": "graphic/00_graphics.txt",
+    "key": "SPRAWL_BORDER_PADDING",
+    "ns": "NHoldingSprawl",
+    "value": "2"
+  },
+  {
+    "comment": "How far to sample for slopes - higher = faster but less accurate - expected range 1-10",
+    "file": "graphic/00_graphics.txt",
+    "key": "SPRAWL_SLOPE_SAMPLE_DISTANCE",
+    "ns": "NHoldingSprawl",
+    "value": "1.0"
+  },
+  {
+    "comment": "Maximum delta allowed to place sprawl",
+    "file": "graphic/00_graphics.txt",
+    "key": "SPRAWL_SLOPE_MAX",
+    "ns": "NHoldingSprawl",
+    "value": "0.5"
+  },
+  {
+    "comment": "Multiplication of boundingsphere to exclude sprawl placement inside",
+    "file": "graphic/00_graphics.txt",
+    "key": "SPRAWL_BASE_HOLDING_RADIUS",
+    "ns": "NHoldingSprawl",
+    "value": "0.4"
+  },
+  {
+    "comment": "Amount of building-cells reserved for resource buildings in sprawl",
+    "file": "graphic/00_graphics.txt",
+    "key": "SPRAWL_RESOURCE_BUILDING_COUNT",
+    "ns": "NHoldingSprawl",
+    "value": "1"
+  },
+  {
+    "comment": "Multiplication of resource building boundingsphere to exclude other sprawl placement inside",
+    "file": "graphic/00_graphics.txt",
+    "key": "SPRAWL_RESOURCE_AVOIDANCE_RADIUS_MULT",
+    "ns": "NHoldingSprawl",
+    "value": "0.7"
+  },
+  {
+    "comment": "Multiplication of special and entrepot district boundingsphere to exclude sprawl placement inside",
+    "file": "graphic/00_graphics.txt",
+    "key": "SPRAWL_DISTRICT_AVOIDANCE_RADIUS_MULT",
+    "ns": "NHoldingSprawl",
+    "value": "0.55"
+  },
+  {
+    "comment": "If holding sprawl settings not set to high - cap sprawl to these values",
+    "file": "graphic/00_graphics.txt",
+    "key": "SPRAWL_SETTINGS_BUILD_MAX_VALUES",
+    "ns": "NHoldingSprawl",
+    "value": "{ 5 15 }"
+  },
+  {
     "comment": null,
     "file": "graphic/00_graphics.txt",
     "key": "EPIDEMIC_INFECTED_PROVINCE_ITEM_SIZE",
@@ -14278,6 +16035,55 @@
     "key": "SILK_ROAD_ARROW_TYPE_NAME",
     "ns": "NSilkRoad",
     "value": "silkRoadArrow"
+  },
+  {
+    "comment": null,
+    "file": "graphic/00_graphics.txt",
+    "key": "TENET_GROUP_SORT_ORDER_KNOWN_BY_YOU",
+    "ns": "NRite",
+    "value": "0"
+  },
+  {
+    "comment": null,
+    "file": "graphic/00_graphics.txt",
+    "key": "TENET_GROUP_SORT_ORDER_CORE",
+    "ns": "NRite",
+    "value": "1"
+  },
+  {
+    "comment": null,
+    "file": "graphic/00_graphics.txt",
+    "key": "TENET_GROUP_SORT_ORDER_PERMITTED",
+    "ns": "NRite",
+    "value": "2"
+  },
+  {
+    "comment": null,
+    "file": "graphic/00_graphics.txt",
+    "key": "TENET_GROUP_SORT_ORDER_KNOWN",
+    "ns": "NRite",
+    "value": "3"
+  },
+  {
+    "comment": null,
+    "file": "graphic/00_graphics.txt",
+    "key": "TENET_GROUP_SORT_ORDER_PROHIBITED",
+    "ns": "NRite",
+    "value": "4"
+  },
+  {
+    "comment": null,
+    "file": "graphic/00_graphics.txt",
+    "key": "TENET_GROUP_SORT_ORDER_UNKNOWN",
+    "ns": "NRite",
+    "value": "5"
+  },
+  {
+    "comment": null,
+    "file": "graphic/00_graphics.txt",
+    "key": "TENET_GROUP_SORT_ORDER_INVALID",
+    "ns": "NRite",
+    "value": "6"
   },
   {
     "comment": null,
@@ -14582,6 +16388,13 @@
   },
   {
     "comment": null,
+    "file": "jomini/portraits.txt",
+    "key": "PATTERN_MASK_MIN_SIZE_PER_QUALITY",
+    "ns": "NJominiPortraits",
+    "value": "{ 128 256 512 1024 }"
+  },
+  {
+    "comment": null,
     "file": "jomini/rivers.txt",
     "key": "FADE_IN_DISTANCE",
     "ns": "NRivers",
@@ -14642,6 +16455,20 @@
     "key": "NEGATIVE",
     "ns": "NTextColoring",
     "value": "'N'"
+  },
+  {
+    "comment": null,
+    "file": "jomini/text_coloring.txt",
+    "key": "TRADE_POSITIVE",
+    "ns": "NTextColoring",
+    "value": "'H'"
+  },
+  {
+    "comment": null,
+    "file": "jomini/text_coloring.txt",
+    "key": "TRADE_NEGATIVE",
+    "ns": "NTextColoring",
+    "value": "'W'"
   },
   {
     "comment": null,

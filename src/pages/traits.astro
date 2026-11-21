@@ -130,6 +130,7 @@ const pct = (v: number) => `${Math.round(v * 100)}%`;
                   {t.genetic.incapacitating && <div class="neg">incapacitating</div>}
                   {t.genetic.can_have_children === false && <div class="neg">no children</div>}
                   {t.genetic.immortal && <div>immortal</div>}
+                  {t.clergy && <div title="holders are considered clergy and join the faith organisation">clergy</div>}
                 </td>
                 <td>
                   <span class="chips">

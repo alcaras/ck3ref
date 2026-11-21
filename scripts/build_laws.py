@@ -20,17 +20,25 @@ sys.path.insert(0, str(Path(__file__).parent / "lib"))
 import ck3
 from ck3 import Block, Tagged
 
-GROUP_HANDLED = {"default", "cumulative", "flag", "is_treasury_budget_group"}
+GROUP_HANDLED = {"default", "cumulative", "flag", "is_treasury_budget_group",
+                 "required_government_flag", "can_have_group"}
 GROUP_SKIP = {
     "can_change_law_group": "group-level change gate; per-law can_pass carries the requirements shown",
+    "can_propose": "who may propose a vote on this group (republic/assembly plumbing); not a law requirement",
 }
 
 LAW_HANDLED = {
     "modifier", "flag", "succession", "pass_cost", "revoke_cost",
     "can_keep", "can_pass", "can_have", "potential", "should_start_with",
-    "shown_in_encyclopedia", "title_allegiance_opinion",
+    "shown_in_encyclopedia", "title_allegiance_opinion", "law_group_type", "index",
 }
 LAW_SKIP = {
+    "ai_approval": "AI voting weight on the law, not player-facing",
+    "assembly": "republic assembly composition (sources/limit trigger trees per voter class); not modelled",
+    "assembly_voting_thresholds": "republic assembly vote thresholds (script values); not modelled",
+    "term_length": "republic term length; not modelled",
+    "voting_session": "whether the assembly runs voting sessions under this law; not modelled",
+    "manual_law_change": "republic law-change mechanics plumbing; not modelled",
     "on_pass": "effect script (cooldown variables, modifier cleanup)",
     "on_after_pass": "effect script",
     "on_revoke": "effect script",
@@ -56,12 +64,15 @@ SUCCESSION_FIELDS = {
     "exclude_rulers": "excludeRulers", "limit_to_courtiers": "limitToCourtiers",
 }
 
+# keyed by the law_groups/ file (the laws/ file no longer says where a group lives)
 CATEGORY_BY_FILE = {
-    "00_realm_laws.txt": "realm",
-    "00_succession_laws.txt": "succession",
-    "01_title_succession_laws.txt": "title_succession",
-    "02_admininistrative_laws.txt": "administrative",
-    "03_imperial_policies.txt": "imperial_policy",
+    "00_realm_law_groups.txt": "realm",
+    "00_succession_law_groups.txt": "succession",
+    "01_title_succession_law_groups.txt": "title_succession",
+    "02_admininistrative_law_groups.txt": "administrative",
+    "03_imperial_policie_groups.txt": "imperial_policy",
+    "04_pam_ecclesiastical_law_groups.txt": "ecclesiastical",
+    "04_republic_law_groups.txt": "republic",
 }
 
 NEGATORS = {"NOT", "NOR", "NAND"}
@@ -325,28 +336,57 @@ LAW_ICONS = {  # keys that ship a gfx/interface/icons/laws/<key>.dds
 }
 
 
+def group_reqs(gblk):
+    r = []
+    if gblk.has("can_have_group"):
+        describe_trigger(gblk.get("can_have_group"), r)
+    return r
+
+
 def main():
-    files = sorted((ck3.COMMON / "laws").glob("*.txt"))
+    # Since 1.21 group declarations (common/law_groups/) and law levels
+    # (common/laws/, each carrying `law_group_type` + `index`) are separate.
+    # Parsing the laws files as "groups with nested laws" turned every law
+    # into an empty group (27 -> 283); join them instead.
     unhandled_group = Counter()
     unhandled_law = Counter()
     groups = []
     law_count = 0
 
-    for path in files:
+    group_defs = {}  # key -> (block, source file), in definition order
+    for path in sorted((ck3.COMMON / "law_groups").glob("*.txt")):
         if path.name.startswith("_"):
             continue
-        category = CATEGORY_BY_FILE.get(path.name, "realm")
-        top = ck3.parse_file(path)
-        for gkey, _op, gblk in top:
-            if gkey is None or not isinstance(gblk, Block):
+        for gkey, _op, gblk in ck3.parse_file(path):
+            if gkey is not None and isinstance(gblk, Block):
+                group_defs[gkey] = (gblk, path.name)
+
+    laws_of = {k: [] for k in group_defs}
+    orphans = []
+    for path in sorted((ck3.COMMON / "laws").glob("*.txt")):
+        if path.name.startswith("_"):
+            continue
+        for lkey, _op, lblk in ck3.parse_file(path):
+            if lkey is None or not isinstance(lblk, Block):
                 continue
-            gflags = [v for k, _o, v in gblk if k == "flag" and isinstance(v, str)]
+            gk = lblk.get("law_group_type")
+            if gk not in laws_of:
+                orphans.append((lkey, gk))
+                continue
+            idx = lblk.get("index", 0)
+            laws_of[gk].append((idx if isinstance(idx, (int, float)) else 0, lkey, lblk, path.name))
+    if orphans:
+        print(f"⚠ {len(orphans)} laws name no known law group: {orphans[:6]}")
+
+    for gkey, (gblk, gfile) in group_defs.items():
+        category = CATEGORY_BY_FILE.get(gfile, "realm")
+        gflags = [v for k, _o, v in gblk if k == "flag" and isinstance(v, str)]
+        for k in gblk.keys():
+            if k not in GROUP_HANDLED and k not in GROUP_SKIP:
+                unhandled_group[k] += 1
+        if True:
             laws = []
-            for lkey, _o2, lblk in gblk:
-                if lkey in GROUP_HANDLED or lkey in GROUP_SKIP or not isinstance(lblk, Block):
-                    if lkey not in GROUP_HANDLED and lkey not in GROUP_SKIP:
-                        unhandled_group[lkey] += 1
-                    continue
+            for _idx, lkey, lblk, lfile in sorted(laws_of[gkey], key=lambda t: t[0]):
                 law_count += 1
 
                 mods = []
@@ -416,7 +456,10 @@ def main():
                 "treasuryBudget": bool(gblk.get("is_treasury_budget_group", False)),
                 "progression": has_levels,
                 "laws": laws,
-                "sourceFile": path.name,
+                "sourceFile": gfile,
+                "governmentFlags": [v for v in gblk.get_all("required_government_flag")
+                                    for v in (v.values() if isinstance(v, Block) else [v])],
+                "groupRequirements": group_reqs(gblk),
             })
 
     ck3.write_json("laws.json", groups)

@@ -46,7 +46,8 @@ FILES = [
 # that is not in DECLARED is a field we resolve but do not treat as membership.
 DECLARED = ["hegemonies", "empires", "kingdoms", "duchies", "counties",
             "provinces", "regions"]
-FLAGS = ["generate_modifiers", "graphical", "should_remember_counties_order"]
+FLAGS = ["generate_modifiers", "generate_prosperity_modifiers", "graphical",
+         "should_remember_counties_order"]
 
 # ---------------------------------------------------------------------------
 # Families — our grouping, not the game's. The game ships no taxonomy of
@@ -60,6 +61,21 @@ FAMILY_BY_FILE = {
     "10_natural_disaster_regions.txt": "Natural disaster",
 }
 FAMILY_BY_PREFIX = [  # longest first
+    # Ecclesiastical-title territories, one set per start date (867, 1066, 1178). Declared
+    # beside the regions but only ever named by `clerical_region = et_<year>_*`
+    # inside history/titles/ce3/00_ecclesiastical_titles.txt (the territory an
+    # ecclesiastical-government bishop's title covers from that date).
+    ("et_867_", "Ecclesiastical"),
+    ("et_1066_", "Ecclesiastical"),
+    ("et_1178_", "Ecclesiastical"),
+    # Silk and Silver (gdp_*): the Guelph/Ghibelline situation's map areas and
+    # the two trader-tradition areas.
+    ("gdp_guelph_ghibelline_", "Silk and Silver"),
+    ("gdp_monsoon_traders_", "Silk and Silver"),
+    ("gdp_saharan_traders_", "Silk and Silver"),
+    # No script names these; only the region file declares them (engine-side,
+    # presumably ruin art/decor — the game files do not say).
+    ("ruin_region_", "Ruins"),
     ("tgp_silk_road_", "Silk Road"),
     ("seasonal_region_", "Seasonal"),
     ("graphical_", "Graphical"),
@@ -97,10 +113,15 @@ FAMILY_BY_KEY = {
     "tgp_china_tributary_region": "Chinese naming",
     "mpo_region_permafrost": "Other",
     "cp4_music_area": "Other",
+    # named by the Hanseatic decision and the burgher-autonomy faction (DLC
+    # content, but filed by what it is: a trade-league territory)
+    "hanseatic_trade_region": "Silk and Silver",
+    "monkey_region": "Other",   # only referenced by a gdp scripted trigger
 }
 FAMILY_ORDER = ["World", "Custom", "GHW", "DLC", "Sea", "Material", "Hunt",
                 "Special", "Heritage", "Silk Road", "Nomad", "Seasonal",
-                "Natural disaster", "Chinese naming", "Island", "Graphical",
+                "Natural disaster", "Chinese naming", "Silk and Silver",
+                "Ecclesiastical", "Ruins", "Island", "Graphical",
                 "Other"]
 
 # `generate_modifiers = yes` makes the engine create these two modifiers per
@@ -108,7 +129,8 @@ FAMILY_ORDER = ["World", "Custom", "GHW", "DLC", "Sea", "Material", "Hunt",
 # comes from whatever applies them, so only the name is stated here.
 GENERATED_MODIFIERS = ["development_growth", "development_growth_factor"]
 
-SCAN_ROOTS = [ck3.REF / "game" / "common", ck3.REF / "game" / "events"]
+SCAN_ROOTS = [ck3.REF / "game" / "common", ck3.REF / "game" / "events",
+              ck3.REF / "game" / "history" / "titles"]
 
 
 def family_of(key, filename):
@@ -397,6 +419,16 @@ def main():
                 entry[flag] = True
         if rec.get("color"):
             entry["color"] = rec["color"]
+        if rec.get("generate_prosperity_modifiers"):
+            # Not documented in the file header; inferred from the game's own
+            # modifier_definition_formats/00_region_definitions.txt, which
+            # defines <region>_prosperity_growth[_factor] for exactly these.
+            entry["prosperityModifiers"] = [{
+                "key": f"{key}_{base}",
+                "base": base,
+                "name": ck3.modifier_name(f"{key}_{base}"),
+            } for base in ("prosperity_growth", "prosperity_growth_factor")
+                if f"{key}_{base}" in ck3.modifier_formats()]
         if rec.get("generate_modifiers"):
             entry["modifiers"] = [{
                 "key": f"{key}_{base}",

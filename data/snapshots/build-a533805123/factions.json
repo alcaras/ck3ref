@@ -1,0 +1,287 @@
+[
+  {
+    "canJoin": [
+      {
+        "name": "Japan faction cohesion hard",
+        "negated": false
+      }
+    ],
+    "casusBelli": "ceremonial_claimant_faction_war",
+    "casusBelliName": "Ceremonial Claimant Faction",
+    "countyFaction": false,
+    "demand": true,
+    "desc": "Members of the Ceremonial Claimant Faction support a pretender as the Realm's Ceremonial Monarch\n\nUltimatum\nThe Claimant replaces the Ceremonial Monarch, and the Faction Leader replaces the Ruling Regent, and takes all their Landed Titles",
+    "dlc": "All Under Heaven",
+    "id": "ceremonial_claimant_faction",
+    "name": "Ceremonial Claimant Faction",
+    "powerThreshold": null,
+    "shortEffect": "Wants …",
+    "validWhen": [
+      {
+        "name": "Tgp realm has ceremonial liege",
+        "negated": false
+      },
+      {
+        "name": "Valid faction members",
+        "negated": false
+      }
+    ]
+  },
+  {
+    "canJoin": [],
+    "casusBelli": "claimant_faction_war",
+    "casusBelliName": "Claimant Faction",
+    "countyFaction": false,
+    "demand": true,
+    "desc": "Members of the claimant Faction supports a pretender targeting a title belonging to their Liege.",
+    "dlc": null,
+    "id": "claimant_faction",
+    "name": "Claimant Faction",
+    "powerThreshold": null,
+    "shortEffect": "Wants …",
+    "validWhen": [
+      {
+        "name": "Valid faction members",
+        "negated": false
+      }
+    ]
+  },
+  {
+    "canJoin": [],
+    "casusBelli": "nation_fracturing_faction_war",
+    "casusBelliName": "Dissolution Faction",
+    "countyFaction": false,
+    "demand": true,
+    "desc": "Members of the Dissolution Faction Faction seek to destroy the realm of their Liege.\n\nUltimatum\nAll Faction Members become Independent\nLiege loses their Primary Title and other Titles of the same Tier",
+    "dlc": null,
+    "id": "nation_fracturing_faction",
+    "name": "Dissolution Faction",
+    "powerThreshold": null,
+    "shortEffect": "Wants to destroy the Realm of their Liege",
+    "validWhen": [
+      {
+        "name": "Valid faction members",
+        "negated": false
+      }
+    ]
+  },
+  {
+    "canJoin": [
+      {
+        "name": "Peasant Leader",
+        "negated": false
+      }
+    ],
+    "casusBelli": "populist_war",
+    "casusBelliName": "Rebellion",
+    "countyFaction": false,
+    "demand": true,
+    "desc": "The Escalated Peasant Faction wants freedom from unjust rule, and will seek independence from their liege.",
+    "dlc": null,
+    "id": "escalated_peasant_faction",
+    "name": "Escalated Peasant Faction",
+    "powerThreshold": 0,
+    "shortEffect": "Wants Independence from their Liege",
+    "validWhen": [
+      {
+        "name": "Valid faction members",
+        "negated": false
+      }
+    ]
+  },
+  {
+    "canJoin": [
+      {
+        "name": "Has access to an Estate",
+        "negated": false
+      },
+      {
+        "name": "Realm law use imperial policy",
+        "negated": false
+      },
+      {
+        "name": "Japan faction cohesion",
+        "negated": false
+      }
+    ],
+    "casusBelli": "imperial_policy_faction_war",
+    "casusBelliName": "Imperial Policy Faction",
+    "countyFaction": false,
+    "demand": true,
+    "desc": "Members of the Imperial Policy Faction support adopting a new Imperial Policy for the Realm\n\nUltimatum\nThe Faction Leader selects a new Imperial Policy for the Realm",
+    "dlc": "All Under Heaven",
+    "id": "imperial_policy_faction",
+    "name": "Imperial Policy Faction",
+    "powerThreshold": null,
+    "shortEffect": "Wants to change the Imperial Policy",
+    "validWhen": [
+      {
+        "name": "Valid faction members",
+        "negated": false
+      }
+    ]
+  },
+  {
+    "canJoin": [
+      {
+        "name": "Confederation member",
+        "negated": false
+      },
+      {
+        "name": "Has Herd",
+        "negated": true
+      },
+      {
+        "name": "Is a Tribal-type Government",
+        "negated": true
+      }
+    ],
+    "casusBelli": "independence_faction_war",
+    "casusBelliName": "Independence Faction",
+    "countyFaction": false,
+    "demand": true,
+    "desc": "Members of the Independence Faction seek independence from their Liege.\n\nUltimatum\nAll Faction Members become Independent\nLiege loses Prestige",
+    "dlc": null,
+    "id": "independence_faction",
+    "name": "Independence Faction",
+    "powerThreshold": null,
+    "shortEffect": "Wants Independence from their Liege",
+    "validWhen": [
+      {
+        "name": "Valid faction members",
+        "negated": false
+      }
+    ]
+  },
+  {
+    "canJoin": [
+      {
+        "name": "Japan faction cohesion hard",
+        "negated": false
+      }
+    ],
+    "casusBelli": "replace_ceremonial_regent_faction_war",
+    "casusBelliName": "Install Ruling Regent",
+    "countyFaction": false,
+    "demand": true,
+    "desc": "Members of the Install Ruling Regent Faction seek to forcibly oust the current Ruling Regent.\n\nUltimatum\nThe Faction Leader replaces the current Ruling Regent, and takes all their Landed Titles",
+    "dlc": "All Under Heaven",
+    "id": "replace_ceremonial_regent_faction",
+    "name": "Install Ruling Regent Faction",
+    "powerThreshold": null,
+    "shortEffect": null,
+    "validWhen": []
+  },
+  {
+    "canJoin": [],
+    "casusBelli": "liberty_faction_war",
+    "casusBelliName": "Liberty Faction",
+    "countyFaction": false,
+    "demand": true,
+    "desc": "The Liberty Faction seeks to lower Crown Authority, Tribal Authority, or Imperial Bureaucracy, but members are otherwise loyal to the Realm.",
+    "dlc": null,
+    "id": "liberty_faction",
+    "name": "Liberty Faction",
+    "powerThreshold": null,
+    "shortEffect": null,
+    "validWhen": [
+      {
+        "name": "Valid faction members",
+        "negated": false
+      }
+    ]
+  },
+  {
+    "canJoin": [],
+    "casusBelli": "nomadic_war",
+    "casusBelliName": "Nomadic Uprising",
+    "countyFaction": false,
+    "demand": true,
+    "desc": "The Nomadic Faction wants to be ruled by a Nomadic Ruler whos Nomadic Capital shares their Culture and Faith.",
+    "dlc": null,
+    "id": "nomadic_faction",
+    "name": "Nomadic Faction",
+    "powerThreshold": 0,
+    "shortEffect": "Wants to establish new Nomadic Realms",
+    "validWhen": []
+  },
+  {
+    "canJoin": [
+      {
+        "name": "Peasant Leader",
+        "negated": false
+      }
+    ],
+    "casusBelli": "peasant_war",
+    "casusBelliName": "Peasant War",
+    "countyFaction": false,
+    "demand": true,
+    "desc": "The Peasant Faction wants freedom for the people from foreign or infidel rule, and will strive to replace a liege who does not share the Culture and Faith of the commoners in the Counties.",
+    "dlc": null,
+    "id": "peasant_faction",
+    "name": "Peasant Faction",
+    "powerThreshold": 0,
+    "shortEffect": "Wants lower County Control",
+    "validWhen": [
+      {
+        "name": "Valid faction members",
+        "negated": false
+      }
+    ]
+  },
+  {
+    "canJoin": [],
+    "casusBelli": "populist_war",
+    "casusBelliName": "Rebellion",
+    "countyFaction": false,
+    "demand": true,
+    "desc": "The Populist Faction wants freedom from foreign or infidel rule, and will seek independence from a liege who does not share their Culture or Faith.",
+    "dlc": null,
+    "id": "populist_faction",
+    "name": "Populist Faction",
+    "powerThreshold": null,
+    "shortEffect": null,
+    "validWhen": [
+      {
+        "name": "Valid faction members",
+        "negated": false
+      },
+      {
+        "name": "Ai",
+        "negated": false
+      },
+      {
+        "name": "Playable character",
+        "negated": false
+      }
+    ]
+  },
+  {
+    "canJoin": [
+      {
+        "name": "Independent ruler",
+        "negated": false
+      },
+      {
+        "name": "Tgp realm has ceremonial liege",
+        "negated": false
+      }
+    ],
+    "casusBelli": "restore_ceremonial_liege_faction_war",
+    "casusBelliName": "Restore Ceremonial Monarch",
+    "countyFaction": false,
+    "demand": true,
+    "desc": "Members of the Restore Ceremonial Monarch Faction seek to oust the Ruling Regent and re-establish direct rule by the Ceremonial Monarch.\n\nUltimatum\nThe Ceremonial Monarch replaces the Ruling Regent, takes all their Landed Titles, and adopts Primogeniture Succession",
+    "dlc": "All Under Heaven",
+    "id": "restore_ceremonial_liege_faction",
+    "name": "Restore Ceremonial Monarch Faction",
+    "powerThreshold": null,
+    "shortEffect": "Wants to restore the Ceremonial Monarch to power",
+    "validWhen": [
+      {
+        "name": "Government is japanese",
+        "negated": false
+      }
+    ]
+  }
+]

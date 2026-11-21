@@ -5,7 +5,7 @@ import data from '../../data/titles.json';
 export function getStaticPaths() {
   const roots = (data as any).roots;
   const tops = [
-    ...roots.filter((r: any) => r.tier === 'hegemony' || r.tier === 'empire'),
+    ...roots.filter((r: any) => r.tier === 'empire' || (r.tier === 'hegemony' && (r.children ?? []).length > 0)),
     ...roots.filter((r: any) => r.tier === 'hegemony')
       .flatMap((h: any) => (h.children ?? []).filter((c: any) => c.tier === 'empire')),
   ];

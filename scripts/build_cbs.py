@@ -104,6 +104,7 @@ HANDLED_FIELDS = {
     "truce_days", "white_peace_possible", "allow_hostages",
     "is_great_holy_war", "is_holy_war", "defender_faith_can_join",
     "on_primary_attacker_death", "on_primary_defender_death",
+    "same_faith_defenders_allowed_parameter",
 }
 
 # Group keys have no loc; hand-labeled for the group headers.
@@ -416,6 +417,11 @@ def main():
             },
             "whitePeacePossible": blk.get("white_peace_possible") is not False,
             "allowHostages": blk.get("allow_hostages") is not False,
+            # _casus_belli.info: defender-faith rulers may join even against a
+            # same-faith attacker when their government has one of these flags
+            "sameFaithDefenderFlags": [v for v in (blk.get("same_faith_defenders_allowed_parameter").values()
+                                       if isinstance(blk.get("same_faith_defenders_allowed_parameter"), Block) else [])
+                                       if isinstance(v, str)],
             "onAttackerDeath": blk.get("on_primary_attacker_death"),
             "onDefenderDeath": blk.get("on_primary_defender_death"),
             "truceDays": blk.get("truce_days"),
