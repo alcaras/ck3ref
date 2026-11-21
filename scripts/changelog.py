@@ -58,12 +58,13 @@ def main():
     if PATCH.exists():
         version = load(PATCH).get("version", version)
     snap = SNAPDIR / version
-    # Diff against the most recent snapshot of an EARLIER version. Comparing
-    # against this version's own snapshot made every new patch read as
-    # "now tracked" (no snapshot yet) and every re-run as "no changes".
-    earlier = sorted((d for d in SNAPDIR.glob("*") if d.is_dir() and d.name != version),
-                     key=lambda d: d.stat().st_mtime) if SNAPDIR.exists() else []
-    base = earlier[-1] if earlier else snap
+    # Diff against the PREVIOUS version's snapshot (newest other snapshot dir),
+    # so a patch's section lists what changed since the last patch — also on
+    # re-runs. Only the very first run ever falls back to "now tracked".
+    others = [d for d in SNAPDIR.glob("*") if d.is_dir() and d.name != version]         if SNAPDIR.exists() else []
+    prev = max(others, key=lambda d: max((f.stat().st_mtime for f in d.glob("*.json")),
+                                         default=0), default=None)
+    base = prev or snap
     tracked = sorted((ck3.ROOT / "src" / "data").glob("*.json"))
     lines = []
     for f in tracked:

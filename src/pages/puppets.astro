@@ -1,0 +1,182 @@
+---
+import Base from '../layouts/Base.astro';
+import data from '../data/puppets.json';
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const artFiles = new Set(
+  Object.keys(import.meta.glob('/public/img/puppets/*.webp'))
+    .map((p) => p.split('/').pop()!.replace('.webp', ''))
+);
+
+const { types, actions, about } = data as any;
+const KIND: Record<string, string> = {
+  character_interaction: 'interaction',
+  decision: 'decision',
+  great_project: 'great project',
+  trigger: 'permission',
+};
+// sections in the order the game's own file introduces them
+const sections: string[] = [...new Set(actions.map((a: any) => a.section ?? 'Other'))] as string[];
+const shared = actions.filter((a: any) => a.usedBy.length === types.length).length;
+---
+<Base
+  title="Puppets"
+  active="puppets"
+  lede="Characters a ruler can command to act on their behalf: a realm priest inside the Church, a clerical ruler outside your realm, or a secular ruler held by love, fear or obligation. Each type unlocks its own set of actions — interactions, decisions and great projects — taken through the puppet. Read from common/puppets."
+  stats={[
+    { value: types.length, label: 'puppet types' },
+    { value: actions.length, label: 'puppet actions' },
+    { value: shared, label: 'shared by every type' },
+  ]}
+>
+  {about && <p class="about">{about}</p>}
+
+  <section>
+    <h2 class="group-h" id="types">Puppet types</h2>
+    <div class="ptypes">
+      {types.map((t: any) => (
+        <article class="ptype" id={t.id} style={`--c:${t.color ?? 'var(--line)'}`}>
+          <header>
+            {t.icon && artFiles.has(t.icon) && (
+              <img src={`${base}/img/puppets/${t.icon}.webp`} alt="" width="40" height="40" loading="lazy" />
+            )}
+            <span>
+              <span class="u-name">{t.name}</span>
+              {t.dlc && <span class="badge-dlc">{t.dlc}</span>}
+              <br /><span class="subtle">{t.actions.length} actions</span>
+            </span>
+          </header>
+          {t.desc && <p class="desc">{t.desc}</p>}
+          <div class="lbl">Set up with</div>
+          <div>
+            {t.interactionLink
+              ? <a href={`${base}/${t.interactionLink}`}>{t.interactionName ?? t.interaction}</a>
+              : <span class="mono">{t.interaction}</span>}
+          </div>
+          <div class="lbl">Who can have one</div>
+          <ul class="conds">{t.canHave.map((c: string) => <li>{c}</li>)}</ul>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <div class="filterbar">
+    <input type="search" id="q" placeholder="Filter actions…" autocomplete="off" />
+    <select id="ftype">
+      <option value="">any puppet type</option>
+      {types.map((t: any) => <option value={t.id}>{t.name}</option>)}
+    </select>
+    <select id="fkind">
+      <option value="">any kind</option>
+      {Object.entries(KIND).map(([k, v]) => <option value={k}>{v}</option>)}
+    </select>
+    <label class="chk"><input type="checkbox" id="fimp" /> highlighted only</label>
+    <span class="hint" id="count"></span>
+  </div>
+
+  {sections.map((sec) => (
+    <section data-group>
+      <h2 class="group-h" id={`sec-${sec.toLowerCase().replace(/[^a-z]+/g, '-')}`}>
+        {sec}
+        <span class="count">{actions.filter((a: any) => (a.section ?? 'Other') === sec).length}</span>
+      </h2>
+      <div class="tbl-scroll">
+        <table class="ntbl">
+          <thead>
+            <tr>
+              <th>Action</th>
+              <th>What it does</th>
+              <th>Extra condition</th>
+              {types.map((t: any) => <th class="tcol" title={t.name}><span class="sw" style={`--c:${t.color ?? 'var(--line)'}`} />{t.name.replace(/ Puppet$/, '')}</th>)}
+            </tr>
+          </thead>
+          <tbody>
+            {actions.filter((a: any) => (a.section ?? 'Other') === sec).map((a: any) => (
+              <tr
+                id={a.id}
+                data-name={`${a.name} ${a.desc ?? ''} ${a.target ?? ''}`.toLowerCase()}
+                data-types={a.usedBy.join(' ')}
+                data-kind={a.kind}
+                data-imp={a.important ? '1' : ''}
+              >
+                <td class="name">
+                  {a.link
+                    ? <a class="u-name" href={`${base}/${a.link}`}>{a.name}</a>
+                    : <span class="u-name">{a.name}</span>}
+                  <span class="u-sub"><br />{KIND[a.kind] ?? a.kind}{a.important && ' · highlighted'}</span>
+                  {a.dlc && !types.every((t: any) => t.dlc === a.dlc) && <span class="badge-dlc">{a.dlc}</span>}
+                </td>
+                <td class="fx">{a.desc ?? <span class="subtle">—</span>}</td>
+                <td class="fx">
+                  {a.gate.map((g: string) => <div>{g}</div>)}
+                  {a.gate.length === 0 && <span class="subtle">—</span>}
+                </td>
+                {types.map((t: any) => (
+                  <td class="tcol">{a.usedBy.includes(t.id) ? <span class="yes" style={`--c:${t.color ?? 'var(--vellum)'}`}>●</span> : <span class="subtle">·</span>}</td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </section>
+  ))}
+
+  <p class="prov">
+    Types from <code>common/puppets/types</code>, actions from <code>common/puppets/actions</code>;
+    section headings are the comments in the game's own action file. "Who can have one"
+    expands the DLC's scripted triggers into their conditions; a scripted trigger with
+    nothing readable inside is shown by its name. "Highlighted" actions are listed among
+    the special interactions of the intrigue window (<code>is_important</code>). "Extra
+    condition" is the action's own <code>is_enabled</code> gate, on top of the linked
+    interaction's or decision's usual requirements. Permission actions link to nothing;
+    the game's script checks them by name (<code>is_puppet_action_valid</code>), here
+    for creating a Faith or a Rite.
+  </p>
+
+  <script>
+    const q = document.getElementById('q') as HTMLInputElement;
+    const ftype = document.getElementById('ftype') as HTMLSelectElement;
+    const fkind = document.getElementById('fkind') as HTMLSelectElement;
+    const fimp = document.getElementById('fimp') as HTMLInputElement;
+    const count = document.getElementById('count')!;
+    const rows = [...document.querySelectorAll<HTMLTableRowElement>('section[data-group] tbody tr')];
+    const groups = [...document.querySelectorAll<HTMLElement>('section[data-group]')];
+    function apply() {
+      const needle = q.value.trim().toLowerCase();
+      let shown = 0;
+      for (const r of rows) {
+        const ok =
+          (!needle || (r.dataset.name ?? '').includes(needle)) &&
+          (!ftype.value || (r.dataset.types ?? '').split(' ').includes(ftype.value)) &&
+          (!fkind.value || r.dataset.kind === fkind.value) &&
+          (!fimp.checked || r.dataset.imp === '1');
+        r.hidden = !ok;
+        if (ok) shown++;
+      }
+      for (const g of groups) g.hidden = ![...g.querySelectorAll('tbody tr')].some((r) => !(r as HTMLElement).hidden);
+      count.textContent = `${shown} of ${rows.length}`;
+    }
+    for (const el of [q, ftype, fkind, fimp]) el.addEventListener('input', apply);
+    apply();
+  </script>
+
+  <style>
+    .about { color: var(--dim); max-width: 70ch; white-space: pre-line; margin-bottom: 1.2rem; }
+    .ptypes { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 0.8rem; margin-bottom: 1.5rem; }
+    .ptype { background: var(--panel); border: 1px solid var(--line-soft); border-top: 3px solid var(--c); border-radius: var(--r); padding: 0.7rem 0.85rem; font-size: 0.85rem; }
+    .ptype header { display: flex; gap: 0.6rem; align-items: center; margin-bottom: 0.4rem; }
+    .ptype .u-name { font-weight: 600; }
+    .ptype .desc { color: var(--dim); margin: 0.3rem 0 0.5rem; }
+    .ptype .lbl { color: var(--faint); font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.04em; margin-top: 0.5rem; }
+    .conds { margin: 0.2rem 0 0; padding-left: 1.1rem; }
+    .conds li { margin: 0.1rem 0; }
+    .tcol { text-align: center; white-space: nowrap; font-size: 0.72rem; }
+    .tcol .sw { display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: var(--c); margin-right: 0.3rem; }
+    .yes { color: var(--c); }
+    .mono { font-family: var(--font-mono); font-size: 0.75rem; }
+    .chk { color: var(--dim); font-size: 0.8rem; display: flex; gap: 0.3rem; align-items: center; }
+    .prov { color: var(--faint); font-size: 0.78rem; max-width: 70ch; margin-top: 2rem; }
+    .prov code { font-family: var(--font-mono); }
+  </style>
+</Base>

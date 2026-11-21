@@ -67,7 +67,11 @@ for (const id of usedChains) {
     from: num(first.districtLevel) ?? 1,
     reqs: first.requirements.map(trimReq),
     needs: [...new Set(first.needs.map((n: any) => n.name))],
-    fx: last.modifiers.filter((g: any) => !g.cond).flatMap((g: any) => g.lines).slice(0, 4),
+    // unconditional groups first; gated lines (culture/rite/terrain…) carry their gate
+    fx: [...last.modifiers]
+      .sort((a: any, b: any) => Number(!!a.cond) - Number(!!b.cond))
+      .flatMap((g: any) => g.lines.map((l: string) => (g.cond ? `${l} (${g.cond})` : l)))
+      .slice(0, 6),
     levy: num(last.levy), garrison: num(last.maxGarrison),
     dlc: first.dlc,
   };

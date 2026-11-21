@@ -69,7 +69,7 @@ const rest = title.slice(1);
     </main>
     <footer class="foot">
       <span>ck3reference · data generated from the game's own files</span>
-      <span>game build {patch.buildId}{patch.syncedAt ? ` · synced ${patch.syncedAt.slice(0, 10)}` : ''}</span>
+      <span>{patch.version && !patch.version.startsWith('build-') ? `CK3 ${patch.version} · ` : ''}game build {patch.buildId}{patch.syncedAt ? ` · synced ${patch.syncedAt.slice(0, 10)}` : ''}</span>
     </footer>
     <script>
       // close any open nav dropdown when another opens or on outside click

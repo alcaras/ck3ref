@@ -1,0 +1,127 @@
+---
+import Base from '../layouts/Base.astro';
+import data from '../data/fulfillment.json';
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const artFiles = new Set(
+  Object.keys(import.meta.glob('/public/img/fulfillment/*.webp'))
+    .map((p) => p.split('/').pop()!.replace('.webp', ''))
+);
+
+const { types, defines: D, about } = data as any;
+const levelCount = types.reduce((n: number, t: any) => n + t.levels.length, 0);
+const min = D.MIN_SPIRITUAL_FULFILLMENT;
+const max = D.MAX_SPIRITUAL_FULFILLMENT;
+
+// the band a level covers, as exact inequalities (fulfillment need not be a
+// whole number): negative levels run down to the next lower threshold,
+// positive ones up to the next higher, threshold 0 sits between
+function band(levels: any[], i: number): string {
+  const t = levels[i].threshold;
+  const lo = levels[i - 1]?.threshold;
+  const hi = levels[i + 1]?.threshold;
+  if (t === 0) return `${lo ?? min} < x < ${hi ?? max}`;
+  if (t < 0) return lo != null ? `${lo} < x ≤ ${t}` : `x ≤ ${t}`;
+  return hi != null ? `${t} ≤ x < ${hi}` : `x ≥ ${t}`;
+}
+const tone = (t: number) => (t < 0 ? 'neg' : t > 0 ? 'pos' : 'zero');
+---
+<Base
+  title="Spiritual Fulfillment"
+  active="spiritual-fulfillment"
+  lede="How at peace a character is with their faith, on a scale read from the game's defines. Each ladder belongs to a set of religions (one is the fallback for everyone else); every level grants modifiers and unlocks options. Level names, modifiers and unlocks are read from common/spiritual_fulfillment."
+  stats={[
+    { value: types.length, label: 'ladders' },
+    { value: levelCount, label: 'levels' },
+    { value: `${min} to ${max}`, label: 'range' },
+  ]}
+>
+  {about && <p class="about">{about}</p>}
+
+  {types.map((t: any) => (
+    <section>
+      <h2 class="group-h" id={t.id}>
+        {t.fallback ? 'Every other religion' : t.religions.map((r: any) => r.name).join(', ')}
+        <span class="count">{t.levels.length} levels</span>
+        {t.fallback && <span class="cat">fallback ladder</span>}
+      </h2>
+      <div class="tbl-scroll">
+        <table class="ntbl">
+          <thead>
+            <tr>
+              <th>Level</th>
+              <th class="num" title="Active at or below a negative threshold, at or above a positive one">Threshold</th>
+              <th>Range</th>
+              <th>Modifiers</th>
+              <th>Unlocks</th>
+            </tr>
+          </thead>
+          <tbody>
+            {t.levels.map((l: any, i: number) => (
+              <tr id={l.id}>
+                <td class="name">
+                  <span class="unit">
+                    {l.icon && artFiles.has(l.icon) && (
+                      <img src={`${base}/img/fulfillment/${l.icon}.webp`} alt="" width="30" height="30" loading="lazy" />
+                    )}
+                    <span class="u-name">{l.name ?? `level ${l.index}`}</span>
+                  </span>
+                </td>
+                <td class:list={['num', 'thr', tone(l.threshold)]}>{l.threshold > 0 ? `+${l.threshold}` : l.threshold}</td>
+                <td class="subtle mono">{band(t.levels, i)}</td>
+                <td class="fx">
+                  {l.modifiers.map((m: string) => <div>{m}</div>)}
+                  {l.modifiers.length === 0 && <span class="subtle">—</span>}
+                </td>
+                <td class="fx">
+                  {l.flags.map((f: any) => (
+                    <div class={f.text ? '' : 'subtle mono'} title={f.key}>{f.text ?? f.key}</div>
+                  ))}
+                  {l.flags.length === 0 && <span class="subtle">—</span>}
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </section>
+  ))}
+
+  <section>
+    <h2 class="group-h" id="weights">How the baseline is weighted</h2>
+    <table class="ntbl defs">
+      <tbody>
+        <tr><td>Traits tied to a personal tenet</td><td class="num">×{D.SPIRITUAL_FULFILLMENT_MULT_PERSONAL_TENET}</td></tr>
+        <tr><td>Traits tied to a core tenet of your Rite</td><td class="num">×{D.SPIRITUAL_FULFILLMENT_MULT_CORE_TENET}</td></tr>
+        <tr><td>Traits tied to a permitted tenet</td><td class="num">×{D.SPIRITUAL_FULFILLMENT_MULT_PERMITTED_TENET}</td></tr>
+        <tr><td>Religion-type traits synergistic with a tenet or doctrine</td><td class="num">×{D.SPIRITUAL_FULFILLMENT_MULT_RELIGION_TRAIT}</td></tr>
+        <tr><td>Stress from traits, divided by this, becomes a fulfillment change</td><td class="num">÷{D.SPIRITUAL_FULFILLMENT_FOR_STRESS_DIVIDE_FACTOR}</td></tr>
+        <tr><td>Smallest fulfillment change that has an effect</td><td class="num">{D.MIN_FULFILLMENT_CHANGE_FOR_EFFECT}</td></tr>
+        <tr><td>Personal tenets every playable character can hold (raised by piety level)</td><td class="num">{D.BASE_PERSONAL_TENETS_CAP}</td></tr>
+        <tr><td>Wait after dropping or swapping a personal tenet</td><td class="num">{D.PERSONAL_TENET_CHANGE_COOLDOWN_DAYS} days</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <p class="prov">
+    Thresholds, modifiers and unlocks come from <code>common/spiritual_fulfillment/</code>;
+    the range and weightings are the <code>NReligion</code> defines, paraphrasing the
+    defines file's own comments. A negative level is active at or below its threshold,
+    a positive one at or above it, and threshold 0 is the neutral level. Level names
+    use <code>&lt;ladder&gt;_level_&lt;n&gt;</code>, falling back to the default ladder's.
+    Which tenets count for which traits is listed on <a href={`${base}/doctrines`}>Doctrines &amp; Tenets</a>.
+  </p>
+
+  <style>
+    .group-h .cat { color: var(--faint); font-family: var(--font-ui); font-weight: 400; font-size: 0.75rem; }
+    .about { color: var(--dim); max-width: 70ch; white-space: pre-line; margin-bottom: 1.2rem; }
+    .thr { font-family: var(--font-mono); }
+    .thr.neg { color: var(--bad); }
+    .thr.pos { color: var(--good); }
+    .mono { font-family: var(--font-mono); font-size: 0.75rem; }
+    .defs { max-width: 46rem; }
+    .defs td.num { font-family: var(--font-mono); white-space: nowrap; }
+    .prov { color: var(--faint); font-size: 0.78rem; max-width: 70ch; margin-top: 2rem; }
+    .prov code { font-family: var(--font-mono); }
+  </style>
+</Base>

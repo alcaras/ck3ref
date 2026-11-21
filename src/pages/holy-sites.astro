@@ -5,20 +5,17 @@ import faithData from '../data/faiths.json';
 
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 
-// reverse map: holy site -> faiths that list it
-const usedBy = new Map<string, { id: string; name: string | null; color: string | null; eminent: boolean }[]>();
-for (const f of (faithData as any).faiths) {
-  for (const h of f.holySites) {
-    if (!usedBy.has(h.key)) usedBy.set(h.key, []);
-    usedBy.get(h.key)!.push({ id: f.id, name: f.name, color: f.color, eminent: h.eminent });
+// reverse map: holy site -> faiths that list it (eminent or regular)
+type User = { id: string; name: string | null; color: string | null; eminent: boolean };
+const usedBy = new Map<string, User[]>();
+for (const f of faithData.faiths as any[]) {
+  for (const [list, eminent] of [[f.eminentHolySites, true], [f.holySites, false]] as const) {
+    for (const h of list) {
+      if (!usedBy.has(h.key)) usedBy.set(h.key, []);
+      usedBy.get(h.key)!.push({ id: f.id, name: f.name, color: f.color, eminent });
+    }
   }
 }
-const concepts = (faithData as any).concepts;
-const eminentCount = [...usedBy.values()].filter((u) => u.some((x) => x.eminent)).length;
-// holy-site limits per religion come from religion_types or the NReligion defines
-const limits = (faithData as any).religions[0]?.holySiteLimits;
-const sameLimits = (faithData as any).religions.every((r: any) => JSON.stringify(r.holySiteLimits) === JSON.stringify(limits));
-type Scaled = { scale: string; scaleName: string | null; lines: string[] };
 const usedCount = [...usedBy.keys()].filter((k) => sites.some((s) => s.id === k)).length;
 
 const religionName = new Map(faithData.religions.map((r) => [r.id, r.name]));
@@ -30,11 +27,10 @@ const religions = [...new Set(faithData.faiths.map((f) => f.religion))].sort((a,
 <Base
   title="Holy Sites"
   active="holy-sites"
-  lede="Every holy site defined in the game, where it sits on the map, and what it grants: faith-wide bonuses only where a faith counts it as Eminent, plus bonuses to the county holder and the county itself wherever it is a holy site at all."
+  lede="Every holy site defined in the game, where it sits on the map, and its bonuses: for the county holder of the same faith, for every character of a faith that holds it as an Eminent site, and the extra that scales with the rarity of its holy relics. Dynamic sites have no fixed location."
   stats={[
     { value: sites.length, label: 'holy sites' },
     { value: usedCount, label: 'used by a faith at start' },
-    { value: eminentCount, label: 'Eminent for some faith' },
     { value: faithData.faiths.length, label: 'faiths' },
   ]}
 >
@@ -44,33 +40,8 @@ const religions = [...new Set(faithData.faiths.map((f) => f.religion))].sort((a,
       <option value="">every religion</option>
       {religions.map((r) => <option value={r}>{religionName.get(r)}</option>)}
     </select>
-    <select id="fkind">
-      <option value="">all sites</option>
-      <option value="used">used by a faith at start</option>
-      <option value="eminent">Eminent for some faith</option>
-      <option value="dynamic">dynamic (created in play)</option>
-    </select>
+    <label class="hint"><input type="checkbox" id="fused" /> used at start only</label>
     <span class="hint" id="count"></span>
-  </div>
-
-  <div class="concepts">
-    {['eminent_holy_site', 'holy_site'].map((k) => concepts[k]?.desc && (
-      <details>
-        <summary>{concepts[k].name} <span class="subtle">— the game's own description</span></summary>
-        <p class="concept-text">{concepts[k].desc}</p>
-      </details>
-    ))}
-    {limits && sameLimits && (
-      <p class="note">
-        Every religion uses the default limits: at most {limits.eminentMax} Eminent and {limits.totalMax} holy sites in
-        total per faith; at least {limits.eminentMin} Eminent and {limits.totalMin} in total
-        (<code>NReligion</code> defines; no religion overrides them).
-      </p>
-    )}
-    <p class="note">
-      "× relic rarity" bonuses are multiplied by the sum of Rarity values of the holy relics at the site
-      (1=Common, 2=Masterwork, 3=Famed, 4=Illustrious), per <code>_holy_site_types.info</code>.
-    </p>
   </div>
 
   <div class="tbl-scroll">
@@ -79,10 +50,9 @@ const religions = [...new Set(faithData.faiths.map((f) => f.religion))].sort((a,
         <tr>
           <th>Holy site</th>
           <th>County</th>
-          <th title="Applied to every character of the faith while the site's holder shares it — only if the site is Eminent for that faith">Eminent: faith-wide</th>
-          <th title="Applied to the holder of the site's county, if same faith — Eminent or regular">County holder</th>
-          <th title="Applied to the site's county — Eminent or regular">County</th>
-          <th title="❧ = Eminent for that faith">Faiths</th>
+          <th>County holder</th>
+          <th title="Applies to every character of the faith, only when the site is one of the faith's Eminent holy sites">Faith-wide (Eminent)</th>
+          <th>Faiths</th>
         </tr>
       </thead>
       <tbody>
@@ -93,41 +63,47 @@ const religions = [...new Set(faithData.faiths.map((f) => f.religion))].sort((a,
               id={s.id}
               data-name={`${s.name} ${s.countyName ?? ''} ${s.baronyName ?? ''} ${users.map((u) => u.name).join(' ')}`.toLowerCase()}
               data-religions={users.map((u) => religionOf.get(u.id)).join(' ')}
-              data-kind={[users.length > 0 ? 'used' : '', users.some((u) => u.eminent) ? 'eminent' : '', s.dynamic ? 'dynamic' : ''].join(' ')}
+              data-used={users.length > 0 ? '1' : ''}
             >
               <td class="name">
                 <span class="u-name">{s.name}</span>
-                {s.dynamic && <span class="u-sub"><br />dynamic — no fixed location</span>}
+                {s.dlc && <span class="badge-dlc">{s.dlc}</span>}
               </td>
               <td>
-                {s.countyName ?? <span class="subtle">—</span>}
+                {s.dynamic ? <span class="subtle" title="is_dynamic: a general site type without a fixed location">dynamic</span> : (s.countyName ?? <span class="subtle">—</span>)}
                 {s.baronyName && <span class="u-sub"><br />{s.baronyName}</span>}
               </td>
               <td class="fx">
-                {s.faithModifiers.map((m) => <div>{m}</div>)}
-                {(s.faithModifiersScaled as Scaled[]).map((b) => b.lines.map((m) => <div class="scaled" title={b.scaleName ?? b.scale}>{m} <span class="subtle">× relic rarity</span></div>))}
+                {s.holderModifiers.map((m: string) => <div>{m}</div>)}
+                {s.countyModifiersScaled.map((sc: any) => (
+                  <div class="scaled" title={sc.scaleName ?? String(sc.scale)}>
+                    <span class="subtle">county, per relic rarity:</span>
+                    {sc.lines.map((m: string) => <div>{m}</div>)}
+                  </div>
+                ))}
                 {s.effects && <div>{s.effects}</div>}
-                {s.parameters.map((p) => <div class="subtle">{p.text ?? p.key.replace(/_/g, ' ')}</div>)}
-                {s.faithModifiers.length + s.faithModifiersScaled.length + s.parameters.length === 0 && !s.effects && <span class="subtle">—</span>}
+                {s.parameters.map((p: any) => <div class="subtle">{p.text ?? p.key.replace(/_/g, ' ')}</div>)}
+                {s.holderModifiers.length + s.parameters.length + s.countyModifiersScaled.length === 0 && !s.effects && <span class="subtle">—</span>}
               </td>
               <td class="fx">
-                {s.holderModifiers.map((m) => <div>{m}</div>)}
-                {s.holderModifiers.length === 0 && <span class="subtle">—</span>}
-              </td>
-              <td class="fx">
-                {(s.countyModifiersScaled as Scaled[]).map((b) => b.lines.map((m) => <div class="scaled" title={b.scaleName ?? b.scale}>{m} <span class="subtle">× relic rarity</span></div>))}
-                {s.countyModifiersScaled.length === 0 && <span class="subtle">—</span>}
+                {s.eminentModifiers.map((m: string) => <div>{m}</div>)}
+                {s.eminentModifiersScaled.map((sc: any) => (
+                  <div class="scaled" title={sc.scaleName ?? String(sc.scale)}>
+                    <span class="subtle">per relic rarity:</span>
+                    {sc.lines.map((m: string) => <div>{m}</div>)}
+                  </div>
+                ))}
+                {s.eminentModifiers.length + s.eminentModifiersScaled.length === 0 && <span class="subtle">—</span>}
               </td>
               <td>
                 <span class="chips">
                   {users.map((u) => (
-                    <a class:list={['chip', { 'chip--counter': u.eminent }]} href={`${base}/faiths#${u.id}`} title={u.eminent ? concepts.eminent_holy_site.name : undefined}>
+                    <a class:list={['chip', { 'chip--eminent': u.eminent }]} href={`${base}/faiths#${u.id}`} title={u.eminent ? 'Eminent holy site of this faith' : undefined}>
                       <span class="dot" style={`--c:${u.color ?? 'var(--faint)'}`} />
-                      {u.eminent && <span class="x">❧</span>}
                       {u.name}
                     </a>
                   ))}
-                  {users.length === 0 && <span class="subtle" title={s.dynamic ? 'A dynamic site type: rulers create it at a barony in play' : 'No faith lists this site at game start'}>{s.dynamic ? 'created in play' : 'unused at start'}</span>}
+                  {users.length === 0 && <span class="subtle" title="No faith lists this site at game start — reachable via reformation or events">unused at start</span>}
                 </span>
               </td>
             </tr>
@@ -137,10 +113,17 @@ const religions = [...new Set(faithData.faiths.map((f) => f.religion))].sort((a,
     </table>
   </div>
 
+  <p class="prov">
+    "Per relic rarity" bonuses multiply by the site's
+    <code>holy_site_total_artifact_rarity</code>: the sum of the rarities of its
+    holy relics (1 Common, 2 Masterwork, 3 Famed, 4 Illustrious), per the game's
+    own schema doc. Eminent chips mark the faiths whose Eminent sites include it.
+  </p>
+
   <script>
     const q = document.getElementById('q') as HTMLInputElement;
     const frel = document.getElementById('frel') as HTMLSelectElement;
-    const fkind = document.getElementById('fkind') as HTMLSelectElement;
+    const fused = document.getElementById('fused') as HTMLInputElement;
     const count = document.getElementById('count')!;
     const rows = [...document.querySelectorAll<HTMLTableRowElement>('tbody tr')];
 
@@ -152,26 +135,24 @@ const religions = [...new Set(faithData.faiths.map((f) => f.religion))].sort((a,
         const ok =
           (!needle || (r.dataset.name ?? '').includes(needle)) &&
           (!rel || (r.dataset.religions ?? '').split(' ').includes(rel)) &&
-          (!fkind.value || (r.dataset.kind ?? '').split(' ').includes(fkind.value));
+          (!fused.checked || r.dataset.used === '1');
         r.hidden = !ok;
         if (ok) shown++;
       }
       count.textContent = `${shown} of ${rows.length}`;
     }
-    for (const el of [q, frel, fkind]) el.addEventListener('input', apply);
+    for (const el of [q, frel, fused]) el.addEventListener('input', apply);
     apply();
   </script>
 
   <style>
     .fx { font-size: 0.8rem; max-width: 26rem; }
     .chips { max-width: 26rem; }
+    .fx .scaled { margin-top: 0.25rem; padding-left: 0.5rem; border-left: 2px solid var(--line); }
+    .chip--eminent { border-color: color-mix(in oklab, var(--brass) 60%, var(--line)); font-weight: 600; }
+    .prov { color: var(--faint); font-size: 0.78rem; max-width: 70ch; margin-top: 1.5rem; }
+    .prov code { font-family: var(--font-mono); }
     tr:target { background: color-mix(in oklab, var(--brass) 12%, transparent); }
-    .chip .x { color: var(--rubric); margin-right: 0.15rem; }
-    .scaled .subtle { font-size: 0.7rem; }
-    .concepts { margin: 0.4rem 0 1rem; max-width: 72ch; }
-    .concepts summary { cursor: pointer; color: var(--brass); font-size: 0.85rem; }
-    .concept-text { white-space: pre-line; color: var(--dim); font-size: 0.82rem; }
-    .note { color: var(--faint); font-size: 0.78rem; }
-    .note code { font-family: var(--font-mono); }
+    .filterbar label.hint { display: inline-flex; align-items: center; gap: 0.3rem; margin-left: 0; }
   </style>
 </Base>

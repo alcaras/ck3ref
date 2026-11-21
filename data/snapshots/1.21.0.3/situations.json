@@ -2,6 +2,7 @@
   {
     "desc": "The Dynastic Cycle depicts the socio-political status of the Great Empire of China, which flows through Dynastic Cycle Eras of stability, instability, and chaos.\n\nKey to the Dynastic Cycle is the Mandate of Heaven, a form of Legitimacy held by the Emperor. If it is ever lost, the Great Empire of China will shatter - until it is again united by someone worthy to be the Son of Heaven.",
     "dlc": "All Under Heaven",
+    "endingDecisions": [],
     "groupType": "major",
     "groupTypeName": "Major",
     "groups": [
@@ -4174,6 +4175,43 @@
         ]
       }
     ],
+    "situationDecisions": [
+      {
+        "id": "favor_dynastic_cycle_era_decision",
+        "name": "Favor an Era",
+        "onPage": true
+      },
+      {
+        "id": "favored_movement_consults_heaven_decision",
+        "name": "Shape the Dynastic Cycle",
+        "onPage": true
+      },
+      {
+        "id": "movement_petition_decision",
+        "name": "Make Movement Petition",
+        "onPage": true
+      },
+      {
+        "id": "situation_dynastic_cycle_claim_mandate_decision",
+        "name": "Claim the Mandate of Heaven",
+        "onPage": true
+      },
+      {
+        "id": "situation_dynastic_cycle_favor_own_culture_for_appointments",
+        "name": "Promote Cultural Governors",
+        "onPage": true
+      },
+      {
+        "id": "favor_movement_decision",
+        "name": "Favor a Movement",
+        "onPage": true
+      },
+      {
+        "id": "situation_dynastic_cycle_choose_movement_decision",
+        "name": "Join Movement",
+        "onPage": true
+      }
+    ],
     "sourceFile": "tgp_dynastic_cycle.txt",
     "startPhase": "situation_dynastic_cycle_phase_instability",
     "subRegions": [
@@ -4188,6 +4226,7 @@
   {
     "desc": "The open country, the wide expanses where Bedouins traditionally roam.",
     "dlc": "Khans of the Steppe",
+    "endingDecisions": [],
     "groupType": "major",
     "groupTypeName": "Major",
     "groups": [
@@ -4754,6 +4793,7 @@
         ]
       }
     ],
+    "situationDecisions": [],
     "sourceFile": "game_extra_nomads_arabs.txt",
     "startPhase": "situation_steppe_abundant_grazing_season",
     "subRegions": [
@@ -4777,6 +4817,7 @@
   {
     "desc": "The parched plains, the boundless horizon — where Somali herders follow their flocks beneath the burning sun.",
     "dlc": "Khans of the Steppe",
+    "endingDecisions": [],
     "groupType": "major",
     "groupTypeName": "Major",
     "groups": [
@@ -5343,6 +5384,7 @@
         ]
       }
     ],
+    "situationDecisions": [],
     "sourceFile": "game_extra_nomads_horn.txt",
     "startPhase": "situation_steppe_abundant_grazing_season",
     "subRegions": [
@@ -5366,6 +5408,7 @@
   {
     "desc": "The Maghreb and Saharan regions inhabited by Berbers.",
     "dlc": "Khans of the Steppe",
+    "endingDecisions": [],
     "groupType": "major",
     "groupTypeName": "Major",
     "groups": [
@@ -5932,6 +5975,7 @@
         ]
       }
     ],
+    "situationDecisions": [],
     "sourceFile": "game_extra_nomads_sahel.txt",
     "startPhase": "situation_steppe_abundant_grazing_season",
     "subRegions": [
@@ -5962,6 +6006,7 @@
   {
     "desc": "The homeland of the Sami and Karelian people.",
     "dlc": "Khans of the Steppe",
+    "endingDecisions": [],
     "groupType": "major",
     "groupTypeName": "Major",
     "groups": [
@@ -7005,6 +7050,7 @@
         ]
       }
     ],
+    "situationDecisions": [],
     "sourceFile": "game_extra_nomads_sami.txt",
     "startPhase": "situation_steppe_abundant_grazing_season",
     "subRegions": [
@@ -7028,6 +7074,7 @@
   {
     "desc": "Where yaks follow the wind and the sky bends low.",
     "dlc": "Khans of the Steppe",
+    "endingDecisions": [],
     "groupType": "major",
     "groupTypeName": "Major",
     "groups": [
@@ -8071,6 +8118,7 @@
         ]
       }
     ],
+    "situationDecisions": [],
     "sourceFile": "game_extra_nomads_tibet.txt",
     "startPhase": "situation_steppe_abundant_grazing_season",
     "subRegions": [
@@ -8101,6 +8149,7 @@
   {
     "desc": "The Christian Church is the ecclesiastical body that oversees and guides the followers of Jesus Christ, represented as a Situation that advances through a sequence of Chapters.\n\nIts boundaries encompass every Archdiocese in the world; every Christian Ruler of County rank or higher with any part of their Realm inside an Archdiocese is a member, be they clergy or secular.",
     "dlc": "By God Alone",
+    "endingDecisions": [],
     "groupType": "major",
     "groupTypeName": "Major",
     "groups": [
@@ -14007,6 +14056,48 @@
         ]
       }
     ],
+    "situationDecisions": [
+      {
+        "id": "pam_shape_the_christian_church_decision",
+        "name": "Guide the Christian Church",
+        "onPage": true
+      },
+      {
+        "id": "pam_prevent_great_schism_decision",
+        "name": "Prevent the Great Schism",
+        "onPage": true
+      },
+      {
+        "id": "pam_cause_great_schism_decision",
+        "name": "Cause the Great Schism",
+        "onPage": true
+      },
+      {
+        "id": "pam_mend_great_schism_decision",
+        "name": "Mend the Great Schism Through Diplomacy",
+        "onPage": true
+      },
+      {
+        "id": "mend_the_great_schism_decision",
+        "name": "Mend the Great Schism Through Conquest",
+        "onPage": true
+      },
+      {
+        "id": "pam_unite_miaphysite_churches_decision",
+        "name": "Unite the Miaphysite Churches",
+        "onPage": true
+      },
+      {
+        "id": "pam_kingdom_of_heaven_decision",
+        "name": "Proclaim the Kingdom of Heaven",
+        "onPage": true
+      },
+      {
+        "id": "petition_head_of_faith_decision",
+        "name": "Petition the …",
+        "onPage": true
+      }
+    ],
     "sourceFile": "pam_christian_situation.txt",
     "startPhase": "fragile_unity",
     "subRegions": [
@@ -14021,6 +14112,7 @@
   {
     "desc": "The Great Steppe represents the endless sea of grass of the Eurasian Steppe, and the climate conditions that shape it, and is divided into three regions: Western, Central and Eastern.\n\nThe different Steppe Seasons depict these both positive and adverse events, offering opportunities for special actions only available during that time, and modifying the County Fertility of each region.\n\nOnly Nomadic and Herder Rulers take part in this Situation and the Gurkhan represents the most powerful ruler in the entire region.",
     "dlc": "Khans of the Steppe",
+    "endingDecisions": [],
     "groupType": "major",
     "groupTypeName": "Major",
     "groups": [
@@ -15830,6 +15922,7 @@
         ]
       }
     ],
+    "situationDecisions": [],
     "sourceFile": "the_great_steppe.txt",
     "startPhase": "situation_steppe_abundant_grazing_season",
     "subRegions": [
@@ -15864,6 +15957,7 @@
   {
     "desc": "An Earthquake is a type of Natural Disaster which causes grievous and sudden destruction in a small number of Counties.\n\nEarthquakes can only occur in regions which are more prone to seismic activity.",
     "dlc": "All Under Heaven",
+    "endingDecisions": [],
     "groupType": "natural_disasters",
     "groupTypeName": "Natural Disaster",
     "groups": [
@@ -15976,6 +16070,7 @@
         "transitions": []
       }
     ],
+    "situationDecisions": [],
     "sourceFile": "tgp_natural_disaster.txt",
     "startPhase": "warning",
     "subRegions": [
@@ -15990,6 +16085,7 @@
   {
     "desc": "A Flood is a Natural Disaster which causes growing damage in a large number of Counties.\n\nFloods can only occur along the banks of major rivers.",
     "dlc": "All Under Heaven",
+    "endingDecisions": [],
     "groupType": "natural_disasters",
     "groupTypeName": "Natural Disaster",
     "groups": [
@@ -16102,6 +16198,7 @@
         "transitions": []
       }
     ],
+    "situationDecisions": [],
     "sourceFile": "tgp_natural_disaster.txt",
     "startPhase": "warning",
     "subRegions": [
@@ -16116,6 +16213,18 @@
   {
     "desc": null,
     "dlc": "Silk and Silver",
+    "endingDecisions": [
+      {
+        "id": "guelph_victory_decision",
+        "name": "Guelph Victory",
+        "onPage": true
+      },
+      {
+        "id": "ghibelline_victory_decision",
+        "name": "Ghibelline Victory",
+        "onPage": true
+      }
+    ],
     "groupType": "minor",
     "groupTypeName": "Minor",
     "groups": [
@@ -18409,6 +18518,43 @@
         ]
       }
     ],
+    "situationDecisions": [
+      {
+        "id": "change_guelph_ghibelline_phase_decision",
+        "name": "Ignite Conflict",
+        "onPage": true
+      },
+      {
+        "id": "become_guelph_ghibelline_leader_decision",
+        "name": "Seize Ghibelline Leadership",
+        "onPage": true
+      },
+      {
+        "id": "change_guelph_ghibelline_side_decision",
+        "name": "Join the Guelphs",
+        "onPage": true
+      },
+      {
+        "id": "step_down_as_guelph_ghibelline_leader_decision",
+        "name": "Withdraw … Leadership",
+        "onPage": true
+      },
+      {
+        "id": "pick_a_guelph_ghibelline_side_decision",
+        "name": "Determine Alignment",
+        "onPage": true
+      },
+      {
+        "id": "form_lombard_league_decision",
+        "name": "Form the Lombard League",
+        "onPage": true
+      },
+      {
+        "id": "leave_lombard_league_decision",
+        "name": "Leave the Lombard League",
+        "onPage": true
+      }
+    ],
     "sourceFile": "gdp_guelph_ghibelline_situation.txt",
     "startPhase": "in_nomine_domini",
     "subRegions": [
@@ -18423,6 +18569,7 @@
   {
     "desc": "The Silk Road is not one road, but a whole network of routes that connect the furthest corners of civilization to exchange gold, goods, and ideas. To have access to the Silk Road is to have access to all the riches of the world.\n\nDifferent levels of access to the silk road grant varying gold bonuses, and may provide unique opportunities to unlock exotic Silk Road Innovations.\n\n…",
     "dlc": "All Under Heaven",
+    "endingDecisions": [],
     "groupType": "minor",
     "groupTypeName": "Minor",
     "groups": [
@@ -19307,6 +19454,7 @@
         ]
       }
     ],
+    "situationDecisions": [],
     "sourceFile": "tgp_silk_road.txt",
     "startPhase": "phase_steady_trading",
     "subRegions": [

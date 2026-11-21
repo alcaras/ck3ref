@@ -27,6 +27,7 @@ function searchText(t: any): string {
     t.categoryName,
     ...t.parameters.map((p: any) => p.text),
     ...Object.values(t.modifiers).flat(),
+    ...(t.partners ?? []),
     ...t.requirements.map((r: any) => r.text),
   ]
     .join(' ')
@@ -103,6 +104,15 @@ function searchText(t: any): string {
                   </ul>
                 </div>
               ))}
+
+              {t.partners?.length > 0 && (
+                <div class="modgroup">
+                  <span class="scope" title="Overrides the faith's spouse and concubine limits (_cultural_traits.info)">Partners</span>
+                  <ul class="mods">
+                    {(t.partners as string[]).map((l) => <li>{l}</li>)}
+                  </ul>
+                </div>
+              )}
 
               {t.parameters.length > 0 && (
                 <ul class="effects">

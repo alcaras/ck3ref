@@ -6,113 +6,87 @@ import faithsData from '../data/faiths.json';
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 // which icons actually exist, resolved at build time from public/img
 const artFiles = new Set(
-  Object.keys(import.meta.glob('/public/img/{faith,faith_doctrines}/*.webp'))
+  Object.keys(import.meta.glob('/public/img/{faith,rite,faith_doctrines}/*.webp'))
     .map((p) => p.split('/').slice(-2).join('/').replace('.webp', ''))
 );
 const hasArt = (dir: string, id: string) => artFiles.has(dir + '/' + id);
 
-const { doctrines, groups, categories, defines, concepts } = doctrinesData as any;
-const { faiths, rites, religions, tenetStatusNames } = faithsData as any;
-const faithById = new Map<string, any>(faiths.map((f: any) => [f.id, f]));
-const famOfReligion = new Map<string, string>(religions.map((r: any) => [r.id, r.family]));
+const { doctrines, groups, categories } = doctrinesData as any;
+const { faiths, rites, religions } = faithsData as any;
 
 // client payload: only what the math needs
 const docMap = Object.fromEntries(doctrines.map((d: any) => [d.id, {
-  n: d.name, c: d.pietyCost?.steps ?? null, u: d.pietyCost?.unmodelled ?? [],
-  tenet: d.isTenet, dv: d.isTenet ? d.divergenceMultiplier : d.divergence,
-  art: hasArt('faith_doctrines', d.id) ? d.id : null, dlc: d.requiresDlc ?? null,
+  n: d.name, cost: d.pietyCost, tenet: d.isTenet,
+  art: hasArt('faith_doctrines', d.id) ? d.id : null,
 }]));
-const catOrder = new Map<string, number>(categories.map((c: any) => [c.id, c.sortOrder]));
+const catOrder = categories.map((c: any) => c.id);
 const creatableGroups = groups
-  .filter((g: any) => g.category !== 'not_creatable' && g.doctrines.some((id: string) => docMap[id]))
-  .sort((a: any, b: any) => (catOrder.get(a.category) ?? 99) - (catOrder.get(b.category) ?? 99));
-const groupMode = Object.fromEntries(groups.map((g: any) => [g.id, g.divergence]));
-const tenetIds = doctrines.filter((d: any) => d.isTenet)
-  .sort((a: any, b: any) => a.name.localeCompare(b.name)).map((d: any) => d.id);
+  .filter((g: any) => g.category !== 'not_creatable' && g.id !== 'doctrine_core_tenets' &&
+    g.doctrines.some((id: string) => docMap[id]))
+  .sort((a: any, b: any) => catOrder.indexOf(a.category) - catOrder.indexOf(b.category));
+const tenetGroup = groups.find((g: any) => g.id === 'doctrine_core_tenets');
+const tenetSlots: number = tenetGroup?.picks ?? 0;
+const tenetIds = doctrines.filter((d: any) => d.isTenet && d.visible).map((d: any) => d.id);
 
-// tenet stances from the faith's history (cumulative, as of the earliest start)
-function stances(f: any): Record<string, string> {
-  const out: Record<string, string> = {};
-  for (const h of f?.history ?? []) {
-    for (const st of ['known', 'permitted', 'prohibited']) for (const t of h[st] ?? []) out[t.key] = st;
-  }
-  return out;
-}
-const creatable = rites.filter((r: any) => !r.historyOnly);
-const riteMap = Object.fromEntries(creatable.map((r: any) => {
-  const f = faithById.get(r.faith);
-  return [r.id, {
-    n: r.name, faith: r.faith, fn: f?.name ?? r.faith, rel: r.religion,
-    fam: f?.family ?? famOfReligion.get(r.religion) ?? null,
-    d: r.effectiveDoctrines,
-    t: r.tenets.map((t: any) => ({ k: t.key, fb: t.fallback, dlc: t.dlc })),
-    st: stances(f), main: (r.mainOf ?? []).includes(r.faith),
-    art: hasArt('faith', r.icon ?? r.id) ? (r.icon ?? r.id) : null,
-  }];
-}));
-const byFaith = new Map<string, any[]>();
-for (const r of creatable) {
-  const fn = faithById.get(r.faith)?.name ?? r.faith;
-  if (!byFaith.has(fn)) byFaith.set(fn, []);
-  byFaith.get(fn)!.push(r);
-}
-const faithGroups = [...byFaith.entries()].sort((a, b) => a[0].localeCompare(b[0]));
-const defaultRite = creatable.find((r: any) => (r.mainOf ?? []).includes('catholic'))?.id ?? creatable[0]?.id;
-const D = {
-  cap: defines.FAITH_CORE_TENETS_CAP,
-  tsd: defines.TENET_STATUS_DIVERGENCE,
-  fervPer: defines.RITE_CREATION_FERVOR_DISCOUNT_PER_MISSING_FERVOR,
-  fervMax: defines.RITE_CREATION_FERVOR_DISCOUNT_MAX,
-  heretical: defines.RITE_DIVERGENCE_HERETICAL_THRESHOLD,
-  newFaith: defines.RITE_CREATION_DIVERGENCE_FAITH_THRESHOLD,
-  fixed: defines.RITE_CREATION_PIETY_COST,
-};
-const statusOrder = ['unknown', 'known', 'prohibited', 'permitted', 'core'];
-const statusNames = statusOrder.map((k) => tenetStatusNames[k] ?? k);
+const religionFamily = Object.fromEntries(religions.map((r: any) => [r.id, r.family]));
+// the starting point is a Rite: in 1.20 new Rites branch off an existing one
+const riteMap = Object.fromEntries(rites.map((r: any) => [r.id, {
+  n: r.name, faith: r.faith, religion: r.religion, family: religionFamily[r.religion],
+  d: r.doctrines, t: r.tenets.map((t: any) => t.key),
+  art: hasArt('rite', r.id) ? r.id : null,
+}]));
+const faithGroups = faiths
+  .filter((f: any) => rites.some((r: any) => r.faith === f.id))
+  .map((f: any) => ({ id: f.id, name: f.name, rites: rites.filter((r: any) => r.faith === f.id) }));
+
+// cost ranges for the provenance note, from the data rather than prose
+const valuesOf = (tenet: boolean) => doctrines
+  .filter((d: any) => d.isTenet === tenet && d.pietyCost)
+  .flatMap((d: any) => [d.pietyCost.base, ...d.pietyCost.values.map((v: any) => v.value)])
+  .filter((v: any) => typeof v === 'number' && v > 0);
+const range = (xs: number[]) => xs.length ? `${Math.min(...xs).toLocaleString()}–${Math.max(...xs).toLocaleString()}` : '—';
+const keepFactors = [...new Set(doctrines.flatMap((d: any) =>
+  (d.pietyCost?.mults ?? []).filter((m: any) => m.keep).map((m: any) => m.factor)))];
 ---
 <Base
-  title="Faith Cost Calculator"
+  title="Rite Cost Calculator"
   active="faith-creator"
-  lede="Start from any rite, change its tenets and doctrines, and see the piety bill. Every price is the game's own piety_cost script, evaluated against the rite you start from."
+  lede="Pick the Rite you start from, change its tenets and doctrines, and see the piety bill. Every price is evaluated from the game's own cost chains against your starting Rite: its religion, family and faith, and what it already holds (keeping a pick is cheaper; jumping several steps along a spectrum costs more)."
   stats={[
+    { value: rites.length, label: 'rites to start from' },
     { value: creatableGroups.length, label: 'doctrine groups' },
     { value: tenetIds.length, label: 'tenets' },
-    { value: creatable.length, label: 'rites' },
   ]}
 >
   <div class="filterbar">
-    <label>Starting rite
-      <img id="faithart" class="pick-art lg" src="" alt="" width="34" height="34" hidden />
+    <label>Starting Rite
+      <img id="riteart" class="pick-art lg" src="" alt="" width="34" height="34" hidden />
       <select id="baserite">
-        {faithGroups.map(([fn, rs]) => (
-          <optgroup label={fn}>
-            {rs.map((r: any) => <option value={r.id} selected={r.id === defaultRite}>{r.name}{riteMap[r.id].main ? ' ❧' : ''}</option>)}
+        {faithGroups.map((f: any) => (
+          <optgroup label={f.name}>
+            {f.rites.map((r: any) => <option value={r.id}>{r.name}{r.isMain ? ' (main)' : ''}</option>)}
           </optgroup>
         ))}
       </select>
     </label>
-    <label title="NRite.RITE_CREATION_FERVOR_DISCOUNT_*: creating gets cheaper per point of fervor below 100, capped">Fervor
-      <input type="number" id="fervor" min="0" max="100" step="1" value="100" />
-    </label>
-    <label title="Tenets that need a DLC feature fall back to another tenet without it"><input type="checkbox" id="dlcon" checked /> DLC tenets</label>
     <span class="hint total">Total: <b id="total">0</b> piety</span>
+    <span class="hint" id="unmodelled" hidden></span>
   </div>
-  <p class="subtle ctxline" id="ctxline"></p>
 
   <section>
-    <h2 class="group-h">Tenets <span class="count">{D.cap} picks</span></h2>
+    <h2 class="group-h">Tenets <span class="count">up to {tenetSlots}</span></h2>
     <div class="pickgrid" id="tenets">
-      {Array.from({ length: D.cap }, (_, i) => (
+      {Array.from({ length: tenetSlots }, (_, i) => (
         <label class="pick">
           <span class="subtle">tenet {i + 1}</span>
           <span class="pick-row">
             <img class="pick-art" src="" alt="" width="28" height="28" hidden />
             <select data-tenet={i}>
+              <option value="">— none —</option>
               {tenetIds.map((id: string) => <option value={id}>{docMap[id].n}</option>)}
             </select>
           </span>
           <span class="pcost subtle"></span>
-          <span class="pdiv subtle"></span>
         </label>
       ))}
     </div>
@@ -123,138 +97,108 @@ const statusNames = statusOrder.map((k) => tenetStatusNames[k] ?? k);
     <div class="pickgrid" id="doctrines">
       {creatableGroups.map((g: any) => (
         <label class="pick">
-          <span class="subtle">{g.name}{g.mainRiteOnly ? ' · mainline rite only' : ''}</span>
+          <span class="subtle">{g.name}</span>
           <span class="pick-row">
             <img class="pick-art" src="" alt="" width="28" height="28" hidden />
             <select data-group={g.id}>
+              <option value="">— none —</option>
               {g.doctrines.filter((id: string) => docMap[id]).map((id: string) => (
                 <option value={id}>{docMap[id].n}</option>
               ))}
             </select>
           </span>
           <span class="pcost subtle"></span>
-          <span class="pdiv subtle"></span>
         </label>
       ))}
     </div>
   </section>
 
-  <section class="prov">
-    <p>
-      Each price runs the doctrine's or tenet's own <code>piety_cost</code> script value with the
-      starting rite as scope, so "rite has X", religion, family and faith checks are answered from
-      that rite. Unchanged picks therefore get the game's own keep multiplier, and doctrines in
-      ordered groups get their step multipliers. A condition the calculator cannot evaluate (marked
-      <span class="warn">?</span>) is treated as false.
-    </p>
-    <p>
-      Fervor below 100 discounts the total by {D.fervPer}% per point, up to {D.fervMax}%
-      (<code>NRite</code> defines). The define <code>RITE_CREATION_PIETY_COST = {D.fixed}</code>
-      is commented "Fixed cost how much piety it costs to branch off a Faith with new Rite"; how
-      it combines with the total is not documented, so it is shown here but not added.
-    </p>
-    <p>
-      <b>Divergence is not totalled.</b> Each pick shows its inputs: a tenet's status in the
-      starting faith ({statusNames.map((n, i) => `${n} ${D.tsd[i]}`).join(', ')}, from
-      <code>TENET_STATUS_DIVERGENCE</code>) and its divergence multiplier, and a doctrine's
-      divergence value with its group's sequence or category rule. How these combine is described
-      only loosely in the game's files, so the calculator does not claim a number. For reference, a
-      rite above {D.heretical} divergence is heretical and one created at {D.newFaith} or more
-      becomes a new faith. Which tenets and doctrines a given rite may pick is not checked; see the
-      <a href={`${base}/doctrines`}>doctrines page</a> for each one's conditions.
-    </p>
-    {concepts.rite_divergence?.desc && (
-      <details>
-        <summary>{concepts.rite_divergence.name} — the game's own description</summary>
-        <p class="concept-text">{concepts.rite_divergence.desc}</p>
-      </details>
-    )}
-  </section>
+  <p class="prov">
+    Costs come from each tenet's and doctrine's own <code>piety_cost</code> chain
+    (tenets {range(valuesOf(true))}, doctrines {range(valuesOf(false))} piety
+    before multipliers), evaluated against the starting Rite: its religion,
+    family, faith, and the doctrines and tenets it already has. That covers the
+    keep-same multiplier (×{keepFactors.join(' / ')}) and the step-distance
+    surcharges for moving along a spectrum. Branches the game decides on
+    something we cannot know here (a Rite parameter, a variable, an AND/NOT
+    chain) are flagged as not modelled, and the price shown falls through to the
+    next branch. Not included: the Rite-creation base cost
+    (<code>RITE_CREATION_PIETY_COST</code>), fervor discounts, whether the result
+    diverges into a new Faith, and DLC-gated tenets you may not own.
+  </p>
 
-  <script define:vars={{ docMap, riteMap, groupMode, D, statusOrder, statusNames, base }}>
+  <script define:vars={{ docMap, riteMap, base }}>
     const baseSel = document.getElementById('baserite');
-    const fervEl = document.getElementById('fervor');
-    const dlcEl = document.getElementById('dlcon');
     const totalEl = document.getElementById('total');
-    const ctxEl = document.getElementById('ctxline');
+    const unEl = document.getElementById('unmodelled');
 
-    function test(c, ctx, miss) {
-      if (!c) return false;
-      if ('religion' in c) return ctx.rel === c.religion;
-      if ('family' in c) return ctx.fam === c.family;
-      if ('faith' in c) return ctx.faith === c.faith;
-      if ('doctrine' in c) return ctx.docs.has(c.doctrine);
-      if ('tenet' in c) return ctx.tenets.has(c.tenet);
-      if ('const' in c) return !!c.const;
-      if ('not' in c) return !test(c.not, ctx, miss);
-      if ('and' in c) return c.and.every((x) => test(x, ctx, miss));
-      if ('or' in c) return c.or.some((x) => test(x, ctx, miss));
-      miss.push(c.unknown ?? JSON.stringify(c));
-      return false;
-    }
-
-    // a script value: ordered steps, if / else_if / else chains
-    function run(steps, ctx, miss, v) {
-      let chainDone = false;
-      for (const s of steps) {
-        if (s.op === 'if' || s.op === 'else_if' || s.op === 'else') {
-          if (s.op === 'if') chainDone = false;
-          if (chainDone) continue;
-          if (s.op === 'else' || test(s.cond, ctx, miss)) { v = run(s.then, ctx, miss, v); chainDone = true; }
-          continue;
-        }
-        const x = s.value;
-        switch (s.op) {
-          case 'value': v = x; break;
-          case 'add': v += x; break;
-          case 'subtract': v -= x; break;
-          case 'multiply': v *= x; break;
-          case 'divide': v = x ? v / x : v; break;
-          case 'min': v = Math.min(v, x); break;
-          case 'max': v = Math.max(v, x); break;
-          case 'round': v = Math.round(v); break;
-          case 'ceiling': v = Math.ceil(v); break;
-          case 'floor': v = Math.floor(v); break;
-          default: miss.push(`step ${s.op}`);
-        }
-      }
-      return v;
-    }
-
-    function ctxOf(r) {
-      const tenets = r.t.map((t) => (!dlcEl.checked && t.dlc && t.fb ? t.fb : t.k));
-      return { rel: r.rel, fam: r.fam, faith: r.faith, docs: new Set(r.d), tenets: new Set(tenets), tl: tenets };
+    // does a cost-branch condition hold for the starting Rite?
+    function holds(match, ctx) {
+      if (!match) return null; // not modelled
+      return match.religions.includes(ctx.religion) ||
+        match.families.includes(ctx.family) ||
+        match.faiths.includes(ctx.faith) ||
+        match.rites.includes(ctx.rite) ||
+        match.doctrines.some((d) => ctx.has.has(d));
     }
 
     function costOf(id, ctx) {
       const d = docMap[id];
-      if (!d || !d.c) return { v: 0, miss: [] };
-      const miss = [...d.u];
-      const v = run(d.c, ctx, [], 0);
-      return { v, miss };
+      if (!d || !d.cost) return { v: 0, unknown: false, notes: [] };
+      let unknown = false;
+      const notes = [];
+      let v = d.cost.base;
+      if (d.cost.values.length) {
+        let hit = null;
+        for (const e of d.cost.values) {
+          if (e.else) { hit = e; break; }
+          const h = holds(e.match, ctx);
+          if (h === null) { unknown = true; continue; }
+          if (h) { hit = e; break; }
+        }
+        if (hit) v = hit.value;
+      }
+      if (typeof v !== 'number') { v = 0; unknown = true; }
+      for (const m of d.cost.mults) {
+        if (typeof m.factor !== 'number') { unknown = true; continue; }
+        const h = m.else ? null : holds(m.match, ctx);
+        if (h === null) { unknown = true; continue; }
+        if (h) {
+          v *= m.factor;
+          notes.push(m.keep ? `kept ×${m.factor}` : `×${m.factor}`);
+        }
+      }
+      return { v, unknown, notes };
+    }
+
+    function ctxOf(riteId) {
+      const r = riteMap[riteId] ?? { d: [], t: [] };
+      return {
+        rite: riteId, faith: r.faith, religion: r.religion, family: r.family,
+        has: new Set([...(r.d ?? []), ...(r.t ?? [])]),
+      };
     }
 
     function initFromRite() {
-      const r = riteMap[baseSel.value];
-      if (!r) return;
-      const ctx = ctxOf(r);
+      const r = riteMap[baseSel.value] ?? { d: [], t: [] };
       document.querySelectorAll('[data-tenet]').forEach((sel, i) => {
-        const t = ctx.tl[i];
-        if (t && [...sel.options].some((o) => o.value === t)) sel.value = t;
+        const t = r.t[i];
+        sel.value = t && [...sel.options].some((o) => o.value === t) ? t : '';
       });
       document.querySelectorAll('[data-group]').forEach((sel) => {
         const cur = r.d.find((id) => [...sel.options].some((o) => o.value === id));
-        if (cur) sel.value = cur;
+        sel.value = cur ?? '';
       });
     }
 
     function syncArt() {
       const r = riteMap[baseSel.value];
-      const fa = document.getElementById('faithart');
-      if (r?.art) { fa.src = `${base}/img/faith/${r.art}.webp`; fa.hidden = false; }
-      else fa.hidden = true;
+      const ra = document.getElementById('riteart');
+      if (r?.art) { ra.src = `${base}/img/rite/${r.art}.webp`; ra.hidden = false; }
+      else ra.hidden = true;
       document.querySelectorAll('.pick').forEach((p) => {
         const img = p.querySelector('.pick-art');
+        if (!img) return;
         const art = docMap[p.querySelector('select').value]?.art;
         if (art) { img.src = `${base}/img/faith_doctrines/${art}.webp`; img.hidden = false; }
         else img.hidden = true;
@@ -263,46 +207,26 @@ const statusNames = statusOrder.map((k) => tenetStatusNames[k] ?? k);
 
     function update() {
       syncArt();
-      const r = riteMap[baseSel.value];
-      if (!r) return;
-      const ctx = ctxOf(r);
-      ctxEl.textContent = `Scope: ${r.n}, a ${r.main ? 'mainline ' : ''}rite of ${r.fn}.`;
+      const ctx = ctxOf(baseSel.value);
       let total = 0;
+      let unknown = 0;
       document.querySelectorAll('.pick').forEach((p) => {
-        const sel = p.querySelector('select');
-        const id = sel.value;
-        const d = docMap[id];
-        const kept = d?.tenet ? ctx.tenets.has(id) : ctx.docs.has(id);
-        const { v, miss } = costOf(id, ctx);
-        total += v;
-        const pc = p.querySelector('.pcost');
-        pc.textContent = (v ? `${Math.round(v).toLocaleString()} piety` : 'free') + (kept ? ' · kept' : '');
-        if (miss.length) {
-          const w = document.createElement('span');
-          w.className = 'warn';
-          w.textContent = ' ?';
-          w.title = 'Not evaluated (treated as false): ' + miss.join('; ');
-          pc.appendChild(w);
-        }
-        const pd = p.querySelector('.pdiv');
-        if (d?.tenet) {
-          const st = kept ? 'core' : (r.st[id] ?? 'unknown');
-          const i = statusOrder.indexOf(st);
-          pd.textContent = `status in faith: ${statusNames[i]} (${D.tsd[i]})` + (d.dv !== 1 ? ` · divergence ×${d.dv}` : '');
-        } else {
-          const g = sel.dataset.group;
-          pd.textContent = kept ? '' : `divergence ${d?.dv ?? 0}` + (groupMode[g] ? ` (${groupMode[g]})` : '');
-        }
+        const id = p.querySelector('select').value;
+        const out = p.querySelector('.pcost');
+        if (!id) { out.textContent = ''; return; }
+        const c = costOf(id, ctx);
+        total += c.v;
+        if (c.unknown) unknown++;
+        out.textContent = (c.v ? `${Math.round(c.v)} piety` : 'free') +
+          (c.notes.length ? ` (${c.notes.join(', ')})` : '') +
+          (c.unknown ? ' · a branch not modelled' : '');
       });
-      const fervor = Math.max(0, Math.min(100, Number(fervEl.value) || 0));
-      const disc = Math.min(D.fervMax, (100 - fervor) * D.fervPer);
-      const final = total * (1 - disc / 100);
-      totalEl.textContent = Math.round(final).toLocaleString() + (disc ? ` (−${disc}% fervor)` : '');
+      totalEl.textContent = Math.round(total).toLocaleString();
+      unEl.hidden = unknown === 0;
+      unEl.textContent = `${unknown} pick${unknown === 1 ? '' : 's'} with a cost branch not modelled`;
     }
 
     baseSel.addEventListener('input', () => { initFromRite(); update(); });
-    dlcEl.addEventListener('input', () => { initFromRite(); update(); });
-    fervEl.addEventListener('input', update);
     document.querySelectorAll('.pick select').forEach((s) => s.addEventListener('input', update));
     initFromRite();
     update();
@@ -310,7 +234,7 @@ const statusNames = statusOrder.map((k) => tenetStatusNames[k] ?? k);
 
   <style>
     .filterbar label { color: var(--dim); font-size: 0.8rem; display: flex; gap: 0.4rem; align-items: center; }
-    .filterbar select { max-width: 15rem; }
+    .filterbar select { max-width: 18rem; }
     .total { font-size: 0.95rem; color: var(--vellum); }
     .total b { color: var(--rubric); font-family: var(--font-mono); font-size: 1.1rem; }
     .pickgrid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 0.6rem; }
@@ -322,12 +246,5 @@ const statusNames = statusOrder.map((k) => tenetStatusNames[k] ?? k);
     .pick-art { flex: none; filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.6)); }
     .prov { color: var(--faint); font-size: 0.78rem; max-width: 64ch; margin-top: 2rem; }
     .prov code { font-family: var(--font-mono); }
-    .ctxline { font-size: 0.8rem; margin: 0.2rem 0 0.8rem; }
-    .pdiv { font-family: var(--font-mono); font-size: 0.68rem; min-height: 1em; color: var(--faint); }
-    .warn { color: var(--rubric); cursor: help; }
-    #fervor { width: 4.5rem; background: var(--ink); color: var(--vellum); border: 1px solid var(--line); border-radius: var(--r); padding: 0.2rem 0.3rem; }
-    .prov p { margin: 0.5rem 0; }
-    .prov summary { cursor: pointer; color: var(--brass); }
-    .concept-text { white-space: pre-line; }
   </style>
 </Base>

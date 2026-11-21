@@ -37,7 +37,10 @@ MAPPED = {
     "landed_titles": "build_titles.py + build_startworld.py",
     "governments": "build_governments.py",
     "laws": "build_laws.py",
-    "law_groups": "build_laws.py (1.21 split groups out of laws/)",
+    "law_groups": "build_laws.py",
+    "spiritual_fulfillment": "build_fulfillment.py",
+    "holy_orders": "build_holy_orders.py",
+    "puppets": "build_puppets.py",
     "title_types": "build_titles.py (root title typing: merchant/noble/ecclesiastical…)",
     "subject_contracts": "build_contracts.py",
     "court_positions": "build_court.py",
@@ -115,11 +118,12 @@ SKIP = {
     "connection_arrows", "playable_difficulty_infos", "console_groups",
     "province_mapping",
     # 1.21 / Silk and Silver — candidates for new pages, not yet built
-    "trade_tasks", "holy_orders", "spiritual_fulfillment", "puppets",
-    "confederation_aspirations",
+    "trade_tasks", "confederation_aspirations",
     # 1.21 engine/graphics plumbing — no reference value
     "roads", "holding_sprawl_graphics", "holding_sprawl_patterns",
-    "trade_goods_graphics", "menu_scenes", "morpheme_strip_rules",
+    "trade_goods_graphics",
+    "menu_scenes",            # main-menu portraits and animations (frontend GUI)
+    "morpheme_strip_rules",   # name-generation string rules
 }
 
 # game/ subtrees the site reads outside common/: map_data is parsed by

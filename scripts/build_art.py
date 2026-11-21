@@ -30,7 +30,7 @@ ILLUSTRATIONS = [
 ]
 
 # (json file, records path, gfx subfolder, output subdir, icon field, id field,
-#  quiet) — quiet=True: absence is expected (game has no art for some entries),
+#  quiet[, record filter]) — quiet=True: absence is expected (game has no art for some entries),
 #  skip silently with no _default fallback.
 CATEGORIES = [
     ("maa.json", None, "regimenttypes", "maa", "icon", "id", False),
@@ -38,10 +38,14 @@ CATEGORIES = [
     ("legacies.json", None, "dynasty", "legacies", "icon", "id", False),
     ("buildings.json", None, "building_types", "buildings", "icon", "icon", False),
     ("faiths.json", "faiths", "faith", "faith", "icon", "id", False),
-    ("doctrines.json", "doctrines", "faith_doctrines", "faith_doctrines", "icon", "id", True),
-    # 1.21 split tenets out of doctrines; their art moved to icons/faith_tenets
-    # but pages still load both from img/faith_doctrines/.
-    ("doctrines.json", "doctrines?isTenet", "faith_tenets", "faith_doctrines", "icon", "id", True),
+    ("doctrines.json", "doctrines", "faith_doctrines", "faith_doctrines", "icon", "id", True,
+     lambda r: not r.get("isTenet")),
+    # 1.20: tenets have their own icon folder (TENET_TYPE_ICON_PATH); output
+    # stays under faith_doctrines/ so pages keep one lookup for both
+    ("doctrines.json", "doctrines", "faith_tenets", "faith_doctrines", "icon", "id", True,
+     lambda r: r.get("isTenet")),
+    # rites use DYNAMIC_RITE_ICON_PATH, which is the faith icon folder
+    ("faiths.json", "rites", "faith", "rite", "icon", "id", True),
     ("innovations.json", None, "culture_innovations", "innovations", "icon", "id", False),
     ("pillars.json", None, "culture_pillars", "pillars", "icon", "id", True),
     ("traditions.json", "traditions", "culture_tradition/4-items", "traditions", "icon", "id", True),
@@ -63,6 +67,9 @@ CATEGORIES = [
     ("artifacts.json", "named", "artifact", "artifacts", "icon", "icon", False),
     ("interactions.json", None, "character_interactions", "interactions", "icon", "id", True),
     ("domiciles.json", "buildings", "", "domiciles", "icon", "id", True),
+    # By God Alone: level icons are full paths in the data; we keep the stem
+    ("fulfillment.json", "levels", "spiritual_fulfillment_levels", "fulfillment", "icon", "icon", True),
+    ("puppets.json", "types", "", "puppets", "icon", "icon", True),
 ]
 
 
@@ -186,18 +193,15 @@ def main():
                 n += 1
         print(f"✓ art: {n} {out_sub} illustrations → public/img/{out_sub}/")
 
-    for json_file, rec_path, gfx_sub, out_sub, icon_field, id_field, quiet in CATEGORIES:
+    for json_file, rec_path, gfx_sub, out_sub, icon_field, id_field, quiet, *flt in CATEGORIES:
         path = ck3.ROOT / "src/data" / json_file
         if not path.exists():
             continue
         records = json.loads(path.read_text(encoding="utf-8"))
-        flag = None
-        if rec_path and "?" in rec_path:
-            rec_path, flag = rec_path.split("?")
         if rec_path:
             records = records[rec_path]
-        if flag:
-            records = [r for r in records if r.get(flag)]
+        if flt:
+            records = [r for r in records if flt[0](r)]
         seen = set()
         missing = []
         done = 0

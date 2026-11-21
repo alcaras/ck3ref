@@ -1,0 +1,589 @@
+[
+  {
+    "attackerAdvantage": null,
+    "attackerModifiers": [],
+    "color": "#1a1a1a",
+    "combatWidth": 1,
+    "countyCapitalModifiers": [],
+    "countyFertility": 0,
+    "defenderAdvantage": null,
+    "defenderModifiers": [],
+    "icon": "coastal_sea",
+    "id": "coastal_sea",
+    "movementSpeed": 1,
+    "name": "Coastal Sea",
+    "provinceModifiers": [
+      {
+        "polarity": "bad",
+        "text": "+50 Danger"
+      }
+    ],
+    "provisionCost": 80,
+    "sourceFile": "00_terrains.txt",
+    "travelDangerScore": 20
+  },
+  {
+    "attackerAdvantage": null,
+    "attackerModifiers": [],
+    "color": "#ffe500",
+    "combatWidth": 1,
+    "countyCapitalModifiers": [
+      {
+        "polarity": "bad",
+        "text": "-50% Development Growth"
+      }
+    ],
+    "countyFertility": 20,
+    "defenderAdvantage": null,
+    "defenderModifiers": [],
+    "icon": "desert",
+    "id": "desert",
+    "movementSpeed": 0.7,
+    "name": "Desert",
+    "provinceModifiers": [
+      {
+        "polarity": "bad",
+        "text": "-30% Supply Limit"
+      },
+      {
+        "polarity": "bad",
+        "text": "+50 Danger"
+      },
+      {
+        "polarity": "good",
+        "text": "+0.25 County Fertility Growth"
+      }
+    ],
+    "provisionCost": 150,
+    "sourceFile": "00_terrains.txt",
+    "travelDangerScore": 50
+  },
+  {
+    "attackerAdvantage": null,
+    "attackerModifiers": [],
+    "color": "#171326",
+    "combatWidth": 0.5,
+    "countyCapitalModifiers": [
+      {
+        "polarity": "bad",
+        "text": "-50% Development Growth"
+      }
+    ],
+    "countyFertility": 20,
+    "defenderAdvantage": 12,
+    "defenderModifiers": [
+      {
+        "polarity": "good",
+        "text": "-30% Retreat Losses"
+      }
+    ],
+    "icon": "desert_mountains",
+    "id": "desert_mountains",
+    "movementSpeed": 0.5,
+    "name": "Desert Mountains",
+    "provinceModifiers": [
+      {
+        "polarity": "bad",
+        "text": "-60% Supply Limit"
+      },
+      {
+        "polarity": "bad",
+        "text": "+65 Danger"
+      },
+      {
+        "polarity": "good",
+        "text": "+0.15 County Fertility Growth"
+      }
+    ],
+    "provisionCost": 150,
+    "sourceFile": "00_terrains.txt",
+    "travelDangerScore": 65
+  },
+  {
+    "attackerAdvantage": null,
+    "attackerModifiers": [],
+    "color": "#dc2d78",
+    "combatWidth": 1,
+    "countyCapitalModifiers": [
+      {
+        "polarity": "bad",
+        "text": "-5% Development Growth"
+      }
+    ],
+    "countyFertility": 25,
+    "defenderAdvantage": null,
+    "defenderModifiers": [],
+    "icon": "drylands",
+    "id": "drylands",
+    "movementSpeed": 1,
+    "name": "Drylands",
+    "provinceModifiers": [
+      {
+        "polarity": "neutral",
+        "text": "+0% Supply Limit"
+      },
+      {
+        "polarity": "bad",
+        "text": "+35 Danger"
+      },
+      {
+        "polarity": "good",
+        "text": "+0.25 County Fertility Growth"
+      }
+    ],
+    "provisionCost": 80,
+    "sourceFile": "00_terrains.txt",
+    "travelDangerScore": 35
+  },
+  {
+    "attackerAdvantage": null,
+    "attackerModifiers": [],
+    "color": "#ff0000",
+    "combatWidth": 1,
+    "countyCapitalModifiers": [
+      {
+        "polarity": "good",
+        "text": "+20% Development Growth"
+      }
+    ],
+    "countyFertility": 40,
+    "defenderAdvantage": null,
+    "defenderModifiers": [],
+    "icon": "farmlands",
+    "id": "farmlands",
+    "movementSpeed": 1,
+    "name": "Farmlands",
+    "provinceModifiers": [
+      {
+        "polarity": "good",
+        "text": "+50% Supply Limit"
+      },
+      {
+        "polarity": "good",
+        "text": "+0.35 County Fertility Growth"
+      }
+    ],
+    "provisionCost": 25,
+    "sourceFile": "00_terrains.txt",
+    "travelDangerScore": 0
+  },
+  {
+    "attackerAdvantage": null,
+    "attackerModifiers": [],
+    "color": "#371f99",
+    "combatWidth": 0.75,
+    "countyCapitalModifiers": [
+      {
+        "polarity": "good",
+        "text": "+20% Development Growth"
+      }
+    ],
+    "countyFertility": 30,
+    "defenderAdvantage": null,
+    "defenderModifiers": [],
+    "icon": "floodplains",
+    "id": "floodplains",
+    "movementSpeed": 1,
+    "name": "Floodplains",
+    "provinceModifiers": [
+      {
+        "polarity": "good",
+        "text": "+35% Supply Limit"
+      },
+      {
+        "polarity": "bad",
+        "text": "+35 Danger"
+      },
+      {
+        "polarity": "good",
+        "text": "+0.2 County Fertility Growth"
+      }
+    ],
+    "provisionCost": 25,
+    "sourceFile": "00_terrains.txt",
+    "travelDangerScore": 35
+  },
+  {
+    "attackerAdvantage": null,
+    "attackerModifiers": [],
+    "color": "#47b22d",
+    "combatWidth": 0.9,
+    "countyCapitalModifiers": [],
+    "countyFertility": 15,
+    "defenderAdvantage": 3,
+    "defenderModifiers": [],
+    "icon": "forest",
+    "id": "forest",
+    "movementSpeed": 0.8,
+    "name": "Forest",
+    "provinceModifiers": [
+      {
+        "polarity": "bad",
+        "text": "-10% Supply Limit"
+      },
+      {
+        "polarity": "bad",
+        "text": "+45 Danger"
+      },
+      {
+        "polarity": "good",
+        "text": "+0.15 County Fertility Growth"
+      }
+    ],
+    "provisionCost": 50,
+    "sourceFile": "00_terrains.txt",
+    "travelDangerScore": 45
+  },
+  {
+    "attackerAdvantage": null,
+    "attackerModifiers": [],
+    "color": "#5a320c",
+    "combatWidth": 0.8,
+    "countyCapitalModifiers": [
+      {
+        "polarity": "bad",
+        "text": "-10% Development Growth"
+      }
+    ],
+    "countyFertility": 20,
+    "defenderAdvantage": 5,
+    "defenderModifiers": [],
+    "icon": "hills",
+    "id": "hills",
+    "movementSpeed": 0.8,
+    "name": "Hills",
+    "provinceModifiers": [
+      {
+        "polarity": "bad",
+        "text": "-10% Supply Limit"
+      },
+      {
+        "polarity": "bad",
+        "text": "+45 Danger"
+      },
+      {
+        "polarity": "good",
+        "text": "+0.2 County Fertility Growth"
+      }
+    ],
+    "provisionCost": 50,
+    "sourceFile": "00_terrains.txt",
+    "travelDangerScore": 45
+  },
+  {
+    "attackerAdvantage": null,
+    "attackerModifiers": [],
+    "color": "#0a3c23",
+    "combatWidth": 0.7,
+    "countyCapitalModifiers": [
+      {
+        "polarity": "bad",
+        "text": "-40% Development Growth"
+      }
+    ],
+    "countyFertility": 10,
+    "defenderAdvantage": 6,
+    "defenderModifiers": [],
+    "icon": "jungle",
+    "id": "jungle",
+    "movementSpeed": 0.5,
+    "name": "Jungle",
+    "provinceModifiers": [
+      {
+        "polarity": "bad",
+        "text": "-25% Supply Limit"
+      },
+      {
+        "polarity": "bad",
+        "text": "+65 Danger"
+      },
+      {
+        "polarity": "good",
+        "text": "+0.05 County Fertility Growth"
+      }
+    ],
+    "provisionCost": 100,
+    "sourceFile": "00_terrains.txt",
+    "travelDangerScore": 65
+  },
+  {
+    "attackerAdvantage": null,
+    "attackerModifiers": [],
+    "color": "#646464",
+    "combatWidth": 0.5,
+    "countyCapitalModifiers": [
+      {
+        "polarity": "bad",
+        "text": "-25% Development Growth"
+      }
+    ],
+    "countyFertility": 15,
+    "defenderAdvantage": 12,
+    "defenderModifiers": [],
+    "icon": "mountains",
+    "id": "mountains",
+    "movementSpeed": 0.5,
+    "name": "Mountains",
+    "provinceModifiers": [
+      {
+        "polarity": "bad",
+        "text": "-50% Supply Limit"
+      },
+      {
+        "polarity": "bad",
+        "text": "+65 Danger"
+      },
+      {
+        "polarity": "good",
+        "text": "+0.15 County Fertility Growth"
+      }
+    ],
+    "provisionCost": 150,
+    "sourceFile": "00_terrains.txt",
+    "travelDangerScore": 65
+  },
+  {
+    "attackerAdvantage": null,
+    "attackerModifiers": [],
+    "color": "#9b8fcc",
+    "combatWidth": 1,
+    "countyCapitalModifiers": [
+      {
+        "polarity": "good",
+        "text": "+10% Development Growth"
+      }
+    ],
+    "countyFertility": 30,
+    "defenderAdvantage": null,
+    "defenderModifiers": [],
+    "icon": "oasis",
+    "id": "oasis",
+    "movementSpeed": 1,
+    "name": "Oasis",
+    "provinceModifiers": [
+      {
+        "polarity": "good",
+        "text": "+10% Supply Limit"
+      },
+      {
+        "polarity": "bad",
+        "text": "+10 Danger"
+      },
+      {
+        "polarity": "good",
+        "text": "+0.35 County Fertility Growth"
+      }
+    ],
+    "provisionCost": 25,
+    "sourceFile": "00_terrains.txt",
+    "travelDangerScore": 10
+  },
+  {
+    "attackerAdvantage": null,
+    "attackerModifiers": [],
+    "color": "#cca366",
+    "combatWidth": 1,
+    "countyCapitalModifiers": [],
+    "countyFertility": 30,
+    "defenderAdvantage": null,
+    "defenderModifiers": [],
+    "icon": "plains",
+    "id": "plains",
+    "movementSpeed": 1,
+    "name": "Plains",
+    "provinceModifiers": [
+      {
+        "polarity": "neutral",
+        "text": "+0% Supply Limit"
+      },
+      {
+        "polarity": "bad",
+        "text": "+10 Danger"
+      },
+      {
+        "polarity": "good",
+        "text": "+0.25 County Fertility Growth"
+      }
+    ],
+    "provisionCost": 50,
+    "sourceFile": "00_terrains.txt",
+    "travelDangerScore": 10
+  },
+  {
+    "attackerAdvantage": null,
+    "attackerModifiers": [],
+    "color": "#1a1a1a",
+    "combatWidth": 1,
+    "countyCapitalModifiers": [],
+    "countyFertility": 0,
+    "defenderAdvantage": null,
+    "defenderModifiers": [],
+    "icon": "sea",
+    "id": "sea",
+    "movementSpeed": 1,
+    "name": "Sea",
+    "provinceModifiers": [
+      {
+        "polarity": "bad",
+        "text": "+75 Danger"
+      }
+    ],
+    "provisionCost": 100,
+    "sourceFile": "00_terrains.txt",
+    "travelDangerScore": 20
+  },
+  {
+    "attackerAdvantage": null,
+    "attackerModifiers": [],
+    "color": "#c86419",
+    "combatWidth": 1,
+    "countyCapitalModifiers": [
+      {
+        "polarity": "bad",
+        "text": "-50% Development Growth"
+      }
+    ],
+    "countyFertility": 30,
+    "defenderAdvantage": null,
+    "defenderModifiers": [],
+    "icon": "steppe",
+    "id": "steppe",
+    "movementSpeed": 1,
+    "name": "Steppe",
+    "provinceModifiers": [
+      {
+        "polarity": "neutral",
+        "text": "+0% Supply Limit"
+      },
+      {
+        "polarity": "bad",
+        "text": "+50 Danger"
+      },
+      {
+        "polarity": "good",
+        "text": "+0.35 County Fertility Growth"
+      }
+    ],
+    "provisionCost": 80,
+    "sourceFile": "00_terrains.txt",
+    "travelDangerScore": 50
+  },
+  {
+    "attackerAdvantage": null,
+    "attackerModifiers": [],
+    "color": "#2e9959",
+    "combatWidth": 0.8,
+    "countyCapitalModifiers": [
+      {
+        "polarity": "bad",
+        "text": "-5% Development Growth"
+      }
+    ],
+    "countyFertility": 15,
+    "defenderAdvantage": 4,
+    "defenderModifiers": [],
+    "icon": "taiga",
+    "id": "taiga",
+    "movementSpeed": 0.8,
+    "name": "Taiga",
+    "provinceModifiers": [
+      {
+        "polarity": "bad",
+        "text": "-20% Supply Limit"
+      },
+      {
+        "polarity": "bad",
+        "text": "+55 Danger"
+      },
+      {
+        "polarity": "good",
+        "text": "+0.15 County Fertility Growth"
+      }
+    ],
+    "provisionCost": 100,
+    "sourceFile": "00_terrains.txt",
+    "travelDangerScore": 55
+  },
+  {
+    "attackerAdvantage": null,
+    "attackerModifiers": [],
+    "color": "#e12328",
+    "combatWidth": 0.8,
+    "countyCapitalModifiers": [
+      {
+        "polarity": "good",
+        "text": "+10% Development Growth"
+      }
+    ],
+    "countyFertility": 0,
+    "defenderAdvantage": 5,
+    "defenderModifiers": [],
+    "icon": "terraced_hills",
+    "id": "terraced_hills",
+    "movementSpeed": 0.8,
+    "name": "Terraced Hills",
+    "provinceModifiers": [
+      {
+        "polarity": "good",
+        "text": "+10% Supply Limit"
+      }
+    ],
+    "provisionCost": 50,
+    "sourceFile": "00_terrains.txt",
+    "travelDangerScore": 45
+  },
+  {
+    "attackerAdvantage": null,
+    "attackerModifiers": [
+      {
+        "polarity": "bad",
+        "text": "+20% Friendly Fatal Casualties"
+      },
+      {
+        "polarity": "bad",
+        "text": "+25% Retreat Losses"
+      }
+    ],
+    "color": "#4c9999",
+    "combatWidth": 0.6,
+    "countyCapitalModifiers": [
+      {
+        "polarity": "bad",
+        "text": "-25% Development Growth"
+      }
+    ],
+    "countyFertility": 20,
+    "defenderAdvantage": 5,
+    "defenderModifiers": [
+      {
+        "polarity": "bad",
+        "text": "+20% Friendly Fatal Casualties"
+      },
+      {
+        "polarity": "bad",
+        "text": "+25% Retreat Losses"
+      }
+    ],
+    "icon": "wetlands",
+    "id": "wetlands",
+    "movementSpeed": 0.7,
+    "name": "Wetlands",
+    "provinceModifiers": [
+      {
+        "polarity": "bad",
+        "text": "-25% Supply Limit"
+      },
+      {
+        "polarity": "bad",
+        "text": "+65 Danger"
+      },
+      {
+        "polarity": "good",
+        "text": "+0.2 County Fertility Growth"
+      }
+    ],
+    "provisionCost": 80,
+    "sourceFile": "00_terrains.txt",
+    "travelDangerScore": 65
+  }
+]

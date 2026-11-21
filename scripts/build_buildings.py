@@ -26,6 +26,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent / "lib"))
 import ck3
+import faith_cond
 from ck3 import Block, Tagged
 
 # Fields we deliberately do not render, with reasons.
@@ -171,6 +172,11 @@ def param_label(kind, p):
         raw = ck3.loc(f"culture_parameter_{p}")
         return ck3.render_text(raw) if raw else p.replace("_", " ")
     if kind == "rite":
+        # which doctrines/tenets grant the parameter ("Rite has A or B");
+        # faith_cond falls back to the raw key when nothing grants it
+        names = faith_cond.rite_param_sources(p)
+        if names:
+            return " or ".join([", ".join(names[:-1]), names[-1]]) if len(names) > 1 else names[0]
         raw = (ck3.loc(f"doctrine_parameter_{p}") or ck3.loc(f"special_doctrine_{p}_name")
                or ck3.loc(f"{p}_name") or ck3.loc(p))
         return ck3.render_text(raw) if raw else p.replace("_", " ")
@@ -472,7 +478,7 @@ def need_conditions(n):
     for f, label in (("culture_parameter", "culture has"), ("not_culture_parameter", "culture lacks")):
         if n.has(f):
             conds.append(f"{label}: {param_label('culture', n.get(f))}")
-    for f, label in (("rite_parameter", "faith has"), ("not_rite_parameter", "faith lacks")):
+    for f, label in (("rite_parameter", "rite has"), ("not_rite_parameter", "rite lacks")):
         if n.has(f):
             conds.append(f"{label}: {param_label('rite', n.get(f))}")
     if n.has("government_flag"):

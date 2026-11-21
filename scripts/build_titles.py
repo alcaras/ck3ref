@@ -28,9 +28,18 @@ META = {
     "title_history_only", "landless_playable", "creation_requires_capital",
     "no_partition", "should_show_as_hegemony", "min_independent_dejure_counties_to_be_created",
     "can_destroy", "personal_relation_entry", "personal_relation_vassal",
-    "holding_regnal_male_names", "posthumous_regnal_male_names",
-    "posthumous_regnal_female_names", "holding_regnal_female_names",
 }
+
+# Regnal-name pools (string arrays, per _landed_titles.info): names assigned
+# to holders when they gain the title (holding_*) or lose it (posthumous_*).
+# Emitted as node["regnalNames"] and shown on the titles page.
+REGNAL_FIELDS = {
+    "holding_regnal_male_names": "holdingMale",
+    "holding_regnal_female_names": "holdingFemale",
+    "posthumous_regnal_male_names": "posthumousMale",
+    "posthumous_regnal_female_names": "posthumousFemale",
+}
+META |= set(REGNAL_FIELDS)
 
 
 def tier_of(key):
@@ -75,6 +84,16 @@ def build_node(key, blk):
              if blk.get(f) is True]
     if flags:
         node["flags"] = flags
+    regnal = {}
+    for field, out in REGNAL_FIELDS.items():
+        v = blk.get(field)
+        if isinstance(v, Block):
+            names = [ck3.render_text(ck3.loc(n) or n) for n in v.values()
+                     if isinstance(n, str)]
+            if names:
+                regnal[out] = names
+    if regnal:
+        node["regnalNames"] = regnal
     children = []
     baronies = []
     for k, _op, v in blk:
@@ -143,9 +162,6 @@ def main():
                 if tt:
                     node["titleType"] = tt
                 roots.append(node)
-    by_type = Counter(r.get("titleType") for r in roots)
-    for t in title_types:
-        t["roots"] = by_type.get(t["id"], 0)
 
     counts = Counter()
 
@@ -158,6 +174,9 @@ def main():
     for r in roots:
         count(r)
 
+    by_type = Counter(r.get("titleType") for r in roots)
+    for t in title_types:
+        t["roots"] = by_type.get(t["id"], 0)
     ck3.write_json("titles.json", {"roots": roots, "counts": dict(counts), "titleTypes": title_types})
     print(f"  tiers: {dict(counts)}")
     if unknown_fields:

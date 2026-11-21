@@ -3,13 +3,12 @@
     "category": "realm",
     "cumulative": true,
     "default": "crown_authority_1",
+    "dlc": null,
     "flags": [
       "realm_law"
     ],
-    "governmentFlags": [
-      "government_uses_crown_authority"
-    ],
     "groupRequirements": [],
+    "groupSourceFile": "00_realm_law_groups.txt",
     "id": "crown_authority",
     "laws": [
       {
@@ -30,6 +29,7 @@
           }
         ],
         "id": "crown_authority_0",
+        "index": 0,
         "isDefault": false,
         "level": 0,
         "modifiers": [
@@ -108,6 +108,7 @@
           }
         ],
         "id": "crown_authority_1",
+        "index": 1,
         "isDefault": true,
         "level": 1,
         "modifiers": [
@@ -210,6 +211,7 @@
           }
         ],
         "id": "crown_authority_2",
+        "index": 2,
         "isDefault": false,
         "level": 2,
         "modifiers": [
@@ -327,6 +329,7 @@
           }
         ],
         "id": "crown_authority_3",
+        "index": 3,
         "isDefault": false,
         "level": 3,
         "modifiers": [
@@ -425,20 +428,42 @@
     ],
     "name": "Crown Authority",
     "progression": true,
-    "sourceFile": "00_realm_law_groups.txt",
+    "requiredGovernments": [
+      {
+        "flag": "government_uses_crown_authority",
+        "governments": [
+          {
+            "id": "feudal_government",
+            "name": "Feudal"
+          },
+          {
+            "id": "clan_government",
+            "name": "Clan"
+          },
+          {
+            "id": "holy_order_government",
+            "name": "Military Order"
+          },
+          {
+            "id": "monastic_holy_order_government",
+            "name": "Monastic Order"
+          }
+        ]
+      }
+    ],
+    "sourceFile": "00_realm_laws.txt",
     "treasuryBudget": false
   },
   {
     "category": "realm",
     "cumulative": true,
     "default": "tribal_authority_1",
+    "dlc": null,
     "flags": [
       "realm_law"
     ],
-    "governmentFlags": [
-      "government_uses_tribal_authority"
-    ],
     "groupRequirements": [],
+    "groupSourceFile": "00_realm_law_groups.txt",
     "id": "tribal_authority",
     "laws": [
       {
@@ -459,6 +484,7 @@
           }
         ],
         "id": "tribal_authority_0",
+        "index": 0,
         "isDefault": false,
         "level": 0,
         "modifiers": [
@@ -525,6 +551,7 @@
           }
         ],
         "id": "tribal_authority_1",
+        "index": 1,
         "isDefault": true,
         "level": 1,
         "modifiers": [
@@ -615,6 +642,7 @@
           }
         ],
         "id": "tribal_authority_2",
+        "index": 2,
         "isDefault": false,
         "level": 2,
         "modifiers": [
@@ -710,6 +738,7 @@
           }
         ],
         "id": "tribal_authority_3",
+        "index": 3,
         "isDefault": false,
         "level": 3,
         "modifiers": [
@@ -867,20 +896,34 @@
     ],
     "name": "Tribal Authority",
     "progression": true,
-    "sourceFile": "00_realm_law_groups.txt",
+    "requiredGovernments": [
+      {
+        "flag": "government_uses_tribal_authority",
+        "governments": [
+          {
+            "id": "tribal_government",
+            "name": "Tribal"
+          },
+          {
+            "id": "wanua_government",
+            "name": "Wanua"
+          }
+        ]
+      }
+    ],
+    "sourceFile": "00_realm_laws.txt",
     "treasuryBudget": false
   },
   {
     "category": "realm",
     "cumulative": true,
     "default": "church_authority_0",
+    "dlc": null,
     "flags": [
       "realm_law"
     ],
-    "governmentFlags": [
-      "government_uses_church_authority"
-    ],
     "groupRequirements": [],
+    "groupSourceFile": "00_realm_law_groups.txt",
     "id": "church_authority",
     "laws": [
       {
@@ -901,6 +944,7 @@
           }
         ],
         "id": "church_authority_0",
+        "index": 0,
         "isDefault": true,
         "level": 0,
         "modifiers": [
@@ -961,6 +1005,7 @@
           }
         ],
         "id": "church_authority_1",
+        "index": 1,
         "isDefault": false,
         "level": 1,
         "modifiers": [
@@ -1070,6 +1115,7 @@
           }
         ],
         "id": "church_authority_2",
+        "index": 2,
         "isDefault": false,
         "level": 2,
         "modifiers": [
@@ -1204,6 +1250,7 @@
           }
         ],
         "id": "church_authority_3",
+        "index": 3,
         "isDefault": false,
         "level": 3,
         "modifiers": [
@@ -1315,21 +1362,35 @@
     ],
     "name": "Church Authority",
     "progression": true,
-    "sourceFile": "00_realm_law_groups.txt",
+    "requiredGovernments": [
+      {
+        "flag": "government_uses_church_authority",
+        "governments": [
+          {
+            "id": "theocracy_government",
+            "name": "Theocracy"
+          },
+          {
+            "id": "ecclesiastical_government",
+            "name": "Ecclesiastical"
+          }
+        ]
+      }
+    ],
+    "sourceFile": "00_realm_laws.txt",
     "treasuryBudget": false
   },
   {
     "category": "realm",
     "cumulative": false,
     "default": "camp_purpose_wanderers",
+    "dlc": null,
     "flags": [
       "realm_law",
       "BlockLightTexture"
     ],
-    "governmentFlags": [
-      "government_is_landless_adventurer"
-    ],
     "groupRequirements": [],
+    "groupSourceFile": "00_realm_law_groups.txt",
     "id": "camp_purpose",
     "laws": [
       {
@@ -1350,6 +1411,7 @@
           }
         ],
         "id": "camp_purpose_wanderers",
+        "index": 0,
         "isDefault": true,
         "level": null,
         "modifiers": [],
@@ -1419,6 +1481,7 @@
           }
         ],
         "id": "camp_purpose_mercenaries",
+        "index": 1,
         "isDefault": false,
         "level": null,
         "modifiers": [
@@ -1524,6 +1587,7 @@
           }
         ],
         "id": "camp_purpose_scholars",
+        "index": 2,
         "isDefault": false,
         "level": null,
         "modifiers": [
@@ -1611,6 +1675,7 @@
           }
         ],
         "id": "camp_purpose_explorers",
+        "index": 3,
         "isDefault": false,
         "level": null,
         "modifiers": [
@@ -1738,6 +1803,7 @@
           }
         ],
         "id": "camp_purpose_brigands",
+        "index": 4,
         "isDefault": false,
         "level": null,
         "modifiers": [
@@ -1848,6 +1914,7 @@
           }
         ],
         "id": "camp_purpose_legitimists",
+        "index": 5,
         "isDefault": false,
         "level": null,
         "modifiers": [
@@ -1919,20 +1986,30 @@
     ],
     "name": "Camp Purpose",
     "progression": false,
-    "sourceFile": "00_realm_law_groups.txt",
+    "requiredGovernments": [
+      {
+        "flag": "government_is_landless_adventurer",
+        "governments": [
+          {
+            "id": "landless_adventurer_government",
+            "name": "Adventurer"
+          }
+        ]
+      }
+    ],
+    "sourceFile": "00_realm_laws.txt",
     "treasuryBudget": false
   },
   {
     "category": "realm",
     "cumulative": true,
     "default": "imperial_bureaucracy_1",
+    "dlc": null,
     "flags": [
       "realm_law"
     ],
-    "governmentFlags": [
-      "government_uses_imperial_bureaucracy"
-    ],
     "groupRequirements": [],
+    "groupSourceFile": "00_realm_law_groups.txt",
     "id": "imperial_bureaucracy",
     "laws": [
       {
@@ -1961,6 +2038,7 @@
           }
         ],
         "id": "imperial_bureaucracy_0",
+        "index": 0,
         "isDefault": false,
         "level": 0,
         "modifiers": [
@@ -2049,6 +2127,7 @@
           }
         ],
         "id": "imperial_bureaucracy_1",
+        "index": 1,
         "isDefault": true,
         "level": 1,
         "modifiers": [
@@ -2164,6 +2243,7 @@
           }
         ],
         "id": "imperial_bureaucracy_2",
+        "index": 2,
         "isDefault": false,
         "level": 2,
         "modifiers": [
@@ -2280,6 +2360,7 @@
           }
         ],
         "id": "imperial_bureaucracy_3",
+        "index": 3,
         "isDefault": false,
         "level": 3,
         "modifiers": [
@@ -2377,22 +2458,32 @@
     ],
     "name": "Imperial Bureaucracy",
     "progression": true,
-    "sourceFile": "00_realm_law_groups.txt",
+    "requiredGovernments": [
+      {
+        "flag": "government_uses_imperial_bureaucracy",
+        "governments": [
+          {
+            "id": "administrative_government",
+            "name": "Administrative"
+          }
+        ]
+      }
+    ],
+    "sourceFile": "00_realm_laws.txt",
     "treasuryBudget": false
   },
   {
     "category": "realm",
     "cumulative": true,
     "default": "nomadic_authority_1",
+    "dlc": null,
     "flags": [
       "realm_law",
       "dominance_law",
       "BlockLightTexture"
     ],
-    "governmentFlags": [
-      "government_is_nomadic"
-    ],
     "groupRequirements": [],
+    "groupSourceFile": "00_realm_law_groups.txt",
     "id": "nomadic_authority",
     "laws": [
       {
@@ -2425,6 +2516,7 @@
           }
         ],
         "id": "nomadic_authority_1",
+        "index": 0,
         "isDefault": true,
         "level": 1,
         "modifiers": [
@@ -2514,6 +2606,7 @@
           }
         ],
         "id": "nomadic_authority_2",
+        "index": 1,
         "isDefault": false,
         "level": 2,
         "modifiers": [
@@ -2621,6 +2714,7 @@
           }
         ],
         "id": "nomadic_authority_3",
+        "index": 2,
         "isDefault": false,
         "level": 3,
         "modifiers": [
@@ -2720,6 +2814,7 @@
           }
         ],
         "id": "nomadic_authority_4",
+        "index": 3,
         "isDefault": false,
         "level": 4,
         "modifiers": [
@@ -2814,6 +2909,7 @@
           }
         ],
         "id": "nomadic_authority_5",
+        "index": 4,
         "isDefault": false,
         "level": 5,
         "modifiers": [
@@ -2902,20 +2998,30 @@
     ],
     "name": "Dominance",
     "progression": true,
-    "sourceFile": "00_realm_law_groups.txt",
+    "requiredGovernments": [
+      {
+        "flag": "government_is_nomadic",
+        "governments": [
+          {
+            "id": "nomad_government",
+            "name": "Nomadic"
+          }
+        ]
+      }
+    ],
+    "sourceFile": "00_realm_laws.txt",
     "treasuryBudget": false
   },
   {
     "category": "realm",
     "cumulative": true,
     "default": "celestial_bureaucracy_1",
+    "dlc": null,
     "flags": [
       "realm_law"
     ],
-    "governmentFlags": [
-      "government_uses_celestial_bureaucracy"
-    ],
     "groupRequirements": [],
+    "groupSourceFile": "00_realm_law_groups.txt",
     "id": "celestial_bureaucracy",
     "laws": [
       {
@@ -2944,6 +3050,7 @@
           }
         ],
         "id": "celestial_bureaucracy_0",
+        "index": 0,
         "isDefault": false,
         "level": 0,
         "modifiers": [
@@ -3036,6 +3143,7 @@
           }
         ],
         "id": "celestial_bureaucracy_1",
+        "index": 1,
         "isDefault": true,
         "level": 1,
         "modifiers": [
@@ -3155,6 +3263,7 @@
           }
         ],
         "id": "celestial_bureaucracy_2",
+        "index": 2,
         "isDefault": false,
         "level": 2,
         "modifiers": [
@@ -3275,6 +3384,7 @@
           }
         ],
         "id": "celestial_bureaucracy_3",
+        "index": 3,
         "isDefault": false,
         "level": 3,
         "modifiers": [
@@ -3372,20 +3482,30 @@
     ],
     "name": "Celestial Bureaucracy",
     "progression": true,
-    "sourceFile": "00_realm_law_groups.txt",
+    "requiredGovernments": [
+      {
+        "flag": "government_uses_celestial_bureaucracy",
+        "governments": [
+          {
+            "id": "celestial_government",
+            "name": "Celestial"
+          }
+        ]
+      }
+    ],
+    "sourceFile": "00_realm_laws.txt",
     "treasuryBudget": false
   },
   {
     "category": "realm",
     "cumulative": false,
     "default": "mandala_decree_none",
+    "dlc": null,
     "flags": [
       "mandala_law"
     ],
-    "governmentFlags": [
-      "government_is_mandala"
-    ],
     "groupRequirements": [],
+    "groupSourceFile": "00_realm_law_groups.txt",
     "id": "mandala_decree",
     "laws": [
       {
@@ -3410,6 +3530,7 @@
           }
         ],
         "id": "mandala_decree_none",
+        "index": 0,
         "isDefault": true,
         "level": null,
         "modifiers": [],
@@ -3472,6 +3593,7 @@
           }
         ],
         "id": "mandala_decree_prosperity",
+        "index": 1,
         "isDefault": false,
         "level": null,
         "modifiers": [
@@ -3559,6 +3681,7 @@
           }
         ],
         "id": "mandala_decree_expansion",
+        "index": 2,
         "isDefault": false,
         "level": null,
         "modifiers": [
@@ -3650,6 +3773,7 @@
           }
         ],
         "id": "mandala_decree_reverence",
+        "index": 3,
         "isDefault": false,
         "level": null,
         "modifiers": [],
@@ -3686,20 +3810,30 @@
     ],
     "name": "Devaraja Decree",
     "progression": false,
-    "sourceFile": "00_realm_law_groups.txt",
+    "requiredGovernments": [
+      {
+        "flag": "government_is_mandala",
+        "governments": [
+          {
+            "id": "mandala_government",
+            "name": "Mandala"
+          }
+        ]
+      }
+    ],
+    "sourceFile": "00_realm_laws.txt",
     "treasuryBudget": false
   },
   {
     "category": "realm",
     "cumulative": true,
     "default": "meritocratic_bureaucracy_1",
+    "dlc": null,
     "flags": [
       "realm_law"
     ],
-    "governmentFlags": [
-      "government_uses_meritocratic_bureaucracy"
-    ],
     "groupRequirements": [],
+    "groupSourceFile": "00_realm_law_groups.txt",
     "id": "meritocratic_bureaucracy",
     "laws": [
       {
@@ -3728,6 +3862,7 @@
           }
         ],
         "id": "meritocratic_bureaucracy_0",
+        "index": 0,
         "isDefault": false,
         "level": 0,
         "modifiers": [
@@ -3820,6 +3955,7 @@
           }
         ],
         "id": "meritocratic_bureaucracy_1",
+        "index": 1,
         "isDefault": true,
         "level": 1,
         "modifiers": [
@@ -3944,6 +4080,7 @@
           }
         ],
         "id": "meritocratic_bureaucracy_2",
+        "index": 2,
         "isDefault": false,
         "level": 2,
         "modifiers": [
@@ -4069,6 +4206,7 @@
           }
         ],
         "id": "meritocratic_bureaucracy_3",
+        "index": 3,
         "isDefault": false,
         "level": 3,
         "modifiers": [
@@ -4171,20 +4309,34 @@
     ],
     "name": "Meritocratic Bureaucracy",
     "progression": true,
-    "sourceFile": "00_realm_law_groups.txt",
+    "requiredGovernments": [
+      {
+        "flag": "government_uses_meritocratic_bureaucracy",
+        "governments": [
+          {
+            "id": "steppe_admin_government",
+            "name": "Meritocratic Khanate"
+          },
+          {
+            "id": "meritocratic_government",
+            "name": "Meritocratic"
+          }
+        ]
+      }
+    ],
+    "sourceFile": "00_realm_laws.txt",
     "treasuryBudget": false
   },
   {
     "category": "realm",
     "cumulative": true,
     "default": "japanese_bureaucracy_1",
+    "dlc": null,
     "flags": [
       "realm_law"
     ],
-    "governmentFlags": [
-      "government_uses_japanese_bureaucracy"
-    ],
     "groupRequirements": [],
+    "groupSourceFile": "00_realm_law_groups.txt",
     "id": "japanese_bureaucracy",
     "laws": [
       {
@@ -4213,6 +4365,7 @@
           }
         ],
         "id": "japanese_bureaucracy_0",
+        "index": 0,
         "isDefault": false,
         "level": 0,
         "modifiers": [
@@ -4305,6 +4458,7 @@
           }
         ],
         "id": "japanese_bureaucracy_1",
+        "index": 1,
         "isDefault": true,
         "level": 1,
         "modifiers": [
@@ -4423,6 +4577,7 @@
           }
         ],
         "id": "japanese_bureaucracy_2",
+        "index": 2,
         "isDefault": false,
         "level": 2,
         "modifiers": [
@@ -4552,6 +4707,7 @@
           }
         ],
         "id": "japanese_bureaucracy_3",
+        "index": 3,
         "isDefault": false,
         "level": 3,
         "modifiers": [
@@ -4654,20 +4810,36 @@
     ],
     "name": "Japanese Bureaucracy",
     "progression": true,
-    "sourceFile": "00_realm_law_groups.txt",
+    "requiredGovernments": [
+      {
+        "flag": "government_uses_japanese_bureaucracy",
+        "governments": [
+          {
+            "id": "japan_administrative_government",
+            "name": "Ritsuryō"
+          },
+          {
+            "id": "japan_feudal_government",
+            "name": "Sōryō"
+          }
+        ]
+      }
+    ],
+    "sourceFile": "00_realm_laws.txt",
     "treasuryBudget": false
   },
   {
     "category": "realm",
     "cumulative": false,
     "default": "uncrowned",
+    "dlc": null,
     "flags": [
       "realm_law",
       "realm_law_no_number",
       "realm_no_pass"
     ],
-    "governmentFlags": [],
     "groupRequirements": [],
+    "groupSourceFile": "00_realm_law_groups.txt",
     "id": "crowned_laws",
     "laws": [
       {
@@ -4675,6 +4847,7 @@
         "effects": null,
         "flags": [],
         "id": "uncrowned",
+        "index": 0,
         "isDefault": true,
         "level": null,
         "modifiers": [
@@ -4833,6 +5006,7 @@
         "effects": null,
         "flags": [],
         "id": "crowned_king",
+        "index": 1,
         "isDefault": false,
         "level": null,
         "modifiers": [
@@ -4985,6 +5159,7 @@
         "effects": null,
         "flags": [],
         "id": "crowned_emperor",
+        "index": 2,
         "isDefault": false,
         "level": null,
         "modifiers": [
@@ -5137,22 +5312,22 @@
     ],
     "name": "Coronation Laws",
     "progression": false,
-    "sourceFile": "00_realm_law_groups.txt",
+    "requiredGovernments": [],
+    "sourceFile": "99_coronation_laws.txt",
     "treasuryBudget": false
   },
   {
     "category": "realm",
     "cumulative": false,
     "default": "company_size_small",
+    "dlc": null,
     "flags": [
       "realm_law",
       "company_size",
       "BlockLightTexture"
     ],
-    "governmentFlags": [
-      "government_is_merchant"
-    ],
     "groupRequirements": [],
+    "groupSourceFile": "00_realm_law_groups.txt",
     "id": "company_size",
     "laws": [
       {
@@ -5160,6 +5335,7 @@
         "effects": "No effects",
         "flags": [],
         "id": "company_size_small",
+        "index": 0,
         "isDefault": true,
         "level": null,
         "modifiers": [],
@@ -5197,6 +5373,7 @@
         "effects": "Increased chance to be granted Charters by Duke Rank Patrons",
         "flags": [],
         "id": "company_size_medium",
+        "index": 1,
         "isDefault": false,
         "level": null,
         "modifiers": [
@@ -5259,6 +5436,7 @@
         "effects": "Increased chance to be granted Charters by King Rank Patrons",
         "flags": [],
         "id": "company_size_large",
+        "index": 2,
         "isDefault": false,
         "level": null,
         "modifiers": [
@@ -5321,6 +5499,7 @@
         "effects": "Increased chance to be granted Charters by Emperor and Hegemon Rank Patrons",
         "flags": [],
         "id": "company_size_huge",
+        "index": 3,
         "isDefault": false,
         "level": null,
         "modifiers": [
@@ -5381,22 +5560,32 @@
     ],
     "name": "Company Size",
     "progression": false,
-    "sourceFile": "00_realm_law_groups.txt",
+    "requiredGovernments": [
+      {
+        "flag": "government_is_merchant",
+        "governments": [
+          {
+            "id": "merchant_government",
+            "name": "Merchant"
+          }
+        ]
+      }
+    ],
+    "sourceFile": "00_realm_laws.txt",
     "treasuryBudget": false
   },
   {
     "category": "realm",
     "cumulative": false,
     "default": "company_purpose_family",
+    "dlc": null,
     "flags": [
       "realm_law",
       "company_purpose",
       "BlockLightTexture"
     ],
-    "governmentFlags": [
-      "government_is_merchant"
-    ],
     "groupRequirements": [],
+    "groupSourceFile": "00_realm_law_groups.txt",
     "id": "company_purpose",
     "laws": [
       {
@@ -5417,6 +5606,7 @@
           }
         ],
         "id": "company_purpose_family",
+        "index": 0,
         "isDefault": true,
         "level": null,
         "modifiers": [
@@ -5492,6 +5682,7 @@
           }
         ],
         "id": "company_purpose_artisan",
+        "index": 1,
         "isDefault": false,
         "level": null,
         "modifiers": [
@@ -5605,6 +5796,7 @@
           }
         ],
         "id": "company_purpose_creditor",
+        "index": 2,
         "isDefault": false,
         "level": null,
         "modifiers": [
@@ -5700,6 +5892,7 @@
           }
         ],
         "id": "company_purpose_caravaneer",
+        "index": 3,
         "isDefault": false,
         "level": null,
         "modifiers": [
@@ -5795,19 +5988,31 @@
     ],
     "name": "Company Purpose",
     "progression": false,
-    "sourceFile": "00_realm_law_groups.txt",
+    "requiredGovernments": [
+      {
+        "flag": "government_is_merchant",
+        "governments": [
+          {
+            "id": "merchant_government",
+            "name": "Merchant"
+          }
+        ]
+      }
+    ],
+    "sourceFile": "00_realm_laws.txt",
     "treasuryBudget": false
   },
   {
     "category": "succession",
     "cumulative": false,
     "default": null,
+    "dlc": null,
     "flags": [
       "succession_law",
       "succession_order_laws"
     ],
-    "governmentFlags": [],
     "groupRequirements": [],
+    "groupSourceFile": "00_succession_law_groups.txt",
     "id": "succession_order_laws",
     "laws": [
       {
@@ -5820,6 +6025,7 @@
           }
         ],
         "id": "confederate_partition_succession_law",
+        "index": 0,
         "isDefault": false,
         "level": null,
         "modifiers": [
@@ -6016,6 +6222,7 @@
           }
         ],
         "id": "partition_succession_law",
+        "index": 1,
         "isDefault": false,
         "level": null,
         "modifiers": [
@@ -6215,6 +6422,7 @@
           }
         ],
         "id": "high_partition_succession_law",
+        "index": 2,
         "isDefault": false,
         "level": null,
         "modifiers": [
@@ -6409,6 +6617,7 @@
           }
         ],
         "id": "single_heir_succession_law",
+        "index": 3,
         "isDefault": false,
         "level": null,
         "modifiers": [
@@ -6658,6 +6867,7 @@
           }
         ],
         "id": "single_heir_succession_kurultai_law",
+        "index": 4,
         "isDefault": false,
         "level": null,
         "modifiers": [
@@ -6780,6 +6990,7 @@
           }
         ],
         "id": "single_heir_succession_law_youngest",
+        "index": 5,
         "isDefault": false,
         "level": null,
         "modifiers": [
@@ -7023,6 +7234,7 @@
           }
         ],
         "id": "single_heir_dynasty_house",
+        "index": 6,
         "isDefault": false,
         "level": null,
         "modifiers": [
@@ -7271,6 +7483,7 @@
           }
         ],
         "id": "acclamation_succession_law",
+        "index": 7,
         "isDefault": false,
         "level": null,
         "modifiers": [],
@@ -7416,6 +7629,7 @@
           }
         ],
         "id": "appointment_succession_law",
+        "index": 8,
         "isDefault": false,
         "level": null,
         "modifiers": [
@@ -7628,6 +7842,7 @@
           }
         ],
         "id": "landless_adventurer_succession_law",
+        "index": 9,
         "isDefault": false,
         "level": null,
         "modifiers": [],
@@ -7687,6 +7902,7 @@
           }
         ],
         "id": "theocratic_elective_succession_law",
+        "index": 10,
         "isDefault": false,
         "level": null,
         "modifiers": [
@@ -7814,7 +8030,8 @@
         "succession": {
           "electionType": "theocratic_elective",
           "faith": "same_faith",
-          "orderOfSuccession": "election"
+          "orderOfSuccession": "election",
+          "resignOutsideRealm": true
         },
         "titleAllegianceOpinion": 10
       },
@@ -7828,6 +8045,7 @@
           }
         ],
         "id": "clerical_appointment_law",
+        "index": 11,
         "isDefault": false,
         "level": null,
         "modifiers": [],
@@ -7943,6 +8161,7 @@
         "effects": "Upon succession all of the Realm Priest's Titles will be given to their successor. The doctrines of their Faith determine who this successor will be.",
         "flags": [],
         "id": "bishop_theocratic_succession_law",
+        "index": 12,
         "isDefault": false,
         "level": null,
         "modifiers": [],
@@ -7983,6 +8202,7 @@
         "effects": "Upon succession all of the Grandmaster's Titles will be given to their successor, who is generally the Knight with the highest Martial skill.",
         "flags": [],
         "id": "holy_order_succession_law",
+        "index": 13,
         "isDefault": false,
         "level": null,
         "modifiers": [],
@@ -8028,6 +8248,7 @@
         "effects": "Upon succession all of the Grandmaster's Titles will be given to their successor, who is generally the Knight with the highest Martial skill and matching Heritage.",
         "flags": [],
         "id": "cultural_holy_order_succession_law",
+        "index": 14,
         "isDefault": false,
         "level": null,
         "modifiers": [],
@@ -8073,6 +8294,7 @@
         "effects": "Upon succession all of the Archabbot's Titles will be given to their successor, who is generally the Courtier with the highest Learning skill. Only characters of the same Rite as the current Ruler can inherit.",
         "flags": [],
         "id": "monastic_holy_order_succession_law",
+        "index": 15,
         "isDefault": false,
         "level": null,
         "modifiers": [],
@@ -8118,6 +8340,7 @@
         "effects": "Upon succession all of the Archabbesses' Titles will be given to her successor, who is generally the female Courtier with the highest Learning skill. Only characters of the same Rite as the current Ruler can inherit.",
         "flags": [],
         "id": "female_monastic_holy_order_succession_law",
+        "index": 16,
         "isDefault": false,
         "level": null,
         "modifiers": [],
@@ -8163,6 +8386,7 @@
         "effects": "Upon succession all of the Archabbots' Titles will be given to his successor, who is generally the male Courtier with the highest Learning skill. Only characters of the same Rite as the current Ruler can inherit.",
         "flags": [],
         "id": "male_monastic_holy_order_succession_law",
+        "index": 17,
         "isDefault": false,
         "level": null,
         "modifiers": [],
@@ -8208,6 +8432,7 @@
         "effects": "Upon succession all of the Captain's Titles will be given to their successor, who is generally the Knight with the highest Martial skill.",
         "flags": [],
         "id": "mercenary_company_succession_law",
+        "index": 18,
         "isDefault": false,
         "level": null,
         "modifiers": [],
@@ -8252,6 +8477,7 @@
         "effects": "Upon succession all of the ruler's Titles will be given to their successor.",
         "flags": [],
         "id": "city_succession_law",
+        "index": 19,
         "isDefault": false,
         "level": null,
         "modifiers": [],
@@ -8313,6 +8539,7 @@
           }
         ],
         "id": "republican_despot_succession_law",
+        "index": 20,
         "isDefault": false,
         "level": null,
         "modifiers": [
@@ -8492,6 +8719,7 @@
           }
         ],
         "id": "clan_antagonistic_partition_succession_law",
+        "index": 21,
         "isDefault": false,
         "level": null,
         "modifiers": [
@@ -8584,6 +8812,7 @@
           }
         ],
         "id": "clan_competitive_partition_succession_law",
+        "index": 22,
         "isDefault": false,
         "level": null,
         "modifiers": [
@@ -8667,6 +8896,7 @@
           }
         ],
         "id": "clan_impassive_partition_succession_law",
+        "index": 23,
         "isDefault": false,
         "level": null,
         "modifiers": [
@@ -8741,6 +8971,7 @@
           }
         ],
         "id": "clan_friendly_partition_succession_law",
+        "index": 24,
         "isDefault": false,
         "level": null,
         "modifiers": [
@@ -8815,6 +9046,7 @@
           }
         ],
         "id": "clan_harmonious_partition_succession_law",
+        "index": 25,
         "isDefault": false,
         "level": null,
         "modifiers": [
@@ -8884,6 +9116,7 @@
         "effects": "Upon succession all of the ruler's Titles will be given to their successor.",
         "flags": [],
         "id": "herder_succession_law",
+        "index": 26,
         "isDefault": false,
         "level": null,
         "modifiers": [],
@@ -8941,6 +9174,7 @@
           }
         ],
         "id": "celestial_appointment_succession_law",
+        "index": 27,
         "isDefault": false,
         "level": null,
         "modifiers": [
@@ -9133,6 +9367,7 @@
           }
         ],
         "id": "celestial_military_appointment_succession_law",
+        "index": 28,
         "isDefault": false,
         "level": null,
         "modifiers": [
@@ -9341,6 +9576,7 @@
           }
         ],
         "id": "japanese_regency_succession_law",
+        "index": 29,
         "isDefault": false,
         "level": null,
         "modifiers": [],
@@ -9475,6 +9711,7 @@
           }
         ],
         "id": "japanese_appointment_succession_law",
+        "index": 30,
         "isDefault": false,
         "level": null,
         "modifiers": [
@@ -9695,6 +9932,7 @@
           }
         ],
         "id": "japanese_military_appointment_succession_law",
+        "index": 31,
         "isDefault": false,
         "level": null,
         "modifiers": [
@@ -9903,6 +10141,7 @@
           }
         ],
         "id": "mandala_succession_law",
+        "index": 32,
         "isDefault": false,
         "level": null,
         "modifiers": [],
@@ -9968,6 +10207,7 @@
           }
         ],
         "id": "meritocratic_appointment_succession_law",
+        "index": 33,
         "isDefault": false,
         "level": null,
         "modifiers": [
@@ -10160,6 +10400,7 @@
           }
         ],
         "id": "meritocratic_military_appointment_succession_law",
+        "index": 34,
         "isDefault": false,
         "level": null,
         "modifiers": [
@@ -10352,6 +10593,7 @@
           }
         ],
         "id": "meritocratic_regency_succession_law",
+        "index": 35,
         "isDefault": false,
         "level": null,
         "modifiers": [],
@@ -10510,6 +10752,7 @@
           }
         ],
         "id": "merchant_succession_law",
+        "index": 36,
         "isDefault": false,
         "level": null,
         "modifiers": [],
@@ -10573,6 +10816,7 @@
           }
         ],
         "id": "republican_elective_succession_law",
+        "index": 37,
         "isDefault": false,
         "level": null,
         "modifiers": [
@@ -10819,8 +11063,10 @@
         },
         "shownInEncyclopedia": true,
         "succession": {
+          "allowSameSuccessor": true,
           "electionType": "republican_elective",
-          "orderOfSuccession": "election"
+          "orderOfSuccession": "election",
+          "useTermLength": true
         },
         "titleAllegianceOpinion": null
       },
@@ -10838,6 +11084,7 @@
           }
         ],
         "id": "republican_appointment_succession_law",
+        "index": 38,
         "isDefault": false,
         "level": null,
         "modifiers": [],
@@ -10997,19 +11244,21 @@
     ],
     "name": "Succession Laws",
     "progression": false,
-    "sourceFile": "00_succession_law_groups.txt",
+    "requiredGovernments": [],
+    "sourceFile": "00_succession_laws.txt",
     "treasuryBudget": false
   },
   {
     "category": "succession",
     "cumulative": false,
     "default": "male_preference_law",
+    "dlc": null,
     "flags": [
       "succession_law",
       "succession_gender_laws"
     ],
-    "governmentFlags": [],
     "groupRequirements": [],
+    "groupSourceFile": "00_succession_law_groups.txt",
     "id": "succession_gender_laws",
     "laws": [
       {
@@ -11030,6 +11279,7 @@
           }
         ],
         "id": "male_only_law",
+        "index": 0,
         "isDefault": false,
         "level": null,
         "modifiers": [],
@@ -11185,6 +11435,7 @@
           }
         ],
         "id": "male_preference_law",
+        "index": 1,
         "isDefault": true,
         "level": null,
         "modifiers": [],
@@ -11365,6 +11616,7 @@
           }
         ],
         "id": "equal_law",
+        "index": 2,
         "isDefault": false,
         "level": null,
         "modifiers": [],
@@ -11528,6 +11780,7 @@
           }
         ],
         "id": "female_preference_law",
+        "index": 3,
         "isDefault": false,
         "level": null,
         "modifiers": [],
@@ -11700,6 +11953,7 @@
           }
         ],
         "id": "female_only_law",
+        "index": 4,
         "isDefault": false,
         "level": null,
         "modifiers": [],
@@ -11848,16 +12102,18 @@
     ],
     "name": "Gender Laws",
     "progression": false,
-    "sourceFile": "00_succession_law_groups.txt",
+    "requiredGovernments": [],
+    "sourceFile": "00_succession_laws.txt",
     "treasuryBudget": false
   },
   {
     "category": "succession",
     "cumulative": false,
     "default": null,
+    "dlc": null,
     "flags": [],
-    "governmentFlags": [],
     "groupRequirements": [],
+    "groupSourceFile": "00_succession_law_groups.txt",
     "id": "succession_faith",
     "laws": [
       {
@@ -11865,6 +12121,7 @@
         "effects": "Only characters of the same Faith as the current Ruler can inherit.",
         "flags": [],
         "id": "same_faith_only_law",
+        "index": 0,
         "isDefault": false,
         "level": null,
         "modifiers": [],
@@ -11936,16 +12193,18 @@
     ],
     "name": "Faith Succession",
     "progression": false,
-    "sourceFile": "00_succession_law_groups.txt",
+    "requiredGovernments": [],
+    "sourceFile": "00_succession_laws.txt",
     "treasuryBudget": false
   },
   {
     "category": "succession",
     "cumulative": false,
     "default": null,
+    "dlc": null,
     "flags": [],
-    "governmentFlags": [],
     "groupRequirements": [],
+    "groupSourceFile": "00_succession_law_groups.txt",
     "id": "succession_rel_head",
     "laws": [
       {
@@ -11953,6 +12212,7 @@
         "effects": "Only characters of the same Faith as the current Ruler can inherit.",
         "flags": [],
         "id": "same_faith_theocratic_succession_law",
+        "index": 0,
         "isDefault": false,
         "level": null,
         "modifiers": [],
@@ -11978,6 +12238,7 @@
         "effects": "Only characters of the same Faith as the current Ruler can inherit.",
         "flags": [],
         "id": "same_faith_succession_law",
+        "index": 1,
         "isDefault": false,
         "level": null,
         "modifiers": [],
@@ -12001,16 +12262,18 @@
     ],
     "name": "Head of Faith Law",
     "progression": false,
-    "sourceFile": "00_succession_law_groups.txt",
+    "requiredGovernments": [],
+    "sourceFile": "00_succession_laws.txt",
     "treasuryBudget": false
   },
   {
     "category": "title_succession",
     "cumulative": false,
     "default": null,
+    "dlc": null,
     "flags": [],
-    "governmentFlags": [],
     "groupRequirements": [],
+    "groupSourceFile": "01_title_succession_law_groups.txt",
     "id": "title_succession_laws",
     "laws": [
       {
@@ -12023,6 +12286,7 @@
           }
         ],
         "id": "feudal_elective_succession_law",
+        "index": 0,
         "isDefault": false,
         "level": null,
         "modifiers": [],
@@ -12152,6 +12416,7 @@
           }
         ],
         "id": "princely_elective_succession_law",
+        "index": 2,
         "isDefault": false,
         "level": null,
         "modifiers": [
@@ -12274,6 +12539,7 @@
           }
         ],
         "id": "saxon_elective_succession_law",
+        "index": 3,
         "isDefault": false,
         "level": null,
         "modifiers": [],
@@ -12395,6 +12661,7 @@
           }
         ],
         "id": "scandinavian_elective_succession_law",
+        "index": 4,
         "isDefault": false,
         "level": null,
         "modifiers": [],
@@ -12516,6 +12783,7 @@
           }
         ],
         "id": "gaelic_elective_succession_law",
+        "index": 5,
         "isDefault": false,
         "level": null,
         "modifiers": [],
@@ -12637,6 +12905,7 @@
           }
         ],
         "id": "tribal_elective_succession_law",
+        "index": 6,
         "isDefault": false,
         "level": null,
         "modifiers": [],
@@ -12753,6 +13022,7 @@
         "effects": "The Temporal Head of Faith Title will be given to the Player Heir of the current Head of Faith.",
         "flags": [],
         "id": "temporal_head_of_faith_succession_law",
+        "index": 7,
         "isDefault": false,
         "level": null,
         "modifiers": [],
@@ -12776,6 +13046,7 @@
           }
         ],
         "id": "noble_family_succession_law",
+        "index": 8,
         "isDefault": false,
         "level": null,
         "modifiers": [],
@@ -12795,6 +13066,7 @@
         "effects": "This County requires a specific Government to inherit based on the Holding Type of the capital Barony. It will be given to a character in the Realm's Line of Succession that fulfills this condition.; If no one fulfills the requirement, a local character will inherit the Title and become Independent.",
         "flags": [],
         "id": "law_of_the_land_succession_law",
+        "index": 9,
         "isDefault": false,
         "level": null,
         "modifiers": [],
@@ -12818,6 +13090,7 @@
           }
         ],
         "id": "confederation_elective_succession_law",
+        "index": 10,
         "isDefault": false,
         "level": null,
         "modifiers": [],
@@ -12935,6 +13208,7 @@
           }
         ],
         "id": "celestial_ministry_appointment_succession_law",
+        "index": 11,
         "isDefault": false,
         "level": null,
         "modifiers": [
@@ -12977,6 +13251,7 @@
           }
         ],
         "id": "celestial_grand_marshal_appointment_succession_law",
+        "index": 12,
         "isDefault": false,
         "level": null,
         "modifiers": [
@@ -13008,20 +13283,20 @@
     ],
     "name": "Title succession laws",
     "progression": false,
-    "sourceFile": "01_title_succession_law_groups.txt",
+    "requiredGovernments": [],
+    "sourceFile": "01_title_succession_laws.txt",
     "treasuryBudget": false
   },
   {
     "category": "administrative",
     "cumulative": true,
     "default": "province_war_law_0",
+    "dlc": null,
     "flags": [
       "admin_law"
     ],
-    "governmentFlags": [
-      "government_uses_imperial_bureaucracy"
-    ],
     "groupRequirements": [],
+    "groupSourceFile": "02_admininistrative_law_groups.txt",
     "id": "province_war_law",
     "laws": [
       {
@@ -13029,6 +13304,7 @@
         "effects": null,
         "flags": [],
         "id": "province_war_law_0",
+        "index": 0,
         "isDefault": true,
         "level": 0,
         "modifiers": [],
@@ -13067,6 +13343,7 @@
           }
         ],
         "id": "province_war_law_1",
+        "index": 1,
         "isDefault": false,
         "level": 1,
         "modifiers": [],
@@ -13178,6 +13455,7 @@
           }
         ],
         "id": "province_war_law_2",
+        "index": 2,
         "isDefault": false,
         "level": 2,
         "modifiers": [],
@@ -13289,6 +13567,7 @@
           }
         ],
         "id": "province_war_law_3",
+        "index": 3,
         "isDefault": false,
         "level": 3,
         "modifiers": [],
@@ -13393,20 +13672,30 @@
     ],
     "name": "Provincial War Declaration",
     "progression": true,
-    "sourceFile": "02_admininistrative_law_groups.txt",
+    "requiredGovernments": [
+      {
+        "flag": "government_uses_imperial_bureaucracy",
+        "governments": [
+          {
+            "id": "administrative_government",
+            "name": "Administrative"
+          }
+        ]
+      }
+    ],
+    "sourceFile": "02_admininistrative_laws.txt",
     "treasuryBudget": false
   },
   {
     "category": "administrative",
     "cumulative": false,
     "default": "province_border_law_0",
+    "dlc": null,
     "flags": [
       "admin_law"
     ],
-    "governmentFlags": [
-      "government_is_administrative"
-    ],
     "groupRequirements": [],
+    "groupSourceFile": "02_admininistrative_law_groups.txt",
     "id": "province_border_law",
     "laws": [
       {
@@ -13414,6 +13703,7 @@
         "effects": null,
         "flags": [],
         "id": "province_border_law_0",
+        "index": 0,
         "isDefault": true,
         "level": 0,
         "modifiers": [],
@@ -13452,6 +13742,7 @@
           }
         ],
         "id": "province_border_law_1",
+        "index": 1,
         "isDefault": false,
         "level": 1,
         "modifiers": [
@@ -13569,6 +13860,7 @@
           }
         ],
         "id": "province_border_law_2",
+        "index": 2,
         "isDefault": false,
         "level": 2,
         "modifiers": [
@@ -13679,20 +13971,30 @@
     ],
     "name": "Provincial Border Policy",
     "progression": true,
-    "sourceFile": "02_admininistrative_law_groups.txt",
+    "requiredGovernments": [
+      {
+        "flag": "government_is_administrative",
+        "governments": [
+          {
+            "id": "administrative_government",
+            "name": "Administrative"
+          }
+        ]
+      }
+    ],
+    "sourceFile": "02_admininistrative_laws.txt",
     "treasuryBudget": false
   },
   {
     "category": "administrative",
     "cumulative": false,
     "default": "celestial_army_liege_law_0",
+    "dlc": null,
     "flags": [
       "admin_law"
     ],
-    "governmentFlags": [
-      "government_is_celestial"
-    ],
     "groupRequirements": [],
+    "groupSourceFile": "02_admininistrative_law_groups.txt",
     "id": "celestial_army_liege_law",
     "laws": [
       {
@@ -13700,6 +14002,7 @@
         "effects": null,
         "flags": [],
         "id": "celestial_army_liege_law_0",
+        "index": 0,
         "isDefault": true,
         "level": 0,
         "modifiers": [
@@ -13739,6 +14042,7 @@
           }
         ],
         "id": "celestial_army_liege_law_1",
+        "index": 1,
         "isDefault": false,
         "level": 1,
         "modifiers": [
@@ -13861,6 +14165,7 @@
           }
         ],
         "id": "celestial_army_liege_law_2",
+        "index": 2,
         "isDefault": false,
         "level": 2,
         "modifiers": [
@@ -13978,6 +14283,7 @@
           }
         ],
         "id": "celestial_army_liege_law_3",
+        "index": 3,
         "isDefault": false,
         "level": 3,
         "modifiers": [
@@ -14093,20 +14399,30 @@
     ],
     "name": "Army Command Structure",
     "progression": true,
-    "sourceFile": "02_admininistrative_law_groups.txt",
+    "requiredGovernments": [
+      {
+        "flag": "government_is_celestial",
+        "governments": [
+          {
+            "id": "celestial_government",
+            "name": "Celestial"
+          }
+        ]
+      }
+    ],
+    "sourceFile": "02_admininistrative_laws.txt",
     "treasuryBudget": false
   },
   {
     "category": "administrative",
     "cumulative": false,
     "default": "celestial_army_vassal_law_0",
+    "dlc": null,
     "flags": [
       "admin_law"
     ],
-    "governmentFlags": [
-      "government_is_celestial"
-    ],
     "groupRequirements": [],
+    "groupSourceFile": "02_admininistrative_law_groups.txt",
     "id": "celestial_army_vassal_law",
     "laws": [
       {
@@ -14114,6 +14430,7 @@
         "effects": null,
         "flags": [],
         "id": "celestial_army_vassal_law_0",
+        "index": 0,
         "isDefault": true,
         "level": 0,
         "modifiers": [
@@ -14162,6 +14479,7 @@
         "effects": null,
         "flags": [],
         "id": "celestial_army_vassal_law_1",
+        "index": 1,
         "isDefault": false,
         "level": 1,
         "modifiers": [
@@ -14279,6 +14597,7 @@
         "effects": null,
         "flags": [],
         "id": "celestial_army_vassal_law_2",
+        "index": 2,
         "isDefault": false,
         "level": 2,
         "modifiers": [
@@ -14396,6 +14715,7 @@
         "effects": null,
         "flags": [],
         "id": "celestial_army_vassal_law_3",
+        "index": 3,
         "isDefault": false,
         "level": 3,
         "modifiers": [
@@ -14511,20 +14831,30 @@
     ],
     "name": "Army Command Structure",
     "progression": true,
-    "sourceFile": "02_admininistrative_law_groups.txt",
+    "requiredGovernments": [
+      {
+        "flag": "government_is_celestial",
+        "governments": [
+          {
+            "id": "celestial_government",
+            "name": "Celestial"
+          }
+        ]
+      }
+    ],
+    "sourceFile": "02_admininistrative_laws.txt",
     "treasuryBudget": false
   },
   {
     "category": "administrative",
     "cumulative": false,
     "default": "celestial_retirement_law_5",
+    "dlc": null,
     "flags": [
       "admin_law"
     ],
-    "governmentFlags": [
-      "government_is_celestial"
-    ],
     "groupRequirements": [],
+    "groupSourceFile": "02_admininistrative_law_groups.txt",
     "id": "celestial_retirement_law",
     "laws": [
       {
@@ -14541,6 +14871,7 @@
           }
         ],
         "id": "celestial_retirement_law_0",
+        "index": 0,
         "isDefault": false,
         "level": 0,
         "modifiers": [],
@@ -14656,6 +14987,7 @@
           }
         ],
         "id": "celestial_retirement_law_1",
+        "index": 1,
         "isDefault": false,
         "level": 1,
         "modifiers": [],
@@ -14771,6 +15103,7 @@
           }
         ],
         "id": "celestial_retirement_law_2",
+        "index": 2,
         "isDefault": false,
         "level": 2,
         "modifiers": [],
@@ -14886,6 +15219,7 @@
           }
         ],
         "id": "celestial_retirement_law_3",
+        "index": 3,
         "isDefault": false,
         "level": 3,
         "modifiers": [],
@@ -15001,6 +15335,7 @@
           }
         ],
         "id": "celestial_retirement_law_4",
+        "index": 4,
         "isDefault": false,
         "level": 4,
         "modifiers": [],
@@ -15116,6 +15451,7 @@
           }
         ],
         "id": "celestial_retirement_law_5",
+        "index": 5,
         "isDefault": true,
         "level": 5,
         "modifiers": [],
@@ -15147,18 +15483,30 @@
     ],
     "name": "Retirement Age",
     "progression": true,
-    "sourceFile": "02_admininistrative_law_groups.txt",
+    "requiredGovernments": [
+      {
+        "flag": "government_is_celestial",
+        "governments": [
+          {
+            "id": "celestial_government",
+            "name": "Celestial"
+          }
+        ]
+      }
+    ],
+    "sourceFile": "02_admininistrative_laws.txt",
     "treasuryBudget": false
   },
   {
     "category": "administrative",
     "cumulative": false,
     "default": "top_liege_redirected_to_border_wars_law",
+    "dlc": null,
     "flags": [
       "imperial_policy"
     ],
-    "governmentFlags": [],
     "groupRequirements": [],
+    "groupSourceFile": "02_admininistrative_law_groups.txt",
     "id": "border_wars_laws",
     "laws": [
       {
@@ -15171,6 +15519,7 @@
           }
         ],
         "id": "top_liege_redirected_to_border_wars_law",
+        "index": 0,
         "isDefault": true,
         "level": null,
         "modifiers": [
@@ -15209,6 +15558,7 @@
           }
         ],
         "id": "top_liege_not_redirected_to_border_wars_law",
+        "index": 1,
         "isDefault": false,
         "level": null,
         "modifiers": [
@@ -15250,20 +15600,20 @@
     ],
     "name": "Border Wars Policy",
     "progression": false,
-    "sourceFile": "02_admininistrative_law_groups.txt",
+    "requiredGovernments": [],
+    "sourceFile": "02_admininistrative_laws.txt",
     "treasuryBudget": false
   },
   {
     "category": "administrative",
     "cumulative": false,
     "default": "grand_chancellor_law",
+    "dlc": null,
     "flags": [
       "imperial_policy"
     ],
-    "governmentFlags": [
-      "government_is_celestial"
-    ],
     "groupRequirements": [],
+    "groupSourceFile": "02_admininistrative_law_groups.txt",
     "id": "grand_secretariat_laws",
     "laws": [
       {
@@ -15276,6 +15626,7 @@
           }
         ],
         "id": "grand_chancellor_law",
+        "index": 0,
         "isDefault": true,
         "level": null,
         "modifiers": [],
@@ -15309,6 +15660,7 @@
           }
         ],
         "id": "grand_marshal_law",
+        "index": 1,
         "isDefault": false,
         "level": null,
         "modifiers": [],
@@ -15342,6 +15694,7 @@
           }
         ],
         "id": "grand_censor_law",
+        "index": 2,
         "isDefault": false,
         "level": null,
         "modifiers": [],
@@ -15368,20 +15721,30 @@
     ],
     "name": "Grand Secretariat Control",
     "progression": false,
-    "sourceFile": "02_admininistrative_law_groups.txt",
+    "requiredGovernments": [
+      {
+        "flag": "government_is_celestial",
+        "governments": [
+          {
+            "id": "celestial_government",
+            "name": "Celestial"
+          }
+        ]
+      }
+    ],
+    "sourceFile": "02_admininistrative_laws.txt",
     "treasuryBudget": false
   },
   {
     "category": "administrative",
     "cumulative": false,
     "default": "candidate_score_merit_law",
+    "dlc": null,
     "flags": [
       "imperial_policy"
     ],
-    "governmentFlags": [
-      "government_is_celestial"
-    ],
     "groupRequirements": [],
+    "groupSourceFile": "02_admininistrative_law_groups.txt",
     "id": "candidate_score_laws",
     "laws": [
       {
@@ -15394,6 +15757,7 @@
           }
         ],
         "id": "candidate_score_merit_law",
+        "index": 0,
         "isDefault": true,
         "level": null,
         "modifiers": [],
@@ -15444,6 +15808,7 @@
           }
         ],
         "id": "candidate_score_prestige_law",
+        "index": 1,
         "isDefault": false,
         "level": null,
         "modifiers": [],
@@ -15487,21 +15852,31 @@
     ],
     "name": "Candidate Score Focus",
     "progression": false,
-    "sourceFile": "02_admininistrative_law_groups.txt",
+    "requiredGovernments": [
+      {
+        "flag": "government_is_celestial",
+        "governments": [
+          {
+            "id": "celestial_government",
+            "name": "Celestial"
+          }
+        ]
+      }
+    ],
+    "sourceFile": "02_admininistrative_laws.txt",
     "treasuryBudget": false
   },
   {
     "category": "administrative",
     "cumulative": false,
     "default": "budget_allocation_salary_30",
+    "dlc": null,
     "flags": [
       "treasury_budget_law",
       "treasury_budget_salary"
     ],
-    "governmentFlags": [
-      "government_uses_salary_budget"
-    ],
     "groupRequirements": [],
+    "groupSourceFile": "02_admininistrative_law_groups.txt",
     "id": "budget_allocation_salary_law",
     "laws": [
       {
@@ -15514,6 +15889,7 @@
           }
         ],
         "id": "budget_allocation_salary_0",
+        "index": 0,
         "isDefault": false,
         "level": 0,
         "modifiers": [
@@ -15595,6 +15971,7 @@
           }
         ],
         "id": "budget_allocation_salary_5",
+        "index": 1,
         "isDefault": false,
         "level": 5,
         "modifiers": [
@@ -15676,6 +16053,7 @@
           }
         ],
         "id": "budget_allocation_salary_10",
+        "index": 2,
         "isDefault": false,
         "level": 10,
         "modifiers": [
@@ -15752,6 +16130,7 @@
           }
         ],
         "id": "budget_allocation_salary_15",
+        "index": 3,
         "isDefault": false,
         "level": 15,
         "modifiers": [
@@ -15828,6 +16207,7 @@
           }
         ],
         "id": "budget_allocation_salary_20",
+        "index": 4,
         "isDefault": false,
         "level": 20,
         "modifiers": [
@@ -15904,6 +16284,7 @@
           }
         ],
         "id": "budget_allocation_salary_25",
+        "index": 5,
         "isDefault": false,
         "level": 25,
         "modifiers": [
@@ -15970,6 +16351,7 @@
         "effects": null,
         "flags": [],
         "id": "budget_allocation_salary_30",
+        "index": 6,
         "isDefault": true,
         "level": 30,
         "modifiers": [
@@ -16032,6 +16414,7 @@
         "effects": null,
         "flags": [],
         "id": "budget_allocation_salary_35",
+        "index": 7,
         "isDefault": false,
         "level": 35,
         "modifiers": [
@@ -16093,6 +16476,7 @@
         "effects": null,
         "flags": [],
         "id": "budget_allocation_salary_40",
+        "index": 8,
         "isDefault": false,
         "level": 40,
         "modifiers": [
@@ -16154,6 +16538,7 @@
         "effects": null,
         "flags": [],
         "id": "budget_allocation_salary_45",
+        "index": 9,
         "isDefault": false,
         "level": 45,
         "modifiers": [
@@ -16215,6 +16600,7 @@
         "effects": null,
         "flags": [],
         "id": "budget_allocation_salary_50",
+        "index": 10,
         "isDefault": false,
         "level": 50,
         "modifiers": [
@@ -16276,6 +16662,7 @@
         "effects": null,
         "flags": [],
         "id": "budget_allocation_salary_55",
+        "index": 11,
         "isDefault": false,
         "level": 55,
         "modifiers": [
@@ -16337,6 +16724,7 @@
         "effects": null,
         "flags": [],
         "id": "budget_allocation_salary_60",
+        "index": 12,
         "isDefault": false,
         "level": 60,
         "modifiers": [
@@ -16398,6 +16786,7 @@
         "effects": null,
         "flags": [],
         "id": "budget_allocation_salary_65",
+        "index": 13,
         "isDefault": false,
         "level": 65,
         "modifiers": [
@@ -16459,6 +16848,7 @@
         "effects": null,
         "flags": [],
         "id": "budget_allocation_salary_70",
+        "index": 14,
         "isDefault": false,
         "level": 70,
         "modifiers": [
@@ -16520,6 +16910,7 @@
         "effects": null,
         "flags": [],
         "id": "budget_allocation_salary_75",
+        "index": 15,
         "isDefault": false,
         "level": 75,
         "modifiers": [
@@ -16581,6 +16972,7 @@
         "effects": null,
         "flags": [],
         "id": "budget_allocation_salary_80",
+        "index": 16,
         "isDefault": false,
         "level": 80,
         "modifiers": [
@@ -16642,6 +17034,7 @@
         "effects": null,
         "flags": [],
         "id": "budget_allocation_salary_85",
+        "index": 17,
         "isDefault": false,
         "level": 85,
         "modifiers": [
@@ -16703,6 +17096,7 @@
         "effects": null,
         "flags": [],
         "id": "budget_allocation_salary_90",
+        "index": 18,
         "isDefault": false,
         "level": 90,
         "modifiers": [
@@ -16764,6 +17158,7 @@
         "effects": null,
         "flags": [],
         "id": "budget_allocation_salary_95",
+        "index": 19,
         "isDefault": false,
         "level": 95,
         "modifiers": [
@@ -16825,6 +17220,7 @@
         "effects": null,
         "flags": [],
         "id": "budget_allocation_salary_100",
+        "index": 20,
         "isDefault": false,
         "level": 100,
         "modifiers": [
@@ -16884,21 +17280,47 @@
     ],
     "name": "Salary Budget Allocation",
     "progression": true,
-    "sourceFile": "02_admininistrative_law_groups.txt",
+    "requiredGovernments": [
+      {
+        "flag": "government_uses_salary_budget",
+        "governments": [
+          {
+            "id": "republic_government",
+            "name": "Republic"
+          },
+          {
+            "id": "administrative_government",
+            "name": "Administrative"
+          },
+          {
+            "id": "celestial_government",
+            "name": "Celestial"
+          },
+          {
+            "id": "steppe_admin_government",
+            "name": "Meritocratic Khanate"
+          },
+          {
+            "id": "meritocratic_government",
+            "name": "Meritocratic"
+          }
+        ]
+      }
+    ],
+    "sourceFile": "02_admininistrative_laws.txt",
     "treasuryBudget": true
   },
   {
     "category": "administrative",
     "cumulative": false,
     "default": "budget_allocation_ministry_25",
+    "dlc": null,
     "flags": [
       "treasury_budget_law",
       "treasury_budget_ministry"
     ],
-    "governmentFlags": [
-      "government_uses_ministry_budget"
-    ],
     "groupRequirements": [],
+    "groupSourceFile": "02_admininistrative_law_groups.txt",
     "id": "budget_allocation_ministry_law",
     "laws": [
       {
@@ -16911,6 +17333,7 @@
           }
         ],
         "id": "budget_allocation_ministry_0",
+        "index": 0,
         "isDefault": false,
         "level": 0,
         "modifiers": [
@@ -16992,6 +17415,7 @@
           }
         ],
         "id": "budget_allocation_ministry_5",
+        "index": 1,
         "isDefault": false,
         "level": 5,
         "modifiers": [
@@ -17073,6 +17497,7 @@
           }
         ],
         "id": "budget_allocation_ministry_10",
+        "index": 2,
         "isDefault": false,
         "level": 10,
         "modifiers": [
@@ -17154,6 +17579,7 @@
           }
         ],
         "id": "budget_allocation_ministry_15",
+        "index": 3,
         "isDefault": false,
         "level": 15,
         "modifiers": [
@@ -17235,6 +17661,7 @@
           }
         ],
         "id": "budget_allocation_ministry_20",
+        "index": 4,
         "isDefault": false,
         "level": 20,
         "modifiers": [
@@ -17301,6 +17728,7 @@
         "effects": null,
         "flags": [],
         "id": "budget_allocation_ministry_25",
+        "index": 5,
         "isDefault": true,
         "level": 25,
         "modifiers": [
@@ -17362,6 +17790,7 @@
         "effects": null,
         "flags": [],
         "id": "budget_allocation_ministry_30",
+        "index": 6,
         "isDefault": false,
         "level": 30,
         "modifiers": [
@@ -17424,6 +17853,7 @@
         "effects": null,
         "flags": [],
         "id": "budget_allocation_ministry_35",
+        "index": 7,
         "isDefault": false,
         "level": 35,
         "modifiers": [
@@ -17485,6 +17915,7 @@
         "effects": null,
         "flags": [],
         "id": "budget_allocation_ministry_40",
+        "index": 8,
         "isDefault": false,
         "level": 40,
         "modifiers": [
@@ -17546,6 +17977,7 @@
         "effects": null,
         "flags": [],
         "id": "budget_allocation_ministry_45",
+        "index": 9,
         "isDefault": false,
         "level": 45,
         "modifiers": [
@@ -17607,6 +18039,7 @@
         "effects": null,
         "flags": [],
         "id": "budget_allocation_ministry_50",
+        "index": 10,
         "isDefault": false,
         "level": 50,
         "modifiers": [
@@ -17668,6 +18101,7 @@
         "effects": null,
         "flags": [],
         "id": "budget_allocation_ministry_55",
+        "index": 11,
         "isDefault": false,
         "level": 55,
         "modifiers": [
@@ -17729,6 +18163,7 @@
         "effects": null,
         "flags": [],
         "id": "budget_allocation_ministry_60",
+        "index": 12,
         "isDefault": false,
         "level": 60,
         "modifiers": [
@@ -17790,6 +18225,7 @@
         "effects": null,
         "flags": [],
         "id": "budget_allocation_ministry_65",
+        "index": 13,
         "isDefault": false,
         "level": 65,
         "modifiers": [
@@ -17851,6 +18287,7 @@
         "effects": null,
         "flags": [],
         "id": "budget_allocation_ministry_70",
+        "index": 14,
         "isDefault": false,
         "level": 70,
         "modifiers": [
@@ -17912,6 +18349,7 @@
         "effects": null,
         "flags": [],
         "id": "budget_allocation_ministry_75",
+        "index": 15,
         "isDefault": false,
         "level": 75,
         "modifiers": [
@@ -17973,6 +18411,7 @@
         "effects": null,
         "flags": [],
         "id": "budget_allocation_ministry_80",
+        "index": 16,
         "isDefault": false,
         "level": 80,
         "modifiers": [
@@ -18034,6 +18473,7 @@
         "effects": null,
         "flags": [],
         "id": "budget_allocation_ministry_85",
+        "index": 17,
         "isDefault": false,
         "level": 85,
         "modifiers": [
@@ -18095,6 +18535,7 @@
         "effects": null,
         "flags": [],
         "id": "budget_allocation_ministry_90",
+        "index": 18,
         "isDefault": false,
         "level": 90,
         "modifiers": [
@@ -18156,6 +18597,7 @@
         "effects": null,
         "flags": [],
         "id": "budget_allocation_ministry_95",
+        "index": 19,
         "isDefault": false,
         "level": 95,
         "modifiers": [
@@ -18217,6 +18659,7 @@
         "effects": null,
         "flags": [],
         "id": "budget_allocation_ministry_100",
+        "index": 20,
         "isDefault": false,
         "level": 100,
         "modifiers": [
@@ -18276,21 +18719,31 @@
     ],
     "name": "Ministry Budget Allocation",
     "progression": true,
-    "sourceFile": "02_admininistrative_law_groups.txt",
+    "requiredGovernments": [
+      {
+        "flag": "government_uses_ministry_budget",
+        "governments": [
+          {
+            "id": "celestial_government",
+            "name": "Celestial"
+          }
+        ]
+      }
+    ],
+    "sourceFile": "02_admininistrative_laws.txt",
     "treasuryBudget": true
   },
   {
     "category": "administrative",
     "cumulative": false,
     "default": "budget_allocation_military_20",
+    "dlc": null,
     "flags": [
       "treasury_budget_law",
       "treasury_budget_military"
     ],
-    "governmentFlags": [
-      "government_uses_military_budget"
-    ],
     "groupRequirements": [],
+    "groupSourceFile": "02_admininistrative_law_groups.txt",
     "id": "budget_allocation_military_law",
     "laws": [
       {
@@ -18303,6 +18756,7 @@
           }
         ],
         "id": "budget_allocation_military_0",
+        "index": 0,
         "isDefault": false,
         "level": 0,
         "modifiers": [
@@ -18384,6 +18838,7 @@
           }
         ],
         "id": "budget_allocation_military_5",
+        "index": 1,
         "isDefault": false,
         "level": 5,
         "modifiers": [
@@ -18465,6 +18920,7 @@
           }
         ],
         "id": "budget_allocation_military_10",
+        "index": 2,
         "isDefault": false,
         "level": 10,
         "modifiers": [
@@ -18546,6 +19002,7 @@
           }
         ],
         "id": "budget_allocation_military_15",
+        "index": 3,
         "isDefault": false,
         "level": 15,
         "modifiers": [
@@ -18627,6 +19084,7 @@
           }
         ],
         "id": "budget_allocation_military_20",
+        "index": 4,
         "isDefault": true,
         "level": 20,
         "modifiers": [
@@ -18694,6 +19152,7 @@
         "effects": null,
         "flags": [],
         "id": "budget_allocation_military_25",
+        "index": 5,
         "isDefault": false,
         "level": 25,
         "modifiers": [
@@ -18760,6 +19219,7 @@
         "effects": null,
         "flags": [],
         "id": "budget_allocation_military_30",
+        "index": 6,
         "isDefault": false,
         "level": 30,
         "modifiers": [
@@ -18821,6 +19281,7 @@
         "effects": null,
         "flags": [],
         "id": "budget_allocation_military_35",
+        "index": 7,
         "isDefault": false,
         "level": 35,
         "modifiers": [
@@ -18882,6 +19343,7 @@
         "effects": null,
         "flags": [],
         "id": "budget_allocation_military_40",
+        "index": 8,
         "isDefault": false,
         "level": 40,
         "modifiers": [
@@ -18943,6 +19405,7 @@
         "effects": null,
         "flags": [],
         "id": "budget_allocation_military_45",
+        "index": 9,
         "isDefault": false,
         "level": 45,
         "modifiers": [
@@ -19004,6 +19467,7 @@
         "effects": null,
         "flags": [],
         "id": "budget_allocation_military_50",
+        "index": 10,
         "isDefault": false,
         "level": 50,
         "modifiers": [
@@ -19065,6 +19529,7 @@
         "effects": null,
         "flags": [],
         "id": "budget_allocation_military_55",
+        "index": 11,
         "isDefault": false,
         "level": 55,
         "modifiers": [
@@ -19126,6 +19591,7 @@
         "effects": null,
         "flags": [],
         "id": "budget_allocation_military_60",
+        "index": 12,
         "isDefault": false,
         "level": 60,
         "modifiers": [
@@ -19187,6 +19653,7 @@
         "effects": null,
         "flags": [],
         "id": "budget_allocation_military_65",
+        "index": 13,
         "isDefault": false,
         "level": 65,
         "modifiers": [
@@ -19248,6 +19715,7 @@
         "effects": null,
         "flags": [],
         "id": "budget_allocation_military_70",
+        "index": 14,
         "isDefault": false,
         "level": 70,
         "modifiers": [
@@ -19309,6 +19777,7 @@
         "effects": null,
         "flags": [],
         "id": "budget_allocation_military_75",
+        "index": 15,
         "isDefault": false,
         "level": 75,
         "modifiers": [
@@ -19370,6 +19839,7 @@
         "effects": null,
         "flags": [],
         "id": "budget_allocation_military_80",
+        "index": 16,
         "isDefault": false,
         "level": 80,
         "modifiers": [
@@ -19431,6 +19901,7 @@
         "effects": null,
         "flags": [],
         "id": "budget_allocation_military_85",
+        "index": 17,
         "isDefault": false,
         "level": 85,
         "modifiers": [
@@ -19492,6 +19963,7 @@
         "effects": null,
         "flags": [],
         "id": "budget_allocation_military_90",
+        "index": 18,
         "isDefault": false,
         "level": 90,
         "modifiers": [
@@ -19553,6 +20025,7 @@
         "effects": null,
         "flags": [],
         "id": "budget_allocation_military_95",
+        "index": 19,
         "isDefault": false,
         "level": 95,
         "modifiers": [
@@ -19614,6 +20087,7 @@
         "effects": null,
         "flags": [],
         "id": "budget_allocation_military_100",
+        "index": 20,
         "isDefault": false,
         "level": 100,
         "modifiers": [
@@ -19673,21 +20147,46 @@
     ],
     "name": "Military Budget Allocation",
     "progression": true,
-    "sourceFile": "02_admininistrative_law_groups.txt",
+    "requiredGovernments": [
+      {
+        "flag": "government_uses_military_budget",
+        "governments": [
+          {
+            "id": "republic_government",
+            "name": "Republic"
+          },
+          {
+            "id": "administrative_government",
+            "name": "Administrative"
+          },
+          {
+            "id": "celestial_government",
+            "name": "Celestial"
+          },
+          {
+            "id": "steppe_admin_government",
+            "name": "Meritocratic Khanate"
+          },
+          {
+            "id": "meritocratic_government",
+            "name": "Meritocratic"
+          }
+        ]
+      }
+    ],
+    "sourceFile": "02_admininistrative_laws.txt",
     "treasuryBudget": true
   },
   {
     "category": "imperial_policy",
     "cumulative": false,
     "default": "manor_reform_law",
+    "dlc": null,
     "flags": [
       "imperial_policy"
     ],
-    "governmentFlags": [
-      "government_is_japan_administrative",
-      "government_is_japan_feudal"
-    ],
     "groupRequirements": [],
+    "groupSourceFile": "03_imperial_policie_groups.txt",
     "id": "imperial_policy_laws",
     "laws": [
       {
@@ -19708,6 +20207,7 @@
           }
         ],
         "id": "defense_mobilization_law",
+        "index": 0,
         "isDefault": false,
         "level": null,
         "modifiers": [
@@ -19784,6 +20284,7 @@
           }
         ],
         "id": "disarmament_law",
+        "index": 1,
         "isDefault": false,
         "level": null,
         "modifiers": [
@@ -19846,6 +20347,7 @@
           }
         ],
         "id": "isolation_law",
+        "index": 2,
         "isDefault": false,
         "level": null,
         "modifiers": [
@@ -19908,6 +20410,7 @@
           }
         ],
         "id": "imperial_expansion_law",
+        "index": 3,
         "isDefault": false,
         "level": null,
         "modifiers": [
@@ -19984,6 +20487,7 @@
           }
         ],
         "id": "manor_reform_law",
+        "index": 4,
         "isDefault": true,
         "level": null,
         "modifiers": [
@@ -20067,6 +20571,7 @@
           }
         ],
         "id": "bandit_crackdown_law",
+        "index": 5,
         "isDefault": false,
         "level": null,
         "modifiers": [
@@ -20133,28 +20638,48 @@
     ],
     "name": "Imperial Policies",
     "progression": false,
-    "sourceFile": "03_imperial_policie_groups.txt",
+    "requiredGovernments": [
+      {
+        "flag": "government_is_japan_administrative",
+        "governments": [
+          {
+            "id": "japan_administrative_government",
+            "name": "Ritsuryō"
+          }
+        ]
+      },
+      {
+        "flag": "government_is_japan_feudal",
+        "governments": [
+          {
+            "id": "japan_feudal_government",
+            "name": "Sōryō"
+          }
+        ]
+      }
+    ],
+    "sourceFile": "03_imperial_policies.txt",
     "treasuryBudget": false
   },
   {
     "category": "ecclesiastical",
     "cumulative": false,
     "default": "budget_allocation_cardinal_50",
+    "dlc": "By God Alone",
     "flags": [
       "treasury_budget_law",
       "treasury_budget_cardinal"
     ],
-    "governmentFlags": [
-      "government_is_ecclesiastical"
-    ],
     "groupRequirements": [],
+    "groupSourceFile": "04_pam_ecclesiastical_law_groups.txt",
     "id": "budget_allocation_cardinal_law",
     "laws": [
       {
-        "dlc": null,
+        "dlc": "By God Alone",
         "effects": null,
         "flags": [],
         "id": "budget_allocation_cardinal_50",
+        "index": 0,
         "isDefault": true,
         "level": 50,
         "modifiers": [
@@ -20182,27 +20707,38 @@
     ],
     "name": "Cardinal Budget Allocation",
     "progression": false,
-    "sourceFile": "04_pam_ecclesiastical_law_groups.txt",
+    "requiredGovernments": [
+      {
+        "flag": "government_is_ecclesiastical",
+        "governments": [
+          {
+            "id": "ecclesiastical_government",
+            "name": "Ecclesiastical"
+          }
+        ]
+      }
+    ],
+    "sourceFile": "04_pam_ecclesiastical_laws.txt",
     "treasuryBudget": true
   },
   {
     "category": "ecclesiastical",
     "cumulative": false,
     "default": "no_benefices",
+    "dlc": "By God Alone",
     "flags": [
       "church_policy"
     ],
-    "governmentFlags": [
-      "government_is_ecclesiastical"
-    ],
     "groupRequirements": [],
+    "groupSourceFile": "04_pam_ecclesiastical_law_groups.txt",
     "id": "church_benefices_law",
     "laws": [
       {
-        "dlc": null,
+        "dlc": "By God Alone",
         "effects": null,
         "flags": [],
         "id": "no_benefices",
+        "index": 0,
         "isDefault": true,
         "level": null,
         "modifiers": [],
@@ -20217,10 +20753,11 @@
         "titleAllegianceOpinion": null
       },
       {
-        "dlc": null,
+        "dlc": "By God Alone",
         "effects": null,
         "flags": [],
         "id": "cardinal_standard_benefices",
+        "index": 1,
         "isDefault": false,
         "level": null,
         "modifiers": [
@@ -20244,21 +20781,31 @@
     ],
     "name": "Cardinal Benefices",
     "progression": false,
-    "sourceFile": "04_pam_ecclesiastical_law_groups.txt",
+    "requiredGovernments": [
+      {
+        "flag": "government_is_ecclesiastical",
+        "governments": [
+          {
+            "id": "ecclesiastical_government",
+            "name": "Ecclesiastical"
+          }
+        ]
+      }
+    ],
+    "sourceFile": "04_pam_ecclesiastical_laws.txt",
     "treasuryBudget": false
   },
   {
     "category": "republic",
     "cumulative": false,
     "default": "republic_type_communal",
+    "dlc": null,
     "flags": [
       "republican_type_law",
       "BlockLightTexture"
     ],
-    "governmentFlags": [
-      "government_is_republic"
-    ],
     "groupRequirements": [],
+    "groupSourceFile": "04_republic_law_groups.txt",
     "id": "republic_type",
     "laws": [
       {
@@ -20275,6 +20822,7 @@
           }
         ],
         "id": "republic_type_communal",
+        "index": 1,
         "isDefault": true,
         "level": null,
         "modifiers": [
@@ -20383,6 +20931,7 @@
           }
         ],
         "id": "republic_type_civic",
+        "index": 2,
         "isDefault": false,
         "level": null,
         "modifiers": [
@@ -20530,6 +21079,7 @@
           }
         ],
         "id": "republic_type_popular",
+        "index": 3,
         "isDefault": false,
         "level": null,
         "modifiers": [
@@ -20682,6 +21232,7 @@
           }
         ],
         "id": "republic_type_maritime",
+        "index": 4,
         "isDefault": false,
         "level": null,
         "modifiers": [
@@ -20822,6 +21373,7 @@
           }
         ],
         "id": "republic_type_noble",
+        "index": 5,
         "isDefault": false,
         "level": null,
         "modifiers": [
@@ -20966,6 +21518,7 @@
           }
         ],
         "id": "republic_type_roman",
+        "index": 6,
         "isDefault": false,
         "level": null,
         "modifiers": [
@@ -21072,22 +21625,32 @@
     ],
     "name": "Republic Administration",
     "progression": false,
-    "sourceFile": "04_republic_law_groups.txt",
+    "requiredGovernments": [
+      {
+        "flag": "government_is_republic",
+        "governments": [
+          {
+            "id": "republic_government",
+            "name": "Republic"
+          }
+        ]
+      }
+    ],
+    "sourceFile": "04_republic_laws.txt",
     "treasuryBudget": false
   },
   {
     "category": "republic",
     "cumulative": false,
     "default": "republic_tier_county",
+    "dlc": null,
     "flags": [
       "republic_tier_law",
       "republican_law",
       "BlockLightTexture"
     ],
-    "governmentFlags": [
-      "government_is_republic"
-    ],
     "groupRequirements": [],
+    "groupSourceFile": "04_republic_law_groups.txt",
     "id": "republic_tier_law",
     "laws": [
       {
@@ -21095,6 +21658,7 @@
         "effects": "County Tier Republics only have the Republic's Ruler as a single Patrician; Limited to the Communal Republic Administration; This Law determines the Tier of the Republic — that of a County.",
         "flags": [],
         "id": "republic_tier_county",
+        "index": 0,
         "isDefault": true,
         "level": null,
         "modifiers": [
@@ -21149,6 +21713,7 @@
           }
         ],
         "id": "republic_tier_duchy",
+        "index": 1,
         "isDefault": false,
         "level": null,
         "modifiers": [
@@ -21252,6 +21817,7 @@
           }
         ],
         "id": "republic_tier_kingdom",
+        "index": 2,
         "isDefault": false,
         "level": null,
         "modifiers": [
@@ -21360,6 +21926,7 @@
           }
         ],
         "id": "republic_tier_empire",
+        "index": 3,
         "isDefault": false,
         "level": null,
         "modifiers": [
@@ -21459,21 +22026,31 @@
     ],
     "name": "Republic tier law",
     "progression": false,
-    "sourceFile": "04_republic_law_groups.txt",
+    "requiredGovernments": [
+      {
+        "flag": "government_is_republic",
+        "governments": [
+          {
+            "id": "republic_government",
+            "name": "Republic"
+          }
+        ]
+      }
+    ],
+    "sourceFile": "04_republic_laws.txt",
     "treasuryBudget": false
   },
   {
     "category": "republic",
     "cumulative": false,
     "default": "republic_assembly_composition_patrician",
+    "dlc": null,
     "flags": [
       "republican_law",
       "republican_assembly_law"
     ],
-    "governmentFlags": [
-      "government_is_republic"
-    ],
     "groupRequirements": [],
+    "groupSourceFile": "04_republic_law_groups.txt",
     "id": "republic_assembly_composition_laws",
     "laws": [
       {
@@ -21481,6 +22058,7 @@
         "effects": "Major Members:; None; Minor Members:; City Holders; Courtiers; The Assembly is open to City Holders and the Liege's Courtiers.",
         "flags": [],
         "id": "republic_assembly_composition_communal",
+        "index": 0,
         "isDefault": false,
         "level": null,
         "modifiers": [
@@ -21561,6 +22139,7 @@
         "effects": "Major Members:; Patricians; Minor Members:; None; The Assembly is only for the wealthy and privileged Patricians.",
         "flags": [],
         "id": "republic_assembly_composition_patrician",
+        "index": 1,
         "isDefault": true,
         "level": null,
         "modifiers": [],
@@ -21629,6 +22208,7 @@
         "effects": "Major Members:; Councillors; Minor Members:; None; The Assembly is restriced to the Liege's Council, who are responsible for governing the Realm.",
         "flags": [],
         "id": "republic_assembly_composition_council",
+        "index": 2,
         "isDefault": false,
         "level": null,
         "modifiers": [
@@ -21703,6 +22283,7 @@
         "effects": "Major Members:; Patricians; Minor Members:; Republic Vassals; The Assembly invites all Republicans to partake, from wealthy Patricians to lowly City Holders.",
         "flags": [],
         "id": "republic_assembly_composition_general",
+        "index": 3,
         "isDefault": false,
         "level": null,
         "modifiers": [
@@ -21777,6 +22358,7 @@
         "effects": "Major Members:; Patricians; Minor Members:; Vassals; The Assembly is open to all Title Holders within the Realm, granting all an equal voice on legal matters.",
         "flags": [],
         "id": "republic_assembly_composition_parliament",
+        "index": 4,
         "isDefault": false,
         "level": null,
         "modifiers": [
@@ -21851,6 +22433,7 @@
         "effects": "Major Members:; Senators; Minor Members:; None; The Assembly consists only of those appointed as senators, such as Patricians and long serving magistrates.",
         "flags": [],
         "id": "republic_assembly_composition_roman_senate",
+        "index": 5,
         "isDefault": false,
         "level": null,
         "modifiers": [
@@ -21937,21 +22520,31 @@
     ],
     "name": "Assembly Structure",
     "progression": false,
-    "sourceFile": "04_republic_law_groups.txt",
+    "requiredGovernments": [
+      {
+        "flag": "government_is_republic",
+        "governments": [
+          {
+            "id": "republic_government",
+            "name": "Republic"
+          }
+        ]
+      }
+    ],
+    "sourceFile": "04_republic_laws.txt",
     "treasuryBudget": false
   },
   {
     "category": "republic",
     "cumulative": false,
     "default": "republic_assembly_authority_constitutional",
+    "dlc": null,
     "flags": [
       "republican_law",
       "republican_assembly_law"
     ],
-    "governmentFlags": [
-      "government_is_republic"
-    ],
     "groupRequirements": [],
+    "groupSourceFile": "04_republic_law_groups.txt",
     "id": "republic_assembly_authority_laws",
     "laws": [
       {
@@ -21959,6 +22552,7 @@
         "effects": "Assembly responsibilities:; Votes for candidate in Elective Succession Laws; Votes on and approves Laws; Votes on and approves Decrees; With Constitutional Authority, the Assembly operates as a coequal branch of government, ensuring that the Ruler cannot exercise unchecked power.",
         "flags": [],
         "id": "republic_assembly_authority_constitutional",
+        "index": 0,
         "isDefault": true,
         "level": null,
         "modifiers": [
@@ -22029,6 +22623,7 @@
         "effects": "Assembly responsibilities:; Votes for candidate in Elective Succession Laws; Votes on and approves Laws; With Legislative Authority, the Assembly holds substantial influence and governing responsibilities, while the Ruler retains greater executive power.",
         "flags": [],
         "id": "republic_assembly_authority_legislative",
+        "index": 1,
         "isDefault": false,
         "level": null,
         "modifiers": [
@@ -22103,6 +22698,7 @@
         "effects": "Assembly responsibilities:; Votes for candidate in Elective Succession Laws; With Ceremonial Authority, the Assembly functions primarily in a symbolic capacity, holding minimal influence, while the Ruler retains the vast majority of power.",
         "flags": [],
         "id": "republic_assembly_authority_ceremonial",
+        "index": 2,
         "isDefault": false,
         "level": null,
         "modifiers": [
@@ -22175,22 +22771,32 @@
     ],
     "name": "Assembly Authority",
     "progression": false,
-    "sourceFile": "04_republic_law_groups.txt",
+    "requiredGovernments": [
+      {
+        "flag": "government_is_republic",
+        "governments": [
+          {
+            "id": "republic_government",
+            "name": "Republic"
+          }
+        ]
+      }
+    ],
+    "sourceFile": "04_republic_laws.txt",
     "treasuryBudget": false
   },
   {
     "category": "republic",
     "cumulative": false,
     "default": "republic_assembly_voting_thresholds_simple_majority",
+    "dlc": null,
     "flags": [
       "republican_law",
       "voting_threshold",
       "republican_assembly_law"
     ],
-    "governmentFlags": [
-      "government_is_republic"
-    ],
     "groupRequirements": [],
+    "groupSourceFile": "04_republic_law_groups.txt",
     "id": "republic_assembly_voting_thresholds",
     "laws": [
       {
@@ -22198,6 +22804,7 @@
         "effects": "A majority of votes is required to pass a Law or Decree",
         "flags": [],
         "id": "republic_assembly_voting_thresholds_simple_majority",
+        "index": 0,
         "isDefault": true,
         "level": null,
         "modifiers": [],
@@ -22262,6 +22869,7 @@
         "effects": "A two-thirds majority of votes is required to pass a Law or Decree",
         "flags": [],
         "id": "republic_assembly_voting_thresholds_large_majority",
+        "index": 1,
         "isDefault": false,
         "level": null,
         "modifiers": [],
@@ -22326,6 +22934,7 @@
         "effects": "All votes are required to pass a Law or Decree",
         "flags": [],
         "id": "republic_assembly_voting_thresholds_unanimous",
+        "index": 2,
         "isDefault": false,
         "level": null,
         "modifiers": [],
@@ -22392,21 +23001,31 @@
     ],
     "name": "Approval Threshold",
     "progression": false,
-    "sourceFile": "04_republic_law_groups.txt",
+    "requiredGovernments": [
+      {
+        "flag": "government_is_republic",
+        "governments": [
+          {
+            "id": "republic_government",
+            "name": "Republic"
+          }
+        ]
+      }
+    ],
+    "sourceFile": "04_republic_laws.txt",
     "treasuryBudget": false
   },
   {
     "category": "republic",
     "cumulative": false,
     "default": "republic_assembly_term_length_2",
+    "dlc": null,
     "flags": [
       "republican_law",
       "republican_assembly_law"
     ],
-    "governmentFlags": [
-      "government_is_republic"
-    ],
     "groupRequirements": [],
+    "groupSourceFile": "04_republic_law_groups.txt",
     "id": "republic_assembly_term_length_laws",
     "laws": [
       {
@@ -22414,6 +23033,7 @@
         "effects": "Elected Ruler will remain in office for … years",
         "flags": [],
         "id": "republic_assembly_term_length_1",
+        "index": 0,
         "isDefault": false,
         "level": 1,
         "modifiers": [],
@@ -22482,6 +23102,7 @@
         "effects": "Elected Ruler will remain in office for … years",
         "flags": [],
         "id": "republic_assembly_term_length_2",
+        "index": 1,
         "isDefault": true,
         "level": 2,
         "modifiers": [],
@@ -22556,6 +23177,7 @@
         "effects": "Elected Ruler will remain in office for … years",
         "flags": [],
         "id": "republic_assembly_term_length_3",
+        "index": 2,
         "isDefault": false,
         "level": 3,
         "modifiers": [
@@ -22634,6 +23256,7 @@
         "effects": "Elected Ruler will remain in office for … years",
         "flags": [],
         "id": "republic_assembly_term_length_4",
+        "index": 3,
         "isDefault": false,
         "level": 4,
         "modifiers": [
@@ -22712,6 +23335,7 @@
         "effects": "Elected Ruler will remain in office for … years",
         "flags": [],
         "id": "republic_assembly_term_length_5",
+        "index": 4,
         "isDefault": false,
         "level": 5,
         "modifiers": [
@@ -22790,6 +23414,7 @@
         "effects": "Elected Ruler will remain in office for life",
         "flags": [],
         "id": "republic_assembly_term_length_indefinite",
+        "index": 5,
         "isDefault": false,
         "level": null,
         "modifiers": [
@@ -22862,20 +23487,29 @@
     ],
     "name": "Term Length",
     "progression": false,
-    "sourceFile": "04_republic_law_groups.txt",
+    "requiredGovernments": [
+      {
+        "flag": "government_is_republic",
+        "governments": [
+          {
+            "id": "republic_government",
+            "name": "Republic"
+          }
+        ]
+      }
+    ],
+    "sourceFile": "04_republic_laws.txt",
     "treasuryBudget": false
   },
   {
     "category": "republic",
     "cumulative": false,
     "default": "republic_senate_size_2",
+    "dlc": null,
     "flags": [
       "republican_law",
       "republican_assembly_law",
       "republic_senate_size"
-    ],
-    "governmentFlags": [
-      "government_is_republic"
     ],
     "groupRequirements": [
       {
@@ -22883,6 +23517,7 @@
         "text": "Roman Senate enacted"
       }
     ],
+    "groupSourceFile": "04_republic_law_groups.txt",
     "id": "republic_senate_size_laws",
     "laws": [
       {
@@ -22895,6 +23530,7 @@
           }
         ],
         "id": "republic_senate_size_1",
+        "index": 0,
         "isDefault": false,
         "level": 1,
         "modifiers": [],
@@ -22978,6 +23614,7 @@
           }
         ],
         "id": "republic_senate_size_2",
+        "index": 1,
         "isDefault": true,
         "level": 2,
         "modifiers": [],
@@ -23061,6 +23698,7 @@
           }
         ],
         "id": "republic_senate_size_3",
+        "index": 2,
         "isDefault": false,
         "level": 3,
         "modifiers": [],
@@ -23137,20 +23775,30 @@
     ],
     "name": "Senate Size",
     "progression": true,
-    "sourceFile": "04_republic_law_groups.txt",
+    "requiredGovernments": [
+      {
+        "flag": "government_is_republic",
+        "governments": [
+          {
+            "id": "republic_government",
+            "name": "Republic"
+          }
+        ]
+      }
+    ],
+    "sourceFile": "04_republic_laws.txt",
     "treasuryBudget": false
   },
   {
     "category": "republic",
     "cumulative": false,
     "default": "republic_war_declaration_1_limited",
+    "dlc": null,
     "flags": [
       "republican_law"
     ],
-    "governmentFlags": [
-      "government_is_republic"
-    ],
     "groupRequirements": [],
+    "groupSourceFile": "04_republic_law_groups.txt",
     "id": "republic_war_declaration",
     "laws": [
       {
@@ -23163,6 +23811,7 @@
           }
         ],
         "id": "republic_war_declaration_1_limited",
+        "index": 0,
         "isDefault": true,
         "level": null,
         "modifiers": [
@@ -23259,6 +23908,7 @@
         "effects": "The Ruler of the Republic may declare War at will",
         "flags": [],
         "id": "republic_war_declaration_2_unlimited",
+        "index": 1,
         "isDefault": false,
         "level": null,
         "modifiers": [
@@ -23349,20 +23999,30 @@
     ],
     "name": "War Declaration",
     "progression": false,
-    "sourceFile": "04_republic_law_groups.txt",
+    "requiredGovernments": [
+      {
+        "flag": "government_is_republic",
+        "governments": [
+          {
+            "id": "republic_government",
+            "name": "Republic"
+          }
+        ]
+      }
+    ],
+    "sourceFile": "04_republic_laws.txt",
     "treasuryBudget": false
   },
   {
     "category": "republic",
     "cumulative": false,
     "default": "republic_army_organization_1_levy",
+    "dlc": null,
     "flags": [
       "republican_law"
     ],
-    "governmentFlags": [
-      "government_is_republic"
-    ],
     "groupRequirements": [],
+    "groupSourceFile": "04_republic_law_groups.txt",
     "id": "republic_army_organization",
     "laws": [
       {
@@ -23370,6 +24030,7 @@
         "effects": null,
         "flags": [],
         "id": "republic_army_organization_1_levy",
+        "index": 0,
         "isDefault": true,
         "level": null,
         "modifiers": [
@@ -23498,6 +24159,7 @@
         "effects": null,
         "flags": [],
         "id": "republic_army_organization_2_improved_levy",
+        "index": 1,
         "isDefault": false,
         "level": null,
         "modifiers": [
@@ -23626,6 +24288,7 @@
         "effects": null,
         "flags": [],
         "id": "republic_army_organization_3_maa",
+        "index": 2,
         "isDefault": false,
         "level": null,
         "modifiers": [
@@ -23723,6 +24386,7 @@
         "effects": null,
         "flags": [],
         "id": "republic_army_organization_4_merc",
+        "index": 3,
         "isDefault": false,
         "level": null,
         "modifiers": [
@@ -23818,20 +24482,30 @@
     ],
     "name": "Army Organization",
     "progression": false,
-    "sourceFile": "04_republic_law_groups.txt",
+    "requiredGovernments": [
+      {
+        "flag": "government_is_republic",
+        "governments": [
+          {
+            "id": "republic_government",
+            "name": "Republic"
+          }
+        ]
+      }
+    ],
+    "sourceFile": "04_republic_laws.txt",
     "treasuryBudget": false
   },
   {
     "category": "republic",
     "cumulative": false,
     "default": "republic_banishment_2_permitted_by_decree",
+    "dlc": null,
     "flags": [
       "republican_law"
     ],
-    "governmentFlags": [
-      "government_is_republic"
-    ],
     "groupRequirements": [],
+    "groupSourceFile": "04_republic_law_groups.txt",
     "id": "republic_banishment",
     "laws": [
       {
@@ -23844,6 +24518,7 @@
           }
         ],
         "id": "republic_banishment_1_prohibited",
+        "index": 0,
         "isDefault": false,
         "level": null,
         "modifiers": [],
@@ -23935,6 +24610,7 @@
           }
         ],
         "id": "republic_banishment_2_permitted_by_decree",
+        "index": 1,
         "isDefault": true,
         "level": null,
         "modifiers": [],
@@ -24025,6 +24701,7 @@
         "effects": "The Ruler of the Republic may Banish characters and entire families at will",
         "flags": [],
         "id": "republic_banishment_3_unrestricted",
+        "index": 2,
         "isDefault": false,
         "level": null,
         "modifiers": [
@@ -24115,20 +24792,30 @@
     ],
     "name": "Banishment",
     "progression": false,
-    "sourceFile": "04_republic_law_groups.txt",
+    "requiredGovernments": [
+      {
+        "flag": "government_is_republic",
+        "governments": [
+          {
+            "id": "republic_government",
+            "name": "Republic"
+          }
+        ]
+      }
+    ],
+    "sourceFile": "04_republic_laws.txt",
     "treasuryBudget": false
   },
   {
     "category": "republic",
     "cumulative": false,
     "default": "republic_execution_1_prohibited",
+    "dlc": null,
     "flags": [
       "republican_law"
     ],
-    "governmentFlags": [
-      "government_is_republic"
-    ],
     "groupRequirements": [],
+    "groupSourceFile": "04_republic_law_groups.txt",
     "id": "republic_execution",
     "laws": [
       {
@@ -24141,6 +24828,7 @@
           }
         ],
         "id": "republic_execution_1_prohibited",
+        "index": 0,
         "isDefault": true,
         "level": null,
         "modifiers": [],
@@ -24232,6 +24920,7 @@
           }
         ],
         "id": "republic_execution_2_permitted_by_decree",
+        "index": 1,
         "isDefault": false,
         "level": null,
         "modifiers": [],
@@ -24322,6 +25011,7 @@
         "effects": "The Ruler of the Republic may Execute characters at will",
         "flags": [],
         "id": "republic_execution_3_unrestricted",
+        "index": 2,
         "isDefault": false,
         "level": null,
         "modifiers": [
@@ -24412,20 +25102,30 @@
     ],
     "name": "Execution",
     "progression": false,
-    "sourceFile": "04_republic_law_groups.txt",
+    "requiredGovernments": [
+      {
+        "flag": "government_is_republic",
+        "governments": [
+          {
+            "id": "republic_government",
+            "name": "Republic"
+          }
+        ]
+      }
+    ],
+    "sourceFile": "04_republic_laws.txt",
     "treasuryBudget": false
   },
   {
     "category": "republic",
     "cumulative": false,
     "default": "republic_title_revocation_2_allowed",
+    "dlc": null,
     "flags": [
       "republican_law"
     ],
-    "governmentFlags": [
-      "government_is_republic"
-    ],
     "groupRequirements": [],
+    "groupSourceFile": "04_republic_law_groups.txt",
     "id": "republic_title_revocation",
     "laws": [
       {
@@ -24433,6 +25133,7 @@
         "effects": "County-Tier and higher Titles can not be revoked; Trade Posts held by Vassal Patricians can not be revoked",
         "flags": [],
         "id": "republic_title_revocation_1_disallowed",
+        "index": 0,
         "isDefault": false,
         "level": null,
         "modifiers": [],
@@ -24524,6 +25225,7 @@
           }
         ],
         "id": "republic_title_revocation_2_allowed",
+        "index": 1,
         "isDefault": true,
         "level": null,
         "modifiers": [
@@ -24614,20 +25316,30 @@
     ],
     "name": "Title Revocation",
     "progression": false,
-    "sourceFile": "04_republic_law_groups.txt",
+    "requiredGovernments": [
+      {
+        "flag": "government_is_republic",
+        "governments": [
+          {
+            "id": "republic_government",
+            "name": "Republic"
+          }
+        ]
+      }
+    ],
+    "sourceFile": "04_republic_laws.txt",
     "treasuryBudget": false
   },
   {
     "category": "republic",
     "cumulative": false,
     "default": "republic_retract_vassal_1_disallowed",
+    "dlc": null,
     "flags": [
       "republican_law"
     ],
-    "governmentFlags": [
-      "government_is_republic"
-    ],
     "groupRequirements": [],
+    "groupSourceFile": "04_republic_law_groups.txt",
     "id": "republic_retract_vassal",
     "laws": [
       {
@@ -24635,6 +25347,7 @@
         "effects": "Vassals can not be retracted",
         "flags": [],
         "id": "republic_retract_vassal_1_disallowed",
+        "index": 0,
         "isDefault": true,
         "level": null,
         "modifiers": [],
@@ -24726,6 +25439,7 @@
           }
         ],
         "id": "republic_retract_vassal_2_allowed",
+        "index": 1,
         "isDefault": false,
         "level": null,
         "modifiers": [
@@ -24816,20 +25530,30 @@
     ],
     "name": "Vassal Retraction",
     "progression": false,
-    "sourceFile": "04_republic_law_groups.txt",
+    "requiredGovernments": [
+      {
+        "flag": "government_is_republic",
+        "governments": [
+          {
+            "id": "republic_government",
+            "name": "Republic"
+          }
+        ]
+      }
+    ],
+    "sourceFile": "04_republic_laws.txt",
     "treasuryBudget": false
   },
   {
     "category": "republic",
     "cumulative": false,
     "default": "republic_vassal_refusal_1_allowed",
+    "dlc": null,
     "flags": [
       "republican_law"
     ],
-    "governmentFlags": [
-      "government_is_republic"
-    ],
     "groupRequirements": [],
+    "groupSourceFile": "04_republic_law_groups.txt",
     "id": "republic_vassal_refusal",
     "laws": [
       {
@@ -24842,6 +25566,7 @@
           }
         ],
         "id": "republic_vassal_refusal_1_allowed",
+        "index": 0,
         "isDefault": true,
         "level": null,
         "modifiers": [],
@@ -24933,6 +25658,7 @@
           }
         ],
         "id": "republic_vassal_refusal_2_treason",
+        "index": 1,
         "isDefault": false,
         "level": null,
         "modifiers": [
@@ -25023,20 +25749,30 @@
     ],
     "name": "Vassal Refusal",
     "progression": false,
-    "sourceFile": "04_republic_law_groups.txt",
+    "requiredGovernments": [
+      {
+        "flag": "government_is_republic",
+        "governments": [
+          {
+            "id": "republic_government",
+            "name": "Republic"
+          }
+        ]
+      }
+    ],
+    "sourceFile": "04_republic_laws.txt",
     "treasuryBudget": false
   },
   {
     "category": "republic",
     "cumulative": false,
     "default": "republic_trade_specialization_none",
+    "dlc": null,
     "flags": [
       "republican_law"
     ],
-    "governmentFlags": [
-      "government_is_republic"
-    ],
     "groupRequirements": [],
+    "groupSourceFile": "04_republic_law_groups.txt",
     "id": "republic_trade_specialization",
     "laws": [
       {
@@ -25044,6 +25780,7 @@
         "effects": "No Trade Goods are subsidized",
         "flags": [],
         "id": "republic_trade_specialization_none",
+        "index": 0,
         "isDefault": true,
         "level": null,
         "modifiers": [],
@@ -25130,6 +25867,7 @@
         "effects": null,
         "flags": [],
         "id": "republic_trade_specialization_base_needs",
+        "index": 1,
         "isDefault": false,
         "level": null,
         "modifiers": [
@@ -25232,6 +25970,7 @@
         "effects": null,
         "flags": [],
         "id": "republic_trade_specialization_construction",
+        "index": 2,
         "isDefault": false,
         "level": null,
         "modifiers": [
@@ -25329,6 +26068,7 @@
         "effects": null,
         "flags": [],
         "id": "republic_trade_specialization_metals",
+        "index": 3,
         "isDefault": false,
         "level": null,
         "modifiers": [
@@ -25426,6 +26166,7 @@
         "effects": null,
         "flags": [],
         "id": "republic_trade_specialization_luxury",
+        "index": 4,
         "isDefault": false,
         "level": null,
         "modifiers": [
@@ -25528,6 +26269,7 @@
         "effects": null,
         "flags": [],
         "id": "republic_trade_specialization_luxury_food",
+        "index": 5,
         "isDefault": false,
         "level": null,
         "modifiers": [
@@ -25630,6 +26372,7 @@
         "effects": null,
         "flags": [],
         "id": "republic_trade_specialization_minerals",
+        "index": 6,
         "isDefault": false,
         "level": null,
         "modifiers": [
@@ -25727,6 +26470,7 @@
         "effects": null,
         "flags": [],
         "id": "republic_trade_specialization_textiles",
+        "index": 7,
         "isDefault": false,
         "level": null,
         "modifiers": [
@@ -25824,6 +26568,7 @@
         "effects": null,
         "flags": [],
         "id": "republic_trade_specialization_unique",
+        "index": 8,
         "isDefault": false,
         "level": null,
         "modifiers": [
@@ -25924,20 +26669,30 @@
     ],
     "name": "Subsidized Trade Goods",
     "progression": false,
-    "sourceFile": "04_republic_law_groups.txt",
+    "requiredGovernments": [
+      {
+        "flag": "government_is_republic",
+        "governments": [
+          {
+            "id": "republic_government",
+            "name": "Republic"
+          }
+        ]
+      }
+    ],
+    "sourceFile": "04_republic_laws.txt",
     "treasuryBudget": false
   },
   {
     "category": "republic",
     "cumulative": false,
     "default": "republic_trade_pricing_none",
+    "dlc": null,
     "flags": [
       "republican_law"
     ],
-    "governmentFlags": [
-      "government_is_republic"
-    ],
     "groupRequirements": [],
+    "groupSourceFile": "04_republic_law_groups.txt",
     "id": "republic_trade_pricing",
     "laws": [
       {
@@ -25945,6 +26700,7 @@
         "effects": "No Trade Good industry is sponsored",
         "flags": [],
         "id": "republic_trade_pricing_none",
+        "index": 0,
         "isDefault": true,
         "level": null,
         "modifiers": [],
@@ -26031,6 +26787,7 @@
         "effects": null,
         "flags": [],
         "id": "republic_trade_pricing_arsenal",
+        "index": 1,
         "isDefault": false,
         "level": null,
         "modifiers": [
@@ -26133,6 +26890,7 @@
         "effects": null,
         "flags": [],
         "id": "republic_trade_pricing_granary",
+        "index": 2,
         "isDefault": false,
         "level": null,
         "modifiers": [
@@ -26230,6 +26988,7 @@
         "effects": null,
         "flags": [],
         "id": "republic_trade_pricing_victualling",
+        "index": 3,
         "isDefault": false,
         "level": null,
         "modifiers": [
@@ -26327,6 +27086,7 @@
         "effects": null,
         "flags": [],
         "id": "republic_trade_pricing_caravan",
+        "index": 4,
         "isDefault": false,
         "level": null,
         "modifiers": [
@@ -26429,6 +27189,7 @@
         "effects": null,
         "flags": [],
         "id": "republic_trade_pricing_mint",
+        "index": 5,
         "isDefault": false,
         "level": null,
         "modifiers": [
@@ -26526,6 +27287,7 @@
         "effects": null,
         "flags": [],
         "id": "republic_trade_pricing_dyeworks",
+        "index": 6,
         "isDefault": false,
         "level": null,
         "modifiers": [
@@ -26628,6 +27390,7 @@
         "effects": null,
         "flags": [],
         "id": "republic_trade_pricing_drapery",
+        "index": 7,
         "isDefault": false,
         "level": null,
         "modifiers": [
@@ -26725,6 +27488,7 @@
         "effects": null,
         "flags": [],
         "id": "republic_trade_pricing_apothecary",
+        "index": 8,
         "isDefault": false,
         "level": null,
         "modifiers": [
@@ -26825,21 +27589,31 @@
     ],
     "name": "Sponsored Industry",
     "progression": false,
-    "sourceFile": "04_republic_law_groups.txt",
+    "requiredGovernments": [
+      {
+        "flag": "government_is_republic",
+        "governments": [
+          {
+            "id": "republic_government",
+            "name": "Republic"
+          }
+        ]
+      }
+    ],
+    "sourceFile": "04_republic_laws.txt",
     "treasuryBudget": false
   },
   {
     "category": "republic",
     "cumulative": false,
     "default": "republic_end_term_law_2",
+    "dlc": null,
     "flags": [
       "republican_law",
       "republican_assembly_law"
     ],
-    "governmentFlags": [
-      "government_is_republic"
-    ],
     "groupRequirements": [],
+    "groupSourceFile": "04_republic_law_groups.txt",
     "id": "republic_end_term_laws",
     "laws": [
       {
@@ -26847,6 +27621,7 @@
         "effects": "Pre-emptive Elections to end a Term early are not allowed",
         "flags": [],
         "id": "republic_end_term_law_1",
+        "index": 0,
         "isDefault": false,
         "level": 1,
         "modifiers": [
@@ -26945,6 +27720,7 @@
         "effects": "Pre-emptive Elections to end a Term early are allowed",
         "flags": [],
         "id": "republic_end_term_law_2",
+        "index": 1,
         "isDefault": true,
         "level": 2,
         "modifiers": [],
@@ -27043,6 +27819,7 @@
         "effects": "Start a vote to call for an immediate Election and force the Ruler to step down",
         "flags": [],
         "id": "republic_end_term_law_3",
+        "index": 1,
         "isDefault": false,
         "level": 3,
         "modifiers": [],
@@ -27141,7 +27918,18 @@
     ],
     "name": "Call for New Election",
     "progression": true,
-    "sourceFile": "04_republic_law_groups.txt",
+    "requiredGovernments": [
+      {
+        "flag": "government_is_republic",
+        "governments": [
+          {
+            "id": "republic_government",
+            "name": "Republic"
+          }
+        ]
+      }
+    ],
+    "sourceFile": "04_republic_laws.txt",
     "treasuryBudget": false
   }
 ]

@@ -285,27 +285,44 @@ Known gaps / next steps:
   parameter applies too), clamped 0-100. Cooldowns: 50y hybrid, 100y
   divergence, 50y per tradition change.
 
-- **1.21 restructures (Silk and Silver patch).** Religion is now
-  religion → faith (`faith_types/`) → rite (`rite_types/`), with tenets in
-  their own `tenet_types/`; doctrines merge religion → faith → rite (later
-  layer wins per group). Province history uses `rite =`. Shared helpers live
-  in `scripts/lib/ck3_religion.py`. Buildings sit in subfolders of
-  `common/buildings/` and are organised by `common/districts/`
-  (`build_districts.py`); icons moved into `icons/building_types/<subdir>/`,
-  so building `icon` keys carry the subdir. Laws split into `law_groups/`
-  (joined by `law_group_type` + `index`). `title_types/` types root titles
-  (merchant/noble/ecclesiastical families → 3.4k roots). Tenet art is in
-  `icons/faith_tenets`.
+- **1.20 (By God Alone) restructured religion — Religion → Faith → Rite.**
+  `religion_types/` (now a `religion_details` block), `faith_types/` (faiths
+  moved out of their religion; holy sites split into `eminent_holy_sites` and
+  `holy_sites`; optional `main_rite`), `rite_types/` (each names its parent
+  `faith =`). Effective doctrines: faith overrides religion per doctrine
+  group, rite overrides both; a faith with a scripted main Rite takes that
+  Rite's tenets and doctrines. A main Rite's default parent can be another
+  faith and be handed over in `history/faiths` (roman_rite: christian_faith
+  -> catholic at 1054.7.16). Doctrines name their own `doctrine_group_type` +
+  `index`; tenets are a separate database (`tenet_types/`, icons in
+  `icons/faith_tenets/`); the 3-tenet cap is define
+  `NReligion.FAITH_CORE_TENETS_CAP`. Cost limits use `rite_has_doctrine` /
+  `rite_has_tenet` / `rite_religion_tag`. Province and character history set
+  `rite =`, not `religion =`. Laws likewise split: groups in
+  `common/law_groups/`, laws carry `law_group_type` + `index`.
+- **By God Alone systems** (spiritual fulfillment, holy orders, puppets) each
+  have a builder and page. Holy order types split their trigger on a
+  `*_game_start_founder` variable (game-start placement vs founded in play);
+  the page shows both branches. `build_puppets.py` and `build_holy_orders.py`
+  read the site's own interactions/decisions/great-projects/titles/regions/
+  maa JSON for names and links, so they run after those builders. Their
+  condition describers phrase only shapes they recognise and print "…" for
+  the rest; puppet gates expand the DLC's own `pam_scripted_triggers.txt`.
+- **Windows PC pipeline**: no `rsync`/`make`. Sync mirror ← Steam with the
+  robocopy lines of the mirror's `update-ck3ref.bat` (drop its `pause`), then
+  robocopy the `scripts/sync.sh` SUBTREES into `reference/` and compare file
+  counts; run the Makefile `data:` lines with `python` and `PYTHONUTF8=1`.
+  The committed lockfile lacks Rollup's Windows binary: `npm i --no-save
+  @rollup/rollup-win32-x64-msvc@<rollup version>`.
+- **1.21 (Silk and Silver) restructured buildings around districts.**
+  Buildings sit in subfolders of `common/buildings/` and are organised by
+  `common/districts/` (`build_districts.py`, one page per district); icons
+  moved into `icons/building_types/<subdir>/`, so building `icon` keys carry
+  the subdir. Trade goods (`common/trade/`) are rendered as needs only — no
+  trade page yet. `title_types/` types root titles (merchant / noble /
+  ecclesiastical families → 3.4k roots).
 - **DLC prefix map was off by one for bp3/bp4/ce1/ce2 before 1.21** —
   corrected from `has_<prefix>_dlc_trigger`. `reform_culture` → The Royal
   Court is INFERRED (no game file states it); labelled in ck3.py.
-- **Mirror vs Steam install.** The Dropbox mirror is filled from the PC by
-  `update-ck3ref.bat`. The Mac's Steam install can be used directly:
-  `CK3REF_DIR="$HOME/Library/Application Support/Steam/steamapps/common/Crusader Kings III" make patch`
-  (local disk, no FUSE dropouts). Without it, sync reads the mirror and will
-  revert `reference/` to whatever the PC last copied.
-- **changelog.py diffs against the most recent snapshot of an EARLIER
-  version** (it used to diff against its own version's snapshot, so a patch
-  read as "now tracked" for every file).
 - A game file can end inside a block (gdp_visit_holding_decision_event_2.txt
   is missing its last `}`); the parser closes it and warns, like the game.

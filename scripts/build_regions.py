@@ -61,13 +61,6 @@ FAMILY_BY_FILE = {
     "10_natural_disaster_regions.txt": "Natural disaster",
 }
 FAMILY_BY_PREFIX = [  # longest first
-    # Ecclesiastical-title territories, one set per start date (867, 1066, 1178). Declared
-    # beside the regions but only ever named by `clerical_region = et_<year>_*`
-    # inside history/titles/ce3/00_ecclesiastical_titles.txt (the territory an
-    # ecclesiastical-government bishop's title covers from that date).
-    ("et_867_", "Ecclesiastical"),
-    ("et_1066_", "Ecclesiastical"),
-    ("et_1178_", "Ecclesiastical"),
     # Silk and Silver (gdp_*): the Guelph/Ghibelline situation's map areas and
     # the two trader-tradition areas.
     ("gdp_guelph_ghibelline_", "Silk and Silver"),
@@ -89,6 +82,9 @@ FAMILY_BY_PREFIX = [  # longest first
     ("ghw_", "GHW"),
     ("dlc_", "DLC"),
     ("tgp_", "Chinese naming"),
+    # By God Alone: assigned to ecclesiastical titles via `clerical_region =`
+    # in history/titles; keyed et_<start year>_<see>_region
+    ("et_", "Clerical"),
 ]
 FAMILY_BY_SUFFIX = [
     ("_de_jure_region", "Special"),   # the Mongol khanate de jure claims
@@ -119,9 +115,9 @@ FAMILY_BY_KEY = {
     "monkey_region": "Other",   # only referenced by a gdp scripted trigger
 }
 FAMILY_ORDER = ["World", "Custom", "GHW", "DLC", "Sea", "Material", "Hunt",
-                "Special", "Heritage", "Silk Road", "Nomad", "Seasonal",
+                "Special", "Clerical", "Heritage", "Silk Road", "Nomad", "Seasonal",
                 "Natural disaster", "Chinese naming", "Silk and Silver",
-                "Ecclesiastical", "Ruins", "Island", "Graphical",
+                "Ruins", "Island", "Graphical",
                 "Other"]
 
 # `generate_modifiers = yes` makes the engine create these two modifiers per

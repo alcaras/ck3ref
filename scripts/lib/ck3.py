@@ -588,6 +588,7 @@ FEATURE_TO_DLC = {
     "holy_buildings": "Medieval Monuments",
     "medieval_monuments": "Medieval Monuments",
     "east_asian_wonders": "All Under Heaven",
+    "by_god_alone": "By God Alone",
     # cosmetic packs — gate attire/music/CoA only; tagged for completeness
     "arctic_attire": "Northern Lords",
     "celestial_court_attire": "All Under Heaven",
@@ -598,7 +599,6 @@ FEATURE_TO_DLC = {
     "elegance_of_the_empire": "Elegance of the Empire",
     "symbols_of_authority": "Symbols of Authority",
     "songs_of_the_realm": "Songs of the Realm",
-    "by_god_alone": "By God Alone",
     # Silk and Silver (dlc031_ep5; has_gdp_dlc_trigger checks silk_and_silver)
     "silk_and_silver": "Silk and Silver",
     # the game's DLC text for Silk & Silver: "seize power in a republic"
@@ -625,9 +625,11 @@ PREFIX_TO_DLC = {
     "bp4": "Coronations",
     "mpo": "Khans of the Steppe",
     "ce1": "Legends of the Dead", "ce2": "Khans of the Steppe",
-    "ce3": "By God Alone", "pam": "By God Alone",
     # the game's own has_tgp_dlc_trigger checks feature all_under_heaven
     "tgp": "All Under Heaven",
+    # the game's own has_pam_dlc_trigger checks feature by_god_alone;
+    # ce3 is the DLC's own folder tag (game/dlc/dlc030_ce3)
+    "pam": "By God Alone", "ce3": "By God Alone",
     "gdp": "Silk and Silver",
     "mp1": "Songs of the Realm",
     "afr": "African Attire", "laamp": "Roads to Power",
