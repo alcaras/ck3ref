@@ -2,9 +2,8 @@
 """Convert the DDS icons referenced by emitted data to WebP in public/img/.
 
 Data-driven: CATEGORIES maps each dataset to its gfx icon folder. Reads
-straight from the mirror's game/gfx tree (CK3REF_DIR) — single-file reads are
-safe on the FUSE mount; only batch enumeration is not. Skips conversions whose
-output is already newer than the source.
+straight from the local install's game/gfx tree (ck3.game_dir()). Skips
+conversions whose output is already newer than the source.
 """
 
 from __future__ import annotations
@@ -19,7 +18,7 @@ from PIL import Image
 sys.path.insert(0, str(Path(__file__).parent / "lib"))
 import ck3
 
-MIRROR = Path(os.environ.get("CK3REF_DIR", Path.home() / "Library/CloudStorage/Dropbox/cc/ck3ref"))
+MIRROR = ck3.game_dir()  # the local CK3 install (CK3REF_DIR overrides)
 ICONS = MIRROR / "game/gfx/interface/icons"
 ILLUS = MIRROR / "game/gfx/interface/illustrations"
 
@@ -147,7 +146,7 @@ def build_decision_art():
             missing += 1
     print(f"✓ art: {done}/{len(seen)} decision illustrations → public/img/decisions/")
     if missing:
-        print(f"  ({missing} referenced files not present in the mirror)")
+        print(f"  ({missing} referenced files not present in the install)")
 
 
 # 1.21 split several icon sets into subfolders (building_types/old_buildings,
@@ -225,7 +224,7 @@ def main():
         print(f"✓ art: {done}/{len(seen)} {out_sub} icons → public/img/{out_sub}/")
         if missing and not quiet:
             print(f"⚠ {len(missing)} fell back or failed: {missing[:8]}"
-                  " (mirror may still be Dropbox-syncing; re-run make art)")
+                  "")
 
 
 if __name__ == "__main__":

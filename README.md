@@ -11,8 +11,9 @@ projection of the game's script, in the spirit of
 make patch   # sync → version → data → art → audit → changelog → build → check
 ```
 
-- `scripts/sync.sh` copies the needed game subtrees from a local CK3 data
-  mirror (`CK3REF_DIR`) into `reference/` with integrity verification.
+- `scripts/sync.sh` copies the needed game subtrees from the local CK3 Steam
+  install (auto-detected; `CK3REF_DIR` overrides) into `reference/` with
+  integrity verification.
 - `scripts/build_*.py` parse the Jomini script via `scripts/lib/ck3.py` and
   emit deterministic JSON into `src/data/`.
 - `scripts/audit.py` fails the build when a patch adds content the site
@@ -21,7 +22,7 @@ make patch   # sync → version → data → art → audit → changelog → bui
 
 ## Requirements
 
-- A CK3 install (or mirror of its `game/` folder) — set `CK3REF_DIR`
+- A CK3 install (default Steam location is found automatically; otherwise set `CK3REF_DIR`)
 - Python 3.12+, Pillow (icon conversion), Node 20+
 
 CK3 game data and art are © Paradox Interactive; this project renders them for

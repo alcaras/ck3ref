@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Build src/data/dlc.json — what each DLC adds, aggregated from every
 generated dataset's `dlc` field, plus display metadata from dlc_metadata.
-Also converts the store thumbnails from the mirror's game/dlc/ folders.
+Also converts the store thumbnails from the install's game/dlc/ folders.
 """
 
 import json
@@ -12,7 +12,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent / "lib"))
 import ck3
 
-MIRROR = Path(os.environ.get("CK3REF_DIR", Path.home() / "Library/CloudStorage/Dropbox/cc/ck3ref"))
+MIRROR = ck3.game_dir()  # the local CK3 install (CK3REF_DIR overrides)
 DATA = ck3.ROOT / "src" / "data"
 
 # dataset -> (records path, type label, page)

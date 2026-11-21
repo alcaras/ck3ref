@@ -1,19 +1,22 @@
 # CLAUDE.md — agent guide for ck3reference
 
 Static Astro site generated from CK3's own game files. Sibling of
-`owreference` (Old World) and `eu5ref` (EU5); the master plan lives in the
-data mirror's `PLAN.md`. Pipeline: `make patch` = sync → version → data → art
+`owreference` (Old World) and `eu5ref` (EU5); the master plan lives in
+`PLAN.md` in the Dropbox `cc/ck3ref` folder (notes only; no game data is read
+from there any more). Pipeline: `make patch` = sync → version → data → art
 → audit → changelog → build → check.
 
 ## Hard rules
 
 1. **No personal names, emails, or absolute home paths in anything committed.**
-   Mirror location comes from `CK3REF_DIR`; `data/patch.json` records version
-   hashes and dates only.
-2. **Never read the Dropbox mirror in batch** — it silently drops files under
-   `find`/`xargs` (verified). All builds read repo-local `reference/`
-   (populated + manifest-verified by `scripts/sync.sh`). Single-file reads
-   from the mirror (icons) are fine.
+   The install location is auto-detected (`ck3.game_dir()`, override with
+   `CK3REF_DIR`); `data/patch.json` records version, hashes and dates only.
+2. **Builds read repo-local `reference/`, never the install in batch.**
+   `scripts/sync.sh` copies it from the local Steam install (macOS, Windows or
+   Linux, found by `ck3.game_dir()`) and verifies file counts. Art and DLC
+   thumbnails are single-file reads straight from the install. (The old
+   Dropbox mirror is retired: it went stale between machines and its FUSE
+   mount silently dropped files in batch reads.)
 3. **XML→JSON determinism**: every build script emits
    `json.dumps(..., indent=2, sort_keys=True)` via `ck3.write_json`, prints
    `✓ wrote … — N entries`, and is registered in the Makefile `data:` target.
@@ -73,7 +76,7 @@ hover, ruling). Six skill colors (`--sk-*`) are the only other hues.
   inventing new ones; page-specific styles go in the page's scoped `<style>`.
 - Icons: emit the game's icon key in build scripts; `build_art.py` converts
   `game/gfx/interface/icons/<category>/<key>.dds` → `public/img/<cat>/…webp`
-  from the mirror (Pillow reads DDS directly).
+  from the install (Pillow reads DDS directly).
 
 ## Status (2026-11-21 — game 1.21.0.3 "Florin" + Silk and Silver)
 
@@ -135,7 +138,7 @@ Known gaps / next steps:
 - `game/dlc/` has no script content; feature→DLC mapping is many-to-one and
   hand-maintained in `ck3.FEATURE_TO_DLC`.
 - Some icons legitimately share art via the `icon =` field; `build_art.py`
-  falls back to `_default.dds` and warns (Dropbox may also still be syncing).
+  falls back to `_default.dds` and warns.
   Categories where absence is normal (doctrines, pillars, traditions) run
   `quiet=True`. The FUSE mount sometimes returns an EMPTY folder listing until
   an `ls` materializes it — a 0/N art run usually means that, not missing art.
@@ -308,10 +311,10 @@ Known gaps / next steps:
   maa JSON for names and links, so they run after those builders. Their
   condition describers phrase only shapes they recognise and print "…" for
   the rest; puppet gates expand the DLC's own `pam_scripted_triggers.txt`.
-- **Windows PC pipeline**: no `rsync`/`make`. Sync mirror ← Steam with the
-  robocopy lines of the mirror's `update-ck3ref.bat` (drop its `pause`), then
-  robocopy the `scripts/sync.sh` SUBTREES into `reference/` and compare file
-  counts; run the Makefile `data:` lines with `python` and `PYTHONUTF8=1`.
+- **Windows PC pipeline**: no `rsync`/`make`. Robocopy the `scripts/sync.sh`
+  SUBTREES straight from the Steam install into `reference/` (plus
+  `launcher/launcher-settings.json` for the version) and compare file
+  counts; `ck3.game_dir()` finds the default Steam path for art; run the Makefile `data:` lines with `python` and `PYTHONUTF8=1`.
   The committed lockfile lacks Rollup's Windows binary: `npm i --no-save
   @rollup/rollup-win32-x64-msvc@<rollup version>`.
 - **1.21 (Silk and Silver) restructured buildings around districts.**

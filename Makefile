@@ -1,6 +1,6 @@
 # ck3reference pipeline. `make patch` after each game update.
-# Data source: the ck3ref mirror; set CK3REF_DIR if it is not at the default
-# Dropbox location (see scripts/sync.sh).
+# Data source: the local CK3 Steam install, found automatically on macOS,
+# Windows and Linux; set CK3REF_DIR if it lives elsewhere (see ck3.game_dir()).
 
 .PHONY: patch sync version data art audit changelog build check compositions
 

@@ -7,8 +7,8 @@
 - script_value resolver (static scalars + named chains; conditional -> rule dicts)
 - DLC provenance tagger (filename prefix + has_dlc_feature)
 
-All reads go through reference/ (repo-local, populated by scripts/sync.sh).
-Never point this at the Dropbox mirror directly — see sync.sh header.
+All reads go through reference/ (repo-local, populated by scripts/sync.sh
+from the local Steam install — see game_dir()).
 """
 
 from __future__ import annotations
@@ -22,6 +22,29 @@ REF = ROOT / "reference"
 COMMON = REF / "game" / "common"
 LOC_DIR = REF / "game" / "localization" / "english"
 CACHE = ROOT / ".cache"
+
+# Where the game is installed. CK3REF_DIR overrides; otherwise the default
+# Steam library location on macOS, Windows (native or Git Bash) and Linux.
+_INSTALL_CANDIDATES = [
+    Path.home() / "Library/Application Support/Steam/steamapps/common/Crusader Kings III",
+    Path("C:/Program Files (x86)/Steam/steamapps/common/Crusader Kings III"),
+    Path("/c/Program Files (x86)/Steam/steamapps/common/Crusader Kings III"),
+    Path.home() / ".steam/steam/steamapps/common/Crusader Kings III",
+    Path.home() / ".local/share/Steam/steamapps/common/Crusader Kings III",
+]
+
+
+def game_dir() -> Path:
+    """The CK3 install root (the folder holding game/, jomini/, launcher/)."""
+    import os
+    env = os.environ.get("CK3REF_DIR")
+    if env:
+        return Path(env)
+    for c in _INSTALL_CANDIDATES:
+        if (c / "game" / "common").is_dir():
+            return c
+    raise SystemExit("✗ CK3 install not found — set CK3REF_DIR to the folder "
+                     "that contains game/ and jomini/")
 
 
 # ---------------------------------------------------------------------------

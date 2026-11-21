@@ -1,11 +1,10 @@
 #!/usr/bin/env python3
 """Record the game version + sync time in data/patch.json.
 
-CK3 exposes its version in game/dlc_metadata? No — the reliable text source
-in the mirror is the launcher-visible version embedded in the exe, which we
-don't parse. Until a better source lands in the mirror, the version is derived
-from a hash of common/defines/00_defines.txt + dlc_metadata (stable within a
-patch, changes across patches) unless CK3_VERSION is set explicitly.
+The version comes from the launcher's `rawVersion` (sync.sh copies
+launcher/launcher-settings.json into reference/); CK3_VERSION overrides it.
+buildId is a hash of 00_defines.txt + dlc_metadata, which changes across
+patches even when the launcher file is missing.
 
 Deliberately records NO install paths or machine-identifying data.
 """
@@ -34,6 +33,9 @@ def main():
     prev = {}
     if OUT.exists():
         prev = json.loads(OUT.read_text(encoding="utf-8"))
+    launcher = ck3.REF / "launcher-settings.json"
+    if not version and launcher.exists():
+        version = json.loads(launcher.read_text(encoding="utf-8-sig")).get("rawVersion")
     if not version:
         version = prev.get("version") if prev.get("buildId") == build_id else f"build-{build_id}"
     OUT.parent.mkdir(parents=True, exist_ok=True)
