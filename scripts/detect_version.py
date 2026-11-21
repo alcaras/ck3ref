@@ -22,6 +22,25 @@ import ck3
 OUT = ck3.ROOT / "data" / "patch.json"
 
 
+def latest_dlc():
+    """Newest non-cosmetic DLC: the highest-numbered dlc_NNN entry in
+    dlc_metadata whose type isn't `minor` (minor = attire/music packs)."""
+    md = ck3.REF / "game" / "dlc_metadata" / "00_dlc_metadata.txt"
+    if not md.exists():
+        return None
+    best = None
+    for key, _op, v in ck3.parse_file(md):
+        if not (key and key.startswith("dlc_") and hasattr(v, "get")):
+            continue
+        if v.get("type") == "minor":
+            continue
+        n = int(key.removeprefix("dlc_"))
+        if best is None or n > best[0]:
+            name = v.get("key")
+            best = (n, ck3.render_text(ck3.loc(name) or name))
+    return best[1] if best else None
+
+
 def main():
     version = os.environ.get("CK3_VERSION")
     h = hashlib.sha256()
@@ -42,10 +61,11 @@ def main():
     OUT.write_text(json.dumps({
         "version": version,
         "buildId": build_id,
+        "latestDlc": latest_dlc(),
         "syncedAt": (ck3.REF / ".synced-at").read_text().strip() if (ck3.REF / ".synced-at").exists() else None,
         "generatedAt": datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
     }, indent=2) + "\n", encoding="utf-8")
-    print(f"✓ patch.json — version {version} (build {build_id})")
+    print(f"✓ patch.json — version {version} (build {build_id}), latest DLC {latest_dlc()}")
 
 
 if __name__ == "__main__":
